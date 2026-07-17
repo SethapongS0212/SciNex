@@ -1,0 +1,19 @@
+16:39:23 [INFO] Found 20 paper(s).
+16:39:23 [INFO] Initializing LLM extractor...
+16:39:23 [INFO] ────────────────────────────────────────────────────────────
+16:39:23 [INFO] Paper : 2020.acl-main.130
+16:39:23 [INFO] HTML  : output/2020.acl-main.130/no-llm/output.html
+16:39:23 [INFO]   ── Extractor: LLM ──
+16:39:23 [INFO]   Title    : MuTual: A Dataset for Multi-Turn Dialogue Reasoning
+16:39:23 [INFO]   Sections : 10
+16:39:23 [INFO]     [1 Introduction] 36 sentences
+16:39:23 [INFO] Loading Qwen/Qwen3-14B (4-bit quantized)...
+16:39:24 [INFO] Successfully registered DSL: cutedsl
+16:39:24 [INFO] Successfully registered DSL: triton
+Loading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]/home/ubuntu/.local/lib/python3.10/site-packages/bitsandbytes/backends/cuda/ops.py:213: FutureWarning: _check_is_size will be removed in a future PyTorch release along with guard_size_oblivious.     Use _check(i >= 0) instead.
+  torch._check_is_size(blocksize)
+Loading checkpoint shards:  12%|█▎        | 1/8 [00:03<00:21,  3.08s/it]Loading checkpoint shards:  25%|██▌       | 2/8 [00:07<00:22,  3.71s/it]Loading checkpoint shards:  38%|███▊      | 3/8 [00:11<00:19,  3.90s/it]Loading checkpoint shards:  50%|█████     | 4/8 [00:15<00:16,  4.00s/it]Loading checkpoint shards:  62%|██████▎   | 5/8 [00:19<00:12,  4.08s/it]Loading checkpoint shards:  75%|███████▌  | 6/8 [00:23<00:08,  4.02s/it]Loading checkpoint shards:  88%|████████▊ | 7/8 [00:27<00:03,  3.95s/it]Loading checkpoint shards: 100%|██████████| 8/8 [00:28<00:00,  2.91s/it]Loading checkpoint shards: 100%|██████████| 8/8 [00:28<00:00,  3.52s/it]
+Device set to use cuda:0
+16:39:59 [INFO] Qwen/Qwen3-14B loaded.
+/home/ubuntu/.local/lib/python3.10/site-packages/bitsandbytes/backends/cuda/ops.py:468: FutureWarning: _check_is_size will be removed in a future PyTorch release along with guard_size_oblivious.     Use _check(i >= 0) instead.
+  torch._check_is_size(blocksize)

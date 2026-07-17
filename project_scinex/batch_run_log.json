@@ -1,0 +1,4690 @@
+[
+  {
+    "paper_id": "D12-1048",
+    "success": true,
+    "elapsed": 13.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "C14-1152",
+    "success": true,
+    "elapsed": 693.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "K16-1019",
+    "success": true,
+    "elapsed": 738.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "K19-1016",
+    "success": true,
+    "elapsed": 747.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "K19-1034",
+    "success": true,
+    "elapsed": 12.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "L14-1496",
+    "success": true,
+    "elapsed": 704.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "L14-1628",
+    "success": true,
+    "elapsed": 869.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "L16-1312",
+    "success": true,
+    "elapsed": 695.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "L16-1505",
+    "success": true,
+    "elapsed": 62.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "L16-1593",
+    "success": true,
+    "elapsed": 713.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "L18-1594",
+    "success": true,
+    "elapsed": 745.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "L18-1601",
+    "success": true,
+    "elapsed": 219.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "L18-1675",
+    "success": true,
+    "elapsed": 12.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N13-1120",
+    "success": true,
+    "elapsed": 10.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N15-1016",
+    "success": true,
+    "elapsed": 193.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1241",
+    "success": true,
+    "elapsed": 23.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-5002",
+    "success": true,
+    "elapsed": 27.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P17-2010",
+    "success": true,
+    "elapsed": 92.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P17-2022",
+    "success": true,
+    "elapsed": 7.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1196",
+    "success": true,
+    "elapsed": 23.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-2071",
+    "success": true,
+    "elapsed": 6.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Q18-1018",
+    "success": true,
+    "elapsed": 871.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D12-1051",
+    "success": false,
+    "elapsed": 95.6,
+    "error": "[network] API error (paper/ACL:D12-1051): HTTP Error 403: Forbidden",
+    "stdout": "──────────────────────────────\n  PDF      : output/acl/pdfs/D12-1051.pdf\n  Mode     : no-llm\n  Output   : output/D12-1051/no-llm/output.html\n  LLM      : SKIPPED\n  Citations: Semantic Scholar  [slow ~1-5 min]\n───────────────────────────────────────────────────────\n\n1. Loading PDF...\n2. Extracting layout blocks...\n   152 blocks extracted\n3. Extracting tables (multi-strategy)...\nTable pages: 6,7,8,9,10\nRunning borderless table detector...\n[table_detector] Found 7 borderless table(s)\n[text_reconstructor] Table 3 recovered (page 8, 11 rows, q=0.48)\nSkipping OCR\nFinal table count after dedup: 14\n   14 tables found\n4. Building citation network via Semantic Scholar...\n   (Makes ~20-60 API calls — may take 1-5 min)\n[network] API error (paper/ACL:D12-1051): HTTP Error 403: Forbidden\n[network] Searching for: 'D12 1051'\n[network] API error (paper/search): HTTP Error 403: Forbidden\n[network] Paper not found.\n   ⚠️  Paper not found on Semantic Scholar — continuing without citation network\n   (Run with --no-citations to suppress this)\n5. Building document structure...\n   22 sections, 11 metrics\n   Re-fetching with real paper title...\n[network] API error (paper/ACL:D12-1051): HTTP Error 403: Forbidden\n[network] Searching for: 'Exploiting Chunk-level Features to Improve Phrase Chunking'\n[network] API error (paper/search): HTTP Error 403: Forbidden\n[network] Paper not found.\n   ⚠️  Still not found — proceeding without citation network\n6. Cleaning text (regex — instant, no GPU)...\n7. Enriching paragraphs with concept keywords...\n8. Rebuilding and placing tables...\n   14 tables placed\n9. Saving JSON -> output/D12-1051/no-llm/output.json\n10. Generating HTML -> output/D12-1051/no-llm/output.html\n\n───────────────────────────────────────────────────────\nDONE\n  Tables extracted  : 14\n  Concept keywords  : 0\n  OUTPUT            : output/D12-1051/no-llm/output.html  <- open this\n  JSON data         : output/D12-1051/no-llm/output.json\n───────────────────────────────────────────────────────\n\n",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P13-2003",
+    "success": false,
+    "elapsed": 90.8,
+    "error": "[network] API error (paper/ACL:P13-2003): HTTP Error 403: Forbidden",
+    "stdout": "[network] Semantic Scholar API key loaded ✔\n\n───────────────────────────────────────────────────────\n  PDF      : output/acl/pdfs/P13-2003.pdf\n  Mode     : no-llm\n  Output   : output/P13-2003/no-llm/output.html\n  LLM      : SKIPPED\n  Citations: Semantic Scholar  [slow ~1-5 min]\n───────────────────────────────────────────────────────\n\n1. Loading PDF...\n2. Extracting layout blocks...\n   95 blocks extracted\n3. Extracting tables (multi-strategy)...\nTable pages: 4,5\nRunning borderless table detector...\n[table_detector] Found 8 borderless table(s)\nSkipping OCR\nFinal table count after dedup: 2\n   2 tables found\n4. Building citation network via Semantic Scholar...\n   (Makes ~20-60 API calls — may take 1-5 min)\n[network] API error (paper/ACL:P13-2003): HTTP Error 403: Forbidden\n[network] Searching for: 'P13 2003'\n[network] API error (paper/search): HTTP Error 403: Forbidden\n[network] Paper not found.\n   ⚠️  Paper not found on Semantic Scholar — continuing without citation network\n   (Run with --no-citations to suppress this)\n5. Building document structure...\n   13 sections, 39 metrics\n   Re-fetching with real paper title...\n[network] API error (paper/ACL:P13-2003): HTTP Error 403: Forbidden\n[network] Searching for: 'A Tale about PRO and Monsters'\n[network] API error (paper/search): HTTP Error 403: Forbidden\n[network] Paper not found.\n   ⚠️  Still not found — proceeding without citation network\n6. Cleaning text (regex — instant, no GPU)...\n7. Enriching paragraphs with concept keywords...\n8. Rebuilding and placing tables...\n   2 tables placed\n9. Saving JSON -> output/P13-2003/no-llm/output.json\n10. Generating HTML -> output/P13-2003/no-llm/output.html\n\n───────────────────────────────────────────────────────\nDONE\n  Tables extracted  : 2\n  Concept keywords  : 0\n  OUTPUT            : output/P13-2003/no-llm/output.html  <- open this\n  JSON data         : output/P13-2003/no-llm/output.json\n───────────────────────────────────────────────────────\n\n",
+    "stderr": ""
+  },
+  {
+    "paper_id": "L18-1051",
+    "success": true,
+    "elapsed": 67.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N18-1166",
+    "success": true,
+    "elapsed": 708.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1179",
+    "success": true,
+    "elapsed": 62.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "K19-1053",
+    "success": false,
+    "elapsed": 7.1,
+    "error": "❌ Pipeline error: unsupported operand type(s) for +=: 'dict' and 'int'",
+    "stdout": "[network] Semantic Scholar API key loaded ✔\n\n───────────────────────────────────────────────────────\n  PDF      : output/acl/pdfs/K19-1053.pdf\n  Mode     : no-llm\n  Output   : output/K19-1053/no-llm/output.html\n  LLM      : SKIPPED\n  Citations: Semantic Scholar  [slow ~1-5 min]\n───────────────────────────────────────────────────────\n\n1. Loading PDF...\n2. Extracting layout blocks...\n   115 blocks extracted\n3. Extracting tables (multi-strategy)...\nTable pages: 5,6\nRunning borderless table detector...\n[table_detector] Found 7 borderless table(s)\nSkipping OCR\nFinal table count after dedup: 2\n   2 tables found\n4. Building citation network via Semantic Scholar...\n   (Makes ~20-60 API calls — may take 1-5 min)\n[network] Loading from cache: output/K19-1053/citation_network.json\n   20 network nodes, 60 concept keywords\n   Top related papers:\n     [cited_by] BERT: Pre-training of Deep Bidirectional Transformers f (2019)\n     [cited_by] Freebase: a collaboratively created graph database for  (2008)\n     [cited_by] The Statistical Analysis of Roll Call Data (2004)\n     [cited_by] A Spatial Model for Legislative Roll Call Analysis (1985)\n     [cited_by] Personality, ideology, prejudice, and politics: a dual- (2010)\n5. Building document structure...\n   20 sections, 32 metrics\n6. Cleaning text (regex — instant, no GPU)...\n7. Enriching paragraphs with concept keywords...\n8. Rebuilding and placing tables...\n   2 tables placed\n9. Saving JSON -> output/K19-1053/no-llm/output.json\n10. Generating HTML -> output/K19-1053/no-llm/output.html\n\n❌ Pipeline error: unsupported operand type(s) for +=: 'dict' and 'int'\n",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/ubuntu/project_clean_9/main.py\", line 329, in run_pipeline\n    html = to_html(structured)\n  File \"/home/ubuntu/project_clean_9/parser/html_generator.py\", line 472, in to_html\n    section_tree  = _build_section_tree(flat_sections)\n  File \"/home/ubuntu/project_clean_9/parser/html_generator.py\", line 309, in _build_section_tree\n    sssid = id_gen.next_subsubsection(parent[\"sec_id\"])\n  File \"/home/ubuntu/project_clean_9/parser/html_generator.py\", line 195, in next_subsubsection\n    self._subsub[parent_id] += 1\nTypeError: unsupported operand type(s) for +=: 'dict' and 'int'\n"
+  },
+  {
+    "paper_id": "P19-1416",
+    "success": true,
+    "elapsed": 13.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "R13-1064",
+    "success": true,
+    "elapsed": 7.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S14-1013",
+    "success": true,
+    "elapsed": 181.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S16-1103",
+    "success": true,
+    "elapsed": 22.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S16-2017",
+    "success": true,
+    "elapsed": 63.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S17-1008",
+    "success": true,
+    "elapsed": 695.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S17-2116",
+    "success": true,
+    "elapsed": 58.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W11-2141",
+    "success": true,
+    "elapsed": 703.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W11-2155",
+    "success": true,
+    "elapsed": 908.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W11-2819",
+    "success": true,
+    "elapsed": 702.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W11-3204",
+    "success": true,
+    "elapsed": 19.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W11-4630",
+    "success": true,
+    "elapsed": 21.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W12-1816",
+    "success": true,
+    "elapsed": 49.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W12-1909",
+    "success": true,
+    "elapsed": 80.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W12-3307",
+    "success": true,
+    "elapsed": 63.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W12-5212",
+    "success": true,
+    "elapsed": 20.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W12-5305",
+    "success": true,
+    "elapsed": 57.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-3105",
+    "success": true,
+    "elapsed": 695.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-4019",
+    "success": true,
+    "elapsed": 744.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-5007",
+    "success": true,
+    "elapsed": 20.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W14-5318",
+    "success": true,
+    "elapsed": 8.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W14-5502",
+    "success": true,
+    "elapsed": 14.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W15-1213",
+    "success": true,
+    "elapsed": 10.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W15-3306",
+    "success": true,
+    "elapsed": 10.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W15-4501",
+    "success": true,
+    "elapsed": 8.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-4829",
+    "success": true,
+    "elapsed": 6.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-5219",
+    "success": true,
+    "elapsed": 9.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-7412",
+    "success": true,
+    "elapsed": 9.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W18-5201",
+    "success": true,
+    "elapsed": 20.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W18-5810",
+    "success": true,
+    "elapsed": 24.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W18-6407",
+    "success": true,
+    "elapsed": 178.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-1310",
+    "success": true,
+    "elapsed": 11.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Y12-1067",
+    "success": true,
+    "elapsed": 8.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.321",
+    "success": true,
+    "elapsed": 55.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.513",
+    "success": true,
+    "elapsed": 58.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.298",
+    "success": true,
+    "elapsed": 740.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.669",
+    "success": true,
+    "elapsed": 33.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.50",
+    "success": true,
+    "elapsed": 76.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.716",
+    "success": true,
+    "elapsed": 27.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.238",
+    "success": true,
+    "elapsed": 22.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1211",
+    "success": true,
+    "elapsed": 20.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1648",
+    "success": true,
+    "elapsed": 751.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "R19-1070",
+    "success": true,
+    "elapsed": 745.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.208",
+    "success": true,
+    "elapsed": 12.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.304",
+    "success": true,
+    "elapsed": 24.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.469",
+    "success": true,
+    "elapsed": 23.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.480",
+    "success": true,
+    "elapsed": 11.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.506",
+    "success": true,
+    "elapsed": 10.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.509",
+    "success": true,
+    "elapsed": 10.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.558",
+    "success": true,
+    "elapsed": 7.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.641",
+    "success": true,
+    "elapsed": 11.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.175",
+    "success": true,
+    "elapsed": 13.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.317",
+    "success": true,
+    "elapsed": 11.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.493",
+    "success": true,
+    "elapsed": 16.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.583",
+    "success": true,
+    "elapsed": 8.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.548",
+    "success": true,
+    "elapsed": 10.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.609",
+    "success": true,
+    "elapsed": 39.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.656",
+    "success": true,
+    "elapsed": 18.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.197",
+    "success": true,
+    "elapsed": 16.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.206",
+    "success": true,
+    "elapsed": 8.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.268",
+    "success": true,
+    "elapsed": 9.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.288",
+    "success": true,
+    "elapsed": 13.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.373",
+    "success": true,
+    "elapsed": 12.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.375",
+    "success": true,
+    "elapsed": 11.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.466",
+    "success": true,
+    "elapsed": 14.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.431",
+    "success": true,
+    "elapsed": 15.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.436",
+    "success": true,
+    "elapsed": 14.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.494",
+    "success": true,
+    "elapsed": 33.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.624",
+    "success": true,
+    "elapsed": 15.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.258",
+    "success": true,
+    "elapsed": 16.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.329",
+    "success": true,
+    "elapsed": 10.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.348",
+    "success": true,
+    "elapsed": 17.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.392",
+    "success": true,
+    "elapsed": 23.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.410",
+    "success": true,
+    "elapsed": 13.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.427",
+    "success": true,
+    "elapsed": 16.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.54",
+    "success": true,
+    "elapsed": 11.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D18-1268",
+    "success": true,
+    "elapsed": 10.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D18-1293",
+    "success": true,
+    "elapsed": 10.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D18-1429",
+    "success": true,
+    "elapsed": 24.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1070",
+    "success": true,
+    "elapsed": 12.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1157",
+    "success": true,
+    "elapsed": 8.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1395",
+    "success": true,
+    "elapsed": 11.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1528",
+    "success": true,
+    "elapsed": 12.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N18-1013",
+    "success": true,
+    "elapsed": 12.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N18-1058",
+    "success": true,
+    "elapsed": 13.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1019",
+    "success": true,
+    "elapsed": 10.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1353",
+    "success": true,
+    "elapsed": 11.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1208",
+    "success": true,
+    "elapsed": 14.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1081",
+    "success": true,
+    "elapsed": 9.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1136",
+    "success": true,
+    "elapsed": 11.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1146",
+    "success": true,
+    "elapsed": 14.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1187",
+    "success": true,
+    "elapsed": 12.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1275",
+    "success": true,
+    "elapsed": 7.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1444",
+    "success": true,
+    "elapsed": 11.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1641",
+    "success": true,
+    "elapsed": 13.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S16-1185",
+    "success": true,
+    "elapsed": 8.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.136",
+    "success": true,
+    "elapsed": 68.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.148",
+    "success": true,
+    "elapsed": 706.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.185",
+    "success": true,
+    "elapsed": 187.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.194",
+    "success": true,
+    "elapsed": 17.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.210",
+    "success": true,
+    "elapsed": 21.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.213",
+    "success": true,
+    "elapsed": 693.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.365",
+    "success": true,
+    "elapsed": 22.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.44",
+    "success": true,
+    "elapsed": 201.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.476",
+    "success": true,
+    "elapsed": 11.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.478",
+    "success": true,
+    "elapsed": 36.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.616",
+    "success": true,
+    "elapsed": 117.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.658",
+    "success": true,
+    "elapsed": 17.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.724",
+    "success": true,
+    "elapsed": 186.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.726",
+    "success": true,
+    "elapsed": 15.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.732",
+    "success": true,
+    "elapsed": 59.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.11",
+    "success": true,
+    "elapsed": 16.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.122",
+    "success": true,
+    "elapsed": 17.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.191",
+    "success": true,
+    "elapsed": 77.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.219",
+    "success": true,
+    "elapsed": 14.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.273",
+    "success": true,
+    "elapsed": 189.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.37",
+    "success": true,
+    "elapsed": 210.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.397",
+    "success": true,
+    "elapsed": 84.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.439",
+    "success": true,
+    "elapsed": 101.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.440",
+    "success": true,
+    "elapsed": 31.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.446",
+    "success": true,
+    "elapsed": 24.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.480",
+    "success": true,
+    "elapsed": 15.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.498",
+    "success": true,
+    "elapsed": 54.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.539",
+    "success": true,
+    "elapsed": 67.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.54",
+    "success": true,
+    "elapsed": 18.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.541",
+    "success": true,
+    "elapsed": 68.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.581",
+    "success": true,
+    "elapsed": 696.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.623",
+    "success": true,
+    "elapsed": 32.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.627",
+    "success": true,
+    "elapsed": 58.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.114",
+    "success": true,
+    "elapsed": 22.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.196",
+    "success": true,
+    "elapsed": 311.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.217",
+    "success": true,
+    "elapsed": 22.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.230",
+    "success": true,
+    "elapsed": 367.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.245",
+    "success": true,
+    "elapsed": 179.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.261",
+    "success": true,
+    "elapsed": 69.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.325",
+    "success": true,
+    "elapsed": 62.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.334",
+    "success": true,
+    "elapsed": 57.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.351",
+    "success": true,
+    "elapsed": 755.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.352",
+    "success": true,
+    "elapsed": 20.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.699",
+    "success": true,
+    "elapsed": 20.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.712",
+    "success": true,
+    "elapsed": 21.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.107",
+    "success": true,
+    "elapsed": 57.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.110",
+    "success": true,
+    "elapsed": 18.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.134",
+    "success": true,
+    "elapsed": 16.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.145",
+    "success": true,
+    "elapsed": 913.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.177",
+    "success": true,
+    "elapsed": 26.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.241",
+    "success": true,
+    "elapsed": 26.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.246",
+    "success": true,
+    "elapsed": 95.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.272",
+    "success": true,
+    "elapsed": 163.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.398",
+    "success": true,
+    "elapsed": 29.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.450",
+    "success": true,
+    "elapsed": 64.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.462",
+    "success": true,
+    "elapsed": 56.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.5",
+    "success": true,
+    "elapsed": 15.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.6",
+    "success": true,
+    "elapsed": 25.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.80",
+    "success": true,
+    "elapsed": 60.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.1",
+    "success": true,
+    "elapsed": 18.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.123",
+    "success": true,
+    "elapsed": 15.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.157",
+    "success": true,
+    "elapsed": 9.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.193",
+    "success": true,
+    "elapsed": 23.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.338",
+    "success": true,
+    "elapsed": 23.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.342",
+    "success": true,
+    "elapsed": 14.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.368",
+    "success": true,
+    "elapsed": 22.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.39",
+    "success": true,
+    "elapsed": 31.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.442",
+    "success": true,
+    "elapsed": 253.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.514",
+    "success": true,
+    "elapsed": 13.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.628",
+    "success": true,
+    "elapsed": 187.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.673",
+    "success": true,
+    "elapsed": 204.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.748",
+    "success": true,
+    "elapsed": 24.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.786",
+    "success": true,
+    "elapsed": 17.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.116",
+    "success": true,
+    "elapsed": 12.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.159",
+    "success": true,
+    "elapsed": 11.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.172",
+    "success": true,
+    "elapsed": 19.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.198",
+    "success": true,
+    "elapsed": 16.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.215",
+    "success": true,
+    "elapsed": 16.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.221",
+    "success": true,
+    "elapsed": 19.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.224",
+    "success": true,
+    "elapsed": 14.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.293",
+    "success": true,
+    "elapsed": 34.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.311",
+    "success": true,
+    "elapsed": 15.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.333",
+    "success": true,
+    "elapsed": 24.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.357",
+    "success": true,
+    "elapsed": 16.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.377",
+    "success": true,
+    "elapsed": 13.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.424",
+    "success": true,
+    "elapsed": 19.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.426",
+    "success": true,
+    "elapsed": 13.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D18-1006",
+    "success": true,
+    "elapsed": 8.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D18-1284",
+    "success": true,
+    "elapsed": 10.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D18-1340",
+    "success": true,
+    "elapsed": 10.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D18-1458",
+    "success": true,
+    "elapsed": 11.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1144",
+    "success": true,
+    "elapsed": 520.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1307",
+    "success": true,
+    "elapsed": 25.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1491",
+    "success": true,
+    "elapsed": 15.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1636",
+    "success": true,
+    "elapsed": 12.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1670",
+    "success": true,
+    "elapsed": 12.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N18-1026",
+    "success": true,
+    "elapsed": 16.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N18-1034",
+    "success": true,
+    "elapsed": 19.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N18-1087",
+    "success": true,
+    "elapsed": 14.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N18-1088",
+    "success": true,
+    "elapsed": 14.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N18-1165",
+    "success": true,
+    "elapsed": 11.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N18-1204",
+    "success": true,
+    "elapsed": 31.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1032",
+    "success": true,
+    "elapsed": 11.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1039",
+    "success": true,
+    "elapsed": 9.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1040",
+    "success": true,
+    "elapsed": 60.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1045",
+    "success": true,
+    "elapsed": 18.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1052",
+    "success": true,
+    "elapsed": 11.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1056",
+    "success": true,
+    "elapsed": 10.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1177",
+    "success": true,
+    "elapsed": 9.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1197",
+    "success": true,
+    "elapsed": 8.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1200",
+    "success": true,
+    "elapsed": 21.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1267",
+    "success": true,
+    "elapsed": 14.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1268",
+    "success": true,
+    "elapsed": 13.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1286",
+    "success": true,
+    "elapsed": 6.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1293",
+    "success": true,
+    "elapsed": 6.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1320",
+    "success": true,
+    "elapsed": 12.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1330",
+    "success": true,
+    "elapsed": 8.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1355",
+    "success": true,
+    "elapsed": 12.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1369",
+    "success": true,
+    "elapsed": 11.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1373",
+    "success": true,
+    "elapsed": 9.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1387",
+    "success": true,
+    "elapsed": 9.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1413",
+    "success": true,
+    "elapsed": 9.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1016",
+    "success": true,
+    "elapsed": 12.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1021",
+    "success": true,
+    "elapsed": 23.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1069",
+    "success": true,
+    "elapsed": 12.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1089",
+    "success": true,
+    "elapsed": 11.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1116",
+    "success": true,
+    "elapsed": 11.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1178",
+    "success": true,
+    "elapsed": 11.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1222",
+    "success": true,
+    "elapsed": 15.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1009",
+    "success": true,
+    "elapsed": 15.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1015",
+    "success": true,
+    "elapsed": 19.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1045",
+    "success": true,
+    "elapsed": 10.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1068",
+    "success": true,
+    "elapsed": 13.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1094",
+    "success": true,
+    "elapsed": 15.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1123",
+    "success": true,
+    "elapsed": 12.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1126",
+    "success": true,
+    "elapsed": 14.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1137",
+    "success": true,
+    "elapsed": 12.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1141",
+    "success": true,
+    "elapsed": 13.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1148",
+    "success": true,
+    "elapsed": 7.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1166",
+    "success": true,
+    "elapsed": 9.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1183",
+    "success": true,
+    "elapsed": 12.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1200",
+    "success": true,
+    "elapsed": 12.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1202",
+    "success": true,
+    "elapsed": 15.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1223",
+    "success": true,
+    "elapsed": 23.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1225",
+    "success": true,
+    "elapsed": 16.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1249",
+    "success": true,
+    "elapsed": 9.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1272",
+    "success": true,
+    "elapsed": 15.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1280",
+    "success": true,
+    "elapsed": 17.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1290",
+    "success": true,
+    "elapsed": 8.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1298",
+    "success": true,
+    "elapsed": 9.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1433",
+    "success": true,
+    "elapsed": 12.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1434",
+    "success": true,
+    "elapsed": 9.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1457",
+    "success": true,
+    "elapsed": 11.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1519",
+    "success": true,
+    "elapsed": 12.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1530",
+    "success": true,
+    "elapsed": 7.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1543",
+    "success": true,
+    "elapsed": 8.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1558",
+    "success": true,
+    "elapsed": 8.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1603",
+    "success": true,
+    "elapsed": 9.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1619",
+    "success": true,
+    "elapsed": 12.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1644",
+    "success": true,
+    "elapsed": 31.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.710",
+    "success": true,
+    "elapsed": 61.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.452",
+    "success": true,
+    "elapsed": 16.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.findings-emnlp.283",
+    "success": true,
+    "elapsed": 17.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2024.emnlp-main.624",
+    "success": true,
+    "elapsed": 33.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2024.findings-acl.771",
+    "success": true,
+    "elapsed": 71.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2024.findings-emnlp.494",
+    "success": true,
+    "elapsed": 79.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2025.acl-long.1460",
+    "success": true,
+    "elapsed": 52.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2025.findings-naacl.439",
+    "success": true,
+    "elapsed": 63.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2025.gem-1.76",
+    "success": true,
+    "elapsed": 571.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2026.acl-long.2114",
+    "success": true,
+    "elapsed": 53.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "C14-1057",
+    "success": false,
+    "elapsed": 10.7,
+    "error": "❌ Pipeline error: '<' not supported between instances of 'NoneType' and 'int'",
+    "stdout": "[network] Semantic Scholar API key loaded ✔\n\n───────────────────────────────────────────────────────\n  PDF      : output\\acl\\pdfs\\C14-1057.pdf\n  Mode     : no-llm\n  Output   : output\\C14-1057\\no-llm/output.html\n  LLM      : SKIPPED\n  Citations: Semantic Scholar  [slow ~1-5 min]\n───────────────────────────────────────────────────────\n\n1. Loading PDF...\n2. Extracting layout blocks...\n   102 blocks extracted\n3. Extracting tables (multi-strategy)...\nTable pages: 7\nRunning borderless table detector...\n[table_detector] Found 1 borderless table(s)\nFallback -> text reconstruction\nSkipping OCR\nFinal table count after dedup: 10\n   10 tables found\n4. Building citation network via Semantic Scholar...\n   (Makes ~20-60 API calls — may take 1-5 min)\n[network] Loading from cache: output\\C14-1057\\citation_network.json\n   1 network nodes, 0 concept keywords\n   Top related papers:\n     [citing  ] Methodologies for infographics retrieval (2016)\n5. Building document structure...\n\n❌ Pipeline error: '<' not supported between instances of 'NoneType' and 'int'\n",
+    "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\svenz\\Downloads\\project_scinex\\main.py\", line 280, in run_pipeline\n    structured = build_structure(blocks, tables, known_entities=known_entities)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\svenz\\Downloads\\project_scinex\\parser\\structure_builder.py\", line 505, in build_structure\n    all_blocks = sorted(\n                 ^^^^^^^\nTypeError: '<' not supported between instances of 'NoneType' and 'int'\n"
+  },
+  {
+    "paper_id": "C18-1156",
+    "success": true,
+    "elapsed": 15.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D11-1133",
+    "success": true,
+    "elapsed": 25.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D13-1185",
+    "success": true,
+    "elapsed": 13.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D14-1125",
+    "success": true,
+    "elapsed": 19.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D14-1127",
+    "success": true,
+    "elapsed": 12.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D15-1243",
+    "success": true,
+    "elapsed": 23.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D18-1307",
+    "success": true,
+    "elapsed": 22.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D18-1439",
+    "success": true,
+    "elapsed": 31.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D18-1447",
+    "success": true,
+    "elapsed": 33.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1016",
+    "success": true,
+    "elapsed": 33.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1035",
+    "success": true,
+    "elapsed": 14.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1051",
+    "success": true,
+    "elapsed": 22.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1083",
+    "success": true,
+    "elapsed": 23.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1089",
+    "success": true,
+    "elapsed": 28.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1191",
+    "success": true,
+    "elapsed": 21.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1243",
+    "success": true,
+    "elapsed": 13.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-1299",
+    "success": true,
+    "elapsed": 28.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-5610",
+    "success": true,
+    "elapsed": 27.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "D19-5615",
+    "success": true,
+    "elapsed": 21.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "L18-1102",
+    "success": true,
+    "elapsed": 17.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N09-1003",
+    "success": true,
+    "elapsed": 15.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N10-1087",
+    "success": true,
+    "elapsed": 256.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N13-1039",
+    "success": true,
+    "elapsed": 20.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N13-1104",
+    "success": true,
+    "elapsed": 20.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1242",
+    "success": true,
+    "elapsed": 19.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1246",
+    "success": true,
+    "elapsed": 24.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "N19-1292",
+    "success": true,
+    "elapsed": 20.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "O15-1023",
+    "success": true,
+    "elapsed": 26.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "O17-3008",
+    "success": true,
+    "elapsed": 20.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P11-1098",
+    "success": true,
+    "elapsed": 35.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P11-2046",
+    "success": true,
+    "elapsed": 11.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P12-1099",
+    "success": true,
+    "elapsed": 17.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P13-1014",
+    "success": true,
+    "elapsed": 17.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P14-1036",
+    "success": true,
+    "elapsed": 26.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P14-1072",
+    "success": true,
+    "elapsed": 28.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P14-1131",
+    "success": true,
+    "elapsed": 28.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P14-1136",
+    "success": true,
+    "elapsed": 24.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P15-1019",
+    "success": true,
+    "elapsed": 20.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P15-1081",
+    "success": true,
+    "elapsed": 16.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P15-2020",
+    "success": true,
+    "elapsed": 14.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P15-4012",
+    "success": true,
+    "elapsed": 15.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P16-1023",
+    "success": true,
+    "elapsed": 16.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P16-1030",
+    "success": true,
+    "elapsed": 19.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P16-1066",
+    "success": true,
+    "elapsed": 25.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P16-1075",
+    "success": true,
+    "elapsed": 33.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P16-1175",
+    "success": true,
+    "elapsed": 27.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P16-1198",
+    "success": true,
+    "elapsed": 15.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P16-2022",
+    "success": true,
+    "elapsed": 18.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P16-4013",
+    "success": true,
+    "elapsed": 13.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P17-1017",
+    "success": true,
+    "elapsed": 17.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P17-1077",
+    "success": true,
+    "elapsed": 20.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P17-1096",
+    "success": true,
+    "elapsed": 16.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P17-1175",
+    "success": true,
+    "elapsed": 17.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P17-4017",
+    "success": true,
+    "elapsed": 18.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1002",
+    "success": true,
+    "elapsed": 19.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1012",
+    "success": true,
+    "elapsed": 25.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1047",
+    "success": true,
+    "elapsed": 19.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1082",
+    "success": true,
+    "elapsed": 16.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1093",
+    "success": true,
+    "elapsed": 16.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1145",
+    "success": true,
+    "elapsed": 19.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1180",
+    "success": true,
+    "elapsed": 18.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-1182",
+    "success": true,
+    "elapsed": 18.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-2005",
+    "success": true,
+    "elapsed": 13.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-2025",
+    "success": true,
+    "elapsed": 117.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-2060",
+    "success": true,
+    "elapsed": 13.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P18-2062",
+    "success": true,
+    "elapsed": 15.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1001",
+    "success": true,
+    "elapsed": 20.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1117",
+    "success": true,
+    "elapsed": 20.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1129",
+    "success": true,
+    "elapsed": 17.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1197",
+    "success": true,
+    "elapsed": 16.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1208",
+    "success": true,
+    "elapsed": 18.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1229",
+    "success": true,
+    "elapsed": 16.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1240",
+    "success": true,
+    "elapsed": 21.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1296",
+    "success": true,
+    "elapsed": 14.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1356",
+    "success": true,
+    "elapsed": 63.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1454",
+    "success": true,
+    "elapsed": 19.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1473",
+    "success": true,
+    "elapsed": 22.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1483",
+    "success": true,
+    "elapsed": 24.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1505",
+    "success": true,
+    "elapsed": 19.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1515",
+    "success": true,
+    "elapsed": 22.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1568",
+    "success": true,
+    "elapsed": 20.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1600",
+    "success": true,
+    "elapsed": 26.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1612",
+    "success": true,
+    "elapsed": 20.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-1620",
+    "success": true,
+    "elapsed": 17.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-2043",
+    "success": true,
+    "elapsed": 13.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-2060",
+    "success": true,
+    "elapsed": 17.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-3006",
+    "success": true,
+    "elapsed": 13.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "P19-3016",
+    "success": true,
+    "elapsed": 16.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Q13-1010",
+    "success": true,
+    "elapsed": 20.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Q14-1019",
+    "success": true,
+    "elapsed": 18.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Q15-1016",
+    "success": true,
+    "elapsed": 25.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Q16-1029",
+    "success": true,
+    "elapsed": 29.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Q17-1008",
+    "success": true,
+    "elapsed": 21.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Q17-1009",
+    "success": true,
+    "elapsed": 19.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Q18-1002",
+    "success": true,
+    "elapsed": 27.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Q18-1026",
+    "success": true,
+    "elapsed": 25.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "R13-1011",
+    "success": true,
+    "elapsed": 12.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "R13-2007",
+    "success": true,
+    "elapsed": 18.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "R15-1010",
+    "success": true,
+    "elapsed": 10.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "R19-1135",
+    "success": true,
+    "elapsed": 16.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S12-1080",
+    "success": true,
+    "elapsed": 13.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S13-2032",
+    "success": true,
+    "elapsed": 12.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S14-2038",
+    "success": true,
+    "elapsed": 13.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S14-2059",
+    "success": true,
+    "elapsed": 10.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S14-2108",
+    "success": true,
+    "elapsed": 10.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S15-2077",
+    "success": true,
+    "elapsed": 18.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S15-2085",
+    "success": true,
+    "elapsed": 14.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S15-2150",
+    "success": true,
+    "elapsed": 15.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S16-1001",
+    "success": true,
+    "elapsed": 27.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S16-1056",
+    "success": true,
+    "elapsed": 12.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S16-1174",
+    "success": true,
+    "elapsed": 11.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S16-2013",
+    "success": true,
+    "elapsed": 11.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S17-2031",
+    "success": true,
+    "elapsed": 11.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S17-2034",
+    "success": true,
+    "elapsed": 10.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S17-2054",
+    "success": true,
+    "elapsed": 10.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S17-2102",
+    "success": true,
+    "elapsed": 10.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S17-2171",
+    "success": true,
+    "elapsed": 13.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S18-1005",
+    "success": true,
+    "elapsed": 15.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S18-1006",
+    "success": true,
+    "elapsed": 10.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S18-1160",
+    "success": true,
+    "elapsed": 9.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S18-1169",
+    "success": true,
+    "elapsed": 12.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S18-1179",
+    "success": true,
+    "elapsed": 9.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S19-1022",
+    "success": true,
+    "elapsed": 17.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S19-2018",
+    "success": true,
+    "elapsed": 11.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S19-2062",
+    "success": true,
+    "elapsed": 11.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S19-2066",
+    "success": true,
+    "elapsed": 10.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "S19-2122",
+    "success": true,
+    "elapsed": 26.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "U14-1006",
+    "success": true,
+    "elapsed": 60.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "U15-1013",
+    "success": true,
+    "elapsed": 12.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "U15-1017",
+    "success": true,
+    "elapsed": 14.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W11-1921",
+    "success": true,
+    "elapsed": 9.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W11-2120",
+    "success": true,
+    "elapsed": 17.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W11-2603",
+    "success": true,
+    "elapsed": 10.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W11-3201",
+    "success": true,
+    "elapsed": 11.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W11-3308",
+    "success": true,
+    "elapsed": 18.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W11-3406",
+    "success": true,
+    "elapsed": 12.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W11-4403",
+    "success": true,
+    "elapsed": 12.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W11-4619",
+    "success": true,
+    "elapsed": 15.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W12-1502",
+    "success": false,
+    "elapsed": 5.8,
+    "error": "❌ Pipeline error: '<' not supported between instances of 'NoneType' and 'int'",
+    "stdout": "[network] Semantic Scholar API key loaded ✔\n\n───────────────────────────────────────────────────────\n  PDF      : output\\acl\\pdfs\\W12-1502.pdf\n  Mode     : no-llm\n  Output   : output\\W12-1502\\no-llm/output.html\n  LLM      : SKIPPED\n  Citations: Semantic Scholar  [slow ~1-5 min]\n───────────────────────────────────────────────────────\n\n1. Loading PDF...\n2. Extracting layout blocks...\n   9 blocks extracted\n3. Extracting tables (multi-strategy)...\nTable pages: all\nRunning borderless table detector...\n[table_detector] Found 0 borderless table(s)\nFallback -> text reconstruction\nSkipping OCR\nFinal table count after dedup: 1\n   1 tables found\n4. Building citation network via Semantic Scholar...\n   (Makes ~20-60 API calls — may take 1-5 min)\n[network] Found via ACL ID: Expressive NLG for Next-Generation Learning Environments: Language, Affect, and Narrative (ID: cad341fd50bcd3a08facca6f437a795c1ae0af1e)\n[network] Found: Expressive NLG for Next-Generation Learning Environments: Language, Affect, and Narrative (ID: cad341fd50bcd3a08facca6f437a795c1ae0af1e)\n[network] Fetching up to 10 citing papers...\n[network] Fetching up to 10 reference papers...\n[network] Built network: 1 nodes, 1 edges\n[network] Saved → output\\W12-1502\\citation_network.json\n   1 network nodes, 0 concept keywords\n   Top related papers:\n     [citing  ] Narrative Composition: Achieving the Perceived Linearit (2013)\n5. Building document structure...\n\n❌ Pipeline error: '<' not supported between instances of 'NoneType' and 'int'\n",
+    "stderr": "C:\\Users\\svenz\\AppData\\Local\\Python\\pythoncore-3.12-64\\Lib\\site-packages\\camelot\\parsers\\base.py:238: UserWarning: No tables found in table area (62.10079999999999, 213.5249, 552.9508000000001, 788.9859918750001)\n  cols, rows, v_s, h_s = self._generate_columns_and_rows(bbox, user_cols)\nTraceback (most recent call last):\n  File \"C:\\Users\\svenz\\Downloads\\project_scinex\\main.py\", line 280, in run_pipeline\n    structured = build_structure(blocks, tables, known_entities=known_entities)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\svenz\\Downloads\\project_scinex\\parser\\structure_builder.py\", line 505, in build_structure\n    all_blocks = sorted(\n                 ^^^^^^^\nTypeError: '<' not supported between instances of 'NoneType' and 'int'\n"
+  },
+  {
+    "paper_id": "W12-2604",
+    "success": true,
+    "elapsed": 14.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W12-3155",
+    "success": true,
+    "elapsed": 12.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W12-3503",
+    "success": true,
+    "elapsed": 56.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W12-4302",
+    "success": true,
+    "elapsed": 23.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W12-4406",
+    "success": true,
+    "elapsed": 28.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W12-4603",
+    "success": true,
+    "elapsed": 27.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W12-5020",
+    "success": false,
+    "elapsed": 90.0,
+    "error": "[network] Found via ACL ID: Error tracking in search engine development (ID: 1953e3dd06f1bb449b0524f872423e4c44d9b68f)",
+    "stdout": "[network] Semantic Scholar API key loaded ✔\n\n───────────────────────────────────────────────────────\n  PDF      : output\\acl\\pdfs\\W12-5020.pdf\n  Mode     : no-llm\n  Output   : output\\W12-5020\\no-llm/output.html\n  LLM      : SKIPPED\n  Citations: Semantic Scholar  [slow ~1-5 min]\n───────────────────────────────────────────────────────\n\n1. Loading PDF...\n2. Extracting layout blocks...\n   67 blocks extracted\n3. Extracting tables (multi-strategy)...\nTable pages: all\nRunning borderless table detector...\n[table_detector] Found 1 borderless table(s)\nFallback -> text reconstruction\nSkipping OCR\nFinal table count after dedup: 4\n   4 tables found\n4. Building citation network via Semantic Scholar...\n   (Makes ~20-60 API calls — may take 1-5 min)\n[network] Rate limited (429) — waiting 2s before retry 1/5\n[network] Rate limited (429) — waiting 8s before retry 2/5\n[network] Rate limited (429) — waiting 32s before retry 3/5\n[network] Found via ACL ID: Error tracking in search engine development (ID: 1953e3dd06f1bb449b0524f872423e4c44d9b68f)\n[network] Found: Error tracking in search engine development (ID: 1953e3dd06f1bb449b0524f872423e4c44d9b68f)\n[network] Rate limited (429) — waiting 2s before retry 1/5\n[network] Fetching up to 10 citing papers...\n[network] Fetching up to 10 reference papers...\n[network] Built network: 1 nodes, 1 edges\n[network] Saved → output\\W12-5020\\citation_network.json\n   1 network nodes, 0 concept keywords\n   Top related papers:\n     [citing  ] Detection and correction of non word spelling errors in (2014)\n5. Building document structure...\n\n❌ Pipeline error: '<' not supported between instances of 'NoneType' and 'int'\n",
+    "stderr": "e-3.12-64\\Lib\\site-packages\\sklearn\\base.py:1336: ConvergenceWarning: Number of distinct clusters (1) found smaller than n_clusters (2). Possibly due to duplicate points in X.\n  return fit_method(estimator, *args, **kwargs)\nC:\\Users\\svenz\\AppData\\Local\\Python\\pythoncore-3.12-64\\Lib\\site-packages\\sklearn\\base.py:1336: ConvergenceWarning: Number of distinct clusters (1) found smaller than n_clusters (3). Possibly due to duplicate points in X.\n  return fit_method(estimator, *args, **kwargs)\nTraceback (most recent call last):\n  File \"C:\\Users\\svenz\\Downloads\\project_scinex\\main.py\", line 280, in run_pipeline\n    structured = build_structure(blocks, tables, known_entities=known_entities)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\svenz\\Downloads\\project_scinex\\parser\\structure_builder.py\", line 505, in build_structure\n    all_blocks = sorted(\n                 ^^^^^^^\nTypeError: '<' not supported between instances of 'NoneType' and 'int'\n"
+  },
+  {
+    "paper_id": "W12-6323",
+    "success": true,
+    "elapsed": 15.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-2124",
+    "success": true,
+    "elapsed": 652.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-2315",
+    "success": true,
+    "elapsed": 16.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-2316",
+    "success": true,
+    "elapsed": 10.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-2805",
+    "success": true,
+    "elapsed": 9.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-2902",
+    "success": true,
+    "elapsed": 12.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-3202",
+    "success": true,
+    "elapsed": 15.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-3512",
+    "success": true,
+    "elapsed": 15.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-3724",
+    "success": true,
+    "elapsed": 14.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-4002",
+    "success": true,
+    "elapsed": 17.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-4069",
+    "success": true,
+    "elapsed": 15.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-4071",
+    "success": true,
+    "elapsed": 13.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W13-4601",
+    "success": true,
+    "elapsed": 15.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W14-1003",
+    "success": true,
+    "elapsed": 14.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W14-1618",
+    "success": true,
+    "elapsed": 17.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W14-3359",
+    "success": true,
+    "elapsed": 13.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W14-3362",
+    "success": true,
+    "elapsed": 15.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W14-4207",
+    "success": true,
+    "elapsed": 16.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W14-6006",
+    "success": true,
+    "elapsed": 15.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W14-7002",
+    "success": true,
+    "elapsed": 14.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W15-1512",
+    "success": true,
+    "elapsed": 10.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W15-1608",
+    "success": true,
+    "elapsed": 19.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W15-2509",
+    "success": true,
+    "elapsed": 13.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W15-2910",
+    "success": true,
+    "elapsed": 18.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W15-3127",
+    "success": true,
+    "elapsed": 18.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W15-3213",
+    "success": true,
+    "elapsed": 18.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W15-3809",
+    "success": true,
+    "elapsed": 24.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W15-5703",
+    "success": true,
+    "elapsed": 14.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W15-5934",
+    "success": true,
+    "elapsed": 16.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-1003",
+    "success": true,
+    "elapsed": 17.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-1315",
+    "success": true,
+    "elapsed": 14.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-1519",
+    "success": true,
+    "elapsed": 9.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-1711",
+    "success": true,
+    "elapsed": 28.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-2205",
+    "success": true,
+    "elapsed": 26.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-2305",
+    "success": true,
+    "elapsed": 13.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-2387",
+    "success": true,
+    "elapsed": 12.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-2403",
+    "success": true,
+    "elapsed": 30.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-2520",
+    "success": true,
+    "elapsed": 9.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-3013",
+    "success": true,
+    "elapsed": 7.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-3304",
+    "success": true,
+    "elapsed": 17.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-3648",
+    "success": true,
+    "elapsed": 12.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-3811",
+    "success": true,
+    "elapsed": 16.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-4311",
+    "success": true,
+    "elapsed": 11.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-4607",
+    "success": true,
+    "elapsed": 23.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-5707",
+    "success": true,
+    "elapsed": 11.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W16-6644",
+    "success": true,
+    "elapsed": 23.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-2403",
+    "success": true,
+    "elapsed": 16.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-3403",
+    "success": true,
+    "elapsed": 19.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-3801",
+    "success": true,
+    "elapsed": 15.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-4103",
+    "success": true,
+    "elapsed": 11.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-4502",
+    "success": true,
+    "elapsed": 17.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-4608",
+    "success": true,
+    "elapsed": 10.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-4811",
+    "success": true,
+    "elapsed": 14.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-5009",
+    "success": true,
+    "elapsed": 14.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-5015",
+    "success": true,
+    "elapsed": 11.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-5205",
+    "success": true,
+    "elapsed": 20.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-5216",
+    "success": true,
+    "elapsed": 11.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-5302",
+    "success": true,
+    "elapsed": 12.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-5539",
+    "success": true,
+    "elapsed": 23.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-6907",
+    "success": true,
+    "elapsed": 14.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W17-7623",
+    "success": true,
+    "elapsed": 12.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W18-2801",
+    "success": true,
+    "elapsed": 9.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W18-3102",
+    "success": true,
+    "elapsed": 13.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W18-3407",
+    "success": true,
+    "elapsed": 14.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W18-3924",
+    "success": true,
+    "elapsed": 12.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W18-4928",
+    "success": true,
+    "elapsed": 12.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W18-5015",
+    "success": true,
+    "elapsed": 16.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W18-5115",
+    "success": true,
+    "elapsed": 11.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W18-5452",
+    "success": true,
+    "elapsed": 9.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W18-5528",
+    "success": true,
+    "elapsed": 22.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W18-6327",
+    "success": true,
+    "elapsed": 15.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-1003",
+    "success": true,
+    "elapsed": 14.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-1901",
+    "success": true,
+    "elapsed": 20.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-2301",
+    "success": true,
+    "elapsed": 13.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-2706",
+    "success": true,
+    "elapsed": 23.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-2905",
+    "success": true,
+    "elapsed": 30.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-3410",
+    "success": true,
+    "elapsed": 18.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-3713",
+    "success": true,
+    "elapsed": 10.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-3822",
+    "success": true,
+    "elapsed": 15.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-4217",
+    "success": true,
+    "elapsed": 34.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-4508",
+    "success": true,
+    "elapsed": 14.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-4828",
+    "success": true,
+    "elapsed": 30.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-5301",
+    "success": true,
+    "elapsed": 47.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-5318",
+    "success": true,
+    "elapsed": 16.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-5365",
+    "success": true,
+    "elapsed": 13.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-5419",
+    "success": true,
+    "elapsed": 24.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-5933",
+    "success": true,
+    "elapsed": 19.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-5941",
+    "success": true,
+    "elapsed": 17.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-6611",
+    "success": true,
+    "elapsed": 16.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-6727",
+    "success": true,
+    "elapsed": 23.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-6907",
+    "success": true,
+    "elapsed": 12.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-7902",
+    "success": true,
+    "elapsed": 13.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-8615",
+    "success": true,
+    "elapsed": 11.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "W19-8646",
+    "success": true,
+    "elapsed": 10.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Y11-1029",
+    "success": true,
+    "elapsed": 23.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Y12-1049",
+    "success": true,
+    "elapsed": 14.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Y13-2007",
+    "success": true,
+    "elapsed": 12.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Y14-1042",
+    "success": true,
+    "elapsed": 14.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Y15-1006",
+    "success": true,
+    "elapsed": 24.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Y15-1007",
+    "success": true,
+    "elapsed": 22.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Y16-3028",
+    "success": true,
+    "elapsed": 21.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "Y17-1008",
+    "success": true,
+    "elapsed": 12.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.407",
+    "success": true,
+    "elapsed": 134.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.421",
+    "success": true,
+    "elapsed": 27.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.441",
+    "success": true,
+    "elapsed": 24.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.461",
+    "success": true,
+    "elapsed": 24.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.536",
+    "success": true,
+    "elapsed": 45.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.736",
+    "success": true,
+    "elapsed": 18.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.acl-main.747",
+    "success": true,
+    "elapsed": 24.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.coling-main.156",
+    "success": true,
+    "elapsed": 15.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.coling-main.426",
+    "success": true,
+    "elapsed": 19.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.484",
+    "success": true,
+    "elapsed": 22.7,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.emnlp-main.618",
+    "success": true,
+    "elapsed": 20.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.findings-emnlp.372",
+    "success": true,
+    "elapsed": 23.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.semeval-1.14",
+    "success": true,
+    "elapsed": 12.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.tacl-1.30",
+    "success": true,
+    "elapsed": 58.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.tacl-1.47",
+    "success": true,
+    "elapsed": 121.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2020.wmt-1.68",
+    "success": true,
+    "elapsed": 24.2,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.acl-long.15",
+    "success": true,
+    "elapsed": 23.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.acl-long.391",
+    "success": true,
+    "elapsed": 19.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.acl-long.507",
+    "success": true,
+    "elapsed": 28.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.eacl-main.160",
+    "success": true,
+    "elapsed": 24.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.eacl-main.229",
+    "success": true,
+    "elapsed": 19.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.emnlp-main.102",
+    "success": true,
+    "elapsed": 20.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.findings-emnlp.18",
+    "success": true,
+    "elapsed": 38.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.naacl-main.116",
+    "success": true,
+    "elapsed": 21.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.tacl-1.67",
+    "success": true,
+    "elapsed": 58.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2021.wmt-1.68",
+    "success": true,
+    "elapsed": 18.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.acl-long.383",
+    "success": true,
+    "elapsed": 17.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.acl-long.497",
+    "success": true,
+    "elapsed": 18.6,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.acl-srw.10",
+    "success": true,
+    "elapsed": 21.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.acl-srw.8",
+    "success": true,
+    "elapsed": 25.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.blackboxnlp-1.34",
+    "success": true,
+    "elapsed": 29.1,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.emnlp-main.767",
+    "success": true,
+    "elapsed": 31.5,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.findings-acl.210",
+    "success": true,
+    "elapsed": 17.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.findings-emnlp.196",
+    "success": true,
+    "elapsed": 79.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.lrec-1.405",
+    "success": true,
+    "elapsed": 31.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.naacl-main.359",
+    "success": true,
+    "elapsed": 30.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.semeval-1.197",
+    "success": true,
+    "elapsed": 13.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2022.tacl-1.80",
+    "success": true,
+    "elapsed": 588.0,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2023.acl-long.122",
+    "success": true,
+    "elapsed": 39.8,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2023.acl-long.341",
+    "success": true,
+    "elapsed": 21.4,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2023.eacl-main.95",
+    "success": true,
+    "elapsed": 27.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2023.emnlp-main.438",
+    "success": true,
+    "elapsed": 178.9,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "paper_id": "2023.emnlp-main.992",
+    "success": true,
+    "elapsed": 54.3,
+    "error": "",
+    "stdout": "",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,129 @@
+Entity,Abbreviation,Aliases,LLM Extraction,TP,FN,FP,TN,Confusion Matrix,,Actual,,,,Definition
+Bidirectional Encoder Representations from Transformers,BERT,"BERT transformer, BERT model",Bidirectional Encoder Representations from Transformers,1,0,0,1,,,Positive,Negative,,,"These datasets are used in machine learning (ML) research and have been cited in peer-reviewed academic journals. Datasets are an integral part of the field of machine learning. Major advances in this field can result from advances in learning algorithms, computer hardware, and, less intuitively, the availability of high-quality training datasets. High-quality labeled training datasets for supervised and semi-supervised machine-learning algorithms are usually difficult and expensive to produce because of the large amount of time needed to label the data. Although they do not need to be labeled, high-quality unlabeled datasets for unsupervised learning can also be difficult and costly to produce."
+Natural Language Processing,NLP,,General Language Understanding Evaluation,1,0,0,1,Prediction,Positive,31,84,TP,FP,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+General Language Understanding Evaluation,GLUE,GLUE score,Multi-Genre Natural Language Inference,1,0,0,1,,Negative,18,40,FN,TN,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Multi-Genre Natural Language Inference,MNLI,MultiNLI,Stanford Question Answering Dataset,1,0,1,0,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Accuracy,,,Embeddings from Language Models,1,0,0,1,,Recall,0.6326530612,115,,,"A generative pre-trained transformer (GPT) is a type of large language model (LLM) that is widely used in generative artificial intelligence chatbots. GPTs are based on a deep learning architecture called the transformer. They are pre-trained on large datasets of unlabeled content, and able to generate novel content."
+SQuAD v1.1,,,Generative Pre-trained Transformer,0,1,0,1,,Precision,0.2695652174,,,,"""Attention Is All You Need"" is a 2017 research paper in machine learning authored by eight scientists and engineers working at Google. The paper introduced a new deep learning architecture known as the transformer, based on the attention mechanism proposed in 2014 by Bahdanau et al. The transformer approach it describes has become the main architecture of a wide variety of artificial intelligence, including large language models. At the time, the focus of the research was on improving Seq2seq techniques for machine translation, but the authors go further in the paper, foreseeing the technique's potential for other tasks like question answering and what is now known as multimodal generative AI."
+Question Answering,QA,,Attention Is All You Need,0,1,1,0,,Specificity,0.3225806452,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+F1 score,,F1,Masked Language Model,1,0,0,1,,F1 score,0.3780487805,,,,"Natural language processing (NLP) is the processing of natural language information by a computer. NLP is a subfield of computer science and is closely associated with artificial intelligence. NLP is also related to information retrieval, knowledge representation, computational linguistics, and linguistics more broadly."
+Paraphrasing,,,Natural Language Processing,1,0,0,1,,Accuracy,0.4104046243,,,,"Sentiment analysis is the use of natural language processing, text analysis, computational linguistics, and biometrics to systematically identify, extract, quantify, and study affective states and subjective information. Sentiment analysis is widely applied to voice of the customer materials such as reviews and survey responses, online and social media, and healthcare materials for applications that range from marketing to customer service to clinical medicine. With the rise of deep language models, such as RoBERTa, more difficult data domains can be analyzed, e.g., news texts where authors typically express their opinion/sentiment less explicitly."
+Named Entity Recognition,NER,,Sentiment Analysis,1,0,0,1,,,,,,,"Named-entity recognition (NER) (also known as (named) entity identification, entity chunking, and entity extraction) is a subtask of information extraction that seeks to locate and classify named entities mentioned in unstructured text into pre-defined categories such as person names (PER), organizations (ORG), locations (LOC), geopolitical entities (GPE), vehicles (VEH), medical codes, time expressions, quantities, monetary values, percentages, etc."
+Embeddings from Language Models,ELMo,,Named Entity Recognition,1,0,0,1,,,,,,,"Machine translation is the use of computational techniques to translate text or speech from one language to another, including the contextual, idiomatic, and pragmatic nuances of both languages."
+Generative Pre-trained Transformer ,GPT,GPT transformer,Machine Translation,1,0,0,1,,,,,,,"
+The ImageNet project is a large visual database designed for use in visual object recognition software research. More than 14 million images have been hand-annotated by the project to indicate what objects are pictured and in at least one million of the images, bounding boxes are also provided. ImageNet contains more than 20,000 categories, with a typical category, such as ""balloon"" or ""strawberry"", consisting of several hundred images. The database of annotations of third-party image URLs is freely available directly from ImageNet, though the actual images are not owned by ImageNet. Since 2010, the ImageNet project runs an annual software contest, the ImageNet Large Scale Visual Recognition Challenge, where software programs compete to correctly classify and detect objects and scenes. The challenge uses a ""trimmed"" list of one thousand non-overlapping classes."
+OpenAI GPT,,,ImageNet,0,1,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Unidirectional language model,,,Tensor2Tensor,0,1,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 429. Truncated server response: You are making too many requests to the API.
+Please follow the best practices at <https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits>.
+If yo... (use muteHttpExceptions option to examine full response)"
+Masked Language Model,MLM,Masked LM,WordPiece,1,0,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 429. Truncated server response: You are making too many requests to the API.
+Please follow the best practices at <https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits>.
+If yo... (use muteHttpExceptions option to examine full response)"
+Cloze task,,,BooksCorpus,1,0,0,1,,,,,,,"Wikipedia is a free online encyclopedia written and maintained by a community of volunteers, known as Wikipedians, through open collaboration and the wiki software MediaWiki. Founded by Jimmy Wales and Larry Sanger in 2001, Wikipedia has been hosted since 2003 by the Wikimedia Foundation, an American nonprofit organization funded mainly by donations from readers. Wikipedia is the largest and most read reference work in history."
+Left-to-right Language Model,LTR LM,Left-to-right LM,Wikipedia,1,0,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Bidirectional transformer,,,Billion Word Benchmark,0,1,0,1,,,,,,,"In statistical analysis of binary classification and information retrieval systems, the F-score or F-measure is a measure of predictive performance. It is calculated from the precision and recall of the test, where the precision is the number of true positive results divided by the number of all samples predicted to be positive, including those not identified correctly, and the recall is the number of true positive results divided by the number of all samples that should have been identified as positive. Precision is also known as positive predictive value, and recall is also known as sensitivity in diagnostic binary classification."
+Next sentence prediction,,NSP,F1 Score,1,0,0,1,,,,,,,Quantum Quality Productions was a computer games company specializing in strategy games and war games.
+RIght-to-left Language Model,RIght-to-left LM,,QQP,0,1,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 429. Truncated server response: You are making too many requests to the API.
+Please follow the best practices at <https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits>.
+If yo... (use muteHttpExceptions option to examine full response)"
+Pre-trained word embeddings,,,QNLI,0,1,0,1,,,,,,,"SST-1 is a plasma confinement experimental device in the Institute for Plasma Research (IPR), an autonomous research institute under Department of Atomic Energy, India. It belongs to a new generation of tokamaks with the major objective being steady state operation of an advanced configuration plasma. It has been designed as a medium-sized tokamak with superconducting magnets."
+Word embedding,,Word embedding vector,SST-2,0,1,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Sentence embedding,,,CoLA,0,1,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Paragraph embedding,,,STS-B,0,1,0,1,,,,,,,"The American Bar Association's Model Rules of Professional Conduct (MRPC) are a set of rules and commentaries on the ethical and professional responsibilities of members of the legal profession in the United States. Although the MRPC generally is not binding law in and of itself, it is intended to be a model for state regulators of the legal profession to adopt, while leaving room for state-specific adaptations. All fifty states and the District of Columbia have adopted legal ethics rules based at least in part on the MRPC."
+Denoising auto-encoder,,,MRPC,0,1,0,1,,,,,,,"Raidió Teilifís Éireann is an Irish public service broadcaster. It produces and broadcasts programmes on television, radio and online. The radio service began on 1 January 1926, with regular television broadcasts beginning on 31 December 1961, making it one of the oldest continuously operating public service broadcasters in the world. It is headquartered in Donnybrook in Dublin, with offices across Ireland."
+Contextual word embedding,,,RTE,0,1,0,1,,,,,,,"A cloze test is an exercise, test, or assessment in which a portion of text is masked and the participant is asked to fill in the masked portion of text. Cloze tests require the ability to understand the context and vocabulary in order to identify the correct language or part of speech that belongs in the deleted passages. This exercise is commonly administered for the assessment of native and second language learning and instruction."
+Sentiment analysis,,,Cloze task,1,0,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Sentence encoder,,,denoising auto-encoders,0,1,1,0,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Document encoder,,,Next Sentence Prediction,0,1,0,1,,,,,,,"A paraphrase or rephrase is a rewording of a text that retains the original meaning. Paraphrasing can enhance clarity and effectiveness in conveying ideas. It involves expressing the same concepts as the original text in a new way. For example, when someone tells a story they have heard, they paraphrase it in their own words while preserving the meaning. The term comes from the Latin paraphrasis, from Ancient Greek  παράφρασις (paráphrasis) 'additional manner of expression'. The act of paraphrasing is also called paraphrasis."
+Contextual token,,,paraphrasing,0,1,0,1,,,,,,,"Logical consequence is a fundamental concept in logic which describes the relationship between statements that hold true when one statement logically follows from one or more statements. A valid logical argument is one in which the conclusion is entailed by the premises, because the conclusion is the consequence of the premises. The philosophical analysis of logical consequence involves the following questions: In what sense does a conclusion follow from its premises? and What does it mean for a conclusion to be a consequence of premises? All of philosophical logic is meant to provide accounts of the nature of logical consequence and the nature of logical truth."
+[CLS],,,entailment,0,1,0,1,,,,,,,"Document classification or document categorization is a problem in library science, information science and computer science. The task is to assign a document to one or more classes or categories. This may be done ""manually"" or algorithmically. The intellectual classification of documents has mostly been the province of library science, while the algorithmic classification of documents is mainly in information science and computer science. The problems are overlapping, however, and there is therefore interdisciplinary research on document classification."
+[SEP],,,text classification,0,1,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+[MASK],,,sequence tagging,0,1,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Pre-training,,,BiLSTM+ELMo+Attn,0,1,0,1,,,,,,,Accuracy and precision are measures of observational error; accuracy is how close a given set of measurements is to the true value and precision is how close the measurements are to each other.
+Fine-tuning,,,accuracy,0,1,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Auto-encoder,,,Spearman correlations,0,1,1,0,,,,,,,"In data science, sameAs or exactMatch is a method of indicating that the subject of, or entity represented by, two resources is considered to be one and the same thing. It is a key part of the Semantic Web."
+Natural Language Inference,NLI,,Exact Match,0,1,1,0,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Machine translation,,,TriviaQA,1,0,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Transfer learning,,,Question Answering Network,0,1,1,0,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+ImageNet,,,MIR-MRC,1,0,1,0,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Multi-layer bidirectional Transformer encoder,,,nlnet,0,1,1,0,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 429. Truncated server response: You are making too many requests to the API.
+Please follow the best practices at <https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits>.
+If yo... (use muteHttpExceptions option to examine full response)"
+tensor2tensor,,,SLQA+,1,0,1,0,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+The Annotated Transformer,,,Situations With Adversarial Generations,0,1,1,0,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Transformer block,,,Enhanced Sequential Inference Model,0,1,1,0,,,,,,,"Swag, SWAG, or Swagg may refer to:"
+Self-attention head,,,SWAG,0,1,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+BERT_BASE,,,Left-to-Right Language Model,0,1,0,1,,,,,,,"Conditional random fields (CRFs) are a class of statistical modeling methods often applied in pattern recognition and machine learning and used for structured prediction. Whereas a classifier predicts a label for a single sample without considering ""neighbouring"" samples, a CRF can take context into account. To do so, the predictions are modelled as a graphical model, which represents the presence of dependencies between the predictions. The kind of graph used depends on the application. For example, in natural language processing, ""linear chain"" CRFs are popular, for which each prediction is dependent only on its immediate neighbours. In image processing, the graph typically connects locations to nearby and/or similar locations to enforce that they receive similar predictions."
+BERT_LARGE,,,Conditional Random Field,0,1,1,0,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Bidirectional self-attention,,,Character Variational Autoencoder,0,1,1,0,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Self-attention,,,CoNLL-2003,0,1,1,0,,,,,,,"Adam is the name given in Genesis 1–5 to the first human. Adam is the first human being aware of God, and features as such in various belief systems."
+WordPiece,,,Adam,1,0,1,0,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Token segment,,,GeLU,0,1,0,1,,,,,,,"In the context of artificial neural networks, the rectifier or ReLU activation function is an activation function defined as the non-negative part of its argument, i.e., the ramp function:"
+Positional embedding,,,ReLU,0,1,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+WordPiece token,,,Quora Question Pairs,0,1,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 429. Truncated server response: You are making too many requests to the API.
+Please follow the best practices at <https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits>.
+If yo... (use muteHttpExceptions option to examine full response)"
+WordPiece embedding,,,Stanford Sentiment Treebank,0,1,1,0,,,,,,,"Corpus of Linguistic Acceptability (CoLA) is a dataset the primary purpose of which is to serve as a benchmark for evaluating the ability of artificial neural networks, including large language models, to judge the grammatical correctness of sentences. It consists of 10,657 English sentences from published linguistics literature that were manually labeled either as grammatical or ungrammatical."
+Binarized next sentence prediction,,,Corpus of Linguistic Acceptability,0,1,1,0,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+Wikipedia,,,Semantic Textual Similarity Benchmark,1,0,1,0,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 404. Truncated server response: {""status"":404,""type"":""Internal error""} (use muteHttpExceptions option to examine full response)"
+BooksCorpus,,,Microsoft Research Paraphrase Corpus,1,0,0,1,,,,,,,"Error: Exception: Request failed for https://en.wikipedia.org returned code 429. Truncated server response: You are making too many requests to the API.
+Please follow the best practices at <https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits>.
+If yo... (use muteHttpExceptions option to examine full response)"
+English Wikipedia,,,Winograd NLI,0,1,0,1,,,,,,,
+Billion Word Benchmark,,,,1,0,,,,,,,,,
+Bidirectional cross attention,,,,0,1,,,,,,,,,
+Entailment,,,,1,0,,,,,,,,,
+Text classification,,,,1,0,,,,,,,,,
+Sequence tagging,,,,1,0,,,,,,,,,
+Cloud TPU,,,,0,1,,,,,,,,,
+GPU,,,,0,1,,,,,,,,,
+Natural language understanding,,,,0,1,,,,,,,,,
+Classification loss,,,,0,1,,,,,,,,,
+Softmax,,,,0,1,,,,,,,,,
+Pre-OpenAI SOTA,,,,0,1,,,,,,,,,
+BiLSTM+ELMo+Attn,,,,1,0,,,,,,,,,
+MNLI-(m/mm),,,,0,1,,,,,,,,,
+Quora Question Pairs,QQP,,,1,0,,,,,,,,,
+Question Natural Language Inference,QNLI,,,0,1,,,,,,,,,
+The Standford Sentiment Treebank,SST-2,,,0,1,,,,,,,,,
+The Corpus of Linguistic Acceptability,CoLA,,,0,1,,,,,,,,,
+The Sentiment Textual Similarity Benchmark,STS-B,,,0,1,,,,,,,,,
+Microsoft Research Paraphrase Corpus,MRPC,,,1,0,,,,,,,,,
+Recognizing Textual Entailment,RTE,,,0,1,,,,,,,,,
+Winograd Natural Language Inference,WNLI,Winograd NLI,,0,1,,,,,,,,,
+The Stanford Question Answering Dataset,SQuAD,,,0,1,,,,,,,,,
+TriviaQA,,,,1,0,,,,,,,,,
+Ensemble - nlnet,,,,0,1,,,,,,,,,
+Ensemble - QAnet,,,,0,1,,,,,,,,,
+BiDAF+ELMo (single),,,,0,1,,,,,,,,,
+R.M. Reader (Ensemble),,,,0,1,,,,,,,,,
+BERT_BASE (Single),,,,0,1,,,,,,,,,
+BERT_LARGE (Single),,,,0,1,,,,,,,,,
+BERT_LARGE (Ensemble),,,,0,1,,,,,,,,,
+BERT_LARGE (Sgl.+TriviaQA),,,,0,1,,,,,,,,,
+BERT_LARGE (Ens.+TriviaQA),,,,0,1,,,,,,,,,
+ESIM+GloVe,,,,0,1,,,,,,,,,
+ESIM+ELMo,,,,0,1,,,,,,,,,
+The Situations With Adversarial Generations,SWAG,,,0,1,,,,,,,,,
+MNLI-m,,,,0,1,,,,,,,,,
+No NSP,,,,0,1,,,,,,,,,
+LTR & No NSP ,,,,0,1,,,,,,,,,
+LTR & No NSP + BiLSTM,,,,0,1,,,,,,,,,
+BiLSTM,,,,0,1,,,,,,,,,
+Bidirectional model,,,,0,1,,,,,,,,,
+LM perplexity,,,,0,1,,,,,,,,,
+Bi-LM,,,,0,1,,,,,,,,,
+CoNLL-2003 Named Entity Recognition,CoNLL-2003 NER,,,0,1,,,,,,,,,
+CRF,,,,0,1,,,,,,,,,
+masked LM perplexity,,,,0,1,,,,,,,,,
+CVT,,,,0,1,,,,,,,,,
+CSE,,,,0,1,,,,,,,,,
+Unidirectional architecture,,,,0,1,,,,,,,,,
+Bidirectional architecture,,,,0,1,,,,,,,,,
+LSTM,,,,0,1,,,,,,,,,
+Left-to-right transformer,,,,0,1,,,,,,,,,
+Gelu,,,,1,0,,,,,,,,,
+Relu,,,,1,0,,,,,,,,,
+Entailment classification,,,,0,1,,,,,,,,,
+Binary classification,,,,0,1,,,,,,,,,
+SQuAD v2.0,,,,0,1,,,,,,,,,
