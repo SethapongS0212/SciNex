@@ -1,359 +1,216 @@
-# SciNex
+# Scientific-Paper Knowledge Graph Pipeline
 
-**End-to-end scientific paper knowledge graph (KG) extraction and evaluation pipeline**, built for the SciClaimEval shared task under Professor Nathawut at JAIST.
+Turns scientific-paper PDFs into a queryable knowledge graph, then tests whether
+that graph actually captures something real: can it predict a paper's true
+citation neighbours from nothing but its extracted content?
 
-SciNex parses scientific papers into structured HTML, builds citation networks, extracts knowledge graph triples using both open-vocabulary LLM extraction and schema-constrained extraction (Core Experiment Ontology / SciNex ontology), and evaluates the resulting graphs with KG embedding models (TransE, ComplEx, RotatE) against held-out citation edges.
+Three stages, each usable standalone:
 
----
-
-## Table of Contents
-
-- [Pipeline Overview](#pipeline-overview)
-- [Setup](#setup)
-- [Full Workflow (Quick Start)](#full-workflow-quick-start)
-- [Stage 1 — Acquire Papers](#stage-1--acquire-papers)
-- [Stage 2 — Parse PDFs + Build Citation Networks](#stage-2--parse-pdfs--build-citation-networks)
-- [Stage 3 — Enrich Entity CSVs](#stage-3--enrich-entity-csvs)
-- [Stage 4 — Extract Knowledge Graphs](#stage-4--extract-knowledge-graphs)
-- [Stage 5 — Evaluate Extraction Quality](#stage-5--evaluate-extraction-quality)
-- [Stage 6 — Citation Fusion](#stage-6--citation-fusion)
-- [Stage 7 — Train & Evaluate KG Embeddings](#stage-7--train--evaluate-kg-embeddings)
-- [Output Directory Reference](#output-directory-reference)
-- [Common Gotchas](#common-gotchas)
+1. **PDF → HTML Parser** — clean structured text + tables from raw PDFs
+2. **KG Extraction** — LLM-extracted `(subject, predicate, object)` triples,
+   constrained to an ontology, folded into one persistent cross-paper graph
+3. **KG Embedding Evaluation** — train TransE/ComplEx/RotatE on the graph,
+   test whether it ranks a paper's real citations above random papers
 
 ---
 
-## Pipeline Overview
+## ⭐ Headline result
 
-```
-┌─────────────────────┐     ┌──────────────────────┐     ┌───────────────────────┐
-│ 1. ACQUIRE PAPERS    │────▶│ 2. PARSE + CITATIONS  │────▶│ 3. ENRICH ENTITIES     │
-│ acl_pipeline.py      │     │ main.py               │     │ enrich_entity_csv.py   │
-│ citation_expand_     │     │ run_acl_batch.py      │     │                        │
-│   pipeline.py         │     │ (batch wrapper)        │     │                        │
-└─────────────────────┘     └──────────────────────┘     └───────────────────────┘
-                                                                        │
-                                                                        ▼
-┌─────────────────────┐     ┌──────────────────────┐     ┌───────────────────────┐
-│ 6. CITATION FUSION   │◀────│ 5. EVALUATE QUALITY   │◀────│ 4. EXTRACT KG TRIPLES  │
-│ kg_citation_fusion.py│     │ kg_evaluate.py        │     │ kg_main.py             │
-└─────────────────────┘     └──────────────────────┘     └───────────────────────┘
-          │
-          ▼
-┌─────────────────────────────────────┐
-│ 7. TRAIN & EVALUATE KG EMBEDDINGS    │
-│ kg_transe_pipeline.py / kge_multiseed.py │
-│ (TransE / ComplEx / RotatE → MRR, Hits@k) │
-└─────────────────────────────────────┘
-```
-
-Two extraction strategies are supported at Stage 4:
-- **Open (schema-free):** LLM extracts triples with no vocabulary constraints (`--extractor llm`)
-- **Schema-guided:** subjects constrained to the CS-NER entity gazetteer, predicates constrained to either the Core Experiment Ontology (`--extractor fixed`) or a refined SciNex ontology variant (`--extractor fixed --ontology scinex`)
+**RotatE + self-adversarial negative sampling predicts held-out citation links
+with MRR ≈ 0.60 and Hits@10 ≈ 0.85** (5 seeds, hyperparameters selected on a
+disjoint validation split, reported on held-out test papers). Random baseline
+≈ 0.2%. Full methodology, caveats, and reproduction commands in
+[`results.md`](results.md).
 
 ---
 
-## Setup
+## Quickstart
 
 ```bash
-git clone <this-repo>
-cd scinex
+pip install -r requirement.txt
 
-pip install -r requirements_kg.txt --break-system-packages
-# ITER (SciERC baseline) is installed separately:
-pip install git+https://github.com/fleonce/iter --break-system-packages
+# 1. Parse a PDF → structured HTML
+python3 main.py paper.pdf --no-llm
+
+# 2. Extract a knowledge graph from it (constrained-entity extraction, CEO ontology)
+python3 kg_main.py --paper paper --extractor fixed --model Qwen/Qwen3-14B
+
+# 3. Evaluate KG quality via citation-link prediction
+python3 kg_transe_pipeline.py --output-dir output --extractor fixed --model Qwen3-14B --kge all
 ```
 
-**PowerShell users:** every command below works unchanged — this is a pure-Python CLI pipeline, no bash-only syntax involved except where noted (batch loops).
-
-**GPU note:** default LLM model is `Qwen/Qwen3-32B` / `Qwen3-14B`, sized for a 20GB+ VRAM GPU (e.g. JAIST HAKUSAN A100). For local 8GB-VRAM machines, pass a smaller model explicitly:
-```bash
---model Qwen/Qwen2.5-7B-Instruct
-# or, for very constrained setups:
---model microsoft/phi-3-mini-4k-instruct
-```
+`--all` in place of `--paper <name>` runs any stage over the whole corpus;
+`--skip-existing` resumes an interrupted batch without re-running the LLM.
 
 ---
 
-## Full Workflow (Quick Start)
+## 1. PDF → HTML Parser (`main.py`)
 
-The shortest path from zero to an evaluated KG, in order:
-
-```bash
-# One-time: build the local ACL title→ID index
-python acl_pipeline.py --build-index
-
-# 1. Acquire papers (from CS-NER IOB dataset)
-python acl_pipeline.py --all --out-dir output/acl --limit 500
-
-# 2. Parse PDFs → HTML + citation networks (skips papers already done)
-python run_acl_batch.py --pdf-dir output/acl/pdfs --out-dir output
-
-# 3. Enrich entity CSVs (CS-NER gazetteer, non-circular)
-python enrich_entity_csv.py --all --source csner --out-dir output/acl
-
-# 4. Extract KG triples — both strategies
-python kg_main.py --all --extractor llm --model Qwen/Qwen2.5-7B-Instruct --skip-existing
-python kg_main.py --all --extractor fixed --skip-existing
-python kg_main.py --all --extractor fixed --ontology scinex --skip-existing
-
-# 5. Evaluate extraction quality (LLM-as-judge)
-python kg_evaluate.py --all --extractor all
-
-# 6. Fuse each paper's KG with its citation network
-python kg_citation_fusion.py --paper <paper_id> --extractor fixed/Qwen2.5-7B-Instruct
-
-# 7. Train + evaluate KG embeddings
-python kge_multiseed.py --extractor fixed --model Qwen2.5-7B-Instruct --kge all --seeds 1 2 3 4 5 --epochs 500 --device cuda
-```
-
----
-
-## Stage 1 — Acquire Papers
-
-Two ways to grow your paper set.
-
-### 1a. From the CS-NER IOB dataset (primary source)
-
-`acl_pipeline.py` fetches CS-NER's IOB-annotated ACL papers, resolves each title to an ACL Anthology ID (local index → DBLP → Semantic Scholar), downloads the PDF, and writes an entity CSV per paper (used later by the `fixed` extractor).
+Parses academic PDFs (arXiv, ACL Anthology, PeerJ, …) into clean HTML, with
+optional LLM text cleanup and citation-network enrichment via Semantic Scholar.
 
 ```bash
-# Build the local title index once — takes a few minutes, do this first
-python acl_pipeline.py --build-index
-
-# Full pipeline, capped at 500 papers
-python acl_pipeline.py --all --out-dir output/acl --limit 500
-
-# Or run stages individually:
-python acl_pipeline.py --parse-iob     --out-dir output/acl
-python acl_pipeline.py --resolve-ids   --out-dir output/acl
-python acl_pipeline.py --download-pdfs --out-dir output/acl
+python3 main.py paper.pdf --fast    # no GPU, no internet, ~10-30 sec
+python3 main.py paper.pdf           # + LLM cleanup + citation fetch, 5-20 min
 ```
 
-| Flag | Purpose |
-|---|---|
-| `--limit N` | Cap total papers pulled from the IOB dataset |
-| `--out-dir` | Where `papers.json` + `pdfs/` + entity CSVs go (default `output/acl`) |
-| `--delay` | Seconds between HTTP requests (default 1.0) |
-
-### 1b. From the citation graph (expansion beyond CS-NER)
-
-`citation_expand_pipeline.py` walks the citation networks of papers you've already parsed (Stage 2) and pulls in new papers that are (a) linked by citation and (b) confirmed to exist on ACL Anthology. It processes one seed paper's citation network at a time; once a seed is exhausted it automatically moves to the next.
-
-```bash
-python citation_expand_pipeline.py --limit 800
-```
-
-| Flag | Purpose |
-|---|---|
-| `--limit N` | **Required.** Stop once total PDFs on disk reaches N |
-| `--seeds ID1,ID2` | Start from specific papers instead of everything already downloaded |
-| `--no-recurse` | Only expand one hop from the original seeds (don't snowball into newly-pulled papers) |
-| `--pdf-dir` / `--out-dir` / `--papers-dir` | Override default paths |
-
-> Requires citation networks to already exist for the seed papers — run Stage 2 first.
-
----
-
-## Stage 2 — Parse PDFs + Build Citation Networks
-
-### Single paper
-
-```bash
-python main.py output/acl/pdfs/P19-1028.pdf --no-llm --citation-limit 10
-```
-
-| Mode | LLM | Citations | Speed |
-|---|---|---|---|
-| (default) | ✅ | ✅ | Slowest, needs GPU |
-| `--no-llm` | ❌ | ✅ | **Recommended** — fast, still gets citation network |
-| `--fast` | ❌ | ❌ | Fastest, no citation data |
-| `--no-citations` | ✅ | ❌ | Rare — LLM parse without citation lookup |
-
-Can also run directly against SciClaimEval (auto-downloads from HuggingFace):
-```bash
-python main.py --paper 1810.04805 1706.03762   # by arXiv ID
-python main.py --domain NLP --limit 5
-python main.py --all
-```
-
-### Batch — all PDFs, skipping ones already parsed
-
-```bash
-python run_acl_batch.py --pdf-dir output/acl/pdfs --out-dir output
-```
-
-Automatically skips any paper that already has both `output/<id>/no-llm/output.html` and `output/<id>/citation_network.json`. Safe to re-run; persists progress after every paper so an interruption doesn't lose work.
-
-```bash
-python run_acl_batch.py --rerun-failed          # retry only previously-failed papers
-python run_acl_batch.py --paper C16-1036        # single paper by ID
-python run_acl_batch.py --timeout 1800          # raise per-paper timeout (citation rate-limit backoff can be slow)
-```
-
-**PowerShell one-liner equivalent** (if you need to call `main.py` directly per-PDF instead):
-```powershell
-Get-ChildItem output/acl/pdfs/*.pdf | ForEach-Object {
-    $outfile = "output/$($_.BaseName)/no-llm/output.html"
-    if (!(Test-Path $outfile)) {
-        python main.py $_.FullName --no-llm --citation-limit 10
-    }
-}
-```
-
----
-
-## Stage 3 — Enrich Entity CSVs
-
-The CS-NER IOB annotations only cover paper *titles*. This step expands each paper's entity CSV with entities found in the *body text*, using an external (non-circular) source so the `fixed` extractor isn't evaluated against its own extractions.
-
-```bash
-python enrich_entity_csv.py --all --source csner --out-dir output/acl
-```
-
-| `--source` | Description |
-|---|---|
-| `csner` (default) | Intersects the global CS-NER gazetteer with each paper's body text — external, non-circular |
-| `iter` | Runs the ITER/SciERC model over the parsed HTML |
-| `llm` | Harvests entities from your own LLM triples — **circular, retired**, avoid for evaluation |
-
-```bash
-python enrich_entity_csv.py --paper D17-1028 --source csner   # single paper
-python enrich_entity_csv.py --all --source csner --rebuild-gazetteer  # force gazetteer re-download
-```
-
-Output: `Entity_<id>_enriched.csv` alongside the original `Entity_<id>.csv` — the `fixed` extractor auto-prefers the enriched version.
-
----
-
-## Stage 4 — Extract Knowledge Graphs
-
-Core extraction step. `--paper <id>` for one paper, `--all --limit N` for a batch.
-
-```bash
-# Single paper, all extractors
-python kg_main.py --paper 2205.11361 --extractor all
-
-# Batch, resumable
-python kg_main.py --all --extractor llm   --model Qwen/Qwen2.5-7B-Instruct --skip-existing --max-new-tokens 2048
-python kg_main.py --all --extractor fixed --skip-existing
-python kg_main.py --all --extractor fixed --ontology scinex --ontology-file scinex_refined_14.owl --skip-existing
-```
-
-| Extractor | Flag | Notes |
+| Bottleneck | Time cost | Skip with |
 |---|---|---|
-| REBEL baseline | `--extractor rebel` | General-domain relation extraction baseline |
-| ITER / SciERC baseline | `--extractor iter` | Science-specific baseline |
-| Open LLM | `--extractor llm` | Schema-free, open-vocabulary |
-| Schema-guided (CEO) | `--extractor fixed` | Entities from gazetteer, predicates from Core Experiment Ontology |
-| Schema-guided (SciNex) | `--extractor fixed --ontology scinex` | Same entities, refined predicate set — writes to `kg/fixed_scinex/` |
-| All | `--extractor all` | Runs every extractor above |
+| Qwen2.5-14B LLM text cleanup | 5–15 min | `--no-llm` / `--fast` |
+| Semantic Scholar citation fetch | 1–5 min | `--no-citations` / `--fast` |
+| Table extraction | 10–30 sec | always runs |
 
-Key flags:
-
-| Flag | Purpose |
-|---|---|
-| `--skip-existing` | Resume — skip papers that already have `triples.json` for this extractor+model |
-| `--model` | HF model ID for the LLM extractor (default `Qwen/Qwen3-32B`; use a 7B/mini model for ≤8GB VRAM) |
-| `--limit N` | With `--all`, process only first N papers |
-| `--no-gpu` | Force CPU |
-| `--no-viz` | Skip the interactive HTML visualization (faster) |
-| `--entity-csv` | Override auto-resolved entity CSV path for the `fixed` extractor |
-
-Output per paper: `output/<id>/kg/<extractor>/[<model>/]{triples.json, kg.graphml, kg_stats.json, kg_viz.html}`
+Output: `output/<paper>/no-llm/output.html` (or `output.html` in full mode) +
+`citation_network.json`. Citation fetches are cached — re-running the same
+paper reads instantly.
 
 ---
 
-## Stage 5 — Evaluate Extraction Quality
+## 2. KG Extraction (`kg_main.py`)
 
-LLM-as-judge scoring of extracted triples.
+Extracts `(subject, predicate, object)` triples from the parsed HTML. Five
+extractors, selected with `--extractor`:
+
+| Extractor | Model | Subjects | Relations |
+|---|---|---|---|
+| `rebel` | `Babelscape/rebel-large` | open | open |
+| `iter` | `fleonce/iter-scierc-deberta-large` | open | SciERC-typed |
+| `llm` | Qwen3-14B | open | open vocabulary |
+| **`fixed`** | Qwen3-14B / Gemma3-12B | entity CSV | CEO ontology — **main extractor** |
+| `pair` | Qwen3-14B | entity CSV | entity CSV, relation free |
 
 ```bash
-python kg_evaluate.py --all --extractor all
-python kg_evaluate.py --paper 2205.11361 --extractor fixed llm --entity-csv output/acl/2205.11361/Entity_2205.11361_enriched.csv
+python3 kg_main.py --paper 2020.acl-main.130 --extractor fixed --model Qwen/Qwen3-14B
+python3 kg_main.py --all --extractor fixed --model google/gemma-3-12b-it --skip-existing
 ```
 
-Passing `--entity-csv` tells the judge about known abbreviations so it doesn't penalize a triple for using "BERT" instead of the full model name.
+`--entity-csv` is optional — auto-resolved per paper from CS-NER-derived
+entity lists (`enrich_entity_csv.py`) when omitted.
+
+**Models validated for `fixed` extraction:** Qwen3-14B (original, ~7–8GB
+4-bit) and **Gemma3-12B** (`google/gemma-3-12b-it`, gated — requires
+`HF_TOKEN` in `.env`; multimodal checkpoint, loaded text-only). Both produce
+correctly-grounded triples and merge cleanly into the global KG — see
+[`Claude.md`](Claude.md) for the swap-in notes and per-model comparison.
+
+### Persistent global KG
+
+Every `fixed`/`fixed_scinex` extraction also folds into **one incrementally-merged
+cross-paper graph** (not just each paper's isolated `triples.json`): each paper
+is a big node (`paper:<id>`), its entities hang off it as augmented nodes via
+`mentions` edges, and real `cites` edges connect papers to each other directly.
+
+```
+output/global_kg/<extractor>/<model>/graph.graphml   # the merged graph
+output/global_kg/<extractor>/<model>/meta.json        # merge bookkeeping
+```
+
+Handles node identity across time — a citation to a paper not yet in the
+corpus gets a `paper_stub` node that resolves into the real node once that
+paper is actually extracted, preserving any edges already attached.
 
 ---
 
-## Stage 6 — Citation Fusion
+## 3. KG Embedding Evaluation (`kg_transe_pipeline.py`)
 
-Merges a paper's extracted KG with its citation network into one unified graph (paper–paper edges + entity–entity edges).
+Trains a KG embedding model on the extracted graph, then tests whether a
+paper's learned embedding ranks its **real citation neighbours** above other
+papers — citation edges are held out of training and used only as ground
+truth.
 
 ```bash
-python kg_citation_fusion.py --paper 1810.04805 --extractor fixed/Qwen2.5-7B-Instruct
-python kg_citation_fusion.py --paper 1810.04805 --extractor llm/Qwen2.5-7B-Instruct
-python kg_citation_fusion.py --paper 1810.04805 --extractor rebel
+python3 kg_transe_pipeline.py --output-dir output --extractor fixed --model Qwen3-14B --kge all
+# multi-seed (report mean ± std):
+python3 kge_multiseed.py --extractor fixed --model Qwen3-14B --kge all --seeds 1 2 3 4 5 --epochs 1000
+```
+
+Three models (`--kge {transe,complex,rotate,all}`), two objectives (margin
+vs. self-adversarial), two ontologies (CEO / scinex — statistically tied on
+this metric), reported as Hits@1/5/10 + MRR. Full protocol and honest caveats
+in [`results.md`](results.md).
+
+---
+
+## Corpus
+
+800+ papers currently parsed and entity-enriched (scaling toward 2000+),
+fetched by walking ACL Anthology citation networks
+(`citation_expand_pipeline.py`) from an 83k-title local index
+(`acl_index.py`). Entity subject lists are built non-circularly from the
+**CS-NER** human-annotated gazetteer intersected with each paper's text — not
+back-filled from the pipeline's own extraction.
+
+---
+
+## Project structure
+
+```
+main.py                     — PDF→HTML parser CLI
+config.py                   — OUTPUT_DIR, CITATION_LIMIT
+compare.py                  — HTML output similarity scorer
+rebuild_html.py              — offline table-fix tool (standalone)
+
+parser/
+    pdf_loader.py            — PDF loading (PyMuPDF)
+    layout.py                — text block extraction (pdfplumber/PyMuPDF)
+    table_extractor.py       — multi-strategy table detection
+    structure_builder.py     — raw blocks → structured sections
+    html_generator.py        — structured data → final HTML
+    llm_refiner.py           — optional Qwen2.5-14B text cleanup
+
+citation/
+    network.py                — Semantic Scholar citation graph builder
+    auto_fetcher.py           — auto-download related papers
+    semantic.py                — S2 API helpers
+    concept_builder.py        — concept keywords from abstracts
+
+kg_main.py                  — KG extraction CLI (rebel/iter/llm/fixed/pair/all)
+kg_extraction/
+    fixed_extractor.py        — fixed-subject extractor (CEO ontology; Qwen3-14B / Gemma3-12B)
+    llm_extractor.py           — free LLM extractor (open vocabulary)
+    extractor.py                — REBEL baseline
+    iter_extractor.py           — ITER/SciERC baseline
+    entity_loader.py            — entity CSV loading, alias lookup
+    kg_builder.py                — NetworkX KG + entity normalisation
+    global_graph.py              — persistent cross-paper global KG (incremental merge, stub resolution)
+    html_parser.py               — sentence extraction from output.html
+    visualizer.py                 — interactive pyvis visualization
+
+kg_transe_pipeline.py       — KG embedding evaluation (TransE/ComplEx/RotatE)
+kge_multiseed.py            — multi-seed KGE runner
+kg_evaluate.py               — LLM-as-Judge faithfulness eval (retired, kept for reference)
+kg_compare.py / kg_fixed_compare.py / kg_citation_fusion.py — comparison/fusion utilities
+
+acl_index.py                — title→ACL-ID index (anthology.json.gz / XML fallback)
+acl_pipeline.py              — ACL paper download pipeline (CS-NER → entity CSVs + PDFs)
+enrich_entity_csv.py         — per-paper entity lists from the CS-NER gazetteer
+run_acl_batch.py              — batch PDF parsing with success/failure tracking
+citation_expand_pipeline.py   — snowball paper downloads via citation networks
+expand_and_validate.py        — global-KG validation smoke test
+paper_registry.py              — SciClaimEval paper ID registry
 ```
 
 ---
 
-## Stage 7 — Train & Evaluate KG Embeddings
-
-Trains a KG embedding model on the unified graph (entity–entity + paper–entity + paper–paper citation edges) and evaluates predicted related-papers against real citation links.
+## Dependencies
 
 ```bash
-# Single run
-python kg_transe_pipeline.py --output-dir output --extractor fixed --model Qwen2.5-7B-Instruct --kge rotate --epochs 500 --device cuda
-
-# Compare all three embedding models in one run
-python kg_transe_pipeline.py --extractor fixed --model Qwen2.5-7B-Instruct --kge all --epochs 500
+pip install -r requirement.txt
 ```
 
-**Recommended: multi-seed for a defensible result.** A single KGE run varies run-to-run (random init + negative sampling); this reports mean ± std over several fixed, reproducible seeds.
+Requires a CUDA-capable GPU (≥16GB VRAM) for LLM extraction/refinement.
+`requirement.txt` pins PyTorch for specific CUDA toolkits — check the comment
+at the top of the file if installing on new hardware (works out of the box on
+CUDA 12.x/13.x, including RTX 50-series).
 
-```bash
-python kge_multiseed.py --extractor fixed --model Qwen2.5-7B-Instruct \
-    --kge all --seeds 1 2 3 4 5 --epochs 500 --device cuda
-```
-
-| KGE model | Captures |
-|---|---|
-| `transe` | Translation: h + r ≈ t |
-| `complex` | Complex bilinear — handles asymmetric relations |
-| `rotate` | Relation as rotation in complex space — best empirical result in our runs (self-adversarial negative sampling, MRR ~0.60, Hits@10 ~0.85) |
+Gated models (e.g. `google/gemma-3-12b-it`) need a Hugging Face token —
+accept the license on the model page, then add `HF_TOKEN=hf_...` to `.env`
+(same file as `SEMANTIC_SCHOLAR_API_KEY`).
 
 ---
 
-## Output Directory Reference
+## Further reading
 
-```
-output/
-├── acl/
-│   ├── papers.json                          ← paper index (title, ACL ID, entities)
-│   ├── pdfs/<paper_id>.pdf
-│   ├── csner_gazetteer.csv                  ← cached CS-NER gazetteer
-│   └── <paper_id>/
-│       ├── Entity_<paper_id>.csv            ← title-only entities (from IOB)
-│       └── Entity_<paper_id>_enriched.csv   ← + body entities (Stage 3)
-│
-└── <paper_id>/
-    ├── citation_network.json                ← shared across all parse modes
-    ├── no-llm/output.html                   ← parsed structure (Stage 2)
-    ├── default/output.html
-    └── kg/
-        ├── rebel/{triples.json, kg.graphml, kg_stats.json, kg_viz.html}
-        ├── iter/{...}
-        ├── llm/<model>/{...}
-        ├── fixed/{...}                      ← CEO ontology
-        └── fixed_scinex/{...}               ← SciNex ontology
-```
-
----
-
-## Common Gotchas
-
-- **Forgetting `--entity-csv`** on manual/evaluation commands silently disables alias resolution for the `fixed` extractor. Prefer letting it auto-resolve (omit the flag) unless you need to override.
-- **`--skip-existing` is model-aware** — switching `--model` on the `llm` extractor will *not* skip papers processed under a different model; each model gets its own subdirectory.
-- **BIOES, not BIO** — CS-NER IOB files use `B/I/E/S/O` tags; `acl_pipeline.py`'s IOB parser accounts for this.
-- **Citation networks are required before `citation_expand_pipeline.py` can expand from a seed** — that seed must have gone through Stage 2 (`main.py` without `--no-citations`/`--fast`) first.
-- **`enrich_entity_csv.py --source llm`** is circular (evaluating LLM triples against LLM-derived entities) — only use `csner` or `iter` for anything you intend to report as evaluation.
-- **8GB VRAM machines** should always pass `--model Qwen/Qwen2.5-7B-Instruct` or smaller to `kg_main.py --extractor llm`; the default `Qwen3-32B`/`Qwen3-14B` will OOM.
-- **PowerShell vs bash** — every script here is pure argparse Python, so commands are identical across shells; only ad-hoc batch loops (e.g. the PowerShell one-liner in Stage 2) need shell-specific syntax.
-
----
-
-## Acknowledgments
-
-Developed by Sam under the supervision of Professor Nathawut at JAIST, for the SciClaimEval shared task. CS-NER gazetteer and ACL entity annotations from the [CS-NER](https://github.com/jd-coderepos/contributions-ner-cs) project. Core Experiment Ontology (CEO) maintained at [wpatipon/core-experiment-ontology](https://github.com/wpatipon/core-experiment-ontology).
+- [`Claude.md`](Claude.md) — architecture, model notes, GPU quirks, current status
+- [`results.md`](results.md) — consolidated paper-ready results and caveats
+- [`hands_off.md`](hands_off.md) — dated session-by-session change log
