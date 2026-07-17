@@ -1,7 +1,7 @@
 [README.md](https://github.com/user-attachments/files/30121371/README.md)
 # SciNex
 
-**End-to-end scientific paper knowledge graph (KG) extraction and evaluation pipeline**, built for the SciClaimEval shared task under Professor Nathawut at JAIST.
+**End-to-end scientific paper knowledge graph (KG) extraction and evaluation pipeline**
 
 SciNex parses scientific papers into structured HTML, builds citation networks, extracts knowledge graph triples using both open-vocabulary LLM extraction and schema-constrained extraction (Core Experiment Ontology / SciNex ontology), and evaluates the resulting graphs with KG embedding models (TransE, ComplEx, RotatE) against held-out citation edges.
 
