@@ -28,10 +28,17 @@ all judge verdicts (`ontology_eval/*/verdicts.csv`, `gold/`), the fold split `ft
 data manifests and run manifests.
 
 ### The private bundle
-`SciNex_private_bundle.zip` (made on the old laptop, 2026-10-20) holds the not-in-GitHub files from that
-laptop: the 7 open-access PDFs, their parsed HTML, the gazetteer + entity CSVs, both finetuning
-datasets, the trained teacher-only Qwen3-4B adapter, and the C2/C5 bundles. Its `BUNDLE_CONTENTS.txt`
-lists every file. **Move it privately (USB drive or a private cloud folder). Never upload it to GitHub
+`SciNex_private_bundle.zip` (made on the old laptop, 2026-10-20; 57 files, 166 MB) holds the
+not-in-GitHub files from that laptop:
+- the 7 open-access PDFs and their parsed HTML;
+- the CS-NER gazetteer `output/acl/csner_gazetteer.csv` (the per-paper entity CSVs were not on that
+  laptop: regenerate them with §5B step 3);
+- 5 stored `prompts.jsonl`;
+- both finetuning datasets;
+- the trained teacher-only Qwen3-4B adapter;
+- the 16 C2/C5 bundles.
+
+Its `BUNDLE_CONTENTS.txt` lists every file. **Move it privately (USB drive or a private cloud folder). Never upload it to GitHub
 or anywhere public.** The other 13 PDFs were never on that laptop. They are on the lab machine, or
 get them by hand (§5B).
 
