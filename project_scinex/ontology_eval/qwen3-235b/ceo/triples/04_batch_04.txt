@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 9950fe9254dc -----
+TRIPLE:     (Down matrices)  --supports-->  (model degradation)
+PREDICATE DEFINITION: ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion
+SOURCE SENTENCE: Further analysis of self-attention and feed-forward matrices shows that feed-forward components, particularly the Down matrices, have a stronger influence on model degradation.
+
+----- triple_id: 6b3df300769f -----
+TRIPLE:     (this study)  --reports-->  (preparing videos for inpainting)
+PREDICATE DEFINITION: AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead
+SOURCE SENTENCE: By using YOLOv8 for efficient participant segmentation and the Segment Anything Model (SAM2) for accurate tracking, this study expands on earlier research by preparing videos for inpainting.
+
+----- triple_id: ae0981a618c1 -----
+TRIPLE:     (Segment Anything Model (SAM))  --writtenby-->  (Kirillov et al.)
+PREDICATE DEFINITION: AcademicPaper → Author  |  use only for explicit author attribution
+SOURCE SENTENCE: the Segment Anything Model (SAM), created by Kirillov et al. [9], is a powerful tool for segmenting any object in an image using simple prompts.
+
+----- triple_id: 4adb7aa2e454 -----
+TRIPLE:     (Logistic Regression)  --uses-->  (LR)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Third, the experiments were conducted using several classification techniques: Logistic Regression (LR), Decision Tree (DT), Random Forest (RF), K-Nearest Neighbor (KNN), and Artificial Neural Network (ANN).
+
+----- triple_id: 95b3f4ab8acd -----
+TRIPLE:     (MobileNet)  --achieves-->  (average time of 0.99 seconds)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The test results indicated that the CTv1 model had an average execution time of about 1 second, similar to MobileNet's average time of 0.99 seconds, and the CTv1 had a power consumption of 25 mWh(milliwatts-hour), while MobileNet had 38 mWh.
+
+----- triple_id: 47d6f0d17c96 -----
+TRIPLE:     (biometric landmark ratios)  --addresses-->  (strabismus classification)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The use of biometric landmark ratios provided a more interpretable representation for strabismus classification than an end-to-end image classifier.
+
+----- triple_id: 5256c710656e -----
+TRIPLE:     (SA-LSTM)  --comprises-->  (self-attention)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: In the second experiment, the LSTM was improved with the addition of self-attention, becoming an SA-LSTM.
+
+----- triple_id: 2e927cd7ed5d -----
+TRIPLE:     (CNN)  --comparesagainst-->  (ResNet50)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: This model is smaller than the state -of-the-art CNN models tested, which achieved over 90% accuracy (VGG16, InceptionV3, Yolo11m-cls, and ResNet50).
+
+----- triple_id: 57463c541977 -----
+TRIPLE:     (LRAU)  --evaluatedon-->  (InceptionV3)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: To enhance vehicle make and model classification across multiple VMMR datasets, Boukerche and Ma [11] applied their LRAU to the ResNet50 model (along with VGG16 and InceptionV3).
+
+----- triple_id: f7b30d6047d8 -----
+TRIPLE:     (recall)  --evaluates-->  (model's accuracy and robustness)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: Evaluation metrics like precision, recall and Intersection over Union (IoU) which gauges how much the predicted bounding box overlaps with the ground-truth bounding box. A score of 1.0 indicates a complete match, while 0.0 means there's no overlap between the predicted and ground-truth bounding boxes are utilized to assess the model's accuracy and robustness.

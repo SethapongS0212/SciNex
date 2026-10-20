@@ -1,0 +1,299 @@
+{
+  "paper_id": "0b771eb51dbe6029257d66b9889069ce4efbb4ef",
+  "title": "Utilizing deep learning from mobile phone photos for early detection of horizontal strabismus: a screening approach",
+  "year": 2026,
+  "abstract": "To develop and validate an artificial intelligence pipeline for binary screening of horizontal strabismus versus orthotropia using smartphone-acquired facial images and geometric landmark analysis. This two-stage system combines Real-Time Detection Transformer (RT-DETR) to localize nine ocular landmarks per eye across three gaze directions (left, center, right), and supervised machine learning classifiers. A feature set of five biometric ratios was derived from coordinates including the canthi, limbi, and corneal light reflexes. The model was trained on facial images from 150 participants (96 with strabismus and 54 controls). To address class imbalance and improve generalizability, Synthetic Minority Oversampling Technique (SMOTE) and 4-fold cross-validation were applied. RT-DETR achieved an intersection over union of 0.62 and a mean center-point error of 6.52 pixels in landmark localization. The Random Forest classifier achieved an accuracy of 0.95, sensitivity of 0.96, specificity of 0.94, positive predictive value of 0.97, and negative predictive value of 0.92. This study demonstrates the feasibility of combining transformer-based landmark detection with geometric ratios for strabismus screening. The framework shows high performance under controlled conditions. While the use of biometric ratios allows for feature-level inspection, further research is required to establish full clinical interpretability and performance in uncontrolled environments.",
+  "citation_count": 1,
+  "root_concepts": [
+    "strabismus",
+    "landmark",
+    "ratios",
+    "screening",
+    "facial",
+    "images",
+    "geometric",
+    "detection",
+    "transformer",
+    "center",
+    "feature",
+    "biometric",
+    "achieved",
+    "predictive",
+    "value"
+  ],
+  "nodes": {
+    "88b0bdf74b0bc2ce0592a49272f364986f62f5b2": {
+      "title": "A Calibration-Free Multi-Expert System for Automated Diopter Measurement: Overcoming Noise-Induced Binocular Inconsistency",
+      "year": 2026,
+      "abstract": "Estimating ocular alignment in unconstrained settings remains challenging because Noise-Induced Binocular Inconsistency (NIBI), caused by blinking, head motion, and tracking noise, can produce temporary inter-ocular inconsistencies. Existing frame-based or classification-based methods often cannot provide reliable continuous measurements for clinical use. In this study, we introduce a calibration-free deep multi-expert architecture for real-time prism diopter estimation from short monocular video sequences. Unlike approaches that treat ocular alignment as a static image-, feature-, or frame-wise task, the proposed framework formulates it as a temporal regression problem to better handle dynamic image variations. The framework integrates three complementary components: a Geometric Expert, termed the Living Ruler, which extracts iris-normalized and scale-invariant features; a Trajectory Expert, which encodes temporal eye movement dynamics together with deep image features; and a Transformer-based Stability Supervisor, which estimates frame-wise reliability scores for reliability-aware temporal fusion by emphasizing stable observations and suppressing unreliable ones. Because publicly available datasets with prism diopter annotations are limited, geometry-based reference deviations were simulated using the real human eye geometry derived from the Columbia Gaze Dataset. Experimental results show that the proposed method achieves high accuracy, with a mean absolute error of $1.3038\\Delta $ and an $R^{2}$ of 0.9963 over the range of 0– $50\\Delta $ , while maintaining strong temporal stability. Evaluation on real-world data without fine-tuning further demonstrated generalization across appearance, head pose, and imaging variations. These findings suggest that continuous calibration-free ocular deviation estimation from standard video input is feasible for tele-screening and longitudinal monitoring.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "ocular",
+        "temporal",
+        "frame",
+        "expert",
+        "image",
+        "alignment",
+        "noise",
+        "continuous",
+        "calibration",
+        "prism",
+        "diopter",
+        "estimation",
+        "video",
+        "framework",
+        "variations"
+      ]
+    },
+    "936fdde8d761d54ba7023815d099ec93b08ed259": {
+      "title": "Retinal fundus image enhancement using an ensemble framework for accurate glaucoma detection",
+      "year": 2024,
+      "abstract": null,
+      "citation_count": 11,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "981809ec24bd1ce1cf3287f21d60589689c42464": {
+      "title": "A three-stage novel framework for efficient and automatic glaucoma classification from retinal fundus images",
+      "year": 2024,
+      "abstract": null,
+      "citation_count": 23,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "3cecbb26db517b4632e6f284a503f618dbfdf215": {
+      "title": "Incidence, Risk Factors and Management of Postoperative Complications in Horizontal Strabismus Surgery",
+      "year": 2023,
+      "abstract": "ABSTRACT Objective To report the incidence, risk factors and management of postoperative complications after horizontal strabismus surgery. Design Retrospective Cohort study. Participants The study assessed 1,273 patients with 1,035 cases of exotropia and 238 cases of esotropia, with a minimum 18-month follow-up. Methods Retrospective review of strabismus operation patients’ medical records included baseline demographics, age at surgery, pre/postoperative visual acuity, and deviation. Complications were categorized as surgical site (infection, scarring, cyst, granuloma, ischemia) and strabismus-related (recurrence, diplopia), with analysis of incidence, risk factors, and management. Results Among surgical site complications, the incidence of infection, pyogenic granuloma, and anterior segment ischemia were similar between the exotropia (0.3%, 0.3%, 0.2%) and esotropia (0.8%, 0%, 0.4%) groups (p = .221, 0.406, 0.515). In contrast, the esotropia group presented a higher risk of conjunctival inclusion cyst and conjunctival scar than the exotropia group, with incidences of 5.0% vs 2.2% and 6.3% vs 1.3%, respectively (p = .004, <0.001). Regarding strabismus complications, the incidence of early recurrence was not significant between the two groups, with 10.0% in the exotropia group and 10.5% in the esotropia group (p = .553). Older age and poor initial visual acuity were associated with early recurrence (p < .001). The esotropia group had a higher risk of persistent diplopia than the exotropia group, with incidences of 4.2% vs 2.0%, respectively (p = .003). Conclusion Esotropia carries a higher risk of conjunctival inclusion cysts, conjunctival scarring, and persistent diplopia compared to the exotropia group, while both groups exhibit similar rates of early recurrence and other surgical site complications.",
+      "citation_count": 6,
+      "relation": "cited_by",
+      "concepts": [
+        "group",
+        "exotropia",
+        "esotropia",
+        "complications",
+        "incidence",
+        "strabismus",
+        "recurrence",
+        "conjunctival",
+        "surgical",
+        "diplopia",
+        "groups",
+        "higher",
+        "early",
+        "factors",
+        "management"
+      ]
+    },
+    "1f28405584d8ed56380f6e1597879477e22be7c4": {
+      "title": "Hybrid glaucoma detection model based on reflection components separation from retinal fundus images",
+      "year": 2023,
+      "abstract": "The diagnosis of diseases associated to the retina is significantly aided by retinal fundus images. However, when flash illumination is used during image acquisition, specularity reflection can occur on images. The retinal image processing applications are popular now days in diseases detection such as glaucoma, diabetic retinopathy, and cataract. Many modern disease detection algorithms suffer from performance accuracy limitation due to the creation of specularity reflection problem. This research proposes a hybrid model for screening of glaucoma which includes a preprocessing step to separate specular reflections from corrupted fundus images, a segmentation step using modified U-Net CNN, a feature extraction step, and an image classification step using support vector machine (SVM) with different kernels. Firstly, the diffuse and specular components are obtained using seven existing methods and apply a filter having high emphasis with a function called similar in each component. The best method, which provides highest quality images, is chosen among the seven compared methods and the output image is used in next steps for screening of glaucoma. The experimental results of the proposed model show that in preprocessing step, maximum improvement in terms of PSNR and SSIM are 37.97 dB and 0.961 respectively. For glaucoma detection experiment the results have the accuracy, sensitivity, and specificity of 91.83%, 96.39%, and 95.37% respectively and AUROC of 0.971.",
+      "citation_count": 10,
+      "relation": "cited_by",
+      "concepts": [
+        "images",
+        "image",
+        "glaucoma",
+        "detection",
+        "diseases",
+        "retinal",
+        "fundus",
+        "specularity",
+        "reflection",
+        "accuracy",
+        "screening",
+        "preprocessing",
+        "specular",
+        "seven",
+        "methods"
+      ]
+    },
+    "3a6c423cc0f687fc43a671e55dce06f681df7476": {
+      "title": "DETRs Beat YOLOs on Real-time Object Detection",
+      "year": 2023,
+      "abstract": "The YOLO series has become the most popular frame-work for real-time object detection due to its reasonable trade-off between speed and accuracy. However, we observe that the speed and accuracy of YOLOs are negatively affected by the NMS. Recently, end-to-end Transformer-based detectors (DETRs) have provided an alternative to eliminating NMS. Nevertheless, the high computational cost limits their practicality and hinders them from fully exploiting the advantage of excluding NMS. In this paper, we propose the Real-Time DEtection TRansformer (RT-DETR), the first real-time end-to-end object detector to our best knowledge that addresses the above dilemma. We build RT-DETR in two steps, drawing on the advanced DETR: first we focus on maintaining accuracy while improving speed, followed by maintaining speed while improving accuracy. Specifically, we design an efficient hybrid encoder to expeditiously process multi-scale features by decoupling intra-scale interaction and cross-scale fusion to improve speed. Then, we propose the uncertainty-minimal query selection to provide high-quality initial queries to the decoder, thereby improving accuracy. In addition, RT-DETR supports flexible speed tuning by adjusting the number of decoder layers to adapt to various scenarios without retraining. Our RT-DETR-R50 /R101 achieves 53.1% 154.3% AP on COCO and 108 /74 FPS on T4 GPU, outperforming previously advanced YOLOs in both speed and accuracy. Furthermore, RT-DETR-R50 outperforms DINO-R50 by 2.2% AP in accuracy and about 21 times in FPS. After pre-training with Objects365, RT-DETR-R50 / R101 achieves 55.3% 156.2% AP. The project page: https://zhao-yian.github.io/RTDEtr.",
+      "citation_count": 4153,
+      "relation": "cited_by",
+      "concepts": [
+        "speed",
+        "accuracy",
+        "improving",
+        "scale",
+        "object",
+        "detection",
+        "yolos",
+        "transformer",
+        "first",
+        "advanced",
+        "maintaining",
+        "while",
+        "decoder",
+        "achieves",
+        "series"
+      ]
+    },
+    "32c71817ddb1e3989da373f16f208b8c1b5d8af6": {
+      "title": "Strabismus and Pediatric Psychiatric Illness: A Literature Review",
+      "year": 2023,
+      "abstract": "Purpose: This literature review aims to investigate the potential association between strabismus and mental illness among children. Materials: The search was conducted in the PubMed and Google Scholar databases using a wide range of search terms related to strabismus, mental disorders, psychiatric illness, childhood, and adolescence. Results: Eleven published studies were included in this review. The findings from this review suggest an association between strabismus and mental illness. Negative attitudes and social bias against children with strabismus were also noted. Conclusions: These findings should alert healthcare providers to counsel children and their caregivers regarding the risk for mood disorders in children with strabismus and to consider mental health screening and referral as needed.",
+      "citation_count": 12,
+      "relation": "cited_by",
+      "concepts": [
+        "strabismus",
+        "mental",
+        "children",
+        "review",
+        "illness",
+        "association",
+        "search",
+        "disorders",
+        "findings",
+        "purpose",
+        "literature",
+        "investigate",
+        "potential",
+        "among",
+        "materials"
+      ]
+    },
+    "a55bb30e6fe47a8b6b66f67ef8bdc2a70dd25682": {
+      "title": "Anomaly Detection in Red Reflex Images Using Deep Learning Approaches",
+      "year": 2022,
+      "abstract": "Amblyopia is a noteworthy disease in children leading to visual loss. This work focuses on creating a deep learning model for the detection of Amblyopia factors in patients wearing masks under the COVID-19 pandemic.",
+      "citation_count": 5,
+      "relation": "cited_by",
+      "concepts": [
+        "amblyopia",
+        "noteworthy",
+        "disease",
+        "children",
+        "leading",
+        "visual",
+        "focuses",
+        "creating",
+        "detection",
+        "factors",
+        "patients",
+        "wearing",
+        "masks",
+        "under",
+        "covid"
+      ]
+    },
+    "7fbbfd09bb7ed80154818b7eb3517b0d2dffafa7": {
+      "title": "Prevalence of strabismus and its risk factors among school aged children: The Hong Kong Children Eye Study",
+      "year": 2021,
+      "abstract": "The study aims to determine the prevalence of strabismus and its risk factors among school children in Hong Kong. This is a cross-sectional study involving 6–8 year old children from different districts in Hong Kong. 4273 children received comprehensive ophthalmological examination, cycloplegic auto-refraction, best corrected visual acuity (BCVA), anterior segment examination, cover/uncover test, ocular motility, and fundus examination. Demographic information, pre- and post- natal background, parental smoking status, and family history of strabismus were obtained through questionnaires. Strabismus was found among 133 children (3.11%, 95% CI 2.59–3.63%), including 117 (2.74%) exotropia and 12 (0.28%) esotropia cases (exotropia-esotropia ratio: 9.75:1). There was no significant difference in prevalence across age (6–8 years) and gender. Multivariate analysis revealed associations of strabismus with myopia (≤ − 1.00D; OR 1.61; 95% CI 1.03–2.52; P = 0.037) hyperopia (≥ + 2.00D; OR 2.49; 95% CI 1.42–4.39; P = 0.002), astigmatism (≥ + 2.00D; OR 2.32; 95% CI 1.36–3.94; P = 0.002), and anisometropia (≥ 2.00D; OR 3.21; 95% CI 1.36–7.55; P = 0.008). Other risk factors for strabismus included maternal smoking during pregnancy (OR 4.21; 95% CI 1.80–9.81; P = 0.001), family history of strabismus (OR 6.36; 95% CI 2.78–14.50, P < 0.0001) and advanced maternal age at childbirth (> 35 years; OR 1.65; CI 1.09–2.49, P = 0.018). The prevalence of strabismus among children aged 6—8 years in Hong Kong is 3.11%. Refractive errors, family history of strabismus and maternal smoking history during pregnancy are risk factors. Early correction of refractive errors and avoidance of maternal smoking during pregnancy are potentially helpful in preventing strabismus.",
+      "citation_count": 50,
+      "relation": "cited_by",
+      "concepts": [
+        "strabismus",
+        "children",
+        "smoking",
+        "history",
+        "maternal",
+        "prevalence",
+        "factors",
+        "among",
+        "examination",
+        "family",
+        "years",
+        "during",
+        "pregnancy",
+        "exotropia",
+        "esotropia"
+      ]
+    },
+    "1ebfb4b8d170ea26caafe82ce13ed510d6df133e": {
+      "title": "Development of GUI for Detetection of Eye Disorders in Infants",
+      "year": 2021,
+      "abstract": "Strabismus is one of the most common vision diseases in which the eyes do not properly align with each other when looking at an object. The condition may be present occasionally or constantly and if it is present during a large part of childhood, it may result in amblyopia or loss of depth perception. In contrast to manual diagnosis, automatic recognition can significantly reduce labor cost and increase diagnosis efficiency. In this paper, we propose to detect ICD-10-CM Code H50.9 unspecified strabismus using CNN and Image Processing techniques. There are four types of strabismus namely exotropia, esotropia, hypertropia and hypotropia which we aim to detect. We furthermore aim to introduce a GUI particularly into pediatric ophthalmology where obtaining relevant diagnostic information is taxing. Keywords—International Classification of Diseases (ICD), Convolutional Neural Network (CNN), Python Imaging Library (PIL), Support Vector Machine (SVM)",
+      "citation_count": 2,
+      "relation": "cited_by",
+      "concepts": [
+        "strabismus",
+        "diseases",
+        "present",
+        "diagnosis",
+        "detect",
+        "common",
+        "vision",
+        "properly",
+        "align",
+        "other",
+        "looking",
+        "object",
+        "condition",
+        "occasionally",
+        "constantly"
+      ]
+    },
+    "f429d21cec6015eb0f30b00e414115753c0f5a2c": {
+      "title": "Automatic Ocular Alignment Evaluation for Strabismus Detection Using U-NET and ResNet Networks",
+      "year": 2019,
+      "abstract": null,
+      "citation_count": 2,
+      "relation": "cited_by",
+      "concepts": []
+    }
+  },
+  "edges": [
+    {
+      "source": "88b0bdf74b0bc2ce0592a49272f364986f62f5b2",
+      "target": "0b771eb51dbe6029257d66b9889069ce4efbb4ef",
+      "type": "cites"
+    },
+    {
+      "source": "0b771eb51dbe6029257d66b9889069ce4efbb4ef",
+      "target": "936fdde8d761d54ba7023815d099ec93b08ed259",
+      "type": "cites"
+    },
+    {
+      "source": "0b771eb51dbe6029257d66b9889069ce4efbb4ef",
+      "target": "981809ec24bd1ce1cf3287f21d60589689c42464",
+      "type": "cites"
+    },
+    {
+      "source": "0b771eb51dbe6029257d66b9889069ce4efbb4ef",
+      "target": "3cecbb26db517b4632e6f284a503f618dbfdf215",
+      "type": "cites"
+    },
+    {
+      "source": "0b771eb51dbe6029257d66b9889069ce4efbb4ef",
+      "target": "1f28405584d8ed56380f6e1597879477e22be7c4",
+      "type": "cites"
+    },
+    {
+      "source": "0b771eb51dbe6029257d66b9889069ce4efbb4ef",
+      "target": "3a6c423cc0f687fc43a671e55dce06f681df7476",
+      "type": "cites"
+    },
+    {
+      "source": "0b771eb51dbe6029257d66b9889069ce4efbb4ef",
+      "target": "32c71817ddb1e3989da373f16f208b8c1b5d8af6",
+      "type": "cites"
+    },
+    {
+      "source": "0b771eb51dbe6029257d66b9889069ce4efbb4ef",
+      "target": "a55bb30e6fe47a8b6b66f67ef8bdc2a70dd25682",
+      "type": "cites"
+    },
+    {
+      "source": "0b771eb51dbe6029257d66b9889069ce4efbb4ef",
+      "target": "7fbbfd09bb7ed80154818b7eb3517b0d2dffafa7",
+      "type": "cites"
+    },
+    {
+      "source": "0b771eb51dbe6029257d66b9889069ce4efbb4ef",
+      "target": "1ebfb4b8d170ea26caafe82ce13ed510d6df133e",
+      "type": "cites"
+    },
+    {
+      "source": "0b771eb51dbe6029257d66b9889069ce4efbb4ef",
+      "target": "f429d21cec6015eb0f30b00e414115753c0f5a2c",
+      "type": "cites"
+    }
+  ]
+}

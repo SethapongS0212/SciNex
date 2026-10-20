@@ -1,0 +1,18 @@
+{"verdicts": [
+  {"para_key": "textaug2023#4", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["Tweepy API", "Twitter dataset", "imbalance rate (IR)", "data augmentation", "majority / minority classes"],
+   "missed_relations": ["dataset -> collectedUsing -> Tweepy API", "imbalance rate -> evaluates -> class imbalance of the dataset", "IR below 0.50 -> motivates -> data augmentation"],
+   "note": "names the collection tool, the metric and the decision rule that triggers the paper's whole augmentation contribution; nothing extracted"},
+  {"para_key": "strabismus2026#26", "C2": "COMPLETE", "C5": "PARTIAL",
+   "missed_concepts": [],
+   "missed_relations": ["RT1-RT5 features -> producedFrom -> landmarks detected by RT-DETR", "RT-DETR -> feeds/produces -> input to the Random Forest classifier"],
+   "note": "every named entity in the paragraph is present in the triples; what is missed is the pipeline chaining - that the features the Random Forest consumes are the output of RT-DETR"},
+  {"para_key": "parkingyolo2023#21", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["MOTA", "mean Average Precision (mAP)", "YOLOv8", "True/False Positive/Negative", "object tracking"],
+   "missed_relations": ["YOLOv8 -> evaluatedOn/uses -> mean Average Precision", "MOTA -> evaluates -> detection and tracking accuracy", "this work -> uses -> MOTA to validate results"],
+   "note": "an entire evaluation-metric paragraph - two named metrics and the models they score - yielding zero triples"},
+  {"para_key": "llamacorrupt2025#4", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["GLUE-QNLI dataset", "parameter corruption / random zeroing", "10-15% threshold", "feed-forward components", "self-attention matrices"],
+   "missed_relations": ["Llama-3.2-1B-Instruct -> evaluatedOn -> GLUE-QNLI", "zeroing 10-15% of parameters -> causes -> onset of degradation", "later layers -> more sensitive than -> earlier layers", "feed-forward components -> more susceptible than -> self-attention matrices"],
+   "note": "the model, the architecture and both metrics are present, but the DATASET it was evaluated on is missing and all four of the paper's actual findings are absent; the four captured relations are the least informative ones in the paragraph"}
+]}

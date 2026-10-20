@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 962eeb12f060 -----
+TRIPLE:     (MAE)  --evaluates-->  (27.12 min per 100 km)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: The MAE was 27.12 min per 100 km, as shown in Section 4.1.
+
+----- triple_id: e0c6ab6d9a01 -----
+TRIPLE:     (InceptionV3)  --evaluatedon-->  (Raspberry Pi 3 Model B)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Since this work also aims to create a vehicle make classification model for embedding in a portable device having lower computational resources, the execution time of the proposed model (CTv1) and baseline models VGG16, InceptionV3, Yolo11m-cls, ResNet50, and MobileNet will be measured on an ARM-based Raspberry Pi 3 Model B board.
+
+----- triple_id: 0f06bbeda577 -----
+TRIPLE:     (Deep Learning)  --encompasses-->  (object detection)
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains
+SOURCE SENTENCE: Deep Learning-based methods have been applied in many tasks, such as classification [9], object detection [10], object tracking [11], and healthcare [12–14].
+
+----- triple_id: 7934f111c3cd -----
+TRIPLE:     (ANN())  --produces-->  (ANN model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: ANN() was used to construct an ANN model based on the input weight matrix with the linear activation function (Algorithm 1).
+
+----- triple_id: 4b669b93254e -----
+TRIPLE:     (CNN model)  --designedfor-->  (recognizing and classifying vehicle makes from front-view images)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: This study presents a CNN model for recognizing and classifying vehicle makes from front-view images, designed to be small enough for resource-constrained systems .
+
+----- triple_id: a3c9f912251d -----
+TRIPLE:     (Question-answering Natural Language Inference (QNLI))  --splitfrom-->  (General Language Understanding Evaluation (GLUE) benchmark)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: We selected the Question-answering Natural Language Inference (QNLI) dataset from the General Language Understanding Evalua- tion (GLUE) benchmark for this study [6]
+
+----- triple_id: 477fc961d32a -----
+TRIPLE:     (yolov8n- seg)  --trainedon-->  (bespoke dataset comprising the initial 5000 frames)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: For YOLOv8, a custom model will be implemented, which has been trained by fine-tuning yolov8n- seg utilizing a bespoke dataset comprising the initial 5000 frames from the video selectively edited to encompass only the Degree conferral period.
+
+----- triple_id: 9780f0bce0cd -----
+TRIPLE:     (cSysGuard)  --employs-->  (multi-layered stacking ensemble approach)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: Rather than building upon a single meta-model or weight averaging, cSysGuard employs a multi-layered stacking ensemble approach with a weighted averaging strategy, effectively amalgamating the contributions of all models in the output generation.
+
+----- triple_id: 8e3074e65793 -----
+TRIPLE:     (OC-SORT)  --publishedin-->  (CVPR 2023)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  use for journal/conference names only
+SOURCE SENTENCE: OC-SORT was published in CVPR 2023.
+
+----- triple_id: 9833adb4ef33 -----
+TRIPLE:     (SMOTE)  --configures-->  (number of neighbors was set to 5)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships
+SOURCE SENTENCE: For the SMOTE, the number of neighbors was set to 5, and the sample strategy of True: False cases was up to 200:200.

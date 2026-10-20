@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 24 -----
+Section: 3.4. Sugar and salt
+
+Text:
+The applications of machine learning methodology for predicting concentrations in colourless sugar and salt solutions have yielded sur prisingly encouraging outcomes. Accuracy evaluations, as summarized in Tables 5 and 6, comparing predicted to actual concentrations, indi cate that the XGB algorithm achieved the lowest errors for both sugar and salt solutions of 5.00 % and 30.54 %, respectively. A graphical comparison of predicted and actual concentrations using the XGB algorithm, as presented in Fig. 21, indicates a more accurate prediction for sugar concentrations compared to salt concentrations. 21A shows that the predictions for sugar concentrations in the train, test, and validation sets closely follow a consistent trend with minimal error, comparable to a general, more expensive refractometer, which can have an error of up to 6.7 % [44]. However, the predictions for salt concentration, depicted in Fig. 21B, display a discernible trend but do not achieve a satisfactory level of precision. This difference can be attributed to the inherent properties of the solutions. Sugar solutions exhibit a notable interaction with light, allowing for straightforward concentration measurement using a simple refractometer [45]. In contrast, salt solutions show minimal interaction with visible light and have a more pronounced response to near-infrared wavelengths [46].
+
+----- para_id: 25 -----
+Section: 3.4. Sugar and salt
+
+Text:
+Consequently, the spectrophotometer and machine learning methodol ogy effectively captured the changes in light induced by varying sugar concentrations, resulting in more accurate predictions.
+
+----- para_id: 26 -----
+Section: 3.5. Mixed solutes
+
+Text:
+The applications of machine learning methodology for predicting concentrations in mixed sugar-salt solutions yielded less than satisfac tory outcomes. Accuracy evaluations, as summarized in Table 7, indicate that none of the algorithms were able to accurately predict individual compound concentrations within the mixed solutions. The XGB algorithm achieved the highest overall accuracy of 89.29 % within a limited sample set but was accompanied by a relatively low R2 of 0.679. Prior to the execution of the experiment, it was anticipated that the results would not be successful. Given that both sugar and salt solutions are colourless, and despite the fact that sugar solutions interact with light and can be detected by the current equipment and predicted by the methodology, the mixture of the two exceeds current capabilities. 22 illustrates the scattered and inconsistent nature of the pre dictions. It is expected that the utilization of coloured chemical solutions in the mixture could potentially enhance the outcome in the future.
+
+----- para_id: 27 -----
+Section: 3.6. Computational resources and performance analysis
+
+Text:
+The computational resources employed include a laptop equipped with an i5-12500H CPU, integrated graphics, 16 GB of DDR4 3200 MHz RAM, and a 512 GB SSD PCIe M.2 for storage. The code was executed in the Spyder IDE on Windows 11 version 23H2. Image processing was conducted, followed by the sequential execution of four machine learning algorithms. The processing times required to execute each set of experiments are detailed in Table 8. The computational tasks were completed swiftly, requiring only a short span of minutes.
+
+----- para_id: 28 -----
+Section: 3.7. Discussions
+
+Text:
+The low-cost spectrophotometer developed is straightforward to assemble and functions as intended . It produces two parallel spectral bands: one for reference and another for analysis. The image processing step effectively corrects image rotation, misalignment, and light fluc tuation without the need for human intervention, thereby increasing reliability and eliminating bias. This approach enables broader appli cation with greater confidence compared to other low-cost spectro photometers. A discussion is presented from the perspectives of machine learning application , device capability and limitation, and outlook.
+
+----- para_id: 29 -----
+Section: 3.7.1. Machine learning application
+
+Text:
+The application of machine learning (ML) to predict concentration has shown satisfactory performance. The ML methodology, incorpo rating feature selection and cross-validation, accelerates calculation and effectively mitigates overfitting. In the case involving concentrations ranging from 12 to 16 concentrations, a maximum of five minutes is required for image processing and prediction. When applied to chemical compounds with a distinct colour change, such as KMnO4, the method produced a low error of 1.48 %, which is superior to other low-cost spectrophotometers with reported errors ranging from 3 % to 12 % [14,38]. The method also demonstrated satisfactory performance in predicting Carbosulfan concentrations, with an error of approximately 3 %. However, at lower concentrations of Carbosulfan, the method failed to detect changes in lightness below 500 mg⋅L−1, where the average lightness value change was less than 0.5 L* per 50 mg⋅L−1. The relationship between changes in lightness value (absorbance) and chemical concentrations was observed not to strictly adhere to the Beer-Lambert law, which is typically applied by UV–Visible spectro photometers, as the most effective algorithms exhibited non-linear behaviour. This behaviour has been previously observed and reported by Randhawa et al. [47] and was captured in this study through the use of the whole wavelength for analysis, in contrast to conventional UV–Visible spectroscopy which utilizes only a single wavelength.
+
+----- para_id: 30 -----
+Section: 3.7.1. Machine learning application
+
+Text:
+XGB demonstrated superior performance in most cases due to its effective handling of sparse data and its built-in regularization contributing to the prevention of overfitting. However, it is noted that future applications
+
+----- para_id: 31 -----
+Section: Table
+
+Text:
+Statistical Evaluation of Various Machine Learning Algorithms for Predicting Cabosulfan Concentrations. will not be restricted to a single algorithm.
+
+----- para_id: 32 -----
+Section: 3.7.2. Device capability and limitation
+
+Text:
+As reported, the photographs used in the experiment were captured using the Galaxy A53 smartphone, equipped with the ISOCELL GW1 camera sensor. According to the specifications detailed on the manu facturer's website [48], the sensor's performance is characterised by a 10-bit analogue-to-digital converter (ADC), a 100 dB dynamic range, and a 32x analogue gain, which enhance its functionality under both high and low-light conditions. A broad operating temperature range (−20 ◦C to +85 ◦C) and advanced signal processing are employed to minimise distortion caused by non-visible light and to ensure accurate colour reproduction, demonstrating the sensor's cross-sensitivity. In addition to the sensor specifications, an experiment was con ducted to evaluate the limitations of the camera sensor. Sensitivity was assessed by capturing the same spectral image multiple times at different intervals and measuring variations in the colour channels (red, green, and blue values), which ranged from 0 to 255. The average standard deviations of the mean values for the red, green, and blue channels, calculated across three sets of 10 images , were measured as 0.0049, 0.0046, and 0.0044, respectively. Cross-sensitivity was evaluated by altering the temperature of the camera sensor and measuring the standard deviations of the three colour channels. During a temperature change from 22 ◦C to 44 ◦C, as illus trated in Fig.
+
+----- para_id: 33 -----
+Section: 3.7.2. Device capability and limitation
+
+Text:
+23, the average standard deviation values for red, green, and blue were 0.0337, 0.0337, and 0.0343, respectively. The tempera ture variation induced slightly higher changes than those observed in the sensitivity assessment . The minimal colour variations observed indicate that the camera sensor used in the experiment meets industrial- grade quality standards.
+
+----- para_id: 34 -----
+Section: 3.7.3. Outlook
+
+Text:
+The method has been extended to transparent solutions, demon strating effective performance with sugar solutions, which interact with light. However, the method exhibited poor performance with salt solu tions, potentially due to salt's lesser interaction with light as reported by Ja'afar et al. Similarly, significant limitations were observed with non-coloured compound mixtures, where errors approaching 50 % indicate a need for methodological enhancements.
+
+----- para_id: 35 -----
+Section: 4. Conclusions
+
+Text:
+The development of a low-cost, portable spectrophotometer has culminated in a production cost of approximately $4.5. The design was conceived with the explicit purpose of subjecting resultant images to image processing and machine learning analyses. The device captured images with two spectral bands. In one band, light traversed an empty path, serving as the reference spectral band. In the other spectral band,

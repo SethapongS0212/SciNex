@@ -1,0 +1,56 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 7 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: 3.1 Experimental Results
+
+Text:
+This pare presents the experimental results based on the design outlined in the previous section. It is noted that in this experiment, ASSE 2025, September 17–19, 2025, Tokyo, Japan Rathachai Chawuthai et al. 5% 0.661 0.400 The capital city of Thailand is Bangkok. Itś also known as Ŕaadetín Thai, which means Great City. However I am 10% 0.603 0.240 The capital city of Thailand (officially known as Bangkok) and its sister, Chon Buri. However it's also commonly referred by name 15% 0.447 0.000 The most well-known and widely recognized location for Thai (Thai) culture or country refers that there 's an important place in Southeast Asia, which would be 20% 0.326 0.000 Here for you:\n\n* January = February (and)\nFebruary: November, and April - March.\nApril's month was not used. The only known 40% 0.275 0.000 ** Highway Gl glson**…\nle sane Saaeda "** "́td Woodward SP…abor sup U withholdawn US TheaterStage stage Stagestage Clayton 60% 0.302 0.000 Buddhist-iropr Tibetan moderatorican Fiscal fiscal MacMac mac Christianity.internet sock é-Christian Dane disposition-dis 100% 0.271 0.000 airsairsairsairsairsairsairsairsairsairsairsairsairsairsairsairsairsairsairsairsairsairsairsair- sairsairsairsairsairsairs the LLM parameters were adjusted with top-k set to 1 in order to stabilize the answers. Experiment 1: From the experiment of corrupting every matrix in each layer, it can be observed that both BERT and ROUGE scores decrease as the corruption percentage increases, as depicted in Fig.
+
+----- para_id: 13 -----
+Section: 3.1 Experimental Results
+
+Text:
+The BERT score dropped from approximately 0.5 to 0.2, while the ROUGE score decreased to 0 when the corruption reached between 20% and 30%. In addition, the results of a sample answer are presented in Table 1, where the question "What is the capital city of Thailand?" is fixed , and the baseline answer is "The capital city of Thailand is Bangkok." The BERT and ROUGE-L scores for the results in this table are also included. It can be observed that the answer begins to distort starting from the corruption at 15%, eventually becoming incomprehensible. Experiment 2: The results of the experiment with 10% and 15% matrix corruption in each layer revealed that each layer has a similar impact on the final answer, as shown in Fig. As a closer look at the 15% corruption, the first 4 layers were less affected compared to the remaining 11 layers, based on ROUGE-1 and ROUGE-L scores. Experiment 3: The results depicted in Fig. 4 show that the im- pact of corrupting Attn-Q, Attn-K, and Attn-V leads to a consistent decrease in both BERT and ROUGE scores in the same direction. The degradation occurs gradually and uniformly, with no single factor being more prominent than the others. Experiment 4: The results of the Feed-Forward Network cor- ruption show a more severe impact on the reduction of BERT and ROUGE scores compared to self-attention. During the initial 5–30% corruption, the rate of decline is steeper, as demonstrated in Fig.
+
+----- para_id: 14 -----
+Section: 3.1 Experimental Results
+
+Text:
+Additionally, the matrices FF-Down has the most significant effect, causing all ROUGE scores to drop to 0 when corrupted at around 20%.
+
+----- para_id: 15 -----
+Section: 3.2 Discussion
+
+Text:
+This is a discussion of the experimental results on parameter cor- ruption in Llama -3.2-1B-Instruct [4] The test results align with Assessing the Effects of Corrupted Parameters in a Large Language Model: A Case Study of LLAMA 3.2 1B ASSE 2025, September 17–19, 2025, Tokyo, Japan expectations: as more parameters are corrupted, the model's re- sponses deviate further from the baseline answer (obtained from a freshly loaded model). This deviation is quantitatively measured using BERT and ROUGE scores, as demonstrated in Experiment 1. ASSE 2025, September 17–19, 2025, Tokyo, Japan Rathachai Chawuthai et al. In the Experiment 2, the results show that corruption at 10% produces similar effects across layers. This suggests that individual layers are of roughly equal importance. At 15% corruption, there are early signs that corrupting the earlier layers has less impact than corrupting the later layers, but the difference is not yet statistically significant. Although, the impact was not significant enough to be of major concern, further research is required to validate this trend. A more experimental design is needed to investigate these behaviors in greater depth. When testing the effects of self-attention and feed-forward matri- ces in Experiments 3 and 4, the results showed that the more these two types of matrices were corrupted, the greater the deviation from the expected output. The results from both experiments were combined and plotted in Fig.
+
+----- para_id: 16 -----
+Section: 3.2 Discussion
+
+Text:
+By analyzing BERT and ROUGE-L scores, it is evident that both self-attention matrices (dashed line) and feed-forward network matrices (dotted line) follow the same trend as full matrix corruption (solid black line). However, the feed- forward matrices exhibit a stronger effect, with their impact being comparable to corrupting all matrices simultaneously. A closer examination reveals that the degradation rates of Attn-Q, Attn-K, and Attn-V matrices are similar, which aligns with their equivalent roles within the Transformer architecture, as depicted in Fig. In contrast, within the feed-forward network, the FF-Down matrix appears to have the most severe impact. This is likely because it is positioned at the very end of each layer, right before the final output, making its corruption the most disruptive. However, this study is subject to several limitations. These in- clude testing only on a relatively small model due to computational resource constraints, focusing on a single model, and applying random corruption by setting parameters to zero. Future research should explore a broader range of models, particularly those uti- lizing the Mixture of Experts (MoE) architecture [10] to better understand how different model structures respond to parameter corruption. Additionally, alternative corruption methods should be considered, such as replacing values with random numbers or using the maximum or minimum representable values instead of simply setting them to zero.
+
+----- para_id: 17 -----
+Section: 3.2 Discussion
+
+Text:
+These aspects present valuable opportunities for further investigation. Investigating the behavior of LLMs following partial parame- ter corruption may prove advantageous for future advancements, particularly in the context of embedding model parameters at the microchip level. Should hardware flaws arise, the results of these trials may assist in identifying and locating the defective areas within the chip. This comprehension can guide strategies for con- trolling very sensitive matrices, such as FF-Down, by situating them in less susceptible areas or utilizing redundancy methods, such as preserving several backups of these matrices within the semicon- ductor [8] In addition, this approach can be further investigated to facilitate the refine specific matrices in particular layers, according to the desired sensitivity level of an application, to achieve more specialized responses while minimizing the resources required for fine-tuning.
+
+----- para_id: 18 -----
+Section: 4 Summary
+
+Text:
+This study examines the effects of parameter corruption on a Large Language Model (LLM) by methodically altering various compo- nents and assessing the resultant discrepancies from the baseline outputs. The trials demonstrate that heightened corruption results in a more significant decline in model performance, as assessed by BERT and ROUGE scores. Testing the Llama -3.2-1B-Instruct was conducted on questions from the GLUE-QNLI dataset to measure deviations from the baseline model. While all layers appear to be equally important at lower corruption levels, higher corruption lev- els suggest that later layers may be more critical. Further analysis of self-attention and feed-forward matrices shows that feed-forward components, particularly the Down matrices, have a stronger influ- ence on model degradation. The study acknowledges limitations such as testing on a single, relatively small model and using a uni- form zeroing-out approach for corruption. Future research should extend to larger and more diverse architectures, including Mix- ture of Experts (MoE) models, and explore alternative corruption techniques. These insights could inform future efforts to hard-wire LLM parameters into microchips, enabling better fault detection and designing redundancy strategies for critical components like the Down matrices. The authors have no competing interests to declare that are relevant to the content of this article.

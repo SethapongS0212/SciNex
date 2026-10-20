@@ -1,0 +1,17 @@
+{"verdicts": [
+  {"para_key": "osmotic2026#6", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["osmotic coefficients", "quaternary ammonium salts (Quats)", "SMILES", "activity coefficients", "cations", "anions", "ionized-nitrogen groups", "1,654 datapoints / 52 Quats / 11 sources"],
+   "missed_relations": ["dataset -> comprises -> 1,654 osmotic-coefficient datapoints", "Quats -> representedBy -> SMILES", "cations -> comprises -> carbon atoms, oxygen atoms, phenyl groups, branches, ionized-nitrogen groups", "activity coefficients -> producedFrom -> predicted osmotic coefficients"],
+   "note": "content-rich data-preparation paragraph naming the dataset, its size, its representation and its full feature decomposition; nothing at all extracted - the clearest possible C2/C5 failure"},
+  {"para_key": "roadwaylight2018#1", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["street lighting", "pavement conditions", "road safety"],
+   "missed_relations": ["this paper -> addresses -> street lighting and pavement conditions"],
+   "note": "most of this paragraph is background prose and running-header contamination, correctly declined; but the paper's own scope statement ('This paper focuses on two factors, street lighting and pavement conditions') is a stated paper->context relation and was missed"},
+  {"para_key": "traveltime2022#41", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["truck GPS transactions", "travel time prediction", "sliding window size 24", "55.20% improvement over baseline"],
+   "missed_relations": ["this study -> addresses -> travel time prediction on long-distance road segments", "time-series data -> producedFrom -> truck GPS transactions and Thailand road data", "SA-LSTM -> trainedOn -> time-series data"],
+   "note": "strong extraction - both results, the model comparison and both split relations captured; what is missed is the study's aim statement and the provenance of the input data"},
+  {"para_key": "videoseg2025#3", "C2": "COMPLETE", "C5": "COMPLETE",
+   "missed_concepts": [], "missed_relations": [],
+   "note": "single-sentence paragraph; the one model, the one task and the one relation between them are all captured"}
+]}

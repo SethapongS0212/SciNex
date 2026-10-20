@@ -11,23 +11,32 @@ Verdicts:
   PARTIAL   — triple is implied but not directly stated, or partially wrong
   INCORRECT — triple is wrong, hallucinated, or not related to the source
 
+Every triple gets a stable `triple_id`, so verdicts can be resumed across runs and
+joined against human labels — see gold_eval.py for the human/cross-model side.
+
 Usage:
-    python kg_evaluate.py --paper 2205.11361 --extractor rebel
-    python kg_evaluate.py --paper 2205.11361 --extractor llm
-    python kg_evaluate.py --paper 2205.11361 --extractor all
-    python kg_evaluate.py --all --extractor rebel
-    python kg_evaluate.py --paper 2205.11361 --extractor rebel --model Qwen/Qwen2.5-7B-Instruct
+    python3 kg_evaluate.py --paper 2205.11361 --extractor fixed
+    python3 kg_evaluate.py --all --extractor fixed fixed_scinex --resume \
+        --summary-out output/eval/judge_corpus.json
+    python3 kg_evaluate.py --all --extractor fixed --max-per-paper 40
+    python3 kg_evaluate.py --paper BERT --extractor fixed --model Qwen/Qwen2.5-14B-Instruct
+
+Entity aliases are resolved per paper automatically (same CSV the fixed extractor
+used); --entity-csv overrides that for every paper.
 
 Output:
     output/<paper>/kg/<extractor>/evaluation.json   — per-triple verdicts
-    output/<paper>/kg/<extractor>/eval_summary.json — precision/partial/incorrect rates
+    output/<paper>/kg/<extractor>/eval_summary.json — rates + per-predicate breakdown
+    --summary-out                                   — corpus-level report across papers
 """
 
 import argparse
+import hashlib
 import json
 import logging
 import re
 import sys
+from collections import defaultdict
 from pathlib import Path
 from typing import Optional
 
@@ -40,6 +49,24 @@ logger = logging.getLogger(__name__)
 
 OUTPUT_DIR = Path("output")
 KG_SUBDIR  = "kg"
+
+
+def triple_id(triple: dict, extractor: str) -> str:
+    """Stable id joining a triple across judge runs, human annotation and re-extraction.
+
+    Keyed on content, not position, so re-running the judge or re-exporting a gold
+    sample maps back onto the same rows. Includes the extractor family because CEO
+    and scinex can produce byte-identical triples that must stay distinguishable.
+    """
+    parts = [
+        extractor.split("/")[0],
+        str(triple.get("paper", "")),
+        str(triple.get("subject", "")),
+        str(triple.get("predicate", "")),
+        str(triple.get("object", "")),
+        str(triple.get("source_sentence") or triple.get("source_text", ""))[:300],
+    ]
+    return hashlib.sha1("|".join(parts).encode("utf-8")).hexdigest()[:12]
 
 # ── Prompts ───────────────────────────────────────────────────────────────────
 
@@ -92,6 +119,15 @@ The following phrasings DO count as comparison and should be marked CORRECT:
   - "compared to", "in contrast to", "differs from", "versus", "better than" → CORRECT
 Do NOT mark INCORRECT just because the sentence says "most comparable" instead of "outperforms".
 
+CRITICAL — ontology conformance: when a "Predicate definition" is given, the triple must
+respect it as well as the sentence. The definition gives the predicate's domain → range
+(what kind of thing the subject and object must be) and its intended use.
+- Sentence supports the fact AND the predicate fits its definition → CORRECT
+- Sentence supports the fact but the predicate is a loose/imprecise fit for its definition
+  (e.g. the object is not the type the range calls for) → PARTIAL
+- The subject and object are swapped relative to the domain → range direction → INCORRECT
+Judge the predicate by the definition given, not by the everyday English meaning of its name.
+
 Return ONLY valid JSON, no explanation outside the JSON:
 {
   "verdict": "CORRECT" | "PARTIAL" | "INCORRECT",
@@ -99,7 +135,8 @@ Return ONLY valid JSON, no explanation outside the JSON:
 }"""
 
 
-def _make_judge_prompt(triple: dict, aliases: dict[str, str] | None = None) -> str:
+def _make_judge_prompt(triple: dict, aliases: dict[str, str] | None = None,
+                       relation_hint: str = "") -> str:
     source = triple.get("source_sentence") or triple.get("source_text", "")
     source = source[:500]
 
@@ -169,13 +206,15 @@ def _make_judge_prompt(triple: dict, aliases: dict[str, str] | None = None) -> s
             "just because the sentence uses the short form):\n" + "\n".join(alias_lines)
         )
 
+    hint_note = f"\nPredicate definition: {pred} = {relation_hint}" if relation_hint else ""
+
     return f"""Source sentence (with entity aliases shown inline):
 \"{normalised_source}\"
 
 Extracted triple:
   Subject:   {subj}
   Predicate: {pred}
-  Object:    {obj}{type_info}{alias_note}
+  Object:    {obj}{type_info}{hint_note}{alias_note}
 
 Is this triple correct based on the source sentence?"""
 
@@ -252,7 +291,8 @@ class LLMJudge:
         self._tokenizer = tokenizer
         logger.info("Judge model loaded.")
 
-    def evaluate(self, triples: list[dict], aliases: dict[str, str] | None = None) -> list[dict]:
+    def evaluate(self, triples: list[dict], aliases: dict[str, str] | None = None,
+                 schema: dict[str, str] | None = None) -> list[dict]:
         """
         Evaluate a list of triples. Returns same list with added fields:
             verdict:    CORRECT | PARTIAL | INCORRECT
@@ -263,6 +303,10 @@ class LLMJudge:
                  e.g. {"Bidirectional Encoder Representations from Transformers": "BERT"}
                  Passed to the judge so it does not penalise full-name subjects when
                  the source sentence uses an abbreviation.
+        schema:  optional relation → "Domain → Range | usage" map for the ontology the
+                 triples were extracted under. Without it the judge scores the predicate
+                 by its English name rather than its ontology definition, which makes a
+                 CEO-vs-scinex comparison meaningless.
         """
         self._load()
 
@@ -283,16 +327,26 @@ class LLMJudge:
             if (i + 1) % 10 == 0:
                 logger.info(f"  Progress: {i+1}/{len(judgeable)}")
 
-            verdict = self._judge_triple(triple, aliases=aliases)
+            verdict = self._judge_triple(triple, aliases=aliases, schema=schema)
             triple.update(verdict)
 
         return triples
 
-    def _judge_triple(self, triple: dict, aliases: dict[str, str] | None = None) -> dict:
+    def _judge_triple(self, triple: dict, aliases: dict[str, str] | None = None,
+                      schema: dict[str, str] | None = None) -> dict:
         """Run one LLM judge call for a single triple."""
+        hint = ""
+        if schema:
+            pred = str(triple.get("predicate", "")).strip().lower()
+            for rel, rel_hint in schema.items():
+                if rel.lower() == pred:
+                    hint = rel_hint
+                    break
+
         messages = [
             {"role": "system", "content": JUDGE_SYSTEM_PROMPT},
-            {"role": "user",   "content": _make_judge_prompt(triple, aliases=aliases)},
+            {"role": "user",   "content": _make_judge_prompt(triple, aliases=aliases,
+                                                             relation_hint=hint)},
         ]
 
         try:
@@ -412,9 +466,30 @@ def compute_summary(evaluated_triples: list[dict]) -> dict:
         "lenient_precision": round(
             (counts["CORRECT"] + 0.5 * counts["PARTIAL"]) / judgeable, 3
         ) if judgeable else 0,
+        "by_predicate":      per_predicate(evaluated_triples),
     }
 
     return summary
+
+
+def per_predicate(evaluated_triples: list[dict]) -> dict:
+    """Verdict counts + precision per predicate — shows which relations to fix first."""
+    buckets: dict[str, dict] = defaultdict(
+        lambda: {"n": 0, "CORRECT": 0, "PARTIAL": 0, "INCORRECT": 0, "UNVERIFIABLE": 0}
+    )
+    for t in evaluated_triples:
+        b = buckets[str(t.get("predicate", "")).lower()]
+        b["n"] += 1
+        b[t.get("verdict", "UNVERIFIABLE")] = b.get(t.get("verdict", "UNVERIFIABLE"), 0) + 1
+
+    out = {}
+    for pred, b in sorted(buckets.items(), key=lambda kv: -kv[1]["n"]):
+        judgeable = b["n"] - b["UNVERIFIABLE"]
+        out[pred] = {
+            **b,
+            "precision": round(b["CORRECT"] / judgeable, 3) if judgeable else 0,
+        }
+    return out
 
 
 def print_summary(paper_name: str, extractor_name: str, summary: dict, sample_triples: list[dict]):
@@ -470,19 +545,88 @@ def find_extractor_dirs(paper_dir: Path, filter_extractors: list[str] | None) ->
                     extractors[f"{child.name}/{subchild.name}"] = subchild
 
     if filter_extractors and filter_extractors != ["all"]:
+        # Match the extractor family exactly — "fixed" must not also select
+        # "fixed_scinex", which a substring test would do.
+        wanted = set(filter_extractors)
         extractors = {
             k: v for k, v in extractors.items()
-            if any(f in k for f in filter_extractors)
+            if k.split("/")[0] in wanted
         }
 
     return extractors
+
+
+def _cached_verdicts(ext_dir: Path) -> dict[str, dict]:
+    """Verdicts from a previous run of this extractor dir, keyed by triple_id."""
+    path = ext_dir / "evaluation.json"
+    if not path.exists():
+        return {}
+    try:
+        prev = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    return {
+        t["triple_id"]: {"verdict": t.get("verdict"), "reason": t.get("reason", "")}
+        for t in prev
+        if t.get("triple_id") and t.get("verdict")
+    }
+
+
+_SCHEMA_CACHE: dict[str, dict] = {}
+
+
+def schema_for(extractor_family: str, ontology_file: str) -> dict[str, str] | None:
+    """Relation → definition map matching the ontology the triples were extracted under."""
+    if extractor_family in _SCHEMA_CACHE:
+        return _SCHEMA_CACHE[extractor_family]
+
+    # fixed / relation are CEO; fixed_scinex / relation_scinex come from the OWL.
+    schema = None
+    if extractor_family in ("fixed", "relation"):
+        from kg_extraction.fixed_extractor import _CEO_SCHEMA
+        schema = _CEO_SCHEMA
+    elif extractor_family in ("fixed_scinex", "relation_scinex"):
+        try:
+            from kg_extraction.ontology_loader import load_ontology
+            _, schema = load_ontology(ontology_file)
+        except Exception as e:
+            logger.warning(f"Could not load {ontology_file}: {e}. Judging scinex triples "
+                           "without predicate definitions.")
+    _SCHEMA_CACHE[extractor_family] = schema
+    return schema
+
+
+def load_aliases_for(paper_name: str, explicit_csv: str | None) -> dict[str, str] | None:
+    """Surface-form → canonical map for the judge, resolved per paper.
+
+    A corpus run spans papers with different entity CSVs, so the judge needs the
+    right one per paper or it penalises abbreviations it was never told about.
+    """
+    from kg_extraction.entity_loader import load_entity_csv
+
+    if explicit_csv:
+        csv_path = Path(explicit_csv)
+    else:
+        from kg_main import resolve_entity_csv
+        csv_path = resolve_entity_csv(paper_name)
+
+    if not csv_path or not Path(csv_path).exists():
+        return None
+    try:
+        return load_entity_csv(csv_path, tp_only=False).all_aliases
+    except Exception as e:
+        logger.warning(f"Could not load entity CSV '{csv_path}': {e}")
+        return None
 
 
 def evaluate_paper(
     paper_dir: Path,
     judge: LLMJudge,
     filter_extractors: list[str] | None,
-    aliases: dict[str, str] | None = None,
+    entity_csv: str | None = None,
+    resume: bool = False,
+    max_per_paper: int | None = None,
+    ontology_file: str = "scinex_refined_14.owl",
 ) -> dict:
     """Run LLM-as-Judge evaluation for all extractors of one paper."""
     paper_name     = paper_dir.name
@@ -491,6 +635,10 @@ def evaluate_paper(
     if not extractor_dirs:
         logger.warning(f"No KG outputs found for '{paper_name}'. Run kg_main.py first.")
         return {}
+
+    aliases = load_aliases_for(paper_name, entity_csv)
+    if aliases:
+        logger.info(f"{paper_name}: {len(aliases)} entity surface forms loaded for the judge")
 
     paper_results = {}
 
@@ -508,11 +656,35 @@ def evaluate_paper(
             logger.warning(f"No triples found for {ext_name}. Skipping.")
             continue
 
-        logger.info(f"{'─'*65}")
-        logger.info(f"Evaluating: {paper_name} / {ext_name} ({len(triples)} triples)")
+        for t in triples:
+            # Fill `paper` before hashing — gold_eval.py does the same, and the id
+            # must come out identical in both or the labels won't rejoin.
+            t.setdefault("paper", paper_name)
+            t["triple_id"] = triple_id(t, ext_name)
+            t.setdefault("extractor", ext_name)
 
-        # Run evaluation — pass aliases so judge can resolve abbreviations
-        evaluated = judge.evaluate(triples, aliases=aliases)
+        if max_per_paper is not None and len(triples) > max_per_paper:
+            # Deterministic subsample by id so repeated runs judge the same triples.
+            triples = sorted(triples, key=lambda t: t["triple_id"])[:max_per_paper]
+
+        cached = _cached_verdicts(ext_dir) if resume else {}
+        todo   = [t for t in triples if t["triple_id"] not in cached]
+        for t in triples:
+            if t["triple_id"] in cached:
+                t.update(cached[t["triple_id"]])
+
+        logger.info(f"{'─'*65}")
+        logger.info(
+            f"Evaluating: {paper_name} / {ext_name} "
+            f"({len(todo)} to judge, {len(triples) - len(todo)} cached)"
+        )
+
+        # Run evaluation — aliases resolve abbreviations, schema gives the judge the
+        # ontology definition of each predicate
+        if todo:
+            judge.evaluate(todo, aliases=aliases,
+                           schema=schema_for(ext_name.split("/")[0], ontology_file))
+        evaluated = triples
         summary   = compute_summary(evaluated)
 
         # Print report
@@ -530,7 +702,7 @@ def evaluate_paper(
         logger.info(f"Saved → {eval_path}")
         logger.info(f"Saved → {summary_path}")
 
-        paper_results[ext_name] = summary
+        paper_results[ext_name] = {"summary": summary, "triples": evaluated}
 
     return paper_results
 
@@ -543,11 +715,10 @@ def parse_args():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python kg_evaluate.py --paper 2205.11361 --extractor rebel
-  python kg_evaluate.py --paper 2205.11361 --extractor llm
-  python kg_evaluate.py --paper 2205.11361 --extractor all
-  python kg_evaluate.py --all --extractor rebel
-  python kg_evaluate.py --paper 2205.11361 --extractor rebel --model Qwen/Qwen2.5-7B-Instruct
+  python3 kg_evaluate.py --paper BERT --extractor fixed
+  python3 kg_evaluate.py --all --extractor fixed fixed_scinex --resume \\
+      --summary-out output/eval/judge_corpus.json
+  python3 kg_evaluate.py --all --extractor fixed --max-per-paper 40
         """
     )
 
@@ -558,7 +729,8 @@ Examples:
         help="Evaluate all papers in output/")
 
     parser.add_argument("--extractor", nargs="+", default=["all"],
-        help="Which extractor(s) to evaluate: rebel, iter, llm, fixed, all (default: all)")
+        help="Extractor families to evaluate: rebel, iter, llm, fixed, fixed_scinex, pair, "
+             "all (default: all). Matched exactly — 'fixed' does NOT include 'fixed_scinex'")
     parser.add_argument("--entity-csv", default=None, metavar="CSV_PATH",
         help="Entity CSV file (same as used for fixed extraction). When provided, the judge "
              "is told about abbreviations so it does not penalise full-name subjects when "
@@ -567,10 +739,33 @@ Examples:
         help="Judge model HuggingFace ID (default: Qwen/Qwen2.5-7B-Instruct)")
     parser.add_argument("--limit", type=int, default=None,
         help="When using --all, process only first N papers")
+    parser.add_argument("--max-per-paper", type=int, default=None, metavar="N",
+        help="Judge at most N triples per paper+extractor (deterministic subsample by "
+             "triple id — the same N triples on every re-run)")
+    parser.add_argument("--resume", action="store_true",
+        help="Reuse verdicts already in evaluation.json (matched by triple id) and only "
+             "judge new triples")
+    parser.add_argument("--ontology-file", default="scinex_refined_14.owl", metavar="OWL",
+        help="Ontology file used to give the judge predicate definitions for "
+             "fixed_scinex triples (CEO definitions are built in)")
+    parser.add_argument("--summary-out", default=None, metavar="JSON",
+        help="Write a corpus-level summary (all papers, per extractor and per predicate) "
+             "to this path")
     parser.add_argument("--no-gpu", action="store_true",
         help="Force CPU inference")
 
     return parser.parse_args()
+
+
+def corpus_summary(all_results: dict, per_paper_triples: dict) -> dict:
+    """Aggregate per-paper verdicts into one corpus-level report per extractor."""
+    out = {}
+    for ext_name, triples in per_paper_triples.items():
+        summary = compute_summary(triples)
+        summary["papers"] = sorted({t.get("paper", "") for t in triples})
+        summary["n_papers"] = len(summary["papers"])
+        out[ext_name] = summary
+    return {"by_extractor": out, "by_paper": all_results}
 
 
 def main():
@@ -600,34 +795,27 @@ def main():
 
     filter_ext = None if args.extractor == ["all"] else args.extractor
 
-    # Load entity aliases if CSV provided — used to fix judge abbreviation mismatch
-    aliases: dict[str, str] | None = None
-    if args.entity_csv:
-        try:
-            from kg_extraction.entity_loader import load_entity_csv
-            entity_set = load_entity_csv(args.entity_csv, tp_only=False)
-            # Use the full surface-form lookup: surface_form_lower → canonical
-            # This includes "openai gpt" → "Generative Pre-trained Transformer" etc.
-            aliases = entity_set.all_aliases
-            logger.info(f"Loaded {len(aliases)} surface forms from {args.entity_csv}")
-        except Exception as e:
-            logger.warning(f"Could not load entity CSV '{args.entity_csv}': {e}. Proceeding without aliases.")
-
     # Load judge once
     device = "cpu" if args.no_gpu else None
     judge  = LLMJudge(model_name=args.model, device=device)
 
     # Evaluate
-    all_results = {}
+    all_results: dict[str, dict] = {}
+    per_extractor_triples: dict[str, list] = defaultdict(list)
     for paper_dir in papers:
         results = evaluate_paper(
             paper_dir=paper_dir,
             judge=judge,
             filter_extractors=filter_ext,
-            aliases=aliases,
+            entity_csv=args.entity_csv,
+            resume=args.resume,
+            max_per_paper=args.max_per_paper,
+            ontology_file=args.ontology_file,
         )
         if results:
-            all_results[paper_dir.name] = results
+            all_results[paper_dir.name] = {k: v["summary"] for k, v in results.items()}
+            for ext, payload in results.items():
+                per_extractor_triples[ext].extend(payload["triples"])
 
     judge.unload()
 
@@ -645,7 +833,22 @@ def main():
                     f"{summary['precision']*100:>9.1f}% "
                     f"{summary['lenient_precision']*100:>9.1f}%"
                 )
+        print(f"{'─'*70}")
+        print(f"  {'CORPUS':<25} {'Extractor':<25} {'Precision':>10} {'Lenient':>10}")
+        corpus = corpus_summary(all_results, per_extractor_triples)
+        for ext, summary in corpus["by_extractor"].items():
+            print(
+                f"  {'(' + str(summary['n_papers']) + ' papers)':<25} {ext:<25} "
+                f"{summary['precision']*100:>9.1f}% "
+                f"{summary['lenient_precision']*100:>9.1f}%"
+            )
         print(f"{'═'*70}\n")
+
+        if args.summary_out:
+            out_path = Path(args.summary_out)
+            out_path.parent.mkdir(parents=True, exist_ok=True)
+            out_path.write_text(json.dumps(corpus, indent=2, ensure_ascii=False), encoding="utf-8")
+            logger.info(f"Corpus summary → {out_path}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,56 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 7 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 48 -----
+Section: Limitations and critical evaluation
+
+Text:
+On-Device Deployment: Quantize and optimize any lightweight architectures model to allow offline screen ing in real-time on smartphones without relying on the internet, guaranteeing accessibility and privacy in environments with limited resources. Multi-center Clinical Validation: Test the application's sensitivity and specificity in several healthcare facil ities before it is widely used to ensure that it performs consistently across a variety of patient demographics and clinical settings. Model Enhancement: When dealing with diverse demographics or a wider range of environmental condi
+
+----- para_id: 49 -----
+Section: Conclusion
+
+Text:
+In conclusion, using Real-Time Detection Transformer (RT-DETR) for high-precision eye landmark detection across three gaze positions—straight, left, and right—this study created an automated framework for binary screening of horizontal strabismus versus orthotropia. The geometric eye landmark ratios (RT1–5), which are the proportional distances between key ocular landmarks, such as the medial canthus, medial limbus, central corneal light reflex, and temporal canthus, were the basis of our proposed feature set. A Random Forest model, which showed high performance with an accuracy of 0.95, sensitivity of 0.96, and specificity of 0.94, was then used to classify these features. In addition, internal analysis suggested that several learned feature patterns exhibited alignment with established ophthalmic principles, especially with regard to the off-center displacement of the central corneal light reflex in strabismus patients and the visible sclera area during various gazes. However, these findings should be interpreted as model-level associations rather than direct causal explanations. Although an exploratory three-class analysis was also performed, further validation is required before reliable subtype classification can be claimed. Future research should focus on external validation of the proposed framework under more diverse and realistic image acquisition conditions, including low-light settings, variable facial orientations, and different smartphone cameras.
+
+----- para_id: 50 -----
+Section: Conclusion
+
+Text:
+Additional multicenter studies are needed to evaluate performance and generalizability across broader patient populations. Further methodological development may also explore video -based analysis to better capture ocular motility. Finally, lightweight on-device models should be investigated to reduce reliance on server-side processing and to improve the practical feasibility of real-time screening .
+
+----- para_id: 51 -----
+Section: Data availability
+
+Text:
+The datasets generated and/or analyzed during the current study are not publicly available due to the sensitive nature of the patient's facial image , even though consent was obtained from the patient for the photograph, the purpose of the request was solely for educational and research purposes in this instance. The images will not be disseminated to the general public but are available from the corresponding author on reasonable request. Received: 7 August 2025; Accepted: 10 April
+
+----- para_id: 52 -----
+Section: Author contributions
+
+Text:
+supervision and writing (original draft and revision). contributed to software development, data curation, investigation, formal analysis, and figure preparation. contributed to clinical investigation and data acqui sition. All authors reviewed and approved the final manuscript.
+
+----- para_id: 53 -----
+Section: Funding
+
+Text:
+This study was supported by Siriraj Research Development Fund (Managed by Routine to Research: R2R), Grant Number (IO) R016635038.
+
+----- para_id: 54 -----
+Section: Declarations
+
+Text:
+Competing interests The authors declare no competing interests. Additional information Correspondence and requests for materials should be addressed to T.S. Reprints and permissions information is available at www.nature.com/reprints. Publisher's note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommo ns.org/licenses/by-nc-nd/4.0/.

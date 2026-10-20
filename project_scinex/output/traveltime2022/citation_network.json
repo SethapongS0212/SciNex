@@ -1,0 +1,423 @@
+{
+  "paper_id": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+  "title": "Travel Time Prediction on Long-Distance Road Segments in Thailand",
+  "year": 2022,
+  "abstract": "This study proposes a method by which to predict the travel time of vehicles on long-distance road segments in Thailand. We adopted the Self-Attention Long Short-Term Memory (SA-LSTM) model with a Butterworth low-pass filter to predict the travel time on each road segment using historical data from the Global Positioning System (GPS) tracking of trucks in Thailand. As a result, our prediction method gave a Mean Absolute Error (MAE) of 12.15 min per 100 km, whereas the MAE of the baseline was 27.12 min. As we can estimate the travel time of vehicles with a lower error, our method is an effective way to shape a data-driven smart city in terms of predictive mobility.",
+  "citation_count": 6,
+  "root_concepts": [
+    "travel",
+    "predict",
+    "vehicles",
+    "thailand",
+    "error",
+    "proposes",
+    "distance",
+    "segments",
+    "adopted",
+    "attention",
+    "short",
+    "memory",
+    "butterworth",
+    "filter",
+    "segment"
+  ],
+  "nodes": {
+    "05effc12361c056322bec8e88753a2010d5f45ec": {
+      "title": "IMPROVING SUSTAINABLE URBAN ACCESSIBILITY: A MULTIMODAL PLANNING MODEL USING GIS",
+      "year": 2026,
+      "abstract": "Evaluating and improving sustainable urban accessibility constitutes a foundational challenge for contemporary metropolitan areas grappling with severe traffic congestion, irregular urban sprawl, and multi-modal transit inefficiencies. Traditional spatial planning often relies on static macroscopic accessibility metrics that fail to account for time-varying traffic friction, stochastic intersections, and the operational interdependencies between diverse transit modes. This comprehensive literature review systematically evaluates the evolution of urban accessibility modeling, contrasting conventional aggregate frameworks with high-resolution, spatial-temporal Geographic Information Systems (GIS) and Global Positioning System (GPS) probe data integrations. By synthesizing global methodologies and localized urban dynamics—with a particular focus on complex, high-friction arterial networks such as those observed in Baghdad—this paper establishes a robust conceptual framework for a multi-modal planning model. The analysis delves into mathematical formulations of gravity-based models, cumulative opportunity indices, and travel time reliability metrics, including the  percentile buffer index. The synthesized findings underscore that intersection control delay, mixed land-use friction, and the absence of integrated non-motorized transport (NMT) infrastructures are the primary determinants of urban accessibility degradation. Ultimately, this review bridges the gap between empirical traffic engineering data and macro-level urban planning, providing a cohesive foundation for deploying automated, multi-modal spatial decision support systems.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "urban",
+        "accessibility",
+        "traffic",
+        "multi",
+        "modal",
+        "spatial",
+        "planning",
+        "friction",
+        "transit",
+        "metrics",
+        "review",
+        "systems",
+        "global",
+        "evaluating",
+        "improving"
+      ]
+    },
+    "13fdee5a2ac209f53dc5bf4333858882e1b10b6e": {
+      "title": "How ’Smart’ is the 15-Minute City? Evaluating the Role of Technology in Advancing Accessibility, Mobility, and Well-being",
+      "year": 2025,
+      "abstract": null,
+      "citation_count": 10,
+      "relation": "citing",
+      "concepts": []
+    },
+    "faa1d4824640f1ffb14a91b8a174631fb1e35c30": {
+      "title": "Time series forecasting based on optimized LLM for fault prediction in distribution power grid insulators",
+      "year": 2025,
+      "abstract": "Surface contamination on electrical grid insulators leads to an increase in leakage current until an electrical discharge occurs, which can result in a power system shutdown. To mitigate the possibility of disruptive faults resulting in a power outage, monitoring contamination and leakage current can help predict the progression of faults. Given this need, this paper proposes a hybrid deep learning (DL) model for predicting the increase in leakage current in high-voltage insulators. The hybrid structure considers a multi-criteria optimization using tree-structured Parzen estimation, an input stage filter for signal noise attenuation combined with a large language model (LLM) applied for time series forecasting. The proposed optimized LLM outperforms state-of-the-art DL models with a root-mean-square error equal to 2.24$\\times10^{-4}$ for a short-term horizon and 1.21$\\times10^{-3}$ for a medium-term horizon.",
+      "citation_count": 7,
+      "relation": "citing",
+      "concepts": [
+        "leakage",
+        "current",
+        "contamination",
+        "electrical",
+        "insulators",
+        "increase",
+        "power",
+        "faults",
+        "hybrid",
+        "horizon",
+        "surface",
+        "leads",
+        "until",
+        "discharge",
+        "occurs"
+      ]
+    },
+    "dc2c30eed51a96a0c05568b21b8e796a64431f6e": {
+      "title": "The Role of Artificial Intelligence in Managing Emergencies and Crises within Smart Cities",
+      "year": 2023,
+      "abstract": "The rapid growth of urbanization and the consequent rise in the urban population have created unprecedented challenges for cities. Traditional methods have proven insufficient in tackling these challenges, prompting the adoption of modern technology, such as the Internet and sensors, to enhance the delivery of services and amenities to urban residents. This has led to the emergence of smart cities across the globe. Recently, there has been a surge in the use of information technology (IT) and the Internet of Things (IoT) in smart cities, particularly for crisis management. At present, cities are leveraging modern technology, IT, and IoT to improve the quality of life for their residents. It is beyond dispute that modern technologies play a pivotal role in managing emergencies and crises in smart cities. As these technologies experience rapid growth in the coming years, we can anticipate their roles and impact in smart cities to expand even further. The present study aims to investigate the role of artificial intelligence (AI) in emergency and crisis management in smart cities. Additionally, the challenges and opportunities associated with the use of AI in this context are explored, and recommendations are provided to enhance the level of awareness among researchers regarding this topic for future investigations.",
+      "citation_count": 12,
+      "relation": "citing",
+      "concepts": [
+        "cities",
+        "smart",
+        "challenges",
+        "modern",
+        "technology",
+        "rapid",
+        "growth",
+        "urban",
+        "internet",
+        "enhance",
+        "residents",
+        "crisis",
+        "management",
+        "present",
+        "technologies"
+      ]
+    },
+    "c3eaaec2128828d3004075182d0ed28cff3804ec": {
+      "title": "GPS Data Analytics for the Assessment of Public City Bus Transportation Service Quality in Bangkok",
+      "year": 2023,
+      "abstract": "Evaluation of the quality of service (QoS) of public city buses is generally performed using surveys that assess attributes such as accessibility, availability, comfort, convenience, reliabilities, safety, security, etc. Each survey attribute is assessed from the subjective viewpoint of the service users. This is reliable and straightforward because the consumer is the one who accesses the bus service. However, in addition to summarizing personal feedback from humans, using data analytics has become another useful method for assessing the QoS of bus transportation. This work aims to use global positioning system (GPS) data to measure the reliability, accessibility, and availability of bus transportation services. There are three QoS scoring functions for tracking complete trips, on-path driving, and on-schedule operation. In the analytical process, GPS coordinates rounding is adopted and applied for detecting trips on each route path. After assessing the three QoS scores, it has been found that most bus routes have good operations with high scores, while some bus routes show room for improvement. Future work could use our data to create recommendations for policy makers in terms of how to improve a city’s smart mobility.",
+      "citation_count": 11,
+      "relation": "citing",
+      "concepts": [
+        "service",
+        "accessibility",
+        "availability",
+        "assessing",
+        "transportation",
+        "three",
+        "trips",
+        "scores",
+        "routes",
+        "evaluation",
+        "quality",
+        "public",
+        "buses",
+        "generally",
+        "performed"
+      ]
+    },
+    "328bd62c4fc56ae72db2908f2d9411653046dbb7": {
+      "title": "Special Issue on Future Intelligent Transportation System (ITS) for Tomorrow and Beyond",
+      "year": 2022,
+      "abstract": "Intelligent Transportation System (ITS) has evolved into a system for provision of traffic information and traffic control with the help of advanced IT technologies [...]",
+      "citation_count": 2,
+      "relation": "citing",
+      "concepts": [
+        "system",
+        "traffic",
+        "intelligent",
+        "transportation",
+        "evolved",
+        "provision",
+        "information",
+        "control",
+        "advanced",
+        "technologies"
+      ]
+    },
+    "8ee672190463e80a2c96673f779738a2d609477b": {
+      "title": "Machine Learning Based Short-Term Travel Time Prediction: Numerical Results and Comparative Analyses",
+      "year": 2021,
+      "abstract": "Due to the increasing traffic volume in metropolitan areas, short-term travel time prediction (TTP) can be an important and useful tool for both travelers and traffic management. Accurate and reliable short-term travel time prediction can greatly help vehicle routing and congestion mitigation. One of the most challenging tasks in TTP is developing and selecting the most appropriate prediction algorithm using the available data. In this study, the travel time data was provided and collected from the Regional Integrated Transportation Information System (RITIS). Then, the travel times were predicted for short horizons (ranging from 15 to 60 min) on the selected freeway corridors by applying four different machine learning algorithms, which are Decision Trees (DT), Random Forest (RF), Extreme Gradient Boosting (XGBoost), and Long Short-Term Memory neural network (LSTM). Many spatial and temporal characteristics that may affect travel time were used when developing the models. The performance of prediction accuracy and reliability are compared. Numerical results suggest that RF can achieve a better prediction performance result than any of the other methods not only in accuracy but also with stability.",
+      "citation_count": 29,
+      "relation": "cited_by",
+      "concepts": [
+        "travel",
+        "prediction",
+        "short",
+        "traffic",
+        "developing",
+        "accuracy",
+        "increasing",
+        "volume",
+        "metropolitan",
+        "areas",
+        "important",
+        "useful",
+        "travelers",
+        "management",
+        "accurate"
+      ]
+    },
+    "ab6a2edfd7a2a5b801e989d2842423c34f496369": {
+      "title": "Joint prediction of next location and travel time from urban vehicle trajectories using long short-term memory neural networks",
+      "year": 2021,
+      "abstract": "Abstract This paper aims to incorporate travel time prediction in the next location prediction problem to enable the prediction of the city-wide movement trajectory of an individual vehicle by considering both where the vehicle will go next and when it will arrive. We propose two deep learning models based on long short-term memory (LSTM) neural networks with self-attention mechanism—namely, hybrid LSTM and sequential LSTM. These models capture patterns in location and time sequences in trajectory data and their dependencies to predict next locations and travel times simultaneously. Using Bluetooth vehicle trajectory data from Brisbane, Australia, we compare the prediction performance of the proposed models with several existing approaches including hidden Markov model and other LSTM-based models. The results show that the proposed models produce higher prediction accuracy for both location and time prediction tasks, with the sequential LSTM yielding the best performance. Compared to the conventional next location prediction problem, which considers location sequences only without travel time consideration, the study finds that jointly modelling location and travel time sequences actually improves the next location prediction performance itself, potentially because travel time observations capture the information on traffic conditions in the network, which may affect drivers’ location choices. We demonstrate an application of the proposed models in network traffic management, where important locations can be identified to mitigate congestion in a hot-spot by predicting where vehicles come from and go next in an urban road network.",
+      "citation_count": 98,
+      "relation": "cited_by",
+      "concepts": [
+        "prediction",
+        "location",
+        "travel",
+        "trajectory",
+        "vehicle",
+        "where",
+        "sequences",
+        "problem",
+        "sequential",
+        "capture",
+        "locations",
+        "traffic",
+        "abstract",
+        "incorporate",
+        "enable"
+      ]
+    },
+    "977fdf96fbc8c8b2056d511f61f05319df187f50": {
+      "title": "Kalman-LSTM Model for Short-term Traffic Flow Forecasting",
+      "year": 2021,
+      "abstract": "This paper proposes a time prediction model based on Kalman filtering and LSTM, namely the Kalman LSTM model, which is used to predict time series data with long-term and short-term characteristics. The Kalman-LSTM model uses LSTM’s unique storage function to \"store\" the information contained in the pre-order data. It is then used to obtain the basic time series of the prediction problem in subsequent processing. The following Kalman filter model dynamically adjusts the basic time data series obtained by LSTM processing. Finally, we will obtain adjusted forecasts. Here, we establish training and test set samples to train the Kalman-LSTM model and test the performance of the sample model. For comparison, we evaluated the RMSE (root mean square error) indicator of the conventional LSTM model with the Kalman-LSTM model. The results show that the Kalman-LSTM model is superior to the LSTM model, and can get more accurate predictions.",
+      "citation_count": 15,
+      "relation": "cited_by",
+      "concepts": [
+        "kalman",
+        "series",
+        "prediction",
+        "obtain",
+        "basic",
+        "processing",
+        "proposes",
+        "filtering",
+        "namely",
+        "predict",
+        "short",
+        "characteristics",
+        "unique",
+        "storage",
+        "function"
+      ]
+    },
+    "8bb6d8c73ea4ef27f29036502d724348aed237f4": {
+      "title": "Research on Lane-level Travel Time Prediction Method Based on Gated Recurrent Neural Network",
+      "year": 2020,
+      "abstract": null,
+      "citation_count": 1,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "130f477d45655d41135a23e29240690b7d31e4bf": {
+      "title": "Bus Arrival Time Estimation for Public Transportation System Using LSTM",
+      "year": 2020,
+      "abstract": "This research aims to create an arrival time estimation model for the electric bus service of Chiang Mai University. To achieve that, we employed the Long Short-Term Memory (LSTM) model to capture the regularities in the data. The model was trained using online learning approach well suited for learning from real-time data coming directly from the bus's onboard GPS unit. Despite the size and the complexity of the data, LSTM demonstrated the capability to learn from the data. Experimental results based on real data records of four representative bus lines, spanning over 3 months demonstrated the superiority of the proposed LSTM compared to the Support Vector Regression (SVR) as measured by the Mean Absolute Error (MAE). This suggested that the estimation method proposed in this study is feasible and might be applicable to other bus service networks.",
+      "citation_count": 9,
+      "relation": "cited_by",
+      "concepts": [
+        "estimation",
+        "service",
+        "demonstrated",
+        "research",
+        "create",
+        "arrival",
+        "electric",
+        "chiang",
+        "university",
+        "employed",
+        "short",
+        "memory",
+        "capture",
+        "regularities",
+        "trained"
+      ]
+    },
+    "116f4d529b31a4fa695df8aadff8fac65eb3d254": {
+      "title": "Support Vector Regression",
+      "year": 2020,
+      "abstract": "Abstract This chapter provides an overview of the support vector regression (SVR), an analytical technique to investigate the relationship between one or more predictor variables and a real-valued (continuous) dependent variable. In the first part of the chapter, we provide a description of the SVR algorithm. Unlike traditional regression methods that depend on assumptions of the model that might not be accurate (e.g., linear data distribution), SVR is a machine learning technique in which a model learns a variable's importance for characterizing the relationship between input and output. In the second part of the chapter, we review a number of studies that have applied SVR to magnetic resonance imaging data to performance multivariate pattern regression analysis of brain disorders. These studies have been successful in revealing spatially distributed patterns across multiple brain regions in several brain disorders including schizophrenia, autism, and attention-deficit/hyperactivity disorder.",
+      "citation_count": 2505,
+      "relation": "cited_by",
+      "concepts": [
+        "chapter",
+        "regression",
+        "brain",
+        "technique",
+        "relationship",
+        "variable",
+        "studies",
+        "disorders",
+        "abstract",
+        "provides",
+        "overview",
+        "support",
+        "vector",
+        "analytical",
+        "investigate"
+      ]
+    },
+    "63f9894cc6904a2fa862a41578e5951804942512": {
+      "title": "DeepTRANS",
+      "year": 2020,
+      "abstract": "In the public transportation domain, accurate estimation of travel times helps to manage rider expectations as well as to provide a powerful tool for transportation agencies to coordinate the public transport vehicles. Although many statistical and machine learning methods have been proposed to estimate travel times, none of the methods consider utilizing predicted traffic information. Forecasting how congestion is going to evolve is critical for accurate travel time estimations. In this paper, we present DeepTRANS, which incorporates traffic forecasting information to our prior Deep Learning-based Bus Estimated Time of Arrival (ETA) model, increasing its accuracy by 21% in estimating bus travel time.",
+      "citation_count": 33,
+      "relation": "cited_by",
+      "concepts": [
+        "travel",
+        "public",
+        "transportation",
+        "accurate",
+        "times",
+        "methods",
+        "traffic",
+        "information",
+        "forecasting",
+        "domain",
+        "estimation",
+        "helps",
+        "manage",
+        "rider",
+        "expectations"
+      ]
+    },
+    "32253023b6912f62682d169b59ce6acfa9d677a0": {
+      "title": "Real-time traffic accidents post-impact prediction: Based on crowdsourcing data.",
+      "year": 2020,
+      "abstract": "Traffic accident management is a critical issue for advanced intelligent traffic management. The increasingly abundant crowdsourcing data and floating car data provide new support for improving traffic accident management. This paper investigates the methods to predict the complicated behavior of traffic flow evolution after traffic accidents using crowdsourcing data. Based on the available data source, the traffic condition is divided into four levels by congestion delay index: severely congested, congested, slow moving and uncongested. Four types of accidents are consequently defined based on the occurrence of each level. A hierarchical scheme is designed for identifying the most congested level and sequentially predicting duration of each level. The proposed model is validated using traffic accident data in 2017 from an anonymous source in Beijing, China by embedding three machine learning algorithms, random forest (RF), support vector machine (SVM) and neural network (NN), in the scheme. The results show NN outperforms the other two models when the assessment is conducted in absolute differences. Meanwhile, RF has a slightly better performance than SVM, especially when predicting the short-period congestion of severely congested level at the first time. By continuously updating the traffic condition information, significant improvement in accuracy can be acquired regardless of the exact model used. This study shows that emerging crowdsourcing data can be used in a real-time analysis of traffic accidents and the proposed model is effective to analyze such data.",
+      "citation_count": 91,
+      "relation": "cited_by",
+      "concepts": [
+        "traffic",
+        "congested",
+        "level",
+        "accident",
+        "management",
+        "crowdsourcing",
+        "accidents",
+        "support",
+        "source",
+        "condition",
+        "congestion",
+        "severely",
+        "scheme",
+        "predicting",
+        "machine"
+      ]
+    },
+    "192b3f8a4b55c20b80919f2ac4fd9792d341e503": {
+      "title": "The emerging data–driven Smart City and its innovative applied solutions for sustainability: the cases of London and Barcelona",
+      "year": 2020,
+      "abstract": null,
+      "citation_count": 228,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "1900637c8c3564121fc013e74e60647f815473fa": {
+      "title": "Application on traffic flow prediction of machine learning in intelligent transportation",
+      "year": 2020,
+      "abstract": null,
+      "citation_count": 138,
+      "relation": "cited_by",
+      "concepts": []
+    }
+  },
+  "edges": [
+    {
+      "source": "05effc12361c056322bec8e88753a2010d5f45ec",
+      "target": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "type": "cites"
+    },
+    {
+      "source": "13fdee5a2ac209f53dc5bf4333858882e1b10b6e",
+      "target": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "type": "cites"
+    },
+    {
+      "source": "faa1d4824640f1ffb14a91b8a174631fb1e35c30",
+      "target": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "type": "cites"
+    },
+    {
+      "source": "dc2c30eed51a96a0c05568b21b8e796a64431f6e",
+      "target": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "type": "cites"
+    },
+    {
+      "source": "c3eaaec2128828d3004075182d0ed28cff3804ec",
+      "target": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "type": "cites"
+    },
+    {
+      "source": "328bd62c4fc56ae72db2908f2d9411653046dbb7",
+      "target": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "type": "cites"
+    },
+    {
+      "source": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "target": "8ee672190463e80a2c96673f779738a2d609477b",
+      "type": "cites"
+    },
+    {
+      "source": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "target": "ab6a2edfd7a2a5b801e989d2842423c34f496369",
+      "type": "cites"
+    },
+    {
+      "source": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "target": "977fdf96fbc8c8b2056d511f61f05319df187f50",
+      "type": "cites"
+    },
+    {
+      "source": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "target": "8bb6d8c73ea4ef27f29036502d724348aed237f4",
+      "type": "cites"
+    },
+    {
+      "source": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "target": "130f477d45655d41135a23e29240690b7d31e4bf",
+      "type": "cites"
+    },
+    {
+      "source": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "target": "116f4d529b31a4fa695df8aadff8fac65eb3d254",
+      "type": "cites"
+    },
+    {
+      "source": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "target": "63f9894cc6904a2fa862a41578e5951804942512",
+      "type": "cites"
+    },
+    {
+      "source": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "target": "32253023b6912f62682d169b59ce6acfa9d677a0",
+      "type": "cites"
+    },
+    {
+      "source": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "target": "192b3f8a4b55c20b80919f2ac4fd9792d341e503",
+      "type": "cites"
+    },
+    {
+      "source": "8909ebe4b02b0bb3aa3ea3200e9d9177c8be4c53",
+      "target": "1900637c8c3564121fc013e74e60647f815473fa",
+      "type": "cites"
+    }
+  ]
+}

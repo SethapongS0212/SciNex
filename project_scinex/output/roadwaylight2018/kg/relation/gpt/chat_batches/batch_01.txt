@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: Abstract
+
+Text:
+Street maintenance and improvement are significant missions in ensuring transportation safety, especially at nighttime because the severity of injuries doubles at night. Driving visibility and road surface conditions are key factors behind nighttime traffic accidents, and they must be solved as a major priority. Having an exclusive report representing this issue becomes useful documentation for preparing an effective plan for repairing and upgrading a street at appropriate locations. However, road observations are mostly performed by humans, so reports are imprecise owing to the limitation of human cognition and documentation during observation at night. For this reason, the aim of this work is to create a visualization report for monitoring the risk on a street at nighttime. To achieve this goal, a light sensor for measuring brightness on the road, a gyro sensor and an accelerometer for detecting pavement defects, and a location sensor for marking the current latitude and longitude are placed in a car, and the data obtained are transferred to a cloud database while driving on the road. After that, all data are analyzed by machine learning techniques to identify some critical failures and report on map visualization. The result demonstrates that this approach can visualize the right defect at the correct location, and it will become an important contribution to transport safety.
+
+----- para_id: 1 -----
+Section: 1. Introduction
+
+Text:
+The frequencies of road traffic accidents between daytime and nighttime are similar; however, the severity of injuries doubles at night.(1) There are several factors affecting road accidents such as visibility, geometry, lane markings, surface condition, and street lighting .(2,3) This paper focuses on two factors, street lighting and pavement conditions, because they potentially influence the drivers during nighttime driving, and these issues can be fixed without changing the whole structure of a road. Pavement failure is found everyday because of daily usage. In addition , the number of car accidents caused by low street lighting is increasing.(4) With very low road lighting as encountered in the countryside or on secondary roads, drivers for Nighttime Street Safety Assessment by Sensor Data Analysis and Visualization Faculty of Engineering, King Mongkut's Institute of Technology Ladkrabang, ISSN 0914-4935 © MYU K.K. 2268 Sensors and Materials, Vol. 10 (2018) must rely on the light from the headlamps of their car, which, however, is not bright enough to enable drivers to estimate the road conditions precisely as shown in Fig. Some dangerous potholes, most of them cause severe accidents, may not be clearly seen by drivers. There are many news reports about car accidents caused by a poor road environment reported daily.(5–7) In order to improve road safety, government agencies responsible for transportation must watch over and maintain the quality of street surfaces.
+
+----- para_id: 2 -----
+Section: 1. Introduction
+
+Text:
+In this case, a useful report about road surface quality can aid government agencies in organizing an inclusive and precise street maintenance plan. Although there is a suitable technology called a laser surface profilometer, which is a laser-based road surface scanner for measuring road surface roughness,(8) it is not yet widely used owing to its high cost. With this background, many government agencies, especially in local governments in Thailand, still observe the street lighting and the pavement failure manually or on the basis of feedback from citizens. This method is viable but human cognition is limited and imprecise, so overlooked defects may lead to critical accidents. To reduce human labor and human errors, electronic sensors are used for detecting street lighting and pavement failure. There is much research on road safety,(9–12) and it usually focuses on pavement quality with less attention on the aspect of lighting . For this reason, in this study, the creation of an approach to monitoring unsafety points on street at nighttime is attempted. Failures such as potholes, ruts, and bumps on the road are emphasized because they are commonly found in Thailand, and most of them can cause severe accidents during the hours of darkness. In addition , the roughness of a street surface has most often been detected using Z-axis acceleration, which is derived from the up-down movement of a sensor. The result indicates that all obstacles on streets are classified as pavement failures.
+
+----- para_id: 3 -----
+Section: 1. Introduction
+
+Text:
+In practice, speed bumps or breakers must not be classified as failures, because they are traffic-calming devices, Sensors and Materials, Vol. 10 (2018) 2269 so the classification model must consider this issue as well. In our work, we invent the cyber- physical system for collecting data of a road and sending them to a server for data analysis and map visualization. To achieve this aim, this research is conducted to accomplish the following objectives: • measure street lighting at night and pavement failure using sensors, • analyze the sensor data and create a model for identifying risky locations on the street that have the potential to cause traffic accident at nighttime, and • visualize the quality of the street at nighttime on a map. The results of this study show that a photoresistor sensor and a gyro sensor can be used to measure the brightness on a street and an abnormal street surface, respectively. The analysis of gyro sensor data by a classification method(13) helps us to separate pavement failures from speed bumps, and calculations using accelerometer data can yield estimates of the degree of pavement failure. Locations obtained using a global positioning system (GPS) sensor together with analysis results are used to present the quality of a street on a map. The overall results support the contribution of road safety as well. The rest of the paper is organized into the following sections: Section 2 shows the materials and methods used in this work.
+
+----- para_id: 4 -----
+Section: 1. Introduction
+
+Text:
+Section 3 gives the results of our experiments. Section 4 is a discussion of our contribution. 5 presents the conclusions and future work.
+
+----- para_id: 5 -----
+Section: 2. Materials and Methods
+
+Text:
+In this section, a review of materials for measuring street safety at nighttime, the sensors used, data analysis, and methods of this work is given.
+
+----- para_id: 6 -----
+Section: 2.1 Materials
+
+Text:
+Street safety, especially at nighttime, is a challenging issue for improving personal security . From several articles,(1) we have found that the numbers of accidents at daytime and nighttime are similar; however, the severity of accidents at nighttime is twice higher that at daytime. There are three main factors for traffic accident: geometric factors, that is, the shape, curve, and number of lanes of a road; drivers' behavioral factors, that is, driving speed and sensibility; environmental factors, that is, surface conditions, lighting conditions, and time of day. Traffic condition factors are traffic volume and the variety of vehicles.(2,3) To solve all issues, much more time and efforts are required, so this study is aimed at contributing to the improvement of the nighttime road environment. Thus, the street surface and lighting conditions are considered to be the materials of this study.
+
+----- para_id: 7 -----
+Section: 2.1.1 Street lighting
+
+Text:
+Because of the darkness at night, the ability of drivers to see the environment while driving is reduced. Although street lightings are installed along the edge of roads, they do not cover all areas. The issue of darkness in many local areas is shown in Fig. An accident may 2270 Sensors and Materials, Vol. 10 (2018) easily occur if an abnormal situation arises, for example, falling into a large pothole, an animal running in front of the car, or collision with someone walking or riding a bicycle. There are standards and guidelines for street lighting . The standard unit of measurement for illuminance is the lux (lx). In this study, we refer to the guidelines from the Bureau of Street Lighting , Los Angeles.(14) The standards and guidelines concern types of road, road and pedestrian conflict, and pavement classification. The minimum illuminance of a streetlight in the guidelines(14) is 3 lx.
+
+----- para_id: 8 -----
+Section: 2.1.2 Pavement failure
+
+Text:
+A pavement failure is a defect on the road surface resulting from the low quality of the street, a change in the road environment, or material degradation. There are many pavement failures such as potholes, bumps, ruts, slippage cracks, joint reflection cracks, and edge cracks.(9–12) These defects result in different severities of accidents, so the issue must be resolved in order to improve the safety of citizens. In this case, government agencies involved in this issue should know every defect in order to have a precise plan to repair it. One task is to monitor each failure, which is commonly done visually, as can be seen in the example report from the Department of Rural Roads of Thailand(15) in Fig. The pavement failure can be measured from the roughness of the road using the international roughness index (IRI), which is an index that shows the roughness of a road for measuring longitudinal road profiles.(16) It basically uses the quarter-car vehicle model for calculation considering a linear spring of stiffness and a linear damper with a damping rate.(17) In addition , an accelerometer can be used to estimate the IRI, but it must be calibrated first.(17–19) The linear correlation between car
+
+----- para_id: 9 -----
+Section: 2.1.2 Pavement failure
+
+Text:
+speed and Z-axis acceleration is described by IRIi = C0 + C1 × |aZi| + C2vi, (1) where the subscript i refers to the road section i, IRIi is the IRI, aZi is the value on the Z-axis of the accelerometer, vi is the speed of the car, and C0, C1, and C2 are coefficients of the equation for a particular car. These coefficients are estimated by the linear technique by minimizing error against actual IRIs. In Thailand, IRIs are recorded in the Central Road Database of Thailand,(20) so they can be used for determining precise coefficients.
+
+----- para_id: 10 -----
+Section: 2.2 Sensors
+
+Text:
+To measure street lighting , a photoresistor is used, and to detect pavement failure, an accelerometer and a gyro sensor are used.
+
+----- para_id: 11 -----
+Section: 2.2.1 Photoresistor
+
+Text:
+A photoresistor, also known as a light-dependent resistor (LDR), can be varied by the illumination or light energy received, so the output voltage is a measure of the brightness of the surrounding environment.

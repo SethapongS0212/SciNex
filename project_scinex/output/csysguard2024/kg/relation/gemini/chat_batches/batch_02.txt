@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: C. TECHNIQUE
+
+Text:
+The versatility of SMOTE makes it applicable across various domains, from fraud detection to medical diagnoses, where it significantly contributes to more equitable and accurate predictive modeling. 3) ENSEMBLE MODEL: STACKING The stacking approach in ensemble models features a multi- layered structure, each recognized as a Level-N layer, for enhanced prediction . Initially, the base models process the data independently, offering diverse analytical perspectives. Higher-level models then collectively analyze their outputs to enhance predictive accuracy. Each subsequent level integrates and improves upon the previous ones [33], reducing biases and variances, thus enhancing the overall predictive accuracy. 2 visually represents the multi-layer stacking approach, presenting the flow from Level-0 to Level-N layers. 4) REGRESSION ANALYTICS The Autoregressive Integrated Moving Average (ARIMA) model is essential for time-series analysis , effectively capturing temporality with autoregressive features and mov- ing averages for non-seasonal forecasting [34]. The Sea- sonal Autoregressive Integrated Moving Average (SARIMA) builds on ARIMA by incorporating seasonality, making it adept at predicting seasonal fluctuations in time series data. Exponential Smoothing (ETS) is a time-honored technique for forecasting that assigns exponentially decreasing weights over time.
+
+----- para_id: 13 -----
+Section: C. TECHNIQUE
+
+Text:
+It captures trends and seasonalities in time-series data [35], and its simplicity makes it particularly effective for quick and short-term forecasting. Linear Regression is a fundamental model in statistical analysis [36] and is ideal for predicting a continuous dependent variable using one or more independent variables. It assumes a linear relationship between the variables. A simple LR involves a single independent variable, whereas multiple LRs extend to multiple variables. This model is particularly effective in scenarios where a linear correlation exists, with coefficients indicating the influence of each variable. Random Forest creates multiple decision trees to improve the prediction accuracy and robustness. It leverages bagging and feature randomness in tree construction [37], reducing overfitting and enhancing diversity. This method effectively handles complex datasets, offering a reliable performance in various applications . Feedforward Neural Networks feature a straightforward input, hidden, and output layer structure [38]. Using sequen- tial neuron connections, they excel in complex pattern recognition and prediction . Highly versatile and efficient, they are ideal for handling large datasets. Their widespread use in applications such as speech recognition in predictive analytics stems from their proficient nonlinear modeling of intricate relationships between inputs and outputs.
+
+----- para_id: 14 -----
+Section: C. TECHNIQUE
+
+Text:
+Convolutional Neural Networks (CNN), renowned for their efficacy in image processing, also excel in time-series and regression tasks owing to their ability to prioritize pat- terns through convolutional layers [39]. It enables practical applications in audio processing and natural language tasks, extending their use beyond visual data analysis . Temporal Convolutional Networks (TCN) combine the strengths of CNN with the temporal sensitivity suited for sequence modeling [40]. They effectively handle long input sequences in complex time series forecasting tasks. Recurrent Neural Networks (RNN) are fundamental mod- els for sequential data analysis . It has the unique ability to retain information across sequences [41], making it essential for text processing, speech recognition, and time- series analysis . Nevertheless, RNN encounters challenges with long-term dependencies, leading to the development of advanced versions, such as Gated Recurrent Unit (GRU) and Long Short-Term Memory (LSTM). The GRU incorporates a simplified gating mechanism to address the vanishing gra- dient problem [42], balancing computational efficiency with the ability to learn long-term dependencies. This advantage makes the GRU suitable for complex tasks such as language modeling and nuanced time-series analysis . Alternatively, LSTM selectively retains or forgets information [43], making it practical for extended sequences.
+
+----- para_id: 15 -----
+Section: C. TECHNIQUE
+
+Text:
+Its capability to handle long-term dependencies makes LSTM ideal for challenging tasks, such as predictive text generation, advanced time series forecasting, and language translation. 5) CLASSIFICATION ANALYTICS Decision Trees are known to simplify complex decision- making. They created an intuitive, tree-like structure by seg- menting datasets into branches based on feature values [44]. This method divides data into smaller, more manageable subsets, effectively handling nonlinear relationships among variables and facilitating hierarchical decision processes. A Support Vector Machine (SVM) is used in classification and regression tasks. It offers robust performance in high- dimensional spaces owing to its margin maximization prin- ciple, which forms a hyperplane for data classification [45]. K-Nearest Neighbors (KNN) is an instance-based algorithm that classifies data by analyzing the majority class among its ''K'' nearest neighbors, relying on a similarity principle [46]. The algorithm's accuracy is sensitive to the chosen number of neighbors and the specific distance metric applied, thereby impacting its adaptability to various data. Logistic Regression, essential for binary classification in machine learning [47], uses a logistic function to convert predictor variables into probabilities, thereby accommodat- ing nonlinear variable relationships.
+
+----- para_id: 16 -----
+Section: C. TECHNIQUE
+
+Text:
+In various fields, like medical diagnosis and spam detection, employing maximum likelihood estimation for coefficient calculation is pivotal. Neural Networks, inspired by the structure of biological neurons, are composed of complex interconnected layers of artificial neurons or nodes [48]. It begins with an input layer, includes one or more hidden layers, and ends with an output layer. Each node simulates a biological neuron, calculates a weighted sum of inputs, and applies a nonlinear transformation commonly termed the activation function. 6) EVALUATION METHOD The Root Mean Square Error (RMSE) is a critical metric for assessing regression tasks, quantifying the square root of the mean of the squared discrepancies between the predicted and actual values. By squaring the errors before averaging, the RMSE heavily penalizes the larger discrepancies, making it particularly sensitive to significant prediction errors. This characteristic enhances its utility in offering a precise measure of model accuracy. The formula is detailed in (1) where yk represents the actual value, ˆyk denotes the predicted value, and n signifies the number of observations. A lower RMSE indicates better accuracy compared to a higher one. The F1 score is a key metric for evaluating classification tasks.
+
+----- para_id: 17 -----
+Section: C. TECHNIQUE
+
+Text:
+It is computed by harmonically averaging precision, which is the ratio of true positives to all positive predictions, indicating the accuracy of positive classifications, and recall, the ratio of true positives to all actual positives, reflecting the ability to identify all relevant instances. These calculations are elaborated in (2), (3), and (4) for class n. In addition to these equations, TP represents true positives, FP signifies false positives, and FN indicates false negatives. An F1 score of 1 signifies perfect precision and recall, indicating that all predictions are accurate and complete. Conversely, a score of 0 represents the lowest accuracy, where the model fails to identify any true positive values.
+
+----- para_id: 18 -----
+Section: III METHODOLOGY OVERVIEW
+
+Text:
+This section provides a detailed overview of the methodology used in our study, focusing on the design and data handling of cSysGuard.
+
+----- para_id: 19 -----
+Section: A. CSYSGUARD ARCHITECTURE
+
+Text:
+simulation, data aggregator, controller, metrics and health predictor, ensemble refiner, and preprocessor. Each is integral to the prediction process. The following sections briefly describe the system workflow and each element, elucidating their functions and collaborative interactions. 4 reveals the execution workflow of cSysGuard. Initially, cSysGuard determines whether the configuration necessitates the creation of models. In such cases, it initiates and stores these models for future analysis ; otherwise, it bypasses the preprocessing step and proceeds directly to the primary process using the pre-existing models stored in the repository. In the main phase, the system remains idle until a task emerges. Upon reaching the prediction intervals, the algorithm collects data from the target application to access the most recent inputs and then activates the predictors to generate and store the forecast. In addition to preserving model performance, the refinement process is activated at predefined intervals to utilize the latest dataset to align models with current data trends. Post-refinement, updated models are stored. This cycle of prediction and refinement recurs over time, ensuring cSysGuard's processes are perpetually optimized and up-to-date. 2) APPLICATION SIMULATION This component emulates an application cloud environment, providing a means to acquire the dataset.
+
+----- para_id: 20 -----
+Section: A. CSYSGUARD ARCHITECTURE
+
+Text:
+The study leveraged Digital Ocean's cloud service [49], deploying three Linux virtual machines [50], each with 1vCPU, 1GB of memory, and a 10GB disk. The API gateway is responsible for routing requests to the stateless application service , which utilizes a database for data storage. Our target service incorporates a monitoring tool called Prometheus [51] to collect and store metrics over time methodically. In addition, the simulator employs a custom script to simulate dynamic workloads, manipulating the intensity of various metrics in unique combinations for each request. For instance, one scenario may involve high CPU and memory usage with low usage in other metrics, whereas another could stress high bandwidth usage while keeping the rest low. This approach enables the model to evaluate the system 's performance under fluctuating conditions, focusing on randomness and swift changes. These assumptions mirror real-world cloud envi- ronments, enhancing the generalizability of cSysGuard by ensuring it can adapt to unpredictable and rapidly changing workloads. 3) DATA AGGREGATOR This component is responsible for updating and structuring the dataset for modeling and analysis . Initially, the process aggregates the system data from the application service and then transforms the metrics into a suitable format for predictive modeling. To enhance the accuracy of the fore- casts, it also performs a noise reduction process to minimize data inconsistencies.
+
+----- para_id: 21 -----
+Section: A. CSYSGUARD ARCHITECTURE
+
+Text:
+Finally, the component forwards the processed dataset to the controller for further processing. 4) CONTROLLER This component is crucial for orchestrating cSysGuard's logic flow. It begins by fetching the essential setting parameters, such as the model refinement and prediction schedules, from the configuration repository. The controller initiates the models to generate system metrics and health forecasts. Afterward, it archives the predictions in the metrics repository. Beyond these tasks, it manages the model maintenance by periodically signaling the refiner to tune models as per the schedule. Additionally, it consistently acquires the latest data from the aggregator for system predictions and refinements. This adept coordination by the controller is vital to cSysGuard's seamless operation and overall dependability and efficiency. 5) METRICS AND HEALTH PREDICTOR This component mainly oversees the prediction process, including forecasting system performance metrics and health assessments. Once activated by the controller, the prediction process is initiated with the most recent dataset as the input. Represented as an ensemble regression model, the first three layers—Level 0, Level 1, and Weight Aggregation—mainly focus on forecasting performance metrics, as detailed in Section IV. Besides, we incorporate several sets of predictors within the forecasting layers, with each set specializing in specific metrics.
+
+----- para_id: 22 -----
+Section: A. CSYSGUARD ARCHITECTURE
+
+Text:
+Upon completion, it consolidates and forwards the results to the final layer for system health assessment, requiring inputs from all metric sets for a thorough evaluation, as detailed in Section V. Moreover, each layer sends its predictions to the controller for storage, serving as valuable data for subsequent model evaluation and refinement. This component ensures precise and timely pre- dictions through a comprehensive and systematic ensemble architecture . 6) ENSEMBLE REFINER This component maintains the regression model's proficiency in identifying the trends and data characteristics. Upon activation by the controller, the refiner fine-tunes the Level-0 and Level-1 models by utilizing the latest dataset. Similarly, it adjusts the Level-1 weights based on the range of historical predictions, dynamically aligning the models' strengths with their predictive efficacy. Once completed, the system promptly updates the repository with the newly refined model and weights. Through this iterative refinement, the component enhances the adaptability and precision of the models, ensuring they remain effective in a dynamic environment. 7) PREPROCESSOR This component is essential for setting up the models cSysGuard requires to initiate the primary process. The preprocessor commences by retrieving the list of models from the system configuration. Then, it actively compiles the models with predefined parameters and training datasets.
+
+----- para_id: 23 -----
+Section: A. CSYSGUARD ARCHITECTURE
+
+Text:
+Upon completion, the calibrated models are stored in the repository. However, the preprocessing step is optional if the repository already contains the models.

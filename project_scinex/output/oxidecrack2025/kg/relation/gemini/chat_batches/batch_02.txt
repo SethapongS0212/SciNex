@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: Oversampling
+
+Text:
+Thus, the 71 features were reduced to 2 dimensions using Principal Component Analysis (PCA)35, which was a widely used method for reducing the dimensionality of data in machine learning by transferring the input into a lower-dimensional space by using eigenvectors and a scatter plot was created. The non-spallation samples (majority class) were represented by gray circles, while the spallation samples (minority class) were represented by red crosses, as depicted in Fig. As we took a closer look at the data, there was almost no overlap between classes. As mentioned above, since our data did not have enough spallation samples for training a model and the data points from each class based on observation were not grouped in a way that overlaps, the use of Synthetic Minority Over-sampling Technique (SMOTE)31 was an appropriate technique for this problem, without the need Scientific Reports | (2025) 15:7758 5 | https://doi.org/10.1038/s41598-025-91449-3 of more advanced variants of the technique. For the Synthetic Minority Over-sampling Technique (SMOTE), newly generated samples of the minority classes are produced to have a similar number as the majority class. 4, when the class "1" is smaller than the class "0", Synthetic Minority Over-sampling Technique (SMOTE) generates new samples between the existing data points and adds a small random noise. The steps of Synthetic Minority Over-sampling Technique (SMOTE) are as follows: 1. In each minority class, the samples are randomly picked up.
+
+----- para_id: 13 -----
+Section: Oversampling
+
+Text:
+For each sample, some nearest samples of the same class are randomly selected. Let a given sample is A and a selected neighbor is B, the synthetic sample S is created using the formula. Repeating the steps 2–4 until the given class has number of samples closing to the majority class. Go to step 1 for another minority class.
+
+----- para_id: 14 -----
+Section: Methodology
+
+Text:
+The classification output of the dataset indicated spallation, with 35 samples labeled as spallation (spallation = 1) and the remaining 199 samples labeled as non-spallation (spallation = 0). This scenario was characterized by an extremely imbalanced dataset . Consequently, our experiment necessitated a data pre- processing step to balance the data before constructing a classifier, as illustrated in Fig. The figure depicts a series of steps. First, the original data passed through the Synthetic Minority Over-sampling Technique (SMOTE) technique. Second, oversampled data was generated to create a balanced dataset . Third, the experiments were conducted using several classification techniques: Logistic Regression (LR), Decision Tree (DT), Random Forest (RF), K-Nearest Neighbor (KNN), and Artificial Neural Network (ANN). Fourth, the best technique was selected, and important features were evaluated. Finally, a final model was created using the selected technique with the entire dataset .
+
+----- para_id: 15 -----
+Section: Input data
+
+Text:
+It was reported that 2 factors, which were the mechanical and chemical factors, were the causes of spallation. For the mechanical factors, the spallation can occur by 2 main causes which were the CTE mismatch between the oxide and substrate and the poor surface adhesion of oxide scale . For CTE mismatch, it seemed to be the primary cause of spallation36. However, it was dependent on the phase structure of the substrate and developed oxide scale37, so it can be said that the spallation was actually due to the chemical compositions and operating conditions resulting in the atomic/ion diffusions specifying the phase formed. For the surface adhesion, it was also due to the chemical compositions36,38–40 microstructures, defect structures41, oxidation atmospheres42–44, oxidation temperature40 and period of oxidation45,46 which selectively promoted the solid-state diffusion of ions affecting the oxide -substrate adhesion47. Therefore, it can be summarized that the mechanical factors were actually the intermediate effect affecting the spallation. The real primary effect was chemical factors which were in good agreement with the work of Hardell et al.48 demonstrated that the changes in mechanical properties was a result of microstructural and morphological changes, thermal conditions and surface chemistry. Also, Takeda et al.49 reported that the spallation of the scale was influenced by the elemental compositions.
+
+----- para_id: 16 -----
+Section: Input data
+
+Text:
+Thus, in this work, only chemical input parameters, which were the wt% of each element of oxidized alloys, the total and partial where λ is a random number between 0 and 1. Thus, by doing this step, the new sample S is guaranteed to be on the line segment between A and B. pressures of the oxidant gases, oxidation temperatures and times, the oxide phases promoted during oxidation and the kinetic rate constants relating to the oxide scale thickness formed on the substrate5 were collected for modelling. The raw dataset as depicted in Fig. 6 containing 72 columns and 233 samples. The explanation of each column is in the list below. These raw data collected can be categorized into the chemical compositions, columns C to Fe, oxidation conditions, columns t to cAr, and the type of oxide formed during high temperature oxidation , columns FeO3 to (Mn,Cr)3O4. • Type: The grade of oxidized alloy . • Spallation: The occurrence of oxide spallation (1 occur, 0 not occur). • C: The wt% of C in the alloy . • Mn: The wt% of Mn in the alloy . • Si: The wt% of Si in the alloy . • P: The wt% of P in the alloy . • S: The wt% of S in the alloy . • Cr: The wt% of Cr in the alloy . • Ni: The wt% of Ni in the alloy . • Mo: The wt% of Mo in the alloy . • Nb: The wt% of Nb in the alloy . • Ti: The wt% of Ti in the alloy . • Cu: The wt% of Cu in the alloy . • V: The wt% of V in the alloy . • O: The wt% of O in the alloy .
+
+----- para_id: 17 -----
+Section: Input data
+
+Text:
+Scientific Reports | (2025) 15:7758 6 | https://doi.org/10.1038/s41598-025-91449- • N: The wt% of N in the alloy . • Al: The wt% of Al in the alloy . • W: The wt% of W in the alloy . • Ag: The wt% of Ag in the alloy . • B: The wt% of B in the alloy . • Re: The wt% of Re in the alloy . • Ta: The wt% of Ta in the alloy . • Co: The wt% of Co in the alloy . • La: The wt% of La in the alloy . • Se: The wt% of Se in the alloy . • Fe: The wt% of Fe in the alloy . • t: Oxidation time (h). • T: Oxidation temperature (oC). • Tin: The minimum operating temperature of the data collected (oC). • Tif: The maximum operating temperature of the data collected (oC). • p: Experimental pressure (atm). • pO2: The partial pressure of O2 (atm). • pH2O: The partial pressure of H2O (atm). • cO2: The percentage of O2 in the oxidant gas. • cN2: The percentage of N2 in the oxidant gas. • cCO2: The percentage of CO2 in the oxidant gas. • cH2O: The percentage of H2O in the oxidant gas. • cH2: The percentage of H2 in the oxidant gas. • cAr: The percentage of Ar in the oxidant gas. • kp: The kinetic rate constant of the oxidation reaction. • FeO3: The formation of FeO3 during oxidation (1 = Yes, 0 = No). • FeO: The formation of FeO during oxidation (1 = Yes, 0 = No). • Fe2O3: The formation of Fe2O3 during oxidation (1 = Yes, 0 = No). • Fe3O4: The formation of Fe3O4 during oxidation (1 = Yes, 0 = No). • spinel (Fe,Cr)3O4: The formation of (Fe,Cr)3O4 during oxidation (1 = Yes, 0 = No).
+
+----- para_id: 18 -----
+Section: Input data
+
+Text:
+• Mn3O4: The formation of Mn3O4 during oxidation (1 = Yes, 0 = No). • Cr2O3: The formation of Cr2O3 during oxidation (1 = Yes, 0 = No). • (Cr,Mn,Fe)3O4: The formation of (Cr,Mn,Fe)3O4 during oxidation (1 = Yes, 0 = No). • CoO: The formation of CoO during oxidation (1 = Yes, 0 = No). • Al2O3: The formation of Al2O3 during oxidation (1 = Yes, 0 = No). • WO3: The formation of WO3 during oxidation (1 = Yes, 0 = No). • NiO: The formation of NiO during oxidation (1 = Yes, 0 = No). • SiO2: The formation of SiO2 during oxidation (1 = Yes, 0 = No). • Co3O4: The formation of Co3O4 during oxidation (1 = Yes, 0 = No). • CoWO4: The formation of CoWO4 during oxidation (1 = Yes, 0 = No). • CrTaO4: The formation of CrTaO4 during oxidation (1 = Yes, 0 = No). • NiCr2O4: The formation of NiCr2O4 during oxidation (1 = Yes, 0 = No). • NiAl2O4: The formation of NiAl2O4 during oxidation (1 = Yes, 0 = No). • CoAl2O4: The formation of CoAl2O4 during oxidation (1 = Yes, 0 = No). • TiO2: The formation of TiO2 during oxidation (1 = Yes, 0 = No). • MnTiO3: The formation of MnTiO3 during oxidation (1 = Yes, 0 = No). • Ni5TiO7: The formation of Ni5TiO7 during oxidation (1 = Yes, 0 = No). • Cr2TiO5: The formation of Cr2TiO5 during oxidation (1 = Yes, 0 = No). • CrWO4: The formation of CrWO4 during oxidation (1 = Yes, 0 = No). • W20O58: The formation of W20O58 during oxidation (1 = Yes, 0 = No). • Ta2O5: The formation of Ta2O5 during oxidation (1 = Yes, 0 = No). • CuO: The formation of CuO during oxidation (1 = Yes, 0 = No).
+
+----- para_id: 19 -----
+Section: Input data
+
+Text:
+• Cu2O: The formation of Cu2O during oxidation (1 = Yes, 0 = No). • Nb2O5: The formation of Nb2O5 during oxidation (1 = Yes, 0 = No). • (Ni,Co)Al2O4: The formation of (Ni,Co)Al2O4 during oxidation (1 = Yes, 0 = No). • NiTiO3: The formation of NiTiO3 during oxidation (1 = Yes, 0 = No). • (Mn,Cr)3O4 : The formation of (Mn,Cr)3O4 during oxidation (1 = Yes, 0 = No).
+
+----- para_id: 20 -----
+Section: Data pre-processing
+
+Text:
+Since the obtained dataset was imbalanced with a spallation to non-spallation ratio of 35:199, the minority class lacked sufficient samples for training a classification model. Therefore, the Synthetic Minority Over-sampling Technique (SMOTE) technique31, an oversampling method, was employed to generate additional samples for spallation. Following this process, the number of spallation samples increased to 199 rows, resulting in the total samples of 398, as demonstrated in Fig.
+
+----- para_id: 21 -----
+Section: Data analytics
+
+Text:
+The balanced dataset from the previous task was visualized using a PCA-reduced 2D scatter plot, as shown in Fig. The pattern of the figure suggested that simple linear classification methods such as Logistic Regression (LR) may not be effective. Thus, widely used non-linear classification techniques, which were Scientific Reports | (2025) 15:7758 7 | https://doi.org/10.1038/s41598-025-91449-3 Scientific Reports | (2025) 15:7758 8 | https://doi.org/10.1038/s41598-025-91449-3 reviewed, were adopted. However, the linear method was included because the data was possible to be linearly separable in higher dimensions of many features. In this case, our experiment involved selecting and tuning classification techniques, namely Logistic Regression (LR), Decision Tree (DT), Random Forest (RF) with varying numbers of estimators (5, 10, 15, and 20), K-Nearest Neighbor (KNN) with different values of k (3, 7, and 9), and Artificial Neural Network (ANN) with configurations of 1 hidden layer containing 100 nodes and 2 hidden layers, each with 100 nodes. All experiments including their machine learning technique and hyperparameter are described in Table 1. To provide more explanation for Table 1, the hyperparameters of each machine learning technique varied from one another. Fine-tuned hyperparameters referred to the ability to adjust the hyperparameters of certain methods, like Logistic Regression (LR) and Decision Tree (DT), and selected the most effective one to report the results.
+
+----- para_id: 22 -----
+Section: Data analytics
+
+Text:
+In addition, several methods, such as Artificial Neural Network (ANN), K-Nearest Neighbor (KNN), and Random Forest (RF), had their own critical parameters, which were the numbers of hidden layers and nodes, the numbers of nearest neighbors, and the numbers of estimators, respectively. Results from the latter machine learning methods are typically reported using different critical hyperparameters. Each experiment underwent testing through K-Fold Cross-Validation, where K is set to be 3, as depicted in Fig. The dataset was divided into 3 chunks, and the training and testing processes were repeated for 3 rounds. In each round, 2 chunks were utilized for training to create a model, while the remaining chunk was employed to test the model. The training set can contain both original and oversampled data, whereas the test set comprised only the original samples; thus, it was ensured that the performance of each classification technique was reported from the original data. Due to the imbalanced ratio of spallation and non-spallation samples in the test set, the F1 score was chosen as the evaluation metric for the model, rather than accuracy. In the final step, the F1 scores from the 3 rounds were averaged to report the performance of each experiment.
+
+----- para_id: 23 -----
+Section: Model performance evaluation
+
+Text:
+From the types of oxide formed collected in Sect. "Input data", the PBRs were calculated according to Eq. These values were used to predict the spallation of oxides. The predicting results obtained from the PBR calculation and the machine learning model were compared with the actual oxide adherence given by the literatures. Then, the prediction performances of both methods were evaluated.

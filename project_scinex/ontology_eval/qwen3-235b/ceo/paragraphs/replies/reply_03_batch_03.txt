@@ -1,0 +1,18 @@
+{"verdicts": [
+  {"para_key": "eyelandmark2024#10", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["9,000-row landmark dataset", "rules-based selection algorithm", "maximum selection algorithm", "final landmarks dataset (154 rows / 154 volunteers)", "detection confidence", "x-y midpoint"],
+   "missed_relations": ["preprocessing pipeline -> produces -> final landmarks dataset", "maximum selection algorithm -> selects -> highest-confidence landmark per image", "final dataset -> comprises -> image name, class name, detection confidence, x-y midpoint"],
+   "note": "a methods paragraph describing a named preprocessing pipeline and the dataset it produces, start to finish; nothing extracted"},
+  {"para_key": "traveltime2022#0", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["travel time prediction", "GPS tracking of trucks", "MAE of 12.15 min per 100 km", "baseline MAE of 27.12 min", "long-distance road segments in Thailand"],
+   "missed_relations": ["this study -> addresses -> travel time prediction on long-distance road segments", "SA-LSTM -> achieves -> MAE of 12.15 min per 100 km", "our method -> comparesAgainst -> baseline (27.12 min)", "SA-LSTM -> trainedOn -> historical GPS tracking data"],
+   "note": "this is the ABSTRACT - the densest claim paragraph in the paper - and only the internal 'SA-LSTM uses Butterworth filter' relation survives; the task, the data, the result and the baseline comparison are all dropped (the model did capture them from the conclusion paragraph, so this is a per-paragraph miss, not a corpus-level one)"},
+  {"para_key": "reststop2018#15", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["PNext", "AUC", "next rest stop prediction", "300 km configured distance", "coefficients alpha, beta, gamma"],
+   "missed_relations": ["PNext -> evaluatedOn/evaluates -> AUC", "experiment -> configures -> alpha, beta, gamma coefficients", "PNext -> addresses -> next rest stop prediction"],
+   "note": "procedural paragraph, but PNext is the paper's OWN named method and AUC is the metric it is measured with - the single most important methodological pairing in the paper, and neither node exists"},
+  {"para_key": "eyelandmark2024#12", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["IoU of 0.612", "corneal light reflection", "strabismus", "amblyopia", "Viola & Jones (accuracy 0.884)", "Amato et al. (accuracy 0.95)"],
+   "missed_relations": ["model -> achieves -> IoU of 0.612", "this work -> comparesAgainst -> Viola & Jones (2001) / Amato et al. (2018)", "corneal light reflection -> addresses -> diagnosis of eye conditions including strabismus and amblyopia"],
+   "note": "the paper's own headline metric (IoU 0.612) is stated in the first clause and missed, along with two explicit numeric comparisons against prior work"}
+]}

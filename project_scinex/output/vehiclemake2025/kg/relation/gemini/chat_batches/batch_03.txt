@@ -1,0 +1,74 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 10 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 24 -----
+Section: B. RESULT AND EVALUATION
+
+Text:
+This section will discuss the model architecture, its contribution, its application conditions, and the opportunities for future research. 1) MODEL SIZE As reviewing the result, larger models took more time to train, but they did not always result in better prediction accuracy (as seen in the previous results in TABLE 2 for F1 w-avg and F1 score). TABLE 2 shows the model sizes and training times for 200 epochs. VGG16 [18] had the largest model size at 134.28M total parameters and the longest training time but had the lowest F1 w-avg and F1 score. InceptionV3 [4] had the best F1 w-avg and F1 score among the base models, with a size of 23.59M total parameters and a training time of 945.07 seconds. CTv1 had the highest F1 w-avg and F1 score, with a size and training time about three times less than InceptionV3 [4]. CTv1-DW was about 6.5 times smaller than CTv1 but had about 9% lower accuracy , and CTv1-DR was about 11 times smaller than CTv1 but its performance gave a little bit lower as about 6%. The DW and DR models are smaller because the size of the kernel (the number of kernel parameters) is reduced compared to
+
+----- para_id: 25 -----
+Section: A. MODEL ARCHITECTURE
+
+Text:
+calculations using a standard kernel, resulting in an overall smaller model size. However, the accuracy of the results does not decrease significantly. Based on analysis and testing, this study realizes that the parameters in the kernel that are removed in the DW or DR calculations are less important than the remaining parameters. There are other methods for reducing the size of CNN models, such as pruning. Preliminary studies [38] have indicated that it is possible to reduce the size of the model while maintaining its classification ability, with only a slight decrease in accuracy . This study started with creating a new one and found good results, which meant that pruning was not within the scope of this research. However, thank you to the reviewer for bringing this issue up again and the experiment in feature work with the proposed model. 2) MODIFYING PADDING AND STRIDE In the previous main experiment, the proposed small CNN model is aimed at use in resource-constrained processing devices. The model size directly affects the memory require- ments of the device, but the complexity of processing also directly impacts processing time. Although the CTv1 model could operate on the Raspberry Pi 3 Model B with an average processing speed of 1 second per image, the padding and stride parameters were adjusted in the convolutional layer. These parameters do not affect the model size but do impact processing complexity.
+
+----- para_id: 26 -----
+Section: A. MODEL ARCHITECTURE
+
+Text:
+Therefore, additional experiments were conducted by creating the CTv1-XX-NP model, which includes versions of CTv1, CTv1-DW, and CTv1-DR without padding in the filter-block layer that is a convolution layer. This adjustment resulted in a slight reduction in the size of the feature map output at each layer after passing through the convolution layer. Consequently, the original CTv1 model, which had 6 filter-block layers, could not process at the 1024 layer because the matrix from the 512 layer was 4×4×512. Therefore, the first 32 filter-blocks were removed. CTv1-XX-St, in FIGURE 12(b-a), adjusts the CTv1, CTv1-DW, and CTv1-DR models by changing the convolu- tion layer's stride from the default value of 1, where the kernel overlaps during feature extraction, to a stride of 2 in some layers. When using a 3×3 kernel, this prevents overlap during feature extraction. Increasing the stride reduces the size of the feature map output after passing through the convolution layer, so the number of Filter-Block layers is reduced to 5. Adjusting the padding and stride does not affect the number of parameters within the model because these changes only alter the kernel's operational boundaries. The number of parameters in the kernel remains the same, but the resulting feature map matrix size differs with different padding and stride values.
+
+----- para_id: 27 -----
+Section: A. MODEL ARCHITECTURE
+
+Text:
+For example, the training and inference times are ordered as CTv1-St < CTv1-NP < CTv1, which corresponds to the feature map matrix size during operation; CTv1-St has the smallest matrix size, followed by CTv1-NP, and finally CTv1 with the largest. The accuracy in vehicle brand recognition shows that CTv1 and CTv1-NP have similar values, while CTv1-St is slightly lower. 3) BATCH NORMALIZATION In the structure of the models presented, CTv1, CTv1-DW, and CTv1-DR, which include Filter-blocks with Batch- normalization (batchnorm) layers, it was found through experiments that using Batch normalization helps both in terms of classification accuracy and the time taken for model training. To demonstrate the differences, models with and without batch normalization were tested. The results are shown in TABLE 8. From TABLE 8, in the CTv1 model without batchnorm, the F1-weight average decreased from 0.99 to 0.76, which is approximately a 25% reduction, and the training time increased to 3,354.51 seconds, nearly a tenfold increase. The model CTv1-DW without batchnorm, the F1-weight average dropped from 0.90 to 0.74, by approximately 16%, and the training time increased to 1,511.66 seconds from the original 418.04, an increase of about 3.5 times. Finally, the CTv1-DR model's F1-weight average decreased from 0.93 to 0.16, a reduction of more than 80%, and the training time taken increased from 435.59 seconds to 2,113.53 seconds, an increase of approximately 4.8 times.
+
+----- para_id: 28 -----
+Section: A. MODEL ARCHITECTURE
+
+Text:
+4) CONTRIBUTION A compact CNN model for car make recognition is presented in this work, which maximizes computational efficiency and memory utilization. The model employs more filters by decreasing the feature map dimension and increasing the network depth, which produces richer feature extraction while keeping the model size minimal. This makes it the perfect and affordable option for devices with limited resources, such as tolling systems or traffic cameras. Our tests demonstrate that accuracy is not necessarily increased by larger models. For example, VGG16 had the lowest F1 scores even though it had the highest size (134.28M parameters). Among base models, InceptionV3 had the highest accuracy with 23.59M parameters. With a three -fold reduction in both model size and training time, the suggested CTv1 model outperformed InceptionV3, and CTv1-DW and CTv1-DR further decreased model size without appreciably lowering accuracy (by 9% and 6%, respectively ). Depth-wise separable convolutions were used to accomplish these reductions, demonstrating that performance may be preserved while model size is reduced by eliminating less important kernel parameters. 5) APPLICABLE CONDITIONS In testing the robustness of the presented CNN model, the researchers simulated scenarios similar to camera obstruc- tions, such as blur, noise, lighting, and water drops.
+
+----- para_id: 29 -----
+Section: A. MODEL ARCHITECTURE
+
+Text:
+This was conducted on initial images with a size of approximately 600×600 pixels before testing with the CTv1 model as shown in FIGURE 13, the test results are shown in FIGURE 14, and the discussion is as follows. The results of the experiment simulating water drop occlusion in front of the camera (waterdrop) involved simulating 2 to 11 water drops with random sizes ranging from 10 to 30 pixels on the test set image. The experimental results show that in the water drop scenario, the CTv1 model still has an F1 weight average of approximately 0.98 - 0.99, which is close to the normal system . It is predicted that the water drops on the camera lens do not significantly obscure various parts of the image, allowing the overall data or important points to remain intact. Therefore, the impact on the classification of the CTv1 model is minimal. The testing involved adding noise to the images. Two types of noise were tested: the first was Gaussian Noise, which was tested with a mean of 0 and a standard deviation adjusted from 10 to 100. This resulted in the F1 weight average of the CTv1 model decreasing from 0.99 to approximately 0.70. Analyzing the images with added Gaussian Noise showed that the color values in some positions were altered, which affected the calculation of the feature map during the convolutional process. This was particularly evident when testing with salt and pepper noise, which randomly adds white or black color values to the image based on a defined probability.
+
+----- para_id: 30 -----
+Section: A. MODEL ARCHITECTURE
+
+Text:
+The test results graph indicated a linear trend of the F1 weight average decreasing. The nature of salt and pepper noise involves adding white and black colors, and the white color, when processed in the convolutional process, has a chance of being considered an important feature , affecting the classification. As for the testing when the image was blurred, the blur was tested by adjusting the size of the blurring kernel from 1 × 1 (which means no blur) to 10 × 10. It was observed that in the kernel size range of 1-5, the F1 weight average value decreased slightly, but after that, it decreased significantly. From the analysis, it is expected that blurring the image causes important information or features in the image to disappear. If the blur does not remove important information or features in the image, the model can still classify with reduced accuracy . However, if the blur causes important characteristics or information in the image to decrease or disappear, it will affect the model's classification. Finally, the test to reduce the brightness of the image was conducted by adjusting the brightness level from 0 to 100. From the tests, it was shown that the CTv1 model had a decreasing F1 weight average according to the level of brightness reduction. Although the logo of the vehicle make was still somewhat visible to the naked eye, the analysis indicated that the CTv1 model also used other components in conjunction with the vehicle logo to classify the vehicle make.
+
+----- para_id: 31 -----
+Section: A. MODEL ARCHITECTURE
+
+Text:
+Therefore, reducing the image brightness affected the F1 weight average of the model. also be further enhanced by investigating different feature descriptors [22], concentrating on the thorough classification of particular components [40], or putting attention filters in place filter [41], [42], [43], [44]. In the future, the work intends to create CNN models to categorize different kinds of vehicles in peculiar circumstances. 6) OPPORTUNITIES FOR FUTURE RESEARCH Even though the research's images are clear and unob- structed, there may be instances in which dust on the camera lens, paper, leaves, insects, or water droplets could block the view. These elements might make the suggested methods less effective. Therefore, in order to test and improve the robustness of the model, future work might entail simulating such scenarios, much like the study in [39]. The system could Using vehicle classes that are frequently found in Thailand, the demand for the country's free-flow tolling system was evaluated in this study. Our study focuses on these classes because five particular brands are very well-liked. Our architecture can be extended for further training if enough information on other car brands becomes available in the future. This study's vehicle detection method makes use of the YOLO model, which has a high memory and processing overhead. Future studies will look into developing a more effective vehicle detection model that can be used with low- resource hardware.
+
+----- para_id: 32 -----
+Section: VI CONCLUSION
+
+Text:
+From the study and development of a small Con- volutional Neural Network (CNN) model for use in resource-constrained processing devices to recognize car makes from frontal images, this study developed a CNN model with 99% accuracy in recognizing car makes. This model is smaller than the state -of-the-art CNN models tested, which achieved over 90% accuracy (VGG16, InceptionV3, Yolo11m-cls, and ResNet50). The proposed model achieved 99% accuracy with shorter training and prediction times. It was tested on a resource-limited device, the Raspberry Pi 3 Model B, where the CTv1 model operated with an average processing time of 1 second per image and a power consumption of 20 mWh. The model uses a simple CNN structure and reduces the dimension of feature maps while increasing the number of layers. Testing with Depth-wise Separable Convolution reduced the number of parameters but also decreased accuracy . The 1 × 1 Convolutional Dimension Reduction (Bottleneck) method can reduce size if the output filter count is not too high, but it increased training and prediction times compared to Depth-wise Separable Convolution. Not using padding in the convolution layer did not affect learning accuracy but limited network construction due to reduced feature map size after each convolution layer. Stride also reduced feature map size but had a greater negative impact on prediction accuracy . Moreover, the robustness testing was additionally con- ducted.
+
+----- para_id: 33 -----
+Section: VI CONCLUSION
+
+Text:
+The issues of blurring, Gaussian noise, salt and pepper noise, waterdrop simulation, and light dimming were simulated and tested. In this regard, increasing the level of noise gradually highlights the robustness boundaries of the model more clearly. This is an intriguing aspect that can be further explored for improving the CNN model as well as studying appropriate preprocessing techniques and pruning methods to enhance vehicle model classification in any challenging conditions.

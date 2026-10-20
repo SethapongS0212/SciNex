@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "4b94a9da1bf6", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "the purpose clause ('to minimize identity shifts') maps cleanly onto addresses"},
+  {"triple_id": "5e817414a5a1", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "a TASK in the Dataset slot; the sentence states what YOLO was implemented FOR, which is designedFor/addresses, not evaluatedOn"},
+  {"triple_id": "f77a511a033f", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "producedBy gets the artifact->creator DIRECTION right where CEO's (TensorFlow) uses (Google) inverted it; marked down only because Ultralytics is an Organisation, and the range is ResearchProcess"},
+  {"triple_id": "589d9154f8f1", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "arguments swapped: configures is Specification -> Experiment, so the correct form is (10-fold cross-validation) configures (evaluation process). Closer than the usual Model->setting error, but still inverted"},
+  {"triple_id": "81ed6f9dbf14", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "employs is Organisation -> Person; a model and a capability satisfy neither side"},
+  {"triple_id": "b50ae6738878", "C1": "CORRECT", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "the design intent is explicit; 'CNN model' stands in for the paper's actual named model"},
+  {"triple_id": "ab08e0beb389", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "the object is a PAPER, not a dataset, and reuse of another study's data is not a train/test partition - splitFrom is the wrong relation entirely"},
+  {"triple_id": "dd50f72743bd", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "supports requires a QUANTITATIVE MEASUREMENT as subject; no number appears anywhere in the sentence"},
+  {"triple_id": "c1012b223d77", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "correct Agent -> Organisation direction, on the same sentence the CEO run rendered backwards"},
+  {"triple_id": "b5c196248f06", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "'citing' is explicit, but the subject 'study' names no paper and the object is an author key"}
+]}

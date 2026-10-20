@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "4a21adfacad1", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "inverted hyponymy: the alternate prism cover test IS one of the specialized tests listed, so it cannot consume the category it belongs to"},
+  {"triple_id": "f86f923f46bb", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "correctly takes 0.93 as CTv1-DR's own F1 and leaves 0.16 to the ablated variant - qwen3-235b took the ABLATED figure from this same sentence"},
+  {"triple_id": "51dc365a3087", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "d4bfa86b3bbe", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "2971428759a6", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "minor: the stored source sentence carries the model's own markdown emphasis (**Query...**), so formatting leaked into the evidence field"},
+  {"triple_id": "5075a2a716a5", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "the sentence DEFINES an abbreviation ('GT refers to total ground truth object') - no evaluation occurs, and no quantitative result is present"},
+  {"triple_id": "d56fe4bdd74d", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "direction reversed: the sentence says the SF/SP hybrid was mentioned IN the works of Jeung et al., so the paper is the subject; SP is also a scoring function, not an AcademicPaper"},
+  {"triple_id": "3d6d568d02b8", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "correctly picks one named benchmark out of a five-dataset list"},
+  {"triple_id": "75719e244a5b", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "⭐ exemplary producedBy: artifact -> the PROCESS that generated it, matching the range exactly. gemma4-31b's version of this same triple put RDF DATA in the process slot instead"},
+  {"triple_id": "631770f6ca6d", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "extracted from a hedge - the sentence says there is POTENTIAL for this, not that it was produced; the object is also a capability, not a generated artifact"}
+]}

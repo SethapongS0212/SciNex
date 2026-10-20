@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 008a64131955 -----
+TRIPLE:     (LR)  --achievesresult-->  (combined R2 0.5177)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: Specifically, considering both R2 and %MAPE, the LR algorithm achieves the combined R2 values of 0.5177 and %MAPE values of 24.97%.
+
+----- triple_id: 785c937dd9a8 -----
+TRIPLE:     (CTv1 model)  --comparesagainst-->  (InceptionV3)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: With a three -fold reduction in both model size and training time, the suggested CTv1 model outperformed InceptionV3, and CTv1-DW and CTv1-DR further decreased model size without appreciably lowering accuracy (by 9% and 6%, respectively ).
+
+----- triple_id: 465e03bce64e -----
+TRIPLE:     (U-GMo)  --comprises-->  (posture detection)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: Our work, named U-GMo (Your Great Moment), comprises of three primary steps comprise the artificial intelligence part (AI Part) of our automatic video editing system: (1) posture detection, (2) graduation identification, and (3) video segment extraction.
+
+----- triple_id: a039cd0db4bd -----
+TRIPLE:     (this study)  --uses-->  (dataset of 1,654 Quats)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Additionally, this study utilises a larger dataset (1,654) of Quats compared to Belvèze (767) and Akbari (1,007), contributing to the observed differences in %MAPE.
+
+----- triple_id: 4da8da24639d -----
+TRIPLE:     (LPII)  --addresses-->  (link prediction)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: This paper introduces LPII, a hybrid recommendation approach for link prediction.
+
+----- triple_id: 8658424591ab -----
+TRIPLE:     (CNN model)  --designedfor-->  (recognizing vehicle makes)
+PREDICATE DEFINITION: Model → ResearchTask  |  Associates a model with the research task it was specifically designed or optimised to solve, such as a transformer model designed for machine translation or a CNN designed for image classification
+SOURCE SENTENCE: The former part discusses the structure of the CNN model designed for recognizing vehicle makes from front- view images, including a version of the model reduced in size using Depth-wise Separable Convolution and 1 × 1 Convolution Dimension Reduction.
+
+----- triple_id: 7a9dd0a85742 -----
+TRIPLE:     (Realtime Identification Transformer (RT- DETR) approach)  --trainedon-->  (labeled data)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: Secondly, we employed the Realtime Identification Transformer (RT- DETR) approach to train our labeled data and create a deep learning model.
+
+----- triple_id: 3de5f9134d9a -----
+TRIPLE:     (test set)  --splitfrom-->  (time-series data)
+PREDICATE DEFINITION: Dataset → Dataset  |  Records that a dataset partition was derived from a larger source dataset
+SOURCE SENTENCE: the time-series data were split into a training set and a test set, where the sliding window size was 24.
+
+----- triple_id: d943a91d3f5b -----
+TRIPLE:     (recommender system)  --produces-->  (trip_plans)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: Second, the recommender system generates possible m trip_plans or candi- dates as depicted in Fig.
+
+----- triple_id: 027534d5aef0 -----
+TRIPLE:     (MAE)  --evaluates-->  (27.12 min per 100 km)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  Links an evaluation metric to the experimental result it quantitatively assesses
+SOURCE SENTENCE: The MAE was 27.12 min per 100 km, as shown in Section 4.1.

@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "96238435f9a9", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "location is expressed by apposition ('Bureau of Street Lighting, Los Angeles') rather than a verb, but that is the statement, not an inference; typing is exact"},
+  {"triple_id": "1c297a97d66d", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "correct splitFrom direction - the derived partition is the subject, the source dataset the object"},
+  {"triple_id": "1b98f1ce76ae", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "'TensorFlow from Google' supports a provenance link and Google is correctly in the Organisation slot, but affiliatedWith is typed Agent -> Organisation and a software library is not an Agent"},
+  {"triple_id": "c30dcee2aefb", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "explicitly stated, but OC-SORT is a Model standing in for the AcademicPaper the predicate requires"},
+  {"triple_id": "918852e363c2", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "employs is defined Organisation -> Person for employment relationships; a model and an architectural block satisfy neither side - the English verb was matched instead of the ontology definition"},
+  {"triple_id": "a6002e804476", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "extracted from a FUTURE WORK hedge ('could explore'), so the relation is proposed rather than asserted by the paper"},
+  {"triple_id": "07ad2aba615d", "C1": "CORRECT", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "'robust predictive capabilities' is a generic objective that would merge across unrelated papers"},
+  {"triple_id": "8e51e216a4cd", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "7c700efa750a", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "leading article in 'the XGB algorithm' is a surface variant of the same node - a C6 concern, not a C3 one"},
+  {"triple_id": "f0f5d8feae43", "C1": "CORRECT", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "relation is explicit and correctly directed; 'recommender system' is an unnamed generic subject"}
+]}

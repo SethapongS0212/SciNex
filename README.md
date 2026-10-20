@@ -1,228 +1,58 @@
-# Scientific-Paper Knowledge Graph Pipeline
+# SciNex: Knowledge Graph Construction for Open Science
 
-Turns scientific-paper PDFs into a queryable knowledge graph, then tests whether
-that graph actually captures something real: can it predict a paper's true
-citation neighbours from nothing but its extracted content?
+Turns scientific-paper PDFs into knowledge graphs of `(subject, predicate, object)` triples typed by
+a research ontology (CEO or scinex). Then it measures whether those graphs are any good: per triple
+(judged against the source sentence), per graph (citation prediction), and by simulated Q&A
+against the real papers.
 
-```
-PDF → HTML → entity lists → KG triples → persistent global KG → KGE link prediction
-```
-
----
-
-## ⭐ Headline result
-
-**RotatE + self-adversarial negative sampling predicts held-out citation links
-with MRR ≈ 0.60 and Hits@10 ≈ 0.85** (5 seeds, hyperparameters selected on a
-disjoint validation split, reported on held-out test papers). Random baseline
-≈ 0.2%. Full methodology, caveats, and reproduction commands in
-[`results.md`](results.md).
+**All code and documentation are in [`project_scinex/`](project_scinex/). Run every command from that folder.**
 
 ---
 
-## Run the pipeline end-to-end
+## Start here
 
-Follow the steps **in order** — each one consumes the previous step's output.
-
-### Step 0 — Setup (once)
-
-```bash
-pip install -r requirement.txt
-```
-
-Create a `.env` file in the project root:
-
-```bash
-SEMANTIC_SCHOLAR_API_KEY=your_s2_key    # citation networks (free: api.semanticscholar.org)
-HF_TOKEN=hf_...                         # only needed for gated models (e.g. Gemma3)
-```
-
-You need a CUDA GPU with ≥16GB VRAM for the extraction steps (4 and beyond).
-Steps 1–3 run on CPU.
-
-### Step 1 — Get PDFs
-
-**Option A — you already have a PDF:** skip to Step 2.
-
-**Option B — build an ACL Anthology corpus** (what the reported results use):
-
-```bash
-# 1a. Build the local title→ACL-ID index (one-time, ~83k entries)
-python3 -c "from acl_index import ACLIndex; ACLIndex('acl_title_index.json').build(save=True)"
-
-# 1b. Fetch seed papers: CS-NER annotations → entity CSVs + PDF downloads
-python3 acl_pipeline.py --all
-
-# 1c. (Optional) grow the corpus by walking citation networks of papers you already have
-python3 citation_expand_pipeline.py --limit 500        # stop at 500 PDFs on disk
-```
-
-PDFs land in `output/acl/pdfs/`.
-
-### Step 2 — Parse PDFs → structured HTML
-
-```bash
-# Single paper
-python3 main.py paper.pdf --no-llm
-
-# Whole downloaded corpus (tracks success/failure in batch_run_log.json)
-python3 run_acl_batch.py
-```
-
-This also fetches each paper's **citation network** from Semantic Scholar
-(cached; needs the S2 key from Step 0). Output per paper:
-
-```
-output/<paper_id>/no-llm/output.html      ← structured text, the KG input
-output/<paper_id>/citation_network.json   ← cites/cited-by graph, the eval ground truth
-```
-
-Flags: `--fast` (skip LLM+citations), `--no-citations`, `--citation-limit N`.
-
-### Step 3 — Build entity lists (subjects for extraction)
-
-The `fixed` extractor only accepts subjects from a per-paper entity list,
-built **non-circularly** from the CS-NER human-annotated gazetteer
-intersected with each paper's text:
-
-```bash
-python3 enrich_entity_csv.py --all --source csner
-# or one paper:
-python3 enrich_entity_csv.py --paper 2020.acl-main.130 --source csner
-```
-
-Output: `output/acl/<paper_id>/Entity_<paper_id>_enriched.csv`
-(~70–150 entities per paper). First run also builds the global gazetteer
-cache (`output/acl/csner_gazetteer.csv`, ~51k entities).
-
-### Step 4 — Extract the knowledge graph (GPU)
-
-```bash
-# One paper
-python3 kg_main.py --paper 2020.acl-main.130 --extractor fixed --model Qwen/Qwen3-14B
-
-# Whole corpus, resumable (skips papers already extracted)
-python3 kg_main.py --all --extractor fixed --model google/gemma-3-12b-it --skip-existing
-```
-
-The entity CSV from Step 3 is auto-resolved per paper — no flag needed.
-Validated models: **Qwen3-14B** and **Gemma3-12B** (`google/gemma-3-12b-it`,
-gated → needs `HF_TOKEN`). Both are loaded 4-bit NF4; budget ~5–10 min/paper.
-
-Output per paper: `output/<paper_id>/kg/fixed/<model>/triples.json` + `kg.graphml`
-+ an interactive `kg_viz.html`.
-
-**The persistent global KG is built automatically during this step** — every
-extracted paper is folded into one cross-paper graph at
-`output/global_kg/fixed/<model>/graph.graphml`: papers are big nodes, their
-entities hang off them via `mentions` edges, and real `cites` edges connect
-papers directly. Citations to not-yet-extracted papers become stub nodes that
-resolve automatically once those papers are extracted.
-
-> Note: the global graph is saved every 25 papers and on clean exit — don't
-> `kill -9` a batch mid-run (per-paper `triples.json` files are always safe;
-> the merge can be replayed from them if needed).
-
-Other extractors for comparison baselines: `--extractor rebel` (open
-relations), `iter` (SciERC-typed), `llm` (free LLM vocabulary), `pair`
-(both ends constrained). `--ontology scinex` swaps the CEO predicate set for
-the scinex ontology.
-
-### Step 5 — KG embedding evaluation / link prediction (GPU)
-
-Trains a KG embedding on the extracted triples + paper–entity links, with
-**citation edges held out**, then ranks candidate papers per query paper and
-checks whether the true citation neighbours come out on top:
-
-```bash
-# Single run, all three KGE models (TransE / ComplEx / RotatE)
-python3 kg_transe_pipeline.py --output-dir output --extractor fixed --model Qwen3-14B --kge all
-
-# Multi-seed with honest val/test split (the headline configuration)
-python3 kge_multiseed.py --extractor fixed --model Qwen3-14B --kge rotate \
-  --seeds 1 2 3 4 5 --epochs 1000 --loss adv --gamma 28 \
-  --eval-split test --split-seed 42 --val-frac 0.5
-```
-
-Metrics: Hits@1/5/10 + MRR, both bidirectional and temporal-filtered
-("papers it could actually have cited"). Per-paper diagnostics
-(`top10_predictions`, `gt_ranks`) are written alongside the summary JSONs in
-`output/`. Full protocol and caveats: [`results.md`](results.md).
+| If you want to… | read |
+|---|---|
+| **set the project up on a new machine** | [`project_scinex/SETUP_NEW_MACHINE.md`](project_scinex/SETUP_NEW_MACHINE.md) |
+| **know where the work stands and what is next** | [`project_scinex/HANDOFF_NEXT_SESSION.md`](project_scinex/HANDOFF_NEXT_SESSION.md) |
+| read the full write-up (pipeline, ontologies, evaluation, results, limitations) | [`project_scinex/RESULTS_REPORT.md`](project_scinex/RESULTS_REPORT.md) |
+| see paper-ready result tables | [`project_scinex/results.md`](project_scinex/results.md) |
+| see the finetuning + Q&A progress summary | [`project_scinex/SUMMARY_finetune_qa_2026-10-01.md`](project_scinex/SUMMARY_finetune_qa_2026-10-01.md) |
+| understand the architecture and conventions | [`project_scinex/Claude.md`](project_scinex/Claude.md) |
+| read the session-by-session log (every trap found) | [`project_scinex/hands_off.md`](project_scinex/hands_off.md) |
+| see the 20-paper corpus | [`project_scinex/PAPERS.md`](project_scinex/PAPERS.md), `project_scinex/papers/manifest.csv` |
+| use the PDF → HTML parser (Part 1, `main.py`) | [`project_scinex/README.md`](project_scinex/README.md) |
 
 ---
 
-## Corpus
+## The project in three parts
 
-800+ papers currently parsed and entity-enriched (scaling toward 2000+).
-Entity subject lists come from external human annotation (CS-NER), never from
-the pipeline's own extraction — no circularity.
+1. **Paper → knowledge graph** (built). PDF parser → paragraphs → an LLM extracts triples whose
+   relation must come from the ontology → rule-based guards reject malformed triples.
+2. **Finetune an open-weight LLM on the ontology and vocabulary** (current work). A small student
+   (Qwen3, QLoRA) learns from a teacher model's stored extractions (GPT-OSS-120B), optionally
+   augmented with triples that other models agree on. It is evaluated on papers it never trained on.
+3. **Evaluate graphs by simulated Q&A** (tooling built, `qa_eval.py`). Questions verified against the
+   paper text are answered from the graph alone and graded deterministically.
 
----
+## Status (October 2026)
 
-## Project structure
+- **Extraction comparison, 20 papers, CEO ontology** (C1 concept correctness / C3 specificity /
+  C4 relation correctness, ~40 judged triples per model): GPT-OSS-120B 88.8 / 80.0 / **86.2**,
+  Gemma-4-31B 93.8 / 80.0 / 73.8, Qwen3-235B 75.0 / 60.0 / 47.5, Ministral-14B 70.0 / 52.5 / 41.2.
+  The models differ most on relation typing (C4). At this sample size, gaps under ~10 points
+  are not distinguishable. Details and caveats: `results.md`.
+- **Finetuning:** pipeline built; the first laptop test (Qwen3-4B) raised the share of triples
+  passing the guards from 38% to 86% on one held-out paper (the teacher: 88%). It still extracts
+  less than the teacher. The full experiment (Qwen3-8B, teacher-only vs multi-model training data,
+  blind judging) is next.
+- **Earlier result (ACL corpus, citation prediction):** RotatE knowledge-graph embeddings predict
+  held-out citation links with MRR ≈ 0.60 and Hits@10 ≈ 0.85 (5 seeds, held-out test papers).
 
-```
-main.py                     — Step 2: PDF→HTML parser CLI
-config.py                   — OUTPUT_DIR, CITATION_LIMIT
-compare.py                  — HTML output similarity scorer
-rebuild_html.py             — offline table-fix tool (standalone)
+## What is deliberately NOT in this repo
 
-parser/
-    pdf_loader.py           — PDF loading (PyMuPDF)
-    layout.py               — text block extraction (pdfplumber/PyMuPDF)
-    table_extractor.py      — multi-strategy table detection
-    structure_builder.py    — raw blocks → structured sections
-    html_generator.py       — structured data → final HTML
-    llm_refiner.py          — optional Qwen2.5-14B text cleanup
-
-citation/
-    network.py              — Semantic Scholar citation graph builder
-    auto_fetcher.py         — auto-download related papers
-    semantic.py             — S2 API helpers
-    concept_builder.py      — concept keywords from abstracts
-
-acl_index.py                — Step 1: title→ACL-ID index (83k entries)
-acl_pipeline.py             — Step 1: CS-NER → entity CSVs + PDF downloads
-citation_expand_pipeline.py — Step 1: snowball corpus via citation networks
-run_acl_batch.py            — Step 2: batch PDF parsing with success tracking
-enrich_entity_csv.py        — Step 3: per-paper entity lists from CS-NER gazetteer
-
-kg_main.py                  — Step 4: KG extraction CLI (rebel/iter/llm/fixed/pair)
-kg_extraction/
-    fixed_extractor.py      — fixed-subject extractor (CEO ontology; Qwen3-14B / Gemma3-12B)
-    llm_extractor.py        — free LLM extractor (open vocabulary)
-    extractor.py            — REBEL baseline
-    iter_extractor.py       — ITER/SciERC baseline
-    entity_loader.py        — entity CSV loading, alias lookup
-    kg_builder.py           — NetworkX KG + entity normalisation
-    global_graph.py         — persistent cross-paper global KG (incremental merge)
-    html_parser.py          — sentence extraction from output.html
-    visualizer.py           — interactive pyvis visualization
-
-kg_transe_pipeline.py       — Step 5: KGE evaluation (TransE/ComplEx/RotatE)
-kge_multiseed.py            — Step 5: multi-seed KGE runner
-
-expand_and_validate.py      — end-to-end smoke test (fetch → parse → enrich → extract → merge check)
-kg_evaluate.py              — LLM-as-Judge faithfulness eval (retired, kept for reference)
-kg_compare.py / kg_fixed_compare.py / kg_citation_fusion.py — comparison/fusion utilities
-paper_registry.py           — SciClaimEval paper ID registry
-```
-
----
-
-## Dependencies
-
-```bash
-pip install -r requirement.txt
-```
-
-Works out of the box on CUDA 12.x/13.x, including RTX 50-series — see the
-comment at the top of `requirement.txt` if installing on other hardware.
-
----
-
-## Further reading
-
-- [`Claude.md`](Claude.md) — architecture, model notes, GPU quirks, current status
-- [`results.md`](results.md) — consolidated paper-ready results and caveats
-- [`hands_off.md`](hands_off.md) — dated session-by-session change log
+This repo is public. API keys, the paper PDFs (several are paywalled), and any file containing full
+paper text (parsed HTML, prompt files, finetuning datasets, paragraph-level judging bundles) are
+excluded by `project_scinex/.gitignore`. So are trained adapter weights (over GitHub's file-size
+limit). `papers/manifest.csv` lists every paper's DOI so it can be obtained legitimately;
+`SETUP_NEW_MACHINE.md` explains how to regenerate everything else.

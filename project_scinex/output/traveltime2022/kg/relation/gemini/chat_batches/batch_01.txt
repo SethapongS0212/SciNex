@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: Abstract
+
+Text:
+This study proposes a method by which to predict the travel time of vehicles on long- distance road segments in Thailand. We adopted the Self-Attention Long Short -Term Memory (SA-LSTM) model with a Butterworth low-pass filter to predict the travel time on each road segment using historical data from the Global Positioning System (GPS) tracking of trucks in Thailand. As a result, our prediction method gave a Mean Absolute Error (MAE) of 12.15 min per 100 km, whereas the MAE of the baseline was 27.12 min. As we can estimate the travel time of vehicles with a lower error, our method is an effective way to shape a data-driven smart city in terms of predictive mobility.
+
+----- para_id: 1 -----
+Section: 1. Introduction
+
+Text:
+For data-driven smart cities , predictive mobility is a key factor that can help city officers monitor the performance of traffic [1–3]. Having predictable traffic and travel times is important for traffic management authorities if they are to maintain proper policies and solve traffic problems. Furthermore, to achieve these aims, historical traffic data have become a key factor in the development of prediction models [4]. Accurate travel time prediction assists the various stakeholders such as drivers, travelers, and transportation agencies in transportation , making proper route plans, and managing traffic lights. In addition, predictable traffic facilitates good travel planning and helps reduce environmental problems because the release of carbon dioxide in traffic congestion is higher than that in free-flow traffic [5,6]. City mobility data are essential to the task of precisely predicting travel time on roads [4]. Owing to a collaborative project between King Mongkut's Institute of Technology Ladkrabang and the Department of Land Transport of Thailand, some global position- ing system (GPS) tracking data of trucks in Thailand have become available, which were beneficial to our study. Most of the data are for long-distance driving trucks. The dataset entry includes the masked identifier of each vehicle, the timestamp, the latitude, and the longitude, all of which were received from a GPS device for each truck at every minute; some example data are shown in Section 3.1.
+
+----- para_id: 2 -----
+Section: 1. Introduction
+
+Text:
+A thorough literature search revealed that there are research studies that have attempted to conduct travel time prediction , and most of these have taken advantage of time-series data analytics. Several studies, such as those in [7–9], used the Auto-Regressive Integrated Moving Average (ARIMA), a well-known statistical method for predicting travel time. Some machine learning techniques, such as Support Vector Regression (SVR), were also adapted to carry out regression analytics for travel time [10–12]. In addition, in recent years, researchers of travel time predic- tion have adopted neural network-based approaches such as Long Short -Term Memory (LSTM) [4,13–22] and its enhancement, Convolutional LSTM (ConvLSTM) [14,22], together with attentions [13,14,16] and filters [8,23,24] to improve their prediction models. 2022, 12, 5681 2 of 18 To introduce an approach to the prediction of long-distance travel time, we analyzed the time series data according to the average of the travel time every hour from all the trucks between the end points of 10 selected road segments. Our approach uses travel time over a period of 24 h to predict travel time in the following hour. We implemented some techniques from the related work shown in Section 4.1. LSTM provided the best performance against our dataset, so it was selected as a baseline. However, as we interpreted the Mean Absolute Error (MAE) of the LSTM, the error of 27.12 min per 100 km was considered highly inaccurate.
+
+----- para_id: 3 -----
+Section: 1. Introduction
+
+Text:
+Thus, in this study, we aimed to improve the LSTM using techniques that are often adopted in time-series analytics in order to reduce the MAE. In this case, a filter and attention were considered, and it was found that using the self-attention LSTM (SA-LSTM) model together with the Butterworth low-pass filter reduced the MAE to 12.15 min per 100 km. This manuscript is organized into five sections. First, the background and the objec- tives of this research are introduced in the Introduction. Second, the technical background from related work is reviewed in the Literature Review . Third, the data preparation, base- line implementation, our approach, and the experiment steps are described in the Materials and Methods section. Next, the results of all the experiments are shown in the Results and Discussion section. Finally, conclusions are drawn, and suggestions are offered in the Conclusion.
+
+----- para_id: 4 -----
+Section: 2. Literature Review
+
+Text:
+As noted, when we reviewed the literature, we found various studies on the modeling of travel time prediction . In this section, we describe the background of travel time prediction techniques and review the related studies.
+
+----- para_id: 5 -----
+Section: 2.1. Travel Time Prediction Techniques
+
+Text:
+In general, researchers have organized the problem into time-series analytics, then adopted time-series forecasting techniques to create travel time prediction models, such as the ARIMA [7–9], SVR [10–12], LSTM [4,13–22], and ConvLSTM [14,22] models. Some studies proposed improvements using attentions [13,14,16] and filters [8,23,24]. These methods are reviewed and summarized as follows: Auto-Regressive Integrated Moving Average (ARIMA) is a well-known time-series prediction technique that is commonly used in the domain of finance, especially for data that are seasonal. This technique has been applied for traffic prediction challenges , such as urban roadway travel time prediction from Bluetooth data [7], real-time road traffic state prediction [8], and the prediction of changes in travel time [9]. The ARIMA uses statistical data points to forecast future points. In more detail, the ARIMA has three basic parameters, which are p, d, and q, where p is the number of lag observations (the lag order); d is the number of non-seasonal differences observed from the raw data (the degree of differencing), and q is the moving average window size (the order of the moving average). Support Vector Regression (SVR) is a regression technique that utilizes the concept of a well-known classification method: the Support Vector Machine (SVM).
+
+----- para_id: 6 -----
+Section: 2.1. Travel Time Prediction Techniques
+
+Text:
+In our review , we found studies of prediction models using SVR, including travel time of freight transport [10], urban main road travel time [11], and traffic flow prediction [12]. The SVM uses a kernel, which is a mathematical function, to transform data points to aid a hyperplane separation of the data in higher-dimensional space. SVR uses a hyperplane to define decision boundaries to maximize the number of included data points [25]. On the basis of this mechanism, the SVR model can be applied as a time-series forecasting technique. However, an appropriate kernel must be chosen to fit with the characteristics of the data. Long Short -Term Memory (LSTM) is a type of artificial Recurrent Neural Network (RNN) architecture. Some recent research studies have utilized this method as follows: - Ran et al. [13] used LSTM and extension to predict travel time in an English road network. [4] used LSTM analytics on travel time on freeways using data from inductive loop detectors. [14] predicted bus journey times using LSTM. [15] adopted LSTM to estimate bus arrival times and performed an evaluation using MAE. - Sun and Kim [16] used LSTM with self-attention to predict travel time by grouping the time into hours. [17] created a travel time prediction model using LSTM and trip plans from historical GPS data and road networks. [18] made a travel time prediction using LSTM with multiple lane levels.
+
+----- para_id: 7 -----
+Section: 2.1. Travel Time Prediction Techniques
+
+Text:
+[19] used LSTM for bus travel time prediction by having distance, speed, and start time as the parameters. [20] made a travel time prediction model using different methods and found that the LSTM provided the highest performance. - Agafonov and Yumaganov [21] used LSTM to predict travel time on five routes whose average distances were about 16 km. - Xu and Rong [22] performed an experiment on Convolutional LSTM (ConvLSTM) and LSTM to predict travel time and found that the LSTM with trip plans had a better performance than that of the ConvLSTM in their dataset. In more detail, the LSTM uses the connection of the feedback to analyze the sequences of data [26], so it is a well-known technique for time-series prediction . As depicted in Figure 1, LSTM architecture usually contains a sequence of units corresponding to window size. One unit has an input and output, and inside a unit, there is a cell state, a forget gate, an input gate, and an output gate. The cell state (Ct) is a memory from a previous unit (Ct−1) that is updated and sent to the next unit, where the gates contain the combination of the current input (xt) and the previous output (ht−1) activated by either the sigmoid function (sig) or the hyperbolic tangent function (tanh). In addition, the LSTM can be improved by the addition of attention, such as self-attention, so it becomes a self-attention LSTM (SA-LSTM).
+
+----- para_id: 8 -----
+Section: 2.1. Travel Time Prediction Techniques
+
+Text:
+The mechanism of an SA-LSTM involves the learning of the association between the current batch of data and the previous parts in a sequence of data. In the case of travel time prediction , this method attempts to choose near-term data points that have a high correlation with 1 [13,14,16]. In addition to the original LSTM, Convolutional Long Short -Term Memory (ConvL- STM) is also used in the travel time prediction problem [14]. The ConvLSTM is an extension of LSTM that uses convolutional layers to process input. This approach is suitable for large input matrices, such as images. There are studies, such as [14], that have taken advantage of this method to predict the travel time of buses and have found that the ConvLSTM prediction model provided the best performance. In addition, the work in [22] also used the ConvLSTM in a travel time prediction experiment. 2022, 12, 5681 4 of 18 Moreover, to improve the analytic method, we often required filters to transform the data into a good shape for good- quality inputs for training the model. Thus, methods to clean, denoise, reduce demotion, and transform the dataset were needed. To achieve these goals, some filters were applied, such as a Kalman filter with a neuron network or LSTM [23,24]. As time-series data can be viewed as signal data, some well-known filters, such as the Kalman filter, the Savitzky–Golay filter, and the Butterworth low-pass filter, have been researched [27,28].
+
+----- para_id: 9 -----
+Section: 2.1. Travel Time Prediction Techniques
+
+Text:
+First, there is the Kalman filter [21], which has often been used for travel time prediction [23,24]. This filter calculates a joint probability distribution across the variables for each period to smooth the signal data. Second, the Savitzky–Golay filter uses a low-degree polynomial and the linear least-squares method to smooth data points based on adjacent points. Last, the Butterworth low-pass filter is a well-known signal processing filter that operates in a frequency domain. This method uses an algorithm to screen the signal by cutting off the high-frequency signal pass, so it generally helps denoise signal data. Thus, we also attempted to adopt these filter methods and selected one of them to improve the performance of the travel time prediction model.
+
+----- para_id: 10 -----
+Section: 2.2. Review of Related Studies
+
+Text:
+Since the results of our work showed that the Self-Attention Long Short -Term Memory (SA-LSTM) model with a Butterworth low-pass filter provides the best performance among all the experiments, this subsection details several research studies that used the LSTM technique and viewed the GPS transactions as time-series data. [13] proposed an LSTM neural network with an attention mechanism for travel time prediction and carried out an experiment from a dataset provided by Highways England. In the raw dataset, the highway had several road segments, and the length of each segment in the dataset was about 18 km. The dataset contained the road segments' names, dates, times, travel times, and distances. Then, the authors of this work sampled the data in intervals of 15 min. The LSTM was tuned to have seven units by which to predict the travel time of the next interval. The experiment found that the MAE of the proposed model was 5.788 s, which was better than the LSTM without attention by about 3.19%. [20] conducted travel time prediction experiments for Taiwan's provincial highway number 61 with deep learning techniques. The dataset was processed into travel time between two gates of the highway with timestamps.
+
+----- para_id: 11 -----
+Section: 2.2. Review of Related Studies
+
+Text:
+The authors of this work adopted several techniques for long-term prediction , such as LSTM, bidirectional LSTM (BiLSTM), Facebook time-series forecasting model (FBProphet), and an extended ARIMA named the Seasonal Auto-Regressive Integrated Moving Average with eXogenous factors (SARIMAX). In the experiment results, the LSTM, BiLSTM, and SARIMAX showed similar performances. However, in the overall experiment, the LSTM had the lowest Mean Relative Error (MRE), which was a mean absolute error per km. [14] proposed a convolutional LSTM model (ConvLSTM) with at- tention to predicting the travel time of buses . The dataset was a general transit feed specification (GTFS) from Google Transit APIs. The data contained trips , stop sequences, arrival times, and departure times. The authors of this work processed the GTFS data into running times between two stops and waiting times at each stop. The ConvLSTM model predicted both running times and waiting times. The hyperparameter of the model included a learning rate of 0.001, 20 epochs, and a batch size of 16. In addition, the authors allowed the developers to determine an appropriate number of LSTM units according to the datasets and experiments. For the results of the running time prediction , the MAE of the ConvLSTM with attention was 36.328 s, which was about 3.21% higher than that of the ConvLSTM without attention and about 22.95% higher than that of the LSTM without attention. 2022, 12, 5681 5 of

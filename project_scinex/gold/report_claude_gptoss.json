@@ -1,0 +1,257 @@
+{
+  "label_files": [
+    "gold/gptoss_verdicts.csv"
+  ],
+  "n_labelled": 100,
+  "extractors": {
+    "relation": {
+      "n_labelled": 100,
+      "corpus_triples": 296,
+      "sampled_strict": 0.85,
+      "sampled_lenient": 0.93,
+      "weighted_strict": 0.8280275467775471,
+      "weighted_lenient": 0.9256756756756758,
+      "weight_coverage": 1.0,
+      "by_predicate": {
+        "achieves": {
+          "n": 13,
+          "correct": 13,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 61,
+          "corpus_share": 0.20608108108108109,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "addresses": {
+          "n": 13,
+          "correct": 9,
+          "partial": 2,
+          "incorrect": 2,
+          "corpus_n": 82,
+          "corpus_share": 0.27702702702702703,
+          "strict": 0.6923076923076923,
+          "lenient": 0.8461538461538461
+        },
+        "comparesagainst": {
+          "n": 13,
+          "correct": 12,
+          "partial": 1,
+          "incorrect": 0,
+          "corpus_n": 23,
+          "corpus_share": 0.0777027027027027,
+          "strict": 0.9230769230769231,
+          "lenient": 1.0
+        },
+        "comprises": {
+          "n": 13,
+          "correct": 10,
+          "partial": 2,
+          "incorrect": 1,
+          "corpus_n": 28,
+          "corpus_share": 0.0945945945945946,
+          "strict": 0.7692307692307693,
+          "lenient": 0.9230769230769231
+        },
+        "designedfor": {
+          "n": 6,
+          "correct": 6,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 7,
+          "corpus_share": 0.02364864864864865,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "encompasses": {
+          "n": 2,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 2,
+          "corpus_share": 0.006756756756756757,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "evaluatedon": {
+          "n": 12,
+          "correct": 12,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 12,
+          "corpus_share": 0.04054054054054054,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "evaluates": {
+          "n": 1,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 9,
+          "corpus_share": 0.030405405405405407,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "locatedin": {
+          "n": 1,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 1,
+          "corpus_share": 0.0033783783783783786,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "produces": {
+          "n": 4,
+          "correct": 3,
+          "partial": 1,
+          "incorrect": 0,
+          "corpus_n": 7,
+          "corpus_share": 0.02364864864864865,
+          "strict": 0.75,
+          "lenient": 1.0
+        },
+        "splitfrom": {
+          "n": 6,
+          "correct": 5,
+          "partial": 0,
+          "incorrect": 1,
+          "corpus_n": 6,
+          "corpus_share": 0.02027027027027027,
+          "strict": 0.8333333333333334,
+          "lenient": 0.8333333333333334
+        },
+        "supports": {
+          "n": 2,
+          "correct": 2,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 2,
+          "corpus_share": 0.006756756756756757,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "trainedon": {
+          "n": 1,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 1,
+          "corpus_share": 0.0033783783783783786,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "uses": {
+          "n": 13,
+          "correct": 10,
+          "partial": 2,
+          "incorrect": 1,
+          "corpus_n": 55,
+          "corpus_share": 0.1858108108108108,
+          "strict": 0.7692307692307693,
+          "lenient": 0.9230769230769231
+        }
+      },
+      "bootstrap": {
+        "n": 2000,
+        "weighted_strict_ci95": [
+          0.7386304573804575,
+          0.9115124740124743
+        ],
+        "weighted_lenient_ci95": [
+          0.8578482328482331,
+          0.9825883575883577
+        ]
+      }
+    }
+  },
+  "by_paper": {
+    "eyelandmark2024": {
+      "n": 4,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "gamlprop2025": {
+      "n": 7,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "osmotic2026": {
+      "n": 2,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "oxidecrack2025": {
+      "n": 2,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "pesticide2025": {
+      "n": 5,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "textaug2023": {
+      "n": 5,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "trafficspeed2021": {
+      "n": 1,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "vehiclemake2025": {
+      "n": 13,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "videoseg2025": {
+      "n": 6,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "traveltime2022": {
+      "n": 10,
+      "strict": 0.9,
+      "lenient": 1.0
+    },
+    "csysguard2024": {
+      "n": 8,
+      "strict": 0.875,
+      "lenient": 1.0
+    },
+    "ugmo2024": {
+      "n": 5,
+      "strict": 0.8,
+      "lenient": 1.0
+    },
+    "parkingyolo2023": {
+      "n": 14,
+      "strict": 0.7857142857142857,
+      "lenient": 0.7857142857142857
+    },
+    "strabismus2026": {
+      "n": 6,
+      "strict": 0.6666666666666666,
+      "lenient": 1.0
+    },
+    "microwave2018": {
+      "n": 4,
+      "strict": 0.5,
+      "lenient": 0.5
+    },
+    "roadwaylight2018": {
+      "n": 4,
+      "strict": 0.5,
+      "lenient": 0.75
+    },
+    "llamacorrupt2025": {
+      "n": 4,
+      "strict": 0.25,
+      "lenient": 0.75
+    }
+  }
+}

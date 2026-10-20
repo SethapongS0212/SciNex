@@ -1,0 +1,18 @@
+{"verdicts": [
+  {"para_key": "traveltime2022#24", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["self-attention", "sliding window of 24 h", "filter pre-processing methods"],
+   "missed_relations": ["self-attention -> improves -> LSTM (the paper's actual contribution)", "validation set -> uses -> hyperparameter adjustment during learning", "model -> uses -> 24 continuous input points to produce the next-hour prediction", "several filter methods -> comparesAgainst -> each other"],
+   "note": "the strongest completeness result in the whole study: the full 6-pair comparison ring and all three split relations plus trainedOn and evaluatedOn. Characteristic of this extractor - it enumerates every pairwise combination. Still misses the self-attention improvement, which is the paper's contribution"},
+  {"para_key": "reststop2018#10", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["scoring function based on frequent pattern (SF)", "direction of connected rest stops", "popularity of the rest stop", "s0/s1/s2 rest-stop schema", "300 km candidate range"],
+   "missed_relations": ["the approach -> comprises -> three scoring functions (frequent pattern, direction, popularity)", "SF -> addresses -> predicting the next rest stop s2 from s0 and s1", "SF -> groundedIn -> association-based prediction from Morzy, Yavas et al. and Monreale et al.", "candidate selection -> configures -> 300 km range from s1"],
+   "note": "the paper's own three-way method decomposition, spelled out as an enumerated list, and nothing extracted"},
+  {"para_key": "trafficspeed2021#12", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["km stone speed prediction", "linear regression", "5-20 minute prediction horizon", "neighbour km stones", "prediction accuracy"],
+   "missed_relations": ["km stone speed -> predictedFrom -> current speeds at neighbouring km stones", "linear regression models -> designedFor -> speed prediction under given time/place conditions", "prediction horizon -> is -> next 5 to 20 minutes"],
+   "note": "ALL FOUR triples come from the FUTURE WORK hedge ('might be some non-linear regressors such as...'), asserting that four unused methods address the paper's goal. The paragraph's actual findings are untouched. Volume extracted from the one sentence that should have been declined."},
+  {"para_key": "csysguard2024#27", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["ARIMA", "SARIMA", "ETS", "CNN", "TCN", "RNN", "GRU", "LSTM", "Level-0 learners", "observation steps (30)", "prediction steps (5)", "two hidden layers (64 and 32 neurons, ReLU)", "Statsmodels", "TensorFlow"],
+   "missed_relations": ["Level-0 learners -> comprises -> base time-series models", "setup -> uses -> ARIMA, SARIMA, ETS, CNN, TCN, RNN, GRU, LSTM", "cSysGuard -> configures -> 30 observation steps and 5 forecast steps", "architecture -> comprises -> two hidden layers of 64 and 32 neurons with ReLU", "implementation -> uses -> Statsmodels and TensorFlow"],
+   "note": "EIGHT named models plus a complete hyperparameter specification, and zero triples - from the highest-volume extractor in the study. Set against roadwaylight2018#21, where the same model produced 11 configures triples from an equivalent paragraph, this shows the recall is erratic rather than uniformly high"}
+]}

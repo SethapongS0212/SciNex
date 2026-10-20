@@ -1,0 +1,22 @@
+{"verdicts": [
+  {"paper": "csysguard2024", "C6": "CONTRADICTORY",
+   "issues": ["CONTRADICTS THE PAPER'S OWN DESIGN CLAIM, TWICE OVER: (cSysGuard) --uses--> (simple averaging) sits alongside (cSysGuard) --uses--> (stacking approach) and (cSysGuard) --employs--> (multi-layered stacking ensemble approach) and (cSysGuard) --employs--> (weighted averaging strategy). The source states cSysGuard uses stacking RATHER THAN simple/weight averaging - and (CloudInsight) uses (weighted average strategy) is the system it is being contrasted with, so the contrast has been collapsed onto cSysGuard itself",
+              "employs used twice with a system and a method, where it is defined Organisation -> Person",
+              "surface split: (cSysGuard) / (cSys- Guard) from a PDF hyphenation artifact",
+              "three overlapping component claims: (cSysGuard) uses (Level-0 models), (Level-1 models), and (Level-0 and Level-1 models)",
+              "(cSysGuard) --evaluatedOn--> (system metrics): what the model forecasts, in the Dataset slot",
+              "(RMSE) evaluates (predictive performance of each Level-1 model) and (improvements): prose where the range requires a numeric result",
+              "(Bayesian optimization) --uses--> (hyperparameters): inverted, optimisation SETS hyperparameters"],
+   "note": "the five comparesAgainst triples and the SMOTE application relations are clean; what breaks it is the graph asserting cSysGuard uses the very averaging scheme the paper defines itself against. gptoss-120b made the identical error on this paper"},
+  {"paper": "roadwaylight2018", "C6": "MINOR_ISSUES",
+   "issues": ["(photoresistor sensor) and (gyro sensor) --achieves--> (measure ...): a sensor CAPABILITY in the ResearchObjective slot; achieves is for attained results",
+              "possible surface split: (Central Road Database of Thailand) and (RoadNet) both --produces--> IRIs, and RoadNet appears to be that database's name",
+              "(this experiment) is a deictic subject"],
+   "note": "no contradictions - the three classifiers all achieving 'stable RMSE' agree with each other, and the sensor-to-measurement mapping is coherent"},
+  {"paper": "textaug2023", "C6": "CONTRADICTORY",
+   "issues": ["HIERARCHY VIOLATION: (CNN) --comprises--> (BERT) makes BERT a component of CNN, while (CNN) addresses (categorization processes) and (Bert) addresses (categorization processes) treat them as siblings - the same pair is both peer and part",
+              "SAME NODE, TWO INCOMPATIBLE VALUES: (F1-score) --evaluates--> (0.91) and (0.43), with the class qualifiers dropped",
+              "FOUR surface variants of the paper's own technique: (BPEmb), (BPEmbAug), (BPEmb data augmentation strategy), (BPEmb augmentation technique)",
+              "(Bert) vs standard (BERT) casing adds a further split"],
+   "note": "unchanged from the Session 28 judgement of this same triple set; reproduced here because the paper was redrawn into the 20-paper C6 sample"}
+]}

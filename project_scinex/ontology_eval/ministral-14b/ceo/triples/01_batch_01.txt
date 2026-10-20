@@ -1,0 +1,90 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: d9a70cc7a0e4 -----
+TRIPLE:     (WhereNext)  --uses-->  (hybrid methods)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: (2009) introduced a model named WhereNext for predicting the next location of a moving object. It used the hybrid methods including the order of location, travel time, and frequent user visits.
+
+----- triple_id: c08e053f9d5c -----
+TRIPLE:     (Koohkan et al.'s paper-based spectrophotometer)  --addresses-->  (low-cost spectrophotometer limitations)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Examples include Jarujareet et al.'s 3D-printed spec trometer [13], Gonz´alez-Morales et al.'s LED-based device [14], Pereira and Hosker's Lego-like block [15], and Koohkan et al.'s paper-based spectrophotometer [16], each demonstrating potential but with chal lenges.
+
+----- triple_id: 1ad5cc059167 -----
+TRIPLE:     (Genetic Algorithm)  --comprises-->  (Initialization)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: The application of the Genetic Algorithm to generate chemicals with desirable properties, as illustrated in Figure 3, comprises five steps: Initialization, Population, Selection, Crossover, and Mutation.
+
+----- triple_id: b449d8345c11 -----
+TRIPLE:     (OC-SORT)  --achieves-->  (MOTA scores of (1.0, 0.76, 0.90, 0.83))
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: On the other hand, the OC-SORT algorithm achieved MOTA scores of (1.0, 0.76, 0.90, 0.83) across the same datasets.
+
+----- triple_id: 42101749deda -----
+TRIPLE:     (CTv1)  --evaluates-->  (6.5M parameters)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: The proposed models by the researchers, CTv1, had the largest size with 6.5M parameters, followed by CTv1-DW and CTv1-DR.
+
+----- triple_id: 3411a15c9118 -----
+TRIPLE:     (Artificial Neural Network (ANN))  --comparesagainst-->  (Support Vector Machine (SVM))
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: We evaluated and compared seven supervised machine learning classifiers11. • Artificial Neural Network (ANN). • Support Vector Machine (SVM).
+
+----- triple_id: af9b53f8fd5c -----
+TRIPLE:     (Synthetic Minority Over-sampling Technique (SMOTE))  --produces-->  (newly generated samples of the minority classes)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: For the Synthetic Minority Over-sampling Technique (SMOTE), newly generated samples of the minority classes are produced to have a similar number as the majority class.
+
+----- triple_id: 7097ac44fd6b -----
+TRIPLE:     (ResNet50)  --evaluatedon-->  (Stanford Cars)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Using their developed Lightweight Recurrent Attention Unit (LRAU), Boukerche and Ma [11] also tested InceptionV3 (along with ResNet50 and VGG16) to improve classification performance on well-known VMMR datasets such as Stanford Cars, CompCars, and NTOU-MMR.
+
+----- triple_id: 5b8bafacdc5c -----
+TRIPLE:     (tweets)  --encompasses-->  (disasters)
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains
+SOURCE SENTENCE: Research has shown that tweets can be classified into categories such as traffic, accidents, disasters, social events, and road repairs.
+
+----- triple_id: 404910eae4b6 -----
+TRIPLE:     (WangchanBERTa)  --trainedon-->  (a large Thai language dataset)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: developed a pre-trained Thai language model named WangchanBERTa, trained on a large Thai language dataset and used for multiple applications, including text augmentation.

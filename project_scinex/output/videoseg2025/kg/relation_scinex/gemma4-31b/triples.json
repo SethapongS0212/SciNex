@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "YOLOv8",
+    "predicate": "comparesagainst",
+    "object": "YOLO predecessors",
+    "object_type": "Model",
+    "source_sentence": "First, YOLOv8, developed by Ultralytics [4], exhibits superior performance compared to its YOLO predecessors with respect to both processing speed and accuracy.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "II LITERATURE REVIEW"
+  },
+  {
+    "subject": "YOLOv8",
+    "predicate": "uses",
+    "object": "C2f module",
+    "object_type": "Method",
+    "source_sentence": "In summary, the architecture of the YOLOv8 model is informed by the design principles of YOLOv7 ELAN; the fundamental convolutional unit is the C2f module, which incorporates two parallel gradient flow pathways, thereby enhancing the robustness of the gradient information propagation.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "II LITERATURE REVIEW"
+  },
+  {
+    "subject": "YOLOv8",
+    "predicate": "uses",
+    "object": "Spatial Pyramid Pooling Fusion (SPPF)",
+    "object_type": "Method",
+    "source_sentence": "Furthermore, YOLOv8 employs the Spatial Pyramid Pooling Fusion (SPPF), a mechanism for extracting contextual information from images across diverse scales, which markedly improves the model's generalization proficiency.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "II LITERATURE REVIEW"
+  },
+  {
+    "subject": "YOLOv8-seg model",
+    "predicate": "uses",
+    "object": "FocalNext",
+    "object_type": "Method",
+    "source_sentence": "In the context of construction site oversight, an advanced YOLOv8-seg model, which integrates FocalNext, Efficient Multiscale Attention, and Context Aggregation modules, has demonstrated enhanced efficacy in identifying subtle features as evidenced by Ruihan Bai et al.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "II LITERATURE REVIEW"
+  },
+  {
+    "subject": "YOLOv8-seg model",
+    "predicate": "uses",
+    "object": "Efficient Multiscale Attention",
+    "object_type": "Method",
+    "source_sentence": "In the context of construction site oversight, an advanced YOLOv8-seg model, which integrates FocalNext, Efficient Multiscale Attention, and Context Aggregation modules, has demonstrated enhanced efficacy in identifying subtle features as evidenced by Ruihan Bai et al.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "II LITERATURE REVIEW"
+  },
+  {
+    "subject": "YOLOv8-seg model",
+    "predicate": "uses",
+    "object": "Context Aggregation modules",
+    "object_type": "Method",
+    "source_sentence": "In the context of construction site oversight, an advanced YOLOv8-seg model, which integrates FocalNext, Efficient Multiscale Attention, and Context Aggregation modules, has demonstrated enhanced efficacy in identifying subtle features as evidenced by Ruihan Bai et al.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "II LITERATURE REVIEW"
+  },
+  {
+    "subject": "SAM 2",
+    "predicate": "uses",
+    "object": "memory- based transformer",
+    "object_type": "Method",
+    "source_sentence": "Using a memory- based transformer, SAM 2 tracks objects and their interactions across video frames, creating accurate and consistent masks for moving objects while tackling the unique challenges of video segmentation.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "II LITERATURE REVIEW"
+  },
+  {
+    "subject": "Efficient Frame Pruning",
+    "predicate": "achieves",
+    "object": "3x increase in frames per second",
+    "object_type": "Other",
+    "source_sentence": "[12] address efficiency challenges in surgical video segmentation by implementing an Efficient Frame Pruning mechanism, achieving a 3x increase in frames per second compared to vanilla SAM2.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "II LITERATURE REVIEW"
+  },
+  {
+    "subject": "Efficient Frame Pruning",
+    "predicate": "comparesagainst",
+    "object": "vanilla SAM2",
+    "object_type": "Model",
+    "source_sentence": "[12] address efficiency challenges in surgical video segmentation by implementing an Efficient Frame Pruning mechanism, achieving a 3x increase in frames per second compared to vanilla SAM2.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "II LITERATURE REVIEW"
+  },
+  {
+    "subject": "YOLOv8",
+    "predicate": "uses",
+    "object": "YOLOv8x",
+    "object_type": "Model",
+    "source_sentence": "YOLOv8 object detection and SAM2 will utilize pretrained models sourced from their respective GitHub repositories, with YOLOv8 utilizing YOLOv8x to achieve optimal accuracy in bounding box generation, thereby transmitting values to SAM2, while SAM2 employs sam2.1_hiera_base+.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "yolov8n- seg",
+    "predicate": "trainedon",
+    "object": "bespoke dataset",
+    "object_type": "Dataset",
+    "source_sentence": "For YOLOv8, a custom model will be implemented, which has been trained by fine-tuning yolov8n- seg utilizing a bespoke dataset comprising the initial 5000 frames from the video selectively edited to encompass only the Degree conferral period.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "Mask Transparency Operation",
+    "predicate": "uses",
+    "object": "video frames",
+    "object_type": "Other",
+    "source_sentence": "Upon completion of the segmentation process, video frames are produced that exhibit a robust mask overlay, which are subsequently utilized as inputs for the Mask Transparency Operation.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "YOLOv8",
+    "predicate": "evaluatedon",
+    "object": "predetermined dataset",
+    "object_type": "Dataset",
+    "source_sentence": "In order to evaluate the efficacy of the segmentation models YOLOv8 and SAM2, we quantified the temporal and memory consumption associated with each methodology while processing a predetermined dataset.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "SAM2",
+    "predicate": "evaluatedon",
+    "object": "predetermined dataset",
+    "object_type": "Dataset",
+    "source_sentence": "In order to evaluate the efficacy of the segmentation models YOLOv8 and SAM2, we quantified the temporal and memory consumption associated with each methodology while processing a predetermined dataset.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "YOLOv8",
+    "predicate": "evaluatedon",
+    "object": "overlay frames",
+    "object_type": "Dataset",
+    "source_sentence": "Once the color thresholds were defined, all overlay frames from YOLOv8 and SAM2 were evaluated.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "IV RESULTS"
+  },
+  {
+    "subject": "SAM2",
+    "predicate": "evaluatedon",
+    "object": "overlay frames",
+    "object_type": "Dataset",
+    "source_sentence": "Once the color thresholds were defined, all overlay frames from YOLOv8 and SAM2 were evaluated.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "IV RESULTS"
+  },
+  {
+    "subject": "YOLOv8",
+    "predicate": "comparesagainst",
+    "object": "SAM2",
+    "object_type": "Model",
+    "source_sentence": "In the result of Table I, YOLOv8 and SAM2 both have a similar color proportion, with YOLOv8 showing slightly better overall suppression.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "IV RESULTS"
+  },
+  {
+    "subject": "SAM2",
+    "predicate": "comparesagainst",
+    "object": "YOLOv8",
+    "object_type": "Model",
+    "source_sentence": "SAM2 stands out with superior Dice and IoU scores compared to YOLOv8 making it ideal for precision-critical applications more than YOLOv8",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "IV RESULTS"
+  },
+  {
+    "subject": "YOLOv8",
+    "predicate": "comparesagainst",
+    "object": "SAM2",
+    "object_type": "Model",
+    "source_sentence": "The findings underscore the superior efficiency of YOLOv8, which surpasses SAM2 in terms of both computational velocity and memory utilization.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "IV RESULTS"
+  },
+  {
+    "subject": "YOLOv8",
+    "predicate": "comparesagainst",
+    "object": "Segment Anything Model (SAM2)",
+    "object_type": "Model",
+    "source_sentence": "While the Segment Anything Model (SAM2) and YOLOv8 both attain comparable color proportions, YOLOv8 exhibits marginally superior overall suppression.",
+    "extraction_mode": "relation",
+    "paper": "videoseg2025",
+    "title": "Techniques for Graduate Detection in Thai Graduation Ceremonies",
+    "section": "V CONCLUSION"
+  }
+]

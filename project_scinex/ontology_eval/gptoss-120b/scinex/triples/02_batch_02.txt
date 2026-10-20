@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 4222765562ec -----
+TRIPLE:     (SVM)  --evaluatedon-->  (NTOU-MMR dataset)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: SVM classification produced higher accuracy than direct VGG16 classification, according to their tests on the NTOU-MMR dataset.
+
+----- triple_id: f7ebbb4614f7 -----
+TRIPLE:     (this study)  --mentions-->  (Belvèze)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: Upon comparison of the outcomes of this study with those of Belvèze and Akbari, it is observed that the method employed here yields lower %MAPE values for each substance.
+
+----- triple_id: 70b499f524e1 -----
+TRIPLE:     (five-parameter model)  --producedby-->  (warp perspective method)
+PREDICATE DEFINITION: ResearchArtifact → ResearchProcess  |  Links a research artifact back to the research process that generated it
+SOURCE SENTENCE: The viewing angle of an image was adjusted using the warp perspective method, available in the OpenCV library, resulting in a five-parameter model for the projection step.
+
+----- triple_id: c36abf17d8fd -----
+TRIPLE:     (cross-validation)  --achieves-->  (reduction of MAPE from 1.94% to 1.72%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: For instance, the incorporation of cross-validation resulted in a reduction of RMSE from 9.92 K to 8.00 K and MAPE from 1.94% to 1.72% for the test set, indicating improved performance in property estimation.
+
+----- triple_id: 96238435f9a9 -----
+TRIPLE:     (Bureau of Street Lighting)  --locatedin-->  (Los Angeles)
+PREDICATE DEFINITION: Organisation → Place  |  Associates an organisation with the geographic place in which it is situated
+SOURCE SENTENCE: In this study, we refer to the guidelines from the Bureau of Street Lighting , Los Angeles.(14)
+
+----- triple_id: 0a8e1070a453 -----
+TRIPLE:     (Random Forest (RF) model)  --achievesresult-->  (87.13% F1 score)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: It was found that the accuracy and F1 score of the Random Forest (RF) model were 88.26% and 87.13%, respectively.
+
+----- triple_id: bf7193022bc9 -----
+TRIPLE:     (YOLOv8)  --comparesagainst-->  (Segment Anything Model (SAM2))
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: While the Segment Anything Model (SAM2) and YOLOv8 both attain comparable color proportions, YOLOv8 exhibits marginally superior overall suppression.
+
+----- triple_id: bf4be80b387b -----
+TRIPLE:     (image processing methodology)  --comprises-->  (morphology)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: The image processing methodology, consisting of object detection, morphology, and corner detection, successfully corrected the misalignment between each reference spectral band.
+
+----- triple_id: cfcc071ea1d5 -----
+TRIPLE:     (scoring function SD)  --uses-->  (cosine similarity index)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The scoring function SD represents this concept using the cosine similarity index.
+
+----- triple_id: b4d53d6ea818 -----
+TRIPLE:     (Decision Tree (DT))  --addresses-->  (classification)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Decision Tree (DT) is one of supervised learning methods for classification26.

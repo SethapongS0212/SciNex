@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: Abstract
+
+Text:
+Material degradation is one of the main problems in various high- temperature processes, directly resulting in the failure of the material. Crack and protective oxide film spallation caused either by mechanical stress development in the oxidation process or thermal stress due to a mismatch of the thermal expansions of the formed oxide and alloy are common forms of failure in high- temperature processes. Typically, the Pilling-Bedworth ratio (PBR) is employed to predict crack and spallation of the oxide by determining the volume changes of oxide and alloy because of its simplicity. However, this approach provides poor crack and spallation predictions. Hence, machine learning was adopted in the present work to predict oxide formation and spallation in the temperature range of 600-1,200 °C. The inputs for the present developed model were alloy compositions, oxide formed during oxidation , and oxidation conditions and periods. Furthermore, the predicted results of the present developed machine learning model were compared to those obtained by the PBR method. The present results revealed that the accuracy of the oxide spallation prediction of the present model was better than that of the PBR method. The random forest with 15 estimators was the best machine learning model. Finally, it can be concluded that the machine learning model is essential for accurate material failure prediction.
+
+----- para_id: 1 -----
+Section: Abstract
+
+Text:
+In high temperature processes, the alloys usually deploy as structural and process equipment due to their high melting point, proper mechanical properties and high oxidation resistance1,2. The resistance to high temperature deterioration is a result of the protective oxide scales formed on the alloy surfaces which protect the alloy from environmental attack3–6. Hence, whenever the scales well adhere on the alloy surface , the deteriorations of the alloys are supposed to be not occurred. On the contrary, if the crack and/or spallation, which are the signs of non-protective, of the scale occurs, the chemical reactions promoting the failures of the materials would be accelerated leading to catastrophic of the materials. Crack and spallation could occur by the stress development in the oxide scale reaching the critical strength of oxide . The stress in the oxide scale can be distinguished into 2 types7: the thermal stress due to the thermal expansion mismatch of oxide formed and the substrate and the growth stress developing during the oxidation process5,8,9. The crack due to thermal stress can be easily estimated by considering the thermal expansion coefficients (CTE) at high temperature of the substrate and the oxides formed10,11. If the difference in both CTEs is large, the use of such materials should be avoided.
+
+----- para_id: 2 -----
+Section: Abstract
+
+Text:
+For the growth stress, it is more complicated and believed that the stress developed is a result of many factors12, i.e., the volumes and crystal structures of substrate and oxide and the oxide growth mechanism. The equation evaluating the volume change due to the oxide formation during oxidation was established in 1923 by Pilling and Bedworth and it is known as Pilling-Bedworth ratio abbreviated as PBR Eq. By taking the comparison of the volumes of oxide formed and the metal used, it helps ascribe the protectiveness of the oxide . PBR gives the protection performance of the oxide scale . PBR < 1 means the oxide formed does not fully cover the metal surface due to the tensile stress, so the oxide is not protective. The best performance occurs when PBR is close to 1 or in the range of 1 to 2. The larger PBR implies high compressive stress in the oxide film, thus the crack tends to occur13–16. Nevertheless, PBR was established based on several assumptions which are sometimes not consistent with the real situation leading to the poor predictions14. Some oxides externally grow at the oxide -gas interface opposing to the assumption of PBR that the oxides grow at the metal- oxide interface3,18–22. PBR does not consider the substrate and component geometries which affect the stress distribution in the oxides. Also, the self-healing and volatilisations of oxide components during the oxidation is not taken into account by PBR14.
+
+----- para_id: 3 -----
+Section: Abstract
+
+Text:
+Hence, some literatures found the formation of protective oxide even the PBR was not close to 1 and the modifications of PBR were studied15,16,23–25 and, in this work, a novel method for prediction which is machine learning is proposed to use.
+
+----- para_id: 4 -----
+Section: Literature review
+
+Text:
+Classification analytics Logistic Regression (LR) In order to divide data into 2 classes—such as 0 or 1, pass or fail, spam or not spam—based on independent factors, Logistic Regression (LR) is a straightforward binary classification technique26. It makes use of a logistic function to translate the linear combination of input features into 0 or 1. The logistic function is expressed in Eq. (2), with a feature vector X, a coefficient vector B, and a bias b0. This technique is appropriate for data that can be linearly separated because it contains a linear equation, so it is being explored as an early option in classification experiments.
+
+----- para_id: 5 -----
+Section: Decision Tree (DT)
+
+Text:
+Decision Tree (DT) is one of supervised learning methods for classification26. 1, it is a rule- based decision maker into a tree structure with nodes and branches. Nodes display any features that are taken into consideration, and branches divide each feature's values or value ranges. The highest-ranking node in the tree, referred to as the root node, provides the best label split as determined by a loss function, such as Entropy, Information Gain, and GINI index. After that, the conditions were split into branches and nodes, leading to the leaf nodes, which are labels or class representations. This method offers robustness against outliers and explainable structures. P = 1 1 + e−(b0+BX) (2) Scientific Reports | (2025) 15:7758 3 | https://doi.org/10.1038/s41598-025-91449-
+
+----- para_id: 6 -----
+Section: Random Forest (RF)
+
+Text:
+A Random Forest (RF), as illustrated in Fig. 2, is an assembly classifier that combines multiple decision trees27. This method expands on the general decision tree's benefits by utilizing the idea of the wisdom of the crowd. It takes the outputs of multiple decision trees into consideration to produce a single output. Regarding its ability to solve classification problems with high performance explainable structure, this method is generally acknowledged. In addition, it calculates the importance of every feature during the learning process.
+
+----- para_id: 7 -----
+Section: K-Nearest Neighbor (KNN)
+
+Text:
+The idea behind K-Nearest Neighbors (KNN) is to forecast a new data point's label by taking into account the majority class of the k closest data points in the feature space26. Given that k is this method's hyperparameter, it must select a suitable value. A smaller k might be impacted by noise in the data, while a larger k might overlook local patterns. Nevertheless, because this approach uses a memory-based model, it may be computationally expensive for large datasets.
+
+----- para_id: 8 -----
+Section: Artificial Neural Network (ANN)
+
+Text:
+An Artificial Neural Network (ANN) is a classification method inspired by the structure of biological neural networks26. A perceptron, also known as a node, is a single computational unit that combines linear inputs to produce a non-linear output through the use of an activation function. Examples of activation functions include the Hyperbolic Tangent function (tanh), the Sigmoid function, the Rectified Linear Unit (ReLU) function, etc. Artificial Neural Network (ANN) is composed of nodes arranged in 3 layers which are input, hidden, and output layers. These layers are made up of connected nodes. To find patterns in the data, each link between nodes is a weight that can be adjusted during the training phase, also known as feedforward and backpropagation. In addition, nodes, layers, and activation functions are some of the hyperparameters that must be carefully tuned for ANNs.
+
+----- para_id: 9 -----
+Section: Classification evaluation
+
+Text:
+In the context of binary classification evaluation, terms like True-Positive (TP), True-Negative (TN), False- Positive (FP), and False-Negative (FN) are frequently used to assess a model's performance. The predicted labels are positive and negative, and the correctness classification is indicated by true and false. These metrics are necessary to build a confusion matrix, which is a table that shows the expected and actual class labels and offers a more thorough examination of the model's performance28,29. In general, the matric named "Accuracy" is calculated as a single value incorporating TP, TN, FP, and FN, as expressed in Eq. It is suitable for balanced-class problems where the numbers of the positive and negative classes are rather close. Accuracy = TP + TN TP + TN + FP + FN (3) Scientific Reports | (2025) 15:7758 4 | https://doi.org/10.1038/s41598-025-91449-3 However, when working with imbalanced data where the number of samples in the positive group is significantly less than the negative group, Accuracy is distracted by the large TN value. Here, alternative metrics—like F1— are taken into account, where TN is ignored. (6), is the result of the harmonic mean of the precision score and the recall score expressed in Eqs. Precision is how predicted positive items correct, while recall is how positive items remaining. Similar to other classification evaluation metrics, F1 score can reach to 1 in case of a high- performance prediction model.
+
+----- para_id: 10 -----
+Section: Classification evaluation
+
+Text:
+Precision = TP TP + FP (4) Recall = TP TP + FN (5)
+
+----- para_id: 11 -----
+Section: Oversampling
+
+Text:
+Oversampling is a machine learning technique that helps balance imbalanced datasets by reducing model bias from imbalanced datasets by adding the number of instances in the minority class. Several techniques have been highlighted in recent reviews30. The Synthetic Minority Over-sampling Technique (SMOTE)31 is a well- known and dependable oversampling technique for resolving class imbalance. It effectively balances datasets while lowering the risk of overfitting and underfitting by using nearest neighbors to generate synthetic samples uniformly across the feature space. Although techniques such as Adaptive Synthetic Sampling (ADASYN)32 and Border-line SMOTE33 provide specific improvements, like concentrating on decision boundaries or adjusting to data density. They frequently have increased computational costs and complexity. Although helpful in lowering noise, K-Means SMOTE34 can be more challenging because it depends on precise clustering. The Synthetic Minority Over-sampling Technique (SMOTE) is an excellent option for many imbalanced data problems because it balances ease of use, efficacy, and broad applicability. In our study, our dataset contains 71 features and 233 samples, where the spallation class was about 15% of all data entries. To observe the behavior of both classes against their features, our study visualized the data by a scatter plot, which was limited by a 2-dimensional display.

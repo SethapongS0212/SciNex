@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: Abstract
+
+Text:
+Stateless cloud computing presents remarkable scalability and cost-effectiveness by offering dynamically adjustable resources tailored to fluctuating demands, eliminating the constraints of stateful architectures. However, the challenges presented by dynamic workload are substantial in the context of system health monitoring , frequently leading to service interruptions owing to insufficient resources . It underscores the need for the development of more efficient monitoring systems . Our study introduces cSysGuard, a novel framework designed to enhance monitoring capabilities within cloud environments. The methodology employs an ensemble regression model with a stacking strategy to forecast dynamic performance metrics. The algorithm also leverages a classification model to assess the system 's health based on forecasted metrics, effectively identifying potential failures in the future. Under the configuration utilized, our evaluations demonstrated increased predictive performance with cSysGuard in forecasting various metrics compared to traditional models. The results showed an improvement of up to a remarkable 2.28-fold increase , varying significantly based on the specific metric under consideration. In addition, the effectiveness of health assessment was achieved through Decision Trees with hyperparameter tuning, resulting in a macro- averaged F1 score of 89.79%.
+
+----- para_id: 1 -----
+Section: Abstract
+
+Text:
+This research contributes to both the theoretical and practical aspects of server monitoring , presenting a solution that assesses system performance metrics and health to tackle dynamic challenges in cloud infrastructure.
+
+----- para_id: 2 -----
+Section: I INTRODUCTION
+
+Text:
+Cloud computing , renowned for its scalability [1] and flexibility [2], has revolutionized the management of sys- tem resources . Within its broad spectrum, stateless cloud computing plays a crucial role. This paradigm facilitates the flexible allocation of resources without retaining session information [3], significantly aiding in instance scaling. In such cases, it significantly enhances system reliability and adaptability to fluctuating demands while maintaining The associate editor coordinating the review of this manuscript and approving it for publication was Liangxiu Han. This work is licensed under a Creative Commons Attribution 4.0 License. For more information, see https://creativecommons.org/licenses/by/4.0/ VOLUME 12, 2024 optimal system utilization. As easily integrated with various architectures, stateless computing has become the preferred framework for application hosting, directly catering to the dynamic demands of the digital environment. Nonetheless, the unpredictable nature of cloud computing [4] often complicates effective resource allocation, carrying the risk of unexpected system failures that violate service - level agreements or SLAs [5]. Even though cloud providers offer auto-scaling mechanisms [6] for dynamic resource adjustment, they often rely on predefined rules or simple threshold-based techniques [7], [8]. While certain providers also provide predictive methods [9] for auto-scaling, the systems are typically pattern-based [10].
+
+----- para_id: 3 -----
+Section: I INTRODUCTION
+
+Text:
+These strategies often struggle with scaling within a reasonable timeframe during irregular workload patterns, such as traffic spikes, leading to inefficient resource management. A more robust framework is required to handle these challenges in such cases. Furthermore, existing monitoring frameworks primarily focus on real-time monitoring data but rarely provide continuous analysis of system health based on current captured data. This limitation arises because the interplay between resource metrics and their sufficiency assessment— determining whether they are adequate or inadequate—is intricate. It is often characterized by nonlinear dependencies from various factors, such as application characteristics and system configuration. Therefore, relying solely on individual metrics to assess resource allocation adequacy effectively can be challenging. To address these challenges, we require a sophisticated tool that accurately forecasts key metrics and assesses system health using these indicators in dynamic cloud environments. In response, we have developed cSysGuard, denoted as '' Cloud System Guard,'' a comprehensive ensemble pre- dictor framework designed to handle unpredictable nature effectively. It builds upon our previous research [11], which primarily focused on real-time system - health analysis . With this advancement, cSysGuard comprises two main compo- nents: a system performance metric forecasting module and a health assessment feature.
+
+----- para_id: 4 -----
+Section: I INTRODUCTION
+
+Text:
+It predicts performance metrics and then promptly uses these forecasts to assess potential system failures. Unlike traditional real-time monitoring tools [51], [52], cSysGuard emphasizes machine learning- based prediction with customizable internal architecture . This flexibility allows users to tailor the configuration to their needs, maximizing predictive accuracy and robustness in rapidly changing cloud environments. This manuscript elucidates our research on stateless applications , introducing cSysGuard, an ensemble machine learning framework devised for precise system metrics forecasting and health status diagnosis. The narrative begins with a thorough literature review (Section II), establishing a foundational understanding and drawing parallels with similar endeavors in the field. We then transition to a compre- hensive overview of cSysGuard's methodology (Section III), detailing the high-level workings, component functionalities, and data preprocessing strategies. The discussion elaborates on system metrics forecasting (Section IV), highlighting the regression analysis framework , input-output formats, and the model's evaluation and tuning processes. Subsequently, we explore the system health assessment phase (Section V), focusing on classification analysis , predictor structure, and performance optimization techniques.
+
+----- para_id: 5 -----
+Section: I INTRODUCTION
+
+Text:
+The paper culmi- nates in the Results and Discussion sections (Section VI), presenting a critical evaluation of cSysGuard's predictive capabilities, followed by a conclusion (Section VII) that encapsulates the essential findings and suggests avenues for future research.
+
+----- para_id: 6 -----
+Section: II LITERATURE REVIEW
+
+Text:
+This section provides a comprehensive synthesis of cloud computing with machine -learning backgrounds, insights from prior studies, and the techniques utilized in our research.
+
+----- para_id: 7 -----
+Section: A. ADAPTATION: CLOUD WITH MACHINE LEARNING
+
+Text:
+Although cloud applications introduce innovative resource management strategies, they also present challenges in monitoring resources . Its variable nature complicates the effective tracking of fluctuating system metrics. Conse- quently, resource utilization can result in inefficiency and diminished system performance. It underscores the need for more flexible monitoring methods to precisely assess and adapt to the ever-changing requirements of cloud environments. Therefore, there is growing interest in leveraging machine learning techniques to address these challenges [12], [13], [14], [15], [16], [17], [18], [19], [20], [21], [22], [23], [24], [25], [26], [27], [28]. Machine learning- driven predictive analytics, widely used in many fields [29], can analyze complex data patterns to identity potential anomalies. This proactive approach enhances system reliability and resource allocation, ensuring scalable and responsive services . Inte- grating machine learning with cloud computing represents a significant advancement in improving system resource management.
+
+----- para_id: 8 -----
+Section: B. RELATED WORK
+
+Text:
+Notably, many methodologies frequently favor singular predictive models [12], [13], [14], [15], [16], [17], [18], using universal models irrespective of specific system nuances, a practice often known as the ''one-size-fits-all'' approach. However, as emphasized by Kim et al. [22], relying on a single predictor model does not adequately address the cloud workload dynamics and short-term volatility. [19] proposed an alternative solution using a Support Vector Machine to categorize workloads into broad categories like ''very low,'' ''low,'' ''medium,'' and ''high.'' Although the method offers a simplified overview of the status , the reliance on categorical variables is insufficient for delivering precise values in applications that require detailed nuances. [20] and Caron et al. [21] proposed forecasting methods based on historical pattern data. Due to their heavy reliance on historical trends, these methods are limited in rapidly evolving environments, particularly when encountering novel patterns that emerge without precedent. In contrast, cSys- Guard employs an ensemble machine -learning approach that leverages the unique strengths of various models to achieve robust predictive capabilities. This strategy effectively adapts to the rapidly evolving cloud environments. Several studies have proposed ensemble model approaches that incorporate numerous predictors. [22] achieved balanced predictions by employing multiple models using a weighted averaging strategy.
+
+----- para_id: 9 -----
+Section: B. RELATED WORK
+
+Text:
+This method maximizes the strength of each model, calibrated by their predictive performance. Nonetheless, as Section VI-C indicates, relying solely on weighted averaging yields a lower accuracy than cSysGuard, where high predictive accuracy is essential for anticipating potential failures. [23] proposed a stacking ensemble model using Decision Trees as a meta-model to finalize the predictions from the base models. Our findings indicate that a single meta-model may not always provide robust performance, especially in unpredictable environments. 1 illustrates the varying performances of meta-models for Central Processing Unit (CPU) requests in a dynamic cloud environment over time. The data indicates that the best-performing meta-model changes periodically, presenting a challenge to select the best meta-model for the specific usage . Rather than building upon a single meta-model or weight averaging, cSysGuard employs a multi-layered stacking ensemble approach with a weighted averaging strategy, effectively amalgamating the contributions of all models in the output generation. On the other hand, deep learning techniques have been extensively utilized in several studies [24], [25], [26], [27], [28]. Although deep learning techniques are potent instruments for predictive analysis , they inevitably require substantial computational resources , even when applied to simpler metric patterns.
+
+----- para_id: 10 -----
+Section: B. RELATED WORK
+
+Text:
+Meanwhile, cSysGuard offers a balanced strategy for computational resource utilization and predictive accuracy by judiciously selecting well-suited models with specific data characteristics. Even the best accuracy is considered without regard to computational complexity; cSysGuard still performs better than standalone deep learning models, owing to its incorporation of a diverse array of predictive models. Our prior research focused on system health assessments. Although the inputs remain consistent with our current work, the approach in this study diverges by employing forecasted values instead of actual historical data. This methodology integrates our regression analytics to predict these met- rics and feeds the results into our classification health assessment process. This innovative approach enhances our capability to identify potential future system failures by leveraging insights to inform proactive measures for resource management.
+
+----- para_id: 11 -----
+Section: C. TECHNIQUE
+
+Text:
+This subsection provides a comprehensive overview of the essential techniques and a foundation for understanding the advancements in our study area. 1) LOW-PASS BUTTERWORTH FILTER The low-pass Butterworth filter, a key concept in signal processing [30], attenuates high-frequency noise while maintaining signal integrity. Characterized by its maximally flat magnitude response and ripple-free passband, the filter ensures a smooth frequency response up to the cut- off frequency, making it ideal for applications requiring undistorted outputs. Its transfer function, defined by the filter order, influences the steepness of the roll-off at the cut-off point [31]. Higher-order filters offer a faster passband-to-stopband transition but increase the complexity and risk of phase distortion. In the data analysis , the filter actively smooths out noise and data variations, bolstering the reliability of the analytical results. 2) SYNTHETIC MINORITY OVERSAMPLING TECHNIQUE The synthetic minority over-sampling technique (SMOTE) addresses imbalanced data by generating synthetic samples for the minority class, thereby improving the data distribution for machine learning applications . It creates new instances through interpolation between minority samples and their neighbors [32], enhancing diversity and reducing overfitting risks. However, its effectiveness depends on careful parame- ter tuning, including the number of neighbors and the amount of synthetic data generated.

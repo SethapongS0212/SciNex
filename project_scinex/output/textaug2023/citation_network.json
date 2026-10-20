@@ -1,0 +1,86 @@
+{
+  "paper_id": "4249b52d8c37b901a955404bfe681efb93ccd511",
+  "title": "Improving a text classifier using text augmentation: road traffic content from Twitter",
+  "year": 2023,
+  "abstract": "The purpose of this study is to develop a more effective method for categorizing Thai-language tweets related to traffic. The categorization consists of five categories. Previous studies have utilized CNN and BERT for classification, but have faced the challenge of needing balanced data for improved performance. To address this, we propose the use of BPEmb to augmentation the data and calculate cosine similarity. The subsequent step will be to create a balanced dataset to train a combination of CNN and bi-LSTM models for tweet classification. Our experiment demonstrates a significant improvement in tweet classification with a 14.3% increase in F1-score compared to the baseline method.",
+  "citation_count": 2,
+  "root_concepts": [
+    "classification",
+    "balanced",
+    "tweet",
+    "purpose",
+    "develop",
+    "effective",
+    "categorizing",
+    "tweets",
+    "related",
+    "traffic",
+    "categorization",
+    "consists",
+    "categories",
+    "previous",
+    "studies"
+  ],
+  "nodes": {
+    "7a01e95b957a85b4a8886c0ee7bf26755e4e0560": {
+      "title": "Expandor : A Novel Enhanced Exploratory Processing Augmentation for Text Data Optimization & Refinement",
+      "year": 2025,
+      "abstract": "Techniques for text-based augmentation have shown great potential in addressing the issue of data imbalance in Natural Language Processing (NLP) problems.Nevertheless, traditional augmentation methods are frequently domain-specific and contribute to noise rather than improving the quality of the augmented data. Therefore, there is a need to apply comparable augmentation techniques to additional data formats. This research aims to bridge this gap by developing an integrated algorithm incorporating a range of augmentation operations.This research evaluated the proposed algorithm \"Enhanced Exploratory Processing Augmentation for Data Optimization & Refinement\" (Expandor), and performed tests on a variety of machine learning tasks, including sentiment analysis and spam classification. By comparing the performance of models trained with and without augmentation and was able to find significant increases in accuracy, resilience, and generalization across a variety of datasets and models.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "augmentation",
+        "techniques",
+        "processing",
+        "research",
+        "algorithm",
+        "variety",
+        "shown",
+        "great",
+        "potential",
+        "addressing",
+        "issue",
+        "imbalance",
+        "natural",
+        "problems",
+        "nevertheless"
+      ]
+    },
+    "873374939a6b10648073794acb9eb7357e4925fc": {
+      "title": "A Modular, Data-Free Pipeline for Multi-Label Intention Recognition in Transportation Agentic AI Applications",
+      "year": 2025,
+      "abstract": "In this study, a modular, data-free pipeline for multi-label intention recognition is proposed for agentic AI applications in transportation. Unlike traditional intent recognition systems that depend on large, annotated corpora and often struggle with fine-grained, multi-label discrimination, our approach eliminates the need for costly data collection while enhancing the accuracy of multi-label intention understanding. Specifically, the overall pipeline, named DMTC, consists of three steps: 1) using prompt engineering to guide large language models (LLMs) to generate diverse synthetic queries in different transport scenarios; 2) encoding each textual query with a Sentence-T5 model to obtain compact semantic embeddings; 3) training a lightweight classifier using a novel online focal-contrastive (OFC) loss that emphasizes hard samples and maximizes inter-class separability. The applicability of the proposed pipeline is demonstrated in an agentic AI application in the maritime transportation context. Extensive experiments show that DMTC achieves a Hamming loss of 5.35% and an AUC of 95.92%, outperforming state-of-the-art multi-label classifiers and recent end-to-end SOTA LLM-based baselines. Further analysis reveals that Sentence-T5 embeddings improve subset accuracy by at least 3.29% over alternative encoders, and integrating the OFC loss yields an additional 0.98% gain compared to standard contrastive objectives. In conclusion, our system seamlessly routes user queries to task-specific modules (e.g., ETA information, traffic risk evaluation, and other typical scenarios in the transportation domain), laying the groundwork for fully autonomous, intention-aware agents without costly manual labelling.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "multi",
+        "label",
+        "pipeline",
+        "intention",
+        "transportation",
+        "recognition",
+        "agentic",
+        "large",
+        "costly",
+        "accuracy",
+        "queries",
+        "scenarios",
+        "sentence",
+        "embeddings",
+        "contrastive"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "source": "7a01e95b957a85b4a8886c0ee7bf26755e4e0560",
+      "target": "4249b52d8c37b901a955404bfe681efb93ccd511",
+      "type": "cites"
+    },
+    {
+      "source": "873374939a6b10648073794acb9eb7357e4925fc",
+      "target": "4249b52d8c37b901a955404bfe681efb93ccd511",
+      "type": "cites"
+    }
+  ]
+}

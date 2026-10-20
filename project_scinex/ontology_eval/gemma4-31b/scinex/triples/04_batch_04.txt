@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 5a970b5340a3 -----
+TRIPLE:     (Initial exploration)  --encompasses-->  (Multilayer Perceptron (MLP))
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  Relates a research domain to the research tasks that fall within its scope
+SOURCE SENTENCE: Initial exploration encompassed ordinary least-squares regression, ridge regression, k-Nearest Neighbours (KNN) [29], Gaussian Process (GP) [30], Decision Tree (DT) [31], Random Forest (RF) [32], Support Vector Regression (SVR) [33], and Multilayer Perceptron (MLP) [34].
+
+----- triple_id: 7446387bc384 -----
+TRIPLE:     (BPEmb)  --trainedon-->  (byte-pair encoding technique)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: BPEmb is a pre- trained corpus that was trained using the byte-pair encoding technique and contains word embeddings for 275 different languages [9].
+
+----- triple_id: 980021931f16 -----
+TRIPLE:     (LTrain)  --splitfrom-->  (LExist)
+PREDICATE DEFINITION: Dataset → Dataset  |  Records that a dataset partition was derived from a larger source dataset
+SOURCE SENTENCE: In the evaluation phase, the LExist is split into training links (LTrain) and test links (LTest).
+
+----- triple_id: 9833adb4ef33 -----
+TRIPLE:     (SMOTE)  --configures-->  (number of neighbors was set to 5)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: For the SMOTE, the number of neighbors was set to 5, and the sample strategy of True: False cases was up to 200:200.
+
+----- triple_id: ad088b12514c -----
+TRIPLE:     (road data for Thailand)  --extractedfrom-->  (OpenStreetMap)
+PREDICATE DEFINITION: ? → AcademicPaper  |  Links an extracted entity to the academic paper it was extracted from.
+SOURCE SENTENCE: In addition, the road data for Thailand were prepared from OpenStreetMap [29].
+
+----- triple_id: 4af2abe28984 -----
+TRIPLE:     (Joseph Redmon)  --affiliatedwith-->  (University of Washington)
+PREDICATE DEFINITION: Agent → Organisation  |  Associates an agent with an organisation to which they are professionally attached during a research activity
+SOURCE SENTENCE: In 2015, Joseph Redmon and Ali Farhadi from the University of Washington created the cutting-edge object recognition algorithm called YOLO (You Only Look Once) [17].
+
+----- triple_id: 51e66536b6d3 -----
+TRIPLE:     (PCF)  --achieves-->  (best AUC)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: It has been found that among all stand-alone scoring functions, the collaborative filtering approach, PCF, provided the best AUC.
+
+----- triple_id: 2a8ade9a32b7 -----
+TRIPLE:     (Filter-Block-DR)  --uses-->  (1 × 1 convolution method)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Last, Filter-Block-DR uses the 1 × 1 convolution method to reduce the size of the input matrix in the standard Filter- Block.
+
+----- triple_id: b161c65c6b27 -----
+TRIPLE:     (proposed model)  --comparesagainst-->  (ResNet)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Performance Evaluation, which compares the proposed model's performance in vehicle make classification against state -of-the-art models (Ima- geNet, VCC16, Inception, ResNet, MobileNet), including model size and training time;
+
+----- triple_id: 46b4cb789e53 -----
+TRIPLE:     (LPII)  --comprises-->  (biological classification)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: Therefore, the contribution of our research is to introduce LPII, a hybrid approach that combines three concepts of collaborative filtering , community structure, and biological classification.

@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "bd9ff3e4c930", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "direction reversed: sentence says object detection USING RT-DETR, so the task consumes the model, not the reverse; also object detection is a Task, not a ResearchArtifact"},
+  {"triple_id": "69734d40b2a0", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "ef7174e9a772", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "757d2e6fb4e9", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "'dataset' is a bare placeholder; comprises requires BOTH sides to be processes, and a dataset comprising footage violates domain->range"},
+  {"triple_id": "b6e381991270", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "738d01004ed1", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "'the same datasets' is anaphoric; evaluatedOn explicitly requires a NAMED benchmark"},
+  {"triple_id": "cd8927745fbe", "C1": "INCORRECT", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "'performance' is not a concept; evaluates requires a named metric as subject and a numeric result as object - both roles are wrong here"},
+  {"triple_id": "af47c94c096c", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "SMOTE is an oversampling technique APPLIED TO data, not a Model trainedOn a named corpus; 'training data' is also unnamed"},
+  {"triple_id": "0058e90facd5", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "direction reversed: the training set is split FROM the time-series data, not the reverse"},
+  {"triple_id": "a6ac579ff6f4", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"}
+]}

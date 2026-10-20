@@ -1,0 +1,41 @@
+triple_id,C1,C3,C4,missed_concepts,missed_relations,issues,note
+f86f923f46bb,CORRECT,APPROPRIATE,CORRECT,,,,correctly takes 0.93 as CTv1-DR's own F1 and leaves 0.16 to the ablated variant - qwen3-235b took the ABLATED figure from this same sentence
+75719e244a5b,CORRECT,APPROPRIATE,CORRECT,,,,"⭐ exemplary producedBy: artifact -> the PROCESS that generated it, matching the range exactly. gemma4-31b's version of this same triple put RDF DATA in the process slot instead"
+8e953b002aa8,CORRECT,APPROPRIATE,PARTIAL,,,,"'designed to' is verbatim and the RT1/RT4 pairing is correctly disentangled, but RT4 is a derived feature rather than a Model"
+e43db831f3f8,CORRECT,APPROPRIATE,PARTIAL,,,,"'as reported by' is explicit, but the object is a physical phenomenon and the range is ResearchProcess"
+a75bf1e9eba6,INCORRECT,TOO_BROAD,INCORRECT,,,,"SELF-CITATION LOOP: subject and object are the same work in two renderings, so the graph asserts a paper cites itself"
+358464d6a658,CORRECT,APPROPRIATE,CORRECT,,,,correctly picks one metric out of three in the sentence and keeps its name with the value
+312716f0ce2c,CORRECT,APPROPRIATE,PARTIAL,,,,"PCF/PCS/PBC are scoring functions rather than Models, and the sentence says their significance is TESTED, not that they are benchmarked against one another"
+d378f8e6c5e3,CORRECT,APPROPRIATE,CORRECT,,,,"clean producedBy: artifact -> the process that built it, matching the range"
+1ef452c18b8a,CORRECT,APPROPRIATE,CORRECT,,,,
+bbfe29aacf12,CORRECT,APPROPRIATE,INCORRECT,,,,inverted: the sentence says a note about the project was ADDED TO the medical records - the project does not consume them
+afde2bb47a08,PARTIAL,TOO_BROAD,INCORRECT,,,,"'imbalanced text data' appears nowhere in the sentence, which only says the approach involves embedding weights from a large corpus"
+03a5a6ef77b2,CORRECT,APPROPRIATE,PARTIAL,,,,"a real, explicitly-listed chemical membership, but comprises requires processes on both sides and these are ion species"
+34705a483f8a,PARTIAL,TOO_BROAD,INCORRECT,,,,evaluates needs a named METRIC as subject; 'controlled experiments' is the activity doing the evaluating
+61d096659a24,PARTIAL,TOO_BROAD,INCORRECT,,,,inverted hyponymy - Kayak IS one of the travel websites listed - and Kayak is not an AcademicPaper
+5bf187b0dc5a,CORRECT,APPROPRIATE,CORRECT,,,,
+0c146360b8ab,PARTIAL,TOO_BROAD,CORRECT,,,,'produces' is verbatim and correctly typed; the subject is unnamed
+404910eae4b6,PARTIAL,TOO_BROAD,PARTIAL,,,,"explicit, but trainedOn asks for a NAMED corpus and 'a large Thai language dataset' names none"
+43ceea847f46,PARTIAL,TOO_BROAD,PARTIAL,,,,"the OTHER half of the qualifier-stripped pair - the sentence says SOME models exceed 90% and others fall below 50%, and this model emitted both halves against one node"
+bc0fa5181e00,PARTIAL,APPROPRIATE,INCORRECT,,,,"taken from a flattened hyperparameter TABLE, and configures is inverted (Specification -> Experiment)"
+c0cf66d6fa5c,PARTIAL,APPROPRIATE,INCORRECT,,,,extractedFrom has range AcademicPaper; the source sentence is also truncated mid-clause ('were salt')
+8b2dfe145daf,PARTIAL,TOO_BROAD,INCORRECT,,,,REVERSED - the 3 chunks were divided FROM the dataset
+7fed792a7308,PARTIAL,APPROPRIATE,CORRECT,,,,"correctly typed Organisation -> Person, but from an AUTHOR BIO - and from the SAME sentence gptoss-120b mined into a locatedIn triple. The bio guard misses this form ('He is a <role> with <Org>')"
+d1313c5fc7f3,INCORRECT,TOO_BROAD,INCORRECT,,,,bibliography entry; the subject is the bare truncated word 'Proc.' and the object repeats it - a near self-reference
+fbf6110063a2,CORRECT,APPROPRIATE,PARTIAL,,,,"explicit clinical taxonomy with the containment the right way round; neither ontology has a class for it, so the typing cannot be satisfied"
+1afd9fc1482a,CORRECT,APPROPRIATE,PARTIAL,,,,"a university is an Organisation, not the Place the range requires; drawn from an ethics-approval statement"
+031b391f27c7,CORRECT,APPROPRIATE,PARTIAL,,,,"the affiliation is real and stated by apposition, but an IRB is an Organisation rather than the Agent the domain requires; ethics-statement provenance"
+b1701013ab4d,INCORRECT,TOO_BROAD,INCORRECT,,,,"⚠ CRediT line, and the NEW CRediT PATTERN MISSES IT: the OCR splits 'review' into 're view', so `writing - review` never matches. The object is a contribution ROLE, not a paper. Guard needs to tolerate intra-word OCR splits"
+dc670a36819e,PARTIAL,TOO_BROAD,CORRECT,,,,'used to classify these features' supports consumption; the object paraphrases rather than quotes
+913531f51a3d,PARTIAL,TOO_BROAD,CORRECT,,,,explicitly stated focus; the subject is a generic phrase rather than a named process
+7fe6a8e571af,CORRECT,APPROPRIATE,CORRECT,,,,
+60b3acb357ea,CORRECT,APPROPRIATE,INCORRECT,,,,"the grid is what YOLO imposes ON the input image, not a component of YOLO"
+9bf8f3836788,PARTIAL,TOO_BROAD,INCORRECT,,,,"the object is another METRIC, not an experimental result - the sentence says results will be REPORTED as F1"
+d4db99b44b35,CORRECT,APPROPRIATE,INCORRECT,,,,"inverted, and mistyped: the REVIEW mentions ConvLSTM, and ConvLSTM is a model rather than an AcademicPaper"
+197879de1181,PARTIAL,TOO_BROAD,INCORRECT,,,,"'52 distinct Quats' are the compounds the data describe, not an Experiment; the sentence says the dataset RESULTED FROM compiling data for them"
+5444306dfc9e,CORRECT,APPROPRIATE,PARTIAL,,,,"'applied to perform' is explicit, but a backward ESTIMATION is an activity rather than a generated artifact"
+7a946cb2b50d,CORRECT,APPROPRIATE,PARTIAL,,,,"road networks are one input source among several in the sentence, not the named training corpus"
+8189f1a05002,CORRECT,APPROPRIATE,CORRECT,,,,"⭐ KEEPS THE SCOPE QUALIFIER - 'among all selected classifiers' is carried into the object, which is exactly what prevents the conflicting-superlative contradictions seen elsewhere"
+8c3655ff9e13,CORRECT,APPROPRIATE,CORRECT,,,,"⭐ THIRD correctly-directed configures in the study - Specification -> Experiment, exactly as defined. All three are ministral-14b's, so this model alone sometimes gets the direction right"
+1fdcc5a17e47,CORRECT,TOO_NARROW,INCORRECT,,,,"the English reads perfectly, which is the trap: extractedFrom has range AcademicPaper, and the object is an image region"
+8129cfb1be80,INCORRECT,TOO_BROAD,INCORRECT,,,,SELF-REFERENCE through surface variants: 'KM Stone' IS the km stones database named in the same sentence

@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "b7206d045d79", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "cleanly isolates SMOT-EEN as the subject; qwen3-235b's version of this same sentence kept the whole malformed run-on 'prediction approach with the replacing SMOTE with SMOT-EEN' as its subject"},
+  {"triple_id": "1b56280a2ba3", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "7c0c2a9dbbe2", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "'consists of' is explicit, but 'Experiment Method' is a SECTION HEADING - document structure standing in as a ResearchProcess"},
+  {"triple_id": "24ead29ef33f", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "near-tautological (PCF IS the collaborative-filtering score) and only implied; the source sentence is also heavily OCR-mangled formula debris"},
+  {"triple_id": "64bdc3bdf683", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "93c024f3df1b", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "7e8c82ede0c7", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "identical to this model's CEO triple of the same id - the content hash makes them one"},
+  {"triple_id": "c2d9389ac187", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "CORRECT splitFrom direction again - qwen3-235b's scinex run rendered this same sentence as (ordered TTR dataset) splitFrom (road). gptoss-120b is the only model in the study that gets splitFrom right under BOTH ontologies"},
+  {"triple_id": "f3b11c3abb16", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "358dcdc4d4de", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "correctly pairs IoU with 0.612 out of three metric/value pairs in one sentence"}
+]}

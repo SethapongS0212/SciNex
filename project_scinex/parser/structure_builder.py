@@ -114,9 +114,73 @@ _APPENDIX_RE = re.compile(
 # Math operator characters that disqualify ALL-CAPS text from being a heading
 _MATH_OP_RE = re.compile(r'[=\+\*×∗→←↔≤≥≠±∑∏∫\|{}\\%@]|\d')
 
+# Unnumbered section names, for venues that don't number their headings.
+# ACL/IEEE papers number theirs ("1 Introduction"); Nature/Scientific Reports and
+# many journals do not ("Introduction", "Results", "Methods"), which left those
+# papers with ZERO detected headings — and since everything before the first
+# heading is dropped, the entire body was discarded. Matching a closed vocabulary
+# (rather than a general "short title-case line" rule) is what keeps this from
+# firing on ordinary body prose.
+_SECTION_VOCAB = {
+    "abstract", "introduction", "background", "related work", "related works",
+    "literature review", "materials", "materials and methods", "method", "methods",
+    "methodology", "methods and materials", "experimental", "experimental setup",
+    "experimental section", "experiments", "experiment", "results",
+    "results and discussion", "results and discussions", "discussion", "discussions",
+    "evaluation", "analysis", "implementation", "system overview", "proposed method",
+    "proposed approach", "conclusion", "conclusions", "conclusion and future work",
+    "conclusions and future work", "concluding remarks", "future work", "limitations",
+    "data availability", "code availability", "data availability statement",
+    "acknowledgement", "acknowledgements", "acknowledgment", "acknowledgments",
+    "author contributions", "competing interests", "conflicts of interest",
+    "conflict of interest", "additional information", "supplementary information",
+    "supplementary material", "ethics declarations", "declarations", "funding",
+    "appendix", "abbreviations", "nomenclature", "keywords", "highlights",
+}
+
+_SECTION_NUM_PREFIX = re.compile(r"^\d+(\.\d+)*\.?\s+")
+
+# Running page headers carry a page number and then the journal line, which is
+# exactly the shape of a numbered heading: "2268 Sensors and Materials, Vol. 30,
+# No. 10 (2018)". Bibliographic markers are what separate the two.
+_RUNNING_HEADER_RE = re.compile(
+    r"\bVol\.|\bNo\.|\bpp\.|\bISSN\b|\bISBN\b|\bDOI\b|\(\d{4}\)|\b\d{4}\s*\)",
+    re.IGNORECASE,
+)
+# Real section numbers are small; a leading number in the hundreds or thousands
+# is a page number, not a section.
+_MAX_SECTION_NUMBER = 40
+
+
+def _is_running_header(text):
+    m = re.match(r"^(\d+)(?:\.\d+)*\.?\s+", text)
+    if not m:
+        return False
+    if int(m.group(1)) > _MAX_SECTION_NUMBER:
+        return True
+    return bool(_RUNNING_HEADER_RE.search(text))
+
+
+def _section_vocab_key(text):
+    """Normalised heading key: 'Materials and Methods:' → 'materials and methods'."""
+    t = text.strip().rstrip(":.").strip()
+    t = _SECTION_NUM_PREFIX.sub("", t)
+    return re.sub(r"\s+", " ", t).lower()
+
+
 def is_heading(text):
     text = text.strip()
     if len(text) < 5 or len(text) > 120:
+        return False
+
+    # Unnumbered vocabulary heading: "Introduction", "Results", "Data availability"
+    if _section_vocab_key(text) in _SECTION_VOCAB:
+        return True
+
+    # A running page header ("2268 Sensors and Materials, Vol. 30, No. 10
+    # (2018)") satisfies the numeric-heading rule on every page, fragmenting the
+    # document into one junk section per page.
+    if _is_running_header(text):
         return False
 
     # Numeric heading: "1 Introduction", "2.1 Attention Model"
@@ -164,6 +228,68 @@ def is_heading(text):
             return True
 
     return False
+
+
+_AFFILIATION_RE = re.compile(
+    r"\b(?:Department|Universit|Institute|Faculty|College|School of|Laborator|"
+    r"Correspondence|E-?mail|@|ORCID|Received:|Accepted:|Published:|"
+    r"©|Copyright|Licensee|Creative Commons|This article is licensed)\b",
+    re.IGNORECASE,
+)
+
+
+def looks_like_abstract_prose(text):
+    """
+    Is this pre-heading block real prose (an abstract) rather than front-matter
+    furniture — author lists, affiliations, correspondence, copyright, dates?
+
+    Used to rescue the abstract, which every paper was losing: it sits before the
+    first heading, and blocks before the first heading are dropped.
+    """
+    text = text.strip()
+    words = text.split()
+    if len(words) < 40:
+        return False
+    if _AFFILIATION_RE.search(text):
+        return False
+    if text.count(".") < 2:
+        return False
+    # Mostly letters/spaces — filters keyword rows, author lists with superscripts,
+    # reference-style blocks and numeric tables.
+    letters = sum(1 for c in text if c.isalpha() or c.isspace())
+    if letters / max(len(text), 1) < 0.80:
+        return False
+    return True
+
+
+def extract_abstract_section(pre_heading_texts):
+    """
+    Build an "Abstract" section from the blocks that preceded the first heading.
+
+    Two layouts are handled: an explicit "Abstract" / "Abstract:" label (the label
+    block may or may not also carry the text), and an unlabelled leading paragraph
+    (Nature style). Anything that doesn't read as prose is left out, so author
+    lists and copyright boilerplate don't leak into the KG.
+    """
+    items = []
+    for raw in pre_heading_texts:
+        text = raw.strip()
+        low = text.lower()
+        if low.startswith("abstract"):
+            # Strip the label; keep whatever followed it in the same block.
+            stripped = re.sub(r"^abstract\s*[:.\-—]?\s*", "", text, flags=re.IGNORECASE)
+            if len(stripped.split()) >= 20:
+                items.append(clean_paragraph(stripped))
+                continue
+        if looks_like_abstract_prose(text):
+            items.append(clean_paragraph(text))
+
+    if not items:
+        return None
+    return {
+        "heading": "Abstract",
+        "content": [{"type": "paragraph", "text": t} for t in items],
+    }
 
 
 def clean_heading(text):
@@ -286,7 +412,113 @@ def extract_metrics(text):
 # ─────────────────────────────────────────────────────────────
 # TITLE DETECTION
 # ─────────────────────────────────────────────────────────────
+# Front-matter lines that are never the paper's title, however prominent they look:
+# journal mastheads, DOI/ISSN footers, keyword rows, licence blurbs, section labels.
+_NON_TITLE_RE = re.compile(
+    r"^(?:abstract|keywords?|highlights?|open access|received|accepted|published|"
+    r"doi\b|https?://|www\.|issn|isbn|volume\s*\d|vol\.\s*\d|©|copyright|"
+    r"citation:|correspondence|e-?mail|check for updates|a publication of|"
+    r"guest editors?|scientific reports\b|nature\b|sensors\b|applied sciences\b|"
+    # Publisher furniture that shares the title's font size and so survives the
+    # largest-font filter: an Elsevier masthead is the bare journal name, and
+    # ScienceDirect brands the header. `measurement` is anchored to end-of-block
+    # so a real title starting "Measurement of ..." is not rejected.
+    r"sciencedirect\b|measurement\s*$|procedia\b|"
+
+    r"ieee\b|elsevier\b|springer\b|mdpi\b|chemical engineering transactions\b)",
+    re.IGNORECASE,
+)
+
+# Journal templates print an article-type label in the same style as the title
+# ("Article Travel Time Prediction on…"). Strip the label, keep the title.
+_TITLE_LABEL_RE = re.compile(
+    r"^(?:original\s+)?(?:research\s+)?(?:article|review|communication|letter|"
+    r"perspective|brief\s+report|paper)\s+(?=[A-Z0-9])",
+    re.IGNORECASE,
+)
+
+
+def _strip_title_label(text):
+    return _TITLE_LABEL_RE.sub("", text.strip(), count=1).strip()
+
+
+def _title_block_ok(text):
+    """
+    Per-BLOCK filter — deliberately lenient about length, because titles wrap into
+    short continuation blocks ("in Thailand", "Properties Prediction", "Language
+    Understanding") that a word-count minimum would throw away, truncating the title.
+    """
+    # Collapse internal runs of whitespace BEFORE the furniture test: journal
+    # mastheads are letter-spaced in the PDF ("applied   sciences"), so the
+    # _NON_TITLE_RE alternatives would never match the raw text.
+    text = re.sub(r"\s+", " ", text.strip())
+    if not text or len(text.split()) > 30:
+        return False
+    if _NON_TITLE_RE.match(text):
+        return False
+    if "@" in text or re.search(r"\bdoi\.org\b|\bhttps?://|arxiv:", text, re.IGNORECASE):
+        return False
+    letters = sum(1 for c in text if c.isalpha() or c.isspace())
+    if letters / max(len(text), 1) < 0.75:
+        return False
+    # Author lists: "Name A 1,*, Name B 2 and Name C 3" — a superscript
+    # affiliation marker next to a comma/asterisk, or a surname followed by a
+    # standalone superscript digit. The digit must be its own token: an earlier
+    # version allowed "<digit> and <Name>", which fired on "YOLOv8 and Tracking
+    # Algorithms" and rejected a real title.
+    if re.search(r"\d\s*,\s*\*|\*\s*,|(?:^|\s)[A-Z][a-z]+\s+\d\s*(?:,|and\s)", text):
+        return False
+    # Citation-block continuation lines ("M.P.; Chawuthai, R. Parking Time") are
+    # set in the same style as their "Citation:" head, which _NON_TITLE_RE only
+    # catches on the first line.
+    if re.search(r"[A-Z]\.\s*;|[A-Z][a-z]+,\s*[A-Z]\.", text):
+        return False
+    return True
+
+
+def _title_final_ok(text):
+    words = text.split()
+    return 3 <= len(words) <= 30 and _title_block_ok(text)
+
+
 def extract_title(blocks):
+    """
+    Title = the largest-font text on page 1, minus the front-matter furniture.
+
+    Font size is the signal that actually separates a title from the journal
+    masthead; the previous length-only heuristic scored every short block equally
+    and `max()` returned the first one, which is the masthead on essentially every
+    journal template ("sensors", "applied sciences", "CHEMICAL ENGINEERING
+    TRANSACTIONS"). Falls back to the length heuristic when no size info is
+    available (e.g. a PDF the dict extractor can't read).
+    """
+    page1 = [b for b in blocks if (b.get("page") or 0) == 0] or blocks[:20]
+
+    sized = []
+    for b in page1[:40]:
+        text = _strip_title_label(normalize_text(b.get("text", "")))
+        size = b.get("size")
+        if not text or len(text) < 3 or len(text) > 300:
+            continue
+        if size and _title_block_ok(text):
+            sized.append((float(size), float(b.get("y") or 0.0),
+                          float(b.get("x") or 0.0), text))
+
+    if sized:
+        max_size = max(s for s, _, _, _ in sized)
+        # Keep every block within 5% of the largest size — titles wrap across
+        # blocks — and join them in READING order. Block order out of
+        # extract_blocks has been through column clustering by this point, which
+        # can interleave the lines of a wrapped title (it put "Thailand Roads"
+        # before "Spatial-Temporal Traffic Speed Prediction on").
+        parts = [t for _, _, _, t in
+                 sorted((c for c in sized if c[0] >= max_size * 0.95),
+                        key=lambda c: (c[1], c[2]))]
+        title = re.sub(r"\s+", " ", " ".join(parts).strip())
+        if _title_final_ok(title):
+            return title
+
+    # ── Fallback: original length heuristic ──────────────────────────────
     candidates = []
     for b in blocks[:20]:
         text = normalize_text(b.get("text", ""))
@@ -299,6 +531,8 @@ def extract_title(blocks):
             score -= 2
         if len(text.split()) > 25:
             score -= 2
+        if _title_final_ok(text):
+            score += 3
         candidates.append((score, text))
     if not candidates:
         return ""
@@ -399,6 +633,8 @@ def assign_table_positions(blocks, table_blocks):
         # least appear in order at a midpoint of their page.
         for i, tb in enumerate(table_blocks):
             tb["y"] = 500 + i * 10
+            if tb.get("page") is None:
+                tb["page"] = 0
         return table_blocks
 
     # Sort captions by their appearance order
@@ -431,6 +667,8 @@ def assign_table_positions(blocks, table_blocks):
         else:
             # Fallback: put it at a sensible position within its page
             tb["y"] = 500
+            if tb.get("page") is None:
+                tb["page"] = 0
 
     return table_blocks
 
@@ -454,10 +692,13 @@ def _page_column_ranks(blocks):
 
 
 def _reading_order_key(block, col_ranks):
-    page = block.get("page", 0)
+    # None-safe: table blocks from the detectors can carry page/y/x = None (no
+    # caption was matched to position them), and sorting None against an int
+    # raises TypeError — which used to abort the whole parse for that paper.
+    page = block.get("page") or 0
     col = block.get("col")
     rank = col_ranks.get(page, {}).get(col, 0)
-    return (page, rank, block.get("y", 0), block.get("x", 0))
+    return (page, rank, block.get("y") or 0, block.get("x") or 0)
 
 
 # ─────────────────────────────────────────────────────────────
@@ -518,6 +759,7 @@ def build_structure(blocks, tables, known_entities=None):
 
     current_section     = None
     pending_table_cap   = None   # FIX: stores "Table N:" caption text
+    pre_heading_texts   = []     # buffered until the first heading (abstract lives here)
 
     for block in all_blocks:
 
@@ -543,7 +785,14 @@ def build_structure(blocks, tables, known_entities=None):
             continue
         text = normalize_text(block["text"])
 
-        if is_garbage(text) or text == title:
+        # `is_heading_hint` is set by layout.py when a block was split off the
+        # front of its own paragraph because it is set in the heading face.
+        # Trust that font evidence: these headings ("Related works", "Object
+        # detections") are often too short or too far off the section
+        # vocabulary for the text rules, and is_garbage would drop them.
+        hinted_heading = bool(block.get("is_heading_hint"))
+
+        if not hinted_heading and (is_garbage(text) or text == title):
             continue
 
         if is_references(text):
@@ -551,12 +800,16 @@ def build_structure(blocks, tables, known_entities=None):
             doc["sections"].append(current_section)
             continue
 
-        if is_heading(text):
+        if hinted_heading or is_heading(text):
             current_section = {"heading": clean_heading(text), "content": []}
             doc["sections"].append(current_section)
             continue
 
         if not current_section:
+            # Before the first heading. Buffer instead of dropping — this region
+            # holds the abstract (and, if heading detection fails entirely, the
+            # whole paper).
+            pre_heading_texts.append(text)
             continue
 
         # ── FIGURE / TABLE CAPTIONS ───────────────────────────────────
@@ -598,6 +851,26 @@ def build_structure(blocks, tables, known_entities=None):
 
         for m in extract_metrics(text):
             doc["metrics"].append({**m, "entities": entities})
+
+    # ── RESCUE PRE-HEADING CONTENT (abstract) ─────────────────────────
+    # Everything before the first heading used to be dropped outright, which cost
+    # every paper its abstract — and cost papers whose heading style wasn't
+    # recognised their entire body.
+    abstract_section = extract_abstract_section(pre_heading_texts)
+    if abstract_section:
+        for item in abstract_section["content"]:
+            item["quality"] = paragraph_quality(item["text"])
+            item["needs_llm"] = item["quality"] < 0.8
+            entities = detect_entities(item["text"], known_entities)
+            doc["entities"].update(entities)
+        doc["sections"].insert(0, abstract_section)
+
+    if not doc["sections"]:
+        print("[structure] WARNING: no sections detected — the document is empty.")
+    elif all(s["heading"].strip().lower().startswith("reference")
+             for s in doc["sections"]):
+        print("[structure] WARNING: only a References section was detected — "
+              "heading detection likely failed for this paper's layout.")
 
     # ── PARAGRAPH MERGING PASS ────────────────────────────────────────
     for section in doc["sections"]:

@@ -1,0 +1,17 @@
+{"verdicts": [
+  {"para_key": "eyelandmark2024#7", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["gaze image dataset (154 volunteers x 3 images)", "middle / left / right gaze", "nine eye landmarks", "Lateral Canthus", "Medial Canthus", "Cornea Light Reflection", "user-defined annotation application"],
+   "missed_relations": ["dataset -> comprises -> 154 volunteers with three gaze images each", "annotation application -> produces -> cropped eye images and nine-landmark labels", "nine landmarks -> comprises -> Lateral Canthus, Medial Canthus, conjunctiva-cornea junction, Cornea Light Reflection"],
+   "note": "the leading half is an OCR'd coordinate table and is fairly non-extractable, but the prose half is the paper's entire dataset-construction protocol and yields nothing"},
+  {"para_key": "ugmo2024#10", "C2": "COMPLETE", "C5": "COMPLETE",
+   "missed_concepts": [], "missed_relations": [],
+   "note": "three raw BIBLIOGRAPHY entries; the rubric excludes citations, so an empty extraction is correct. Flagging that this model did mine a bibliography entry into a publishedIn triple elsewhere (dcd42598827c) - the restraint here is inconsistent, not principled."},
+  {"para_key": "traveltime2022#35", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["travel time prediction", "GPS transactions of trucks in Thailand", "10 long-distance road segments", "average hourly travel time / time-series sampling"],
+   "missed_relations": ["our work -> addresses -> improving travel time prediction accuracy", "dataset -> comprises -> GPS transactions of trucks in Thailand", "raw data -> producedInto -> hourly time-series over 10 road segments"],
+   "note": "the experimental chain (baseline, improvement, comparison, error value) is captured well; what is lost is the task and the data the whole study runs on"},
+  {"para_key": "parkingyolo2023#12", "C2": "COMPLETE", "C5": "PARTIAL",
+   "missed_concepts": [],
+   "missed_relations": ["proposed algorithm -> uses -> YOLOv8, Deep SORT and OC-SORT"],
+   "note": "all three named algorithms and both tasks are captured; the missing piece is the composition relation - that these three are components OF the proposed system - so the graph has the parts without the whole"}
+]}

@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "51d25167d541", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "b8acab151a7a", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "cross-validation does not really address imbalance (SMOTE does), but the sentence explicitly attributes it to both, and the sentence is the evidence"},
+  {"triple_id": "335b62a5eb0d", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "645411eaa78f", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "'final results' is not a ResearchArtifact and not a concept a KG can use; the relation is stated but its object is empty of content"},
+  {"triple_id": "b6e7f8f32794", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "the sentence does list Population among the five steps, but Population is a data structure/state, and comprises requires an explicitly named sub-PROCESS"},
+  {"triple_id": "a95b250c144a", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "correct metric->value shape with the unit preserved"},
+  {"triple_id": "cf0f9613889f", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "named benchmark, explicit test statement, exact typing - and this is the same relation qwen3-235b missed entirely from llamacorrupt2025"},
+  {"triple_id": "a3bdcfa6692b", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "7ba2557febca", "C1": "PARTIAL", "C3": "TOO_NARROW", "C4": "PARTIAL", "note": "'left and right eyes' is an image region, not a named training corpus as trainedOn requires; the substance of the sentence is captured but the object is not a dataset"},
+  {"triple_id": "a234516e4757", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "PROVENANCE FLAG (2nd in this model's sample): well-formed on all three criteria but mined from an AUTHOR BIOGRAPHY"}
+]}

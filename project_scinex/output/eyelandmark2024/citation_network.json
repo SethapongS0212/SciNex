@@ -1,0 +1,57 @@
+{
+  "paper_id": "355ccc51a53f83f582eb56aba8e97aacf0f688e3",
+  "title": "Eye Landmarks Detection using RT-DETR with Rules",
+  "year": 2024,
+  "abstract": "In order to help ophthalmologists diagnose eye problems, it is necessary to scan for eye landmarks such as the pupil, the reflection point on the retina, and the boundary of the eye. An individual's eye landmarks on their face can be obtained via some facial landmarks' detection methods, including Haar Cascade. Two problematic aspects of the current approaches, however, are that the pupil and reflection point information is not provided, and the detection is ineffective when confronted with a picture of the upper half of the face or a person wearing a mask. In this study, we intend to develop a deep learning model for eye landmark identification using the Realtime identification Transformer (RT-DETR) approach together with our rules. As a consequence, nine landmark points-two for the eye, six for the pupil, and one for the reflection, are computed with an accuracy of 0.974. Since the focus of this paper is on eye landmark recognition, the next stage will be to build an application and a machine learning model for the diagnosis of eye disorders. - Keywords Deep Learning, Detection, Eye Landmarks, Facial Landmarks, Ophthalmology, RT-DETR",
+  "citation_count": 1,
+  "root_concepts": [
+    "landmarks",
+    "pupil",
+    "reflection",
+    "detection",
+    "landmark",
+    "point",
+    "facial",
+    "identification",
+    "order",
+    "ophthalmologists",
+    "diagnose",
+    "problems",
+    "necessary",
+    "retina",
+    "boundary"
+  ],
+  "nodes": {
+    "c22d8457718f997b92dcac9fb1af8a3d691a7462": {
+      "title": "StrabNet-CQ: an integrated deep learning framework for automated strabismus classification and quantification using ocular landmark detection",
+      "year": 2025,
+      "abstract": "Strabismus is a common ocular misalignment that can impair binocular vision if untreated. Conventional diagnosis and treatment rely on clinical prism diopter (PD) readings, which quantify deviation along with base direction. However, these values are coarse, manual, and subject to inter-clinician variability. We present the development and results of StrabNet-CQ (Strabismus Network for Classification and Quantification), a newly developed deep learning-based framework for automated strabismus classification and quantification. Six hundred eye images, with and without strabismus, were analyzed by the model. A YOLOv8 model performs classification into normal and abnormal as well as subsequent classification (normal, esotropia, exotropia, hypertropia, hypotropia), with refined classification via ResNet101 on segmented eye regions from the images. Ocular landmarks are detected using ResNet18, from which horizontal and vertical deviation indices and angular deviation are computed. The system achieved 94% accuracy in strabismus detection and 90% in strabismus classification, with high sensitivity for normal (0.91–1.00), esotropia (0.89), and hypotropia (0.90). The derived parameters show a good correlation with manual PD values(r = 0.733) that can be utilized for quantification of strabismus. StrabNet-CQ supports objective diagnosis and holds promise for deployment in clinical settings for strabismus detection as well as quantification.",
+      "citation_count": 1,
+      "relation": "citing",
+      "concepts": [
+        "strabismus",
+        "classification",
+        "quantification",
+        "deviation",
+        "normal",
+        "ocular",
+        "diagnosis",
+        "clinical",
+        "values",
+        "manual",
+        "strabnet",
+        "images",
+        "esotropia",
+        "hypotropia",
+        "detection"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "source": "c22d8457718f997b92dcac9fb1af8a3d691a7462",
+      "target": "355ccc51a53f83f582eb56aba8e97aacf0f688e3",
+      "type": "cites"
+    }
+  ]
+}

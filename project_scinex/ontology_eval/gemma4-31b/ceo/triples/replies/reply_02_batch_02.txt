@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "c1b1135fb091", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "direction reversed: the sentence says LExist is split INTO LTest, so LTest is the subject of splitFrom. gptoss-120b got this same relation right"},
+  {"triple_id": "0ae41fe25fea", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "explicitly stated, but trainedOn requires a NAMED corpus and 'English-language scientific text' is a description of a language, not a dataset"},
+  {"triple_id": "b4ce48f8b68b", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "correct Agent -> Organisation direction, but the sentence records a degree AWARDED BY the institution - an alma mater, not the stated affiliation; also mined from an author biography"},
+  {"triple_id": "8e3074e65793", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "explicitly stated, but OC-SORT is a Model standing in for the AcademicPaper the predicate requires"},
+  {"triple_id": "17270614cfe0", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "employs is defined Organisation -> Person; a framework and an averaging strategy satisfy neither side - the English verb was matched instead of the ontology definition"},
+  {"triple_id": "6715bfe66339", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "configures is defined ExperimentalSpecification -> Experiment; this is Model -> hyperparameter value, which is neither the domain nor the range"},
+  {"triple_id": "f02b134ad14e", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "BOTH sides mistyped: Galactica is a Model not an AcademicPaper, and Meta AI is an Organisation not an Author; the sentence says 'developed by', which is not authorship"},
+  {"triple_id": "77c687f9ec16", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "LRAU applied to InceptionV3 as a backbone - uses explicitly sanctions an architecture object"},
+  {"triple_id": "dad17eb9eca7", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "correctly disentangles the ablation: 0.90 is CTv1-DW's value, 0.74 the without-batchnorm variant's"},
+  {"triple_id": "1c6fc73f40d1", "C1": "CORRECT", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "ML is a research DOMAIN, so this is encompasses territory; addresses requires a Paper, Model or Method as subject"}
+]}

@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "LOGO",
+    "predicate": "uses",
+    "object": "C4H9(C2H5)3NI",
+    "object_type": "Concept",
+    "source_sentence": "To ensure robust validation , as suggested by recent cheminformatics guidelines36,37, Leave-One- Group - Out (LOGO) cross - validation is employed; by systematically holding out all data points corresponding to a specific salt, C4H9(C2H5)3NI, to test model generalization on unseen compounds .",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Modelling"
+  },
+  {
+    "subject": "GP",
+    "predicate": "achieves",
+    "object": "R2 value greater than 0.97",
+    "object_type": "ResearchObjective",
+    "source_sentence": "Specifically, GP achieves an R2 value greater than 0.97 and %MAPE below 5%, while other algorithms have R2 values below 0.96 and %MAPE exceeding 5%.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "GP",
+    "predicate": "achieves",
+    "object": "%MAPE below 5%",
+    "object_type": "ResearchObjective",
+    "source_sentence": "Specifically, GP achieves an R2 value greater than 0.97 and %MAPE below 5%, while other algorithms have R2 values below 0.96 and %MAPE exceeding 5%.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "XGB",
+    "predicate": "achieves",
+    "object": "lowest errors on the random split",
+    "object_type": "ResearchObjective",
+    "source_sentence": "While XGB and RF achieve the lowest errors on the random split, GP demonstrates superior stability in the LOGO validation , maintaining a lower drop in performance compared to tree-based methods when predicting unseen salts.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "RF",
+    "predicate": "achieves",
+    "object": "lowest errors on the random split",
+    "object_type": "ResearchObjective",
+    "source_sentence": "While XGB and RF achieve the lowest errors on the random split, GP demonstrates superior stability in the LOGO validation , maintaining a lower drop in performance compared to tree-based methods when predicting unseen salts.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "GP",
+    "predicate": "achieves",
+    "object": "highest R2 value",
+    "object_type": "ResearchObjective",
+    "source_sentence": "Finally, when evaluating the combined data, GP again achieves the highest R2 value, while DT exhibits the lowest %MAPE.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "DT",
+    "predicate": "achieves",
+    "object": "lowest %MAPE",
+    "object_type": "ResearchObjective",
+    "source_sentence": "Finally, when evaluating the combined data, GP again achieves the highest R2 value, while DT exhibits the lowest %MAPE.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "decision tree",
+    "predicate": "comparesagainst",
+    "object": "Gaussian process",
+    "object_type": "Model",
+    "source_sentence": "Comparison was made between the decision tree (DT) and Gaussian process (GP) algorithms to assess their performance in predicting osmotic coefficients.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "Gaussian process",
+    "predicate": "comparesagainst",
+    "object": "decision tree",
+    "object_type": "Model",
+    "source_sentence": "Comparison was made between the decision tree (DT) and Gaussian process (GP) algorithms to assess their performance in predicting osmotic coefficients.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "GP",
+    "predicate": "addresses",
+    "object": "predicting osmotic coefficients",
+    "object_type": "ResearchContext",
+    "source_sentence": "Comparison was made between the decision tree (DT) and Gaussian process (GP) algorithms to assess their performance in predicting osmotic coefficients.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "DT",
+    "predicate": "addresses",
+    "object": "predicting osmotic coefficients",
+    "object_type": "ResearchContext",
+    "source_sentence": "Comparison was made between the decision tree (DT) and Gaussian process (GP) algorithms to assess their performance in predicting osmotic coefficients.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "Gaussian Process algorithm",
+    "predicate": "achieves",
+    "object": "optimal performance for osmotic coefficient prediction",
+    "object_type": "ResearchObjective",
+    "source_sentence": "Considering both performance and behavioral aspects, it can be concluded that the Gaussian Process algorithm is optimal for osmotic coefficient prediction.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  }
+]

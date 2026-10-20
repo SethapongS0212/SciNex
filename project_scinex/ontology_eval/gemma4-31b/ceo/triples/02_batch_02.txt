@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 6bb3b73a0403 -----
+TRIPLE:     (test set)  --splitfrom-->  (TTR dataset)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: In this case, the ordered TTR dataset of each road was split into third sets: a training set (60%), a validation set (20%), and a test set (20%), as shown in Figure 7a.
+
+----- triple_id: a3c39db6ac33 -----
+TRIPLE:     (R-Model)  --trainedon-->  (308 cropped eye images captured during right gazing)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: To illustrate, 308 cropped eye images captured during right gazing were used to train the R-Model.
+
+----- triple_id: 17270614cfe0 -----
+TRIPLE:     (cSysGuard)  --employs-->  (weighted averaging strategy)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: Rather than building upon a single meta-model or weight averaging, cSysGuard employs a multi-layered stacking ensemble approach with a weighted averaging strategy, effectively amalgamating the contributions of all models in the output generation.
+
+----- triple_id: f108ec664268 -----
+TRIPLE:     (Facial landmark detection based on cascade neural network)  --publishedin-->  (Journal of Physics: Conference Series)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  use for journal/conference names only
+SOURCE SENTENCE: Chen, Xuzhan, Luxi Huang, and Yingming Chen. "Facial landmark detection based on cascade neural network." Journal of Physics: Conference Series.
+
+----- triple_id: 6715bfe66339 -----
+TRIPLE:     (Random Forest)  --configures-->  (30 estimators)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships
+SOURCE SENTENCE: In addition, the tuned hyperparameter for a Random Forest contains 30 estimators or trees to be constructed, where each base decision tree will utilize the Gini impurity to evaluate the quality of a split.
+
+----- triple_id: d2a0a61d7f5b -----
+TRIPLE:     (YOLOv2)  --uses-->  (batch normalization)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In 2016, YOLOv2 was released, improving on the original model by including batch normalization, anchor boxes, and dimension clusters [40].
+
+----- triple_id: 4e5a01e76939 -----
+TRIPLE:     (CTv1)  --achieves-->  (highest F1 w-avg and F1 score)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: CTv1 had the highest F1 w-avg and F1 score, with a size and training time about three times less than InceptionV3 [4].
+
+----- triple_id: e3bab35fb92e -----
+TRIPLE:     (Focal loss)  --addresses-->  (class imbalance)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Focal loss addresses class imbalance by down-weighting easy negatives, while GIoU loss measures overlap and spatial alignment between predicted and ground-truth bounding boxes.
+
+----- triple_id: 601f8ad4b486 -----
+TRIPLE:     (SVR)  --comparesagainst-->  (LSTM)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: First, the time-series-based prediction techniques ARIMA, SVR, LSTM, and ConvLSTM were compared to decide which one would be the baseline.
+
+----- triple_id: 46b4cb789e53 -----
+TRIPLE:     (LPII)  --comprises-->  (biological classification)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: Therefore, the contribution of our research is to introduce LPII, a hybrid approach that combines three concepts of collaborative filtering , community structure, and biological classification.

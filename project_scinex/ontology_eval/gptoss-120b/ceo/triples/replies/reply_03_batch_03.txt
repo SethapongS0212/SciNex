@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "58ec5f9927d3", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "undersampling is a KIND of random sampling, not a PART of it - comprises encodes meronymy and this is hyponymy; source sentence also has a running-header glued to its front"},
+  {"triple_id": "0e7c2b633591", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "correct shape, but the qualifier is dropped: the sentence gives F1 0.91 for Traffic AND 0.43 for Social-events, so a bare 0.91 cannot be told apart from the other value"},
+  {"triple_id": "7ea888f308c7", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "evaluatedOn explicitly requires a NAMED benchmark; 'test set' names nothing"},
+  {"triple_id": "8658424591ab", "C1": "CORRECT", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "'designed for' is verbatim and correctly typed; 'CNN model' is a generic stand-in for the paper's actual model (CTv1)"},
+  {"triple_id": "d926c6bf42a0", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "b133d9382bf8", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "PROVENANCE FLAG: correct on all three criteria, but mined from an AUTHOR BIOGRAPHY - C1/C3/C4 as defined cannot penalise a well-formed triple drawn from boilerplate"},
+  {"triple_id": "3de5f9134d9a", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "correct splitFrom direction (contrast the same sentence reversed by qwen3-235b); 'test set' is the standard partition term but still an unnamed node"},
+  {"triple_id": "c19775ca3a58", "C1": "PARTIAL", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "source is an IEEE DOWNLOAD WATERMARK, not paper content; the sentence asserts a licensing arrangement, and affiliatedWith is Agent -> Organisation with an Organisation in the Agent slot"},
+  {"triple_id": "dcd42598827c", "C1": "PARTIAL", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "typing is exactly right, but drawn from the BIBLIOGRAPHY and the venue string is truncated - the real venue is IEEE IAEAC 2021, and the middle of the name is dropped"},
+  {"triple_id": "c36e209f1c8c", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "relation is explicit and correctly directed; 'system' is a bare placeholder subject"}
+]}

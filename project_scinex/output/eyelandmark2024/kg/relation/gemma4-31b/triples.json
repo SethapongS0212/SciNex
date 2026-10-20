@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "eye landmarks detection method",
+    "predicate": "uses",
+    "object": "Realtime Identification Transformer (RT-DETR)",
+    "object_type": "Model",
+    "source_sentence": "We propose an eye landmarks detection method by utilizing the Realtime Identification Transformer (RT-DETR) coupled with specific rules tailored for precise eye landmark identification.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "I INTRODUCTION"
+  },
+  {
+    "subject": "Viola and Jones",
+    "predicate": "addresses",
+    "object": "object detection",
+    "object_type": "Task",
+    "source_sentence": "According to the paper by Viola and Jones, they present a novel approach to object detection that minimizes computation time while achieving high detection accuracy.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "II LITERATURE REVIEWS"
+  },
+  {
+    "subject": "RT-DETR",
+    "predicate": "addresses",
+    "object": "incomplete detection of the facial landmarks",
+    "object_type": "Concept",
+    "source_sentence": "Lastly, due to the COVID-19 situation, all the reference images wore facial masks, which does not support any of the mentioned studies, causing incomplete detection of the facial landmarks shown in Fig 2. This study proposes Real-Time- DEtection TRansformer (RT-DETR), a deep learning approach.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "II LITERATURE REVIEWS"
+  },
+  {
+    "subject": "RT-DETR",
+    "predicate": "comprises",
+    "object": "transformer decoder",
+    "object_type": "Method",
+    "source_sentence": "A transformer decoder with additional prediction heads, a hybrid encoder, and a backbone make up the RT-DETR.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "II LITERATURE REVIEWS"
+  },
+  {
+    "subject": "RT-DETR",
+    "predicate": "comprises",
+    "object": "hybrid encoder",
+    "object_type": "Method",
+    "source_sentence": "A transformer decoder with additional prediction heads, a hybrid encoder, and a backbone make up the RT-DETR.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "II LITERATURE REVIEWS"
+  },
+  {
+    "subject": "RT-DETR",
+    "predicate": "comprises",
+    "object": "backbone",
+    "object_type": "Method",
+    "source_sentence": "A transformer decoder with additional prediction heads, a hybrid encoder, and a backbone make up the RT-DETR.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "II LITERATURE REVIEWS"
+  },
+  {
+    "subject": "decoder",
+    "predicate": "uses",
+    "object": "IoU-aware query selection",
+    "object_type": "Method",
+    "source_sentence": "The decoder receives higher-quality initial object queries from the IoU-aware query selection.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "II LITERATURE REVIEWS"
+  },
+  {
+    "subject": "R-Model",
+    "predicate": "trainedon",
+    "object": "308 cropped eye images captured during right gazing",
+    "object_type": "Dataset",
+    "source_sentence": "To illustrate, 308 cropped eye images captured during right gazing were used to train the R-Model.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "RT-DETR model",
+    "predicate": "uses",
+    "object": "hybrid encoder",
+    "object_type": "Method",
+    "source_sentence": "Then all images were fed into RT-DETR model, firstly, the backbone extracts multi-scale features from the input image, then fed into the hybrid encoder.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "precision",
+    "predicate": "evaluates",
+    "object": "0.923",
+    "object_type": "Other",
+    "source_sentence": "In order to assess the model's accuracy and robustness, precision of 0.923, accuracy of 0.974 and IoU of 0.612 are evaluated.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "accuracy",
+    "predicate": "evaluates",
+    "object": "0.974",
+    "object_type": "Other",
+    "source_sentence": "In order to assess the model's accuracy and robustness, precision of 0.923, accuracy of 0.974 and IoU of 0.612 are evaluated.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "IoU",
+    "predicate": "evaluates",
+    "object": "0.612",
+    "object_type": "Other",
+    "source_sentence": "In order to assess the model's accuracy and robustness, precision of 0.923, accuracy of 0.974 and IoU of 0.612 are evaluated.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "RT-DETR with Rules",
+    "predicate": "addresses",
+    "object": "object detection tasks",
+    "object_type": "Task",
+    "source_sentence": "Unlike traditional methods, RT-DETR with Rules operates on a unique paradigm, leveraging transformer-based architectures to handle object detection tasks without relying on traditional anchor boxes or post-processing steps.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "IV RESULT AND DISCUSSION"
+  },
+  {
+    "subject": "IoU",
+    "predicate": "evaluates",
+    "object": "0.612",
+    "object_type": "Other",
+    "source_sentence": "Furthermore, the IoU metric of 0.612 underscores the model's capability to precisely delineate the eye landmarks, exhibiting a substantial overlap between predicted and actual positions.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "IV RESULT AND DISCUSSION"
+  },
+  {
+    "subject": "Realtime Identification Transformer (RT- DETR)",
+    "predicate": "uses",
+    "object": "labeled data",
+    "object_type": "Dataset",
+    "source_sentence": "Secondly, we employed the Realtime Identification Transformer (RT- DETR) approach to train our labeled data and create a deep learning model.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "IV RESULT AND DISCUSSION"
+  },
+  {
+    "subject": "Facial landmark detection based on cascade neural network",
+    "predicate": "publishedin",
+    "object": "Journal of Physics: Conference Series",
+    "object_type": "Other",
+    "source_sentence": "Chen, Xuzhan, Luxi Huang, and Yingming Chen. \"Facial landmark detection based on cascade neural network.\" Journal of Physics: Conference Series.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "IV RESULT AND DISCUSSION"
+  }
+]

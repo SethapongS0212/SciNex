@@ -1,0 +1,90 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 287f502d1c8d -----
+TRIPLE:     (PBR)  --achieves-->  (accuracy of 41.86%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: When the model was tested with unseen data from the evaluation based on 3-fold cross-validation, the accuracy and F1 score were approximately 88.26% and 87.13%, respectively, while predictions from PBR yielded an accuracy of only 41.86%.
+
+----- triple_id: a696ce855b5b -----
+TRIPLE:     (SMOTE)  --uses-->  (oversampling technique)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Additionally, the oversampling technique using SMOTE is utilized to aid in the training process.
+
+----- triple_id: 8fa2d61dfa36 -----
+TRIPLE:     (SSD)  --comparesagainst-->  (R-CNN)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Since SSD does not use region based proposals, SSD models have increased detection speed, as opposed to two-stage detectors such as R-CNN.
+
+----- triple_id: a7e52850c826 -----
+TRIPLE:     (Genetic Algorithm)  --comprises-->  (Mutation)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: The application of the Genetic Algorithm to generate chemicals with desirable properties, as illustrated in Figure 3, comprises five steps: Initialization, Population, Selection, Crossover, and Mutation.
+
+----- triple_id: f892daec3b42 -----
+TRIPLE:     (Extreme Gradient Boosting (XGB))  --evaluatedon-->  (images)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: The Random Forest (RF) [32], Support Vector Regression (SVR) [33], Multilayer Perceptron (MLP) [34], and Extreme Gradient Boosting (XGB) [35] algorithms, which are readily accessible packages, were utilized to train models with 80 % of the images .
+
+----- triple_id: d380e1dcd881 -----
+TRIPLE:     (%MAPE)  --evaluates-->  (2.91%)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  Links an evaluation metric to the experimental result it quantitatively assesses
+SOURCE SENTENCE: Based on a dataset of 767 data points, a mean percentage absolute error (%MAPE) of 2.91% was yielded.
+
+----- triple_id: cd1d791973e3 -----
+TRIPLE:     (kick activation method)  --addresses-->  (hand-free operation issue)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: A kick activation method is one of solutions for addressing a hand-free operation issue.
+
+----- triple_id: 0ca53cc10d42 -----
+TRIPLE:     (LSTM)  --achievesresult-->  (MAE of 27.12 min per 100 km)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: In our study, the LSTM was selected as a baseline and had an MAE of 27.12 min per 100 km.
+
+----- triple_id: 1ff3219b8e34 -----
+TRIPLE:     (feature engineering)  --produces-->  (geometric ratios (RT1–RT5))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: In the step of feature engineering, as performed in Fig. 2 (D), five geometric ratios (RT1–RT5) were computed using selected landmarks in the horizontal line.
+
+----- triple_id: d898335feded -----
+TRIPLE:     (RT4)  --designedfor-->  (reflect temporal scleral exposure)
+PREDICATE DEFINITION: Model → ResearchTask  |  Associates a model with the research task it was specifically designed or optimised to solve, such as a transformer model designed for machine translation or a CNN designed for image classification
+SOURCE SENTENCE: Accordingly, RT1 and RT4 were designed to reflect nasal and temporal scleral exposure, RT2 and RT3 to reflect the position of the corneal light reflex within the horizontal corneal span, and RT5 to reflect visible iris width as an internal reference during gaze change.

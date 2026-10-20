@@ -1,0 +1,23 @@
+{"verdicts": [
+  {"paper": "llamacorrupt2025", "C6": "MINOR_ISSUES",
+   "issues": ["surface split: (Llama -3.2-1B-Instruct model) and (Llama -3.2-1B-Instruct) carry the same evaluatedOn fact as two nodes",
+              "(Experiment Method) and (Experiment 1) are document labels standing in as entities",
+              "(Mixture of Experts (MoE) architecture) --addresses--> (parameter corruption): MoE is not the architecture under test in this paper (Llama-3.2-1B is dense)"],
+   "note": "no contradictions; the Experiment Method decomposition is internally consistent and evaluatedOn is correctly typed. Contrast qwen3-235b on this same paper, which asserted GLUE-QNLI as BOTH training and evaluation data"},
+  {"paper": "traveltime2022", "C6": "CONTRADICTORY",
+   "issues": ["NUMERIC CONTRADICTION: (SA-LSTM) achieves (26.89 MAE) against (12.15 min per 100 km MAE) and (error of +/-12.15 min per 100 km) - the same model with two incompatible headline errors",
+              "CONFLICTING SUPERLATIVES: (LSTM) achieves (highest performance), (best performance) and (lowest Mean Relative Error) - but LSTM is the BASELINE here, and the graph elsewhere records (LSTM model) achieves (error of +/-27.12 min) against SA-LSTM's 12.15. The baseline is asserted to be the best while also being twice as bad",
+              "(Butterworth low-pass filter) --achieves--> (best result among all the compared methods): a filter holding the overall best result, conflicting with both claims above",
+              "SIX-WAY NODE SPLIT of the paper's own model: (Self-Attention Long Short -Term Memory (SA-LSTM) model), (self-attention LSTM (SA-LSTM) model), (SA-LSTM), (SA_LSTM), (Self-Attention LSTM), (LSTM only)",
+              "(LSTM) --addresses--> (travel time prediction) asserted FIVE times",
+              "DIRECTION TANGLE: (LSTM) produces (self-attention LSTM), (self- attention) uses (LSTM), (ConvLSTM) uses (LSTM) - LSTM is variously the producer, the consumed and the component",
+              "symmetric duplication: (LSTM) comparesAgainst (SA-LSTM) and (SA-LSTM) comparesAgainst (LSTM)",
+              "(BF()), (LSTM()), (ANN()): function-call notation lifted from pseudocode as entity names",
+              "(ConvLSTM) / (ConvL- STM) / (ConvLSTM model): a third split, one caused by a PDF hyphenation artifact"],
+   "note": "72 triples, the largest set in this C6 sample, and the contradiction density scales with it. CREDIT: (training set) and (test set) splitFrom (time-series data) are both in the CORRECT direction - the only model in the study to get this consistently right"},
+  {"paper": "microwave2018", "C6": "MINOR_ISSUES",
+   "issues": ["one result in three renderings: (logistic regression) achieves (highest score) / (highest accuracy) / (best accuracy) - redundant but mutually consistent",
+              "(Artificial Natural Network (ANN)) --uses--> (biological neural system of animal brains): 'Natural' is an OCR corruption of 'Neural', and the relation is inspiration, not consumption",
+              "(result model) is an unnamed placeholder subject"],
+   "note": "no contradictions; the sensor relations (ultrasonic->sound wave, infrared->infrared light) are correctly typed and the related-work systems are cleanly separated"}
+]}

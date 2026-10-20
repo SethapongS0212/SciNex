@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 1afd9fc1482a -----
+TRIPLE:     (Faculty of Medicine Siriraj Hospital)  --locatedin-->  (Mahidol University)
+PREDICATE DEFINITION: Organisation → Place  |  Associates an organisation with the geographic place in which it is situated
+SOURCE SENTENCE: This study was approved by the Siriraj Institutional Review Board, Faculty of Medicine Siriraj Hospital, Mahidol University Panel 3.
+
+----- triple_id: 031b391f27c7 -----
+TRIPLE:     (Siriraj Institutional Review Board)  --affiliatedwith-->  (Faculty of Medicine Siriraj Hospital)
+PREDICATE DEFINITION: Agent → Organisation  |  Associates an agent with an organisation to which they are professionally attached during a research activity
+SOURCE SENTENCE: This study was approved by the Siriraj Institutional Review Board, Faculty of Medicine Siriraj Hospital, Mahidol University Panel 3.
+
+----- triple_id: a75bf1e9eba6 -----
+TRIPLE:     (the works of Marrero and Gani (2001))  --cites-->  (Marrero and Gani (2001))
+PREDICATE DEFINITION: AcademicPaper → AcademicPaper  |  Records a bibliographic reference from one academic paper to another, indicating that the citing paper acknowledges, builds upon, or contrasts with the cited work
+SOURCE SENTENCE: a comparison of results with conventional group-contribution methods, such as the works of Marrero and Gani (2001), Constantinou and Gani (1994), and Joback and Reid (1987), revealed significantly lower errors...
+
+----- triple_id: b1701013ab4d -----
+TRIPLE:     (Mansouri)  --writes-->  (Writing – review & editing)
+PREDICATE DEFINITION: Author → AcademicPaper  |  Links an author to an academic paper to which they have contributed as a named author
+SOURCE SENTENCE: Mansouri: Writing – re view & editing.
+
+----- triple_id: dc670a36819e -----
+TRIPLE:     (Random Forest model)  --uses-->  (the proposed feature set)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: A Random Forest model, which showed high performance with an accuracy of 0.95, sensitivity of 0.96, and specificity of 0.94, was then used to classify these features.
+
+----- triple_id: 358464d6a658 -----
+TRIPLE:     (Random Forest model)  --achievesresult-->  (specificity of 0.94)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: A Random Forest model, which showed high performance with an accuracy of 0.95, sensitivity of 0.96, and specificity of 0.94, was then used to classify these features.
+
+----- triple_id: 913531f51a3d -----
+TRIPLE:     (evaluation in this work)  --addresses-->  (user satisfaction)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: However, in this work, the supervised data about trip plans of any users are hardly gathered. Thus, the evaluation in this work has to be mainly focusing on user satisfaction.
+
+----- triple_id: 7fe6a8e571af -----
+TRIPLE:     (XGB algorithm)  --comparesagainst-->  (RF)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Across all datasets, the XGB algorithm demonstrated marginally superior performance compared to SVR, RF, and MLP.
+
+----- triple_id: 60b3acb357ea -----
+TRIPLE:     (YOLO)  --comprises-->  (grid of dimensions M × M)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: YOLO divides input images into a grid of dimensions M × M.
+
+----- triple_id: 9bf8f3836788 -----
+TRIPLE:     (ROUGE-L)  --evaluates-->  (F1 score)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  Links an evaluation metric to the experimental result it quantitatively assesses
+SOURCE SENTENCE: For the ROUGE score, we use ROUGE-1, ROUGE-2, and ROUGE-L. All evaluation results, including both BERT and ROUGE, will be presented using the F1 score.

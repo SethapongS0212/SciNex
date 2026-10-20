@@ -1,0 +1,83 @@
+{
+  "paper_id": "73f64af6abe6c77efbccd3dde5c5ec178ffbf70e",
+  "title": "Development of machine learning enhanced low-cost spectrophotometer for pesticide prediction",
+  "year": 2025,
+  "abstract": null,
+  "citation_count": 3,
+  "root_concepts": [],
+  "nodes": {
+    "1bd6df9a1bd0703b52eab92d12d5d7799c4d9014": {
+      "title": "Precision Optimization of Agricultural Pesticide Application using Ensemble Machine Learning Algorithms",
+      "year": 2026,
+      "abstract": "This work is intended to increase the accuracy of agricultural pesticide application using an ensemble approach based on a gradient boosting algorithm compared to the performance of the K-Nearest Neighbor method. Materials and The models were assessed independently: Group 1 with the application of a KNN model and Group 2 with the use of an ensemble model in gradient boosting supported by XGBoost, LightGBM, and CatBoost. These models had been trained and tested using 50,000 agricultural images, while the statistical significance of their performance comparison had been checked using a t-test on 20 images. Result: The ensemble gradient boosting model performed better with a higher average accuracy of 98.10% against KNN of 93.54%, and also performed well in terms of precision, recall, and F1 score. Moreover, it was also more reliable with a lower standard deviation of 0.62 in comparison to KNN with a standard deviation of 0.85. Also, the t-test with a p-value of less than 0.05 validates the better performance as statistically significant. Together, the gradient boosting ensemble procedure provides better accuracy and results than the current KNN model for the optimization of agricultural use of pesticides. Such methods are capable of addressing complex field-level data and resolving the issue with higher decision-making reliability. It emphasizes the validity of such ensemble techniques for farming automation solutions.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "ensemble",
+        "gradient",
+        "boosting",
+        "accuracy",
+        "agricultural",
+        "better",
+        "application",
+        "group",
+        "images",
+        "comparison",
+        "performed",
+        "higher",
+        "standard",
+        "deviation",
+        "intended"
+      ]
+    },
+    "c18c9377e5c6be9613638649f183c756f682e917": {
+      "title": "CAM-Diffusion: Explainable synthetic SERS spectra generation via 1D-class activation mapping and conditional diffusion models for enhanced cancer detection",
+      "year": 2026,
+      "abstract": null,
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": []
+    },
+    "6a8221263945c7ba92e32a118bbbb9769e98edf9": {
+      "title": "Prediction and interpretation of pesticide behavior in acidic soil based on XGBoost-SHAP.",
+      "year": 2026,
+      "abstract": "The migration and transformation behavior of pesticides in acidic soils is a key link in environmental risk assessment, and its complex nonlinear characteristics pose a challenge to traditional research methods. This review systematically summarizes the research progress of the XGBoost-SHAP interpretable machine learning framework in predicting pesticide behavior in acidic soils, aiming to construct a new analytical paradigm that balances high accuracy and interpretability. The XGBoost algorithm, through ensemble learning mechanism and regularization strategy, can effectively capture the nonlinear response under the coupling effect of multiple environmental factors, and enhance the ability to model the behavior of adsorption, degradation, leaching and other processes; Combining the SHAP interpretation framework and game theory to achieve fair allocation and visualization of feature contribution, the model's predicted results are interpretable in terms of environmental chemistry. At the level of feature construction, research is gradually shifting from a single parameter description to a mechanism guided multidimensional variable system, integrating soil physicochemical properties, pesticide molecular structure, and environmental dynamic factors, and strengthening the model's ability to characterize interface processes such as protonation and complexation. The review further explores the application value of this framework in practical scenarios, including supporting pesticide registration risk assessment, optimizing contaminated site remediation strategies, and guiding regional agricultural precision management. Through global and local interpretation mechanisms, it reveals the pathways and threshold behaviors of key environmental factors. The current research still faces problems such as strong dependence on data quality and insufficient cross category generalization ability. In the future, it can develop towards hybrid architectures that integrate physical mechanism models, spatiotemporal dynamic modeling, and multi-scale interpretation systems. The application of XGBoost-SHAP method marks the transformation of environmental prediction research from black box modeling to interpretable intelligence, providing theoretical basis and technical path for building a scientific and transparent environmental decision support system.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "environmental",
+        "research",
+        "behavior",
+        "xgboost",
+        "interpretable",
+        "framework",
+        "pesticide",
+        "mechanism",
+        "factors",
+        "ability",
+        "interpretation",
+        "transformation",
+        "acidic",
+        "soils",
+        "assessment"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "source": "1bd6df9a1bd0703b52eab92d12d5d7799c4d9014",
+      "target": "73f64af6abe6c77efbccd3dde5c5ec178ffbf70e",
+      "type": "cites"
+    },
+    {
+      "source": "c18c9377e5c6be9613638649f183c756f682e917",
+      "target": "73f64af6abe6c77efbccd3dde5c5ec178ffbf70e",
+      "type": "cites"
+    },
+    {
+      "source": "6a8221263945c7ba92e32a118bbbb9769e98edf9",
+      "target": "73f64af6abe6c77efbccd3dde5c5ec178ffbf70e",
+      "type": "cites"
+    }
+  ]
+}

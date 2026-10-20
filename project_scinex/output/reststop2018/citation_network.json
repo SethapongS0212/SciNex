@@ -1,0 +1,177 @@
+{
+  "paper_id": "398a3eae28da1dbdb32ccc357e8e4816d3a1578e",
+  "title": "A Hybrid Method for Predicting a Potential Next Rest Stop of Commercial Vehicles",
+  "year": 2018,
+  "abstract": "Abstract Long-distance trips such as freight and passenger transports over cities can create driver fatigue, so drivers prefer to get a rest for a while during their long-time driving. In Thailand, there are rest stops along main roads between cities, such as petrol stations, travel plazas, wayside parks, and scenic areas. In order to provide a better service to customers, the rest stops must have a good management, so the prediction of the number of potential vehicles in a period of time is primarily needed. One important task is to predict the next rest stop of every car at a period of time. Due to this requirement, this paper aims to introduce a prediction model for predicting the next rest stop of a vehicle by analyzing the global positioning system (GPS) tracking data of all commercial vehicles in Thailand. The proposed prediction model is a hybrid model that comprises of three scoring functions depended on the frequent pattern of connected rest stops, the direction of connected rest stops in a route, and the popularity of the rest stops. The experimental result shows that the proposed prediction model gives high accurate result in terms of the area under the receiver-operating-characteristic curve (AUC). This predicted result is also useful for a government department and rest stops’ owner to improve transportation, road safety, and other service.",
+  "citation_count": 2,
+  "root_concepts": [
+    "stops",
+    "prediction",
+    "result",
+    "cities",
+    "thailand",
+    "service",
+    "vehicles",
+    "period",
+    "connected",
+    "abstract",
+    "distance",
+    "trips",
+    "freight",
+    "passenger",
+    "transports"
+  ],
+  "nodes": {
+    "c3eaaec2128828d3004075182d0ed28cff3804ec": {
+      "title": "GPS Data Analytics for the Assessment of Public City Bus Transportation Service Quality in Bangkok",
+      "year": 2023,
+      "abstract": "Evaluation of the quality of service (QoS) of public city buses is generally performed using surveys that assess attributes such as accessibility, availability, comfort, convenience, reliabilities, safety, security, etc. Each survey attribute is assessed from the subjective viewpoint of the service users. This is reliable and straightforward because the consumer is the one who accesses the bus service. However, in addition to summarizing personal feedback from humans, using data analytics has become another useful method for assessing the QoS of bus transportation. This work aims to use global positioning system (GPS) data to measure the reliability, accessibility, and availability of bus transportation services. There are three QoS scoring functions for tracking complete trips, on-path driving, and on-schedule operation. In the analytical process, GPS coordinates rounding is adopted and applied for detecting trips on each route path. After assessing the three QoS scores, it has been found that most bus routes have good operations with high scores, while some bus routes show room for improvement. Future work could use our data to create recommendations for policy makers in terms of how to improve a city’s smart mobility.",
+      "citation_count": 11,
+      "relation": "citing",
+      "concepts": [
+        "service",
+        "accessibility",
+        "availability",
+        "assessing",
+        "transportation",
+        "three",
+        "trips",
+        "scores",
+        "routes",
+        "evaluation",
+        "quality",
+        "public",
+        "buses",
+        "generally",
+        "performed"
+      ]
+    },
+    "24b49f70eb57bb20e634ea1937513d9c8b05daa5": {
+      "title": "Defect Detection of GPS Trackers through Data Visualization",
+      "year": 2019,
+      "abstract": "A Global Positioning System (GPS) tracker installed in a vehicle is commonly used to improve logistics management processes and transportation safety. All GPS trackers must send data including locations, timestamps, and speeds to a server all the time. In case of a device failure, it can be checked by incomplete data; however, a device's sensor inaccuracy, which can create negative consequences to many parties, becomes a challenging issue to detect. With this reason, this paper aims to adopt data visualization to find out the defect of GPS trackers. It has been found that some defects noticed by a visualization were reported, and providers got advantage of this result to maintain their devices.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "trackers",
+        "device",
+        "visualization",
+        "global",
+        "positioning",
+        "system",
+        "tracker",
+        "installed",
+        "vehicle",
+        "commonly",
+        "improve",
+        "logistics",
+        "management",
+        "processes",
+        "transportation"
+      ]
+    },
+    "53d7ef68ded137a5e85e034131b66036df849650": {
+      "title": "Mining Frequent Trajectories of Moving Objects for Location Prediction",
+      "year": 2007,
+      "abstract": null,
+      "citation_count": 218,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "79303b347eb1c9f8e08b540ccc267848a0262bf1": {
+      "title": "Prediction of Moving Object Location Based on Frequent Trajectories",
+      "year": 2006,
+      "abstract": null,
+      "citation_count": 94,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "1ae0ac5e13134df7a0d670fc08c2b404f1e3803c": {
+      "title": "A data mining approach for location prediction in mobile environments",
+      "year": 2005,
+      "abstract": null,
+      "citation_count": 359,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "6ac23fe48b2caae908c63fc58bd48be1400a92b4": {
+      "title": "Hybrid Recommender Systems: Survey and Experiments",
+      "year": 2002,
+      "abstract": null,
+      "citation_count": 4500,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "bc37489e7173c75be152b2fcea35191c68847ab2": {
+      "title": "The meaning and use of the area under a receiver operating characteristic (ROC) curve.",
+      "year": 1982,
+      "abstract": null,
+      "citation_count": 22274,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "24f1a3ec9d02abcd3b5ed7f511b9d8017213954a": {
+      "title": "Introduction to Recommender Systems Handbook",
+      "year": 2011,
+      "abstract": null,
+      "citation_count": 2748,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "34446adc7d701a2c3a89c2fc5f6d3479eef407b0": {
+      "title": "Content-Based Recommendation Systems",
+      "year": 2007,
+      "abstract": null,
+      "citation_count": 2894,
+      "relation": "cited_by",
+      "concepts": []
+    }
+  },
+  "edges": [
+    {
+      "source": "c3eaaec2128828d3004075182d0ed28cff3804ec",
+      "target": "398a3eae28da1dbdb32ccc357e8e4816d3a1578e",
+      "type": "cites"
+    },
+    {
+      "source": "24b49f70eb57bb20e634ea1937513d9c8b05daa5",
+      "target": "398a3eae28da1dbdb32ccc357e8e4816d3a1578e",
+      "type": "cites"
+    },
+    {
+      "source": "398a3eae28da1dbdb32ccc357e8e4816d3a1578e",
+      "target": "53d7ef68ded137a5e85e034131b66036df849650",
+      "type": "cites"
+    },
+    {
+      "source": "398a3eae28da1dbdb32ccc357e8e4816d3a1578e",
+      "target": "79303b347eb1c9f8e08b540ccc267848a0262bf1",
+      "type": "cites"
+    },
+    {
+      "source": "398a3eae28da1dbdb32ccc357e8e4816d3a1578e",
+      "target": "1ae0ac5e13134df7a0d670fc08c2b404f1e3803c",
+      "type": "cites"
+    },
+    {
+      "source": "398a3eae28da1dbdb32ccc357e8e4816d3a1578e",
+      "target": "6ac23fe48b2caae908c63fc58bd48be1400a92b4",
+      "type": "cites"
+    },
+    {
+      "source": "398a3eae28da1dbdb32ccc357e8e4816d3a1578e",
+      "target": "bc37489e7173c75be152b2fcea35191c68847ab2",
+      "type": "cites"
+    },
+    {
+      "source": "398a3eae28da1dbdb32ccc357e8e4816d3a1578e",
+      "target": "24f1a3ec9d02abcd3b5ed7f511b9d8017213954a",
+      "type": "cites"
+    },
+    {
+      "source": "398a3eae28da1dbdb32ccc357e8e4816d3a1578e",
+      "target": "34446adc7d701a2c3a89c2fc5f6d3479eef407b0",
+      "type": "cites"
+    }
+  ]
+}

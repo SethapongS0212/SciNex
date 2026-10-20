@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "45568b614f18", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "'custom-developed desktop application' is unnamed; design intent IS explicit but 'ensure consistency' is a goal, not a ResearchTask"},
+  {"triple_id": "fc7e95da9854", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "reversed: affiliatedWith is Agent->Organisation, so the person is affiliated with the university, not vice versa"},
+  {"triple_id": "b24ffc924b78", "C1": "INCORRECT", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "'work' is not a concept and not a venue; the sentence is about reusing a dataset, nothing about publication"},
+  {"triple_id": "9950fe9254dc", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "supports needs a MEASUREMENT (a number) as subject; 'Down matrices' is a component, and the sentence says 'influence on', not that a number backs a conclusion"},
+  {"triple_id": "da2ce9504549", "C1": "PARTIAL", "C3": "TOO_NARROW", "C4": "PARTIAL", "note": "citation key as an entity will never recur; 'reported' is literal but the object is a result, not a ResearchProcess"},
+  {"triple_id": "1da5b95de155", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "writtenBy is AcademicPaper->Author; SAM 2 is a Model standing in for its paper - supported but loosely typed"},
+  {"triple_id": "3a112515ecc2", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "locatedIn is Organisation->Place; a camera model is not an Organisation and KMITL is not a Place - fact supported, both types wrong"},
+  {"triple_id": "371c58b1991f", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "employs is defined Organisation->Person; this is a model and its component - should be comprises"},
+  {"triple_id": "b2e0f87b705a", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "cites is Paper->Paper; YOLOv8 is a model and Ultralytics an organisation, and the sentence says 'developed by', not cites"},
+  {"triple_id": "a3d8a0c83173", "C1": "CORRECT", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "'statistical data points' is a generic data descriptor"}
+]}

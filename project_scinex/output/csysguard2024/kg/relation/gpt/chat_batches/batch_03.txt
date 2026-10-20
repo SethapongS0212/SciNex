@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 24 -----
+Section: B. DATA PREPROCESSING
+
+Text:
+In the data collection, we implemented a custom script to access Prometheus' local storage to receive resource utilization and performance indicators. The dataset [57] com- prises approximately 8,000 data points, each accumulated every 5 seconds. The metrics include CPU and memory requests (expressed as percentages), network inbound and outbound rates (measured in gigabytes per second, GB/s, or megabytes per second, MB/s), transactions per second (TPS), and response time (in seconds, s, or milliseconds, ms), as illustrated in Fig. Moreover, we collected the system 's real-time health status , which was determined by scrutinizing HTTP response codes [53]. When the script detects prede- fined error response codes, it classifies the system health as ''unhealthy''; in all other cases, it designates the status as ''healthy.'' Although stateless applications rarely leverage disk storage, which is not part of the training input, we still monitor it to ensure its proper stateless behavior. Eventually, the system performs a noise reduction process utilizing a low-pass Butterworth filter to minimize data inconsistencies. To demonstrate an enhanced forecasting accuracy, Fig. 6 showcases the impact of noise reduction by contrasting the predictions and RMSE of LSTM, GRU, and ARIMA models using both noise-filtered and raw data inputs with actual values. It highlights the enhancement achieved by applying a filter to reduce noise.
+
+----- para_id: 25 -----
+Section: B. DATA PREPROCESSING
+
+Text:
+The process then yields and stores a well-refined dataset for further analysis . Subsequently, the system performs a series of transfor- mations to format the data appropriately for subsequent modeling and analysis . Table 1 shows the modification results, outlining how various metrics were adjusted to meet the analytical requirements. Specifically, we normalized CPU and memory requests to a scale from 0 to 1, transformed inbound and outbound bandwidth in megabytes per second (MB/s), and quantified response time in milliseconds (ms). We retained the TPS feature in its original form as collected. The mechanism also transformed system status from the orig- inal textual designations into a numerical format, encoding ''healthy'' as 0 and ''unhealthy'' as 1, facilitating binary analysis .
+
+----- para_id: 26 -----
+Section: IV SYSTEM METRICS FORECASTING
+
+Text:
+This section describes the detailed process of forecast- ing performance metrics. This comprehensive examination covers the intricacies of Level-0 and Level-1 learners, Weight Aggregation, and the approaches used for comparing models and tuning hyperparameters in regression models.
+
+----- para_id: 27 -----
+Section: A. LEVEL-0 LEARNER
+
+Text:
+Level-0 learners comprise base models designed for time- series prediction that utilize datasets aggregated directly from the system for their training. At each predefined interval, these models use the most recent dataset to predict forthcoming values, considering two key elements: the predetermined count of past data points (observation steps) and the quantity of future data points ( prediction steps) to be predicted. 7 visualizes the sequence of time series predictions, showcasing observation steps ''o'' and prediction steps ''p'' for each interval ''k'' across ''n'' predictions. cSysGuard allows the adjustment of these parameters to meet user-specific requirements. In this study, we configured the settings with 30 observation steps and five forecast steps, aligning the interval with the forecasting steps. Our setup has operated various models, including the ARIMA, SARIMA, ETS, CNN, TCN, RNN, GRU, and LSTM. Each brings a unique forecasting approach, enabling us to capture various aspects and patterns within the data. In addition to deep learning, we incorporated two hidden layers into the architecture : the first equipped with 64 neurons and the second with 32 neurons, both employing ReLU activation. We used the default settings provided by the Statsmodels [54] and TensorFlow [55] libraries. Despite this, we observed that the library's default parameter values for deep learning led to suboptimal predictions. Therefore, parameter adjustments are required.
+
+----- para_id: 28 -----
+Section: A. LEVEL-0 LEARNER
+
+Text:
+Table 2 outlines the model-fitting configuration, ensuring the retention of initial learning proficiency of deep learning models. Upon predic- tion, the models forward the results to the subsequent layer, Level 1.
+
+----- para_id: 29 -----
+Section: B. LEVEL-1 LEARNER
+
+Text:
+Level-1 learners serve as meta-models designed for refining the regression outputs and constitute the second layer in our predictive framework . Their main objective is to improve the forecast precision by leveraging the outcomes from Level-0 models as inputs to produce refined outputs. This integration enables Level-1 learners to fine-tune the initial forecasts, enhancing the overall predictive performance of cSysGuard. This layer comprises three distinct models: Linear Regres- sion, Random Forest, and Feedforward Neural Networks. Linear Regression provides simplicity and interoperability to effectively capture linear relationships within the data. Random Forest contributes to reducing overfitting and improving generalization. Feedforward Neural Networks excel at capturing complex, nonlinear patterns and interac- tions in the data. This combination leverages the strengths of each model, ensuring that the stacking approach can effectively generalize across different metrics and system behaviors to enhance the predictive accuracy and robustness of cSysGuard. For Linear Regression and Random Forest, we employed the standard parameters provided by the Scikit-learn library [56]. For Feedforward Neural Networks, we replicated the deep learning structure and model-fitting parameters of Level-0 models using the TensorFlow library.
+
+----- para_id: 30 -----
+Section: B. LEVEL-1 LEARNER
+
+Text:
+To optimally balance cSysGuard's predictive performance and computational complexity, we adopted a selective approach to determine which Level-0 models would be fed into specific Level-1 models for predictions. The selection depends on the impact each model has on the predictive performance for particular metrics, evaluated by the Pearson correlation coefficient, r [58], which is defined as follows: where xi represents the predicted metric values from Level-0 models, ¯x signifies the average predicted metric across Level- 0 models, yi indicates the actual metric values, and ¯y reflects the mean of the actual metrics. Upon score calculation, we sorted the models in descending order based on their correlations to gauge their impact. 9 illustrates the Pearson correlations of each base model for predicting CPU requests. We then incrementally incorporated Level-0 models into each Level-1 learner, starting with those having the highest correlation scores, and assessed P(xi −¯x)(yi −¯y) pP(xi −¯x)2 P(yi −¯y)2 (5) the predictive performance of each Level-1 model using the RMSE. This iterative process continued until all base models were utilized and assessed. 8 demonstrates the improvement in the performance of Level- 1 models for predicting CPU requests by adding each model. 10 offers a unified visualization of the enhancements across the models, presented in a single comprehensive graph.
+
+----- para_id: 31 -----
+Section: B. LEVEL-1 LEARNER
+
+Text:
+Our analysis aimed to pinpoint an ''elbow point'' [59], where incorporating additional models led to minimal gains in the predictive accuracy for the specific metric. This selective approach to model integration significantly conserves computational resources while ensuring high predictive precision, demonstrating a successful trade-off between performance and computational efficiency in intricate forecasting tasks.
+
+----- para_id: 32 -----
+Section: C. WEIGHTED AGGREGATION LAYER
+
+Text:
+The weighted aggregation layer is the final regression stage for predicting forthcoming metrics. To effectively leverage the contributions of each Level-1 model, the system receives predictive model outputs and refines the final prediction using a weight-averaging method [60] by assigning higher weights to more accurate models. In addition to the weight calculation, the layer computes the Performance Vector (PV) of Level-1 learners based on past t refinement iterations. The PV is represented as a 3 × t matrix: where it consolidates the prediction errors, measured by RMSE, for Linear Regression (LR), Random Forest (RF), and Feedforward Neural Networks (FF) across t refinement iterations. The refinement process enables ongoing updates to the model performance, ensuring sustained accuracy in a rapidly changing cloud environment. Nevertheless, incorporating the RMSE directly as weights presents a significant challenge, as it may not adequately reflect model correlations. A model with a slightly lower RMSE may not enhance the ensemble diversity if similar to another model. To mitigate this issue, we developed a normalized weighting system derived from the PV. The calculation scales the errors into normalized weights, identified as NormWeighti,j, converting them to a range between 0 and 1 for comparability across different models.
+
+----- para_id: 33 -----
+Section: C. WEIGHTED AGGREGATION LAYER
+
+Text:
+The weight normalization formula is outlined in (7): where the weights are calculated by inversely relating them to their RMSE, expressed as exp(−α × PEk,j), ensuring that models with lower errors are more reliable than those with higher errors. In addition, α acts as a sensitivity controller, adjusting the weight assignment based on error magnitude. α facilitates a subtle balance between emphasizing and mod- erating differences in model errors and acts as a controllable safeguard to prevent integer overflow [61] during exponential system computations. To maximize the weight difference, our study aimed to maximize each weight value while ensuring that outcomes stayed within an acceptable range as controlled by α. This strategy allows for a more pronounced distinction in model weights, which is particularly beneficial when the models' performances are nearly identical. To derive the final prediction , we integrated the outputs from our Level-1 learners through a weighted averaging approach. The final prediction for a given time point m, represented by Pm, is determined as (8): where each model's prediction , denoted as Pk,m, is multiplied by its respective normalized weight, NormWeightk,m. This process guarantees that each model's contribution to the final prediction is proportional to its performance. By harmonizing the models' strengths, this approach yields a more precise and reliable ensemble forecast.
+
+----- para_id: 34 -----
+Section: D. MODEL COMPARISON
+
+Text:
+Our approach evaluated cSysGuard's efficacy in forecasting system metrics by comparing its performance with traditional models used in the Level-0 layer. We utilized RMSE to compare and benchmark the performance across different metrics. This method clearly explains the precision and dependability of cSysGuard, emphasizing its capability to manage dynamic environments effectively.
+
+----- para_id: 35 -----
+Section: E. HYPERPARAMETER TUNING
+
+Text:
+After comparing the models, we concentrated on devel- oping a strategy to enhance cSysGuard further. Therefore, we selected one model from each Level-0 and Level-1 layer and investigated their impacts by adjusting the hyperpa- rameters through Bayesian optimization [62]. Subsequently, we evaluated the improvements using the RMSE as our benchmark. Given the system configuration constraints outlined in Section VI-E, we limited our hyperparameter tuning to particular models and metrics to mainly focus on a methodol- ogy optimizing cSysGuard. With an emphasis on enhancing CPU request predictions, the study focused on refining the RNN and Random Forest models, designated as Level-0 and Level-1, respectively. These models were selected not only due to their numerous tunable parameters but also to demonstrate that our hyperparameter tuning methodology is effective across deep learning and traditional machine learning techniques in a stacking architecture . The hyperparameters covered various factors within speci- fied ranges, as detailed in Table 3, directly affecting model performance. For the RNN, these parameters include data structuring elements (such as observation steps), model architecture (covering learning rate, the number of neurons, and activation functions in both the first and second layers), and model training configurations (incorporating epochs and batch size).

@@ -1,0 +1,247 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 11 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: I INTRODUCTION
+
+Text:
+In general, when people whose right and left hands are busy carrying somethings need to do some other actions such as open a door, open a car trunk, etc.; they have to place those things down on somewhere first in order to use a free hand to do another operation. However, the people are under the difficult situation if there is no place to put the things down or they are under difficult environment such as raining. Thus, for doing a hands-free operation, using another part of the body instead of a hand can be a proper solution such as a voice command, an eye command, a foot command, etc. as demonstrated in Fig 1. The scope of this paper is to detect the foot command or the kick gesture in order to activate a hand-free operation. Several sensors were reviewed in the Section II, and we decided to use a Rachsak Sakdanuphab College of Data Storage Innovation King Mongkut's Institute of Technology Ladkrabang microwave sensor because it works well under the variety of locations' situations particularly in the outdoor environment. Thus, this work aims to detect the kick gesture by analysis the signal from a microwave sensor and create a classification model for implementing in any kick-activated applications. To report our achievement, next, Section II reviews several motion sensors and classification methods, Section III describes a method to find a classification model for detecting a kick gesture, Section IV shows results and discussions, and Section V draws conclusion and future work.
+
+----- para_id: 1 -----
+Section: II LITERATURE REVIEW
+
+Text:
+As we reviewed, there are some studies about the kick activation or the kick gesture detection. GekiPe [1] detected the kick action by analyzing the body structure using Microsoft Kinect. KICK [2] analyzed the kick gesture from a mobile phone's camera monitoring a user's foot for accessing some menu items. KickSoul [3] employed a wearable device to detect natural feet movements for accessing a digital device. [4] introduced a touch-less interactive detected by a camera for reality game on vision-based wearable devices such as Google Glasses. The trend of the kick gesture's applications is much more on the games and entertainments, and most of them use the analysis of video cameras. However, in case of a kick activation with a target device, it is still opening for academic research. Thus, we further reviewed some sensors and data analysis techniques for analyzing electronic signals from the kick detection. For detecting the kick gesture, two types of sensors are reviewed in the following list. Distance sensors that are commonly used are an ultrasonic sensor and an infrared sensor. First, the ultrasonic sensor uses a sound wave to detect an object, but it needs to care about the environment's temperature which effects the wave speed [5]. Second, the infrared sensor uses the reflection of infrared light to calculate the distance of an object [5]. It may be error if the sensor is dirty from mud, or there are some drops of water to change the refraction of light.
+
+----- para_id: 2 -----
+Section: II LITERATURE REVIEW
+
+Text:
+The motion sensors are also used to detect a movement of an object. There are a Passive InfraRed sensor (PIR) and a Doppler sensor that are generally discussed. First, the PIR detects the change in light radiating from the spotting area [5]. In practice, it will alert if someone move a little bit, but it cannot distinguish between the kick gesture and other movements. Second, the doppler sensor is a sensor notices the change of speed of an object using the result from doppler effect [5]. A microwave senor is a type of the doppler sensor as can be seen in Fig 2(a). The movement of an object can be detected by the speed of an object, and then the signal is generated as shown in Fig 2(b). It can transform the signal into a digital wave in order to be processed by a microcontroller as well. The microwave sensor also tolerates the changes in temperature, dirty, and other conditions under the environment and its cost is reasonable, so we choose the microwave sensor for detecting the kick gesture for conducting this research. Next, after the signal is retrieved from a sensor, it needs to be classified into the class "Kick" or "non-Kick". In this case, the following classification techniques are reviewed for conducting an experiment. The logistic regression is a model that employs a statistical technique to classify a dataset into two classes [6].
+
+----- para_id: 3 -----
+Section: II LITERATURE REVIEW
+
+Text:
+It estimates the association between the categorical dependent variable (or class) and independent variables (or attributes) by calculating probabilities using a logistic function as expressed in Eq. where the number e is the natural exponential being 2.7183, α is an intercept, X is a set of attributes, βn is a vector of coefficients of n elements of the X. The learning technique must adjust all α and β for minimizing the error between predicted and actual results. The model of the decision tree is simple like a flowchart and widely used for making a prediction [7]. The model evaluates the value of attributes of an object and rearranges them into the flow of decision. It starts from the root node and split the remaining samples into branches which present the outcome of an attribute and the leaf nodes are classes' labels. The Artificial Natural Network (ANN) [7] is a method that uses the concept of the biological neural system of animal brains. It contains the set of artificial neurons and the connections of them. All neurons and connections have well-adjusted weights that can increase or decrease the strength of input signal to generate the classification output. The Support Vector Machine (SVM) [8] is one machine learning technique for addressing a classification problem. It employs a hyperplane for dividing members of two classes by increasing the width of the gab as possible. There are many types of hyperplanes that are formed mathematics equations as known as kernels.
+
+----- para_id: 4 -----
+Section: II LITERATURE REVIEW
+
+Text:
+KICK GESTURE ANALYSIS To detect the kick gesture, we firstly design the system to collect data. Then, we explore the data to compare the pattern of signal between kicking and non-kicking. At last, we use data analysis techniques to build a classifier for checking the kick gesture. The system design for making experiment, which is demonstrated in Fig. 3, uses a sensor to detect the kick gesture, a microcontroller to collect data from the sensor, and a push switch to give supervised data of the kick gesture. As our review from the previous section, the microwave sensor [5], which use the doppler technique to detect the movement of an object, is selected to be a part of our work; because it can be used in various conditions especially in the outdoor environment. The sensor box is put at a short table. It sends a wave and receives the response frequency from an object in every 10 milliseconds. For gathering data, we kick into the air near the sensor, and then we click the push switch immediately in order to inform the computer that the gesture we did is kicking. During the experiment, we try various actions, such as walk around the sensor and pass some objects through the table without pressing the push switch. Thus, there are supervised data including kicking and non-kicking signal for doing data analysis. After data are collected, the line graph presenting the absolute value of the response frequency is simply plotted with a time axis based as shown in Fig.
+
+----- para_id: 5 -----
+Section: II LITERATURE REVIEW
+
+Text:
+Figures 4 (a) and (b) are resulted from the kick gestures. As we take a look at the graph, there have the same pattern that contains high spiky graph in the middle the left and the right sides become lower. In addition, when the data about human's walks around the sensor are plotted, it shows the frequent spike graph as displayed in Fig. 4 (d) depicts the pattern when an object such as a ball passing thought the table under the sensor. In addition, as we analyze from the visualization, the pattern of kicking commonly consumes 1 seconds and the data is gathered every 10 milliseconds, so a chunk containing 100 times of data (100 data points) is used to be analyzed. Based on the visualization in Fig. 4, there are clearly patterns between the signal from the kick gesture and the other actions, so it is possible to create a classifier model to make a prediction of any incoming inputs. In this case, the experiment for analyzing data is conducted by the following steps. Examiners kick into the air nearby the sensor box and press the push switch immediately. They can walk pass or throw something pass through the table in order to test other non-kicking actions. The response frequency from the sensor box is collected into a computer. The signal is processed into sliding windows, and each of them containing 100 data points. One sliding window is a sample containing 100 features (data points), and the label of each window is the status of the push switch.
+
+----- para_id: 6 -----
+Section: II LITERATURE REVIEW
+
+Text:
+It means that there are sliding windows for demonstrating kicking and non- kicking, and this set is used as a supervised dataset. The 4 classifier methods: Logistic Regression [6], Decision Tree [7], ANN [7], and SVM [8] are employed in our analytic process. The evaluation is done by 10-fold cross-validation, and an accuracy score is expressed in Eq. The result of 4 methods are compared and discussed
+
+----- para_id: 7 -----
+Section: IV RESULT AND DISCUSION
+
+Text:
+This section describes the experimental result and discussion of our experiment. Each classifier model is measured by the accuracy index expressed by Eq. The accuracy index considers True-Positive (TP), True-Negative (TN), False-Positive (FP), and False- Negative (FN); so, it is a proper method to verified that sliding windows in the test set in each fold of cross-validation are correctly classified. The accuracy result of each classifier model is demonstrated in Table I. All methods provide high result, especially in the logistic regression which gives the highest score. 1, the α and the β, which are an intercept and coefficients of all data points in a sliding window, are adjusted to create a fit logistic regression model for this data set. As the result, a vector containing one intercept (α) and 100 coefficients (β) of the fit model becomes the parameter of the logistic regression equation for implementing on a controller. It is known that a hand-free operation is sometimes needed in our daily life such as opening a car's trunk, opening front door, turn on a light, etc., when both hands are busy carrying somethings and cannot put those things somewhere. The solution such as the kick activation is a proper solution that returns user convenience. In this case, a motion sensor becomes a key player in this solution.
+
+----- para_id: 8 -----
+Section: IV RESULT AND DISCUSION
+
+Text:
+As we reviewed, the ultrasonic sensor and the infrared sensor can detect the movement of an object, however, they do not work well in some conditions such as temperature change, turbidity from dirt or mud, water drops, etc. For this reason, the microwave sensor becomes a proper device for detecting the kick motion, because it works well in both indoor and outdoor environment. This sensor uses an electromagnetic field between a transmitter and a receiver as depicted in Fig. 2, and it takes advantage from the doppler effect to evaluate the doppler shift or change in the frequencies or the wavelengths of reflections from a moving object [5]. Thus, it can detect the movement of a foot that is viewed as a moving object as well. When the sensor detects any movements of a human's part or an object such as kicking, walking, passing through, etc.; the frequencies of the reflected signals are shaped differently as shown in Fig. Most patterns of the signals can be clearly recognized by a human recognition, because the signal of the kick gesture commonly consists of a spike range in the middle of a sliding window. It is resulted from the motion of a foot during kicking. When start kicking, the speed of the foot is a little bit low because it moves from the standing position. During the foot kick to the end and start pulling the foot back, the speed of the foot is rising rapidly, so the reflect frequency become spike in the middle of the kick action.
+
+----- para_id: 9 -----
+Section: IV RESULT AND DISCUSION
+
+Text:
+After that, the frequency becomes lower again when the foot is drawn back to the normal standing position. Based on the different patterns of the signals between kicking and non-kicking gestures from the result of our experiment; the logistic regression, which is a known classifier model, is selected because it gives the highest accuracy among other techniques. Since the logistic regression is a generalized linear model, it can be conversed that the problem of signal processing for the kick activation can be solved by a linear program. The result model is a vector comprising of the intercept and coefficients of all data points in a sliding window, so it can be simply programmed in a microcontroller for building a kick- activated application. However, since the linear regression is a binary classification, so it is limited to only kick and non-kick classes. In case the future operation requires more types of kicking gestures such as slow kick, fast kick, left kick, right kick, etc.; it needs to use other multiclass classification techniques for separating the different gestures as well.
+
+----- para_id: 10 -----
+Section: V CONCLUSION
+
+Text:
+A kick activation method is one of solutions for addressing a hand-free operation issue. This paper attempts to detect a kicking gesture from a microwave sensor because it works well under various conditions of environment especially in the outdoor areas such as opening a car's trunk. The idea is that when a human kicks into the air nearby the sensor, signal data from the sensor are generated. After that, a microcontroller processes a one-second-length sliding window of the sensor's signal for classifying the kick and non-kick actions based on the supervised dataset. Signals between these actions are clearly distinguished using the signal visualization. It also found that the logistic regression, which is a known data analytic method, can be used as a classification method to detect the kick gesture; because it provides the best accuracy among all selected classifiers. The parameters of the fit model can be implemented in a microcontroller for creating any kick-activated applications. Furthermore, in fact, there are several kinds of kicking actions such as fast kicking, slow kicking, kicking by left or right foot, etc. In the future, a kick detector will be learned with many kinds of kicking gestures in order to support various inputs from different kick actions. In this case, more features and some multi-label classifiers should be adopted.

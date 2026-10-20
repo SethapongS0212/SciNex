@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 3c9dbe2bbabf -----
+TRIPLE:     (U-GMo (Your Great Moment))  --comprises-->  (posture detection)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: Our work, named U-GMo (Your Great Moment), comprises of three primary steps comprise the artificial intelligence part (AI Part) of our automatic video editing system: (1) posture detection, (2) graduation identification, and (3) video segment extraction.
+
+----- triple_id: 358dcdc4d4de -----
+TRIPLE:     (IoU)  --evaluates-->  (0.612)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: In order to assess the model's accuracy and robustness, precision of 0.923, accuracy of 0.974 and IoU of 0.612 are evaluated.
+
+----- triple_id: 694a2648d834 -----
+TRIPLE:     (Level-1 learners)  --designedfor-->  (refining the regression outputs)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: Level-1 learners serve as meta-models designed for refining the regression outputs and constitute the second layer in our predictive framework.
+
+----- triple_id: b5646c077233 -----
+TRIPLE:     (parking space detection algorithm)  --evaluatedon-->  (PKLot)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Grbi´c and Koch [24] proposed occu- pancy classification and a parking space detection algorithm, wherein parking spaces were determined as occupied or empty using a trained ResNet34 deep classifier; they extensively evaluated this approach on publicly known parking datasets such as PKLot [25] and CN- RPark+EXT [26].
+
+----- triple_id: 7e8c82ede0c7 -----
+TRIPLE:     (RT-DETR model)  --trainedon-->  (complete eye landmark dataset)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: The RT-DETR model was finalized by training on the complete eye landmark dataset.
+
+----- triple_id: e1ac0e859327 -----
+TRIPLE:     (training set)  --splitfrom-->  (time-series data)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: The raw data, together with road data from Thailand, were processed into time-series data of the average hourly travel time on each road segment in 2019, and the time-series data were split into a training set and a test set, where the sliding window size was 24.
+
+----- triple_id: 96238435f9a9 -----
+TRIPLE:     (Bureau of Street Lighting)  --locatedin-->  (Los Angeles)
+PREDICATE DEFINITION: Organisation → Place  |  use for physical location
+SOURCE SENTENCE: In this study, we refer to the guidelines from the Bureau of Street Lighting , Los Angeles.
+
+----- triple_id: dcd42598827c -----
+TRIPLE:     (Kalman-LSTM Model for Short -term Traffic Flow Forecasting)  --publishedin-->  (IEEE 5th Advanced Information Technology Conference)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  use for journal/conference names only
+SOURCE SENTENCE: Kalman-LSTM Model for Short -term Traffic Flow Forecasting. In Proceedings of the 2021 IEEE 5th Advanced Information Technology , Electronic and Automation Control Conference (IAEAC), Chongqing, China, 12–14 March 2021; Volume 5, pp.
+
+----- triple_id: 65d75e7e3017 -----
+TRIPLE:     (Realtime Identification Transformer (RT- DETR))  --uses-->  (labeled data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Secondly, we employed the Realtime Identification Transformer (RT- DETR) approach to train our labeled data and create a deep learning model.
+
+----- triple_id: f2b4919f6a85 -----
+TRIPLE:     (self-attention LSTM (SA-LSTM) model)  --achieves-->  (12.15 min per 100 km MAE)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: In this case, a filter and attention were considered, and it was found that using the self-attention LSTM (SA-LSTM) model together with the Butterworth low-pass filter reduced the MAE to 12.15 min per 100 km.

@@ -1,0 +1,18 @@
+{"verdicts": [
+  {"para_key": "microwave2018#10", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["microwave sensor", "microcontroller", "one-second sliding window", "supervised dataset", "kick / non-kick classification"],
+   "missed_relations": ["this paper -> addresses -> detecting a kicking gesture from a microwave sensor", "microcontroller -> uses -> one-second sliding window of sensor signal", "logistic regression -> designedFor/uses -> classifying kick vs non-kick actions"],
+   "note": "identical extraction to gptoss-120b on this paragraph, down to the two triples chosen; captures motivation and result but not the apparatus"},
+  {"para_key": "linkpred2015#13", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["LPII", "collaborative filtering", "community structure", "biological classification", "RDF data of interspecies interaction"],
+   "missed_relations": ["LPII -> uses -> collaborative filtering, community structure and biological classification", "the combination of the three -> achieves -> better prediction than any one alone", "LPII -> designedFor -> RDF data of interspecies interaction"],
+   "note": "this paragraph states the paper's three-component method and its central claim - that the combination beats the parts - in plain prose; nothing extracted"},
+  {"para_key": "csysguard2024#26", "C2": "PARTIAL", "C5": "COMPLETE",
+   "missed_concepts": ["Level-0 learners", "Level-1 learners", "Weight Aggregation"],
+   "missed_relations": [],
+   "note": "a table-of-contents sentence: it NAMES three architecture components, so C2 is penalised, but it asserts no relation between them beyond 'this section covers them' - so an empty extraction is the right answer for C5. A clean case of the two criteria separating."},
+  {"para_key": "roadwaylight2018#8", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["international roughness index (IRI)", "quarter-car vehicle model", "accelerometer", "potholes / bumps / ruts / slippage cracks / joint reflection cracks / edge cracks", "pavement failure"],
+   "missed_relations": ["pavement failure -> comprises -> potholes, bumps, ruts, slippage cracks, joint reflection cracks, edge cracks", "IRI -> evaluates -> road roughness", "IRI -> uses -> quarter-car vehicle model", "accelerometer -> uses/estimates -> IRI"],
+   "note": "a named index, a named physical model and a named instrument, plus a six-way taxonomy of defects - the richest domain paragraph in this sample and it yields nothing"}
+]}

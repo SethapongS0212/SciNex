@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "fb345c5b12c2", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "1a8ba326664f", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "85066cf3bb8f", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "2e249ff9f64e", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "2456e3e855bf", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "0dd0d6671607", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "range violation: evaluatedOn requires a Dataset and a Raspberry Pi is hardware; the sentence says the model RAN on the device, which is deployment, not evaluation on data"},
+  {"triple_id": "77096d06bde6", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "direction is right (AUC verifies the model's accuracy) but the predicate explicitly demands a SPECIFIC numeric result as object, and this object is a descriptive phrase with no number"},
+  {"triple_id": "f5b184054dee", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "dda5d6f48ad5", "C1": "PARTIAL", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "domain and task classes are both right, but the sentence says Twitter messages serve as an NLP tool for the task - it does not state that NLP encompasses it; object is also a bare verb phrase"},
+  {"triple_id": "c55fd86c62d2", "C1": "CORRECT", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "'designed for' is verbatim; 'CNN model' stands in for the paper's actual model (CTv1)"}
+]}

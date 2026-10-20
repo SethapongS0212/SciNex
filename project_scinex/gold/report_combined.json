@@ -1,0 +1,605 @@
+{
+  "label_files": [
+    "gold/sample_claude.csv",
+    "gold/sample_round2_claude.csv"
+  ],
+  "n_labelled": 240,
+  "extractors": {
+    "relation": {
+      "n_labelled": 114,
+      "corpus_triples": 1101,
+      "sampled_strict": 0.20175438596491227,
+      "sampled_lenient": 0.5614035087719298,
+      "weighted_strict": 0.3465031789282471,
+      "weighted_lenient": 0.6675749318801091,
+      "weight_coverage": 1.0,
+      "by_predicate": {
+        "achieves": {
+          "n": 6,
+          "correct": 6,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 140,
+          "corpus_share": 0.1271571298819255,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "addresses": {
+          "n": 6,
+          "correct": 2,
+          "partial": 1,
+          "incorrect": 3,
+          "corpus_n": 287,
+          "corpus_share": 0.26067211625794734,
+          "strict": 0.3333333333333333,
+          "lenient": 0.5
+        },
+        "affiliatedwith": {
+          "n": 6,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 6,
+          "corpus_n": 29,
+          "corpus_share": 0.02633969118982743,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "cites": {
+          "n": 4,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 4,
+          "corpus_n": 4,
+          "corpus_share": 0.0036330608537693005,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "comparesagainst": {
+          "n": 6,
+          "correct": 4,
+          "partial": 1,
+          "incorrect": 1,
+          "corpus_n": 46,
+          "corpus_share": 0.04178019981834696,
+          "strict": 0.6666666666666666,
+          "lenient": 0.8333333333333334
+        },
+        "comprises": {
+          "n": 6,
+          "correct": 1,
+          "partial": 5,
+          "incorrect": 0,
+          "corpus_n": 37,
+          "corpus_share": 0.03360581289736603,
+          "strict": 0.16666666666666666,
+          "lenient": 1.0
+        },
+        "configures": {
+          "n": 6,
+          "correct": 0,
+          "partial": 5,
+          "incorrect": 1,
+          "corpus_n": 8,
+          "corpus_share": 0.007266121707538601,
+          "strict": 0.0,
+          "lenient": 0.8333333333333334
+        },
+        "designedfor": {
+          "n": 6,
+          "correct": 2,
+          "partial": 4,
+          "incorrect": 0,
+          "corpus_n": 18,
+          "corpus_share": 0.01634877384196185,
+          "strict": 0.3333333333333333,
+          "lenient": 1.0
+        },
+        "employs": {
+          "n": 6,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 6,
+          "corpus_n": 26,
+          "corpus_share": 0.023614895549500452,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "encompasses": {
+          "n": 5,
+          "correct": 2,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 5,
+          "corpus_share": 0.004541326067211626,
+          "strict": 0.4,
+          "lenient": 0.4
+        },
+        "evaluatedon": {
+          "n": 6,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 4,
+          "corpus_n": 98,
+          "corpus_share": 0.08900999091734786,
+          "strict": 0.0,
+          "lenient": 0.3333333333333333
+        },
+        "evaluates": {
+          "n": 6,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 4,
+          "corpus_n": 12,
+          "corpus_share": 0.010899182561307902,
+          "strict": 0.0,
+          "lenient": 0.3333333333333333
+        },
+        "locatedin": {
+          "n": 6,
+          "correct": 1,
+          "partial": 2,
+          "incorrect": 3,
+          "corpus_n": 9,
+          "corpus_share": 0.008174386920980926,
+          "strict": 0.16666666666666666,
+          "lenient": 0.5
+        },
+        "motivates": {
+          "n": 1,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 1,
+          "corpus_n": 1,
+          "corpus_share": 0.0009082652134423251,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "produces": {
+          "n": 6,
+          "correct": 2,
+          "partial": 3,
+          "incorrect": 1,
+          "corpus_n": 14,
+          "corpus_share": 0.012715712988192553,
+          "strict": 0.3333333333333333,
+          "lenient": 0.8333333333333334
+        },
+        "publishedin": {
+          "n": 6,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 6,
+          "corpus_n": 8,
+          "corpus_share": 0.007266121707538601,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "reports": {
+          "n": 2,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 0,
+          "corpus_n": 2,
+          "corpus_share": 0.0018165304268846503,
+          "strict": 0.0,
+          "lenient": 1.0
+        },
+        "splitfrom": {
+          "n": 6,
+          "correct": 1,
+          "partial": 1,
+          "incorrect": 4,
+          "corpus_n": 21,
+          "corpus_share": 0.01907356948228883,
+          "strict": 0.16666666666666666,
+          "lenient": 0.3333333333333333
+        },
+        "supports": {
+          "n": 6,
+          "correct": 0,
+          "partial": 4,
+          "incorrect": 2,
+          "corpus_n": 8,
+          "corpus_share": 0.007266121707538601,
+          "strict": 0.0,
+          "lenient": 0.6666666666666666
+        },
+        "trainedon": {
+          "n": 6,
+          "correct": 0,
+          "partial": 6,
+          "incorrect": 0,
+          "corpus_n": 54,
+          "corpus_share": 0.04904632152588556,
+          "strict": 0.0,
+          "lenient": 1.0
+        },
+        "uses": {
+          "n": 6,
+          "correct": 2,
+          "partial": 3,
+          "incorrect": 1,
+          "corpus_n": 274,
+          "corpus_share": 0.2488646684831971,
+          "strict": 0.3333333333333333,
+          "lenient": 0.8333333333333334
+        }
+      },
+      "bootstrap": {
+        "n": 2000,
+        "weighted_strict_ci95": [
+          0.21707538601271573,
+          0.4884953072963972
+        ],
+        "weighted_lenient_ci95": [
+          0.5228580078716321,
+          0.7989706327580988
+        ]
+      }
+    },
+    "relation_scinex": {
+      "n_labelled": 126,
+      "corpus_triples": 1031,
+      "sampled_strict": 0.24603174603174602,
+      "sampled_lenient": 0.5158730158730159,
+      "weighted_strict": 0.39637892014225673,
+      "weighted_lenient": 0.5990947300355641,
+      "weight_coverage": 1.0,
+      "by_predicate": {
+        "achieves": {
+          "n": 6,
+          "correct": 4,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 144,
+          "corpus_share": 0.1396702230843841,
+          "strict": 0.6666666666666666,
+          "lenient": 0.6666666666666666
+        },
+        "achievesresult": {
+          "n": 6,
+          "correct": 1,
+          "partial": 5,
+          "incorrect": 0,
+          "corpus_n": 13,
+          "corpus_share": 0.012609117361784675,
+          "strict": 0.16666666666666666,
+          "lenient": 1.0
+        },
+        "addresses": {
+          "n": 6,
+          "correct": 3,
+          "partial": 1,
+          "incorrect": 2,
+          "corpus_n": 252,
+          "corpus_share": 0.24442289039767218,
+          "strict": 0.5,
+          "lenient": 0.6666666666666666
+        },
+        "affiliatedwith": {
+          "n": 5,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 4,
+          "corpus_n": 5,
+          "corpus_share": 0.004849660523763337,
+          "strict": 0.0,
+          "lenient": 0.2
+        },
+        "cites": {
+          "n": 4,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 4,
+          "corpus_n": 4,
+          "corpus_share": 0.0038797284190106693,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "comparesagainst": {
+          "n": 6,
+          "correct": 3,
+          "partial": 2,
+          "incorrect": 1,
+          "corpus_n": 94,
+          "corpus_share": 0.09117361784675072,
+          "strict": 0.5,
+          "lenient": 0.8333333333333334
+        },
+        "comprises": {
+          "n": 6,
+          "correct": 5,
+          "partial": 0,
+          "incorrect": 1,
+          "corpus_n": 49,
+          "corpus_share": 0.0475266731328807,
+          "strict": 0.8333333333333334,
+          "lenient": 0.8333333333333334
+        },
+        "configures": {
+          "n": 6,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 5,
+          "corpus_n": 64,
+          "corpus_share": 0.06207565470417071,
+          "strict": 0.0,
+          "lenient": 0.16666666666666666
+        },
+        "designedfor": {
+          "n": 6,
+          "correct": 3,
+          "partial": 3,
+          "incorrect": 0,
+          "corpus_n": 17,
+          "corpus_share": 0.016488845780795344,
+          "strict": 0.5,
+          "lenient": 1.0
+        },
+        "employs": {
+          "n": 6,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 6,
+          "corpus_n": 29,
+          "corpus_share": 0.028128031037827354,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "encompasses": {
+          "n": 5,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 3,
+          "corpus_n": 5,
+          "corpus_share": 0.004849660523763337,
+          "strict": 0.0,
+          "lenient": 0.4
+        },
+        "evaluatedon": {
+          "n": 6,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 4,
+          "corpus_n": 63,
+          "corpus_share": 0.061105722599418044,
+          "strict": 0.0,
+          "lenient": 0.3333333333333333
+        },
+        "evaluates": {
+          "n": 6,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 6,
+          "corpus_n": 23,
+          "corpus_share": 0.02230843840931135,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "extractedfrom": {
+          "n": 6,
+          "correct": 0,
+          "partial": 3,
+          "incorrect": 3,
+          "corpus_n": 9,
+          "corpus_share": 0.008729388942774006,
+          "strict": 0.0,
+          "lenient": 0.5
+        },
+        "locatedin": {
+          "n": 4,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 2,
+          "corpus_n": 4,
+          "corpus_share": 0.0038797284190106693,
+          "strict": 0.0,
+          "lenient": 0.5
+        },
+        "mentions": {
+          "n": 6,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 5,
+          "corpus_n": 26,
+          "corpus_share": 0.02521823472356935,
+          "strict": 0.16666666666666666,
+          "lenient": 0.16666666666666666
+        },
+        "motivates": {
+          "n": 3,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 3,
+          "corpus_share": 0.002909796314258002,
+          "strict": 0.3333333333333333,
+          "lenient": 0.3333333333333333
+        },
+        "producedby": {
+          "n": 6,
+          "correct": 1,
+          "partial": 2,
+          "incorrect": 3,
+          "corpus_n": 8,
+          "corpus_share": 0.007759456838021339,
+          "strict": 0.16666666666666666,
+          "lenient": 0.5
+        },
+        "produces": {
+          "n": 6,
+          "correct": 3,
+          "partial": 3,
+          "incorrect": 0,
+          "corpus_n": 43,
+          "corpus_share": 0.041707080504364696,
+          "strict": 0.5,
+          "lenient": 1.0
+        },
+        "reports": {
+          "n": 1,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 0,
+          "corpus_n": 1,
+          "corpus_share": 0.0009699321047526673,
+          "strict": 0.0,
+          "lenient": 1.0
+        },
+        "splitfrom": {
+          "n": 5,
+          "correct": 3,
+          "partial": 1,
+          "incorrect": 1,
+          "corpus_n": 9,
+          "corpus_share": 0.008729388942774006,
+          "strict": 0.6,
+          "lenient": 0.8
+        },
+        "supports": {
+          "n": 5,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 3,
+          "corpus_n": 13,
+          "corpus_share": 0.012609117361784675,
+          "strict": 0.0,
+          "lenient": 0.4
+        },
+        "trainedon": {
+          "n": 5,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 3,
+          "corpus_n": 62,
+          "corpus_share": 0.06013579049466537,
+          "strict": 0.0,
+          "lenient": 0.4
+        },
+        "uses": {
+          "n": 5,
+          "correct": 3,
+          "partial": 1,
+          "incorrect": 1,
+          "corpus_n": 91,
+          "corpus_share": 0.08826382153249272,
+          "strict": 0.6,
+          "lenient": 0.8
+        }
+      },
+      "bootstrap": {
+        "n": 2000,
+        "weighted_strict_ci95": [
+          0.27381183317167795,
+          0.5194309731652119
+        ],
+        "weighted_lenient_ci95": [
+          0.4768186226964111,
+          0.7161008729388947
+        ]
+      }
+    }
+  },
+  "by_paper": {
+    "osmotic2026": {
+      "n": 8,
+      "strict": 0.5,
+      "lenient": 0.625
+    },
+    "ugmo2024": {
+      "n": 4,
+      "strict": 0.5,
+      "lenient": 1.0
+    },
+    "llamacorrupt2025": {
+      "n": 10,
+      "strict": 0.4,
+      "lenient": 0.7
+    },
+    "vehiclemake2025": {
+      "n": 30,
+      "strict": 0.3333333333333333,
+      "lenient": 0.6333333333333333
+    },
+    "videoseg2025": {
+      "n": 9,
+      "strict": 0.3333333333333333,
+      "lenient": 0.5555555555555556
+    },
+    "csysguard2024": {
+      "n": 16,
+      "strict": 0.3125,
+      "lenient": 0.5625
+    },
+    "parkingyolo2023": {
+      "n": 18,
+      "strict": 0.2777777777777778,
+      "lenient": 0.7222222222222222
+    },
+    "pesticide2025": {
+      "n": 19,
+      "strict": 0.2631578947368421,
+      "lenient": 0.47368421052631576
+    },
+    "traveltime2022": {
+      "n": 19,
+      "strict": 0.2631578947368421,
+      "lenient": 0.3684210526315789
+    },
+    "gamlprop2025": {
+      "n": 13,
+      "strict": 0.23076923076923078,
+      "lenient": 0.3076923076923077
+    },
+    "eyelandmark2024": {
+      "n": 6,
+      "strict": 0.16666666666666666,
+      "lenient": 0.6666666666666666
+    },
+    "strabismus2026": {
+      "n": 34,
+      "strict": 0.14705882352941177,
+      "lenient": 0.6764705882352942
+    },
+    "oxidecrack2025": {
+      "n": 12,
+      "strict": 0.08333333333333333,
+      "lenient": 0.25
+    },
+    "roadwaylight2018": {
+      "n": 16,
+      "strict": 0.0625,
+      "lenient": 0.5625
+    },
+    "microwave2018": {
+      "n": 5,
+      "strict": 0.0,
+      "lenient": 0.2
+    },
+    "reststop2018": {
+      "n": 5,
+      "strict": 0.0,
+      "lenient": 0.6
+    },
+    "textaug2023": {
+      "n": 7,
+      "strict": 0.0,
+      "lenient": 0.2857142857142857
+    },
+    "trafficspeed2021": {
+      "n": 9,
+      "strict": 0.0,
+      "lenient": 0.2222222222222222
+    }
+  },
+  "difference_strict": {
+    "a": "relation",
+    "b": "relation_scinex",
+    "mean": -0.048789585196187375,
+    "ci95": [
+      -0.22503901899134698,
+      0.13941882772414227
+    ],
+    "p_a_greater": 0.3025
+  }
+}

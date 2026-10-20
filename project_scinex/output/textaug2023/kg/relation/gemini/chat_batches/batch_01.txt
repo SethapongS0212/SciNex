@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: Abstract
+
+Text:
+The purpose of this study is to develop a more effective method for categorizing Thai-language tweets related to traffic. The categorization consists of five categories. Previous studies have utilized CNN and BERT for classification, but have faced the challenge of needing balanced data for improved performance. To address this, we propose the use of BPEmb to augmentation the data and calculate cosine similarity. The subsequent step will be to create a balanced dataset to train a combination of CNN and bi-LSTM models for tweet classification. Our experiment demonstrates a significant improvement in tweet classification with a 14.3% increase in F1- score compared to the baseline method. The growing number of vehicles on roads presents challenges such as traffic jams, accidents, and natural disasters, making accurate detection and real-time monitoring of traffic problems crucial for effective traffic management. Sensor-based and CCTV detection approaches require significant investments and are impractical in many locations. Social media text messages, on the other hand, offer a convenient solution for informing people about traffic-related events. Twitter messages can be used as a Natural Language Processing (NLP) tool to understand traffic events. Research has shown that tweets can be classified into categories such as traffic, accidents, disasters, social events, and road repairs.
+
+----- para_id: 1 -----
+Section: Abstract
+
+Text:
+Deep learning algorithms can be used to build a classification model and extract significant information from tweets [1]-[5]. However, there is often an imbalance in the data used to train the models, and the application of texts among different sections. Some researchers have employed imbalanced data for training classification models. An imbalanced data collection can result in bias toward the majority group and poor performance for the minority group. That is issues in traffic management often result from incorrect classification. The performance of classification is the topic of this work once the data has been balanced. The CNN and Bert categorization processes have been employed in recent research [4]. Some pieces of research used CNN+LSTM [1]-[3], [5]. Therefore, it is important to study two parts, including the making of balanced data, and the identification of a strategy for classifying traffic accidents, in order to increase the accuracy of classification. Dealing with data imbalance is a common issue in Twitter classification. Various options exist to address this, with the most basic being to store data for the minority of classes, but this takes longer to process. Machine learning approaches can be used for faster improvement of imbalanced data.
+
+----- para_id: 2 -----
+Section: I INTRODUCTION
+
+Text:
+School of Engineering, King Mongkut's Institute of Technology Ladkrabang method is random sampling, either through undersampling or oversampling. While this works well with large , numerical data, it is not as effective for text classification. New techniques , such as algorithms using Markov chains to generate new text, are required for classification tasks. This technique selects words most likely to be the next word, based on the highest probability, and the number of expected words limits the generated text [6]. Recently, there has been a major trend in using deep learning methods, such as Long Short-Term Memory (LSTM), for predictive word processing to create text. The LSTM method requires a seed word to generate a predicted later word as output, which is then used as input to generate another word. Although this approach can produce intelligible text, the content may become repetitive as the LSTM architecture is sequential and changes the meaning and context of the entire sentence with each new generated word [7]. To address imbalanced text data, researchers have proposed increasing the number of text categories through data augmentation techniques . One method is to insert multiple tokens in various formats into short sentences, which can create diverse content that appears to be produced by a human [8]. Another approach involves word embedding weights based on word similarity in a large corpus.
+
+----- para_id: 3 -----
+Section: I INTRODUCTION
+
+Text:
+Recent advances in this area include the integration of words from Wikipedia into a large corpus for training large word embeddings . BPEmb is a pre- trained corpus that was trained using the byte-pair encoding technique and contains word embeddings for 275 different languages [9]. The categorization of Tweets related to road accidents has been studied in several works, including the detection of road traffic incident Tweets using a combined deep learning approach of CNN and LSTM for classifying the messages into three classes [1]. A recent method involves classifying tweets about traffic accidents into four categories using CNN's combination deep learning methodology and pre-trained BERT [4]. However, both studies have demonstrated that using imbalanced datasets to train all these models has caused to some groups being predicted less accurately. In this paper, we used the BPEmb data augmentation strategy with a WangchanBERTa pre-trained embedding word approach and evaluated the performance of the augmented data using cosine similarity. Moreover, we used a combination of CNN and LSTM deep learning algorithms to accomplish multi - label text classification. Metrics such as precision, recall, F1-score, and accuracy . Section IV presents the results of the assessment, Section V provides conclusions and future work.
+
+----- para_id: 4 -----
+Section: II RELATED WORK
+
+Text:
+The messages from Twitter will be collected using the Tweepy API and Python language to request data and then store that data as a dataset to make sure that the messages are imbalanced. We can measure it using the following equation 1: imbalance rate (IR), where M and m represent for the numbers of examples in the majority and minority classes, respectively [10]. When data in all classes to verify the imbalance rate, which can be seen in Table I when the IR value of any group is less than 0.50. This indicates that there is not enough data to train that group, and additional data augmentation is necessary.
+
+----- para_id: 5 -----
+Section: A. Data augmentation
+
+Text:
+A deep learning method for text generation using LSTM for next sentence prediction was presented by Sarang Shaikh et al. The process starts with an initial word and generates subsequent words until the desired number of words in the sentence is reached [7]. Benjamin Heinzerling and Michael Strube used BPEmb, a set of subword embeddings that have been pre-trained in 275 languages using Byte-Pair Encoding (BPE) and trained from Wikipedia. The purpose was to use as input for NLP models. BPEmb uses BPE encoding which results in good enough subword segmentation without the need for tokens or linguistic analysis. BPE encoding is much smaller in size compared to other works as it does not require tokenization [9]. developed a pre-trained Thai language model named WangchanBERTa, trained on a large Thai language dataset and used for multiple applications, including text augmentation . The Masked Language Model (MLM) approach is used by the model, and it predicts missing words based on the context that is supplied by the words around them in the module Thai2transformersAug [11]. The study of text classification using deep learning methods has a lot of research work being done. The study integrates the Long Short-Term Memory (LSTM) architecture with the pre-trained of Bert, and other research efforts, employing Convolutional Neural Network (CNN) architecture.
+
+----- para_id: 6 -----
+Section: A. Data augmentation
+
+Text:
+Gregorius Aria Neruda and Edi Winarko used a Convolutional Neural Network (CNN) for text classification, which involves transforming words in sentences into word embedding representations for feature extraction. They use the embedding values obtained from Indonesian pre-trained BERT feature extraction and pass them through a filter layer to find the highest feature value in the maxpooling layer [4]. Long Short-Term Memory Network (LSTM) is a development of RNN, which is a popular architecture for text classification tasks because LSTM has the ability to process sequences. Sina Dabiri and Kevin Heaslip is one example where they utilized LSTMs as a layer following a CNN, processing the data that has been processed by maxpooling, and produced final results [1]. The cosine similarity is a useful measure because it can accurately identify similarities between documents even if they are far apart in terms of Euclidean distance (i.e., the overall size of the documents). This is because the cosine similarity is based on the orientation of the documents, rather than their absolute size. As a result, when two documents have a smaller angle between them, their cosine similarity will be higher. Shuzhong Lai and Dian Lei proposed a sentence vector similarity calculation based on the fasttex and calculate the total weight vector of all sentences [12]. Calculating the cosine similarity in accordance with equation 2.
+
+----- para_id: 7 -----
+Section: A. Data augmentation
+
+Text:
+When ∙ represents the dot product of vectors A and B, or ∑ ∙ (which is the sum of the products of corresponding entries of vectors A and B), and ‖‖ and ‖‖ represent the norms (lengths) of A and B, respectively
+
+----- para_id: 8 -----
+Section: III EXPERIMENT
+
+Text:
+In this section, we present the method for collecting messages from the Twitter API. The messages in the tweets are taken from Thailand traffic organizations. Such as, js100radio, fm91trafficpro, Traffic_1197. We collected a total of 6,618 filtered tweets dating from October 1, 2022 to October 31, 2022. The text messages were then labeled by expert staff and divided into five groups. As follows in Table I. Next, special word removal: delete special words that usually appear in a tweet, such as "@username", "#hashtag", emoji, smileys, and URL. The text messages were processed by removing stop words and meaningless or irrelevant words. This section is a test to find the most efficient method to improve the text. We randomly selected ten percent of sentences and tested four different methods to improve each sentence . The effectiveness of each strategy was evaluated using the cosine similarity of vectors to compare. Sentence similarity measurement requires the use the use of weighted vectors of all words. Therefore, we separated the word embedding from WangchanBERTa to create a word corpus. To evaluate the similarity score of the sentences, we used equation 2 to calculate the score of the augment sentence compared to the original sentence using the same set of sentences in all four methods and found the average cosine similarity score of each method. They are scored on a scale of 0 to 1, with 0 being the most dissimilar and 1 being the most similar.
+
+----- para_id: 9 -----
+Section: III EXPERIMENT
+
+Text:
+The best score range was then determined by averaging all ten percent of sentences. In Table II, the average scores of all four methods are shown , with BPEmbAug being the most effective method with a score range of 0.74; if the score is higher than 0.8, the generated sentences will not have significant changes. On the other hand, if the score is lower than 0.6, the meaning of the sentences will be altered. We now have a successful strategy for enhancing sentences from the previous part. This part will include creating a dataset using that technique. Minority data sets are generated to grow at the same rate as the majority. The sentences will first be split into bigrams, and the best approach will then be used to augment the words. The data will be used as training data for the model after it has been balanced and updated. A ratio of 80:20 will be used to divide the data into training and testing. During the training phase, the training data will also be separated into five folds of cross-validation. The architecture of the text classification model used in this study is comprised of two processes: the first is a combination of CNN and BERT [baseline]: the second is text augmentation using BPEmb, and the CNN deep learning architecture works with LSTM. We chose an example to demonstrate the difference between the similarity scores of the cosine. Texts with scores lower than 0.7 are difficult to comprehend, whereas those with scores higher than 0.8 have not significantly changed.
+
+----- para_id: 10 -----
+Section: III EXPERIMENT
+
+Text:
+0.16 อุบัติเหตุจักรยานยนต์ บาดเจ็บสาหัสช่วงปากซอย ( Motorcycle accident, serious injury at the entrance of the alley ) 0.37 วันนี3บริเวณอนุสาวรีย์ประชาธิปไต ยกรณีชุมนุมผลกระทบการจราจร (Today, the democracy monument area in case of a rally affects traffic.) วันพรุ่งนี3อาณาบริเวณระบอบประชาธิปไตยใ นกรณีที=เดินขบวนผลเสียหายการจราจรติดขัด (Tomorrow, the democratic territory in case of demonstrations damages traffic jams.) 0.76 อุบัติเหตุสุขุมวิทบริเวณขวางช่องท างซ้ายบาดเจ็บ การจราจรปกติ (Sukhumvit accident in the area blocking the left lane, injured, normal traffic.) อุบัติเหตุ ถ.จรัญสนิทวงศ์บริเวณช่องทางการขวาจราจร คล่องตัว (Accident, Charansanitwong road, in the right lane, traffic flows.) 0.81 วันนี3บริเวณประชาธิปไตย กรณีชุมนุมผลกระทบการจราจร( Democratic area today In the event of a rally, traffic impacts) 0.94 รถติดสุขุมวิทสุขุมวิท การจราจรหยุดนิ=ง พิเศษสุดท้ายปากซอยวชิรครับ ( Sukhumvit traffic jam traffic stand still The last special, at the entrance of Soi Wachira.) This section will explain to classify text using two different processes. First, it combines the CNN and BERT methods, and it is trained on a dataset from Table I that contains five classes. The majority of the data is in the "Traffic" type category. While the group of "Social events" is minority, signify an imbalanced dataset. When the model was trained on this imbalanced data, it appears to classify the text bias towards to Traffic class.
+
+----- para_id: 11 -----
+Section: III EXPERIMENT
+
+Text:
+This illustrated by the high F1-score of 0.91 in Traffic, while the F1-score in Social- events is only 0.43. The model performance when created using this way, it is decided, generates a bias toward of the majority class. In the previous step, we augmented the text in the dataset using the BPEmb method because it was the best approach from the experiment C. For our model training and testing, we decided to use 3,780 sentences per group. We enhanced the text using BPEmb to data balanced and then divided the data into 80% for training and 20% for testing, using five-fold cross-validation in

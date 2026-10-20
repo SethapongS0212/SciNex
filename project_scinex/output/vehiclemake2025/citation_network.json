@@ -1,0 +1,267 @@
+{
+  "paper_id": "34dad5ed9be0c642572059cad90ae250f7728e92",
+  "title": "Minimizing Model Size of CNN-Based Vehicle Make Recognition for Frontal Vehicle Images",
+  "year": 2025,
+  "abstract": "Vehicle Make Model Recognition (VMMR) is commonly used in Intelligent Transportation Systems (ITS), free-flow image-based toll systems, and enforcement systems. These systems must analyze and process vehicle front images for use as evidence. Convolutional Neural Networks (CNN) are widely used for image classification and VMMR problems. Complex model structures and more internal parameters are needed to improve classification accuracy with many classes. Issues included larger models and longer processing times. The goal of this work is to study and create a smaller CNN model that can be used on devices with limited resources, like embedded computers and embedded computer cameras, to figure out what kind of car it is from a front view picture. Real free-flow toll systems were used to train a CNN model that recognized vehicle makes with 99% accuracy. The model is smaller than VGG16, InceptionV3, Yolo11m-cls, and ResNet50 and has over 90% accuracy. It reduced parameters by 69.95% and developed the CTv1 model to achieve an F1 score 2.06% higher than InceptionV3, the best. The model was tested on a Raspberry Pi 3 Model B, processing images in 1 second and using 25 mWh. The compact version of the proposed model also adjusts the Padding and Stride of the Convolutional Layer and reduces the CNN model size using Depth-wise Separable Convolutional and $1\\times 1$ Convolutional Dimension Reduction (Bottleneck) methods to test vehicle make recognition accuracy, training time, processing time, and model size.",
+  "citation_count": 1,
+  "root_concepts": [
+    "systems",
+    "vehicle",
+    "convolutional",
+    "accuracy",
+    "processing",
+    "recognition",
+    "image",
+    "front",
+    "images",
+    "classification",
+    "parameters",
+    "times",
+    "smaller",
+    "embedded",
+    "commonly"
+  ],
+  "nodes": {
+    "6a14f33cb5f78eace59f3cef85af65605aa913a8": {
+      "title": "NH SwiftPass",
+      "year": 2025,
+      "abstract": "This project aims to reduce highway toll booth delays by introducing a smart toll pre-booking system with dedicated express lanes. Over three months, a mobile/web app will be developed to let users pre-book tolls within a 5–20 km radius, with a time-bound entry window. AI cameras will verify vehicle numbers using OpenCV with YOLO or OCR or Google Gemini API, detecting violations and enabling automatic fine or refund processing. The backend will manage bookings, enforce rules, and provide an admin dashboard, while the frontend shows booking status, fines, and history. The system prototype will be tested and optimized before final submission, ensuring faster toll access, reduced congestion, and improved user convenience.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "booking",
+        "system",
+        "project",
+        "reduce",
+        "highway",
+        "booth",
+        "delays",
+        "introducing",
+        "smart",
+        "dedicated",
+        "express",
+        "lanes",
+        "three",
+        "months",
+        "mobile"
+      ]
+    },
+    "f1e7cdc58205c6ad08693cf0ed86ddfe826d06ae": {
+      "title": "Robust Person Re-Identification Approach with Deep Learning and Optimized Feature Extraction",
+      "year": 2024,
+      "abstract": "Person re-identification (Re-ID) is a critical technology in video surveillance, essential for enhanced security and efficient monitoring in urban settings. Our research improves the accuracy and robustness of Re-ID systems through advanced deep learning techniques and optimized feature extraction. By integrating methodologies such as non-local blocks, random erasing augmentation, and weighted regularization triplet loss, we address the inherent challenges of Re-ID, including variations in appearance due to lighting, pose, and occlusion. Our comprehensive approach not only mitigates these issues but also improves feature discrimination and model stability, significantly contributing to the field's progression. Our work offers a robust solution for real-world applications, aligning with the broader goals of public safety and security. The code is available at https://github.com/JDing-JNU/ReID_Human.",
+      "citation_count": 1,
+      "relation": "cited_by",
+      "concepts": [
+        "security",
+        "improves",
+        "feature",
+        "person",
+        "identification",
+        "critical",
+        "technology",
+        "video",
+        "surveillance",
+        "essential",
+        "enhanced",
+        "efficient",
+        "monitoring",
+        "urban",
+        "settings"
+      ]
+    },
+    "64378bf8356ffe52ca8da9fa12a583134889a3d6": {
+      "title": "A Feature Fusion based Custom Deep Learning Model for Vehicle Make and Model Recognition",
+      "year": 2024,
+      "abstract": "Vehicle Make and Model Recognition (VMMR) is a pivotal task in various domains including surveillance, traffic management, and the automotive industry. Despite significant progress in deep learning approaches, existing VMMR systems still struggle to attain robust accuracy, particularly across diverse environments and viewing angles. In this paper, we propose a novel approach based on the fusion of two feature maps extracted from DenseNet201 and ResNet50V2 baseline models, respectively. Additionally, we employ a modified Convolutional Block Attention Module (CBAM) to enhance the resilience and precision of VMMR systems. By incorporating attention mechanisms in the feature extraction process, our modified CBAM model effectively captures both spatial and channel-wise dependencies, facilitating more potent discriminative feature representations. We assess our proposed approach through extensive experiments on two benchmark datasets namely Stanford Cars and CompCarsSV. Achieved accuracies are 93.51% and 99.03%, on Stanford Cars and CompCarsSV, respectively that are better than past methods. The code of our proposed model can be found at: https://github.com/JUVCSE/featurefusion.",
+      "citation_count": 2,
+      "relation": "cited_by",
+      "concepts": [
+        "feature",
+        "systems",
+        "respectively",
+        "modified",
+        "attention",
+        "stanford",
+        "compcarssv",
+        "vehicle",
+        "recognition",
+        "pivotal",
+        "various",
+        "domains",
+        "including",
+        "surveillance",
+        "traffic"
+      ]
+    },
+    "b5e28c047da0fb4157b97e79c084e06c707f2221": {
+      "title": "A deep learning approach for scoring quality in vehicle grading",
+      "year": 2024,
+      "abstract": null,
+      "citation_count": 4,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "f2357207f9bd040cb54ed59df2adb040795ab8bd": {
+      "title": "Artificial intelligent systems for vehicle classification: A survey",
+      "year": 2024,
+      "abstract": null,
+      "citation_count": 16,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "a767eda670b0573d8adb1f1334d646bb90153d1b": {
+      "title": "Unveiling underwater structures: pyramid saliency detection via homomorphic filtering",
+      "year": 2024,
+      "abstract": null,
+      "citation_count": 9,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "b65dab4d79d3aef259d24fc4c3539b58735c58f3": {
+      "title": "Car make and model recognition system using rear-lamp features and convolutional neural networks",
+      "year": 2023,
+      "abstract": null,
+      "citation_count": 5,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "231a434f8fac0b01cbc05890b283f4d9da4cb100": {
+      "title": "Real-Time Flying Object Detection with YOLOv8",
+      "year": 2023,
+      "abstract": "This paper presents a generalized model for real-time detection of flying objects that can be used for transfer learning and further research, as well as a refined model that achieves state-of-the-art results for flying object detection. We achieve this by training our first (generalized) model on a data set containing 40 different classes of flying objects, forcing the model to extract abstract feature representations. We then perform transfer learning with these learned parameters on a data set more representative of real world environments (i.e. higher frequency of occlusion, very small spatial sizes, rotations, etc.) to generate our refined model. Object detection of flying objects remains challenging due to large variances of object spatial sizes/aspect ratios, rate of speed, occlusion, and clustered backgrounds. To address some of the presented challenges while simultaneously maximizing performance, we utilize the current state-of-the-art single-shot detector, YOLOv8, in an attempt to find the best trade-off between inference speed and mean average precision (mAP). While YOLOv8 is being regarded as the new state-of-the-art, an official paper has not been released as of yet. Thus, we provide an in-depth explanation of the new architecture and functionality that YOLOv8 has adapted. Our final generalized model achieves a mAP50 of 79.2%, mAP50-95 of 68.5%, and an average inference speed of 50 frames per second (fps) on 1080p videos. Our final refined model maintains this inference speed and achieves an improved mAP50 of 99.1% and mAP50-95 of 83.5%",
+      "citation_count": 815,
+      "relation": "cited_by",
+      "concepts": [
+        "flying",
+        "speed",
+        "generalized",
+        "detection",
+        "objects",
+        "refined",
+        "achieves",
+        "state",
+        "object",
+        "inference",
+        "transfer",
+        "occlusion",
+        "spatial",
+        "sizes",
+        "while"
+      ]
+    },
+    "dcef3423b80ab451aef6b9c100d700a8b4317301": {
+      "title": "Saliency-based fabric defect detection via bag-of-words model",
+      "year": 2022,
+      "abstract": null,
+      "citation_count": 18,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "eb7a2241d05cc910e4a1c54bc53b831a2a44a2f4": {
+      "title": "A new approach based on convolutional neural network and feature selection for recognizing vehicle types",
+      "year": 2022,
+      "abstract": "The number of vehicles used in traffic life has reached enormous dimensions today. The increase in the number of vehicles day by day causes some traffic problems along with it; such as traffic congestion, accidents, pollution, and safety. To overcome all these problems, convolutional neural networks (CNN) methods are one of the trend methods used in recent years due to their success. In this study, a new approach is proposed to use this power of CNN in low-power devices. First of all, MobileNetv1, MobileNetv2, and NASNetMobile models were optimized to increase accuracy performance. Then, an approach is proposed in which these optimized mobile CNN approaches are used only as feature extractors, and methods such as combining, selecting, and classifying the obtained features are used together. As a result of the classification made with this approach, the classification accuracy has increased by approximately 5%.",
+      "citation_count": 12,
+      "relation": "cited_by",
+      "concepts": [
+        "traffic",
+        "methods",
+        "number",
+        "vehicles",
+        "increase",
+        "problems",
+        "power",
+        "optimized",
+        "accuracy",
+        "classification",
+        "reached",
+        "enormous",
+        "dimensions",
+        "today",
+        "causes"
+      ]
+    },
+    "b041cd49576f4ad976877a36102b5ab0bfab851e": {
+      "title": "Framework for Vehicle Make and Model Recognition—A New Large-Scale Dataset and an Efficient Two-Branch–Two-Stage Deep Learning Architecture",
+      "year": 2022,
+      "abstract": "In recent years, Vehicle Make and Model Recognition (VMMR) has attracted a lot of attention as it plays a crucial role in Intelligent Transportation Systems (ITS). Accurate and efficient VMMR systems are required in real-world applications including intelligent surveillance and autonomous driving. The paper introduces a new large-scale dataset and a novel deep learning paradigm for VMMR. A new large-scale dataset dubbed Diverse large-scale VMM (DVMM) is proposed collecting image-samples with the most popular vehicle brands operating in Europe. A novel VMMR framework is proposed which follows a two-branch architecture performing make and model recognition respectively. A two-stage training procedure and a novel decision module are proposed to process the make and model predictions and compute the final model prediction. In addition, a novel metric based on the true positive rate is proposed to compare classification confusion of the proposed 2B–2S and the baseline methods. A complex experimental validation is carried out, demonstrating the generality, diversity, and practicality of the proposed DVMM dataset. The experimental results show that the proposed framework provides 93.95% accuracy over the more diverse DVMM dataset and 95.85% accuracy over traditional VMMR datasets. The proposed two-branch approach outperforms the conventional one-branch approach for VMMR over small-, medium-, and large-scale datasets by providing lower vehicle model confusion and reduced inter-make ambiguity. The paper demonstrates the advantages of the proposed two-branch VMMR paradigm in terms of robustness and lower confusion relative to single-branch designs.",
+      "citation_count": 14,
+      "relation": "cited_by",
+      "concepts": [
+        "branch",
+        "large",
+        "scale",
+        "dataset",
+        "novel",
+        "vehicle",
+        "confusion",
+        "recognition",
+        "intelligent",
+        "systems",
+        "paradigm",
+        "diverse",
+        "framework",
+        "experimental",
+        "accuracy"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "source": "6a14f33cb5f78eace59f3cef85af65605aa913a8",
+      "target": "34dad5ed9be0c642572059cad90ae250f7728e92",
+      "type": "cites"
+    },
+    {
+      "source": "34dad5ed9be0c642572059cad90ae250f7728e92",
+      "target": "f1e7cdc58205c6ad08693cf0ed86ddfe826d06ae",
+      "type": "cites"
+    },
+    {
+      "source": "34dad5ed9be0c642572059cad90ae250f7728e92",
+      "target": "64378bf8356ffe52ca8da9fa12a583134889a3d6",
+      "type": "cites"
+    },
+    {
+      "source": "34dad5ed9be0c642572059cad90ae250f7728e92",
+      "target": "b5e28c047da0fb4157b97e79c084e06c707f2221",
+      "type": "cites"
+    },
+    {
+      "source": "34dad5ed9be0c642572059cad90ae250f7728e92",
+      "target": "f2357207f9bd040cb54ed59df2adb040795ab8bd",
+      "type": "cites"
+    },
+    {
+      "source": "34dad5ed9be0c642572059cad90ae250f7728e92",
+      "target": "a767eda670b0573d8adb1f1334d646bb90153d1b",
+      "type": "cites"
+    },
+    {
+      "source": "34dad5ed9be0c642572059cad90ae250f7728e92",
+      "target": "b65dab4d79d3aef259d24fc4c3539b58735c58f3",
+      "type": "cites"
+    },
+    {
+      "source": "34dad5ed9be0c642572059cad90ae250f7728e92",
+      "target": "231a434f8fac0b01cbc05890b283f4d9da4cb100",
+      "type": "cites"
+    },
+    {
+      "source": "34dad5ed9be0c642572059cad90ae250f7728e92",
+      "target": "dcef3423b80ab451aef6b9c100d700a8b4317301",
+      "type": "cites"
+    },
+    {
+      "source": "34dad5ed9be0c642572059cad90ae250f7728e92",
+      "target": "eb7a2241d05cc910e4a1c54bc53b831a2a44a2f4",
+      "type": "cites"
+    },
+    {
+      "source": "34dad5ed9be0c642572059cad90ae250f7728e92",
+      "target": "b041cd49576f4ad976877a36102b5ab0bfab851e",
+      "type": "cites"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 11 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: Abstract
+
+Text:
+Graduation ceremonies are important occasions in life. A video in this event is usually very long due to a lot of graduates getting their degree. This study suggests a method for automatically cutting the entire ceremony video into customized segments that only include the most significant events for each particular graduate, named U-GMo (Your Great Moment). The system uses deep learning with computer vision techniques, such as YOLOv8 for posture detection, to identify graduates by observing their motions and posture during the degree ceremony. After that, the identified bits are taken out and assembled into brief video snippets for every graduate. The algorithm can detect and extract each graduate's crucial moments with high performance, according to an examination conducted on a dataset of graduation ceremonies. The personalized video clips provide a convenient way to preserve the meaningful highlights from these milestone events. Keywords: Artificial Intelligence; Deep Learning; Graduation Ceremony; Posture Detection; Video Processing; YOLOv8. Introduction Graduation ceremonies commemorate significant life transitions and academic accomplishments. In Thailand, the most graduation ceremonies are attended by nationally notable person, which creates an impressive moment for the graduates and their families [1].
+
+----- para_id: 1 -----
+Section: Abstract
+
+Text:
+The official video records of these occasions, however, are usually rather long and contain a large number of graduates receiving their degree, while an individual graduate airtime is quite quick. Rewatching and finding oneself from the full multi-hour ceremony film is inconvenient and time- consuming for graduates and their families, whose primary concern is merely preserving the brief moment when their graduate crosses the stage. These long ceremony recordings must be automatically edited into brief, customized video segments that only include the most significant portions for each individual graduate. An automated video editing system designed specifically for this use case is presented in this paper. The whole video recording of a graduation ceremony is fed into the system, which then split a personal clip for each graduate, that solely feature their favorite moments from earning their degree. These customized videos could be shared online and more readily stored as mementos. Our method tracks the motions of the graduates across the stage and through the crowd by using computer vision and machine learning techniques. It then extracts the pertinent portions of the original film that were precisely targeted at each graduate during their degree conferral.
+
+----- para_id: 2 -----
+Section: Abstract
+
+Text:
+Our work, named U-GMo (Your Great Moment), comprises of three primary steps comprise the artificial intelligence part (AI Part) of our automatic video editing system: (1) posture detection, (2) graduation identification, and (3) video segment extraction. We utilize the YOLOv8 [2] object detection model for graduate detection, which has been pre-trained using data on human posture. In this version of YOLO, the YOLOv8 has faster inference speed and better accuracy, which is commonly used for many pieces of research about object detection [3-4]. Graduates use certain body language and gestures as they walk into a target area to accept their degrees duing the graduation ceremony. Using the YOLOv8 posture detection capabilities [5-6], we are able to localize the body of every graduate as they walk and get a degree in each video frame. The monitored graduation detections are then linked together using a posture detection. As a result, we are able to select a set of video frames that trace the movements of each graduate as they enter the target area and leave after being awarded their degree. Lastly, we use heuristic criteria and movement analysis to identify the important frames that capture the high point of each graduate's degree conferral, such as when they are standing in the middle of the stage and shaking hands with their diploma. This peak moment is the center of a little video clip that we take out to create the graduate's customized highlight reel.
+
+----- para_id: 3 -----
+Section: 2. Method
+
+Text:
+U-GMo provides 2 parts depicted in Fig 1. The main part is the Artificial Intelligence (AI) part that process an input video into individual clips using the techniques of movement tracking, graduation identification, and video segment extraction. An additional part is an application part which allows users select a clip, decorate, and export for sharing. The lengthy film of our university, King Mongkut's Institute of Technology Ladkrabang (KMITL), 2023 [7], graduation ceremony is an input video, as seen in Fig 2. First, the AI part is described following the tasks in Fig 1., which are posture detection, graduation identification, and video segment extraction. Posture Detection Our method examines the changing body alignments along each graduate's movements. Since there are many people in a frame, a selected area in the middle of a frame, as displayed in Fig 3., is focused to detect the key points of every person. This posture tracking makes use of the YOLOv8 model's potent human pose estimation capabilities. A 2D mapping of the identified person's major joints and limbs is output by YOLOv8 at each frame. It is possible for the system to identify different posture signatures, such as standing straight, turning in one way, spreading out your arms, etc., by looking at how these projected skeletal configurations change over time. It is essential to monitor the dynamics of posture in order to ascertain the precise moment at which each graduate receives their degree.
+
+----- para_id: 4 -----
+Section: 2. Method
+
+Text:
+The graduate stopping in the middle of the stage, extending their arm for a handshake, or accepting the diploma are examples of patterns that the system recognizes, as shown in Fig 4. This "degree conferral" pose pattern's peak is localized within the frames that serve as the bounds for each highlight clip extraction. The result from YOLOv8 pose estimation contains 17 key points, as shown in Fig 4. As we take a look at frames carefully, the key points number 6, 8, 10, and 12 which are a right shoulder, a right elbow, a right wrist, and a right hip are emphasized to be important key points. The more analysis is to estimate proper angles A (10-8-6) and B (8-6-12) as displayed in Fig 5. Among many of degree conferral poses; the angle A is usually between 150° and 180°, and the angle B is usually between 50° and 70°. This includes spotting routines, which involve approaching the center stage area, pausing to stand, extending one arm outward, and then turning to face a specific direction – the standard gestures associated with being shook hands and given a diploma. After detecting frames containing degree conferral poses which is satisfying the conditions of angles A and B, the center frame in each selected frame interval represents the middle point on a clip. For example, if an interval frame numbers between 10003 and 10015 are detected as degree conferral, the middle point becomes the frame number 10009.
+
+----- para_id: 5 -----
+Section: 2. Method
+
+Text:
+In this case, the video frames before and after the frame number 10009 within 1 seconds are extracted as a video segment of an individual graduation ceremony video. After analyzing every frame throughout the video, individual graduation clips are collected and stored in a file system with their metadata, such as academic year, university, faculty, etc., in a database. The customized video highlight clips are automatically extracted by the system and saved in a single repository for every graduate. After that, graduates and their families can browse, preview, and edit their clips via an online interface. The interface allows searching for clips by academic year, university, faculty, or other metadata tags. Once their clip is located, users can preview it alongside the option to edit the start/end points to fine- tune the highlight boundaries or trim out any unwanted frames. Additionally, users who have highlights from other ceremonies can apply personalized visual upgrades such as filters and text overlays. The editing interface offers a selection of user-friendly tools for customizing and annotating the downloaded videos. Users can download their customized clips locally in a range of video formats and qualities after completing their modifications. This makes it easy to backup, share, and save their priceless graduation highlights.
+
+----- para_id: 6 -----
+Section: 3. Result
+
+Text:
+The research findings are presented into the parts on the AI, an application, and discussion that are demonstrated in the following sections. The system was evaluated on a test set of hundred graduates of KMITL in 2023. Performance was measured in two key areas: Person Detection: This measures the system's ability to accurately localize all people/graduates within each video frame. Across the test set, the YOLOv8 person detector achieved an average precision of 0.85, indicating robust detection of human figures. Degree Conferral Pose Detection: After localizing people, the system must correctly identify the specific frames/segments when a graduate exhibits the distinctive poses of receiving their degree. The pose analysis module of the system identified these "degree conferral" sequences with a precision of 0.97, meaning that 97% of the time, it accurately identified real degree receipt moments while avoiding false positives on irrelevant postures. To demonstrate the feasibility of our work, a web application was implemented. Users are able to gain experience of the highlight clip selection, customization, and download workflow. Users were provided access to the web application to find out their video through their search criteria which is resulted in Fig 6. In addition, they can edit the video, such as, adding text and video filter as demonstrated in Fig 7.
+
+----- para_id: 7 -----
+Section: 3. Result
+
+Text:
+With the highlight boundaries identified, the system extracts a short video clip surrounding those frames to produce the final personalized highlight reel for that graduate. The pose analysis allows intelligently locating just the relevant segments without requiring identities or manual annotations. The strong person detection provides confidence that graduates are reliably detected as they move around the stage area. In addition, the 0.97 accuracy on degree pose detection demonstrates the system's effectiveness in pinpointing the exact key highlight to extract, even among other movements. Our method, U-GMo, runs independently on each detected person/pose-track. This allows the system to identify and extract individual clips for multiple graduates simultaneously within the same ceremony footage. The power of modern human pose estimation enables this automated graduation highlight extraction in a flexible, scalable manner compared to conventional video editing techniques. The online clip management system serves as a user-friendly distribution platform bridging the automated video processing with the end-users. Graduates get a self-serve experience to easily access, curate, and obtain their individually tailored commemorative videos from the mass of original ceremony footage. This enhances the symbolic value and archiving of these career milestone events.
+
+----- para_id: 8 -----
+Section: 3. Result
+
+Text:
+Beyond this graduation use case, the core technical approach combining posture detection, movement tracking, and adaptive temporal subsampling could generalize to other scenarios requiring extraction of personalized highlights from lengthy videos. Potential applications include sport highlights, surveillance triage, and recognition event logging from archival footage [8-10]. Conclusion In this research, U-GMo (Your Great Moment), an automated system for creating customized highlight videos for each graduate from long graduation ceremony video recordings was provided. The main innovations are applying heuristics to identify the precise frames where the degree conferral takes accurately tracking graduate posture and movement by utilizing the YOLOv8 object detection model. Short video segments that focus only on the most significant highlights are produced by cutting short video segments from around these crucial frames. A dataset of the graduation ceremony from King Mongkut's Institute of Technology Ladkrabang in 2023 was used to assess the system. The algorithm was able to locate the degree conferral moments across the dataset with 97% precision according to quantitative data. A qualitative examination of the final personal video clips revealed that the unnecessary material had been removed while successfully preserving the most memorable parts.
+
+----- para_id: 9 -----
+Section: 3. Result
+
+Text:
+Considering that the average length of an individual clip is about seconds from the raw video lengths ranged from few hours, this indicates the enormous potential for automated editing to compress large amounts of archive footage into manageable, shareable clips. Future work includes further improving the accuracy of the graduate tracking through integration of re-identification models, extending the system to handle multiple camera views, and exploring human-in-the-loop refinement to customize the temporal clip boundaries. Overall, this work demonstrates the potential of computer vision and video understanding techniques to intelligently condense long videos into tailored, meaningful highlights. Pitiyanuwat, "Higher education in Thailand," in International Handbook on Education in South East Asia, Springer, 2022, pp. Chawuthai, "Parking time violation tracking using yolov8 and tracking algorithms," Sensors, vol. Feng, "Multi-object pedestrian tracking using improved YOLOv8 and OC-SORT," Sensors, vol. Du, "An enhanced real-time human pose estimation method based on modified YOLOv8 framework," Scientific Reports, vol. Zheng, "Improvement of the key point detection algorithm based on yolov8," International Conference on Algorithms, High Performance Computing, and Artificial Intelligence , vol. Channel, "Youtube: 2023 KMITL Graduation Ceremony," November 2023.
+
+----- para_id: 10 -----
+Section: 3. Result
+
+Text:
+Bansal, "Detecting moments and highlights in videos via natural language queries," dvances in Neural Information Processing Systems, vol. Jin, "Scene classification for sports video summarization using transfer learning," Sensors, vol. Mishra, "ideo processing using deep learning techniques: A systematic literature review," IEEE Access, vol.

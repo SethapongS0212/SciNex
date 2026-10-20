@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "prediction model based on Viterbi algorithm",
+    "predicate": "uses",
+    "object": "Viterbi algorithm",
+    "object_type": "Method",
+    "source_sentence": "Since the baseline model is designed for a single car and it provides low performance for our experiment, our approach using the HDBSCAN clustering for route data preprocessing and the prediction model based on Viterbi algorithm, which is an extension of the Hidden Markov Model, provides the better performance in terms of Hit@K where K being 3.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "Abstract"
+  },
+  {
+    "subject": "prediction model based on Viterbi algorithm",
+    "predicate": "achieves",
+    "object": "better performance in terms of Hit@K",
+    "object_type": "Other",
+    "source_sentence": "Since the baseline model is designed for a single car and it provides low performance for our experiment, our approach using the HDBSCAN clustering for route data preprocessing and the prediction model based on Viterbi algorithm, which is an extension of the Hidden Markov Model, provides the better performance in terms of Hit@K where K being 3.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "Abstract"
+  },
+  {
+    "subject": "Hidden Markov Model (HMM)",
+    "predicate": "uses",
+    "object": "GPS data",
+    "object_type": "Dataset",
+    "source_sentence": "Antonio et al. [1] used Hidden Markov Model (HMM) for the route prediction using GPS data.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "I INTRODUCTION"
+  },
+  {
+    "subject": "clustering from Epperlein, et al. [2]",
+    "predicate": "uses",
+    "object": "GPS data",
+    "object_type": "Dataset",
+    "source_sentence": "In this case, our work gains the advantage of using clustering from Epperlein, et al. [2], that uses GPS data together with road data from Open Street Map (OSM) to find the clusters of route sequences, and it can improve the performance of the route prediction over the baseline.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "I INTRODUCTION"
+  },
+  {
+    "subject": "clustering from Epperlein, et al. [2]",
+    "predicate": "uses",
+    "object": "Open Street Map (OSM)",
+    "object_type": "Dataset",
+    "source_sentence": "In this case, our work gains the advantage of using clustering from Epperlein, et al. [2], that uses GPS data together with road data from Open Street Map (OSM) to find the clusters of route sequences, and it can improve the performance of the route prediction over the baseline.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "I INTRODUCTION"
+  },
+  {
+    "subject": "HMM",
+    "predicate": "uses",
+    "object": "Viterbi algorithm",
+    "object_type": "Method",
+    "source_sentence": "In this case, the trained model has possibility to predict a hidden state from only partial sequence on the current time by using Viterbi algorithm [4], which is an extension of the HMM.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "II BACKGROUND"
+  },
+  {
+    "subject": "OSM",
+    "predicate": "produces",
+    "object": "road network data",
+    "object_type": "Dataset",
+    "source_sentence": "The paper [2] create the observations from GPS trajectories of each trip together with road data network data from OSM.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "II BACKGROUND"
+  },
+  {
+    "subject": "hierarchical clustering",
+    "predicate": "achieves",
+    "object": "clusters of similar routes",
+    "object_type": "Other",
+    "source_sentence": "When some trips have a high potential to pass the same route cluster, and those trips are about to have similar value ratio and numbers of shared road segments using hierarchical clustering.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "II BACKGROUND"
+  },
+  {
+    "subject": "stop detection algorithm",
+    "predicate": "produces",
+    "object": "trips data",
+    "object_type": "Dataset",
+    "source_sentence": "We extract a large number of trips data from a large volume of GPS transaction data using the stop detection algorithm [5], which our result shows in Fig 2.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "II BACKGROUND"
+  },
+  {
+    "subject": "DBSCAN",
+    "predicate": "addresses",
+    "object": "vast and complex of road data from OSM",
+    "object_type": "Other",
+    "source_sentence": "In the next step, spatial data preparation, as shown in Fig 3 (b), our work adopts the DBSCAN [6] to deal with the vast and complex of road data from OSM, which is visualized in Fig.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "II BACKGROUND"
+  },
+  {
+    "subject": "HDBSCAN",
+    "predicate": "achieves",
+    "object": "a good result for route clustering",
+    "object_type": "Other",
+    "source_sentence": "However, as our experiment, the HDBSCAN [7], which is the hierarchical clustering of DBSCAN, becomes a good result for route clustering as depicted in Fig 5.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "II BACKGROUND"
+  },
+  {
+    "subject": "OSM database",
+    "predicate": "produces",
+    "object": "road data",
+    "object_type": "Dataset",
+    "source_sentence": "The road data are pulled from the OSM database via the Overpass web services [8].",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "DBSCAN",
+    "predicate": "achieves",
+    "object": "grouped nodes",
+    "object_type": "Other",
+    "source_sentence": "As shown in Fig 6, the nodes appearing in Fig 6 (1) are grouped by DBSCAN into Fig 6 (2), and the road network are constructed in Fig 6 (3).",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "stop detection algorithm",
+    "predicate": "uses",
+    "object": "minimum stop time interval",
+    "object_type": "Method",
+    "source_sentence": "The trip data is processed by the stop detection algorithm [5] using \"minimum stop time interval\" to detect stop points after car's geometric locations, which are located in the \"radius between points\" of previous point.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "baseline model",
+    "predicate": "uses",
+    "object": "HMM",
+    "object_type": "Model",
+    "source_sentence": "Base on article [1] and [2], our work implements baseline model about predicting futures routes using HMM.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "baseline model",
+    "predicate": "uses",
+    "object": "Quick bundles algorithm",
+    "object_type": "Method",
+    "source_sentence": "The routes in this baseline model are obtain by use the Quick bundles algorithm [9] to cluster trips by route similarity Fig 8 and the support points from Fig 6 (1).",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "Viterbi algorithm",
+    "predicate": "achieves",
+    "object": "maximum likelihood path of hidden states",
+    "object_type": "Concept",
+    "source_sentence": "After the train model is completed, the Viterbi algorithm [4] is used to find the maximum likelihood path of hidden states given the trip sequences in test dataset.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "HDBSCAN",
+    "predicate": "uses",
+    "object": "DBSCAN",
+    "object_type": "Method",
+    "source_sentence": "In this case, the HDBSCAN, which is an extension of the DBSCAN, is adopted for this task, and it performs with various density of roads and noise handling.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "Hit@K",
+    "predicate": "evaluates",
+    "object": "accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Then, we use the Hit@K to be the evaluation matric, where K is 3.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "Viterbi algorithm",
+    "predicate": "uses",
+    "object": "Hidden Markov Model technique",
+    "object_type": "Method",
+    "source_sentence": "Then, it uses the Viterbi algorithm, which is an extension of the Hidden Markov Model technique.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "V CONCLUSION"
+  }
+]

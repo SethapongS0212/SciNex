@@ -1,0 +1,40 @@
+triple_id,C1,C3,C4,missed_concepts,missed_relations,issues,note
+287f502d1c8d,CORRECT,APPROPRIATE,PARTIAL,,,,"41.86% is an ExperimentalResult, and scinex provides achievesResult for exactly this - the weaker achieves (-> ResearchObjective) was chosen instead. qwen3-235b rendered the SAME fact from the same paper as achievesResult and scored CORRECT"
+a696ce855b5b,PARTIAL,TOO_BROAD,INCORRECT,,,,"reversed and tautological: the sentence says the oversampling technique USES SMOTE, and SMOTE simply IS an oversampling technique"
+8fa2d61dfa36,CORRECT,APPROPRIATE,PARTIAL,,,,"a real architectural contrast, but scinex's definition requires models 'directly compared in an experiment' and this is a background statement about two-stage vs one-stage detectors"
+a7e52850c826,CORRECT,APPROPRIATE,CORRECT,,,,
+f892daec3b42,PARTIAL,TOO_BROAD,INCORRECT,,,,"the sentence describes TRAINING on 80% of the images, not evaluation; 'images' also names no dataset"
+d380e1dcd881,CORRECT,APPROPRIATE,CORRECT,,,,textbook metric->value shape with the unit preserved
+cd1d791973e3,CORRECT,APPROPRIATE,CORRECT,,,,
+0ca53cc10d42,CORRECT,APPROPRIATE,CORRECT,,,,"correctly picks achievesResult over achieves for a metric outcome - the distinction scinex adds over CEO, used as intended"
+1ff3219b8e34,CORRECT,APPROPRIATE,CORRECT,,,,captures the feature-derivation relation that the CEO run missed entirely from this paper's feature-engineering paragraph
+d898335feded,CORRECT,APPROPRIATE,PARTIAL,,,,"correctly disentangles the RT1->nasal / RT4->temporal pairing and 'designed to' is verbatim, but RT4 is a derived feature rather than the Model the predicate requires. Same verdict as the identical CEO triple"
+16183ea6eb3c,PARTIAL,TOO_BROAD,INCORRECT,,,,"the English verb 'encompassed' is verbatim, but 'Initial exploration' is a phase label rather than a ResearchDomain and GP is a Model rather than a ResearchTask - both slots mistyped"
+99110f5b8ed9,CORRECT,APPROPRIATE,CORRECT,,,,
+980021931f16,CORRECT,APPROPRIATE,CORRECT,,,,CORRECT splitFrom direction - and this same model's CEO run inverted the identical relation on the same paper ((LExist) splitFrom (LTest))
+5c9dea7e58e8,PARTIAL,TOO_NARROW,INCORRECT,,,,"arguments inverted (configures is Specification -> Experiment), and two distinct parameters are bundled into a single object node"
+4801b83a6530,CORRECT,APPROPRIATE,INCORRECT,,,,"SECOND instance of the extractedFrom range violation in this study: the range is AcademicPaper, and the object is a dataset. The relation name reads generically enough to invite this, and CEO has no equivalent relation to misuse"
+701aa7f75584,CORRECT,APPROPRIATE,CORRECT,,,,
+9780f0bce0cd,CORRECT,APPROPRIATE,INCORRECT,,,,employs is Organisation -> Person in scinex as in CEO; identical verdict to the same triple under CEO
+75b0e45cd84a,CORRECT,APPROPRIATE,PARTIAL,,,,"'generated from' supports the direction and producedBy is the right relation, but RDF data is DATA, not the ResearchProcess the range requires"
+8e3074e65793,CORRECT,APPROPRIATE,PARTIAL,,,,a Model standing in for the AcademicPaper the predicate requires
+d2e329c99652,CORRECT,APPROPRIATE,INCORRECT,,,,"the sentence never states where the centre is - 'in Thailand' attaches to the travel-time prediction the group targets, not to the group's location. True in fact, unsupported by the evidence sentence"
+56ba312d94bf,CORRECT,APPROPRIATE,PARTIAL,,,,a metric outcome placed under achieves (-> ResearchObjective) when scinex provides achievesResult for exactly this; the same choice error as 287f502d1c8d
+a4a0ffe16a51,CORRECT,APPROPRIATE,CORRECT,,,,"⭐ SCINEX FIXES A CEO FAILURE: on this identical sentence the CEO run chose employs (Organisation -> Person) and scored INCORRECT; here uses is picked, which is correctly typed for a model consuming an architectural block"
+601f8ad4b486,CORRECT,APPROPRIATE,CORRECT,,,,"an explicit experimental comparison, which is what scinex's definition demands"
+7cc6c17620a2,CORRECT,APPROPRIATE,CORRECT,,,,'comprises' is verbatim and the sub-component is named; the OCR noise later in the sentence does not touch the relevant clause
+a3561f8d4e17,CORRECT,APPROPRIATE,CORRECT,,,,
+6e813127694a,PARTIAL,TOO_BROAD,PARTIAL,,,,"right direction, but 'performance' is not the quantitative result the range requires"
+4ae2e883e954,CORRECT,APPROPRIATE,PARTIAL,,,,"the sentence says SP is BASED ON rest-stop popularity - it consumes it as a signal, which is uses; addresses would make popularity the research context SP targets"
+04dda1fc37a2,CORRECT,APPROPRIATE,CORRECT,,,,achievesResult correctly chosen for a metric outcome
+25bb2347783a,CORRECT,APPROPRIATE,CORRECT,,,,
+88d866290e34,CORRECT,APPROPRIATE,CORRECT,,,,'developed for' is explicit; the object bundles two closely-related tasks but both are genuine
+5a970b5340a3,PARTIAL,TOO_BROAD,INCORRECT,,,,"same failure as 16183ea6eb3c: 'Initial exploration' is a phase label, not a ResearchDomain, and MLP is a Model, not a ResearchTask"
+7446387bc384,CORRECT,APPROPRIATE,INCORRECT,,,,"a TECHNIQUE in the TrainingDataset slot - 'trained USING byte-pair encoding' describes the method, not the corpus"
+9833adb4ef33,INCORRECT,TOO_NARROW,INCORRECT,,,,"propositional clause as object, and configures is inverted; identical to the CEO verdict for this id"
+ad088b12514c,CORRECT,APPROPRIATE,INCORRECT,,,,"THIRD extractedFrom range violation in this study - OpenStreetMap is a data source, and the range is AcademicPaper. The English reading ('prepared from') fits perfectly, which is exactly why this relation keeps being misused"
+4af2abe28984,CORRECT,APPROPRIATE,CORRECT,,,,
+51e66536b6d3,CORRECT,APPROPRIATE,PARTIAL,,,,"⭐ THE QUALIFIER-STRIPPING MECHANISM, CAUGHT AT TRIPLE LEVEL: the sentence says PCF is best 'among all STAND-ALONE scoring functions' and the object keeps only 'best AUC'. This is precisely what produces the conflicting-superlative contradictions scored under C6"
+2a8ade9a32b7,CORRECT,APPROPRIATE,CORRECT,,,,
+b161c65c6b27,PARTIAL,TOO_BROAD,PARTIAL,,,,"the benchmark is explicit, but comparesAgainst requires named Models on both sides and 'proposed model' names nothing"
+46b4cb789e53,CORRECT,APPROPRIATE,CORRECT,,,,captures the three-component LPII decomposition that the CEO run missed entirely from this paper

@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "5a849300ae4f", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "PROVENANCE FLAG: exactly the right typing (paper title -> journal), but mined from a BIBLIOGRAPHY entry rather than paper content"},
+  {"triple_id": "9780f0bce0cd", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "employs is defined Organisation -> Person; the English verb was matched instead of the ontology definition"},
+  {"triple_id": "9833adb4ef33", "C1": "INCORRECT", "C3": "TOO_NARROW", "C4": "INCORRECT", "note": "the object is a propositional clause ('number of neighbors was set to 5'), not a concept; and configures is ExperimentalSpecification -> Experiment, so both slots are wrong"},
+  {"triple_id": "61aa4d50688e", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "the filter preprocesses data that then feeds the LSTM - the model does not consume the filter; 'filter' is also unnamed"},
+  {"triple_id": "4d7b38178b1c", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "8da545f77693", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "52595a92cb26", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "cfcdf24cd56a", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "the sentence says CTv1-XX-St ADJUSTS CTv1 - a derivation, not a composition; defensible only because the variant embeds the base architecture"},
+  {"triple_id": "a3561f8d4e17", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "eb3cc5a4f828", "C1": "PARTIAL", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "the metric is the BERT SCORE, not BERT the model; 0.2 is also the post-corruption value with its condition stripped, so it cannot be told from the 0.5 in the same sentence"}
+]}

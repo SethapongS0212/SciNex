@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 953981914931 -----
+TRIPLE:     (VGG16)  --designedfor-->  (recognizing a large number of classes)
+PREDICATE DEFINITION: Model → ResearchTask  |  Associates a model with the research task it was specifically designed or optimised to solve, such as a transformer model designed for machine translation or a CNN designed for image classification
+SOURCE SENTENCE: The structure of some CNN models is designed to recognize a large number of classes, such as 1000 classes (VGG16, ResNet50, Inception).
+
+----- triple_id: 7600635e8222 -----
+TRIPLE:     (RT-DETR model)  --trainedon-->  (eye landmark annotations dataset)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: For the eye landmark detection task, the RT-DETR model was employed and trained on a dataset of eye landmark annotations.
+
+----- triple_id: 254e37fa73b6 -----
+TRIPLE:     (test set)  --splitfrom-->  (the dataset)
+PREDICATE DEFINITION: Dataset → Dataset  |  Records that a dataset partition was derived from a larger source dataset
+SOURCE SENTENCE: For this study, the dataset was initially divided into a training set and a test set, with 460 out of 560 data points randomly selected for training.
+
+----- triple_id: 8b259df906ca -----
+TRIPLE:     (ANN())  --produces-->  (ANN model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: ANN() was used to construct an ANN model based on the input weight matrix with the linear activation function (Algorithm 1).
+
+----- triple_id: 1b80fc210b34 -----
+TRIPLE:     (RMSE)  --evaluates-->  (9.23)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  Links an evaluation metric to the experimental result it quantitatively assesses
+SOURCE SENTENCE: It has been found that the accuracy in terms of the root-mean-square error (RMSE) was about 9.23 evaluated by the original speed unit of kilometers per hour (km/h).
+
+----- triple_id: 62036878c356 -----
+TRIPLE:     (YOLO–GCC)  --evaluatedon-->  (TSD–MAX dataset)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: By introducing asymmetric convolution and a global point tracking module, Li et al. [28] proposed YOLO–GCC based on the YOLO algorithm and achieved an average accuracy of 83.0% on the TSD–MAX dataset.
+
+----- triple_id: 2ec7f5fe0af5 -----
+TRIPLE:     (Overview of long short-term memory neural networks)  --mentions-->  (long short-term memory neural networks)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: K. James, ''Overview of long short-term memory neural networks,'' in Deep Learning Classifiers With Memristive Networks (Modeling and Optimization in Science and Technologies), vol.
+
+----- triple_id: 16019a9b7b34 -----
+TRIPLE:     (KM Stone Speed dataset)  --producedby-->  (construction)
+PREDICATE DEFINITION: ResearchArtifact → ResearchProcess  |  Links a research artifact back to the research process that generated it
+SOURCE SENTENCE: The construction of the KM Stone Speed dataset is the final step of the data preparation.
+
+----- triple_id: 1cc0b2151d63 -----
+TRIPLE:     (Genetic Algorithm)  --achieves-->  (generation of chemical structures meeting specified property targets)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: When combined with a Genetic Algorithm, this methodology successfully generated chemical structures meeting specified property targets.
+
+----- triple_id: 5b4a19fddb74 -----
+TRIPLE:     (King Mongkut's Institute of Technology Ladkrabang)  --locatedin-->  (Bangkok, Thailand)
+PREDICATE DEFINITION: Organisation → Place  |  Associates an organisation with the geographic place in which it is situated
+SOURCE SENTENCE: aFaculty of Engineering, King Mongkut's Institute of Technology Ladkrabang, Bangkok 10520, Thailand

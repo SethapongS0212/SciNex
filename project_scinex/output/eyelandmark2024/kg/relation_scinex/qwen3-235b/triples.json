@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Haar Cascade",
+    "predicate": "uses",
+    "object": "facial landmarks' detection methods",
+    "object_type": "Method",
+    "source_sentence": "An individual's eye landmarks on their face can be obtained via some facial landmarks' detection methods, including Haar Cascade.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "Abstract"
+  },
+  {
+    "subject": "Mask R-CNN",
+    "predicate": "uses",
+    "object": "pupil localization",
+    "object_type": "ResearchTask",
+    "source_sentence": "The model uses Mask R-CNN and MTCNN for pupil localization and a convolutional neural network for classification .",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "II LITERATURE REVIEWS"
+  },
+  {
+    "subject": "MTCNN",
+    "predicate": "uses",
+    "object": "pupil localization",
+    "object_type": "ResearchTask",
+    "source_sentence": "The model uses Mask R-CNN and MTCNN for pupil localization and a convolutional neural network for classification .",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "II LITERATURE REVIEWS"
+  },
+  {
+    "subject": "convolutional neural network",
+    "predicate": "uses",
+    "object": "classification",
+    "object_type": "ResearchTask",
+    "source_sentence": "The model uses Mask R-CNN and MTCNN for pupil localization and a convolutional neural network for classification .",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "II LITERATURE REVIEWS"
+  },
+  {
+    "subject": "preprocessing techniques",
+    "predicate": "uses",
+    "object": "improve the accuracy of the model",
+    "object_type": "ResearchObjective",
+    "source_sentence": "The paper also suggests that preprocessing techniques can be used to improve the accuracy of the model.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "II LITERATURE REVIEWS"
+  },
+  {
+    "subject": "precision",
+    "predicate": "evaluates",
+    "object": "model's accuracy",
+    "object_type": "Concept",
+    "source_sentence": "Evaluation metrics like precision, recall and Intersection over Union (IoU) which gauges how much the predicted bounding box overlaps with the ground-truth bounding box are utilized to assess the model's accuracy and robustness.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "recall",
+    "predicate": "evaluates",
+    "object": "model's accuracy",
+    "object_type": "Concept",
+    "source_sentence": "Evaluation metrics like precision, recall and Intersection over Union (IoU) which gauges how much the predicted bounding box overlaps with the ground-truth bounding box are utilized to assess the model's accuracy and robustness.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "dataset",
+    "predicate": "comprises",
+    "object": "3 eye gazing images",
+    "object_type": "Dataset",
+    "source_sentence": "First, the dataset comprises of 3 eye gazing images , left gazing, front gazing, and right gazing ensuring diverse samples.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "hybrid encoder",
+    "predicate": "comprises",
+    "object": "intra-scale interaction",
+    "object_type": "ResearchProcess",
+    "source_sentence": "The hybrid encoder transforms the multi-scale features into a sequence of image features through intra-scale interaction and cross-scale fusion.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "hybrid encoder",
+    "predicate": "comprises",
+    "object": "cross-scale fusion",
+    "object_type": "ResearchProcess",
+    "source_sentence": "The hybrid encoder transforms the multi-scale features into a sequence of image features through intra-scale interaction and cross-scale fusion.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "decoder",
+    "predicate": "uses",
+    "object": "auxiliary prediction heads",
+    "object_type": "Method",
+    "source_sentence": "Finally, the decoder with auxiliary prediction heads iteratively optimizes object queries to generate boxes and confidence scores.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "IoU-aware query selection",
+    "predicate": "uses",
+    "object": "encoder output sequence",
+    "object_type": "ResearchArtifact",
+    "source_sentence": "Finally, the IoU-aware query selection is then employed to select a fixed number of image features from the encoder output sequence to serve as initial object queries for the decoder.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "RT-DETR",
+    "predicate": "trainedon",
+    "object": "all images",
+    "object_type": "Dataset",
+    "source_sentence": "Then all images were fed into RT-DETR model, firstly, the backbone extracts multi-scale features from the input image, then fed into the hybrid encoder.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "final dataset",
+    "predicate": "comprises",
+    "object": "924 rows and 12 columns",
+    "object_type": "Dataset",
+    "source_sentence": "According to Table III, the final dataset, it comprises of 924 rows and 12 columns, including image name, cropped eye side, face gazing side, and 9 landmarks.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "IV RESULT AND DISCUSSION"
+  },
+  {
+    "subject": "Realtime Identification Transformer (RT- DETR)",
+    "predicate": "trainedon",
+    "object": "labeled data",
+    "object_type": "Dataset",
+    "source_sentence": "Secondly, we employed the Realtime Identification Transformer (RT- DETR) approach to train our labeled data and create a deep learning model.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "IV RESULT AND DISCUSSION"
+  },
+  {
+    "subject": "Realtime Identification Transformer (RT- DETR)",
+    "predicate": "produces",
+    "object": "deep learning model",
+    "object_type": "Model",
+    "source_sentence": "Secondly, we employed the Realtime Identification Transformer (RT- DETR) approach to train our labeled data and create a deep learning model.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "IV RESULT AND DISCUSSION"
+  },
+  {
+    "subject": "work's scope",
+    "predicate": "comprises",
+    "object": "detecting nine points of eye landmarks",
+    "object_type": "ResearchTask",
+    "source_sentence": "Our work's scope involves detecting nine points of eye landmarks, comprising four points of the eye, four points of the pupil, and one point of the reflection.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "IV RESULT AND DISCUSSION"
+  },
+  {
+    "subject": "detecting nine points of eye landmarks",
+    "predicate": "comprises",
+    "object": "four points of the eye",
+    "object_type": "Concept",
+    "source_sentence": "Our work's scope involves detecting nine points of eye landmarks, comprising four points of the eye, four points of the pupil, and one point of the reflection.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "IV RESULT AND DISCUSSION"
+  },
+  {
+    "subject": "detecting nine points of eye landmarks",
+    "predicate": "comprises",
+    "object": "four points of the pupil",
+    "object_type": "Concept",
+    "source_sentence": "Our work's scope involves detecting nine points of eye landmarks, comprising four points of the eye, four points of the pupil, and one point of the reflection.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "IV RESULT AND DISCUSSION"
+  },
+  {
+    "subject": "detecting nine points of eye landmarks",
+    "predicate": "comprises",
+    "object": "one point of the reflection",
+    "object_type": "Concept",
+    "source_sentence": "Our work's scope involves detecting nine points of eye landmarks, comprising four points of the eye, four points of the pupil, and one point of the reflection.",
+    "extraction_mode": "relation",
+    "paper": "eyelandmark2024",
+    "title": "Eye Landmarks Detection using RT-DETR with Rules",
+    "section": "IV RESULT AND DISCUSSION"
+  }
+]

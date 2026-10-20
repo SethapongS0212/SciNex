@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 40ee89e96ac9 -----
+TRIPLE:     (RT-DETR)  --trainedon-->  (ocular landmark images)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: The Real-Time Detection Transformer (RT-DETR) model was trained for ocular landmark localization, as illustrated in Fig.
+
+----- triple_id: 5e6b343941db -----
+TRIPLE:     (SVM)  --configures-->  (1.0 penalty parameter (c))
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships
+SOURCE SENTENCE: For the SVM, according to the visualization in Fig. 7, there are overlapped class distributions, and a radial basis function (RBF) kernel becomes a proper kernel for our experiment. In addition, the configuration of this classifier is that the penalty parameter (c) of the error term is 1.0, the kernel coefficient (gamma) is 0.3, the number of maximum iterations is 5000, and the tolerance for the stopping criterion is 0.0001.
+
+----- triple_id: 2125c9fd40d9 -----
+TRIPLE:     (Muresan)  --publishedin-->  (Proc.)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  use for journal/conference names only
+SOURCE SENTENCE: Muresan, ''Forecasting for grid and cloud computing on-demand resources based on pattern matching,'' in Proc.
+
+----- triple_id: b9a387a8c602 -----
+TRIPLE:     (CNN model)  --designedfor-->  (recognizing vehicle makes from front-view images)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: This part discusses the structure of the CNN model designed for recognizing vehicle makes from front-view images
+
+----- triple_id: 3093c099d48c -----
+TRIPLE:     (phase structure of the substrate)  --motivates-->  (CTE mismatch)
+PREDICATE DEFINITION: ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method
+SOURCE SENTENCE: For CTE mismatch, it seemed to be the primary cause of spallation, however, it was dependent on the phase structure of the substrate and developed oxide scale
+
+----- triple_id: 1e65c664b32b -----
+TRIPLE:     (cSysGuard)  --employs-->  (controller)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: This adept coordination by the controller is vital to cSysGuard's seamless operation and overall dependability and efficiency.
+
+----- triple_id: 69d1390b51c0 -----
+TRIPLE:     (training set)  --splitfrom-->  (five segments)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: Within the training set, the data were further partitioned into five segments to facilitate algorithm tuning and evaluation.
+
+----- triple_id: 97de118a0554 -----
+TRIPLE:     (Toyota)  --supports-->  (0.38 (VGG16's F1 score))
+PREDICATE DEFINITION: ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion
+SOURCE SENTENCE: VGG16 placed seventh with the lowest F1 w-avg (0.23), predicting only Toyota with an F1 score of 0.38.
+
+----- triple_id: 1d52f17db7b0 -----
+TRIPLE:     (Viola and Jones)  --writtenby-->  (Viola, P., & Jones, M)
+PREDICATE DEFINITION: AcademicPaper → Author  |  use only for explicit author attribution
+SOURCE SENTENCE: According to the paper by Viola and Jones, they present a novel approach to object detection...
+
+----- triple_id: 412551d34f45 -----
+TRIPLE:     (The guidelines)  --cites-->  (Bureau of Street Lighting, Los Angeles)
+PREDICATE DEFINITION: AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name
+SOURCE SENTENCE: In this study, we refer to the guidelines from the Bureau of Street Lighting, Los Angeles.

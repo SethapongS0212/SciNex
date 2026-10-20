@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "343d41381616", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "relation is explicit and uses sanctions a dataset object, but 'bespoke dataset' names nothing - as a node it would merge with every other paper's bespoke dataset"},
+  {"triple_id": "c45569e03ad2", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "947bdb5e7e0e", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "3e81d4ded106", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "b1c5e34ab96e", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "c7b2c15de7f7", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "e9338e39b63b", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "textbook-correct shape for evaluates: named metric as subject, bare numeric result as object - exactly the case the old _is_valid_entity bug used to delete"},
+  {"triple_id": "b5646c077233", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "PKLot is correctly captured and the evaluation is explicit, but the subject is a generic description of the approach rather than the named model (ResNet34)"},
+  {"triple_id": "2e61c2bb0f06", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "'designed for' is stated verbatim, but designedFor is typed Model -> ResearchTask and the subject is a physical instrument"},
+  {"triple_id": "7e8c82ede0c7", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"}
+]}

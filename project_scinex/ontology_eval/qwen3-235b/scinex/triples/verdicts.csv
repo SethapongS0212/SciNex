@@ -1,0 +1,41 @@
+triple_id,C1,C3,C4,missed_concepts,missed_relations,issues,note
+1061a50b5f00,CORRECT,APPROPRIATE,CORRECT,,,,"scinex's achievesResult (Model -> ExperimentalResult) is a tighter fit here than CEO's achieves, which also admits objectives"
+c1818eb3878d,CORRECT,APPROPRIATE,PARTIAL,,,,"the sentence says 'use', but mAP is a METRIC used to validate, not an artifact consumed as input; scinex has evaluates/evaluatedOn for exactly this"
+9434798daab4,CORRECT,APPROPRIATE,CORRECT,,,,correctly isolates the filtered variant as a distinct comparison target
+ef8143c64015,CORRECT,APPROPRIATE,CORRECT,,,,"'consists of' is verbatim, and this captures the Up matrix that several CEO runs dropped from the Gate/Up/Down triple"
+a608d45fd951,CORRECT,APPROPRIATE,CORRECT,,,,
+31c9ef6a37e2,CORRECT,APPROPRIATE,CORRECT,,,,"'creates' maps cleanly onto produces, and decision trees are a genuine generated artifact"
+57be24c0ffdf,PARTIAL,APPROPRIATE,PARTIAL,,,,"correct metric->result typing, but the object restates the subject name and the sentence lists EIGHT MOTA values across two trackers and four datasets - a bare 1.0 cannot be traced back to either"
+af47c94c096c,PARTIAL,TOO_BROAD,INCORRECT,,,,"SMOTE is an oversampling technique APPLIED TO data, not a Model trained on a named corpus; 'training data' also names nothing. Same verdict as the identical CEO triple - the content hash makes them one id"
+4b785a1115a3,PARTIAL,APPROPRIATE,PARTIAL,,,,"the object does not appear in the source sentence at all - it is recoverable only by expanding the LPII acronym; the sentence states what LPII COMBINES, not what it targets"
+c5e94160f5ce,INCORRECT,TOO_BROAD,INCORRECT,,,,"SELF-LOOP: a dataset evaluated on itself, and the subject should be an Experiment rather than the dataset"
+1ed729d78de9,PARTIAL,APPROPRIATE,PARTIAL,,,,"producedBy is a scinex-only INVERSE of CEO's produces, and the direction here is exactly right (artifact -> process). Marked down only because SMOTE is not named in this sentence - the agent is carried in from context"
+d3e6aa32c4c8,INCORRECT,TOO_NARROW,INCORRECT,,,,"the object is a propositional clause, not a concept; and configures is Specification -> Experiment, so Model -> setting-value is neither slot. Identical failure to the CEO run"
+09c607f68365,CORRECT,APPROPRIATE,INCORRECT,,,,employs is Organisation -> Person in scinex exactly as in CEO; neither side qualifies. The sentence also runs the other way - YOLOv8 produces boxes FOR SAM2
+c802b38c805a,CORRECT,APPROPRIATE,PARTIAL,,,,"'designed for' is verbatim, but 'real-time performance' is a performance characteristic; the ResearchTask this model is designed for is object detection"
+0e2b63c38095,INCORRECT,TOO_BROAD,INCORRECT,,,,'road' is not a dataset and is not what anything was split from - the sentence says the TTR dataset was split INTO training/validation/test. Both the direction and the object are wrong
+b50e7230c729,INCORRECT,TOO_NARROW,PARTIAL,,,,"'Rule 1' is a paper-internal label and the object is a clause; the sentence does state the link, but supports requires a quantitative MEASUREMENT as subject. Same verdict as the identical CEO triple"
+2490d492721b,CORRECT,APPROPRIATE,CORRECT,,,,CORRECT DIRECTION (Agent -> Organisation) on the same sentence where this model's CEO run produced the REVERSED (University of Washington) affiliatedWith (Ali Farhadi)
+2762eddc8b80,PARTIAL,TOO_BROAD,PARTIAL,,,,"'citing' is explicit, but the subject 'study' names no paper and the object is an author key standing in for one"
+eea64759ab70,CORRECT,APPROPRIATE,INCORRECT,,,,"RANGE VIOLATION SPECIFIC TO SCINEX: extractedFrom is defined ? -> AcademicPaper, but the object is an architecture component. The relation name reads generically, which invites exactly this misuse - a hazard CEO does not have because it has no such relation"
+72fdecd307c8,PARTIAL,TOO_BROAD,PARTIAL,,,,"'future work' is a placeholder, not a concept a KG can hold; and the sentence states future INTENT ('will focus on'), which is not a gap motivating a process"
+382ccbaa403a,CORRECT,APPROPRIATE,PARTIAL,,,,"explicitly stated, but OC-SORT is a Model standing in for the AcademicPaper the predicate requires - same verdict as under CEO"
+de3fdd162018,CORRECT,APPROPRIATE,PARTIAL,,,,"'reported by' is explicit and the citation key acceptably denotes the paper, but 'non-linear behaviour' is a FINDING, and reports takes a ResearchProcess"
+d24f68f0b5ff,CORRECT,APPROPRIATE,PARTIAL,,,,"2,113.53 s is the WITHOUT-BATCHNORM ablation figure (F1 fell 0.93 to 0.16 in the same sentence); attributing it plainly to CTv1-DR strips the condition that makes it meaningful"
+a3ecd30d1faf,PARTIAL,TOO_BROAD,INCORRECT,,,,the text lists SVP as one of four algorithms EMPLOYED BY the ML methodology; 'SVP uses ML methodology' inverts that and is tautological - SVP is itself an ML algorithm
+e9ec99020ea6,CORRECT,APPROPRIATE,CORRECT,,,,
+9c618e5c4c53,PARTIAL,TOO_NARROW,PARTIAL,,,,TWO sub-processes bundled into one node ('intra-scale interaction and cross-scale fusion') where the CEO run split them; composition is also only implied by 'used ... to'
+917377fcf405,CORRECT,TOO_BROAD,CORRECT,,,,the comparative result is explicit and correctly typed; 'this study' is deictic and would merge across every paper in a corpus graph
+9f83f18dd3a5,PARTIAL,TOO_BROAD,INCORRECT,,,,"produces requires a generated ARTIFACT; 'stronger influence on model degradation' is a causal effect, and the sentence says 'have a stronger influence on', not 'produce'"
+3a4754c392a1,PARTIAL,TOO_BROAD,PARTIAL,,,,"right metric->result direction, but the object is a qualitative phrase where the range demands a quantitative result - the actual Dice value is in Table II and was not taken"
+3e34b5d0d256,PARTIAL,TOO_BROAD,INCORRECT,,,,"the sentence describes HYPERPARAMETER SELECTION (p, q, d chosen from observations), not training on a corpus; 'data of each road' also names no dataset"
+4b94a9da1bf6,CORRECT,APPROPRIATE,CORRECT,,,,the purpose clause ('to minimize identity shifts') maps cleanly onto addresses
+5e817414a5a1,CORRECT,APPROPRIATE,INCORRECT,,,,"a TASK in the Dataset slot; the sentence states what YOLO was implemented FOR, which is designedFor/addresses, not evaluatedOn"
+f77a511a033f,CORRECT,APPROPRIATE,PARTIAL,,,,"producedBy gets the artifact->creator DIRECTION right where CEO's (TensorFlow) uses (Google) inverted it; marked down only because Ultralytics is an Organisation, and the range is ResearchProcess"
+589d9154f8f1,CORRECT,APPROPRIATE,INCORRECT,,,,"arguments swapped: configures is Specification -> Experiment, so the correct form is (10-fold cross-validation) configures (evaluation process). Closer than the usual Model->setting error, but still inverted"
+81ed6f9dbf14,CORRECT,APPROPRIATE,INCORRECT,,,,employs is Organisation -> Person; a model and a capability satisfy neither side
+b50ae6738878,CORRECT,TOO_BROAD,CORRECT,,,,the design intent is explicit; 'CNN model' stands in for the paper's actual named model
+ab08e0beb389,PARTIAL,TOO_BROAD,INCORRECT,,,,"the object is a PAPER, not a dataset, and reuse of another study's data is not a train/test partition - splitFrom is the wrong relation entirely"
+dd50f72743bd,PARTIAL,TOO_BROAD,INCORRECT,,,,supports requires a QUANTITATIVE MEASUREMENT as subject; no number appears anywhere in the sentence
+c1012b223d77,CORRECT,APPROPRIATE,CORRECT,,,,"correct Agent -> Organisation direction, on the same sentence the CEO run rendered backwards"
+b5c196248f06,PARTIAL,TOO_BROAD,PARTIAL,,,,"'citing' is explicit, but the subject 'study' names no paper and the object is an author key"

@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: 3. Materials and Methods
+
+Text:
+In this section, we explain the data preparation of the GPS data of trucks and the implementation of methods from related works for the determination of a baseline and provide a description of our approach and the steps of our experiments.
+
+----- para_id: 13 -----
+Section: 3.1. Data Preparation
+
+Text:
+We mainly used GPS data together with road data. The GPS dataset was the GPS tracking data of trucks in Thailand. The dataset collected included the vehicle location and timestamp at every minute from the GPS device, shown in Figure 2. Our work considered data from 2019 because the traffic patterns in that year were not disrupted by the COVID-19 virus. Using the data from trucks, our study focused on the analytics of long-distance roads, and the pre-analysis of these data indicated that many truck GPS data concerned long roads between cities . In addition, the road data for Thailand were prepared from OpenStreetMap [29]. As there were many roads in the road network data, we chose roads that had a high occurrence of truck GPS data. Highways 1, 2, 4, 7, 9, 32, 35, 41, 304, and 331 were included, and they are shown on the map in Figure 3. Since there were no trucks driving along the entirety of the road lines, some long-distance road segments that had a high number of trucks passing through were selected. For example, we chose 332 km of highway number 1, 232 km of highway number 2, and 219 km of highway number 4, which are shown in Tables 1 and 2 under the columns named Distance (km). Next, we used the locations of each truck in the GPS dataset to map them to the road segments and selected only trucks that passed through the beginning point and the end point of each road segment. In this case, there were about a hundred million GPS data entries.
+
+----- para_id: 14 -----
+Section: 3.1. Data Preparation
+
+Text:
+Since the timestamp of each truck was found at the beginning point and the end point of a road segment, we were able to calculate the travel time of each road segment, as shown in Table 1. In addition, the stopping times, which were calculated from a duration of longer than 20 min in the same location, were excluded. Table 1 shows example data for highway number 1, where each entry is the average travel time from every beginning hour. Thus, this dataset can be viewed as time-series data with an hourly sampling rate. For example, the first data row of Table 1 means that trucks entering the starting point of the road segment highway number 1 during 00:00 and 00:59 took an average travel time of 18,421.14 s (about 5 h and 7 min) to the end point of that road segment. To better understand the dataset, the average hourly travel time of trucks on highway number 1 in 2019 is plotted in Figure 4. In addition, the processed data are summarized in Table 2. There were 81,068 unique trucks with 2,010,270 trips and an average travel time of 203.04 min. 2022, 12, 5681 6 of Appl. 2022, 12, 5681 7 of 18 travel time (seconds) Travel Time on Highway No. 1 Jan, 2019 Dec, 2019 June, 2019 Mar, 2019 Sep,
+
+----- para_id: 15 -----
+Section: 3.2. Baseline Implementation
+
+Text:
+Based on the review of the time-series analytic techniques discussed in previous related work, we considered ARIMA [7], SVR [25], LSTM [26], and ConvLSTM [14] for the preliminary analysis. The details of these techniques are described in the following subsections. After this, we conducted an experiment to select which of these techniques would provide the best performance as a baseline in our study. The pre-processed dataset that we adopted and examples of it are shown in Table 1, and the steps of our experiment are described in Section 3.4.
+
+----- para_id: 16 -----
+Section: 3.3. Our Approach
+
+Text:
+In the first experiment explained in Section 3.4, the LSTM showed the best performance. The MAE was 27.12 min per 100 km, as shown in Section 4.1. This meant that we could use the original LSTM to predict travel time with an error of about 27.12 min for every 100 km. Thus, the LSTM was selected as a baseline, and our challenge was to improve the LSTM, increasing the performance by minimizing the MAE. After obtaining the raw data, we used a filter to process the data in order for it to be an input of the LSTM with attention, as shown in Figure 5.
+
+----- para_id: 17 -----
+Section: 3.3.1. Time-Series Data of Travel Time on Road Segments
+
+Text:
+To create the time-series data of travel time on road segments as input data, the GPS vehicle and road data were processed as follows. First, the GPS vehicle data were the set of relations expressed by where GPSTX is a set of the GPS transactions of the vehicles. The elements were the vehicle identifier (vid), timestamp (ts), latitude (lat), and longitude (lon). The format of the timestamp was "YYYY-MM-DD hh:mm:ss", where YYYY, MM, DD, hh, mm, and ss Appl. 2022, 12, 5681 8 of 18 indicate the year, month, day, hour, minute, and second, respectively. A typical example of data corresponding to this expression is displayed in Figure 1. Second, the road data including the polyline of coordinates of each road were formu- lated as where ROADS is a set of road shapes, which are relations including a road identifier (rid) and a road polyline (RPL). The RPL is an ordered set of pairs of latitude (lat) and longitude (lon) points that form the line of a road. An example visualization of some roads in Thailand is presented in Figure 3. Next, the locations (lat and lon) of each member of GPSTX were mapped to the polyline of each road, so any vehicles passing through every point on each road were documented. After this, the road segments that had high occurrences of vehicles passing through them were selected. Finally, the timestamps (ts) of the vehicles between the endpoints of each road segment were calculated and became travel time entries.
+
+----- para_id: 18 -----
+Section: 3.3.1. Time-Series Data of Travel Time on Road Segments
+
+Text:
+Then, these values were averaged according to hours and presented as time-series data of the travel time on each road segment, which is described by the following expression: where TTR is a set of travel time on road segments. The equation elements are road id (rid), date–hour (dh), and average travel time (tt) of a road in that hour. An example of the data is shown in Table 1, where the rid is presented by the road name instead of the road identifier. It should be noted that long-duration parked vehicles were eliminated. This was calculated by finding the duration that a vehicle had stayed in the same latitude and longitude and that exceeded a pre-defined threshold, such as parking for longer than 20 min. The results of this step, which were a time-series dataset of travel time on road segments, became the input for the analytics in the next modules.
+
+----- para_id: 19 -----
+Section: 3.3.2. Filtering Method
+
+Text:
+In this section, we used a filtering method to pre-process the time-series data TTR. There are several filtering methods, such as the Kalman, Savitzky–Golay, and Butterworth low-pass methods. In order to find a suitable filtering method, we conducted experiments as described in Section 3.4.3. Based on our experimental results in Section 4.3, we chose the Butterworth low-pass filter [28] as part of our model.
+
+----- para_id: 20 -----
+Section: 3.3.3. Self-Attention LSTM (SA-LSTM)
+
+Text:
+Our main approach was to use the SA-LSTM to predict the travel time. We learned the TTR data, which were processed by a filter method, to create one model for one road, so we had 10 models for 10 selected road segments. In addition, we used a window size of 24 due to the observation of hourly patterns across different days. However, the window size can be configured according to the pattern of the data. In addition, the decision to use self-attention or operate without attention depends on the experiment. In our case, the comparison between the LSTM only and the SA-LSTM models guided us to choose the SA-LSTM. Finally, our approach is formulated as expressed in the following equation: where ˆ ttdh rid denotes a predicted travel time (tt) of a given road segment (rid) at a given date–hour (dh). The formula is the composite of the SA_LSTM (SA_LSTM) model and the Appl. 2022, 12, 5681 9 of 18 Butterworth low-pass filter (BF), where the input TTR[dh−24:dh−1] rid is a set of travel time (TTR) of a given road segment (rid) between 24 h ([dh−24: dh−1]) before the given dh.
+
+----- para_id: 21 -----
+Section: 3.3.4. Architecture of Our Travel Time Prediction Model
+
+Text:
+This subsection describes the architecture of our travel time prediction model. The model is demonstrated in Figure 6, after all the experiments were completed and with all the adjusted parameters. Our model has six layers: input data, a Butterworth low-pass filter, a self-attention layer, an LSTM layer, a fully connected layer, and an output. It was assumed that the model had already been trained from historical data. Thus, some variables, such as the weight vector of query (WQ), the weight vector of key (WK), the weight vector of value (WV), the hidden state input vector (H0), the cell state input vector (C0), the weight tensor of the LSTM (WLSTM), and the weight matrix (WFC) of the artificial neural network in the fully connected layer, were already assigned. The input data were the sequences of previous travel times over a period of 24 h that were selected from TTR (Equation (4)) with a given road segment. This is a 24-dimension (24-dim) vector. In the case of predicting road segment A at 07:00 on one day, the average hourly travel time along road segment A between 07:00 and 24:00 of the previous day and between 00:00 and 06:00 of the current day needs to be collected. The task of this layer is to process the input vector by the Butterworth low-pass filtering. This resulted in the 24-dim vector. The self-attention layer has an attention function that multiples the input travel time vector with the trained weight vectors: WQ, WK, and WV, becoming vectors Q, K, and V, respectively.
+
+----- para_id: 22 -----
+Section: 3.3.4. Architecture of Our Travel Time Prediction Model
+
+Text:
+Then, it calculates the vectors Q, K, and V by the SoftMax where the SoftMax is a function expressed by SoftMax(z)i = ezi ∑J resulted in the 24-dim vector of the self-attention feature map. Then, the input vector from the previous layer is added by the self-attention feature map vector, so it becomes a 24-dim input feature vector. The LSTM layer consists of 24 LSTM units. All of the LSTM units are constructed by the trained weight tensor (WLSTM). In addition, the trained 256-dim vectors of the hidden state input vector (H0) and the cell state input vector (C0) are inputs of the first LSTM unit. Then, the result of the last LSTM unit is used as an output feature, which is a 256-dim vector. The fully connected layer is an artificial neural network (ANN). This ANN is con- structed by the trained weight matrix (WFC). In this case, there are 256 input nodes whose values are from the 256-dim output feature vector. Then, the ANN generates one output node with a linear activation function. The output from the fully connected layer is the predicted travel time of the following hour along a given road segment. In addition, we wrote the following pseudocode to demonstrate our model in detail, corresponding to Figure 6. The input was a 24-dim input vector of the travel time (input_ttr) and the trained variables; the output was a predicted travel time of the following hour. The trained variables were selected according to the road segment from input_ttr.
+
+----- para_id: 23 -----
+Section: 3.3.4. Architecture of Our Travel Time Prediction Model
+
+Text:
+This means that it needed to prepare trained variables for each road segment. In the pseudocode, BF() is a function of the Butterworth low-pass filter; SoftMax() is a SoftMax function; LSTM() was used to construct an LSTM model based on an input cell state, an input hidden state, and a weight tensor; and ANN() was used to construct an ANN model based on the input weight matrix with the linear activation function (Algorithm 1). Input: input_ttr //a vector representing the input of previous travel times (24-dim) WQ, WK, WV //3 vectors for self-attention (24-dim) C0 //a cell state input vector (256-dim) H0 //a hidden state input vector (256-dim) WLSTM //a weight tensor of LSTM for 24 units WFC //a weight matrix for the fully connected layer (256-dim) Output: pred_tt //the prediction of a following travel time (scalar) 1: //Butterworth Low-Pass Filter 2: input_ttr ←BF(input_ttr) //24-dim vector 3: //Self-Attention Layer 4: Q ←WQ × input_ttr //24-dim vector 5: K ←WK × input_ttr //24-dim vector 6: V ←WV × input_ttr //24-dim vector 7: sa_map ←SoftMax(Q·KT ÷ √24) ·V //24-dim vector 8: input_features ←input_ttr + sa_map //24-dim vector 9: //LSTM Layer 10: lstm_model ←LSTM(C0, H0, WLSTM) //24 LSTM units 11: output_features ←lstm_model.predict(input_features) //256-dim vector 12: //Fully Connected Layer j=1 ezj for i = 1,..., J. 13: ann_model ←ANN(WFC, 'linear') //256 input nodes and 1 output node 14: pred_tt ←ann_model.predict(output_features) //scalar 15: RETURN pred_tt

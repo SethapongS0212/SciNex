@@ -1,0 +1,68 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 9 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 48 -----
+Section: D. cSysGuard PERFORMANCE OVERHEAD
+
+Text:
+Such variations, in turn, can potentially affect the predictive accuracy and generalizability of cSysGuard. Therefore, the study recommends that users consider adjusting cSysGuard's setup to suit their server specifi- cations. Users can select different models and quantities, optimize parameters, fine-tune data configuration and pre- diction interval, or adjust Level-1 model error sensitivity. cSysGuard offers flexibility to align with users' operational goals and requirements, maximizing the advantages of ensemble learning. This paper introduces cSysGuard, a novel and resilient monitoring framework designed to enhance the prediction of system performance metrics and health assessments in dynamic cloud environments. To forecast performance metrics effectively, cSysGuard implements an advanced ensemble model using a stacking approach that integrates various predictors, such as the Level-0 and Level-1 models. Subsequently, the framework dynamically yields an accu- rate final metric prediction through a weighted averaging strategy. Furthermore, cSysGuard examines these forecasts to determine system failover through a fine-tuned classification model. In our study, cSysGuard consistently outperformed the other standard models, encompassing traditional statistical and advanced deep learning approaches. It showcased sig- nificant proficiency, from nearly equivalent to an impressive increase of up to 2.28 times compared to conventional models.
+
+----- para_id: 49 -----
+Section: D. cSysGuard PERFORMANCE OVERHEAD
+
+Text:
+In addition to the system health assessment, it lever- aged Decision Trees refined through hyperparameter tuning, achieving a macro-averaged F1 score of 89.79%. These outcomes highlight cSysGuard's effectiveness in delivering precise performance metrics and health analysis , showcasing it as a comprehensive system monitoring tool. In future work, we intend to expand the capabilities of cSysGuard beyond its focus on detecting system - health failures based on resource sufficiency.
+
+----- para_id: 50 -----
+Section: VII CONCLUSION AND FUTURE WORK
+
+Text:
+consider integrating other system failures, such as network- related issues, security breaches, and application-level errors. By addressing these additional dimensions, cSysGuard will become a more versatile framework adaptable to a broader range of scenarios and capable of providing comprehensive monitoring across various aspects of system health .
+
+----- para_id: 51 -----
+Section: What
+
+Text:
+com/ cloud /insights/ cloud - computing -flexibility.html [3] Red Hat. Available: https://www.redhat.com/en/topics/ cloud -native- apps/stateful-vs-stateless [4] Q. Boutaba, ''Dynamic workload management in hetero- geneous cloud computing environments,'' in Proc. (NOMS), Krakow, Poland, May 2014, pp. Available: https://www.techtarget.com/searchitchannel/definition/ service - level-agreement [6] M. Assuncao, ''Evaluating auto-scaling strategies for cloud computing environments,'' in Proc. [7] Amazon Web Services . Available: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as- scale -based-on-demand.html [8] Google Cloud . Available: https:// cloud .google.com/compute/docs/autoscaler [9] P. AutoScaling: Introducing Compute Engine Predictive Autoscaling. Available: https:// cloud .google.com/blog/products/compute/introducing- compute-engine- predictive -autoscaling [10] Google Cloud . Available: https:// cloud .google.com/compute/docs/ autoscaler/ predictive -autoscaling [11] N. Chawuthai, '' Cloud stateless server failover predic- tion using machine learning on proactive system metrics,'' in Proc. Chen, ''Cost-effective cloud HPC resource provisioning by building semi-elastic virtual clusters,'' in Proc. Comput., Netw., Storage Anal., Denver, CO, USA, Nov. Ajila, '' Predicting cloud resource provisioning using machine learning techniques,'' in Proc. (CCECE), Regina, SK, Canada, May 2013, pp.
+
+----- para_id: 52 -----
+Section: What
+
+Text:
+Hoonlor, '' Workload prediction with regression for over and under provisioning problems in multi-agent dynamic resource provisioning framework ,'' in Proc. Buyya, '' Workload prediction using ARIMA model and its impact on cloud applications ' QoS,'' IEEE Trans. Andiy, ''ARIMA forecast models for scheduling usage of resources in IT-infrastructure,'' in Proc. Zuva, ''Traffic flow prediction in cloud computing ,'' in Proc. (ICACCE), Durban, South Africa, Nov. Lee, '' Prediction of network throughput using ARIMA,'' in Proc. Dhar, '' Machine learning based workload prediction for auto-scaling cloud applications ,'' in Proc. Shen, '' Machine learning based workload prediction in cloud computing ,'' in Proc. (ICCCN), Honolulu, HI, USA, Aug. Muresan, ''Forecasting for grid and cloud computing on-demand resources based on pattern matching,'' in Proc. Humphrey, ''Forecasting cloud appli- cation workloads with CloudInsight for predictive resource management,'' IEEE Trans. Malik, '' Prediction of cloud computing resource utilization,'' in Proc. Smart Cities, Improving Quality Life Using ICT IoT (HONET-ICT), Islamabad, Pakistan, Oct. Zhang, ''Improved LSTM-based prediction method for highly variable workload and resources in clouds,'' in Proc. (SMC), Toronto, ON, Canada, Oct. Goyal, '' Workload analysis of cloud resources using time series and machine learning prediction ,'' in Proc. (CSDE), Melbourne, VIC, Australia, Dec.
+
+----- para_id: 53 -----
+Section: What
+
+Text:
+Kumar, '' Resource provisioning in cloud using ARIMA and LSTM technique,'' in Proc. IEEE 2nd Mysore Sub Sect. Xu, ''RPTCN: Resource prediction for high-dynamic workloads in clouds based on deep learning,'' in Proc. (CLUSTER), Portland, OR, USA, Sep. Liu, ''DEARS: A deep learning based elastic and automatic resource scheduling framework for cloud applications ,'' in Proc. Commun., Big Data Cloud Comput., Social Comput. (ISPA/IUCC/BDCloud/SocialCom/SustainCom), Melbourne, VIC, Australia, Dec. Magableh, '' Predictive analytics in mental health leveraging LLM embeddings and machine learning models for social media analysis ,'' Int. Challis, ''Signal processing,'' in Experimental Methods in Biome- chanics. Cham, Switzerland: Springer, 2021, doi: 10.1007/978-3-030- 52256-8_4. Paarmann, ''Butterworth filters,'' in Design and Analysis of Analog Filters (The International Series in Engineering and Computer Science), vol. Boston, MA, USA: Springer, 2003, doi: 10.1007/0-306-48012- 3_3. SMOTE for Imbalanced Classification With Python. Available: https://www.analyticsvidhya.com/blog/2020/10/overcoming- class-imbalance-using-smote-techniques [33] R. Mathur, ''Ensemble learning method using stacking with base learner: A comparison,'' in Proc. Harvey, ''ARIMA models,'' in The New Palgrave (Time Series and Statistics), J. London, U.K.: Palgrave Macmillan, 1990, doi: 10.1007/978-1-349-20865-4_2. Snyder, Forecasting With Exponential Smoothing: The State Space Approach.
+
+----- para_id: 54 -----
+Section: What
+
+Text:
+Cham, Switzer- land: Springer, 2008, doi: 10.1007/978-3-540-71918-2. Tibshirani, ''Linear regression,'' in An Introduction to Statistical Learning (Springer Texts in Statistics). New York, NY, USA: Springer, 2021, doi: 10.1007/978-1-0716-1418-1_3. Zhang, ''New machine learning algorithm: Random forest,'' in Information Computing and Applications (Lecture Notes in Computer Science), vol. Berlin, Germany: Springer, 2012, doi: 10.1007/978-3-642-34062-8. Skansi, ''Feedforward neural networks,'' in Introduction to Deep Learn- ing (Undergraduate Topics in Computer Science). Cham, Switzerland: Springer, 2018, doi: 10.1007/978-3-319-73004-2_4. Singh, ''Convolutional neural network: An overview and application in image classification,'' in Proc. Singapore: Springer, 2022, doi: 10.1007/978-981-16- 4538-9_15. Hager, ''Temporal convolutional networks: A unified approach to action segmentation,'' in Proc. ECCV Workshops, in Lecture Notes in Computer Science, vol. Cham, Switzerland: Springer, 2016, pp. Kremer, ''Recurrent neural networks,'' in Handbook on Neural Information Processing (Intelligent Systems Reference Library), vol. Berlin, Heidelberg: Springer, 2013, doi: 10.1007/978-3-642- 36657-4_2. Available: https://towardsdatascience.com/understanding-gru-networks- 2ef37df6c9be [43] K. James, ''Overview of long short-term memory neural networks,'' in Deep Learning Classifiers With Memristive Networks (Modeling and Optimization in Science and Technologies), vol.
+
+----- para_id: 55 -----
+Section: What
+
+Text:
+Cham, Switzerland: Springer, 2020, doi: 10.1007/978-3- 030-14524-8_11. Quinlan, ''Induction of decision trees,'' Mach. Hart, ''Nearest neighbor pattern classification,'' IEEE Trans. Cramer, ''The origins and development of the logit model,'' in Logit Models From Economics and Other Fields. Strickland, ''Neural networks: An introduction,'' in Physics of Neural Networks, 2nd ed. Berlin, Germany: Springer, 1995, doi: 10.1007/978-3-642-57760-4. Available: https://www.digitalocean.com [50] Google Cloud . What is a Virtual Machine ? Available: https:// cloud .google.com/learn/what-is-a-virtual- machine [51] Prometheus. Available: https:// prometheus.io [52] Zabbix. Available: https:// www.zabbix.com [53] MDN Web Docs: HTTP Response Status Codes. Available: https://developer.mozilla.org/en-U.S./ docs/Web/HTTP/ Status [54] Statsmodels. 31, 2024, '' Cloud stateless system performance metrics and status ,'' IEEE Dataport, doi: 10.21227/8wf2- 2y40. Available: https://www.scribbr.com/ statistics/pearson-correlation-coefficient [59] B. Elbow Method for Finding the Optimal Number of Clusters in K-Means. Available: https://www.analyticsvidhya.com/blog/2021/01/in- depth-intuition-of-k-means-clustering-algorithm-in- machine -learning [60] D. Available: https://www.sciencedirect.com/topics/computer- science/integer-overflow [62] W. Bayesian Optimization Concept Explained in Layman Terms. Available: https://towardsdatascience.com/bayesian-optimization- concept-explained-in-layman-terms-1d2bcdeaf12f [63] J.
+
+----- para_id: 56 -----
+Section: What
+
+Text:
+A Gentle Introduction to Imbalanced Classification. What is the Difference Between Micro and Macro Averaging? Available: https://www.educative.io/answers/what-is-the-difference-between-micro- and-macro-averaging From 2006 to 2010, he was a Software Engineer with Thomson Reuters. From 2012 to 2013, he was a Senior Software Engineer with Punsarn Asia. From 2013 to 2016, he was a Research Assistant with the National Institute of Informatics. He is currently an Assistant Professor with the King Mongkut's Institute of Technology Ladkrabang. NUTT CHAIRATANA received the B.Eng. degree in computer innovation engineering from the King Mongkut's Institute of Technology Ladkrabang, Bangkok, Thailand, in 2022, where he is cur- rently pursuing the M.Eng. degree in robotics and computational intelligence systems with the Department of Robotics and AI Engineering. From 2022 to 2023, he was a Software Engineer with RentSpree. He is a Machine Learning Engi- neer with Kasikorn Business-Technology Group, Thailand. RATHACHAI CHAWUTHAI received the B.Eng. degree in computer engineering from the King Mongkut's Institute of Technology Ladkrabang, Bangkok, Thailand, in 2006; the M.Eng. degree in information management from Asian Institute of Technology, Pathum Thani, Thailand, in 2012; and the Ph.D. degree in informatics from SOKENDAI and National Institute of Informatics, Kanagawa, Japan, in 2016.

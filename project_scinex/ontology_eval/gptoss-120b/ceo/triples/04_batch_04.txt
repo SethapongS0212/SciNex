@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 64bdc3bdf683 -----
+TRIPLE:     (kick activation method)  --addresses-->  (hand-free operation issue)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: A kick activation method is one of solutions for addressing a hand-free operation issue.
+
+----- triple_id: 645d933953a1 -----
+TRIPLE:     (Random Forest (RF))  --comparesagainst-->  (Artificial Neural Network (ANN))
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: Furthermore, the Random Forest (RF) technique consistently provided a similar and improved F1 score compared to Logistic Regression (LR), Decision Tree (DT), K-Nearest Neighbor (KNN), and Artificial Neural Network (ANN).
+
+----- triple_id: 4b4d7242c86d -----
+TRIPLE:     (collaborative filtering method)  --produces-->  (predictive scores)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: For link prediction in a bipartite graph, the collaborative filtering method [4], which gives predictive scores for missing fungus-host pairs based on number of common hosts among fungi, is used.
+
+----- triple_id: afe23cbfeafe -----
+TRIPLE:     (Standard Filter-Block)  --comprises-->  (3 × 3 convolution layer)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: Standard Filter-Block consists of an initial 3 × 3 convolution layer where the number of filters can be specified as needed, without using bias or activation function, with padding set to 'same' and stride = 1.
+
+----- triple_id: 9832890d5fe2 -----
+TRIPLE:     (precision)  --evaluates-->  (0.923)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: In order to assess the model's accuracy and robustness, precision of 0.923, accuracy of 0.974 and IoU of 0.612 are evaluated.
+
+----- triple_id: 2e61c2bb0f06 -----
+TRIPLE:     (low- cost portable spectrophotometer)  --designedfor-->  (automatic image processing and analysis)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: This study presents the development and evaluation of a novel, low- cost portable spectrophotometer designed for automatic image processing and analysis using machine learning techniques.
+
+----- triple_id: 641199fe127b -----
+TRIPLE:     (RT-DETR-L)  --evaluatedon-->  (COCO val2017)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: For example, RT-DETR-L achieves 53.0% mean average precision (mAP) on COCO val2017 and 114 frames per second (FPS) on an NVIDIA Tesla T4 GPU, while RT-DETR-X achieves 54.8% AP, outperforming existing YOLO-based detectors18.
+
+----- triple_id: 2e56936e044b -----
+TRIPLE:     (final output model)  --trainedon-->  (entire dataset)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: The final output model was trained on the entire dataset (including oversamples) using these selected features.
+
+----- triple_id: 3de5f9134d9a -----
+TRIPLE:     (test set)  --splitfrom-->  (time-series data)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: The raw data, together with road data from Thailand, were processed into time-series data of the average hourly travel time on each road segment in 2019, and the time-series data were split into a training set and a test set, where the sliding window size was 24.
+
+----- triple_id: 2ceaca46553a -----
+TRIPLE:     (Random Forest model)  --uses-->  (explicit geometric features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: the classification of Random Forest model offers a methodological alternative that utilizes explicit geometric features, which are more accessible for clinical review than the latent representations in 'black-box' deep learning models.

@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 16183ea6eb3c -----
+TRIPLE:     (Initial exploration)  --encompasses-->  (Gaussian Process (GP))
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  Relates a research domain to the research tasks that fall within its scope
+SOURCE SENTENCE: Initial exploration encompassed ordinary least-squares regression, ridge regression, k-Nearest Neighbours (KNN) [29], Gaussian Process (GP) [30], Decision Tree (DT) [31], Random Forest (RF) [32], Support Vector Regression (SVR) [33], and Multilayer Perceptron (MLP) [34].
+
+----- triple_id: 99110f5b8ed9 -----
+TRIPLE:     (RT-DETR)  --trainedon-->  (eye landmark dataset)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: The RT-DETR model was finalized by training on the complete eye landmark dataset.
+
+----- triple_id: 980021931f16 -----
+TRIPLE:     (LTrain)  --splitfrom-->  (LExist)
+PREDICATE DEFINITION: Dataset → Dataset  |  Records that a dataset partition was derived from a larger source dataset
+SOURCE SENTENCE: The remaining 80% of LExist becomes LTrain.
+
+----- triple_id: 5c9dea7e58e8 -----
+TRIPLE:     (cSysGuard)  --configures-->  (observation steps and prediction steps)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: cSysGuard allows the adjustment of these parameters to meet user-specific requirements.
+
+----- triple_id: 4801b83a6530 -----
+TRIPLE:     (GProjFungi)  --extractedfrom-->  (interspecies interaction dataset)
+PREDICATE DEFINITION: ? → AcademicPaper  |  Links an extracted entity to the academic paper it was extracted from.
+SOURCE SENTENCE: A closer look at the projection of fungi (NFungi-projection or GProjFungi) from the in- terspecies interaction dataset shows that the degrees of most fungi are very low and some of them do not have neighbors, so the collaborative filtering alone does not provide enough prediction for this situation.
+
+----- triple_id: 701aa7f75584 -----
+TRIPLE:     (Ali Farhadi)  --affiliatedwith-->  (University of Washington)
+PREDICATE DEFINITION: Agent → Organisation  |  Associates an agent with an organisation to which they are professionally attached during a research activity
+SOURCE SENTENCE: In 2015, Joseph Redmon and Ali Farhadi from the University of Washington created the cutting-edge object recognition algorithm called YOLO (You Only Look Once) [17].
+
+----- triple_id: 9780f0bce0cd -----
+TRIPLE:     (cSysGuard)  --employs-->  (multi-layered stacking ensemble approach)
+PREDICATE DEFINITION: Organisation → Person  |  Associates an organisation with the persons who work for or are institutionally employed by it at the time of a research publication
+SOURCE SENTENCE: Rather than building upon a single meta-model or weight averaging, cSysGuard employs a multi-layered stacking ensemble approach with a weighted averaging strategy, effectively amalgamating the contributions of all models in the output generation.
+
+----- triple_id: 75b0e45cd84a -----
+TRIPLE:     (GBipt)  --producedby-->  (RDF data)
+PREDICATE DEFINITION: ResearchArtifact → ResearchProcess  |  Links a research artifact back to the research process that generated it
+SOURCE SENTENCE: The initial input of this model is the bipartite graph of interspecies interaction, GBipt=(NFungi, NHosts, LExist), that is generated from RDF data as presented in the first step of Fig.
+
+----- triple_id: 8e3074e65793 -----
+TRIPLE:     (OC-SORT)  --publishedin-->  (CVPR 2023)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  Links an academic paper to the publication venue in which it appears, such as a journal, conference, or workshop
+SOURCE SENTENCE: OC-SORT was published in CVPR 2023.
+
+----- triple_id: d2e329c99652 -----
+TRIPLE:     (Urban Informatics Center)  --locatedin-->  (Thailand)
+PREDICATE DEFINITION: Organisation → Place  |  Associates an organisation with the geographic place in which it is situated
+SOURCE SENTENCE: Our research group, Urban Informatics Center, has a mission to improve the smart mobility, and one ultimate goal is to build a predictive traffic model that can serve the travel time prediction in Thailand .

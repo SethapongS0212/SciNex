@@ -1,0 +1,1242 @@
+{
+  "a": "claude",
+  "b": "gemini",
+  "compared": 110,
+  "unmatched": 130,
+  "unscorable": 0,
+  "overall": {
+    "n": 110,
+    "agreement": 0.591,
+    "kappa": 0.342,
+    "confusion": {
+      "CORRECT": {
+        "CORRECT": 12,
+        "PARTIAL": 11,
+        "INCORRECT": 4
+      },
+      "PARTIAL": {
+        "CORRECT": 3,
+        "PARTIAL": 9,
+        "INCORRECT": 25
+      },
+      "INCORRECT": {
+        "CORRECT": 0,
+        "PARTIAL": 2,
+        "INCORRECT": 44
+      }
+    }
+  },
+  "binary": {
+    "n": 110,
+    "agreement": 0.836,
+    "kappa": 0.48,
+    "confusion": {
+      "CORRECT": {
+        "CORRECT": 12,
+        "NOT_CORRECT": 15
+      },
+      "NOT_CORRECT": {
+        "CORRECT": 3,
+        "NOT_CORRECT": 80
+      }
+    }
+  },
+  "precision": {
+    "claude": 0.245,
+    "gemini": 0.136
+  },
+  "by_extractor": {
+    "relation": {
+      "n": 58,
+      "agreement": 0.621,
+      "kappa": 0.386,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 8,
+          "PARTIAL": 4,
+          "INCORRECT": 1
+        },
+        "PARTIAL": {
+          "CORRECT": 1,
+          "PARTIAL": 5,
+          "INCORRECT": 14
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 2,
+          "INCORRECT": 23
+        }
+      },
+      "precision_a": 0.224,
+      "precision_b": 0.155
+    },
+    "relation_scinex": {
+      "n": 52,
+      "agreement": 0.558,
+      "kappa": 0.296,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 4,
+          "PARTIAL": 7,
+          "INCORRECT": 3
+        },
+        "PARTIAL": {
+          "CORRECT": 2,
+          "PARTIAL": 4,
+          "INCORRECT": 11
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 21
+        }
+      },
+      "precision_a": 0.269,
+      "precision_b": 0.115
+    }
+  },
+  "by_predicate": {
+    "addresses": {
+      "n": 6,
+      "agreement": 0.667,
+      "kappa": 0.455,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 1,
+          "PARTIAL": 1,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 1,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 3
+        }
+      },
+      "precision_a": 0.333,
+      "precision_b": 0.333
+    },
+    "comparesagainst": {
+      "n": 6,
+      "agreement": 0.667,
+      "kappa": 0.478,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 1,
+          "PARTIAL": 1,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 2,
+          "INCORRECT": 1
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 1
+        }
+      },
+      "precision_a": 0.333,
+      "precision_b": 0.167
+    },
+    "employs": {
+      "n": 6,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 6
+        }
+      },
+      "precision_a": 0.0,
+      "precision_b": 0.0
+    },
+    "supports": {
+      "n": 5,
+      "agreement": 0.6,
+      "kappa": 0.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 2
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 3
+        }
+      },
+      "precision_a": 0.0,
+      "precision_b": 0.0
+    },
+    "cites": {
+      "n": 4,
+      "agreement": 0.75,
+      "kappa": 0.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 3
+        }
+      },
+      "precision_a": 0.0,
+      "precision_b": 0.0
+    },
+    "designedfor": {
+      "n": 6,
+      "agreement": 0.667,
+      "kappa": 0.333,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 3,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 2,
+          "PARTIAL": 1,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 0.5,
+      "precision_b": 0.833
+    },
+    "producedby": {
+      "n": 2,
+      "agreement": 0.0,
+      "kappa": -0.333,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 1
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 0.5,
+      "precision_b": 0.0
+    },
+    "encompasses": {
+      "n": 3,
+      "agreement": 0.667,
+      "kappa": 0.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 1
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 2
+        }
+      },
+      "precision_a": 0.333,
+      "precision_b": 0.0
+    },
+    "comprises": {
+      "n": 6,
+      "agreement": 0.5,
+      "kappa": 0.28,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 2,
+          "PARTIAL": 1,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 2
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 1
+        }
+      },
+      "precision_a": 0.5,
+      "precision_b": 0.333
+    },
+    "evaluates": {
+      "n": 5,
+      "agreement": 0.8,
+      "kappa": 0.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 1
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 4
+        }
+      },
+      "precision_a": 0.0,
+      "precision_b": 0.0
+    },
+    "splitfrom": {
+      "n": 5,
+      "agreement": 0.6,
+      "kappa": 0.375,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 1,
+          "PARTIAL": 1,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 1
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 2
+        }
+      },
+      "precision_a": 0.4,
+      "precision_b": 0.2
+    },
+    "produces": {
+      "n": 5,
+      "agreement": 0.4,
+      "kappa": 0.118,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 2,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 1
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 1
+        }
+      },
+      "precision_a": 0.4,
+      "precision_b": 0.0
+    },
+    "publishedin": {
+      "n": 3,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 3
+        }
+      },
+      "precision_a": 0.0,
+      "precision_b": 0.0
+    },
+    "motivates": {
+      "n": 2,
+      "agreement": 0.5,
+      "kappa": 0.333,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 1
+        }
+      },
+      "precision_a": 0.5,
+      "precision_b": 0.0
+    },
+    "affiliatedwith": {
+      "n": 5,
+      "agreement": 0.8,
+      "kappa": 0.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 1
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 4
+        }
+      },
+      "precision_a": 0.0,
+      "precision_b": 0.0
+    },
+    "achieves": {
+      "n": 6,
+      "agreement": 0.5,
+      "kappa": 0.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 3,
+          "PARTIAL": 1,
+          "INCORRECT": 2
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 1.0,
+      "precision_b": 0.5
+    },
+    "evaluatedon": {
+      "n": 5,
+      "agreement": 0.8,
+      "kappa": 0.545,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 1
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 3
+        }
+      },
+      "precision_a": 0.0,
+      "precision_b": 0.0
+    },
+    "trainedon": {
+      "n": 5,
+      "agreement": 0.2,
+      "kappa": 0.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 4
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 0.0,
+      "precision_b": 0.0
+    },
+    "uses": {
+      "n": 5,
+      "agreement": 0.2,
+      "kappa": -0.053,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 1
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 2
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 0.4,
+      "precision_b": 0.0
+    },
+    "configures": {
+      "n": 6,
+      "agreement": 0.667,
+      "kappa": 0.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 2
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 4
+        }
+      },
+      "precision_a": 0.0,
+      "precision_b": 0.0
+    },
+    "reports": {
+      "n": 3,
+      "agreement": 0.333,
+      "kappa": 0.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 2
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 0.0,
+      "precision_b": 0.0
+    },
+    "locatedin": {
+      "n": 4,
+      "agreement": 0.25,
+      "kappa": -0.2,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 1
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 1
+        }
+      },
+      "precision_a": 0.25,
+      "precision_b": 0.0
+    },
+    "achievesresult": {
+      "n": 3,
+      "agreement": 0.667,
+      "kappa": 0.5,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 1,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 1
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 0.333,
+      "precision_b": 0.333
+    },
+    "extractedfrom": {
+      "n": 2,
+      "agreement": 0.0,
+      "kappa": 0.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 2
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 0.0,
+      "precision_b": 0.0
+    },
+    "mentions": {
+      "n": 2,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 2
+        }
+      },
+      "precision_a": 0.0,
+      "precision_b": 0.0
+    }
+  },
+  "disagreements": [
+    {
+      "triple_id": "4ab0e4e18d38",
+      "paper": "eyelandmark2024",
+      "extractor": "relation_scinex",
+      "subject": "Eye Landmarks Detection using RT-DETR with Rules",
+      "predicate": "addresses",
+      "object": "ocular health",
+      "source_sentence": "With the assistance of Eye Landmarks Detection using RT-DETR with Rules, clinicians can glean essential information about ocular health, facilitating early detection , accurate diagnosis , and tailored treatment strategies for a spectrum of eye diseases.",
+      "claude": "PARTIAL",
+      "gemini": "CORRECT",
+      "note": "implied ('with the assistance of'), not stated as addressing"
+    },
+    {
+      "triple_id": "9ce35f3eb187",
+      "paper": "eyelandmark2024",
+      "extractor": "relation_scinex",
+      "subject": "dataset",
+      "predicate": "producedby",
+      "object": "rules-based selection algorithms",
+      "source_sentence": "This dataset will undergo further preprocessing using rules-based selection algorithms proposed in this paper",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "dataset is preprocessed BY the algorithms, not produced by them"
+    },
+    {
+      "triple_id": "24dca9085540",
+      "paper": "gamlprop2025",
+      "extractor": "relation_scinex",
+      "subject": "test set",
+      "predicate": "splitfrom",
+      "object": "100 data points",
+      "source_sentence": "The remaining 100 data points constituted the test set and were used to estimate the performance of the final model.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "the test set IS the 100 points, not split from them"
+    },
+    {
+      "triple_id": "a66e1b872e9b",
+      "paper": "llamacorrupt2025",
+      "extractor": "relation",
+      "subject": "BERT",
+      "predicate": "addresses",
+      "object": "language understanding and prediction",
+      "source_sentence": "BERT will assess the quality of the language understanding and prediction",
+      "claude": "CORRECT",
+      "gemini": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "7c4bf728830e",
+      "paper": "llamacorrupt2025",
+      "extractor": "relation",
+      "subject": "model",
+      "predicate": "produces",
+      "object": "baseline answers",
+      "source_sentence": "The model's responses, before any parameter corruption is introduced, are then used as baseline answers for comparison.",
+      "claude": "CORRECT",
+      "gemini": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "cfbd64ee41c9",
+      "paper": "parkingyolo2023",
+      "extractor": "relation",
+      "subject": "Panasonic V series",
+      "predicate": "produces",
+      "object": "video footage",
+      "source_sentence": "The CCTV model utilized at KMITL is the Panasonic V series, which offers a 2530 frames per second (FPS) capture rate and a 1080P resolution.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "camera is a tool, not a ResearchProcess; production only implied"
+    },
+    {
+      "triple_id": "3cd66bf149ed",
+      "paper": "parkingyolo2023",
+      "extractor": "relation",
+      "subject": "ResNet34",
+      "predicate": "trainedon",
+      "object": "CN- RPark+EXT",
+      "source_sentence": "Grbi´c and Koch [24] proposed occu- pancy classification and a parking space detection algorithm, wherein parking spaces were determined as occupied or empty using a trained ResNet34 deep classifier; they extensively evaluated this approach on publicly known parking datasets such as PKLot [25] and CN- RPark+EXT [26]",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "source sentence does not clearly state training on that corpus"
+    },
+    {
+      "triple_id": "2720fb182613",
+      "paper": "parkingyolo2023",
+      "extractor": "relation",
+      "subject": "SPPF Module",
+      "predicate": "uses",
+      "object": "final layer of the backbone",
+      "source_sentence": "At the final layer of the backbone, the SPPF Module is used.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "inverted: the module is used AT the layer, it does not use the layer"
+    },
+    {
+      "triple_id": "ecee2b023f4a",
+      "paper": "pesticide2025",
+      "extractor": "relation",
+      "subject": "five-parameter model of the reference spectrum",
+      "predicate": "comprises",
+      "object": "width",
+      "source_sentence": "A five-parameter model of the reference spectrum was established, comprising the rectangle's centre coordinates (x,y), width, length, and horizontal angle.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "'width' is a parameter, not a ResearchProcess"
+    },
+    {
+      "triple_id": "64114f4a20b9",
+      "paper": "pesticide2025",
+      "extractor": "relation_scinex",
+      "subject": "XGB",
+      "predicate": "achieves",
+      "object": "superior performance in most cases",
+      "source_sentence": "XGB demonstrated superior performance in most cases due to its effective handling of sparse data and its built-in regularization contributing to the prevention of overfitting.",
+      "claude": "CORRECT",
+      "gemini": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "220f2ca23795",
+      "paper": "pesticide2025",
+      "extractor": "relation_scinex",
+      "subject": "low-cost spectrophotometer",
+      "predicate": "produces",
+      "object": "two parallel spectral bands",
+      "source_sentence": "The low-cost spectrophotometer developed is straightforward to assemble and functions as intended . It produces two parallel spectral bands: one for reference and another for analysis.",
+      "claude": "CORRECT",
+      "gemini": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "d45e6415740b",
+      "paper": "reststop2018",
+      "extractor": "relation",
+      "subject": "proper range",
+      "predicate": "configures",
+      "object": "300 km from s1",
+      "source_sentence": "The proper range can be configured such as 300 km from s1.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "object is a value, not an Experiment"
+    },
+    {
+      "triple_id": "63d265f90c0e",
+      "paper": "reststop2018",
+      "extractor": "relation_scinex",
+      "subject": "report",
+      "predicate": "reports",
+      "object": "accuracy of our approach",
+      "source_sentence": "In this step, the report is generated by grouping the vtype and time1 in terms of daytime and nighttime with the average of AUC in these groups in order to demonstrate the accuracy of our approach.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "subject 'report' is not the AcademicPaper itself"
+    },
+    {
+      "triple_id": "80a10f667548",
+      "paper": "roadwaylight2018",
+      "extractor": "relation",
+      "subject": "Central Road Database of Thailand",
+      "predicate": "locatedin",
+      "object": "Thailand",
+      "source_sentence": "In Thailand, IRIs are recorded in the Central Road Database of Thailand,(20) so they can be used for determining precise coefficients.",
+      "claude": "CORRECT",
+      "gemini": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "f99125a31eef",
+      "paper": "roadwaylight2018",
+      "extractor": "relation",
+      "subject": "gyro sensor",
+      "predicate": "supports",
+      "object": "pavement failure detection",
+      "source_sentence": "This work confirms the effectiveness of using a gyro sensor in pavement failure detection.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "a sensor is a tool, not an ExperimentalMeasurement"
+    },
+    {
+      "triple_id": "489e76ede0c5",
+      "paper": "strabismus2026",
+      "extractor": "relation",
+      "subject": "SMOTE",
+      "predicate": "cites",
+      "object": "Chawla et al.",
+      "source_sentence": "SMOTE (Synthetic Minority Over-sampling Technique) is an oversampling method used to address class imbalance. It was introduced by Chawla et al.",
+      "claude": "INCORRECT",
+      "gemini": "PARTIAL",
+      "note": "cites is Paper->Paper; SMOTE is a method"
+    },
+    {
+      "triple_id": "d939e1fcda2a",
+      "paper": "strabismus2026",
+      "extractor": "relation",
+      "subject": "landmark P9",
+      "predicate": "locatedin",
+      "object": "middle-gaze image",
+      "source_sentence": "For example, landmark P9 of the left eye in a middle-gaze image ('img0001') was recorded at coordinates (492, 419) (Fig.",
+      "claude": "INCORRECT",
+      "gemini": "PARTIAL",
+      "note": "locatedIn is Organisation->Place; a landmark and an image are neither"
+    },
+    {
+      "triple_id": "456f768b049e",
+      "paper": "strabismus2026",
+      "extractor": "relation",
+      "subject": "Valente et al.8",
+      "predicate": "reports",
+      "object": "sensitivity of 0.97",
+      "source_sentence": "Valente et al.8 employed a cover-test–based automated diagnosis with digital video , reporting accuracy of 0.94, sensitivity of 0.97, and specificity = 0.73.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "object is a result, not a ResearchProcess"
+    },
+    {
+      "triple_id": "104fb0c467c6",
+      "paper": "strabismus2026",
+      "extractor": "relation_scinex",
+      "subject": "Random Forest model",
+      "predicate": "achieves",
+      "object": "accuracy of 0.95",
+      "source_sentence": "A Random Forest model, which showed high performance with an accuracy of 0.95, sensitivity of 0.96, and specificity of 0.94, was then used to classify these features.",
+      "claude": "CORRECT",
+      "gemini": "INCORRECT",
+      "note": ""
+    },
+    {
+      "triple_id": "8dfe4a2ea900",
+      "paper": "strabismus2026",
+      "extractor": "relation_scinex",
+      "subject": "Valente et al.8",
+      "predicate": "achievesresult",
+      "object": "sensitivity of 0.97",
+      "source_sentence": "Valente et al.8 employed a cover-test–based automated diagnosis with digital video , reporting accuracy of 0.94, sensitivity of 0.97, and specificity = 0.73.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "subject is a paper, not a Model"
+    },
+    {
+      "triple_id": "c01ca631da78",
+      "paper": "strabismus2026",
+      "extractor": "relation_scinex",
+      "subject": "SMOTE",
+      "predicate": "evaluatedon",
+      "object": "the training data",
+      "source_sentence": "ensuring that SMOTE was applied to the training data and thus avoiding any data leakage into the test set",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "SMOTE was APPLIED to the training data, not evaluated on it"
+    },
+    {
+      "triple_id": "acf62f848d19",
+      "paper": "strabismus2026",
+      "extractor": "relation_scinex",
+      "subject": "RT1–RT5 features",
+      "predicate": "extractedfrom",
+      "object": "detected landmarks of all participants",
+      "source_sentence": "The RT1–RT5 features were extracted from the detected landmarks of all participants to serve as structured inputs for the final Random Forest classifier.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "extractedFrom range is AcademicPaper; object is landmarks"
+    },
+    {
+      "triple_id": "91040cc4ac03",
+      "paper": "strabismus2026",
+      "extractor": "relation_scinex",
+      "subject": "RT-DETR",
+      "predicate": "uses",
+      "object": "IoU-aware query selection",
+      "source_sentence": "The decoder in RT-DETR used IoU-aware query selection and iterative refinement to produce final bounding boxes and confidence scores for each predicted landmark",
+      "claude": "CORRECT",
+      "gemini": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "9641558d99d6",
+      "paper": "trafficspeed2021",
+      "extractor": "relation_scinex",
+      "subject": "temporal-lagged associations",
+      "predicate": "extractedfrom",
+      "object": "feature selection process",
+      "source_sentence": "The temporal-lagged associations among kilometer stones, which were extracted during the feature selection process, are observed as a traffic -dependent network on roads for analyzing the traffic congestion spreads in the future.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "extractedFrom range is AcademicPaper; object is a process"
+    },
+    {
+      "triple_id": "c2a1b8c4371b",
+      "paper": "traveltime2022",
+      "extractor": "relation",
+      "subject": "travel time",
+      "predicate": "evaluates",
+      "object": "203.04 min",
+      "source_sentence": "There were 81,068 unique trucks with 2,010,270 trips and an average travel time of 203.04 min.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "'travel time' is not a named evaluation metric"
+    },
+    {
+      "triple_id": "ef4266e054cb",
+      "paper": "traveltime2022",
+      "extractor": "relation_scinex",
+      "subject": "LSTM",
+      "predicate": "uses",
+      "object": "feedback",
+      "source_sentence": "In more detail, the LSTM uses the connection of the feedback to analyze the sequences of data [26], so it is a well-known technique for time-series prediction .",
+      "claude": "CORRECT",
+      "gemini": "INCORRECT",
+      "note": ""
+    },
+    {
+      "triple_id": "38cb792b965a",
+      "paper": "vehiclemake2025",
+      "extractor": "relation",
+      "subject": "CTv2-DW",
+      "predicate": "trainedon",
+      "object": "dataset of car images",
+      "source_sentence": "In the experiments conducted on learning and testing car make recognition using CNN models, the well-known base models for classifying vehicle make and model [36], [37] were tested, which included VGG16 [35], InceptionV3 [9], ResNet50 [2], MobileNet [15], Yolo11m-cls [31] and the other three models, which are introduced in this paper, developed from three types of filter-blocks, resulting in three models: CTv1, CTv2-DW, and CTv2-DR.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "'dataset of car images' is generic, not a named training corpus"
+    },
+    {
+      "triple_id": "97cb5d9daeb3",
+      "paper": "vehiclemake2025",
+      "extractor": "relation_scinex",
+      "subject": "Depth-wise Separable Convolution",
+      "predicate": "comparesagainst",
+      "object": "1 × 1 Convolutional Dimension Reduction (Bottleneck) method",
+      "source_sentence": "The 1 × 1 Convolutional Dimension Reduction (Bottleneck) method can reduce size if the output filter count is not too high, but it increased training and prediction times compared to Depth-wise Separable Convolution.",
+      "claude": "CORRECT",
+      "gemini": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "17042ea746f7",
+      "paper": "vehiclemake2025",
+      "extractor": "relation_scinex",
+      "subject": "the goal of this work",
+      "predicate": "motivates",
+      "object": "study and create a smaller CNN model",
+      "source_sentence": "The goal of this work is to study and create a smaller CNN model that can be used on devices with limited resources, like embedded computers and embedded computer cameras, to figure out what kind of car it is from a front view picture.",
+      "claude": "CORRECT",
+      "gemini": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "5547cdc17a81",
+      "paper": "vehiclemake2025",
+      "extractor": "relation_scinex",
+      "subject": "each model type",
+      "predicate": "producedby",
+      "object": "different filter block",
+      "source_sentence": "Each model type was produced from a different filter block.",
+      "claude": "CORRECT",
+      "gemini": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "d86e8f687471",
+      "paper": "vehiclemake2025",
+      "extractor": "relation_scinex",
+      "subject": "CTv1",
+      "predicate": "trainedon",
+      "object": "dataset of car images",
+      "source_sentence": "In the experiments conducted on learning and testing car make recognition using CNN models, the well-known base models for classifying vehicle make and model [36], [37] were tested, which included VGG16 [35], InceptionV3 [9], ResNet50 [2], MobileNet [15], Yolo11m-cls [31] and the other three models, which are introduced in this paper, developed from three types of filter-blocks, resulting in three models: CTv1, CTv2-DW, and CTv2-DR.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "generic object, not a named training corpus"
+    },
+    {
+      "triple_id": "f98c0cd8be55",
+      "paper": "vehiclemake2025",
+      "extractor": "relation_scinex",
+      "subject": "Yolo11m-cls",
+      "predicate": "trainedon",
+      "object": "dataset of car images",
+      "source_sentence": "In the experiments conducted on learning and testing car make recognition using CNN models, the well-known base models for classifying vehicle make and model [36], [37] were tested, which included VGG16 [35], InceptionV3 [9], ResNet50 [2], MobileNet [15], Yolo11m-cls [31] and the other three models, which are introduced in this paper, developed from three types of filter-blocks, resulting in three models: CTv1, CTv2-DW, and CTv2-DR.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "generic object, not a named training corpus"
+    },
+    {
+      "triple_id": "b395cdfc7e71",
+      "paper": "videoseg2025",
+      "extractor": "relation",
+      "subject": "video",
+      "predicate": "splitfrom",
+      "object": "original recording",
+      "source_sentence": "The individual video refers to the footage that has been truncated to short duration from the original recording obtained during the graduation ceremonies at King Mongkut's Institute of Technology Ladkrabang (KMITL), 2023.",
+      "claude": "CORRECT",
+      "gemini": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "cf05bc455ea6",
+      "paper": "csysguard2024",
+      "extractor": "relation",
+      "subject": "dataset",
+      "predicate": "comprises",
+      "object": "approximately 8,000 data points",
+      "source_sentence": "The dataset [57] com- prises approximately 8,000 data points, each accumulated every 5 seconds.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "stated verbatim, but comprises is defined ResearchProcess->ResearchProcess; here Dataset->count of records"
+    },
+    {
+      "triple_id": "711d2d16ab6a",
+      "paper": "roadwaylight2018",
+      "extractor": "relation",
+      "subject": "ANN",
+      "predicate": "configures",
+      "object": "the learning rate is 0.001",
+      "source_sentence": "The configuration of ANN for our experiment is that there is one hidden layer having 3 units with a sigmoid activation function, the number of maximum iterations is 5000, the tolerance for the stopping criterion is 0.0001, and the learning rate is 0.001.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "hyperparameter is explicitly stated, but the spec should be the subject (ExperimentalSpecification->Experiment)"
+    },
+    {
+      "triple_id": "a411e40cfa5b",
+      "paper": "strabismus2026",
+      "extractor": "relation",
+      "subject": "RT1",
+      "predicate": "designedfor",
+      "object": "nasal and temporal scleral exposure",
+      "source_sentence": "Accordingly, RT1 and RT4 were designed to reflect nasal and temporal scleral exposure, RT2 and RT3 to reflect the position of the corneal light reflex within the horizontal corneal span, and RT5 to reflect visible iris width as an internal reference during gaze change.",
+      "claude": "PARTIAL",
+      "gemini": "CORRECT",
+      "note": "stated ('RT1 and RT4 were designed to reflect...'), but RT1 is a ratio feature, not a Model, and the object is not a ResearchTask"
+    },
+    {
+      "triple_id": "9a334a03a2f0",
+      "paper": "parkingyolo2023",
+      "extractor": "relation",
+      "subject": "Object tracking",
+      "predicate": "encompasses",
+      "object": "Multiple Object Tracking (MOT)",
+      "source_sentence": "Single Object Tracking (SOT) and Multiple Object Tracking (MOT) are the two cat- egories into which object tracking can be subdivided [30].",
+      "claude": "CORRECT",
+      "gemini": "INCORRECT",
+      "note": ""
+    },
+    {
+      "triple_id": "55767dd4e149",
+      "paper": "strabismus2026",
+      "extractor": "relation",
+      "subject": "landmark P9",
+      "predicate": "locatedin",
+      "object": "left eye",
+      "source_sentence": "For example, landmark P9 of the left eye in a middle-gaze image ('img0001') was recorded at coordinates (492, 419) (Fig.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "spatial fact is stated, but locatedIn is Organisation->Place and neither side is one"
+    },
+    {
+      "triple_id": "1dd81bdfc56c",
+      "paper": "vehiclemake2025",
+      "extractor": "relation",
+      "subject": "Symmetric Image-Half Flip preprocessing technique",
+      "predicate": "supports",
+      "object": "deal with the issue of occlusion",
+      "source_sentence": "In response, they suggested a Symmetric Image-Half Flip preprocessing technique to deal with the issue of occlusion .",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "stated as the purpose of the technique, but supports is ExperimentalMeasurement->ExperimentalOutcome; subject is a technique"
+    },
+    {
+      "triple_id": "9ba2cb4bd122",
+      "paper": "textaug2023",
+      "extractor": "relation",
+      "subject": "WangchanBERTa",
+      "predicate": "uses",
+      "object": "BPEmb data augmentation strategy",
+      "source_sentence": "In this paper, we used the BPEmb data augmentation strategy with a WangchanBERTa pre-trained embedding word approach and evaluated the performance of the augmented data using cosine similarity.",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "the paper uses both; the sentence does not state that WangchanBERTa itself uses BPEmb"
+    },
+    {
+      "triple_id": "54b91f40232d",
+      "paper": "vehiclemake2025",
+      "extractor": "relation_scinex",
+      "subject": "CTv1",
+      "predicate": "achieves",
+      "object": "highest weighted average F1 score (0.99)",
+      "source_sentence": "The CTv1 model took first place with the highest weighted average F1 score (0.99) and got a 1.00 F1 score for predicting Honda and Isuzu, with Toyota being the lowest at 0.98.",
+      "claude": "CORRECT",
+      "gemini": "INCORRECT",
+      "note": ""
+    },
+    {
+      "triple_id": "74bbe2a64824",
+      "paper": "roadwaylight2018",
+      "extractor": "relation_scinex",
+      "subject": "Bureau of Street Lighting",
+      "predicate": "affiliatedwith",
+      "object": "Los Angeles",
+      "source_sentence": "In this study, we refer to the guidelines from the Bureau of Street Lighting , Los Angeles.(14)",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "fact is stated but this is Organisation->Place - locatedIn, not affiliatedWith"
+    },
+    {
+      "triple_id": "efb3da8ff51e",
+      "paper": "parkingyolo2023",
+      "extractor": "relation_scinex",
+      "subject": "DeepSORT",
+      "predicate": "comparesagainst",
+      "object": "SORT (Simple Online Realtime Tracking )",
+      "source_sentence": "DeepSORT is an extension of SORT (Simple Online Realtime Tracking ) [11].",
+      "claude": "PARTIAL",
+      "gemini": "INCORRECT",
+      "note": "'DeepSORT is an extension of SORT' is an inheritance statement, not the benchmark comparison comparesAgainst calls for"
+    },
+    {
+      "triple_id": "809b1e1dc3fd",
+      "paper": "parkingyolo2023",
+      "extractor": "relation_scinex",
+      "subject": "object detection models",
+      "predicate": "comprises",
+      "object": "selection of region of interest",
+      "source_sentence": "Based on Zhao et al. [16], object detection models consist of three phases: selection of region of interest, extraction of features, and, finally, classification of objects .",
+      "claude": "CORRECT",
+      "gemini": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "e1418c2a14cf",
+      "paper": "strabismus2026",
+      "extractor": "relation_scinex",
+      "subject": "RT-DETR",
+      "predicate": "designedfor",
+      "object": "real-time performance",
+      "source_sentence": "RT-DETR is a transformer -based object detector designed for real-time performance.",
+      "claude": "PARTIAL",
+      "gemini": "CORRECT",
+      "note": "'designed for real-time performance' is stated, but the object is a performance property, not a ResearchTask"
+    }
+  ]
+}

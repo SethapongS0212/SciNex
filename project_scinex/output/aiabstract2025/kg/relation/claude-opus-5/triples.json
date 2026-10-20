@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Galactica",
+    "predicate": "designedfor",
+    "object": "understanding domain-specific semantics",
+    "object_type": "Task",
+    "source_sentence": "We leverage Galactica, a transformer-based language model trained on scientific literature and designed to understand domain-specific semantics, including technical terms, equations, and citation patterns [15].",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "I INTRODUCTION"
+  },
+  {
+    "subject": "Galactica",
+    "predicate": "produces",
+    "object": "contextualized embeddings",
+    "object_type": "Other",
+    "source_sentence": "Galactica produces contextualized embeddings that serve as strong representations for downstream analysis of scientific texts.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "I INTRODUCTION"
+  },
+  {
+    "subject": "GPTZero",
+    "predicate": "uses",
+    "object": "GPT-2 perplexity",
+    "object_type": "Metric",
+    "source_sentence": "GLTR [17] visualizes to- ken predictability distributions, while GPTZero [13] applies threshold-based heuristics using GPT-2 perplexity.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "II RELATED WORK"
+  },
+  {
+    "subject": "DetectGPT",
+    "predicate": "uses",
+    "object": "curvature-based likelihood shifts",
+    "object_type": "Method",
+    "source_sentence": "More re- cently, DetectGPT [9] proposed using curvature-based like- lihood shifts to detect generated text in a zero-shot manner.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "II RELATED WORK"
+  },
+  {
+    "subject": "Galactica",
+    "predicate": "produces",
+    "object": "768-dimensional contextual embeddings",
+    "object_type": "Other",
+    "source_sentence": "Galactica is pre-trained on scientific corpora (papers, textbooks, citations) and produces 768-dimensional contextual embeddings well- suited for academic language.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "IV METHODOLOGY"
+  },
+  {
+    "subject": "Graph Convolutional Network",
+    "predicate": "addresses",
+    "object": "node classification",
+    "object_type": "Task",
+    "source_sentence": "We apply a 2-layer Graph Convolutional Network (GCN) for node classification.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "IV METHODOLOGY"
+  },
+  {
+    "subject": "GCNs",
+    "predicate": "produces",
+    "object": "structure-aware node representations",
+    "object_type": "Other",
+    "source_sentence": "GCNs aggregate information from a node's local neighborhood to compute structure-aware node representations:",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "IV METHODOLOGY"
+  },
+  {
+    "subject": "GCN",
+    "predicate": "uses",
+    "object": "PyTorch Geometric",
+    "object_type": "Tool",
+    "source_sentence": "Training the GCN model over the full graph (28,662 nodes) required approximately 14 minutes on a T4 GPU using PyTorch Geometric.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "IV METHODOLOGY"
+  },
+  {
+    "subject": "recall",
+    "predicate": "evaluates",
+    "object": "88%",
+    "object_type": "Other",
+    "source_sentence": "The true positive rate (recall) for AI-generated content was 88%, while specificity on human-written content was 91%, confirm- ing the model's reliability in both detection and discrimination.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "V EXPERIMENTS AND RESULTS"
+  },
+  {
+    "subject": "specificity",
+    "predicate": "evaluates",
+    "object": "91%",
+    "object_type": "Other",
+    "source_sentence": "The true positive rate (recall) for AI-generated content was 88%, while specificity on human-written content was 91%, confirm- ing the model's reliability in both detection and discrimination.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "V EXPERIMENTS AND RESULTS"
+  },
+  {
+    "subject": "Graph Attention Network",
+    "predicate": "comparesagainst",
+    "object": "GCN",
+    "object_type": "Model",
+    "source_sentence": "We also tested the use of a Graph Attention Network (GAT) with k = 5, which showed a small performance gain (+0.01 F1) over the GCN baseline.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "V EXPERIMENTS AND RESULTS"
+  },
+  {
+    "subject": "Galactica + GNN",
+    "predicate": "achieves",
+    "object": "94.8% classified as human-written",
+    "object_type": "Other",
+    "source_sentence": "Our Galactica + GNN model classified 94.8% of the arXiv abstracts as human-written, while flagging 5.2% as likely AI- generated.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "V EXPERIMENTS AND RESULTS"
+  }
+]

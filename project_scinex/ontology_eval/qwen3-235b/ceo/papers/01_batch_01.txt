@@ -1,0 +1,84 @@
+########## RUBRIC — C6 (per paper) ##########
+
+You are grading SEMANTIC CONSISTENCY across one paper's whole extracted triple set.
+
+Look for contradictions and incoherence, not for individual wrong triples (those are C1/C4):
+  * the same concept used with conflicting meanings or at conflicting levels
+  * mutually exclusive relations asserted between the same pair
+  * hierarchy/direction violations (X part-of Y and Y part-of X; a task "addressing" a task)
+  * the same real entity split across surface variants that should be one node
+    ("RT-DETR" / "RT-DETR model" / "the RT-DETR")
+  * a relation whose domain/range is systematically misused across this paper
+
+C6:
+  CONSISTENT     no contradictions; surface variants are minor and would merge cleanly
+  MINOR_ISSUES   some duplication or loose typing, but nothing self-contradictory
+  CONTRADICTORY  real contradictions, or systematic misuse of a relation
+
+Return ONE JSON object, no fences:
+
+{"verdicts": [
+  {"paper": "<id>", "C6": "...", "issues": ["..."], "note": "<short>"}
+]}
+
+Grade the following 3 papers on C6.
+
+----- paper: llamacorrupt2025 -----
+ALL TRIPLES (23):
+    (Llama -3.2-1B-Instruct) --uses--> (Transformer)
+    (Llama -3.2-1B-Instruct) --trainedon--> (Hugging Face)
+    (performance) --evaluates--> (BERT's F1 score)
+    (performance) --evaluates--> (ROUGE metrics)
+    (Llama -3.2-1B-Instruct) --uses--> (Transformer)
+    (Llama -3.2-1B-Instruct) --trainedon--> (Hugging Face)
+    (self-attention) --comprises--> (Query)
+    (self-attention) --comprises--> (Key)
+    (self-attention) --comprises--> (Value)
+    (feed-forward network) --comprises--> (Gate)
+    (feed-forward network) --comprises--> (Down)
+    (BERT) --addresses--> (quality of the language understanding and prediction)
+    (ROUGE) --comprises--> (ROUGE-1)
+    (ROUGE) --comprises--> (ROUGE-2)
+    (F1 score) --evaluates--> (evaluation results)
+    (Llama -3.2-1B-Instruct) --evaluatedon--> (GLUE-QNLI dataset)
+    (Llama -3.2-1B-Instruct) --trainedon--> (GLUE-QNLI dataset)
+    (BERT) --evaluates--> (discrepancies from the baseline outputs)
+    (ROUGE) --evaluates--> (discrepancies from the baseline outputs)
+    (feed-forward components) --comprises--> (Down matrices)
+    (Large Language Model) --addresses--> (effects of parameter corruption)
+    (Large Language Model (LLM)) --addresses--> (effects of parameter corruption)
+    (Down matrices) --supports--> (model degradation)
+
+----- paper: traveltime2022 -----
+ALL TRIPLES (27):
+    (SA-LSTM) --uses--> (Butterworth low-pass filter)
+    (ARIMA) --uses--> (statistical data points)
+    (ARIMA) --comparesagainst--> (SVR)
+    (ARIMA) --comparesagainst--> (LSTM)
+    (ARIMA) --comparesagainst--> (ConvLSTM)
+    (SVR) --comparesagainst--> (LSTM)
+    (SVR) --comparesagainst--> (ConvLSTM)
+    (LSTM) --comparesagainst--> (ConvLSTM)
+    (self- attention) --comparesagainst--> (the original LSTM)
+    (SA-LSTM) --comparesagainst--> (LSTM)
+    (SA-LSTM) --uses--> (self-attention)
+    (LSTM) --achieves--> (MAE of 27.12)
+    (LSTM) --comparesagainst--> (ARIMA)
+    (LSTM) --comparesagainst--> (SVR)
+    (LSTM) --comparesagainst--> (ConvLSTM)
+    (SA-LSTM) --evaluatedon--> (Butterworth low-pass filter)
+    (SA-LSTM) --achieves--> (MAE of 12.15)
+    (Butterworth low-pass filter) --comparesagainst--> (all the compared methods)
+    (LSTM) --evaluatedon--> (road segments)
+    (SA-LSTM) --uses--> (Butterworth low-pass filter method)
+    (LSTM) --achieves--> (error of ±27.12 min in every 100 km)
+    (SA-LSTM) --achieves--> (better than the LSTM)
+    (SA-LSTM) --comprises--> (LSTM)
+    (SA-LSTM) --comprises--> (self-attention)
+    (LSTM) --achieves--> (MAE of 27.12 min per 100 km)
+    (SA-LSTM with the Butterworth low-pass filter) --achieves--> (error of ±12.15 min for every 100 km)
+    (SA-LSTM with the Butterworth low-pass filter) --comparesagainst--> (LSTM)
+
+----- paper: microwave2018 -----
+ALL TRIPLES (1):
+    (logistic regression) --uses--> (statistical technique)

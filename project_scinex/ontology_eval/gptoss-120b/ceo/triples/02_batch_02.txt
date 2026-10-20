@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 1c297a97d66d -----
+TRIPLE:     (LTrain)  --splitfrom-->  (LExist)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: The remaining 80% of LExist becomes LTrain.
+
+----- triple_id: e7a105a9948a -----
+TRIPLE:     (Kasikorn Business-Technology Group)  --locatedin-->  (Thailand)
+PREDICATE DEFINITION: Organisation → Place  |  use for physical location
+SOURCE SENTENCE: He is a Machine Learning Engineer with Kasikorn Business-Technology Group, Thailand.
+
+----- triple_id: c30dcee2aefb -----
+TRIPLE:     (OC-SORT)  --publishedin-->  (CVPR 2023)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  use for journal/conference names only
+SOURCE SENTENCE: OC-SORT was published in CVPR 2023.
+
+----- triple_id: 1b98f1ce76ae -----
+TRIPLE:     (TensorFlow)  --affiliatedwith-->  (Google)
+PREDICATE DEFINITION: Agent → Organisation  |  use for institutional affiliation
+SOURCE SENTENCE: In the experiment, the Python and machine learning libraries: TensorFlow from Google and Conda were used for managing the environment and installing various packages.
+
+----- triple_id: 918852e363c2 -----
+TRIPLE:     (YOLOv8)  --employs-->  (Spatial Pyramid Pooling Fusion)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: Furthermore, YOLOv8 employs the Spatial Pyramid Pooling Fusion (SPPF), a mechanism for extracting contextual information from images across diverse scales, which markedly improves the model's generalization proficiency.
+
+----- triple_id: a91586184642 -----
+TRIPLE:     (Self-Attention Long Short -Term Memory (SA-LSTM) model)  --uses-->  (Global Positioning System (GPS) tracking)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We adopted the Self-Attention Long Short -Term Memory (SA-LSTM) model with a Butterworth low-pass filter to predict the travel time on each road segment using historical data from the Global Positioning System (GPS) tracking of trucks in Thailand.
+
+----- triple_id: 4d657ab0efff -----
+TRIPLE:     (CTv1 model)  --achieves-->  (F1 weight average of approximately 0.98 - 0.99)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The experimental results show that in the water drop scenario, the CTv1 model still has an F1 weight average of approximately 0.98 - 0.99, which is close to the normal system.
+
+----- triple_id: bc5b7c81616c -----
+TRIPLE:     (Gaussian Process algorithm)  --addresses-->  (osmotic coefficient prediction)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Considering both performance and behavioral aspects, it can be concluded that the Gaussian Process algorithm is optimal for osmotic coefficient prediction.
+
+----- triple_id: e5a550b88ea7 -----
+TRIPLE:     (LSTM only)  --comparesagainst-->  (SA-LSTM)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: The table compares the LSTM only and the LSTM with self-attention (SA-LSTM).
+
+----- triple_id: 4b37bf7b3463 -----
+TRIPLE:     (recommender system)  --produces-->  (trip plan)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: Since our recommender system produces a trip plan from a few flexible user criteria, our work is directly evaluated from user feedback directly.

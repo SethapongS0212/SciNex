@@ -1,0 +1,528 @@
+{
+  "paper_id": "fdc854619d817604a362e7c31a4271f56dba8408",
+  "title": "Parking Time Violation Tracking Using YOLOv8 and Tracking Algorithms",
+  "year": 2023,
+  "abstract": "The major problem in Thailand related to parking is time violation. Vehicles are not allowed to park for more than a specified amount of time. Implementation of closed-circuit television (CCTV) surveillance cameras along with human labor is the present remedy. However, this paper presents an approach that can introduce a low-cost time violation tracking system using CCTV, Deep Learning models, and object tracking algorithms. This approach is fairly new because of its appliance of the SOTA detection technique, object tracking approach, and time boundary implementations. YOLOv8, along with the DeepSORT/OC-SORT algorithm, is utilized for the detection and tracking that allows us to set a timer and track the time violation. Using the same apparatus along with Deep Learning models and algorithms has produced a better system with better performance. The performance of both tracking algorithms was well depicted in the results, obtaining MOTA scores of (1.0, 1.0, 0.96, 0.90) and (1, 0.76, 0.90, 0.83) in four different surveillance data for DeepSORT and OC-SORT, respectively.",
+  "citation_count": 55,
+  "root_concepts": [
+    "tracking",
+    "violation",
+    "along",
+    "algorithms",
+    "surveillance",
+    "system",
+    "object",
+    "detection",
+    "deepsort",
+    "better",
+    "major",
+    "problem",
+    "thailand",
+    "related",
+    "parking"
+  ],
+  "nodes": {
+    "b6ef6ba0c02ce6b295aaa78db7dd0c87a88c94a4": {
+      "title": "Real-Time Vehicle Detection and Counting Using YOLOv8 and ByteTrack Multi-Object Tracking on Surveillance Cameras",
+      "year": 2026,
+      "abstract": "Vehicle counting in tourist area parking facilities is typically performed manually, leading to counting errors and the inability to provide real-time capacity updates. This study proposes an automated real-time vehicle detection and counting system integrating YOLOv8s as the object detector and ByteTrack as the Multi-Object Tracking algorithm on surveillance camera footage to support parking capacity management. The dataset consists of 1,377 images across two vehicle classes, cars and motorcycles, prepared through a data-leakage-free pipeline with a 70/20/10 training-validation-test split followed by horizontal flip augmentation applied exclusively to the training subset. The model was trained for 50 epochs on an NVIDIA GeForce RTX 4050 GPU. A virtual counting line positioned at 70% of the frame height, combined with ByteTrack's persistent unique ID mechanism, enables precise vehicle entry and exit counting while preventing double counting. Evaluation results show that the YOLOv8s model achieved precision of 0.904, recall of 0.961, F1-score of 0.930, and mAP@0.5 of 0.969. Vehicle counting evaluation over a 30-minute test video yielded a counting accuracy of 96.875%, MAE of 2.25, and MAPE of 3.125%. The system operated at an average processing speed of 37.82 FPS, exceeding the real-time threshold of 25–30 FPS. These results indicate that the proposed system has the potential to serve as an alternative solution for automated parking capacity management at tourist area facilities.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "counting",
+        "vehicle",
+        "parking",
+        "capacity",
+        "system",
+        "tourist",
+        "facilities",
+        "automated",
+        "object",
+        "bytetrack",
+        "management",
+        "evaluation",
+        "typically",
+        "performed",
+        "manually"
+      ]
+    },
+    "e01587556ee46400d5a48e5ca21e7f11f054b51a": {
+      "title": "ENDÜSTRİYEL SAHALARDA İŞ GÜVENLİĞİ İÇİN YOLO-V8 VE DEEPSORT İLE BİR DERİN GÖRÜ ÇALIŞMASI",
+      "year": 2026,
+      "abstract": "Endüstri 4.0 kavramıyla birlikte son yıllarda birçok iş kolu farklı dijital çözümleri çalışma sahalarına entegre etmektedir. İş güvenliği konusu dijital çözümlerin konu edindiği en yaygın başlıklardan biridir. Çalışma sahasında iş güvenliğini riske atması muhtemelen unsurların tespiti ve takibi, kazaların ve iş gücü kayıplarının önlenmesi için önem arz etmektedir. Bu çalışmada, şantiye ortamlarında işçi güvenliği ve denetim süreçlerinin dijitalleştirilmesine katkı sağlamak amacıyla geliştirilen, derin öğrenme tabanlı bir nesne tespit ve takip sistemi sunulmaktadır. Bu amaçla, ilk olarak baret, telefon ve sigara görsellerinden oluşan bir veri seti oluşturulmuştur ve çeşitli açılar, ışık koşulları ve senaryolar dikkate alınarak veri seti üzerinde genişletme ve dengeleme işlemleri uygulanmıştır. Daha sonra, derin öğrenme tabanlı YOLO-v8 algoritması ile gerçek zamanlı nesne tespiti yapmak üzere çeşitli hiper-parametreler ile model eğitimleri gerçekleştirilmiştir. Aynı zamanda, DeepSORT algoritması önerilen sisteme entegre edilerek başarım testleri yapılmıştır. Son olarak, kayıp fonksiyonlarına (konumlandırma kaybı, sınıflandırma kaybı, dağılım odaklı kayıp) ve yaygın nesne tespit ve takip metriklerine (kesinlik, duyarlılık, mAP, FPS, IDF1, IDs, MOTA, MOTP) göre elde edilen başarım değerleri literatürde yer alan çeşitli veri setleri üzerinde eğitilmiş farklı derin öğrenme modelleri ile karşılaştırılmıştır. Elde edilen bulgular, önerilen sistemin yüksek doğruluk oranı ile gerçek zamanlı izleme ve otomatik denetim uygulamaları için etkin şekilde kullanılabileceğini göstermektedir.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "derin",
+        "nesne",
+        "dijital",
+        "entegre",
+        "etmektedir",
+        "tespiti",
+        "denetim",
+        "tespit",
+        "takip",
+        "olarak",
+        "edilen",
+        "birlikte",
+        "konusu",
+        "biridir",
+        "riske"
+      ]
+    },
+    "450e7a64e9d7570e0da1db28c9ada4213ed3ced8": {
+      "title": "Motorcycle Parking Violation Detection Using YOLOv12 Segmentation and ROI-Guided Orientation Analysis",
+      "year": 2026,
+      "abstract": "This study aims to improve the accuracy of legal and illegal motorcycle parking classification by proposing a computer vision-based detection system using YOLOv12 segmentation and region-of-interest (ROI)-guided orientation analysis. The proposed system integrates object segmentation, ROI mapping, and computation of the angular deviation between vehicle orientation and parking guides. To determine the optimal orientation tolerance, experiments are conducted using multiple angular thresholds under identical datasets and testing scenarios. The system is evaluated across three locations using confusion-matrix-based performance metrics. The results show that a 30° tolerance yields the best performance, achieving an average accuracy of 87.29%, precision of 93.14%, recall of 92.23%, and F1-score of 92.68%. These findings indicate that ROI-guided orientation analysis enhances the reliability of motorcycle parking violation detection.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "orientation",
+        "parking",
+        "system",
+        "accuracy",
+        "motorcycle",
+        "detection",
+        "segmentation",
+        "guided",
+        "analysis",
+        "angular",
+        "tolerance",
+        "improve",
+        "legal",
+        "illegal",
+        "classification"
+      ]
+    },
+    "500cb179879a67fa9512eafbc9c6ea6db9ebb25d": {
+      "title": "Bridging captioning gaps in educational videos: a deep learning approach for handwritten mathematical expression recognition",
+      "year": 2026,
+      "abstract": null,
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": []
+    },
+    "6fc51299488ff4ed3d11fa3c9f9150ebefce8685": {
+      "title": "Investigating the Effect of Roundabout Geometry and Traffic Congestion Level on Deep Learning-Based Vehicle Detection and Tracking",
+      "year": 2026,
+      "abstract": "Unmanned aerial vehicles have revolutionized traffic monitoring systems by providing a unique top-view perspective crucial for accurately detecting and tracking vehicles in complex traffic scenarios. However, the efficiency of deep learning (DL) models in these environments can be significantly influenced by factors such as roundabout geometry and traffic congestion. Despite advancements in artificial intelligence-based detection and tracking algorithms, a notable gap remains in understanding how these factors specifically affect performance, especially in multilane roundabouts, where vehicle interactions are more complex. To fill this gap, this research investigates their effect on the performance of DL algorithms, You Only Look Once v8 and Deep Simple Online and Real Time Tracking, for vehicle detection and tracking, respectively. The results revealed that the geometric shape slightly affects vehicle detection accuracy, with elliptical and stadium-shaped roundabouts exhibiting higher precision and recall than round-shaped ones. However, the geometric shape has a negligible effect on tracking performance across shapes. Increased congestion significantly decreases detection precision and recall because of higher vehicle overlap, making it challenging to distinguish individual vehicles. Severely congested conditions present the lowest detection accuracy, highlighting difficulties in high traffic environments. An inverse relationship between congestion and testing speed was observed, with severe congestion leading to slower processing. Moderate congestion levels provide optimal tracking, and extreme congestion challenges accuracy, underscoring the need for adaptive strategies. Both factors independently affect DL performance; traffic congestion exerts a more significant influence. This research concludes that congestion affects detection and tracking performance more than geometry. Future research should focus on developing adaptive strategies tailored to specific traffic conditions.",
+      "citation_count": 1,
+      "relation": "citing",
+      "concepts": [
+        "congestion",
+        "tracking",
+        "traffic",
+        "detection",
+        "vehicle",
+        "vehicles",
+        "factors",
+        "research",
+        "accuracy",
+        "complex",
+        "environments",
+        "significantly",
+        "geometry",
+        "algorithms",
+        "affect"
+      ]
+    },
+    "7b9d176d6989539cdfdf094cf553ce919a1ff368": {
+      "title": "Cross-Lingual Transfer Learning for Enhancing Kinyarwanda Automatic Speech Recognition",
+      "year": 2026,
+      "abstract": "In today’s voice-activated digital world, millions of people face a profound challenge: their native languages remain invisible to the very technologies that are transforming human-computer interaction. While speakers of major world languages like English, Mandarin, and Spanish enjoy seamless access to virtual assistants, transcription services, and voice-controlled systems across education, healthcare, and entertainment, countless indigenous and regional languages have been left behind in this technological revolution. Kinyarwanda, the vibrant national language spoken by over 13,246,394 million people across Rwanda, Burundi, Uganda, and the Democratic Republic of Congo, exemplifies this digital divide despite its crucial role in preserving cultural identity and facilitating daily communication, Kinyarwanda speakers are forced to abandon their mother tongue when interacting with modern speech recognition systems. This study uses cross-lingual transfer learning a new Speech-to-Text system formulated for Kinyarwanda, an under-developed Bantu language, with more than 14,104,965 million speakers mainly in Rwanda, Burundi, Uganda, and the Democratic Republic of Congo. The problem addressed involved merging different open-source Natural Language Processing data models with individualized preprocessing algorithms and acoustic feature extraction techniques. Using this innovative technique of combining Connectionist Temporal Classification with attention, assisted in achieving low Word Error Rate on standard Kinyarwanda speech corpora. The developed model is very efficient Automatic Speech Recognition system that can write spoken Kinyarwanda into text and promote digital inclusion and preserving linguistic heritage. This research demonstrates a developed complete speech recognition system through the deployment of the most recent deep learning architectures, such as Recurrent Neural Networks, Long Short-Term Memory models, and Transformer architecture. This new creation addresses the particular phonetic features, tonal differences, and morphological complexity of Kinyarwanda, while functioning within the confines of scarcity of training data as is characteristic of low resource languages.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "kinyarwanda",
+        "speech",
+        "languages",
+        "digital",
+        "speakers",
+        "recognition",
+        "system",
+        "developed",
+        "voice",
+        "world",
+        "people",
+        "while",
+        "systems",
+        "across",
+        "spoken"
+      ]
+    },
+    "1e5d57c73e97928997e4b70a6f57bea3c0bc2e4c": {
+      "title": "Secure and federated vision-based parking management using a hybrid deep learning and privacy-preserving framework for smart cities",
+      "year": 2025,
+      "abstract": null,
+      "citation_count": 1,
+      "relation": "citing",
+      "concepts": []
+    },
+    "8795d313bab22f0fa6464b9e39c063f2d178463a": {
+      "title": "Indian Cuisine Analysis: Food Identification and Calorie Calculation",
+      "year": 2025,
+      "abstract": "In today's fast-paced lifestyle, the need for accurate calorie estimation and food recognition systems has become increasingly crucial. With rising health consciousness and diverse dietary preferences, individuals are seeking personalized tools to monitor their nutritional intake effectively. Calorie estimation plays a pivotal role in supporting weight management, fitness goals, and overall well-being, providing users with valuable insights into their daily dietary habits. Using the YOLOv8 and InceptionV3 deep learning algorithms, this paper presents a computer vision and machine learning system for food recognition and calorie estimation. Trained on an extensive dataset containing around 10000 images of 30 Indian dishes, these algorithms accurately identify diverse food items, enabling precise recognition. The system incorporates a calorie estimation module, associating recognized foods with a comprehensive database to provide real-time calorie intake estimations. With applications in fitness and dietary management, the system facilitates personalized nutritional monitoring, supporting healthy eating habits. The proposed model, achieving a precision of $\\mathbf{8 4. 9 \\%}$ and recall of $\\mathbf{8 5. 9 \\%}$ for YOLOv8 and $\\mathbf{7 3. 9 6 \\%}$ precision and 71.63% recall for InceptionV3, shows that it has the potential to be a useful instrument for encouraging healthy living.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "calorie",
+        "estimation",
+        "recognition",
+        "dietary",
+        "system",
+        "mathbf",
+        "diverse",
+        "personalized",
+        "nutritional",
+        "intake",
+        "supporting",
+        "management",
+        "fitness",
+        "habits",
+        "algorithms"
+      ]
+    },
+    "840cea2cc2cfcb274adc26d9a70ac9f7e4d807fb": {
+      "title": "Reconstruct the trajectory of the falling of an object based on video segments",
+      "year": 2025,
+      "abstract": "Abstract. The traceability of falling objects has always been a major challenge in the field of urban safety, and reconstructing the trajectory of falling objects based on video fragments can solve the problem of high-altitude falling object detection at a low cost. In practical applications, due to the large floor height or the limited placement of cameras, it is often difficult to fully capture the movement process of falling objects from heights, resulting in missing trajectory information and only partial trajectory fragments being observable. Therefore, the difficulty lies in how to effectively reconstruct the trajectory of objects falling from heights based on incomplete video data. We propose an algorithm for trajectory reconstruction of falling objects based on video segments, which is built upon a physical kinematics model, enhanced by advanced video analysis techniques. First, a kinematics model is established by analyzing the motion scene, and a dedicated vertical calibration zone is designed to simulate the “video segments” scenario and establish an accurate pixel-to-physical-unit conversion. Then, we combine the you only look once (YOLO) series object detection algorithms and an improved DeepSORT tracker (Kalman-optimized) to enhance tracking accuracy. Finally, by analyzing the pixel displacement of the target object between adjacent frames, the instantaneous velocities of the object at the moments of entering and exiting the calibration zone were calculated. The acceleration of the object was then determined based on these two instantaneous velocities. Acceleration is derived from these velocities, enabling inference of the initial falling position. Experiments show that YOLOv8 achieves 99.4% detection accuracy for a single object (1.4% improvement over YOLOv7) and 97.1% detection accuracy for multiobject (1.1% improvement over YOLOv7). The DeepSORT tracker optimized for Kalman achieved 98% multiobject tracking accuracy (MOTA) in single-target scenarios and 96% MOTA in multitarget scenarios. Based on the detection and tracking of the target, after the proposed algorithm is derived, the algorithm’s predicted initial fall height has a 2.61% average error rate. Therefore, this approach effectively reconstructs trajectories from video fragments.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "falling",
+        "video",
+        "object",
+        "objects",
+        "trajectory",
+        "detection",
+        "accuracy",
+        "fragments",
+        "algorithm",
+        "tracking",
+        "target",
+        "velocities",
+        "height",
+        "heights",
+        "effectively"
+      ]
+    },
+    "1221e0c3d95becec34ae4b931f47826aaadc44ea": {
+      "title": "Autonomous Classification of Wave Breaker Type in a Large Wave Flume",
+      "year": 2025,
+      "abstract": null,
+      "citation_count": 1,
+      "relation": "citing",
+      "concepts": []
+    },
+    "4fab53dca0f23301bfe208da607614856b52936a": {
+      "title": "Automatic vision-based parking slot detection and occupancy classification",
+      "year": 2023,
+      "abstract": "Parking guidance information (PGI) systems are used to provide information to drivers about the nearest parking lots and the number of vacant parking slots. Recently, vision-based solutions started to appear as a cost-effective alternative to standard PGI systems based on hardware sensors mounted on each parking slot. Vision-based systems provide information about parking occupancy based on images taken by a camera that is recording a parking lot. However, such systems are challenging to develop due to various possible viewpoints, weather conditions, and object occlusions. Most notably, they require manual labeling of parking slot locations in the input image which is sensitive to camera angle change, replacement, or maintenance. In this paper, the algorithm that performs Automatic Parking Slot Detection and Occupancy Classification (APSD-OC) solely on input images is proposed. Automatic parking slot detection is based on vehicle detections in a series of parking lot images upon which clustering is applied in bird's eye view to detect parking slots. Once the parking slots positions are determined in the input image, each detected parking slot is classified as occupied or vacant using a specifically trained ResNet34 deep classifier. The proposed approach is extensively evaluated on well-known publicly available datasets (PKLot and CNRPark+EXT), showing high efficiency in parking slot detection and robustness to the presence of illegal parking or passing vehicles. Trained classifier achieves high accuracy in parking slot occupancy classification.",
+      "citation_count": 48,
+      "relation": "cited_by",
+      "concepts": [
+        "parking",
+        "systems",
+        "information",
+        "slots",
+        "occupancy",
+        "images",
+        "input",
+        "detection",
+        "provide",
+        "vacant",
+        "vision",
+        "camera",
+        "image",
+        "automatic",
+        "classification"
+      ]
+    },
+    "d780824c50ef4ddf8dc19aa72ad439b2de12c8a2": {
+      "title": "Histopathological Classification of Colorectal Polyps using Deep Learning",
+      "year": 2023,
+      "abstract": "Early diagnosis and classification of colorectal polyps are critical in reducing the morbidity and mortality rate of colorectal cancer (CRC). This paper proposes an automated method for histopathologically classifying colorectal polyps from 7000 µm H&E-stained images. First, a number of state-of-the-art deep learning models are developed and fine-tuned using transfer learning and ImageNet pre-trained weights. Subsequently, a baseline architecture is selected by comparing the trained models, and its performance is then optimized using data augmentation methods such as rotation, rescaling, mixup and cutout. Moreover, an extended variant of the adaptive moment estimation (Adam) optimizer called rectified Adam (Radam) and label smoothing are also used to boost the model performance. Based on the experimentation results using an open dataset, the proposed method achieved an accuracy of 90%, a precision of 90%, a recall of 89% and an F1-score of 0.91%.",
+      "citation_count": 3,
+      "relation": "cited_by",
+      "concepts": [
+        "colorectal",
+        "polyps",
+        "trained",
+        "early",
+        "diagnosis",
+        "classification",
+        "critical",
+        "reducing",
+        "morbidity",
+        "mortality",
+        "cancer",
+        "proposes",
+        "automated",
+        "histopathologically",
+        "classifying"
+      ]
+    },
+    "577bb074206266d73edb0c0768ecb100d2c8864c": {
+      "title": "Classification of White Blood Cells: A Comprehensive Study Using Transfer Learning Based on Convolutional Neural Networks",
+      "year": 2022,
+      "abstract": "White blood cells (WBCs) in the human immune system defend against infection and protect the body from external hazardous objects. They are comprised of neutrophils, eosinophils, basophils, monocytes, and lymphocytes, whereby each accounts for a distinct percentage and performs specific functions. Traditionally, the clinical laboratory procedure for quantifying the specific types of white blood cells is an integral part of a complete blood count (CBC) test, which aids in monitoring the health of people. With the advancements in deep learning, blood film images can be classified in less time and with high accuracy using various algorithms. This paper exploits a number of state-of-the-art deep learning models and their variations based on CNN architecture. A comparative study on model performance based on accuracy, F1-score, recall, precision, number of parameters, and time was conducted, and DenseNet161 was found to demonstrate a superior performance among its counterparts. In addition, advanced optimization techniques such as normalization, mixed-up augmentation, and label smoothing were also employed on DenseNet to further refine its performance.",
+      "citation_count": 37,
+      "relation": "cited_by",
+      "concepts": [
+        "blood",
+        "white",
+        "cells",
+        "specific",
+        "accuracy",
+        "number",
+        "human",
+        "immune",
+        "system",
+        "defend",
+        "against",
+        "infection",
+        "protect",
+        "external",
+        "hazardous"
+      ]
+    },
+    "7dc719fb4272d6ce04657b78561fbb6aeb0a11b8": {
+      "title": "Automatic Cardiopulmonary Resuscitation System",
+      "year": 2022,
+      "abstract": "Cardiac arrest occurs when the heart unexpectedly malfunctions and stops breathing and pumping blood. Cardiopulmonary resuscitation, an emergency resuscitation procedure, must be performed as soon as possible when the patients suffer cardiac arrest to prevent brain damage or stop breathing. If not, it may lead a person dead even in a short time (from 8-10 minutes) of cardiac arrest. According to the American Heart Association, proper CPR must be performed at a depth of 5 cm in the sternum and a rate of chest compressions of 100 to 120 breaths per minute. Therefore, medical personnel or the person who performs CPR must be well-trained to conduct proper CPR. For this reason, CPR machines are demanded to assist and support medical personnel in saving human lives. This paper will focus on developing an automated CPR machine and automatic resuscitation ventilator to ensure that patients receive proper CPR. The device will be wirelessly controlled by a mobile phone via Bluetooth and was able to press at a depth of 4-5 cm, which is a correct depth, and at a rate of 70 beats per minute. An Arduino Uno microcontroller and a linear motor are used to control the push of the device. The proposed automated CPR machine will be a cost-effective, fully functional CPR device that is easy to use and can help people or healthcare professionals perform proper CPR.",
+      "citation_count": 5,
+      "relation": "cited_by",
+      "concepts": [
+        "proper",
+        "cardiac",
+        "arrest",
+        "resuscitation",
+        "depth",
+        "device",
+        "heart",
+        "breathing",
+        "performed",
+        "patients",
+        "person",
+        "minute",
+        "medical",
+        "personnel",
+        "automated"
+      ]
+    },
+    "9916c3f16393d7d775e08ab0b7fdef1f854040cf": {
+      "title": "Fast vehicle detection algorithm in traffic scene based on improved SSD",
+      "year": 2022,
+      "abstract": null,
+      "citation_count": 137,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "643914ae0ad9dcc5868348e4d867374aedbf9531": {
+      "title": "Observation-Centric SORT: Rethinking SORT for Robust Multi-Object Tracking",
+      "year": 2022,
+      "abstract": "Kalman filter (KF) based methods for multi-object tracking (MOT) make an assumption that objects move linearly. While this assumption is acceptable for very short periods of occlusion, linear estimates of motion for prolonged time can be highly inaccurate. Moreover, when there is no measurement available to update Kalman filter parameters, the standard convention is to trust the priori state estimations for posteriori update. This leads to the accumulation of errors during a period of occlusion. The error causes significant motion direction variance in practice. In this work, we show that a basic Kalman filter can still obtain state-of-the-art tracking performance if proper care is taken to fix the noise accumulated during occlusion. Instead of relying only on the linear state estimate (i.e., estimation-centric approach), we use object observations (i.e., the measurements by object detector) to compute a virtual trajectory over the occlusion period to fix the error accumulation of filter parameters. This allows more time steps to correct errors accumulated during occlusion. We name our method Observation-Centric SORT (OC-SORT). It remains Simple, Online, and Real-Time but improves robustness during occlusion and non-linear motion. Given off-the-shelf detections as input, OC-SORT runs at 700+ FPS on a single CPU. It achieves state-of-the-art on multiple datasets, including MOT17, MOT20, KITTI, head tracking, and especially DanceTrack where the object motion is highly non-linear. The code and models are available at https://github.com/noahcao/OC_SORT.",
+      "citation_count": 964,
+      "relation": "cited_by",
+      "concepts": [
+        "occlusion",
+        "filter",
+        "object",
+        "linear",
+        "motion",
+        "state",
+        "during",
+        "kalman",
+        "tracking",
+        "assumption",
+        "highly",
+        "available",
+        "update",
+        "parameters",
+        "accumulation"
+      ]
+    },
+    "7d1ff4ac2390759cbe60dd46b2b9bcabd4a90db4": {
+      "title": "ByteTrack: Multi-Object Tracking by Associating Every Detection Box",
+      "year": 2021,
+      "abstract": "Multi-object tracking (MOT) aims at estimating bounding boxes and identities of objects in videos. Most methods obtain identities by associating detection boxes whose scores are higher than a threshold. The objects with low detection scores, e.g. occluded objects, are simply thrown away, which brings non-negligible true object missing and fragmented trajectories. To solve this problem, we present a simple, effective and generic association method, tracking by associating almost every detection box instead of only the high score ones. For the low score detection boxes, we utilize their similarities with tracklets to recover true objects and filter out the background detections. When applied to 9 different state-of-the-art trackers, our method achieves consistent improvement on IDF1 score ranging from 1 to 10 points. To put forwards the state-of-the-art performance of MOT, we design a simple and strong tracker, named ByteTrack. For the first time, we achieve 80.3 MOTA, 77.3 IDF1 and 63.1 HOTA on the test set of MOT17 with 30 FPS running speed on a single V100 GPU. ByteTrack also achieves state-of-the-art performance on MOT20, HiEve and BDD100K tracking benchmarks. The source code, pre-trained models with deploy versions and tutorials of applying to other trackers are released at https://github.com/ifzhang/ByteTrack.",
+      "citation_count": 2611,
+      "relation": "cited_by",
+      "concepts": [
+        "objects",
+        "detection",
+        "tracking",
+        "boxes",
+        "score",
+        "state",
+        "bytetrack",
+        "object",
+        "identities",
+        "associating",
+        "scores",
+        "simple",
+        "trackers",
+        "achieves",
+        "multi"
+      ]
+    },
+    "48d36c24e6c656db2242e055ee0c3fccd7116e24": {
+      "title": "Vehicle detection from road image sequences for intelligent traffic scheduling",
+      "year": 2021,
+      "abstract": null,
+      "citation_count": 25,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "501458cef95e8e5ccc99346549350ae51d2db480": {
+      "title": "Real Time Pear Fruit Detection and Counting Using YOLOv4 Models and Deep SORT",
+      "year": 2021,
+      "abstract": "This study aimed to produce a robust real-time pear fruit counter for mobile applications using only RGB data, the variants of the state-of-the-art object detection model YOLOv4, and the multiple object-tracking algorithm Deep SORT. This study also provided a systematic and pragmatic methodology for choosing the most suitable model for a desired application in agricultural sciences. In terms of accuracy, YOLOv4-CSP was observed as the optimal model, with an AP@0.50 of 98%. In terms of speed and computational cost, YOLOv4-tiny was found to be the ideal model, with a speed of more than 50 FPS and FLOPS of 6.8–14.5. If considering the balance in terms of accuracy, speed and computational cost, YOLOv4 was found to be most suitable and had the highest accuracy metrics while satisfying a real time speed of greater than or equal to 24 FPS. Between the two methods of counting with Deep SORT, the unique ID method was found to be more reliable, with an F1count of 87.85%. This was because YOLOv4 had a very low false negative in detecting pear fruits. The ROI line is more reliable because of its more restrictive nature, but due to flickering in detection it was not able to count some pears despite their being detected.",
+      "citation_count": 186,
+      "relation": "cited_by",
+      "concepts": [
+        "speed",
+        "terms",
+        "accuracy",
+        "found",
+        "object",
+        "detection",
+        "suitable",
+        "computational",
+        "reliable",
+        "aimed",
+        "produce",
+        "robust",
+        "fruit",
+        "counter",
+        "mobile"
+      ]
+    },
+    "74cb8b9951f904d74b677ff91d78c0901877392f": {
+      "title": "A Survey of Multiple Pedestrian Tracking Based on Tracking-by-Detection Framework",
+      "year": 2021,
+      "abstract": "Multiple pedestrian tracking (MPT) has gained significant attention due to its huge potential in a commercial application. It aims to predict multiple pedestrian trajectories and maintain their identities, given a video sequence. In the past decade, due to the advancement in pedestrian detection algorithms, Tracking-by-Detection (TBD) based algorithms have achieved tremendous successes. TBD has become the most popular MPT framework, and it has been actively studied in the past decade. In this paper, we give a comprehensive survey of recent advances in TBD-based MPT algorithms. We systematically analyze the existing TBD-based algorithms and organize the survey into four major parts. At first, this survey draws a timeline to introduce the milestones of TBD-based works which briefly reviews the development of the existing TBD-based methods. Second, the main procedures of the TBD framework are summarized, and each stage in the procedure is described in detail. Afterward, this survey analyzes the performance of existing TBD-based algorithms on MOT challenge datasets and discusses the factors that affect tracking performance. Finally, open issues and future directions in the TBD framework are discussed.",
+      "citation_count": 155,
+      "relation": "cited_by",
+      "concepts": [
+        "algorithms",
+        "survey",
+        "pedestrian",
+        "tracking",
+        "framework",
+        "existing",
+        "multiple",
+        "decade",
+        "detection",
+        "gained",
+        "significant",
+        "attention",
+        "potential",
+        "commercial",
+        "application"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "source": "b6ef6ba0c02ce6b295aaa78db7dd0c87a88c94a4",
+      "target": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "type": "cites"
+    },
+    {
+      "source": "e01587556ee46400d5a48e5ca21e7f11f054b51a",
+      "target": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "type": "cites"
+    },
+    {
+      "source": "450e7a64e9d7570e0da1db28c9ada4213ed3ced8",
+      "target": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "type": "cites"
+    },
+    {
+      "source": "500cb179879a67fa9512eafbc9c6ea6db9ebb25d",
+      "target": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "type": "cites"
+    },
+    {
+      "source": "6fc51299488ff4ed3d11fa3c9f9150ebefce8685",
+      "target": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "type": "cites"
+    },
+    {
+      "source": "7b9d176d6989539cdfdf094cf553ce919a1ff368",
+      "target": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "type": "cites"
+    },
+    {
+      "source": "1e5d57c73e97928997e4b70a6f57bea3c0bc2e4c",
+      "target": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "type": "cites"
+    },
+    {
+      "source": "8795d313bab22f0fa6464b9e39c063f2d178463a",
+      "target": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "type": "cites"
+    },
+    {
+      "source": "840cea2cc2cfcb274adc26d9a70ac9f7e4d807fb",
+      "target": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "type": "cites"
+    },
+    {
+      "source": "1221e0c3d95becec34ae4b931f47826aaadc44ea",
+      "target": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "type": "cites"
+    },
+    {
+      "source": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "target": "4fab53dca0f23301bfe208da607614856b52936a",
+      "type": "cites"
+    },
+    {
+      "source": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "target": "d780824c50ef4ddf8dc19aa72ad439b2de12c8a2",
+      "type": "cites"
+    },
+    {
+      "source": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "target": "577bb074206266d73edb0c0768ecb100d2c8864c",
+      "type": "cites"
+    },
+    {
+      "source": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "target": "7dc719fb4272d6ce04657b78561fbb6aeb0a11b8",
+      "type": "cites"
+    },
+    {
+      "source": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "target": "9916c3f16393d7d775e08ab0b7fdef1f854040cf",
+      "type": "cites"
+    },
+    {
+      "source": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "target": "643914ae0ad9dcc5868348e4d867374aedbf9531",
+      "type": "cites"
+    },
+    {
+      "source": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "target": "7d1ff4ac2390759cbe60dd46b2b9bcabd4a90db4",
+      "type": "cites"
+    },
+    {
+      "source": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "target": "48d36c24e6c656db2242e055ee0c3fccd7116e24",
+      "type": "cites"
+    },
+    {
+      "source": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "target": "501458cef95e8e5ccc99346549350ae51d2db480",
+      "type": "cites"
+    },
+    {
+      "source": "fdc854619d817604a362e7c31a4271f56dba8408",
+      "target": "74cb8b9951f904d74b677ff91d78c0901877392f",
+      "type": "cites"
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: Abstract
+
+Text:
+The ultimate goal of our research mission is to build a traffic model for travel time prediction in Thailand in order to improve the mobility domain of the smart city. To achieve our mission, this piece of research places important on a traffic speed prediction of any reference points at an incoming time that is one significant part of the travel time prediction. In this study, we employ a linear model for predicting traffic speed of some kilometer stones in the next several minutes. Our prediction model performs less root-mean-squared-error score under some spatial-temporal conditions. In addition, the temporal-lagged associations among kilometer stones, which were extracted during the feature selection process, are observed as a traffic -dependent network on roads for analyzing the traffic congestion spreads in the future.
+
+----- para_id: 1 -----
+Section: I INTRODUCTION
+
+Text:
+One key point for making a smart city is to make any activities in the city be predictable, for example, power usages, water usages, people movements, etc., in order to make a better plan for improving the city. In this case, to make a better decision, data analytics especially in the predictive analytics become a key player in the journey of being a smart city [1]. Our research group, Urban Informatics Center, has a mission to improve the smart mobility, and one ultimate goal is to build a predictive traffic model that can serve the travel time prediction in Thailand . Developing an accurate model for travel time prediction is challenging project that needs several pieces of research to solve many problems. For this reason, this paper aims to build a model for predicting traffic speeds of any reference points on roads in every periods of time. The reference points of our study are basically based on kilometer stone (km stone) on Thailand roads. To start studying this topic, the main input data is the dataset of average traffic speeds of any km stones in every minute. The traffic speed of each km stone is changed every time. A closer look at these data shows that the behavior is similar to the movement of stock exchange in the market, where each km stone is a stock tricker symbol, and the traffic speed is its price at the period of time. In this case, it is possible to use some machine learning methods to solve this problem of predicting stock prices [2].
+
+----- para_id: 2 -----
+Section: I INTRODUCTION
+
+Text:
+As we reviewed, some pieces of research were working on this issue , for example finding temporal patterns among stock symbols [3], estimating the spatial-temporal dependency among stock for the prediction [4], using the linear regression technique for predicting stock Thanunchai Threepak School of Engineering, King Mongkut's Institute of Technology Development Team, Transcode Co., Ltd. market [5], and finding the trends of stock prices by the linear regression [6]. According to our reviews, using location-based and temporal dependencies among features and machine learning becomes an advantage approach to the prediction of traffic speeds, that are in form of a time series model. In the work, we aim to create spatial-temporal machine learning models for predicting traffic speeds in Thailand roads. Our method includes four steps, as in Fig 1., that are (1) collecting time series data of the speed of km stones in a selected area, (2) extracting temporal information of the time series data, (3) finding correlations among km stones and construct spatial-temporal dependency network among them for supporting a feature selection task, (4) building regression models that are depended on time periods and reference points and evaluating the models at the final. It has been found that the accuracy in terms of the root-mean-square error (RMSE) was about 9.23 evaluated by the original speed unit of kilometers per hour (km/h).
+
+----- para_id: 3 -----
+Section: I INTRODUCTION
+
+Text:
+The result is better than using the linear model without any spatial-temporal aspects about 31.14%. To demonstrate of our study, this paper is organized into five sections, the introduction and reviews are described in section I, data preparation is mentioned in section II, method is formally expressed in section III, results and discussion are showed in section IV, and conclusion is drawn in section V.
+
+----- para_id: 4 -----
+Section: II DATA PREPARATION
+
+Text:
+In the preparation steps, there are minutely transaction data entries from Global Positioning System (GPS) boxes, which are installed in many commercial vehicles. This dataset , GPS Transaction, is one of input datasets of the overall flow as shown in Fig. It includes the attributes: bid (masked identifier of each GPS box), ts (timestamp retrieved from the GPS box), lat (latitude), lon (longitude), and speed (speed in km/h) as demonstrated by example entries in Table I. Next, the other input dataset is the km stones database, KM Stone, that contains km_label (including road number and km), lat (latitude), and lon (longitude). For reading the km_label, the example value "7.002" means the 2nd km of the road number 7. An example dataset is shown in Table II. After that, in the 1st step "To Map KM Stone and Speed" in Fig. 1., we calculated the average of speeds and the the count of vehicles passing each km stone in every 5 minutes. It is noted that the data for finding average speeds are selected between 5th-95th percentile for removing outliers. The calculation was done based on "in" and "out" direction, so the km_label after this task is appended by the direction. The direction "out" means that the vehicle flow passes from a lower km number to a greater km number, whereas the direction "in" is the inversed direction of "out". For example, 7.002.out means the 2nd km of the road number 7 with the direction out. The example entries of the "KM Stone Speed" dataset are shown in Table III.
+
+----- para_id: 5 -----
+Section: II DATA PREPARATION
+
+Text:
+In this table, the attributes are km_label, date, time, speed (average of speeds), and num (count of vehicles). The construction of the KM Stone Speed dataset is the final step of the data preparation. In the next step, the main part of data analytics is formally described.
+
+----- para_id: 6 -----
+Section: III METHOD
+
+Text:
+The target of this study is to build a prediction model for predicting the traffic speed in the next couple minutes based on the speeds of dependent km stones at earlier time. The overall implementation of our work is depicted in Fig. The product of beginning parts, which are explained in the data preparation section, is the KM Stone Speed as shown in Table III. In this section, the steps 2, 3, and 4 in Fig. It is noted that our early experiment implements on the eastern area of Bangkok and only km labels having much data are selected. As a result, there are 114 km labels focused; for example, 304.001.in, 304.001.out, 304.002.in, 304.002.out, 304.003.in, 304.003.out, 304.004.in, 304.004.out, etc. In the 2nd step, the attributes date and time of the KM Stone Speed dataset are analyzed to create more features. We firstly group the dates by weekdays into a new column name "weekdays". Based on the discussion with domain experts of transportation, the behavior of traffic of Sunday and Saturday are similar and ones between Tuesday and Thursday also have the similar behaviors. As a result, the groups are "sat.sun", "mon", tue.wed.thu", and "fri" for Sunday-Saturday, Monday, Tuesday-Thursday, and Friday respectively. In addition, the time are also binning into 3-hour duration that are 0, 3, 6, 9, 12, 15, 18, and 21; and added into a new column named "hours". For example, 3 means the hours between 03:00 and 03:59. Some example data in the Table III are transformed into the data in Table IV.
+
+----- para_id: 7 -----
+Section: III METHOD
+
+Text:
+ts y x1 x2 x3 … x n t 000 t 005 t 100 t 015 ts y x1 x2 x3 … x n t 000 t 005 t 100 t 015 ts y x1 x2 x3 … x n t 005 t 100 t B. To Create Dependency Network between KM Stones Next, the 3rd step is to create spatial-temporal dependency network among km stones by the following tasks. We firstly find out the Pearson correlation among km stones using time series data of their speeds. The idea is that we begin with choosing each km stone label as the target or output attribute, y or km_y; and select neighbor km stones within a 5-km radius of the target km stones as a set of X attributes. For example, as shown in Fig. (a), ts is a timestamp in every 5 minutes, y is a target km stone, X attributes from x1 to xn are selected neighbors. Secondly, in order to make an incoming time prediction of y, all neighbor km stones are lagged by 5, 10, 15, and 20 minutes. 2(b)., the example X attributes are lagged by 5 minutes. In the other words, we use the speeds at X at a timepoint to predict the speed at y in next 5 minutes. After that, some rows having missing values after lagging are dropped as depicted in Fig. Next, for one target km label, there are 4 tables, like Fig. 2(c), which are lags of 5, 10, 15, and 20 minutes. Correlations between speeds at every neighbor (x) and target km stone (y) are executed. Some neighbors having correlation greater than 0.7 and lower than -0.7 are selected as dependent neighbors of y. The results are demonstrated in Table V.
+
+----- para_id: 8 -----
+Section: III METHOD
+
+Text:
+There 6 columns: km_y is a target km stone label, km_x is a neighbor km stone having high correlation with y, lag_mins is a lagging time in minutes, hours is the beginning hour of a 3-hour duration, weekdays is a group of days, and support is the support value that x and y have higher correlation in the same hours duration and weekdays. The support means the number times that x and y have high correlation under the same time slice divided by the number of comparison times. For example, the first rows of Table V shows that we can use the speed of the km label 34.035.out to predict the speed of the km label 34.036.out during 6:00-9:00 on any Friday with support being 1. Some blank value in the column weekdays means every day. Finally, some rows in the Table V. having support higher than 0.7 are selected. Thus, this table becomes a spatial- temporal dependency network among km stones for using in a feature selection process in the step of training a model. This part is the first part of the 4th step of Fig. that mentioned about how to create prediction models. Since our study points to forecast the speed of each km stone in an incoming time, regression analysis become a key player in this study. To make models, data are sliced by target km stones, hour durations, and weekday groups. Since there are 8 time slots of 3-hour, durations, 4 weekday groups, and 4 types of lags; there are 128 (8x4x4) models for one target km stones.
+
+----- para_id: 9 -----
+Section: III METHOD
+
+Text:
+Each slicing dataset of a target km stone is used to build a model. The time series data of speeds at the target km stone is used as y in the linear model. Moreover, the lagged time series data of speeds of neighbor km stones that are selected from Table V are used as X in the linear model. The equation of a linear model is expressed in Eq. (1), where ŷ is the predicted speed at a target km stone, x1..n are the lagged speed at neighbor km stones, b0 is an intercept, and b1..n are coefficients of x1..n. 𝑦̂ = 𝑏0 + 𝑏1𝑥1 + 𝑏2𝑥2 + ⋯+ 𝑏𝑛𝑥𝑛 () In our experiment, we use the Python based linear regression function of the library scikit-learn [7]. The configuration is fitting intercept being true, normalization being false, number of jobs being unset, and negative confidents being allowed. This part is the second part of the 4th step of Fig. that explains about how to evaluate prediction models. In this work, the root-mean-square error (RMSE) is used to evaluate any produced regression models. According to the RMSE equation in Eq. (2), ŷ is a predicted speed, y is an actual speed, n is a number of samples in the test set. Our experiment evaluates the model using the method of 5-fold cross-validation, so there are 5 rounds of the calculation where the ratio of the training set and the test set of each round is 80:20; and the test sets of all rounds are different chunks. The result of our experiment is expressed in the next section.
+
+----- para_id: 10 -----
+Section: IV RESULT AND DISCUSSION
+
+Text:
+To demonstrate the results of our propose, first of all, we did an experiment as a baseline . The baseline is the linear model of the whole dataset without concerning about separating models by km labels and time slices. The feature selection, training parameters, and measurement method are consistent with the previous section. In this experiment, the RMSE of the baseline is 14.76. For our propose, the following tables shows the result by different viewpoints. Hours Next N Minutes Total 5 10 15
+
+----- para_id: 11 -----
+Section: STONES IN NEXT N MINUTES
+
+Text:
+Next N Minutes Total 5 10 15 20 The results of each next 5, 10, 15, and 20 minutes that are sliced by hour durations and weekday groups are recorded in Table VIII, IX, X, and XI one-to-one. According to the data in these tables, the RMSE values of predicting in next 5, 10, 15, and 20 minutes are 9.28, 9.34, 9.53, and 9.51 respectively. The results are also close to the overall RMSE from Table VI. In this study we use the term "spatial" to refer to the prediction of the individual of a target km stone using the features from neighbor km stones which are near the location of the target and have high correlation in terms of speeds with high support. Besides, the term "temporal" refers to slicing data by the aspects of times, which are hour durations, weekday groups, and prediction in next N minutes. According to the results, using spatial-temporal models for traffic speed prediction provides the better performance than the baseline . It is because the traffic speed of every reference point has a pattern. Some km stones might have similar speed in every day, some might have similar pattern in an interval time in every day, some might have similar pattern among working days and holidays, and some have dependency pattern among nearby km stones. Our approach attempts to attract these associations of speeds of each km stones among different time periods on the basis of linear associations.

@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: 2.4. Machine learning analysis
+
+Text:
+The methodology for enhancing the predictive performance of portable spectrophotometers using machine learning can be divided into two primary components: 1) preparation of images and their trans formation into numerical data, and 2) application of machine learning algorithms and validation. Image processing In the process of predicting the concentration of substances through machine learning, an analysis of spectral bands derived from images captured by portable spectrophotometer equipment is conducted. However, these images cannot be directly utilized for machine learning training as they must be of a numeric data type. Prior to the analysis, a gradual conversion into numerical data is required, followed by an automated selection of the spectral band for use. The captured images were systematically collected within a single folder. Experimental setups were determined from the image nomen clature, as described in section 2.3.2. All images were collectively pro cessed, in accordance with the procedure outlined in Fig. The CIELAB color space system [40] was employed due to the necessity of utilizing ΔL in the prediction process. The com mand, "cvtColor" with the setting "COLOR_BGR2LAB," available in the OpenCV library [41], was used to extract the lightness (L) value from every pixel across all images . Given the spectral misalignment inherent in the images , a method to identify the image segment containing the spectral band was required.
+
+----- para_id: 13 -----
+Section: 2.4. Machine learning analysis
+
+Text:
+This was achieved by averaging the L values across both horizontal and vertical axes to locate the peak of the L value, as displayed in Fig. This peak then served as a reference point for the detection of the spectral band area. In addition to positional shifts, the spectral band may exhibit minor inclinations or rotations, as depicted in Fig. Adjustment parameters were required to correct in clinations or rotations, ensuring that reference spectra from all images remained unaltered in orientation. In order to acquire the adjustment parameters, image enhancement was necessary to achieve a clearer identification of the four corners of the rectangle. Initially, the image was converted to grayscale. Subse quently, the light was enhanced to establish a distinct threshold. Following this, an opening method was employed to diminish noise. Finally, a closing method was utilized to sharpen the image. This process is illustrated in Fig. The viewing angle of an image was adjusted using the warp perspective method, available in the OpenCV library, resulting in a five-parameter model for the projection step. In the experiment, variations in light intensity, as depicted in Fig. These variations were attributed to the blinking of fluorescent lights, changes in LED intensity over time, and instances of single-point over-brightness in LEDs. Therefore, rectifying the inconsistent levels of illumination was imperative.
+
+----- para_id: 14 -----
+Section: 2.4. Machine learning analysis
+
+Text:
+The underlying assumption was that the average brightness of the reference spectral bands should be consistent across the experimental sets. The reference spectral band in each image was utilized to establish this average brightness. Subsequently, the necessary value to adjust the brightness of each image to this average value was calculated. Upon ensuring consistency of all spectral bands on the reference side of the image across all experimental sets, fixed values were projected from the reference spectrum to the analysed spectrum. A five-parameter model of the reference spectrum was established, comprising the rectangle's centre coordinates (x,y), width, length, and horizontal angle. As the centre point of the rectangle shifted from the reference spectrum to the analysed spectrum, a new rectangle was constructed from the new centre point using the five-parameter data. employed by ML algorithms to predict the concentration of substances, in accordance with the Beer-Lambert law [28]. From the employed image processing methodology, a data frame was obtained. This data frame comprised types of light sources, types of solute(s), types of solvent, concentrations, and differences in lightness (ΔL) values, as displayed in Fig. This data frame was subsequently employed for prediction and validation through the application of ma chine learning algorithms.
+
+----- para_id: 15 -----
+Section: 2.4.2. Prediction and validation
+
+Text:
+The result images were configured to a size of 100 × 20 pixels, and Fig. 11 offers a visual representation of this configuration. Upon the generation of a data frame from the image processing methodology, the stage was set for the application of machine learning for predictive purposes. Supervised learning was employed, incorpo rating feature selection and cross-validation steps, as depicted in Fig. This study utilized four machine learning algorithms: Random Forest (RF), Support Vector Regression (SVR), Multilayer Perceptron (MLP), and Extreme Gradient Boosting (XGB). These algorithms were applied to predict the concentration of solutes (KMnO4, Carbosulfan, sugar, and 2.4.1.6. Upon the spectral bands on the analysed side being deemed appropriate for analysis, the mean lightness (L) value in each row was deducted from the L value of the blank solution across all columns, resulting in differences in lightness (ΔL) values. ΔL values, observed as results of light absorptions across diverse wavelengths, were salt) in various solvents. Further details on each step are discussed in the following sections.
+
+----- para_id: 16 -----
+Section: 2.4.3. Feature selection
+
+Text:
+The data frame was divided into independent variables (ΔL values) and dependent variables (concentrations of the solute). It was observed that up to 100 ΔL values could be extracted per image. To adhere to fundamental machine learning principles [42], a dataset with at least ten times the number of independent variables is required. To reduce the number of features, the F-test [43], implemented through the "SelectKBest" library [36], was employed to discern the relationship between independent and dependent variables and select the most im pactful features. 14, the feature set could be reduced to four features without significant loss of predictive accuracy . The top four data points with the highest correlation coefficients were selected.
+
+----- para_id: 17 -----
+Section: 2.4.4. Model selection with Cross-Validation
+
+Text:
+Cross-validation is a technique employed to estimate the perfor mance of a model on unseen data [37]. This technique involves parti tioning the available data into multiple segments, training the model on a subset of these segments, and subsequently testing the model on the remaining segment, as illustrated in Fig. This procedure is reiterated with varying subsets, and the outcomes are averaged to yield a robust measure of the model's performance. The goal is to prevent overfitting, where a model performs well on training data but poorly on new data. To ensure a fair comparison of model performance in this study, K was selected to be 5. The Random Forest (RF) [32], Support Vector Regression (SVR) [33], Multilayer Perceptron (MLP) [34], and Extreme Gradient Boosting (XGB) [35] algorithms, which are readily accessible packages, were utilized to train models with 80 % of the images . These algorithms were selected based on their performance during the development stage, considering that light absorbance behaviours do not strictly follow the linear relationship of the Beer-Lambert law, and the data exhibited some noise. Subsequently, 20 % of the images were used as test-set data to test model performances. Each model was configured with the optimal hyperparameters, as shown in Table 2. Statistical values, including the Mean Absolute Percentage Error (MAPE) in Eq. (2), the Root Mean Squared Error (RMSE) in Eq. (3), the Coefficient of Determination (R2) in Eq.
+
+----- para_id: 18 -----
+Section: 2.4.4. Model selection with Cross-Validation
+
+Text:
+(4), and the Index of Agreement (IA) in Eq. (5), were utilized for the comparison of the performance of various models. where yi denotes the actual value at position îy denotes the predicted value at position iy denotes the average valueand n denotes the quantity of data.
+
+----- para_id: 19 -----
+Section: 2.4.5. Validation
+
+Text:
+The model was validated using sets of distinctive concentrations. Once the optimal machine learning model was obtained, it was employed to predict the concentration of the validation sets. Moreover, the Evolution™ 201/220 UV–Visible Spectrophotometers were employed for the estimations of concentrations within the validation sets in the KMnO4 and Carbosulfan case studies. The UV–Visible spec trophotometer was configured with an integration time of 0.05 s, a data interval of 1 nm, a scan speed of 1200 nm/min, across a wavelength range of 200–700 nm. This enabled a direct comparison of errors be tween the standard method and the proposed approach. Errors were reported in terms of Mean Absolute Percentage Error (MAPE) and Root Mean Squared Error (RMSE).
+
+----- para_id: 20 -----
+Section: 3.1. Image processing
+
+Text:
+The image processing methodology, consisting of object detection, morphology, and corner detection, successfully corrected the misalign ment between each reference spectral band. 16 depicts an extreme case of misalignment employed to validate the method's efficacy. The camera was intentionally rotated and repositioned to create these mis alignments. The developed methodology successfully captured the spectral band area and corrected rotational misalignment, resulting in consistent band representation. This approach ensures the reliability of spectral data acquisition despite variations in camera positioning. In addition, the light correction step effectively addressed variations in lightness within the reference spectral bands. Significant differences in lightness were observed, as illustrated in Fig. 17A, with the standard deviation of average lightness calculated at 1.30 L*. The lightness of each image was adjusted to a uniform value, as shown in Fig. This adjustment substantially reduced the standard deviation to 1.34 × 10−4 L*. The calculated offset value was then applied to the corresponding analysed side of the spectral band, resulting in a set of spectral bands exhibiting a discernible trend, as presented in Fig.
+
+----- para_id: 21 -----
+Section: 3.2. KMnO
+
+Text:
+The application of machine learning methodology for predicting KMnO4 concentrations, utilizing images acquired from a low-cost portable spectrophotometer, has yielded highly encouraging out comes. Four distinct algorithms – namely, SVP, RF, MLP, and XGB – were employed. Additionally, a 5-fold cross-validation methodology considering the analysis of four optimal features was applied. Accuracy SVR 'C': [0.1, 1, 10, 100, 1000], 'kernel': ['linear', 'rbf', 'sigmoid'] RF 'n_estimators': [50, 100, 200, 300, 400, 500], 'max_depth': [None, 10, 20, 30, 40, 50], 'min_samples_split': [2,5,10,15,20] MLP 'hidden_layer_sizes': [(50, 50), (75, 75), (100,100), (25,25)], 'activation': ['relu', 'tanh'], 'alpha': [0.0001, 0.001, 0.01] XGB 'n_estimators': [100, 200, 300, 400, 500], 'max_depth': [3,4,5,6,7,8], 'learning_rate': [0.01, 0.05, 0.1, 0.5, 1] evaluations based on the comparison between predicted and actual concentrations, as summarized in Table 3, indicate that the XGB algo rithm achieved the lowest error of combined unseen data sets (test and validation sets) of 1.48 %. Notably, the error obtained from the current approach was even lower than that of the standard method. Across all datasets, the XGB algorithm demonstrated slightly supe rior performance compared to SVR, RF, and MLP. Notably, the test and validation sets exhibited minimal accuracy reduction, affirming the effectiveness of the cross-validation approach.
+
+----- para_id: 22 -----
+Section: 3.2. KMnO
+
+Text:
+Additionally, a graphical comparison between predicted and actual concentrations using the XGB algorithm is presented in Fig. It is important to note that the error bars for the train set data points were imperceptible due to the minimal variation in predicted values. It is important to note that one point of concentration in the figure corresponds to ten images , and the error bars for the train set data points remained imperceptible due to the minimal variation in predicted values.
+
+----- para_id: 23 -----
+Section: 3.3. Carbosulfan
+
+Text:
+The application of machine learning methodology for predicting Carbosulfan concentrations has yielded acceptable outcomes. Accuracy evaluations based on the comparison between predicted and actual concentrations, as summarized in Table 4, indicate that the XGB algo rithm achieved the lowest error of combined unseen data sets of 3.29 %. Across all datasets, the XGB algorithm demonstrated marginally su perior performance compared to SVR, RF, and MLP. Despite the implementation of the cross-validation technique, a notable increase in errors on the test set compared to the train set was evident across all algorithms, indicating potential overfitting to the training data. 20 illustrates a graphical comparison between the predicted and actual concentrations using the XGB algorithm. Predom inant errors in prediction were observed at lower concentration levels (below 500 mg⋅L−1), where the average lightness change was below 0.5 L* per 50 mg⋅L−1.

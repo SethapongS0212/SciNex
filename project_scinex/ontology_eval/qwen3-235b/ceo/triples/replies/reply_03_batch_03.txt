@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "8ae6d074247e", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "5e73089d07d9", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "7695bceff83b", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "'comprises five steps' is literal and both sides are processes"},
+  {"triple_id": "66283603269e", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "comparesAgainst requires BOTH sides to be named models; 'all the compared methods' names nothing"},
+  {"triple_id": "c95c0d95bfb3", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "evaluatedOn requires a named dataset; a Raspberry Pi is hardware - the measurement is real but the range is wrong"},
+  {"triple_id": "a76c104a3a43", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "exactly the intended shape: named metric -> specific numeric result"},
+  {"triple_id": "464ebcfde2f4", "C1": "PARTIAL", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "'observation steps' is a hyperparameter, not a named training corpus; nothing in the sentence says the RNN was trained on it"},
+  {"triple_id": "35ec9594a0e4", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "direction reversed: the train/test sets are split FROM the dataset"},
+  {"triple_id": "cdf9d1f0ac4d", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "misattribution: the sentence credits the feature engineering process with producing the features; the RT1-5 metrics are themselves an output"},
+  {"triple_id": "c336277a15ae", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "'baseline model' is unnamed; 'designed for' is explicit but 'a single car' is a scope, not a ResearchTask"}
+]}

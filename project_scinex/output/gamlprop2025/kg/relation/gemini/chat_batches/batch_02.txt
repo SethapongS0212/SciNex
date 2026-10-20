@@ -1,0 +1,26 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 2 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: 3.2 Compound Prediction with Genetic Algorithm
+
+Text:
+The lack of success in the first two cases is attributed to the absence of feasible hydrocarbon structures within the given target range, rendering it impossible to generate a structure that satisfies the specified criteria, regardless of the number of iterations performed. Conversely, for the cases with feasible solutions, the genetic algorithm identified the desired structures with notable efficiency. Targets (K) Results (K) Structure Iteration Error (%) C = # ( 1 200-205 188.45 2 0 0 0 0 100 5.78 250-255 249.95 3 0 1 0 0 100 0.02 300-305 300.05 4 0 1 0 0 3 0.00 350-355 351.05 7 1 0 3 0 4 0.00 400-405 403.58 8 2 0 0 1 5 0.00 450-455 453.15 12 1 0 5 0 2 0.
+
+----- para_id: 13 -----
+Section: 4. Conclusions
+
+Text:
+The application of machine learning and genetic algorithms demonstrates significant potential in predicting and optimising the properties of chemical compounds. The integration of cross-validation enhances model robustness, reducing errors in the prediction of unseen data. For instance, the incorporation of cross-validation resulted in a reduction of RMSE from 9.92 K to 8.00 K and MAPE from 1.94% to 1.72% for the test set, indicating improved performance in property estimation. When combined with a Genetic Algorithm, this methodology successfully generated chemical structures meeting specified property targets. In the boiling point prediction task, six cases were evaluated, with targets ranging from 200 K to 455 K. For four feasible target ranges (300–305 K, 350–355 K, 400–405 K, and 450–455 K), the algorithm identified structures such as 1-butyne and 2-butyne, achieving exact matches to the desired boiling points within an average of 3.5 iterations. In contrast, for infeasible target ranges (200–205 K and 250–255 K), the algorithm reached the maximum of 100 iterations without producing a structure within the specified range, highlighting the limitations of the input space. Overall, the approach demonstrates improved predictive accuracy and efficient property-targeted compound generation. Further refinements to the dataset and algorithm optimisation may expand the applicability to a wider range of chemical properties and enhance prediction accuracy.

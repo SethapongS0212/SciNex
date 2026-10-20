@@ -1,0 +1,340 @@
+{
+  "created": "2026-10-01",
+  "split_file": "ft_data\\split.json",
+  "folds": 4,
+  "split_seed": 13,
+  "eval_fold": 0,
+  "dev_fold": null,
+  "eval_papers": [
+    "csysguard2024",
+    "linkpred2015",
+    "osmotic2026",
+    "strabismus2026",
+    "textaug2023"
+  ],
+  "train_papers": [
+    "eyelandmark2024",
+    "gamlprop2025",
+    "llamacorrupt2025",
+    "microwave2018",
+    "oxidecrack2025",
+    "parkingyolo2023",
+    "pesticide2025",
+    "reststop2018",
+    "roadwaylight2018",
+    "trafficspeed2021",
+    "traveltime2022",
+    "tripplanner2020",
+    "ugmo2024",
+    "vehiclemake2025",
+    "videoseg2025"
+  ],
+  "dev_papers": [],
+  "teacher": "gptoss-120b",
+  "ontologies": [
+    "ceo",
+    "scinex"
+  ],
+  "system_prompt": "current",
+  "configures": "exclude",
+  "verdict_filter": "off",
+  "max_empty_frac": null,
+  "counts": {
+    "extraction": 168,
+    "ontology": 700,
+    "vocabulary": 1612,
+    "dev_extraction": 0,
+    "empty_extraction_targets": 87
+  },
+  "files": {
+    "train.jsonl": "a55cefec992db80560d939c7835ad33d3d1b05859be6839c8058c903ca203ee6"
+  },
+  "report": {
+    "extraction": {
+      "eyelandmark2024/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "gamlprop2025/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "rendered:output\\gamlprop2025\\no-llm\\output.html",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 23
+        },
+        "status": "ok",
+        "examples": 14
+      },
+      "llamacorrupt2025/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "microwave2018/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "oxidecrack2025/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "rendered:output\\oxidecrack2025\\no-llm\\output.html",
+        "alignment": {
+          "rate": 0.875,
+          "n_sentences": 40
+        },
+        "status": "misaligned (0.88 < 0.9)"
+      },
+      "parkingyolo2023/ceo": {
+        "drops": {
+          "unparseable": 1
+        },
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "rendered:output\\parkingyolo2023\\no-llm\\output.html",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 41
+        },
+        "status": "ok",
+        "examples": 25
+      },
+      "pesticide2025/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "reststop2018/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "roadwaylight2018/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "rendered:output\\roadwaylight2018\\no-llm\\output.html",
+        "status": "paragraph_count_mismatch (30 rendered vs 31 in teacher run)"
+      },
+      "trafficspeed2021/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "traveltime2022/ceo": {
+        "drops": {
+          "empty_content": 1
+        },
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "rendered:output\\traveltime2022\\no-llm\\output.html",
+        "alignment": {
+          "rate": 0.9879518072289156,
+          "n_sentences": 83
+        },
+        "status": "ok",
+        "examples": 44
+      },
+      "tripplanner2020/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "ugmo2024/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "vehiclemake2025/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "videoseg2025/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "eyelandmark2024/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "gamlprop2025/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "rendered:output\\gamlprop2025\\no-llm\\output.html",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 23
+        },
+        "status": "ok",
+        "examples": 14
+      },
+      "llamacorrupt2025/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "microwave2018/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "oxidecrack2025/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "rendered:output\\oxidecrack2025\\no-llm\\output.html",
+        "alignment": {
+          "rate": 0.7058823529411765,
+          "n_sentences": 17
+        },
+        "status": "misaligned (0.71 < 0.9)"
+      },
+      "parkingyolo2023/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "rendered:output\\parkingyolo2023\\no-llm\\output.html",
+        "alignment": {
+          "rate": 0.9375,
+          "n_sentences": 16
+        },
+        "status": "ok",
+        "examples": 26
+      },
+      "pesticide2025/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "reststop2018/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "roadwaylight2018/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "rendered:output\\roadwaylight2018\\no-llm\\output.html",
+        "status": "paragraph_count_mismatch (30 rendered vs 31 in teacher run)"
+      },
+      "trafficspeed2021/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "traveltime2022/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "rendered:output\\traveltime2022\\no-llm\\output.html",
+        "alignment": {
+          "rate": 0.9743589743589743,
+          "n_sentences": 39
+        },
+        "status": "ok",
+        "examples": 45
+      },
+      "tripplanner2020/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "ugmo2024/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "vehiclemake2025/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      },
+      "videoseg2025/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "missing",
+        "status": "no_paragraphs"
+      }
+    },
+    "notes": [],
+    "vocabulary": {
+      "paper_csvs": {
+        "eyelandmark2024": null,
+        "gamlprop2025": null,
+        "llamacorrupt2025": null,
+        "microwave2018": null,
+        "oxidecrack2025": null,
+        "parkingyolo2023": null,
+        "pesticide2025": null,
+        "reststop2018": null,
+        "roadwaylight2018": null,
+        "trafficspeed2021": null,
+        "traveltime2022": null,
+        "tripplanner2020": null,
+        "ugmo2024": null,
+        "vehiclemake2025": null,
+        "videoseg2025": null
+      },
+      "gazetteer": {
+        "path": "output\\acl\\csner_gazetteer.csv",
+        "taken_per_type": {
+          "Model": 300,
+          "Method": 300,
+          "Dataset": 41,
+          "Task": 300,
+          "Tool": 227,
+          "Resource": 300,
+          "Language": 144
+        }
+      }
+    }
+  }
+}

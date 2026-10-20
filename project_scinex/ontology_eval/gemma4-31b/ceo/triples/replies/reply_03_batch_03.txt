@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "b161c65c6b27", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "the benchmark is explicit, but comparesAgainst requires BOTH sides to be named models and 'proposed model' names nothing"},
+  {"triple_id": "ed9529ad62d3", "C1": "PARTIAL", "C3": "TOO_NARROW", "C4": "PARTIAL", "note": "three layers bundled into one malformed node instead of three triples; comprises also wants processes on both sides and layers are structural"},
+  {"triple_id": "b565e3630962", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "'system metrics' is what the model FORECASTS - that is addresses, not evaluatedOn, which requires a named dataset"},
+  {"triple_id": "527e2cf1de3f", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "the metric is BERTScore, not BERT the model, and the object is a descriptive phrase where the predicate demands a numeric result"},
+  {"triple_id": "65b8063c2b5d", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "1f1396b6963b", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "textbook encompasses: a broad domain as subject, a specific task as object, containment stated by 'in the fields of'"},
+  {"triple_id": "d898335feded", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "correctly disentangles the RT1->nasal / RT4->temporal pairing, and 'designed to' is verbatim; but RT4 is a derived feature, not the Model the predicate requires"},
+  {"triple_id": "a3c9f912251d", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "right direction and right classes, but this is membership in a benchmark suite, and splitFrom is defined for train/dev/test partitions"},
+  {"triple_id": "477fc961d32a", "C1": "PARTIAL", "C3": "TOO_NARROW", "C4": "CORRECT", "note": "object is a long descriptive phrase rather than a corpus name, but trainedOn is the right predicate here - gptoss-120b rendered the same sentence as the weaker 'uses'"},
+  {"triple_id": "6ac4a827466b", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "correct Agent -> Organisation direction, but the sentence records a degree awarded, not a current affiliation; mined from an author biography"}
+]}

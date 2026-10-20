@@ -1,0 +1,23 @@
+{"verdicts": [
+  {"paper": "csysguard2024", "C6": "CONTRADICTORY",
+   "issues": ["CONTRADICTS THE PAPER'S OWN DESIGN CLAIM: (cSysGuard) --uses--> (simple averaging) alongside (cSysGuard) --uses--> (multi-layered stacking ensemble approach). The source states cSysGuard employs stacking RATHER THAN simple/weight averaging, so the graph asserts it uses the approach the paper explicitly rejects",
+              "SYSTEMATIC RANGE MISUSE of uses: it carries methods (stacking approach), a tool (sliding window technique), HARDWARE (host machine) and a METRIC (RMSE, four times - (Linear Regression (LR)), (Random Forest (RF)), (Feedforward Neural Networks (FF)), (weight normalization formula)). Models consuming a metric should be evaluatedOn/evaluates",
+              "EXACT DUPLICATE: (Decision Trees) achieves (macro-averaged F1 score of 89.79%) asserted twice",
+              "surface splits: (cSysGuard) / (cSys- Guard) from a PDF hyphenation artifact; (Linear Regression) / (Linear Regression (LR)); (Random Forest) / (Random Forest (RF)); (Feedforward Neural Networks) / (Feedforward Neural Networks (FF))",
+              "(cSysGuard) --achieves--> (marginally higher processing times): a COST recorded as an achievement",
+              "(Kasikorn Business-Technology Group) --locatedIn--> (Thailand): affiliation matter that survived the provenance guard"],
+   "note": "the five comparesAgainst triples (GRU/RNN/LSTM/ARIMA/CNN) are clean and correctly typed; what breaks it is one predicate spanning four incompatible ranges plus a claim the paper contradicts"},
+  {"paper": "roadwaylight2018", "C6": "MINOR_ISSUES",
+   "issues": ["CITATION MARKERS FUSED INTO ENTITY NAMES: (classification method(13)) and (ANN(13)) - the superscript reference number became part of the node id, and (ANN(13)) then splits from (ANN)",
+              "surface split: (decision tree) / (decision tree model)",
+              "(four key classification methods) is a collective noun standing in for four named entities",
+              "'the dataset' is an unnamed object shared by four uses triples - consistent, but it identifies nothing"],
+   "note": "no contradictions and the per-classifier configuration relations (Gini index, sigmoid, RBF kernel) are each correctly attached; the defects are node-identity artifacts from the PDF"},
+  {"paper": "textaug2023", "C6": "CONTRADICTORY",
+   "issues": ["SAME NODE, TWO INCOMPATIBLE VALUES: (F1-score) --evaluates--> (0.91) and (F1-score) --evaluates--> (0.43); the class qualifiers (Traffic vs Social-events) were dropped, turning two compatible facts into one self-contradictory node",
+              "FOUR surface variants of the paper's own technique: (BPEmb), (BPEmbAug), (BPEmb data augmentation strategy), (BPEmb augmentation technique)",
+              "THREE variants of LSTM: (Long Short-Term Memory (LSTM)), (LSTMs), (LSTM method)",
+              "(random sampling) comprises (undersampling)/(oversampling): hyponymy encoded as meronymy",
+              "(LSTMs) --produces--> (final results): a contentless object"],
+   "note": "unchanged from the Session 28 judgement of this same triple set - the verdict is reproduced here because the paper was redrawn into the 20-paper C6 sample"}
+]}

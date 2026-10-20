@@ -1,0 +1,90 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: f89178fffff0 -----
+TRIPLE:     (DeepSORT)  --uses-->  (Max cosine distance)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Max cosine distance was the threshold to identify vehicle similarity by the DeepSORT algorithm.
+
+----- triple_id: 8a4617b20c00 -----
+TRIPLE:     (Random Forest (RF))  --achieves-->  (F1 score of 87.13%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Specifically, the results indicated that Random Forest (RF) with 15 estimators achieved the best performance, yielding the F1 score of 87.13%.
+
+----- triple_id: 2f0e601e15c1 -----
+TRIPLE:     (Genetic algorithm (GA))  --addresses-->  (optimization and search problems)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Genetic algorithm (GA), a subset of evolutionary algorithms (EAs), are adaptive search methods inspired by natural selection, widely used for optimization and search problems.
+
+----- triple_id: ab8f20d245fc -----
+TRIPLE:     (CTv1)  --comparesagainst-->  (InceptionV3)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: With a three -fold reduction in both model size and training time, the suggested CTv1 model outperformed InceptionV3, and CTv1-DW and CTv1-DR further decreased model size without appreciably lowering accuracy (by 9% and 6%, respectively ).
+
+----- triple_id: b15ff6180ca6 -----
+TRIPLE:     (cSysGuard)  --comprises-->  (health assessment feature)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: With this advancement, cSysGuard comprises two main components: a system performance metric forecasting module and a health assessment feature.
+
+----- triple_id: f9fec0ea1839 -----
+TRIPLE:     (MAE)  --evaluates-->  (36.328 s)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: For the results of the running time prediction , the MAE of the ConvLSTM with attention was 36.328 s, which was about 3.21% higher than that of the ConvLSTM without attention and about 22.95% higher than that of the LSTM without attention.
+
+----- triple_id: cb734c6be102 -----
+TRIPLE:     (ResNet50)  --evaluatedon-->  (NTOU-MMR)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Using their developed Lightweight Recurrent Attention Unit (LRAU), Boukerche and Ma [11] also tested InceptionV3 (along with ResNet50 and VGG16) to improve classification performance on well-known VMMR datasets such as Stanford Cars, CompCars, and NTOU-MMR.
+
+----- triple_id: 850336f8c31b -----
+TRIPLE:     (NLP)  --encompasses-->  (text generation)
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains
+SOURCE SENTENCE: Large language models (LLMs) [1] have transformed natural lan- guage processing (NLP) by performing exceptionally well in many real-world tasks, especially in text generation and question an- swering.
+
+----- triple_id: bea25c97ba68 -----
+TRIPLE:     (Gaussian Process algorithm)  --produces-->  (osmotic coefficients)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: The osmotic coefficients estimated from the Gaussian Process algorithm are subsequently utilized to calculate activity coefficients using Eq.
+
+----- triple_id: c55fd86c62d2 -----
+TRIPLE:     (CNN model)  --designedfor-->  (recognizing vehicle makes from front- view images)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: The former part discusses the structure of the CNN model designed for recognizing vehicle makes from front- view images, including a version of the model reduced in size using Depth-wise Separable Convolution and 1 × 1 Convolution Dimension Reduction.

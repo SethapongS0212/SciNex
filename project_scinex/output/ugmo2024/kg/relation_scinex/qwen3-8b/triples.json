@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "automated video editing system",
+    "predicate": "designedfor",
+    "object": "use case",
+    "object_type": "Concept",
+    "source_sentence": "An automated video editing system designed specifically for this use case is presented in this paper.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "Abstract"
+  },
+  {
+    "subject": "YOLOv8",
+    "predicate": "trainedon",
+    "object": "data on human posture",
+    "object_type": "Dataset",
+    "source_sentence": "We utilize the YOLOv8 [2] object detection model for graduate detection, which has been pre-trained using data on human posture.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "Abstract"
+  },
+  {
+    "subject": "YOLOv8",
+    "predicate": "achieves",
+    "object": "faster inference speed and better accuracy",
+    "object_type": "Metric",
+    "source_sentence": "In this version of YOLO, the YOLOv8 has faster inference speed and better accuracy, which is commonly used for many pieces of research about object detection [3-4].",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "Abstract"
+  },
+  {
+    "subject": "YOLOv8",
+    "predicate": "uses",
+    "object": "posture detection capabilities",
+    "object_type": "Method",
+    "source_sentence": "Using the YOLOv8 posture detection capabilities [5-6], we are able to localize the body of every graduate as they walk and get a degree in each video frame.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "Abstract"
+  },
+  {
+    "subject": "U-GMo",
+    "predicate": "comprises",
+    "object": "Artificial Intelligence (AI) part",
+    "object_type": "Concept",
+    "source_sentence": "U-GMo provides 2 parts depicted in Fig 1. The main part is the Artificial Intelligence (AI) part that process an input video into individual clips using the techniques of movement tracking, graduation identification, and video segment extraction.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "2. Method"
+  },
+  {
+    "subject": "U-GMo",
+    "predicate": "comprises",
+    "object": "application part",
+    "object_type": "Concept",
+    "source_sentence": "U-GMo provides 2 parts depicted in Fig 1. The main part is the Artificial Intelligence (AI) part that process an input video into individual clips using the techniques of movement tracking, graduation identification, and video segment extraction.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "2. Method"
+  },
+  {
+    "subject": "system",
+    "predicate": "addresses",
+    "object": "patterns",
+    "object_type": "Concept",
+    "source_sentence": "The graduate stopping in the middle of the stage, extending their arm for a handshake, or accepting the diploma are examples of patterns that the system recognizes, as shown in Fig 4.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "2. Method"
+  },
+  {
+    "subject": "degree conferral",
+    "predicate": "addresses",
+    "object": "pose pattern",
+    "object_type": "Concept",
+    "source_sentence": "This \"degree conferral\" pose pattern's peak is localized within the frames that serve as the bounds for each highlight clip extraction.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "2. Method"
+  },
+  {
+    "subject": "YOLOv8",
+    "predicate": "produces",
+    "object": "result",
+    "object_type": "Other",
+    "source_sentence": "The result from YOLOv8 pose estimation contains 17 key points, as shown in Fig 4.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "2. Method"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "addresses",
+    "object": "angles A (10-8-6) and B (8-6-12)",
+    "object_type": "Concept",
+    "source_sentence": "The more analysis is to estimate proper angles A (10-8-6) and B (8-6-12) as displayed in Fig 5.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "2. Method"
+  },
+  {
+    "subject": "angle A",
+    "predicate": "addresses",
+    "object": "150° and 180°",
+    "object_type": "Concept",
+    "source_sentence": "Among many of degree conferral poses; the angle A is usually between 150° and 180°, and the angle B is usually between 50° and 70°.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "2. Method"
+  },
+  {
+    "subject": "angle B",
+    "predicate": "addresses",
+    "object": "50° and 70°",
+    "object_type": "Concept",
+    "source_sentence": "Among many of degree conferral poses; the angle A is usually between 150° and 180°, and the angle B is usually between 50° and 70°.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "2. Method"
+  },
+  {
+    "subject": "frames",
+    "predicate": "addresses",
+    "object": "degree conferral poses",
+    "object_type": "Concept",
+    "source_sentence": "After detecting frames containing degree conferral poses which is satisfying the conditions of angles A and B, the center frame in each selected frame interval represents the middle point on a clip.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "2. Method"
+  },
+  {
+    "subject": "interval frame",
+    "predicate": "addresses",
+    "object": "frame number 10009",
+    "object_type": "Concept",
+    "source_sentence": "For example, if an interval frame numbers between 10003 and 10015 are detected as degree conferral, the middle point becomes the frame number 10009.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "2. Method"
+  },
+  {
+    "subject": "video frames",
+    "predicate": "extractedfrom",
+    "object": "individual graduation ceremony video",
+    "object_type": "Task",
+    "source_sentence": "In this case, the video frames before and after the frame number 10009 within 1 seconds are extracted as a video segment of an individual graduation ceremony video.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "2. Method"
+  },
+  {
+    "subject": "YOLOv8 person detector",
+    "predicate": "achieves",
+    "object": "0.85 average precision",
+    "object_type": "Metric",
+    "source_sentence": "Across the test set, the YOLOv8 person detector achieved an average precision of 0.85, indicating robust detection of human figures.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "3. Result"
+  },
+  {
+    "subject": "pose analysis module of the system",
+    "predicate": "achieves",
+    "object": "0.97 precision",
+    "object_type": "Metric",
+    "source_sentence": "The pose analysis module of the system identified these \"degree conferral\" sequences with a precision of 0.97, meaning that 97% of the time, it accurately identified real degree receipt moments while avoiding false positives on irrelevant postures.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "3. Result"
+  },
+  {
+    "subject": "system",
+    "predicate": "produces",
+    "object": "final personalized highlight reel",
+    "object_type": "Task",
+    "source_sentence": "With the highlight boundaries identified, the system extracts a short video clip surrounding those frames to produce the final personalized highlight reel for that graduate.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "3. Result"
+  },
+  {
+    "subject": "strong person detection",
+    "predicate": "produces",
+    "object": "confidence that graduates are reliably detected",
+    "object_type": "Concept",
+    "source_sentence": "The strong person detection provides confidence that graduates are reliably detected as they move around the stage area.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "3. Result"
+  },
+  {
+    "subject": "system",
+    "predicate": "achieves",
+    "object": "0.97 accuracy on degree pose detection",
+    "object_type": "Metric",
+    "source_sentence": "In addition, the 0.97 accuracy on degree pose detection demonstrates the system's effectiveness in pinpointing the exact key highlight to extract, even among other movements.",
+    "extraction_mode": "relation",
+    "paper": "ugmo2024",
+    "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+    "section": "3. Result"
+  }
+]

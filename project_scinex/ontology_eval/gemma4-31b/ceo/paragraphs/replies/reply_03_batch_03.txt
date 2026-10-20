@@ -1,0 +1,18 @@
+{"verdicts": [
+  {"para_key": "oxidecrack2025#11", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["SMOTE", "ADASYN", "Borderline SMOTE", "K-Means SMOTE", "oversampling", "class imbalance", "71 features / 233 samples", "15% spallation class"],
+   "missed_relations": ["SMOTE -> addresses -> class imbalance", "SMOTE -> uses -> nearest neighbors to generate synthetic samples", "ADASYN / Borderline SMOTE -> improve on -> SMOTE", "our dataset -> comprises -> 71 features and 233 samples"],
+   "note": "four named oversampling techniques, their trade-offs, and the paper's own dataset dimensions - and not one triple. The single densest zero-yield paragraph across all four models."},
+  {"para_key": "llamacorrupt2025#6", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["Llama-3.2-1B-Instruct", "Transformer", "Hugging Face", "16 layers", "self-attention (Query, Key, Value)", "feed-forward network (Gate, Up, Down)"],
+   "missed_relations": ["Llama-3.2-1B-Instruct -> uses -> Transformer architecture", "model -> comprises -> 16 layers", "each layer -> comprises -> self-attention and feed-forward computations", "self-attention -> comprises -> Query, Key and Value matrices", "feed-forward network -> comprises -> Gate, Up and Down matrices"],
+   "note": "a fully compositional architecture description - five nested comprises relations spelled out explicitly - yielding nothing. This is exactly the structure a KG exists to hold."},
+  {"para_key": "pesticide2025#23", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["Carbosulfan", "lowest error of 3.29%", "cross-validation", "overfitting to the training data"],
+   "missed_relations": ["XGB -> achieves -> lowest error of 3.29% on combined unseen data", "machine learning methodology -> addresses -> predicting Carbosulfan concentrations", "all algorithms -> exhibit -> increased test-set error indicating overfitting"],
+   "note": "the four models and their comparison ring are captured but the headline result is not - the same failure gptoss-120b made on the sibling paragraph #21, so this looks like a systematic bias toward comparison over quantity"},
+  {"para_key": "pesticide2025#20", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["rotational misalignment", "spectral bands", "standard deviation 1.30 L* reduced to 1.34e-4 L*"],
+   "missed_relations": ["image processing methodology -> addresses -> misalignment between reference spectral bands", "light correction -> achieves -> standard deviation reduced from 1.30 to 1.34e-4 L*"],
+   "note": "the best paragraph in this model's sample - the three-way comprises decomposition is exactly the intended shape and the light-correction relation is right; only the quantities are lost"}
+]}

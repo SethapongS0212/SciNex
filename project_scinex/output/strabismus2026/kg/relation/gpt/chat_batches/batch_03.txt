@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 24 -----
+Section: Eye landmark feature engineering
+
+Text:
+RT5 was also expected to decrease during lateral gaze relative to the primary position, likely reflecting the effect of ocular curvature and changing visibility of the limbal boundaries during horizontal rotation. Some variation between eyes was anticipated because of inter-individual differences in eyelid configuration and gaze-dependent changes in visible scleral exposure. Scientific Reports | (2026) 16:18278 8 | https://doi.org/10.1038/s41598-026-48893-
+
+----- para_id: 25 -----
+Section: Strabismus classification
+
+Text:
+Machine learning models for strabismus classification The final analytical stage involved classifying strabismus based on landmark-derived features, as illustrated in Fig. We evaluated and compared seven supervised machine learning classifiers11. • Artificial Neural Network (ANN). • Support Vector Machine (SVM). The classification was performed using 30 features per participant, derived from five geometric ratios (RT1– RT5) calculated across six ocular observations (two eyes per image across three gaze positions). Training process To ensure rigorous performance assessment, the following experimental protocol was implemented: 1) The dataset was labeled binary, where 'True' represented the presence of strabismus and 'False' indicated orthotropia. 2) Our experiment conducted 4-fold cross-validation by splitting data into 4 partitions. Each partition con tained 25 strabismus cases and 12–13 orthotropia subjects. 3) In each fold, the training set was oversampled using SMOTE with five nearest neighbors and a sampling strategy designed to have 200 samples for each class. Then, all machine learning models were fitted to the oversampled training set, and the performances of test set prediction were evaluated. 4) At the final step, the performance metrics: accuracy , sensitivity, specificity, positive predictive value (PPV or precision), and negative predictive value (NPV), were averaged and reported.
+
+----- para_id: 26 -----
+Section: Final prediction models
+
+Text:
+Following the comparative analysis, the optimal architecture was integrated for potential deployment. The RT-DETR model was finalized by training on the complete eye landmark dataset. Subsequently, the RT1–RT5 features were extracted from the detected landmarks of all participants to serve as structured inputs for the final Random Forest classifier. This integrated pipeline ensures that the classification process remains grounded in quantifiable geometric measurements.
+
+----- para_id: 27 -----
+Section: Results
+
+Text:
+The study involved 150 participants, predominantly of Thai ethnicity, with a median age of 19.62 years (interquartile range [IQR], 10.92–58.13). The cohort consisted of 64 males (42.7%) and 86 females (57.3%). Based on ocular alignment , participants were categorized into three groups : orthotropia (n = 54; 36.0%), exotropia (n = 54; 36.0%), and esotropia (n = 42; 28.0%). Clinical measurements revealed a median deviation of 35.00 PD (IQR, 20.00–40.00) for the exotropia group and 25.00 PD (IQR, 13.50–45.00) for the esotropia group (Table 1).
+
+----- para_id: 28 -----
+Section: Experimental results
+
+Text:
+Result of eye landmark detections For the eye landmark detection task, the RT-DETR model was employed and trained on a dataset of eye landmark annotations. The training process spanned 100 epochs per fold, utilizing a multi-part loss function consisting of Generalized Intersection-over-Union (GIoU) loss, classification (Cls) loss, and L1 loss. The summary of the evaluation metrics for the RT-DETR method using 4-fold cross-validation resulted in an intersection over union (IoU) of 0.62, and a mean center-point error of 6.52 pixels (Euclidean distance), with a horizontal component of 5.31 pixels. This horizontal error represents approximately 0.74% of the image width and 2.44% of the average eye width. In addition, the loss curves for a fold are illustrated in Fig. After RT-DETR eye landmark detection , strabismus was classified using machine learning. We used predicted landmarks from the test set of each fold for every participant to prevent data leaks. The example of eye landmark data is as illustrated in, Fig. Then, RT1-5 metrics were computed by the feature engineering process, as exampled in Fig. As mentioned in previous section, this produced 30 features that were mapped to a binary strabismus label (True/False). These features included 5 RT metrics for each eye across 3 gazes.
+
+----- para_id: 29 -----
+Section: Result of strabismus classification
+
+Text:
+The seven classifiers evaluated—Logistic Regression (LR), Decision Tree (DT), Naïve Bayes (NB), Random Forest (RF), K-Nearest Neighbors (KNN), Artificial Neural Networks (ANN), and Support Vector Machines (SVM)—were trained using 4-fold cross-validation with SMOTE-adjusted data balancing. Table 2 presents the full evaluation metrics for each model. Among the models tested, Random Forest (RF) yielded the best overall performance: accuracy of 0.95, specificity of 0.94, sensitivity of 0.96, PPV (or precision) of 0.97, and NPV of 0.92. The Decision Tree (DT) model followed closely with an accuracy of 0.87 and nearly identical sensitivity and specificity values. In contrast, the Naïve Bayes (NB) model showed limited utility, with an accuracy of only 0.45 and a sensitivity of 0.24. Moreover, KNN (k = 3) and SVM (polynomial kernel) also demonstrated moderate performance, whereas ANN models displayed variable performance depending on hidden layer configuration. Since the Random Forest was chosen due to its exceptional performance, we expanded our analysis by looking at the confusion matrix shown in Table 3. The presented confusion matrix was aggregated from the test sets of all four folds. We also determined the performance metrics' 95% Wilson Confidence Intervals (CIs), as Scientific Reports | (2026) 16:18278 9 | https://doi.org/10.1038/s41598-026-48893- Scientific Reports | (2026) 16:18278 10 | https://doi.org/10.1038/s41598-026-48893-
+
+----- para_id: 30 -----
+Section: Model settings
+
+Text:
+Based on experimental results, the settings were adjusted for optimizing the performance of the model. The resulting configurations for the models are summarized below. For the RT-DETR hyperparameters, the Loss functions are considered by the costs and weights: weight_ loss_bbox (L1 weight) is set to 5.0, weight_loss_giou (GIoU weight) is set to 2.0, and focal_loss_alpha (0.75) and focal_loss_gamma (2.0) are for the Focal Loss used for classification, controlled by use_focal_loss=True. The IoU-aware query selection mechanism uses a fixed number of num_queries = 300 and incorporates denoising with num_denoising = 100, label_noise_ratio = 0.5, and box_noise_scale = 1.0. Hyperparameters for the Transformer model include a shared d_model = 256, and specific settings for the hybrid encoder (e.g., encoder_layers = 1, encoder_ffn_dim = 1024, encoder_attention_heads = 8) and the RT-DETR Transformer decoder (e.g., decoder_layers = 6, decoder_ffn_dim = 1024, decoder_attention_heads = 8), with a standard activation_function="silu" for the model and encoder_activation_function="gelu" for the encoder. Essential training hyperparameters include the dropout rate dropout = 0.1 and attention_dropout = 0.1, the classification penalty eos_coefficient=1e-4, and the option with_box_refine=True.
+
+----- para_id: 31 -----
+Section: Model settings
+
+Text:
+Other parameters set precision and stability features like initializer_range = 0.01, layer_norm_eps=1e-5, and batch_norm_eps=1e-5, while the backbone is configured with use_pretrained_backbone=False and freeze_backbone_batch_norms=True. In addition, the tuned hyperparameter for a Random Forest contains 30 estimators or trees to be constructed, where each base decision tree will utilize the Gini impurity to evaluate the quality of a split. In addition, the feature subset size considered at each split is set to the square root of the maximum number of features via max_features='sqrt'. For the SMOTE, the number of neighbors was set to 5, and the sample strategy of True: False cases was up to 200:200.
+
+----- para_id: 32 -----
+Section: Implementation
+
+Text:
+The StrabSeen prototype was developed as a proof-of-concept mobile application to demonstrate the clinical feasibility of the proposed AI pipeline that returns a binary screening output and associated probability score for horizontal strabismus , as depicted in Fig. The AI model is stored on a server with an API for access. A mobile Scientific Reports | (2026) 16:18278 11 | https://doi.org/10.1038/s41598-026-48893-6 application has been developed with Flutter and deployed on the Android platform to demonstrate the technical feasibility. The application guides the user to capture three images corresponding to the required gaze directions (center, left, and right). To ensure data privacy, the server was designed as a dedicated processing unit that performs real- time inference without persistent image storage. During the experimental phase, the inference was hosted on a server environment with 2 vCPUs and 4 GB of RAM. The end-to-end processing time, including image transmission and deep learning inference, averaged 15–20 s per case. While this latency is acceptable for a prototype, further optimization—such as utilizing GPU acceleration or migrating to on-device inference—could enhance scalability and reduce dependency on network connectivity in high-traffic or resource-limited settings.
+
+----- para_id: 33 -----
+Section: Discussion
+
+Text:
+This study presented a two-stage, AI framework for binary screening of horizontal strabismus versus orthotropia using smartphone-acquired images under controlled conditions—an approach that combines deep-learning- based landmark localization with geometric feature extraction that provides feature-level transparency by utilizing human-readable geometric descriptors, rather than offering a mechanistic explanation of the underlying disease pathology. This section discusses our work from the following perspectives.
+
+----- para_id: 34 -----
+Section: Interpretation of results
+
+Text:
+By employing RT-DETR for landmark localization and biometric ratio–based classification via traditional ML models, we demonstrated promising screening performance under controlled image acquisition conditions. Across the RT-DETR models trained for each gaze, landmark detection reached acceptable reliability with IoU = 0.62 and mean center-point error of 6.52 pixels, despite the absence of clinical-grade imaging. These results match or exceed prior ocular landmark detection systems. For instance, Simoes et al.17 used U-Net and ResNet to detect ocular alignment in digital images , achieving strong detection performance but limited generalizability beyond controlled settings. Our model expanded on this by using RT-DETR, which enabled real-time inference and robust performance across three gaze directions. The use of biometric landmark ratios provided a more interpretable representation for strabismus classification than an end-to-end image classifier. Similar to earlier work by Mengash et al.22, who applied rule- based and CNN methods to video analysis for detecting horizontal strabismus22, our method demonstrated comparable screening performance— accuracy of 0.95, sensitivity of 0.96, and specificity of 0.94—using only still images from smartphones. In contrast, Seo et al.9 reported 0.93 accuracy with an infrared video –based system that required specialized hardware.
+
+----- para_id: 35 -----
+Section: Interpretation of results
+
+Text:
+Our proof-of-concept framework used smartphone-acquired images collected under controlled conditions and required three static photographs for binary screening of strabismus versus orthotropia. Additionally, Valente et al.8 employed a cover-test–based automated diagnosis with digital video , reporting accuracy of 0.94, sensitivity of 0.97, and specificity = 0.73. While they achieved slightly higher sensitivity, our approach showed higher specificity. High specificity is clinically advantageous in screening contexts to minimize unnecessary referrals and parental anxiety resulting from false positives. Furthermore, their system relied on motion cues, whereas ours relied on still images and landmark geometry, thus reducing environmental constraints and allowing asynchronous screening . From an architectural perspective, prior mobile-based AI attempts typically used CNNs without landmark explanation6. In contrast, our framework uses human-readable input features (RT1–RT5) derived from ocular geometry, which may facilitate clinical inspection of model inputs and improve transparency relative to end- to-end image classifiers. Nevertheless, feature importance and rule extraction from a Random Forest should be interpreted as providing partial interpretability of how the model separates classes within this dataset, rather than a clinically exhaustive or directly causal explanation of ocular misalignment.

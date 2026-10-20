@@ -1,0 +1,18 @@
+{"verdicts": [
+  {"para_key": "linkpred2015#12", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["Naive Bayes", "bipartite graph GBipt", "projection graph GProjFungi", "PCS(f,h)", "PBC(f,h)", "RDF dataset"],
+   "missed_relations": ["this research -> uses -> Naive Bayes to evaluate the probability of finding fungus f at host h", "bipartite graph -> producedFrom -> the RDF dataset", "PCS -> derivedFrom -> prior work [12]"],
+   "note": "same paragraph and same zero yield as gptoss-120b; the OCR-mangled formulae are a fair excuse for most of it, but the Naive Bayes sentence is clean prose"},
+  {"para_key": "routepred2023#11", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["Hit@3", "4-fold cross-validation"],
+   "missed_relations": ["model -> evaluatedOn/evaluates -> Hit@3 averaged over 4 rounds"],
+   "note": "a thin methodological aside; only two items were available and both were missed, so the absolute loss is small"},
+  {"para_key": "ugmo2024#4", "C2": "PARTIAL", "C5": "POOR",
+   "missed_concepts": ["degree conferral pose", "key points 6/8/10/12 (right shoulder, elbow, wrist, hip)", "angles A and B", "highlight clip extraction"],
+   "missed_relations": ["system -> addresses -> recognising degree conferral poses", "angles A and B -> computedFrom -> key points 10-8-6 and 8-6-12", "degree conferral -> detected when -> angle A in 150-180 deg and angle B in 50-70 deg", "detected interval -> produces -> centre frame as clip midpoint"],
+   "note": "the paper's actual detection rule is a pair of angle thresholds over four specific key points, spelled out numerically here; only the generic '17 key points' output survives"},
+  {"para_key": "tripplanner2020#0", "C2": "PARTIAL", "C5": "POOR",
+   "missed_concepts": ["trip plan", "web application for trip planner", "place features (categories, open weekdays, times to spend, routes)", "user satisfaction"],
+   "missed_relations": ["recommender system -> produces -> a whole trip schedule from a few user constraints", "web application -> designedFor -> demonstrating the recommender system", "trip plan -> uses -> places' categories, open weekdays, times to spend, feasible routes"],
+   "note": "this is the ABSTRACT, and the system's defining output relation - that it PRODUCES a trip plan - is missing; only the internal 'uses genetic algorithm' survives"}
+]}

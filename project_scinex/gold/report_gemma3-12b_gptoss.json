@@ -1,0 +1,337 @@
+{
+  "label_files": [
+    "gold/gptoss_verdicts_gemma3-12b.csv"
+  ],
+  "n_labelled": 100,
+  "extractors": {
+    "relation": {
+      "n_labelled": 100,
+      "corpus_triples": 1789,
+      "sampled_strict": 0.15,
+      "sampled_lenient": 0.38,
+      "weighted_strict": 0.29150363331470097,
+      "weighted_lenient": 0.5212968138624932,
+      "weight_coverage": 1.0,
+      "by_predicate": {
+        "achieves": {
+          "n": 5,
+          "correct": 2,
+          "partial": 3,
+          "incorrect": 0,
+          "corpus_n": 252,
+          "corpus_share": 0.14086081609837897,
+          "strict": 0.4,
+          "lenient": 1.0
+        },
+        "addresses": {
+          "n": 5,
+          "correct": 4,
+          "partial": 0,
+          "incorrect": 1,
+          "corpus_n": 353,
+          "corpus_share": 0.19731693683622134,
+          "strict": 0.8,
+          "lenient": 0.8
+        },
+        "affiliatedwith": {
+          "n": 4,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 8,
+          "corpus_share": 0.004471771939631079,
+          "strict": 0.25,
+          "lenient": 0.25
+        },
+        "cites": {
+          "n": 5,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 5,
+          "corpus_n": 27,
+          "corpus_share": 0.01509223029625489,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "comparesagainst": {
+          "n": 5,
+          "correct": 2,
+          "partial": 1,
+          "incorrect": 2,
+          "corpus_n": 94,
+          "corpus_share": 0.05254332029066518,
+          "strict": 0.4,
+          "lenient": 0.6
+        },
+        "comprises": {
+          "n": 5,
+          "correct": 2,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 170,
+          "corpus_share": 0.09502515371716043,
+          "strict": 0.4,
+          "lenient": 0.4
+        },
+        "configures": {
+          "n": 5,
+          "correct": 1,
+          "partial": 1,
+          "incorrect": 3,
+          "corpus_n": 37,
+          "corpus_share": 0.02068194522079374,
+          "strict": 0.2,
+          "lenient": 0.4
+        },
+        "designedfor": {
+          "n": 4,
+          "correct": 1,
+          "partial": 3,
+          "incorrect": 0,
+          "corpus_n": 14,
+          "corpus_share": 0.007825600894354388,
+          "strict": 0.25,
+          "lenient": 1.0
+        },
+        "employs": {
+          "n": 5,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 5,
+          "corpus_n": 64,
+          "corpus_share": 0.03577417551704863,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "encompasses": {
+          "n": 5,
+          "correct": 1,
+          "partial": 1,
+          "incorrect": 3,
+          "corpus_n": 39,
+          "corpus_share": 0.021799888205701508,
+          "strict": 0.2,
+          "lenient": 0.4
+        },
+        "evaluatedon": {
+          "n": 5,
+          "correct": 1,
+          "partial": 2,
+          "incorrect": 2,
+          "corpus_n": 60,
+          "corpus_share": 0.03353828954723309,
+          "strict": 0.2,
+          "lenient": 0.6
+        },
+        "evaluates": {
+          "n": 5,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 5,
+          "corpus_n": 77,
+          "corpus_share": 0.043040804918949134,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "locatedin": {
+          "n": 5,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 4,
+          "corpus_n": 40,
+          "corpus_share": 0.022358859698155393,
+          "strict": 0.0,
+          "lenient": 0.2
+        },
+        "produces": {
+          "n": 5,
+          "correct": 0,
+          "partial": 3,
+          "incorrect": 2,
+          "corpus_n": 37,
+          "corpus_share": 0.02068194522079374,
+          "strict": 0.0,
+          "lenient": 0.6
+        },
+        "publishedin": {
+          "n": 5,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 5,
+          "corpus_n": 69,
+          "corpus_share": 0.03856903297931805,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "reports": {
+          "n": 5,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 3,
+          "corpus_n": 40,
+          "corpus_share": 0.022358859698155393,
+          "strict": 0.0,
+          "lenient": 0.4
+        },
+        "splitfrom": {
+          "n": 4,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 4,
+          "corpus_n": 7,
+          "corpus_share": 0.003912800447177194,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "supports": {
+          "n": 4,
+          "correct": 0,
+          "partial": 3,
+          "incorrect": 1,
+          "corpus_n": 8,
+          "corpus_share": 0.004471771939631079,
+          "strict": 0.0,
+          "lenient": 0.75
+        },
+        "trainedon": {
+          "n": 5,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 4,
+          "corpus_n": 74,
+          "corpus_share": 0.04136389044158748,
+          "strict": 0.0,
+          "lenient": 0.2
+        },
+        "uses": {
+          "n": 5,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 3,
+          "corpus_n": 311,
+          "corpus_share": 0.1738401341531582,
+          "strict": 0.0,
+          "lenient": 0.4
+        },
+        "writtenby": {
+          "n": 4,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 4,
+          "corpus_n": 8,
+          "corpus_share": 0.004471771939631079,
+          "strict": 0.0,
+          "lenient": 0.0
+        }
+      },
+      "bootstrap": {
+        "n": 2000,
+        "weighted_strict_ci95": [
+          0.19223029625489096,
+          0.39155953046394637
+        ],
+        "weighted_lenient_ci95": [
+          0.41252096143096706,
+          0.6376746785913916
+        ]
+      }
+    }
+  },
+  "by_paper": {
+    "trafficspeed2021": {
+      "n": 2,
+      "strict": 0.5,
+      "lenient": 0.5
+    },
+    "strabismus2026": {
+      "n": 12,
+      "strict": 0.4166666666666667,
+      "lenient": 0.5833333333333334
+    },
+    "pesticide2025": {
+      "n": 5,
+      "strict": 0.4,
+      "lenient": 0.4
+    },
+    "parkingyolo2023": {
+      "n": 6,
+      "strict": 0.3333333333333333,
+      "lenient": 0.5
+    },
+    "roadwaylight2018": {
+      "n": 3,
+      "strict": 0.3333333333333333,
+      "lenient": 0.3333333333333333
+    },
+    "traveltime2022": {
+      "n": 10,
+      "strict": 0.2,
+      "lenient": 0.3
+    },
+    "videoseg2025": {
+      "n": 5,
+      "strict": 0.2,
+      "lenient": 0.2
+    },
+    "csysguard2024": {
+      "n": 14,
+      "strict": 0.07142857142857142,
+      "lenient": 0.5
+    },
+    "aiabstract2025": {
+      "n": 4,
+      "strict": 0.0,
+      "lenient": 0.5
+    },
+    "gamlprop2025": {
+      "n": 3,
+      "strict": 0.0,
+      "lenient": 0.0
+    },
+    "llamacorrupt2025": {
+      "n": 2,
+      "strict": 0.0,
+      "lenient": 0.0
+    },
+    "microwave2018": {
+      "n": 2,
+      "strict": 0.0,
+      "lenient": 0.5
+    },
+    "osmotic2026": {
+      "n": 6,
+      "strict": 0.0,
+      "lenient": 0.3333333333333333
+    },
+    "oxidecrack2025": {
+      "n": 5,
+      "strict": 0.0,
+      "lenient": 0.2
+    },
+    "reststop2018": {
+      "n": 2,
+      "strict": 0.0,
+      "lenient": 0.5
+    },
+    "routepred2023": {
+      "n": 3,
+      "strict": 0.0,
+      "lenient": 0.3333333333333333
+    },
+    "textaug2023": {
+      "n": 3,
+      "strict": 0.0,
+      "lenient": 0.0
+    },
+    "ugmo2024": {
+      "n": 2,
+      "strict": 0.0,
+      "lenient": 0.5
+    },
+    "vehiclemake2025": {
+      "n": 11,
+      "strict": 0.0,
+      "lenient": 0.36363636363636365
+    }
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "label_files": [
+    "gold/gptoss_verdicts_qwen3-8b-v2.csv"
+  ],
+  "n_labelled": 100,
+  "extractors": {
+    "relation": {
+      "n_labelled": 100,
+      "corpus_triples": 1357,
+      "sampled_strict": 0.24,
+      "sampled_lenient": 0.41,
+      "weighted_strict": 0.38131908621960214,
+      "weighted_lenient": 0.6612011790714811,
+      "weight_coverage": 1.0,
+      "by_predicate": {
+        "achieves": {
+          "n": 5,
+          "correct": 5,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 181,
+          "corpus_share": 0.13338246131171702,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "addresses": {
+          "n": 5,
+          "correct": 1,
+          "partial": 3,
+          "incorrect": 1,
+          "corpus_n": 368,
+          "corpus_share": 0.2711864406779661,
+          "strict": 0.2,
+          "lenient": 0.8
+        },
+        "affiliatedwith": {
+          "n": 5,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 4,
+          "corpus_n": 13,
+          "corpus_share": 0.009579955784819455,
+          "strict": 0.2,
+          "lenient": 0.2
+        },
+        "cites": {
+          "n": 5,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 5,
+          "corpus_n": 19,
+          "corpus_share": 0.01400147383935151,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "comparesagainst": {
+          "n": 5,
+          "correct": 2,
+          "partial": 3,
+          "incorrect": 0,
+          "corpus_n": 78,
+          "corpus_share": 0.05747973470891673,
+          "strict": 0.4,
+          "lenient": 1.0
+        },
+        "comprises": {
+          "n": 5,
+          "correct": 2,
+          "partial": 1,
+          "incorrect": 2,
+          "corpus_n": 57,
+          "corpus_share": 0.04200442151805453,
+          "strict": 0.4,
+          "lenient": 0.6
+        },
+        "configures": {
+          "n": 4,
+          "correct": 3,
+          "partial": 1,
+          "incorrect": 0,
+          "corpus_n": 7,
+          "corpus_share": 0.005158437730287398,
+          "strict": 0.75,
+          "lenient": 1.0
+        },
+        "designedfor": {
+          "n": 5,
+          "correct": 1,
+          "partial": 2,
+          "incorrect": 2,
+          "corpus_n": 20,
+          "corpus_share": 0.014738393515106854,
+          "strict": 0.2,
+          "lenient": 0.6
+        },
+        "employs": {
+          "n": 5,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 5,
+          "corpus_n": 16,
+          "corpus_share": 0.011790714812085483,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "encompasses": {
+          "n": 5,
+          "correct": 1,
+          "partial": 2,
+          "incorrect": 2,
+          "corpus_n": 9,
+          "corpus_share": 0.006632277081798084,
+          "strict": 0.2,
+          "lenient": 0.6
+        },
+        "evaluatedon": {
+          "n": 5,
+          "correct": 1,
+          "partial": 1,
+          "incorrect": 3,
+          "corpus_n": 74,
+          "corpus_share": 0.054532056005895356,
+          "strict": 0.2,
+          "lenient": 0.4
+        },
+        "evaluates": {
+          "n": 5,
+          "correct": 2,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 48,
+          "corpus_share": 0.03537214443625645,
+          "strict": 0.4,
+          "lenient": 0.4
+        },
+        "locatedin": {
+          "n": 5,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 4,
+          "corpus_n": 10,
+          "corpus_share": 0.007369196757553427,
+          "strict": 0.0,
+          "lenient": 0.2
+        },
+        "motivates": {
+          "n": 4,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 3,
+          "corpus_n": 9,
+          "corpus_share": 0.006632277081798084,
+          "strict": 0.0,
+          "lenient": 0.25
+        },
+        "produces": {
+          "n": 5,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 4,
+          "corpus_n": 20,
+          "corpus_share": 0.014738393515106854,
+          "strict": 0.0,
+          "lenient": 0.2
+        },
+        "publishedin": {
+          "n": 4,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 4,
+          "corpus_n": 8,
+          "corpus_share": 0.0058953574060427415,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "reports": {
+          "n": 2,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 2,
+          "corpus_share": 0.0014738393515106854,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "splitfrom": {
+          "n": 5,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 4,
+          "corpus_n": 18,
+          "corpus_share": 0.013264554163596167,
+          "strict": 0.2,
+          "lenient": 0.2
+        },
+        "supports": {
+          "n": 3,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 3,
+          "corpus_share": 0.002210759027266028,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "trainedon": {
+          "n": 5,
+          "correct": 2,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 72,
+          "corpus_share": 0.05305821665438467,
+          "strict": 0.4,
+          "lenient": 0.4
+        },
+        "uses": {
+          "n": 5,
+          "correct": 2,
+          "partial": 1,
+          "incorrect": 2,
+          "corpus_n": 322,
+          "corpus_share": 0.23728813559322035,
+          "strict": 0.4,
+          "lenient": 0.6
+        },
+        "writtenby": {
+          "n": 3,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 3,
+          "corpus_share": 0.002210759027266028,
+          "strict": 0.0,
+          "lenient": 0.0
+        }
+      },
+      "bootstrap": {
+        "n": 2000,
+        "weighted_strict_ci95": [
+          0.2486735445836404,
+          0.5344141488577745
+        ],
+        "weighted_lenient_ci95": [
+          0.5074428887251289,
+          0.7929255711127488
+        ]
+      }
+    }
+  },
+  "by_paper": {
+    "oxidecrack2025": {
+      "n": 1,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "trafficspeed2021": {
+      "n": 1,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "pesticide2025": {
+      "n": 6,
+      "strict": 0.6666666666666666,
+      "lenient": 0.6666666666666666
+    },
+    "vehiclemake2025": {
+      "n": 9,
+      "strict": 0.4444444444444444,
+      "lenient": 0.5555555555555556
+    },
+    "llamacorrupt2025": {
+      "n": 3,
+      "strict": 0.3333333333333333,
+      "lenient": 0.6666666666666666
+    },
+    "osmotic2026": {
+      "n": 3,
+      "strict": 0.3333333333333333,
+      "lenient": 0.3333333333333333
+    },
+    "parkingyolo2023": {
+      "n": 12,
+      "strict": 0.25,
+      "lenient": 0.3333333333333333
+    },
+    "videoseg2025": {
+      "n": 8,
+      "strict": 0.25,
+      "lenient": 0.375
+    },
+    "strabismus2026": {
+      "n": 17,
+      "strict": 0.23529411764705882,
+      "lenient": 0.5294117647058824
+    },
+    "textaug2023": {
+      "n": 5,
+      "strict": 0.2,
+      "lenient": 0.2
+    },
+    "traveltime2022": {
+      "n": 10,
+      "strict": 0.2,
+      "lenient": 0.4
+    },
+    "aiabstract2025": {
+      "n": 1,
+      "strict": 0.0,
+      "lenient": 0.0
+    },
+    "csysguard2024": {
+      "n": 3,
+      "strict": 0.0,
+      "lenient": 0.0
+    },
+    "eyelandmark2024": {
+      "n": 4,
+      "strict": 0.0,
+      "lenient": 0.25
+    },
+    "gamlprop2025": {
+      "n": 6,
+      "strict": 0.0,
+      "lenient": 0.3333333333333333
+    },
+    "microwave2018": {
+      "n": 3,
+      "strict": 0.0,
+      "lenient": 0.0
+    },
+    "reststop2018": {
+      "n": 1,
+      "strict": 0.0,
+      "lenient": 1.0
+    },
+    "roadwaylight2018": {
+      "n": 4,
+      "strict": 0.0,
+      "lenient": 0.25
+    },
+    "routepred2023": {
+      "n": 3,
+      "strict": 0.0,
+      "lenient": 0.3333333333333333
+    }
+  }
+}

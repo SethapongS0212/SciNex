@@ -1,0 +1,558 @@
+{
+  "ceo": {
+    "qwen3-4b-base-hf": {
+      "strabismus2026": {
+        "paragraphs": 51,
+        "replies": 51,
+        "status": {
+          "ok": 51
+        },
+        "truncated": 0,
+        "reply_issues": {},
+        "proposed": 343,
+        "kept": 126,
+        "kept_rate": 0.3673469387755102,
+        "coverage": 0.6862745098039216,
+        "predicates": [
+          [
+            "achieves",
+            23
+          ],
+          [
+            "addresses",
+            19
+          ],
+          [
+            "trainedon",
+            15
+          ],
+          [
+            "uses",
+            12
+          ],
+          [
+            "comprises",
+            12
+          ],
+          [
+            "evaluatedon",
+            8
+          ],
+          [
+            "employs",
+            7
+          ],
+          [
+            "evaluates",
+            6
+          ]
+        ],
+        "configures": 5
+      },
+      "osmotic2026": {
+        "paragraphs": 23,
+        "replies": 23,
+        "status": {
+          "ok": 23
+        },
+        "truncated": 0,
+        "reply_issues": {},
+        "proposed": 150,
+        "kept": 46,
+        "kept_rate": 0.30666666666666664,
+        "coverage": 0.6086956521739131,
+        "predicates": [
+          [
+            "trainedon",
+            13
+          ],
+          [
+            "comprises",
+            10
+          ],
+          [
+            "achieves",
+            7
+          ],
+          [
+            "addresses",
+            6
+          ],
+          [
+            "employs",
+            4
+          ],
+          [
+            "evaluatedon",
+            2
+          ],
+          [
+            "comparesagainst",
+            2
+          ],
+          [
+            "uses",
+            1
+          ]
+        ],
+        "configures": 0
+      }
+    },
+    "gptoss-120b": {
+      "strabismus2026": {
+        "paragraphs": 51,
+        "replies": 51,
+        "status": {
+          "ok": 50,
+          "empty_content": 1
+        },
+        "truncated": 0,
+        "reply_issues": {},
+        "proposed": 72,
+        "kept": 65,
+        "kept_rate": 0.9027777777777778,
+        "coverage": 0.47058823529411764,
+        "predicates": [
+          [
+            "uses",
+            20
+          ],
+          [
+            "achieves",
+            19
+          ],
+          [
+            "addresses",
+            19
+          ],
+          [
+            "comprises",
+            2
+          ],
+          [
+            "trainedon",
+            2
+          ],
+          [
+            "evaluatedon",
+            1
+          ],
+          [
+            "evaluates",
+            1
+          ],
+          [
+            "produces",
+            1
+          ]
+        ],
+        "configures": 0
+      },
+      "osmotic2026": {
+        "paragraphs": 23,
+        "replies": 23,
+        "status": {
+          "ok": 22,
+          "empty_content": 1
+        },
+        "truncated": 0,
+        "reply_issues": {},
+        "proposed": 35,
+        "kept": 26,
+        "kept_rate": 0.7428571428571429,
+        "coverage": 0.391304347826087,
+        "predicates": [
+          [
+            "achieves",
+            10
+          ],
+          [
+            "comparesagainst",
+            9
+          ],
+          [
+            "addresses",
+            4
+          ],
+          [
+            "produces",
+            1
+          ],
+          [
+            "evaluates",
+            1
+          ],
+          [
+            "uses",
+            1
+          ]
+        ],
+        "configures": 0
+      }
+    }
+  },
+  "_summary": {
+    "ceo": {
+      "qwen3-4b-base-hf": {
+        "replies": 74,
+        "truncated": 0,
+        "proposed": 493,
+        "kept": 172,
+        "configures": 5,
+        "valid": 74,
+        "covered": 49,
+        "top_predicates": [
+          [
+            "achieves",
+            30
+          ],
+          [
+            "trainedon",
+            28
+          ],
+          [
+            "addresses",
+            25
+          ],
+          [
+            "comprises",
+            22
+          ],
+          [
+            "uses",
+            13
+          ],
+          [
+            "employs",
+            11
+          ],
+          [
+            "evaluatedon",
+            10
+          ],
+          [
+            "evaluates",
+            6
+          ]
+        ],
+        "vs_teacher_precision": 0.0872093023255814,
+        "vs_teacher_recall": 0.16483516483516483
+      },
+      "gptoss-120b": {
+        "replies": 74,
+        "truncated": 0,
+        "proposed": 107,
+        "kept": 91,
+        "configures": 0,
+        "valid": 72,
+        "covered": 33,
+        "top_predicates": [
+          [
+            "achieves",
+            29
+          ],
+          [
+            "addresses",
+            23
+          ],
+          [
+            "uses",
+            21
+          ],
+          [
+            "comparesagainst",
+            9
+          ],
+          [
+            "comprises",
+            2
+          ],
+          [
+            "trainedon",
+            2
+          ],
+          [
+            "evaluates",
+            2
+          ],
+          [
+            "produces",
+            2
+          ]
+        ],
+        "vs_teacher_precision": 0.0,
+        "vs_teacher_recall": null
+      }
+    },
+    "scinex": {
+      "qwen3-4b-base-hf": {
+        "replies": 74,
+        "truncated": 1,
+        "proposed": 464,
+        "kept": 164,
+        "configures": 2,
+        "valid": 73,
+        "covered": 47,
+        "top_predicates": [
+          [
+            "achieves",
+            28
+          ],
+          [
+            "addresses",
+            25
+          ],
+          [
+            "comprises",
+            18
+          ],
+          [
+            "employs",
+            18
+          ],
+          [
+            "trainedon",
+            16
+          ],
+          [
+            "evaluatedon",
+            12
+          ],
+          [
+            "achievesresult",
+            9
+          ],
+          [
+            "uses",
+            8
+          ]
+        ],
+        "vs_teacher_precision": 0.018292682926829267,
+        "vs_teacher_recall": 0.05263157894736842
+      },
+      "gptoss-120b": {
+        "replies": 72,
+        "truncated": 0,
+        "proposed": 70,
+        "kept": 57,
+        "configures": 0,
+        "valid": 72,
+        "covered": 17,
+        "top_predicates": [
+          [
+            "achievesresult",
+            37
+          ],
+          [
+            "comparesagainst",
+            9
+          ],
+          [
+            "designedfor",
+            3
+          ],
+          [
+            "trainedon",
+            2
+          ],
+          [
+            "uses",
+            2
+          ],
+          [
+            "mentions",
+            2
+          ],
+          [
+            "addresses",
+            1
+          ],
+          [
+            "produces",
+            1
+          ]
+        ],
+        "vs_teacher_precision": 0.0,
+        "vs_teacher_recall": null
+      }
+    }
+  },
+  "scinex": {
+    "qwen3-4b-base-hf": {
+      "strabismus2026": {
+        "paragraphs": 51,
+        "replies": 51,
+        "status": {
+          "ok": 50,
+          "unparseable": 1
+        },
+        "truncated": 1,
+        "reply_issues": {},
+        "proposed": 316,
+        "kept": 133,
+        "kept_rate": 0.4208860759493671,
+        "coverage": 0.6666666666666666,
+        "predicates": [
+          [
+            "achieves",
+            19
+          ],
+          [
+            "addresses",
+            17
+          ],
+          [
+            "comprises",
+            17
+          ],
+          [
+            "trainedon",
+            16
+          ],
+          [
+            "employs",
+            15
+          ],
+          [
+            "evaluatedon",
+            10
+          ],
+          [
+            "achievesresult",
+            9
+          ],
+          [
+            "uses",
+            6
+          ]
+        ],
+        "configures": 2
+      },
+      "osmotic2026": {
+        "paragraphs": 23,
+        "replies": 23,
+        "status": {
+          "ok": 23
+        },
+        "truncated": 0,
+        "reply_issues": {},
+        "proposed": 148,
+        "kept": 31,
+        "kept_rate": 0.20945945945945946,
+        "coverage": 0.5652173913043478,
+        "predicates": [
+          [
+            "achieves",
+            9
+          ],
+          [
+            "addresses",
+            8
+          ],
+          [
+            "employs",
+            3
+          ],
+          [
+            "evaluatedon",
+            2
+          ],
+          [
+            "comparesagainst",
+            2
+          ],
+          [
+            "uses",
+            2
+          ],
+          [
+            "extractedfrom",
+            1
+          ],
+          [
+            "comprises",
+            1
+          ]
+        ],
+        "configures": 0
+      }
+    },
+    "gptoss-120b": {
+      "strabismus2026": {
+        "paragraphs": 51,
+        "replies": 49,
+        "status": {
+          "ok": 49
+        },
+        "truncated": 0,
+        "reply_issues": {
+          "duplicate_conflict": 2,
+          "duplicate_identical": 5
+        },
+        "proposed": 44,
+        "kept": 32,
+        "kept_rate": 0.7272727272727273,
+        "coverage": 0.20408163265306123,
+        "predicates": [
+          [
+            "achievesresult",
+            25
+          ],
+          [
+            "designedfor",
+            3
+          ],
+          [
+            "trainedon",
+            2
+          ],
+          [
+            "addresses",
+            1
+          ],
+          [
+            "uses",
+            1
+          ]
+        ],
+        "configures": 0
+      },
+      "osmotic2026": {
+        "paragraphs": 23,
+        "replies": 23,
+        "status": {
+          "ok": 23
+        },
+        "truncated": 0,
+        "reply_issues": {},
+        "proposed": 26,
+        "kept": 25,
+        "kept_rate": 0.9615384615384616,
+        "coverage": 0.30434782608695654,
+        "predicates": [
+          [
+            "achievesresult",
+            12
+          ],
+          [
+            "comparesagainst",
+            9
+          ],
+          [
+            "mentions",
+            2
+          ],
+          [
+            "produces",
+            1
+          ],
+          [
+            "uses",
+            1
+          ]
+        ],
+        "configures": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "b3a087c76800", "C1": "INCORRECT", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "the source sentence is a bare metric LIST ('Metrics such as precision, recall, F1-score, and accuracy.') - the object appears nowhere in it"},
+  {"triple_id": "7b8eea676b9f", "C1": "INCORRECT", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "'sport' is one of the category VALUES, not an AcademicPaper, and the containment runs the other way - the category includes sport"},
+  {"triple_id": "a5aa9a615221", "C1": "INCORRECT", "C3": "TOO_NARROW", "C4": "INCORRECT", "note": "⛔ TABLE-DUMP CONTAMINATION: the subject is OCR debris - two chemical formulas with their table row numbers (27, 30, 31) spliced into the sentence. Not an entity at all"},
+  {"triple_id": "d378f8e6c5e3", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "clean producedBy: artifact -> the process that built it, matching the range"},
+  {"triple_id": "464ce22cf653", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "37e047f5eb09", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "'trainedOn' is the RIGHT relation for this sentence - gemma4-31b rendered the same sentence as (XGB) evaluatedOn (images) and scored INCORRECT. Marked down only because '80% of the images' is a proportion, not a named corpus"},
+  {"triple_id": "e0c5ebd58acc", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "8ed2f567efaa", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "configures inverted again - Specification -> Experiment, not Model -> setting"},
+  {"triple_id": "c22650bd2efe", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "FIFTH extractedFrom violation, and mined from a DATA AVAILABILITY STATEMENT. The Session 26 guard lists 'data availability' but matches it as a SECTION NAME, so a sentence-level occurrence slips through"},
+  {"triple_id": "1ef452c18b8a", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"}
+]}

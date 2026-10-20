@@ -1,0 +1,26 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 2 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 24 -----
+Section: Data and software availability
+
+Text:
+Data utilized in this work are collected from published journals, as listed in Table 1. A structure of data frame is displayed in Figure 2. All data will be available as supplementary document, for the publication.Python has been used as developed language, and all algorithms used are available in sci-kit learn open source. Therefore, both language and package are available to use freely. Additional information Correspondence and requests for materials should be addressed to A.A. Reprints and permissions information is available at www.nature.com/reprints. Publisher's note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material . You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material .
+
+----- para_id: 25 -----
+Section: Data and software availability
+
+Text:
+If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommo ns.org/licenses/by-nc-nd/4.0/. Scientific Reports | (2026) 16:5969 15 | https://doi.org/10.1038/s41598-026-36758-x

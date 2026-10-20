@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: A Hybrid Method for Predicting a Potential Next Rest Stop
+
+Text:
+aFaculty of Engineering, King Mongkut's Institute of Technology Ladkrabang, Bangkok 10520, Thailand
+
+----- para_id: 1 -----
+Section: Abstract
+
+Text:
+Long-distance trips such as freight and passenger transports over cities can create driver fatigue, so drivers prefer to get a rest for a while during their long-time driving. In Thailand, there are rest stops along main roads between cities, such as petrol stations, travel plazas, wayside parks, and scenic areas. In order to provide a better service to customers, the rest stops must have a good management , so the prediction of the number of potential vehicles in a period of time is primarily needed. One important task is to predict the next rest stop of every car at a period of time. Due to this requirement, this paper aims to introduce a prediction model for predicting the next rest stop of a vehicle by analyzing the global positioning system (GPS) tracking data of all commercial vehicles in Thailand. The proposed prediction model is a hybrid model that comprises of three scoring functions depended on the frequent pattern of connected rest stops, the direction of connected rest stops in a route, and the popularity of the rest stops. The experimental result shows that the proposed prediction model gives high accurate result in terms of the area under the receiver-operating-characteristic curve (AUC). This predicted result is also useful for a government department and rest stops' owner to improve transportation , road safety, and other service .
+
+----- para_id: 2 -----
+Section: Abstract
+
+Text:
+This is an open access article under the CC BY-NC-ND license (https://creativecommons.org/licenses/by-nc-nd/4.0/) "Peer-review under responsibility of the scientific committee of the International Symposium of Transport Simulation (ISTS'18) and the International Workshop on Traffic Data Collection and its Standardization (IWTDCS'18)" Keywords: Rest Stop Prediction; GPS Tracking System ; Prediction; Data Analysis; Transportation ; Freight Movement; * Corresponding author. Tel.: +66 95 465 0692; fax: +66 2 329 8343. E-mail address: rathachai.ch@kmitl.ac.th 2352-1465  2018 The Authors. This is an open access article under the CC BY-NC-ND license (https://creativecommons.org/licenses/by-nc-nd/4.0/) "Peer-review under responsibility of the scientific committee of the International Symposium of Transport Simulation (ISTS'18) and the International Workshop on Traffic Data Collection and its Standardization (IWTDCS'18)" 10.1016/j.trpro.2018.11.
+
+----- para_id: 3 -----
+Section: 1. Introduction
+
+Text:
+It is known that long-distance trips of commercial vehicles in Thailand such as freight and passenger transports over cities are common situation in many areas. Driving for long time makes drivers be fatigued which is one cause of roadway accident. Thus, during long-time trip, drivers prefer to park for a while at any rest stops. Most preferable rest stops on routes between cites in Thailand are petrol stations, travel plazas, wayside parks, and scenic areas. Thus, in order to provide better services to drivers at there, every rest stop should manage resources for supporting every driver well. It is better if the rest stop's owner can predict the number of vehicles parking there every period of time. The government department also get benefit from this information for improving transport safety. However, predicting the temporal frequency of vehicles at rest stops has to deal with many aspects such as time, weather, season, etc., and one important task is to predict the next rest stop of an individual vehicle . In this case, this work is originated to address this task. To predict the potential next rest stop of a vehicle is a challenging mission, because it needs to deal with spatio- temporal data. Thanks to the Department of Land Transport of Thailand, we can access global positioning system (GPS) tracking data of every commercial vehicles for conducting this research.
+
+----- para_id: 4 -----
+Section: 1. Introduction
+
+Text:
+Based on the GPS data and concepts from existing works, predicting the future location using trajectory data always employ a hybrid model including the frequent pattern of the route of vehicles together with other aspects such as time and distance. Thus, to address the issue about predicting the next rest stops, we steer this research on the following objectives. 1) To introduce a hybrid prediction model for predicting the next stop of a commercial vehicles using data from a GPS tracking system . 2) To report the accuracy of the model for each type of vehicles and time. Our paper is organized into 5 sections. The introduction is informed in this section, the literature review and data preparation are described in Section 2, the proposed approach is introduced in Section 3, the experimental steps and results are discussed in Section 4, and the conclusion and future work are drawn in Section 5.
+
+----- para_id: 5 -----
+Section: 2. Literature Review and Data Preparation
+
+Text:
+In this section, we report some studies that are related to our work and demonstrate how to prepare data for our prediction model.
+
+----- para_id: 6 -----
+Section: 2.1. Literature Review
+
+Text:
+As we learned from existing works, there are several studies that attempt to solve the issue about the prediction of future location of an object based on trajectory data. Morzy (2006 and 2007) applied the Appriori and PrefixSpan, which are based on support and confidence used in the field of data mining, to find the frequent pattern of vehicles' movements. However, both techniques do not rely on the aspects of location and time in the routes of objects. (2005) retrieved location from a mobile device in a car for analyzing the pattern of an individual vehicle based on the confident and support of the distance to a future location using a data mining technique. (2008) used a hybrid method including features that were mined from the Apriori technique for predicting the future movement of an object. (2009) introduced a model named WhereNext for predicting the next location of a moving object. It used the hybrid methods including the order of location, travel time, and frequent user visits. (2011) proposed a prediction model named NextPlace for a single user to visit the next place based on the most important places, but it does not focus on the transition between different location. As we reviewed, most studies employed the frequent pattern of the movement of an object for making a prediction. In addition, some works used a hybrid prediction model for improving the accuracy of the prediction model.
+
+----- para_id: 7 -----
+Section: 2.1. Literature Review
+
+Text:
+However, the commercial vehicles are both regular route service and non-regular route service . Thus, only the aspect of frequent pattern is not enough. It needs other aspects, such as the frequent user visits and the time domain, to build a hybrid prediction method as other studies uses.
+
+----- para_id: 8 -----
+Section: 2.2. Data Preparation
+
+Text:
+Having GPS tracking data of commercial vehicles in Thailand is a challenging task. Due to the ack of the Department of Land Transport of Thailand, all commercial vehicles such as buses , vans, trucks, etc. have had to install a GPS tracking system and sent data to the department. GPS tracking data from each vehicle are collected in very minute. They include a unit-id (a unique identifier of a GPS device in a vehicle ), timestamp, latitude, longitude, and speed in kilometer per hour (km/h). There are about 20,000 vehicles that are categorized into 10 types: Air- conditioned Buses , Buses , Coaches, Container trucks, Hazardous Trucks, Limousine Buses , Liquid trucks, Pickup trucks, Pick-Up Trucks with Labor-Saving Devices, and Special-Purpose Trucks. In this paper, we used data in October 2017, and there are almost 1,000 million records for our experiment. For predicting the next rest stop of commercial vehicles in Thailand, the frequency of rest stops has to be constructed together with some related data such as the type of a vehicle and time at the current rest stop. There are several steps to construct the data as follows: 1) The definition of the rest stop in our work is the place where a vehicle stops more than 30 minutes. Thus, the dataset is queried to select a unit-id, latitude, longitude, arrived-timestamp, and leaved-timestamp, where the difference between the arrived-timestamp and leaved-timestamp is more than 30 minutes.
+
+----- para_id: 9 -----
+Section: 2.2. Data Preparation
+
+Text:
+2) All locations are simply grouped by two decimal places of latitudes and longitudes in order to gather all locations within 1 kilometer (km) into a single point of a rest stop. 3) Locations including latitudes and longitudes are selected only the places where vehicles stop more than 100 times in a day in order to remove some outlier places. 4) After that, sequences of rest stops of each vehicle are built. If a vehicle stops at a rest stop more than 10 hours, this rest stop will be used to be a point to slice that sequence into two sequences. 5) Lastly, the three connected rest stops are collected into one records together with the unit-id of a device , the type of a vehicle , and a timestamp. In this work, we initially introduce a notation for describing our approach. The GPS tracking data are transformed into the relation of used elements as follows:
+
+----- para_id: 10 -----
+Section: 3. Method: A Hybrid Recommender Model
+
+Text:
+As we review techniques about future location prediction and take a look at the data and the association between rest stops and route paths in Thailand, we found that there are three aspects for making prediction. These aspects are formalized into scoring functions that are based on (1) the frequent pattern between rest stops, (2) the directions of connected rest stops, and (3) the popularity of the rest stop. These concepts are described in the following steps. It is noted that dataset is based on the schema in Eq. The prediction will be done by predicting s2 based on the given s1 and s0, while vtype and time1 are used for demonstrating the accuracy of our approach based on the type of vehicles and the periods of time. In addition, the candidates of the next rest stop or s2 are selected from any rest stops that are in the range from the current rest stop s1. The proper range can be configured such as 300 km from s1. Scoring Function based on the Frequent Pattern between Rest Stops (SF) This function predicts the next rest stop (s2) on the basis of the association between s2 and the current rest stop (s1) together with the previous rest stop (s0). This technique is grounded by the prediction based on association method from Morzy (2006 and 2007), Yavas et al. (2008), and Monreale et al. In this paper, we find the possibility of a vehicle that parks at the given s0 and s1, and then that vehicle also parks at the s2.
+
+----- para_id: 11 -----
+Section: 3. Method: A Hybrid Recommender Model
+
+Text:
+Based on this proposition, we use the following equation to find the probability of the relation between s0→s1 and s1→s2. where s1 is the current rest stop of a vehicle , s0 is the previous rest stop of a vehicle , and s2 is the next rest stop of a vehicle , vtype is the type of a vehicle , and time1 is the timestamp of the vehicle at the rest stop s1. where SF(s2 | s0→s1) is the possibility of the next rest stop s2 of a vehicle that parked at s0 and s1 before, NV is the function that returns the number of vehicles passing through the given rest stops. In this case, the NV(s0→s1→ s2) and NV(s0→s1) returns the numbers of vehicles parking at the s0→s1→s2 and s0→s1 respectively. If there are 100 vehicles parked at s0 and s1 before, and 80 of them also parked at s2; SF(s2 | s0→s1) would be 80/100 = 0.8. Scoring Function based on the Directions of Connected Rest Stops (SD) Next, as we observed the main routes in Thailand, the routes from Bangkok to the north, north-east, east, and south are generally linear. In other words, the connected rest stops s0, s1, and s2 are commonly arranged in straight direction. It means that the vector between the points s0 and s1 has the same direction as the vector between the points s1 and s2. In this case, the cosine similarity is employed in this scoring function. The cosine similarity method is commonly used in the recommendation systems as described in the work of Pazzani and Bilsus (2007).

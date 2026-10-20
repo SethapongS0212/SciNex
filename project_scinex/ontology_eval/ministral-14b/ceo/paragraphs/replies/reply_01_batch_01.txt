@@ -1,0 +1,16 @@
+{"verdicts": [
+  {"para_key": "strabismus2026#46", "C2": "COMPLETE", "C5": "COMPLETE",
+   "missed_concepts": [], "missed_relations": [],
+   "note": "a single future-work sentence with no asserted relation - an empty extraction is correct"},
+  {"para_key": "vehiclemake2025#2", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["Vehicle Make Model Recognition (VMMR)", "license plate recognition", "free-flow tolling system", "traffic management", "tolling", "vehicle re-identification", "vehicle registration fraud"],
+   "missed_relations": ["VMMR -> addresses -> traffic management, tolling and vehicle re-identification", "free-flow tolling system -> uses -> license plate recognition from frontal vehicle images", "vehicle make and model -> supports -> confirming vehicle information when the plate cannot be read"],
+   "note": "gemma4-31b captured exactly the VMMR -> traffic management / tolling / re-identification triples from this paper, so the content is demonstrably reachable; ministral took nothing despite being the highest-volume extractor overall"},
+  {"para_key": "roadwaylight2018#21", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["cross-validation", "one hidden layer with 3 units and sigmoid activation", "illuminance threshold of 3 lx", "correlation"],
+   "missed_relations": ["each model -> evaluatedOn/uses -> cross-validation to minimise RMSE", "ANN -> configures -> one hidden layer of 3 units with sigmoid activation", "road -> colored green when -> illuminance > 3 lx"],
+   "note": "THE HIGHEST-YIELD PARAGRAPH IN THE STUDY - 11 triples, and 8 of ~10 important concepts captured. It is also the sharpest demonstration that completeness and correctness dissociate: every one of the nine configures triples has the ontology direction wrong (see cb6b11927d6b), so this paragraph scores well here and badly on C4"},
+  {"para_key": "routepred2023#2", "C2": "COMPLETE", "C5": "COMPLETE",
+   "missed_concepts": [], "missed_relations": [],
+   "note": "a section roadmap plus an IEEE download watermark and a stray author-block fragment - nothing extractable, and declining is correct. Worth noting gptoss-120b DID mine that same watermark into (KMITL) affiliatedWith (UniNet) elsewhere"}
+]}

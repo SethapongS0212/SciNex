@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: Abstract
+
+Text:
+This study explores the effects of parameter corruption in a large language model (LLM) by altering its weights and evaluating perfor- mance. Experiments involve corrupting different layers and matrix types, including Self-Attention and Feed-Forward components, with performance assessed using BERT and ROUGE scores. Testing the Llama -3.2-1B-Instruct model was performed on the GLUE-QNLI dataset. Results show that increased corruption leads to greater degradation, with Feed-Forward matrices having a stronger impact especially in the Down matrices. According to the study, later layers are more important for performance than those that come before them. These results shed light on possible future chip implemen- tations of LLM, which may help guide the design of fault-tolerant systems by taking vulnerable parameter placement into account. This work is licensed under a Creative Commons Attribution 4.0 International License. ASSE 2025, Tokyo, Japan © 2025 Copyright held by the owner/author(s). ACM ISBN 979-8-4007-1850-2/2025/09 https://doi.org/10.1145/3775030.3775040 Phalat Kraichoke Department of Computer Engineering, School of Engineering • Computing methodologies →Natural language generation; • General and reference →Verification; • Software and its engineering →Software fault tolerance.
+
+----- para_id: 1 -----
+Section: Keywords
+
+Text:
+Large Language Models, Fault Tolerance, Model Robustness, Pa- rameter Corruption, Performance Degradation
+
+----- para_id: 2 -----
+Section: ACM Reference Format:
+
+Text:
+Rathachai Chawuthai, Anon Thongsawaeng, John Paul Layug Perdio, Kaung Khant Zaw, Phalat Kraichoke, Hlaing Myat Nwe, and Natthawut Kertkei- dkachorn. Assessing the Effects of Corrupted Parameters in a Large Language Model: A Case Study of LLAMA 3.2 1B. In 2025 6th Asia Service Sciences and Software Engineering Conference , Sep- tember 17–19, 2025, Tokyo, Japan. ACM, New York, NY, USA, 6 pages.
+
+----- para_id: 3 -----
+Section: 1 Introduction
+
+Text:
+Large language models (LLMs) [1] have transformed natural lan- guage processing (NLP) by performing exceptionally well in many real-world tasks, especially in text generation and question an- swering. Nonetheless, despite their extraordinary capabilities, the ASSE 2025, September 17–19, 2025, Tokyo, Japan Rathachai Chawuthai et al. resilience of LLMs to parameter corruption, as well as the mod- els' robustness, has been discussed in the domain of deep learning for image classification especially in corruptions during training process [2] [3] Owing to their dependence on billions of interre- lated parameters , even minor corrupts to their internal architecture, which are matrices, could critically impact the performance of these language models. Model robustness is important in some domains such as finance, healthcare, and security , making understanding the repercussions of such misconduct imperative. This research methodically investigates the impact of corrupted parameters on the efficacy of LLM. We conduct controlled exper- iments to introduce perturbations to various model parameters and evaluate the consequent decline in accuracy, robustness, and task efficacy.
+
+----- para_id: 4 -----
+Section: 1 Introduction
+
+Text:
+We assess Meta's Llama -3.2-1B-Instruct [4] a 16-layer Transformer model acquired from Hugging Face [5] The model underwent evaluation on the GLUE-QNLI dataset [6] with perfor- mance assessed through BERT's F1 score and ROUGE metrics [7] Our experiments indicate that randomly zeroing 10–15% of the model's parameters signifies the threshold at which the LLM starts deteriorating. Moreover, the experiments show that corruption in the earlier layers has less impact than in the later layers, suggesting that the sensitivity of the model increases towards the deeper layers. In addition, we have noted that the feed-forward components are more susceptible to parameter corruption than the self-attention matrices. The above data suggests that the submodules of the Trans- former architecture respond to perturbations in a wide range of ways. Our research offers insights into the structural vulnerabilities of LLMs and their resilience to internal disruptions, especially regard- ing future LLM implementations on microchips [8] By highlighting these limitations, we seek to promote the advancement of language models that are more robust and fault-tolerant, thereby ensuring their dependability in crucial applications, particularly those imple- mented on hardware systems .
+
+----- para_id: 5 -----
+Section: 2 Experiment Method
+
+Text:
+The Experiment Method section consists of four key components: model selection, test data selection, evaluation methodology, and experimental procedures.
+
+----- para_id: 6 -----
+Section: 2.1 A Selected LLM Model: Llama-3.2-1B-Instruct
+
+Text:
+There are multiple options when selecting a model for this study. Due to the limitations of computational resources in the experi- ment as it was conducted on a personal computer, we have chosen Llama -3.2-1B-Instruct [4] a Transformer -based model [5] as our initial candidate due to its popularity as an open-source model and its availability on Hugging Face. Its size is appropriately balanced for the available resources. This model consists of 16 layers, where each layer primarily performs self-attention and feed-forward com- putations. The self-attention (Attn) mechanism involves three key matrices: Query (Q or Attn-Q), Key (K or Attn-K), and Value (V or Attn-V), while the feed-forward network (FF) consists of three matrices: Gate (or FF-Gate), Up (or FF-Up), and Down (or FF-Down) [1] [5] as illustrated in Fig. 1 In future experiments, we plan to extend this methodology to evaluate other models, ensuring a broader understanding of param- eter corruption across different architectures.
+
+----- para_id: 7 -----
+Section: 2.2 Selected Test Data
+
+Text:
+We selected the Question-answering Natural Language Inference (QNLI) dataset from the General Language Understanding Evalua- tion (GLUE) benchmark for this study [6] The GLUE-QNLI dataset contains over hundred thousand question-answer pairs, but in prac- tice, we randomly sampled thousand questions for testing. In this experiment, we do not use the provided answers from the dataset, as our goal is not to evaluate the knowledge of the LLM. Instead, we use the questions as prompts, serving as input to the LLM. The model's responses, before any parameter corruption is introduced, are then used as baseline answers for comparison. These baseline answers may differ from the original dataset answers but serve as a consistent reference for evaluating the impact of parameter corruption.
+
+----- para_id: 8 -----
+Section: 2.3 Evaluation Method
+
+Text:
+This test will be evaluated based on Bidirectional Encoder Represen- tations from Transformers (BERT) and Recall-Oriented Understudy for Gisting Evaluation (ROUGE) scores [7] BERT will assess the quality of the language understanding and prediction, while ROUGE will measure the overlap between the generated content and the reference content. For the ROUGE score, we use ROUGE-1, ROUGE-2, and ROUGE- L. All evaluation results, including both BERT and ROUGE, will be presented using the F1 score. The F1 score is a harmonic mean of precision and recall, providing a balanced measure of accuracy for both ROUGE and BERT evaluations.
+
+----- para_id: 9 -----
+Section: 2.4 Experiments
+
+Text:
+In the main experiment, each matrix will be corrupted by randomly selecting positions and changing their values to zero, similar to dropout, based on the desired percentage. The following Python code demonstrates how to destroy a tensor in PyTorch [9] def corrupt(input: torch.Tensor, p: float): Preparation: To prepare baseline answer from the GLUE-QNLI dataset. Experiment 1: To explore the behavior of LLMs based on the percentage of corrupted parameters across the entire model. mask = torch.rand\_like(input) > p return input * mask • 1) Load the LLM. • 2) Select a question from the dataset and ask the LLM. • 3) Store the answer as a baseline answer. • 4) Loop through steps 2-3 until all the selected thousand questions are processed. • 1) Load the LLM. • 2) Corrupt Attn-Q, Attn-K, Attn-V, FF-Gate, FF-Up, and FF- Down of 16 layers with 5%. Assessing the Effects of Corrupted Parameters in a Large Language Model: A Case Study of LLAMA 3.2 1B ASSE 2025, September 17–19, 2025, Tokyo, Japan • 3) Take the questions from the selected questions and query the LLM with corrupted parameters . Then, compare the an- swers with the baseline answers and evaluate the results us- ing the F1 score of BERT, ROUGE-1, ROUGE-2, and ROUGE- L. • 4) Report the average of BERT, ROUGE-1, ROUGE-2, and ROUGE-L. • 5) Repeat steps 1-4, increasing the parameter corruption by 5% in each round until reaching 100%. Experiment 2: To explore the behavior of LLMs based on the percentage of corrupted parameters in each layer.
+
+----- para_id: 10 -----
+Section: 2.4 Experiments
+
+Text:
+Since the results began to deteriorate starting from the 10–15% corruption in Exper- iment 1, this experiment aims to test corruption at 10% and 15% for each layer. In this experiment, every matrix will be corrupted layer by layer, from layer 1 to 16. The LLM will be reloaded after each layer is corrupted to ensure that the remaining 16 layers remain untouched. Experiment 3: To explore the behavior of LLMs based on the percentage of corrupted parameters in self-attention matrices in all heads and layers. In this step, the experiment will be conducted similarly to Experiment 1, but focusing solely on corrupting the Self-Attention components individually. The corruption will begin with Attn-Q, Attn-K, and Attn-V matrices of all layers, one at a time. Experiment 4: To explore the behavior of LLMs based on the percentage of corrupted parameters in feed-forward network ma- trices in all layers. Perform the experiment as done previously, but this time focus on corrupting the Feed-Forward Network compo- nents individually. The corruption will be applied to the FF-Gate, FF-Up, and FF-Down matrices of every layer, one by one.
+
+----- para_id: 11 -----
+Section: 3 Results
+
+Text:
+The results of four experiments and discussion about the result are described in this section.

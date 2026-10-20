@@ -199,7 +199,8 @@ def run_extraction(
     # Resolve output dir up front so we can skip already-extracted papers
     # (llm/fixed get a model-name subfolder; rebel/iter stay flat)
     model_slug = None
-    if extractor_name in ('llm', 'fixed', 'fixed_scinex', 'pair') and hasattr(extractor, 'model_name'):
+    if extractor_name in ('llm', 'fixed', 'fixed_scinex', 'relation', 'relation_scinex',
+                          'pair') and hasattr(extractor, 'model_name'):
         model_slug = extractor.model_name.split('/')[-1]
         kg_output_dir = paper_dir / KG_SUBDIR / extractor_name / model_slug
     else:
@@ -403,8 +404,10 @@ Examples:
         help="Process all papers in output/")
 
     # Extractor choice
-    parser.add_argument("--extractor", choices=["rebel", "iter", "llm", "fixed", "pair", "all"], default="rebel",
-        help="Which extractor to use: rebel, iter, llm, fixed (constrained), or all (default: rebel)")
+    parser.add_argument("--extractor", choices=["rebel", "iter", "llm", "fixed", "relation", "pair", "all"], default="rebel",
+        help="Which extractor to use: rebel, iter, llm, fixed (subject∈CSV + relation∈ontology), "
+             "relation (relation∈ontology only, free subjects — fallback when a paper has no "
+             "usable entity CSV), pair, or all (default: rebel)")
 
     # Options
     parser.add_argument("--mode", choices=VALID_MODES, default="no-llm",
@@ -418,9 +421,10 @@ Examples:
     parser.add_argument("--relations", nargs="+", default=None, metavar="RELATION",
         help="Custom relation list for fixed extractor (default: placeholder set)")
     parser.add_argument("--ontology", choices=["ceo", "scinex"], default="ceo",
-        help="Ontology for the fixed extractor: 'ceo' (default, hardcoded Core "
+        help="Ontology for the fixed/relation extractors: 'ceo' (default, hardcoded Core "
              "Experiment Ontology) or 'scinex' (loaded from --ontology-file). "
-             "scinex output is written to kg/fixed_scinex/ so both can be compared.")
+             "scinex output is written to kg/fixed_scinex/ (resp. kg/relation_scinex/) "
+             "so both can be compared.")
     parser.add_argument("--ontology-file", default="scinex_refined_14.owl", metavar="OWL",
         help="OWL/Turtle file to load when --ontology scinex (default: scinex_refined_14.owl)")
     parser.add_argument("--no-viz", action="store_true",
@@ -501,6 +505,34 @@ def main():
             max_new_tokens=args.max_new_tokens,
         )
 
+    def _ontology_for(base: str):
+        """(relations, schema, output_name) for an ontology-constrained extractor.
+
+        scinex results go to a parallel output dir (fixed → fixed_scinex,
+        relation → relation_scinex) so a CEO run is never overwritten by a scinex one.
+        """
+        if args.ontology == "scinex":
+            from kg_extraction.ontology_loader import load_ontology
+            rels, schema = load_ontology(args.ontology_file)
+            logger.info(f"Using scinex ontology ({len(rels)} relations) from "
+                        f"{args.ontology_file} → output dir kg/{base}_scinex/")
+            return rels, schema, f"{base}_scinex"
+        return args.relations, None, base
+
+    if args.extractor in ("relation", "all"):
+        # Relation-only: relation ∈ ontology, subject free. No entity CSV needed —
+        # this is the fallback for papers the gazetteer can't cover.
+        from kg_extraction import RelationOnlyExtractor
+        rel_relations, rel_schema, rel_name = _ontology_for("relation")
+        logger.info("Initializing relation-only extractor (free subjects)...")
+        extractors[rel_name] = RelationOnlyExtractor(
+            relations=rel_relations,
+            model_name=args.model,
+            device=device,
+            max_new_tokens=args.max_new_tokens,
+            schema=rel_schema,
+        )
+
     auto_entity = False
     # fixed (subject∈list, relation∈ontology, object free) and
     # pair  (subject∈list, relation free, object∈list) are both entity-CSV-driven.
@@ -526,15 +558,7 @@ def main():
             # Ontology selection: 'ceo' = hardcoded default; 'scinex' = loaded
             # from an .owl and routed to a separate output dir (kg/fixed_scinex/)
             # so it never overwrites the CEO results — the two are compared.
-            fixed_relations = args.relations
-            fixed_schema = None
-            fixed_name = "fixed"
-            if args.ontology == "scinex":
-                from kg_extraction.ontology_loader import load_ontology
-                fixed_relations, fixed_schema = load_ontology(args.ontology_file)
-                fixed_name = "fixed_scinex"
-                logger.info(f"Using scinex ontology ({len(fixed_relations)} relations) "
-                            f"from {args.ontology_file} → output dir kg/{fixed_name}/")
+            fixed_relations, fixed_schema, fixed_name = _ontology_for("fixed")
             extractors[fixed_name] = FixedTripleExtractor(
                 entity_set=entity_set,
                 relations=fixed_relations,   # None = placeholder set (ceo)

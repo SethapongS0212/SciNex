@@ -1,0 +1,347 @@
+{
+  "label_files": [
+    "gold/gptoss_verdicts_qwen3-235b-scinex.csv"
+  ],
+  "n_labelled": 100,
+  "extractors": {
+    "relation_scinex": {
+      "n_labelled": 100,
+      "corpus_triples": 582,
+      "sampled_strict": 0.38,
+      "sampled_lenient": 0.66,
+      "weighted_strict": 0.547365406643757,
+      "weighted_lenient": 0.8116838487972508,
+      "weight_coverage": 1.0,
+      "by_predicate": {
+        "achieves": {
+          "n": 6,
+          "correct": 0,
+          "partial": 5,
+          "incorrect": 1,
+          "corpus_n": 36,
+          "corpus_share": 0.061855670103092786,
+          "strict": 0.0,
+          "lenient": 0.8333333333333334
+        },
+        "achievesresult": {
+          "n": 6,
+          "correct": 6,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 112,
+          "corpus_share": 0.19243986254295534,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "addresses": {
+          "n": 6,
+          "correct": 1,
+          "partial": 4,
+          "incorrect": 1,
+          "corpus_n": 18,
+          "corpus_share": 0.030927835051546393,
+          "strict": 0.16666666666666666,
+          "lenient": 0.8333333333333334
+        },
+        "affiliatedwith": {
+          "n": 3,
+          "correct": 2,
+          "partial": 1,
+          "incorrect": 0,
+          "corpus_n": 3,
+          "corpus_share": 0.005154639175257732,
+          "strict": 0.6666666666666666,
+          "lenient": 1.0
+        },
+        "cites": {
+          "n": 5,
+          "correct": 2,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 5,
+          "corpus_share": 0.00859106529209622,
+          "strict": 0.4,
+          "lenient": 0.4
+        },
+        "comparesagainst": {
+          "n": 6,
+          "correct": 4,
+          "partial": 2,
+          "incorrect": 0,
+          "corpus_n": 94,
+          "corpus_share": 0.16151202749140894,
+          "strict": 0.6666666666666666,
+          "lenient": 1.0
+        },
+        "comprises": {
+          "n": 6,
+          "correct": 3,
+          "partial": 1,
+          "incorrect": 2,
+          "corpus_n": 52,
+          "corpus_share": 0.08934707903780069,
+          "strict": 0.5,
+          "lenient": 0.6666666666666666
+        },
+        "configures": {
+          "n": 5,
+          "correct": 0,
+          "partial": 3,
+          "incorrect": 2,
+          "corpus_n": 7,
+          "corpus_share": 0.012027491408934709,
+          "strict": 0.0,
+          "lenient": 0.6
+        },
+        "designedfor": {
+          "n": 5,
+          "correct": 3,
+          "partial": 2,
+          "incorrect": 0,
+          "corpus_n": 7,
+          "corpus_share": 0.012027491408934709,
+          "strict": 0.6,
+          "lenient": 1.0
+        },
+        "employs": {
+          "n": 5,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 5,
+          "corpus_n": 7,
+          "corpus_share": 0.012027491408934709,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "evaluatedon": {
+          "n": 6,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 6,
+          "corpus_n": 20,
+          "corpus_share": 0.03436426116838488,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "evaluates": {
+          "n": 6,
+          "correct": 2,
+          "partial": 3,
+          "incorrect": 1,
+          "corpus_n": 23,
+          "corpus_share": 0.03951890034364261,
+          "strict": 0.3333333333333333,
+          "lenient": 0.8333333333333334
+        },
+        "extractedfrom": {
+          "n": 1,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 1,
+          "corpus_n": 1,
+          "corpus_share": 0.001718213058419244,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "motivates": {
+          "n": 1,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 1,
+          "corpus_n": 1,
+          "corpus_share": 0.001718213058419244,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "producedby": {
+          "n": 5,
+          "correct": 2,
+          "partial": 1,
+          "incorrect": 2,
+          "corpus_n": 10,
+          "corpus_share": 0.01718213058419244,
+          "strict": 0.4,
+          "lenient": 0.6
+        },
+        "produces": {
+          "n": 6,
+          "correct": 2,
+          "partial": 2,
+          "incorrect": 2,
+          "corpus_n": 30,
+          "corpus_share": 0.05154639175257732,
+          "strict": 0.3333333333333333,
+          "lenient": 0.6666666666666666
+        },
+        "publishedin": {
+          "n": 1,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 0,
+          "corpus_n": 1,
+          "corpus_share": 0.001718213058419244,
+          "strict": 0.0,
+          "lenient": 1.0
+        },
+        "reports": {
+          "n": 1,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 0,
+          "corpus_n": 1,
+          "corpus_share": 0.001718213058419244,
+          "strict": 0.0,
+          "lenient": 1.0
+        },
+        "splitfrom": {
+          "n": 5,
+          "correct": 2,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 8,
+          "corpus_share": 0.013745704467353952,
+          "strict": 0.4,
+          "lenient": 0.4
+        },
+        "supports": {
+          "n": 3,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 3,
+          "corpus_share": 0.005154639175257732,
+          "strict": 0.3333333333333333,
+          "lenient": 0.3333333333333333
+        },
+        "trainedon": {
+          "n": 6,
+          "correct": 5,
+          "partial": 0,
+          "incorrect": 1,
+          "corpus_n": 28,
+          "corpus_share": 0.048109965635738834,
+          "strict": 0.8333333333333334,
+          "lenient": 0.8333333333333334
+        },
+        "uses": {
+          "n": 6,
+          "correct": 3,
+          "partial": 2,
+          "incorrect": 1,
+          "corpus_n": 115,
+          "corpus_share": 0.19759450171821305,
+          "strict": 0.5,
+          "lenient": 0.8333333333333334
+        }
+      },
+      "bootstrap": {
+        "n": 2000,
+        "weighted_strict_ci95": [
+          0.4351660939289805,
+          0.6563001145475372
+        ],
+        "weighted_lenient_ci95": [
+          0.7318442153493699,
+          0.879266895761741
+        ]
+      }
+    }
+  },
+  "by_paper": {
+    "reststop2018": {
+      "n": 1,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "microwave2018": {
+      "n": 3,
+      "strict": 0.6666666666666666,
+      "lenient": 1.0
+    },
+    "traveltime2022": {
+      "n": 5,
+      "strict": 0.6,
+      "lenient": 0.6
+    },
+    "eyelandmark2024": {
+      "n": 2,
+      "strict": 0.5,
+      "lenient": 0.5
+    },
+    "gamlprop2025": {
+      "n": 2,
+      "strict": 0.5,
+      "lenient": 0.5
+    },
+    "roadwaylight2018": {
+      "n": 2,
+      "strict": 0.5,
+      "lenient": 1.0
+    },
+    "strabismus2026": {
+      "n": 19,
+      "strict": 0.47368421052631576,
+      "lenient": 0.7894736842105263
+    },
+    "parkingyolo2023": {
+      "n": 11,
+      "strict": 0.45454545454545453,
+      "lenient": 0.8181818181818182
+    },
+    "vehiclemake2025": {
+      "n": 11,
+      "strict": 0.45454545454545453,
+      "lenient": 0.5454545454545454
+    },
+    "aiabstract2025": {
+      "n": 10,
+      "strict": 0.4,
+      "lenient": 0.6
+    },
+    "osmotic2026": {
+      "n": 3,
+      "strict": 0.3333333333333333,
+      "lenient": 0.6666666666666666
+    },
+    "videoseg2025": {
+      "n": 10,
+      "strict": 0.3,
+      "lenient": 0.7
+    },
+    "csysguard2024": {
+      "n": 8,
+      "strict": 0.25,
+      "lenient": 0.5
+    },
+    "llamacorrupt2025": {
+      "n": 2,
+      "strict": 0.0,
+      "lenient": 0.0
+    },
+    "oxidecrack2025": {
+      "n": 5,
+      "strict": 0.0,
+      "lenient": 0.6
+    },
+    "pesticide2025": {
+      "n": 1,
+      "strict": 0.0,
+      "lenient": 1.0
+    },
+    "routepred2023": {
+      "n": 2,
+      "strict": 0.0,
+      "lenient": 0.5
+    },
+    "trafficspeed2021": {
+      "n": 2,
+      "strict": 0.0,
+      "lenient": 0.5
+    },
+    "ugmo2024": {
+      "n": 1,
+      "strict": 0.0,
+      "lenient": 0.0
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "e762a0c5313e", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "direction reversed: affiliatedWith is defined Agent -> Organisation, so the person must be the subject and the university the object"},
+  {"triple_id": "382ccbaa403a", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "explicitly stated, but OC-SORT is a Model standing in for the AcademicPaper the predicate requires; publishedIn grants no Model-as-shorthand allowance the way evaluatedOn does"},
+  {"triple_id": "b50e7230c729", "C1": "INCORRECT", "C3": "TOO_NARROW", "C4": "PARTIAL", "note": "'Rule 1' is a paper-internal label, not a concept, and the object is a propositional clause rather than an entity; the sentence does state the link, but supports requires a specific NUMBER as subject"},
+  {"triple_id": "6b3df300769f", "C1": "CORRECT", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "correctly typed and stated, but 'this study' is deictic - as a KG node it would merge every paper in the corpus"},
+  {"triple_id": "ae0981a618c1", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "sentence says 'created by', and SAM is a Model standing in for the AcademicPaper that writtenBy requires"},
+  {"triple_id": "3f4f4e5baef6", "C1": "CORRECT", "C3": "TOO_NARROW", "C4": "INCORRECT", "note": "unsupported: the patches were cropped for training the classifiers; nothing says RT-DETR consumes them - the link is inferred across two sentences"},
+  {"triple_id": "748aec800024", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "relation is explicit and correctly typed, but 'our method' is an unnamed placeholder subject"},
+  {"triple_id": "cd7f3434a40e", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "17ee128bbf5f", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "both sides are processes and the sub-process is named, but composition is implied by 'through', not stated"},
+  {"triple_id": "69c77b1a3caa", "C1": "PARTIAL", "C3": "TOO_NARROW", "C4": "PARTIAL", "note": "comparison is stated, but neither side is a named Model as comparesAgainst requires; the subject is a malformed run-on lifted from the sentence"}
+]}

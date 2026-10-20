@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 404910eae4b6 -----
+TRIPLE:     (WangchanBERTa)  --trainedon-->  (a large Thai language dataset)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: developed a pre-trained Thai language model named WangchanBERTa, trained on a large Thai language dataset and used for multiple applications, including text augmentation.
+
+----- triple_id: 43ceea847f46 -----
+TRIPLE:     (state-of-the-art models)  --achieves-->  (below 50% accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Using our dataset for testing with state-of-the-art models showed varying accuracy values, with some models achieving over 90% accuracy and others below 50%.
+
+----- triple_id: bc0fa5181e00 -----
+TRIPLE:     (Decision Tree (DT))  --configures-->  (Max Depth: None)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: Decision Tree (DT) Max Depth: None Min Samples Split: 2
+
+----- triple_id: 8e953b002aa8 -----
+TRIPLE:     (RT4)  --designedfor-->  (reflecting temporal scleral exposure)
+PREDICATE DEFINITION: Model → ResearchTask  |  Associates a model with the research task it was specifically designed or optimised to solve, such as a transformer model designed for machine translation or a CNN designed for image classification
+SOURCE SENTENCE: Accordingly, RT1 and RT4 were designed to reflect nasal and temporal scleral exposure, RT2 and RT3 to reflect the position of the corneal light reflex within the horizontal corneal span, and RT5 to reflect visible iris width as an internal reference during gaze change.
+
+----- triple_id: c0cf66d6fa5c -----
+TRIPLE:     (ΔL values)  --extractedfrom-->  (light absorptions across diverse wavelengths)
+PREDICATE DEFINITION: ? → AcademicPaper  |  Links an extracted entity to the academic paper it was extracted from.
+SOURCE SENTENCE: ΔL values, observed as results of light absorptions across diverse wavelengths, were salt
+
+----- triple_id: 8b2dfe145daf -----
+TRIPLE:     (dataset)  --splitfrom-->  (3 chunks)
+PREDICATE DEFINITION: Dataset → Dataset  |  Records that a dataset partition was derived from a larger source dataset
+SOURCE SENTENCE: The dataset was divided into 3 chunks, and the training and testing processes were repeated for 3 rounds.
+
+----- triple_id: 7fed792a7308 -----
+TRIPLE:     (Kasikorn Business-Technology Group, Thailand)  --employs-->  (NUTT CHAIRATANA)
+PREDICATE DEFINITION: Organisation → Person  |  Associates an organisation with the persons who work for or are institutionally employed by it at the time of a research publication
+SOURCE SENTENCE: He is a Machine Learning Engineer with Kasikorn Business-Technology Group, Thailand.
+
+----- triple_id: d1313c5fc7f3 -----
+TRIPLE:     (Proc.)  --publishedin-->  (Proc. (CSDE), Melbourne, VIC, Australia, Dec.)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  Links an academic paper to the publication venue in which it appears, such as a journal, conference, or workshop
+SOURCE SENTENCE: Goyal, '' Workload analysis of cloud resources using time series and machine learning prediction ,'' in Proc. (CSDE), Melbourne, VIC, Australia, Dec.
+
+----- triple_id: fbf6110063a2 -----
+TRIPLE:     (strabismus)  --encompasses-->  (esotropia)
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  Relates a research domain to the research tasks that fall within its scope
+SOURCE SENTENCE: Depending on the direction of deviation, strabismus is classified into four types: esotropia (inward), exotropia (outward), hypertropia (upward), and hypotropia (downward).
+
+----- triple_id: e43db831f3f8 -----
+TRIPLE:     (Ja'afar et al.)  --reports-->  (salt's lesser interaction with light)
+PREDICATE DEFINITION: AcademicPaper → ResearchProcess  |  Associates an academic paper with the research processes it describes, including its methodology, data processing pipeline, and experiments
+SOURCE SENTENCE: However, the method exhibited poor performance with salt solutions, potentially due to salt's lesser interaction with light as reported by Ja'afar et al.

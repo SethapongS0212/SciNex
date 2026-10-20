@@ -4,6 +4,7 @@ from .llm_extractor import LLMExtractor
 from .iter_extractor import ITERExtractor
 from .fixed_extractor import FixedTripleExtractor, PLACEHOLDER_RELATIONS
 from .pair_extractor import EntityPairExtractor
+from .relation_extractor import RelationOnlyExtractor
 from .entity_loader import EntitySet, load_entity_csv, load_entity_csvs
 from .kg_builder import KnowledgeGraphBuilder
 from .visualizer import build_viz
@@ -17,6 +18,7 @@ __all__ = [
     "ITERExtractor",
     "FixedTripleExtractor",
     "EntityPairExtractor",
+    "RelationOnlyExtractor",
     "PLACEHOLDER_RELATIONS",
     "EntitySet",
     "load_entity_csv",

@@ -1,0 +1,54 @@
+{
+  "paper_id": "d2a1ef6706433ca2ca1f460337e4c11ba25a818b",
+  "title": "The Analysis of a Microwave Sensor Signal for Detecting a Kick Gesture",
+  "year": 2018,
+  "abstract": "A hands-free operation is a solution for people who require a hand to do an action but both right and left hands are busy carrying something. There are many techniques, and most of them use sensors to check a command from humans such as voice and movement. A kick gesture is one technique that people can kick into the air to invoke an operation of a target device such as a kick-activation liftgate of a car. In this paper, we use a microwave sensor to detect the movement of a human's foot and employ machine learning techniques to analyses the sensor data. It has found that the Logistic Regression technique provides the best accuracy, and the model can be simply programmed in an embedded system.",
+  "citation_count": 2,
+  "root_concepts": [
+    "hands",
+    "operation",
+    "people",
+    "techniques",
+    "movement",
+    "technique",
+    "sensor",
+    "solution",
+    "require",
+    "action",
+    "right",
+    "carrying",
+    "something",
+    "there",
+    "sensors"
+  ],
+  "nodes": {
+    "5eca32093a7d1d67aa2107ece72de3f91ba660aa": {
+      "title": "Dynamic time warping–based feature selection method for foot gesture cobot operation mode selection",
+      "year": 2023,
+      "abstract": null,
+      "citation_count": 6,
+      "relation": "citing",
+      "concepts": []
+    },
+    "767095760b686267aaf807d02287f874195faadc": {
+      "title": "Extreme Learning Machines Classification of Kick Gesture",
+      "year": 2019,
+      "abstract": null,
+      "citation_count": 4,
+      "relation": "citing",
+      "concepts": []
+    }
+  },
+  "edges": [
+    {
+      "source": "5eca32093a7d1d67aa2107ece72de3f91ba660aa",
+      "target": "d2a1ef6706433ca2ca1f460337e4c11ba25a818b",
+      "type": "cites"
+    },
+    {
+      "source": "767095760b686267aaf807d02287f874195faadc",
+      "target": "d2a1ef6706433ca2ca1f460337e4c11ba25a818b",
+      "type": "cites"
+    }
+  ]
+}

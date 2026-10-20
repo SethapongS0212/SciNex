@@ -1,0 +1,80 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 11 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 24 -----
+Section: Results and discussion
+
+Text:
+Output model Table 2 presents the experimental results, revealing that Random Forest (RF) with 15 estimators (15 decision trees) delivered the highest performance in terms of F1 score. Upon inspecting the model, the top-10 features deeming important for the classifier were identified which were "(Cr,Mn,Fe)3O4", "Si", "Cr2O3", "Tin", "C", "t", "Cr", "T", "cAr", and "cO2". These features were consistent with the literatures reporting that they were the important factors resulting in the oxidation process. During the oxidation of Cr-containing alloys, the Cr in the alloy was oxidized by O2 to form the chromium oxide protective layer (Cr2O3) as shown in Eq. This layer helps improve the oxidation resistance of alloy by acting as a diffusion barrier preventing the inward oxygen diffusion, so the overall oxidation rate was reduced51. Nevertheless, at high temperatures than 700 oC, this Cr2O3 starts to volatile by reacting with either O2 or O2/H2O and form Cr-volatile species. The main volatilization reactions in O2 and O2/H2O are shown in Eqs. Meanwhile, the spinel phase, such as (Cr,Mn,Fe)3O4 formed during high temperature oxidation of Fe-Cr-Mn alloys55,56 was at the top surface of alloys and reduced the activity of Cr compared to that of Cr2O3 resulting in the decrease in Cr volatilization57.
+
+----- para_id: 25 -----
+Section: Results and discussion
+
+Text:
+These oxidation reactions, including oxide formations and volatilization, would be more aggressive when exposed to higher partial pressures of oxygen (cO2), higher temperatures (the features T and Tin) and longer oxidation times (t)4,5,58 resulting in the thickening of the oxide layer promoting the stress in the oxides and thus the spallation tends to occur5. The feature cAr was also important because Ar was normally used to control the low O2 content environments. It was demonstrated that, in low O2 partial pressure, the non-protective oxides such as Fe2O3 formed59. These non-protective oxides cannot slow down the diffusion through the oxide scale and the reaction promoting the thickening of the oxide layer60 and then the spallation occurs when the thickness of oxides reached the critical thickness. The chemical compositions of alloy included in the top-10 features were Cr, C and Si. For Cr, it played the major role in promoting the oxidation resistance of the alloys. Higher Cr contents increased oxidation protection performance61,62. Meanwhile, C had a detrimental effect on the oxidation resistance and resulted in a porous oxide layer63 leading to easier spallation compared to the dense oxides. Si was found to be oxidized by O2 and usually forms SiO2 located at the metal/ oxide interface64. It was demonstrated that the addition of Si suppressed the formation of iron oxides and decelerated the oxidation of all alloys65–67.
+
+----- para_id: 26 -----
+Section: Results and discussion
+
+Text:
+The final output model was trained on the entire dataset (including oversamples) using these selected features. The ultimate model comprised 15 decision trees, as illustrated in Fig. 8, and was ready for integration into any software applications. Subsequently, when the final model was tested with the test set, the F1 score reached 87.13%. Table 2 displays the experimental results obtained from the Data Analytics section. Initially, it was observed that conducting experiments with data after applying Synthetic Minority Over-sampling Technique (SMOTE) Scientific Reports | (2025) 15:7758 9 | https://doi.org/10.1038/s41598-025-91449-3 Fine-tuned hyperparameters: - Solver: "L-BFGS" (Limited-memory Broyden-Fletcher-Goldfarb-Shanno) - Max iteration: 500 - Tolerance for stopping criteria (tol): 0.0001 Fine-tuned hyperparameters: - Criterion: Gini index - Splitter: best split - Minimum number of samples required to split: 2 Critical hyperparameters: - Number of estimators: 5 Fine-tuned hyperparameters: - Criterion: Gini index - Minimum number of samples required
+
+----- para_id: 27 -----
+Section: Results and discussion
+
+Text:
+to split: 2 - Max features: square root of number of features - Bootstrap samples are used when building trees: True Critical hyperparameters: - Number of estimators: 10 Fine-tuned hyperparameters: - Criterion: Gini index - Minimum number of samples required to split: 2 - Max features: square root of number of features - Bootstrap samples are used when building trees: True Critical hyperparameters: - Number of estimators: 15 Fine-tuned hyperparameters: - Criterion: Gini index - Minimum number of samples required to split: 2 - Max features: square root of number of features - Bootstrap samples are used when building trees: True Critical hyperparameters: - Number of estimators: 20 Fine-tuned hyperparameters: - Criterion: Gini index - Minimum number of samples required to split: 2 - Max features: square root of number of features - Bootstrap samples are used when building trees: True Critical hyperparameters: - Number of nearest neighbors (K): 3 Fine-tuned hyperparameters: - Weights: uniform (equally weighted) - Leaf size
+
+----- para_id: 28 -----
+Section: Results and discussion
+
+Text:
+(memory for storing the tree): 30 - Metric: Minkowski - Power parameter of Minkowski metric: 2 (Euclidean distance) Critical hyperparameters: - Number of nearest neighbors (K): 5 Fine-tuned hyperparameters: - Weights: uniform (equally weighted) - Leaf size (memory for storing the tree): 30 - Metric: Minkowski - Power parameter of Minkowski metric: 2 (Euclidean distance) Critical hyperparameters: - Number of nearest neighbors (K): 7 Fine-tuned hyperparameters: - Weights: uniform (equally weighted) - Leaf size (memory for storing the tree): 30 - Metric: Minkowski - Power parameter of Minkowski metric: 2 (Euclidean distance) Critical hyperparameters: - Hidden nodes = (100) Fine-tuned hyperparameters: - Activation function: ReLU - Solver: Adam - Epsilon (a parameter of Adam solver): 0.00000001 - Alpha (the L2 regularization term): 0.0001 - Learning rate: 0.001 - Max iteration: 500 - Tolerance for stopping criteria (tol): 0.0001 Critical hyperparameters: - Hidden nodes = (100, 100) Fine-tuned hyperparameters: - Activation function: ReLU - Solver: Adam - Epsilon (a parameter of Adam solver): 0.00000001 - Alpha (the L2 regularization term): 0.0001 - Learning rate: 0.001 - Max iteration: 500 - Tolerance for stopping criteria (tol): 0. yielded higher performance compared to working with the raw data, addressing the issue of the imbalanced dataset .
+
+----- para_id: 29 -----
+Section: Results and discussion
+
+Text:
+Furthermore, the Random Forest (RF) technique consistently provided a similar and improved F1 score compared to Logistic Regression (LR), Decision Tree (DT), K-Nearest Neighbor (KNN), and Artificial Neural Network (ANN). Specifically, the results indicated that Random Forest (RF) with 15 estimators achieved the best performance, yielding the F1 score of 87.13%. Consequently, this technique, with its hyperparameters, was selected for our work. A closer examination of the model revealed the top-10 important features among the original 70 features, calculated using the Scikit Learn library68, as shown in Table 3. Scientific Reports | (2025) 15:7758 10 | https://doi.org/10.1038/s41598-025-91449- Scientific Reports | (2025) 15:7758 11 | https://doi.org/10.1038/s41598-025-91449- After creating a classification model using the Random Forest (RF) with 15 estimators (RF(15)) and the top- 10 features, the obtained F1 score was 87.13%. One round of the corresponding confusion matrix is illustrated in Fig. It was noteworthy that the test set contained all original data, with 35 samples from spallation entries and the remaining 70 samples randomly selected from non-spallation entries.
+
+----- para_id: 30 -----
+Section: Model performance evaluation
+
+Text:
+The performance of the model was evaluated by 3-fold cross-validation of the collected data. It was found that the accuracy and F1 score of the Random Forest (RF) model were 88.26% and 87.13%, respectively. Because these scores were averaged over 3 cross-validation rounds, it should be noted that these evaluation scores deviated slightly from the direct calculation of the confusion matrix in Fig. This revealed that the model constructed was reliable for predicting the spallation of the oxides. On the other hand, the data from literatures, including the alloy types and the oxide formation, were used for estimating their volumes, which were further used to calculate the PBR and predict the spallation as reported in Table 4. Table 4 presents the examples of the spallation predictions for alloys oxidized under various conditions by PBR, collected from the literatures, and compared to those predicted by the model in this work. It can be seen that the predictive performance of PBR was only 41.86%, which was much lower than that provided by the machine learning model. Hence, this model should be used for prediction instead of the conventional PBR method.
+
+----- para_id: 31 -----
+Section: Conclusions
+
+Text:
+This work proposes a novel method for predicting spallation during high- temperature oxidation processes of alloys, utilizing machine learning. After collecting raw data from the literatures, several machine learning models were trained and tested. The 15-estimator Random Forest (RF) proved to be the best predictive model, with the top 10 features being "(Cr,Mn,Fe)3O4", "Si", "Cr2O3", "Ti", "C", "t", "Cr", "T", "cAr", and "cO2". When the model was tested with unseen data from the evaluation based on 3-fold cross-validation, the accuracy and F1 score were approximately 88.26% and 87.13%, respectively, while predictions from PBR yielded an accuracy of only 41.86%. Therefore, this machine learning model demonstrated a significant advantage over conventional PBR calculations for spallation predictions. Based on the use of the random forest technique for spallation prediction, this work can be considered as a part of the demonstration that machine learning can play an important role in the field of material sciences. In the future, using advanced machine learning techniques, also known as deep Scientific Reports | (2025) 15:7758 12 | https://doi.org/10.1038/s41598-025-91449- Fe-based 180 650 1 2.78 Yes No 74 Scientific Reports | (2025) 15:7758 13 | https://doi.org/10.1038/s41598-025-91449-3 learning, can contribute to the deeper study of other complex features in this field, such as, images, spectrums, or resonances.
+
+----- para_id: 32 -----
+Section: Data availability
+
+Text:
+The datasets used and analyzed during the current study are available from the corresponding author upon reasonable request. Received: 20 August 2024; Accepted: 20 February
+
+----- para_id: 33 -----
+Section: Author contributions
+
+Text:
+Rathachai Chawuthai: Methodology, Model development, Manuscript writing & Editing, Formal analysis. Teeratat Promchan: Data acquisition, Methodology, Model development. Jularak Rojsanga: Data acquisition, Methodology, Model development. Somrerk Chandra-ambhorn: Formal analysis, Manuscript editing. Thana sak Nilsonthi: Formal analysis, Funding acquisition. Patthranit Wongpromrat: Conceptualization, Manuscript writing & Editing, Formal analysis, Project administration. Eakarach Bumrungthaichaichan: Formal analysis, Manuscript editing. Amata Anantpinijwatna: Model development, Formal analysis.
+
+----- para_id: 34 -----
+Section: Declarations
+
+Text:
+Competing interests The authors declare no competing interests. Additional information Correspondence and requests for materials should be addressed to P.W. Reprints and permissions information is available at www.nature.com/reprints. Publisher's note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommo ns.org/licenses/by-nc-nd/4.0/. Scientific Reports | (2025) 15:7758 15 | https://doi.org/10.1038/s41598-025-91449-

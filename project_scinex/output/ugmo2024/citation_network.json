@@ -1,0 +1,41 @@
+{
+  "paper_id": "98ed429701f61442cf6af5d74b0ac7ee0a562878",
+  "title": "U-GMo: Individual Clip Detection from a Graduation Ceremony Video",
+  "year": 2024,
+  "abstract": "Graduation ceremonies are important occasions in life. A video in this event is usually very long due to a lot of graduates getting their degree. This study suggests a method for automatically cutting the entire ceremony video into customized segments that only include the most significant events for each particular graduate, named U-GMo (Your Great Moment). The system uses deep learning with computer vision techniques, such as YOLOv8 for posture detection, to identify graduates by observing their motions and posture during the degree ceremony. After that, the identified bits are taken out and assembled into brief video snippets for every graduate. The algorithm can detect and extract each graduate's crucial moments with high performance, according to an examination conducted on a dataset of graduation ceremonies. The personalized video clips provide a convenient way to preserve the meaningful highlights from these milestone events.",
+  "citation_count": 1,
+  "root_concepts": [
+    "video",
+    "graduate",
+    "graduation",
+    "ceremonies",
+    "graduates",
+    "degree",
+    "ceremony",
+    "events",
+    "posture",
+    "important",
+    "occasions",
+    "event",
+    "usually",
+    "getting",
+    "suggests"
+  ],
+  "nodes": {
+    "c0ce7eaacbc7757a743aba1bbf2b672f46b28b23": {
+      "title": "A Comparative Study of Video Segmentation Techniques for Graduate Detection in Thai Graduation Ceremonies",
+      "year": 2025,
+      "abstract": null,
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": []
+    }
+  },
+  "edges": [
+    {
+      "source": "c0ce7eaacbc7757a743aba1bbf2b672f46b28b23",
+      "target": "98ed429701f61442cf6af5d74b0ac7ee0a562878",
+      "type": "cites"
+    }
+  ]
+}

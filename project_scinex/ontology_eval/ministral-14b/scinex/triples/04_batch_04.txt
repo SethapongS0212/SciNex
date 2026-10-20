@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: d4db99b44b35 -----
+TRIPLE:     (ConvLSTM)  --mentions-->  (time-series analytic techniques)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: Based on the review of the time-series analytic techniques discussed in previous related work, we considered ARIMA [7], SVR [25], LSTM [26], and ConvLSTM [14] for the preliminary analysis.
+
+----- triple_id: d378f8e6c5e3 -----
+TRIPLE:     (KM Stone Speed dataset)  --producedby-->  (data preparation)
+PREDICATE DEFINITION: ResearchArtifact → ResearchProcess  |  Links a research artifact back to the research process that generated it
+SOURCE SENTENCE: The construction of the KM Stone Speed dataset is the final step of the data preparation.
+
+----- triple_id: 197879de1181 -----
+TRIPLE:     (52 distinct Quats)  --evaluatedon-->  (a dataset of 1,654 data points)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: Osmotic coefficients obtained from experimental data and activity coefficients calculated by reference sources were compiled for 52 distinct Quats, resulting in a dataset of 1,654 data points.
+
+----- triple_id: 5444306dfc9e -----
+TRIPLE:     (Genetic Algorithm)  --produces-->  (backward estimation of a compound's structure)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: A Genetic Algorithm was subsequently applied to perform the backward estimation of a compound's structure based on the target property.
+
+----- triple_id: 7a946cb2b50d -----
+TRIPLE:     (LSTM)  --trainedon-->  (road networks)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: [17] created a travel time prediction model using LSTM and trip plans from historical GPS data and road networks.
+
+----- triple_id: 8189f1a05002 -----
+TRIPLE:     (logistic regression)  --achieves-->  (the best accuracy among all selected classifiers)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: It also found that the logistic regression, which is a known data analytic method, can be used as a classification method to detect the kick gesture; because it provides the best accuracy among all selected classifiers.
+
+----- triple_id: 8c3655ff9e13 -----
+TRIPLE:     (K-Fold Cross-Validation)  --configures-->  (each experiment)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: Each experiment underwent testing through K-Fold Cross-Validation, where K is set to be 3, as depicted in Fig.
+
+----- triple_id: 1ef452c18b8a -----
+TRIPLE:     (Convolutional Neural Networks)  --designedfor-->  (image classification and recognition)
+PREDICATE DEFINITION: Model → ResearchTask  |  Associates a model with the research task it was specifically designed or optimised to solve, such as a transformer model designed for machine translation or a CNN designed for image classification
+SOURCE SENTENCE: Specifically, Convolutional Neural Networks (CNNs) are developed for image classification and recognition, and it is also applied to VMMR to enhance performance [1], [2], [3], [4], [5], [6].
+
+----- triple_id: 1fdcc5a17e47 -----
+TRIPLE:     (landmark P9)  --extractedfrom-->  (left eye in a middle-gaze image ('img0001'))
+PREDICATE DEFINITION: ? → AcademicPaper  |  Links an extracted entity to the academic paper it was extracted from.
+SOURCE SENTENCE: For example, landmark P9 of the left eye in a middle-gaze image ('img0001') was recorded at coordinates (492, 419) (Fig.
+
+----- triple_id: 8129cfb1be80 -----
+TRIPLE:     (KM Stone)  --splitfrom-->  (km stones database)
+PREDICATE DEFINITION: Dataset → Dataset  |  Records that a dataset partition was derived from a larger source dataset
+SOURCE SENTENCE: Next, the other input dataset is the km stones database, KM Stone, that contains km_label (including road number and km), lat (latitude), and lon (longitude).

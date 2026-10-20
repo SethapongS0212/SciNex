@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "287f502d1c8d", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "41.86% is an ExperimentalResult, and scinex provides achievesResult for exactly this - the weaker achieves (-> ResearchObjective) was chosen instead. qwen3-235b rendered the SAME fact from the same paper as achievesResult and scored CORRECT"},
+  {"triple_id": "a696ce855b5b", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "reversed and tautological: the sentence says the oversampling technique USES SMOTE, and SMOTE simply IS an oversampling technique"},
+  {"triple_id": "8fa2d61dfa36", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "a real architectural contrast, but scinex's definition requires models 'directly compared in an experiment' and this is a background statement about two-stage vs one-stage detectors"},
+  {"triple_id": "a7e52850c826", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "f892daec3b42", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "the sentence describes TRAINING on 80% of the images, not evaluation; 'images' also names no dataset"},
+  {"triple_id": "d380e1dcd881", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "textbook metric->value shape with the unit preserved"},
+  {"triple_id": "cd1d791973e3", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "0ca53cc10d42", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "correctly picks achievesResult over achieves for a metric outcome - the distinction scinex adds over CEO, used as intended"},
+  {"triple_id": "1ff3219b8e34", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "captures the feature-derivation relation that the CEO run missed entirely from this paper's feature-engineering paragraph"},
+  {"triple_id": "d898335feded", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "correctly disentangles the RT1->nasal / RT4->temporal pairing and 'designed to' is verbatim, but RT4 is a derived feature rather than the Model the predicate requires. Same verdict as the identical CEO triple"}
+]}

@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: 2.2.2 Accelerometer
+
+Text:
+An accelerometer is used to quantify the change in the velocity of the host device.(21) The sensor can measure the acceleration along three axes, X, Y, and Z, in meters per second squared (m/s2); in this paper, they are called aX, aY, and aZ, respectively. In a general experiment, this sensor is set up in a car, as demonstrated in Fig. We ignore the gravity force, so all values are zero when the car stops or moves at a constant speed.
+
+----- para_id: 13 -----
+Section: 2.2.3 Gyro sensor
+
+Text:
+A gyro sensor is used to measure the rotation rate of X, Y, and Z dimensions.(21) In this paper, gX, gY, and gZ in degrees per second (°/s) are used. If there is no rotation change, all values are zero. When a car pitches, rolls, and yaws; the values change as depicted in Fig.
+
+----- para_id: 14 -----
+Section: 2.3 Data analysis
+
+Text:
+One task in our work is to identify pavement failures and distinguish them from speed bumps. Sensor and location data are logged in the dataset. To differentiate normal surfaces, failures, and speed bumps, some supervised classification methods(13) are used. 2272 Sensors and Materials, Vol.
+
+----- para_id: 15 -----
+Section: 2.3.1 Decision tree
+
+Text:
+A decision tree(13) is a flowchart-like mathematical model for predicting the classification of an object by evaluating the values of object attributes in a flow decision. Each branch presents the outcome of an attribute and each leaf node is a class label, as shown in Fig.
+
+----- para_id: 16 -----
+Section: 2.3.2 Linear classification
+
+Text:
+A linear classification(13) uses a line to separate data into two classes, as depicted in Fig. The model is n i=0 aixi + c, where xi is a feature, and ai and c are adjustable constants that result in minimum error verified by the labels of the actual classification.
+
+----- para_id: 17 -----
+Section: 2.3.3 Artificial neural network (ANN)
+
+Text:
+An ANN(13) is a set of artificial neurons and their connections for processing input signals in order to produce a classification output. Each of the neurons and connections has an adjustable weight that can increase or decrease the strength of the signal from the input to the output, as shown in Fig.
+
+----- para_id: 18 -----
+Section: 2.3.4 Support vector machine (SVM)
+
+Text:
+An SVM(13) separates two classes by a space, i.e., a clear gap, which is as wide as possible, as shown in Fig. This behavior can improve the overfitting issue of the classifier as well. The shape of the gap can be configured as a user-specified kernel.
+
+----- para_id: 19 -----
+Section: 2.4 Method
+
+Text:
+In order to obtain a visualization report about the quality of a street at nighttime in terms of street lighting and locations of pavement failures, data must be collected along the street and analyzed, and a visualization must be drawn on a map. 10 (2018) 2273 We firstly implement a cyber-physical system, as depicted in Fig. A device is installed on the car console, as demonstrated in Fig. 5(e), to collect data on driving and send them to the server. The sensors installed are a photoresistor, a gyro sensor, and an accelerometer, as well as a GPS, as depicted in Fig. This experiment uses an MPU-5060(22,23) sensor that includes an accelerometer and a gyro sensor. Basically, a calibration and a low-pass filter configuration are implemented by referring to the references,(22,23) and a high-pass filter for a complementary sensor fusion is applied by the algorithmic implementation.(24) In addition , the GPS is used to collect pairs of a latitude and a longitude. Throughout driving, the device collects all sensor data with timestamps every 500 ms. We also manually record any time points of pavement defects found on the map with a timestamp. Thus, this is the supervised classification with label "0" for a regular street surface and label "1" for a found defect. Secondly, data are combined and stored in a cloud database for analysis, as shown in Fig. An example of our processed dataset is demonstrated in Fig.
+
+----- para_id: 20 -----
+Section: 2.4 Method
+
+Text:
+There are timestamps, latitudes, longitudes, light intensities, accelerations (aX, aY, and aZ), rotations (gX, gY, and gZ), and the supervised classifications of pavement failures. The accelerations and rotations are 2274 Sensors and Materials, Vol. 10 (2018) changed into their absolute values during data analysis. As we observed, the mean absolute values of the data (aX, aY, aZ, gX, gY, and gZ) of regular road surfaces are (2.687, 2.795, 1.894, 2.897, 3.304, and 2.068), those of pavement failures are (2.805, 3.096, 9.927, 10.787, 13.168, and 2.698), and those of speed bumps are (2.375, 1.710, 9.984, 2.361, 9.464, and 1.182). Next, in order to understand the data characteristics, a scatter matrix of every pair of acceleration and rotation data with labels of pavement failures is plotted, as shown in Fig. As we have a closer look at the visualization, some pairs can be simply separated by a linear classifier and some other pairs may need to be classified by a nonlinear method. Thus, we use different classification methods,(13) namely, decision tree, linear classification, ANN, and SVM, to analyze the dataset. Parameters of these methods are configured to support either linear or nonlinear separable data as follows: • The linear classification is implemented to perform classification analysis and find some key attributes by considering their weights resulting from the classifier model.
+
+----- para_id: 21 -----
+Section: 2.4 Method
+
+Text:
+• The decision tree model is configured by using the Gini index(13) to measure the quality of a split. • The configuration of ANN for our experiment is that there is one hidden layer having 3 units with a sigmoid activation function, the number of maximum iterations is 5000, the tolerance for the stopping criterion is 0.0001, and the learning rate is 0.001. • For the SVM, according to the visualization in Fig. 7, there are overlapped class distributions, and a radial basis function (RBF) kernel becomes a proper kernel for our experiment. In addition , the configuration of this classifier is that the penalty parameter (c) of the error term is 1.0, the kernel coefficient (gamma) is 0.3, the number of maximum iterations is 5000, and the tolerance for the stopping criterion is 0.0001. To find the proper classification method, we train and test each model using cross-validation to obtain the minimum root mean-square error (RMSE) and calculating a correlation for measuring the relationship between input and output.(13) In addition , we fit the coefficient of the IRI equation against the data from RoadNet.(20) Lastly, we plot the analytical results onto a map. For street lighting , if the illuminance is greater than 3 lx, as recommended by the guidelines,(14) the road is colored green, otherwise a dark line is used. For pavement failure, the location of each defect is plotted with a dot whose size corresponds to its IRI.
+
+----- para_id: 22 -----
+Section: 3. Results
+
+Text:
+Throughout the driving of a car along a street in Suphanburi Province in Thailand, about 20000 entries of sensor data were collected, as displayed in Fig. The experimental dataset includes street lighting at nighttime, regular street surfaces, pavement failures, and speed bumps. Then, the data analysis is performed . The data from the accelerometer and gyro sensor are analyzed separately using the four key classification methods, and they are evaluated on the basis of the RMSE and correlation. Since RMSE indicates error, a near-zero value is described. In contrast, the correlation shows the relationship between the inputs and the output, so a near- one value is preferred. The result of our experiment is documented in Table 1. It is found that the analysis of the gyro sensor data provides a better result than that of the accelerometer data in terms of the RMSE and correlation. Moreover, the convergence test of each model is performed , as shown in Fig. The linear classifier, ANN, and SVM converge into their stable RMSE, and as we observed, they are almost unchanged for iterations between 20 and 30, between 200 and 220, and between 5 and 15, respectively. However, we did not perform the convergence test for the decision tree, because each iteration of the decision tree is for splitting a node, but does not provide a complete classifier model as the former three models did.
+
+----- para_id: 23 -----
+Section: 3. Results
+
+Text:
+In addition , the results from the four classification methods are not markedly different, so it can be considered that the classes of data are linear separable patterns. Upon a closer look at a simple method such as the linear classification, it shows that the equation 0.051 × |gX| + 0.063 × |gY| + 0.002 × |gZ| – 0.133 > 0 describes the pattern when a pavement defect is found. This equation also implies that the pitch and roll rotations of a car are caused by pavement failure. Since the coefficients of gX and gY are similar, the equation can be simplified as where PFi is the pavement failure at location i. The positive PFi indicates that a pavement failure is found. Next, the proper coefficients of Eq. (1) for our car with a speed of 60–80 km/h are determined using the aZ values collected during driving on streets and adjusted by the official IRIs from RoadNet.(20) RoadNet can provide IRIs of a section of a road but not a particular location, so we use IRIs of road sections to tune appropriate coefficients by minimizing error. As a result, the IRI of our car can be calculated using Eq. It is noted that these coefficients are dependent on the elastic property of a car, and they must be recalculated when using a different car. IRIi = 0.201 + 0.318 × |aZi| + 0.201vi (3) Finally, we can plot all data on street lighting and locations of pavement failures with their IRIs on a map as demonstrated in Fig. We draw a route throughout our driving at night.

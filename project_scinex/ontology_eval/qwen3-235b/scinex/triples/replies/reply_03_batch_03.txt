@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "382ccbaa403a", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "explicitly stated, but OC-SORT is a Model standing in for the AcademicPaper the predicate requires - same verdict as under CEO"},
+  {"triple_id": "de3fdd162018", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "'reported by' is explicit and the citation key acceptably denotes the paper, but 'non-linear behaviour' is a FINDING, and reports takes a ResearchProcess"},
+  {"triple_id": "d24f68f0b5ff", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "2,113.53 s is the WITHOUT-BATCHNORM ablation figure (F1 fell 0.93 to 0.16 in the same sentence); attributing it plainly to CTv1-DR strips the condition that makes it meaningful"},
+  {"triple_id": "a3ecd30d1faf", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "the text lists SVP as one of four algorithms EMPLOYED BY the ML methodology; 'SVP uses ML methodology' inverts that and is tautological - SVP is itself an ML algorithm"},
+  {"triple_id": "e9ec99020ea6", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "9c618e5c4c53", "C1": "PARTIAL", "C3": "TOO_NARROW", "C4": "PARTIAL", "note": "TWO sub-processes bundled into one node ('intra-scale interaction and cross-scale fusion') where the CEO run split them; composition is also only implied by 'used ... to'"},
+  {"triple_id": "917377fcf405", "C1": "CORRECT", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "the comparative result is explicit and correctly typed; 'this study' is deictic and would merge across every paper in a corpus graph"},
+  {"triple_id": "9f83f18dd3a5", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "produces requires a generated ARTIFACT; 'stronger influence on model degradation' is a causal effect, and the sentence says 'have a stronger influence on', not 'produce'"},
+  {"triple_id": "3a4754c392a1", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "right metric->result direction, but the object is a qualitative phrase where the range demands a quantitative result - the actual Dice value is in Table II and was not taken"},
+  {"triple_id": "3e34b5d0d256", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "the sentence describes HYPERPARAMETER SELECTION (p, q, d chosen from observations), not training on a corpus; 'data of each road' also names no dataset"}
+]}

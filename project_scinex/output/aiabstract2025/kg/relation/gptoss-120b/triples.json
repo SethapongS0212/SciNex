@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Galactica",
+    "predicate": "produces",
+    "object": "contextualized embeddings",
+    "object_type": "Other",
+    "source_sentence": "Galactica produces contextualized embeddings that serve as strong representations for downstream analysis of scientific texts.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "I INTRODUCTION"
+  },
+  {
+    "subject": "GPTZero",
+    "predicate": "uses",
+    "object": "GPT-2 perplexity",
+    "object_type": "Metric",
+    "source_sentence": "GLTR [17] visualizes token predictability distributions, while GPTZero [13] applies threshold-based heuristics using GPT-2 perplexity.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "II RELATED WORK"
+  },
+  {
+    "subject": "DetectGPT",
+    "predicate": "uses",
+    "object": "curvature-based likelihood shifts",
+    "object_type": "Method",
+    "source_sentence": "More recently, DetectGPT [9] proposed using curvature-based likelihood shifts to detect generated text in a zero-shot manner.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "II RELATED WORK"
+  },
+  {
+    "subject": "Semantic k-NN Graph",
+    "predicate": "uses",
+    "object": "Galactica-derived cosine similarity",
+    "object_type": "Concept",
+    "source_sentence": "Semantic k-NN Graph: Dynamic graph construction based on Galactica-derived cosine similarity, allowing contextual relationships without needing citation meta- data.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "Analysis"
+  },
+  {
+    "subject": "GNN-based semantic graph learning",
+    "predicate": "addresses",
+    "object": "research fraud detection",
+    "object_type": "Task",
+    "source_sentence": "Together, these elements distinguish our method as the first to combine scientific-domain LLMs with GNN-based semantic graph learning for research fraud detection.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "Analysis"
+  },
+  {
+    "subject": "semantic embedding extraction",
+    "predicate": "uses",
+    "object": "Galactica",
+    "object_type": "Model",
+    "source_sentence": "The end-to-end pipeline consists of four main stages: (1) semantic embedding extraction via Galactica, (2) construction of a pseudo-citation graph using k- NN similarity, (3) classification via a Graph Convolutional Network (GCN), and (4) supervised training and evaluation.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "IV METHODOLOGY"
+  },
+  {
+    "subject": "construction of a pseudo-citation graph",
+    "predicate": "uses",
+    "object": "k- NN similarity",
+    "object_type": "Method",
+    "source_sentence": "The end-to-end pipeline consists of four main stages: (1) semantic embedding extraction via Galactica, (2) construction of a pseudo-citation graph using k- NN similarity, (3) classification via a Graph Convolutional Network (GCN), and (4) supervised training and evaluation.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "IV METHODOLOGY"
+  },
+  {
+    "subject": "mean pooling",
+    "predicate": "uses",
+    "object": "token embeddings",
+    "object_type": "Other",
+    "source_sentence": "We chose mean pooling over all token embeddings instead of alternatives like using the [CLS] token or max pooling.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "IV METHODOLOGY"
+  },
+  {
+    "subject": "mean pooling",
+    "predicate": "achieves",
+    "object": "stable and discriminative representations",
+    "object_type": "Concept",
+    "source_sentence": "Empirically, mean pooling yielded more stable and discriminative representations across abstracts of varying lengths.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "IV METHODOLOGY"
+  },
+  {
+    "subject": "SciBERT multilingual variants",
+    "predicate": "addresses",
+    "object": "multilingual generalization",
+    "object_type": "Task",
+    "source_sentence": "For multilingual generalization, the embedding pipeline can be extended using language-specific scientific models (e.g., SciBERT multilingual variants or XLM-RoBERTa).",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "IV METHODOLOGY"
+  },
+  {
+    "subject": "XLM-RoBERTa",
+    "predicate": "addresses",
+    "object": "multilingual generalization",
+    "object_type": "Task",
+    "source_sentence": "For multilingual generalization, the embedding pipeline can be extended using language-specific scientific models (e.g., SciBERT multilingual variants or XLM-RoBERTa).",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "IV METHODOLOGY"
+  },
+  {
+    "subject": "citation-style graph G",
+    "predicate": "uses",
+    "object": "pairwise cosine similarity",
+    "object_type": "Other",
+    "source_sentence": "Since the AI-GA dataset does not include citation or co-authorship metadata, we simulate a citation-style graph G = (V, E) using pairwise cosine similarity between embeddings.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "IV METHODOLOGY"
+  },
+  {
+    "subject": "RoBERTa fine-tuned classifier",
+    "predicate": "trainedon",
+    "object": "AI-GA dataset",
+    "object_type": "Dataset",
+    "source_sentence": "RoBERTa fine-tuned classifier: A large transformer- based model pre-trained on general corpora and fine- tuned on the AI-GA dataset for binary classification.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "V EXPERIMENTS AND RESULTS"
+  },
+  {
+    "subject": "Perplexity-based GPT-2 filter",
+    "predicate": "uses",
+    "object": "GPT-2",
+    "object_type": "Model",
+    "source_sentence": "Perplexity-based GPT-2 filter: An unsupervised method where the average GPT-2 perplexity of each abstract is computed.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "V EXPERIMENTS AND RESULTS"
+  },
+  {
+    "subject": "Uniform Manifold Approximation and Projection (UMAP)",
+    "predicate": "uses",
+    "object": "768-dimensional embeddings",
+    "object_type": "Other",
+    "source_sentence": "To qualitatively assess how Galactica embeddings separate AI and human-authored abstracts, we apply Uniform Manifold Approximation and Projection (UMAP) to reduce the 768-dimensional embeddings to a 2D space.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "V EXPERIMENTS AND RESULTS"
+  },
+  {
+    "subject": "Galactica + GNN model",
+    "predicate": "evaluatedon",
+    "object": "arXiv abstracts",
+    "object_type": "Dataset",
+    "source_sentence": "Our Galactica + GNN model classified 94.8% of the arXiv abstracts as human-written, while flagging 5.2% as likely AI- generated.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "V EXPERIMENTS AND RESULTS"
+  },
+  {
+    "subject": "Galactica's domain-tuned semantic embeddings",
+    "predicate": "uses",
+    "object": "graph-based reasoning via GNNs",
+    "object_type": "Method",
+    "source_sentence": "Our findings demonstrate that combining Galactica's domain-tuned semantic embeddings with graph-based reasoning via GNNs yields significantly improved detection of AI-generated abstracts compared to TF-IDF, perplexity filtering, and transformer-only baselines like RoBERTa.",
+    "extraction_mode": "relation",
+    "paper": "aiabstract2025",
+    "title": "Detecting AI-Generated Scientiﬁc Abstracts Using Galactica and Graph Neural Networks",
+    "section": "V EXPERIMENTS AND RESULTS"
+  }
+]

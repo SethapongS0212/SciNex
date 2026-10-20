@@ -1,0 +1,18 @@
+{"verdicts": [
+  {"para_key": "strabismus2026#36", "C2": "PARTIAL", "C5": "POOR",
+   "missed_concepts": ["geometric eye landmark ratios", "smartphone images", "telehealth / community screening"],
+   "missed_relations": ["Random Forest classifier -> uses -> explicit geometric landmark features", "screening approach -> uses -> smartphone images instead of specialized hardware", "modular framework -> designedFor -> telehealth and community screening tools"],
+   "note": "captures the classifier and the task but not the paper's actual contribution - that the features are explicit geometric ratios rather than black-box representations, which is the whole argument of the paragraph"},
+  {"para_key": "aiabstract2025#8", "C2": "POOR", "C5": "PARTIAL",
+   "missed_concepts": ["AI-generated abstract detection", "LLM-derived embeddings", "BERT + GNN hybrid models", "BERT", "GPT-2"],
+   "missed_relations": ["our approach -> uses -> Galactica INSTEAD OF generic LLMs like BERT or GPT-2", "prior hybrid models -> comprises -> BERT + GNN", "Galactica -> trainedOn -> scientific texts (captured only as the weaker 'uses')"],
+   "note": "the paragraph exists to state one contrast - Galactica in place of generic LLMs - and the two models it is contrasted against are both absent, so the innovation is unrecoverable from the graph"},
+  {"para_key": "gamlprop2025#2", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["chemical compound design", "specific property ranges", "ML integration"],
+   "missed_relations": ["GA -> designedFor -> designing chemical compounds that meet industrial requirements", "integrating GA with ML -> produces -> alternative chemical compounds"],
+   "note": "the one captured triple takes the weaker half of the sentence: GA is employed to DESIGN COMPOUNDS that meet industrial requirements, and only the requirements survive"},
+  {"para_key": "eyelandmark2024#0", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["RT-DETR", "Haar Cascade", "eye landmarks (pupil, reflection point, eye boundary)", "nine landmark points", "accuracy of 0.974", "ophthalmology"],
+   "missed_relations": ["this study -> uses -> RT-DETR for eye landmark identification", "RT-DETR approach -> achieves -> accuracy of 0.974", "Haar Cascade -> addresses -> facial landmark detection", "current approaches -> fail on -> upper-half faces and masked subjects"],
+   "note": "this is the ABSTRACT and it yields zero triples - the model, the baseline, the landmark scheme and the headline accuracy are all stated here. qwen3-235b captured (accuracy, evaluates, 0.974) from this same paper, so the number is reachable; gemma4 simply did not take it."}
+]}

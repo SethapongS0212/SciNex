@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "1061a50b5f00", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "scinex's achievesResult (Model -> ExperimentalResult) is a tighter fit here than CEO's achieves, which also admits objectives"},
+  {"triple_id": "c1818eb3878d", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "the sentence says 'use', but mAP is a METRIC used to validate, not an artifact consumed as input; scinex has evaluates/evaluatedOn for exactly this"},
+  {"triple_id": "9434798daab4", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "correctly isolates the filtered variant as a distinct comparison target"},
+  {"triple_id": "ef8143c64015", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "'consists of' is verbatim, and this captures the Up matrix that several CEO runs dropped from the Gate/Up/Down triple"},
+  {"triple_id": "a608d45fd951", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "31c9ef6a37e2", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "'creates' maps cleanly onto produces, and decision trees are a genuine generated artifact"},
+  {"triple_id": "57be24c0ffdf", "C1": "PARTIAL", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "correct metric->result typing, but the object restates the subject name and the sentence lists EIGHT MOTA values across two trackers and four datasets - a bare 1.0 cannot be traced back to either"},
+  {"triple_id": "af47c94c096c", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "SMOTE is an oversampling technique APPLIED TO data, not a Model trained on a named corpus; 'training data' also names nothing. Same verdict as the identical CEO triple - the content hash makes them one id"},
+  {"triple_id": "4b785a1115a3", "C1": "PARTIAL", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "the object does not appear in the source sentence at all - it is recoverable only by expanding the LPII acronym; the sentence states what LPII COMBINES, not what it targets"},
+  {"triple_id": "c5e94160f5ce", "C1": "INCORRECT", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "SELF-LOOP: a dataset evaluated on itself, and the subject should be an Experiment rather than the dataset"}
+]}

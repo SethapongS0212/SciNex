@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "bf7a99c0c9f1", "C1": "INCORRECT", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "'The paper [2]' is a cross-reference, not a publication venue; no venue is named anywhere in the sentence and the subject is a bare citation key"},
+  {"triple_id": "17810e59ba0b", "C1": "CORRECT", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "configures is ExperimentalSpecification -> Experiment; this is Model -> architecture description, neither the domain nor the range"},
+  {"triple_id": "b9d79a9ad8dd", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "direction reversed on the identical sentence gptoss-120b got right: LTrain is split FROM LExist, so LTrain must be the subject"},
+  {"triple_id": "63330cfd62a8", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "bbea6ce781af", "C1": "PARTIAL", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "the ONLY correct use of employs (Organisation -> Person) anywhere in this evaluation - every other model matched the English verb to method-uses-method instead. Object is resolved by coreference from 'He', so it is not literally in the stored sentence, and the source is an author biography"},
+  {"triple_id": "61baabfd8c53", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "'due to' here is physical causation among material factors, not a research gap driving a method; neither side is a ResearchObjective or ResearchProcess"},
+  {"triple_id": "5f7acb4d0307", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "'together with' denotes collaboration between two organisations, which is not institutional affiliation; LODAC is also a project, not an Agent"},
+  {"triple_id": "cf14d9ab5efb", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "PROVENANCE FLAG: correct on all three criteria but mined from an author biography"},
+  {"triple_id": "541d933be28f", "C1": "PARTIAL", "C3": "TOO_NARROW", "C4": "INCORRECT", "note": "roles swapped - supports requires the MEASUREMENT as subject and the conclusion as object; here a dataset class label (Nissan) holds the subject slot and the number sits in the object with a parenthetical gloss"},
+  {"triple_id": "1d52f17db7b0", "C1": "INCORRECT", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "near-tautology: subject and object are the same two people in two renderings, and the object string does not appear in the sentence"}
+]}

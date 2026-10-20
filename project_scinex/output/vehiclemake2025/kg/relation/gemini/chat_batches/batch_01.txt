@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: Abstract
+
+Text:
+Vehicle Make Model Recognition (VMMR) is commonly used in Intelligent Transportation Systems (ITS), free-flow image-based toll systems , and enforcement systems . These systems must analyze and process vehicle front images for use as evidence. Convolutional Neural Networks (CNN) are widely used for image classification and VMMR problems. Complex model structures and more internal parameters are needed to improve classification accuracy with many classes. Issues included larger models and longer processing times. The goal of this work is to study and create a smaller CNN model that can be used on devices with limited resources, like embedded computers and embedded computer cameras, to figure out what kind of car it is from a front view picture. Real free-flow toll systems were used to train a CNN model that recognized vehicle makes with 99% accuracy . The model is smaller than VGG16, InceptionV3, Yolo11m-cls, and ResNet50 and has over 90% accuracy . It reduced parameters by 69.95% and developed the CTv1 model to achieve an F1 score 2.06% higher than InceptionV3, the best. The model was tested on a Raspberry Pi 3 Model B, processing images in 1 second and using 25 mWh.
+
+----- para_id: 1 -----
+Section: Abstract
+
+Text:
+The compact version of the proposed model also adjusts the Padding and Stride of the Convolutional Layer and reduces the CNN model size using Depth-wise Separable Convolutional and 1×1 Convolutional Dimension Reduction (Bottleneck) methods to test vehicle make recognition accuracy , training time, processing time, and model size.
+
+----- para_id: 2 -----
+Section: I INTRODUCTION
+
+Text:
+Current Vehicle Make Model Recognition (VMMR) tech- nologies remain a significant area of interest for researchers and industries, since they play a crucial role in traffic management, tolling, and vehicle re- identification . Specif- ically, the free-flow tolling system worked with license plate recognition from frontal vehicle images. The current system in Thailand uses only the license plate to identify an individual car and generate an invoice, and it also uses the detected vehicle make and model to help the operator confirm the vehicle information when the system cannot identify the license. Moreover, the free-flow expressway system that is used in Thailand has a relatively high installation cost because detecting and classifying vehicles requires high-performance The associate editor coordinating the review of this manuscript and approving it for publication was Antonio J. This work is licensed under a Creative Commons Attribution 4.0 License. However, relying on only license plate recognition , the system may face the problems of misreading unclear license plates and vehicle registration fraud. There- fore, using other attributes of the vehicle to consider, such as the brand of the vehicle , may help charge the service fee for the correct vehicle . In addition, the result can lead to the arrest of fraud related to illegal vehicle registrations.
+
+----- para_id: 3 -----
+Section: I INTRODUCTION
+
+Text:
+Over the past decade, machine learning techniques have garnered substantial attention and development from any research studies, and they were applied across various fields. Specifically, Convolutional Neural Networks (CNNs) are developed for image classification and recognition , and it is also applied to VMMR to enhance performance [1], [2], [3], [4], [5], [6]. Some studies have incorporated state -of- the-art models like ImageNet, VCC16, Inception, Yolo (you only look once), and ResNet [7], [8], [9], [10], [11], [12], [13], [14], [15] to improve classification accuracy . However, achieving high performance is often due to the larger model sizes and higher computational costs, which require more computing resources [16] leading to a high-cost solution. Most pieces of research utilize standard VMMR datasets, and they typically consist of images of entire vehicle . However, due to the real-world scenario of toll plazas in Thailand, image data in this study consisted of long-range photographs of vehicle fronts at toll plazas including their license plate (FIGURE 6). Using our dataset for testing with state -of- the-art models showed varying accuracy values, with some models achieving over 90% accuracy and others below 50%. Experiments showed larger models slowed processing on the Raspberry Pi 3 Model B. To address an according issue, this study focuses on the classification solution.
+
+----- para_id: 4 -----
+Section: I INTRODUCTION
+
+Text:
+This study presents a CNN model for recognizing and classifying vehicle makes from front-view images, designed to be small enough for resource-constrained systems . The study involved creating a small CNN model, experimenting with different layer configurations, and adjust- ing key hyperparameters related to CNNs. The resulting filter-block structure achieved over 95% accuracy in vehicle make classification and was smaller than state -of-the-art models. With the small CNN model size, the demand for processing resources is reduced, and the costs associated with these resources are also lowered. The research report is divided into four main sections: Related Work, which discusses various studies on VMMR technology that have improved CNNs; Proposed Model, which introduces the CNN model for VMMR, detailing the dataset used for training and testing; Performance Evaluation, which compares the proposed model's performance in vehicle make classification against state -of-the-art models (Ima- geNet, VCC16, Inception, ResNet, MobileNet), including model size and training time; and Conclusion.
+
+----- para_id: 5 -----
+Section: II LITERATURE REVIEW
+
+Text:
+RELATE VMMR CNN-BASE WORK There's significant research on applying machine learning, particularly CNN technology , for classifying vehicle make and model [4], [17]. Over the past decade, many studies have experimented with well-known state -of-the-art CNN mod- els [18], [19], [20], [21] and even enhanced methods beyond CNN [22]. Common datasets for these experiments include Stanford Cars, CompCars, and CompCars Surveillance [23], offering accessible resources for evaluating classification results and efficiency. VGG-oriented The VGG16 model was employed by Naseer et al. [7] as a feature extractor. They then used data from the FC-6 layer to test SVM, Tree, and KNNs for classification. SVM classification produced higher accuracy than direct VGG16 classification, according to their tests on the NTOU-MMR dataset. Among other CNN models, Liu and Wang [8] investigated VGGNet for vehicle make and model classification. They looked into different weight configurations, such as training new weights from scratch or using the original weights completely or in part. Methods based on Inception, The InceptionV3 model has been used in numerous studies. In order to classify vehicle make and model from nighttime near-infrared (NIR) images, Balci et al. They investigated preprocessing techniques like LIME, Ying, and LightenNet for enhancing low-light images and preprocessed normal images using gray or dark filters to mimic NIR images prior to training.
+
+----- para_id: 6 -----
+Section: II LITERATURE REVIEW
+
+Text:
+Their results demonstrated that the best accuracy was obtained when Ying's preprocessing was applied to dark-filtered images. Re-training make and model classes within the InceptionV3 model when adding new classes with few sample images was the subject of another study by Balci and Artan [10]. They used the Nearest Class Mean Classifier and Weight Imprinting Based Classifier techniques to assess the model's feature embedding outcomes. Using their developed Lightweight Recurrent Attention Unit (LRAU), Boukerche and Ma [11] also tested InceptionV3 (along with ResNet50 and VGG16) to improve classification performance on well-known VMMR datasets such as Stanford Cars, CompCars, and NTOU-MMR. ResNet-based Approaches: To enhance vehicle make and model classification across multiple VMMR datasets, Boukerche and Ma [11] applied their LRAU to the ResNet50 model (along with VGG16 and InceptionV3). Their find- ings demonstrated that LRAU could improve classification accuracy . In order to lower the classification accuracy of CNN-based VMMR models, Siddiqui and Ma [12] trained the ResNet50 model to generate simulated occluded portions of vehicle images. In response, they suggested a Symmetric Image-Half Flip preprocessing technique to deal with the issue of occlusion . YOLO-oriented Methods : Shuo et al. [24] used Yolo for Vehicle Logo Detection (VLD), which focuses on vehicle classification.
+
+----- para_id: 7 -----
+Section: II LITERATURE REVIEW
+
+Text:
+They developed a customized dataset with car logos from 30 brands and altered Yolo to enhance its small object detection capabilities. In comparison to other models, their tests showed that the modified Yolo model produced the best accuracy and the fastest processing time. These studies demonstrate the broad use and ongoing advancement of CNN technology for the classification and recognition of vehicle makes and models.
+
+----- para_id: 8 -----
+Section: B. CONVOLUTIONAL NEURAL NETWORK
+
+Text:
+A Convolutional Neural Network (CNN) is a type of artificial intelligence model [13] that is well-suited for processing or recognizing image data. The CNN model is developed from the foundation of the ANN model, inspired by the way the human visual system works to see and recognize various images. It consists of two parts: the first part involves seeing and distinguishing key features in the image, and the second part involves learning and remembering these key features for interpretation. A simple CNN model consists of the following picture below. From the basic structure of a CNN model, numerous studies have developed various structures to suit specific objectives and problems. State -of-the-art CNN models also have their foundations in simple CNN models.
+
+----- para_id: 9 -----
+Section: C. DEPTH-WISE SEPARABLE CONVOLUTION
+
+Text:
+The structure of some CNN models is designed to recognize a large number of classes, such as 1000 classes (VGG16, ResNet50, Inception). Recognizing and distinguishing a large number of classes requires an internal structure with a sufficient number of layers and filter outputs (results from convolutional operations) to differentiate the various features of many classes. This results in large models that require high computational resources. Depth-wise Separable Convolution [14] is a method that separates the convolutional operation into two steps. The first step, called Depth-wise, involves using a single filter to perform convolution on each depth layer of the input (if the input has 3 depth layers, there will be 3 filters in total). This step is used for feature extraction from the input. The second step, called Point- wise (with a kernel size of 1 × 1), combines the results from the Depth-wise step to create the desired number of filter outputs. FIGURE 2 shows a simple diagram of the Depth-wise Separable Convolution method. This method reduces the number of multiplications within the model, resulting in a smaller model size and lower computational resource usage, while maintaining accuracy .
+
+----- para_id: 10 -----
+Section: C. DEPTH-WISE SEPARABLE CONVOLUTION
+
+Text:
+The concept can be explained as follows A standard convolution layer receives an input of size Df × Df × M (where Df is the width and height of the input image, M represents the number of depths) performs convolution with a filter kernel of size Dk × Dk × N (where Dk is the width and height of the convolutional kernel, N represents the number of depths of kernel) and produces a feature map. The computational costs required are equal to Df · Df · M · Dk · Dk · N (1) When applying the Depth-wise Separable Convolution method to standard convolution, the computational costs required are equal to Df · Df · M · Dk · Dk + Df · Df · M · N (2) When compared, it can be observed that the computa- tional resources required in equation (2) are less than in equation (1). An example of its application is MobileNet [15], where the research aims to create a CNN model that is not large, making it suitable for use on smartphones. The internal structure of the model applies the Depth-wise Separable Convolution method. 1 × 1 CONVOLUTION DIMENSION REDUCTION Another method to reduce computational resources, oppo- site to Depth-wise Separable Convolution, is to use a 1 × 1 convolution filter to reduce the size of the input matrix first (similar to the Point-wise method). After that, the convolution with the intended kernel size is performed. This method reduces the number of depth layers in the input, thus decreasing the number of calculations required. This is called Dimension Reduction.
+
+----- para_id: 11 -----
+Section: C. DEPTH-WISE SEPARABLE CONVOLUTION
+
+Text:
+An example is as follows second stage, using 5×5 convolution, requires (14×14×48) x (5 × 5×16) = 3.8 million calculations. In total, the number of calculations is 1.5 million + 3.8 million = 5.3 million. Comparing the difference in the number of calculations, it is reduced by 112.9 million calculations. The 1 × 1 convolution method became more well-known through GoogLeNet [25], also known as the Inception module (v1), which used 1 × 1 convolution to reduce the number of computations, helping to create a smaller model while maintaining similar classification accuracy . Another study, the Xception model [26], experimented with combining Depth-wise Separable Convolution with the Inception module that uses 1 × 1 convolution.

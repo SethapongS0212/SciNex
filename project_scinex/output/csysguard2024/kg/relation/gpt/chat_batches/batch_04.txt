@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 36 -----
+Section: E. HYPERPARAMETER TUNING
+
+Text:
+For the Random Forest, considered parameters entail the number of trees (estimators), tree depth (max depth), minimum samples for a split (min sample split), minimum samples per leaf (min sample leaf), maximum number of features considered for splitting a node (max features), maximum number of leaf nodes (max-leaf nodes), minimum impurity decrease for a split (min impurity decrease), whether bootstrap samples are used (bootstrap), and the function to measure the quality of a split (criterion).
+
+----- para_id: 37 -----
+Section: V SYSTEM HEALTH ASSESSMENT
+
+Text:
+This section describes the system health assessment approach, focusing on layer concepts, model comparisons, and hyperparameter tuning in the classification models.
+
+----- para_id: 38 -----
+Section: A. HEALTH PREDICTION LAYER
+
+Text:
+The health predictor represents the last layer in our pre- dictive framework . It has a classification model designed to determine the system 's health . Based on inputs from the forecasting layer that precedes it, this model categorizes the system 's condition as either ''healthy'' or ''unhealthy.'' Moreover, we utilized the sliding window technique to incorporate data trends into the prediction process to enhance predictive accuracy. To forecast the target point, the model concentrates on the latest data within a specified range, defined by the window size. 11, cSysGuard adopts this technique for system health assess- ment, concentrating on the ten latest forecast points from the regression layer to ascertain the current system status . This method effectively captures the temporal patterns of data, leading to more accurate forecasts of future system conditions. In addition to the imbalanced nature of our dataset [63], characterized by a higher prevalence of ''healthy'' statuses, there is a risk of models favoring the majority class and underperforming on the crucial but rarer ''unhealthy'' class. To address this, we implemented SMOTE to enhance the representation of the minority class, thereby enhancing the model equity by creating synthetic instances of this class to improve its detection.
+
+----- para_id: 39 -----
+Section: B. MODEL COMPARISON
+
+Text:
+An essential aspect of our methodology is the comparative analysis of various machine learning models to assess their performance efficacy. For this analysis , we selected five prominent models: Decision Trees, Support Vector Machines, K-Nearest Neighbors, Logistic Regression, and Neural Networks. These models were initially performed with the default parameters provided by the Scikit-learn and TensorFlow libraries [55], [56]. In addition to Neural Networks, our configuration featured a two-layered structure: the first layer had six nodes using the ReLU activation function, and the second comprised a single node with a Sigmoid activation function. To enhance the model's generalizability, the evaluation process employed 10-fold cross-validation, conducting sev- eral training rounds and validation on different data splits to derive the average scores. We utilized precision, recall, and F1 score with macro averaging [64], ensuring equal weighting of each category in the assessment throughout the cross-validation process. The model with the highest macro- averaged F1 score is the most optimal, as it demonstrates a balanced trade-off between precision and recall, with the specifics detailed in (9), (10), and (11).
+
+----- para_id: 40 -----
+Section: C. HYPERPARAMETER TUNING
+
+Text:
+Subsequently, we carefully refined the model's hyperparam- eters through Bayesian optimization to enhance its predictive capabilities with our dataset. We methodically tested a range of parameter values to identify the combination that resulted in the highest macro-averaged F1 score. This process allowed us to optimize the model's accuracy and tailor the model specifically to the nuances of the dataset.
+
+----- para_id: 41 -----
+Section: VI RESULT AND DISCUSSION
+
+Text:
+This section presents our empirical findings for machine - learning models in system metrics and health forecasting. It also provides an insightful discussion of the findings.
+
+----- para_id: 42 -----
+Section: A. SYSTEM METRICS FORECASTING EVALUATION
+
+Text:
+This subsection details the experimental results of the system metrics forecasting, including two main categories: model comparison and hyperparameter tuning. 1) MODEL COMPARISON Table 5 provides a detailed performance evaluation of cSysGuard compared to the selected Level-0 models across various metrics. Deep learning models, such as GRU, LSTM, and RNN, show competitive predictive performance due to their ability to capture complex temporal dependencies and nonlinear patterns in the data. In contrast, traditional models like ARIMA and SARIMA generally lag in most metrics because they rely on more straightforward, linear assumptions and are less effective at handling the vari- ability and complexity of dynamic cloud environments. Overall, cSysGuard shows superior proficiency in most areas. Notably, in response time, it achieves a significant 2.28-fold increase in performance compared to ETS. Notably, this comparison also highlights cSysGuard's capability to surpass advanced deep learning models, such as GRU and LSTM, typically known for their strong performance in predictive tasks. These results demonstrate that cSysGuard effectively surpasses traditional models in certain areas, reinforcing its robustness and adaptability in diverse system -metric forecasting scenarios. 12 visualizes the predicted values compared to the actual values for various metrics. Each graph compares the performance of cSysGuard with commonly used models such as GRU, RNN, LSTM, ARIMA, and CNN.
+
+----- para_id: 43 -----
+Section: A. SYSTEM METRICS FORECASTING EVALUATION
+
+Text:
+The visualizations clarify cSysGuard's predictive capa- bilities, highlighting its effectiveness in forecasting diverse system metrics. Given their alignment with performance benchmarks and the vast array of adjustable parameters, we opted for RNN and Random Forest as our Level-0 and Level-1 models in our optimization experiment. 2) HYPERPARAMETER TUNING Table 6 lists the optimal RNN and Random Forest parameters for CPU usage prediction . Simultaneously, Table 7 presents the improved performance of each model and cSysGuard. Interestingly, the tuning process not only augmented the indi- vidual performances of the RNN and Random Forest but also enhanced the predictive capabilities of the subsequent layers in the architecture . This finding suggests a synergistic effect, where refining one system component positively influences overall efficacy, thereby underscoring the interconnected nature of the models within the system .
+
+----- para_id: 44 -----
+Section: B. SYSTEM HEALTH ASSESSMENT EVALUATION
+
+Text:
+This subsection specifically delves into the experimental results of the system health assessment, dividing them into model comparison and hyperparameter tuning. 1) MODEL COMPARISON Table 8 presents a comparative analysis of various base models' performance, focusing on the macro-averaged precision, recall, and F1 score. The analysis reveals that the Decision Trees outperform the other base models by achieving the highest F1 score. This performance highlights its efficiency in accurately identifying positive instances while minimizing false positives, as evidenced by its high recall and precision. Such a balanced effectiveness profile underscores the suitability of Decision Trees for reliable system health status prediction , establishing it as a robust choice for such assessments. Based on the evaluation, we focused on Decision Trees for in-depth analysis during hyperparameter tuning. 2) HYPERPARAMETER TUNING With Decision Trees identified as the top-performing base model, Table 8 offers a comparative analysis showcasing the impact of hyperparameter tuning on model performance. In addition, Table 9 presents the optimal parameter settings of our model. The results indicate that the optimized Decision Trees outperform the original model, showing enhancements of approximately 1.56% in precision, 1.66% in recall, and 1.67% in the F1 score. It demonstrates the improved performance of its original version and other base models.
+
+----- para_id: 45 -----
+Section: B. SYSTEM HEALTH ASSESSMENT EVALUATION
+
+Text:
+Following the hyperparameter tuning process, we embarked on a detailed analysis of the model's classification accuracy. We constructed an averaged confusion matrix, denoted as Fig. It synthesized the outcomes from each iteration of cross-validation conducted with our sample data, offering a transparent and quantifiable measure of cSysGuard's predictive accuracy. The matrix delineates two principal classes indicative of server status : ''healthy'' and ''unhealthy.'' In this matrix, columns represent predicted labels, and rows correspond to actual labels. This graphical representation is crucial for evaluating the precision and reliability of our model in distinguishing the server's operational states.
+
+----- para_id: 46 -----
+Section: C. COMPARATIVE ANALYSIS OF DIFFERENT ENSEMBLE
+
+Text:
+METHODOLOGY Our study introduces an innovative ensemble stacking model to enhance predictive accuracy. In detail, the regression framework is a three-tiered architecture , comprising base models in the first layer, meta-models in the second, and employing a weighted averaging approach in the third. Then, we conducted a comparative analysis incorporating existing research studies alongside a novel experiment we devised, all utilizing similar ensemble modeling approaches. Specifically, we have selected two research studies. Both employ two-tiered architectural frameworks. The first literature, by Mehmood et al. [23], proposed an ensemble model with a single meta-model (Decision Trees) in the second layer, which leverages predictions from the base models to determine the outcome. The second publication, by Kim et al. [22], introduced an ensemble model framework named CloudInsight. It incorporates a weighted average strategy in its second layer to aggregate and summarize predictions from the base models. In addition, we conducted an experiment that involves simple averaging in the third layer of cSysGuard. The study aimed to determine if a more streamlined model structure or a more straightforward aggregation method could achieve superior results without adding extra complexity. Therefore, we constructed these frameworks and applied them to our dataset to determine their effectiveness and compare them to the cSysGuard architecture .
+
+----- para_id: 47 -----
+Section: D. cSysGuard PERFORMANCE OVERHEAD
+
+Text:
+Subsequently, our analysis shifted towards assessing the impact on system performance, specifically examining the computational overhead. We experimented with cSysGuard on a host machine with a 2.9 GHz Intel Core i7-7820HK Quad-Core processor and 16GB DDR4 RAM. Table 11 show- cases a comprehensive comparison, highlighting differences in key performance indicators such as average prediction and refinement times across three machine learning models (RNN, GRU, and LSTM) chosen for their substantial operational times and the cSysGuard (cSG) framework . Based on the result, cSysGuard exhibits marginally higher processing times than the selected high-performing models. However, it is essential to note that cSysGuard's processing duration is contingent upon the complexity of the underlying model it incorporates. Employing a more streamlined model within the system can reduce overall processing times for cSysGuard. Conversely, based on our findings, enhancing the host's resources can also reduce overall processing time. cSysGuard is fundamentally influenced by the characteristics of the employed models and the capabilities of its operating machine . As Section III-A2 outlined, our methodology deployed the system with specific configurations, including CPU type, memory capacity, and the operating system used. It is essential to acknowledge that differences in these specifications can influence the overall modeling process and its predictive outcomes.

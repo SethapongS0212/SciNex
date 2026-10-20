@@ -40,15 +40,41 @@ def _normalize(text: str) -> str:
     return text.lower().strip()
 
 
-def _is_valid_entity(text: str) -> bool:
+# A measurement value: 88.5, 0.923, 14.76 ms, 97%, ~3.2, 1.2e-4.
+# These are legitimate OBJECTS for the metric predicates, whose whole point is to
+# attach a number to a metric — the prompt's own example is (<Metric>, evaluates, 88.5).
+_VALUE_RE = _re.compile(r'^[<>~≈±]?\s*\d+(?:[.,]\d+)?(?:\s*[eE][-+]?\d+)?\s*[%a-zA-Z/µ°²³]{0,12}$')
+
+# Predicates whose range IS a numeric value rather than a named entity.
+_VALUE_PREDICATES = {"evaluates", "achieves", "reports"}
+
+
+def _is_value(text: str) -> bool:
+    return bool(_VALUE_RE.match(text.strip()))
+
+
+def _is_valid_entity(text: str, predicate: str | None = None,
+                     role: str = "subject") -> bool:
     """
     Filter out bad entities before they enter the graph.
     Returns False for math, citations, theorems, vague phrases, too short/long.
+
+    `predicate`/`role` carve out the one case this filter used to get wrong: the
+    OBJECT of a metric predicate is supposed to be a bare number, which every
+    letters/length rule below would delete AFTER the extractor's guards passed.
     """
     t = text.strip()
 
-    # Too short or too long
-    if len(t) < 3:
+    if not t:
+        return False
+
+    # Metric values survive as objects of the metric predicates only.
+    pred = (predicate or "").lower().strip().replace("_", " ")
+    if role == "object" and pred in _VALUE_PREDICATES and _is_value(t):
+        return True
+
+    # Too short or too long — all-caps acronyms (SF, SD, F1) are real entities.
+    if len(t) < 3 and not _re.fullmatch(r'[A-Z0-9]{2,}', t):
         return False
     if len(t.split()) > 8:
         return False
@@ -145,7 +171,9 @@ class KnowledgeGraphBuilder:
             raw_obj  = t["object"]
 
             # Filter bad entities before they enter the graph
-            if not _is_valid_entity(raw_subj) or not _is_valid_entity(raw_obj):
+            pred_raw = t.get("predicate", "")
+            if (not _is_valid_entity(raw_subj, pred_raw, "subject")
+                    or not _is_valid_entity(raw_obj, pred_raw, "object")):
                 skipped += 1
                 continue
 

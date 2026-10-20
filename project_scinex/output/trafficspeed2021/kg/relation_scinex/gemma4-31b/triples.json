@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Urban Informatics Center",
+    "predicate": "locatedin",
+    "object": "Thailand",
+    "object_type": "Other",
+    "source_sentence": "Our research group, Urban Informatics Center, has a mission to improve the smart mobility, and one ultimate goal is to build a predictive traffic model that can serve the travel time prediction in Thailand .",
+    "extraction_mode": "relation",
+    "paper": "trafficspeed2021",
+    "title": "Spatial-Temporal Traffic Speed Prediction on Thailand Roads",
+    "section": "I INTRODUCTION"
+  },
+  {
+    "subject": "KM Stone",
+    "predicate": "uses",
+    "object": "km stones database",
+    "object_type": "Dataset",
+    "source_sentence": "Next, the other input dataset is the km stones database, KM Stone, that contains km_label (including road number and km), lat (latitude), and lon (longitude).",
+    "extraction_mode": "relation",
+    "paper": "trafficspeed2021",
+    "title": "Spatial-Temporal Traffic Speed Prediction on Thailand Roads",
+    "section": "II DATA PREPARATION"
+  },
+  {
+    "subject": "KM Stone Speed dataset",
+    "predicate": "uses",
+    "object": "date",
+    "object_type": "Other",
+    "source_sentence": "In the 2nd step, the attributes date and time of the KM Stone Speed dataset are analyzed to create more features.",
+    "extraction_mode": "relation",
+    "paper": "trafficspeed2021",
+    "title": "Spatial-Temporal Traffic Speed Prediction on Thailand Roads",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "KM Stone Speed dataset",
+    "predicate": "uses",
+    "object": "time",
+    "object_type": "Other",
+    "source_sentence": "In the 2nd step, the attributes date and time of the KM Stone Speed dataset are analyzed to create more features.",
+    "extraction_mode": "relation",
+    "paper": "trafficspeed2021",
+    "title": "Spatial-Temporal Traffic Speed Prediction on Thailand Roads",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "root-mean-square error (RMSE)",
+    "predicate": "evaluates",
+    "object": "produced regression models",
+    "object_type": "Model",
+    "source_sentence": "In this work, the root-mean-square error (RMSE) is used to evaluate any produced regression models.",
+    "extraction_mode": "relation",
+    "paper": "trafficspeed2021",
+    "title": "Spatial-Temporal Traffic Speed Prediction on Thailand Roads",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "scikit-learn",
+    "predicate": "uses",
+    "object": "linear regression function",
+    "object_type": "Method",
+    "source_sentence": "In our experiment, we use the Python based linear regression function of the library scikit-learn [7].",
+    "extraction_mode": "relation",
+    "paper": "trafficspeed2021",
+    "title": "Spatial-Temporal Traffic Speed Prediction on Thailand Roads",
+    "section": "III METHOD"
+  },
+  {
+    "subject": "RMSE",
+    "predicate": "evaluates",
+    "object": "9.23",
+    "object_type": "ExperimentalResult",
+    "source_sentence": "The overall accuracy is 9.23 in terms of RMSE processed by 5-fold cross-validation, and it better than the regression model without spatial-temporal aspects about 30.14%.",
+    "extraction_mode": "relation",
+    "paper": "trafficspeed2021",
+    "title": "Spatial-Temporal Traffic Speed Prediction on Thailand Roads",
+    "section": "STONES IN NEXT N MINUTES"
+  }
+]

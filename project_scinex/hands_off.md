@@ -1,4 +1,1421 @@
-# Hands-Off Notes — Model Swap Session
+# Hands-Off Notes
+
+## Session 34 — why ONE teacher? Census of every stored model's replies as finetuning targets (2026-10-01)
+
+> User: *"why did we only use one example result from models for finetuning? do we not have others
+> also? if so we should use them"*. Offline analysis only: no model calls and no GPU. Every number comes from
+> running the CURRENT `ft_common.guard_pass` (the one `build_ft_data.py` uses) over stored
+> `responses.jsonl`; exact match = lowercased, whitespace-collapsed (s, p, o) on the same paragraph;
+> loose = same predicate + subject and object substring either way.
+
+### 34.1 Why one teacher (the Session 32 reasoning, now written down)
+`build_ft_data.py` takes a single `--teacher` (default `gptoss-120b`). It was chosen on relation
+correctness: C4 **86.2% CEO / 90.0% scinex** vs gemma4-31b 73.8 / 59.0, qwen3-235b 47.5 / 46.2,
+ministral-14b 41.2 / 46.2 (n≈40, Claude-judged, §31). Distillation copies the teacher's errors, and
+C4 errors (direction/typing) are exactly what finetuning is meant to fix. **But replies from every
+model ARE on disk**, for all 20 papers × both ontologies (gemma3-12b CEO only): gemma4-31b,
+qwen3-235b, ministral-14b, gemma3-12b, qwen3-8b-v2 (+ claude-opus-5, excluded).
+
+### 34.2 Census — fold-0 training set (15 papers, i.e. what the VM build would see)
+| CEO | paras w/ triples | kept | kept % | exact agree w/ gptoss | loose agree | paras where gptoss has nothing |
+|---|---|---|---|---|---|---|
+| gptoss-120b | 155 | 367 | 83.8 | — | — | — |
+| gemma4-31b | 173 | 428 | 65.8 | 21.0% | 30.6% | 60 |
+| qwen3-235b | 56 | 253 | 62.3 | 13.0% | 24.9% | 14 |
+| ministral-14b | 258 | 1,025 | 47.5 | 9.2% | 14.0% | 117 |
+| gemma3-12b | 294 | 1,147 | 62.2 | 5.7% | 9.2% | 151 |
+| qwen3-8b-v2 | 210 | 932 | 37.1 | 8.0% | 10.8% | 84 |
+
+| scinex | paras w/ triples | kept | kept % | exact agree | loose agree | gap-fill |
+|---|---|---|---|---|---|---|
+| gptoss-120b | 98 | 219 | 86.9 | — | — | — |
+| gemma4-31b | 149 | 331 | 57.3 | 19.3% | 21.5% | 75 |
+| qwen3-235b | 87 | 389 | 57.6 | 12.6% | 15.9% | 39 |
+| ministral-14b | 260 | 1,007 | 45.6 | 6.1% | 9.2% | 172 |
+| qwen3-8b-v2 | 206 | 910 | 37.6 | 3.1% | 4.5% | 126 |
+
+**Consensus pool (exact match, ≥2 of the 4 line-up models on the same paragraph):** CEO **292**
+triples on 124 paragraphs (2 votes 220 / 3 votes 58 / 4 votes 14), **143 of them absent from gptoss's
+output**; scinex **232** on 96 (170 / 42 / 20), **124 absent from gptoss**. On the 3 papers usable on
+the laptop: CEO 98 on 40 paragraphs (44 new), scinex 87 on 33 (56 new); gptoss alone there = CEO 125
+triples on 48 paragraphs, scinex 67 on 33.
+
+**Reading:** agreement with the teacher is low (exact 3–21%), so the other models give DIFFERENT
+targets for the SAME paragraphs, not more examples of the same behaviour. Stacking them as extra
+teachers would put conflicting answers on one input and pull the student toward over-extraction,
+which is the base model's problem already (35% kept, §33). The consensus pool is the defensible way
+to use them. ⚠ Agreement is not correctness (models can share an error), and gemma4-31b contributing
+to training would disqualify it as the "independent" judge recommended in §32.6. Undecided, for the user.
+gemma4-31b scinex has 8 conflicting duplicate reply lines (§30.8 pattern); `read_replies` drops them.
+
+### 34.3 ⚠ SIDE FINDING, UNRESOLVED — most of qwen3-235b's "empty" replies are the FAILED-CALL string
+Over the 22 dirs on disk (567 paragraphs), qwen3-235b CEO replies are **375 exactly
+`{"triples": []}`** (the string `run_api_extract.py` writes when a call raises) vs **91 formatted
+empties** (`{\n  "triples": []\n}`, the model's own abstention style) and 101 with content; scinex
+319 / 93 / 155. Every other model: 0–3 such lines. The sentinels are interleaved with real replies,
+not in contiguous blocks, so the files cannot tell an intermittent call failure from the model
+occasionally writing a compact empty. But two whole papers are nearly all sentinel: tripplanner2020
+23/23 and roadwaylight2018 30/31, plus textaug2023 12/14. **If these are failures, then qwen3-235b's
+16.4% paragraph coverage (Table 10, §27.4), its "precise by declining" reading, and its C6 vacuous
+passes (roadwaylight2018, textaug2023) come from failed calls, not abstention.** Its C1/C3/C4 are
+unaffected (judged on triples it did produce). Settle it with the OpenRouter activity log (free) or by
+re-calling a handful of sentinel paragraphs (costs credit → user's OK). For finetuning it does not
+matter: `guard_pass` drops sentinels from API runs either way.
+
+### 34.4 IMPLEMENTED — consensus-augmented targets (`build_ft_data.py --consensus-models`)
+User: *"if more model means better finetuning then do it"*. Whether it IS better is the experiment
+in §34.6. Rule: target = teacher's guard survivors + every triple that ≥ `--consensus-min` (2) of
+gemma4-31b / qwen3-235b / ministral-14b kept on the same paragraph (exact normalised match). An
+addition is skipped if the teacher already related that entity pair (any predicate, either
+direction; protects the teacher's typing and direction), if it is `configures`, if its source
+sentence is not in the paragraph, or if two additions on one pair disagree (a tie is dropped).
+Only paragraphs with a usable teacher reply are used, so the paragraph count does not change. A consensus
+model is skipped per paper on paragraph-count or alignment mismatch (ministral-14b on parkingyolo2023:
+0.87 CEO / 0.90 scinex). Ontology and vocabulary cards are unchanged. Output defaults to `ft_data/consensus/`
+so the teacher-only data cannot be overwritten. **Regression: the teacher-only rebuild is
+byte-identical (train.jsonl sha256 a55cefec… = manifest).**
+Local fold-0 build (3 usable train papers): **+66 triples on top of the teacher's 192 (+34%)**: CEO +35,
+scinex +31; 7 teacher-empty paragraphs gained a target, so empty targets went 87 → 80. Skipped:
+3 teacher-related pair, 12 relation conflict. Token max 4,034 (was 3,821), 0 dropped, still 2,480
+examples / 620 steps.
+
+### 34.5 ⛔ "Nothing is running" in §33.5c was WRONG — and the run was 4× slow because of Windows EcoQoS
+At 07:58 the teacher-only retrain (`qwen3-4b-f0`, token-level loss) WAS running: PIDs 16912
+(runner) / 12272 (trainer), started 06:47:42, i.e. the hidden relaunch after run #2's window-close
+abort. It ran at ~40 s/step (ETA ~6 h) vs ~9 s/step for run #2 in a console. Cause: **Windows 11
+power throttling (EcoQoS) of a windowless background process.** The trainer is bound by ONE CPU
+thread feeding the GPU (CPU time ≈ wall time; GPU mostly P4/P5 at ~10% util), and EcoQoS parks it
+on the i7-13620H's efficiency cores. `SetProcessInformation(ProcessPowerThrottling)` with
+StateMask 0 on the live process → **~7 s/step immediately**, with no restart. Fixed in code:
+`run_ft_pipeline.no_power_throttling()` opts out the runner and every child step.
+`ft_runs/wait_then_run.py` does the same for an older runner's descendants. **Every hidden (WMI)
+launch on this laptop needs this.**
+
+### 34.6 ⏹ SUPERSEDED (killed before the consensus run started, §34.11). Was: teacher-only vs consensus, same fold, same base model
+The plan below is now carried out on the RTX 5090 VM instead (§34.12). Kept for the design.
+1. `qwen3-4b-f0` (teacher-only) continues: train → ft_gen (`qwen3-4b-ft-cv`) → compare. Its own
+   Q&A step is deliberately skipped (`_pipeline_qwen3-4b-f0/qa.done` explains why).
+2. Hidden waiter (`ft_runs/wait_then_run.py --pid 16912`, log `ft_runs/chain_qwen3-4b-f0-cons.log`)
+   then runs `ft_runs/launch_qwen3-4b-f0-cons.cmd`: `run_ft_pipeline.py --tag cons --data
+   ft_data/consensus/fold0 --also-slugs qwen3-4b-ft-cv` → train `ft_runs/qwen3-4b-f0-cons` → ft_gen
+   `qwen3-4b-ft-cons-cv` → compare **base / ft-cv / ft-cons-cv / teacher** → Q&A with all four KGs
+   on ONE question set (run `qwen3-4b-f0-cons-smoke`; base 4B as generator/answerer/grader = pipeline
+   test only). New runner flags: `--data`, `--tag`, `--also-slugs`; base_gen is shared across tags.
+Expected end ≈ 13:00 (2026-10-01). **Collapse check for both:** first replies in
+`output/strabismus2026/kg/relation/<slug>/responses.jsonl` must not all be `{"triples": []}`.
+⚠ ft_compare's "agreement with teacher" favours the teacher-only model BY CONSTRUCTION, because the
+consensus model is trained to add triples the teacher lacks. Kept rate and coverage are fair;
+correctness needs a judge or Q&A (§34.7).
+
+### 34.7 Why a judge is still needed (answered for the user)
+Judge-free numbers (valid JSON, guard kept rate, coverage) show triples are WELL-FORMED, not that
+they are RIGHT; agreement-with-teacher measures imitation and is biased between the two variants.
+Q&A uses an LLM as question writer (code-verified), answerer (unavoidable; it IS the test), and
+grader (only for non-exact answers; could be made deterministic with token-F1). Q&A cannot see
+DIRECTION errors (the answerer reads triples loosely), and direction/typing (C4) is what
+finetuning targets. So C4 still needs a triple-level check. With consensus training, all four
+line-up models feed the training data, so an independent judge must come from OUTSIDE the line-up
+(non-Claude), or be a human-labelled sample (`gold_eval.py export`). → The user chose Claude in
+session, blind (§34.8).
+
+### 34.8 DECIDED (user, 2026-10-01): judge = Claude Opus 5.5 IN SESSION, for C1/C3/C4 only
+Reverses §32.1 for judging ONLY. Claude stays out as extractor, teacher and training data, and
+is never called through an API. Claude is the one model in no part of the training data, so it is
+independent of teacher, consensus voters and student. Caveats to state: (a) the judge is
+**claude-opus-5-5**, NOT the claude-opus-5 that judged Tables 10–12, so never mix those numbers with
+these; (b) single rater, as decided in Session 29; (c) the judge co-designed the consensus variant,
+so judging is **BLIND**: new `blind_judge.py` pools every kept triple of every extractor on the
+held-out papers, de-duplicates (identical triple = one verdict for all models), shuffles, salts the
+ids, and keeps the model mapping in `key.csv`, which the judge does not open before `collect`. It is a
+census, not a sample (n≈40 is too noisy, §31.3). The triple set = exactly what `ft_compare` counts
+as kept (today's guards over stored replies, conflicting duplicates dropped); verified equal: CEO
+base 172 / teacher 91, scinex 164 / 57. `build` → judge writes `replies/reply_NN.txt` → `status` →
+`collect` → `report --compare A B` (C1/C3/C4 with bootstrap CI over triples). Tested end to end on
+DUMMY verdicts (deleted). **Not yet run for real:** it needs both finetuned KGs, which now come
+from the RTX 5090 VM (§34.12). Size on the laptop's 2 papers: base + teacher alone = 257 CEO / 220
+scinex unique items; the 5090 run covers all 5 fold-0 papers, so expect more. Batches of 25; do CEO first.
+```
+python blind_judge.py build --run ft-f0 --ontology ceo \
+       --papers csysguard2024 linkpred2015 osmotic2026 strabismus2026 textaug2023 \
+       --slugs qwen3-8b-base-hf qwen3-8b-ft-cv qwen3-8b-ft-cons-cv gptoss-120b
+```
+`build` refuses a slug/paper with no stored replies (`--allow-missing` overrides). It reads
+`output/<paper>/kg/relation{,_scinex}/<slug>/responses.jsonl` + `prompt_meta.json`, so those must be
+copied back from the 5090 VM.
+
+### 34.9 Q&A grading is now DETERMINISTIC by default (`qa_eval.py grade --method overlap`)
+SQuAD-style token overlap over content words: CORRECT if F1 ≥ 0.8 or (all reference words present
+and precision ≥ 0.5); PARTIAL if all reference words present or F1 ≥ 0.4; else INCORRECT.
+Thresholds `--f1-correct/--f1-partial`. Grades store f1/precision/recall. `report` gains a
+**token F1** column (the standard continuous Q&A score). `--method llm` keeps the old blind LLM
+grader. Mixing methods in one run is refused. Known bias: stricter than a human on verbose answers
+("average accuracy of 83.0% on X" vs "83.0%" → PARTIAL). Tested on a synthetic run (deleted).
+`run_ft_pipeline`'s qa step calls `grade` with `--provider/--model`; they are accepted and ignored
+under `--method overlap`. **Q&A now needs an LLM only to write questions (code-verified) and to
+answer them.**
+
+### 34.10 How to settle the qwen3-235b sentinel question (§34.3), for the user
+OpenRouter id `qwen/qwen3-235b-a22b-2507`, runs in Session 27 (2026-09-03 → 09-05), on the
+professor's key. In the OpenRouter Activity view, count that model's completed requests in that
+window. If every call succeeded, expect ≈1,134 (567 CEO + 567 scinex); if the sentinels were
+failures, ≈440 (192 CEO + 248 scinex). Also look for hundreds of completions with ~5–10 output
+tokens (a genuine compact `{"triples": []}`), plus error rows (429/5xx/timeouts). Alternative:
+re-call ~20 sentinel paragraphs (≈$0.01), which needs a key on the machine and the user's OK.
+
+### 34.11 ⏹ ALL LOCAL RUNS KILLED (user, ~09:20): moving to a DGX Spark (later changed to an RTX 5090 VM, §34.12)
+User: *"kill all tasks running in the background, i will run it in dgx spark instead"*. Killed the
+waiter (first, so it could not start the consensus run), the runner, the launcher cmd and
+`ft_generate`. Verified: no python processes, GPU 0 MiB. **The consensus variant never started**
+(no `ft_runs/qwen3-4b-f0-cons/`).
+* **Teacher-only Qwen3-4B adapter FINISHED training** at 09:11 (144.3 min wall, of which the first
+  ~70 min were EcoQoS-throttled) → `ft_runs/qwen3-4b-f0/adapter` + `run_manifest.json`.
+* Its extraction was killed after **44 of 51 strabismus2026 CEO paragraphs**
+  (`output/strabismus2026/kg/relation/qwen3-4b-ft-cv/responses.jsonl`, partial and NOT ingested).
+* **⭐ EARLY SIGNAL (1 paper, CEO, same 44 paragraphs; not a result):** the loss fix WORKED, with no
+  collapse. Abstract: 7 kept of 7 proposed (teacher 7). Kept rate base **38%** (117/308) →
+  finetuned **86%** (25/29) vs teacher **88%** (53/60). **But it under-extracts:** triples in 8
+  paragraphs vs the teacher's 21 (base 32). It learned the teacher's precision and over-learned
+  abstention. That is exactly what the consensus variant (fewer empty targets) and
+  `--max-empty-frac` address.
+* Leftover markers: `ft_runs/_pipeline_qwen3-4b-f0/{base_gen,train,qa}.done`. `qa.done` is a
+  deliberate skip (§34.6). **Do not copy `ft_runs/` to another machine**, or the markers skip steps.
+
+### 34.12 ▶ NEXT: the RTX 5090 VM run (user runs it)
+**⚠ TARGET CHANGED 2026-10-20 (user): "we will change from running in dgx to running on rtx5090 vm
+instead".** The DGX Spark plan of 2026-10-01 is dropped; this section is the 5090 plan. Status at
+that point: no local process running, laptop files unchanged since 2026-10-01 09:12, and no
+results from any other machine. If the user reports 5090 results, they supersede this section.
+* **Copy to the VM:** the code, `ft_data/` (incl. `split.json`, the sticky fold file; never
+  regenerate it), and `output/` (stored model replies + parsed papers). **Do NOT copy `ft_runs/`**
+  (its `.done` markers would skip training).
+* **The GPU: RTX 5090 = 32 GB, Blackwell sm_120, the SAME architecture as the laptop's RTX 5070
+  (§33.1), so the laptop's findings transfer:**
+  - **torch must be a CUDA 12.8+ build.** ⛔ The old VM rule "stable torch 2.6.0+cu124, never a
+    nightly" (`Claude.md` GPU notes, `requirements_ft.txt`) does NOT work here: cu124 wheels have no
+    sm_120 kernels. Use a stable cu128-or-newer build if one installs; pass `--allow-dev-torch` ONLY
+    if the torch you end up with is a dev/nightly build (`check_environment` refuses those otherwise).
+    The laptop ran `2.12.0.dev…+cu128` + bitsandbytes **0.49.2** successfully on sm_120.
+  - `pip install -r requirements_ft.txt` with that torch ALREADY installed; check
+    `torch.__version__` is unchanged afterwards. Then:
+    `python3 -c "import torch, bitsandbytes; print(torch.__version__, torch.cuda.get_device_capability())"`
+    should print capability (12, 0).
+  - The laptop's attention trap (SDPA silently falling back to the MATH kernel for Qwen3's
+    grouped-query attention) may recur on sm_120. `ft_common.fast_attention(training=True)` already
+    forces cuDNN for training only. Watch `peak VRAM` and s/step in the step lines of `pipeline.log`.
+  - 32 GB is ample for Qwen3-8B QLoRA (the 4B peaked at 4.6 GB on the laptop), and likely for
+    Ministral-14B later. Generation batch can go above the laptop's 4 (`--gen-args=--batch-size=8`);
+    halve it if VRAM peaks near the limit.
+* **The VM:** if Linux, use `python3` and run inside `tmux`/`nohup` so an SSH drop doesn't kill
+  training. If it is a **vGPU**, the old VM notes apply: never set
+  `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`, and `nvidia-smi` utilisation may read 0% while
+  busy (judge by the log advancing). If it is a Windows VM, the EcoQoS opt-out is automatic in
+  `run_ft_pipeline.py`. Launch hidden per the laptop notes. Qwen3-8B's thinking mode is already
+  off (`ft_common.render_chat` passes `enable_thinking=False`).
+* **Rebuild the data there if all 20 papers are parsed** (`output/<id>/no-llm/output.html`, or the
+  teacher's `prompts.jsonl`). The laptop could only use 3 training papers; fold 0 has 15. Check
+  every train paper × ontology says `ok`. On the laptop, oxidecrack2025 (misaligned) and
+  roadwaylight2018 (paragraph count) were excluded; they may align on the machine where the
+  teacher ran.
+```
+python3 build_ft_data.py --eval-fold 0
+python3 build_ft_data.py --eval-fold 0 --consensus-models gemma4-31b qwen3-235b ministral-14b
+python3 run_ft_pipeline.py --base-model Qwen/Qwen3-8B --prefix qwen3-8b --fold 0 \
+    --papers csysguard2024 linkpred2015 osmotic2026 strabismus2026 textaug2023 \
+    --gen-args=--batch-size=8 --steps base_gen train ft_gen compare
+python3 run_ft_pipeline.py --base-model Qwen/Qwen3-8B --prefix qwen3-8b --fold 0 \
+    --papers csysguard2024 linkpred2015 osmotic2026 strabismus2026 textaug2023 \
+    --gen-args=--batch-size=8 --tag cons --data ft_data/consensus/fold0 --also-slugs qwen3-8b-ft-cv
+```
+(add `--allow-dev-torch` to both only if the VM's torch is a dev build)
+  Slugs produced: `qwen3-8b-base-hf`, `qwen3-8b-ft-cv` (teacher-only), `qwen3-8b-ft-cons-cv`
+  (consensus). The second run's `compare` and `qa` cover base / both finetunes / teacher. Its Q&A
+  uses the base Qwen3-8B as question writer + answerer (pipeline default), so it is a PIPELINE
+  TEST; real Q&A needs an independent writer/answerer (open, §34.13).
+* **First checks on the results:** (1) collapse: the finetuned `responses.jsonl` must not be all
+  `{"triples": []}`; (2) the §34.11 under-extraction: paragraphs with kept triples, finetuned vs
+  teacher; (3) `ft_runs/qwen3-8b-f0-cons/compare.json`. Agreement-with-teacher favours the
+  teacher-only model by construction.
+* **Then bring back** `output/<5 fold-0 papers>/kg/relation{,_scinex}/qwen3-8b-*/` and run the blind
+  judge here (§34.8 command), CEO first, then scinex.
+* After fold 0: 4-fold CV with the winning variant (`--eval-fold 1..3`, the SAME `--model-slug`s,
+  so every paper is scored by an adapter that never saw it).
+
+### 34.14 Project moved to GitHub: https://github.com/SethapongS0212/SciNex (2026-10-20)
+User: *"update this github to be up to date. make sure to include everything and wrote the
+instructions also since i will need to move work to another laptop"*.
+* **The project lives in `project_scinex/` of that PUBLIC repo** (the layout the repo already had).
+  Before this, the repo held a July 17–19 web-upload snapshot (72 files). This laptop's folder
+  (`Downloads/llm-as-a-judge-on-triples-main/…`) was not a git repo; git was installed with winget, the
+  repo cloned to `Downloads/SciNex`, and the current project copied over it (no file deleted except
+  the ones below).
+* **⛔ SECURITY: the July snapshot contained a credential file.** It is deleted from the current tree,
+  but deletion does not remove it from git history; the user was told in session to revoke that
+  key (details deliberately not repeated in this public file). Also removed from the tree: `BERT.pdf` (no-PDF
+  policy), two `.log` files, `acl_title_index.json.corrupt.bak`, and a root-level
+  `fixed_extractor.py`. That was an OLDER copy (1,035 lines, without the Session 25–29 guards); the real
+  one is `kg_extraction/fixed_extractor.py` (1,268 lines), which the last July commit had deleted and
+  this sync restores. Kept although absent here: `kg_masked_node_pipeline.py`.
+* **"Everything" = everything except what the public-repo `.gitignore` blocks:** secrets, PDFs, and
+  files holding full paper text (parsed HTML, prompts.jsonl, ft_data train/parts). Two rules were
+  added this session: `ft_runs/_pipeline_*/*.done` (a clone would otherwise skip pipeline steps) and
+  `ontology_eval/*/*/paragraphs/*_batch_*.txt` (C2/C5 bundles print whole paragraphs). Adapters are
+  excluded too (126 MB > GitHub's 100 MB limit).
+* **The excluded-but-needed files went into `Downloads/SciNex_private_bundle.zip`** (for a private
+  transfer; never public): 7 OA PDFs, parsed HTML, `output/acl/`, both ft datasets, the teacher-only
+  Qwen3-4B adapter, and the C2/C5 bundles, listed in its `BUNDLE_CONTENTS.txt`.
+* **New `SETUP_NEW_MACHINE.md`**: install order (torch first; RTX 50-series needs CUDA 12.8+), keys,
+  restore from the bundle or regenerate, an install check with expected numbers (ft_compare: CEO
+  base 493 → 172, teacher 107 → 91), and how to continue. README "Start here" table links it.
+* **From now on, work inside a clone of SciNex** (`project_scinex/`): `git pull` first; commit +
+  push after each session, checking `git status` for PDFs/keys/full text (public repo).
+
+### 34.13 Open decisions for the user (as of end of Session 34)
+1. Q&A question writer / answerer: the pipeline default (base student) is a pipeline test only.
+   An independent model is needed for reportable Q&A; Claude is NOT used there (its only role is
+   the blind triple judge). Needs a choice and possibly API spend.
+2. qwen3-235b sentinel check (§34.10), which affects the EXISTING Table 10 coverage/C6, not finetuning.
+3. `configures` direction (§29.5); training still excludes it.
+4. `--verdict-filter` stays off.
+5. If the 5090 run under-extracts again: try `--max-empty-frac 0.3` as a third variant.
+
+## Session 33 — first LOCAL finetune test on the 8 GB laptop: Qwen3-4B, fold 0, 2 held-out papers (2026-10-01)
+
+> User: *"is qwen 3 8b able to run on 8gb vram? i need to run local for now, if not, change to a
+> suitable model … you can just extract a few papers for this run as a test"*. This is a
+> **PIPELINE TEST**, not a result: 3 training papers, 2 eval papers, no independent judge.
+
+### 33.1 Machine (verified — NOT the laptop the older notes describe)
+RTX 5070 **Laptop** GPU, **8 GB**, Blackwell **sm_120**; 15.6 GB RAM; Windows 11; Python 3.12.10;
+torch **2.12.0.dev20260408+cu128** (a nightly — sm_120 needs cu128; `--allow-dev-torch` is passed on
+this machine only); transformers 5.5.4; bitsandbytes 0.49.2. Added `peft 0.21.1` + `rdflib 7.6.0`
+with `--no-deps` so pip could not touch torch. **No Ollama, no `.env` keys** on this machine.
+
+### 33.2 Model choice: Qwen3-8B does NOT fit for training at 8 GB → `Qwen/Qwen3-4B-Instruct-2507`
+Qwen3-8B *runs* at 8 GB (4-bit inference) but cannot be *trained*: 4-bit weights + unquantised
+151,936 x 4,096 embeddings ≈ 6 GB before activations. **Qwen3-4B-Instruct-2507** (Apache-2.0, same
+family, non-thinking instruct) loads at 2.62 GB. Training examples are ≤3,821 tokens with this
+tokenizer (system prompt ≈ 3.1k), so nothing is dropped at `--max-seq-len 6144`.
+
+### 33.3 ⛔ Two memory traps, both found by measurement — both now fixed in code
+1. **SDPA silently fell back to the MATH attention kernel.** On this Windows nightly the FLASH and
+   MEM-EFFICIENT kernels report "No available kernel" for grouped-query attention, so every Qwen3
+   attention layer ran MATH: **7.27 GB peak for ONE layer at 3.8k tokens**, vs **0.34 GB with cuDNN**
+   (0.33 GB mem-efficient without GQA). Symptom: 100% GPU util at ~40 W and no training step in 10 min
+   — Windows pages VRAM to system RAM instead of raising OOM. Fix: `ft_common.fast_attention()`.
+   After the fix one forward+backward on the longest example = **6–8 s, 5.10 GB peak**.
+   **⚠ But cuDNN is WRONG for generation:** it builds an execution plan per shape and the key length
+   grows every decoded token, so it re-plans each step — the first overnight launch decoded at
+   **5.7 tok/s vs 18 tok/s** (batch 4) and was killed after one batch. So `fast_attention(training=True)`
+   = flash → cuDNN → mem-efficient → math (training only); the default for generation/Q&A = flash →
+   mem-efficient → math (MATH's prefill peak is fine without a backward pass: 5.3 GB at batch 4).
+   Re-measured: identical token counts to the pre-fix run, 3.6 min per 4-paragraph batch.
+2. **peft's `prepare_model_for_kbit_training` upcasts all non-quantised weights to fp32** — doubles
+   Qwen3-4B's tied embedding (0.8 → 1.6 GB). Default is now a lean bf16 path; `--upcast-fp32` restores
+   the peft helper (fine on the 20 GB VM).
+Also: `ft_train_qlora.py` now computes logits only over the target span (`logits_to_keep`) instead
+of all ~3.8k positions x 152k vocab; prints one line per step with ETA and peak VRAM, and warns near
+the VRAM limit.
+
+### 33.4 Data for this run
+* **PDFs:** the 7 `oa` papers of the EXISTING corpus re-downloaded to `papers/` (no new papers; the
+  other 13 need the manual/bulk PDFs). Nature returns an HTML bot page to Python's urllib — `curl.exe`
+  works; gamlprop2025 failed urllib's certificate store — also fine with `curl.exe`.
+* **Parsing must reuse the committed `citation_network.json`.** The teacher's paragraphs contain
+  concept-mark spacing artefacts (`time-series analysis ,`, `( esotropia , exotropia`) — they were
+  parsed WITH citation concepts. `main.py --no-llm` loads the cached network (no S2 calls, nothing
+  overwritten). gamlprop2025 had no network (not in S2) → parsed `--no-citations` into `no-llm/`.
+  ⚠ `--no-citations` alone writes to `no-llm_no-citations/`, not `no-llm/`.
+* **The pairing checks earned their keep:** `oxidecrack2025` is GENUINELY misaligned (teacher reply 29
+  cites sentences that today's render puts in paragraph 28 — one boundary shifted; 0.88 CEO / 0.71
+  scinex) and `roadwaylight2018` renders 30 paragraphs vs the teacher's 31. Both excluded
+  automatically. Usable training papers: **gamlprop2025, parkingyolo2023, traveltime2022**.
+* `ft_data/fold0/train.jsonl`: **2,480** examples — extraction **168** (83 CEO / 85 scinex; 87 empty
+  targets), ontology **700**, vocabulary **1,612**. Eval (held out): **strabismus2026, osmotic2026**.
+* Gazetteer restored from `output.zip` to `output/acl/csner_gazetteer.csv` (its canonical path).
+
+### 33.5 Smoke results (before the overnight run)
+* Base Qwen3-4B, 4 paragraphs of osmotic2026 (CEO): **42 triples proposed, 5 kept by the guards**
+  (it invents predicates such as `definedAs`, `classifiedInto`). ~1,000 tokens per reply.
+* Decode speed (bnb 4-bit): ~8 tok/s per sequence; batch 4 → ~18 tok/s aggregate, 5.3 GB peak.
+* 2-step QLoRA through the real trainer: 16 long examples in 1.3 min, 4.18 GB peak, adapter saved.
+
+### 33.5b ⛔ FIRST TRAINING RUN COLLAPSED — the adapter answered `{"triples": []}` to EVERYTHING
+Base extraction finished cleanly (186.7 min). Training #1 (83.9 min, loss 3.31 → 0.14) produced an
+adapter that returned `{"triples": []}` for **40/40** held-out paragraphs — and, probed directly, for
+**5/5 TRAINING paragraphs whose target had triples**. So not overfitting: the abstain decision won.
+**Cause (mine): per-EXAMPLE loss averaging.** A 7-token empty target weighed as much as a 300-token
+extraction, so its abstain token carried ~1/7 of an example's weight vs ~1/300 for "start a triple";
+with 87 empty vs 81 non-empty targets the model learned to always abstain. **Fix:** token-level
+normalisation across the accumulation window (`model_accepts_loss_kwargs = True`, loss = token sum /
+`num_items_in_batch`). Collapsed adapter kept as `ft_runs/qwen3-4b-f0-collapsed-exampleweighted/`.
+Retrained from 06:35.
+**Also fixed while waiting:** `{"triples": []}` is `run_api_extract`'s FAILED-CALL marker, but a local
+model prints the identical string as a genuine answer (21 of the base model's 148 replies). The
+marker is now honoured only for API runs (`ft_common.is_api_run`: `ft_generate` runs record
+`base_model` in `prompt_meta.json`); ft_compare had been reporting the base model at 86.5% valid JSON
+instead of 100%.
+
+### 33.5c ⏸ FINAL STATE — no usable finetuned model yet
+Retraining #2 (token-level loss) ran 06:35–06:46 and reached **step 72/620** (losses 0.12–0.52, peak
+4.30 GB) before aborting with `forrtl: error (200): program aborting due to window-CLOSE event` — the
+Intel Fortran runtime in numpy/scipy exits when the launcher's console window is closed. The launcher
+now sets `FOR_DISABLE_CONSOLE_CTRL_HANDLER=1`; launch it hidden (command in `HANDOFF_NEXT_SESSION.md`).
+**The user then stopped the work** ("you dont have to run the extraction anymore"). Nothing is running.
+Resume = relaunch `ft_runs\launch_qwen3-4b-f0.cmd` (base extraction is marked done). Q&A was never
+reached. Written this session: `SUMMARY_finetune_qa_2026-10-01.md` (slide-ready summary for the user)
+and `HANDOFF_NEXT_SESSION.md` (what to do next).
+
+### 33.6 The overnight run
+`ft_runs/launch_qwen3-4b-f0.cmd` (launched detached via WMI so it outlives the assistant's session;
+double-click it to resume — finished steps are skipped) → `run_ft_pipeline.py`:
+`base_gen` (slug `qwen3-4b-base-hf`) → `train` (`ft_runs/qwen3-4b-f0`) → `ft_gen` (`qwen3-4b-ft-cv`)
+→ `compare` (`ft_compare.py`, judge-free) → `qa` (`qa_eval.py`, run `qwen3-4b-f0-smoke`, local `hf`
+provider). Log: `ft_runs/_pipeline_qwen3-4b-f0/pipeline.log`. The pipeline holds a Windows
+keep-awake request while it runs. ⚠ The Q&A step uses the base Qwen3-4B as generator/answerer/grader
+— same family as the student — so its numbers test the PIPELINE, not the model.
+
+## Session 32 — Part 2 finetuning + Part 3 Q&A evaluation: CODE BUILT, NOTHING RUN (2026-10-01)
+
+> **User, mid-session: "dont run the model or anything yet, just finish the fine tune and q and a
+> evaluation first".** No model was loaded, no training started, no API called. Only offline checks
+> (py_compile, a `build_ft_data.py --dry-run`, a guard-parity scan of stored replies) were run.
+
+### 32.1 Decisions carried in (from Sam's handoff — do not re-open)
+Claude is OUT of the pipeline (no extractor, judge, teacher; exclude every `claude-opus-5` output from
+training data) · finetuning before Q&A · corpus size ON HOLD · no Qwen3-14B · line-up qwen3-235b /
+gptoss-120b / gemma4-31b / ministral-14b (+ qwen3:8b as the first student) · never OpenRouter on
+Claude · C1-C6 single-rater · `configures` direction still Sam's decision (§29.5).
+
+### 32.2 The teacher replies — verified on disk
+`output/<paper>/kg/relation{,_scinex}/gptoss-120b/responses.jsonl`, one line per paragraph,
+`{"para_id": N, "raw": "<the model's JSON reply>"}`. gptoss ran **relation mode only** (no `fixed`).
+Offline scan over the 20 papers:
+
+| | lines | paragraphs | ok | empty content | failed-call sentinel | unparseable | duplicated para_ids |
+|---|---|---|---|---|---|---|---|
+| CEO | 528 | 528 | 520 (250 with triples) | 7 | 0 | 1 | 0 |
+| scinex | 538 | 528 | 522 (155 with triples) | 0 | 3 | 1 | **7, all strabismus2026** (5 identical, 2 conflicting) |
+
+**Guard parity:** running the current `_parse_fixed_output` + `kg_builder._is_valid_entity` over the
+stored replies reproduces `triples.json` **exactly** — CEO 547 = 547 on disk, and every scinex paper
+except `strabismus2026`, where ingesting every line (duplicates included) reproduces the on-disk 43
+and de-duplicating gives 32. **Side finding:** gptoss-120b's scinex volume **323 is inflated by the
+§30.8 double-writer incident; the true count is 312–323** (ratio 0.57–0.59×). Caveat added to
+`results.md` Table 12.
+
+⚠ `prompts.jsonl`, `no-llm/output.html` and `output/acl/` are **gitignored** — this GitHub checkout
+has none of them (`output.zip` holds only the gazetteer + one stale `no-llm` parse). Extraction pairs
+can only be built where the pipeline ran. This machine also differs from the laptop the docs
+describe: Python **3.12.10** with torch + transformers installed, no peft / rdflib / spaCy.
+
+### 32.3 Files added
+| file | what |
+|---|---|
+| `ft_common.py` | shared: sticky fold split, paragraph loading (stored `prompts.jsonl` → else rendered from HTML with `claude_extract`'s exact logic), defensive reply reader, guard pass, the ONE chat-template helper used by training and inference, Claude refusal |
+| `build_ft_data.py` | the three data parts as chat JSONL → `ft_data/fold<k>/{train.jsonl, parts/, manifest.json, eval_papers.txt}` + `ft_data/split.json` |
+| `ft_train_qlora.py` | QLoRA (4-bit NF4, LoRA r16 all attention+MLP projections, loss on assistant tokens only), `--dry-run` = tokenizer stats only |
+| `ft_generate.py` | base or base+adapter through the SAME relation-extraction path → `responses.jsonl` → `claude_extract.py ingest`; refuses papers the adapter trained on |
+| `qa_eval.py` | Part 3: `generate` / `answer` / `grade` / `report` |
+| `requirements_ft.txt` | transformers ≥4.51, peft, bitsandbytes, accelerate, rdflib |
+
+### 32.4 Design decisions, and why
+* **Split = sticky folds, default K=4.** Every paper gets a fold once (`ft_data/split.json`); new papers
+  go to the smallest fold (optionally within a stratum, `--strata-file`) and nobody ever moves. So it
+  works at any corpus size and growing the corpus can never turn a training paper into an eval paper.
+  Fold 0 = `csysguard2024 linkpred2015 osmotic2026 strabismus2026 textaug2023`. Disjointness is
+  enforced **three times**: build (abort if any example carries an eval paper), train (re-checks the
+  manifest, the split on disk and the train.jsonl sha256), generate (refuses any paper in the adapter's
+  `train_papers`). Changing `--folds`/`--seed` on an existing split is refused.
+* **What counts as held-out data:** nothing from an eval paper — not its paragraphs, triples, source
+  sentences (the ontology cards use train-paper sentences only) or entity list. The CS-NER gazetteer
+  IS used whole: it is a public, paper-independent resource.
+* **Extraction targets = the guard survivors**, re-serialised in the extractor's own output contract
+  with canonical camelCase predicates (the guard lowercases them). A paragraph whose target can't be
+  trusted is **dropped, never edited**: empty-content replies, failed-call sentinels, unparseable
+  replies, conflicting duplicates, and (by default) any paragraph where the teacher used `configures`.
+  Teacher abstentions and all-rejected replies become `{"triples": []}` targets — gptoss abstains on
+  ~52% of CEO paragraphs, and that restraint is part of why it is precise (§27.4).
+* **Pairing safety:** when paragraphs are rendered rather than read from the teacher's own
+  `prompts.jsonl`, the paper is used only if the paragraph count matches the teacher run's
+  `n_paragraphs` AND ≥90% of the teacher's source sentences are found in the paragraph they are
+  attributed to. Otherwise every target would be attached to the wrong input, silently.
+* **`--verdict-filter` defaults OFF — conflicts with the handoff, flagged for Sam.** The handoff asks
+  to drop triples with bad C1/C4 verdicts, but every C1-C6 verdict on disk was made by
+  claude-opus-5, and Claude is out of the pipeline. Turning it on (`incorrect` or `partial`) puts a
+  Claude judgement into data selection. It touches ~40 sampled triples per ontology at most.
+* **`--configures exclude` default** — no example teaches either direction (paragraphs skipped, no
+  cards). `--configures keep` once Sam decides.
+* **Ontology cards:** 3 definition phrasings per relation; direction judgements (as extracted = yes,
+  subject/object swapped = no) ONLY where a swap is unambiguously wrong — domain ≠ range, or
+  `splitFrom` where `_splitfrom_is_inverted` confirms the swapped form; relation-choice items.
+  ⚠ Positives are teacher output, so they carry the teacher's error rate (gptoss C4 86.2% CEO / 90.0%
+  scinex, n≈40, Claude-judged).
+* **Train/infer prompt parity:** the system prompt is today's code (`--system-prompt current`; scinex
+  needs rdflib), identical to what `ft_generate.py` sends. The baseline must go through
+  `ft_generate.py` too — comparing an HF finetune against the old Ollama `qwen3-8b-v2` run would
+  confound the adapter with the runtime (GGUF vs NF4, different templating).
+* **Overlong examples are dropped, never truncated** (`--max-seq-len 6144`; the system prompt alone is
+  ~3.4k tokens) — a truncated JSON target teaches broken JSON.
+
+### 32.5 Local dry run (offline, `--system-prompt stored`)
+Split 5/5/5/5. Ontology part **700** cards (141 definition, 167 direction-pos, 167 direction-neg, 225
+relation-choice); vocabulary **1,612** type cards (gazetteer, count ≥ 2, ≤300 per type). Extraction
+**0** — no paragraphs on this machine, as expected (§32.2).
+
+### 32.6 Evaluation plan — finetuned vs base
+1. Base and FT through `ft_generate.py` on the held-out papers; `--ingest` runs the normal guards.
+2. **Census, not a sample**: `ontology_eval.py triples --n 100000 --papers-file
+   ft_data/fold0/eval_papers.txt` judges every held-out triple. n≈40 moved scores ±10 pts (§31.3); a
+   base-vs-FT delta would drown in it.
+3. **Judge: not Claude, not the teacher, not the student's family.** For a qwen3:8b student trained on
+   gptoss: **gemma-4-31b** is the only line-up model that is neither. Same judge for base, FT and the
+   teacher ceiling (gptoss's own KG on the same papers). Driven by `run_api_judge.py --dest
+   ontology_eval/<slug>/ceo --slug triples --rubric triples`. **Needs OpenRouter spend → Sam's OK.**
+   ⚠ These numbers are NOT comparable with Tables 11/12 (Claude-judged): compare only within one judge.
+4. Also report volume and paragraph coverage (exact, no judge), and the Q&A result.
+5. Cross-validation: folds 1-3 with the SAME `--model-slug`, so every paper is scored by the one
+   adapter that never saw it; then score all 20 under one slug.
+
+### 32.7 Q&A evaluation design (`qa_eval.py`)
+Questions are written from the real paragraphs by a generator model and **checked in code**: answer
+copied verbatim from the paragraph, evidence sentence present, answer not in the question, no generic
+"the proposed model", no boilerplate (`_is_provenance_sentence`), deduped; ≤3 per paragraph, ≤30 per
+paper round-robin over paragraphs. The same question set is reused for every KG (paired). Conditions:
+`kg` (triples only, **no source sentences** — they would leak the text; whole paper graph if ≤300
+triples), `oracle` (the source paragraph — ceiling), `closedbook` (nothing — floor, since these are
+published papers). Grading is blind and deduplicated: one verdict per (question, normalised answer)
+whichever condition produced it; exact matches and abstentions need no call. Report: accuracy with a
+**paper-cluster bootstrap CI**, strict share, precision on answered, per relation/paper,
+**`answer_in_kg`** (deterministic, no LLM: is the gold answer a node of the graph?), **`grounded`**
+(do correct KG answers come from the triples they cite, or from the answerer's own knowledge?), and
+paired `--compare A B`. A missing KG run aborts rather than scoring as empty. Claude refused as
+generator/answerer/grader/KG; `anthropic` is not even a provider option.
+
+### 32.8 ▶ OPEN — needs Sam
+1. **Confirm the base model** before any training (default suggestion `Qwen/Qwen3-8B`).
+2. **Judge + Q&A models, and the OpenRouter spend** — recommendation: gemma-4-31b for the C1/C3/C4
+   judge and for Q&A generator/answerer/grader (not the teacher, not the student's family).
+3. **`--verdict-filter`** on or off, given the verdicts are Claude's (§32.4).
+4. `configures` direction (§29.5) — decides `--configures keep`.
+5. Verify the Hugging Face ids for Ministral-14B / Gemma-4-31B before their runs; Ministral 3 may load
+   through a multimodal class, which `ft_train_qlora.py` does not handle yet.
+
+## Session 31 — junk filter applied, samples REDRAWN, and n≈40 shown to be the binding constraint (2026-09-08)
+
+> **⭐ START HERE. The headline of this session is a METHODOLOGICAL result, not a model result:
+> at n≈40 a fresh draw of the same corpus moves scores by up to 10 points and can flip a close
+> ranking. Everything below is downstream of that.**
+
+### 31.1 What was done
+
+1. **Extended `_is_provenance_sentence`** with the boilerplate classes the scinex round exposed
+   (§30.14): fictional UX personas, CRediT lines, declarations, data-availability statements,
+   affiliation blocks with postal codes, and author bios lacking "degree"/"currently".
+   Added `_looks_like_table_debris()` — rejects a subject/object carrying ≥3 BARE standalone
+   integers, which is the signature of a flattened table row (`(CH3)2...NCl 27 30 ...NBr 31`).
+   Threshold 3 so `Llama-3.2-1B-Instruct`, `2-butyne`, `ResNet50`, `MOT17` and `1 x 1 convolution`
+   all pass. **22/22 unit cases pass: 7 new patterns caught, 4 old ones still caught, 8 real-science
+   sentences untouched.**
+2. **Re-ingested all 8 runs from stored replies — zero API calls.**
+3. **Redrew and re-judged the 5 affected samples** (146 new judgements).
+
+### 31.2 ⭐ THE FILTER BARELY MATTERS — AND ONLY ONE MODEL WAS AFFECTED
+
+Removed **40 triples of 6,054 (0.7%)**, and **every single one came from ministral-14b**
+(12 CEO, 28 scinex). qwen3-235b, gptoss-120b and gemma4-31b lost **nothing** — they decline
+that boilerplate unprompted. Worth reporting: boilerplate mining is not a general property of
+extraction, it is a property of the weakest extractor in the set.
+
+### 31.3 ⛔⛔ THE REDRAW MOVED SCORES BY UP TO 10 POINTS AND FLIPPED A RANKING
+
+| model | C1 | C3 | C4 |
+|---|---|---|---|
+| qwen3-235b | 79.5 -> **75.0** | 61.5 -> 60.0 | 44.9 -> 47.5 |
+| gptoss-120b | 89.7 -> 88.8 | 74.4 -> **80.0** | 84.6 -> 86.2 |
+| gemma4-31b | 85.1 -> **93.8** | 73.0 -> **80.0** | 63.5 -> **73.8** |
+| ministral-14b | 65.4 -> 70.0 | 56.4 -> 52.5 | 39.7 -> 41.2 |
+
+**A prediction made before the redraw — "±4.5 points, no ordering change" — was WRONG.** Movement
+reached **+10.3 points**, and the **C1 ranking flipped at the top**: gemma4-31b (93.8) now leads
+gptoss-120b (88.8), reversing the earlier order.
+
+**This is NOT the filter's doing.** Removing 0.7% of a corpus cannot move a score ten points. It is
+**sampling variance**: the sampler round-robins over predicate buckets, so disturbing the pool at all
+reshuffles the draw, and two draws of the same corpus at n≈40 differ by roughly ±10 points.
+
+**⚠ THE RULE THAT FOLLOWS, APPLY IT EVERYWHERE:** at n≈40, **any gap smaller than ~10 points between
+two models is not distinguishable.** Quote rankings only where the gap is comfortably larger, and
+never quote a C1 ordering — its whole spread is ~24 points across four models, so neighbouring pairs
+are inside the noise.
+
+**What survives:** the **C4 ranking is unchanged** (gptoss-120b > gemma4-31b > qwen3-235b >
+ministral-14b), and C4's spread (~45 pts) remains far wider than C1's (~24 pts), so
+"models differ on typing more than on finding concepts" holds comfortably.
+
+### 31.4 FINAL NUMBERS — 20-paper corpus, post-filter, post-redraw
+
+| model | CEO vol | C1 | C2 | C3 | C4 | C5 | C6 |
+|---|---|---|---|---|---|---|---|
+| gptoss-120b | 547 | 88.8 | 34.4 | 80.0 | **86.2** | 31.2 | 25.0 |
+| gemma4-31b | 615 | **93.8** | 28.6 | 80.0 | 73.8 | 21.4 | 33.3 |
+| qwen3-235b | 367 | 75.0 | 31.2 | 60.0 | 47.5 | 28.1 | **50.0** |
+| ministral-14b | 1,536 | 70.0 | 26.7 | 52.5 | 41.2 | **34.4** | 8.3 |
+
+scinex, triples harness only:
+
+| model | scinex vol | C1 | C3 | C4 | dC1 | dC3 | dC4 | vol ratio |
+|---|---|---|---|---|---|---|---|---|
+| ministral-14b | 1,538 | 72.5 | 60.0 | 46.2 | +2.5 | +7.5 | +5.0 | 1.00x |
+| qwen3-235b | 563 | 72.5 | 57.5 | 46.2 | -2.5 | -2.5 | -1.2 | 1.53x |
+| gemma4-31b | 525 | 88.5 | 79.5 | 59.0 | -5.3 | -0.5 | **-14.8** | 0.85x |
+| gptoss-120b | 323 | 86.2 | 72.5 | **90.0** | -2.5 | -7.5 | +3.7 | 0.59x |
+
+**⚠ Most of these deltas are inside the ±10 pt noise band.** Only gemma4-31b's **-14.8** on C4 and
+possibly ministral's +7.5 on C3 sit outside it. The earlier conclusion — *the ontology effect is
+model-specific and does not order by capability* — still stands, but state it as **"no consistent
+ontology effect was detectable at this sample size"**, which is what the data actually support.
+
+**The volume ratio still falls monotonically with capability** (1.00x, 1.53x, 0.85x, 0.59x ordered
+by C4 — not monotone; ordered by C4 it is 1.00, 1.53, 0.85, 0.59). Volume counts are exact, not
+sampled, so that column carries no sampling noise — but it is also not monotone, so do not claim it is.
+
+### 31.5 ⛔ GUARD GAPS STILL OPEN — found by judging the redrawn items
+
+The extended guard closed the §30.14 list, and judging the new draws immediately exposed four more:
+
+| gap | example that slipped through |
+|---|---|
+| author bio, third form | `He is a Machine Learning Engineer with Kasikorn Business-Technology Group, Thailand.` — no "degree", no "currently", no "From YYYY to YYYY". Needs `(he\|she\|they) is a/an <role> with <Org>` |
+| bibliography, third form | `Chen, Xuzhan... "Facial landmark detection based on cascade neural network." Journal of Physics: Conference Series.` — no year:pages tail, no vol./pp., no doi |
+| CRediT split by OCR | `Mansouri: Writing – re view & editing.` — the OCR splits "review" into "re view", so `writing - review` never matches |
+| `splitFrom` guard, known limit | `(training set) splitFrom (five segments)` — the guard only fires when the OBJECT names a partition and the subject does not; here the subject is the partition word |
+
+**Do NOT patch these mid-measurement.** That is what forced this session's 146-judgement redraw.
+Batch them for a single guard round, then re-ingest and redraw once.
+
+### 31.6 ⭐ `configures` — THREE CORRECT USES EXIST, ALL FROM ONE MODEL
+
+The user asked to ignore the `configures` ontology question, so nothing was changed. Recording the
+evidence for whenever it is revisited: across the whole study exactly **three** correctly-directed
+`configures` triples exist (Specification -> Experiment), and **all three are ministral-14b's**:
+`(LLM parameters) -> (Experiment 1)`, `(mutation probability m) -> (mutation operation)`,
+`(K-Fold Cross-Validation) -> (each experiment)`. Every other instance from every model is
+`Model -> setting-value`. So the direction is not unlearnable — one model gets it right sometimes,
+inconsistently, and the same model also produces the inverted form elsewhere.
+
+### 31.7 The 8B question, settled
+
+The user asked whether a Gemma 8B was in the fixed line-up. **It was not** — the Session 27 list is
+Qwen3-235B / GPT-OSS-120B / **Gemma-4-31B** / Ministral-14B. A `gemma3-12b` exists on disk from
+Session 26 (22-paper frame, CEO only) and is not part of this experiment. No Gemma is installed
+locally, so no local Gemma run was ever pending.
+
+**qwen3-8b DID run everything, via the local Ollama build:** `relation/qwen3-8b-v2` and
+`relation_scinex/qwen3-8b-v2` are both **20/20 papers with stored replies** (1,355 and 1,325
+triples). v1 (`qwen3-8b`) sits at 18/20 with NO stored replies and stays frozen as the §26.14
+"before" baseline. **qwen3-8b-v2 could be judged for free** — the extraction exists and judging is
+in-session — giving a fifth point on the capability curve. Outside the fixed line-up, so not done.
+
+### 31.8 Tooling changed this session
+
+* `_is_provenance_sentence` extended; `_looks_like_table_debris` added.
+* **`ontology_eval.py collect` is now INDEX-AWARE.** It previously read every file in `replies/` and
+  deduped by id, so after a redraw a verdict for a no-longer-sampled triple silently survived into
+  `verdicts.csv` and got scored. It now restricts to the ids in `index.csv`, reports how many stale
+  verdicts it dropped, and **warns about sampled items that are still unjudged** — which is what made
+  the 146-item redraw tractable.
+* `show_unjudged.py` (new) prints only the sampled items lacking a verdict, so a redraw costs
+  judging time proportional to what actually changed.
+* `reingest_ceo.sh`, `reingest_scinex.sh`, `reingest_one.sh` — re-ingest from stored replies, no calls.
+
+### 31.9 ▶ WHAT IS LEFT
+
+1. **Sample size is now the top issue.** Every per-model comparison narrower than ~10 points is
+   undecidable. Raising n to ~120 per cell would be the single highest-value change; it costs
+   judging time only, no money.
+2. **scinex C2/C5 deliberately skipped** — user: *"we want correctness not how importance."*
+   scinex C6 (contradiction, arguably correctness) is still unjudged: 8 batches if wanted.
+3. **C2/C5/C6 were NOT redrawn** this session — only the triples harness was affected by the filter.
+   ministral's C6 triple sets did change slightly, so its C6 (8.3%) is the least trustworthy figure.
+4. Guard gaps in §31.5, batched for one round.
+5. `configures` — ignored by user decision; evidence preserved in §31.6.
+6. `results.md` still lacks the scinex tables (RESULTS_REPORT.md has them).
+
+## Session 30 — ⛔ CORPUS CORRECTED TO 20 PAPERS; Qwen3-14B retired; scinex run launched (2026-09-07)
+
+> **⭐ READ THIS BEFORE QUOTING ANY NUMBER. The corpus is 20 papers, not 22.**
+
+### 30.1 ⛔⛔ THE CORPUS IS THE USER'S 20-PAPER LIST. NOT 22. NOT "18 + 2 SUBSTITUTES".
+
+User, this session: *"arent we supposed to run only 20 papers that are all the list i gave you
+before. not 22"*. They are right, and `papers/manifest.csv` proves it:
+
+* `aiabstract2025` — note reads **`SUBSTITUTE for tripplanner2020`**
+* `routepred2023`  — note reads **`SUBSTITUTE for linkpred2015`**
+
+Those two were added in Session 26 **only because** `tripplanner2020` and `linkpred2015` were
+paywalled and unobtainable. In Session 27 **the user supplied both missing PDFs** and they parsed
+clean — at which point the substitutes should have been RETIRED. Instead they were kept *alongside*
+the recovered originals, and the corpus was written up as 22. That was the error.
+
+**The corpus = the 20 papers on the user's list**, which INCLUDES `tripplanner2020` and
+`linkpred2015` and EXCLUDES `aiabstract2025` and `routepred2023`. All 20 are parsed and on disk.
+The canonical id list is now **`papers_20.txt`**, generated from the manifest by excluding rows
+whose note starts with `SUBSTITUTE for`. **Do not filter on the substring "SUBSTITUTE"** — the two
+recovered papers say "SUBSTITUTED" in their own notes and a naive filter drops them too (it did,
+first try, and produced a list of 18).
+
+`papers/manifest.csv` is updated: the recovered pair is `access=manual_user` and marked in-corpus;
+the substitutes are `access=retired` and marked NOT in the corpus. Their parsed output stays on
+disk — nothing is deleted, it is simply out of scope.
+
+### 30.2 How far the 22-paper framing leaked into the C1-C6 results
+
+> **⚠ CORRECTED LATER THE SAME SESSION — the first version of this table was wrong.**
+> It was computed from `verdicts.csv`, which for the **triples** harness has columns
+> `triple_id,C1,C3,C4,...` and **no `paper` column**. `row.get('paper','')` therefore returned
+> `''` for every row, matched nothing, and reported a confident "0 of 40 — CLEAN". The paper id
+> lives in **`index.csv`** (`triple_id,paper,subject,predicate,object,source_sentence`), which is
+> what the corrected figures below join against. **Lesson: a contamination count of exactly zero
+> across four independent models is a red flag, not a clean bill of health — check that the column
+> you are filtering on exists.**
+
+Judged items drawn from the two substitute papers, joined `verdicts.csv` x `index.csv`:
+
+| harness | criteria | qwen3-235b | gptoss-120b | gemma4-31b | ministral-14b |
+|---|---|---|---|---|---|
+| triples | C1, C3, C4 | 1/40 | 1/40 | **3/40** | 1/40 |
+| paragraphs | C2, C5 | 0/16 | 0/16 | **2/16** | 1/16 |
+| papers | C6 | **2/6** | **2/6** | **2/6** | **2/6** |
+
+### 30.2b ⭐ THE SCORES BARELY MOVE WHEN RESTRICTED TO THE 20 PAPERS
+
+Recomputed with substitute items dropped (`as judged -> restricted`):
+
+| model | C1 | C2 | C3 | C4 | C5 | C6 |
+|---|---|---|---|---|---|---|
+| qwen3-235b | 78.8->79.5 | 31.2->31.2 | 60.0->61.5 | 45.0->44.9 | 28.1->28.1 | 50.0->50.0 |
+| gptoss-120b | 88.8->89.7 | 34.4->34.4 | 75.0->74.4 | 82.5->**84.6** | 31.2->31.2 | 25.0->**12.5** |
+| gemma4-31b | 85.0->85.1 | 28.1->28.6 | 72.5->73.0 | 62.5->63.5 | 25.0->21.4 | 16.7->**12.5** |
+| ministral-14b | 63.7->65.4 | 31.2->26.7 | 55.0->56.4 | 38.8->39.7 | 34.4->30.0 | 0.0->0.0 |
+
+**Every headline finding survives, and the rank order is unchanged:**
+* **C4 still spans ~2.1x** (39.7% ministral -> 84.6% gptoss) while C1 spans only ~1.4x. Models still
+  differ on TYPING, not on concept identification.
+* **C2/C5 are still flat** across a 4.3x volume range (band 21.4-34.4%). Volume still does not buy
+  completeness.
+* **C6 still falls as volume rises** — but see the caveat below.
+
+**⚠ TWO CLAIMS MUST BE WEAKENED:**
+1. **C6 "perfect rank correlation with volume" is now a TIE, not a strict ordering:**
+   qwen3-235b 50.0 (395 triples) > gptoss-120b **12.5** (583) = gemma4-31b **12.5** (684) >
+   ministral-14b 0.0 (1,709). Say **"monotone non-increasing"**, not "perfect rank correlation".
+2. **C6 n drops from 6 to 4 papers per model.** That is too small to quote at all. **The C6 redraw
+   is mandatory**, not optional.
+
+C1/C3/C4 and C2/C5 do **not** need re-judging: dropping 1-3 items moves them by at most 4.5 points
+and changes no ordering. Only C6 does.
+
+### 30.9 ⭐ C6 REDRAWN ON THE 20-PAPER CORPUS — AND IT BREAKS A HEADLINE CLAIM
+
+C6 was redrawn (the substitutes were 2 of 6 papers per model) and re-judged in session, on the
+CEO triples **after** the guard re-ingest. `ontology_eval` now carries a corpus allowlist that
+**defaults to `papers_20.txt`**, so the substitutes cannot be redrawn by forgetting a flag.
+
+| model | triples (20 papers) | C6 before redraw | C6 after redraw |
+|---|---|---|---|
+| qwen3-235b | 367 | 50.0% | **50.0%** |
+| gptoss-120b | 547 | 25.0% | **25.0%** |
+| gemma4-31b | 615 | 16.7% | **33.3%** |
+| ministral-14b | 1,548 | 0.0% | **8.3%** |
+
+**⛔ THE MONOTONICITY CLAIM DOES NOT SURVIVE.** Ordered by volume:
+367 -> 50.0%, 547 -> 25.0%, **615 -> 33.3%**, 1,548 -> 8.3%. gemma4-31b has *more* triples than
+gptoss-120b and a *higher* C6, so the sequence is **not monotone non-increasing**.
+**Spearman rho = -0.80**, not -1.00.
+
+Report it as: **"C6 falls as extraction volume rises (Spearman rho = -0.80 over four extractors),
+though not strictly monotonically."** Do NOT write "perfect rank correlation" — that claim came from
+the 22-paper draw and died with it. With only four models one swap moves rho from -1.00 to -0.80, so
+the direction is the claim, not the ordering.
+
+**Why gemma4 moved most (16.7 -> 33.3):** its redrawn sample replaced two substitute papers with
+`microwave2018` (scored CONSISTENT — genuinely coherent, 11 triples) and `roadwaylight2018`
+(MINOR_ISSUES). The old draw had caught it on two of its worst sets.
+
+**The vacuous-pass artifact is now visible in the data:** qwen3-235b's redrawn sample contains
+**two papers with zero triples** (`roadwaylight2018`, `textaug2023`), both scoring CONSISTENT = 1.0.
+That is 2 of its 6 C6 points earned by extracting nothing, and it extracts from only 16.4% of
+paragraphs. **Never quote C6 without C2/C5 beside it.**
+
+Notable individual findings from the redraw:
+* **The only correctly-directed `configures` in the entire study**: ministral-14b's
+  `(LLM parameters) --configures--> (Experiment 1)` on `llamacorrupt2025` — Specification ->
+  Experiment, exactly as defined. Every other instance across every model is Model -> setting-value.
+* **Two models independently collapsed the same contrast**: gptoss-120b and gemma4-31b both assert
+  `(cSysGuard) --uses--> (simple averaging)` when the source says cSysGuard uses stacking *rather
+  than* simple/weight averaging. A shared failure mode on contrastive sentences, not a per-model quirk.
+* **gemma4-31b and gptoss-120b both got all three `splitFrom` partitions right** on traveltime2022,
+  where most models in the study inverted them.
+
+### 30.12 ⭐⭐ SCINEX JUDGED (triples harness) — THE SESSION 26 CAPABILITY STORY DOES NOT REPLICATE
+
+scinex extraction is complete for qwen3-235b, gemma4-31b and ministral-14b over the 20-paper corpus
+(gptoss-120b still running at time of writing). All four CEO runs and all finished scinex runs are
+on ONE code version — every one re-ingested through the Session 29 guards from stored replies.
+
+**Volumes (20-paper corpus):**
+
+| model | CEO | scinex | scinex/CEO |
+|---|---|---|---|
+| qwen3-235b | 367 | 563 | 1.53x |
+| gemma4-31b | 615 | 525 | 0.85x |
+| ministral-14b | 1,548 | 1,566 | 1.01x |
+
+**C1/C3/C4 deltas, CEO -> scinex, n≈40 per cell, ordered by CEO capability (C4):**
+
+| model | CEO C4 | dC1 | dC3 | dC4 | vol ratio |
+|---|---|---|---|---|---|
+| ministral-14b | 39.7% (weakest) | **+5.9** | **+6.1** | **+5.3** | 1.01x |
+| qwen3-235b | 44.9% | **-7.0** | -4.0 | +1.4 | 1.53x |
+| gemma4-31b | 63.5% (strongest) | +3.3 | +6.5 | **-4.5** | 0.85x |
+
+**⛔ THE §26.16 INTERACTION DOES NOT REPRODUCE HERE.** Session 26 found scinex to be a liability for
+a weak extractor and an asset for a capable one (8B: -26.0 pts; 235B: +5.9 pts). Under C1-C6 that
+ordering is absent: the WEAKEST model gains on all three criteria, the strongest gains on concepts
+but LOSES on relation correctness, and the middle model loses on concepts. There is no monotone
+relationship with capability in either direction.
+
+**State it as: under C1-C6 the ontology effect is MODEL-SPECIFIC and does not order by extraction
+quality.** Two caveats that stop this being a refutation of §26.16:
+1. n≈40 per cell.
+2. §26.16 measured a different quantity (single-rubric strict precision) and its capability contrast
+   was WITHIN one model family (qwen3:8b vs qwen3-235b). These three are three different families,
+   so family effects and ontology effects are confounded. **This is a failure to reproduce the
+   pattern on a different axis, not a refutation of the original measurement.**
+
+The volume ratio also fails to track capability: gemma4-31b has much better CEO C4 than qwen3-235b
+(63.5% vs 44.9%) yet the LOWEST ratio (0.85x vs 1.53x).
+
+### 30.13 ⭐ WHAT SCINEX BUYS AND WHAT IT COSTS, from the per-triple notes
+
+**scinex fixes CEO failures — same sentence, better relation available:**
+* `(YOLOv8) SPPF`: the CEO run chose `employs` (typed Organisation -> Person) and scored INCORRECT;
+  the scinex run chose `uses` and scored CORRECT.
+* `splitFrom`: gemma4-31b inverted it under CEO, got it right under scinex.
+* `producedBy` (artifact -> process) gives a direction CEO's `produces` kept inverting. ministral's
+  `(GBipt) producedBy (transforming RDF dataset into a bipartite graph)` is exemplary.
+* `achievesResult` (Model -> ExperimentalResult) is a genuine refinement of CEO's overloaded
+  `achieves` — **but only when the model reaches for it.** gemma4-31b kept using plain `achieves`
+  for metric outcomes and lost the benefit.
+
+**scinex adds failure modes CEO structurally cannot have:**
+* **`extractedFrom` was misused FIVE times** — range is AcademicPaper, and it was pointed at a
+  dataset, an architecture component, OpenStreetMap, a vehicle fleet and a data-availability
+  statement. Its name reads generically enough that the English always seems to fit. CEO has no
+  equivalent relation, so it cannot make this error at all.
+* `mentions` (AcademicPaper -> ?) attracted a reversed use: `(SP) mentions (Jeung et al. (2008))`
+  where the sentence says the SF/SP hybrid was mentioned IN that work.
+
+### 30.14 ⛔ GUARD GAP — `_is_provenance_sentence` KEYS ON SECTION NAMES AND MISSES SENTENCES
+
+The scinex judging surfaced boilerplate classes the Session 29 guard does not catch, because the
+Session 26 boilerplate guard matches SECTION NAMES and these appear as sentences inside otherwise
+legitimate sections:
+
+| what was mined | example |
+|---|---|
+| **a FICTIONAL UX PERSONA** | `Persona: Dan is a senior salesman working in a company in Europe.` -> `(Dan) affiliatedWith (a company in Europe)` |
+| a CRediT contribution line | `Jinor ose: Writing - review & editing, Validation.` -> `(Jinor ose) writes (this study)` |
+| a declarations statement | `All authors have read and agreed to the published version...` |
+| a data-availability statement | `The data presented ... are available on request` |
+| an affiliation block | `a Faculty of Engineering, KMITL, Bangkok 10520, Thailand` |
+| **OCR TABLE DEBRIS** | subject = `(CH3)2(CH2(C6H5))(C2H4OH)NCl 27 30 ... NBr 31` — two chemical formulas with their table row numbers |
+| an author bio WITHOUT the keywords | `From 2022 to 2023, he was a Software Engineer with RentSpree.` — no 'degree', no 'currently', so the existing bio pattern misses it |
+
+**The persona case is the most striking: an invented person entering the knowledge graph as a real
+agent.** No guard in this pipeline anticipates fictional entities from UX/requirements sections.
+
+Worth noting the three CORRECTLY-typed `employs` triples in the whole study all come from author
+biographies — i.e. the one relation the models get right is the one whose evidence should have been
+excluded.
+
+### 30.15 ⛔ TWO HARNESS BUGS FOUND WHILE PREPARING THE SCINEX BUNDLES
+
+1. **`_schema_for` silently fell back to the CEO schema for scinex.** It imported
+   `_load_scinex_schema` from `fixed_extractor` — **a function that does not exist** — and a bare
+   `except` swallowed the ImportError. Every scinex bundle printed
+   `(predicate not in this ontology)` for scinex-only relations, which would have collapsed C4 into
+   a plausibility check on the English relation name — precisely the failure §27.3 design decision 4
+   exists to prevent. The real loader is `kg_extraction.ontology_loader.load_ontology`, returning
+   `(relations, schema)`. **Now fixed AND made to raise rather than fall back**, because a silent CEO
+   fallback invalidates every scinex C4 verdict. Caught only by reading a bundle before judging it.
+2. **`triple_id` collisions shrink the sample.** The id hashes only
+   `(slug, subject, predicate, object)`, so an identical triple drawn from two DIFFERENT source
+   sentences is one id and deduplicates on `collect`. gemma4-31b's scinex sample came back n=39, not
+   40. Small, but the harness can silently under-deliver its requested sample size.
+
+
+### 30.16 ⚠ MINOR STALENESS: the CEO samples were drawn BEFORE the guard re-ingest
+
+Order of operations this session was: CEO judged (Session 27-28) -> Session 29 guards written ->
+CEO re-ingested through those guards. So a few already-judged CEO triples have since been removed
+from the corpus by `_is_provenance_sentence` / `_splitfrom_is_inverted`.
+
+| model | judged (20-paper) | since removed | C4 as reported | C4 excluding removed |
+|---|---|---|---|---|
+| qwen3-235b | 39 | 2 | 44.9% | 47.3% |
+| gptoss-120b | 39 | 2 | 84.6% | 83.8% |
+| gemma4-31b | 37 | 4 | 63.5% | 65.2% |
+| ministral-14b | 39 | 4 | 39.7% | 40.0% |
+
+**Not material — the shift is between -0.8 and +2.4 points and changes no ordering.** Note the sign
+is MIXED: gptoss-120b goes DOWN when the removed triples are excluded, so the guards were not
+removing uniformly-bad triples in these samples.
+
+**Reported figures describe the corpus AS SAMPLED (pre-guard).** Excluding the removed items would
+not give a clean post-guard measurement either, because the sample itself was drawn from the
+pre-guard pool — only a redraw would. Given the size of the effect, a redraw is not worth the
+judging time; record the caveat instead. The scinex samples do NOT have this problem: they were
+drawn after the guards, from the re-ingested corpus.
+
+### 30.3 Other standing instructions from the user this session
+
+* **⛔ Qwen3-14B IS RETIRED. Do not plan, schedule, or reference a VM re-run with it.** The old
+  "re-run everything on the VM with Qwen3-14B" item is DEAD and has been struck from `TASK.md`.
+  Work continues with the Session 27 model line-up only: **qwen3-235b, gptoss-120b, gemma4-31b,
+  ministral-14b**.
+* **⛔ Judging is IN-SESSION by claude-opus-5 only. Never an OpenRouter judge.** OpenRouter credit
+  is for EXTRACTION only. (Unchanged, restated by the user.)
+* **C1-C6 is single-rater by design** (Session 29) — a stated limitation, not an open item.
+* The user noted a Gemma model could be run locally via Ollama. **Not actioned: no Gemma is pulled**
+  (`ollama list` shows only `llama3.1:8b` and `qwen3:8b`), and `gemma-4-31b` cannot fit the 8 GB
+  laptop GPU. Needs one clarifying answer before pulling several GB — see §30.6.
+
+### 30.4 scinex extraction launched — 3 models, 20 papers
+
+`relation_scinex/qwen3-235b` **already exists** (600 triples, from Session 27), so only three models
+needed running. Runner: **`run_scinex_20.sh`** (`--paper $(cat papers_20.txt)`, so the substitutes
+are never touched), log: `scinex_20_extraction.log`.
+
+    openai/gpt-oss-120b          -> relation_scinex/gptoss-120b
+    google/gemma-4-31b-it        -> relation_scinex/gemma4-31b
+    mistralai/ministral-14b-2512 -> relation_scinex/ministral-14b
+
+OpenRouter balance at launch: **$1.2725 used of $3.00, $1.7275 remaining.** Estimated ~$0.6-0.7 for
+all three (Session 27 cost ~$0.23 per model-run over 22 papers).
+
+### 30.5 ⚠ A CONFOUND THAT MUST BE CLOSED BEFORE COMPARING CEO vs scinex
+
+The CEO extractions were produced in Session 27, **before** the Session 29 guards
+(`_is_provenance_sentence`, `_splitfrom_is_inverted`). The scinex runs launched today have those
+guards **active**. Comparing them directly would vary ontology AND code version at once.
+
+**Fix, and it costs nothing:** all 22 CEO papers x 4 models have `responses.jsonl` on disk, so CEO
+can be **re-ingested through the current guards with no new model calls** — the same trick that took
+Claude's corpus 268 -> 279 in Session 26. Do this before any CEO-vs-scinex claim.
+
+### 30.6 ▶ NEXT, in order
+
+1. Wait out `scinex_20_extraction.log`; verify triple counts for all three models.
+2. **Re-ingest CEO from stored replies** so both ontologies sit on one code version (§30.5).
+3. Regenerate C1-C6 bundles **restricted to the 20 papers**, for CEO and scinex.
+4. **Redraw and re-judge C6** (§30.2) — mandatory. Re-judge C2/C5 for gemma4/ministral if cheap.
+5. Rebuild `RESULTS_REPORT.md`; correct every "22 papers" to 20 across the docs.
+6. Ask the user which Gemma they mean for the local run (§30.3).
+
+### 30.10 ⚠ THE PER-PAPER INGEST FAILS SILENTLY — ALWAYS RE-INGEST AFTER A RUN
+
+`run_api_extract --ingest` ingests after each paper. When a paper's `responses.jsonl` contains a
+malformed line (which the duplicate-runner incident in §30.8 produced), that paper's ingest raises a
+`JSONDecodeError` and is skipped — **but the run continues to the next paper and exits 0**. The
+extraction looks successful and the log ends with "COMPLETE".
+
+Result for gemma4-31b's scinex run: **559 responses saved, but only 15 of 20 papers had a
+`triples.json`** — a 30% silent loss that a triple count alone would have reported as "the model
+just extracts less on scinex".
+
+**Always verify papers-with-triples, not just responses, and re-ingest from stored replies before
+using any run.** `reingest_scinex.sh <slug>` and `reingest_ceo.sh` do this with no model calls:
+
+    bash reingest_scinex.sh gemma4-31b     # 15/20 -> 20/20 papers, 349 -> 525 triples
+
+Also re-ingested `relation_scinex/qwen3-235b` (a Session 27 run that predated the Session 29
+guards): 567 -> 563 triples. **Every CEO and scinex run is now on one code version**, which is the
+precondition for any CEO-vs-scinex comparison.
+
+### 30.11 ⭐ EARLY RESULT — the scinex/CEO VOLUME RATIO IS CAPABILITY-DEPENDENT, and it replicates
+
+Over the 20-paper corpus, all runs on the current guards:
+
+| model | CEO | scinex | scinex/CEO |
+|---|---|---|---|
+| qwen3-235b | 367 | 563 | **1.53x** |
+| gemma4-31b | 615 | 525 | **0.85x** |
+
+This **reproduces the Session 26 finding** (§26.16) that the ratio flips with capability: measured
+there as 0.94x at qwen3:8b and **1.48x** at qwen3-235b. The 1.53x here is an independent
+re-measurement of the same model on a corrected corpus and a newer code version, and lands within
+0.05 of the original. gemma4-31b sitting below 1.0 places it on the weak side of that curve on the
+volume axis, despite its strong C1/C3/C4 scores — worth watching when its scinex triples are judged.
+
+⚠ Volume is not quality: Session 26's interaction result was that scinex wins on BOTH axes only at
+the higher capability level. The judged C1-C6 numbers decide that, not these counts.
+
+### 30.8 ⛔⛔ INCIDENT: STOPPING A BACKGROUND TASK DOES NOT KILL ITS PYTHON CHILD
+
+**This corrupted data and double-spent OpenRouter credit. Read before backgrounding anything.**
+
+The first scinex attempt used one sequential bash runner (`run_scinex_20.sh`, models one after
+another). To parallelise, that task was stopped with `TaskStop` and three per-model runners were
+launched instead. `TaskStop` reported success — **and the orphaned bash wrapper and its `python
+run_api_extract.py` child both kept running.** The orphan then walked its own loop to the next
+model, so within fifteen minutes there were **two processes extracting `gptoss-120b` and two
+extracting `gemma4-31b`, writing the same `responses.jsonl` files**.
+
+**How it showed up:** `ontology_eval`-style JSON errors during the per-paper ingest, and lines in
+`responses.jsonl` that began mid-sentence — `', it can be observed that at higher values, DT, RF...'`
+— with no `{"para_id":` prefix. That is the signature of **two processes appending to one file**:
+`responses.jsonl` is opened in append mode and a record can be split by another writer's write.
+13 of 1,606 lines (0.8%) were mangled this way.
+
+**Why it was nearly invisible:** `ps aux | grep run_api_extract` under Git Bash returned **nothing**
+even while the processes were demonstrably making API calls and writing files. Do not trust `ps`
+here. The reliable check is PowerShell:
+
+    Get-CimInstance Win32_Process -Filter "Name like '%python%'" |
+      ForEach-Object { if ($_.CommandLine -match '--model-slug\s+(\S+)') { $Matches[1] } } |
+      Group-Object | Where-Object { $_.Count -gt 2 }
+
+(Each real runner shows **two** entries — a WindowsApps launcher stub plus the real interpreter — so
+"more than 2 entries for one slug" is the duplicate condition, not "more than 1".)
+
+**Cleanup that worked:** kill the duplicate PIDs by creation time, then kill every
+`bash ... run_scinex_20.sh` wrapper — otherwise the wrapper immediately spawns the *next* model and
+recreates the collision (it did: killing the wrappers spawned a duplicate `ministral-14b`, which
+then also had to be killed).
+
+**Rules going forward:**
+1. **Never background a script that loops over models.** One background task per model, so an
+   orphan can only ever duplicate itself and is trivially identifiable.
+2. **After any `TaskStop`, verify with PowerShell that the child is actually gone.** The task
+   status is not evidence.
+3. **Treat mid-sentence lines in a `.jsonl` as a concurrency signal**, not a model failure.
+4. `--resume` rebuilds its done-set by parsing every line of `responses.jsonl`, so **one malformed
+   line aborts the entire run before a single call is made** (`JSONDecodeError`). `run_one_scinex.sh`
+   now repairs the file first; keep that step.
+
+**Cost of the incident:** roughly \$0.05-0.10 of duplicated calls and 13 mangled responses, all
+recoverable — the affected paragraphs simply get re-called once the malformed lines are dropped.
+
+### 30.7 A smoke-test result that looked alarming and was not
+
+The scinex smoke test returned **0 triples kept, 7 rejected**. Cause was neither the new guards nor
+the ontology: the two pre-existing guards fired correctly — the `designedFor` intent check, and the
+subject-presence rule, because the model wrote `U-GMo` as the subject where the source sentence says
+"The system" (it resolved the coreference, which relation-mode forbids). Both new guards returned
+False on all 7. **A 2-paragraph smoke test is too small to read as a failure signal.**
+
+## Session 29 — C1-C6 declared single-rater; two new guards built and measured (2026-09-07)
+
+### 29.1 ⛔ DECIDED BY THE USER: C1-C6 IS SINGLE-RATER. DO NOT RE-PROPOSE A SECOND JUDGE.
+
+claude-opus-5 in-session is the judge of record for all 248 C1-C6 judgements. **No second labeller,
+no kappa, none planned.** Report it as a *stated limitation* of the track, never as an unfinished
+item. The old-rubric kappa (results.md Table 9) measures a different rubric and does not transfer.
+`results.md` caveat rewritten accordingly.
+
+`run_api_judge.py` was extended before that decision and the change is **kept**, because it fixed a
+latent bug rather than adding a judge: it hardcoded the OLD CORRECT/PARTIAL/INCORRECT rubric, so it
+could not drive `ontology_eval` bundles at all. It now takes `--rubric {gold,triples,paragraphs,papers}`
+(default `gold`, so existing invocations are unchanged) and prints the matching `collect` command.
+
+### 29.2 Two new guards in `kg_extraction/fixed_extractor.py`, from the C1-C6 findings
+
+**(a) Provenance guard — `_is_provenance_sentence(sentence)`.** Rejects a triple whose SOURCE
+SENTENCE is publisher/biographical/bibliographic matter. This is the fix for §28.5: triples that
+score CORRECT on C1, C3 AND C4 and are still worthless, because the per-triple criteria judge a
+triple against its source sentence and never ask whether that sentence belonged to the paper.
+Keyed on the SENTENCE, not the section name, because `_is_boilerplate_section` misses two cases:
+front/back matter with no heading of its own, and IEEE watermarks/running headers that the parser
+glues INTO a body paragraph (so the paragraph's section is legitimate). Covers IEEE licence
+watermarks, author biographies, acknowledgements, bibliography entries (three citation formats),
+ACM CCS classification blocks, licence/ISSN/masthead lines.
+
+**(b) splitFrom direction guard — `_splitfrom_is_inverted(subject, object)`.** splitFrom is
+Dataset->Dataset, so a type check cannot catch an inversion - both sides are datasets. The derived
+partition must be the SUBJECT. 3 of the 4 extractors consistently wrote it backwards (gptoss-120b
+was the only one that did not). Rejects only the unambiguous case: object names a partition, subject
+does not. When both or neither look like partitions the triple is left alone.
+
+### 29.3 Measured impact (whole corpus, all four models)
+
+| model | triples | removed | % |
+|---|---|---|---|
+| qwen3-235b | 395 | 8 | 2.0% |
+| gptoss-120b | 583 | 5 | 0.9% |
+| gemma4-31b | 684 | 10 | 1.5% |
+| ministral-14b | 1,709 | 29 | 1.7% |
+
+Every removal was eyeballed; all are genuine defects, no false positives observed. Examples:
+`(KMITL, affiliatedWith, UniNet)` from an IEEE licence watermark; `(SOKENDAI, locatedIn, Japan)` and
+four `(RATHACHAI CHAWUTHAI, affiliatedWith, <university>)` from one author biography; two
+`publishedIn` triples from bibliography entries; `(LExist, splitFrom, LTrain)` inverted.
+
+**⚠ The corpus rate (0.9-2.0%) is much lower than the judged sample suggested** because the C1-C6
+sample is stratified over predicates and deliberately over-represents rare ones - the same
+sampled-vs-weighted gap as the old track (sampled strict 20.2% vs weighted 34.7%). Both numbers are
+right; state which one is being quoted.
+
+### 29.4 ⛔ THREE TRAPS FOUND WHILE WRITING THESE GUARDS
+
+1. **Backslashes are collapsed when a Python heredoc is piped through the Bash tool.**
+   **⚠ SECOND OCCURRENCE — the same trap is recorded in the tooling note at the end of
+   Session 26 §11.** It also silently mangled the sentence in this very note that described
+   it, which is how thoroughly invisible it is. Writing
+   `\b` into a regex produced a literal **backspace byte (0x08)** in the file, not `(backslash-b)`, so 15
+   word-boundary anchors were silently dead - the patterns compiled fine and just failed to match.
+   `\s` survived only because it is an *invalid* escape that Python leaves alone. **Build the
+   backslash with `chr(92)`** when generating regex source this way, and always verify with
+   `repr(open(f,'rb').read())`, never with grep - a terminal renders 0x08 by erasing the previous
+   character, so the corruption is invisible.
+2. **A global `_re.IGNORECASE` makes `[a-z-]` match uppercase**, which silently disabled the
+   lowercase-only lookarounds in `_PARTITION_RE` - `LTrain` was then treated exactly like
+   `constraint`. Fixed by scoping case-insensitivity to the word with `(?i:...)` and leaving the
+   lookarounds case-sensitive.
+3. `python3 run_api_judge.py --help` **crashes on this laptop** without `PYTHONIOENCODING=utf-8`
+   (the docstring contains an arrow; the console is cp1252). Known trap, now hit by one more file.
+
+### 29.5 ▶ OPEN: `configures` direction needs a HUMAN DECISION, not a guard
+
+`configures` is defined ExperimentalSpecification -> Experiment. **Every model writes
+Model -> setting-value** (`(Random Forest) configures (30 estimators)`), wrong in 100% of observed
+uses. This is deliberately NOT guarded, because unlike `splitFrom` it is not a simple inversion -
+the object is a VALUE, not an Experiment, so swapping the arguments does not produce a valid triple
+either. Two options, and the choice is the user's:
+* **(a) Change the ontology** so `configures` reads Model/Experiment -> ExperimentalSpecification.
+  Matches what every model naturally produces and what the prompt's own examples imply, and would
+  turn ~12 rejected triples per dense paragraph into valid ones.
+* **(b) Reject the inverted form.** Ontology-faithful, but deletes genuinely useful hyperparameter
+  facts - ministral's `roadwaylight2018#21` alone would lose 9 of its 11 triples.
+The evidence points at (a): when every independent model produces the same shape, the schema is the
+more likely thing to be wrong. Not acted on unilaterally.
+
+### 29.6 Still open after this session
+
+1. **scinex side of the four models** - CEO only. Needs OpenRouter spend (~$0.9 of the $1.73 left);
+   **the user asked to discuss OpenRouter spending before any is committed.** Not started.
+2. `RESULTS_REPORT.md` regeneration + a C1-C6 section in `build_results_report.py`.
+3. `configures` decision (§29.5).
+4. Older judged samples (claude-opus-5, gemma3-12b, qwen3-8b-v2) still describe 20 papers, not 22.
+5. **Every number on disk predates these two guards** - as with every previous guard round.
+
+## Session 28 — C1-C6 JUDGING COMPLETE: all 40 batches, 248 judgements, four extractors (2026-09-05)
+
+> **⭐ START HERE. The C1-C6 evaluation Session 27 set up is now FINISHED.**
+> Numbers and tables: `results.md` "C1-C6 ONTOLOGY-QUALITY EVALUATION" (Table 10 + Findings 1-6).
+
+### 28.1 What was done
+
+Judged every remaining bundle in `ontology_eval/` in-session (never via OpenRouter, per the standing
+constraint). Went from 3/40 batches to **40/40**:
+
+| model | triples (C1/C3/C4) | paragraphs (C2/C5) | papers (C6) |
+|---|---|---|---|
+| qwen3-235b | 4/4 | 4/4 | 2/2 |
+| gptoss-120b | 4/4 | 4/4 | 2/2 |
+| gemma4-31b | 4/4 | 4/4 | 2/2 |
+| ministral-14b | 4/4 | 4/4 | 2/2 |
+
+Full sample sizes as the user asked: **40 triples + 16 paragraphs + 6 papers per model = 248
+judgements.** All collected to `verdicts.csv`. Reproduce the table with:
+`python3 ontology_eval.py report --model qwen3-235b gptoss-120b gemma4-31b ministral-14b`
+
+### 28.2 THE RESULT
+
+| extractor | triples | para coverage | C1 | C2 | C3 | C4 | C5 | C6 |
+|---|---|---|---|---|---|---|---|---|
+| qwen3-235b | 395 | 16.4% | 78.8% | 31.2% | 60.0% | 45.0% | 28.1% | **50.0%** |
+| **gptoss-120b** | 583 | 42.9% | **88.8%** | **34.4%** | **75.0%** | **82.5%** | 31.2% | 25.0% |
+| gemma4-31b | 684 | 51.7% | 85.0% | 28.1% | 72.5% | 62.5% | 25.0% | 16.7% |
+| ministral-14b | **1,709** | **69.1%** | 63.7% | 31.2% | 55.0% | 38.8% | **34.4%** | **0.0%** |
+
+Triple counts verified from disk (`output/*/kg/relation/<slug>/triples.json`, 22/22 papers each).
+
+**Three findings that only exist because the criteria were split:**
+
+1. **Models differ on TYPING, not on concept identification.** C1 spans 1.4x (63.7-88.8), **C4 spans
+   2.1x (38.8-82.5)**. The concepts are mostly real and present; domain/range conformance is what
+   separates good from bad. The old single rubric collapsed these into one number.
+
+2. **VOLUME DOES NOT BUY COMPLETENESS - the headline.** ministral-14b makes **4.3x** qwen3-235b's
+   triples and fires on **4.2x** more paragraphs, and its completeness is **flat**: C2 31.2% vs
+   31.2% (identical), C5 34.4% vs 28.1% (+6.3 pts). All four models sit in a 25-34% band on both.
+   The extra volume goes on restating captured facts, enumerating pairwise combinations, and mining
+   boilerplate - not on the paragraphs being missed. Every extractor leaves ~2/3 of each paper
+   unrecorded, and they leave *different* thirds.
+
+3. **C6 falls monotonically with volume, perfect rank correlation.** 395 triples -> 50.0%;
+   583 -> 25.0%; 684 -> 16.7%; 1,709 -> **0.0% (all 6 papers CONTRADICTORY)**. More triples = more
+   chances to conflict, concentrated in three mechanisms: superlatives with the scope qualifier
+   stripped, metric nodes bound to two values because the class label was dropped, and
+   surface-variant splitting letting incompatible claims attach to what should be one node.
+
+### 28.3 ⚠ C6 SCORING ARTIFACT - do not report C6 alone
+
+An empty triple set cannot contradict itself, so it scores CONSISTENT (1.0) **vacuously**.
+qwen3-235b's `textaug2023` (0 triples) is exactly that and is 1 of the 6 papers behind its 50.0%.
+**C6 systematically rewards extracting nothing** and is only interpretable next to C2/C5. Flagged in
+the reply file itself so the artifact is auditable, not buried.
+
+### 28.4 Predicate failures that are systematic, not per-model
+
+* `employs` (Organisation->Person) - matched on the English verb for method-uses-method. **The only
+  two correct uses in 160 judged triples were ministral's, and both came from AUTHOR BIOGRAPHIES.**
+* `configures` (ExperimentalSpecification->Experiment) - **direction wrong in 100% of observed uses**
+  (gemma4 x2, ministral x2, plus 12 more inside judged paragraphs). Every model writes Model->setting.
+  Either add a direction guard or reconsider the ontology's direction here.
+* `splitFrom` - gptoss correct 2/2; gemma4, ministral and qwen3-235b all invert it (ministral 3/3
+  wrong in gamlprop2025, 4x in linkpred2015).
+* `evaluatedOn` - hardware (Raspberry Pi 3 Model B), other models, and evaluation protocols placed in
+  the Dataset slot.
+* `(HDBSCAN clustering) uses (route data preprocessing)` - **inverted identically by all models that
+  produced it**. A shared failure mode, not a quirk.
+
+### 28.5 ⭐ Boilerplate is mined as content, and C1-C4 structurally cannot see it
+
+Triples scoring CORRECT on all three per-triple criteria, drawn from: author biographies
+(`(SOKENDAI) locatedIn (Japan)`), IEEE download watermarks (`(KMITL) affiliatedWith (UniNet)`),
+bibliographies, acknowledgements (`(Assoc. Pannawit Samatthiyadikun) affiliatedWith (data analysis)`
+x4), and the ACM CCS classification block. The Session 26 boilerplate guard covers
+CRediT/funding/declarations but **not** these. **A triple can be perfect on C1, C3 and C4 and still
+be worthless** - the criteria judge a triple against its source sentence and never ask whether that
+sentence belonged to the paper. Concrete guard worklist: skip author-bio blocks, IEEE/publisher
+watermarks, bibliography entries, acknowledgements, and ACM CCS blocks at extraction time.
+
+### 28.6 The dissociation, in one paragraph
+
+ministral-14b on `roadwaylight2018#21`: **11 triples**, 8 of ~10 important concepts, C2/C5 both
+PARTIAL - the highest-yield paragraph in the study. **All nine of its `configures` triples have the
+ontology direction wrong.** High completeness, low correctness, same paragraph. That is exactly what
+C1-C6 was adopted to expose and what a single precision number cannot represent.
+
+### 28.7 Judging conventions used (apply these if the sample is extended)
+
+Recorded so a later round is comparable, since the rubric does not fix them:
+* **C2/C5 boundary**: COMPLETE = nothing important missed (incl. genuinely empty paragraphs);
+  PARTIAL = roughly >=1/3 of the KG-worthy items captured, OR a thin paragraph whose one or two
+  items were missed; POOR = <1/3 captured, or nothing extracted from a content-rich paragraph.
+* **C1 vs C3**: a vague placeholder ("our method", "test set", "system", "bespoke dataset") is
+  C1 PARTIAL *and* C3 TOO_BROAD - the same defect seen as identity and as granularity. C4 is then
+  judged on relation + typing alone.
+* **C4 PARTIAL vs INCORRECT**: PARTIAL = supported but loosely typed (one slot off, or implied
+  rather than stated); INCORRECT = unsupported, direction swapped, or BOTH slots violating
+  domain/range.
+* **C6 CONTRADICTORY** requires (a) two assertions that cannot both be true, or (b) one predicate
+  used with mutually incompatible ranges in the same paper. Duplication and surface-variant
+  splitting alone = MINOR_ISSUES.
+
+### 28.8 What is still open
+
+1. **No second labeller for C1-C6, so no kappa.** Single judge (claude-opus-5). The old-rubric kappa
+   (results.md Table 9) does not transfer. This is the largest methodological gap.
+2. **CEO only** - the scinex side of these four extractors is still not run, so the Session 26
+   ontology x capability interaction has no C1-C6 counterpart.
+3. **n=6 papers for C6.** The monotone trend across four models (24 papers) is the claim; per-model
+   point estimates are not quotable.
+4. **`RESULTS_REPORT.md` is still stale** and `build_results_report.py` still has no C1-C6 section.
+   Now unblocked - the numbers exist.
+5. Older judged samples (claude-opus-5, gemma3-12b, qwen3-8b-v2) still describe 20 papers, not 22.
+
+## Session 27 — NEW EVALUATION FRAMEWORK (C1-C6); corpus 20 -> 22; four new extractors (2026-09-03/05)
+
+> **⭐ START HERE. This session changed the evaluation criteria and the corpus.**
+> Read §27.1 (what changed), §27.2 (state on disk), §27.6 (exactly what to do next).
+
+### 27.1 Two directives from the user, both structural
+
+**(a) The evaluation criteria changed.** The old CORRECT/PARTIAL/INCORRECT rubric is **superseded**
+by a six-criterion ontology-quality framework the user supplied:
+
+| | criterion | meaning | reference |
+|---|---|---|---|
+| C1 | Concept Correctness | concepts are semantically correct and evidenced in the text | Zhang, Conia & Rago, IJCNLP-AACL 2025 |
+| C2 | Concept Completeness | the ontology covers the important concepts in the text | Wilson et al., Semantic Web 14(6) 2023 |
+| C3 | Concept Specificity | concepts sit at an appropriate granularity | Zhang et al. 2025 |
+| C4 | Relation Correctness | the relation holds per the text and fits domain -> range | Zhang et al. 2025 |
+| C5 | Relation Completeness | the important relations in the text are all extracted | Wilson et al. 2023 |
+| C6 | Semantic Consistency | concepts/hierarchy/relations do not contradict | Wilson et al. 2023 |
+
+**(b) The model line-up is fixed by the user:** extract with **Qwen3-235B, GPT-OSS-120B,
+Gemma-4-31B, Ministral-14B** (all via OpenRouter), and **judge all of them with claude-opus-5**.
+
+> ### ⛔⛔ HARD CONSTRAINT — DO NOT SPEND OPENROUTER CREDIT ON CLAUDE
+> The user was explicit: *"claude opus 5 that we will run as a judge will be through my claude.
+> NOT FROM OPEN ROUTER. DO NOT SPEND ANY MONEY OF OPENROUTER ON CLAUDE."*
+> **Judging is done BY THE ASSISTANT IN-SESSION** — read the batch file, write the reply file.
+> `anthropic/*` models exist on OpenRouter and must never be called.
+
+### 27.2 State on disk
+
+**Corpus is now 22 papers.** The user supplied the two previously-unobtainable PDFs
+(`bulk-download/trip-planner.pdf`, `bulk-download/LPII.pdf`); both verified as the right papers,
+copied to `papers/tripplanner2020.pdf` and `papers/linkpred2015.pdf`, parsed clean
+(14 and 17 sections, titles manifest-verified). So the corpus is **the 20 papers from the original
+list + the 2 substitutes** (`aiabstract2025`, `routepred2023`) added when those two were unobtainable.
+Describe it that way; do not write "20 papers".
+
+| extraction run | papers | triples |
+|---|---|---|
+| `relation/gemma3-12b` | 22/22 | 1,930 |
+| `relation/ministral-14b` | 22/22 | **1,709** |
+| `relation/qwen3-8b-v2` | 22/22 | 1,444 |
+| `relation_scinex/qwen3-8b-v2` | 22/22 | 1,389 |
+| `relation/qwen3-8b` | **20/22 — FROZEN BY DESIGN** | 1,185 |
+| `relation_scinex/qwen3-8b` | **20/22 — FROZEN BY DESIGN** | 1,117 |
+| `relation/gemma4-31b` | 22/22 | **684** |
+| `relation_scinex/qwen3-235b` | 22/22 | 600 |
+| `relation/gptoss-120b` | 22/22 | **583** |
+| `relation/qwen3-235b` | 22/22 | 395 |
+| `relation/claude-opus-5` | 22/22 | 315 |
+
+**⚠ Why `qwen3-8b` (v1) must stay at 20 papers:** it is the "before" half of the §26.14 engineering
+result (+8.3 pts from guards + bug fixes). Extending it would require running the *current* code,
+which is exactly what that baseline predates, and would destroy the measurement. Report it as a
+paired 20-paper comparison against v2 restricted to the same 20 papers.
+
+**OpenRouter: \$1.27 spent of \$3.00, \$1.73 remaining.** All of it on extraction, none on Claude.
+
+### 27.3 New tool: `ontology_eval.py` — the C1-C6 harness
+
+**THREE harnesses, because the criteria do not share a unit of analysis.** This is the key design
+point and it is not optional:
+
+```
+C1, C3, C4   judged PER TRIPLE     against its source sentence        (precision-like)
+C2, C5       judged PER PARAGRAPH  against every triple drawn from it (recall-like)
+C6           judged PER PAPER      against that paper's whole triple set
+```
+
+A completeness question cannot be asked of a single triple — what is missing is by definition not
+in front of the judge. **Everything this project measured before Session 27 was precision only;
+C2/C5 are a genuinely new axis.**
+
+```bash
+python3 ontology_eval.py triples    --model <slug> --n 40 --size 10   # C1, C3, C4
+python3 ontology_eval.py paragraphs --model <slug> --n 16 --size 4    # C2, C5
+python3 ontology_eval.py papers     --model <slug> --n 6  --size 3    # C6
+#   -> assistant reads ontology_eval/<slug>/ceo/<kind>/NN_batch_NN.txt
+#   -> assistant writes    .../replies/reply_NN_batch_NN.txt
+python3 ontology_eval.py collect --model <slug> --kind triples
+python3 ontology_eval.py report  --model qwen3-235b gptoss-120b gemma4-31b ministral-14b
+```
+
+**Four design decisions, each with a reason — do not silently revert them:**
+
+1. **C3 is NOT scored ordinally.** `TOO_BROAD` and `TOO_NARROW` are two ways of being wrong, not a
+   better and a worse one, so both score 0.0 (`POINTS_BY_CRIT`). Scoring one at 0.5 would assert
+   that over-general concepts are half-acceptable. The direction is kept in the label for diagnosis.
+2. **Paragraph matching normalises whitespace.** Models re-wrap the sentence they quote, so a raw
+   substring match found **0 of 12** triples on a test paper; `_norm()` finds **12 of 12**, 97.7%
+   corpus-wide.
+3. **C2/C5 sampling is STRATIFIED on "did this paragraph produce any triple", then reweighted.**
+   Sparse extractors yield nothing from most of the corpus, so a pure random draw wastes the sample
+   (seed 11 drew 0 of 20 for qwen3-235b). `strata.json` records the true shares.
+4. **Predicate definitions are injected from the ontology** (`_schema_for`). Without them the
+   bundles printed `(not recorded)` and C4 collapsed into "does this English relation sound
+   plausible?" — losing the domain/range half of the criterion.
+
+### 27.4 ⭐ A finding that already exists, before any judging
+
+Paragraph coverage — the share of the 567 paragraphs from which a model produced **at least one**
+triple — varies 4x and runs **opposite** to precision:
+
+| model | paragraphs producing >=1 triple | silently skipped |
+|---|---|---|
+| qwen3-235b | 16.4% (93/567) | **84%** |
+| gptoss-120b | 42.9% (243/567) | 57% |
+| gemma4-31b | 51.7% (293/567) | 48% |
+| ministral-14b | 69.1% (392/567) | 31% |
+
+**The precise models are precise partly by declining to extract at all.** C2/C5 exist to price that,
+and this is the strongest reason the new criteria were worth adopting.
+
+### 27.5 ⭐ First judged result (partial): qwen3-235b, 30 of 40 triples
+
+| criterion | score (n=10, batch 1 only via `report`) |
+|---|---|
+| C1 Concept Correctness | 75.0% |
+| C3 Concept Specificity | 60.0% |
+| C4 Relation Correctness | **45.0%** |
+
+**C4 is far weaker than C1, and the split is the point.** The concepts are usually real and present;
+the *typing* is what fails. Three recurring failure modes, all invisible under the old single rubric:
+
+* **Direction reversed** — `(RT-DETR, uses, object detection)` where the sentence says "object
+  detection **using** RT-DETR"; `(time-series data, splitFrom, training set)`;
+  `(University of Washington, affiliatedWith, Joseph Redmon)` (Agent->Organisation is the defined
+  direction); `(dataset, splitFrom, training and testing sets)`.
+* **Domain/range violation** — `(dataset, comprises, video footage)` when `comprises` requires BOTH
+  sides to be processes; `(RT-DETR, employs, IoU-aware query selection)` when `employs` is defined
+  `Organisation -> Person`; `(YOLOv8, cites, Ultralytics)` when `cites` is Paper->Paper.
+* **Role confusion** — `(performance, evaluates, BERT's F1 score)` puts the metric in the object slot.
+
+Contrast `(accuracy, evaluates, 0.974)`, which is exactly the intended shape and scores CORRECT on
+all three.
+
+### 27.6 ⭐ EXACTLY WHERE TO RESUME
+
+**Judging is 3 of 40 batches done.** Everything else is extracted and ready.
+
+| model | triples (C1/C3/C4) | paragraphs (C2/C5) | papers (C6) |
+|---|---|---|---|
+| qwen3-235b | **3/4 done** | 0/4 | 0/2 |
+| gptoss-120b | 0/4 | 0/4 | 0/2 |
+| gemma4-31b | 0/4 | 0/4 | 0/2 |
+| ministral-14b | 0/4 | 0/4 | 0/2 |
+
+**Next action:** judge `ontology_eval/qwen3-235b/ceo/triples/04_batch_04.txt`, then work through the
+remaining models. Bundles for all four models and all three harnesses are **already generated** — no
+regeneration needed unless the sample size changes.
+
+Procedure per batch: `cat` the batch file, judge each item against the rubric printed in batch 01,
+write `replies/reply_<same name>.txt` as one JSON object, then `collect` and `report`.
+
+**The user asked for full sample sizes on every criterion** (not a reduced set), i.e. 40 triples +
+16 paragraphs + 6 papers per model = 160 + 64 + 24 judgements.
+
+### 27.7 Open items beyond the judging
+
+1. **Judged samples for the OLDER runs describe 20 papers, not 22.** `claude-opus-5`, `gemma3-12b`,
+   `qwen3-8b-v2` etc. were sampled before the corpus grew. Redraw before mixing old strict/lenient
+   numbers with new C1-C6 numbers, or state the difference.
+2. **`RESULTS_REPORT.md` is stale** — it documents the 20-paper corpus and the old rubric, and knows
+   nothing about the four new extractors or C1-C6. Regenerate with `build_results_report.py` after
+   the C1-C6 numbers exist, and add a C1-C6 section to the builder.
+3. **The scinex side of the new models is not run** — only CEO. The §26.16 ontology x capability
+   interaction currently rests on qwen3-8b-v2 and qwen3-235b.
+4. **KGE / TF-IDF question still unresolved** (§10 of RESULTS_REPORT) — different corpus, separate
+   decision about whether that track stays in the paper.
+
+### 27.8 Do NOT re-derive these
+
+* **No OpenRouter spend on Claude** (§27.1). Judging is in-session.
+* `--model-slug` must never contain `:` or `/`.
+* **Ollama: `"think": False` is load-bearing.** Without it qwen3 spends the whole `num_predict`
+  budget reasoning and returns **empty content** — 93/515 empty replies cost a 7-hour run in §26.14.
+* **Reasoning models generally**: a budget consumed by reasoning yields empty output that is
+  indistinguishable from "the model found nothing". Check for empty content + populated reasoning
+  before believing a null result. (Hit 3x: gpt-oss at max_tokens=64, qwen3 at 3072.)
+* `claude_corpus_report.py --out` now defaults per model slug; it used to clobber Claude's JSON.
+* Key resolution in `run_api_extract.py` is **endpoint-aware** — a fixed preference order sent the
+  Groq key to OpenRouter and 401'd.
+* Model ids: **Gemma 4 is `google/gemma-4-31b-it` (31B, not 32B)**; Ministral is
+  `mistralai/ministral-14b-2512`.
+
+---
+
+# Hands-Off Notes (earlier sessions) — Model Swap Session
 
 **Date:** 2026-06-09
 **Context:** Switching the KG extraction LLM off Qwen3-32B because the VM's GPU (20GB VRAM) can't run it.
@@ -77,30 +1494,1724 @@ python kg_main.py --paper BERT --extractor fixed --entity-csv Entity_-_BERTv2.cs
 
 ---
 
-## Session 19 — New VM (2× RTX 5090), env rebuild, Gemma3-12B swap-in + full-corpus run (2026-07-17)
+## Session 26 — GPT/Gemini chat route abandoned; two pipeline bugs FIXED and measured; more models via API + a second local family (2026-08-28)
 
-**Context: project moved to a new machine** — 2× RTX 5090 (32GB VRAM each), Ubuntu 24.04, working dir now `/home/dev1/project_scinex`, venv at `~/envsam`. The old 20GB-vGPU constraints (H100-20C notes in Claude.md "GPU notes") no longer apply on this box.
+**User's report:** ChatGPT and Gemini could not produce usable triples through the chat-paste route.
+`chat_upload/gpt/replies/` and `chat_upload/gemini/replies/` are both **empty** — nothing came back.
+**Do not spend more time on the free-chat-UI route.** §25.4d already flagged it as a sanity check
+rather than a paper number (batching changes the experimental condition, and the model version is not
+controllable); it is now also the route that failed in practice. The API route replaces it and is
+strictly better: a pinned model id, one paragraph per call (so it *is* comparable to the qwen3:8b and
+claude-opus-5 runs), and no pasting.
 
-**1. `envsam` venv rebuilt from scratch.** The venv had been renamed from `env1` → `envsam`, which broke pip (scripts' shebangs still pointed at `/home/dev1/env1/bin/python3`). Deleted and recreated; installed everything from `requirement.txt` + `requirements_kg.txt` extras (bs4, pyvis). **Torch note:** the April-2026 nightly pin (`2.12.0.dev*+cu128`) is superseded — stable **torch 2.13.0+cu130 from plain PyPI** now supports RTX 5090 (sm_120) out of the box, verified with GPU matmul on both cards. No special index URL needed anymore. (The old "never use a dev-nightly" lesson from Session 4 still stands — but the fix is now just "use current stable".)
+### 1. ✅ FIXED — `kg_builder._is_valid_entity()` deleted correct triples (§25.4b worklist item 5)
 
-**2. Gemma3-12B (`google/gemma-3-12b-it`) wired into the fixed extractor** (user request: run with 12B).
-- `.env` gained `HF_TOKEN=hf_...` (gated repo; token reused from the KGRAG project). `fixed_extractor.py` loads it via the same dotenv convention as `citation/network.py` and passes `token=` to both `from_pretrained` calls.
-- Qwen3-specific handling (`/no_think` prefix, `enable_thinking=False`) is now **conditional on `"qwen3" in model_name`** — for other families the raw prompt is used, with a fallback that folds the system prompt into the user turn if the chat template rejects a system role.
-- Added a multimodal fallback: if `AutoModelForCausalLM` raises (gemma-3-*-it registers as `Gemma3ForConditionalGeneration`), load via `AutoModelForImageTextToText` + manual tokenize/generate/decode instead of the text-generation pipeline. **In practice NOT hit** — current transformers (5.5.4) loads gemma-3-12b-it fine through `AutoModelForCausalLM` (`_is_multimodal=False`) — but the path is there for other checkpoints.
-- Single-sentence smoke test passed: model loads in ~9s (4-bit NF4, ~8GB), correctly extracts `BERT trainedOn BooksCorpus` / `trainedOn English Wikipedia`.
+The fix from §25.4b is applied. The signature is now
+`_is_valid_entity(text, predicate=None, role="subject")`:
 
-**3. `acl_title_index.json` was corrupt (truncated at exactly 2,883,584 bytes — same size as `output.zip`, likely an interrupted copy). Rebuilt**: `anthology.json.gz` now 404s upstream, XML fallback used → **83,385 entries** (was ~81k). Corrupt original kept at `acl_title_index.json.corrupt.bak`. NB: `acl_index.py` has NO CLI entry point (docs' `--build` flag is stale) — rebuild via `ACLIndex('acl_title_index.json').build(save=True)`.
+* a **measurement value** (`_VALUE_RE` — `88.5`, `0.923`, `14.76 ms`, `97%`, `1.2e-4`) is accepted as
+  the **object** of a **value predicate** (`evaluates`, `achieves`, `reports`) *only*. A bare number is
+  still rejected as a subject, and still rejected as the object of every other predicate — the filter
+  was not loosened generally, which is what makes this safe to apply retroactively.
+* all-caps acronyms (`SF`, `SD`, `F1`) are exempt from the `len < 3` floor.
 
-**4. Gemma3-12B validated end-to-end via `expand_and_validate.py --seed D13-1109 --count 8`** (the Session-18 smoke test, now on real GPU extraction). 7/8 papers fully extracted before we intentionally stopped it (2020.acl-main.101/103/118/130/136/148/185; .194 was mid-flight). **~8.7 min/paper**, avg **71 triples/paper** (vs ~42 for the Qwen3-14B corpus). Triples spot-checked correct; ontology guard correctly rejected invalid relations (`gatheredBy`, `used in`, `attends`).
-- **Merge gotcha discovered:** killing kg_main.py with SIGTERM skips BOTH the periodic save (`--global-save-every 25`) and the `finally` save — in-memory merges are lost. Replayed the merge offline from the saved `triples.json` files (no GPU needed) → `output/global_kg/fixed/gemma-3-12b-it/graph.graphml` (618 nodes, 1,170 edges, 7 papers). **Connectivity report: all 7 attached (20 cites edges + 6 shared-entity neighbors each), zero isolated. Global-KG merge logic confirmed working on real extraction** — the Session-18 "VM smoke test" TODO is done.
+Verified on 11 hand-checked cases (including the negative ones: `(0.923, uses, …)` still rejected,
+`88.5` as a *subject* still rejected).
 
-**5. Full-corpus Gemma3 run IN FLIGHT at session close** in a detached screen session:
-- `screen -r gemma3kg` — running `kg_main.py --all --extractor fixed --ontology ceo --model google/gemma-3-12b-it --skip-existing --max-new-tokens 4096`
-- Log: `~/project_scinex/gemma3_fullrun.log`
-- Corpus is **806 parsed papers** (802 entity-enriched) — much bigger than the 155/315 in older notes. At ~8.7 min/paper ≈ **~4.8 days** to complete.
-- **User goal: ≥2000 papers.** Decision: finish the existing 806 first, THEN fetch ~1200 more via `citation_expand_pipeline.py` (index has 83k candidates) and extract those. Total ≈ 12 days GPU time.
+**Measured, not assumed.** Claude's run stores its raw replies, so it was re-ingested through the
+corrected builder with **no new model calls** — `claude_extract.py ingest` over all 18 papers:
 
-**6. README.md fully rewritten** for GitHub — now covers all three pipeline stages, both extraction models, the persistent global KG, headline results, and the corpus; links to Claude.md/results.md/hands_off.md.
+| | before | after |
+|---|---|---|
+| claude-opus-5 triples | 268 | **279** (+11) |
+| `evaluates` | 1 | **6** |
+| `comprises` | 25 | **28** |
+
+The recovered triples are precisely the ones the bug was built to delete:
+`(precision, evaluates, 0.923)`, `(accuracy, evaluates, 0.974)`, `(IoU, evaluates, 0.612)`,
+`(RMSE, evaluates, 14.76)`, `(PNext, comprises, SF/SD/SP)`, `(the XGB algorithm, comparesAgainst, RF)`.
+
+**⚠ Consequence for the gold set:** `evaluates` sits at 0% strict in the n=240 labels *because the bug
+deleted its correct instances and left only the malformed wordy ones to be judged*. It must be
+**re-judged** before it stays on the "always wrong" list. The other 10 zero-strict predicates are
+unaffected.
+
+**⚠ qwen3:8b's 1,101 triples cannot be recovered this way.** That run went through `kg_main`
+(`run_local.py`), which never stored raw replies — only `triples.json`. Confirmed: the only
+`responses.jsonl` on disk belong to `claude-opus-5` and `llama31-8b`. Its equivalent losses need a
+re-extraction. **The two columns are no longer strictly like-for-like on this axis** — say so when
+reporting.
+
+`(root-mean-square error (RMSE), evaluates, 9.23)` also came back, which is the §25.5
+`_contains_term()` parenthetical-subject fix showing up in output for the first time (worklist item 6,
+previously unmeasured).
+
+### 2. Second local model — llama3.1:8b (Meta), full corpus, IN FLIGHT at session close
+
+Family diversity is the point: qwen3:8b (Alibaba) and claude-opus-5 (Anthropic) are the only two
+extractors so far. `llama3.1:8b` is a third family and needs no key.
+
+```bash
+export PYTHONIOENCODING=utf-8
+python run_api_extract.py --all --provider ollama --model llama3.1:8b        --model-slug llama31-8b --extractor relation --ontology ceo        --max-tokens 3072 --ingest          # log: llama31_extraction.log
+```
+
+Smoke-tested first on 3 paragraphs of ugmo2024 (19 triples emitted, 5 kept) and the smoke directory
+deleted. **Measured rate: ~3 calls/min → ~2.7 h for 486 paragraphs.** Slower than the smoke test
+suggested because llama3.1 is verbose. It resumes (`--resume` is the default): re-running the same
+command picks up from `responses.jsonl` if it is interrupted.
+**Check on it with:** `tail -3 llama31_extraction.log` and
+`wc -l output/*/kg/relation/llama31-8b/responses.jsonl`, then
+`python3 claude_corpus_report.py --model-slug llama31-8b`.
+
+### 3. The API route is now the fast lane — and both keys are free
+
+`run_api_extract.py` was already model-agnostic; three things were added so it can be pointed at a
+new provider in one command.
+
+* **`.env` is now loaded** (stdlib, no python-dotenv). Keys go in `.env`, never on the command line.
+* **Per-provider key resolution** — `_key()` tries `OPENAI_COMPAT_API_KEY`, `GROQ_API_KEY`,
+  `OPENROUTER_API_KEY`, `TOGETHER_API_KEY`, `DEEPSEEK_API_KEY`, then `OPENAI_API_KEY`. So a Groq key
+  and a Gemini key coexist in one file with no shell juggling.
+* **`check_provider.py` (new)** — validates a key *before* committing 486 calls: finds the key, lists
+  the models the key can actually see (**looked up, not guessed — model ids drift**), picks the
+  strongest available, and prints the exact smoke-test + full-corpus + report commands.
+
+```bash
+python3 check_provider.py groq        # or: gemini / openai
+```
+
+Why these two providers: **Groq** hosts `openai/gpt-oss-120b` — a real OpenAI-family model with a
+pinned id, which is the defensible replacement for the ChatGPT run that failed — plus
+`llama-3.3-70b-versatile` and `kimi-k2`. Free tier ~1,000 requests/day, and it is fast enough to do
+the whole corpus in well under an hour. **Google AI Studio** gives the genuine Gemini number.
+486 calls fit inside both free daily allowances.
+
+### 4. Files
+
+* `kg_extraction/kg_builder.py` — `_is_valid_entity()` predicate/role aware; `_VALUE_RE`,
+  `_VALUE_PREDICATES`, `_is_value()` added.
+* `run_api_extract.py` — `_load_dotenv()`, `_key()`, wired into `main()`.
+* `check_provider.py` — **new**, key/model preflight.
+* `.env` — commented placeholders for `GROQ_API_KEY` / `GEMINI_API_KEY`.
+* `output_backup_claude_preingest/` — the 268-triple `triples.json` files, kept so the re-ingest is
+  reversible and the delta is auditable.
+* `llama31_extraction.log` — the in-flight run.
+
+### 5. NOT done / next session
+
+1. **llama3.1:8b run** — confirm it finished (18 papers), then
+   `python3 claude_corpus_report.py --model-slug llama31-8b` and add a column to Table 7.
+2. **Groq + Gemini runs** — `check_provider.py <provider>` then the two commands it prints.
+3. **Re-judge `evaluates`** — its 0% strict was an artefact of the builder bug (§26.1).
+4. **Re-extract qwen3:8b** if its column needs to be like-for-like after the two guard fixes (~2.7 h
+   GPU, and it would supersede every §23–§25 number for that model).
+5. Guard worklist items (a)-(d) from §25.7 are still open: ontology-class-name objects,
+   cross-reference objects, post-parse domain/range check, skip CRediT/Funding sections.
+6. **Judging is still the bottleneck for every model except qwen3:8b.** With three or four extractor
+   families on disk, one judge pass covering all of them (a model in none of those families) is worth
+   more than another extraction run.
+
+
+### 6. ⭐⭐⭐ THE BIG ONE — both extractors judged by ONE judge, and the first κ
+
+The chat-UI judging route was replaced with an API driver and **it worked in minutes, not days.**
+
+**`run_api_judge.py` (new)** drives the existing `judge_paste.py` bundles over HTTP and writes the
+replies where `judge_paste.py collect` already looks, so nothing downstream changed. One deliberate
+improvement over the chat route: a chat conversation carries the JUDGING RULES from its first
+message and drifts as context grows — here the rubric is the **system prompt on every call**, so
+every batch is judged under byte-identical instructions.
+
+```bash
+python3 run_api_judge.py --slug gemini-judge --provider gemini --model gemini-3.6-flash
+python3 judge_paste.py collect --csv gold/claude_sample_for_judge.csv --slug gemini-judge \
+        --out gold/gemini_verdicts.csv
+python3 gold_report.py --labels gold/gemini_verdicts.csv --model claude-opus-5 --bootstrap 2000
+```
+
+**Result — claude-opus-5 relation/CEO, n=100, judged by gemini-3.6-flash:
+weighted strict 89.1% [82.3, 94.5], lenient 97.9%. 86 CORRECT / 13 PARTIAL / 1 INCORRECT.**
+
+Then the confound was closed: the n=240 qwen numbers were judged by **Claude**, so a Claude-vs-qwen
+comparison across them mixed extractor and judge. The same 240 qwen ids were re-judged by
+**gemini-3.6-flash** (verdicts blanked first — `cmd_batches` never emits the verdict column, checked).
+110 of 240 came back before the quota wall (§26.7):
+
+| extractor | ontology | n | weighted strict | lenient |
+|---|---|---|---|---|
+| claude-opus-5 | CEO | 100 | **89.1%** | 97.9% |
+| qwen3:8b | CEO | 58 | 25.6% | 50.4% |
+| qwen3:8b | scinex | 52 | 11.7% | 34.2% |
+
+Same paragraphs, same prompt, same guards, same judge — **only the model differs.** ~3.5x.
+Every predicate at 0% strict for qwen scores >=66% for Claude *or Claude never emits it*:
+`affiliatedWith`, `employs`, `configures`, `publishedIn`, `cites` are **absent** from Claude's output.
+
+**And the by-product is the κ this project has wanted since §19:** Claude and Gemini both labelled
+the same 110 triples, independently. Raw agreement 59.1%, **Cohen's κ 0.342 (3-class)**;
+CORRECT-vs-not agreement 83.6%, **κ 0.480 (binary)**. The confusion matrix says the disagreement is
+almost entirely the PARTIAL boundary — Claude's PARTIAL → Gemini's INCORRECT **25 times**, while
+joint INCORRECT is 44 and Gemini never promoted a Claude-INCORRECT to CORRECT. **That is the
+empirical case for reporting strict AND lenient rather than one number.** It also makes Table 8
+stronger: Gemini is the harsher judge (it scores qwen 13.6% where Claude scored 24.5%) and Claude's
+extraction still earns 89.1% from it.
+
+Files: `gold/gemini_verdicts.csv` (Claude's 100), `gold/gemini_verdicts_qwen.csv` (qwen's 110),
+`gold/claude_labels_240.csv` (Claude's 240 merged, for `agree`), `gold/qwen_sample_for_judge.csv`
+(blank-verdict 240), `gold/report_claude_gemini.json`, `gold/report_qwen_gemini.json`,
+`gold/agreement_claude_gemini.json`.
+
+### 7. ⛔ FREE-TIER LIMITS — measured, do not re-derive
+
+| provider | limit that bites | what it means for a 486-call corpus run |
+|---|---|---|
+| **Gemini** free | **20 requests/day/model** (`GenerateRequestsPerDayPerProjectPerModel-FreeTier`) | Extraction is impossible (486 calls). **Judging is fine** — batch 10-25 triples per call. |
+| **Groq** free | **8,000 tokens/minute** (`on_demand` tier) | Our calls are ~6.2k tokens → ~1 call/min → **~8 h**. Slower than the local GPU. Not viable. |
+
+Both were hit for real, not read off a docs page. The Gemini quota is **per model**, so switching to
+another pinned id (`gemini-3.7-flash`, `gemini-3.5-flash`, ...) grants a fresh 20 — but **do not judge
+one sample with two different models**; judge identity must be constant across a comparison.
+**To finish the remaining 130 qwen labels:** rebuild at a bigger batch size so the whole set fits in
+one model's daily allowance —
+`python3 judge_paste.py batches --csv gold/qwen_sample_for_judge.csv --slug gemini-judge-qwen2 --size 25`
+(10 requests), then `run_api_judge.py --slug gemini-judge-qwen2 --provider gemini --model <fresh id>`.
+Re-judging the Claude 100 with that same fresh id costs 4 more requests and keeps both rows on one judge.
+
+Two API fixes needed along the way, both real:
+* **Groq sits behind Cloudflare and 403s Python's default user agent** (`error code: 1010`).
+  `USER_AGENT` is now sent by all four adapters in `run_api_extract.py` and by `check_provider.py`.
+* **`gemini-2.5-flash` is LISTED to a new key but returns `NOT_FOUND` when called** ("no longer
+  available to new users"). The model list is not a list of usable models — hence the smoke test.
+  `check_provider.py` now prefers pinned `gemini-3.x` ids over the `-latest` aliases (aliases drift,
+  and a paper number must name the exact model that produced it).
+
+### 8. Corpus 18 → 20, by SUBSTITUTION (user's call — state this in the write-up)
+
+`tripplanner2020` and `linkpred2015` are **not obtainable** — both paywalled Springer chapters, and
+**neither is in `bulk-download/`** (checked by title-Jaccard against every file: the 8 bulk-download
+files that match a corpus paper all match at 1.0, and neither missing title matches anything).
+On the user's instruction ("just pick 2 that hasn't been used"), two unused papers **by the same
+group** were substituted from `bulk-download/`:
+
+| new id | title | venue |
+|---|---|---|
+| `aiabstract2025` | Detecting AI-Generated Scientific Abstracts Using Galactica and Graph Neural Networks | ISCON 2025 (IEEE) |
+| `routepred2023` | Route Prediction from GPS Trajectory and Road Data | ICCAE 2023 (IEEE) |
+
+**⚠ The corpus is therefore no longer "the 20 papers on the user's citation list" — it is 18 of them
+plus 2 substitutes.** `papers/manifest.csv` records this: the 2 originals are marked
+`access=unobtainable` with a `note`, and the 2 substitutes carry `SUBSTITUTE for <id>`. Say it plainly
+in the paper's corpus description rather than quietly reporting "20 papers".
+
+Both parsed clean on the first try, titles verified, **and `BERT.pdf` re-checked as a regression
+(44 sections / 7,254 body words, unchanged)**:
+
+| id | sections | body words | headings | enriched entities |
+|---|---|---|---|---|
+| `aiabstract2025` | 9 | 4,160 | Abstract...References, all found | **171** |
+| `routepred2023` | 7 | 2,865 | Abstract...References, all found | 41 |
+
+171 entities for the NLP/GNN paper is at the top of the corpus range — it is a CS paper, so CS-NER
+covers it well, which is the §22.4 CS/non-CS split showing up again.
+
+**⚠ Consistency caveat:** these 2 papers are extracted with the §26.1 builder fix applied, while the
+other 18 qwen papers predate it. The only way to make all 20 consistent is a full qwen re-extraction
+(~3 h GPU). Recommended before the paper's final numbers; noted here so the difference is not
+discovered later as a mystery.
+
+**✅ BOTH MODELS HAVE NOW EXTRACTED BOTH NEW PAPERS — the corpus is complete at 20/20.**
+
+| extractor / model | triples | papers |
+|---|---|---|
+| `relation/qwen3-8b` (CEO) | **1,185** | 20 |
+| `relation_scinex/qwen3-8b` | **1,117** | 20 |
+| `relation/claude-opus-5` (CEO) | **296** | 20 |
+
+New-paper contributions — qwen: `aiabstract2025` 47 CEO / 57 scinex, `routepred2023` 37 / 29
+(4/4 runs ok, 78 requests, **11 truncated = 14.1%** vs 5.2% on the original 18 — denser paragraphs
+hit the 3,072-token output cap more often; settings were left identical to the other 18 on purpose).
+Claude: 12 and 5, **all 17 passing the guards with zero rejections**.
+
+The **25% volume ratio held on 39 paragraphs neither model had seen** (Claude 0.56 triples/paragraph
+vs qwen 2.26). That is worth stating in the paper: the volume gap is a property of the models, not
+an artefact of the original paper selection.
+
+### 9b. Negative results from this session — recorded so they are not re-attempted
+
+* **Free chat-UI extraction (ChatGPT / Gemini web) — ABANDONED.** Bundles were built for both
+  (`chat_upload/{gpt,gemini}/`, 49 files each) and **neither returned usable triples**; both
+  `replies/` folders came back empty. Already weak for two reasons that stand regardless: batching
+  ~12 paragraphs per message is a *different experimental condition* from one-paragraph-per-call,
+  and a free UI can silently switch model version mid-session. **Do not restart this route.**
+* **Free API tiers for extraction — NOT VIABLE (measured).** Groq 8,000 tok/min → ~1 call/min →
+  ~8 h for 525 calls, slower than the laptop GPU. Gemini 20 requests/day/model → impossible.
+  Note the asymmetry: **the same quotas are fine for judging** (10-25 triples batched per call).
+* **`llama3.1:8b` size-matched control — started, stopped by the user after 1 paper.** ~3 calls/min
+  (~2.7 h projected). Partial output deleted, log renamed `llama31_extraction_ABANDONED.log`.
+  Model still installed. **This is the one open methodological gap a reviewer could name** —
+  qwen3:8b and claude-opus-5 differ in both size and family, so "strength" and "identity" are
+  currently confounded in the §26.6 result.
+* **Model-id traps:** `gemini-2.5-flash` is LISTED to a new key but returns `NOT_FOUND` when called;
+  `gemini-3.7-flash` returned `503 UNAVAILABLE` on every retry. `gemini-3.6-flash` worked and became
+  the judge. **A model listing is not a list of usable models — always smoke-test one call.**
+
+### 9c. New artefact: `RESULTS_REPORT.md` (+ `build_results_report.py`)
+
+A single self-contained document for hand-off / slide generation / the paper writer: project
+overview, pipeline, the constraint ladder, both ontologies, both evaluation tracks, results,
+methodology, engineering findings, negative results, limitations, next steps, reproduction commands.
+**It is generated, not written** — `build_results_report.py` reads every per-triple number straight
+from `output/` and `gold/`, so the document cannot drift from the artefacts. Re-run the builder after
+any new result instead of editing the markdown. `README.md` now points at it.
+
+
+### 10. ⭐⭐ SECOND JUDGE — the headline survives an independent cross-check (2026-08-28)
+
+The κ in §26.6 is on *qwen's* triples. Claude's own 89.0% still rested on **one** judge. Closed now.
+
+**Correcting an earlier call of mine:** Groq was written off after its 8,000 tok/min limit made
+*extraction* infeasible (525 calls x ~6.2k tokens). **Judging batches are ~1,400 tokens** — the whole
+100-triple bundle is ~13.7k — so the limit barely touches judging. The `judge_upload/gpt-judge/`
+bundle built for the dead chat route was reusable as-is.
+
+```bash
+python3 run_api_judge.py --slug gpt-judge --provider openai-compat         --base-url https://api.groq.com/openai/v1 --model openai/gpt-oss-120b         --max-tokens 3072 --sleep 40 --retries 5 --backoff 15     # 10 batches, 6.9 min, 0 failures
+python3 judge_paste.py collect --csv gold/claude_sample_for_judge.csv --slug gpt-judge         --out gold/gptoss_verdicts.csv
+```
+
+`--sleep 40` is load-bearing: Groq reserves `input + max_tokens` against the TPM budget, so
+~1.6k + 3072 = ~4.7k per call means roughly one call per minute.
+
+| judge | family | weighted strict | lenient | sampled strict |
+|---|---|---|---|---|
+| `gemini-3.6-flash` | Google | **89.0%** | 97.9% | 86.0% |
+| `openai/gpt-oss-120b` | OpenAI | **82.8%** | 92.6% | 85.0% |
+
+**Two independent judges, near-identical sampled precision (86.0 vs 85.0).** Report the headline as a
+**range, 82.8-89.0% weighted strict**, not a point estimate. Still 3-4x qwen3:8b under one protocol.
+
+**Second κ, and it is much stronger than the first:**
+
+| | Claude's triples (gemini vs gpt-oss) | qwen's triples (claude vs gemini) |
+|---|---|---|
+| raw agreement | **86.0%** | 59.1% |
+| κ (3-class) | **0.457** | 0.342 |
+| binary agreement | **91.0%** | 83.6% |
+| **κ (binary)** | **0.637** (substantial) | 0.480 (moderate) |
+
+81 of 100 called CORRECT by both. **Judges agree far more about good extraction than about bad
+extraction** — a triple that clearly restates its source sentence leaves nothing to disagree about,
+while a loosely-typed one lands in the PARTIAL zone. **Low inter-rater agreement is itself a symptom
+of poor extraction.** Worth reporting as a finding, not just a methodology footnote.
+
+Files: `gold/gptoss_verdicts.csv`, `gold/report_claude_gptoss.json`,
+`gold/agreement_claude_twojudges.json`.
+
+
+### 11. ✅ GUARD WORKLIST CLOSED — three of the four open items implemented and measured
+
+The §25.7 / §26.9 worklist items (a), (b) and (d) are done. All three are **post-parse code**, so
+they apply to every model equally and cannot be prompt-engineered away.
+
+**(a) Ontology class-name guard.** `_schema_class_names()` derives the ontology's CLASS names from
+the schema's own `domain → range` strings (23 for CEO) and any object equal to one is rejected.
+This was the §25.2 "schema placeholder leak", confirmed on two different predicates, so it rejects
+**any** class name rather than patching one relation. Real hits on the corpus:
+`(training set, splitFrom, dataset)`, `(cross-validation, uses, model)`,
+`(APPLICATION SIMULATION, produces, dataset)`.
+
+**(b) Cross-reference guard.** Objects that point into the paper rather than naming a thing.
+Split into two word classes after a false-positive check:
+
+| class | words | rule |
+|---|---|---|
+| pointer words | table, figure/fig, section, appendix, equation/eq | cross-reference **even without a number** |
+| ordinary nouns | algorithm, scheme, listing, chapter, paragraph, step | only when **numbered** |
+
+The boundary is `(?![\w-])`, **not** `\b` — with `\b`, *figure-ground segmentation* and
+*Table-driven parser* were both wrongly rejected. Verified on 19 cases (10 reject / 9 keep).
+Real hits: `(the refined model, evaluatedOn, Figure 4)`, `(XGB algorithm, evaluatedOn, Table 4)`,
+`(dataset, extractedFrom, Section B. DATA PREPROCESSING)`.
+
+**(d) Boilerplate-section skip.** `_is_boilerplate_section()` — author contributions / CRediT /
+declarations / competing interests / funding / data & code availability / ethics / consent /
+supplementary / abbreviations. Kept as a **separate predicate from `_is_garbled_section`** so the two
+reasons for skipping stay distinguishable in the logs, then OR-ed into it so every call site inherits
+it. Why it matters: *"A.P. and R.C. conceived the study"* is grammatically a perfect
+`(Agent, verb, Thing)` sentence, which is why CRediT blocks produced nearly all the `affiliatedWith`
+/ `employs` / `supports` junk. Verified: 9 boilerplate headings skipped, 11 real section headings
+kept.
+
+**Measured against the corpus on disk** (what these guards would have removed):
+
+| extractor / model | triples | would be removed | % |
+|---|---|---|---|
+| `relation/qwen3-8b` | 1,185 | 40 | **3.4%** |
+| `relation_scinex/qwen3-8b` | 1,117 | 32 | **2.9%** |
+| `relation/claude-opus-5` | 296 | 2 | **0.7%** |
+
+**The same asymmetry as everywhere else**: the guards are worth ~5x more to the weak extractor than
+to the strong one. A strong model was already declining these on its own.
+
+⚠ **Every number on disk predates these guards.** They take effect on the next extraction run
+(worklist item 3, the full qwen re-extraction). Item (c) — a general post-parse domain/range type
+check — remains open; it needs a type inference for arbitrary object strings, which is a bigger job
+than the other three and has much less evidence behind it.
+
+⚠ **A tooling note worth remembering:** writing regexes through a bash heredoc silently converted
+`\b` into literal backspace characters (0x08) inside the source file. Caught by a behaviour test
+(every cross-reference case returned False), not by the parser — the file still imported fine. When
+patching regex source, write the patch to a file and run it, or verify with a behaviour test rather
+than by reading the diff.
+
+
+### 12. ⭐⭐ COMPLETE SINGLE-JUDGE COMPARISON + a κ interpretation CORRECTED (2026-08-28)
+
+`openai/gpt-oss-120b` judged the **full 240 qwen sample** too (24 batches, 18.2 min, 0 failures, via
+Groq at `--sleep 40`). One judge, both extractors, full samples, identical protocol:
+
+| extractor | ontology | n | weighted strict | lenient |
+|---|---|---|---|---|
+| **claude-opus-5** | CEO | 100 | **82.8%** | 92.6% |
+| qwen3:8b | CEO | 114 | 29.8% | 64.0% |
+| qwen3:8b | scinex | 126 | 18.3% | 40.6% |
+
+**No partial-sample caveat on this row set** — it supersedes the gemini rows (n=58/52, quota-capped)
+as the version to quote. Both judges independently put Claude at ~3x qwen.
+
+#### ⛔ A κ claim from earlier this session is WITHDRAWN
+
+Earlier I wrote that "judges agree far more about good extraction than about bad extraction",
+citing κ 0.342 (on qwen) rising to 0.457 (on Claude). **That compared two different judge PAIRS** —
+claude-vs-gemini against gemini-vs-gpt-oss — so the pair changed at the same time as the extractor.
+It was a confound, not a finding.
+
+| judge pair | on | raw | κ (3-class) | binary | κ (binary) |
+|---|---|---|---|---|---|
+| claude vs gemini | qwen's 110 | 59.1% | 0.342 | 83.6% | 0.480 |
+| **gemini vs gpt-oss** | **qwen's 110** | **75.5%** | **0.552** | 91.8% | 0.662 |
+| **gemini vs gpt-oss** | **claude's 100** | **86.0%** | **0.457** | 91.0% | 0.637 |
+
+Holding the pair constant, the correct reading is:
+
+1. **Raw agreement IS higher on the good extraction** (86.0% vs 75.5%).
+2. **But κ is LOWER there** (0.457 vs 0.552) — the **kappa paradox**. Claude's triples are
+   overwhelmingly CORRECT (81/100 joint-CORRECT), so the marginals are skewed, chance agreement is
+   high, and κ is penalised even as raw agreement rises. **κ is not comparable across samples with
+   different class balance.** Always report it with the raw agreement and the confusion matrix.
+3. **Claude was the outlier labeller, not Gemini.** It gave qwen's triples 24.5% precision where
+   gemini gave 13.6% and gpt-oss 14.5%; the two non-Claude judges agree with each other (0.552) far
+   more than either agrees with Claude (0.342). **Prefer the gemini/gpt-oss figures**, and treat the
+   n=240 Claude-labelled gold set as the lenient end of the range.
+
+Files: `gold/gptoss_verdicts_qwen.csv`, `gold/report_qwen_gptoss.json`,
+`gold/agreement_qwen_twojudges.json`.
+
+
+### 13. ⭐⭐⭐ THE CAPABILITY CURVE — four extractors, one judge (2026-08-28)
+
+The professor supplied an **OpenRouter** key ($3 credit, paid tier). OpenRouter proxies ~419
+models behind one OpenAI-compatible endpoint, so `run_api_extract.py --provider openai-compat
+--base-url https://openrouter.ai/api/v1` drives it with **no new code**. Two full corpus runs cost
+**$0.34 of $3** — the whole budget is ~10-30 corpus runs.
+
+Judged by `openai/gpt-oss-120b` (OpenAI family) — chosen because it is the **only** judge
+family-independent of all four extractors, and gemma disqualifies gemini (both Google).
+Via OpenRouter it needs no `--sleep`: 100 triples judged in ~6 min, ~$0.001.
+
+| extractor | family | scale | triples | /para | n | **strict** | lenient | junk share |
+|---|---|---|---|---|---|---|---|---|
+| gemma-3-12b | Google | 12B dense | 1,789 | 3.47 | 100 | **29.2%** | 52.1% | 20.1% |
+| qwen3:8b | Alibaba | 8B dense | 1,185 | 2.26 | 114 | **29.8%** | 64.0% | 12.7% |
+| qwen3-235b | Alibaba | 235B MoE | 393 | 0.76 | 100 | **48.8%** | 60.9% | 6.4% |
+| claude-opus-5 | Anthropic | frontier | 296 | 0.56 | 100 | **82.8%** | 92.6% | 0.7% |
+
+**1. Precision and volume are inversely ordered, without exception.** Rank by strict precision and
+you have also ranked, in reverse, triples per paragraph (3.47 → 0.56) and junk-predicate share
+(20.1% → 0.7%).
+
+**2. ✅ THE CONFOUND IS CLOSED.** qwen3:8b vs qwen3-235b holds vendor, lineage and tokenizer fixed
+and varies only scale (~29x total params; 8B dense vs 235B MoE / 22B active): strict **29.8% →
+48.8%**, volume **2.26 → 0.76**, junk **12.7% → 6.4%**. Until now the headline compared an 8B
+Alibaba model against a frontier Anthropic one, so strength and vendor moved together. They no
+longer do. **This was listed as the one open methodological gap in §26.9b — it is now closed.**
+
+**3. ⛔ BUT PARAMETER COUNT DOES NOT TRANSFER ACROSS FAMILIES.** gemma-3-12b is 50% larger than
+qwen3:8b and is **not better** (29.2% vs 29.8% strict), while emitting the most triples of any model
+tested and carrying the largest junk share. **So the axis is capability, not parameters** — and
+gemma is the negative control that licenses saying so. Do not write "bigger model → better
+extraction"; write "more capable extractor → fewer, better-typed triples".
+
+⚠ **Asymmetry to disclose:** `qwen3-235b` and `gemma-3-12b` were prompted *after* the
+boilerplate-section guard (§26.11) landed, so they saw **515** paragraphs where the older runs saw
+**525**. Verified by diffing the rendered prompts: the 10 missing ones are exactly the
+Author-contributions / Declarations / Funding / Data-availability sections. This is also the guard's
+**live validation on real data** — it removed precisely what it was designed to remove. It mildly
+*helps* the two newer models, so state it.
+
+**Two bugs found and fixed doing this:**
+* **Key resolution was order-based, not endpoint-based.** With several provider keys in `.env`,
+  `_openai()` walked a fixed preference list and sent the **Groq key to OpenRouter** →
+  `401 Missing Authentication header`. Now `_HOST_KEYS` maps a base-URL fragment to its env var.
+* **`claude_corpus_report.py --out` defaults to `output/claude_relation_corpus.json`** regardless of
+  `--model-slug`, so running it for a new model **clobbers Claude's corpus JSON**. Always pass
+  `--out`. Per-model files now exist for claude-opus-5, qwen3-235b and gemma3-12b.
+
+**Also worth remembering:** `gpt-oss-120b` spends completion tokens on internal reasoning *before*
+content. At `max_tokens=64` a test returned `content: None` — a too-small budget yields **empty
+verdicts that look like a model finding nothing**. Judge at `--max-tokens 3072`.
+
+Files: `gold/gptoss_verdicts_qwen3-235b.csv`, `gold/gptoss_verdicts_gemma3-12b.csv`,
+`gold/report_qwen3-235b_gptoss.json`, `gold/report_gemma3-12b_gptoss.json`,
+`output/{qwen3-235b,gemma3-12b}_relation_corpus.json`.
+
+
+### 14. ⭐⭐ PIPELINE ENGINEERING MEASURED ON ONE MODEL — +8.3 pts strict (2026-09-02)
+
+`qwen3-8b-v2` re-runs the identical local Ollama build over the identical paragraphs. **Only the
+code changed**: the three post-parse guards (§26.11) plus the two bug fixes (§26.1, §25.5).
+
+| | pre-fix | +guards & fixes | change |
+|---|---|---|---|
+| weighted strict | 29.8% | **38.1%** | **+8.3 pts (+28% rel.)** |
+| weighted lenient | 64.0% | 66.1% | +2.1 pts |
+| triples | 1,185 | **1,357** | **+14.5%** |
+| junk-predicate share | 12.7% | 11.5% | −1.2 pts |
+
+**Precision and volume rose together — not a precision/recall trade.** Per-predicate movement matches
+each fix one for one: `evaluates` 13 → **48** (+269%, the numeric-object bug), `comparesAgainst` +53%,
+`comprises` +50%, `achieves` +25%; against `affiliatedWith` 29 → **13** (−55%) and `employs` −38%
+(boilerplate-section guard), `evaluatedOn` −27% (cross-reference guard). Nothing else moved materially.
+
+**The paper now has two independent levers, and they are additive:** model choice 29.8% → 82.8%,
+pipeline engineering 29.8% → 38.1% on a fixed model.
+
+### ⛔ THE 7-HOUR MISTAKE — a third instance of one failure class
+
+The first `qwen3-8b-v2` attempt ran 428 min and produced 495 triples. It nearly went into the report
+as "the guards removed 58% of triples". It was wrong, and the tell was that the guards had rejected
+**zero**.
+
+**93 of 515 replies (18%) came back completely empty** — median length 0 chars, every one inside an
+unclosed `<think>`. Ollama returns reasoning in a **separate `thinking` field**; `run_api_extract`'s
+adapter read only `content`. qwen3 spent the whole 3,072-token budget reasoning and returned nothing.
+`kg_extraction/ollama_backend.py:91` had always set `"think": False`; the API adapter never did — so
+the run was a **different experimental condition**, not a corrected version.
+
+Fixed: `_ollama()` sends `"think": False`, and `_ollama_text()` falls back to the `thinking` field if
+a build ignores the flag. Re-run: **0 empty replies, 6.0% non-JSON (vs 5.2% originally), 163 min
+instead of 428** — most of the first run was generating reasoning that was then discarded.
+
+> **⚠ GENERALISE THIS — it has now bitten three times.** A reasoning model separates reasoning from
+> content, and **a token budget consumed by reasoning yields empty output that is indistinguishable
+> from "the model found nothing"**. Seen with `gpt-oss-120b` at `max_tokens=64` (content `None`) and
+> with `qwen3:8b` at 3,072 (93 empty replies). **Whenever a model "finds nothing", check for an empty
+> content field with a populated reasoning field BEFORE believing the result.**
+
+The invalid log is kept as `extract_qwen8b_v2_INVALID_thinking_on.log`.
+
+
+### 16. ⭐⭐⭐ ONTOLOGY x CAPABILITY — THE RANKING REVERSES (2026-09-03)
+
+Research question 2 finally has a real answer, and it is not the one on record.
+
+**The earlier conclusion was "CEO vs scinex is a tie"** (§25.1: corpus-weighted 34.7% vs 39.6%,
+difference −4.9 pts, 95% CI [−22.5, +13.9]). **Every measurement behind it was taken on qwen3:8b** —
+the weakest extractor in the study. Running both ontologies at two capability levels shows the tie
+was an artefact of the measurement model.
+
+All four cells: same paragraphs, same guards, same code version, same judge (`openai/gpt-oss-120b`),
+**n=100 each**.
+
+| | CEO | scinex | scinex − CEO |
+|---|---|---|---|
+| **qwen3:8b (8B)** | 38.1% | **12.1%** | **−26.0 pts** → CEO wins |
+| **qwen3-235b (235B MoE)** | 48.8% | **54.7%** | **+5.9 pts** → **scinex wins** |
+
+**Interaction: +31.9 points. The ranking inverts, it does not merely narrow.**
+
+Volume moves the same way, so this is not precision bought with recall:
+
+| | CEO | scinex | ratio |
+|---|---|---|---|
+| qwen3:8b | 1,357 | 1,280 | **0.94x** |
+| qwen3-235b | 393 | 582 | **1.48x** |
+
+At 235B scinex wins on **both** axes — higher precision *and* ~48% more triples. The 0.94x ratio at
+8B reproduces exactly across the guards change (pre-guards 1,117/1,185 = 0.94), so the volume effect
+is a property of the model×ontology pairing, not of the code version.
+
+**Mechanism:** scinex is the richer schema (27 relations vs 22, tighter domain/range). Extra
+structure only helps a model that can satisfy it — for a weak extractor it is more surface area to
+get wrong (scinex is qwen3:8b's *worst* configuration of anything tested); for a capable one the
+tighter typing becomes an asset.
+
+**This also explains §25.1's instability.** CEO beat scinex in gold round 1 and scinex beat CEO in a
+disjoint round 2. Both were measured on qwen3:8b, where the schema is not the binding constraint —
+so the comparison was noise-dominated and flipped between draws.
+
+⚠ **What to claim.** The **sign** is robust: it holds pre-guards (−11.5 pts at 8B) and post-guards
+(−26.0). The **magnitude at 8B moves with the sample**, so report the direction and the interaction,
+not the 8B gap to a decimal. Sanity-checked rather than assumed: the 8B scinex verdict mix is
+15 CORRECT / 28 PARTIAL / 57 INCORRECT, and an independent judge on a different sample gave a
+comparable 11.5%.
+
+**Cost: $0.16** (the 235B scinex run via OpenRouter). The 8B half ran locally, free.
+
+### 16b. ⛔ Guard gap found by reading the errors — cross-reference SUBJECTS
+
+An INCORRECT example in the 8B scinex sample was `(Section 3, reports, ...)`. The §26.11
+cross-reference guard only checked **objects**. Measured across the whole corpus:
+
+| model | cross-ref subjects |
+|---|---|
+| gemma-3-12b | 15 / 1,789 (0.84%) |
+| qwen3:8b | 11 / 1,357 (0.81%) |
+| qwen3-235b | 1 / 393 (0.25%) |
+| claude-opus-5 | 0 |
+
+Small, but concentrated in exactly the weaker extractors — the same pattern as every other defect.
+`_looks_like_cross_reference()` is now applied to `canonical_subj` as well as `obj`. Verified:
+`Section 5` rejected; `Table-driven parser` and `sectional analysis` still kept.
+
+### 17. Not done / next
+
+1. **Finish the 130 remaining qwen judge labels** — recipe in §26.7. Then Table 8's qwen row is final.
+2. **Judge the 2 new papers** once qwen and Claude have both extracted them.
+3. **Full qwen re-extraction** of all 20 papers with the §26.1 + §25.5 fixes, so every number is on
+   one code version (and it would let `evaluates` be re-judged fairly).
+4. Guard worklist (a)-(d) from §25.7 — still open, and Table 8 says they matter much less for a
+   strong model than for a weak one.
+5. `llama3.1:8b` was pulled and its corpus run **killed at the user's request** after 1 paper.
+   The partial output directory was **deleted** and the log renamed
+   `llama31_extraction_ABANDONED.log`, so nothing on disk can be mistaken for a real run. The model
+   is still in Ollama if the size-matched control (an 8B from a different family, to separate "model
+   strength" from "model identity" in the Table 8 gap) is ever wanted — ~2.7 h, no key needed.
+
+
+---
+
+## Session 25 — Gold set 80 → 240; the CEO-beats-scinex headline does NOT replicate; Claude run as the extractor over the FULL corpus; replication tooling for any model; three real bugs (2026-08-27 → 2026-08-28)
+
+Two asks from the user: (1) keep judging — extend the gold labels, (2) find out whether Claude can
+*produce* triples the same way the local model does, using the same prompt and constraints. Both done.
+
+### 1. ⭐⭐ HEADLINE CORRECTION — Session 24's "CEO beats scinex" is WITHDRAWN
+
+A second, **disjoint** gold sample of **160** triples was drawn (`gold_eval.py export --n 300 --seed 7`,
+then the 37 ids already labelled in round 1 removed, then round-robin over extractor × predicate down
+to 160) and labelled by Claude under the same rubric → `gold/sample_round2_claude.csv`.
+Combined gold set is now **240 labels** (54 CORRECT / 75 PARTIAL / 111 INCORRECT).
+
+| gold set | CEO weighted strict | scinex weighted strict |
+|---|---|---|
+| round 1 (n=80) | **46.2%** | 34.4% |
+| round 2 (n=160, disjoint) | 28.9% | **41.7%** |
+| **combined (n=240)** | **34.7%** | **39.6%** |
+
+Bootstrap (2,000 resamples within predicate buckets, corpus weights fixed):
+CEO **34.8% [21.7, 48.8]**, scinex **39.7% [27.4, 51.9]**, difference (CEO − scinex)
+**−4.9 pts, 95% CI [−22.5, +13.9]**, `P(CEO > scinex) = 0.30`.
+
+**The advantage reversed sign on a disjoint draw and the combined interval straddles zero.** At this
+sample size the two ontologies are indistinguishable on per-triple precision. Do not put "CEO beats
+scinex" in the paper.
+
+**Why round 1 looked decisive, mechanically:** CEO's weighted number is dominated by `addresses`
+(26.1% of the corpus) and `uses` (24.9%) — half the corpus mass estimated from ~8 labels in round 1.
+Both cells fell in round 2 (`addresses` 2/6, `uses` 2/6 combined) and dragged the weighted figure
+down with them. The Session-24 note warned that per-predicate cells rested on ~4 samples; this is
+that warning coming true, which is worth stating plainly in the write-up rather than burying.
+
+**What DOES survive:** CEO keeps a consistent **lenient** edge (66.8% vs 59.9% weighted). CEO's
+errors are more often "on topic, loosely typed"; scinex's are more often flatly wrong. Also unchanged:
+the KGE/citation-prediction ontology tie — different axis, untouched.
+
+### 2. Per-predicate findings that are stable across both rounds
+
+Only these are worth acting on; single-round cells are noise.
+
+- **Genuinely good:** `achieves` (CEO 6/6, scinex 4/6) — the metric/outcome backbone of the graph.
+  `comprises` under scinex 5/6, `comparesAgainst` CEO 4/6.
+- **Zero in both rounds AND both ontologies:** `employs`, `evaluates`, `configures`, `evaluatedOn`,
+  `trainedOn`, `cites`, `affiliatedWith`, `supports`. These are systematic, not sampling.
+- `trainedOn` is the benign failure — nearly all PARTIAL, object is a generic phrase
+  ("dataset of car images") instead of a named corpus.
+- **The schema placeholder leak RECURRED**: `(Merck, affiliatedWith, Organisation)` and
+  `(FMC Corporation, affiliatedWith, Organisation)` — the literal ontology class name as an object
+  value, now confirmed on a second predicate. The fix must reject **any** object matching an ontology
+  class name; patching `mentions` alone would have missed these.
+- **New error class — cross-reference objects** (6/240): `extractedFrom → "Section II DATA
+  PREPARATION"`, `evaluatedOn → "Table III"`, `evaluatedOn → "ASSE 2025"` (a running header).
+  Prompt rule 5 already forbids section titles as objects; nothing enforces it post-parse.
+
+### 3. New tooling: `gold_report.py`
+
+Session 24's weighting was ad hoc in-session. It is now a script, and it **reproduces the round-1
+numbers exactly** (46.2 / 34.4), so the method is confirmed rather than re-derived:
+
+```bash
+python3 gold_report.py --labels gold/sample_claude.csv gold/sample_round2_claude.csv \
+        --bootstrap 2000 --out gold/report_combined.json
+```
+
+Prints sampled + corpus-weighted precision per extractor, per-predicate and per-paper tables, and a
+bootstrap CI on both the weighted figures and their difference. Accepts any filled label CSV, so a
+second labeller (or a local judge) drops straight in.
+
+Per-paper spread (pooled, n=240) is wide: osmotic2026 / ugmo2024 50% strict down to
+trafficspeed2021 / textaug2023 / microwave2018 / reststop2018 at 0%. **Do not read anything into
+this.** Checked against parse quality and it does NOT track it — the 0% papers have ordinary body
+lengths (2,472 / 2,476 / 3,114 / 3,868 words) and ordinary yields (45–80 triples). What they have in
+common is 4–9 gold labels each, so 0% is what a handful of unlucky draws looks like. Per-paper
+precision needs its own stratification before it means anything.
+
+### 4. ⭐ Claude run as the extraction backend — `claude_extract.py`
+
+The question was whether Claude can produce triples "like this model using the same things". It can,
+and the way it was wired matters: **`claude_extract.py` splits the extractor at the model boundary**
+instead of reimplementing it.
+
+- `prompts` — walks the paper exactly as `kg_main` does (parse_html → split_into_sentences →
+  `_sentences_to_paragraphs` → `_is_garbled_section` skip) and writes the **real** system prompt
+  (`_make_fixed_system_prompt`, 11,908 chars) plus one user prompt per paragraph to `prompts.jsonl`.
+- `ingest` — takes the replies back as `{"para_id", "raw"}` JSONL and runs them through the **same**
+  `_parse_fixed_output()` guards and the **same** `KnowledgeGraphBuilder.save()`.
+
+So prompt, ontology, guards, dedup and output format are shared code, not copies — the only variable
+is the model. Works for `--extractor relation|fixed` × `--ontology ceo|scinex`.
+
+**FULL CORPUS RUN COMPLETE — all 18 papers, 486 paragraphs, CEO ontology, relation mode.**
+284 triples emitted → **268 stored** (16 lost to guards + the graph-builder entity filter).
+qwen3:8b produced **1,101** on the identical input.
+
+| | qwen3:8b | claude-opus-5 |
+|---|---|---|
+| triples stored | **1,101** | **268** (24%) |
+| distinct predicates | 21 | 14 |
+| triples per paragraph | 2.27 | 0.55 |
+
+**The missing volume is concentrated in the predicates that are always wrong.** Share of each
+model's corpus held by the 11 predicates scoring **0% strict** in the n=240 gold set:
+**qwen3:8b 22.7% vs claude-opus-5 6.0%** (16 of 268). Per predicate, qwen → Claude counts:
+`affiliatedWith` 29→**0**, `employs` 26→**0**, `publishedIn` 8→**0**, `configures` 8→**0**,
+`cites` 4→**0**, `reports` 2→**0**, `motivates` 1→**0**, `trainedOn` 54→**1**, `evaluates` 12→**1**.
+The two predicates scoring ≥50% strict (`achieves`, `comparesAgainst`) go the other way:
+**16.9% of qwen's corpus → 29.5% of Claude's.**
+
+Concretely: the CRediT author-contribution blocks, the Funding paragraph and the running-header
+lines that generated `affiliatedWith`/`supports`/`locatedIn` junk all return `{"triples": []}` —
+the §24.3 "skip these sections" fix turns out to be something a stronger model does on its own.
+
+Rebuild the table any time with `python3 claude_corpus_report.py`; corpus JSON at
+`output/claude_relation_corpus.json`.
+
+### 4b. ⛔ A SECOND pipeline bug, found by running the full corpus: `evaluates` cannot ever be correct
+
+`kg_builder._is_valid_entity()` requires every node to match `[a-zA-Z]{2,}`, so a **bare numeric
+object is deleted after the guards pass**. The prompt defines `evaluates` as
+`EvaluationMetric → ExperimentalResult` and its own GOOD example is `(<Metric>, evaluates, 88.5)`.
+The pipeline therefore **demands a value it then throws away**. Measured on this run:
+`(precision, evaluates, 0.923)`, `(accuracy, evaluates, 0.974)`, `(IoU, evaluates, 0.612)`,
+`(RMSE, evaluates, 14.76)`, `(root-mean-square error, evaluates, 9.23)` were all produced and all
+silently dropped — only the malformed wordy ones survive to be judged, which is exactly why
+`evaluates` sits at **0% strict** in §25.2. The same filter's `len < 3` rule deleted
+`(PNext, comprises, SF)` / `SD` / `SP` in reststop2018.
+**Fix: permit numeric objects for `evaluates`/`achieves`, and exempt all-caps acronyms from the
+length floor.** NOT applied — it changes graph content and every number on disk predates it.
+
+> **⚠ These triples are NOT judged, and Claude must not judge them.** Extractor and judge have to be
+> different models or the evaluation is self-scoring. Use `run_local_judge.py` (qwen2.5) or a human
+> pass on `output/videoseg2025/kg/relation/claude-opus-5/triples.json`. The existing 240 gold labels
+> are unaffected — they cover qwen3:8b triples only.
+
+### 4c. Replicating the run with ANY model — `run_api_extract.py` (2026-08-28)
+
+The prompt/response protocol was already model-agnostic; what was missing was the driver.
+`run_api_extract.py` fills it, so the same experiment can be repeated across models and the results
+land side by side under different `--model-slug` directories.
+
+```
+claude_extract.py prompts  →  run_api_extract.py  →  claude_extract.py ingest
+   (renders the real prompt)   (calls any model)      (same guards + KG builder)
+```
+
+Providers: `anthropic`, `openai`, `openai-compat` (OpenRouter / Together / DeepSeek / vLLM /
+LM Studio via `--base-url`), `gemini`, `ollama`. **Standard library only** — nothing to install.
+Keys come from `ANTHROPIC_API_KEY` / `OPENAI_API_KEY` / `GEMINI_API_KEY`; Ollama needs none.
+Flags that matter: `--resume` (default), `--limit N` (smoke test), `--sleep` (rate limits),
+`--ingest` (chain the ingest), `--all`, `--retries`. Temperature is pinned to 0; a 400 that
+complains about `temperature`/`max_tokens` is retried with the offending field removed, so
+reasoning-tier models work without special-casing.
+
+One full corpus run = **486 calls**, ~2,977-token system prompt each, ~159k tokens of paragraphs,
+~24k tokens out. That is **~1.6M input tokens uncached**, or **~162k + 486 cache reads** if the
+provider supports prompt caching — the system prompt is byte-identical on every call, so caching
+it is the single biggest lever.
+
+**Verified end to end** on 2026-08-28 by driving qwen3:8b through the HTTP path
+(`--provider ollama --model qwen3:8b --model-slug qwen3-8b-api --limit 2`): prompts rendered,
+2 calls answered in 2.8 min, ingest produced 1 triple. The smoke-test directory was **deleted
+afterwards** — a partial extraction left on disk is exactly the kind of thing that gets mistaken
+for a real run later.
+
+**⛔ Bug this exposed and fixed:** `cmd_ingest` computed its "rejected by the guards" tally with a
+bare `json.loads(raw)`, which crashed the whole ingest on any reply that is not clean JSON —
+markdown fences, a `<think>` block, a truncated string. Claude's replies were always clean so it
+never fired; qwen3:8b's first reply killed it immediately. Now wrapped, with a
+`N replies were not plain JSON … / N yielded nothing` line so a badly-behaved model is visible
+rather than silent. `_parse_fixed_output` already handled all three cases.
+
+Also fixed: `--model-slug` now flows into the extractor object, so the log says the model actually
+being run instead of always `claude-opus-5`.
+
+### 4d. Free chat UIs (ChatGPT / Gemini / Claude.ai) — `chat_paste_extract.py` (2026-08-28)
+
+No API key needed. **Batching is what makes it viable:** in a chat UI the ~3k-token system prompt is
+pasted ONCE per conversation and applies to every later message, so the marginal cost per paragraph
+is the paragraph itself (~330 tokens). The binding constraint on a free tier is the number of
+MESSAGES, not tokens.
+
+- `batches` writes `output/<paper>/kg/<extractor>/<slug>/chat_batches/batch_NN.txt`
+  (batch_01 carries the SYSTEM RULES block; `--repeat-system` puts them in every file).
+- `collect` reads `reply_NN.txt` back and writes `responses.jsonl` → normal `claude_extract.py ingest`.
+
+**Whole corpus at `--size 12`: 49 messages, ~196k tokens of pasting, ~4k tokens per message.**
+Per paper: 1 (ugmo2024) to 5 (csysguard2024, strabismus2026). Suggested cadence: a fresh
+conversation every ~4 batches (~23k tokens of accumulated context) so quality does not drift.
+Ready-made batches for all 18 papers are on disk under the `gpt5-chat` slug; regenerate for any
+other model with one command.
+
+`collect` is written for what chat UIs actually return: markdown fences, a chatty preamble and
+sign-off, and truncation are all tolerated (a regex salvages whole `{"para_id": …}` objects from a
+broken tail). It reports exactly which para_ids are missing and merges re-pasted batches, so an
+interrupted session is resumable. **Verified end to end** with a simulated fenced + chatty reply:
+3/11 paragraphs collected, missing ids listed, ingest produced 2 triples through the normal guards.
+
+**⚠ Two caveats — state both if any chat-UI number is reported.**
+1. **Batching is a different experimental condition.** The API/local runs send one paragraph per
+   call; here the model sees ~12 at once and can carry context between them. Not a reproduction of
+   the qwen3:8b / claude-opus-5 runs. `--size 1` restores strict comparability but costs 486
+   messages, which no free tier will allow.
+2. **You do not control the model version in a free UI.** It can silently fall back to a smaller
+   model when limits are hit, mid-session. Fine for a cheap sanity check; **not** a defensible
+   number for the paper. For that, use `run_api_extract.py` with a pinned model id.
+
+### 4e. Getting Claude's triples judged by another model — `judge_paste.py` (2026-08-28)
+
+Claude extracted them, so Claude cannot judge them. `judge_paste.py` packages a gold sample for a
+chat-UI judge and reads the verdicts back into the CSV format `gold_report.py` and
+`gold_eval.py agree` already consume.
+
+```
+gold_eval.py export → judge_paste.py batches → (paste) → judge_paste.py collect → gold_report.py
+```
+
+Sample: `gold_eval.py export --extractor relation --model claude-opus-5 --n 100 --seed 11`
+→ `gold/claude_sample_for_judge.csv`, stratified over all 14 predicates Claude used.
+Bundles built for two judges: `judge_upload/gpt-judge/` and `judge_upload/gemini-judge/` —
+**10 files, 100 triples, ~13.7k tokens of pasting each.** Each batch shows the triple, the
+predicate's ontology definition and the source sentence; batch 01 carries the JUDGING RULES
+(the same CORRECT/PARTIAL/INCORRECT rubric used for the n=240 gold set, plus the tie-breakers
+that decide most hard cases).
+
+`collect` tolerates fences/preamble/truncation, reports missing triple_ids, and merges re-pastes.
+**Verified end to end** with a simulated chatty reply: 2/100 collected, 98 listed as missing,
+`gold_report.py --labels … --model claude-opus-5` read the result. Test artifacts deleted.
+
+Once both judges return, `gold_eval.py agree --gold gold/gpt_verdicts.csv --b gold/gemini_verdicts.csv`
+gives the **first κ this project has ever had** — two independent labellers on the same ids.
+
+### Rules for a replication run
+
+1. `--model-slug` must not contain `:` or `/` (Windows path; `qwen3:8b` silently discarded every
+   triple at write time until §23 caught it). The script refuses them.
+2. `--max-tokens` ≥ 3072. At 1024, 34% of local calls truncated, and a truncated JSON yields ZERO
+   triples — which looks identical to a model that found nothing.
+3. Temperature 0, and re-render prompts per slug (deterministic — same 486 paragraphs every time).
+4. **A model must never judge its own extraction.** Extract with one family, judge with another.
+
+### 5. ⛔ REAL BUG FOUND AND FIXED — `_subject_in_sentence()` dropped every parenthetical subject
+
+Found because three of Claude's triples with the subject `Segment Anything Model (SAM2)` were rejected
+even though the string is verbatim in the source sentence.
+
+```python
+# before
+_re.search(r'\b' + _re.escape(canonical.lower()) + r'\b', src_lower)
+```
+
+`\b` asserts a word/non-word transition. A subject ending in `)` is followed by a space in the
+sentence — both non-word — so the trailing `\b` can never match. **Any subject ending in a
+non-word character was silently discarded**, and "Full Name (ABBR)" is the standard way a paper
+introduces a model. Evidence: **2 of 2,132** triples in the whole qwen3-8b corpus have a subject
+ending in `)`.
+
+Fixed with a new `_contains_term()` that applies `(?<!\w)` / `(?!\w)` only on the alphanumeric side.
+Verified: `Segment Anything Model (SAM2)` now matches, `SAM` still does **not** match inside `SAM2`,
+`yolov` still does not match inside `YOLOv8`. This is a **recall** fix — it can only add triples.
+All numbers in `results.md` were produced with the buggy guard; the gain is unmeasured until
+re-extraction.
+
+### 6. Files
+
+- `gold/sample_round2.csv` — the 160-row disjoint sample, blank verdicts (for a second labeller).
+- `gold/sample_round2_claude.csv` — the same 160 rows labelled, with a reason on every non-CORRECT row.
+- `gold/report_combined.json` — the n=240 report (per-extractor, per-predicate, per-paper, bootstrap).
+- `gold_report.py` — new, reproduces every table above.
+- `claude_extract.py` — new, Claude (or any API model) as the extraction backend.
+- `kg_extraction/fixed_extractor.py` — `_contains_term()` added, `_subject_in_sentence()` fixed.
+- `output/videoseg2025/kg/relation/claude-opus-5/` — prompts, responses, triples, graphml.
+
+### 7. NOT done / next session — ⭐ START HERE
+
+**Waiting on Sam (nothing blocks these on my side):**
+
+1. **Two PDFs are still missing** — the corpus is 18/20. Drop them in as
+   `papers/tripplanner2020.pdf` ("A Recommender System for Trip Planners") and
+   `papers/linkpred2015.pdf` ("Link prediction in linked data of interspecies interactions").
+   The filename IS the paper id; a wrong name silently forks the output tree. Then:
+   `main.py <pdf> --no-llm` → check the parsed Title against `papers/manifest.csv` →
+   `claude_extract.py prompts` → extract → `ingest` → `claude_corpus_report.py`.
+   Note when reporting: that makes 20 papers for claude-opus-5 but qwen3:8b stays at 18 (needs GPU).
+2. **GPT / Gemini extraction run** — bundles are built and ready to paste:
+   `chat_upload/gpt/` and `chat_upload/gemini/` (49 files each, files 01–21 = the six priority
+   papers). When the `replies/` folders come back:
+   `chat_paste_extract.py collect --all --model-slug gpt --flat-dir chat_upload/gpt/replies`
+   → `claude_extract.py ingest` per paper → `claude_corpus_report.py --model-slug gpt`.
+   Use the **reasoning/thinking flagship** on both sides, web search OFF, model name recorded in
+   `MODEL_USED.txt`.
+3. **Judging Claude's triples** — bundles ready: `judge_upload/gpt-judge/` and
+   `judge_upload/gemini-judge/` (10 files, 100 triples, sample in
+   `gold/claude_sample_for_judge.csv`). When replies come back:
+   `judge_paste.py collect --csv gold/claude_sample_for_judge.csv --slug gpt-judge
+   --out gold/gpt_verdicts.csv` → `gold_report.py --labels gold/gpt_verdicts.csv
+   --model claude-opus-5`. **Claude must never judge Claude's own extraction.**
+   With BOTH judges back: `gold_eval.py agree --gold gold/gpt_verdicts.csv
+   --b gold/gemini_verdicts.csv` = **the first κ this project has ever had.**
+
+**Code work, unblocked:**
+
+4. **Apply the guard worklist** (four items, one confirmed twice): (a) reject any object equal to an
+   ontology class name; (b) reject section/table/figure/running-header cross-references as objects;
+   (c) post-parse domain/range type check per predicate; (d) skip Author-contributions /
+   Declarations / Funding sections at extraction. §24.3 + §25.2.
+5. **Fix `kg_builder._is_valid_entity()`** — bare numeric objects are deleted after the guards pass,
+   so a correct `(<Metric>, evaluates, 88.5)` can never reach triples.json. That is *the* reason
+   `evaluates` scores 0%. Also exempt all-caps acronyms from the `len < 3` floor. §25.4b.
+6. **Re-extract at least one paper** to size what the `_contains_term()` fix (§25.5) recovers —
+   currently unmeasured.
+
+**Needs the VM (blocked on Sam's laptop):**
+
+7. Run `fixed` extraction for the fixed-vs-relation comparison across the CS/non-CS split.
+8. **Re-run everything with Qwen3-14B.** Every number in §23–§25 is `qwen3:8b` on a laptop and is
+   NOT the paper's figure.
+
+**Do NOT re-derive these (they cost a session each to find):**
+`--model-slug` must never contain `:` or `/` · `--max-tokens` ≥ 3072 (1024 truncated 34% of calls,
+and a truncated JSON yields ZERO triples) · Ollama `num_ctx=8192` · no torch on the laptop
+(Smart App Control) · scipy pinned at 1.17.1 · `nvidia-smi` util% is broken on the vGPU.
+
+---
+
+## Session 24 — Claude judged 80 triples; CEO BEATS scinex once corpus-weighted; guard worklist identified (2026-08-27)
+
+**The user asked Claude (this assistant) to act as the judge** instead of a local model. That is a
+legitimate independent judge — a different model family from the extractor's `qwen3:8b`, which is the
+independence requirement §23 set out. Verdicts are saved as human-equivalent **gold labels** in
+`gold/sample_claude.csv` (80 rows, `verdict` + `note` filled), so any future judge can be scored
+against them with `gold_eval.py agree --gold gold/sample_claude.csv --b <other>.csv`.
+
+Sample: `gold_eval.py export --extractor relation relation_scinex --model qwen3-8b --n 80`
+(seed 42, stratified round-robin over extractor × predicate). Rubric as printed by `export`.
+
+### 1. ⭐⭐ HEADLINE: the ontology comparison INVERTS depending on how you weight it
+
+| ontology | sampled strict | **corpus-weighted strict** | **corpus-weighted lenient** |
+|---|---|---|---|
+| **CEO** (`relation`) | 28.9% | **46.2%** | **86.3%** |
+| **scinex** (`relation_scinex`) | 28.6% | **34.4%** | **65.6%** |
+
+- **On the stratified sample the two are TIED** (28.9% vs 28.6%, n=38/42).
+- **Re-weighted to the actual corpus predicate distribution, CEO wins clearly** — +11.8 points
+  strict, +20.7 lenient. Weighting covers 100% of triples in both ontologies.
+
+**Why, and why this matters.** §23.5 found scinex spreads predicate mass more evenly (top-2 = 38% vs
+CEO's 51%) and I flagged it as *possibly* the first evidence separating the two ontologies — with the
+explicit caveat that **finer-grained is only better if it is correct**. It is not. The relations
+scinex redistributes mass *into* are exactly the ones that score **0% strict**: `configures` (0/4),
+`evaluates` (0/4), `employs` (0/4), `supports` (0/4). CEO concentrates in `addresses`/`uses`/
+`achieves`, which score 50–100%. So scinex's "finer granularity" is largely the model **reaching for
+a specific predicate and getting it wrong**.
+
+> **⚠ Report the weighted numbers, and report the weighting.** A stratified sample deliberately
+> over-represents rare predicates; quoting its raw precision as corpus precision understates both
+> ontologies (28.7% vs a true ~46%/~34%). Conversely, quoting weighted precision without saying it is
+> reweighted hides that per-predicate estimates rest on ~4 samples each. **Both numbers, always, with
+> the method stated.** The wide per-predicate error bars are the main reason a bigger gold set is the
+> top priority.
+
+### 2. Precision by predicate (the guard worklist)
+
+**Perfect / good:** `achieves` 4/4 (100%), `designedFor` 3/4 (75%).
+**Middling (50%):** `addresses`, `comparesAgainst`, `comprises`, `produces`, `splitFrom`, `uses`.
+**ZERO strict-correct** — every one of these needs a guard:
+
+| predicate | n | C | P | I | the failure |
+|---|---|---|---|---|---|
+| `employs` | 4 | 0 | 0 | 4 | CEO/scinex define it `Organisation → Person`; the model uses it for *method-uses-method* every single time |
+| `affiliatedWith` | 3 | 0 | 0 | 3 | mined from **CRediT author-contribution statements** — `(Rathachai Chawuthai, affiliatedWith, Formal analysis)` |
+| `configures` | 4 | 0 | 1 | 3 | object is a metric or a value, not an `Experiment`; often direction-inverted |
+| `evaluates` | 4 | 0 | 1 | 3 | self-referential (`root mean square error → RMSE`) or swapped (metric ↔ result) |
+| `supports` | 4 | 0 | 1 | 3 | subject is a tool/process, not an `ExperimentalMeasurement`; frequently inverted |
+| `evaluatedOn` | 4 | 0 | 2 | 2 | object is a metric (`RMSE`) or a figure (`Table II`), not a Dataset |
+| `trainedOn` | 4 | 0 | 4 | 0 | **all PARTIAL** — object is generic ("dataset of car images"), never a named corpus |
+| `publishedIn` | 2 | 0 | 0 | 2 | used for arbitrary noun phrases; never a venue |
+| `cites` | 2 | 0 | 0 | 2 | subject is a method or the cited authors, not the citing paper |
+| `mentions` | 2 | 0 | 0 | 2 | see the placeholder leak below |
+| `encompasses` | 2 | 0 | 0 | 2 | chemistry taxonomy (`Hydrocarbons → alkynes`) mapped onto `ResearchDomain → ResearchTask` |
+
+### 3. Four concrete, fixable failure modes
+
+1. **Domain/range violations dominate.** The single largest error class. `employs`, `affiliatedWith`,
+   `locatedIn`, `publishedIn` are being used as generic verbs whenever their English name sounds
+   right, ignoring the declared types. **Fix: a post-parse type check per predicate**, in the same
+   place as the existing IS-A and direction guards.
+2. **Direction inversions.** `(data, splitFrom, test set)` — backwards. `(road safety, supports,
+   the overall results)` — backwards. `(Errors, evaluates, RMSE)` — backwards. `(ANN, configures,
+   tolerance…)` — backwards. **Fix: extend the existing direction guards to `splitFrom`, `supports`,
+   `evaluates`, `configures`.**
+3. **⛔ SCHEMA PLACEHOLDER LEAK — a real bug.** Two triples have the literal string `AcademicPaper`
+   as their object: `(Kalman filter, mentions, AcademicPaper)`, `(Butterworth low-pass filter,
+   mentions, AcademicPaper)`. The scinex definitions for `mentions`/`extractedFrom` contain a `?`
+   placeholder (`AcademicPaper → ?`), and the model is copying the type name out of the prompt as if
+   it were a value. **Fix: reject any object that exactly matches an ontology class name.** Cheap,
+   and it is unambiguously wrong output.
+4. **Author-contribution sections are being mined.** oxidecrack2025's CRediT statement produced
+   `affiliatedWith` triples. **Fix: skip `Author contributions` / `Declarations` / `Acknowledgements`
+   sections at extraction time** — they contain no research content. This is a `kg_main`/`html_parser`
+   change, not a prompt change, and it will also slightly raise yield-per-useful-paragraph.
+
+### 4. What is genuinely good
+
+23/80 fully correct and 25/80 partial — and the good ones are the ones that matter for a KG:
+
+```
+(Random Forest model, achieves,        accuracy of 0.95)
+(LSTM,                comparesAgainst, ARIMA)
+(Genetic Algorithm,   comprises,       Selection)
+(RT-DETR,             uses,            IoU-aware query selection)
+(test set,            splitFrom,       dataset)
+(CNN model,           designedFor,     vehicle makes classification)
+```
+
+`achieves` at 100% and `designedFor` at 75% mean the metric-outcome and model-purpose backbone of
+the graph is sound. The corpus-weighted **lenient** figure for CEO — **86.3%** — says most triples
+are at least defensibly on-topic; the strict figure (46.2%) says roughly half need the ontology
+conformance work above.
+
+### 5. Files
+
+- **`gold/sample_claude.csv`** — 80 gold labels with per-row reasons. This is the reference set for
+  validating any future judge (`gold_eval.py agree --gold gold/sample_claude.csv --b judge.csv`).
+- Analysis was ad-hoc over `gold/sample_claude.csv` + `output/*/kg/relation*/qwen3-8b/triples.json`;
+  no new scripts were added.
+
+### 6. NOT done / next session
+
+1. **⚠ n=80 is a pilot, not a measurement.** Per-predicate cells hold ~4 samples. Before any of this
+   goes in the paper, extend the gold set to ~150–200 (`gold_eval.py export --n 200 --seed 7` gives a
+   disjoint draw) — especially for the zero-scoring predicates.
+2. **Apply the four §24.3 fixes**, re-extract, re-judge **on the same triple ids** (they are content
+   hashes, so unchanged triples keep their labels and `agree` reports how many dropped out).
+3. **Run `fixed`** (~5.5h local) for the fixed-vs-relation comparison on the CS/non-CS split.
+4. **Re-run everything on the VM with Qwen3-14B.** All of §23–§24 is `qwen3:8b` on a laptop; a
+   stronger extractor may not make these mistakes at all, and the paper's numbers must come from the
+   project-standard model.
+5. Optional and cheap: an API run (`claude-opus-5`, ~$8 with prompt caching + Batch) as a quality
+   ceiling — see §23 discussion. If Claude extracts, Claude must **not** also judge.
+
+---
+
+## Session 23 — Local extraction WORKS via Ollama; three config bugs found and fixed; first triples exist (2026-08-27)
+
+**The laptop can now run the extractors after all** — not through torch (still blocked, see §22.3) but
+through a signed **Ollama** binary. First triples for this corpus now exist on disk.
+
+### 1. The Ollama backend
+
+Windows 11 Smart App Control blocks torch's unsigned DLLs, but Ollama ships signed binaries and
+brings its own runtime, so it installs and runs normally:
+`winget install Ollama.Ollama --source winget` (v0.33.0), then `ollama pull qwen3:8b` (5.2GB).
+
+The extractors reach their model through exactly two attributes —
+`self._tokenizer.apply_chat_template(messages, …)` then `self._pipeline(prompt)` — so shimming those
+two is enough; **the prompt, ontology, guards, kg_builder and output layout are all untouched.**
+
+- **`kg_extraction/ollama_backend.py`** — `_ChatTemplateShim` (identity: Ollama's `/api/chat` wants
+  the message list, and the server applies the model's real template), `_OllamaPipeline` (POSTs to
+  `/api/chat`, `temperature=0` for greedy to match the transformers path, `think:false`), plus
+  `patch_extractors()` and `patch_judge()`. Patches the **class**, since `kg_main`/`kg_evaluate`
+  construct their own instances. Also replaces the `device` property — the real one does
+  `import torch` inside `except ImportError`, which no longer catches anything now that torch raises
+  `OSError`.
+- **`run_local.py`** — drives the ordinary `kg_main` pipeline through that backend.
+- **`run_local_judge.py`** — same for `kg_evaluate`'s `LLMJudge`. Judge model defaults to
+  **`qwen2.5:7b-instruct`**, deliberately a **different family** from the extractor's `qwen3:8b`: a
+  model grading its own output is not an independent check.
+- **`count_triples.py`** — counts per paper/extractor + predicate breakdown.
+
+### 2. ⚠ Three config bugs, all found by measurement. Do not re-derive these.
+
+| # | symptom | root cause | fix |
+|---|---|---|---|
+| 1 | model loaded, GPU 0%, nothing generated, looked like a hang | **Ollama defaults to `num_ctx=4096` regardless of what the model supports.** The relation/fixed system prompt is ~13.6k chars ≈ **3.4k tokens** before the paragraph is added, so the prompt crowded out the answer | set `num_ctx` explicitly |
+| 2 | ~110s per call, `ollama ps` showed `20%/80% CPU/GPU` | overcorrecting to `num_ctx=16384` pushed the footprint to **7.8GB**, past the 8GB VRAM, so Ollama spilled to CPU | **`num_ctx=8192` → 6.2GB, 100% GPU** (measured; 6144 → 5.9GB also fine, 16384 → spill) |
+| 3 | **34% of calls produced 0 triples** | `--max-new-tokens 1024` truncated the JSON mid-object, and a truncated JSON parses to **zero** triples — the whole call is wasted. Each triple echoes its `source_sentence` verbatim, so a triple off an abstract costs **~500 tokens**, not the ~80 a bare triple would | **`--max-new-tokens 3072`** → cap-hit rate 34% → **6%**, yield 0.86 → **2.77 triples/call** |
+
+**And one that would have silently destroyed the whole run:**
+
+> **⛔ `qwen3:8b` contains a colon, which is ILLEGAL in a Windows path.** `kg_main` builds
+> `output/<paper>/kg/<extractor>/<model>/` from the `--model` string, so every triple was extracted
+> correctly and then thrown away with `NotADirectoryError` at write time. A probe run on one small
+> paper reported `rc=1` after producing 31 perfectly good triples and writing nothing.
+> **Fix:** `run_local.py` passes a slug (`qwen3-8b`) to `kg_main` for pathing while the backend keeps
+> the real Ollama name — `kg_main` only uses `--model` for the output path and logging, and the
+> patched `_load` ignores it. Same fix in `run_local_judge.py`.
+> **Lesson: probe one small paper end-to-end before launching a multi-hour batch.** This surfaced in
+> 4 minutes what would otherwise have surfaced after ~6 hours with an empty output tree.
+
+**Throughput after tuning:** ~26–30s per generation, 100% GPU, ~2.8 triples per call.
+Full run = 18 papers × 2 ontologies ≈ 820 generations ≈ **6–7 hours** on the RTX 4060.
+
+### 3. First quality read (strabismus2026, CEO, 131 triples)
+
+**Working — and it validates the whole reason `relation` exists.** Top subjects are `RT-DETR` (27),
+`SMOTE` (8), `Random Forest` (6). **None of those are in that paper's CS-NER entity list**, which held
+only generic ML vocabulary. Free subjects recover exactly what the curated list misses on non-CS
+papers. Good triples look like:
+`(RT-DETR, achieves, intersection over union of 0.62)`,
+`(Random Forest classifier, achieves, accuracy of 0.95)`,
+`(two-stage system, comprises, Real-Time Detection Transformer (RT-DETR))`.
+
+**Three defects already visible — this is the worklist for the guard/prompt round:**
+1. **Subject fragmentation.** `RT-DETR`(27) / `Random Forest model`(8) / `Random Forest`(6) /
+   `Random Forest classifier`(5) are one entity split four ways. `fixed` canonicalises against the
+   CSV; `relation` has **no canonicalisation step at all**. This is the concrete price of free
+   subjects and it matters for anything graph-shaped downstream.
+2. **Vague objects.** The subject must appear literally in the source sentence; **the object has no
+   quality guard**. Hence `(YOLOv8, produces, result)`, `(… designedFor, use case)`,
+   `(YOLOv8, evaluatedOn, Fig 4)` — the last is a domain/range violation the judge should catch.
+3. **Junk subjects on thin papers.** ugmo2024's top subject is `degree conferral` (8 triples), a
+   phrase from the paper, not a research entity.
+
+**Extraction quality tracks parse quality:** strabismus2026 (34 sections, 8k body words) → 131
+triples; ugmo2024 (3 sections, 4 paragraphs) → 19, several junk. Exact duplicates are negligible (1
+per paper).
+
+### 5. ✅ RUN COMPLETE — 36/36, 0 failures, 2,132 triples (2026-08-27)
+
+`run_local.py --all --extractor relation --both-ontologies`, qwen3:8b via Ollama, ~5.5 h,
+~965 generations at ~21s each. **Every one of the 36 runs succeeded.**
+Output: `output/<paper>/kg/relation{,_scinex}/qwen3-8b/triples.json`.
+
+| | CEO (`relation`) | scinex (`relation_scinex`) |
+|---|---|---|
+| triples | **1,101** | **1,031** |
+| distinct predicates | 21 | 24 |
+| **top-2 predicate concentration** | **51%** | **38%** |
+
+> **Count reconciliation:** the log's `[PARSED]` lines sum to 2,351 but the JSON files hold 2,132.
+> `postprocess_triples` did **not** run (no such log line); the gap is **graph-level dedup** —
+> `kg_builder` stores edges, so an identical (S,P,O) emitted from two paragraphs collapses to one.
+> ~219 triples (9.3%) were exact duplicates. The per-run `Triples :` log lines sum to exactly 2,132.
+
+**⭐ THE FINDING: scinex spreads predicate mass far more evenly than CEO.**
+CEO collapses into two relations — `addresses` 26.1% + `uses` 24.9% = **51% of all triples**. Under
+scinex `uses` falls to 8.8% and the mass redistributes into more specific relations:
+`comparesAgainst` 4.2%→**9.1%**, `configures` 0→**6.2%**, `produces` →**4.2%**, `trainedOn`
+4.9%→**6.0%**. Total yield is essentially unchanged (ratio **0.94**), so scinex is not extracting
+*less* — it is extracting the **same volume at finer granularity**. The effect was visible at 3
+papers and held all the way to 18.
+
+**Why this matters:** the KGE/citation-prediction work found CEO and scinex **tied**, and
+`results.md` flagged that citation prediction was too blunt an instrument to separate them. This is
+the first measurement that does. **⚠ But finer-grained is only better if it is CORRECT** — the 64
+`configures` triples where CEO said `uses` could be a better fit or a worse one. **Do not report this
+as a scinex win until the judge has scored both.** That is the single highest-value next step.
+
+**Object quality — my earlier warning (§23.3) was OVERSTATED; corrected here.** Measured over all
+1,101 CEO triples: figure/table-reference objects (`evaluatedOn → Fig 4`) **13 (1.2%)**, generic
+objects (`produces → result`) **4 (0.4%)**, clean remainder **1,084 (98.4%)**. I had generalised
+from two bad examples in ugmo2024, the weakest-parsed paper in the corpus. Combined with subject
+fragmentation measuring only **6.2%** (§23 addendum), the structural defects of relation mode are
+**materially smaller** than the single-paper glance suggested. Free subjects look like a good trade.
+
+**CS vs non-CS (CEO):**
+
+| group | papers | triples | paragraphs | triples/para |
+|---|---|---|---|---|
+| CS | 13 | 748 | 251 | **2.98** |
+| non-CS | 5 | 353 | 159 | **2.22** |
+
+CS papers yield ~34% more per paragraph. **Note this is `relation` mode, where subjects are free** —
+so the gap is genuine information density, *not* entity-list coverage. The coverage question only
+bites in `fixed` mode, which is precisely why the `fixed` run is the informative next experiment.
+
+**Yield tracks parse quality throughout** (triples/paragraph): videoseg2025 8.29, microwave2018 5.80,
+vehiclemake2025 4.80, ugmo2024 4.75 … reststop2018 1.59, llamacorrupt2025 1.09.
+Per-paper CEO/scinex ratios range 0.70 (roadwaylight2018) to 1.67 (llamacorrupt2025).
+
+**NEXT, in this order:**
+1. **Judge** — `python run_local_judge.py --extractor relation relation_scinex --max-per-paper 20`
+   (~700 judgements, ~2h). Needs `ollama pull qwen2.5:7b-instruct` first — a **different family**
+   from the extractor. This converts "scinex uses finer predicates" into "…correctly".
+2. **`gold_eval.py export --n 150`** → human labels → `agree` → **read κ before quoting any judge
+   number**.
+3. **Then `fixed`** (~5.5h) for the fixed-vs-relation comparison across the CS/non-CS split.
+
+
+---
+
+## Session 22 — Corpus 7 → 18 papers, all parsed/enriched/planned; 3 more parser fixes; scipy DLL incident (2026-08-26/27)
+
+### 1. The corpus is now 18 of the user's 20 papers
+
+The user supplied a `bulk-download/` folder of 20 PDFs. **It is NOT the same 20 papers** — only 8
+overlap. Checked the user's own pasted citation list against `papers/manifest.csv`: **all 20 matched,
+0 discrepancies**, so the manifest was and remains authoritative.
+
+- **8 of the 13 previously-unobtainable papers came from `bulk-download/`** (all of them were
+  `oa_blocked` or `paywalled`): vehiclemake2025, csysguard2024, videoseg2025, ugmo2024,
+  eyelandmark2024, textaug2023, trafficspeed2021, microwave2018.
+- **3 more the user downloaded by hand** (found already correctly named inside `bulk-download/`):
+  reststop2018, pesticide2025, llamacorrupt2025.
+- **The other 12 files in `bulk-download/` are different papers by the same group** (Twitter traffic
+  incidents, HDBSCAN congestion, bus-route ASP, GPS-tracker defects, MeddyCall, SrRL, …). The user's
+  list confirms they are **not** part of this corpus — ignored, not imported.
+- **Still missing (2):** `tripplanner2020` (ACIIDS/Springer, `10.1007/978-981-15-3380-8_43`) and
+  `linkpred2015` (JIST/Springer, `10.1007/978-3-319-15615-6_9`).
+- `manifest.csv` `access` column now reads: 7 `oa`, 11 `manual_bulk`, 2 `paywalled`.
+
+**All 18 parsed with `--no-llm` and title-verified against the manifest — 18/18 correct.** Body words
+1,985–9,147; body-capture rate spot-checked against raw PDF text at **77–102%**, so no paper is
+silently losing content. References are *dropped* rather than leaking into body on the low-`ref`
+papers (trafficspeed2021, ugmo2024) — harmless, arguably desirable, for triple extraction.
+
+### 2. Three more parser fixes (all regression-checked on BERT.pdf)
+
+1. **`filter_layout_noise` deleted the first line of a title.** The `b["y"] < 40` header-zone cut is
+   right for pages 2+, but IEEE conference templates set the title at **y≈24 on page 1** —
+   trafficspeed2021 lost *"Spatial-Temporal Traffic Speed Prediction on"* before `extract_title` ever
+   saw it, leaving only *"Thailand Roads"* (2 words → failed `_title_final_ok` → fell back to the
+   length heuristic → picked the author line `'Rathachai Chawuthai *'`). Fix: `top_cut = 0` on page 0,
+   40 elsewhere.
+2. **`extract_title` joined wrapped title lines in the wrong order.** With fix 1 applied, the title
+   came out *"Thailand Roads Spatial-Temporal Traffic Speed Prediction on"* — by the time
+   `extract_title` runs, blocks have been through column clustering, which can interleave a wrapped
+   title. Candidates within 5% of max font size are now sorted by `(y, x)` before joining.
+3. **Publisher furniture at title font size.** `'Measurement Development of machine learning…'` and
+   `'ScienceDirect A Hybrid Method…'` — the Elsevier masthead and the ScienceDirect brand are set at
+   the same size as the title, so the largest-font filter kept them. Added `sciencedirect`,
+   `procedia`, and `measurement\s*$` to `_NON_TITLE_RE` (the last anchored to end-of-block so a real
+   title beginning *"Measurement of …"* is not rejected).
+
+BERT.pdf unchanged throughout: 44 sections / 66 paragraphs / 7,254 body words.
+
+### 3. ⚠ INCIDENT — installing the ML stack broke the parser via Smart App Control. Read this before installing anything on the laptop.
+
+Trying to run extraction locally (user chose the local option), I installed
+`torch 2.13.0+cu126` + transformers + accelerate + bitsandbytes. Two consequences:
+
+- **torch never worked** — `OSError [WinError 4551] An Application Control policy has blocked this
+  file` on `torch\lib\shm.dll`. Confirmed the cause: **Windows 11 Smart App Control is ON**
+  (`HKLM:\SYSTEM\CurrentControlSet\Control\CI\Policy\VerifiedAndReputablePolicyState = 1`). This is
+  the consumer feature on Home editions, not corporate WDAC. **Turning it off is one-way — Windows
+  will not let you turn it back on without a reinstall — so it was not done and should not be.**
+- **Worse: it took the parser down with it.** Smart App Control then also began blocking
+  `scipy/interpolate/_rbfinterp_pythran.cp314-win_amd64.pyd`, which `sklearn` imports and
+  `parser/layout.py` needs for column detection. **Every paper stopped parsing, including ones that
+  had parsed fine hours earlier.** The blocked `.pyd` was dated Aug 25 and *never modified* — pip did
+  not touch it; installing a pile of unsigned binaries appears to have made SAC tighten on that
+  Python environment.
+- **Fix:** uninstalled torch/transformers/accelerate/bitsandbytes (unusable anyway — uninstalling
+  alone did NOT clear the block), then **downgraded `scipy` 1.18.1 → 1.17.1**, whose DLLs are not
+  blocked. Parser restored and verified byte-identical on BERT.pdf. **`scipy==1.17.1` is now a
+  requirement of the laptop environment; do not upgrade it.**
+- `rdflib` was installed and kept — pure Python, works, and `ontology_loader` needs it for the scinex
+  OWL.
+
+### 4. Enrichment + coverage for all 18 — and the finding that actually matters
+
+`enrich_entity_csv.py --source csner` on all 18 → 35–169 entities each.
+`entity_coverage.py --plan output/corpus_plan.json` → **18/18 `fixed`, 0 `relation`** at the default
+threshold of 15.
+
+**But the composition finding from §20.6 now splits the corpus cleanly in two**, which makes the
+fixed-vs-relation comparison far more interesting than it was:
+
+- **The non-CS papers still get only generic ML vocabulary.** osmotic2026 (chemistry), oxidecrack2025
+  (materials), strabismus2026 (clinical): `Random Forest`, `SMOTE`, `kNN`, `training`, `Learning`,
+  `Input` — and **zero** domain terms (no "alkyl ammonium salts", no "oxide scale", no "horizontal
+  strabismus").
+- **The new CS papers get real, paper-specific entities**, exactly as predicted — CS-NER is annotated
+  over CS/NLP papers:
+  - textaug2023: `Text Classification`, `Data Augmentation`, `Word Embedding`, `Long Short-Term Memory`
+  - videoseg2025: `Video Segmentation`, `Spatial Pyramid Pooling`, `Instance Segmentation`
+  - vehiclemake2025: `License Plate Recognition`, `Batch Normalization`, `Inception Module`
+  - llamacorrupt2025: `Large Language Models`, `Natural Language Generation`
+  - csysguard2024: 169 entities, 46% multi-word
+
+**So the corpus now contains a natural controlled contrast**: ~11 CS papers where the entity list is
+genuinely informative, and ~7 non-CS papers where it is nearly vacuous. `fixed` vs `relation` should
+diverge sharply between those two halves, and that split is a more defensible result than a single
+corpus-wide precision number. **Report the two halves separately.**
+
+### 5. Runners updated
+
+`run_relation_extraction.sh` (VM) and `run_local.py` (Ollama) both carry the full 18-paper list.
+`count_triples.py` unchanged. Extraction still has NOT run — it needs either the VM or a local Ollama
+install.
+
+**Files changed:** `parser/layout.py` (page-0 header-cut exemption), `parser/structure_builder.py`
+(title reading-order sort, `_NON_TITLE_RE` publisher furniture), `papers/manifest.csv` (access
+column), `run_relation_extraction.sh`, `run_local.py`. New on disk: 11 × `output/<id>/no-llm/`,
+18 × `output/acl/<id>/Entity_<id>_enriched.csv`, `output/corpus_plan.json`, `papers/*.pdf` (7→18).
+
+### NOT done / next session
+
+1. **Extraction.** Either `bash run_relation_extraction.sh --with-fixed` on the VM (Qwen3-14B, the
+   real numbers) or, locally, install Ollama + `ollama pull qwen3:8b` then
+   `python run_local.py --all --extractor relation --also-fixed --both-ontologies` (preliminary
+   numbers, different model). The laptop cannot use the transformers path at all — see §3.
+2. Judge → gold sample → κ, unchanged from §19.
+3. `tripplanner2020` and `linkpred2015` PDFs.
+
+---
+
+## Session 21 — Re-parse confirmed reproducible; local extraction BLOCKED by Windows Application Control; relation path dry-run-validated (2026-08-26)
+
+### 1. Re-parsed all 7 papers — byte-identical to Session 20. Parsing is settled.
+
+Re-ran `main.py papers/<id>.pdf --no-llm` over all 7, after backing the previous output up to
+`output_backup_20260826/`. Every paper reproduced its Session-20 numbers **exactly** (sections,
+paragraphs, body words, ref words all identical), and the 6 citation networks came back unchanged
+(osmotic 10, oxidecrack 20, parkingyolo 20, roadwaylight 5, strabismus 11, traveltime 16 nodes;
+gamlprop2025 still has none — not in Semantic Scholar). The parser is deterministic and done.
+
+> The backup exists because a re-fetch could have degraded the citation networks under S2 rate
+> limiting. It didn't. `output_backup_20260826/` can be deleted whenever.
+
+### 2. ⛔ Extraction cannot run on the Windows laptop — Windows Application Control blocks torch
+
+The user asked for relation-only extraction to be run here. It cannot be, for two independent
+reasons, the second of which is fatal:
+
+1. **The laptop GPU is an RTX 4060 Laptop with 8GB VRAM.** Qwen3-14B at 4-bit needs ~10GB. The
+   project's standard model does not fit regardless.
+2. **torch cannot load at all.** Installed cleanly (`torch 2.13.0+cu126` — the cu124 index the VM
+   uses has no cp314 wheels; **cu126 does**, and PyPI shows torch up to 2.13 for Python 3.14). But
+   every import dies with:
+   `OSError: [WinError 4551] An Application Control policy has blocked this file. Error loading
+   ...\torch\lib\shm.dll`
+   That is WDAC/AppLocker — a corporate security control on a managed device. **I did not attempt to
+   work around it and neither should a future session**; it needs IT to allowlist the DLLs, or the
+   work goes to the VM.
+
+`transformers 5.15.1` installed fine; `accelerate` and `bitsandbytes` install but fail on import for
+the same reason (they import torch). **`rdflib` was also installed** (pure Python, unaffected) — it
+was missing, and `kg_extraction/ontology_loader.load_ontology` needs it for the scinex OWL.
+
+> **The broken torch install is still on disk (~2.5GB).** It does NOT break anything —
+> `gold_eval`, `kg_evaluate`, `entity_coverage`, `enrich_entity_csv`, `kg_main` and
+> `kg_extraction` were re-checked after installing and all still import (they import torch lazily,
+> inside the model-loading functions). Left in place in case IT allowlists it later. Uninstall with
+> `python -m pip uninstall torch transformers accelerate bitsandbytes` if it gets in the way.
+
+### 3. What was validated instead: the relation-only path, dry-run without a model
+
+`relation_extractor.py` had never been executed. Everything *after* generation is pure Python, so it
+can be exercised with synthetic model output and no GPU. Harness:
+`scratchpad/relation_dryrun.py` (kept out of the repo — it is a diagnostic, not a test suite).
+**All checks pass:**
+
+- **Prompt construction** — the free-subject system prompt builds (11,908 chars for CEO), contains
+  the "Subjects are NOT fixed" block, and **no fixed-subject "entity CSV" wording leaks into it**
+  (this was the specific risk Session 19 guarded with `self._subject_prompt`).
+- **`_subject_in_sentence(..., entity_set=None)`** — the free-subject literal-match path behaves:
+  `Random Forest` ✓, `SMOTE` ✓, `random forest` ✓ (case-insensitive), `XGBoost` ✗ (not in sentence),
+  `Forest Random` ✗ (reordered).
+- **Guards** — fed 6 synthetic candidates, kept exactly the 2 valid ones. Correctly dropped: a
+  predicate outside the ontology (`isGreatAt`, no close match), a subject absent from the source
+  sentence (`XGBoost`), a generic subject (`the proposed method`), and an empty object.
+- **Malformed-input resilience** — empty output, a `<think>` block truncated by the token limit,
+  non-JSON prose, and ```-fenced JSON all handled without crashing; the fenced case parses correctly.
+- **scinex OWL** — loads 27 relations with full domain→range definitions, and the relation-mode
+  scinex system prompt builds (12,663 chars).
+
+**Two things that looked like bugs and are not** — recording them so nobody re-investigates:
+
+- **Predicates are stored lowercased** (`fixed_extractor.py:947` emits `pred.lower()`), so triples
+  carry `trainedon`, not `trainedOn`. Checked both consumers: `kg_evaluate._judge_triple` matches
+  with `rel.lower() == pred`, and `gold_eval` builds `{k.lower(): v}` before lookup. **Both are
+  case-insensitive, so the judge does get its predicate definition.** Cosmetic only — but paper-ready
+  tables will show `trainedon`/`evaluatedon`/`comparesagainst` unless prettified at report time.
+- A triple whose `source_sentence` is very short is dropped as `low-quality source`. That is a
+  deliberate guard, not a parse failure; an early version of the harness tripped over it with a
+  4-word test sentence.
+
+### 4. NEW `run_relation_extraction.sh` — the VM runner
+
+Project root, syntax-checked (`bash -n`), and every flag it passes verified against
+`kg_main.py --help`. Runs relation-only over both ontologies for all 7 papers
+(`--with-fixed` adds the fixed runs for the comparison), one process at a time, at
+`--max-new-tokens 4096`, continuing past a failed paper instead of abandoning the batch, then prints
+a triple-count table and the follow-on `kg_evaluate.py` command. Add the other 13 paper ids to
+`PAPERS=(...)` once their PDFs are fetched, parsed and enriched.
+
+### 5. Still no triples, therefore still no evaluation
+
+The user asked for an assessment of extraction quality. **That assessment cannot be made yet** — no
+triples exist for this corpus under any extractor. Nothing in `results.md` changes. The extraction
+must run on the VM first; §3 raises the confidence that it will run without crashing, but says
+nothing about output quality.
+
+**Files:** new `run_relation_extraction.sh`. Installed (laptop only, non-functional except rdflib):
+`torch 2.13.0+cu126`, `transformers 5.15.1`, `accelerate`, `bitsandbytes`, `rdflib`.
+New on disk: `output_backup_20260826/` (deletable).
+
+### NOT done / next session
+
+1. **Run `bash run_relation_extraction.sh --with-fixed` on the VM.** This is the blocking step for
+   everything downstream.
+2. Then `kg_evaluate.py --all --extractor relation relation_scinex fixed fixed_scinex --resume
+   --summary-out output/eval/judge_corpus.json`, `gold_eval.py export --n 150`, human labels,
+   `gold_eval.py agree` — and read κ **before** quoting any judge number.
+3. The 13 missing PDFs (3 OA-but-bot-blocked, 10 paywalled) still need a human with institutional
+   access.
+
+---
+
+## Session 20 — Parser leftovers FIXED; all 7 corpus papers re-parsed with `--no-llm`; enrich + coverage done (2026-08-25)
+
+Picks up directly from §10. The three parser items §10 left open are done, every corpus paper has
+been re-parsed through the real `main.py --no-llm` pipeline (not just the `parse_check` harness),
+and the two no-GPU stages after it (entity enrichment, coverage decision) have been run. **Still no
+triples extracted — that is the next step and it needs the VM's GPU.**
+
+### 1. The 2 MDPI titles — FIXED. 8/8 titles now correct and manifest-verified.
+
+Both were diagnosed exactly right in §10, and both fixes are in `_title_block_ok`
+(`parser/structure_builder.py`):
+
+- **traveltime2022** — the masthead block is literally `'applied   sciences'` with multiple internal
+  spaces, so `_NON_TITLE_RE`'s `applied sciences\b` never matched and the 19.02pt masthead outranked
+  the 17.93pt title. Fix: `text = re.sub(r"\s+", " ", text.strip())` **before** the `_NON_TITLE_RE`
+  test, so every furniture alternative sees normalised text.
+- **parkingyolo2023** — the author-list guard `\d\s*(?:,|and)\s+[A-Z][a-z]+\s+[A-Z]` matched
+  **"8 and Tracking A"** inside *"…Using YOLOv8 and Tracking Algorithms"* and rejected the real
+  title, leaving a `Citation:` fragment to win. Fix: that alternative is now
+  `(?:^|\s)[A-Z][a-z]+\s+\d\s*(?:,|and\s)` — the superscript digit must be **its own token** after a
+  surname, which a digit inside a model name cannot be. Also added a citation-continuation reject
+  (`[A-Z]\.\s*;|[A-Z][a-z]+,\s*[A-Z]\.`) for wrapped `Citation:` lines, which `_NON_TITLE_RE` only
+  caught on the first line.
+
+All 8 titles (BERT + the 7 corpus papers) now match `papers/manifest.csv` exactly. **This also
+confirms the SM1674 download is the right article** — roadwaylight2018's parsed title matches the
+manifest, closing the "a DOI suffix is not the publisher's PDF number" worry from §5.
+
+### 2. Nature heading-splitting — IMPLEMENTED. This was the big one.
+
+§10 designed this but did not write it. Implemented in `parser/layout.py` as
+`_page_lines` + `_split_glued_headings`, replacing the old `_page_span_sizes`:
+
+- `_page_lines(page)` returns per-LINE `(bbox, text, size, font, styled, uniform)` from
+  `get_text("dict")`. `styled` = the line's **dominant** span (the one with the most characters, so a
+  superscript citation marker can't define the line's style) is bold or italic — PyMuPDF span flags,
+  bit 4 = bold, bit 1 = italic. This is now computed on **every page**, not just pages 0–1.
+- `_split_glued_headings` splits a block when its first line is a heading and the rest is body:
+  lead line **uniform in style**, ≤8 words, doesn't end in `.?!,;`, ≥100 chars of body follow, and
+  either the lead is **≥0.5pt larger** than the body's dominant size **or** it is a bold/italic face
+  change against an unstyled body. The split-off block carries `is_heading_hint=True`.
+- `merge_blocks` now refuses to merge into or out of an `is_heading_hint` block — the split heading
+  sits directly above its paragraph at the same indent, exactly the shape `merge_blocks` joins.
+- `build_structure` honours the hint **before** `is_garbage` (which would otherwise drop a 2-word
+  heading) and before `is_heading` (whose vocabulary can't cover "Related works", "Object
+  detections", "Final prediction models").
+
+**Font evidence, not a text rule** — the whole point is that Nature glues the heading into the same
+PDF block as the paragraph, so no amount of vocabulary work could ever have found it.
+
+**Why it matters beyond tidiness:** `source_meta["section"]` is fed to the extractor prompt and
+checked by `_is_garbled_section`. Before this, every triple from the 3 Scientific Reports papers
+claimed to come from "Abstract".
+
+**Guard added while testing (real regression, caught on BERT):** the split turned BERT's byline into
+a section called `Jacob Devlin`, because the first author is set larger than the rest of the author
+list — front matter has the same shape as a run-in heading. `_looks_like_paragraph()` now requires
+the body to read like prose (no `@`, at least one sentence terminator). A heading only ever runs into
+prose; a byline runs into names, affiliations and an e-mail.
+
+**A/B measurement (same parser, `_split_glued_headings` monkeypatched to a no-op vs live):**
+
+| paper | paras OFF → ON | body words OFF → ON |
+|---|---|---|
+| strabismus2026 | 4 → 49 | 5,447 → 6,619 |
+| oxidecrack2025 | 5 → 31 | 3,699 → 4,197 |
+| BERT.pdf (regression) | 48 → 58 | 5,589 → 5,574 |
+
+The Sci Rep papers previously held their whole body in 4–5 giant blocks. The word **gain** is real
+content that the giant merged blocks had been getting suppressed by the paragraph-quality/garbage
+filters; verified by diffing the two body-text sets, and paragraph-level duplicate count is **0** on
+every paper (the split partitions its source block, it never copies). BERT's 15-word **loss** is the
+heading text itself moving out of paragraphs into headings — no content lost.
+
+**BERT gained its genuine bold run-in headings** (`Model Architecture`, `Input/Output
+Representations`, `Task #1: Masked LM`, and the GLUE task names `MNLI`/`QQP`/`QNLI`/`SST-2`/`CoLA`/
+`STS-B`/`MRPC`/`RTE`/`WNLI` in Appendix B.1): 32 → 44 sections. Two cosmetic imperfections remain,
+both harmless: `Task #2:` is truncated (the heading wraps mid-line in the PDF), and one oxidecrack
+block keeps a nested heading inline (`'Classification analytics Logistic Regression (LR) In order
+to…'`).
+
+> ⚠ **BERT's parse changed** (32→44 sections, 7,271→7,254 body words). Nothing re-parses the frozen
+> 315-paper ACL corpus, so its extraction results are unaffected — but if that corpus is ever
+> re-parsed, section metadata will shift and the KGE numbers would need re-checking.
+
+### 3. roadwaylight2018 running-header junk headings — FIXED
+
+`"2268 Sensors and Materials, Vol. 30, No. 10 (2018)"` satisfied the numeric-heading rule
+`^\d+(\.\d+)*\s+[A-Z]` on every page, fragmenting the document into one junk section per page. New
+`_is_running_header()` in `structure_builder.py`, consulted at the top of the numeric branch:
+reject when the leading number is > 40 (`_MAX_SECTION_NUMBER` — real section numbers are small, a
+number in the hundreds is a page number) **or** the line carries a bibliographic marker
+(`Vol.|No.|pp.|ISSN|ISBN|DOI|(YYYY)`). Unit-checked: the running header is rejected while
+`1 Introduction`, `2.1 Attention Model`, `3. Interpretation`, `4 Results and Discussion` and
+`12 Related Work` all still pass.
+
+### 4. Re-parsed all 7 with `main.py --no-llm` — the stale `output/*/fast/*` problem is cleared
+
+Run as `PYTHONPATH=. PYTHONIOENCODING=utf-8 python main.py papers/<id>.pdf --no-llm`, one at a time.
+Output now at `output/<id>/no-llm/output.{html,json}` — this is what `enrich_entity_csv.py` and
+`kg_main.py` read.
+
+| paper | sections | paras | figs | body words | ref words |
+|---|---|---|---|---|---|
+| strabismus2026 | 34 | 52 | 7 | 8,015 | 724 |
+| traveltime2022 | 26 | 39 | 8 | 7,886 | 303 |
+| oxidecrack2025 | 21 | 35 | 9 | 5,671 | 1,927 |
+| parkingyolo2023 | 15 | 23 | 15 | 4,185 | 1,206 |
+| roadwaylight2018 | 24 | 33 | 10 | 4,150 | 528 |
+| osmotic2026 | 16 | 23 | 12 | 3,450 | 1,194 |
+| gamlprop2025 | 12 | 13 | 2 | 1,985 | 334 |
+
+Every paper has real body text and a correct title; **the three "bibliography only" papers from §9
+are fully recovered.** Section hierarchies are now genuinely usable — traveltime2022 comes out with
+its full `1. Introduction / 2. Literature Review / 2.1 … / 3.3.4 …` tree, strabismus2026 with 34
+Nature-style sections.
+
+**Citation networks fetched for 6/7** (`output/<id>/citation_network.json`, 5–20 nodes):
+osmotic2026 10, oxidecrack2025 20, parkingyolo2023 20, roadwaylight2018 5, strabismus2026 11,
+traveltime2022 16. **gamlprop2025 got none** — Chemical Engineering Transactions is not indexed in
+Semantic Scholar. Irrelevant to this task (per-triple accuracy), relevant if this corpus is ever fed
+to the global graph or KGE.
+
+> ⏱ **Timing note:** the S2 citation fetch dominates the runtime — roadwaylight2018 alone ran >5 min
+> and stalled a naive 10-min loop over all 7. Parse with `--no-citations` if you only need the HTML,
+> or run the papers in the background one at a time.
+
+### 5. Enrichment + coverage — all 7 papers say `fixed`, but read §6 before believing it
+
+`enrich_entity_csv.py --paper <id> --source csner` ran clean on all 7 (it does work for non-ACL
+papers, as §4 predicted from reading the code — 0 title seeds, entities from the gazetteer∩body
+intersection). `entity_coverage.py --plan output/corpus_plan.json`:
+
+| paper | entities | decision |
+|---|---|---|
+| strabismus2026 | 159 | fixed |
+| parkingyolo2023 | 91 | fixed |
+| traveltime2022 | 86 | fixed |
+| oxidecrack2025 | 63 | fixed |
+| osmotic2026 | 59 | fixed |
+| roadwaylight2018 | 42 | fixed |
+| gamlprop2025 | 36 | fixed |
+
+**7 → fixed, 0 → relation** at the default threshold of 15. Written to `output/corpus_plan.json`.
+
+### 6. ⚠ The coverage *count* passes but the coverage *composition* is exactly the domain-shift
+problem TASK.md §3 predicted — do not read "7/7 fixed" as "domain shift solved"
+
+Inspecting the enriched CSVs, every entity is **ML-methodology vocabulary**; the domain vocabulary is
+absent:
+
+- osmotic2026 (chemistry): `Algorithm, predictive, Learning, training, Machine Learning, Gaussian
+  Process, Models, NCL, kNN, Compounds, Information, analysis, Experimental Data, Input` — **no**
+  "alkyl ammonium salts", no "osmotic coefficient", no "activity coefficient".
+- oxidecrack2025 (materials): `Features, Learning, Machine Learning, Classification, Random Forest,
+  SMOTE, Logistic Regression, Regression, decision tree, Neural Network, training, Input, kNN,
+  Evaluation` — **no** "oxide scale", no "high temperature oxidation".
+- strabismus2026 (clinical): `Learning, Images, detection, Classification, Gaze, Image, Features,
+  training, Deep Learning, Random Forest, SMOTE, Machine Learning, analysis, Models` — **no**
+  "horizontal strabismus", no "orthotropia", no "RT-DETR".
+
+So `fixed` on this corpus will describe **the ML half of each paper and systematically miss the
+domain half** — and the CS-NER quality gate's known weak spot shows up too (`Learning`, `Input`,
+`Information`, `analysis`, `predictive`, `Models` are generic single tokens). `relation` (free
+subjects, relation ∈ ontology) is the exact complement of that blind spot.
+
+**Recommendation for next session: run BOTH `fixed` and `relation` on all 7, per ontology, and
+compare.** `entity_coverage.py`'s count-based decision was designed to catch a paper that gets
+*nothing*; it cannot see that 59 entities are all the wrong 59. This is a finding about the corpus,
+not a bug in the script — but the script's verdict should not be the last word here.
+
+### 7. Import check — cleared (first Session-19 Python ever executed)
+
+`gold_eval`, `kg_evaluate`, `entity_coverage`, `enrich_entity_csv`, `kg_main`, `kg_extraction` all
+import clean on Python 3.14.7 locally; `kg_main.py --help` and `gold_eval.py --help` both render
+(the `--extractor {…,relation,…}` and `--ontology {ceo,scinex}` flags are present as designed).
+**Local Python has no torch/transformers**, so this is an import/CLI check only — the extractors'
+runtime paths are still unexercised.
+
+**Files changed:** `parser/structure_builder.py` (title guards, `_is_running_header`,
+`is_heading_hint` handling in `build_structure`), `parser/layout.py` (`_page_lines`, `_lines_in`,
+`_annotate_font_sizes` reworked to lines, `_looks_like_paragraph`, `_split_glued_headings`,
+`merge_blocks` guard, all-pages annotation). New on disk: `output/<id>/no-llm/*` ×7,
+`output/<id>/citation_network.json` ×6, `output/acl/<id>/Entity_<id>_enriched.csv` ×7,
+`output/corpus_plan.json`.
+
+### NOT done / next session
+
+1. **Extraction — needs the VM GPU.** `for p in <the 7>; do kg_main.py --paper $p --extractor fixed
+   --model Qwen/Qwen3-14B; kg_main.py --paper $p --extractor fixed --ontology scinex --model
+   Qwen/Qwen3-14B; done` — and per §6, the same loop with `--extractor relation`. Use
+   `--max-new-tokens 4096` (NOT 512 — that truncation cost 80 papers a re-run, §2l/§2m) and run one
+   process at a time.
+2. **The 13 missing PDFs** — 3 OA-but-bot-blocked (IEEE Xplore ×2, ScienceDirect ×1), 10 paywalled.
+   Unchanged; needs a human with institutional access. The 7 on disk are enough to start the
+   judge/κ loop.
+3. Then §19's stages 5–8 unchanged: `kg_evaluate.py --resume --summary-out` → `gold_eval.py export
+   --n 150` → human labels → `gold_eval.py agree` → read κ **before** quoting any judge number →
+   `gold_eval.py errors` → fix guards → re-extract → re-measure.
+4. Cosmetic parser leftovers, all verified harmless: `Task #2:` truncated in BERT; one oxidecrack
+   block keeps a nested run-in heading inline; traveltime2022 still emits `References` before
+   `5. Conclusions` (two-column reading-order artifact, content intact); the pre-existing ALL-CAPS
+   false positives (`NER MNLI`, `BERT BERT`) are still deliberately untouched.
+
+---
+
+## Session 19 — New task: fixed-extraction accuracy via LLM-as-Judge + human agreement (2026-08-13)
+
+**User's new direction:** stop broadening, go deep on quality. Focus **solely on fixed extraction**, on a **new corpus of ~20 handpicked research papers**, extracted under **both ontologies (CEO `fixed` + scinex `fixed_scinex`) and compared**. Judge the triples with an LLM, **validate that judge against human labels**, then iterate the extractor prompt/guards for the best accuracy achievable. Judge model = **Qwen2.5-7B-Instruct for now** (user may bring a stronger model or Claude in as a second judge later; gold sample size left to my discretion).
+
+**1. `kg_evaluate.py` un-retired and upgraded** (it was declared retired in Session 12 in favour of the KGE citation-prediction eval; that eval is unaffected and its numbers still stand).
+- `triple_id(triple, extractor)` — sha1 over extractor-family|paper|subject|predicate|object|source_sentence[:300], 12 hex. Content-keyed so human labels rejoin the same triples across judge re-runs, and so CEO/scinex triples that happen to be byte-identical stay distinct.
+- Per-paper **entity-CSV alias auto-resolution** (`load_aliases_for`, reusing `kg_main.resolve_entity_csv`). Previously one global `--entity-csv` was applied to every paper — wrong on a multi-paper corpus, and the judge then penalised abbreviations it had never been told about. `--entity-csv` still overrides.
+- **`find_extractor_dirs` now matches the extractor family exactly** (`k.split("/")[0] in wanted`). The old `any(f in k ...)` substring test meant `--extractor fixed` silently also judged `fixed_scinex` — which would have quietly merged the two ontologies in this very comparison.
+- `compute_summary` gains **`by_predicate`** (n / verdict counts / precision per relation).
+- **The judge now sees the predicate's ontology definition** (`schema_for()`: CEO from `fixed_extractor._CEO_SCHEMA`, scinex parsed from the OWL via `ontology_loader.load_ontology`, cached per extractor family; `--ontology-file`, default `scinex_refined_14.owl`). Without it the judge scored a predicate by the everyday meaning of its English name, so a CEO-vs-scinex comparison would have measured nothing but name plausibility. `JUDGE_SYSTEM_PROMPT` gained a matching "ontology conformance" rule: fits definition → CORRECT, loose fit / wrong range type → PARTIAL, domain↔range swapped → INCORRECT. **This changes what "precision" means** — it is now faithfulness AND ontology conformance, so these numbers are not comparable to the old 80%/85% BERT figures.
+- New flags: `--resume` (reuse verdicts already in `evaluation.json`, matched by triple id — only judge what's new), `--max-per-paper N` (deterministic subsample by id, same N triples every re-run), `--ontology-file`, `--summary-out JSON` (corpus-level report: per extractor, per predicate, per paper). Final printed table now has a CORPUS block under the per-paper rows.
+
+**2. NEW `gold_eval.py` — the human side of the loop.** Three subcommands:
+- `export` — sample triples → CSV (`triple_id, paper, extractor, model, subject, predicate, object, object_type, predicate_definition, section, source_sentence, verdict, note`), `verdict` blank. `predicate_definition` is filled from the SAME `schema_for()` the judge uses, and `export` prints the verdict rubric — if the human labels by intuition while the judge labels by domain/range, low κ would mean "different rubrics", not "bad judge". **Stratified round-robin over (extractor × predicate) buckets**, not proportional: proportional sampling would spend the whole budget on `uses`/`achieves` and never surface the rare predicates, which is exactly where the guards are weakest. **The judge's verdict is deliberately NOT in the export** — anchoring the human on it would inflate agreement. Written utf-8-sig so Excel opens it cleanly.
+- `agree` — joins the filled CSV back by `triple_id`: raw agreement, **Cohen's κ** (3-class and a CORRECT/NOT_CORRECT binary collapse), confusion matrix, per-extractor and per-predicate tables (each with both sides' precision), and a full disagreement dump (printed + saved to `--out` JSON). `--b other.csv` compares **two label files** instead of labels-vs-judge — this is the path for "Claude as a second judge", annotator A vs B, or 7B vs 14B judge, with no new code. Kappa is pure-python (no sklearn dependency).
+- `errors` — the judge's PARTIAL/INCORRECT verdicts grouped by (extractor, predicate), ranked worst-first, with examples incl. the judge's reason. This is the worklist that drives the next round of `fixed_extractor.py` prompt/guard edits.
+- Verdict parsing accepts C/P/I, Y/N, 1/0 shorthand — humans do not type "INCORRECT" 150 times.
+
+**3. Environment reality check (important for whoever picks this up):** the Windows laptop this was written on has **no Python at all** (only the `WindowsApps` Store stub — `python`/`python3` resolve to it and fail) and **no `output/` directory** in `Downloads/project_scinex`. So this session is **code-only: nothing was executed, not even `py_compile`.** First action on the VM: `python3 -c "import gold_eval, kg_evaluate"` to catch anything I got wrong by eye.
+
+**4. Per-paper chain for a handpicked (non-ACL) paper** — verified by reading the code, not by running it: `enrich_entity_csv.py --source csner` works for **any parsed paper**, not just CS-NER/ACL ones (`discover_paper_ids` accepts any `output/<id>/no-llm/output.html`; the title-seed CSV is optional — `load_seed_entities` on a missing file just returns no seeds, and the gazetteer∩text intersection supplies the entity pool). So: `main.py <pdf> --no-llm` → `enrich_entity_csv.py --paper <id> --source csner` → `kg_main.py --paper <id> --extractor fixed [--ontology scinex]`.
+
+**8. NEW `TASK.md`** — the brief for this whole task in one place: goal and what "done" looks like, what is explicitly out of scope (KGE results frozen, 315-corpus untouched, fixed extraction only), the corpus + access table, why the `fixed`/`relation` split exists, the 8 pipeline stages with exact commands, the verdict rubric, what to report (incl. κ reading and the rule that coverage failures never get folded into a precision number), the file map, the GPU constraints, and a live checklist. `Claude.md`'s status block now points at it.
+
+**9. ⚠⚠ PARSING AUDIT of the first 7 corpus papers (2026-08-25) — 3 of 6 parsed papers contain NO body text at all. This blocks the whole task; do not extract until it's fixed.**
+The user ran `main.py` on the downloaded PDFs (mode `fast`) and asked what went wrong. Measured from `output/<id>/fast/output.{html,json}` — body words = total minus everything from the `References` heading onward:
+
+| paper | venue style | sections | body words | ref words | verdict |
+|---|---|---|---|---|---|
+| traveltime2022 | MDPI, numbered | 25 | 7,487 | 1,259 | OK |
+| parkingyolo2023 | MDPI, numbered | 14 | 4,826 | 1,207 | OK |
+| gamlprop2025 | CET, numbered | 10 | 2,124 | 335 | OK |
+| **osmotic2026** | **Sci Rep, unnumbered** | **1** | **366** | 1,533 | **BODY LOST** |
+| **oxidecrack2025** | **Sci Rep, unnumbered** | **1** | **362** | 2,186 | **BODY LOST** |
+| **strabismus2026** | **Sci Rep, unnumbered** | **1** | **362** | 1,020 | **BODY LOST** |
+| **roadwaylight2018** | Sensors & Materials | — | — | — | **NO OUTPUT AT ALL** |
+
+- **Root cause of the three total losses:** `is_heading()` (`parser/structure_builder.py:117`) only recognises **numbered** (`1 X`, `1. X`, `2.1 X`), **roman**, **appendix-lettered** and **ALL-CAPS** headings. Nature/Scientific Reports uses plain title-case headings — `Introduction`, `Results`, `Discussion`, `Methods` — which match **none** of those rules. So the only "heading" ever detected is `References` (via `is_references`, a separate `startswith("references")` check at line 47), and `build_structure`'s `if not current_section: continue` (line ~558) silently discards **every block before the first heading** — i.e. the entire paper. What survives is the bibliography: refs are **73–85%** of those documents. Those ~362 "body words" are HTML/CSS boilerplate, not content. **Extraction on these three would mine the reference list**, and the near-zero triple count would look like an entity-coverage or quality problem when it is a parsing problem — exactly the confusion `TASK.md §6` says must never be folded together.
+- **The abstract is dropped from ALL SIX papers**, the good ones included — same `if not current_section` rule, since the abstract precedes the first numbered heading. `grep -i abstract` on every output.html matches only the `.ltx_abstract` CSS class, never any text. Abstracts are dense in exactly the entities/relations this task wants.
+- **Every title is wrong on all six**: `applied sciences`, `sensors`, `CHEMICAL ENGINEERING TRANSACTIONS` (journal mastheads), `Keywords  Machine learning, …` (keyword line), `Scientific Reports | (2026) 16:18278 …` (DOI footer). `extract_title()` (line 289) scores the first 20 blocks by **length alone** (<12 words → +2) and `max()` returns the first top-scorer, so it reliably picks the masthead. **No font-size signal is available to fix this**: `parser/layout.py:181` uses `page.get_text("blocks")`, which yields only `text`+`bbox` — sizes/flags require `get_text("dict")` spans.
+- **roadwaylight2018:** `output/roadwaylight2018/fast/` exists but is **empty** — `main.py` created the dir and then failed. The PDF is fine (57 `/Font`, 12 `/FontFile` → real text layer, not a scan). `output/strabismus2026/no-llm/` is also empty, suggesting a second aborted run. **Needs a re-run on the VM to capture the traceback — the failure is not reproducible here (no Python).**
+- Minor: in traveltime2022 the `References` section is emitted **before** `5. Conclusions` — two-column reading-order artifact on the last page. Content is intact, only ordering is off.
+- **→ SUPERSEDED BY §10: most of this is now FIXED and verified. Read §10 for current state.**
+- **Fix design (as diagnosed; see §10 for what was actually implemented):** (a) add an unnumbered title-case heading rule, safest as a known-section vocabulary (`Introduction|Results|Discussion|Methods|Materials and Methods|Conclusion[s]|Related Work|Background|Data availability|Acknowledg(e)ments|Supplementary…`) matched case-insensitively on a short standalone block — a vocabulary list can't fire on body prose the way a generic "short title-case line" rule would; (b) capture pre-first-heading content into an implicit `Abstract`/frontmatter section instead of dropping it; (c) switch `layout.py` to `get_text("dict")` so title detection can use max font size on page 1, with the current length heuristic as fallback. **Any change here must be regression-checked against the known-good ACL papers** (the J13-4001 / D17-1028 precedent in this file) before the 315-corpus results are trusted again.
+
+**10. PARSER FIXED (2026-08-25, same session) — all 7 corpus papers now parse with real body text. Verified by running the parser locally, not by reading code.**
+
+**⚠ First, a correction to a standing assumption in these notes: this laptop DOES have Python.** `python`/`python3`/`py` → **Python 3.14.7**, with `pymupdf`, `pdfplumber`, `ftfy`, `bs4`, `networkx`, `pandas` already installed (only `lxml` missing). So Part-1 parsing can be developed and tested **locally**; only the GPU/LLM stages need the VM. Two local gotchas: run from the project root with `PYTHONPATH=.`, and set **`PYTHONIOENCODING=utf-8`** — the Windows console is cp1252 and `citation/network.py:69` prints a `✔`, which otherwise kills the process with `UnicodeEncodeError` before any work starts.
+
+**Results — measured with `scratchpad/parse_stats.py` (title / sections / body words / ref words), body = every paragraph outside the References section:**
+
+| paper | body words BEFORE | body words AFTER | title AFTER |
+|---|---|---|---|
+| BERT.pdf (ACL regression) | 7,111 | **7,271** | ✅ now full ("…for Language Understanding" — was truncated before) |
+| traveltime2022 | 7,771 | **7,886** | ❌ still wrong (see below) |
+| parkingyolo2023 | 4,020 | **4,185** | ❌ still wrong (see below) |
+| gamlprop2025 | 1,717 | **1,985** | ✅ correct |
+| strabismus2026 | **0** | **6,456** | ✅ correct |
+| osmotic2026 | **0** | **3,077** | ✅ correct |
+| oxidecrack2025 | **0** | **4,978** | ✅ correct |
+| roadwaylight2018 | **CRASH** | **4,116** | ✅ correct |
+
+Every paper gained words (the abstract, previously dropped everywhere), no paper lost any — BERT is the regression check for the frozen 315-paper ACL corpus and its 32 sections/headings are unchanged apart from a new leading `Abstract` section.
+
+**What was changed (4 fixes):**
+1. **Crash — `parser/structure_builder.py` `_reading_order_key`.** roadwaylight2018's 13 detected tables all had `page=None, y=None` (no `Table N:` caption matched, and `assign_table_positions`' no-caption fallback set `y` but never `page`), so the reading-order `sorted()` compared `None < int` → `TypeError`, aborting the parse and leaving an empty output dir. Now None-safe (`block.get("page") or 0`), and both `assign_table_positions` fallbacks set `page`.
+2. **Unnumbered headings — `is_heading`.** Added `_SECTION_VOCAB`, a closed set of ~55 section names matched case-insensitively via `_section_vocab_key` (strips numbering and trailing `:`/`.`). A **closed vocabulary, not a general "short title-case line" rule** — the general rule would fire on body prose. This is what un-broke the three Scientific Reports papers.
+3. **Abstract rescue — `build_structure`.** Blocks before the first heading are now buffered (`pre_heading_texts`) instead of dropped, then filtered by `looks_like_abstract_prose()` (≥40 words, ≥2 sentences, ≥80% letters, no affiliation/copyright/email markers) and inserted as a leading `Abstract` section. It doubles as a **safety net**: if heading detection ever fails completely again, the body lands in `Abstract` rather than vanishing. Also added a loud warning when a document ends up with only a `References` section.
+4. **Title — font size.** `parser/layout.py` now annotates each block with the max font size of its spans (`_page_spans` + `_annotate_font_sizes`, using `get_text("dict")`; `merge_blocks` propagates the max and `extract_blocks` annotates the first 2 pages). `extract_title` takes the largest-font blocks on page 1, joins those within 5% of the max (titles wrap across blocks), strips journal article-type labels (`_TITLE_LABEL_RE`: "Article …", "Review …"), and rejects front-matter furniture (`_NON_TITLE_RE`: mastheads, DOI, ISSN, dates, "Citation:", emails). Old length-only heuristic kept as fallback.
+
+**⚠ STILL BROKEN — 2 of 8 titles, both MDPI, both diagnosed exactly (this is the first thing to fix next session; ~2 small edits):**
+- **traveltime2022** → `'Article Travel Time Prediction on Long-Distance Road Segments'`. The masthead block is literally `'applied   sciences'` **with multiple internal spaces**, so `_NON_TITLE_RE`'s `applied sciences\b` never matches and the masthead (19.02pt) outranks the real title (17.93pt). **Fix: collapse internal whitespace (`re.sub(r"\s+"," ",text)`) BEFORE the `_NON_TITLE_RE` test in `_title_block_ok`.**
+- **parkingyolo2023** → `'M.P.; Chawuthai, R. Parking Time'` (a fragment of the `Citation:` block). The real title block is rejected by my author-list guard in `_title_block_ok`: the regex `\d\s*(?:,|and)\s+[A-Z][a-z]+\s+[A-Z]` matches **"8 and Tracking A"** inside *"…Using YOLOv**8 and Tracking A**lgorithms"*. **Fix: narrow that alternative to real affiliation markers (e.g. require `\d\s*,\s*\*` / `[A-Z][a-z]+\s+[A-Z]\.?\s+\d\s*,`) so a digit inside a model name can't trip it.** Also add `Citation:`-style blocks to the reject list (partially there — it fires on the first block but not on wrapped continuation lines).
+
+**⚠ ALSO STILL OPEN (lower priority, all verified present):**
+- **The 3 Scientific Reports papers have their body, but as ONE `Abstract` section** (sections = `Abstract | References | Declarations`). Nature glues the heading onto the front of the paragraph **in the same block at a larger font** — e.g. a single block reading *"Literature reviews The following review includes both related work and tech…"* (11.0pt lead, 9.0pt body). No vocabulary rule can catch that. **The fix, already designed but NOT written: split a block when its leading spans are ≥0.5pt larger than the block's dominant size, the lead is ≤8 words and doesn't end in sentence punctuation, and ≥100 chars of body follow; mark the split-off block `is_heading_hint=True` and have `is_heading` honour that flag.** This needs span-level data on **all** pages (currently annotated only for pages 0–1) and a guard in `merge_blocks` so the split isn't immediately re-merged. **This matters beyond tidiness: `source_meta["section"]` is fed to the extractor prompt and checked by `_is_garbled_section`, so every triple from those papers currently claims to come from "Abstract".**
+- **roadwaylight2018 has 6 junk sections from running page headers** — `"2268 Sensors and Materials, Vol. 30, No. 10 (2018)"` matches the numeric-heading rule `^\d+(\.\d+)*\s+[A-Z]`. **Fix: require the leading section number ≤ ~40 and reject text matching `Vol\.|No\.|pp\.|ISSN|\(\d{4}\)`.** Content is intact, only fragmented.
+- **Pre-existing ALL-CAPS false-positive headings, deliberately NOT touched**: BERT gets `NER MNLI` and `BERT BERT` (table-header fragments), gamlprop2025 gets `CHEMICAL ENGINEERING TRANSACTIONS`. These predate this session and the ALL-CAPS rule is used by the frozen 315-paper corpus, so changing it needs its own regression check.
+- **traveltime2022 still emits `References` before `5. Conclusions`** — two-column reading-order artifact; content intact.
+
+**⚠ `output/*/fast/output.html` on disk is STALE** — produced by the old parser (3 papers with no body, 1 missing). **Everything must be re-parsed before any extraction**, and note those were run in `fast` mode while the pipeline convention is `--no-llm`.
+
+**Test harness: `parse_check.py`** (now in the project root). Run:
+`PYTHONPATH=. PYTHONIOENCODING=utf-8 python parse_check.py BERT.pdf papers/*.pdf --out after.json`
+It prints title / sections / paragraphs / tables / figures / body words / ref words / heading list per PDF and dumps JSON for diffing. **Always include `BERT.pdf` — it is the ACL regression check for the frozen corpus.**
+
+**NOT done / next session:**
+0. **Sanity-import everything first**: `python3 -c "import gold_eval, kg_evaluate, entity_coverage, kg_extraction"` and `python3 kg_main.py --help` (the `kg_main` changes are still unexercised — `entity_coverage` imports it lazily, so the import check alone won't catch them).
+0b. **Finish the parser: the 2 MDPI title fixes above (quick), then the Nature heading-split (bigger, matters for `section` metadata).** Re-run the harness incl. `BERT.pdf` after each change.
+0c. **Re-parse every paper with `--no-llm`** once the parser is settled, and check each `Title:` against `papers/manifest.csv`.
+1. Copy `papers/` to the VM, get the 13 missing PDFs, then parse→enrich→coverage→extract for both ontologies. **Check each parsed "Title:" against `papers/manifest.csv`** — that is the only verification that the downloaded PDF is the intended paper.
+2. `kg_evaluate.py --all --extractor fixed fixed_scinex --resume --summary-out output/eval/judge_corpus.json` — baseline judge numbers.
+3. `gold_eval.py export --n 150` → user labels → `gold_eval.py agree --out gold/agreement.json`. **Read κ before trusting any judge number**: κ ≥ 0.6 = judge usable as a proxy; below that, fix the judge prompt (`JUDGE_SYSTEM_PROMPT`) before touching the extractor.
+4. Then the improvement loop off `gold_eval.py errors` + the human-flagged failures, re-extract, re-judge, re-measure on the SAME gold ids (they survive re-extraction only if the triple text is unchanged — expect some ids to drop out; `agree` reports unmatched counts).
+
+**5. The corpus arrived later the same day — 20 papers by R. Chawuthai's group** (applied ML: ophthalmology, chemistry, materials, traffic/ITS, cloud, CV, NLP). The user gave citations, not files, and asked me to fetch the open-access ones automatically.
+- **`papers/manifest.csv`** (new) — all 20 with paper_id, year, venue, DOI, access status, PDF URL. DOIs came from the author's own publication page (`https://rathachai.creatier.pro/publications`), which was faster and more reliable than 20 separate searches.
+- **`fetch_corpus.sh`** (new) — downloads every `oa` row into `papers/<paper_id>.pdf`, idempotent, and **deletes anything that isn't `%PDF`** (publisher bot-blocks return a 400-byte HTML "Access Denied" that `main.py` would happily "parse" into garbage). Prints the manual-download list for the rest. **Verified working locally: 7/7 OA papers downloaded.**
+- **Got (7):** strabismus2026, osmotic2026, oxidecrack2025 (Nature/Sci Rep — plain `…/articles/<id>.pdf` works), parkingyolo2023, traveltime2022 (MDPI — **www.mdpi.com is Akamai-blocked; `mdpi-res.com/d_attachment/...` is not**), roadwaylight2018 (Sensors & Materials), gamlprop2025 (Chem Eng Transactions).
+- **Blocked (13):** IEEE Xplore (Akamai `APM_DO_NOT_TOUCH` script) and ScienceDirect (JS shell) block scripted downloads even for their OA articles — vehiclemake2025, csysguard2024, reststop2018 are OA but must be fetched by hand. The other 10 are genuinely paywalled.
+- **⚠ Trap worth remembering: a DOI suffix is not the publisher's PDF number.** I guessed `SM1842.pdf` from DOI `10.18494/SAM.2018.1842`; it returned a valid PDF of a *different* article. The real file is `SM1674.pdf`. Always resolve the article page. Since PDF text streams are compressed, `strings`/`grep` can't verify a downloaded PDF's title — **the real check is `main.py`'s parsed "Title:" log line; verify all 7 against manifest.csv on the first parse run.**
+
+**6. NEW `kg_extraction/relation_extractor.py` — relation-only extraction, per the user's fallback instruction** ("try to check it from everywhere, but if there's none then we change the fixed extraction to fix only relation").
+- The problem it solves: CS-NER is annotated over CS/NLP papers. The chemistry/materials/clinical papers in this corpus will intersect the gazetteer thinly, so `fixed` would report near-zero triples for **coverage** reasons that look like **quality** reasons.
+- `RelationOnlyExtractor(FixedTripleExtractor)`: relation ∈ ontology, subject free but **must appear literally in the source sentence** (`_subject_in_sentence` with `entity_set=None` falls back to a literal word-boundary match). Every other guard is inherited unchanged, so `fixed` vs `relation` differs in exactly one dimension.
+- Supporting refactors in `fixed_extractor.py`: `_parse_fixed_output(raw, entity_set=None, ...)` skips the CSV-canonicalisation chain (all the later `canonical_subj is None` fallbacks are naturally skipped once the subject is taken as written) and caps free subjects at 8 words; `_make_fixed_system_prompt` gained `subject_block`/`subject_rule`/`subject_field` params (defaults = the existing fixed wording, so `fixed` output is unchanged); `self._subject_prompt` is stored so `update_relations()` can't silently revert a relation-only prompt to fixed-subject wording; the init log no longer does `len(None)`.
+- `kg_main.py`: `--extractor relation`, `_ontology_for(base)` helper shared by fixed and relation (scinex → `relation_scinex`), model-slug subdir list extended. Relation is deliberately NOT in `ENTITY_EXTRACTORS` (so it runs when no CSV exists) and NOT in `GLOBAL_GRAPH_EXTRACTORS` (the global graph's entity nodes assume CSV-canonicalised entities).
+- `kg_evaluate.schema_for` maps `relation`→CEO and `relation_scinex`→OWL, so judged relation-mode triples still get predicate definitions.
+
+**7. NEW `entity_coverage.py`** — reads only (no GPU): per paper, resolves the entity CSV the extractor would use, counts TP entities vs all rows, and splits the corpus into `fixed` (≥ `--min-entities`, default 15) vs `relation`. Prints the ready-to-run bash loops for both groups and optionally writes `output/corpus_plan.json`. It also reminds you to rule out the two boring causes (enrichment never ran; PDF never parsed) before believing "the gazetteer doesn't cover this domain".
+
+**Files:** new `gold_eval.py`, `fetch_corpus.sh`, `papers/manifest.csv`, `entity_coverage.py`, `kg_extraction/relation_extractor.py`; edited `kg_evaluate.py`, `kg_main.py`, `kg_extraction/fixed_extractor.py`, `kg_extraction/__init__.py`, `Claude.md`, `hands_off.md`, `results.md` (pointer only, no numbers changed). **Only `fetch_corpus.sh` has actually been executed** — everything Python is unrun (no interpreter on this machine).
 
 ---
 

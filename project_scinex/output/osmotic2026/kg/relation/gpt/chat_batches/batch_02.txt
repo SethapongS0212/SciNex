@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: Results and discussion
+
+Text:
+Osmotic coefficients prediction results The visual comparison between experimental osmotic coefficients and the predicted results from various algorithms - namely, Linear Regression (LR), Support Vector Machine (SVM), Decision Tree (DT), Random Forest (RF), K-Nearest Neighbors (KNN), Gaussian Process (GP), and Extreme Gradient Boosting (XGB) - is presented in Figs. 4, 5, 6, 7, 8, 9 and 10. Notably, the LR algorithm exhibits suboptimal performance. Although significant visual distinctions among the algorithms are not readily apparent, it can be observed that at higher values, DT, RF, and KNN demonstrate inferior performance compared to SVM, GP, or XGB. From Table 3, which presents the performance analysis results of the seven algorithms across all data subsets (training set, test set, and combined training-test set), it is evident that the algorithm yielding the poorest predictive osmotic coefficients for Quats is LR. Specifically, considering both R2 and %MAPE, the LR algorithm achieves the combined R2 values of 0.5177 and %MAPE values of 24.97%. These error metrics differ significantly from those of other algorithms that exhibit R2 values exceeding 0.9 and %MAPE values below 10%. For the best-performing algorithm in predicting osmotic coefficients, focusing solely on the training set, DT, RF, and KNN yield comparable results. Specifically, their R2 values exceed 0.99, and %MAPE remains below 3%. However, when considering the test set data, GP outperforms other algorithms.
+
+----- para_id: 13 -----
+Section: Results and discussion
+
+Text:
+Specifically, GP achieves an R2 value greater than 0.97 and %MAPE below 5%, while other algorithms have R2 values below 0.96 and %MAPE exceeding 5%. Finally, when evaluating the combined data, GP again achieves the highest R2 value, while DT exhibits the lowest %MAPE. Scientific Reports | (2026) 16:5969 5 | https://doi.org/10.1038/s41598-026-36758-x Kernel RBF = e−γ?x−x′?2 γ = 10−2.275 Number of Trees = 1,394 Max Features: Auto Random State: 42 Estimators: 500 Learning Rate: 0.05 Max Depth: The performance of the seven algorithms was assessed using R2, RMSE, MAE, and %MAPE across four validation scenarios: Training Set, Test Set, Combined Set, and LOGO Set. Table 3 presents these metrics. While XGB and RF achieve the lowest errors on the random split, GP demonstrates superior stability in the LOGO validation , maintaining a lower drop in performance compared to tree-based methods when predicting unseen salts. Comparison was made between the decision tree (DT) and Gaussian process (GP) algorithms to assess their performance in predicting osmotic coefficients. Osmotic coefficients, as continuous values, necessitate models that faithfully represent their continuous nature. Figures 11 and 12 depict the osmotic coefficients of (C3H7)4NBr and CH3)2(CH2(C6H5))(C2H4OH)NBr, respectively. Notably, the osmotic coefficients predicted by the DT algorithm (solid line) closely aligned with the experimental results but exhibited a non-continuous, ladder-like behavior.
+
+----- para_id: 14 -----
+Section: Results and discussion
+
+Text:
+This behavior was also observed in the predicted results from the RF and KNN algorithms, Scientific Reports | (2026) 16:5969 6 | https://doi.org/10.1038/s41598-026-36758-x although these results are not presented here. In contrast, the GP algorithm (dashed line) yielded a smooth, continuous change in predicted osmotic coefficients. Considering both performance and behavioral aspects, it can be concluded that the Gaussian Process algorithm is optimal for osmotic coefficient prediction.
+
+----- para_id: 15 -----
+Section: Activity coefficients estimations
+
+Text:
+The osmotic coefficients estimated from the Gaussian Process algorithm are subsequently utilized to calculate activity coefficients using Eq. The calculated activity coefficients for nine alkyl ammonium chloride Quats are presented in Fig. It can be observed that the predicted activity coefficients are in close agreement with the collected experimental results. Scientific Reports | (2026) 16:5969 7 | https://doi.org/10.1038/s41598-026-36758-x
+
+----- para_id: 16 -----
+Section: Comparison and discussion
+
+Text:
+The efficacy of predicting activity coefficients is analyzed using the mean absolute percentage error (%MAPE) to compare the analytical results obtained in this study with those from related research . A comparison is made with the methods proposed by Belvèze et al.39 and Akbari et al.40, as presented in Table 4. Belvèze et al.39 predicted activity coefficients of alkyl ammonium Quats using the Electrolyte-NRTL model. The model was analyzed in conjunction with experimental data for 32 different Quats. The interaction parameters between these specific salt types and water were determined. Based on a dataset of 767 data points, a mean percentage absolute error (%MAPE) of 2.91% was yielded. For individual substances, the lowest %MAPE was 0.37%, while the highest was 9.64%. While Akbari et al.40 predicted activity coefficients of alkyl ammonium Quats using the Extended UNIQUAC model. The model was employed to analyze experimental data for 36 Scientific Reports | (2026) 16:5969 8 | https://doi.org/10.1038/s41598-026-36758-x Scientific Reports | (2026) 16:5969 9 | https://doi.org/10.1038/s41598-026-36758-x Performance Indices LR SVM DT RF KNN GP XGB different Quats. Based on a dataset of 1,007 data points, a mean percentage absolute error (%MAPE) of 3.16% was yielded. For individual substances, the lowest %MAPE was 0.19%, while the highest was 9.23%.
+
+----- para_id: 17 -----
+Section: Comparison and discussion
+
+Text:
+Upon comparison of the outcomes of this study with those of Belvèze and Akbari, it is observed that the method employed here yields lower %MAPE values for each substance. Specifically, when considering Belvèze's approach, this study achieves lower %MAPE for 26 out of 32 alkyl ammonium Quats. Similarly, when compared to Akbari's method, this study exhibits lower %MAPE for 25 out of 36 Quats. However, it is important to note that the overall average %MAPE for the method presented in this study is higher than that of Belvèze and Akbari. This discrepancy arises from higher prediction errors associated with certain substances due to inaccuracies in the osmotic coefficient predictions made prior to calculation. Additionally, this study utilises a larger dataset (1,654) of Quats compared to Belvèze (767) and Akbari (1,007), contributing to the observed differences in %MAPE. Furthermore, the prediction method utilized in this study can be extended to other Quats with structural similarities to the reference substances lacking experimental data. In contrast, alternative research methods rely on specific experimental data for those particular substances. Consequently, this research provides a valuable advantage in terms of broader applicability .
+
+----- para_id: 18 -----
+Section: Conclusions
+
+Text:
+This research aims to develop novel machine learning-based methods for predicting the osmotic and activity coefficients of alkyl ammonium electrolytes. To achieve this objective, the quaternary ammonium salts (Quats) are described using SMILES notation, and a model is constructed using supervised machine learning. Osmotic coefficients obtained from experimental data and activity coefficients calculated by reference sources were compiled for 52 distinct Quats, resulting in a dataset of 1,654 data points. The structural characteristics of these Scientific Reports | (2026) 16:5969 10 | https://doi.org/10.1038/s41598-026-36758-x substances were then encoded using SMILES notation, facilitating numerical analysis by computer algorithms. The dataset includes 14 descriptors , each corresponding to specific structural features. The prepared data is divided into two subsets: the training set and the test set, with proportions of 70% and 30% of the total data, respectively. The training set is utilized to train the machine learning model for predicting osmotic coefficients using seven selected algorithms. The test set is employed to assess the performance of the predictive models generated by these algorithms. Ultimately, it is determined that Gaussian Process (GP) is the optimal algorithm for predicting osmotic coefficients, considering both accuracy and continuity of predictions.
+
+----- para_id: 19 -----
+Section: Conclusions
+
+Text:
+The GP model yields a mean absolute percentage error (%MAPE) of 3.33% and an R2 value of 0.9805 when compared to experimental data. The osmotic coefficients predicted using GP are then converted into activity coefficients and compared with reported values from the literature. Notably, this study achieves high accuracy for various Quats, with 40 types having %MAPE below 5%. Despite some deviations, the overall average %MAPE for all 52 substances remains at 5.29%, which is still favorable compared to other research . Importantly, this novel method can be extended to structurally similar compounds not explicitly studied here, while alternative methods relying on specific experimental data cannot be directly applied . While acknowledging that the model is still in its early stages, it demonstrates promising potential . Several avenues for improvement exist. Firstly, enhancing the description of quaternary ammonium compounds (Quats) molecules—currently represented using simple SMILES notation—could be achieved by adopting more sophisticated molecular fingerprints41 for a more distinct characterization. While the current work establishes a baseline for count -based descriptors , future work will focus on implementing these advanced representations. Additionally, as machine learning advances, incorporating newer algorithms such as graph neural networks (GNNs)42 or extreme gradient boosting43 may enhance performance.
+
+----- para_id: 20 -----
+Section: Conclusions
+
+Text:
+Furthermore, techniques like feature selection44 and cross -validation45 can be applied to mitigate overfitting. Although there are rooms for improvement, this work marks a significant starting point for the machine learning-enhanced activity coefficients prediction method. Scientific Reports | (2026) 16:5969 11 | https://doi.org/10.1038/s41598-026-36758-x Scientific Reports | (2026) 16:5969 12 | https://doi.org/10.1038/s41598-026-36758-x (CH3)2(CH2(C6H5)) (C2H4OH)NCl 27 0.76 23 1.15 - - (CH3)2(CH2(C6H5)) (C2H4OH)NBr 31 0.67 30 3.98 - - Scientific Reports | (2026) 16:5969 13 | https://doi.org/10.1038/s41598-026-36758-x Data availability Data is provided within the manuscript and available upon request. Received: 14 October 2025; Accepted: 16 January
+
+----- para_id: 21 -----
+Section: Author contributions
+
+Text:
+Data curation; Investigation; Methodology; SupervisionS.M. Data curation; Formal analysis ; Investigation; Validation ; VisualizationA.N. Data curation; Formal analysis ; Investigation; Val idation; VisualizationL.S. Su pervision; Writing; Funding acquisitionA.A. Conceptualization; Formal analysis ; Funding acquisition; Investi gation; Methodology; Supervision; Validation ; Visualization; Writing.
+
+----- para_id: 22 -----
+Section: Funding
+
+Text:
+The research on "A Machine Learning Approach for Predicting Osmotic Coefficients and Further Calculating Activity Coefficients in Alkyl Ammonium Salts" (grant number RE-KRIS/FF68/36) by King Mongkut's Institute of Technology Ladkrabang (KMITL) has received funding support from the NSRF.
+
+----- para_id: 23 -----
+Section: Declarations
+
+Text:
+Competing interests The authors declare no competing interests.

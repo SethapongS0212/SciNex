@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "fc7e265df146", "C1": "INCORRECT", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "self-citation loop: subject and object are the same work in two renderings. The citing paper is the SOURCE paper, which agrees with Hardell et al. - that paper is nowhere in the triple"},
+  {"triple_id": "86472c22b736", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "reversed and near-tautological: the sentence says the oversampling technique USES SMOTE, and SMOTE simply IS an oversampling technique - hyponymy dressed as consumption"},
+  {"triple_id": "119431a0024c", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "ee6deca07224", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "textbook comprises: 'comprises' is verbatim, both sides are processes, and the object is one of three explicitly enumerated sub-steps"},
+  {"triple_id": "6e5f73340424", "C1": "INCORRECT", "C3": "TOO_NARROW", "C4": "INCORRECT", "note": "'predicted results with observed behavior' is a garbled fragment, not a concept, and the sentence states no achievement at all"},
+  {"triple_id": "fd344c0eebe5", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "direction is right but 'the improvements' is vague where the predicate demands a specific numeric result"},
+  {"triple_id": "7449809471e1", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "3fd3a9df33a5", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "the sentence states an AIM ('aims to ... create'), not a completed production; both sides are also unnamed placeholders"},
+  {"triple_id": "9e8d0b82a94b", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "5971dab7bbe2", "C1": "INCORRECT", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "mined from the ACM CCS CLASSIFICATION BLOCK - 'General and reference' is a bibliographic taxonomy header, not a research domain. The CCS arrow does encode containment, which is the only thing keeping C4 off INCORRECT"}
+]}

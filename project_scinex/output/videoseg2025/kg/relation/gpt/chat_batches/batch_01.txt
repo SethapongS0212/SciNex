@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: Abstract
+
+Text:
+Graduation ceremonies are significant occasions usually documented on lengthy, difficult-to-navigate videos. To make more satisfaction of the video needs to remove other participants and restore clear areas into short segments focused on particular graduates. By using YOLOv8 for efficient participant segmentation and the Segment Anything Model (SAM2) for accurate tracking, this study expands on earlier research by preparing videos for inpainting. The results establish the foundation for a complete system that combines inpainting, segmentation, and detection to produce polished, customized graduation video clips.
+
+----- para_id: 1 -----
+Section: I INTRODUCTION
+
+Text:
+The graduation ceremony is a pivotal event marking the academic achievement at the university level. In Thailand, this ceremony often features the presentation of diplomas by esteemed and influential figures, adding a sense of prestige and creating lasting memories for graduates and their families [1]. These ceremonies are typically recorded in full, resulting in videos that can span 3 - 8 hours. Such extended recordings make it difficult for graduates to revisit specific moments, as locating relevant sections can be time-consuming. To address this issue, it is vital to cut these lengthy recordings into shorter, more focused segments that capture only the most important moments for each graduate. Furthermore, by deleting other participants and recovering any covered sections of the primary graduate and background, the ceremony moment will be refined to be better when looking back on a video. [2] conducted research to develop a solution. The study introduced an automated process for segmenting lengthy graduation videos into concise clips. However, these shorter clips frequently still include multiple graduates, resulting in a visually cluttered appearance. The research, therefore, aimed to further refine these videos by isolating and retaining only the intended graduate, thereby enhancing both the clarity and visual appeal of the final output.
+
+----- para_id: 2 -----
+Section: I INTRODUCTION
+
+Text:
+Consequently, an additional method is required to track participation, detect multiple instances of participation, and subsequently remove unwanted participation, repairing the video frame by frame, similar in [3], which presents a method for inpainting using a diffusion model. Recent developments in the realm of object detection and segmentation algorithms have resulted in substantial enhancements in agricultural monitoring and surveillance of construction sites. Rejin and Varghese [5] present an augmented performance and resilience for applications necessitating real-time processing. have * Corresponding Author School of Engineering, King Mongkut's Institute of Technology Based on the established goal, future research aims to develop a system that incorporates all the functions discussed, utilizing posture detection, graduation identification, video segmentation, and a Diffusion model to achieve this objective in the future. This paper serves as a starting point by selecting models that can effectively detect multiple participants and develop a segmentation process for video to prepare it for inpainting. To this end, we utilize the YOLOv8 and the Segment Anything Model (SAM2) segmentation models for graduate detection, which are commonly used in various research studies on object segmentation. As a result, YOLOv8 demonstrates greater effectiveness in segmentation for removing individuals in preparation for future inpainting processes.
+
+----- para_id: 3 -----
+Section: I INTRODUCTION
+
+Text:
+SAM2 is employed for tracking target participants due to its precision.
+
+----- para_id: 4 -----
+Section: II LITERATURE REVIEW
+
+Text:
+In this review, we study the well-known segmentation models, which are YOLOv8 and Segment Anything Model 2 (SAM2). First, YOLOv8, developed by Ultralytics [4], exhibits superior performance compared to its YOLO predecessors with respect to both processing speed and accuracy. In summary, the architecture of the YOLOv8 model is informed by the design principles of YOLOv7 ELAN; the fundamental convolutional unit is the C2f module, which incorporates two parallel gradient flow pathways, thereby enhancing the robustness of the gradient information propagation. Furthermore, YOLOv8 employs the Spatial Pyramid Pooling Fusion (SPPF), a mechanism for extracting contextual information from images across diverse scales, which markedly improves the model's generalization proficiency. In the design of YOLOv8's neck, the model has eliminated certain convolutional components during the up-sampling process and has judiciously substituted the C3 module with the C2f module. YOLOv8 establishes a comprehensive framework for model training, thereby facilitating the execution of critical tasks such as object detection, instance segmentation, image classification, and pose estimation.
+
+----- para_id: 5 -----
+Section: II LITERATURE REVIEW
+
+Text:
+implemented enhancements to the YOLOv8 architecture, resulting in an optimized YOLOv8-Seg network that demonstrated exceptional accuracy in the segmentation of both healthy and diseased tomato plants [6].In the context of construction site oversight, an advanced YOLOv8-seg model, which integrates FocalNext, Efficient Multiscale Attention, and Context Aggregation modules, has demonstrated enhanced efficacy in identifying subtle features as evidenced by Ruihan Bai et al. Furthermore, a holistic methodology that synergizes YOLOv8 with the Segment Anything Model (SAM) and High Quality SAM has exhibited potential in medical image segmentation across a variety of modalities, as reported by S. Second, the Segment Anything Model (SAM), created by Kirillov et al. [9], is a powerful tool for segmenting any object in an image using simple prompts. It works well across many computer vision tasks without needing extra training for specific tasks, thanks to its ability to adapt to new scenarios (zero-shot transfer). SAM combines a strong image encoder with a prompt-based mask generation system to deliver top- notch performance in object segmentation. Building on this, SAM 2, introduced by Ravi et al. [10], expands the model to handle video data instead of just images. Using a memory- based transformer, SAM 2 tracks objects and their interactions across video frames, creating accurate and consistent masks for moving objects while tackling the unique challenges of video segmentation.
+
+----- para_id: 6 -----
+Section: II LITERATURE REVIEW
+
+Text:
+The current progress of SAM2 framework have led to significant improvements in medical image segmentation and visual object tracking. [11] introduce a self-sorting memory bank mechanism for universal 2D and 3D medical image segmentation, outperforming state-of-the-art models across various tasks. [12] address efficiency challenges in surgical video segmentation by implementing an Efficient Frame Pruning mechanism, achieving a 3x increase in frames per second compared to vanilla SAM2. [13] introduce SAMURAI, which adapts SAM2 for zero-shot visual tracking by incorporating temporal motion cues and a motion-aware memory selection mechanism, demonstrating improved performance on benchmark datasets without the need for retraining or fine-tuning. These innovations collectively enhance the applicability of SAM2 in medical imaging, surgical video analysis, and visual object tracking, offering real-time performance and improved accuracy across diverse scenarios.
+
+----- para_id: 7 -----
+Section: III METHOD
+
+Text:
+The singular video segment that has been truncated to a brief duration for the purpose of input derives from the graduation ceremonies footage at King Mongkut's Institute of Technology Ladkrabang (KMITL), 2023 [14]. The video has been meticulously shortened to 17 seconds to facilitate the generation of an ideal mocking output from automated video segmentation and subsequently employed as input in the analytical process. YOLOv8 object detection and SAM2 will utilize pretrained models sourced from their respective GitHub repositories, with YOLOv8 utilizing YOLOv8x to achieve optimal accuracy in bounding box generation, thereby transmitting values to SAM2, while SAM2 employs sam2.1_hiera_base+. For YOLOv8, a custom model will be implemented, which has been trained by fine-tuning yolov8n- seg utilizing a bespoke dataset comprising the initial 5000 frames from the video selectively edited to encompass only the Degree conferral period. All computational tasks associated with the model will be executed on an Nvidia GeForce 4060 RTX with 8GB of memory. 1 illustrates the methodology employed for the extraction of individual video segments. The individual video refers to the footage that has been truncated to short duration from the original recording obtained during the graduation ceremonies at King Mongkut's Institute of Technology Ladkrabang (KMITL), 2023. The graduation ceremony serves as the input video, as depicted in Fig.
+
+----- para_id: 8 -----
+Section: III METHOD
+
+Text:
+Individual video clips were utilized as inputs for segmentation within the context of the YOLOv8 and SAM2 models, the latter of which necessitates a form of prompting or guidance to accurately delineate specific regions for segmentation. The YOLOv8 object detection model was employed to execute bounding box detections as seen in Fig. 3, thereby creating bounding boxes for SAM2 to indicate the regions designated for segmentation. The segmentation processes of both models are specifically configured to identify only classes to persons. Upon completion of the segmentation process, video frames are produced that exhibit a robust mask overlay, which are subsequently utilized as inputs for the Mask Transparency Operation. The segmented areas within the video frames were altered to induce transparency, effectively creating "holes" where the identified objects were excised, as illustrated in Fig. 4 for YOLOv8 and Fig. The original static image, which consisted solely of a preselected background, was subsequently overlaid onto each frame of the processed footage to generate overlay frames. To assess the efficacy of the segmentation process, we conducted a thorough evaluation. The evaluation was conducted utilizing color distribution analysis by comparing the range of pixels with specific color values to the total number of pixels. The investigation primarily focused on golden, skin tones, and black colors associated with the participants in the ceremony.
+
+----- para_id: 9 -----
+Section: III METHOD
+
+Text:
+A successfully executed segmentation would result in a diminished presence of golden, skin tones, and black in the final output. To evaluate the performance of the model, metrics such as the Dice coefficient and IoU were calculated to quantify the segmentation results. These metrics are extensively used to evaluate segmentation studies The Dice coefficient measures the overlap between the predicted mask and the ground truth mask. It is defined as: where TP is the number of true positive pixels, FP is the number of false positive pixels, and FN is the number of false negative pixels. Similarly, IoU measures the ratio of the intersection of the predicted and ground truth regions to their union: In segmentation tasks, each pixel in the output mask can be classified as true positive (TP), false positive (FP), true negative (TN), or false negative (FN) based on its correspondence with the ground truth mask. The above metrics are computed using these classifications to assess the accuracy of the segmentation. In order to evaluate the efficacy of the segmentation models YOLOv8 and SAM2, we quantified the temporal and memory consumption associated with each methodology while processing a predetermined dataset. The assessment was performed on a computing system outfitted with an Nvidia Geforce 4060RTX 8GB. The timing metrics were concentrated on the inference phase, while the memory utilization was meticulously monitored to assess the resource requirements of each model.
+
+----- para_id: 10 -----
+Section: III METHOD
+
+Text:
+This investigation elucidates the computational efficiency of YOLOv8 and SAM2 concerning both processing speed and resource deployment.
+
+----- para_id: 11 -----
+Section: IV RESULTS
+
+Text:
+Evaluation was conducted utilizing color distribution on frames that passed the overlay process. The proportion of red, black, golden, and skin color will be measured. Each color will have its own color space thresholds assigned, which can be represented as values in Hue Saturation Value color space (HSV): 1) Red The red color is detected using two ranges due to the circular nature of the hue in the HSV color space: 0 ≤ H ≤ 10, 100 ≤ S ≤ 255, 100 ≤ V ≤ 255 () 160 ≤ H ≤ 180, 100 ≤ S ≤ 255, 100 ≤ V ≤ 255 () 0 ≤ H ≤ 180, 0 ≤ S ≤ 255, 0 ≤ V ≤ 50 () 20 ≤ H ≤ 32, 100 ≤ S ≤ 255, 100 ≤ V ≤ 255 () 0 ≤ H ≤ 20, 20 ≤ S ≤ 255, 70 ≤ V ≤ 255 () Where H: Hue S: Saturation V: Value Once the color thresholds were defined, all overlay frames from YOLOv8 and SAM2 were evaluated. The analysis involved comparing each selected color against every pixel in the frames, with results expressed as percentages of the total frame content as show in Table I and Fig. In the result of Table I, YOLOv8 and SAM2 both have a similar color proportion, with YOLOv8 showing slightly better overall suppression. striking a balance between reducing irrelevant colors (black, golden, skin) and retaining critical ones (red) This section evaluates the performance of the model, by using metrics Dice coefficient and IoU as summarized in Table II Both YOLOv8 and SAM2 produce good segmentation results based on their IoU and Dice.

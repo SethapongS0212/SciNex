@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 4fbac97ffb6e -----
+TRIPLE:     (Yolo)  --uses-->  (Ultralytics)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For the vehi- cle brand classification experiment, all base models (VGG16 [35], InceptionV3 [9], ResNet50 [2], and MobileNet [15], Yolo11m-cls [31]) were used as pre-built models available in TensorFlow except for Yolo, which comes with tools from Ultralytics [31] and is trained from scratch.
+
+----- triple_id: e51c7ac6004e -----
+TRIPLE:     (Random Forest)  --achieves-->  (partial interpretability of how the model separates classes)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Nevertheless, feature importance and rule extraction from a Random Forest should be interpreted as providing partial interpretability of how the model separates classes within this dataset, rather than a clinically exhaustive or directly causal explanation of ocular misalignment.
+
+----- triple_id: e6beee75bdc1 -----
+TRIPLE:     (SMOTE)  --addresses-->  (software quality modeling)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: SMOTE has been effectively applied across various domains, including software quality modeling and defect prediction.
+
+----- triple_id: 605705f3bfb2 -----
+TRIPLE:     (Random Forest (RF))  --comparesagainst-->  (deep learning classifiers)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: Among its practical advantages, Random Forest (RF) offers a relatively transparent tabular classification framework for clinical screening compared with fully end-to-end deep learning classifiers.
+
+----- triple_id: 8161cf36614d -----
+TRIPLE:     (LPII)  --comprises-->  (collaborative filtering)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: Therefore, the contribution of our research is to introduce LPII, a hybrid approach that combines three concepts of collaborative filtering , community structure, and biological classification.
+
+----- triple_id: 7b671cab6686 -----
+TRIPLE:     (MAPE)  --evaluates-->  (1.72%)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: For instance, the incorporation of cross-validation resulted in a reduction of RMSE from 9.92 K to 8.00 K and MAPE from 1.94% to 1.72% for the test set, indicating improved performance in property estimation.
+
+----- triple_id: ce414ee3a389 -----
+TRIPLE:     (OC-SORT)  --evaluatedon-->  (MOT20)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: On numerous datasets, including MOT17, MOT20, KITTI, head tracking , and, particularly, DanceTrack, where the object mo- tion is very non-linear, OC-SORT produces state-of-the-art results.
+
+----- triple_id: 1f1396b6963b -----
+TRIPLE:     (computer vision)  --encompasses-->  (object tracking)
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains
+SOURCE SENTENCE: Over the last decade, object tracking methods have gained popularity in the fields of Deep Learning and computer vision.
+
+----- triple_id: a838c1004dc0 -----
+TRIPLE:     (Jaccard index)  --produces-->  (GProjFungi)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: In this case, Jaccard index was selected because it gave the highest AUC, and it was used to construct GProjFungi.
+
+----- triple_id: d898335feded -----
+TRIPLE:     (RT4)  --designedfor-->  (reflect temporal scleral exposure)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: Accordingly, RT1 and RT4 were designed to reflect nasal and temporal scleral exposure, RT2 and RT3 to reflect the position of the corneal light reflex within the horizontal corneal span, and RT5 to reflect visible iris width as an internal reference during gaze change.

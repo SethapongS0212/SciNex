@@ -1,0 +1,604 @@
+{
+  "label_files": [
+    "gold/gemini_verdicts_qwen.csv"
+  ],
+  "n_labelled": 110,
+  "extractors": {
+    "relation": {
+      "n_labelled": 58,
+      "corpus_triples": 1101,
+      "sampled_strict": 0.15517241379310345,
+      "sampled_lenient": 0.3448275862068966,
+      "weighted_strict": 0.2555252800484408,
+      "weighted_lenient": 0.5040871934604905,
+      "weight_coverage": 1.0,
+      "by_predicate": {
+        "achieves": {
+          "n": 3,
+          "correct": 3,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 140,
+          "corpus_share": 0.1271571298819255,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "addresses": {
+          "n": 3,
+          "correct": 1,
+          "partial": 1,
+          "incorrect": 1,
+          "corpus_n": 287,
+          "corpus_share": 0.26067211625794734,
+          "strict": 0.3333333333333333,
+          "lenient": 0.6666666666666666
+        },
+        "affiliatedwith": {
+          "n": 3,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 29,
+          "corpus_share": 0.02633969118982743,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "cites": {
+          "n": 2,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 1,
+          "corpus_n": 4,
+          "corpus_share": 0.0036330608537693005,
+          "strict": 0.0,
+          "lenient": 0.5
+        },
+        "comparesagainst": {
+          "n": 3,
+          "correct": 1,
+          "partial": 1,
+          "incorrect": 1,
+          "corpus_n": 46,
+          "corpus_share": 0.04178019981834696,
+          "strict": 0.3333333333333333,
+          "lenient": 0.6666666666666666
+        },
+        "comprises": {
+          "n": 3,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 37,
+          "corpus_share": 0.03360581289736603,
+          "strict": 0.3333333333333333,
+          "lenient": 0.3333333333333333
+        },
+        "configures": {
+          "n": 3,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 8,
+          "corpus_share": 0.007266121707538601,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "designedfor": {
+          "n": 3,
+          "correct": 3,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 18,
+          "corpus_share": 0.01634877384196185,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "employs": {
+          "n": 3,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 26,
+          "corpus_share": 0.023614895549500452,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "encompasses": {
+          "n": 2,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 5,
+          "corpus_share": 0.004541326067211626,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "evaluatedon": {
+          "n": 3,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 2,
+          "corpus_n": 98,
+          "corpus_share": 0.08900999091734786,
+          "strict": 0.0,
+          "lenient": 0.3333333333333333
+        },
+        "evaluates": {
+          "n": 3,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 12,
+          "corpus_share": 0.010899182561307902,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "locatedin": {
+          "n": 3,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 1,
+          "corpus_n": 9,
+          "corpus_share": 0.008174386920980926,
+          "strict": 0.0,
+          "lenient": 0.6666666666666666
+        },
+        "motivates": {
+          "n": 1,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 1,
+          "corpus_n": 1,
+          "corpus_share": 0.0009082652134423251,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "produces": {
+          "n": 3,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 2,
+          "corpus_n": 14,
+          "corpus_share": 0.012715712988192553,
+          "strict": 0.0,
+          "lenient": 0.3333333333333333
+        },
+        "publishedin": {
+          "n": 3,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 8,
+          "corpus_share": 0.007266121707538601,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "reports": {
+          "n": 2,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 1,
+          "corpus_n": 2,
+          "corpus_share": 0.0018165304268846503,
+          "strict": 0.0,
+          "lenient": 0.5
+        },
+        "splitfrom": {
+          "n": 3,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 2,
+          "corpus_n": 21,
+          "corpus_share": 0.01907356948228883,
+          "strict": 0.0,
+          "lenient": 0.3333333333333333
+        },
+        "supports": {
+          "n": 3,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 8,
+          "corpus_share": 0.007266121707538601,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "trainedon": {
+          "n": 3,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 2,
+          "corpus_n": 54,
+          "corpus_share": 0.04904632152588556,
+          "strict": 0.0,
+          "lenient": 0.3333333333333333
+        },
+        "uses": {
+          "n": 3,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 2,
+          "corpus_n": 274,
+          "corpus_share": 0.2488646684831971,
+          "strict": 0.0,
+          "lenient": 0.3333333333333333
+        }
+      },
+      "bootstrap": {
+        "n": 2000,
+        "weighted_strict_ci95": [
+          0.1547078413563427,
+          0.41810475325461705
+        ],
+        "weighted_lenient_ci95": [
+          0.30305782621858923,
+          0.714199212836815
+        ]
+      }
+    },
+    "relation_scinex": {
+      "n_labelled": 52,
+      "corpus_triples": 1031,
+      "sampled_strict": 0.11538461538461539,
+      "sampled_lenient": 0.3269230769230769,
+      "weighted_strict": 0.1168768186226964,
+      "weighted_lenient": 0.3423860329776916,
+      "weight_coverage": 1.0,
+      "by_predicate": {
+        "achieves": {
+          "n": 3,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 2,
+          "corpus_n": 144,
+          "corpus_share": 0.1396702230843841,
+          "strict": 0.0,
+          "lenient": 0.3333333333333333
+        },
+        "achievesresult": {
+          "n": 3,
+          "correct": 1,
+          "partial": 1,
+          "incorrect": 1,
+          "corpus_n": 13,
+          "corpus_share": 0.012609117361784675,
+          "strict": 0.3333333333333333,
+          "lenient": 0.6666666666666666
+        },
+        "addresses": {
+          "n": 3,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 252,
+          "corpus_share": 0.24442289039767218,
+          "strict": 0.3333333333333333,
+          "lenient": 0.3333333333333333
+        },
+        "affiliatedwith": {
+          "n": 2,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 5,
+          "corpus_share": 0.004849660523763337,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "cites": {
+          "n": 2,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 4,
+          "corpus_share": 0.0038797284190106693,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "comparesagainst": {
+          "n": 3,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 1,
+          "corpus_n": 94,
+          "corpus_share": 0.09117361784675072,
+          "strict": 0.0,
+          "lenient": 0.6666666666666666
+        },
+        "comprises": {
+          "n": 3,
+          "correct": 1,
+          "partial": 1,
+          "incorrect": 1,
+          "corpus_n": 49,
+          "corpus_share": 0.0475266731328807,
+          "strict": 0.3333333333333333,
+          "lenient": 0.6666666666666666
+        },
+        "configures": {
+          "n": 3,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 64,
+          "corpus_share": 0.06207565470417071,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "designedfor": {
+          "n": 3,
+          "correct": 2,
+          "partial": 1,
+          "incorrect": 0,
+          "corpus_n": 17,
+          "corpus_share": 0.016488845780795344,
+          "strict": 0.6666666666666666,
+          "lenient": 1.0
+        },
+        "employs": {
+          "n": 3,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 3,
+          "corpus_n": 29,
+          "corpus_share": 0.028128031037827354,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "encompasses": {
+          "n": 1,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 1,
+          "corpus_n": 5,
+          "corpus_share": 0.004849660523763337,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "evaluatedon": {
+          "n": 2,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 63,
+          "corpus_share": 0.061105722599418044,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "evaluates": {
+          "n": 2,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 23,
+          "corpus_share": 0.02230843840931135,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "extractedfrom": {
+          "n": 2,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 9,
+          "corpus_share": 0.008729388942774006,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "locatedin": {
+          "n": 1,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 1,
+          "corpus_n": 4,
+          "corpus_share": 0.0038797284190106693,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "mentions": {
+          "n": 2,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 26,
+          "corpus_share": 0.02521823472356935,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "motivates": {
+          "n": 1,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 0,
+          "corpus_n": 3,
+          "corpus_share": 0.002909796314258002,
+          "strict": 0.0,
+          "lenient": 1.0
+        },
+        "producedby": {
+          "n": 2,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 1,
+          "corpus_n": 8,
+          "corpus_share": 0.007759456838021339,
+          "strict": 0.0,
+          "lenient": 0.5
+        },
+        "produces": {
+          "n": 2,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 0,
+          "corpus_n": 43,
+          "corpus_share": 0.041707080504364696,
+          "strict": 0.0,
+          "lenient": 1.0
+        },
+        "reports": {
+          "n": 1,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 1,
+          "corpus_n": 1,
+          "corpus_share": 0.0009699321047526673,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "splitfrom": {
+          "n": 2,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 1,
+          "corpus_n": 9,
+          "corpus_share": 0.008729388942774006,
+          "strict": 0.5,
+          "lenient": 0.5
+        },
+        "supports": {
+          "n": 2,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 13,
+          "corpus_share": 0.012609117361784675,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "trainedon": {
+          "n": 2,
+          "correct": 0,
+          "partial": 0,
+          "incorrect": 2,
+          "corpus_n": 62,
+          "corpus_share": 0.06013579049466537,
+          "strict": 0.0,
+          "lenient": 0.0
+        },
+        "uses": {
+          "n": 2,
+          "correct": 0,
+          "partial": 1,
+          "incorrect": 1,
+          "corpus_n": 91,
+          "corpus_share": 0.08826382153249272,
+          "strict": 0.0,
+          "lenient": 0.5
+        }
+      },
+      "bootstrap": {
+        "n": 2000,
+        "weighted_strict_ci95": [
+          0.015195602974458454,
+          0.2754607177497575
+        ],
+        "weighted_lenient_ci95": [
+          0.18218558034270935,
+          0.5208535402521823
+        ]
+      }
+    }
+  },
+  "by_paper": {
+    "videoseg2025": {
+      "n": 2,
+      "strict": 0.5,
+      "lenient": 1.0
+    },
+    "eyelandmark2024": {
+      "n": 5,
+      "strict": 0.4,
+      "lenient": 0.4
+    },
+    "gamlprop2025": {
+      "n": 6,
+      "strict": 0.3333333333333333,
+      "lenient": 0.3333333333333333
+    },
+    "csysguard2024": {
+      "n": 5,
+      "strict": 0.2,
+      "lenient": 0.4
+    },
+    "parkingyolo2023": {
+      "n": 11,
+      "strict": 0.18181818181818182,
+      "lenient": 0.36363636363636365
+    },
+    "pesticide2025": {
+      "n": 12,
+      "strict": 0.16666666666666666,
+      "lenient": 0.4166666666666667
+    },
+    "traveltime2022": {
+      "n": 6,
+      "strict": 0.16666666666666666,
+      "lenient": 0.16666666666666666
+    },
+    "strabismus2026": {
+      "n": 14,
+      "strict": 0.14285714285714285,
+      "lenient": 0.5
+    },
+    "vehiclemake2025": {
+      "n": 16,
+      "strict": 0.125,
+      "lenient": 0.375
+    },
+    "llamacorrupt2025": {
+      "n": 2,
+      "strict": 0.0,
+      "lenient": 1.0
+    },
+    "microwave2018": {
+      "n": 3,
+      "strict": 0.0,
+      "lenient": 0.0
+    },
+    "osmotic2026": {
+      "n": 3,
+      "strict": 0.0,
+      "lenient": 0.3333333333333333
+    },
+    "oxidecrack2025": {
+      "n": 3,
+      "strict": 0.0,
+      "lenient": 0.0
+    },
+    "reststop2018": {
+      "n": 4,
+      "strict": 0.0,
+      "lenient": 0.0
+    },
+    "roadwaylight2018": {
+      "n": 10,
+      "strict": 0.0,
+      "lenient": 0.2
+    },
+    "textaug2023": {
+      "n": 4,
+      "strict": 0.0,
+      "lenient": 0.0
+    },
+    "trafficspeed2021": {
+      "n": 3,
+      "strict": 0.0,
+      "lenient": 0.0
+    },
+    "ugmo2024": {
+      "n": 1,
+      "strict": 0.0,
+      "lenient": 1.0
+    }
+  },
+  "difference_strict": {
+    "a": "relation",
+    "b": "relation_scinex",
+    "mean": 0.13988080597452335,
+    "ci95": [
+      -0.04757072091238809,
+      0.327058727142506
+    ],
+    "p_a_greater": 0.9175
+  }
+}

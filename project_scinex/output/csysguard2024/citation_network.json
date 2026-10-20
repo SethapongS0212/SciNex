@@ -1,0 +1,418 @@
+{
+  "paper_id": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+  "title": "Stateless System Performance Prediction and Health Assessment in Cloud Environments: Introducing cSysGuard, an Ensemble Modeling Approach",
+  "year": 2024,
+  "abstract": "Stateless cloud computing presents remarkable scalability and cost-effectiveness by offering dynamically adjustable resources tailored to fluctuating demands, eliminating the constraints of stateful architectures. However, the challenges presented by dynamic workload are substantial in the context of system health monitoring, frequently leading to service interruptions owing to insufficient resources. It underscores the need for the development of more efficient monitoring systems. Our study introduces cSysGuard, a novel framework designed to enhance monitoring capabilities within cloud environments. The methodology employs an ensemble regression model with a stacking strategy to forecast dynamic performance metrics. The algorithm also leverages a classification model to assess the system’s health based on forecasted metrics, effectively identifying potential failures in the future. Under the configuration utilized, our evaluations demonstrated increased predictive performance with cSysGuard in forecasting various metrics compared to traditional models. The results showed an improvement of up to a remarkable 2.28-fold increase, varying significantly based on the specific metric under consideration. In addition, the effectiveness of health assessment was achieved through Decision Trees with hyperparameter tuning, resulting in a macro-averaged F1 score of 89.79%. This research contributes to both the theoretical and practical aspects of server monitoring, presenting a solution that assesses system performance metrics and health to tackle dynamic challenges in cloud infrastructure.",
+  "citation_count": 4,
+  "root_concepts": [
+    "health",
+    "monitoring",
+    "metrics",
+    "cloud",
+    "dynamic",
+    "system",
+    "remarkable",
+    "effectiveness",
+    "resources",
+    "challenges",
+    "csysguard",
+    "under",
+    "stateless",
+    "computing",
+    "presents"
+  ],
+  "nodes": {
+    "180660047a8227aa6fb26e3f2fab4fa89ff1fe3f": {
+      "title": "Monitoring Cloud Performance Metrics Utilizing AI to Estimate the Efficiency of Cloud Operations",
+      "year": 2025,
+      "abstract": "Cloud self-learning can be conducted through machine learning and deep learning based on AI and leads to predicting cloud performance to increase scalability in real-time applications. The focus of this paper is the Deep Neural Network (DNN) and LightGBM-based artificial intelligence approach to cloud resource optimization and monitoring. A data preparation and feature engineering strategy combined with an exploratory data analysis (EDA) approach generate useful information based on both execution time data as well as memory consumption, CPU utilization, and network traffic among other cloud performance metrics. The predictive models are more accurate and more stable with analysis of MAE, MSE, RMSE and R2 score compared to decision tree regression (DTR), and convolutional neural networks (CNN) analysis. The suggested models showed reduced MAE (0.7209 with LightGBM and 0.7218 with DNN) along with reduced RMSE (0.8307 with all of them) but with high computational efficiency. LightGBM offers faster training with excellent scaling capabilities on large workloads but has similar error distribution characteristics with DNN, and thus suitable to real-time cloud monitoring applications. These findings indicate the potential of AI-based models to improve the management of the cloud infrastructure, make use of the resources more efficiently, and reduce the cost of operation.",
+      "citation_count": 3,
+      "relation": "citing",
+      "concepts": [
+        "cloud",
+        "lightgbm",
+        "analysis",
+        "applications",
+        "monitoring",
+        "reduced",
+        "conducted",
+        "through",
+        "machine",
+        "leads",
+        "predicting",
+        "increase",
+        "scalability",
+        "focus",
+        "artificial"
+      ]
+    },
+    "031cfed03aca1fe93de86d9596e8a46265e89943": {
+      "title": "System Health Status Architecture for Preventive Maintenance Action of Navigation Equipment",
+      "year": 2025,
+      "abstract": "Health status is an important component of data provided by any advanced system, equipment, or sensor. System status is used for various tasks including real-time infrastructure system validity monitoring and real-time reliability analysis of equipment operation. Also, health status data sets are used for developing strategies of preventive maintenance of equipment to minimize faults and increase reliability of intelligent transportation system. These benefits of simple boolean data stimulate usage of system status in various of different applications. In the paper, we propose an architecture of system status processing to automatic maintenance action planning in order to increase the overall reliability level of navigation equipment. Proposed architecture grounds on statistical analysis of failures and built a list of tasks required to be performed during maintenance actions. Preventive maintenance increases system reliability and avoids significant causes connected with equipment repair.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "system",
+        "status",
+        "equipment",
+        "reliability",
+        "maintenance",
+        "health",
+        "various",
+        "analysis",
+        "preventive",
+        "increase",
+        "architecture",
+        "important",
+        "component",
+        "provided",
+        "advanced"
+      ]
+    },
+    "ee0004685a1b5d1d2b66cc2114faff8aadedc136": {
+      "title": "Early Bearing Fault Detection of Industrial Fans based on Vibration Analysis using Interpretable Deep Learning Framework",
+      "year": 2024,
+      "abstract": "The global market of machine condition monitoring is projected to grow at a rate of 8.3% in next five years. The recent technological advancement in IoTs and AI has driven predictive maintenance to be one of the most effective approach in this domain. Vibration analysis is the most efficient technique used to carry out predictive maintenance, using advanced data- driven intelligent approaches. The vibration data carries most significant information regarding the health state of machine components especially bearings. The proposed hybrid framework utilizes CNN and transformer utilizing the complex weightsharing capabilities of CNNs, combined with ability of transformer to capture the broader context of spatial relationships in large-scale patterns, making it suitable for datasets of varying sizes. A fault detection accuracy of 98.86% is achieved through experimentation on a run-to-failure real-industrial environment dataset composed of vibration data of large-scale coaxial fans.",
+      "citation_count": 0,
+      "relation": "citing",
+      "concepts": [
+        "vibration",
+        "machine",
+        "driven",
+        "predictive",
+        "maintenance",
+        "transformer",
+        "large",
+        "scale",
+        "global",
+        "market",
+        "condition",
+        "monitoring",
+        "projected",
+        "years",
+        "recent"
+      ]
+    },
+    "fd50859ac408080f2ad451c95a6b449ae59bcf68": {
+      "title": "Smart Health Monitoring System Using IoT Sensors in Cloud Environment",
+      "year": 2024,
+      "abstract": "This project will propose an extensive architecture of an IoT-based cloud health monitoring system that utilizes IoT sensors. A few sensors are interfaced with the system, includinga DHT11 for humidity and temperature measurement, an HBR(heart beat rate) sensor, and a SpO2 sensor for oxygen saturation monitoring, using NodeMCU as the primarymicrocontroller. These sensors continue collecting data, through Wi-Fi is uploaded into the cloud and analyses as well as saved on the ThingSpeak platform. Among its components is the EDA sensor, which could measure the heart rate of the user and tell so much about emotional and stress levels. With cloud computing, medical practitioners can go through analysing, visualizing and remotely monitoring data pertaining to patients efficiently. In case the systems find any abnormal reading, then the alert systems in the framework will immediately notify both the patient and the healthcare provider. Such a system is cost-efficient and scalable for continuous health monitoring through the integration of IoT with cloud computing. The patients suffering from chronic diseases find it very useful. The proposed framework concerns patient care, trying to improve the ability to perform health care interventions, accuracy in data collection, and ability to utilize real-time analytics and machine learning models for individualized treatment regimens.",
+      "citation_count": 2,
+      "relation": "citing",
+      "concepts": [
+        "cloud",
+        "monitoring",
+        "health",
+        "system",
+        "sensors",
+        "sensor",
+        "through",
+        "heart",
+        "computing",
+        "patients",
+        "systems",
+        "framework",
+        "patient",
+        "ability",
+        "project"
+      ]
+    },
+    "b42d3731737d50dd6762c95213f8000774c7adfd": {
+      "title": "Predictive Analytics in Mental Health Leveraging LLM Embeddings and Machine Learning Models for Social Media Analysis",
+      "year": 2024,
+      "abstract": "The prevalence of stress-related disorders has increased significantly in recent years, necessitating scalable methods to identify affected individuals. This paper proposes a novel approach utilizing large language models (LLMs), with a focus on OpenAI's generative pre-trained transformer (GPT-3) embeddings and machine learning (ML) algorithms to classify social media posts as indicative or not of stress disorders. The aim is to create a preliminary screening tool leveraging online textual data. GPT-3 embeddings transformed posts into vector representations capturing semantic meaning and linguistic nuances. Various models, including support vector machines, random forests, XGBoost, KNN, and neural networks, were trained on a dataset of >10,000 labeled social media posts. The top model, a support vector machine, achieved 83% accuracy in classifying posts displaying signs of stress.",
+      "citation_count": 66,
+      "relation": "cited_by",
+      "concepts": [
+        "posts",
+        "stress",
+        "vector",
+        "disorders",
+        "trained",
+        "embeddings",
+        "machine",
+        "social",
+        "media",
+        "support",
+        "prevalence",
+        "related",
+        "increased",
+        "significantly",
+        "recent"
+      ]
+    },
+    "b3fae57b3e713b941c380f182eaca388d6b8e7b6": {
+      "title": "Cloud Stateless Server Failover Prediction Using Machine Learning on Proactive System Metrics",
+      "year": 2023,
+      "abstract": "Cloud computing, revered for its extraordinary scalability and elasticity, has revolutionized business operations by providing flexible resource options based on demand. However, this on-demand resource allocation poses distinct challenges. Due to the fluid nature of resource allocation and load distribution in the cloud, monitoring the health of servers using system metrics becomes problematic. This complexity can lead to unexpected server request failures and service interruptions due to resource insufficiencies, highlighting the need for more effective monitoring systems. Our research utilizes machine learning techniques to predict cloud server health based on resource usage and operational metrics, focusing specifically on stateless applications. Our study reveals that a Logistic Regression model trained on these system metrics delivers the most precise predictions. After hyperparameter tuning, the model exhibited robust performance, achieving a macro-averaged F1 Score of 97.7%. The paper outlines our methodology, findings, and the potential of this approach for cloud server health prediction.",
+      "citation_count": 2,
+      "relation": "cited_by",
+      "concepts": [
+        "resource",
+        "cloud",
+        "health",
+        "metrics",
+        "server",
+        "demand",
+        "allocation",
+        "monitoring",
+        "system",
+        "computing",
+        "revered",
+        "extraordinary",
+        "scalability",
+        "elasticity",
+        "revolutionized"
+      ]
+    },
+    "a2d3e7e6451eab18b31ab204f53a3356801b458d": {
+      "title": "Machine Learning based Workload Prediction for Auto-scaling Cloud Applications",
+      "year": 2023,
+      "abstract": "Cloud computing is a ubiquitous computing paradigm that offers its users access to software, platforms, and infrastructure as services, on-demand, over the Internet. User requests for these services (also known as workload) are placed over Virtual Machines (VMs) for execution. These VMs are hosted over Physical Machines (PMs) to abstract processing capabilities of these PMs. Over a period, Cloud services experience fluctuations in the workload pattern. To match the resources required for serving the varying workload, VMs must be added or removed autonomically as performing the same task manually is inefficient. Moreover, VMs take some fraction of time to be setup before they can be used. The goal behind automatic scale-up and scale-down operations is to ensure that the Service Level Agreement (SLA) between the cloud service provider and cloud client is upheld and cloud users experience acceptable levels of Quality of Service (QoS). The essential task in achieving this aim of automated scaling is to forecast future workload, using the data on past workload history, so that enough VMs may be setup in advance to match the anticipated change in workload trend. Auto-scalers which provision resources by predicting the workload are categorized as proactive auto-scalers. This work aims at proposing a Machine Learning (ML) based workload prediction model for proactive auto-scaling of cloud resources. To this end, we demonstrate the use of Support Vector Machine (SVM) for Multi-class classification to predict the future workload by using a real cloud dataset. The results found are plausible as they indicate efficient and accurate workload prediction.",
+      "citation_count": 22,
+      "relation": "cited_by",
+      "concepts": [
+        "workload",
+        "cloud",
+        "services",
+        "resources",
+        "service",
+        "computing",
+        "users",
+        "machines",
+        "experience",
+        "match",
+        "setup",
+        "scale",
+        "scaling",
+        "future",
+        "scalers"
+      ]
+    },
+    "ffeb069aaf7cb9210204ca0f78f9aaeb4cc3a4cf": {
+      "title": "Resource Provisioning in Cloud using ARIMA and LSTM Technique",
+      "year": 2022,
+      "abstract": "Cloud computing is the distribution of computer services via the Internet (\"the cloud\"), including servers, storage, databases, networking, software, analytics, and intelligence that provide faster innovation, adaptable resources, and scale economies, Security, resource allocation, and resource provisioning are the three main difficulties in cloud computing. The paper is resource provisioning. Overprovisioning these resources raises costs for cloud users and providers; under provisioning these resources lengthen application response times and may also breach service level agreements (SLAs), which may eventually cost cloud providers clients and revenue. The various machine learning algorithms that are most suited for resource provisioning while taking CPU utilization statistics into consideration are thoroughly surveyed in this research.",
+      "citation_count": 4,
+      "relation": "cited_by",
+      "concepts": [
+        "cloud",
+        "resource",
+        "provisioning",
+        "resources",
+        "computing",
+        "providers",
+        "distribution",
+        "computer",
+        "services",
+        "internet",
+        "including",
+        "servers",
+        "storage",
+        "databases",
+        "networking"
+      ]
+    },
+    "8ac512dafab7eaae186301cf1ef8bf85332848d4": {
+      "title": "MID-UNet: Multi-input directional UNet for COVID-19 lung infection segmentation from CT images",
+      "year": 2022,
+      "abstract": "Coronavirus Disease 2019 (COVID-19) has spread globally since the first case was reported in December 2019, becoming a world-wide existential health crisis with over 90 million total confirmed cases. Segmentation of lung infection from computed tomography (CT) scans via deep learning method has a great potential in assisting the diagnosis and healthcare for COVID-19. However, current deep learning methods for segmenting infection regions from lung CT images suffer from three problems: (1) Low differentiation of semantic features between the COVID-19 infection regions, other pneumonia regions and normal lung tissues; (2) High variation of visual characteristics between different COVID-19 cases or stages; (3) High difficulty in constraining the irregular boundaries of the COVID-19 infection regions. To solve these problems, a multi-input directional UNet (MID-UNet) is proposed to segment COVID-19 infections in lung CT images. For the input part of the network, we firstly propose an image blurry descriptor to reflect the texture characteristic of the infections. Then the original CT image, the image enhanced by the adaptive histogram equalization, the image filtered by the non-local means filter and the blurry feature map are adopted together as the input of the proposed network. For the structure of the network, we propose the directional convolution block (DCB) which consist of 4 directional convolution kernels. DCBs are applied on the short-cut connections to refine the extracted features before they are transferred to the de-convolution parts. Furthermore, we propose a contour loss based on local curvature histogram then combine it with the binary cross entropy (BCE) loss and the intersection over union (IOU) loss for better segmentation boundary constraint. Experimental results on the COVID-19-CT-Seg dataset demonstrate that our proposed MID-UNet provides superior performance over the state-of-the-art methods on segmenting COVID-19 infections from CT images.",
+      "citation_count": 175,
+      "relation": "cited_by",
+      "concepts": [
+        "covid",
+        "infection",
+        "regions",
+        "image",
+        "images",
+        "input",
+        "directional",
+        "infections",
+        "convolution",
+        "cases",
+        "segmentation",
+        "methods",
+        "segmenting",
+        "problems",
+        "features"
+      ]
+    },
+    "12cfe45cf0114f9b2e8de88ac18b9eb199c3aec1": {
+      "title": "RPTCN: Resource Prediction for High-dynamic Workloads in Clouds based on Deep Learning",
+      "year": 2021,
+      "abstract": "Resource management is challenging in clouds due to the dynamics and sharing characteristics. The crucial problem is how to allocate resources accurately and satisfy demands of workloads timely. The traditional solution is to use historical data to predict future resource usage. Although these resource prediction methods can predict the periodicity, they can not accurately predict mutation points due to the high dynamics and uncertainty of resource usage. To tackle this issue, in this paper we propose a resource usage prediction method - RPTCN, which is based on a deep learning method - temporal convolutional networks (TCNs) in cloud systems. We add a fully connected layer and attention mechanism to TCNs to improve the prediction accuracy. In order to explore the relationship between the usage of different resources in the temporal dimension, we use correlation analysis to screen performance indicators as multidimensional feature input for prediction. Finally, we evaluate the performance of this method on Alibaba trace v2018. Evaluations show that RPTCN improves the overall MAE and MSE by 6.50%~89.03% and 0.41%~68.82% respectively compared to baselines in dynamic and long-term prediction of resource usage. Moreover, the convergence and generalization of RPTCN are also better than the baselines.",
+      "citation_count": 20,
+      "relation": "cited_by",
+      "concepts": [
+        "resource",
+        "usage",
+        "prediction",
+        "predict",
+        "rptcn",
+        "dynamics",
+        "resources",
+        "accurately",
+        "temporal",
+        "baselines",
+        "management",
+        "challenging",
+        "clouds",
+        "sharing",
+        "characteristics"
+      ]
+    },
+    "445521d62a3305b779eb4c2bfa7bd6199b95166a": {
+      "title": "Feedforward neural networks",
+      "year": 2021,
+      "abstract": null,
+      "citation_count": 39,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "952d03ca3086ec92e62395b9364a1f195ec54505": {
+      "title": "Workload Prediction with Regression for Over and Under Provisioning Problems in Multi-agent Dynamic Resource Provisioning Framework",
+      "year": 2020,
+      "abstract": "The infrastructure of cloud computing is distributed environment, where resources, such as CPU, storage, and network bandwidth, are shared. The cloud computing system can have the over and under provision problems. Recently, the problems have been handled using the multi-agent dynamic resource provisioning framework, where Machine Learning algorithm is used for workload prediction. We empirically investigated the effectiveness of regression models for the over and under provisioning on cloud system. We found that while linear regression, polynomial regression, and support vector machine (SVM) performed equally well in term of workload prediction. However, polynomial regression was able to distribute the load among the hosts better. This resulting in the lower total energy consumption. All regression model requires little time for parameter tuning. As such, we suggest that the model’s parameters should be readjusted as needed.",
+      "citation_count": 5,
+      "relation": "cited_by",
+      "concepts": [
+        "regression",
+        "cloud",
+        "computing",
+        "where",
+        "system",
+        "under",
+        "problems",
+        "provisioning",
+        "machine",
+        "workload",
+        "prediction",
+        "polynomial",
+        "infrastructure",
+        "distributed",
+        "environment"
+      ]
+    },
+    "d47b1a227cda8f8052d611d5e92b2da401372059": {
+      "title": "Improved LSTM-based Prediction Method for Highly Variable Workload and Resources in Clouds",
+      "year": 2020,
+      "abstract": "A large number of services provided by cloud/edge computing systems have become the most important part of Internet services. In spite of their numerous benefits, cloud/edge providers face some challenging issues, e.g., inaccurate prediction of large-scale workload and resource usage traces. However, due to the complexity of cloud computing environments, workload and resource usage traces are highly-variable, thus making it difficult for traditional models to predict them accurately. Traditional models fail to deal with nonlinear characteristics and long-term memory dependencies. To solve this problem, this work proposes an integrated prediction method that combines Bi-directional and Grid Long Short-Term Memory network (BG-LSTM) models to predict workload and resource usage traces. In this method, workload and resource usage traces are first smoothed by a Savitzky-Golay filter to eliminate their extreme points and noise interference. Then, an integrated prediction model is established to achieve accurate prediction for highly-variable traces. Using real-world workload and resource usage traces from Google cloud data centers, we have conducted extensive experiments to show the effectiveness and adaptability of BG-LSTM for different traces. The performance results well demonstrate that BG-LSTM achieves better prediction results than some typical prediction methods for highly-variable real-world cloud systems.",
+      "citation_count": 20,
+      "relation": "cited_by",
+      "concepts": [
+        "traces",
+        "prediction",
+        "cloud",
+        "workload",
+        "resource",
+        "usage",
+        "highly",
+        "variable",
+        "large",
+        "services",
+        "computing",
+        "systems",
+        "traditional",
+        "predict",
+        "memory"
+      ]
+    },
+    "5dde02f7ae47d0e7b0b39313c335a8c0ec484c2b": {
+      "title": "Machine Learning Based Workload Prediction in Cloud Computing",
+      "year": 2020,
+      "abstract": "As a widely used IT service, more and more companies shift their services to cloud datacenters. It is important for cloud service providers (CSPs) to provide cloud service resources with high elasticity and cost-effectiveness and then achieve good quality of service (QoS) for their clients. However, meeting QoS with cost-effective resource is a challenging problem for CSPs because the workloads of Virtual Machines (VMs) experience variation over time. It is highly necessary to provide an accurate VMs workload prediction method for resource provisioning to efficiently manage cloud resources. In this paper, we first compare the performance of representative state-of-the-art workload prediction methods. We suggest a method to conduct the prediction a certain time before the predicted time point in order to allow sufficient time for task scheduling based on predicted workload. To further improve the prediction accuracy, we introduce a clustering based workload prediction method, which first clusters all the tasks into several categories and then trains a prediction model for each category respectively. The trace-driven experiments based on Google cluster trace demonstrates that our clustering based workload prediction methods outperform other comparison methods and improve the prediction accuracy to around 90% both in CPU and memory.",
+      "citation_count": 243,
+      "relation": "cited_by",
+      "concepts": [
+        "prediction",
+        "workload",
+        "service",
+        "cloud",
+        "methods",
+        "provide",
+        "resources",
+        "resource",
+        "first",
+        "predicted",
+        "improve",
+        "accuracy",
+        "clustering",
+        "trace",
+        "widely"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "source": "180660047a8227aa6fb26e3f2fab4fa89ff1fe3f",
+      "target": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "type": "cites"
+    },
+    {
+      "source": "031cfed03aca1fe93de86d9596e8a46265e89943",
+      "target": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "type": "cites"
+    },
+    {
+      "source": "ee0004685a1b5d1d2b66cc2114faff8aadedc136",
+      "target": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "type": "cites"
+    },
+    {
+      "source": "fd50859ac408080f2ad451c95a6b449ae59bcf68",
+      "target": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "type": "cites"
+    },
+    {
+      "source": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "target": "b42d3731737d50dd6762c95213f8000774c7adfd",
+      "type": "cites"
+    },
+    {
+      "source": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "target": "b3fae57b3e713b941c380f182eaca388d6b8e7b6",
+      "type": "cites"
+    },
+    {
+      "source": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "target": "a2d3e7e6451eab18b31ab204f53a3356801b458d",
+      "type": "cites"
+    },
+    {
+      "source": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "target": "ffeb069aaf7cb9210204ca0f78f9aaeb4cc3a4cf",
+      "type": "cites"
+    },
+    {
+      "source": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "target": "8ac512dafab7eaae186301cf1ef8bf85332848d4",
+      "type": "cites"
+    },
+    {
+      "source": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "target": "12cfe45cf0114f9b2e8de88ac18b9eb199c3aec1",
+      "type": "cites"
+    },
+    {
+      "source": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "target": "445521d62a3305b779eb4c2bfa7bd6199b95166a",
+      "type": "cites"
+    },
+    {
+      "source": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "target": "952d03ca3086ec92e62395b9364a1f195ec54505",
+      "type": "cites"
+    },
+    {
+      "source": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "target": "d47b1a227cda8f8052d611d5e92b2da401372059",
+      "type": "cites"
+    },
+    {
+      "source": "ab3375304f141013e13b9bf8592bdea8f36b8210",
+      "target": "5dde02f7ae47d0e7b0b39313c335a8c0ec484c2b",
+      "type": "cites"
+    }
+  ]
+}

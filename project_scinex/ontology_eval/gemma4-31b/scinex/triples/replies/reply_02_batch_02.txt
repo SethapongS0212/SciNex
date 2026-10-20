@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "16183ea6eb3c", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "the English verb 'encompassed' is verbatim, but 'Initial exploration' is a phase label rather than a ResearchDomain and GP is a Model rather than a ResearchTask - both slots mistyped"},
+  {"triple_id": "99110f5b8ed9", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "980021931f16", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "CORRECT splitFrom direction - and this same model's CEO run inverted the identical relation on the same paper ((LExist) splitFrom (LTest))"},
+  {"triple_id": "5c9dea7e58e8", "C1": "PARTIAL", "C3": "TOO_NARROW", "C4": "INCORRECT", "note": "arguments inverted (configures is Specification -> Experiment), and two distinct parameters are bundled into a single object node"},
+  {"triple_id": "4801b83a6530", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "SECOND instance of the extractedFrom range violation in this study: the range is AcademicPaper, and the object is a dataset. The relation name reads generically enough to invite this, and CEO has no equivalent relation to misuse"},
+  {"triple_id": "701aa7f75584", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "9780f0bce0cd", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "employs is Organisation -> Person in scinex as in CEO; identical verdict to the same triple under CEO"},
+  {"triple_id": "75b0e45cd84a", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "'generated from' supports the direction and producedBy is the right relation, but RDF data is DATA, not the ResearchProcess the range requires"},
+  {"triple_id": "8e3074e65793", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "a Model standing in for the AcademicPaper the predicate requires"},
+  {"triple_id": "d2e329c99652", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "the sentence never states where the centre is - 'in Thailand' attaches to the travel-time prediction the group targets, not to the group's location. True in fact, unsupported by the evidence sentence"}
+]}

@@ -1,0 +1,16 @@
+{"verdicts": [
+  {"paper": "csysguard2024", "C6": "MINOR_ISSUES",
+   "issues": ["NODE SPLIT ON A HYPHENATION ARTIFACT: (Decision Trees) achieves (macro- averaged F1 score of 89.79%) AND (macro-averaged F1 score of 89.79%) - one value, two nodes, differing only by a stray space from the PDF text layer",
+              "SYSTEMATIC uses-FOR-HYPERPARAMETERS: (RNN) uses (learning rate) / (number of neurons) / (activation functions) / (epochs) / (batch size) - five settings in the ResearchArtifact slot. These are configures territory, and are the same underlying failure as the configures-direction problem",
+              "same pair under two predicates: (Level-1 learners) addresses (refining the regression outputs) AND designedFor the same object",
+              "(RNN) --trainedOn--> (observation steps): a window length in the TrainingDataset slot",
+              "(RMSE) --evaluates--> (improvements): the range requires a numeric result",
+              "a third rendering of the same result, (Decision Trees) achieves (highest F1 score), consistent with the other two"],
+   "note": "no assertion contradicts another and the tool relations (Scikit-learn, TensorFlow) are correctly typed; the defects are duplication and one systematically misused predicate, which is MINOR_ISSUES by the standard applied to routepred2023"},
+  {"paper": "roadwaylight2018", "C6": "CONSISTENT",
+   "issues": [],
+   "note": "VACUOUS PASS - zero triples, so no contradiction is possible."},
+  {"paper": "textaug2023", "C6": "CONSISTENT",
+   "issues": [],
+   "note": "VACUOUS PASS - zero triples, so no contradiction is possible. ⚠ TWO of this model's six C6 papers are empty graphs, both scoring the maximum 1.0. qwen3-235b extracts from only 16.4% of paragraphs, so its C6 is inflated by exactly the behaviour C2/C5 penalise. Its C6 figure must never be quoted without C2/C5 beside it."}
+]}

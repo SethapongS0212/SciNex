@@ -1,0 +1,18 @@
+{"verdicts": [
+  {"para_key": "pesticide2025#21", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["KMnO4 concentration prediction", "low-cost portable spectrophotometer", "5-fold cross-validation", "error of 1.48%", "standard method", "four optimal features"],
+   "missed_relations": ["XGB -> achieves -> lowest error of 1.48% on combined unseen data", "machine learning approach -> addresses -> KMnO4 concentration prediction", "approach -> uses -> images from a low-cost portable spectrophotometer", "current approach -> comparesAgainst -> the standard method"],
+   "note": "the four models are captured but only as a comparison ring; the paragraph's headline result (XGB, 1.48%) and the task/instrument the whole study rests on are absent"},
+  {"para_key": "pesticide2025#0", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["gas chromatography", "mass spectrometry", "high-performance liquid chromatography", "smartphone-based image analysis", "pesticide detection", "colorimeters / spectrometers / fluorimeters"],
+   "missed_relations": ["gas chromatography / mass spectrometry / HPLC -> addresses -> pesticide detection", "smartphone-based image analysis -> addresses -> pesticide detection", "optical components -> integratedInto -> smartphones"],
+   "note": "motivation paragraph, but it names four analytical methods and states their task explicitly - that is exactly the kind of domain fact this KG should hold; publisher boilerplate at the tail is correctly ignored"},
+  {"para_key": "strabismus2026#44", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["SMOTE-ENN / Edited Nearest Neighbors (as a clean node)", "data leakage", "noise amplification", "overfitting"],
+   "missed_relations": ["SMOTE-ENN -> encompasses/variantOf -> SMOTE", "applying SMOTE after the split -> addresses -> data leakage"],
+   "note": "good coverage - the imbalance relation, the accuracy, the comparison and the split are all captured; SMOTE-ENN survives only inside a malformed subject string rather than as its own node"},
+  {"para_key": "vehiclemake2025#16", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["batch normalization", "ReLU activation", "3 x 3 convolution", "MaxPooling with stride", "Filter-Block", "Filter-Block-DW", "MobileNet", "ImageNet", "filter counts 32/64/128/512/1024"],
+   "missed_relations": ["Filter-Block-DR -> comprises -> batch normalization, ReLU, 3x3 convolution, MaxPooling", "CTv1 -> comprises -> Filter-Block, Filter-Block-DW, Filter-Block-DR", "filter-count arrangement -> adoptedFrom -> ImageNet", "filter format -> usedIn -> MobileNet architecture"],
+   "note": "the densest architecture paragraph in the sample and only 2 of roughly ten named components survive; every layer-level composition relation is missed"}
+]}

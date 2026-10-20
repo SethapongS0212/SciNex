@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "trajectory mining",
+    "predicate": "addresses",
+    "object": "trip recommendation",
+    "object_type": "Task",
+    "source_sentence": "Zeng introduced the trajectory mining for trip recommendation [10].",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "2.1 Related Work"
+  },
+  {
+    "subject": "travel_time",
+    "predicate": "uses",
+    "object": "POIS",
+    "object_type": "Other",
+    "source_sentence": "It is formulated by travel_time: POIS× POIS→VAL, where VAL is a set of real number representing minutes between both pois.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "3.1 Definitions"
+  },
+  {
+    "subject": "travel_time",
+    "predicate": "produces",
+    "object": "VAL",
+    "object_type": "Other",
+    "source_sentence": "It is formulated by travel_time: POIS× POIS→VAL, where VAL is a set of real number representing minutes between both pois.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "3.1 Definitions"
+  },
+  {
+    "subject": "pref_event",
+    "predicate": "produces",
+    "object": "trip_event",
+    "object_type": "Method",
+    "source_sentence": "Users do not need to give all parameters to pref_event, because it is used to be a sketchy event to generate possible trip_event for the recommender system.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "3.1 Definitions"
+  },
+  {
+    "subject": "application",
+    "predicate": "uses",
+    "object": "HTML",
+    "object_type": "Other",
+    "source_sentence": "The application has been implemented using HTML and JavaScript that access information from the service tier.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "3.2 Key User Scenario"
+  },
+  {
+    "subject": "application",
+    "predicate": "uses",
+    "object": "JavaScript",
+    "object_type": "Other",
+    "source_sentence": "The application has been implemented using HTML and JavaScript that access information from the service tier.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "3.2 Key User Scenario"
+  },
+  {
+    "subject": "recommender system",
+    "predicate": "uses",
+    "object": "genetic algorithm",
+    "object_type": "Method",
+    "source_sentence": "To generate a trip plan, the recommender system employs the genetic algorithm to be a key component of our recommendation model.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "3.5 Trip Planner Technique"
+  },
+  {
+    "subject": "recommender system",
+    "predicate": "produces",
+    "object": "trip_plans",
+    "object_type": "Other",
+    "source_sentence": "Second, the recommender system generates possible m trip_plans or candi- dates as depicted in Fig.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "3.5 Trip Planner Technique"
+  },
+  {
+    "subject": "fitness function",
+    "predicate": "produces",
+    "object": "score",
+    "object_type": "Other",
+    "source_sentence": "In our experimented system, we de- fine the fitness function to calculate the score score = 5 Σ ai + b + c+ d.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "3.5 Trip Planner Technique"
+  },
+  {
+    "subject": "selection operation",
+    "predicate": "uses",
+    "object": "rank selection",
+    "object_type": "Method",
+    "source_sentence": "The selection operation using the technique of rank selection is firstly done by selecting top k plans having high scores.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "3.5 Trip Planner Technique"
+  },
+  {
+    "subject": "crossover operation",
+    "predicate": "uses",
+    "object": "single-point crossover technique",
+    "object_type": "Method",
+    "source_sentence": "Next, the crossover operation using the single-point crossover technique is operated.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "3.5 Trip Planner Technique"
+  },
+  {
+    "subject": "mutation operation",
+    "predicate": "uses",
+    "object": "uniform mutation method",
+    "object_type": "Method",
+    "source_sentence": "After that, the mutation operation using the uniform mutation method is run.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "3.5 Trip Planner Technique"
+  },
+  {
+    "subject": "recommender system",
+    "predicate": "produces",
+    "object": "trip_plan",
+    "object_type": "Other",
+    "source_sentence": "After submitting this form, the recommender system executes the algorithm and generates a trip_plan that is displayed in the next step.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "4.1 Application"
+  },
+  {
+    "subject": "recommender system",
+    "predicate": "produces",
+    "object": "trip plan",
+    "object_type": "Other",
+    "source_sentence": "Since our recommender system produces a trip plan from a few flexible user criteria, our work is directly evaluated from user feedback directly.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "4.3 Discussion"
+  },
+  {
+    "subject": "computing process",
+    "predicate": "uses",
+    "object": "genetic algorithm",
+    "object_type": "Method",
+    "source_sentence": "Besides, the computing process takes advantage of the genetic algorithm to find an appropriate solution.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "4.3 Discussion"
+  },
+  {
+    "subject": "recommender system",
+    "predicate": "uses",
+    "object": "genetic algorithm",
+    "object_type": "Method",
+    "source_sentence": "To execute the recommender system, users just input a few criteria such as some places, places' categories, and some specific time periods; and then the recommender system employed the genetic algorithm to produce the final trip plan having the highest score.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "5 Conclusion and Future Work"
+  },
+  {
+    "subject": "recommender system",
+    "predicate": "produces",
+    "object": "final trip plan",
+    "object_type": "Other",
+    "source_sentence": "To execute the recommender system, users just input a few criteria such as some places, places' categories, and some specific time periods; and then the recommender system employed the genetic algorithm to produce the final trip plan having the highest score.",
+    "extraction_mode": "relation",
+    "paper": "tripplanner2020",
+    "title": "A Recommender System for Trip Planners",
+    "section": "5 Conclusion and Future Work"
+  }
+]

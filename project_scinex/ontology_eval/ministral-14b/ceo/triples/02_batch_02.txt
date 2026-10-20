@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: b4816bab9cee -----
+TRIPLE:     (mutation probability m)  --configures-->  (mutation operation)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships
+SOURCE SENTENCE: The mutation operation using the uniform mutation method is run. The mutation probability m is configured as 0.1 (or 10%).
+
+----- triple_id: c66a24c47647 -----
+TRIPLE:     (Humphrey)  --publishedin-->  (IEEE Trans.)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  use for journal/conference names only
+SOURCE SENTENCE: Humphrey, ''Forecasting cloud appli- cation workloads with CloudInsight for predictive resource management,'' IEEE Trans.
+
+----- triple_id: 1de41b0a5ea7 -----
+TRIPLE:     (CNN model)  --designedfor-->  (recognizing and classifying vehicle makes from front-view images)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: This study presents a CNN model for recognizing and classifying vehicle makes from front-view images, designed to be small enough for resource-constrained systems.
+
+----- triple_id: b3750e7c0c69 -----
+TRIPLE:     (atomic/ion diffusions)  --motivates-->  (spallation)
+PREDICATE DEFINITION: ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method
+SOURCE SENTENCE: so it can be said that the spallation was actually due to the chemical compositions and operating conditions resulting in the atomic/ion diffusions specifying the phase formed
+
+----- triple_id: fc3dc1ab8eb5 -----
+TRIPLE:     (Valente et al.)  --employs-->  (cover-test–based automated diagnosis with digital video)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: Additionally, Valente et al.8 employed a cover-test–based automated diagnosis with digital video, reporting accuracy of 0.94, sensitivity of 0.97, and specificity = 0.73.
+
+----- triple_id: 0b79f9dda102 -----
+TRIPLE:     (QNLI)  --splitfrom-->  (GLUE-QNLI dataset)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: We selected the Question-answering Natural Language Inference (QNLI) dataset from the General Language Understanding Evaluation (GLUE) benchmark for this study
+
+----- triple_id: 541d933be28f -----
+TRIPLE:     (Nissan)  --supports-->  (0.39 (MobileNet's lowest F1 w-avg))
+PREDICATE DEFINITION: ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion
+SOURCE SENTENCE: MobileNet was seventh with the F1 w-avg of 0.65, excelling at 0.76 for Mazda and scoring lowest for Nissan at 0.39.
+
+----- triple_id: 138a992e160a -----
+TRIPLE:     (Rathachai Chawuthai et al.)  --writtenby-->  (Rathachai Chawuthai et al.)
+PREDICATE DEFINITION: AcademicPaper → Author  |  use only for explicit author attribution
+SOURCE SENTENCE: This pare presents the experimental results based on the design outlined in the previous section. It is noted that in this experiment, ASSE 2025, September 17–19, 2025, Tokyo, Japan Rathachai Chawuthai et al. 5% 0.661 0.400 The capital city of Thailand is Bangkok.
+
+----- triple_id: fc7e265df146 -----
+TRIPLE:     (work of Hardell et al.)  --cites-->  (Hardell et al.48)
+PREDICATE DEFINITION: AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name
+SOURCE SENTENCE: The real primary effect was chemical factors which were in good agreement with the work of Hardell et al.48 demonstrated that the changes in mechanical properties was a result of microstructural and morphological changes, thermal conditions and surface chemistry.
+
+----- triple_id: 24a64483961a -----
+TRIPLE:     (Siriraj Hospital)  --locatedin-->  (Bangkok)
+PREDICATE DEFINITION: Organisation → Place  |  use for physical location
+SOURCE SENTENCE: A photograph was taken in the outpatient ophthalmology examination room at Siriraj Hospital.

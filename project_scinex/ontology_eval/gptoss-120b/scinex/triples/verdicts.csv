@@ -1,0 +1,41 @@
+triple_id,C1,C3,C4,missed_concepts,missed_relations,issues,note
+b7206d045d79,CORRECT,APPROPRIATE,CORRECT,,,,cleanly isolates SMOT-EEN as the subject; qwen3-235b's version of this same sentence kept the whole malformed run-on 'prediction approach with the replacing SMOTE with SMOT-EEN' as its subject
+1b56280a2ba3,CORRECT,APPROPRIATE,CORRECT,,,,
+7c0c2a9dbbe2,PARTIAL,TOO_BROAD,PARTIAL,,,,"'consists of' is explicit, but 'Experiment Method' is a SECTION HEADING - document structure standing in as a ResearchProcess"
+24ead29ef33f,CORRECT,APPROPRIATE,PARTIAL,,,,near-tautological (PCF IS the collaborative-filtering score) and only implied; the source sentence is also heavily OCR-mangled formula debris
+64bdc3bdf683,CORRECT,APPROPRIATE,CORRECT,,,,
+93c024f3df1b,CORRECT,APPROPRIATE,CORRECT,,,,
+7e8c82ede0c7,CORRECT,APPROPRIATE,CORRECT,,,,identical to this model's CEO triple of the same id - the content hash makes them one
+c2d9389ac187,CORRECT,APPROPRIATE,CORRECT,,,,CORRECT splitFrom direction again - qwen3-235b's scinex run rendered this same sentence as (ordered TTR dataset) splitFrom (road). gptoss-120b is the only model in the study that gets splitFrom right under BOTH ontologies
+f3b11c3abb16,CORRECT,APPROPRIATE,CORRECT,,,,
+358dcdc4d4de,CORRECT,APPROPRIATE,CORRECT,,,,correctly pairs IoU with 0.612 out of three metric/value pairs in one sentence
+4222765562ec,CORRECT,APPROPRIATE,CORRECT,,,,
+f7ebbb4614f7,PARTIAL,TOO_BROAD,PARTIAL,,,,"'this study' is deictic and 'Belveze' is an author name standing for their work; the relation the sentence actually states is a COMPARISON, for which comparesAgainst would be stronger than the catch-all mentions"
+70b499f524e1,CORRECT,APPROPRIATE,CORRECT,,,,"clean producedBy - 'resulting in' gives the artifact, 'using the warp perspective method' gives the process, and the direction matches the range"
+c36abf17d8fd,CORRECT,APPROPRIATE,CORRECT,,,,"kept under achieves rather than achievesResult deliberately: the object is a described IMPROVEMENT (1.94% -> 1.72%), which reads as an objective fulfilled, not the single metric outcome achievesResult is for"
+96238435f9a9,CORRECT,APPROPRIATE,CORRECT,,,,same id as this model's CEO triple; apposition states the location and the typing is exact
+0a8e1070a453,CORRECT,APPROPRIATE,CORRECT,,,,correctly pairs the F1 score with 87.13% rather than the accuracy 88.26% in the same sentence
+bf7193022bc9,CORRECT,APPROPRIATE,CORRECT,,,,"sound, but semantically duplicates 1b56280a2ba3 (YOLOv8 vs SAM2) under a different object surface form, so the two land on separate nodes - a surface split within one sample"
+bf4be80b387b,CORRECT,APPROPRIATE,CORRECT,,,,
+cfcc071ea1d5,CORRECT,APPROPRIATE,CORRECT,,,,
+b4d53d6ea818,CORRECT,APPROPRIATE,CORRECT,,,,
+953981914931,CORRECT,APPROPRIATE,CORRECT,,,,"the sentence attributes the design intent to a list that names VGG16 explicitly, so distributing it to one member is sound"
+7600635e8222,CORRECT,APPROPRIATE,CORRECT,,,,near-duplicate of 7e8c82ede0c7 ('complete eye landmark dataset') from a different sentence - one dataset on two nodes
+254e37fa73b6,PARTIAL,TOO_BROAD,CORRECT,,,,direction and typing exactly right; 'the dataset' simply names nothing
+8b259df906ca,PARTIAL,TOO_NARROW,PARTIAL,,,,"'ANN()' is pseudocode function notation lifted from Algorithm 1, not an entity; the production relation itself is stated"
+1b80fc210b34,CORRECT,APPROPRIATE,CORRECT,,,,
+62036878c356,CORRECT,APPROPRIATE,CORRECT,,,,
+2ec7f5fe0af5,INCORRECT,TOO_BROAD,INCORRECT,,,,"PROVENANCE: a BIBLIOGRAPHY entry, and near-tautological - the object simply restates the subject's own title"
+16019a9b7b34,PARTIAL,TOO_BROAD,PARTIAL,,,,"'construction' is a bare generic noun; ministral-14b took 'data preparation' from this same sentence, which is the actual named process"
+1cc0b2151d63,CORRECT,APPROPRIATE,CORRECT,,,,
+5b4a19fddb74,CORRECT,APPROPRIATE,CORRECT,,,,"PROVENANCE FLAG: typing is exact and the place is correctly taken, but the source is an AFFILIATION LINE rather than paper content"
+008a64131955,CORRECT,APPROPRIATE,CORRECT,,,,correctly reaches for achievesResult on a metric outcome - gemma4-31b took the same sentence and used the weaker achieves
+785c937dd9a8,CORRECT,APPROPRIATE,CORRECT,,,,
+465e03bce64e,CORRECT,APPROPRIATE,CORRECT,,,,'comprises' verbatim with an explicitly enumerated sub-step
+a039cd0db4bd,PARTIAL,TOO_BROAD,CORRECT,,,,the consumption relation is explicit and correctly typed; 'this study' is a deictic subject
+4da8da24639d,CORRECT,APPROPRIATE,CORRECT,,,,"the task is stated in this sentence - contrast qwen3-235b's scinex version of the same fact, drawn from a sentence where the object never appears"
+8658424591ab,CORRECT,TOO_BROAD,CORRECT,,,,"same id as this model's CEO triple; 'designed for' is verbatim, 'CNN model' names nothing specific"
+7a9dd0a85742,PARTIAL,TOO_BROAD,PARTIAL,,,,trainedOn requires a NAMED corpus and 'labeled data' is a bare description
+3de5f9134d9a,PARTIAL,TOO_BROAD,CORRECT,,,,"same id as this model's CEO triple; correct partition direction, generic object"
+d943a91d3f5b,PARTIAL,TOO_BROAD,CORRECT,,,,'generates' is explicit and correctly typed; 'recommender system' is an unnamed subject
+027534d5aef0,CORRECT,APPROPRIATE,CORRECT,,,,

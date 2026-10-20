@@ -1,0 +1,257 @@
+{
+  "paper_id": "b92a295af9a56b0d1ba783e671327f9858373382",
+  "title": "Assessing the Effects of Corrupted Parameters in a Large Language Model: A Case Study of LLAMA 3.2 1B",
+  "year": 2025,
+  "abstract": "This study explores the effects of parameter corruption in a large language model (LLM) by altering its weights and evaluating performance. Experiments involve corrupting different layers and matrix types, including Self-Attention and Feed-Forward components, with performance assessed using BERT and ROUGE scores. Testing the Llama-3.2-1B-Instruct model was performed on the GLUE-QNLI dataset. Results show that increased corruption leads to greater degradation, with Feed-Forward matrices having a stronger impact especially in the Down matrices. According to the study, later layers are more important for performance than those that come before them. These results shed light on possible future chip implementations of LLM, which may help guide the design of fault-tolerant systems by taking vulnerable parameter placement into account.",
+  "citation_count": 0,
+  "root_concepts": [
+    "parameter",
+    "corruption",
+    "layers",
+    "forward",
+    "matrices",
+    "explores",
+    "effects",
+    "large",
+    "altering",
+    "weights",
+    "evaluating",
+    "experiments",
+    "involve",
+    "corrupting",
+    "different"
+  ],
+  "nodes": {
+    "40e8af970329135ec95057d73e239dab805ad128": {
+      "title": "The Llama 3 Herd of Models",
+      "year": 2024,
+      "abstract": "Modern artificial intelligence (AI) systems are powered by foundation models. This paper presents a new set of foundation models, called Llama 3. It is a herd of language models that natively support multilinguality, coding, reasoning, and tool usage. Our largest model is a dense Transformer with 405B parameters and a context window of up to 128K tokens. This paper presents an extensive empirical evaluation of Llama 3. We find that Llama 3 delivers comparable quality to leading language models such as GPT-4 on a plethora of tasks. We publicly release Llama 3, including pre-trained and post-trained versions of the 405B parameter language model and our Llama Guard 3 model for input and output safety. The paper also presents the results of experiments in which we integrate image, video, and speech capabilities into Llama 3 via a compositional approach. We observe this approach performs competitively with the state-of-the-art on image, video, and speech recognition tasks. The resulting models are not yet being broadly released as they are still under development.",
+      "citation_count": 18039,
+      "relation": "cited_by",
+      "concepts": [
+        "llama",
+        "presents",
+        "foundation",
+        "trained",
+        "image",
+        "video",
+        "speech",
+        "modern",
+        "artificial",
+        "intelligence",
+        "systems",
+        "powered",
+        "called",
+        "natively",
+        "support"
+      ]
+    },
+    "f1cc998bea343f69d0d88b59bfca73e9d9007448": {
+      "title": "LLMs and the Future of Chip Design: Unveiling Security Risks and Building Trust",
+      "year": 2024,
+      "abstract": "Chip design is about to be revolutionized by the integration of large language, multimodal, and circuit models (collectively LxMs). While exploring this exciting frontier with tremendous potential, the community must also carefully consider the related security risks and the need for building trust into using LxMs for chip design. First, we review the recent surge of using LxMs for chip design in general. We cover state-of-the-art works for the automation of hardware description language code generation and for scripting and guidance of essential but cumbersome tasks for electronic design automation tools, e.g., design-space exploration, tuning, or designer training. Second, we raise and provide initial answers to novel research questions on critical issues for security and trustworthiness of LxM-powered chip design from both the attack and defense perspectives.",
+      "citation_count": 42,
+      "relation": "cited_by",
+      "concepts": [
+        "design",
+        "security",
+        "automation",
+        "revolutionized",
+        "integration",
+        "large",
+        "multimodal",
+        "circuit",
+        "collectively",
+        "while",
+        "exploring",
+        "exciting",
+        "frontier",
+        "tremendous",
+        "potential"
+      ]
+    },
+    "bbc57e1b3cf90e09b64377f13de455793bc81ad5": {
+      "title": "Mixture-of-Experts with Expert Choice Routing",
+      "year": 2022,
+      "abstract": "Sparsely-activated Mixture-of-experts (MoE) models allow the number of parameters to greatly increase while keeping the amount of computation for a given token or a given sample unchanged. However, a poor expert routing strategy (e.g. one resulting in load imbalance) can cause certain experts to be under-trained, leading to an expert being under or over-specialized. Prior work allocates a fixed number of experts to each token using a top-k function regardless of the relative importance of different tokens. To address this, we propose a heterogeneous mixture-of-experts employing an expert choice method. Instead of letting tokens select the top-k experts, we have experts selecting the top-k tokens. As a result, each token can be routed to a variable number of experts and each expert can have a fixed bucket size. We systematically study pre-training speedups using the same computational resources of the Switch Transformer top-1 and GShard top-2 gating of prior work and find that our method improves training convergence time by more than 2x. For the same computational cost, our method demonstrates higher performance in fine-tuning 11 selected tasks in the GLUE and SuperGLUE benchmarks. For a smaller activation cost, our method outperforms the T5 dense model in 7 out of the 11 tasks.",
+      "citation_count": 864,
+      "relation": "cited_by",
+      "concepts": [
+        "experts",
+        "expert",
+        "number",
+        "token",
+        "tokens",
+        "mixture",
+        "given",
+        "under",
+        "prior",
+        "fixed",
+        "computational",
+        "sparsely",
+        "activated",
+        "allow",
+        "parameters"
+      ]
+    },
+    "8f4eaabaecc7ab39e127f2de30103b5a08dd6041": {
+      "title": "Performance Study on Extractive Text Summarization Using BERT Models",
+      "year": 2022,
+      "abstract": "The task of summarization can be categorized into two methods, extractive and abstractive. Extractive summarization selects the salient sentences from the original document to form a summary while abstractive summarization interprets the original document and generates the summary in its own words. The task of generating a summary, whether extractive or abstractive, has been studied with different approaches in the literature, including statistical-, graph-, and deep learning-based approaches. Deep learning has achieved promising performances in comparison to the classical approaches, and with the advancement of different neural architectures such as the attention network (commonly known as the transformer), there are potential areas of improvement for the summarization task. The introduction of transformer architecture and its encoder model “BERT” produced an improved performance in downstream tasks in NLP. BERT is a bidirectional encoder representation from a transformer modeled as a stack of encoders. There are different sizes for BERT, such as BERT-base with 12 encoders and BERT-larger with 24 encoders, but we focus on the BERT-base for the purpose of this study. The objective of this paper is to produce a study on the performance of variants of BERT-based models on text summarization through a series of experiments, and propose “SqueezeBERTSum”, a trained summarization model fine-tuned with the SqueezeBERT encoder variant, which achieved competitive ROUGE scores retaining the BERTSum baseline model performance by 98%, with 49% fewer trainable parameters.",
+      "citation_count": 79,
+      "relation": "cited_by",
+      "concepts": [
+        "summarization",
+        "extractive",
+        "abstractive",
+        "summary",
+        "different",
+        "approaches",
+        "transformer",
+        "encoder",
+        "encoders",
+        "original",
+        "document",
+        "achieved",
+        "there",
+        "categorized",
+        "methods"
+      ]
+    },
+    "4b7775e7b4fb4815204baedf2d45910fc91e59ad": {
+      "title": "Sensitivity of neural networks to corruption of image classification",
+      "year": 2021,
+      "abstract": "Artificial intelligence (AI) systems are extensively used today in many fields. In the field of medicine, AI-systems are especially used for the segmentation and classification of medical images. As reliance on such AI-systems increases, it is important to verify that these systems are dependable and not sensitive to bias or other types of errors that may severely affect users and patients. This work investigates the sensitivity of the performance of AI-systems to labeling errors. Such investigation is performed by simulating intentional mislabeling of training images according to different values of a new parameter called “mislabeling balance” and a “corruption” parameter, and then measuring the accuracy of the AI-systems for every value of these parameters. The issues investigated in this work include the amount (percentage) of errors from which a substantial adverse effect on the performance of the AI-systems can be observed, and how unreliable labeling can be done in the training stage. The goals of this work are to raise ethical concerns regarding the various types of errors that can possibly find their way into AI-systems, to demonstrate the effect of training errors, and to encourage development of techniques that can cope with the problem of errors, especially for AI-systems that perform sensitive medical-related tasks.",
+      "citation_count": 12,
+      "relation": "cited_by",
+      "concepts": [
+        "systems",
+        "errors",
+        "especially",
+        "medical",
+        "images",
+        "sensitive",
+        "types",
+        "labeling",
+        "mislabeling",
+        "parameter",
+        "effect",
+        "artificial",
+        "intelligence",
+        "extensively",
+        "today"
+      ]
+    },
+    "d3db091942ac3c1fe6af69275a318c25d7b4ed11": {
+      "title": "Exploring the Vulnerability of Deep Neural Networks: A Study of Parameter Corruption",
+      "year": 2020,
+      "abstract": "We argue that the vulnerability of model parameters is of crucial value to the study of model robustness and generalization but little research has been devoted to understanding this matter. In this work, we propose an indicator to measure the robustness of neural network parameters by exploiting their vulnerability via parameter corruption. The proposed indicator describes the maximum loss variation in the non-trivial worst-case scenario under parameter corruption. For practical purposes, we give a gradient-based estimation, which is far more effective than random corruption trials that can hardly induce the worst accuracy degradation. Equipped with theoretical support and empirical validation, we are able to systematically investigate the robustness of different model parameters and reveal vulnerability of deep neural networks that has been rarely paid attention to before. Moreover, we can enhance the models accordingly with the proposed adversarial corruption-resistant training, which not only improves the parameter robustness but also translates into accuracy elevation.",
+      "citation_count": 47,
+      "relation": "cited_by",
+      "concepts": [
+        "robustness",
+        "corruption",
+        "vulnerability",
+        "parameters",
+        "parameter",
+        "indicator",
+        "worst",
+        "accuracy",
+        "argue",
+        "crucial",
+        "value",
+        "generalization",
+        "little",
+        "research",
+        "devoted"
+      ]
+    },
+    "451d4a16e425ecbf38c4b1cca0dcf5d9bec8255c": {
+      "title": "GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding",
+      "year": 2018,
+      "abstract": "Human ability to understand language is general, flexible, and robust. In contrast, most NLU models above the word level are designed for a specific task and struggle with out-of-domain data. If we aspire to develop models with understanding beyond the detection of superficial correspondences between inputs and outputs, then it is critical to develop a unified model that can execute a range of linguistic tasks across different domains. To facilitate research in this direction, we present the General Language Understanding Evaluation (GLUE, gluebenchmark.com): a benchmark of nine diverse NLU tasks, an auxiliary dataset for probing models for understanding of specific linguistic phenomena, and an online platform for evaluating and comparing models. For some benchmark tasks, training data is plentiful, but for others it is limited or does not match the genre of the test set. GLUE thus favors models that can represent linguistic knowledge in a way that facilitates sample-efficient learning and effective knowledge-transfer across tasks. While none of the datasets in GLUE were created from scratch for the benchmark, four of them feature privately-held test data, which is used to ensure that the benchmark is used fairly. We evaluate baselines that use ELMo (Peters et al., 2018), a powerful transfer learning technique, as well as state-of-the-art sentence representation models. The best models still achieve fairly low absolute scores. Analysis with our diagnostic dataset yields similarly weak performance over all phenomena tested, with some exceptions.",
+      "citation_count": 8871,
+      "relation": "cited_by",
+      "concepts": [
+        "benchmark",
+        "understanding",
+        "linguistic",
+        "general",
+        "specific",
+        "develop",
+        "across",
+        "dataset",
+        "phenomena",
+        "knowledge",
+        "transfer",
+        "fairly",
+        "human",
+        "ability",
+        "understand"
+      ]
+    },
+    "b36a5bb1707bb9c70025294b3a310138aae8327a": {
+      "title": "Automatic differentiation in PyTorch",
+      "year": 2017,
+      "abstract": null,
+      "citation_count": 16272,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "4e3ef44cc63b1b7e95c6c7dc2ed4f0cb3feb821d": {
+      "title": "Large Language Models: A Deep Dive: Bridging Theory and Practice",
+      "year": 2024,
+      "abstract": null,
+      "citation_count": 38,
+      "relation": "cited_by",
+      "concepts": []
+    }
+  },
+  "edges": [
+    {
+      "source": "b92a295af9a56b0d1ba783e671327f9858373382",
+      "target": "40e8af970329135ec95057d73e239dab805ad128",
+      "type": "cites"
+    },
+    {
+      "source": "b92a295af9a56b0d1ba783e671327f9858373382",
+      "target": "f1cc998bea343f69d0d88b59bfca73e9d9007448",
+      "type": "cites"
+    },
+    {
+      "source": "b92a295af9a56b0d1ba783e671327f9858373382",
+      "target": "bbc57e1b3cf90e09b64377f13de455793bc81ad5",
+      "type": "cites"
+    },
+    {
+      "source": "b92a295af9a56b0d1ba783e671327f9858373382",
+      "target": "8f4eaabaecc7ab39e127f2de30103b5a08dd6041",
+      "type": "cites"
+    },
+    {
+      "source": "b92a295af9a56b0d1ba783e671327f9858373382",
+      "target": "4b7775e7b4fb4815204baedf2d45910fc91e59ad",
+      "type": "cites"
+    },
+    {
+      "source": "b92a295af9a56b0d1ba783e671327f9858373382",
+      "target": "d3db091942ac3c1fe6af69275a318c25d7b4ed11",
+      "type": "cites"
+    },
+    {
+      "source": "b92a295af9a56b0d1ba783e671327f9858373382",
+      "target": "451d4a16e425ecbf38c4b1cca0dcf5d9bec8255c",
+      "type": "cites"
+    },
+    {
+      "source": "b92a295af9a56b0d1ba783e671327f9858373382",
+      "target": "b36a5bb1707bb9c70025294b3a310138aae8327a",
+      "type": "cites"
+    },
+    {
+      "source": "b92a295af9a56b0d1ba783e671327f9858373382",
+      "target": "4e3ef44cc63b1b7e95c6c7dc2ed4f0cb3feb821d",
+      "type": "cites"
+    }
+  ]
+}

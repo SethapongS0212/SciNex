@@ -1,0 +1,18 @@
+{"verdicts": [
+  {"para_key": "microwave2018#8", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["microwave sensor", "ultrasonic sensor", "infrared sensor", "doppler effect / doppler shift", "electromagnetic field", "kick motion", "sliding window"],
+   "missed_relations": ["microwave sensor -> addresses -> detecting the kick motion", "microwave sensor -> uses -> electromagnetic field between transmitter and receiver", "microwave sensor -> uses -> the doppler effect", "ultrasonic / infrared sensors -> fail under -> temperature change, turbidity, water drops"],
+   "note": "names the paper's central sensing device, its two rejected alternatives and the physical principle it exploits; zero triples"},
+  {"para_key": "linkpred2015#12", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["Naive Bayes", "bipartite graph GBipt", "projection graph GProjFungi", "PCS(f,h)", "PBC(f,h)", "RDF dataset"],
+   "missed_relations": ["this research -> uses -> Naive Bayes to evaluate the probability of finding fungus f at host h", "bipartite graph -> producedFrom -> the RDF dataset", "PCS -> derivedFrom -> prior work [12]"],
+   "note": "the paragraph is formula-dense with OCR-mangled math, which is a fair excuse for most of it - but 'This research considered Naive Bayes ... to evaluate the probability' is clean prose naming a classifier, and it is missed"},
+  {"para_key": "microwave2018#10", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["microwave sensor", "microcontroller", "one-second sliding window", "supervised dataset", "kick / non-kick classification"],
+   "missed_relations": ["this paper -> addresses -> detecting a kicking gesture from a microwave sensor", "microcontroller -> uses -> one-second sliding window of sensor signal", "logistic regression -> designedFor/uses -> classifying kick vs non-kick actions"],
+   "note": "captures the motivation relation and the winning classifier, but misses the paper's own central statement - that the gesture is detected FROM a microwave sensor - so the graph records the result without the apparatus"},
+  {"para_key": "parkingyolo2023#6", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["YOLO", "SSD", "CNN", "SVM", "ROI extraction", "sliding windows", "feature extraction", "one-stage vs two-stage networks"],
+   "missed_relations": ["object detection pipeline -> comprises -> ROI extraction and object classification", "YOLO / SSD -> are -> one-stage networks treating detection as regression", "R-CNN -> uses -> CNN as feature extractor", "R-CNN -> uses -> SVM to classify candidate regions"],
+   "note": "a related-work paragraph naming six architectures and their internal composition; one triple came out of it. This is the densest miss in the model's paragraph sample."}
+]}

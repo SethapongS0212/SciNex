@@ -1,0 +1,90 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 1061a50b5f00 -----
+TRIPLE:     (PBR)  --achievesresult-->  (41.86% predictive performance)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: It can be seen that the predictive performance of PBR was only 41.86%, which was much lower than that provided by the machine learning model.
+
+----- triple_id: c1818eb3878d -----
+TRIPLE:     (YOLOv8)  --uses-->  (Mean Average Precision (mAP))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Object detection algorithms such as YOLOv8 use Mean Average Precision (mAP) to validate the performance of object detection .
+
+----- triple_id: 9434798daab4 -----
+TRIPLE:     (SA-LSTM)  --comparesagainst-->  (SA-LSTM with Savitzky–Golay filter)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Thus, in this experiment, the SA-LSTM without a filter technique was compared to the SA-LSTM with the selected filter techniques, which were the Kalman filter, the Savitzky–Golay filter, and the Butterworth low-pass filter.
+
+----- triple_id: ef8143c64015 -----
+TRIPLE:     (feed-forward network (FF))  --comprises-->  (Up (or FF-Up))
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: The self-attention (Attn) mechanism involves three key matrices: Query (Q or Attn-Q), Key (K or Attn-K), and Value (V or Attn-V), while the feed-forward network (FF) consists of three matrices: Gate (or FF-Gate), Up (or FF-Up), and Down (or FF-Down) [1] [5] as illustrated in Fig. 1
+
+----- triple_id: a608d45fd951 -----
+TRIPLE:     (Gaussian Process algorithm)  --achieves-->  (optimal for osmotic coefficient prediction)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Considering both performance and behavioral aspects, it can be concluded that the Gaussian Process algorithm is optimal for osmotic coefficient prediction.
+
+----- triple_id: 31c9ef6a37e2 -----
+TRIPLE:     (Random Forest)  --produces-->  (multiple decision trees)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: Random Forest creates multiple decision trees to improve the prediction accuracy and robustness.
+
+----- triple_id: 57be24c0ffdf -----
+TRIPLE:     (MOTA)  --evaluates-->  (MOTA score of 1.0)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  Links an evaluation metric to the experimental result it quantitatively assesses
+SOURCE SENTENCE: The performance of both tracking algorithms was well depicted in the results, obtaining MOTA scores of (1.0, 1.0, 0.96, 0.90) and (1, 0.76, 0.90, 0.83) in four different surveillance data for DeepSORT and OC-SORT, respectively.
+
+----- triple_id: af47c94c096c -----
+TRIPLE:     (SMOTE)  --trainedon-->  (training data)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: In addition, the dataset was first divided into training and testing sets prior to oversampling, ensuring that SMOTE was applied to the training data and thus avoiding any data leakage into the test set.
+
+----- triple_id: 4b785a1115a3 -----
+TRIPLE:     (LPII)  --addresses-->  (prediction of interspecies interactions)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Therefore, the contribution of our research is to introduce LPII, a hybrid approach that combines three concepts of collaborative filtering , community structure, and biological classification.
+
+----- triple_id: c5e94160f5ce -----
+TRIPLE:     (GPS Transaction)  --evaluatedon-->  (GPS Transaction)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: This dataset , GPS Transaction, is one of input datasets of the overall flow as shown in Fig.

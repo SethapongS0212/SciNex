@@ -1,0 +1,26 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 2 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 24 -----
+Section: 5. Conclusions
+
+Text:
+This is not necessary, but may help the algorithm to become more robust. In future studies, researchers can explore the synchronization of the algorithm with two or more cameras. This synchronization would enable the algorithm to detect parking time violations in situations where multiple CCTV cameras are deployed. By integrating the feeds from multiple cameras, the algorithm can gather a more comprehensive view of the parking lot, improving the accuracy of violation detection . This scalability is important for expanding the algorithm's applicability to larger parking areas or scenarios where multiple cameras are already in use. Author Contributions: Conceptualization, N.S., S.B. and R.C.; Methodology, N.S., R.C. and S.B.; Validation, N.S., M.P.P. and R.C.; Analysis , S.B.; Investigation, S.B.; Resources, N.S.; Data collection, R.C., N.S. and S.B.; Draft Preparation, N.S.; Review and Editing, R.C., N.S. and S.B.; Visualization, N.S.; Supervision, R.C., S.B. and M.P.P.; Project Administration, R.C., S.B. All authors have read and agreed to the published version of the manuscript. Funding: This research did not receive any external funding. Institutional Review Board Statement: Not applicable. Informed Consent Statement: Informed consent was obtained from KMITL to use the dataset for research purposes. Data Availability Statement: The data presented in the research paper are available on request, as they represent private parking lot data from KMITL.
+
+----- para_id: 25 -----
+Section: 5. Conclusions
+
+Text:
+Acknowledgments: We would like to acknowledge our sincere gratitude to the office of Information Technology of the School of Engineering, King Mongkut's Institute of Technology, Ladkrabang, for video data. Conflicts of Interest: The authors declare no conflict of interests.

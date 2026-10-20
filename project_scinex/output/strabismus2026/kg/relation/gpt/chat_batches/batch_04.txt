@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 36 -----
+Section: Interpretation of results
+
+Text:
+In summary, geometric eye landmark ratios are used to classify strabismus in this study and the classification of Random Forest model offers a methodological alternative that utilizes explicit geometric features, which are more accessible for clinical review than the latent representations in 'black-box' deep learning models. Instead of complex motions or specialized hardware, images from smartphones performed well in our proposed screening approach. This modular design represents a proof-of-concept framework that may support future development of telehealth and community screening tools.
+
+----- para_id: 37 -----
+Section: Technical advantages of the proposed methodology
+
+Text:
+Our technical approach consists of two main components: Eye Landmark Detection using RT-DETR and Strabismus Classification using Random Forest. Additionally, the oversampling technique using SMOTE is utilized to aid in the training process. Eye landmark detection using RT-DETR We chose to use eye landmark detection using the deep learning model of RT-DETR due to the following key factors : The RT-DETR utilizes a mix of loss functions to enhance several facets of the detection process for assessing ocular alignment in strabismus , which depends on a precise detection of points surrounding the eye, the pupil, and the light reflex. The Focal loss is crucial for reducing class imbalance, ensuring the model does not neglect small, significant landmark points within the picture. The GIoU loss provides correct localization by removing poor bounding box overlap and spatial misalignment, which is essential for accurately framing minor features such as the corneal reflex. Finally, the L1 loss facilitates precise coordinate refinement with steady gradients, Scientific Reports | (2026) 16:18278 12 | https://doi.org/10.1038/s41598-026-48893-6 enhancing the predicted positions for optimal spatial accuracy . Overall, these losses allow the RT-DETR to be able to identify tiny eye landmarks in the picture of patients. The IoU-aware query selection mechanism in RT-DETR has an advantage in eye landmark identification, which requires precise localization of small areas.
+
+----- para_id: 38 -----
+Section: Technical advantages of the proposed methodology
+
+Text:
+The system selects decoder queries based on expected IoU scores, thereby prioritizing high-confidence regions and suppressing suboptimal predictions. Focused selection reduces decoding noise and enhances convergence efficiency, making eye corners, pupils, and eyelid curves easier to recognize. IoU-aware query selection improves detection accuracy in complex, high-density localization applications, such as eye landmark identification.
+
+----- para_id: 39 -----
+Section: Classification using random forest
+
+Text:
+Among its practical advantages, Random Forest (RF) offers a relatively transparent tabular classification framework for clinical screening compared with fully end-to-end deep learning classifiers. The model can summarize how combinations of input features contribute to class separation through feature-importance ranking and tree-based decision paths, which may enhance confidence and facilitate result inspection by domain experts. However, our pipeline remains dependent on deep learning to identify eye landmarks, and the derived rules should be viewed as approximations of model behavior in this dataset rather than direct statements of pathophysiology. Aligned with the goals of interpretable machine learning, our approach leverages the transparency of a feature-based classifier with the effectiveness of deep learning for landmark extraction, thereby supporting more transparent screening outputs without claiming full explainability. To provide the interpretation of the final model, the entire population was analyzed to derive rule-based insights from the Random Forest. This analysis highlights which features contributed most strongly to class separation in the final model, but these patterns should be interpreted as dataset-specific model behavior rather than validated clinical rules.
+
+----- para_id: 40 -----
+Section: Classification using random forest
+
+Text:
+According to our feature importance analysis, the variables ranked by their contribution to the model are: LR_rt1, RL_rt3, MR_rt3, RL_rt1, RL_rt5, LR_rt4, LL_rt2, LL_rt3, RR_rt4, LR_ rt5, RR_rt3, MR_rt2, LR_rt2, RR_rt2, LR_rt3, ML_rt5, LL_rt1, ML_rt4, MR_rt5, MR_rt4, RL_rt4, ML_rt1, ML_rt2, LL_rt5, ML_rt3, MR_rt1, LL_rt4, RL_rt2, RR_rt1, and RR_rt5. The box plots in Fig. 7 illustrate the distribution of these feature strabismus condition. These visualizations highlight distributional shifts in metrics such as LR_rt1 and RL_rt3 between the True and False groups . These differences in medians and ranges provide the empirical basis for the classification rules used in the Random Forest model. To facilitate interpretation, the structure of the Random Forest model can be partially expressed through if–then rules derived from representative trees (see Table 4). These rules highlight several influential features, including LR_rt1, RL_rt3, MR_rt3, and RL_rt1. For instance, LR_rt1—representing the medial scleral area of the right eye—is expected to increase during leftward gaze. In this context, Rule 1 indicates that lower values are linked to strabismus , whereas Rule 2 reflects the alternative condition. Furthermore, features with suffixes _rt2 and _rt3 correspond to corneal light reflex positions, which relate to visual axis alignment . For example, Rule 4 suggests that an imbalance between MR_rt2 and MR_rt3 in the right eye during primary gaze is predictive of strabismus .
+
+----- para_id: 41 -----
+Section: Classification using random forest
+
+Text:
+More specifically, the model captures patterns related to medial scleral exposure during lateral gaze. Rules 1 and 3 indicate that reduced medial scleral area in the right eye during leftward gaze (LR_rt1 ≤ 0.07), in combination with increased temporal corneal light reflex distance in the left eye (LL_rt3 > 0.45), is consistent with strabismus , potentially reflecting reduced adduction of the right eye. Similarly, Rule 3 shows that increased temporal light reflex in the left eye during rightward gaze (RL_rt3 > 0.08) serves as a classifier for strabismus , whereas lower values are more consistent with orthotropia. In addition, the temporal positioning of corneal light reflex serves as a critical feature for strabismus classification. For example, Rule 5 indicates that a discrepancy between MR_rt2 and MR_rt3 (MR_rt2 < 0.16 and MR_rt3 > 0.20) is associated with strabismus , whereas more balanced values are observed in orthotropic cases during primary gaze. The same rule also suggests that limited temporal exposure during rightward gaze (RR_rt3 ≤ 0.08) may further indicate strabismic deviation. Furthermore, Rule 9 indicates that a wider iris width in primary gaze (MR_rt5 > 0.44), combined with reduced medial light reflex (ML_rt2 ≤ 0.28), is linked to strabismus , which may reflect restricted abduction. This geometric-feature approach provides greater interpretability than end-to-end black-box deep learning methods .
+
+----- para_id: 42 -----
+Section: Classification using random forest
+
+Text:
+However, establishing simple, fully comprehensible rules for all cases remains challenging. If straightforward classification were possible, a basic Decision Tree would likely achieve high accuracy . Due to the complexity and high dimensionality of features across multiple gaze positions necessitate the use of an ensemble method such as Random Forest—comprising multiple trees that vote on the final classification. Each rule captures specific patterns identified during training, and the ensemble aggregates these partial signals to achieve a level of performance that isolated, interpretable rules cannot provide. From a clinical perspective, these rules should be interpreted with caution. They do not constitute definitive diagnostic criteria nor isolate independent parameters for each eye. Rather, they are broadly consistent with established domain knowledge while also reflecting dataset-specific patterns learned by the model, and therefore should not be considered comprehensive clinical explanations. Since the primary validated task of this study was binary screening for horizontal strabismus versus orthotropia, the identification of specific strabismus subtypes was not a primary objective. However, to expand the experiment for future research, the experiment was extended to a three-class classification ( esotropia , exotropia , and orthotropia) using the Random Forest method since the dataset contained cases of both esotropia and exotropia .
+
+----- para_id: 43 -----
+Section: Classification using random forest
+
+Text:
+This confusion matrix was generated by aggregating the test sets across the four folds. As shown in Table 5, the exploratory analysis suggested that the model distinguished orthotropia from strabismus more effectively than it differentiated esotropia from exotropia . These findings support the current framework Scientific Reports | (2026) 16:18278 13 | https://doi.org/10.1038/s41598-026-48893- 1 (LR_rt1 < = 0.07) and (LL_rt3 > 0.45) True 2 (LR_rt1 > 0.07) and (RR_rt4 < = 0.07) and (RL_rt3 < = 0.06) False 3 (RL_rt3 > 0.08) and (LR_rt4 > 0.26) and (RL_rt1 > 0.55) True 4 (RL_rt3 < = 0.08) and (LR_rt4 < = 0.23) and (RL_rt3 > 0.05) False 5 (RL_rt1 > 0.50) and (MR_rt2 < 0.16) and (RR_rt3 < = 0.08) and (MR_rt3 > 0.20) True 6 (RL_rt1 < = 0.50) and (RL_rt1 > 0.45) and (LL_rt1 > 0.09) False 7 (LR_rt4 < = 0.22) and (MR_rt3 > 0.19) True 8 (LR_rt4 > 0.22) and (MR_rt3 < = 0.21) and (RR_rt3 > 0.07) and (RR_rt4 > 0.06) False 9 (MR_rt3 < = 0.21) and (RL_rt5 < = 0.30) and (ML_rt2 < = 0.28) and (MR_rt5 > 0.44) True 10 (MR_rt3 < = 0.21) and (RL_rt5 > 0.30) and (ML_rt5 > 0.45) False Scientific Reports | (2026) 16:18278 14 | https://doi.org/10.1038/s41598-026-48893-6 primarily as a binary screening tool, whereas reliable subtype classification will require further validation with additional data and refined feature design.
+
+----- para_id: 44 -----
+Section: Oversampling technique using SMOTE
+
+Text:
+In this study, SMOTE was employed to address class imbalance in a dataset of limited size, which is crucial for improving model training stability and representation of minority classes. However, in some cases where many outliers are found, the synthetic data generated from noise may impact the overall results of the predictive model. To mitigate the issue of noise amplification, we conducted analyses of the synthetic samples by comparing the results against Over-sampling using SMOTE and cleaning using Edited Nearest Neighbors (SMOTE-ENN)23, which is a variant of SMOTE reducing synthesis noise and borderline data. Our prediction approach with the replacing SMOTE with SMOT-EEN resulted in an accuracy of 0.95, which is close to the accuracy of the original experiment using SMOTE. Therefore, the results suggest that the data synthesis was not negatively impacted by noise presented in the processed data. In addition, the dataset was first divided into training and testing sets prior to oversampling, ensuring that SMOTE was applied to the training data and thus avoiding any data leakage into the test set. This design maintains the validity of performance evaluation. Thus, the application of SMOTE under these controlled conditions provides an advantage in enhancing model generalization in small or imbalanced datasets while minimizing the risk of overfitting.
+
+----- para_id: 45 -----
+Section: Theoretical and clinical implications
+
+Text:
+This study contributes to the ongoing convergence between explainable AI, real-time computer vision, and mobile health. It aligns with broader efforts to build AI systems in healthcare that prioritize methodological transparency and feature-level inspectability, while acknowledging that interpretability exists on a spectrum rather than as an all-or-none property2425. By reducing the reliance on specialized hardware and clinician- guided tests, our system offers a proof-of-concept framework that serves as a foundation for future screening applications, pending further external validation in broader and less controlled settings. If validated in broader settings, the proposed system could be used by general practitioners, general ophthalmologists, or trained nurses. The model is intended to support screening rather than provide a definitive diagnosis. In practice, a positive result may help identify individuals who should be referred for confirmatory ophthalmic examination. A negative result, however, should still be interpreted with caution because screening tools have inherent limitations and do not replace clinical examination. To maximize the sensitivity of the screening process and minimize the risk of missed diagnoses, one aim of our study is to minimize false negatives (FN). While Random Forest performed well, as the confusion matrix presented in Table 3, eliminating all FN remains a significant challenge given the inherent variability in image data.
+
+----- para_id: 46 -----
+Section: Theoretical and clinical implications
+
+Text:
+Future work should aim to further reduce false-negative results while maintaining acceptable specificity.
+
+----- para_id: 47 -----
+Section: Limitations and critical evaluation
+
+Text:
+Despite promising results, several limitations must be acknowledged. First , the dataset was collected from a single center and may not reflect real-world variability in age, ethnicity, lighting, or device quality. Second, landmark annotation was performed manually; inter-rater reliability was not formally assessed. One ophthalmologist provided the strabismus labels, and landmark annotation was performed by a researcher blinded to the clinical diagnoses. Third, although we used SMOTE and cross-validation to address imbalance, additional external datasets are needed to confirm generalizability. Moreover, we recognize that ratio-based classification— while interpretable—may have limitations in more complex forms of strabismus involving torsion or vertical components. Future work could explore deep feature fusion between landmark geometry and convolutional texture information to address mixed-type presentations. Future directions We propose several research extensions: 1. Dataset Expansion: Use a variety of smartphones, light settings, camera angles, and demographics (ages, ethnicities, and skin tones) in the training data to ensure the performance of the model can work well in a wide range of real-world scenarios and populations. Automated Annotation: Create and utilize bigger datasets more quickly without the need for expert labeling by using self-supervised or weakly-supervised learning. Scientific Reports | (2026) 16:18278 15 | https://doi.org/10.1038/s41598-026-48893-6 3.

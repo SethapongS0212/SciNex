@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: III METHOD
+
+Text:
+This section proposes an image classification method for vehicle make classification. This part is divided into two parts. The former part discusses the structure of the CNN model designed for recognizing vehicle makes from front- view images, including a version of the model reduced in size using Depth-wise Separable Convolution and 1 × 1 Convolution Dimension Reduction. This is intended for use in processors with limited resources, such as embedded boards capable of processing CNN models, smartphones, or traffic cameras. Furthermore, the latter part covers the datasets, which was collected by our work. All images are long-range photographs of vehicle fronts that are captured at some toll plazas from free flow expressways in Thailand, as shown in FIGURE 5. The structure of the experiment in this research for classifying vehicle make from front-view images of cars is as follows. First, explain the datasets, an overview, and how to collect them. Next, divide the process into two distinct tasks. The first is the pre-processing to crop the ROI [27] [28] vehicle image. The second is experimentation with the proposed CNN model. In our study, the dataset was collected from images of cars with the same viewpoint as ones captured from free flow toll systems in Thailand. This dataset was self-collected in the same manner as other research projects which generally gathered their own datasets [29].
+
+----- para_id: 13 -----
+Section: III METHOD
+
+Text:
+Since the free flow toll system aims to detect license plates, the dataset does not consist of full vehicle images but rather images of the front part of the car. Therefore, the images used in this study prominently feature the front of the car, including the hood, bumper, headlights, and the car logo. Recognizing the make and model of the car can be applied to toll systems , such as verifying car images without using license plates in cases where the license plate cannot be detected. To setup the viewpoint camera like the toll plazas, our camera was installed at a height of 5.3 meters from the road surface, with a detection range of approximately 7 meters, shown in FIGURE 6. The initial images captured by the vehicle detection camera are cropped using Yolo [30], [31] to isolate only the vehicle parts. It resulted in an image size of 244 × 244 pixels [32]. To ensure the dataset is balanced across all vehicle make classes, this study selected images from the entire dataset to represent five commonly found vehicle makes in Thailand: Toyota, Honda, Mazda, Nissan, and Isuzu. Each vehicle make has 200 images, so there are 1000 images in total. All images are captured during the daytime, as some examples are shown in FIGURE 7. The proposed CNN model for vehicle make classification consists of three model types, focusing on enhancing accuracy and reducing complexity. Each model type was produced from a different filter block.
+
+----- para_id: 14 -----
+Section: III METHOD
+
+Text:
+The filter block includes convolutional layers, computing different styles to create a feature map. 1) FILTER-BLOCK In this study, the Filter-boxes are designed, which is a group of processing layers that perform feature extraction. There are three types of Filter-Block: standard filter-box,
+
+----- para_id: 15 -----
+Section: B. PROPOSED CCN MODEL
+
+Text:
+filter-block-DW applied depth-wise separatable convolu- tional method, and filter-block-DR applied dimension reduc- tion method. The structures of all three types of Filter-Blocks are shown in FIGURE 8 First, Standard Filter-Block consists of an initial 3 × 3 convolution layer where the number of filters can be specified as needed, without using bias or activation function, with padding set to 'same' and stride = 1. This is followed by a batch normalization layer [33] to speed up the learning process, an activation function layer using ReLU, and finally, a 3 × 3 MaxPooling layer with stride = 2 (Overlap) [34]. Standard MaxPooling uses a stride equal to the kernel pooling size (in this case, stride = 3). Using a smaller stride for MaxPooling reduces the size of the output matrix. Second, Filter-Block-DW applies the Depth-wise sepa- rable convolution method to the standard Filter-Block. The internal structure starts with a 3 × 3 depth-wise convolution, where the number of filters equals the depth of the input matrix, without using bias or activation function. This is followed by batch normalization and ReLU activation function layers. Next, a 1 × 1 convolution without bias and activation function is applied, where the number of output filters can be specified. This is followed by batch normalization and ReLU activation function layers, ending with MaxPooling with stride = 2.
+
+----- para_id: 16 -----
+Section: B. PROPOSED CCN MODEL
+
+Text:
+Last, Filter-Block-DR uses the 1 × 1 convolution method to reduce the size of the input matrix in the standard Filter- Block. The internal structure starts with a 1 × 1 convolution with 16 filters, without using bias or activation function. This is followed by batch normalization and ReLU activation function layers. Next, a 3 × 3 convolution without bias and activation function is applied, where the number of output filters can be specified. This is followed by batch normalization and ReLU activation function layers, ending with MaxPooling with stride. 2) MODEL STRUCTURE The previous subsection presented Filter-Block, Filter-Block- DW, and Filter-Block-DR. They have different internal oper- ations, affecting the number of parameters and computational processes. After establishing the feature extraction using Filter-Blocks, a preliminary model structure was introduced. This structure, built from the three types of Filter-Blocks, is named ''CTv1''. The model structure starts from the top and progresses downward, it consists of six layers of Filter- Blocks. Each layer has a different number of output filters, arranged from fewer to more filters. This approach, which is adopted from ImageNet [1], increases the chances of detecting key features by reducing the matrix dimensions. The chosen numbers of six filters are 32, 64, 128, 512, and 1024 respectively . This format is used in MobileNet model architecture.
+
+----- para_id: 17 -----
+Section: B. PROPOSED CCN MODEL
+
+Text:
+Input: image_data //a vehicle RGB image sizing 244∗244∗3 Output: vm_pred //the prediction result of vehicle make //Filter-Block 1: Function Filter-Block(filter-size, map-in) 2: m ←Multi-layer-filter(filter=filter-size, map-in) //Model Structure 1: map ←Filter-Block(32, image_data) 2: map ←Filter-Block(64, map) 3: map ←Filter-Block(128, map) 4: map ←Filter-Block(256, map) 5: map ←Filter-Block(512, map) 6: map ←Filter-Block(1024, map) 7: map ←Flatten_GAP(map) 8: map ←Dense_256(map) 9: map ←Dense_5(map) 10: vm_pred ←softmax(map) After passing through all the Filter-Blocks, the model uses Global Average Pooling to flatten the 3D matrix into a 1D matrix. This is followed by a Dense layer with 256 units using the ReLU activator and a final Dense layer with 5 units using the SoftMax activator to predict the five vehicle brands. The other two models, which incorporate Filter-Block-DW and Filter-Block-DR, have structures similar to the CTv1 model, differing only in the Filter-Block sections. All other operational layers remain the same. The structures of all three model concepts are shown in the model pseudocode named ''Model Algorithm'' and FIGURE 9 following the pseudocode for the overall three model structures.
+
+----- para_id: 18 -----
+Section: C. EXPERIMENTS AND EVALUATIONS
+
+Text:
+In the experiment, which randomly shuffled the data but set a seed value to ensure that the randomization results are consistent each time, allowing other models to receive the same randomization. Then split the data into training and testing sets, with 80% for training and 20% for testing, using the split_dataset function from the TensorFlow library [35]. To assess the experiment, the model size, parameter count, and execution time will be measured from the time the trained model is used, which is the inference time. Since the experiment involves multi-class classification, the F1- score was used to measure performance. The F1-Score is calculated from the Recall and Precision value. The Recall and Precision values come from the calculation of TP=True Positive, TN=True Negative, FP=False Positive, and FN=False Negative. The formula of the evaluation values follows. Precision: is the ratio of correctly predicted positive observations to the total predicted positive observation. Recall: is the ratio of correctly predicted positive observa- tions to the total positive observation class.
+
+----- para_id: 19 -----
+Section: IV RESULTS
+
+Text:
+This section of the experiment will explain the initial preparation methods for both hardware and software. The experimental results focus on recognizing vehicle brands based on front-view images. The experiments used both state -of-the-art CNN models and the proposed models. The results will emphasize accuracy , model size, training and prediction time, and additional experiments involving parameter adjustments that affect the CNN model.
+
+----- para_id: 20 -----
+Section: A. EXPERIMENTAL PREPARATION
+
+Text:
+In the experiment, the Python and machine learning libraries: TensorFlow from Google and Conda were used for managing the environment and installing various packages. For the vehi- cle brand classification experiment, all base models (VGG16 [35], InceptionV3 [9], ResNet50 [2], and MobileNet [15], Yolo11m-cls [31]) were used as pre-built models available in TensorFlow except for Yolo, which comes with tools from Ultralytics [31] and is trained from scratch. For the custom models, which were built entirely from scratch using the basic structure of CNNs. For training, the Adam optimizer and Sparse Categorical Cross-Entropy were used to calculate the loss for parameter adjustments within the model. In addition to software preparation, the necessary hardware for the experiment was also prepared. The summary of both hardware and software preparations is shown in TABLE 1.
+
+----- para_id: 21 -----
+Section: B. RESULT AND EVALUATION
+
+Text:
+In the experiments conducted on learning and testing car make recognition using CNN models, the well-known base models for classifying vehicle make and model [36], [37] were tested, which included VGG16 [35], InceptionV3 [9], ResNet50 [2], MobileNet [15], Yolo11m-cls [31] and the other three models, which are introduced in this paper, developed from three types of filter-blocks, resulting in three models: CTv1, CTv2-DW, and CTv2-DR. The experiments were conducted with a dataset of car images, with the number of learning epochs set to 200 (epoch = 200). The results were evaluated using F1 score and F1 weighted average as follows. Model Performance of Vehicle Makes Classification As our experiments from well-known base models and our approaches, the performance estimation results using F1 w- avg (F1 weighted average) and F1 score as reported in TABLE 2. Some key highlights of the result are noticed as follows: The CTv1 model took first place with the highest weighted average F1 score (0.99) and got a 1.00 F1 score for predicting Honda and Isuzu, with Toyota being the lowest at 0.98. InceptionV3 came in second with the F1 w-avg score of 0.97, excelling in Mazda predictions (1.00) and scoring lowest for Nissan (0.92). With an F1 w-avg score of 0.93, the third-ranked CTv1-DR outperformed both Nissan (0.88) and Mazda (0.98). Fourth place went to Yolo11m-cls, scoring 0.92 F1 w-avg, with a peak at Honda 1.00 and a lowest at Nissan 0.85. With an F1 w-avg of 0.90, CTv1-DW came in fifth place.
+
+----- para_id: 22 -----
+Section: B. RESULT AND EVALUATION
+
+Text:
+Honda's peak score was 0.93, while Nissan's was 0.86. ResNet50 ranked sixth, with the F1 w-avg of 0.81, highest for Mazda (0.87) and lowest for Nissan (0.70). MobileNet was seventh with the F1 w-avg of 0.65, excelling at 0.76 for Mazda and scoring lowest for Nissan at 0.39. Lastly, VGG16 placed seventh with the lowest F1 w-avg (0.23), predicting only Toyota with an F1 score of 0.38. Figure 10 presents examples of classification results from the CTv1 model, which include the probability scores for each class. 1) COMPUTATION RESOURCE FOR CLASSIFICATION MODELS In addition to the model performance, the computation resources of each model are also evaluated in TABLE 2. The inference time (I-Time), and the average inference time of each model resulted in Table 4.3. The experiment by timing the models using 200 front-view car images from the test set was conducted, with each model performing calculations 8 times, 25 images per run. The baseline VGG16 model had the largest size with 134.28M parameters, followed by ResNet50, InceptionV3, Yolo11m-cls and MobileNet, respectively . The proposed models by the researchers, CTv1, had the largest size with 6.5M parameters, followed by CTv1-DW and CTv1-DR.
+
+----- para_id: 23 -----
+Section: B. RESULT AND EVALUATION
+
+Text:
+2) INFEENCE TIME EVALUATED BY A RESOURCE-CONSTRAIN DEVICE Since this work also aims to create a vehicle make classification model for embedding in a portable device having lower computational resources, the execution time of the proposed model (CTv1) and baseline models VGG16, InceptionV3, Yolo11m-cls, ResNet50, and MobileNet will be measured on an ARM-based Raspberry Pi 3 Model B board. The board has a Broadcom BCM2837B0 SoC with a 1.4GHz quad-core A53 (ARMv8) 64-bit processor and 1GB LPDDR2 SDRAM, which makes it a device with limited resources. The objective of the research was to develop a model that could operate on such devices. The test results indicated that the CTv1 model had an average execution time of about 1 second, similar to MobileNet's average time of 0.99 seconds, and the CTv1 had a power consumption of 25 mWh(milliwatts-hour), while MobileNet had 38 mWh. InceptionV3 had a power consumption of 90 mWh, Yolo11m-cls of 126 mWh, and ResNet50 of 103 mWh, with each having an average time exceeding 5 seconds. The VGG16 model could not run on the Raspberry Pi 3 Model B due to insufficient memory as indicated by the operating system . From the experiments using state -of-the-art CNN models (VGG16 [35], InceptionV3 [9], ResNet50 [2], MobileNet [15], Yolo11m-cls [31]) and the proposed CNN models (CTv1, CTv1-DW, and CTv1-DR) for classifying car makes from front-view images, the results showed a relationship between model size and training time.

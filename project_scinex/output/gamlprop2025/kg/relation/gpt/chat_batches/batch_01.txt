@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: Abstract
+
+Text:
+DOI: 10.3303/CET25117170 Paper Received: 31 December 2024; Revised: 14 April 2025; Accepted: 24 April 2025 Please cite this article as: Chawuthai R., Murathathunyaluk S., Amornratthamrong N., Arunchaipong R., Anantpinijwatna A., 2025, Integration of Genetic Algorithm with Machine Learning for Properties Prediction, Chemical Engineering Transactions, 117, 1015-1020 DOI:10.3303/CET
+
+----- para_id: 1 -----
+Section: CHEMICAL ENGINEERING TRANSACTIONS
+
+Text:
+Guest Editors: Fabrizio Bezzo, Flavio Manenti, Gabriele Pannocchia, Almerinda di Benedetto Copyright © 2025, AIDIC Servizi S.r.l. ISBN 979-12-81206-17-5; ISSN 2283-9216 Integration of Genetic Algorithm with Machine Learning for Rathachai Chawuthaia, Siripan Murathathunyalukb, Nalin Amornratthamrongb, Run Arunchaipongb, Amata Anantpinijwatnab* aDepartment of Computer Engineering, School of Engineering, King Mongkut's Institute of Technology Ladkrabang, Bangkok 10520, Thailand bDepartment of Chemical Engineering, School of Engineering, King Mongkut's Institute of Technology Ladkrabang, Bangkok 10520, Thailand amata.an@kmitl.ac.th Numerous studies have demonstrated that machine learning (ML) provides more accurate estimations of properties for oxygenated organic derivatives compared to the conventional Quantitative Structure-Property Relationship (QSPR) method. Consequently, ML's predictive capabilities have been extended to encompass a broader range of properties, including Partition Coefficient, Boiling Point, and Solubility, among others, for oxygenated hydrocarbon derivatives. Algorithms such as Linear Regression, Support Vector Machine, Random Forest, and Gaussian Process are selected through trial-and-error to identify the most suitable approach. The models are trained and validated using experimental data from published literature.
+
+----- para_id: 2 -----
+Section: CHEMICAL ENGINEERING TRANSACTIONS
+
+Text:
+Despite the accuracy of these property predictions, they have limited practical utility in industry, where specific property ranges are essential for processes. To address this, Genetic Algorithms (GA) are employed to design chemical compounds that meet industrial requirements. Integrating GA with ML could yield alternative chemical compounds, enhancing overall production processes by increasing economic potential, sustainability, and reducing environmental impact.
+
+----- para_id: 3 -----
+Section: 1. Introduction
+
+Text:
+Hydrocarbons, organic compounds composed solely of carbon and hydrogen atoms, are categorized into alkanes, alkenes, and alkynes. These compounds, with various carbon chain lengths, exhibit diverse properties influenced by their molecular structure . Each type of hydrocarbon structure imparts distinct properties, such as boiling temperature and solubility parameter . Hydrocarbon compounds are widely utilised in industry. Currently, the selection of substances with complex structures or new substances is tailored for specific processes . However, optimal substance selection necessitates experimental trials to determine the most suitable compound, as certain properties of some substances remain unknown without experimentation. These trials incur financial and temporal costs. Traditional methods of assessing the properties of these hydrocarbons often lack sufficient accuracy, rendering them unsuitable for reliable references or practical application . Consequently, experiments are required to verify these properties, but they are time-consuming and costly. Thus, models have been developed to predict these properties. For instance, research by Oprisiu et al. (2013) employed Quantitative Structure Models to predict boiling temperatures and utilised non-linear models such as Associative Neural Networks (ASNNs) along with other linear regression models. Boiling point data focused on organic compounds containing carbon atoms greater than two and other atoms including C, H, F, Cl, Br, N, and O.
+
+----- para_id: 4 -----
+Section: 1. Introduction
+
+Text:
+(2021) studied and developed models to predict boiling temperatures, while Thakaew and Sribut (2021) investigated the water solubility properties of hydrocarbons and developed models to predict solubility.In developing models to predict substance properties, algorithm selection and hyperparameter tuning, along with the training dataset, significantly impact accuracy. Research by Chorbngam et al. (2021), Saengsuradech and Nukaew (2021), and Thakaew and Sribut (2021) enhanced prediction The Italian Association of Chemical Engineering Online at www.cetjournal.it efficiency and model application in industry. In general industry practices, property ranges of substances are chosen to fit processes. However, the aforementioned models predict properties based on structure. For real- world applications, new models need to be constructed by defining the prediction target as the substance structure (SMILES). This research aims to enhance predictive models using machine learning by conducting cross-validation to compare model performance and applying Genetic Algorithms . Genetic Algorithms, techniques for finding desired values or problem solutions based on biological principles or natural selection , are employed to identify appropriate property ranges.
+
+----- para_id: 5 -----
+Section: 2. Methodology
+
+Text:
+In this study, the dataset from the work of Chorbngam et al. (2021) was utilised, comprising boiling point data for 560 hydrocarbons containing 1-12 carbon atoms. The input features employed were consistent with those utilised in previous research, including the number of carbon atoms ('C'), double bonds ('='), triple bonds ('#'), branches ('('), and cyclic structures ('1'). Supervised learning was conducted using K-nearest Neighbour (KNN), Decision Tree (DT), and Random Forest (RF) algorithms, with performance enhanced through the application of the cross-validation technique. A Genetic Algorithm was subsequently applied to perform the backward estimation of a compound's structure based on the target property.
+
+----- para_id: 6 -----
+Section: 2.1 Model Development and Cross Validation
+
+Text:
+The cross-validation technique was employed to identify the most suitable algorithm for prediction. Cross- validation, as described by Refaeilzadeh et al. (2009), is a method used to estimate a model's performance on unseen data. This approach involves partitioning the dataset into multiple segments, training the model on a subset of these segments, and subsequently testing it on the remaining segment, as illustrated in Figure 1. The procedure is repeated with varying subsets, and the results are averaged to obtain a robust measure of model performance. The primary objective is to mitigate overfitting, where a model demonstrates strong performance on training data but performs poorly on new data. For this study, the dataset was initially divided into a training set and a test set, with 460 out of 560 data points randomly selected for training. Within the training set, the data were further partitioned into five segments to facilitate algorithm tuning and evaluation. The remaining 100 data points constituted the test set and were used to estimate the performance of the final model. The constructed model was subsequently employed in the Genetic Algorithm.
+
+----- para_id: 7 -----
+Section: 2.2 Genetic Algorithm
+
+Text:
+Genetic algorithm (GA), a subset of evolutionary algorithms (EAs), are adaptive search methods inspired by natural selection, widely used for optimization and search problems. These algorithms evolve a population of candidate solutions (individuals) through operators such as selection, crossover, and mutation . The process begins with randomly generated individuals, whose fitness is evaluated using an objective function. The fittest individuals are selected to reproduce, forming successive generations. This iterative process continues until a satisfactory fitness level is achieved or a predefined number of generations is reached , as illustrated in Figure 2. The application of the Genetic Algorithm to generate chemicals with desirable properties, as illustrated in Figure 3, comprises five steps: Initialization, Population, Selection, Crossover, and Mutation. The process begins with initialization, where the target property value is specified. During the population step, 60 chemical compounds with varied structures are randomly generated. In the subsequent selection step, 20 compounds with properties closest to the target are screened. If the target property is achieved during this step, the process terminates. If not, the procedure advances to the next phase. In the crossover step, the structures of the selected compounds are combined with each other. While the number of carbon atoms remains fixed, other features are subject to crossover.
+
+----- para_id: 8 -----
+Section: 2.2 Genetic Algorithm
+
+Text:
+Duplicate compounds are eliminated before the selection step is repeated. Depending on the outcomes of the selection step, the screened compounds proceed to the mutation step, where only a single feature is allowed to change. Duplicates are again removed before returning to the selection step. This iterative process continues until a compound with the desired property is identified, with the number of iterations capped at 100 to manage computational time.
+
+----- para_id: 9 -----
+Section: 2.3 Data Analysis
+
+Text:
+The performance of the predicted boiling point in this method was evaluated using root mean square error (RMSE), mean absolute percentage error (MAPE), and the coefficient of determination (R), calculated using Equations (1)-(3), respectively. i i i RMSE T T n = = −  (1) T T R 2 2 1 i i where iT represents the actual boiling point, iT denotes the predicted boiling point, and T indicates the average boiling point across the dataset.
+
+----- para_id: 10 -----
+Section: 3.1 Model Refinement with Cross-Validation
+
+Text:
+As stated in previous research , a comparison of results with conventional group- contribution methods, such as the works of Marrero and Gani (2001), Constantinou and Gani (1994), and Joback and Reid (1987), revealed significantly lower errors in terms of both RMSE and MAPE for all chemical groups when the earlier method was applied without cross-validation. The updated results from the refined model were compared with those from the earlier work, with a graphical comparison presented in Figure 4. Although the changes appear subtle, the predictions generated by the refined model align more closely with the 1:1 line, indicating slightly improved accuracy. Furthermore, Table 1 demonstrates that the incorporation of the cross-validation technique marginally reduces overall error. While cross-validation increases errors in terms of both MAPE and RMSE for the train set, it reduces errors for the test (unseen) set, enhancing the model's generalization performance.
+
+----- para_id: 11 -----
+Section: 3.2 Compound Prediction with Genetic Algorithm
+
+Text:
+In this step, the predictive model developed in the previous section was employed to estimate the boiling points of chemical compounds generated through random population, crossover, and mutation. Six cases were investigated to generate chemical compounds with target boiling points of 200–205 K, 250–255 K, 300–305 K, 350–355 K, 400–405 K, and 450–455 K. Table 2 presents the results, including the target boiling temperature, the SMILES structure of the generated compounds, the predicted boiling temperature, the number of iterations utilized, and the deviation from the target values. For the target boiling point ranges of 200–205 K and 250–255 K, the algorithm was unable to generate chemical structures within the specified range, reaching the maximum of 100 iterations and providing structures that were as close to the target as possible. Conversely, for the remaining four cases, the algorithm identified SMILES structures matching the target boiling points with only a minimal number of iterations. Upon detailed examination, the generated compound structures with boiling points between 300–350 K were identified as either 1-butyne or 2-butyne, hydrocarbons containing four carbon atoms and a single triple bond. Among these, 2-butyne exhibited a boiling point of 300 K.

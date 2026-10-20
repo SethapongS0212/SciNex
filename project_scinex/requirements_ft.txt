@@ -1,0 +1,14 @@
+# Finetuning (Part 2: build_ft_data.py / ft_train_qlora.py / ft_generate.py) and
+# Q&A evaluation (Part 3: qa_eval.py — stdlib HTTP only, needs nothing extra).
+# Install on the GPU VM on top of requirements_kg.txt:
+#   python3 -m pip install -r requirements_ft.txt
+# then confirm torch is STILL the stable 2.6.0+cu124 wheel (Claude.md GPU notes) —
+#   python3 -c "import torch; print(torch.__version__)"
+# a dev nightly silently cripples bitsandbytes 4-bit; ft_train_qlora.py refuses to run on one.
+
+transformers>=4.51.0    # Qwen3 support + enable_thinking in the chat template
+peft>=0.13.0            # LoRA / QLoRA adapters
+bitsandbytes>=0.43.0    # 4-bit NF4
+accelerate>=0.34.0
+packaging
+rdflib>=7.0             # scinex OWL -> the current scinex system prompt

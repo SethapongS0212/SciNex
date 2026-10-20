@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 382ccbaa403a -----
+TRIPLE:     (OC-SORT)  --publishedin-->  (CVPR 2023)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  Links an academic paper to the publication venue in which it appears, such as a journal, conference, or workshop
+SOURCE SENTENCE: OC-SORT was published in CVPR 2023.
+
+----- triple_id: de3fdd162018 -----
+TRIPLE:     (Randhawa et al. [47])  --reports-->  (non-linear behaviour)
+PREDICATE DEFINITION: AcademicPaper → ResearchProcess  |  Associates an academic paper with the research processes it describes, including its methodology, data processing pipeline, and experiments
+SOURCE SENTENCE: This behaviour has been previously observed and reported by Randhawa et al. [47] and was captured in this study through the use of the whole wavelength for analysis, in contrast to conventional UV–Visible spectroscopy which utilizes only a single wavelength.
+
+----- triple_id: d24f68f0b5ff -----
+TRIPLE:     (CTv1-DR)  --achievesresult-->  (2,113.53 seconds training time)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: Finally, the CTv1-DR model's F1-weight average decreased from 0.93 to 0.16, a reduction of more than 80%, and the training time taken increased from 435.59 seconds to 2,113.53 seconds, an increase of approximately 4.8 times.
+
+----- triple_id: a3ecd30d1faf -----
+TRIPLE:     (SVP)  --uses-->  (machine learning methodology)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The application of machine learning methodology for predicting KMnO4 concentrations, utilizing images acquired from a low-cost portable spectrophotometer, has yielded highly encouraging out comes. Four distinct algorithms – namely, SVP, RF, MLP, and XGB – were employed.
+
+----- triple_id: e9ec99020ea6 -----
+TRIPLE:     (XGB algorithm)  --comparesagainst-->  (SVR)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Across all datasets, the XGB algorithm demonstrated marginally su perior performance compared to SVR, RF, and MLP.
+
+----- triple_id: 9c618e5c4c53 -----
+TRIPLE:     (hybrid encoder)  --comprises-->  (intra-scale interaction and cross-scale fusion)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: These were then processed by a hybrid encoder, which used intra- scale interaction and cross- scale fusion to combine them into a refined sequence.
+
+----- triple_id: 917377fcf405 -----
+TRIPLE:     (this study)  --achieves-->  (lower %MAPE for 25 out of 36 Quats)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Similarly, when compared to Akbari's method, this study exhibits lower %MAPE for 25 out of 36 Quats.
+
+----- triple_id: 9f83f18dd3a5 -----
+TRIPLE:     (feed-forward components)  --produces-->  (stronger influence on model degradation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: Further analysis of self-attention and feed-forward matrices shows that feed-forward components, particularly the Down matrices, have a stronger influence on model degradation.
+
+----- triple_id: 3a4754c392a1 -----
+TRIPLE:     (Dice coefficient)  --evaluates-->  (good segmentation results)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  Links an evaluation metric to the experimental result it quantitatively assesses
+SOURCE SENTENCE: This section evaluates the performance of the model, by using metrics Dice coefficient and IoU as summarized in Table II
+
+----- triple_id: 3e34b5d0d256 -----
+TRIPLE:     (ARIMA)  --trainedon-->  (data of each road)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: ARIMA: p, q, and d were based on observations of the data of each road, such as the settings of the highway number 1 being p = 7, q = 0, and d = 12.

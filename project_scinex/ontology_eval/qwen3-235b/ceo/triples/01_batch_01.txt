@@ -1,0 +1,90 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: c8d5110c38ce -----
+TRIPLE:     (RNN)  --uses-->  (activation functions)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For the RNN, these parameters include data structuring elements (such as observation steps), model architecture (covering learning rate, the number of neurons, and activation functions in both the first and second layers), and model training configurations (incorporating epochs and batch size).
+
+----- triple_id: 8b7224676d43 -----
+TRIPLE:     (Yolo11m-cls)  --achieves-->  (average time exceeding 5 seconds)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: InceptionV3 had a power consumption of 90 mWh, Yolo11m-cls of 126 mWh, and ResNet50 of 103 mWh, with each having an average time exceeding 5 seconds.
+
+----- triple_id: b7d2d04ca149 -----
+TRIPLE:     (RT-DETR)  --addresses-->  (landmark localization)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: By employing RT-DETR for landmark localization and biometric ratio–based classification via traditional ML models, we demonstrated promising screening performance under controlled image acquisition conditions.
+
+----- triple_id: 8694b0791f46 -----
+TRIPLE:     (Artificial Neural Network (ANN))  --comprises-->  (output layers)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: Artificial Neural Network (ANN) is composed of nodes arranged in 3 layers which are input, hidden, and output layers.
+
+----- triple_id: a027d1288746 -----
+TRIPLE:     (YOLO)  --comparesagainst-->  (R-CNN)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: YOLO outperforms many other object detection algorithms such as R-CNN and DPM [17].
+
+----- triple_id: 017a1622dae0 -----
+TRIPLE:     (LSTM)  --evaluatedon-->  (road segments)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: In this case, the baseline was the LSTM only, while our approach used the SA-LSTM with the Butterworth low-pass filter method. According to the table, the average MAE of our approach for all the road segments was 12.15, while the baseline was 27.12.
+
+----- triple_id: d6ba742d26ca -----
+TRIPLE:     (BERT)  --evaluates-->  (discrepancies from the baseline outputs)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: The trials demonstrate that heightened corruption results in a more significant decline in model performance, as assessed by BERT and ROUGE scores.
+
+----- triple_id: b07dc47e517f -----
+TRIPLE:     (RT-DETR)  --trainedon-->  (each gaze)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: Across the RT-DETR models trained for each gaze, landmark detection reached acceptable reliability with IoU = 0.62 and mean center-point error of 6.52 pixels, despite the absence of clinical-grade imaging.
+
+----- triple_id: a6ac579ff6f4 -----
+TRIPLE:     (feature engineering process)  --produces-->  (30 features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: Then, RT1-5 metrics were computed by the feature engineering process, as exampled in Fig. As mentioned in previous section, this produced 30 features that were mapped to a binary strabismus label (True/False).
+
+----- triple_id: b50ae6738878 -----
+TRIPLE:     (CNN model)  --designedfor-->  (recognizing and classifying vehicle makes from front-view images)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: This study presents a CNN model for recognizing and classifying vehicle makes from front-view images, designed to be small enough for resource-constrained systems .

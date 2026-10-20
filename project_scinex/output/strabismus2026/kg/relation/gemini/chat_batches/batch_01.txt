@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: Abstract
+
+Text:
+To develop and validate an artificial intelligence pipeline for binary screening of horizontal strabismus versus orthotropia using smartphone-acquired facial images and geometric landmark analysis. This two-stage system combines Real-Time Detection Transformer (RT-DETR) to localize nine ocular landmarks per eye across three gaze directions (left, center, right), and supervised machine learning classifiers. A feature set of five biometric ratios was derived from coordinates including the canthi, limbi, and corneal light reflexes. The model was trained on facial images from 150 participants (96 with strabismus and 54 controls). To address class imbalance and improve generalizability, Synthetic Minority Oversampling Technique (SMOTE) and 4-fold cross-validation were applied. RT-DETR achieved an intersection over union of 0.62 and a mean center-point error of 6.52 pixels in landmark localization. The Random Forest classifier achieved an accuracy of 0.95, sensitivity of 0.96, specificity of 0.94, positive predictive value of 0.97, and negative predictive value of 0.92. This study demonstrates the feasibility of combining transformer -based landmark detection with geometric ratios for strabismus screening . The framework shows high performance under controlled conditions. While the use of biometric ratios allows for feature-level inspection, further research is required to establish full clinical interpretability and performance in uncontrolled environments.
+
+----- para_id: 1 -----
+Section: Abstract
+
+Text:
+Strabismus , defined as ocular misalignment during fixation, is a common ophthalmic disorder affecting approximately 1–3.9% of the population, including both children and adults1,2. Depending on the direction of deviation, strabismus is classified into four types: esotropia (inward), exotropia (outward), hypertropia (upward), and hypotropia (downward). Persistent strabismus can lead to amblyopia (commonly known as "lazy eye"), consequently impairing binocular vision and depth perception. Beyond visual consequences, both children and adults with visible strabismus often experience psychosocial challenges, including stigmatization, anxiety, and depression3,4. Recognition of the psychosocial effects of strabismus underscores the importance of counseling for patients and their families. Early diagnosis and treatment of strabismus are essential to lessen these adverse outcomes and prevent long-term visual impairment. However, diagnosis of strabismus typically requires direct examination by a pediatric ophthalmologist and the use of specialized tests, such as the Krimsky test, cover–uncover test, or alternate prism cover test, which require significant patient cooperation. This dependence presents a substantial barrier to effective screening in the general population, especially in rural or underserved regions where ophthalmologic services are limited5.
+
+----- para_id: 2 -----
+Section: Abstract
+
+Text:
+Recent advances in artificial intelligence (AI) have shown promise in automating ophthalmic diagnostics, including strabismus detection6–8. Convolutional Neural Networks (CNNs) and other deep learning techniques have demonstrated efficacy in identifying ocular misalignments through image analysis7,8. Nonetheless, many of these models depend on structured clinical images or red-reflex photorefraction devices, which may not be consistently available in remote areas with limited access to specialized ophthalmic centers9. Furthermore, few existing systems simultaneously achieve high accuracy and methodological transparency, particularly when handling images captured under specific practical constraints, such as subtle variations in patient positioning or inconsistent gaze direction, even within a controlled environment10. To address these limitations, we propose a hybrid framework that combines transformer -based landmark detection with human-readable biometric ratios and supervised machine learning classifiers, thereby providing explicit geometric features that align with clinical parameters. Specifically, we utilize the Real-time Detection Transformer (RT-DETR) model to localize key ocular landmarks from smartphone-acquired images captured at three gaze angles—left, center, and right. From these landmarks, we derive five geometric ratios for each eye, which are then used as input features for established machine learning classifiers, such as Random Forest11.
+
+----- para_id: 3 -----
+Section: Abstract
+
+Text:
+This modular approach was designed to support screening while preserving feature-level inspectability and facilitating potential mobile deployment. This study represents a proof-of-concept application of RT-DETR in horizontal strabismus screening . By integrating landmark detection with feature-based classification, we aimed to evaluate whether this multistage framework could support binary screening of strabismus versus orthotropia from smartphone-acquired images under controlled acquisition conditions. Future external validation will be needed before broader deployment in less controlled settings can be considered.
+
+----- para_id: 4 -----
+Section: Literature reviews
+
+Text:
+The following review includes both related work and technological background to support the theoretical and practical aspects of this study.
+
+----- para_id: 5 -----
+Section: Related works
+
+Text:
+Currently, deep learning has been widely applied in medical image analysis12. Several studies have focused on ophthalmology, particularly retinal fundus imaging13–16, demonstrating that deep learning is a promising approach for enhancing clinical diagnostic support. In the paper "Anomaly Detection in Red Reflex Images Using Deep Learning Approaches"6, a deep learning model for identifying amblyopia from red reflex images was proposed. The authors emphasized the high prevalence of pediatric eye disorders, with amblyopia being a leading cause of vision loss. Their framework consisted of three components: amblyopia classification, pupil localization, and data preparation. The model combined Mask R-CNN and Multi-task Cascaded Convolutional Neural Networks (MTCNN) to segment and detect pupil and iris regions, followed by a CNN for classification. The study highlighted the importance of early amblyopia detection and reviewed prior work, including smartphone-based photorefraction approaches. Overall, the results demonstrated the potential of deep learning techniques for amblyopia screening . A second study by Hamid (2022)7 further investigated deep learning approaches for detecting amblyopia in red reflex images . The authors emphasized early detection and the applicability of CNN-based models. In addition, the study discussed the potential of deep learning methods for automatic strabismus detection , citing prior work by Almeida et al. and Valente et al.8,17, which reported high accuracy .
+
+----- para_id: 6 -----
+Section: Related works
+
+Text:
+The paper also incorporated eye region segmentation using the Viola–Jones algorithm as part of the detection pipeline. Collectively, these studies highlight the potential of automated systems to improve strabismus diagnosis and clinical outcomes.
+
+----- para_id: 7 -----
+Section: Technological reviews
+
+Text:
+This study employs several techniques, including object detection using RT-DETR, multiple machine learning classifiers, and oversampling using the Synthetic Minority Oversampling Technique (SMOTE).
+
+----- para_id: 8 -----
+Section: Object detections
+
+Text:
+RT-DETR is a transformer -based object detector designed for real-time performance. It consists of a backbone, a hybrid encoder, and a transformer decoder with auxiliary prediction heads. The model efficiently processes multi- scale features by decoupling intra- scale interaction and cross- scale fusion. Its Intersection over Union (IoU)–aware query selection improves the quality of initial object queries, while the decoder iteratively refines them to generate bounding boxes and confidence scores. RT-DETR has demonstrated strong performance in both speed and accuracy . For example, RT-DETR-L achieves 53.0% mean average precision (mAP) on COCO val2017 and 114 frames per second (FPS) on an NVIDIA Tesla T4 GPU, while RT-DETR-X achieves 54.8% AP, outperforming existing YOLO-based detectors18. The training objective combines three loss functions: Focal loss, Generalized IoU (GIoU) loss, and L1 loss. Focal loss addresses class imbalance by down-weighting easy negatives, while GIoU loss measures overlap and spatial alignment between predicted and ground-truth bounding boxes. L1 loss is used for bounding box regression. The relative contributions of these losses are controlled by weighting coefficients during training, enabling robust localization across varying object sizes. In addition, IoU-aware query selection initializes decoder queries using encoder features from regions with high predicted IoU scores.
+
+----- para_id: 9 -----
+Section: Object detections
+
+Text:
+The process includes: 1) Query prediction: Each query produces a classification score and a bounding box proposal. 2) Estimate of IoU: The expected IoU between each forecast box and its matching ground truth is predicted by a separate head. 3) IoU-aware scoring: The quality of the query is evaluated by combining the projected IoU and classification confidence. 4) Choosing a query: For further processing, the top K queries with the highest IoU-aware scores are kept. Scientific Reports | (2026) 16:18278 3 | https://doi.org/10.1038/s41598-026-48893-6 5) Refinement and matching: The selected queries are refined or used for IoU-aware matching to improve lo calization accuracy and training stability.
+
+----- para_id: 10 -----
+Section: Oversampling
+
+Text:
+SMOTE (Synthetic Minority Over-sampling Technique) is an oversampling method used to address class imbalance. It was introduced by Chawla et al. This method operates by selecting instances that are proximate in the feature space, establishing a connection between these instances, and generating a new sample along this connection. Initially, a random instance from the minority class is selected, followed by the identification of its k nearest neighbors (usually k = 5). From these neighbors, another instance is randomly chosen, and a synthetic sample is generated at a randomly selected position between the original instance and its neighbor in the feature space. The above algorithm is shown in Fig. SMOTE has been effectively applied across various domains, including software quality modeling and defect prediction. Machine learning for classification In this study, seven machine learning classification algorithms11,20 were conducted in our experiments: • Logistic Regression (LR): This approach forecasts the likelihood of particular classes based on dependent factors . It yields an output between 0 and 1, making it suitable for binary categorization tasks. • Decision Tree (DT): Utilized for both classification and regression tasks, decision trees have a hierarchical structure and use a divide-and-conquer tactic for data classification. They can generate pure leaf nodes for smaller trees, facilitating accurate classification.
+
+----- para_id: 11 -----
+Section: Oversampling
+
+Text:
+• Naïve Bayes (NB): This is a straightforward probabilistic classifier based on the naïve Bayes theorem. Despite its oversimplified premise, the naïve Bayes classifier is widely used due to its effectiveness in real-world ap plications. • Random Forest (RF): This classifier particularly excels in scenarios where a labeled target variable is present. Notably, random forests are adept at addressing both regression problems, where the target variable is numer ic, and classification challenges, where the target variable is categorical. What distinguishes random forests is their ensemble nature, where they amalgamate predictions from various models. Within the random forest ensemble, each constituent model takes the form of a decision tree. • K-nearest neighbor (KNN): A supervised machine learning technique suitable for regression and classifica tion tasks. KNN is a non-parametric nearest neighbor algorithm known for its simplicity and effectiveness. • Artificial Neural Networks (ANNs): Nonlinear statistical models capable of identifying complex relation ships between inputs and outputs. ANNs have revolutionized various applications, including medical diagno sis, by learning from sample datasets and providing accurate predictions based on subsets of data. • Support Vector Machine (SVM): A powerful supervised learning algorithm known for its efficacy on small er, more intricate datasets.

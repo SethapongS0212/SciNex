@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 4b94a9da1bf6 -----
+TRIPLE:     (DeepSORT)  --addresses-->  (minimize identity shifts)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: DeepSORT uses appearance descriptors to minimize identity shifts, increasing the effectiveness of tracking.
+
+----- triple_id: 5e817414a5a1 -----
+TRIPLE:     (YOLO)  --evaluatedon-->  (object detection task)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: In this research work, YOLO was implemented for the object detection task.
+
+----- triple_id: f77a511a033f -----
+TRIPLE:     (YOLOv8)  --producedby-->  (Ultralytics)
+PREDICATE DEFINITION: ResearchArtifact → ResearchProcess  |  Links a research artifact back to the research process that generated it
+SOURCE SENTENCE: First, YOLOv8, developed by Ultralytics [4], exhibits superior performance compared to its YOLO predecessors with respect to both processing speed and accuracy.
+
+----- triple_id: 589d9154f8f1 -----
+TRIPLE:     (evaluation process)  --configures-->  (10-fold cross-validation)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: To enhance the model's generalizability, the evaluation process employed 10-fold cross-validation, conducting several training rounds and validation on different data splits to derive the average scores.
+
+----- triple_id: 81ed6f9dbf14 -----
+TRIPLE:     (YOLOv8)  --employs-->  (human pose estimation)
+PREDICATE DEFINITION: Organisation → Person  |  Associates an organisation with the persons who work for or are institutionally employed by it at the time of a research publication
+SOURCE SENTENCE: This posture tracking makes use of the YOLOv8 model's potent human pose estimation capabilities.
+
+----- triple_id: b50ae6738878 -----
+TRIPLE:     (CNN model)  --designedfor-->  (recognizing and classifying vehicle makes from front-view images)
+PREDICATE DEFINITION: Model → ResearchTask  |  Associates a model with the research task it was specifically designed or optimised to solve, such as a transformer model designed for machine translation or a CNN designed for image classification
+SOURCE SENTENCE: This study presents a CNN model for recognizing and classifying vehicle makes from front-view images, designed to be small enough for resource-constrained systems .
+
+----- triple_id: ab08e0beb389 -----
+TRIPLE:     (dataset)  --splitfrom-->  (work of Chorbngam et al. (2021))
+PREDICATE DEFINITION: Dataset → Dataset  |  Records that a dataset partition was derived from a larger source dataset
+SOURCE SENTENCE: In this study, the dataset from the work of Chorbngam et al. (2021) was utilised, comprising boiling point data for 560 hydrocarbons containing 1-12 carbon atoms.
+
+----- triple_id: dd50f72743bd -----
+TRIPLE:     (refinement process)  --supports-->  (sustained accuracy in a rapidly changing cloud environment)
+PREDICATE DEFINITION: ExperimentalMeasurement → ExperimentalOutcome  |  Links a quantitative experimental measurement to the qualitative conclusion it provides evidence for
+SOURCE SENTENCE: The refinement process enables ongoing updates to the model performance, ensuring sustained accuracy in a rapidly changing cloud environment.
+
+----- triple_id: c1012b223d77 -----
+TRIPLE:     (Ali Farhadi)  --affiliatedwith-->  (University of Washington)
+PREDICATE DEFINITION: Agent → Organisation  |  Associates an agent with an organisation to which they are professionally attached during a research activity
+SOURCE SENTENCE: In 2015, Joseph Redmon and Ali Farhadi from the University of Washington created the cutting-edge object recognition algorithm called YOLO (You Only Look Once) [17].
+
+----- triple_id: b5c196248f06 -----
+TRIPLE:     (study)  --cites-->  (Valente et al.)
+PREDICATE DEFINITION: AcademicPaper → AcademicPaper  |  Records a bibliographic reference from one academic paper to another, indicating that the citing paper acknowledges, builds upon, or contrasts with the cited work
+SOURCE SENTENCE: In addition, the study discussed the potential of deep learning methods for automatic strabismus detection , citing prior work by Almeida et al. and Valente et al.8,17, which reported high accuracy .

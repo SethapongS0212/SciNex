@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: Abstract
+
+Text:
+In order to help ophthalmologists diagnose eye problems, it is necessary to scan for eye landmarks such as the pupil, the reflection point on the retina, and the boundary of the eye. An individual's eye landmarks on their face can be obtained via some facial landmarks' detection methods, including Haar Cascade. Two problematic aspects of the current approaches, however, are that the pupil and reflection point information is not provided, and the detection is ineffective when confronted with a picture of the upper half of the face or a person wearing a mask. In this study, we intend to develop a deep learning model for eye landmark identification using the Realtime identification Transformer (RT-DETR) approach together with our rules. As a consequence, nine landmark points—two for the eye, six for the pupil, and one for the reflection, are computed with an accuracy of 0.974. Since the focus of this paper is on eye landmark recognition, the next stage will be to build an application and a machine learning model for the diagnosis of eye disorders. - Keywords Deep Learning, Detection , Eye Landmarks, Facial Landmarks, Ophthalmology, RT-DETR
+
+----- para_id: 1 -----
+Section: I INTRODUCTION
+
+Text:
+The accurate identification of eye landmarks plays a pivotal role in modern ophthalmology, enabling precise diagnoses of a wide array of ocular conditions. From the characteristics of the pupil to the critical reflection point on the retina, these landmarks hold invaluable insights essential for a comprehensive assessment of eye health. However, existing methodologies, though proficient in facial landmark detection , fall short in delivering comprehensive data that encompasses pivotal elements like the pupil and reflection point. Moreover, their efficacy diminishes significantly when faced with challenges such as obscured upper facial regions or subjects wearing masks. This study embarks on an exploration to revolutionize eye landmark recognition by leveraging the prowess of deep learning methodologies. We propose an eye landmarks detection method by utilizing the Realtime Identification Transformer (RT-DETR) coupled with specific rules tailored for precise eye landmark identification. Our aim is to address the limitations of current methodologies and empower ophthalmologists Teetouch Jaknamon School of Engineeering, King Mongkut Institute of Rathachai Chawuthai School of Engineeering, King Mongkut Institute of with a tool capable of accurately pinpointing nine crucial landmark points: two delineating the eye structure itself, six capturing nuances of the pupil, and one signifying the pivotal reflection point on the retina.
+
+----- para_id: 2 -----
+Section: I INTRODUCTION
+
+Text:
+Initial assessments showcase promising results, with an achieved accuracy rate of 0.974, marking a substantial leap forward in accuracy and precision. This paper delineates the trajectory of advancements in eye landmark recognition, presenting a comprehensive methodology, promising results, and a
+
+----- para_id: 3 -----
+Section: II LITERATURE REVIEWS
+
+Text:
+According to the paper by Viola and Jones, they present a novel approach to object detection that minimizes computation time while achieving high detection accuracy. Their method includes the Integral Image representation, AdaBoost learning algorithm, and cascade-based detection methodology. The authors demonstrate the effectiveness of their approach on a challenging face detection dataset and compare it with previous methods. Their work represents a significant contribution to the field of object detection and has set a new standard for rapid and accurate object detection . Viola, P., & Jones, M (2001)[1]. Examples of the technique were shown in Fig 1. In "A Comparison of Face Verification with Facial Landmarks and Deep Features," the authors address the crucial task of face verification and compare the accuracy of facial landmarks and deep learning approaches. They emphasize the significance of facial landmarks in forensics and security applications, highlighting their role as objective measures in court. The paper presents experimental findings that demonstrate the superior accuracy of deep learning approaches, particularly in challenging scenarios with low- resolution faces. The comparison between facial landmarks and deep features provides valuable insights for the development of face verification technologies, offering potential advancements in security, surveillance, and biometric identification systems. Amato, G., Falchi, F., Gennaro, C., & Vairo, C.
+
+----- para_id: 4 -----
+Section: II LITERATURE REVIEWS
+
+Text:
+(2018)[2] Another paper presents a deep learning model for detecting Amblyopia factors in red reflex images . It consists of three main parts: data preparation, pupil localization, and Amblyopia classification . The model uses Mask R-CNN and MTCNN for pupil localization and a convolutional neural network for classification . The authors emphasize that the red reflex images , the image size, the optimizer, and the number of trainable layers is important factors for accuracy in anomaly detection . The paper also suggests that preprocessing techniques can be used to improve the accuracy of the model. (Online)[3] In order to diagnose eye diseases, additional facial landmarks were required. However, the first two proposed studies do not provide the pupil and reflection point information, which is necessary for AI to predict the diseases. Furthermore, the third study supports that pupil localization is a significant feature for the model to accurately predict abnormalities in patients with eye diseases. Lastly, due to the COVID-19 situation, all the reference images wore facial masks, which does not support any of the mentioned studies, causing incomplete detection of the facial landmarks shown in Fig 2. This study proposes Real-Time- DEtection TRansformer (RT-DETR), a deep learning approach. This transformer- based detector performs admirably and allows for flexible inference speed changes without requiring retraining.
+
+----- para_id: 5 -----
+Section: II LITERATURE REVIEWS
+
+Text:
+A transformer decoder with additional prediction heads, a hybrid encoder, and a backbone make up the RT-DETR. By separating intra-scale interaction and cross-scale fusion, the hybrid encoder effectively handles multi-scale characteristics. The decoder receives higher-quality initial object queries from the IoU-aware query selection. In order to produce boxes and confidence scores, the decoder optimizes object queries iteratively. The RT-DETR performs faster and more accurately than current real-time object detectors. Without requiring retraining, the RT- DETR allows for variable changes in the inference speed utilizing various decoder layers. Lv, W., Xu, S., Zhao, Y., Wang, G., Wei, J., Cui, C., Du, Y., Dang, Q. [4] Further studies by Chang, Baofang (2024)[5] compared experiments on plant disease identification using CNN- based networks, ViT-based models, and RT-DETR, showcasing improved accuracy and latency. By implementing the RT-DETR technique on the dataset, a total of 9 eye landmarks were detected per eye image: two for the eye, six for the pupil, and one for the reflection. Then, a set of selection rules will be applied to select the highest confidence score from each possible eye landmark, preparing the dataset for further application usages."
+
+----- para_id: 6 -----
+Section: III METHOD
+
+Text:
+The methodology for eye landmarks detection using RT-DETR involves several key steps to accurately identify and localize landmarks within the eye region, represented in flowcharts shown in Fig 3. First, the dataset comprises of 3 eye gazing images , left gazing, front gazing, and right gazing ensuring diverse samples. Preprocessing steps, such as cropping the eye image and augmentation, are applied to enhance model generalization. Then each eye image will be annotated manually to complete the required dataset. Next, the RT-DETR (Real-Time Detection Transformer) architecture is employed. The model is fine-tuned using the annotated dataset specifically tailored for eye landmark detection to expedite convergence and improve performance. During training, the model's parameters are optimized using suitable optimization algorithms, adjusting learning rates, and employing regularization techniques to prevent overfitting. Evaluation metrics like precision, recall and Intersection over Union (IoU) which gauges how much the predicted bounding box overlaps with the ground-truth bounding box. A score of 1.0 indicates a complete match, while 0.0 means there's no overlap between the predicted and ground-truth bounding boxes are utilized to assess the model's accuracy and robustness.
+
+----- para_id: 7 -----
+Section: III METHOD
+
+Text:
+img1 L Mid 84.9% 1 (108,95) img1 L Mid 82.0% 2 (184,103) img1 L Mid 83.7% 3 (220,169) img1 L Mid 83.1% 4 (177,158) img1 L Mid 72.6% 5 (127,167) img1 L Mid 83.5% 6 (110,133) img1 L Mid 82.7% 7 (186,130) img1 L Mid 85.6% 8 (148,114) img1 R Left 78.3% 0 (63,124) img1 R Left 82.3% 1 (183,98) img1 R Left 74.2% 2 (219,120) img1 R Left 82.3% 3 (238,167) img1 R Left 81.7% 4 (214,185) img1 R Left 74.2% 5 (187,182) img1 R Left 78.8% 6 (175,139) img1 R Left 84.0% 7 (230,149) img1 R Left 83.7% 8 (184,138) The data preparation of Gaze Images is the primary focus of this section. In this study, 154 volunteers participated, with each volunteer having three pictures taken using a mobile phone: a straight gaze, known as a middle gaze (M), a left gaze (L), and a right gaze (R). All the photos collected from actual patients were obtained with their consent for research purposes. After collecting all the data, each facial image will be cropped into two eye image files using a user-defined application. This application also enables users to manually localize nine landmarks from each eye image. These nine landmarks include the Lateral Canthus, Medial Canthus, the site where the conjunctiva merges with the cornea, and the Cornea Light Reflection. While nine eye landmarks were manually labeled using the application, a label file format was created for each cropped eye.
+
+----- para_id: 8 -----
+Section: III METHOD
+
+Text:
+According to figure 4, the labels file format notepad shows all the 9 landmarks that were manually annotated in each row (index start from 0 to 8). This process cropped eye images at a ratio of 300x150 pixels. From Table I., the data in each column represents the Bounding box's location for the landmark, represented by one co- ordinate (x, y) and width (w) and height (h) of the bounding box respectively. For example, Landmarks for Corneal Light Reflection is represented in row number 8, where the x-axis is at 51% of the eye image, y-axis is at 49% of the eye image and width and height of the box are 8% of the image, since it is a square box. In total, there were 924 eye image files and 924 label files. The total count of 924 files stems from the three gazing images taken from each of the 154 participants, resulting in 462 photos. Subsequently, two eyes (left and right) were cropped from each photo, doubling the total count to 924 images . 924 images (the combinations of 154 participants, 3 gaze images , and 2 eyes). After preparing 924 images in the appropriate format, each set of 308 eye gaze images was transferred to its respective RT-DETR deep learning model. To illustrate, 308 cropped eye images captured during right gazing were used to train the R-Model. Only the left and right eyes cropped from the right gazing photos were utilized in training the R-Model.
+
+----- para_id: 9 -----
+Section: III METHOD
+
+Text:
+Each deep learning model configuration was set to default settings, except for the flipping parameter, which was fixed at zero to prevent images from flipping to the opposite side. Then all images were fed into RT-DETR model, firstly, the backbone extracts multi-scale features from the input image, then fed into the hybrid encoder. The hybrid encoder transforms the multi-scale features into a sequence of image features through intra-scale interaction and cross-scale fusion. Finally, the IoU-aware query selection is then employed to select a fixed number of image features from the encoder output sequence to serve as initial object queries for the decoder. Finally, the decoder with auxiliary prediction heads iteratively optimizes object queries to generate boxes and confidence scores. The models were trained for 100 epochs. In order to assess the model's accuracy and robustness, precision of 0.923, accuracy of 0.974 and IoU of 0.612 are evaluated. Showing the respectable prediction of the trained model. Once the training for the three RT-DETR models was completed, a separate set of testing images was provided to each model. A sample of prediction results is presented in Table II. Despite the confidence level for predicting each landmark being approximately 0.80, the model achieves a promising accuracy of 0.974 in predicting the correct landmark.
+
+----- para_id: 10 -----
+Section: III METHOD
+
+Text:
+A total of around 9,000 rows of data were gathered from all three models, recording some duplicate entries resulting from the models predicting the same landmark multiple times. This dataset will undergo further preprocessing using rules-based selection algorithms proposed in this paper. The overall algorithms are demonstrated in Fig 5. Finally, the processed data will be stored in both pickle and CSV file formats for subsequent application uses. In the final preprocessing in Fig 5, a new list will be created from the data from each row of detected landmark which contains image name, class name, detection confidence, and coordinate x-y midpoint of the detected point. Given that detect landmarks are comes in x, y, w, h format, each x-y midpoint is calculated from the average values of x, w and y, h. After all the data in a list were created, the high confidence value of each image name was selected by a simple maximum selection algorithm and updated the selected list of data into a new database, both left eye and right eye were computed respectively. This pre-processing process reduces the number of detected landmarks from 9000 rows to 154 rows, which are 154 volunteers participated, the final dataset can be seen in the Table IV – Final Landmarks Dataset.
+
+----- para_id: 11 -----
+Section: IV RESULT AND DISCUSSION
+
+Text:
+Considering the accuracy matrix of the model, it could be prudent to delve into a discussion encompassing these matrices to comprehensively assess the model's performance. Having examined the preparation of images , training models, and data preprocessing techniques employed in this study, the example of predicted eye landmarks data from RT-DETR models is presented in figure 6. According to Table III, the final dataset, it comprises of 924 rows and 12 columns, including image name, cropped eye side, face gazing side, and 9 landmarks. Each landmark contains pixel coordinates within the eye image. The total dataset contains 924 rows (the combinations of 154 participants, 3 gaze images , and 2 eyes) The consistent high-performance showcased by RT- DETR with Rules in localizing eye landmarks is indicative of its superiority in this domain. Its notable accuracy of 0.974 speaks volumes about the model's proficiency in making correct predictions. Unlike traditional methods, RT-DETR with Rules operates on a unique paradigm, leveraging transformer-based architectures to handle object detection tasks without relying on traditional anchor boxes or post-processing steps. This architecture's ability to capture multiple eye landmarks information along with local features significantly contributes to its enhanced accuracy and precision, as evidenced by the impressive accuracy and precision score of 0.974 and 0.843 respectively.

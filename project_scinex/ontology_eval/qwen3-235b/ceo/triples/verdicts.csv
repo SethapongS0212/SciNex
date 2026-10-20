@@ -1,0 +1,41 @@
+triple_id,C1,C3,C4,missed_concepts,missed_relations,issues,note
+a6ac579ff6f4,CORRECT,APPROPRIATE,CORRECT,,,,
+45568b614f18,PARTIAL,TOO_BROAD,PARTIAL,,,,"'custom-developed desktop application' is unnamed; design intent IS explicit but 'ensure consistency' is a goal, not a ResearchTask"
+b24ffc924b78,INCORRECT,TOO_BROAD,INCORRECT,,,,"'work' is not a concept and not a venue; the sentence is about reusing a dataset, nothing about publication"
+9950fe9254dc,CORRECT,APPROPRIATE,INCORRECT,,,,"supports needs a MEASUREMENT (a number) as subject; 'Down matrices' is a component, and the sentence says 'influence on', not that a number backs a conclusion"
+da2ce9504549,PARTIAL,TOO_NARROW,PARTIAL,,,,"citation key as an entity will never recur; 'reported' is literal but the object is a result, not a ResearchProcess"
+1da5b95de155,CORRECT,APPROPRIATE,PARTIAL,,,,writtenBy is AcademicPaper->Author; SAM 2 is a Model standing in for its paper - supported but loosely typed
+3a112515ecc2,CORRECT,APPROPRIATE,PARTIAL,,,,"locatedIn is Organisation->Place; a camera model is not an Organisation and KMITL is not a Place - fact supported, both types wrong"
+371c58b1991f,CORRECT,APPROPRIATE,INCORRECT,,,,employs is defined Organisation->Person; this is a model and its component - should be comprises
+b2e0f87b705a,CORRECT,APPROPRIATE,INCORRECT,,,,"cites is Paper->Paper; YOLOv8 is a model and Ultralytics an organisation, and the sentence says 'developed by', not cites"
+464ebcfde2f4,PARTIAL,APPROPRIATE,INCORRECT,,,,"'observation steps' is a hyperparameter, not a named training corpus; nothing in the sentence says the RNN was trained on it"
+e762a0c5313e,CORRECT,APPROPRIATE,INCORRECT,,,,"direction reversed: affiliatedWith is defined Agent -> Organisation, so the person must be the subject and the university the object"
+382ccbaa403a,CORRECT,APPROPRIATE,PARTIAL,,,,"explicitly stated, but OC-SORT is a Model standing in for the AcademicPaper the predicate requires; publishedIn grants no Model-as-shorthand allowance the way evaluatedOn does"
+b50e7230c729,INCORRECT,TOO_NARROW,PARTIAL,,,,"'Rule 1' is a paper-internal label, not a concept, and the object is a propositional clause rather than an entity; the sentence does state the link, but supports requires a specific NUMBER as subject"
+6b3df300769f,CORRECT,TOO_BROAD,CORRECT,,,,"correctly typed and stated, but 'this study' is deictic - as a KG node it would merge every paper in the corpus"
+ae0981a618c1,CORRECT,APPROPRIATE,PARTIAL,,,,"sentence says 'created by', and SAM is a Model standing in for the AcademicPaper that writtenBy requires"
+c8d5110c38ce,CORRECT,TOO_BROAD,INCORRECT,,,,"a hyperparameter in the ResearchArtifact slot; the sentence lists activation functions among model-architecture PARAMETERS, which is configures territory, not consumption"
+8b7224676d43,CORRECT,APPROPRIATE,CORRECT,,,,correctly attributes the shared '>5 seconds' claim to one of the three models listed
+b7d2d04ca149,CORRECT,APPROPRIATE,CORRECT,,,,
+8694b0791f46,CORRECT,APPROPRIATE,PARTIAL,,,,"'composed of' is explicit, but layers are structural components and comprises requires processes on both sides"
+a027d1288746,CORRECT,APPROPRIATE,CORRECT,,,,
+017a1622dae0,PARTIAL,TOO_BROAD,INCORRECT,,,,"'road segments' is a geographic unit, not a named benchmark; the sentence reports an average MAE across them"
+d6ba742d26ca,PARTIAL,TOO_BROAD,PARTIAL,,,,"the metric is BERTScore, not BERT the model, and the object carries no numeric result"
+b07dc47e517f,INCORRECT,TOO_BROAD,INCORRECT,,,,"'each gaze' is a viewing condition, not a dataset - the sentence says one model was trained PER gaze"
+b50ae6738878,CORRECT,TOO_BROAD,CORRECT,,,,same id and verdict as this model's scinex sample - the content hash makes them one triple
+3bdda7963668,CORRECT,APPROPRIATE,CORRECT,,,,
+24d0cf9e373b,PARTIAL,APPROPRIATE,PARTIAL,,,,"a citation key in the ResearchProcess slot; the sentence attributes 0.94 to the METHOD Valente et al. employed, not to the authors"
+175bccadebc0,CORRECT,APPROPRIATE,PARTIAL,,,,"the system and its domain are both real, but the sentence describes U-GMo's internal STRUCTURE rather than stating the context it targets"
+ed9054724daa,CORRECT,APPROPRIATE,PARTIAL,,,,"listed among the five steps, but Population is a data structure rather than the sub-process comprises requires"
+2499cd111746,PARTIAL,TOO_BROAD,PARTIAL,,,,"'CNN' here is the generic family, not a named model; the sentence contrasts the paper's model against the listed state-of-the-art ones"
+3232901e7e37,PARTIAL,TOO_BROAD,PARTIAL,,,,evaluatedOn requires a NAMED benchmark; 'four different surveillance datasets' names none of them
+c6cd70782029,PARTIAL,TOO_BROAD,PARTIAL,,,,"no numeric result in the object, as the predicate's range demands"
+4ed914a01663,PARTIAL,APPROPRIATE,CORRECT,,,,"the production relation is explicit and correctly directed, but the subject is 'OpenCV21' - the tool name with its citation marker 21 fused on"
+dcab7bb13ac6,CORRECT,APPROPRIATE,INCORRECT,,,,"'together with' denotes collaboration between two organisations, not institutional affiliation; LODAC is also a project, not an Agent"
+4adb7aa2e454,INCORRECT,TOO_BROAD,INCORRECT,,,,"SELF-REFERENCE: LR is simply the abbreviation of Logistic Regression, introduced in that same sentence - the triple says a method consumes its own acronym"
+95b3f4ab8acd,CORRECT,APPROPRIATE,CORRECT,,,,correctly pulls MobileNet's 0.99 s out of a sentence that also carries CTv1's 1 s and both power figures
+47d6f0d17c96,CORRECT,APPROPRIATE,PARTIAL,,,,"the task is right, but the subject is a FEATURE SET rather than the Paper, Model or Method addresses requires"
+5256c710656e,CORRECT,APPROPRIATE,CORRECT,,,,"'improved with the addition of self-attention, becoming an SA-LSTM' states the composition directly"
+2e927cd7ed5d,PARTIAL,TOO_BROAD,PARTIAL,,,,same generic-CNN subject as 2499cd111746
+57463c541977,CORRECT,APPROPRIATE,INCORRECT,,,,"a MODEL in the Dataset slot - LRAU was applied TO InceptionV3, not evaluated on it"
+f7b30d6047d8,PARTIAL,TOO_BROAD,PARTIAL,,,,"no numeric result, and the source sentence is a garbled run-on merging a metric list with a definition of IoU"

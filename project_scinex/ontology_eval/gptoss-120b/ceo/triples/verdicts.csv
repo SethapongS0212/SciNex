@@ -1,0 +1,41 @@
+triple_id,C1,C3,C4,missed_concepts,missed_relations,issues,note
+b5646c077233,PARTIAL,TOO_BROAD,CORRECT,,,,"PKLot is correctly captured and the evaluation is explicit, but the subject is a generic description of the approach rather than the named model (ResNet34)"
+2e61c2bb0f06,CORRECT,APPROPRIATE,PARTIAL,,,,"'designed for' is stated verbatim, but designedFor is typed Model -> ResearchTask and the subject is a physical instrument"
+7e8c82ede0c7,CORRECT,APPROPRIATE,CORRECT,,,,
+96238435f9a9,CORRECT,APPROPRIATE,CORRECT,,,,"location is expressed by apposition ('Bureau of Street Lighting, Los Angeles') rather than a verb, but that is the statement, not an inference; typing is exact"
+1c297a97d66d,CORRECT,APPROPRIATE,CORRECT,,,,"correct splitFrom direction - the derived partition is the subject, the source dataset the object"
+1b98f1ce76ae,CORRECT,APPROPRIATE,PARTIAL,,,,"'TensorFlow from Google' supports a provenance link and Google is correctly in the Organisation slot, but affiliatedWith is typed Agent -> Organisation and a software library is not an Agent"
+c30dcee2aefb,CORRECT,APPROPRIATE,PARTIAL,,,,"explicitly stated, but OC-SORT is a Model standing in for the AcademicPaper the predicate requires"
+918852e363c2,CORRECT,APPROPRIATE,INCORRECT,,,,employs is defined Organisation -> Person for employment relationships; a model and an architectural block satisfy neither side - the English verb was matched instead of the ontology definition
+3de5f9134d9a,PARTIAL,TOO_BROAD,CORRECT,,,,correct splitFrom direction (contrast the same sentence reversed by qwen3-235b); 'test set' is the standard partition term but still an unnamed node
+dcd42598827c,PARTIAL,APPROPRIATE,CORRECT,,,,"typing is exactly right, but drawn from the BIBLIOGRAPHY and the venue string is truncated - the real venue is IEEE IAEAC 2021, and the middle of the name is dropped"
+335b62a5eb0d,CORRECT,APPROPRIATE,CORRECT,,,,
+cf0f9613889f,CORRECT,APPROPRIATE,CORRECT,,,,"named benchmark, explicit test statement, exact typing - and this is the same relation qwen3-235b missed entirely from llamacorrupt2025"
+7ba2557febca,PARTIAL,TOO_NARROW,PARTIAL,,,,"'left and right eyes' is an image region, not a named training corpus as trainedOn requires; the substance of the sentence is captured but the object is not a dataset"
+c6ffd9ee658c,CORRECT,APPROPRIATE,CORRECT,,,,
+cbb02e27c8cc,CORRECT,APPROPRIATE,CORRECT,,,,correctly isolates specificity out of five metrics listed in one sentence
+06010bd1ebeb,CORRECT,APPROPRIATE,PARTIAL,,,,the sentence makes a general APPLICABILITY claim about SMOTE across domains; it is not this paper targeting fraud detection
+b4bd17aaa19b,CORRECT,APPROPRIATE,CORRECT,,,,both sides are named parameters of the system and 'generate' is explicit
+684a1a6799e2,CORRECT,APPROPRIATE,CORRECT,,,,
+db0f242c3380,CORRECT,APPROPRIATE,CORRECT,,,,
+00165d4aac1b,PARTIAL,TOO_BROAD,CORRECT,,,,'designed to determine' is verbatim; 'classification model' names nothing specific
+e7a105a9948a,CORRECT,APPROPRIATE,CORRECT,,,,"⚠ PROVENANCE, AND THE EXTENDED GUARD STILL MISSES IT: source is an AUTHOR BIO reading 'He is a Machine Learning Engineer with X, Thailand.' It has neither 'degree', 'currently', nor a 'From YYYY to YYYY' span, so none of the bio patterns fire. The bio rule needs a '(he|she|they) is a/an <role> with <Org>' form"
+a91586184642,CORRECT,APPROPRIATE,CORRECT,,,,
+4d657ab0efff,CORRECT,APPROPRIATE,PARTIAL,,,,"the scenario qualifier is stripped - 0.98-0.99 holds specifically in the WATER DROP scenario, and without it the value reads as CTv1's general F1"
+bc5b7c81616c,CORRECT,APPROPRIATE,CORRECT,,,,
+e5a550b88ea7,CORRECT,APPROPRIATE,CORRECT,,,,"'LSTM only' is the paper's own label for the unaugmented baseline, so it names a real variant"
+4b37bf7b3463,PARTIAL,TOO_BROAD,CORRECT,,,,'produces' is verbatim and correctly directed; the subject is unnamed
+3c9dbe2bbabf,CORRECT,APPROPRIATE,CORRECT,,,,
+358dcdc4d4de,CORRECT,APPROPRIATE,CORRECT,,,,same id and verdict as this model's scinex sample
+694a2648d834,CORRECT,APPROPRIATE,CORRECT,,,,
+e1ac0e859327,PARTIAL,TOO_BROAD,CORRECT,,,,correct partition direction; the source dataset is described rather than named
+65d75e7e3017,PARTIAL,TOO_BROAD,CORRECT,,,,"uses explicitly admits a dataset object, so the typing holds; 'labeled data' names nothing"
+f2b4919f6a85,CORRECT,APPROPRIATE,PARTIAL,,,,the sentence credits SA-LSTM TOGETHER WITH the Butterworth filter; the triple drops the filter and attributes 12.15 to the model alone
+64bdc3bdf683,CORRECT,APPROPRIATE,CORRECT,,,,
+645d933953a1,CORRECT,APPROPRIATE,CORRECT,,,,
+4b4d7242c86d,CORRECT,APPROPRIATE,CORRECT,,,,
+afe23cbfeafe,CORRECT,APPROPRIATE,PARTIAL,,,,"'consists of' is explicit and the component is named, but a convolution LAYER is structural where comprises requires a sub-process"
+9832890d5fe2,CORRECT,APPROPRIATE,CORRECT,,,,
+641199fe127b,CORRECT,APPROPRIATE,CORRECT,,,,named public benchmark with an explicit result - the cleanest evaluatedOn shape in the sample
+2e56936e044b,PARTIAL,TOO_BROAD,PARTIAL,,,,"'trained on' is explicit but both sides are unnamed placeholders, and trainedOn asks for a named corpus"
+2ceaca46553a,CORRECT,APPROPRIATE,CORRECT,,,,

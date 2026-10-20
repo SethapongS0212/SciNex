@@ -1,0 +1,68 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 9 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 36 -----
+Section: 4.6. Discussion
+
+Text:
+(3) In the last experiment, we tried to find an appropriate filter method for data cleansing. The results in Table 5, using the Butterworth low-pass filter with SA-LSTM, were the best among all the experiments. This may have been due to the noise of the original data having a high impact on the performance of the prediction model. When this filter was applied, the MAE of the SA-LSTM was reduced from 26.89 to 12.15. Based on the experimental results, our best approach was to use the SA-LSTM model with the Butterworth low-pass filter. As we analyzed for each road, as shown in Table 6, we can conclude that the improvement of most road segments was greater than 50%, and the total improvement was 55.20%. Although the MAEs of all the road segments had high variance, as indicated by the standard deviation (STD) in the table, the percent improvements of all the road segments were not much different. This means that our method achieved a relatively stable improvement rate. This result can also be visualized in the line chart in Figure 8. It shows values of actual travel time points (solid black line) and the predicted values (red dashed line) of a few days from all selected road segments. In addition, our approach specifically emphasized the GPS data and viewed the GPS transactions as time-series data. The road data were also used to support the selection of road segments that had a high occurrence of vehicles passing through them.
+
+----- para_id: 37 -----
+Section: 4.6. Discussion
+
+Text:
+Thus, to work with our approach, we recommend that machine-learning developers collect GPS transactions of vehicles, including vehicle identifiers, latitude, longitude, and timestamps. It should be noted that the road data were further used to find reference points to identify road sections. Then, both datasets were analyzed into time series of travel time of each selected road segment, and this dataset was used as the input for our method. As reviewed in the related studies in Section 2, several works, including the LSTM model discussed by Ran et al. [13], the LSTM model of Chen et al. [20], and the ConvLSTM model of Wu et al. First, the model of [13] is closest to our work in terms of an LSTM with attention. It used interval data of 15 min as data points and used seven data points as an input of the LSTM and forwarded these to the attention layer to predict the travel time of the following data point. For our approach, we used the LSTM with self-attention and considered 24 input units at one-hour intervals. The experiments from [13] and our work also show that using the LSTM with attention is better than that without attention; the experiment results from [13] showed a 3.19% improvement, while our work had an improvement of 0.84%. Although this improvement is somewhat low, using attention can be a good means of increasing the performance of the LSTM model. Second, the model of [20] considered an LSTM without attention.
+
+----- para_id: 38 -----
+Section: 4.6. Discussion
+
+Text:
+It also used interval data as the input data in order to predict the subsequent data points. For the long-term prediction , the goal was to use 182 days to predict the travel time of the following 30 days. In our work, we attempted to use the travel time of the previous 24 h to predict the travel time of the following hour. Finally, the ConvLSTM model from [14] used the convolutional layers after LSTM. Although the ConvLSTM did not give a good result in our experiment, it evidenced that the use of self-attention can slightly improve the model. This work also stated that the LSTM played a key role when near-term data were highly correlated to the subsequent travel time. In addition to the selected studies [13,14,20], our model considered the selection of a filter method, which was the Butterworth low-pass filter, to process the input data. This filter method is generally applied in time-series analytics [23,24]; however, it might not be necessary for the three selected studies. As we learned from the related studies and our approach, the architecture of the travel time prediction model can be customized. In the case of using the LSTM as a core technique, the hyperparameters, such as the number of LSTM units, must be adjusted. In addition, other assembly techniques, such as attention layers, convolutional layers, and filter methods, should be considered. This consideration is based on an experimental environment, including datasets, goals, and evaluation methods.
+
+----- para_id: 39 -----
+Section: 4.6. Discussion
+
+Text:
+According to our dataset and the results of the experiments, our travel time prediction model became a Self-Attention LSTM with a Butterworth low-pass filter that can process the travel time of the previous 24 h to estimate that of the following hour. Since this study was strongly focused on the GPS data, the historical travel time data were a key factor in the prediction of future travel time. The advantage of our study is that it attempted to use only time-series of GPS data without other features to predict the travel time of a subsequent hour. This results in one prediction model per road segment. In addition, some other studies [16,18,20,22] considered other features, such as weather, lane level, and the day of the week. In this case, our method framework can be enhanced by the inclusion of other aspects such as weather, road repair schedules, and local festivals that need much more study. Thus, further study should consider other factors so as to improve the travel time prediction model. The potential application of our work is to provide a service for the travel time prediction of commercial trucks. In this case, the government department that owns the big GPS data should calculate the travel time of every route in every following hour, then provide the predicted data to consumers. The consumers might be logistic firms that need precisely estimated travel times for a logistics cycle to improve their logistics plans and monitor unusual situations during delivery processes.
+
+----- para_id: 40 -----
+Section: 4.6. Discussion
+
+Text:
+To the best of our knowledge, a function for predicting the travel time of commercial trucks is not presented in any online map application. In this case, it can add more value to both data owners and data consumers. To this end, as mentioned in the first section, the monitoring of some anomalies in road traffic can help city policymakers and officers achieve solutions to traffic problems more quickly and effectively. When road traffic must be predicted under usual traffic conditions,
+
+----- para_id: 41 -----
+Section: 5. Conclusions
+
+Text:
+The aim of this study was to introduce an approach for the prediction of travel time for vehicles on long-distance road segments in Thailand. The input data that we collected were truck GPS transactions and included vehicle identifiers, timestamps, latitudes, and longitudes. The raw data, together with road data from Thailand, were processed into time-series data of the average hourly travel time on each road segment in 2019, and the time-series data were split into a training set and a test set, where the sliding window size was 24. In our study, the LSTM was selected as a baseline and had an MAE of 27.12 min per 100 km. After studying the data in detail and conducting several experiments, the SA-LSTM with the Butterworth low-pass filter was adopted as our method, and this provided an error of ±12.15 min for every 100 km, which was 55.20% better than that of the baseline. The results of our experiments suggest that having a predictive travel time using GPS data for each road is practical and is a necessary factor in the improvement of smart mobility. Thus, our work can contribute to the development of a data-driven smart city. However, our work is an early step in the area of travel time prediction in Thailand. In the future, other factors such as weather data and road repair schedules might be considered.
+
+----- para_id: 42 -----
+Section: 5. Conclusions
+
+Text:
+In addition, a future plan, which will require more effort and a bigger budget, is to collect the GPS data of other types of vehicles such as personal cars and, indeed, the whole road network in Thailand. Further research can then enrich travel time prediction models. and A.S.; methodology, R.C.; software, N.A., S.I. and N.B.; validation, R.C., N.A., S.I., N.B. and A.S.; formal analysis, R.C, N.A, S.I. and N.B.; investigation, R.C.; resources, R.C. and A.S.; writing—original draft preparation, R.C.; writing— review and editing, R.C.; visualization, R.C., N.A., S.I. and A.S.; project administration, R.C.; All authors have read and agreed to the published version of the manuscript. Funding: This research received no external funding. Institutional Review Board Statement: Not applicable. Informed Consent Statement: Not applicable. Conflicts of Interest: The authors declare no conflict of interest. Forecasting short -term relative changes in travel time on a freeway. Servos, N.; Liu, X.; Teucke, M.; Freitag, M. Travel Time Prediction in a Multimodal Freight Transport Relation Using Machine Learning Algorithms. Philip, A.M.; Ramadurai, G.; Vanajakshi, L. Urban Arterial Travel Time Prediction Using Support Vector Regression. Application on traffic flow prediction of machine learning in intelligent transportation . Ran, X.; Shan, Z.; Fang, Y.; Lin, C. An LSTM-Based Method with Attention Mechanism for Travel Time Prediction . Wu, J.; Wu, Q.; Shen, J.; Cai, C.
+
+----- para_id: 43 -----
+Section: 5. Conclusions
+
+Text:
+Towards Attention-Based Convolutional Long Short -Term Memory for Travel Time Prediction of Bus Journeys. Panyo, K.; Bootkrajang, J.; Inkeaw, P.; Chaijaruwanich, J. Bus Arrival Time Estimation for Public Transportation System Using LSTM. In Proceedings of the 2020—5th International Conference on Information Technology (InCIT), Chonburi, Thailand, 21–22 October 2020; pp. Joint prediction of next location and travel time from urban vehicle trajectories using long short -term memory neural networks. He, P.; Jiang, G.; Lam, S.-K.; Sun, Y. Learning heterogeneous traffic patterns for travel time prediction of bus journeys. Zhang, S.; Guan, D.; Liu, H. Research on Lane-level Travel Time Prediction Method Based on Gated Recurrent Neural Network. Tran, L.; Mun, M.Y.; Lim, M.; Yamato, J.; Huh, N.; Shahabi, C. DeepTRANS: A deep learning system for public bus travel time estimation using traffic forecasting. Chen, M.-Y.; Chiang, H.-S.; Yang, K.-J. Constructing Cooperative Intelligent Transport Systems for Travel Time Prediction with Deep Learning Approaches. Bus Arrival Time Prediction with LSTM Neural Network. In Proceedings of the International Symposium on Neural Networks, Moscow, Russia, 10–12 July 2019; pp. Neural network model based on travel planning for travel time prediction . Aljamal, M.A.; Abdelghaffar, H.M.; Rakha, H.A. Developing a Neural–Kalman Filtering Approach for Estimating Traffic Stream Density Using Probe Vehicle Data. Fang, W.; Cai, W.; Fan, B.; Yan, J.; Zhou, T.
+
+----- para_id: 44 -----
+Section: 5. Conclusions
+
+Text:
+Kalman-LSTM Model for Short -term Traffic Flow Forecasting. In Proceedings of the 2021 IEEE 5th Advanced Information Technology , Electronic and Automation Control Conference (IAEAC), Chongqing, China, 12–14 March 2021; Volume 5, pp. In Machine Learning; Elsevier: Amsterdam, The Netherlands, 2020; pp. Van Houdt, G.; Mosquera, C.; Nápoles, G. A review on the long short -term memory model. Design of Deep Convolutional Neural Network Architectures for Denoising Electrocardiographic Signals. In Pro- ceedings of the 2020 IEEE Conference on Computational Intelligence in Bioinformatics and Computational Biology (CIBCB), Via del Mar, Chile, 27–29 October 2020; pp. Van Van Breugel, F.; Kutz, J.N.; Brunton, B.W. Numerical Differentiation of Noisy Data: A Unifying Multi -Objective Optimization Framework. IEEE Access 2020, 8, 196865–196877. OpenStreetMap Data for This Region: Thailand. Available online: https://download.geofabrik.de/asia/ thailand.html (accessed on 9 October 2021).

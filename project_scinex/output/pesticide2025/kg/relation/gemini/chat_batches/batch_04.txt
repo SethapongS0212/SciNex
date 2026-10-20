@@ -1,0 +1,38 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 4 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 36 -----
+Section: Table
+
+Text:
+Statistical Evaluation of Various Machine Learning Algorithms for Predicting Mixed Sugar-Salt Concentrations. light traversed a cuvette containing solutions, serving as the analysed band. This design enabled automatic correction for variations in image misalignments and brightness fluctuations without human intervention, thus reducing biased selection and result manipulation. The image processing methodology consisted of six steps. Initially, each pixel of the images was converted to a lightness (L) value. Subse quently, three processing steps were undertaken: detection, correction of rotation and inclination, and normalization of light variations in the reference spectral band. Finally, the correction values from the reference band were projected onto the analysed band. This projection reduced uncertainty in the experimental setup and enhanced images of varying qualities into high-quality data suitable for machine learning analysis. Instead of scanning and selecting the highest absorbed wavelengths, as in other spectrophotometer methods, F-score analysis was employed for feature selection to choose the four most impactful wavelengths (features) for model training and validation. During prediction, cross- validation was also used to mitigate the risk of overfitting. Four machine learning algorithms, SVP, RF, MLP, and XGB, were utilised. The dataset was randomly partitioned into two subsets, with 80 % allocated for training and 20 % for testing purposes.
+
+----- para_id: 37 -----
+Section: Table
+
+Text:
+Additionally, a unique case with a distinct concentration was introduced to re-validate the opti mised model. The device and methodology were applied to two case studies involving coloured compounds: the prediction of KMnO4 and Carbo sulfan concentrations. The method demonstrated high accuracy in pre dicting KMnO4, achieving a minimal average error of 1.48 %, comparable to sophisticated UV–Visible spectrophotometric devices. The method also performed effectively in estimating Carbosulfan con centrations, though with a higher error margin of 3.29 %. However, the device exhibited limitations at lower Carbosulfan concentrations, where the solution induced a lightness value change of less than 0.5 L* per 50 mg⋅L−1. It was also observed that the relationship between changes in light ness value and chemical concentrations does not strictly adhere to the Beer-Lambert law, as the most effective model in most cases was XGB, which exhibits non-linear behaviour. XGB performed well due to its effective handling of sparse data and its built-in mechanisms for pre venting overfitting. The method was successfully expanded to estimate sugar solution concentrations, as these solutions interact with light. However, when applied to salt and mixtures of non-coloured compounds, the method ologies exhibited significant inaccuracies, with error rates ranging from 30 % to 50 %. This highlights the need for further refinement of the methodologies to enhance their broader applicability.
+
+----- para_id: 38 -----
+Section: Table
+
+Text:
+Based on the findings of this study, modifications to the current low- cost setup could be explored to further enhance its functionality. Replacing the LED daylight source with UV light is a potential improvement, as certain chemical compounds exhibit greater absorption in UV wavelengths compared to visible light, thus broad ening the scope of compounds that can be analysed. The transition from a corrugated plastic sheet assembly to a 3D-printable design is also planned, as 3D printers are now widely available at low cost. Lastly, efforts are being made to render the code cloud-ready, or at least to host it on GitHub, to facilitate broader access and use. Solute Solvent Number of Images Processing Time (s) In conclusion, the low-cost and portable spectrophotometer has been developed, which, when employed in conjunction with rapid and effi cient image processing and machine learning methodologies, yields precise predictions. Despite the presence of certain challenges, the de vice possesses inherent potential that merits further development and refinement. Murathathunyaluk: Writing – review & editing, Project admin istration, Investigation, Formal analysis, Conceptualization. Jinor ose: Writing – review & editing, Validation, Investigation. Janpetch: Visualization, Validation, Software, Investigation, Formal analysis. Chanthapanya: Visualization, Validation, Software, Investigation, Formal analysis. Chawuthai: Writing – review & editing, Supervision, Software.
+
+----- para_id: 39 -----
+Section: Table
+
+Text:
+Mansouri: Writing – re view & editing. Anantpinijwatna: Writing – review & editing, Writing – original draft, Validation, Supervision, Project administration, Methodology, Investigation, Conceptualization. The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.

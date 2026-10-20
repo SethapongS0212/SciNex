@@ -1,0 +1,582 @@
+{
+  "a": "gemini",
+  "b": "gpt-oss",
+  "compared": 100,
+  "unmatched": 0,
+  "unscorable": 0,
+  "overall": {
+    "n": 100,
+    "agreement": 0.86,
+    "kappa": 0.457,
+    "confusion": {
+      "CORRECT": {
+        "CORRECT": 81,
+        "PARTIAL": 4,
+        "INCORRECT": 1
+      },
+      "PARTIAL": {
+        "CORRECT": 4,
+        "PARTIAL": 4,
+        "INCORRECT": 5
+      },
+      "INCORRECT": {
+        "CORRECT": 0,
+        "PARTIAL": 0,
+        "INCORRECT": 1
+      }
+    }
+  },
+  "binary": {
+    "n": 100,
+    "agreement": 0.91,
+    "kappa": 0.637,
+    "confusion": {
+      "CORRECT": {
+        "CORRECT": 81,
+        "NOT_CORRECT": 5
+      },
+      "NOT_CORRECT": {
+        "CORRECT": 4,
+        "NOT_CORRECT": 10
+      }
+    }
+  },
+  "precision": {
+    "gemini": 0.86,
+    "gpt-oss": 0.85
+  },
+  "by_extractor": {
+    "relation": {
+      "n": 100,
+      "agreement": 0.86,
+      "kappa": 0.457,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 81,
+          "PARTIAL": 4,
+          "INCORRECT": 1
+        },
+        "PARTIAL": {
+          "CORRECT": 4,
+          "PARTIAL": 4,
+          "INCORRECT": 5
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 1
+        }
+      },
+      "precision_a": 0.86,
+      "precision_b": 0.85
+    }
+  },
+  "by_predicate": {
+    "addresses": {
+      "n": 13,
+      "agreement": 0.769,
+      "kappa": 0.339,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 9,
+          "PARTIAL": 2,
+          "INCORRECT": 1
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 1
+        }
+      },
+      "precision_a": 0.923,
+      "precision_b": 0.692
+    },
+    "comparesagainst": {
+      "n": 13,
+      "agreement": 0.923,
+      "kappa": 0.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 12,
+          "PARTIAL": 1,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 1.0,
+      "precision_b": 0.923
+    },
+    "comprises": {
+      "n": 13,
+      "agreement": 0.769,
+      "kappa": 0.506,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 8,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 2,
+          "PARTIAL": 2,
+          "INCORRECT": 1
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 0.615,
+      "precision_b": 0.769
+    },
+    "designedfor": {
+      "n": 6,
+      "agreement": 0.667,
+      "kappa": 0.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 4,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 2,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 0.667,
+      "precision_b": 1.0
+    },
+    "uses": {
+      "n": 13,
+      "agreement": 0.846,
+      "kappa": 0.527,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 10,
+          "PARTIAL": 1,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 1
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 0.846,
+      "precision_b": 0.769
+    },
+    "supports": {
+      "n": 2,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 2,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 1.0,
+      "precision_b": 1.0
+    },
+    "splitfrom": {
+      "n": 6,
+      "agreement": 0.833,
+      "kappa": 0.455,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 5,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 1
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 0.833,
+      "precision_b": 0.833
+    },
+    "evaluatedon": {
+      "n": 12,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 12,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 1.0,
+      "precision_b": 1.0
+    },
+    "achieves": {
+      "n": 13,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 13,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 1.0,
+      "precision_b": 1.0
+    },
+    "encompasses": {
+      "n": 2,
+      "agreement": 0.0,
+      "kappa": 0.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 2
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 0.0,
+      "precision_b": 0.0
+    },
+    "locatedin": {
+      "n": 1,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 1,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 1.0,
+      "precision_b": 1.0
+    },
+    "evaluates": {
+      "n": 1,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 1,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 1.0,
+      "precision_b": 1.0
+    },
+    "trainedon": {
+      "n": 1,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 1,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 1.0,
+      "precision_b": 1.0
+    },
+    "produces": {
+      "n": 4,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "confusion": {
+        "CORRECT": {
+          "CORRECT": 3,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        },
+        "PARTIAL": {
+          "CORRECT": 0,
+          "PARTIAL": 1,
+          "INCORRECT": 0
+        },
+        "INCORRECT": {
+          "CORRECT": 0,
+          "PARTIAL": 0,
+          "INCORRECT": 0
+        }
+      },
+      "precision_a": 0.75,
+      "precision_b": 0.75
+    }
+  },
+  "disagreements": [
+    {
+      "triple_id": "583160a99aa7",
+      "paper": "csysguard2024",
+      "extractor": "relation",
+      "subject": "Random Forest",
+      "predicate": "comprises",
+      "object": "multiple decision trees",
+      "source_sentence": "Random Forest creates multiple decision trees to improve the prediction accuracy and robustness.",
+      "gemini": "PARTIAL",
+      "gpt-oss": "CORRECT",
+      "note": "The sentence states Random Forest 'creates' decision trees, implying composition rather than explicitly stating it comprises them."
+    },
+    {
+      "triple_id": "a5cd6f0b9464",
+      "paper": "gamlprop2025",
+      "extractor": "relation",
+      "subject": "Genetic Algorithm",
+      "predicate": "comprises",
+      "object": "Population",
+      "source_sentence": "The application of the Genetic Algorithm to generate chemicals with desirable properties, as illustrated in Figure 3, comprises five steps: Initialization, Population, Selection, Crossover, and Mutation.",
+      "gemini": "PARTIAL",
+      "gpt-oss": "CORRECT",
+      "note": "Population is a dataset/representation of candidate solutions rather than a process, making it a loose fit for the predicate's range constraint."
+    },
+    {
+      "triple_id": "c79b601a54ee",
+      "paper": "llamacorrupt2025",
+      "extractor": "relation",
+      "subject": "Question-answering Natural Language Inference (QNLI) dataset",
+      "predicate": "splitfrom",
+      "object": "General Language Understanding Evalua- tion (GLUE) benchmark",
+      "source_sentence": "We selected the Question-answering Natural Language Inference (QNLI) dataset from the General Language Understanding Evalua- tion (GLUE) benchmark for this study [6]",
+      "gemini": "PARTIAL",
+      "gpt-oss": "INCORRECT",
+      "note": "QNLI is a dataset within the GLUE benchmark, not a train/dev/test partition split as required by the predicate definition."
+    },
+    {
+      "triple_id": "53c523a20183",
+      "paper": "microwave2018",
+      "extractor": "relation",
+      "subject": "microwave sensor",
+      "predicate": "addresses",
+      "object": "detecting the kick gesture",
+      "source_sentence": "The microwave sensor also tolerates the changes in temperature, dirty, and other conditions under the environment and its cost is reasonable, so we choose the microwave sensor for detecting the kick gesture for conducting this research.",
+      "gemini": "CORRECT",
+      "gpt-oss": "INCORRECT",
+      "note": ""
+    },
+    {
+      "triple_id": "8cb0cb46de5e",
+      "paper": "microwave2018",
+      "extractor": "relation",
+      "subject": "ultrasonic sensor",
+      "predicate": "uses",
+      "object": "a sound wave",
+      "source_sentence": "First, the ultrasonic sensor uses a sound wave to detect an object, but it needs to care about the environment's temperature which effects the wave speed [5].",
+      "gemini": "PARTIAL",
+      "gpt-oss": "INCORRECT",
+      "note": "A sound wave is a physical phenomenon/signal rather than a ResearchArtifact (tool, dataset, or architecture), making the range a loose fit."
+    },
+    {
+      "triple_id": "78d3529db818",
+      "paper": "parkingyolo2023",
+      "extractor": "relation",
+      "subject": "object detection models",
+      "predicate": "comprises",
+      "object": "extraction of features",
+      "source_sentence": "Based on Zhao et al. [16], object detection models consist of three phases: selection of region of interest, extraction of features, and, finally, classification of objects .",
+      "gemini": "PARTIAL",
+      "gpt-oss": "INCORRECT",
+      "note": "Subject 'object detection models' is a class of models rather than a process or method."
+    },
+    {
+      "triple_id": "4c95475ba0c0",
+      "paper": "parkingyolo2023",
+      "extractor": "relation",
+      "subject": "object tracking",
+      "predicate": "encompasses",
+      "object": "Single Object Tracking (SOT)",
+      "source_sentence": "Single Object Tracking (SOT) and Multiple Object Tracking (MOT) are the two cat- egories into which object tracking can be subdivided [30].",
+      "gemini": "PARTIAL",
+      "gpt-oss": "INCORRECT",
+      "note": "Subject 'object tracking' is a research task rather than a broad domain."
+    },
+    {
+      "triple_id": "a162f443a6cf",
+      "paper": "parkingyolo2023",
+      "extractor": "relation",
+      "subject": "object tracking",
+      "predicate": "encompasses",
+      "object": "Multiple Object Tracking (MOT)",
+      "source_sentence": "Single Object Tracking (SOT) and Multiple Object Tracking (MOT) are the two cat- egories into which object tracking can be subdivided [30].",
+      "gemini": "PARTIAL",
+      "gpt-oss": "INCORRECT",
+      "note": "Subject 'object tracking' is a research task rather than a broad domain."
+    },
+    {
+      "triple_id": "57b696a15dac",
+      "paper": "pesticide2025",
+      "extractor": "relation",
+      "subject": "low- cost portable spectrophotometer",
+      "predicate": "designedfor",
+      "object": "automatic image pro cessing and analysis",
+      "source_sentence": "This study presents the development and evaluation of a novel, low- cost portable spectrophotometer designed for automatic image pro cessing and analysis using machine learning techniques.",
+      "gemini": "PARTIAL",
+      "gpt-oss": "CORRECT",
+      "note": "Subject (spectrophotometer) is a physical hardware device rather than a computational model."
+    },
+    {
+      "triple_id": "f3fa9347d1d3",
+      "paper": "pesticide2025",
+      "extractor": "relation",
+      "subject": "low-cost, portable spectrophotometer",
+      "predicate": "designedfor",
+      "object": "the utilization of smartphone cameras",
+      "source_sentence": "A low-cost, portable spectrophotometer was designed to enable the utilization of smartphone cameras for capturing spectral images .",
+      "gemini": "PARTIAL",
+      "gpt-oss": "CORRECT",
+      "note": "Subject is a physical hardware device rather than a model, and the object is a means/capability rather than a standard research task."
+    },
+    {
+      "triple_id": "003717407ee1",
+      "paper": "roadwaylight2018",
+      "extractor": "relation",
+      "subject": "SVM",
+      "predicate": "uses",
+      "object": "a radial basis function (RBF) kernel",
+      "source_sentence": "• For the SVM, according to the visualization in Fig. 7, there are overlapped class distributions, and a radial basis function (RBF) kernel becomes a proper kernel for our experiment.",
+      "gemini": "CORRECT",
+      "gpt-oss": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "c0e14c3bfa3b",
+      "paper": "strabismus2026",
+      "extractor": "relation",
+      "subject": "Convolutional Neural Networks (CNNs)",
+      "predicate": "addresses",
+      "object": "identifying ocular misalignments",
+      "source_sentence": "Convolutional Neural Networks (CNNs) and other deep learning techniques have demonstrated efficacy in identifying ocular misalignments through image analysis7,8.",
+      "gemini": "CORRECT",
+      "gpt-oss": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "7e805df679da",
+      "paper": "strabismus2026",
+      "extractor": "relation",
+      "subject": "Real-time Detection Transformer (RT-DETR)",
+      "predicate": "addresses",
+      "object": "localize key ocular landmarks",
+      "source_sentence": "Specifically, we utilize the Real-time Detection Transformer (RT-DETR) model to localize key ocular landmarks from smartphone-acquired images captured at three gaze angles—left, center, and right.",
+      "gemini": "CORRECT",
+      "gpt-oss": "PARTIAL",
+      "note": ""
+    },
+    {
+      "triple_id": "4f88284874b1",
+      "paper": "traveltime2022",
+      "extractor": "relation",
+      "subject": "SA-LSTM",
+      "predicate": "comparesagainst",
+      "object": "LSTM",
+      "source_sentence": "In our case, the comparison between the LSTM only and the SA-LSTM models guided us to choose the SA-LSTM.",
+      "gemini": "CORRECT",
+      "gpt-oss": "PARTIAL",
+      "note": ""
+    }
+  ]
+}

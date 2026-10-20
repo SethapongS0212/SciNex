@@ -1,0 +1,74 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 10 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: 3. Method: A Hybrid Recommender Model
+
+Text:
+The equation of this scoring function is expressed as follows: where SD(s2 | s0→s1) is the possibility of the next rest stop s2 of a vehicle that parked at s0 and s1 using the direction between stops, 𝑠𝑠𝑠𝑠0 𝑠𝑠𝑠𝑠1 ሬሬሬሬሬሬሬሬሬሬ⃗ is a vector between points s0 and s1, and ฮs0 s1 ሬሬሬሬሬሬሬሬሬሬ⃗ฮ is the size of that vector. Scoring Function based on the Popularity of Rest Stops (SP) where SP(s2 | s0→s1) is a scoring function that demonstrates the popularity of the rest stop s2; NVD is a function that returns the number of vehicles at the given rest stop per day; and NVDR returns the number of vehicles parked from the given point within a radius of a configured distance per day such as the number per day of vehicles stopped within 300 km from the location s1. The prediction on a next rest stop has several factors. As we demonstrated, there are based on the pattern of frequent pattern of continuous rest stops (SF), the direction of connected rest stops (SD), and the popularity of the target rest stops (SP). A vehicle having similar route daily may have a clear pattern, however, in terms of the commercial vehicles in Thailand, their routes are depended on the jobs given. Thus, the prediction model has to consider several viewpoints as we informed. The combination of scoring functions is commonly found in the problems about prediction and recommendation as demonstrated by Ricci et al. Burke (2002) reviewed that there are several ways to combine scoring functions.
+
+----- para_id: 13 -----
+Section: 3. Method: A Hybrid Recommender Model
+
+Text:
+(1) A weighted hybrid model uses a linear combination of all scoring functions with different coefficients to produce a single score. It is simple and straightforward, so it is flexible for plugging with other new prediction methods. (2) A mixed hybrid model uses different prediction models to produce separated results and lets users to choose a desirable one. (3) A switching hybrid model switches among prediction methods based on criteria of the dataset such as the use of only maximum value in each predicting ฮ𝑠𝑠𝑠𝑠0 𝑠𝑠𝑠𝑠1 ሬሬሬሬሬሬሬሬሬሬሬ⃗ฮ ⋅ ฮ𝑠𝑠𝑠𝑠1 𝑠𝑠𝑠𝑠2 ሬሬሬሬሬሬሬሬሬሬሬ⃗ฮ (3) process. However, the mixed and switching hybrid models do not produce a single prediction score, so it is not proper for our research goal. Thus, this paper chooses the weighted hybrid model in order to predict the next rest stop based on the highest prediction score. The hybrid model is expressed in the following equation. where PNext is the hybrid prediction model of all scoring functions; α, β, and γ are constant variables indicating weights of scoring functions SF, SD, and SP respectively. In order to create a precise prediction model, the proper α, β, and γ have to be adjusted. The next section demonstrates the experiment and result of our approach.
+
+----- para_id: 14 -----
+Section: 4. Experimental Result and Discussion
+
+Text:
+This section aims to demonstrate the experimental result including experimental steps, evaluation methods, and result; and discuss about the result.
+
+----- para_id: 15 -----
+Section: 4.1. Experiment
+
+Text:
+Since, the prediction method PNext has been introduced, the next step is to measure the accuracy of the proposed method. Our experiment is done by the following steps: 1) From the dataset of the relation (s0→s1→s2, vtype, time1), the actual next stop s2 will be replaced by any possible next rest stops that are located within a configured distance from a given s1. In this case, we used 300 km as a configured distance. Thus, it can be sa, sb, sc, sd, and se. 2) Find ranking scores for all possible rest stops using Eq. 5., for example, PNext(sa | s0→s1), PNext (sb | s0→s1), PNext (sc | s0→s1), PNext (sd | s0→s1), and PNext (se | s0→s1). 3) Compare the ranking scores of all possible next rest stops with the score of actual next rest stop using the evaluation method named AUC, which is described hereafter. 5., use different α, β, and γ for finding proper coefficients of the equation. The different coefficients (α, β, γ) that we use in this experiment are (1,0,0), (0,1,0), (0,0,1), (1,1,0), (1,0,1), (0,1,1), and (1,1,1) in order to find an appropriate combination of scoring functions based on the AUC result. 5) Adjust the α, β, and γ for creating an accurate model for this dataset that gives the highest AUC value. This experiment evaluates each coefficient one by one. If a coefficient is focused, its value is changed while the others are constant. For example, if α is evaluated, the value of α is slightly increased from 0 to 1, while β and γ remain 0.5.
+
+----- para_id: 16 -----
+Section: 4.1. Experiment
+
+Text:
+6) After the experiment is executed, the result becomes in form of (s0→s1→s2, vtype, time1, AUC). In this step, the report is generated by grouping the vtype and time1 in terms of daytime and nighttime with the average of AUC in these groups in order to demonstrate the accuracy of our approach.
+
+----- para_id: 17 -----
+Section: 4.2. Evaluation Method
+
+Text:
+𝑆𝑆𝑆𝑆𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁(𝑠𝑠𝑠𝑠2|𝑠𝑠𝑠𝑠0 →𝑠𝑠𝑠𝑠1) = 𝛼𝛼𝛼𝛼∙𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑆(𝑠𝑠𝑠𝑠2|𝑠𝑠𝑠𝑠0 →𝑠𝑠𝑠𝑠1) + 𝛽𝛽𝛽𝛽∙𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑆(𝑠𝑠𝑠𝑠2|𝑠𝑠𝑠𝑠0 →𝑠𝑠𝑠𝑠1) + 𝛾𝛾𝛾𝛾∙𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑆(𝑠𝑠𝑠𝑠2|𝑠𝑠𝑠𝑠0 →𝑠𝑠𝑠𝑠1) (5) where there are n comparisons, n' is times of the PNext score of the actual next rest stop has higher than the other predicted stops, and n'' is the times of the PNext score of the actual next rest stop is same as the other predicted stops. It means that the algorithm is more accurate when the AUC value closes to 1.
+
+----- para_id: 18 -----
+Section: 4.3. Result
+
+Text:
+The result of our experiment is demonstrated in this part. First, the importance of each scoring function is evaluated using the combination of scoring functions as mentioned in the fourth step of the experiment. The result is shown in Table 1. It shows that the combination of three scoring functions including SF, SD, and SP provides higher AUC. It means that the function PNext has to contain there three scoring functions. which are the weights of the scoring function SF and SD, results in the increasing of the AUC as shown in Fig. In addition, the increasing of the γ provides the inverse result of the AUC. However, according to the result in Fig. 1, the small weight of the scoring function SP can help to improve the accuracy. After executing this experiment with the current dataset, it found that the proper value of α, β, and γ are 1.0, 0.8, and 0.2 respectively, and these weights are normalized into 0.5, 0.4, and 0.1, as expressed in the following equation of PNext for our dataset. 𝑆𝑆𝑆𝑆𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁𝑁(𝑠𝑠𝑠𝑠2|𝑠𝑠𝑠𝑠0 →𝑠𝑠𝑠𝑠1) = 0.5 ∙𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑆(𝑠𝑠𝑠𝑠2|𝑠𝑠𝑠𝑠0 →𝑠𝑠𝑠𝑠1) + 0.4 ∙𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑆(𝑠𝑠𝑠𝑠2|𝑠𝑠𝑠𝑠0 →𝑠𝑠𝑠𝑠1) + 0.1 ∙𝑆𝑆𝑆𝑆𝑆𝑆𝑆𝑆(𝑠𝑠𝑠𝑠2|𝑠𝑠𝑠𝑠0 →𝑠𝑠𝑠𝑠1) (7) Lastly, according to the last step of the experiment, experimental result based on the adjusted equation PNext as defined in Eq. 7 is reported in Table 2. It has found that all types of vehicles provide good accuracy especially in the liquid trucks at the daytime. In addition, the prediction at the daytime is more accuracy than the nighttime a little bit.
+
+----- para_id: 19 -----
+Section: 4.4. Discussion
+
+Text:
+The result in Table 1. demonstrates that the prediction model having the combination of these three scoring functions gives more accurate result. The scoring function SF based on the frequent pattern of rest stop is the technique that most works in the literature review employed such as Morzy (2006 and 2007), Yavas et al. (2008), and Monreale et al. For the scoring function SP which is based on the popularity of the rest stop, the hybrid method between SF and SP was mentioned in the works of Jeung et al. (2008) and Scellato et al. However, as we reviewed from existing works in this domain, there is no existing method concerning about the direction among rest stops. The scoring function SD represents this concept using the cosine similarity index. Thus, our proposed prediction model that includes the cosine similarity between rest stops' paths for analyzing the trajectory data is firstly introduced in this paper, and the coefficient of this scoring function presented in Eq. supports that the arrangement of the connected rest stops is one key player in the prediction model. 7, it is found that the scoring functions SF and SD have high importance than the SP. It can be inferred that most vehicles have similar pattern of rest stop routes , and there are some popular rest stops in several routes where the vehicles always stop there. This pattern can be seen in the visualization in Fig.
+
+----- para_id: 20 -----
+Section: 4.4. Discussion
+
+Text:
+The end points of most vehicles are dense in the central of Thailand especially in Bangkok, the capital of Thailand, and they are distributed to four main regions of Thailand: North, North-East, East, and South. In addition, the scoring function SD shows that the pattern of three connected rest stops are commonly arranged in the same direction. It is because there are four main directions of four regions as we mentioned, and most routes in each region almost locates in the straight line as can be seen in Fig. In this case, the cosine similarity between s0→s1 and s1→s2 closes to 1. Moreover, the SP is still a player in the equation although its weight is quite small. It helps the prediction model give priority to some nearby popular rest stops. This viewpoint is consistent with the decision of drivers for finding the next rest stops also, because they usually park at some rest stops where other ones often chose. The prediction of the next rest stop of a vehicle can help the owner of a rest stop can estimate the capacity for providing a better service , and it is also benefit to the drivers at nighttime. This information is not only directly beneficial to the rest stops, but it also benefits a government department. Knowing the incoming number of cars at each rest stop precisely, it helps the government department improve transportation management and road safety as well.
+
+----- para_id: 21 -----
+Section: 5. Conclusion
+
+Text:
+This paper aims to predict next rest stops of vehicles based on the current and the previous rest stops. The dataset is from the GPS tracking system installed in commercial vehicles in Thailand. Based on every position on the Earth of every vehicle collected in every minute, all rest stops are selected by estimating any points where a vehicle stops more than 30 minutes. After that, the prediction of the next rest stops has been done by the function PNext that is a weighted hybrid prediction model containing three scoring functions. First, SF is the scoring function based on the frequent pattern between rest stops. Second, SD is the scoring function based on the cosine similarity between directions of previous, current, and possible rest stops. Last, SP is the scoring function based on the popularity of the focused rest stops in the area round the current stop. The analysis measured by AUC demonstrates that all scoring functions are needed in the hybrid method, in addition, with the weights adjusted, the prediction model PNext can provide the higher accuracy. However, besides predicting a next rest stop from known locations, giving a suggestion to have new rest stops becomes an opportunity to improve road safety for drivers and passengers who take long-distance trips . Thus, the future work of this research will emphasis on giving a recommendation for finding appropriate locations to build new rest stops using the big data analytics of GPS data together with the behavior of drivers.

@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 1ed729d78de9 -----
+TRIPLE:     (oversampled data)  --producedby-->  (SMOTE)
+PREDICATE DEFINITION: ResearchArtifact → ResearchProcess  |  Links a research artifact back to the research process that generated it
+SOURCE SENTENCE: Second, oversampled data was generated to create a balanced dataset .
+
+----- triple_id: d3e6aa32c4c8 -----
+TRIPLE:     (SMOTE)  --configures-->  (number of neighbors was set to 5)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: For the SMOTE, the number of neighbors was set to 5, and the sample strategy of True: False cases was up to 200:200.
+
+----- triple_id: 09c607f68365 -----
+TRIPLE:     (SAM2)  --employs-->  (YOLOv8)
+PREDICATE DEFINITION: Organisation → Person  |  Associates an organisation with the persons who work for or are institutionally employed by it at the time of a research publication
+SOURCE SENTENCE: The YOLOv8 object detection model was employed to execute bounding box detections as seen in Fig. 3, thereby creating bounding boxes for SAM2 to indicate the regions designated for segmentation.
+
+----- triple_id: c802b38c805a -----
+TRIPLE:     (RT-DETR)  --designedfor-->  (real-time performance)
+PREDICATE DEFINITION: Model → ResearchTask  |  Associates a model with the research task it was specifically designed or optimised to solve, such as a transformer model designed for machine translation or a CNN designed for image classification
+SOURCE SENTENCE: RT-DETR is a transformer -based object detector designed for real-time performance.
+
+----- triple_id: 0e2b63c38095 -----
+TRIPLE:     (ordered TTR dataset)  --splitfrom-->  (road)
+PREDICATE DEFINITION: Dataset → Dataset  |  Records that a dataset partition was derived from a larger source dataset
+SOURCE SENTENCE: In our experiment, we evaluated the performance of each model using a train–test split. In this case, the ordered TTR dataset of each road was split into third sets: a training set (60%), a validation set (20%), and a test set (20%), as shown in Figure 7a.
+
+----- triple_id: b50e7230c729 -----
+TRIPLE:     (Rule 1)  --supports-->  (lower values are linked to strabismus)
+PREDICATE DEFINITION: ExperimentalMeasurement → ExperimentalOutcome  |  Links a quantitative experimental measurement to the qualitative conclusion it provides evidence for
+SOURCE SENTENCE: In this context, Rule 1 indicates that lower values are linked to strabismus , whereas Rule 2 reflects the alternative condition.
+
+----- triple_id: 2490d492721b -----
+TRIPLE:     (Joseph Redmon)  --affiliatedwith-->  (University of Washington)
+PREDICATE DEFINITION: Agent → Organisation  |  Associates an agent with an organisation to which they are professionally attached during a research activity
+SOURCE SENTENCE: In 2015, Joseph Redmon and Ali Farhadi from the University of Washington created the cutting-edge object recognition algorithm called YOLO (You Only Look Once) [17].
+
+----- triple_id: 2762eddc8b80 -----
+TRIPLE:     (study)  --cites-->  (Almeida et al.)
+PREDICATE DEFINITION: AcademicPaper → AcademicPaper  |  Records a bibliographic reference from one academic paper to another, indicating that the citing paper acknowledges, builds upon, or contrasts with the cited work
+SOURCE SENTENCE: In addition, the study discussed the potential of deep learning methods for automatic strabismus detection , citing prior work by Almeida et al. and Valente et al.8,17, which reported high accuracy .
+
+----- triple_id: eea64759ab70 -----
+TRIPLE:     (Performance Vector)  --extractedfrom-->  (weighted aggregation layer)
+PREDICATE DEFINITION: ? → AcademicPaper  |  Links an extracted entity to the academic paper it was extracted from.
+SOURCE SENTENCE: In addition to the weight calculation, the layer computes the Performance Vector (PV) of Level-1 learners based on past t refinement iterations.
+
+----- triple_id: 72fdecd307c8 -----
+TRIPLE:     (future work)  --motivates-->  (implementing advanced molecular representations)
+PREDICATE DEFINITION: ResearchObjective → ResearchProcess  |  Links a research objective to the research process it drives
+SOURCE SENTENCE: While the current work establishes a baseline for count -based descriptors , future work will focus on implementing these advanced representations.

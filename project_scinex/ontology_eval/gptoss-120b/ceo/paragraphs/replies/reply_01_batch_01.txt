@@ -1,0 +1,17 @@
+{"verdicts": [
+  {"para_key": "linkpred2015#1", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["SPARQL", "GBIF", "TDWG", "National Museum of Nature and Science", "fungus-host interactions", "link prediction / recommendation system for species", "biodiversity observational data"],
+   "missed_relations": ["LODAC -> produces -> SPARQL endpoint for public access", "LODAC + National Museum of Nature and Science -> produces -> RDF dataset of fungus-host interactions", "this project -> addresses -> predicting potential links of species"],
+   "note": "only the incidental 'LODAC uses RDF' survives; the paper's own purpose - a recommendation system for predicting species interaction links - is stated here and entirely absent"},
+  {"para_key": "tripplanner2020#18", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["recommender system", "trip_event / pref_event inputs", "Google Travel", "Inspirelock", "Roadtrippers", "POI features (open weekdays, times to spend, feasible routes)"],
+   "missed_relations": ["our recommender system -> produces -> trip plan from user criteria", "our application -> comparesAgainst -> Google Travel / Inspirelock / Roadtrippers", "trip plan -> uses -> features of attractions"],
+   "note": "three named competing systems are explicitly benchmarked against in the last sentence and none of them appears; zero triples from a discussion paragraph carrying a real comparison"},
+  {"para_key": "csysguard2024#18", "C2": "COMPLETE", "C5": "COMPLETE",
+   "missed_concepts": [], "missed_relations": [],
+   "note": "a section signpost sentence - it names cSysGuard but asserts no relation about it. An empty extraction is the correct answer here."},
+  {"para_key": "pesticide2025#35", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["production cost of ~$4.5", "two spectral bands", "reference spectral band", "image processing and machine learning analysis"],
+   "missed_relations": ["low-cost portable spectrophotometer -> designedFor -> image processing and machine learning analysis", "device -> produces -> images with two spectral bands"],
+   "note": "the designedFor relation stated here IS captured by this model from a different paragraph, so the concept is not lost corpus-wide; the cost and the two-band design are lost outright"}
+]}

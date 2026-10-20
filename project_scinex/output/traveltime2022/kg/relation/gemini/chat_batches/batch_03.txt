@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 24 -----
+Section: 3.4. Experiments
+
+Text:
+As mentioned, we aimed to use a time-series technique to make a prediction of travel time along each selected road segment. We conducted three experiments to model our method. First, the time-series-based prediction techniques ARIMA, SVR, LSTM, and ConvLSTM were compared to decide which one would be the baseline. Second, self- attention was used to improve the LSTM by comparison with the original LSTM. Finally, several filter methods used to pre-process the time-series data were compared. In our experiment, we evaluated the performance of each model using a train–test split. In this case, the ordered TTR dataset of each road was split into third sets: a training set (60%), a validation set (20%), and a test set (20%), as shown in Figure 7a. The training set was used to train the model; the validation set was used to validate the loss to the adjusted hyperparameters during learning; the test set was used to test the performance of the trained model. In every iteration of the predictions, there were 24 continuous input data points as a sliding window size denoting 24 h, and the model used these to produce a predicted output representing the next hour. In other words, we used a travel time of 24 h to predict the following-hour travel time iteratively, as depicted in Figure 7b.
+
+----- para_id: 25 -----
+Section: 3.4. Experiments
+
+Text:
+To evaluate the model, we used the Mean Absolute Error (MAE) [14], as shown in Equation (6), where N is the number of test data; i is the test sample index; y(i) is the actual travel time of the test sample at index i; and ˆ y(i) is the predicted travel time of the test sample at index i. Our evaluations were reported by normalizing the MAE by 100 km. For example, if the model of road number 1, whose distance is 332 km, provides an MAE of 15, it is calculated by 15 × 100 ÷ 332, giving 4.52.
+
+----- para_id: 26 -----
+Section: 3.4.1. Experiment: Choosing a Suitable Baseline
+
+Text:
+This experiment was conducted to compare four techniques from related works to determine our baseline. These techniques were ARIMA [7], SVR [25], LSTM [26], and ConvLSTM [14]. The tuned hyperparameters of these techniques were as follows: - ARIMA: p, q, and d were based on observations of the data of each road, such as the settings of the highway number 1 being p = 7, q = 0, and d = 12. - SVR: sliding window size = 24, kernel = RBF (Radial Basis Function), C (for L2 Regularization) = 1, epsilon = 0.1, gamma = 0.1. - LSTM: input of LSTM units = 24, number of LSTM layers = 1, hidden LSTM size = 256, and dropout = 0.25. - ConvLSTM: The setting of the ConvLSTM was reused from the LSTM. Additionally, the settings of the convolutional layer were 3 convolutional layers with size = 32, kernel size = 2, and max pooling size = 2. The results of this experiment are shown in Section 4.1. It shows that the LSTM provides the best performance among the models from the related studies, so the LSTM model was chosen as the baseline. In the subsequent experiments, improvements to and comparisons against the LSTM were performed.
+
+----- para_id: 27 -----
+Section: 3.4.2. Experiment: Choosing a Self-Attention
+
+Text:
+As mentioned, self-attention is a mechanism that can be adopted to improve the LSTM in regard to the time-series problem [14]. In this step, we conducted an experiment to compare the original LSTM from the previous experiment and the LSTM with self-attention, called the SA-LSTM. The tuned hyperparameters of both techniques are described in the following list. - LSTM: The setting was the same as that in the experiment in Section 3.4.1. - SA-LSTM: The setting was the same as that of the LSTM by adding input size = 1 and output size = 24 (for self-attention).
+
+----- para_id: 28 -----
+Section: 3.4.3. Experiment: Selecting a Suitable Filter Method
+
+Text:
+As discussed, filter methods can be used to improve the performance of the prediction of time-series data by processing the input data before building a prediction model; thus, in this experiment, we aimed to find a suitable filter method for our work. Since the results of the SA-LSTM were better than those of the original LSTM, as presented in Section 4.2, this experiment focused on using filter techniques with the SA-LSTM. Thus, in this experiment, the SA-LSTM without a filter technique was compared to the SA-LSTM with the selected filter techniques, which were the Kalman filter, the Savitzky–Golay filter, and the Butterworth low-pass filter. - SA-LSTM: The setting was the same as that in the experiment in Section 3.4.2. - Kalman: diagonal matrix = 0.1, measurement = 2 - Savitzky–Golay: windows size = 9, polynomial order = 3 - Butterworth low-pass: cut off = 3, frequency = 10, order =
+
+----- para_id: 29 -----
+Section: 4. Results and Discussions
+
+Text:
+The results of the three experiments are shown and discussed in this section. Since the distances between road segments were different, for example, the length of the selected road segment of highway number 1 was 332 km, and that of highway number 331 was 80 km, as mentioned in Section 4.4, the error of each model was normalized by the length, so the results were reported as MAE per 100 km instead of the original MAE. Thus, an MAE value such as 31.25 for the ARIMA in Section 4.1 can be interpreted as follows: the evaluation of the ARIMA technique with the test set provided an error of ±31.25 min within 100 km.
+
+----- para_id: 30 -----
+Section: 4.1. Results of Baselines
+
+Text:
+Firstly, the results of the experiment for the selection of a baseline described in Section 3.4.1 are shown in Table 3. In this table, the MAE of the LSTM technique was 27.12, which was better than the result for ARIMA, SVR, and ConvLSTM. Thus, the LSTM model was selected as the baseline.
+
+----- para_id: 31 -----
+Section: 4.2. Results of Self-Attention LSTM
+
+Text:
+Secondly, Table 4 shows the results of the experiment in Section 3.4.2, performed in order to choose a self-attention for the LSTM. The table compares the LSTM only and the LSTM with self-attention (SA-LSTM). Based on the experiment, the MAE of the SA-LSTM was 26.89, which was better than that of the LSTM only.
+
+----- para_id: 32 -----
+Section: 4.3. Results of Filters
+
+Text:
+Lastly, the results of the experiment for the selection of an appropriate filter method, as explained in Section 3.4.3, are shown in Table 5. According to our test, the MAE of the SA-LSTM with the Butterworth low-pass filter was 12.15, and this was the best result among all the compared methods. Thus, the Butterworth low-pass filter was selected as part of our approach.
+
+----- para_id: 33 -----
+Section: 4.4. Results of Our Approach against the Baseline
+
+Text:
+Moreover, as part of a closer look at our experiments, we analyzed the results of each road segment, and these are summarized in Table 6. In this table, the name of each road segment and its length in km, the MAE per 100 km between the baseline and our approach, and the percent improvement are shown. In this case, the baseline was the LSTM only, while our approach used the SA-LSTM with the Butterworth low-pass filter method. According to the table, the average MAE of our approach for all the road segments was 12.15, while the baseline was 27.12.
+
+----- para_id: 34 -----
+Section: 4.5. Computation Time
+
+Text:
+This was an additional experiment that observed the computation time of each method from the previous experiments. This experiment was performed on a computer with a four- core central processor, 8 gigabyte of memory, and a Linux operating system. The results are shown in Table 7. For the deep learning approaches from the ConvLSTM onwards, it was evaluated by 50 epochs. The SA-LSTM with Butterworth low-pass filter had a computation time similar to that of the other LSTM-based approaches.
+
+----- para_id: 35 -----
+Section: 4.6. Discussion
+
+Text:
+The aim of our work was to improve the accuracy of a travel time prediction model using a time-series technique. Our dataset was the GPS transactions of trucks in Thailand, as depicted in Figure 3. A closer look at the data indicated that the location of trucks with a timestamp could be viewed as time-series data. Thus, we sampled the raw data according to the average hourly travel times of 10 road segments of a long distance, as presented in Table 1. To create an approach for the generation of a travel time prediction model, several time-series forecasting techniques were studied from related works. (1) In the first experiment, we attempted to find a suitable time-series technique for our baseline. The result of the experiment was that the LSTM provided the best performance. The results from Table 3 were interpreted as follows: the LSTM model provided an error of ±27.12 min in every 100 km. This error range, being almost half an hour, was regarded as being too high in error. Thus, in this case, this issue became the main focus of our study, and it was our challenge to solve this problem. (2) In the second experiment, the LSTM was improved with the addition of self-attention, becoming an SA-LSTM. The results presented in Table 4 show that the SA-LSTM was better than the LSTM. Although the MAE was slightly reduced, MAE (minutes) per 100 km % Improvement Baseline Our Approach this was a sign of enhancement of the model.

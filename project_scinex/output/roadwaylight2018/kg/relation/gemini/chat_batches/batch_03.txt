@@ -1,0 +1,56 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 7 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 24 -----
+Section: 3. Results
+
+Text:
+A green road segment represents the area where the photoresistor on the windshield of our car 2276 Sensors and Materials, Vol. 10 (2018) Method RMSE Correlation Accelerometer Gyro Accelerometer Gyro Decision tree 0.206 0.054 0.026 0.815 Linear classification 0.221 0.047 0.033 0.739 ANN 0.197 0.036 0.036 0.788 SVM 0.185 0.038 0.018 0. receives a street light brightness of more than 3 lx. We also place a red dot at a location where PF is greater than 0, and its size corresponds to its IRI. Figures 1(b)–1(d) are example pavement failures that are classified as defects with high IRIs.
+
+----- para_id: 25 -----
+Section: 4. Discussion
+
+Text:
+Regarding the research outcome of monitoring the roadway lighting and pavement defects for nighttime street safety assessment using sensor data analysis and visualization, discussions are carried out in terms of materials and sensors, functionality, usability, and challenges.
+
+----- para_id: 26 -----
+Section: 4.1 Materials and sensors
+
+Text:
+Related approaches(9–12) usually focus on the detection of road surface anomalies through the evaluation of Z-axis acceleration data (aZ). In practice, this approach encounters difficulty in distinguishing between a pavement failure and a speed bump, because any defect results in up- down movement detected by the accelerometer. Thus, the use of rotations becomes an effective technique, as can be seen from our experimental results. The reason for this is that generally one of the front wheels of the car hits a pavement failure first, so the car immediately rotates and gX and gY values are altered as shown in Figs. Although a large defect may cover a road surface, its edge is not always straight across the road so the two front wheels of the car will not hit it at the same time. Unlike a pavement failure, a street bump is installed across the road, so both front wheels of a car hit it at the same time, which cause a change in only gX, as depicted in Fig. Thus, the experimental results and this observation support each other, and this work confirms the effectiveness of using a gyro sensor in pavement failure detection. In addition , a photoresistor is used to measure the luminance on the street, and it can reveal the actual lighting condition on the street.
+
+----- para_id: 27 -----
+Section: 4.2 Functionality
+
+Text:
+When using sensors for detecting street lighting and pavement failures, the sensor data are analyzed to determine the locations of possible traffic accidents at nighttime, and the quality of the roadway at nighttime is represented on a map. In this case, all objectives set out at the beginning of this paper are met.
+
+----- para_id: 28 -----
+Section: 4.3 Usability
+
+Text:
+The map can display the coverage of street lighting and the locations of pavement defects. This visualization report was discussed with car users; they agreed that low lighting and large pavement defects decrease the degree of road safety, and drivers have heightened awareness when driving on unfamiliar routes at nighttime. In addition , this visualization report can 2278 Sensors and Materials, Vol. 10 (2018) support staff members of local government offices in monitoring the quality of the nighttime roadway in order to devise an effective maintenance plan, and it becomes a key documentation when initiating a plan for improving the quality of a road.
+
+----- para_id: 29 -----
+Section: 4.4 Challenges
+
+Text:
+As we informed, the experiment was done using only the 2016 Honda Jazz. It is known that an electronic stability control is embedded in this model and many car models in this age. This results in the absorption of the acceleration and the rotation of a car,(25) so sensor data gathered from different cars may not be exactly the same. In order to enhance the flexibility of our approach for supporting all cars with different absorber technologies and configurations, many car models from various automobile manufacturers must be tested, and an aspect about the absorption can be involved. In this case, a ride road course with different types of pavement failure should be invented for conducting future research in a closed system. In addition , to move this research out into the real world, the analysis of a large amount of data is required to monitor the nighttime roadway. In this case, an eye should be kept on the use of large data storage, crowdsourcing, and the analysis of a large amount of data.
+
+----- para_id: 30 -----
+Section: 5. Conclusions
+
+Text:
+We attempted to monitor the quality of a nighttime roadway by evaluating street lighting and pavement defects. Our work provides an approach for the usage of sensors in a car and the collection of their data while driving on streets. The analysis of the sensor data showed that the gyro sensor is suited to detect pavement failures, because the rotations of a car when hitting a defect become key features in discriminating between failures and speed bumps. We also used a photoresistor to measure street lighting and an accelerometer to obtain data for calculating the severity of the failures in terms of a standard roughness index. After that, a visualization report was developed by displaying the quality of luminance on a street at nighttime and the locations of pavement defects with their severity levels. The visualization report enables users to recognize potentially dangerous locations on a nighttime road and this report can also be used for devising a precise plan of street maintenance. In the future, to have a fully functional system for monitoring the quality of nighttime roadways, some other aspects such as careless driving behaviors of drivers, dangerous road bends, and sudden braking of cars must be considered. In this case, the analysis of a large amount of data will be required as well.

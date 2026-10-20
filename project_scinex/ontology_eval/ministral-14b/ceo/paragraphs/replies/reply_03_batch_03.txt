@@ -1,0 +1,18 @@
+{"verdicts": [
+  {"para_key": "strabismus2026#22", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["RT2-RT5 geometric ratios", "medial canthus (P1)", "temporal canthus (P4)", "medial limbus (P7)", "temporal limbus (P8)", "central corneal light reflex (P9)", "eye width (EW)", "horizontal strabismus", "orthotropic eyes"],
+   "missed_relations": ["RT1-RT5 -> producedFrom -> selected horizontal landmarks", "EW -> definedAs -> distance between medial canthus (P1) and temporal canthus (P4)", "RT1 -> definedAs -> ratio of P1-P7 distance normalised by eye width", "all distances -> normalizedTo -> eye width", "horizontal strabismus -> shifts -> corneal light reflex and scleral show"],
+   "note": "the paper's entire feature definition - five named ratios over five named anatomical landmarks, with the normalisation rule spelled out - reduced to a single triple. The classifier judged elsewhere in this study runs entirely on features this paragraph defines and the graph does not hold them"},
+  {"para_key": "csysguard2024#7", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["machine learning", "predictive analytics", "anomaly detection", "cloud resource monitoring"],
+   "missed_relations": ["machine learning -> addresses -> monitoring challenges in cloud environments", "ML-driven predictive analytics -> addresses -> identifying potential anomalies"],
+   "note": "largely motivation prose and the concepts available are generic ('machine learning', 'predictive analytics'), so the loss is small - but the two method->task statements are explicit and both were declined"},
+  {"para_key": "ugmo2024#1", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["automated video editing system", "computer vision", "machine learning", "graduation ceremony recording", "personalized video clip"],
+   "missed_relations": ["this paper -> presents/produces -> an automated video editing system", "system -> produces -> a personal clip per graduate from the full ceremony recording", "our method -> uses -> computer vision and machine learning to track graduates"],
+   "note": "an introduction, but it contains the paper's contribution statement and its method statement in plain declarative form; both were missed"},
+  {"para_key": "strabismus2026#31", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["initializer_range = 0.01", "layer_norm_eps / batch_norm_eps = 1e-5", "use_pretrained_backbone = False", "freeze_backbone_batch_norms = True", "max_features = 'sqrt'", "sampling strategy 200:200"],
+   "missed_relations": ["backbone -> configures -> use_pretrained_backbone=False and freeze_backbone_batch_norms=True", "Random Forest -> configures -> max_features='sqrt'", "SMOTE -> configures -> sampling strategy 200:200"],
+   "note": "roughly 40% of the settings captured. As in roadwaylight2018#21, all three captured triples have the configures direction wrong per the ontology, so the completeness credit here does not transfer to C4"}
+]}

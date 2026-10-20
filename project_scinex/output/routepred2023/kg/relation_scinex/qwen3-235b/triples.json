@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "HDBSCAN clustering",
+    "predicate": "uses",
+    "object": "route data preprocessing",
+    "object_type": "Task",
+    "source_sentence": "our approach using the HDBSCAN clustering for route data preprocessing and the prediction model based on Viterbi algorithm, which is an extension of the Hidden Markov Model, provides the better performance in terms of Hit@K where K being 3.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "Abstract"
+  },
+  {
+    "subject": "baseline model",
+    "predicate": "designedfor",
+    "object": "single car",
+    "object_type": "Concept",
+    "source_sentence": "Since the baseline model is designed for a single car and it provides low performance for our experiment, our approach using the HDBSCAN clustering for route data preprocessing and the prediction model based on Viterbi algorithm, which is an extension of the Hidden Markov Model, provides the better performance in terms of Hit@K where K being 3.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "Abstract"
+  },
+  {
+    "subject": "Viterbi algorithm",
+    "predicate": "produces",
+    "object": "prediction model based on Viterbi algorithm",
+    "object_type": "Model",
+    "source_sentence": "our approach using the HDBSCAN clustering for route data preprocessing and the prediction model based on Viterbi algorithm, which is an extension of the Hidden Markov Model, provides the better performance in terms of Hit@K where K being 3.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "Abstract"
+  },
+  {
+    "subject": "Hidden Markov Model",
+    "predicate": "produces",
+    "object": "Viterbi algorithm",
+    "object_type": "Method",
+    "source_sentence": "our approach using the HDBSCAN clustering for route data preprocessing and the prediction model based on Viterbi algorithm, which is an extension of the Hidden Markov Model, provides the better performance in terms of Hit@K where K being 3.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "Abstract"
+  },
+  {
+    "subject": "HMM",
+    "predicate": "uses",
+    "object": "support points",
+    "object_type": "Concept",
+    "source_sentence": "The HMM of this work use the support points to be observations and destinations of trips and both observations and destinations are used as hidden states of the HMM.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "II BACKGROUND"
+  },
+  {
+    "subject": "HMM",
+    "predicate": "uses",
+    "object": "destinations of trips",
+    "object_type": "Concept",
+    "source_sentence": "The HMM of this work use the support points to be observations and destinations of trips and both observations and destinations are used as hidden states of the HMM.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "II BACKGROUND"
+  },
+  {
+    "subject": "model",
+    "predicate": "produces",
+    "object": "route that we obtain from HDBSCAN",
+    "object_type": "ResearchArtifact",
+    "source_sentence": "In addition, the model has high score, since the model predict route that we obtain from HDBSCAN that clustering by trend, range, and density of routes.",
+    "extraction_mode": "relation",
+    "paper": "routepred2023",
+    "title": "Route Prediction from GPS Trajectory and Road Data",
+    "section": "IV RESULTS"
+  }
+]

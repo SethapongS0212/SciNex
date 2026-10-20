@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "The GP model",
+    "predicate": "achieves",
+    "object": "MAPE of 5.29%",
+    "object_type": "Metric",
+    "source_sentence": "The GP model achieved a mean absolute percentage error (MAPE) of 5.29% and root mean square error (RMSE) of 0.034.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Abstract"
+  },
+  {
+    "subject": "The GP model",
+    "predicate": "achieves",
+    "object": "RMSE of 0.034",
+    "object_type": "Metric",
+    "source_sentence": "The GP model achieved a mean absolute percentage error (MAPE) of 5.29% and root mean square error (RMSE) of 0.034.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Abstract"
+  },
+  {
+    "subject": "UNIFAC model",
+    "predicate": "addresses",
+    "object": "predict the properties of untested molecules",
+    "object_type": "Task",
+    "source_sentence": "The UNIFAC model offers the capability to predict the properties of untested molecules and facilitate the modification of chemical behavior.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Abstract"
+  },
+  {
+    "subject": "Machine Learning models",
+    "predicate": "addresses",
+    "object": "estimate Quats' activity coefficients",
+    "object_type": "Task",
+    "source_sentence": "It is therefore posited that Machine Learning models can also be utilized to estimate Quats' activity coefficients for PTC systems.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Abstract"
+  },
+  {
+    "subject": "Leave-One- Group - Out (LOGO) cross - validation",
+    "predicate": "addresses",
+    "object": "test model generalization on unseen compounds",
+    "object_type": "Task",
+    "source_sentence": "To ensure robust validation , as suggested by recent cheminformatics guidelines36,37, Leave-One- Group - Out (LOGO) cross - validation is employed; by systematically holding out all data points corresponding to a specific salt, C4H9(C2H5)3NI, to test model generalization on unseen compounds .",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Modelling"
+  },
+  {
+    "subject": "the LR algorithm",
+    "predicate": "achieves",
+    "object": "combined R2 values of 0.5177",
+    "object_type": "Metric",
+    "source_sentence": "Specifically, considering both R2 and %MAPE, the LR algorithm achieves the combined R2 values of 0.5177 and %MAPE values of 24.97%.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "GP",
+    "predicate": "achieves",
+    "object": "an R2 value greater than 0.97",
+    "object_type": "Metric",
+    "source_sentence": "Specifically, GP achieves an R2 value greater than 0.97 and %MAPE below 5%, while other algorithms have R2 values below 0.96 and %MAPE exceeding 5%.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "XGB",
+    "predicate": "achieves",
+    "object": "the lowest errors",
+    "object_type": "Metric",
+    "source_sentence": "While XGB and RF achieve the lowest errors on the random split, GP demonstrates superior stability in the LOGO validation , maintaining a lower drop in performance compared to tree-based methods when predicting unseen salts.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "GP",
+    "predicate": "achieves",
+    "object": "superior stability in the LOGO validation",
+    "object_type": "Metric",
+    "source_sentence": "While XGB and RF achieve the lowest errors on the random split, GP demonstrates superior stability in the LOGO validation , maintaining a lower drop in performance compared to tree-based methods when predicting unseen salts.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "decision tree (DT)",
+    "predicate": "comparesagainst",
+    "object": "Gaussian process (GP)",
+    "object_type": "Model",
+    "source_sentence": "Comparison was made between the decision tree (DT) and Gaussian process (GP) algorithms to assess their performance in predicting osmotic coefficients.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "Gaussian Process algorithm",
+    "predicate": "addresses",
+    "object": "osmotic coefficient prediction",
+    "object_type": "Task",
+    "source_sentence": "Considering both performance and behavioral aspects, it can be concluded that the Gaussian Process algorithm is optimal for osmotic coefficient prediction.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Results and discussion"
+  },
+  {
+    "subject": "Electrolyte-NRTL model",
+    "predicate": "addresses",
+    "object": "activity coefficients of alkyl ammonium Quats",
+    "object_type": "Task",
+    "source_sentence": "Belvèze et al.39 predicted activity coefficients of alkyl ammonium Quats using the Electrolyte-NRTL model.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Comparison and discussion"
+  },
+  {
+    "subject": "Extended UNIQUAC model",
+    "predicate": "addresses",
+    "object": "activity coefficients of alkyl ammonium Quats",
+    "object_type": "Task",
+    "source_sentence": "While Akbari et al.40 predicted activity coefficients of alkyl ammonium Quats using the Extended UNIQUAC model.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Comparison and discussion"
+  },
+  {
+    "subject": "The GP model",
+    "predicate": "achieves",
+    "object": "an R2 value of 0.9805",
+    "object_type": "Metric",
+    "source_sentence": "The GP model yields a mean absolute percentage error (%MAPE) of 3.33% and an R2 value of 0.9805 when compared to experimental data.",
+    "extraction_mode": "relation",
+    "paper": "osmotic2026",
+    "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+    "section": "Conclusions"
+  }
+]

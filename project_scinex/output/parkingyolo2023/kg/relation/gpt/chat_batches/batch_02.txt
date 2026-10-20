@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: 3. Proposed Parking Time Violation Algorithm
+
+Text:
+The proposed algorithm utilizes a state-of-the-art object detection algorithm called YOLOv8 [39] for detecting vehicles . For tracking vehicles , two object tracking algorithms were implemented, Deep SORT (Simple Online Real Tracking ) [11] and Observation- Centric SORT (OC-SORT) [38]. In-depth discussion of the algorithm is included in the subsection below.
+
+----- para_id: 13 -----
+Section: 3.1. Dataset
+
+Text:
+Due to limitations and privacy concerns, acquiring mini-mart data was not possible. As such, the dataset was comprised of video footage obtained from CCTV cameras installed at King Mongkut's Institute of Technology, Ladkrabang (KMITL). The CCTV model utilized at KMITL is the Panasonic V series, which offers a 2530 frames per second (FPS) capture rate and a 1080P resolution. These cameras are IP66 rated, providing resistance to water and dust. Data collection was conducted using 4 cameras placed at different locations within the university campus, all with a resolution of 1080P and a frame rate of 15 FPS. The selection of dataset locations was carefully carried out to incorporate diverse camera angles and viewpoints. The video samples within the dataset encompassed various daylight and weather settings, offering a comprehensive representation of the parking lot scenarios at KMITL.
+
+----- para_id: 14 -----
+Section: 3.2. Vehicle Detection
+
+Text:
+In 2015, Joseph Redmon and Ali Farhadi from the University of Washington created the cutting-edge object recognition algorithm called YOLO (You Only Look Once) [17]. YOLO outperforms many other object detection algorithms such as R-CNN and DPM [17]. YOLO sees the entire image during training and testing, in contrast to sliding window- and region proposal-based approaches, implicitly capturing contextual information about classes as well as their appearance. The initial version of YOLO had the ability to quickly recognize objects in images, but it had trouble locating smaller objects precisely. Since the problem domain herein did not contain very small images, there was no problem using YOLO in this study. YOLO divides input images into a grid of dimensions M × M. For instance, a grid cell is in charge of detecting an object if its center falls inside that grid cell. Each grid cell predicts the bounding box and offers a confidence score for the associated boxes. In YOLO, confidence is described as Pr( Object ) × IOU where Pr( Object ) represents the probability of the presence of an object , and IOU represents the Intersection over Union (IOU), i.e., the overlap area between inference and ground truth. Each grid cell generates five predictions (x, y, w, h, and a confidence score). Additionally, each grid produces p conditional class probabilities, expressed as Pr(Class| Object ).
+
+----- para_id: 15 -----
+Section: 3.2. Vehicle Detection
+
+Text:
+Equation (2) below demonstrates the method to obtain class-specific confidence scores for each box during the test phase. The final layers predict both the coordinates of their bounding boxes and their associ- ated class probabilities. Then, the bounding boxes are normalized to fall between 0 and 1. All further layers increase non-linearity by using the leaky rectified linear activation func- tion, as described in Equation (2), with an exception of the final layer, which employs a linear activation function: In 2016, YOLOv2 was released, improving on the original model by including batch normalization, anchor boxes, and dimension clusters [40]. Similarly, YOLOv3 was released in 2018, improving the model's performance by employing a more efficient backbone network, incorporating a feature pyramid, and employing focal loss [41]. The initial model of YOLO had many successors, including YOLOv4, YOLOv5, YOLOv6, and YOLOv7. In 2023, YOLOv8 was released by Ultralytics [39]. Figure 5 shows the detailed architecture of YOLOv8. Figure 6–9 show images of the dataset. In the backbone architecture, the C2f module, based on Cross Stage Partial (CSP), is used in YOLOv8, as opposed to the C3 Module used in YOLOv5. The architecture of CSP enhances the learning capacity of CNN and decreases the computational effort of the model. The C2f module comprises two Conv Modules and n BottleNeck, connected through Split pred = Classi | Object × Object × IOUtruth x, if x > 0.
+
+----- para_id: 16 -----
+Section: 3.2. Vehicle Detection
+
+Text:
+The remainder of the backbone park is the same as that in YOLOv5. At the final layer of the backbone, the SPPF Module is used.
+
+----- para_id: 17 -----
+Section: 3.3. Movement Tracking
+
+Text:
+Once successfully able to detect vehicles in a parking lot, object tracking algorithms could be deployed to track the vehicles . Two tracking algorithms were implemented in the research . The first algorithm was DeepSORT. Figure 10 shows the workflow of our algorithm. The DeepSORT algorithm was implemented to track each vehicle throughout the frame. DeepSORT is an extension of SORT (Simple Online Realtime Tracking ) [11]. DeepSORT uses appearance descriptors to minimize identity shifts, increasing the effec- tiveness of tracking . For problems involving the prediction of temporal or time series data, Kalman filtering is the used algorithm. The second tracking algorithm that was implemented was Observation-Centric SORT (OC-SORT) [38]. OC-SORT was published in CVPR 2023. On numerous datasets, including MOT17, MOT20, KITTI, head tracking , and, particularly, DanceTrack, where the object mo- tion is very non-linear, OC-SORT produces state-of-the-art results. To improve the accuracy and robustness during a period of occlusion, OC-SORT implements object observations to compute a virtual trajectory. Figure 11 shows the pipeline of OC-SORT.
+
+----- para_id: 18 -----
+Section: 3.4. Time Violation
+
+Text:
+After successful integration of vehicle detection , followed by vehicle tracking that assigns a unique ID to each unique vehicle , a simple time violation algorithm was deployed to track every car in the frame. Every minute, the presence of the vehicle was checked. If the vehicle did not exist in the next 10 consecutive frames, then the ID of the vehicle was discarded. On the other hand, if the ID was present in 15 consecutive frames, the vehicle was determined to have violated the time restriction. In the figure, a blue label is associated with no violation, while a red label is associated with violation.
+
+----- para_id: 19 -----
+Section: 3.5. Experimental Setup
+
+Text:
+This section discusses the experimental platform, providing details of the in-depth flow of the algorithm, including the chosen parameters. The workstation used for the experiment was Ubuntu Linux. All experiments were conducted in a 3.6 GHz Intel Xeon Quad-Core processor with 8GB RAM and an NVIDIA Quadro P4000 graphics card. A Mean Average Precision (mAP) of 53.9 was achieved by YOLOv8x, which was higher than all other YOLO versions. Therefore, YOLOv8x was chosen for vehicle detection . A pretrained model was used, as the class was already trained on the MS COCO dataset. The resolution of the video feed was 1080P (1920 × 1080), with a frame rate of 15 fps. For YOLOv8, the image-size parameter was set to 640. The model thus resized the longest dimension to be 640, i.e., size 1920 became 640, while maintaining the aspect ratio. Therefore, the resized images were close to 640 × 360. Classes were filtered to be (2, 5, 7) i.e., car, bus, and truck, as the violation algorithm was checking for big vehicles . The confidence threshold was set to 0.5. The probability of the class occurring in the bounding box was evaluated using the confidence score. The maximum object detection parameter was set to 100. For tracking vehicles , DeepSORT/OC-SORT tracking algorithms were used. The max- age parameter was set to 10. For DeepSORT algorithm, Max Age preserves the ID of a vehicle for a threshold number of frames before deleting the ID. The n_init parameter was set to 2.
+
+----- para_id: 20 -----
+Section: 3.5. Experimental Setup
+
+Text:
+The n_init parameter refers to the number of objects detected before initializing the tracking of the object . max_cosine_distance was set to 0.3. Max cosine distance was the threshold to identify vehicle similarity by the DeepSORT algorithm. The trajectory parameter was set to False, as the trajectory of the vehicle over time was not required.
+
+----- para_id: 21 -----
+Section: 3.6. Validation Criteria
+
+Text:
+Object detection algorithms such as YOLOv8 use Mean Average Precision (mAP) to validate the performance of object detection . Since the objective of this work was to track vehicles across a frame, it was essential to validate the results with an object tracking algorithm. MOTA (Multiple Object Tracking Algorithm) metrics were used to validate the results. MOTA metrics measure the accuracy of both detection and tracking algorithms . Firstly, it was essential to define True Positive (TP), False Positive (FP), False Negative (FN), and True Negative (TN). Table 2 shows the detailed definitions. The formula for MOTA is shown in Equation (3). FN refers to no match for the ground truth object . This can occur because of various reasons, such as the vehicle being too far away from the camera, weather, different illumination, etc. FP refers to no ground truth object but a match by the algorithm. There was one instance of FP where the reflection of the vehicle was considered as a vehicle . False IDs refer to identification switches between the tracked vehicles . GT refers to total ground truth object . MOTA = 1 −∑t FNt + FPt + IDSt True Positive (TP) Vehicle is present and the algorithm can track vehicle . True Negative (TN) Vehicle is not present and the algorithm does not track vehicle False Positive (FP) Vehicle is not present but the algorithm tracks vehicle . False Negative (FN) Vehicle is present but the algorithm does not track vehicle
+
+----- para_id: 22 -----
+Section: 4. Results and Discussion
+
+Text:
+Overall, based on the experiment conducted, it is clear that the performance of the vehicle tracking algorithm is greatly influenced by factors such as camera position and weather variation, particularly when using a single camera for inference. To achieve optimal tracking results, positioning the camera at or near a top-view perspective can greatly en- hance the performance of the vehicle tracking algorithm. This camera placement minimizes the occurrence of vehicle overlapping, leading to improved tracking accuracy . By capturing a top-down view of the monitored area, the camera can provide a clear and unobstructed line of sight to the vehicles , reducing the chances of them overlapping or obstructing each other. This unambiguous view allows the tracking algorithm to more accurately detect and track individual vehicles , ensuring reliable and precise tracking results. Thus, selecting a top-view perspective for camera placement is crucial in minimizing vehicle overlap and maximizing the effectiveness of the vehicle tracking algorithms . Location 4 0 0 0 1 Location 2 0 0 0 1 Location 3 1 0 0 0.96 Location 1 0 3 0 0.90 Location 4 0 0 0 1 Location 2 0 0 7 0.76 Location 3 1 0 2 0.90 Location 1 0 4 1 0.
+
+----- para_id: 23 -----
+Section: 5. Conclusions
+
+Text:
+Manual parking time violation tracking is unideal, due to its requirements for man- power and high cost. In this research paper, a parking time violation tracking algorithm was successfully demonstrated; this has the potential to reduce additional manpower and labor costs. The algorithm can be implemented in many parking lot settings. The YOLOv8 algo- rithm was used to detect vehicles in the parking lot, while DeepSORT and OC-SORT were used to track the vehicles throughout the frame. For the DeepSORT algorithm, the MOTA scores were recorded as (1.0, 1.0, 0.96, 0.90) across four different surveillance datasets. This indicates a high level of accuracy and effectiveness in tracking multiple objects . On the other hand, the OC-SORT algorithm achieved MOTA scores of (1.0, 0.76, 0.90, 0.83) across the same datasets. While still achieving relatively high scores, there is a slight variation compared to DeepSORT, particularly in the second dataset, where the MOTA score dropped to 0.76 due to frequent ID switching. Overall, both algorithms showcased their ability to effectively track objects in the given surveillance data. These results provide valuable insights into the tracking performance of each algorithm and can aid in selecting the most suitable algorithm based on specific tracking requirements and dataset characteristics. The performance of the detection model might be increased by customized training of the model with vehicles .

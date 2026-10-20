@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: e762a0c5313e -----
+TRIPLE:     (University of Washington)  --affiliatedwith-->  (Ali Farhadi)
+PREDICATE DEFINITION: Agent → Organisation  |  use for institutional affiliation
+SOURCE SENTENCE: In 2015, Joseph Redmon and Ali Farhadi from the University of Washington created the cutting-edge object recognition algorithm called YOLO (You Only Look Once) [17].
+
+----- triple_id: 382ccbaa403a -----
+TRIPLE:     (OC-SORT)  --publishedin-->  (CVPR 2023)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  use for journal/conference names only
+SOURCE SENTENCE: OC-SORT was published in CVPR 2023.
+
+----- triple_id: b50e7230c729 -----
+TRIPLE:     (Rule 1)  --supports-->  (lower values are linked to strabismus)
+PREDICATE DEFINITION: ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion
+SOURCE SENTENCE: For instance, LR_rt1—representing the medial scleral area of the right eye—is expected to increase during leftward gaze. In this context, Rule 1 indicates that lower values are linked to strabismus , whereas Rule 2 reflects the alternative condition.
+
+----- triple_id: da2ce9504549 -----
+TRIPLE:     (Seo et al.9)  --reports-->  (0.93 accuracy)
+PREDICATE DEFINITION: AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead
+SOURCE SENTENCE: In contrast, Seo et al.9 reported 0.93 accuracy with an infrared video –based system that required specialized hardware.
+
+----- triple_id: 1da5b95de155 -----
+TRIPLE:     (SAM 2)  --writtenby-->  (Ravi et al.)
+PREDICATE DEFINITION: AcademicPaper → Author  |  use only for explicit author attribution
+SOURCE SENTENCE: Building on this, SAM 2, introduced by Ravi et al. [10], expands the model to handle video data instead of just images.
+
+----- triple_id: 3a112515ecc2 -----
+TRIPLE:     (Panasonic V series)  --locatedin-->  (King Mongkut's Institute of Technology, Ladkrabang)
+PREDICATE DEFINITION: Organisation → Place  |  use for physical location
+SOURCE SENTENCE: The CCTV model utilized at KMITL is the Panasonic V series, which offers a 2530 frames per second (FPS) capture rate and a 1080P resolution.
+
+----- triple_id: 371c58b1991f -----
+TRIPLE:     (RT-DETR)  --employs-->  (IoU-aware query selection mechanism)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: The IoU-aware query selection mechanism in RT-DETR has an advantage in eye landmark identification, which requires precise localization of small areas.
+
+----- triple_id: b2e0f87b705a -----
+TRIPLE:     (YOLOv8)  --cites-->  (Ultralytics)
+PREDICATE DEFINITION: AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name
+SOURCE SENTENCE: First, YOLOv8, developed by Ultralytics [4], exhibits superior performance compared to its YOLO predecessors with respect to both processing speed and accuracy.
+
+----- triple_id: 3bdda7963668 -----
+TRIPLE:     (Llama -3.2-1B-Instruct)  --uses-->  (Transformer)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We assess Meta's Llama -3.2-1B-Instruct [4] a 16-layer Transformer model acquired from Hugging Face [5]
+
+----- triple_id: 24d0cf9e373b -----
+TRIPLE:     (Valente et al.)  --achieves-->  (accuracy of 0.94)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Additionally, Valente et al.8 employed a cover-test–based automated diagnosis with digital video , reporting accuracy of 0.94, sensitivity of 0.97, and specificity = 0.73.

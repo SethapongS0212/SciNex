@@ -1,0 +1,90 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: bbfe29aacf12 -----
+TRIPLE:     (AI-based Eye Disease Screening Project)  --uses-->  (participants' medical records)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: A note documenting participation in the AI-based Eye Disease Screening Project was added to each subject's medical records.
+
+----- triple_id: f86f923f46bb -----
+TRIPLE:     (CTv1-DR)  --achievesresult-->  (F1-weight average of 0.93)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: Finally, the CTv1-DR model's F1-weight average decreased from 0.93 to 0.16, a reduction of more than 80%, and the training time taken increased from 435.59 seconds to 2,113.53 seconds, an increase of approximately 4.8 times.
+
+----- triple_id: afde2bb47a08 -----
+TRIPLE:     (word embedding weights)  --addresses-->  (imbalanced text data)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Another approach involves word embedding weights based on word similarity in a large corpus.
+
+----- triple_id: 312716f0ce2c -----
+TRIPLE:     (PCS)  --comparesagainst-->  (PBC)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: the variation of the significance of PCF, PCS, and PBC is tested on each condition.
+
+----- triple_id: 03a5a6ef77b2 -----
+TRIPLE:     (Anions)  --comprises-->  (chloride (Cl-))
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: Anions are represented as single groups of fluoride (F-), chloride (Cl-), bromide (Br-), iodide (I-), nitrate (N+([O-])[O-]), and perchlorate ([O-]Cl(= O)(= O) = O).
+
+----- triple_id: 34705a483f8a -----
+TRIPLE:     (controlled experiments)  --evaluates-->  (decline in accuracy)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  Links an evaluation metric to the experimental result it quantitatively assesses
+SOURCE SENTENCE: We conduct controlled experiments to introduce perturbations to various model parameters and evaluate the consequent decline in accuracy, robustness, and task efficacy.
+
+----- triple_id: 61d096659a24 -----
+TRIPLE:     (Kayak)  --mentions-->  (travel websites)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: In general, before travelling, users search information about the destination via any travel websites such as Google Travel [2], Expedia [3], Kayak [4], TripAdvisor [5], etc. for finding some popular travel attractions to make an own travel itinerary plan.
+
+----- triple_id: 75719e244a5b -----
+TRIPLE:     (GBipt)  --producedby-->  (transforming RDF dataset into a bipartite graph)
+PREDICATE DEFINITION: ResearchArtifact → ResearchProcess  |  Links a research artifact back to the research process that generated it
+SOURCE SENTENCE: To prepare data for the prediction process, GBipt=(NFungi, NHosts, LExist) is constructed by transforming RDF dataset into a bipartite graph;
+
+----- triple_id: 5bf187b0dc5a -----
+TRIPLE:     (OC-SORT)  --evaluatedon-->  (KITTI)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: On numerous datasets, including MOT17, MOT20, KITTI, head tracking, and, particularly, DanceTrack, where the object motion is very non-linear, OC-SORT produces state-of-the-art results.
+
+----- triple_id: 0c146360b8ab -----
+TRIPLE:     (recommender system)  --produces-->  (trip plan)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: Since our recommender system produces a trip plan from a few flexible user criteria...

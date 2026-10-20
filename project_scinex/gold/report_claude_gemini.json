@@ -1,0 +1,257 @@
+{
+  "label_files": [
+    "gold/gemini_verdicts.csv"
+  ],
+  "n_labelled": 100,
+  "extractors": {
+    "relation": {
+      "n_labelled": 100,
+      "corpus_triples": 279,
+      "sampled_strict": 0.86,
+      "sampled_lenient": 0.99,
+      "weighted_strict": 0.8899917287014061,
+      "weighted_lenient": 0.9787703336090432,
+      "weight_coverage": 1.0,
+      "by_predicate": {
+        "achieves": {
+          "n": 13,
+          "correct": 13,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 60,
+          "corpus_share": 0.21505376344086022,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "addresses": {
+          "n": 13,
+          "correct": 12,
+          "partial": 0,
+          "incorrect": 1,
+          "corpus_n": 77,
+          "corpus_share": 0.27598566308243727,
+          "strict": 0.9230769230769231,
+          "lenient": 0.9230769230769231
+        },
+        "comparesagainst": {
+          "n": 13,
+          "correct": 13,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 22,
+          "corpus_share": 0.07885304659498207,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "comprises": {
+          "n": 13,
+          "correct": 8,
+          "partial": 5,
+          "incorrect": 0,
+          "corpus_n": 28,
+          "corpus_share": 0.1003584229390681,
+          "strict": 0.6153846153846154,
+          "lenient": 1.0
+        },
+        "designedfor": {
+          "n": 6,
+          "correct": 4,
+          "partial": 2,
+          "incorrect": 0,
+          "corpus_n": 6,
+          "corpus_share": 0.021505376344086023,
+          "strict": 0.6666666666666666,
+          "lenient": 1.0
+        },
+        "encompasses": {
+          "n": 2,
+          "correct": 0,
+          "partial": 2,
+          "incorrect": 0,
+          "corpus_n": 2,
+          "corpus_share": 0.007168458781362007,
+          "strict": 0.0,
+          "lenient": 1.0
+        },
+        "evaluatedon": {
+          "n": 12,
+          "correct": 12,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 12,
+          "corpus_share": 0.043010752688172046,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "evaluates": {
+          "n": 1,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 6,
+          "corpus_share": 0.021505376344086023,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "locatedin": {
+          "n": 1,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 1,
+          "corpus_share": 0.0035842293906810036,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "produces": {
+          "n": 4,
+          "correct": 3,
+          "partial": 1,
+          "incorrect": 0,
+          "corpus_n": 4,
+          "corpus_share": 0.014336917562724014,
+          "strict": 0.75,
+          "lenient": 1.0
+        },
+        "splitfrom": {
+          "n": 6,
+          "correct": 5,
+          "partial": 1,
+          "incorrect": 0,
+          "corpus_n": 6,
+          "corpus_share": 0.021505376344086023,
+          "strict": 0.8333333333333334,
+          "lenient": 1.0
+        },
+        "supports": {
+          "n": 2,
+          "correct": 2,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 2,
+          "corpus_share": 0.007168458781362007,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "trainedon": {
+          "n": 1,
+          "correct": 1,
+          "partial": 0,
+          "incorrect": 0,
+          "corpus_n": 1,
+          "corpus_share": 0.0035842293906810036,
+          "strict": 1.0,
+          "lenient": 1.0
+        },
+        "uses": {
+          "n": 13,
+          "correct": 11,
+          "partial": 2,
+          "incorrect": 0,
+          "corpus_n": 52,
+          "corpus_share": 0.1863799283154122,
+          "strict": 0.8461538461538461,
+          "lenient": 1.0
+        }
+      },
+      "bootstrap": {
+        "n": 2000,
+        "weighted_strict_ci95": [
+          0.8229942100909843,
+          0.9454094292803971
+        ],
+        "weighted_lenient_ci95": [
+          0.9363110008271298,
+          1.0
+        ]
+      }
+    }
+  },
+  "by_paper": {
+    "eyelandmark2024": {
+      "n": 4,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "osmotic2026": {
+      "n": 2,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "oxidecrack2025": {
+      "n": 2,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "strabismus2026": {
+      "n": 6,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "textaug2023": {
+      "n": 5,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "trafficspeed2021": {
+      "n": 1,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "traveltime2022": {
+      "n": 10,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "vehiclemake2025": {
+      "n": 13,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "videoseg2025": {
+      "n": 6,
+      "strict": 1.0,
+      "lenient": 1.0
+    },
+    "gamlprop2025": {
+      "n": 7,
+      "strict": 0.8571428571428571,
+      "lenient": 1.0
+    },
+    "ugmo2024": {
+      "n": 5,
+      "strict": 0.8,
+      "lenient": 1.0
+    },
+    "parkingyolo2023": {
+      "n": 14,
+      "strict": 0.7857142857142857,
+      "lenient": 1.0
+    },
+    "csysguard2024": {
+      "n": 8,
+      "strict": 0.75,
+      "lenient": 1.0
+    },
+    "microwave2018": {
+      "n": 4,
+      "strict": 0.75,
+      "lenient": 1.0
+    },
+    "roadwaylight2018": {
+      "n": 4,
+      "strict": 0.75,
+      "lenient": 0.75
+    },
+    "pesticide2025": {
+      "n": 5,
+      "strict": 0.6,
+      "lenient": 1.0
+    },
+    "llamacorrupt2025": {
+      "n": 4,
+      "strict": 0.25,
+      "lenient": 1.0
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{"verdicts": [
+  {"para_key": "vehiclemake2025#17", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["Global Average Pooling", "Dense layer (256 units, ReLU)", "Dense layer (5 units, SoftMax)", "CTv1", "filter sizes 32/64/128/256/512/1024", "input image 244x244x3", "five vehicle brands"],
+   "missed_relations": ["model -> uses -> Global Average Pooling to flatten the 3D matrix", "Dense_256 -> uses -> ReLU; Dense_5 -> uses -> SoftMax", "model -> produces -> vehicle make prediction over five brands", "CTv1 -> comprises -> six Filter-Blocks with increasing filter counts", "the DW and DR models -> differ from CTv1 only in -> the Filter-Block section"],
+   "note": "the Filter-Block hierarchy is captured but the head of the network - pooling, both Dense layers, the activations and the five-class output - is absent. Also emits (Filter-Block) comprises (Multi-layer-filter) AND uses (Multi-layer-filter): the same pair under two predicates"},
+  {"para_key": "linkpred2015#5", "C2": "POOR", "C5": "PARTIAL",
+   "missed_concepts": ["Melampsora yezoensis", "Salix pierotii", "903 fungi URIs / 2001 host URIs / 2,966 triples", "bipartite graph", "density of 0.15%", "link prediction"],
+   "missed_relations": ["dataset -> comprises -> 903 fungi URIs, 2001 host URIs and 2,966 growsOn triples", "dataset -> is -> a bipartite graph of fungi and hosts", "dataset sparsity (0.15% density) -> motivates -> the link prediction approach"],
+   "note": "the two captured triples are sound, but the paragraph's payload is the dataset's size and extreme sparsity - and the sparsity->link-prediction motivation is the reason the paper exists"},
+  {"para_key": "linkpred2015#24", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["coefficients alpha, beta, gamma", "AUC"],
+   "missed_relations": ["gamma -> should be smaller than -> alpha and beta"],
+   "note": "thin and largely a hedged negative finding ('the golden values cannot be claimed'); one usable relation available and missed, so the absolute loss is small"},
+  {"para_key": "roadwaylight2018#20", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["decision tree", "ANN", "SVM", "accelerations (aX, aY, aZ)", "rotations (gX, gY, gZ)", "light intensity", "regular road surface / pavement failure / speed bump classes", "scatter matrix"],
+   "missed_relations": ["this work -> uses -> decision tree, linear classification, ANN and SVM to analyse the dataset", "dataset -> comprises -> timestamps, coordinates, light intensity, accelerations and rotations", "three surface classes -> characterisedBy -> their mean absolute acceleration and rotation values"],
+   "note": "an explicit four-method list ('namely, decision tree, linear classification, ANN, and SVM') and only one member survives; the entire sensor schema and the class-separating statistics are dropped"}
+]}

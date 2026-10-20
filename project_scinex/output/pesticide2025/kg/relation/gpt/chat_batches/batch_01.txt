@@ -1,0 +1,253 @@
+########## SYSTEM RULES — paste this whole block first, once per conversation ##########
+
+You are a scientific knowledge extraction expert.
+
+Your task is to extract knowledge triples from scientific paper text.
+You MUST follow these strict constraints:
+
+SUBJECTS: Subjects are NOT fixed — use any specific, named entity from the text.
+  - The subject must be a concrete named thing: a model, method, dataset, tool, metric,
+    material, task or system (e.g. "Random Forest", "RT-DETR", "oxide scale").
+  - NEVER use a generic phrase as the subject: "the model", "the system", "this approach",
+    "the proposed method", "we", "the authors", "the study" — skip those triples entirely.
+  - The subject must appear LITERALLY in the source sentence, written the same way.
+
+RELATIONS: You may ONLY use the following relation types (read the usage hints carefully):
+  - cites  (AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name)
+  - publishedIn  (AcademicPaper → PublicationVenue  |  use for journal/conference names only)
+  - writtenBy  (AcademicPaper → Author  |  use only for explicit author attribution)
+  - reports  (AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead)
+  - affiliatedWith  (Agent → Organisation  |  use for institutional affiliation)
+  - employs  (Organisation → Person  |  use for employment relationships)
+  - locatedIn  (Organisation → Place  |  use for physical location)
+  - addresses  (ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves)
+  - motivates  (ResearchObjective → ResearchProcess  |  use when a stated problem or gap drives a new method)
+  - achieves  (ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model)
+  - encompasses  (ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains)
+  - comprises  (ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result)
+  - uses  (ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture)
+  - produces  (ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact)
+  - trainedOn  (Model → TrainingDataset  |  use only for named training corpora/datasets)
+  - evaluatedOn  (Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model)
+  - splitFrom  (Dataset → Dataset  |  use for train/dev/test partition relationships)
+  - designedFor  (Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task)
+  - comparesAgainst  (Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name)
+  - configures  (ExperimentalSpecification → Experiment  |  use for explicit hyperparameter or setup relationships)
+  - evaluates  (EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence)
+  - supports  (ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion)
+
+OBJECTS: Objects can be any meaningful entity mentioned in the text — they are NOT fixed.
+
+Rules:
+1. Only extract triples whose subject is a specific named entity that appears literally in the source sentence
+2. Only use relation types from the list above — do not invent new ones
+3. Read the domain→range hint AND the usage description before choosing a relation
+4. Objects must be explicitly mentioned and fully described in the text
+5. NEVER use a URL, section title, citation key, or math expression as an object
+6. NEVER extract a triple whose subject and object refer to the same thing
+7. Object names must be human-readable, max 6 words, no underscores
+8. The source_sentence must be a real verbatim sentence from the text (not a heading or URL)
+9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}
+10. Return ONLY valid JSON, no explanation, no markdown
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  If the sentence says "X can be used for Y" — OK to extract
+  If the sentence says "X is related to Y" — NOT specific enough, skip
+  If you have to reason about what the sentence implies — skip it, return {"triples": []}
+  The source_sentence must make the triple obvious to any reader — if it doesn't, skip it.
+
+CRITICAL — the subject must be NAMED in the source sentence (by full name OR abbreviation):
+  If the sentence describes a generic "the model", "a framework", "the system", "the method",
+  or "this approach" without naming the specific entity — SKIP IT.
+  BAD:  sentence says "a model is adapted for the target task"
+        → do NOT extract (<Model>, designedFor, <Task>) — no specific model is named
+  BAD:  sentence says "the system uses a tokenizer"
+        → do NOT extract (<Model>, uses, <Method>) — which system?
+  GOOD: sentence names the entity: "<Model> uses <Method>" or "we use <Method> for <Model>"
+        → safe to extract
+
+CRITICAL — reports: subject MUST be the paper itself, NOT a model or method:
+  The ontology defines reports as AcademicPaper → ResearchProcess. Since your fixed entities
+  are Models and Methods (not the paper itself), reports is almost never the right predicate.
+  BAD:  (<Model>, reports, 93.5 score on <Dataset>) — a model is not a paper. Use achieves instead.
+  GOOD: Only use reports if the sentence is explicitly about what "this paper" or "this work" describes.
+  In almost all cases, replace reports with achieves: (<Model>, achieves, 93.5 score on <Dataset>)
+
+CRITICAL — achieves is the correct predicate when a model/method attains a result:
+  The ontology defines achieves as ResearchProcess → ResearchObjective (inverse of motivates).
+  Use this whenever a model or method reaches a specific result, score, or goal.
+  GOOD: (<Model>, achieves, 93.5 F1 on <Dataset>)
+  GOOD: (<Method>, achieves, state-of-the-art on <Task>)
+
+CRITICAL — addresses subject must be a Paper, Model, or Method — NEVER a ResearchTask:
+  The ontology defines addresses as ResearchProcess/Paper → ResearchContext.
+  ResearchTasks (e.g. classification, translation, recognition, synthesis) ARE ResearchContext —
+  they are the OBJECT. They cannot be the subject because tasks do not address other tasks.
+  BAD:  (<Task>, addresses, <another task or context>) — a task IS the research context
+  BAD:  (<Model>, addresses, <Method the model uses>) — if it USES the thing, use `uses` not addresses
+  GOOD: (<Method>, addresses, <a named problem/limitation>) — the method tackles a stated problem
+  When in doubt, do NOT use addresses. Leave the triple out.
+
+CRITICAL — encompasses subject MUST be a broad ResearchDomain, never a ResearchTask:
+  The ontology defines encompasses as ResearchDomain → ResearchTask.
+  A specific ResearchTask CANNOT be the subject — tasks are not domains.
+  BAD:  (<specific task>, encompasses, <broader area>) — direction is REVERSED
+  GOOD: (<broad field/domain>, encompasses, <specific task within it>)
+  Ask: "Is the subject a BROAD FIELD or a specific task?" Only broad fields can be subjects.
+
+CRITICAL — comparesAgainst requires BOTH subject and object to be named Models/systems:
+  The ontology defines comparesAgainst as Model → Model.
+  Citation keys like "Smith et al. (2019)" are NOT valid model names — use the actual model name.
+  BAD:  (<Model>, comparesAgainst, Smith et al. (2019)) — citation key, not a model name
+  BAD:  src="including <Model A>, <Model B> and <Model C>" → a list, not a comparison, return {"triples": []}
+  BAD:  src="<Method> is also referred to as <alias>" → an alias, not a comparison
+  GOOD: (<Model A>, comparesAgainst, <Model B>) — both are named models/systems
+  Only use when sentence contains: compared to, unlike, outperforms, better than, versus,
+  most comparable, in contrast to, differs from.
+
+CRITICAL — comprises: BOTH subject and object must be ResearchProcesses:
+  The ontology defines comprises as ResearchProcess → ResearchProcess.
+  BOTH sides must be processes/methods/tasks — NOT datasets, representations, or results.
+  BAD:  (<Method>, comprises, <a representation or output>) — not a process
+  GOOD: (<Method>, comprises, <a named sub-process/component>) — both are processes/methods
+
+CRITICAL — trainedOn: extract one triple per dataset, even if a sentence lists multiple:
+  If the sentence says "<Model> is trained on <Dataset A> and <Dataset B>", extract TWO triples.
+
+CRITICAL — designedFor requires explicit design intent stated in the text:
+  BAD:  (<Model>, designedFor, <Task>) — "presenting results on <Task>" is NOT design intent
+  GOOD: (<Model>, designedFor, <Task>) — the paper explicitly states this design goal
+  Only use when text contains: "designed for", "built for", "intended for", "purpose of".
+
+CRITICAL — evaluatedOn subject can be Model as shorthand for its experiment:
+  The ontology defines evaluatedOn as Experiment → Dataset, but using Model as subject is accepted
+  as shorthand for "the experiment involving this model". Named benchmark/dataset required as object.
+  BAD:  (<Model>, evaluatedOn, <Task>) — too vague, not a named benchmark/dataset
+  GOOD: (<Model>, evaluatedOn, <named Dataset/benchmark>) — the model is the system under test
+
+CRITICAL — evaluates: subject must be EvaluationMetric, object must be a specific numeric result:
+  BAD:  (<Metric>, evaluates, <a descriptive sentence>) — object must be a clean numeric result
+  GOOD: (<Metric>, evaluates, 88.5) — metric and clean numeric result
+
+CRITICAL — writtenBy is ONLY for the paper being read, not cited papers:
+  BAD: Reference list authors — those are authors of CITED papers, not of the subject entity.
+  If source sentence is a bare list of names → return {"triples": []}
+
+CRITICAL — reject low-quality source sentences before extracting:
+  If the source sentence is ANY of the following, return {"triples": []} immediately:
+  - A URL or GitHub link
+  - A bare author name list
+  - A table or figure reference ("The results are presented in Table X")
+  - A section heading or phrase under 8 words
+
+CRITICAL — the subject must be NAMED in the source sentence:
+  If the sentence says "the model", "a pre-trained model", "this approach" without naming the
+  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.
+
+CRITICAL — DO NOT INFER. Only extract what the text explicitly states:
+  The source_sentence must make the triple obvious. If you have to reason about what is implied,
+  return {"triples": []}
+
+Return format:
+{
+  "triples": [
+    {
+      "subject": "specific named entity, written exactly as it appears in the text",
+      "predicate": "relation from the allowed list",
+      "object": "entity found in text",
+      "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other",
+      "source_sentence": "verbatim sentence from text supporting this triple"
+    }
+  ]
+}
+
+If no valid triples can be extracted, return: {"triples": []}
+
+########## END SYSTEM RULES ##########
+
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 0 -----
+Section: 1. Introduction
+
+Text:
+Pesticide usage has dramatically increased in recent decades, doubling since 1990 to reach 4.3 million tonnes globally [1]. Over 1,000 different types of pesticides are currently in use, despite their well- documented health and environmental risks [2]. An estimated 11,000 fatalities and 385 million poisonings occur annually due to pesticide exposure [3]. Traditional analytical methods for pesticide detection, such as gas chromatography, mass spectrometry [4], and high- performance liquid chromatography [5], often require expensive equipment and specialized expertise [6,7]. To address these limitations, smartphone-based image analysis has emerged as a promising alterna tive [8]. By leveraging the ubiquity, computational power, affordability, and real-time data processing capabilities of smartphones, these methods offer a convenient and accessible approach to pesticide testing. Optical components like colorimeters, photo- and spectrometers, and fluorimeters can be integrated into smartphones [9] to enable rapid, on- * Corresponding author. https://doi.org/10.1016/j.measurement.2025.116890 Received 12 June 2024; Received in revised form 12 January 2025; Accepted 28 January 2025 Available online 8 February 2025 0263-2241/© 2025 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+
+----- para_id: 1 -----
+Section: 1. Introduction
+
+Text:
+Conventional analytical methods for measuring pesticide concentrations, such as chromatography, offer high accuracy but require expensive instrumentation, prompting the investigation of cost-effective alternatives like smartphone-based spectrophotometers. Despite their potential, these methods face challenges related to as sembly and precision, often requiring human intervention to select appropriate images for analysis. This study presents a novel, affordable spectrophotometer designed for integration with machine learning algorithms. The device captures images of two spectral bands and employs a six-step image processing methodology to prepare images for analysis. A machine learning model trained on four algorithms with feature selection and cross- validation demonstrates high accuracy in predicting chemical concentrations of coloured solutions. The approach achieves 98.5 % accuracy for KMnO4 and 96.7 % for Carbosulfan solutions, comparable to high-end spectrophotometry devices. The design eliminates the need for human intervention, reducing biased selection and result manipulation. However, concentration estimation of non-coloured compounds remains inaccurate, indicating areas for further refinement. site, and home-based detection [10] of chemical substances [11,12]. This innovative technology has the potential to revolutionize food safety and agricultural practices by providing timely, cost-effective, and user- friendly solutions for monitoring pesticide levels.
+
+----- para_id: 2 -----
+Section: 1. Introduction
+
+Text:
+Despite advancements in low-cost portable spectrophotometers using paper-craft, 3D printing, smartphones, or LEDs, these devices often exhibit limitations compared to commercial spectrophotometers. Factors like careful assembly, camera calibration, and environmental conditions can significantly impact their performance. Moreover, all methods require substantial human involvement, from device assembly and experiment setup to image selection, adjustment, calibration, and data analysis. Examples include Jarujareet et al.'s 3D-printed spec trometer [13], Gonz´alez-Morales et al.'s LED-based device [14], Pereira and Hosker's Lego-like block [15], and Koohkan et al.'s paper-based spectrophotometer [16], each demonstrating potential but with chal lenges. While these low-cost options offer promising alternatives, further research and development are needed to address their limitations and ensure their reliability for various applications. To address the challenges associated with manual assembly, exper imental setup imperfections, and human interference, automated correction of light flicker, camera tilt, and position shift is essential. Previous studies have demonstrated the effectiveness of image pre- processing techniques for tasks such as determining hawthorn matu rity [17], classifying pistachio ripeness [18], and identifying cinnamon adulteration [19].
+
+----- para_id: 3 -----
+Section: 1. Introduction
+
+Text:
+Machine learning (ML) techniques, which have been successfully applied in various domains [20], can further enhance pre diction accuracy in spectroscopic applications. ML has shown promise in spectroscopic analysis [21,22], including Raman [23], IR, NIR, and UV spectroscopy [24,25]. Studies have successfully employed ML-enhanced spectrophotometry for assessing honey quality [26] and measuring phosphorus concentrations [27]. It is, therefore, anticipated that ML can similarly improve the prediction accuracy of low-cost portable spectrophotometers. This study presents the development and evaluation of a novel, low- cost portable spectrophotometer designed for automatic image pro cessing and analysis using machine learning techniques. The device in corporates an automated image correction mechanism , eliminating the need for human intervention, and aims to provide accurate predictions of chemical concentrations in liquid solutions. The capabilities of the equipment and methodology were demonstrated through the measure ment of potassium permanganate (KMnO4) and Carbosulfan pesticide concentrations. To further explore the method's potential, its applica tion was extended to non-coloured substances, specifically sugar and salt in aqueous solutions. This expansion of the technique's scope un derscores its versatility and potential broader applications in chemical analysis.
+
+----- para_id: 4 -----
+Section: 2.1. Development of the spectrophotometer
+
+Text:
+Prior to the current design, multiple iterations were required to refine the prototype. An early successful attempt resulted in a spectro photometer capable of capturing a single spectrum, necessitating manual cropping of the spectral band from the entire image. Subsequent manual identification of the wavelength exhibiting the greatest varia tion in light intensity allowed for the application of the Beer-Lambert law [28], Eq. (1), to determine the concentration. where I0 is the incident intensityI is the transmitted intensityA is the absorbanceε is the molar absorption coefficientl is the optical path lengthc is the concentration of the species. Subsequently, a machine learning approach was adopted for con centration prediction. Given the underlying adherence of light absor bance to the Beer-Lambert law, it was anticipated that simple machine learning algorithms could effectively model absorbance behaviour. Initial exploration encompassed ordinary least-squares regression, ridge regression, k-Nearest Neighbours (KNN) [29], Gaussian Process (GP) [30], Decision Tree (DT) [31], Random Forest (RF) [32], Support Vector Regression (SVR) [33], and Multilayer Perceptron (MLP) [34]. Among these, RF, MLP, and SVM demonstrated promising performance with our data. To further explore the potential of ensemble methods Extreme Gradient Boosting (XGB) [35] was also included in this study.
+
+----- para_id: 5 -----
+Section: 2.1. Development of the spectrophotometer
+
+Text:
+Addi tionally, machine learning techniques designed to expedite the process and mitigate overfitting, such as feature selection [36] and cross- validation [37], were incorporated. A detailed methodology is pre sented in section 2.4.2. The final stage of development focused on eliminating human interference. To achieve automatic identification of the spectral band, precise determination of the spectral band area was required, along with the elimination of light intensity fluctuations. 1, using a single spectrum is insufficient for identifying spectral band boundaries when the solution absorbs multiple wavelengths. Further more, minor rotational movements of the phone camera can introduce significant errors in prediction. To address these challenges, the pro posed low-cost portable spectrophotometer incorporates the concept of a double-beam spectrophotometer as introduced by Gong et al. As outlined in the subsequent section 2.2, this new design generates two spectra, one of which serves as the reference spectrum. This configura tion enables image processing techniques to rectify both camera movements and light fluctuations.
+
+----- para_id: 6 -----
+Section: 2.2. Low-cost portable spectrophotometer
+
+Text:
+A low-cost, portable spectrophotometer was designed to enable the utilization of smartphone cameras for capturing spectral images . These images were subsequently processed using a combination of image processing techniques and machine learning algorithms. The design ensured that each image contained two spectra. The first was the reference spectrum, generated when light passed through a void. This spectrum served as a reference, compensating for any inclinations, movements, or shifts in light intensity that may occur during the experiment. The second was the analysed spectrum, produced when light traversed a solution, altering its intensity before it reached the camera sensor. This design facilitated a comprehensive and accurate analysis of light intensity changes. A schematic representation of the spectrophotometer is depicted in Fig. For assembly, the diagram should be printed and adhered to a corrugated plastic sheet, followed by cutting the sheet along the solid line. A black felt cloth should be affixed to the interior side to prevent light reflection within the device. A 13,400 lines-per-inch (LPI) transmission grating is positioned on an aperture in part number 1, enabling the smartphone camera to view through it. Part number 1 is affixed to one side of part number 2, which is folded to form a box. Subsequently, part number 3, equipped with a 50 µm slit, is attached to the opposite side.
+
+----- para_id: 7 -----
+Section: 2.2. Low-cost portable spectrophotometer
+
+Text:
+Part number 4, which accommodates a polymethyl methacrylate (PMMA) solution cuvette in a small opening and a 10 cm daylight LED light source in a larger opening, is then secured to part number 3. Part number 5 is employed to block external light, ensuring the optimal operation of the spectrophotometer. Ultimately, all com ponents were assembled using adhesive tape, as shown in Fig. The resulting spectral bands image captured by the device is exemplified in Fig. The total cost of the entire apparatus, excluding the smartphone, was under 145 THB (approximately $4.5), as described in detail in the supplementary materials S1. In this experiment, the Samsung Galaxy A53 smartphone was utilized. The disparity in image processors does not influence the results, provided that a single device is used per experi mental set.
+
+----- para_id: 8 -----
+Section: 2.3.1. Reagents
+
+Text:
+All chemical compounds, excluding deionized water produced in- house, were procured from either Merck or FMC Corporation. The sol utes utilized in the experiments included potassium permanganate (KMnO4), Carbosulfan, sugar (sucrose), and salt (NaCl). Deionized water was employed as the solvent in the experiments involving KMnO4, sugar, and salt. Conversely, chromatography-grade ethanol was used in the Carbosulfan experiment.
+
+----- para_id: 9 -----
+Section: 2.3.2. Experimental setups
+
+Text:
+Solutions of KMnO4 with concen trations ranging from 5 mg ⋅ L−1 to 50 mg⋅L−1 were prepared. Initially, 5.0 mg of KMnO4 was weighed and dissolved in 100 mL of deionized water to create a 50 mg⋅L−1 solution. Subsequently, aliquots of varying volumes (9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, and 1.0 mL) were extracted from the prepared solution using a micropipette. Each aliquot was then diluted to a total volume of 10 mL with deionized water, resulting in a set of solutions that are depicted in Fig. Additionally, an 18 mg⋅L−1 solution was prepared as the validation set. A 9 mL aliquot of the initially prepared solution was diluted to a final volume of 25 mL, resulting in a concentration of 18 mg⋅L−1. This diluted solution served as the validation set for subsequent analyses. Solutions of Carbosulfan with concentrations ranging from 50 to 1,500 mg⋅L−1 were prepared. A 500 mg⋅L−1 solution was initially prepared by adding 0.25 mL of a 20 % w/v Carbosulfan solution to a 100-mL volumetric flask, which was then filled with ethanol up to the mark. Subsequently, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, and 1.0 mL aliquots of the 500 mg⋅L−1 Carbosulfan solution were transferred into separate 10-mL volumetric flasks using a micropipette. Each flask was filled to 10 mL with ethanol, resulting in solutions with 450, 400, 350, 300, 250, 200, 150, 100, and 50 mg⋅L−1 concentrations, respectively.
+
+----- para_id: 10 -----
+Section: 2.3.2. Experimental setups
+
+Text:
+A separate stock solution with a concentration of 1,500 mg⋅L−1 was prepared by adding 0.75 mL of the 20 % w/v Carbosulfan solution to a 100-mL volumetric flask and diluting to the mark with ethanol. From this stock solution, aliquots of 8.0, 6.0, and 4.0 mL were extracted and diluted to 10 mL with ethanol, yielding solutions with concentrations of 1,200, 900, and 600 mg⋅L-1, respectively. These so lutions are displayed in Fig. Additionally, a 380 mg⋅L−1 solution was prepared as the validation set. 0, 5, 10, 15, 20, 8 % w/v 60 (0.0, 0.0), (5.0, 2.5), (2.5, 5.0), (7.5, 2.5), (5.0,5.0), (5.0, 7.5), (7.5, 5.0) 2.3.2.3. Extended cases with sugar and salt. While it is acknowledged that sugar and salt solutions may not exhibit significant light absorption or strictly adhere to the Beer-Lambert law, they can interact with light through reflection [39]. This interaction could potentially influence the light captured by the spectrophotometer, allowing for subsequent analysis using an appropriate machine learning algorithm. Sugar and salt solutions were prepared within a concentration range of 5 to 20 % w/v. Individual compounds were weighed at 5.0, 10.0, 15.0, and 20.0 g, respectively. Subsequently, deionized water was added to each sample, resulting in a final volume of 100 mL. Moreover, an investigation was conducted on binary solute solutions. Mixed sugar-salt solutions were created by combining various sugar-salt mixtures in 100 mL of deionized water.
+
+----- para_id: 11 -----
+Section: 2.3.2. Experimental setups
+
+Text:
+Additionally, an 8 % w/v sugar solution and a 12 % w/v salt solution were prepared as the validation set. The concentrations of all samples were determined using a standard method. For each concentration, ten images were captured with a fixed shutter speed of 1/50 at ambient temperature. To facilitate subsequent machine learning analysis, images for each experimental case were stored in a dedicated folder. The image naming convention followed the format '"date of experiment"_"light source"_"solvent"_"solute no.1"_"solute no.2"_"concentration of solute no.1"_"concentration of solute no.2"_"number of image"'. For example, '241007_LED_Etha nol_Carbosulfan_N_35_N_01.jpg' is the image of the 35 ppm of Carbo sulfan in Ethanol solution taken on October 7th, 2024. Table 1 provides a summary of the experimental sets investigated and analysed in this study.

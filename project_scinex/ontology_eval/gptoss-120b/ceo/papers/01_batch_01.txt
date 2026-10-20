@@ -1,0 +1,128 @@
+########## RUBRIC — C6 (per paper) ##########
+
+You are grading SEMANTIC CONSISTENCY across one paper's whole extracted triple set.
+
+Look for contradictions and incoherence, not for individual wrong triples (those are C1/C4):
+  * the same concept used with conflicting meanings or at conflicting levels
+  * mutually exclusive relations asserted between the same pair
+  * hierarchy/direction violations (X part-of Y and Y part-of X; a task "addressing" a task)
+  * the same real entity split across surface variants that should be one node
+    ("RT-DETR" / "RT-DETR model" / "the RT-DETR")
+  * a relation whose domain/range is systematically misused across this paper
+
+C6:
+  CONSISTENT     no contradictions; surface variants are minor and would merge cleanly
+  MINOR_ISSUES   some duplication or loose typing, but nothing self-contradictory
+  CONTRADICTORY  real contradictions, or systematic misuse of a relation
+
+Return ONE JSON object, no fences:
+
+{"verdicts": [
+  {"paper": "<id>", "C6": "...", "issues": ["..."], "note": "<short>"}
+]}
+
+Grade the following 3 papers on C6.
+
+----- paper: llamacorrupt2025 -----
+ALL TRIPLES (11):
+    (Llama -3.2-1B-Instruct model) --evaluatedon--> (GLUE-QNLI dataset)
+    (Large language models (LLMs)) --addresses--> (text generation)
+    (Large language models (LLMs)) --addresses--> (question answering)
+    (Experiment Method) --comprises--> (model selection)
+    (Experiment Method) --comprises--> (test data selection)
+    (Experiment Method) --comprises--> (evaluation methodology)
+    (Experiment Method) --comprises--> (experimental procedures)
+    (Experiment 1) --uses--> (BERT)
+    (Experiment 1) --uses--> (ROUGE scores)
+    (Mixture of Experts (MoE) architecture) --addresses--> (parameter corruption)
+    (Llama -3.2-1B-Instruct) --evaluatedon--> (GLUE-QNLI dataset)
+
+----- paper: traveltime2022 -----
+ALL TRIPLES (72):
+    (Self-Attention Long Short -Term Memory (SA-LSTM) model) --uses--> (Butterworth low-pass filter)
+    (Self-Attention Long Short -Term Memory (SA-LSTM) model) --uses--> (Global Positioning System (GPS) tracking)
+    (Mean Absolute Error (MAE)) --evaluates--> (12.15 min per 100 km)
+    (self-attention LSTM (SA-LSTM) model) --uses--> (Butterworth low-pass filter)
+    (self-attention LSTM (SA-LSTM) model) --achieves--> (12.15 min per 100 km MAE)
+    (ARIMA) --uses--> (statistical data points)
+    (SVR) --uses--> (Support Vector Machine)
+    (SVM) --uses--> (kernel)
+    (SVR) --uses--> (hyperplane)
+    (LSTM) --addresses--> (travel time prediction)
+    (LSTM) --addresses--> (bus journey time prediction)
+    (LSTM) --addresses--> (bus arrival time estimation)
+    (LSTM) --addresses--> (travel time prediction)
+    (LSTM) --addresses--> (travel time prediction)
+    (LSTM) --addresses--> (bus travel time prediction)
+    (LSTM) --achieves--> (highest performance)
+    (LSTM) --addresses--> (travel time prediction)
+    (LSTM) --comparesagainst--> (ConvLSTM)
+    (LSTM) --produces--> (self-attention LSTM)
+    (ConvL- STM) --addresses--> (travel time prediction)
+    (ConvLSTM) --uses--> (convolutional layers)
+    (Kalman filter) --addresses--> (travel time prediction)
+    (Savitzky–Golay filter) --uses--> (low-degree polynomial)
+    (Savitzky–Golay filter) --uses--> (linear least-squares method)
+    (Self-Attention Long Short -Term Memory (SA-LSTM) model) --uses--> (Butterworth low-pass filter)
+    (LSTM) --addresses--> (long-term prediction)
+    (BiLSTM) --addresses--> (long-term prediction)
+    (FBProphet) --addresses--> (long-term prediction)
+    (SARIMAX) --addresses--> (long-term prediction)
+    (LSTM) --achieves--> (lowest Mean Relative Error (MRE))
+    (ConvLSTM) --addresses--> (predicting the travel time of buses)
+    (ConvLSTM with attention) --achieves--> (MAE 36.328 s)
+    (SA-LSTM) --comparesagainst--> (LSTM)
+    (SA_LSTM) --uses--> (Butterworth low-pass filter)
+    (SA_LSTM) --uses--> (TTR)
+    (self-attention layer) --uses--> (weight vector of query (WQ))
+    (self-attention layer) --uses--> (weight vector of key (WK))
+    (self-attention layer) --uses--> (weight vector of value (WV))
+    (self-attention layer) --uses--> (input travel time vector)
+    (input data) --uses--> (TTR)
+    (BF()) --uses--> (Butterworth low-pass filter)
+    (LSTM()) --produces--> (LSTM model)
+    (ANN()) --produces--> (ANN model)
+    (self- attention) --uses--> (LSTM)
+    (ConvLSTM) --uses--> (LSTM)
+    (LSTM) --achieves--> (best performance)
+    (LSTM) --comparesagainst--> (SA-LSTM)
+    (SA-LSTM) --uses--> (self-attention)
+    (SA-LSTM) --comparesagainst--> (original LSTM)
+    (ARIMA) --evaluatedon--> (test set)
+    (LSTM technique) --comparesagainst--> (ARIMA)
+    (LSTM technique) --comparesagainst--> (SVR)
+    (LSTM technique) --comparesagainst--> (ConvLSTM)
+    (LSTM only) --comparesagainst--> (SA-LSTM)
+    (SA-LSTM) --achieves--> (26.89 MAE)
+    (Butterworth low-pass filter) --achieves--> (best result among all the compared methods)
+    (SA-LSTM) --uses--> (Butterworth low-pass filter method)
+    (SA-LSTM) --uses--> (self-attention)
+    (SA-LSTM) --comparesagainst--> (LSTM)
+    (LSTM model) --achieves--> (error of ±27.12 min)
+    (SA-LSTM) --uses--> (Butterworth low-pass filter)
+    (ConvLSTM model) --uses--> (convolutional layers)
+    (Self-Attention LSTM) --uses--> (Butterworth low-pass filter)
+    (travel time prediction model) --uses--> (Butterworth low-pass filter)
+    (training set) --splitfrom--> (time-series data)
+    (test set) --splitfrom--> (time-series data)
+    (LSTM) --achieves--> (MAE of 27.12 min per 100 km)
+    (SA-LSTM) --uses--> (Butterworth low-pass filter)
+    (SA-LSTM) --achieves--> (error of ±12.15 min per 100 km)
+    (DeepTRANS) --uses--> (traffic forecasting)
+    (Neural–Kalman Filtering Approach) --uses--> (Probe Vehicle Data)
+    (Kalman-LSTM Model for Short -term Traffic Flow Forecasting) --publishedin--> (IEEE 5th Advanced Information Technology Conference)
+
+----- paper: microwave2018 -----
+ALL TRIPLES (12):
+    (GekiPe) --uses--> (Microsoft Kinect)
+    (KICK) --uses--> (mobile phone's camera)
+    (KickSoul) --uses--> (wearable device)
+    (ultrasonic sensor) --uses--> (sound wave)
+    (infrared sensor) --uses--> (infrared light)
+    (Artificial Natural Network (ANN)) --uses--> (biological neural system of animal brains)
+    (Support Vector Machine (SVM)) --addresses--> (classification problem)
+    (logistic regression) --achieves--> (highest score)
+    (logistic regression) --achieves--> (highest accuracy)
+    (result model) --uses--> (microcontroller)
+    (kick activation method) --addresses--> (hand-free operation issue)
+    (logistic regression) --achieves--> (best accuracy)

@@ -1,0 +1,254 @@
+{
+  "paper_id": "df18ef807e902368a025e305f04b221f02ca4f9c",
+  "title": "A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts",
+  "year": 2026,
+  "abstract": "Quaternary Ammonium Salts (Quats) have diverse applications across various domains. They are extensively used as phase-transfer catalysts (PTCs) in chemical reactions, facilitating the transfer of reactants between aqueous and organic phases. Their unique structure enables the formation of ion pairs, enhancing reaction rates at phase boundaries. This research develops a novel method for predicting Quats’ osmotic coefficients using Simplified Molecular Input Line Entry System (SMILES) notation and supervised machine learning. A comprehensive dataset of 1,654 data points from 52 distinct Quats was compiled. The structural characteristics were encoded using SMILES notation. The data was evaluated using random splitting and Leave-One-Group-Out (LOGO) validation to train seven machine learning algorithms. Gaussian Process (GP) emerged as the optimal algorithm. The GP model achieved a mean absolute percentage error (MAPE) of 5.29% and root mean square error (RMSE) of 0.034. Comparisons with Electrolyte-NRTL and Extended UNIQUAC models demonstrate that this data-driven approach offers competitive accuracy while enabling generalization to structurally similar compounds. This work marks a significant starting point for the machine learning-enhanced prediction of activity coefficients, with considerable potential for future refinement and application.",
+  "citation_count": 0,
+  "root_concepts": [
+    "quats",
+    "machine",
+    "phase",
+    "transfer",
+    "coefficients",
+    "smiles",
+    "notation",
+    "error",
+    "quaternary",
+    "ammonium",
+    "salts",
+    "diverse",
+    "applications",
+    "across",
+    "various"
+  ],
+  "nodes": {
+    "c9756d831f4fec9904680eba03b811dd19effd6b": {
+      "title": "Computational QSAR study of novel 2-aminothiazol-4(5H)-one derivatives as 11β‐HSD1 inhibitors",
+      "year": 2025,
+      "abstract": "This research aims to develop a predictive model to support the design of new 11β-hydroxysteroid dehydrogenase type 1 (11β-HSD1) inhibitors based on the pseudothiohydantoin scaffold, offering potential for novel treatments of metabolic disorders. The Quantitative Structure–Activity Relationship (QSAR) analysis was performed on 56 2-aminothiazol-4(5h)-one derivatives, for which the 11β-HSD1 inhibitory activity was previously reported. Gaussian software was employed for geometry optimization, while Dragon software was used to calculate the molecular descriptors. The study used an Artificial Neural Network (ANN) algorithm for regression analysis between the top ten preselected descriptors and the activity of the studied analogs. A predictive model was developed using a network architecture 10-11-1 with a Broyden–Fletcher–Goldfarb–Shanno learning algorithm. The model’s reliability was supported through cross-validation and y-randomization strategies. The model exhibited high accuracy with a determination coefficient (R2) of 0.9482, and its validity was confirmed through internal validation with a cross-validated R2 (Q2) of 0.9944. Three classes of 3D descriptors (GETAWAY, 3D-MoRSE, and RDF descriptors) and four groups of topological indices (GALVEZ, 2D autocorrelations, 2D matrix-based descriptors, and Burden eigenvalues) were used to generate the QSAR model. The developed model was applied to predict the 11β-HSD1 inhibitory activity of four designed series of 2-aminothiazol-4(5h)-one derivatives, suggesting that compounds with cyclohexyl and 2-(tetrahydro-2H-pyran-2-yl)methyl residues substituted at the amino group, and various substituents at C-5 of the thiazole ring, could be potential candidates for upcoming chemical synthesis and biological assessment.",
+      "citation_count": 9,
+      "relation": "cited_by",
+      "concepts": [
+        "descriptors",
+        "activity",
+        "predictive",
+        "potential",
+        "analysis",
+        "aminothiazol",
+        "derivatives",
+        "inhibitory",
+        "software",
+        "algorithm",
+        "developed",
+        "through",
+        "cross",
+        "validation",
+        "research"
+      ]
+    },
+    "1fad14bcfc2b75797c686a5a05779076437a683e": {
+      "title": "A review of graph neural networks: concepts, architectures, techniques, challenges, datasets, applications, and future directions",
+      "year": 2024,
+      "abstract": null,
+      "citation_count": 550,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "7c5ce83f309762c65a9bf1576f0d0ba362b26541": {
+      "title": "Quaternary ammonium antimicrobial agents and their application in antifouling coatings: a review",
+      "year": 2023,
+      "abstract": null,
+      "citation_count": 55,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "8882cf36bdd52f805379f80e9f21a7519e703f44": {
+      "title": "Application of Machine Learning in Material Synthesis and Property Prediction",
+      "year": 2023,
+      "abstract": "Material innovation plays a very important role in technological progress and industrial development. Traditional experimental exploration and numerical simulation often require considerable time and resources. A new approach is urgently needed to accelerate the discovery and exploration of new materials. Machine learning can greatly reduce computational costs, shorten the development cycle, and improve computational accuracy. It has become one of the most promising research approaches in the process of novel material screening and material property prediction. In recent years, machine learning has been widely used in many fields of research, such as superconductivity, thermoelectrics, photovoltaics, catalysis, and high-entropy alloys. In this review, the basic principles of machine learning are briefly outlined. Several commonly used algorithms in machine learning models and their primary applications are then introduced. The research progress of machine learning in predicting material properties and guiding material synthesis is discussed. Finally, a future outlook on machine learning in the materials science field is presented.",
+      "citation_count": 137,
+      "relation": "cited_by",
+      "concepts": [
+        "machine",
+        "material",
+        "research",
+        "progress",
+        "development",
+        "exploration",
+        "materials",
+        "computational",
+        "innovation",
+        "plays",
+        "important",
+        "technological",
+        "industrial",
+        "traditional",
+        "experimental"
+      ]
+    },
+    "cec82dde6a77ac1867204fee9cc55bdb60f20ac9": {
+      "title": "Count-Based Morgan Fingerprint: A More Efficient and Interpretable Molecular Representation in Developing Machine Learning-Based Predictive Regression Models for Water Contaminants' Activities and Properties.",
+      "year": 2023,
+      "abstract": "In this study, we introduce the count-based Morgan fingerprint (C-MF) to represent chemical structures of contaminants and develop machine learning (ML)-based predictive models for their activities and properties. Compared with the binary Morgan fingerprint (B-MF), C-MF not only qualifies the presence or absence of an atom group but also quantifies its counts in a molecule. We employ six different ML algorithms (ridge regression, SVM, KNN, RF, XGBoost, and CatBoost) to develop models on 10 contaminant-related data sets based on C-MF and B-MF to compare them in terms of the model's predictive performance, interpretation, and applicability domain (AD). Our results show that C-MF outperforms B-MF in nine of 10 data sets in terms of model predictive performance. The advantage of C-MF over B-MF is dependent on the ML algorithm, and the performance enhancements are proportional to the difference in the chemical diversity of data sets calculated by B-MF and C-MF. Model interpretation results show that the C-MF-based model can elucidate the effect of atom group counts on the target and have a wider range of SHAP values. AD analysis shows that C-MF-based models have an AD similar to that of B-MF-based ones. Finally, we developed a \"ContaminaNET\" platform to deploy these C-MF-based models for free use.",
+      "citation_count": 137,
+      "relation": "cited_by",
+      "concepts": [
+        "predictive",
+        "morgan",
+        "fingerprint",
+        "chemical",
+        "develop",
+        "group",
+        "counts",
+        "terms",
+        "interpretation",
+        "introduce",
+        "count",
+        "represent",
+        "structures",
+        "contaminants",
+        "machine"
+      ]
+    },
+    "4326f310637870932044172126c60ab2b18543a6": {
+      "title": "Prediction of parameters of group contribution models of mixtures by matrix completion.",
+      "year": 2023,
+      "abstract": "Group contribution (GC) methods are widely used for predicting the thermodynamic properties of mixtures by dividing components into structural groups. These structural groups can be combined freely so that the applicability of a GC method is only limited by the availability of its parameters for the groups of interest. For describing mixtures, pairwise interaction parameters between the groups are of prime importance. Finding suitable numbers for these parameters is often impeded by a lack of suitable experimental data. Here, we address this problem by using matrix completion methods (MCMs) from machine learning to predict missing group-interaction parameters. This new approach is applied to UNIFAC, an established group contribution method for predicting activity coefficients in mixtures. The developed MCM yields a complete set of parameters for the first 50 main groups of UNIFAC, which substantially extends the scope and applicability of UNIFAC. The quality of the predicted parameter set is evaluated using vapor-liquid equilibrium data of binary mixtures from the Dortmund Data Bank. This evaluation reveals that our approach gives prediction accuracies comparable with UNIFAC for data sets to which UNIFAC was fitted, and only slightly lower accuracies for data sets to which UNIFAC is not applicable.",
+      "citation_count": 17,
+      "relation": "cited_by",
+      "concepts": [
+        "unifac",
+        "groups",
+        "parameters",
+        "mixtures",
+        "group",
+        "contribution",
+        "methods",
+        "predicting",
+        "structural",
+        "applicability",
+        "interaction",
+        "suitable",
+        "accuracies",
+        "widely",
+        "thermodynamic"
+      ]
+    },
+    "91acf3ca6abd1196a6a660df8f1b4a790ad15c17": {
+      "title": "Group Contribution-Based Graph Convolution Network: Pure Property Estimation Model",
+      "year": 2022,
+      "abstract": null,
+      "citation_count": 11,
+      "relation": "cited_by",
+      "concepts": []
+    },
+    "10166a88233770ff2276b19ae25cbc40a5a1e1b9": {
+      "title": "Application of Multivariate Adaptive Regression Splines (MARSplines) for Predicting Antitumor Activity of Anthrapyrazole Derivatives",
+      "year": 2022,
+      "abstract": "An approach using multivariate adaptive regression splines (MARSplines) was applied for quantitative structure–activity relationship studies of the antitumor activity of anthrapyrazoles. At the first stage, the structures of anthrapyrazole derivatives were subjected to geometrical optimization by the AM1 method using the Polak–Ribiere algorithm. In the next step, a data set of 73 compounds was coded over 2500 calculated molecular descriptors. It was shown that fourteen independent variables appearing in the statistically significant MARS model (i.e., descriptors belonging to 3D-MoRSE, 2D autocorrelations, GETAWAY, burden eigenvalues and RDF descriptors), significantly affect the antitumor activity of anthrapyrazole compounds. The study confirmed the benefit of using a modern machine learning algorithm, since the high predictive power of the obtained model had proven to be useful for the prediction of antitumor activity against murine leukemia L1210. It could certainly be considered as a tool for predicting activity against other cancer cell lines.",
+      "citation_count": 28,
+      "relation": "cited_by",
+      "concepts": [
+        "activity",
+        "antitumor",
+        "descriptors",
+        "anthrapyrazole",
+        "algorithm",
+        "compounds",
+        "against",
+        "multivariate",
+        "adaptive",
+        "regression",
+        "splines",
+        "marsplines",
+        "applied",
+        "quantitative",
+        "structure"
+      ]
+    },
+    "be1a74dc70ead8a3ca79734cae7285a0f5183448": {
+      "title": "Accurate Physical Property Predictions via Deep Learning",
+      "year": 2022,
+      "abstract": "Neural networks and deep learning have been successfully applied to tackle problems in drug discovery with increasing accuracy over time. There are still many challenges and opportunities to improve molecular property predictions with satisfactory accuracy even further. Here, we proposed a deep-learning architecture model, namely Bidirectional long short-term memory with Channel and Spatial Attention network (BCSA), of which the training process is fully data-driven and end to end. It is based on data augmentation and SMILES tokenization technology without relying on auxiliary knowledge, such as complex spatial structure. In addition, our model takes the advantages of the long- and short-term memory network (LSTM) in sequence processing. The embedded channel and spatial attention modules in turn specifically identify the prime factors in the SMILES sequence for predicting properties. The model was further improved by Bayesian optimization. In this work, we demonstrate that the trained BSCA model is capable of predicting aqueous solubility. Furthermore, our proposed method shows noticeable superiorities and competitiveness in predicting oil–water partition coefficient, when compared with state-of-the-art graphs models, including graph convoluted network (GCN), message-passing neural network (MPNN), and AttentiveFP.",
+      "citation_count": 29,
+      "relation": "cited_by",
+      "concepts": [
+        "spatial",
+        "predicting",
+        "accuracy",
+        "further",
+        "short",
+        "memory",
+        "channel",
+        "attention",
+        "smiles",
+        "sequence",
+        "successfully",
+        "applied",
+        "tackle",
+        "problems",
+        "discovery"
+      ]
+    },
+    "175350d719829390942b516184ae5c229efabae2": {
+      "title": "Prediction of chemical compounds properties using a deep learning model",
+      "year": 2021,
+      "abstract": null,
+      "citation_count": 30,
+      "relation": "cited_by",
+      "concepts": []
+    }
+  },
+  "edges": [
+    {
+      "source": "df18ef807e902368a025e305f04b221f02ca4f9c",
+      "target": "c9756d831f4fec9904680eba03b811dd19effd6b",
+      "type": "cites"
+    },
+    {
+      "source": "df18ef807e902368a025e305f04b221f02ca4f9c",
+      "target": "1fad14bcfc2b75797c686a5a05779076437a683e",
+      "type": "cites"
+    },
+    {
+      "source": "df18ef807e902368a025e305f04b221f02ca4f9c",
+      "target": "7c5ce83f309762c65a9bf1576f0d0ba362b26541",
+      "type": "cites"
+    },
+    {
+      "source": "df18ef807e902368a025e305f04b221f02ca4f9c",
+      "target": "8882cf36bdd52f805379f80e9f21a7519e703f44",
+      "type": "cites"
+    },
+    {
+      "source": "df18ef807e902368a025e305f04b221f02ca4f9c",
+      "target": "cec82dde6a77ac1867204fee9cc55bdb60f20ac9",
+      "type": "cites"
+    },
+    {
+      "source": "df18ef807e902368a025e305f04b221f02ca4f9c",
+      "target": "4326f310637870932044172126c60ab2b18543a6",
+      "type": "cites"
+    },
+    {
+      "source": "df18ef807e902368a025e305f04b221f02ca4f9c",
+      "target": "91acf3ca6abd1196a6a660df8f1b4a790ad15c17",
+      "type": "cites"
+    },
+    {
+      "source": "df18ef807e902368a025e305f04b221f02ca4f9c",
+      "target": "10166a88233770ff2276b19ae25cbc40a5a1e1b9",
+      "type": "cites"
+    },
+    {
+      "source": "df18ef807e902368a025e305f04b221f02ca4f9c",
+      "target": "be1a74dc70ead8a3ca79734cae7285a0f5183448",
+      "type": "cites"
+    },
+    {
+      "source": "df18ef807e902368a025e305f04b221f02ca4f9c",
+      "target": "175350d719829390942b516184ae5c229efabae2",
+      "type": "cites"
+    }
+  ]
+}

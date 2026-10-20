@@ -24,8 +24,12 @@ def filter_layout_noise(blocks):
         if len(text) < 3:
             continue
 
-        # header/footer zones
-        if b["y"] < 40 or b["y"] > 780:
+        # header/footer zones. Page 1 is exempt at the top: running headers are a
+        # page-2-onward phenomenon, whereas a journal that sets its title high on
+        # page 1 (IEEE conference templates put it at y~24) would otherwise have
+        # the first line of its own title deleted before title detection runs.
+        top_cut = 0 if (b.get("page") or 0) == 0 else 40
+        if b["y"] < top_cut or b["y"] > 780:
             continue
 
         filtered.append(b)
@@ -144,10 +148,17 @@ def merge_blocks(blocks, y_threshold=10):
 
         should_merge = same_group and vertical_close and same_indent
 
+        # A heading split off from its paragraph sits directly above that
+        # paragraph at the same indent - exactly the shape merge_blocks joins.
+        if b.get("is_heading_hint") or last.get("is_heading_hint"):
+            should_merge = False
+
         if should_merge:
             last["text"] += " " + b["text"]
             last["bbox"][2] = max(last["bbox"][2], b["bbox"][2])
             last["bbox"][3] = max(last["bbox"][3], b["bbox"][3])
+            if "size" in b:
+                last["size"] = max(last.get("size", 0.0), b["size"])
         else:
             merged.append(b)
 
@@ -175,6 +186,192 @@ def sort_columns(blocks):
 # -------------------------
 # MAIN PIPELINE
 # -------------------------
+def _page_lines(page):
+    """
+    Per-LINE style info: [(bbox, text, size, font, styled, uniform)].
+
+    get_text("blocks") gives text+bbox but no font information, so the title
+    detector had nothing but text length to go on (and reliably picked the
+    journal masthead), and a heading glued to the front of its paragraph was
+    invisible. The dict extractor carries per-span size/font/flags; this pass
+    annotates and splits the existing blocks rather than replacing the
+    extraction pipeline.
+
+    `styled` is True when the line's dominant span is bold or italic
+    (PyMuPDF span flags: bit 4 = bold, bit 1 = italic).
+    """
+    lines = []
+    try:
+        page_dict = page.get_text("dict")
+    except Exception:
+        return lines
+    for blk in page_dict.get("blocks", []):
+        for line in blk.get("lines", []):
+            spans = line.get("spans", [])
+            text = "".join(sp.get("text", "") for sp in spans)
+            inked = [sp for sp in spans if sp.get("text", "").strip()]
+            if not text.strip() or not inked or not line.get("bbox"):
+                continue
+            # Dominant span = the one carrying the most characters, so a
+            # superscript citation marker can't define the line's style.
+            main = max(inked, key=lambda sp: len(sp.get("text", "")))
+            flags = int(main.get("flags", 0))
+            uniform = len({sp.get("font") for sp in inked}) == 1
+            lines.append((
+                tuple(line["bbox"]),
+                text,
+                max(float(sp.get("size", 0.0)) for sp in inked),
+                main.get("font", ""),
+                bool(flags & 16 or flags & 2),
+                uniform,
+            ))
+    return lines
+
+
+def _lines_in(block, lines):
+    """The lines whose centre falls inside a block's bbox, in reading order."""
+    x0, y0, x1, y1 = block["bbox"]
+    inside = []
+    for ln in lines:
+        lx0, ly0, lx1, ly1 = ln[0]
+        cx, cy = (lx0 + lx1) / 2.0, (ly0 + ly1) / 2.0
+        if x0 <= cx <= x1 and y0 <= cy <= y1:
+            inside.append(ln)
+    inside.sort(key=lambda ln: (ln[0][1], ln[0][0]))
+    return inside
+
+
+def _annotate_font_sizes(blocks, lines):
+    """Attach the max font size of the lines falling inside each block's bbox."""
+    if not lines:
+        return blocks
+    for b in blocks:
+        contained = _lines_in(b, lines)
+        if contained:
+            b["size"] = max(ln[2] for ln in contained)
+    return blocks
+
+
+# A heading glued to the front of its paragraph (the Nature/Scientific Reports
+# layout) is one PDF block whose first line is set in the heading style and
+# whose remainder is body prose. These bound what may be split off as a heading.
+_GLUED_LEAD_MAX_WORDS = 8
+_GLUED_BODY_MIN_CHARS = 100
+_GLUED_SIZE_DELTA = 0.5
+_GLUED_LEAD_END_RE = re.compile(r"[.?!,;]$")
+
+
+def _looks_like_paragraph(text):
+    """
+    A heading only ever runs into PROSE. Front matter has the same shape - the
+    first author is set larger than the rest of the author list, so "Jacob
+    Devlin" would otherwise be split off BERT's byline as a section heading -
+    but it is a name/affiliation/e-mail run, not a paragraph.
+    """
+    if "@" in text:
+        return False
+    return bool(_SENTENCE_END_RE.search(text))
+
+
+_SENTENCE_END_RE = re.compile(r"[.?!](?:\s|$)")
+
+
+def _dominant_style(lines):
+    """(size, font, styled) of the style carrying the most characters."""
+    weights = {}
+    for _bbox, text, size, font, styled, _uniform in lines:
+        key = (round(size, 1), font, styled)
+        weights[key] = weights.get(key, 0) + len(text.strip())
+    if not weights:
+        return None
+    return max(weights.items(), key=lambda kv: kv[1])[0]
+
+
+def _split_glued_headings(blocks, lines):
+    """
+    Split "Literature reviews The following review includes both related work..."
+    into a heading block + a body block.
+
+    Nature-family templates set the heading in a larger and/or bold face but do
+    not break the PDF block, so no text rule can find it - `is_heading` never
+    fires and every triple extracted from those papers claims to come from the
+    section the previous heading named (in practice, "Abstract"). The split-off
+    block is marked `is_heading_hint` so `build_structure` trusts the font
+    evidence instead of re-deriving the heading from the words.
+    """
+    if not lines:
+        return blocks
+
+    out = []
+    for b in blocks:
+        contained = _lines_in(b, lines)
+        if len(contained) < 2:
+            out.append(b)
+            continue
+
+        lead, body = contained[0], contained[1:]
+        lead_text = lead[1].strip()
+        body_text = " ".join(ln[1] for ln in body).strip()
+
+        if (
+            not lead[5]                                   # lead line style is mixed
+            or len(lead_text.split()) > _GLUED_LEAD_MAX_WORDS
+            or len(lead_text) < 3
+            or _GLUED_LEAD_END_RE.search(lead_text)       # reads as a sentence
+            or len(body_text) < _GLUED_BODY_MIN_CHARS
+            or not _looks_like_paragraph(body_text)
+        ):
+            out.append(b)
+            continue
+
+        dom = _dominant_style(body)
+        if dom is None:
+            out.append(b)
+            continue
+        body_size, body_font, body_styled = dom
+
+        bigger = lead[2] >= body_size + _GLUED_SIZE_DELTA
+        # Same-size sub-headings exist too ("Object detections", in italic); a
+        # face change alone is only trusted when the lead is bold/italic and the
+        # body is not, which an emphasised opening word cannot satisfy (it would
+        # not occupy the whole line uniformly).
+        restyled = lead[3] != body_font and lead[4] and not body_styled
+
+        if not (bigger or restyled):
+            out.append(b)
+            continue
+
+        lx0, ly0, lx1, ly1 = lead[0]
+        head_block = dict(b)
+        head_block.update({
+            "text": lead_text,
+            "bbox": [lx0, ly0, lx1, ly1],
+            "x": lx0,
+            "y": ly0,
+            "size": lead[2],
+            "is_heading_hint": True,
+        })
+
+        bx0 = min(ln[0][0] for ln in body)
+        by0 = min(ln[0][1] for ln in body)
+        bx1 = max(ln[0][2] for ln in body)
+        by1 = max(ln[0][3] for ln in body)
+        body_block = dict(b)
+        body_block.update({
+            "text": body_text,
+            "bbox": [bx0, by0, bx1, by1],
+            "x": bx0,
+            "y": by0,
+            "size": max(ln[2] for ln in body),
+        })
+        body_block.pop("is_heading_hint", None)
+
+        out.append(head_block)
+        out.append(body_block)
+
+    return out
+
+
 def extract_blocks(doc):
     all_blocks = []
 
@@ -195,6 +392,12 @@ def extract_blocks(doc):
                 "x": x0,
                 "y": y0
             })
+
+        # Font/style info is needed on EVERY page now: page 1 for title
+        # detection, all pages for splitting headings glued to their paragraph.
+        page_lines = _page_lines(page)
+        blocks = _annotate_font_sizes(blocks, page_lines)
+        blocks = _split_glued_headings(blocks, page_lines)
 
         # Step 1: noise filtering
         blocks = filter_layout_noise(blocks)

@@ -1,0 +1,32 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 3 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: IV RESULTS
+
+Text:
+SAM2 stands out with superior Dice and IoU scores compared to YOLOv8 making it ideal for precision-critical applications more than YOLOv8 This section evaluates the computational performance of the model, focusing on computation time and GPU memory usage, as summarized in Table III. The findings underscore the superior efficiency of YOLOv8, which surpasses SAM2 in terms of both computational velocity and memory utilization. The diminished processing duration (approximately 5.5 times swifter than SAM2) coupled with reduced memory requirements renders YOLOv8 a more computationally efficient alternative. Although SAM2 exhibits commendable performance in alternative scenarios (e.g., detection precision) as illustrated in Fig. 5, it incurs greater computational expenses. The results from the evaluation of YOLOv8 and SAM2 indicate that both models exhibit distinct strengths and weaknesses in the context of video segmentation. YOLOv8 demonstrates superior performance in terms of computational efficiency, processing video approximately 5.5 times faster and utilizing less GPU memory. This renders YOLOv8 a more suitable option for applications where computational resources or processing speed are critical factors. Furthermore, YOLOv8 exhibits a marginally enhanced ability to suppress irrelevant colors, such as black, golden, and skin tones, while preserving the salient red color of graduation attire.
+
+----- para_id: 13 -----
+Section: IV RESULTS
+
+Text:
+These characteristics make it appropriate for multiple- person segmentation to prepare the video for inpainting using generative AI to rectify defects on each frame. As an initial step in accomplishing this objective, future research will focus on integrating the efficiency of YOLOv8 and evaluating the precision and tracking capabilities of SAM2 to determine its potential utilization in the task of tracking the target participant. However, both models still demonstrate room for improvement in frames that are densely populated with numerous participants, which impacts their accuracy. Subsequently, the research will concentrate on employing generative AI to produce a comprehensive individual participant video.
+
+----- para_id: 14 -----
+Section: V CONCLUSION
+
+Text:
+Particularly in Thailand, the graduation ceremony is a momentous occasion where distinguished people award diplomas, giving graduates and their families priceless memories. In order to provide a clearer view of the intended graduate, this study focuses on creating techniques to improve video clarity by eliminating other participants from the stage. While the Segment Anything Model (SAM2) and YOLOv8 both attain comparable color proportions, YOLOv8 exhibits marginally superior overall suppression. It successfully keeps the essential colors (red) essential to graduation attire while reducing the unnecessary ones (black, golden, and skin). Future research will concentrate on separating a single participant and using generative AI to repair defects on each frame. As the first step in accomplishing this objective, this study lays the groundwork by identifying efficient models and segmentation procedures.

@@ -1,0 +1,140 @@
+########## RUBRIC — C6 (per paper) ##########
+
+You are grading SEMANTIC CONSISTENCY across one paper's whole extracted triple set.
+
+Look for contradictions and incoherence, not for individual wrong triples (those are C1/C4):
+  * the same concept used with conflicting meanings or at conflicting levels
+  * mutually exclusive relations asserted between the same pair
+  * hierarchy/direction violations (X part-of Y and Y part-of X; a task "addressing" a task)
+  * the same real entity split across surface variants that should be one node
+    ("RT-DETR" / "RT-DETR model" / "the RT-DETR")
+  * a relation whose domain/range is systematically misused across this paper
+
+C6:
+  CONSISTENT     no contradictions; surface variants are minor and would merge cleanly
+  MINOR_ISSUES   some duplication or loose typing, but nothing self-contradictory
+  CONTRADICTORY  real contradictions, or systematic misuse of a relation
+
+Return ONE JSON object, no fences:
+
+{"verdicts": [
+  {"paper": "<id>", "C6": "...", "issues": ["..."], "note": "<short>"}
+]}
+
+Grade the following 3 papers on C6.
+
+----- paper: llamacorrupt2025 -----
+ALL TRIPLES (12):
+    (NLP) --encompasses--> (text generation)
+    (NLP) --encompasses--> (question answering)
+    (Experiment Method) --comprises--> (model selection)
+    (Experiment Method) --comprises--> (test data selection)
+    (Experiment Method) --comprises--> (evaluation methodology)
+    (Experiment Method) --comprises--> (experimental procedures)
+    (Question-answering Natural Language Inference (QNLI)) --splitfrom--> (General Language Understanding Evaluation (GLUE) benchmark)
+    (F1 score) --evaluates--> (balanced measure of accuracy)
+    (BERT) --evaluates--> (0.2)
+    (FF-Down) --achieves--> (ROUGE scores to drop to 0)
+    (BERT) --evaluates--> (deviation from the baseline answer)
+    (ROUGE) --evaluates--> (deviation from the baseline answer)
+
+----- paper: traveltime2022 -----
+ALL TRIPLES (84):
+    (SA-LSTM) --uses--> (Butterworth low-pass filter)
+    (MAE) --evaluates--> (12.15 min per 100 km)
+    (Auto-Regressive Integrated Moving Average (ARIMA)) --addresses--> (predicting travel time)
+    (Support Vector Regression (SVR)) --addresses--> (regression analytics for travel time)
+    (Long Short -Term Memory (LSTM)) --addresses--> (travel time prediction)
+    (Convolutional LSTM (ConvLSTM)) --addresses--> (travel time prediction)
+    (Mean Absolute Error (MAE)) --evaluates--> (27.12 min per 100 km)
+    (SA-LSTM) --uses--> (Butterworth low-pass filter)
+    (SA-LSTM) --achieves--> (MAE to 12.15 min per 100 km)
+    (SVR) --uses--> (Support Vector Machine (SVM))
+    (SVR) --addresses--> (travel time of freight transport)
+    (SVR) --addresses--> (urban main road travel time)
+    (SVR) --addresses--> (traffic flow prediction)
+    (SVM) --uses--> (kernel)
+    (LSTM) --addresses--> (travel time on freeways)
+    (LSTM) --addresses--> (predicted bus journey times)
+    (LSTM) --addresses--> (estimate bus arrival times)
+    (LSTM) --uses--> (MAE)
+    (LSTM with self-attention) --addresses--> (predict travel time)
+    (LSTM) --addresses--> (travel time prediction)
+    (LSTM with multiple lane levels) --addresses--> (travel time prediction)
+    (LSTM) --addresses--> (bus travel time prediction)
+    (LSTM) --addresses--> (predict travel time)
+    (LSTM) --comparesagainst--> (Convolutional LSTM (ConvLSTM))
+    (SA-LSTM) --uses--> (self-attention)
+    (Convolutional Long Short -Term Memory (ConvL- STM)) --addresses--> (travel time prediction problem)
+    (ConvLSTM) --uses--> (convolutional layers)
+    (ConvLSTM) --addresses--> (predict the travel time of buses)
+    (Kalman filter) --addresses--> (travel time prediction)
+    (Savitzky–Golay filter) --uses--> (linear least-squares method)
+    (Self-Attention Long Short -Term Memory (SA-LSTM) model) --uses--> (Butterworth low-pass filter)
+    (MAE) --evaluates--> (5.788 s)
+    (MAE) --evaluates--> (36.328 s)
+    (ConvLSTM with attention) --comparesagainst--> (ConvLSTM without attention)
+    (ConvLSTM with attention) --comparesagainst--> (LSTM without attention)
+    (road data for Thailand) --uses--> (OpenStreetMap)
+    (MAE) --evaluates--> (27.12 min per 100 km)
+    (LSTM with attention) --uses--> (filter)
+    (SA-LSTM) --comparesagainst--> (LSTM only)
+    (SA_LSTM (SA_LSTM) model) --uses--> (Butterworth low-pass filter (BF))
+    (self-attention layer) --uses--> (WQ)
+    (self-attention layer) --uses--> (WK)
+    (self-attention layer) --uses--> (WV)
+    (fully connected layer) --uses--> (artificial neural network (ANN))
+    (ANN) --uses--> (trained weight matrix (WFC))
+    (LSTM()) --produces--> (LSTM model)
+    (ANN()) --produces--> (ANN model)
+    (ARIMA) --comparesagainst--> (SVR)
+    (ARIMA) --comparesagainst--> (LSTM)
+    (ARIMA) --comparesagainst--> (ConvLSTM)
+    (SVR) --comparesagainst--> (LSTM)
+    (SVR) --comparesagainst--> (ConvLSTM)
+    (LSTM) --comparesagainst--> (ConvLSTM)
+    (self- attention) --comparesagainst--> (original LSTM)
+    (training set) --splitfrom--> (TTR dataset)
+    (validation set) --splitfrom--> (TTR dataset)
+    (test set) --splitfrom--> (TTR dataset)
+    (SA-LSTM) --comparesagainst--> (LSTM)
+    (SA-LSTM) --comparesagainst--> (LSTM)
+    (SA-LSTM) --comparesagainst--> (Kalman filter)
+    (SA-LSTM) --comparesagainst--> (Savitzky–Golay filter)
+    (SA-LSTM) --comparesagainst--> (Butterworth low-pass filter)
+    (MAE) --evaluates--> (31.25)
+    (ARIMA) --achieves--> (error of ±31.25 min within 100 km)
+    (MAE) --evaluates--> (27.12)
+    (LSTM technique) --comparesagainst--> (ARIMA)
+    (LSTM technique) --comparesagainst--> (SVR)
+    (LSTM technique) --comparesagainst--> (ConvLSTM)
+    (SA-LSTM) --achieves--> (MAE of 26.89)
+    (SA-LSTM) --comparesagainst--> (LSTM only)
+    (MAE) --evaluates--> (12.15)
+    (SA-LSTM with the Butterworth low-pass filter) --achieves--> (12.15 MAE)
+    (LSTM) --achieves--> (error of ±27.12 min in every 100 km)
+    (SA-LSTM) --comparesagainst--> (LSTM)
+    (SA-LSTM) --uses--> (Butterworth low-pass filter)
+    (SA-LSTM) --achieves--> (MAE of 12.15)
+    (LSTM with self-attention) --uses--> (24 input units at one-hour intervals)
+    (ConvLSTM) --uses--> (convolutional layers)
+    (our model) --uses--> (Butterworth low-pass filter)
+    (travel time prediction model) --uses--> (Self-Attention LSTM)
+    (travel time prediction model) --uses--> (Butterworth low-pass filter)
+    (LSTM) --achieves--> (MAE of 27.12 min per 100 km)
+    (SA-LSTM with the Butterworth low-pass filter) --achieves--> (error of ±12.15 min for every 100 km)
+    (SA-LSTM with the Butterworth low-pass filter) --comparesagainst--> (LSTM)
+
+----- paper: microwave2018 -----
+ALL TRIPLES (11):
+    (this work) --addresses--> (detect the kick gesture)
+    (this work) --uses--> (microwave sensor)
+    (GekiPe) --uses--> (Microsoft Kinect)
+    (KICK) --addresses--> (kick gesture)
+    (KickSoul) --addresses--> (natural feet movements)
+    (Support Vector Machine (SVM)) --addresses--> (classification problem)
+    (microwave sensor) --uses--> (doppler technique)
+    (microwave sensor) --addresses--> (detecting the kick motion)
+    (logistic regression) --achieves--> (highest accuracy among other techniques)
+    (kick activation method) --addresses--> (hand-free operation issue)
+    (logistic regression) --achieves--> (the best accuracy among all selected classifiers)

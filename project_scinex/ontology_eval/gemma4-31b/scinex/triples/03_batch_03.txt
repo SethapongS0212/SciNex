@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 56ba312d94bf -----
+TRIPLE:     (LR)  --achieves-->  (%MAPE values of 24.97%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Specifically, considering both R2 and %MAPE, the LR algorithm achieves the combined R2 values of 0.5177 and %MAPE values of 24.97%.
+
+----- triple_id: a4a0ffe16a51 -----
+TRIPLE:     (YOLOv8)  --uses-->  (Spatial Pyramid Pooling Fusion (SPPF))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Furthermore, YOLOv8 employs the Spatial Pyramid Pooling Fusion (SPPF), a mechanism for extracting contextual information from images across diverse scales, which markedly improves the model's generalization proficiency.
+
+----- triple_id: 601f8ad4b486 -----
+TRIPLE:     (SVR)  --comparesagainst-->  (LSTM)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: First, the time-series-based prediction techniques ARIMA, SVR, LSTM, and ConvLSTM were compared to decide which one would be the baseline.
+
+----- triple_id: 7cc6c17620a2 -----
+TRIPLE:     (C2f module)  --comprises-->  (Conv Modules)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: The C2f module comprises two Conv Modules and n BottleNeck, connected through Split pred = Classi | Object × Object × IOUtruth x, if x > 0.
+
+----- triple_id: a3561f8d4e17 -----
+TRIPLE:     (InceptionV3)  --evaluatedon-->  (NTOU-MMR)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: Using their developed Lightweight Recurrent Attention Unit (LRAU), Boukerche and Ma [11] also tested InceptionV3 (along with ResNet50 and VGG16) to improve classification performance on well-known VMMR datasets such as Stanford Cars, CompCars, and NTOU-MMR.
+
+----- triple_id: 6e813127694a -----
+TRIPLE:     (F1- score)  --evaluates-->  (performance)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  Links an evaluation metric to the experimental result it quantitatively assesses
+SOURCE SENTENCE: Since the experiment involves multi-class classification, the F1- score was used to measure performance.
+
+----- triple_id: 4ae2e883e954 -----
+TRIPLE:     (SP)  --addresses-->  (popularity of the rest stop)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: For the scoring function SP which is based on the popularity of the rest stop, the hybrid method between SF and SP was mentioned in the works of Jeung et al. (2008) and Scellato et al.
+
+----- triple_id: 04dda1fc37a2 -----
+TRIPLE:     (RT-DETR)  --achievesresult-->  (intersection over union (IoU) of 0.62)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: The summary of the evaluation metrics for the RT-DETR method using 4-fold cross-validation resulted in an intersection over union (IoU) of 0.62, and a mean center-point error of 6.52 pixels (Euclidean distance), with a horizontal component of 5.31 pixels.
+
+----- triple_id: 25bb2347783a -----
+TRIPLE:     (YOLOv8 pose estimation)  --produces-->  (17 key points)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: The result from YOLOv8 pose estimation contains 17 key points, as shown in Fig 4.
+
+----- triple_id: 88d866290e34 -----
+TRIPLE:     (Convolutional Neural Networks (CNNs))  --designedfor-->  (image classification and recognition)
+PREDICATE DEFINITION: Model → ResearchTask  |  Associates a model with the research task it was specifically designed or optimised to solve, such as a transformer model designed for machine translation or a CNN designed for image classification
+SOURCE SENTENCE: Specifically, Convolutional Neural Networks (CNNs) are developed for image classification and recognition , and it is also applied to VMMR to enhance performance [1], [2], [3], [4], [5], [6].

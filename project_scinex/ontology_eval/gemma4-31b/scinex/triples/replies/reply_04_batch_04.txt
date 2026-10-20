@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "5a970b5340a3", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "same failure as 16183ea6eb3c: 'Initial exploration' is a phase label, not a ResearchDomain, and MLP is a Model, not a ResearchTask"},
+  {"triple_id": "7446387bc384", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "a TECHNIQUE in the TrainingDataset slot - 'trained USING byte-pair encoding' describes the method, not the corpus"},
+  {"triple_id": "980021931f16", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "⚠ SAMPLING ARTIFACT: this triple_id already appeared in batch 02 with a DIFFERENT source sentence. triple_id hashes only (slug, subject, predicate, object), so one id can be drawn twice from two sentences - it deduplicates on collect, shrinking the effective n below 40"},
+  {"triple_id": "9833adb4ef33", "C1": "INCORRECT", "C3": "TOO_NARROW", "C4": "INCORRECT", "note": "propositional clause as object, and configures is inverted; identical to the CEO verdict for this id"},
+  {"triple_id": "ad088b12514c", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "THIRD extractedFrom range violation in this study - OpenStreetMap is a data source, and the range is AcademicPaper. The English reading ('prepared from') fits perfectly, which is exactly why this relation keeps being misused"},
+  {"triple_id": "4af2abe28984", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "51e66536b6d3", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "PARTIAL", "note": "⭐ THE QUALIFIER-STRIPPING MECHANISM, CAUGHT AT TRIPLE LEVEL: the sentence says PCF is best 'among all STAND-ALONE scoring functions' and the object keeps only 'best AUC'. This is precisely what produces the conflicting-superlative contradictions scored under C6"},
+  {"triple_id": "2a8ade9a32b7", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "b161c65c6b27", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "the benchmark is explicit, but comparesAgainst requires named Models on both sides and 'proposed model' names nothing"},
+  {"triple_id": "46b4cb789e53", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "captures the three-component LPII decomposition that the CEO run missed entirely from this paper"}
+]}

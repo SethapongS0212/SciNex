@@ -1,0 +1,76 @@
+# ─── SECRETS — never commit ──────────────────────────────────────────────────
+# .env holds live SEMANTIC_SCHOLAR / GROQ / GEMINI / OPENROUTER keys.
+# citation/apikey.env is a SECOND credential file — found only by an explicit
+# pre-commit scan, not by the obvious `.env` pattern. Both are excluded by name
+# AND by the catch-all patterns below.
+.env
+.env.*
+!.env.example
+**/*.env
+**/apikey*
+*.key
+*secret*
+*credential*
+
+# ─── COPYRIGHTED PAPER PDFs — do not redistribute ───────────────────────────
+# The corpus is 20 published papers; 10 are paywalled (IEEE/Springer/Elsevier/ACM).
+# papers/manifest.csv carries the DOIs and access status so anyone can obtain them
+# legitimately. fetch_corpus.sh downloads the open-access subset.
+*.pdf
+papers/*.pdf
+bulk-download/
+
+# ─── Large regenerable artifacts ────────────────────────────────────────────
+# prompts.jsonl regenerates from the parsed HTML; graphml regenerates from triples.json.
+output/*/kg/*/*/prompts.jsonl
+output/*/kg/*/*/*.graphml
+output/**/*.graphml
+output/*/no-llm/
+output/*/fast/
+output/acl/
+output/global_kg/
+summary/
+
+# ─── Finetuning / Q&A eval (Session 32) ─────────────────────────────────────
+# These carry FULL paragraphs of the (partly paywalled) papers, like prompts.jsonl
+# above, or adapter weights. Keep split.json / manifest.json / *_papers.txt /
+# run_manifest.json / report.json tracked — they are what makes a run reproducible.
+ft_data/*/train.jsonl
+ft_data/*/dev.jsonl
+ft_data/*/parts/
+ft_runs/*/adapter/
+ft_runs/*/checkpoints/
+ft_runs/*.cmd
+qa_eval/*/questions.jsonl
+qa_eval/*/qgen_raw.jsonl
+qa_eval/*/rejected.jsonl
+# Pipeline step markers are machine-local: a fresh clone carrying base_gen/train .done
+# files would make run_ft_pipeline.py SKIP those steps on the new machine.
+ft_runs/_pipeline_*/*.done
+
+# ─── C2/C5 judging bundles print WHOLE PARAGRAPHS of the papers (Session 34) ─
+# The verdicts.csv / index.csv / replies next to them are kept; only the inputs are
+# excluded (regenerable with `ontology_eval.py paragraphs`, and in the private bundle).
+ontology_eval/*/*/paragraphs/*_batch_*.txt
+
+# ─── Session scratch ────────────────────────────────────────────────────────
+ontology_eval_backup_*/
+verdict_backup_*/
+before_filter.json
+ceo_before.json
+*.log
+chat_upload/
+judge_upload/
+
+# ─── Python ─────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# stray archives
+*.zip
+
+# stale session backups
+output_backup_*/
+triples_open/

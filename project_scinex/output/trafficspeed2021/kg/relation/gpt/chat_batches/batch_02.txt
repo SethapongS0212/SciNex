@@ -1,0 +1,32 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 3 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: STONES IN NEXT N MINUTES
+
+Text:
+As we stated in the beginning of the paper, this behavior is similar to the prediction of time-series data for stock prices. As we found, there are many km stones have these behaviors and their speeds of some periods can be predicted with satisfying performance. Furthermore, these associations might be changed depended on the states of data, so the models of each predictions can be updated continuously with the updated datasets. A closer look at the result can be interpreted that many km stones' speed can be predicted in next 5 to 20 minutes using the current speeds at neighbor km stones. The accuracy value provides an acceptable result for using in an application; however, the accuracy has chance to improve. As we suspected, some km stones have a good behavior in terms of linear associations with other neighbors, but not all. Since this study places important to the linear equation, any models being satisfied the linear regression are reserved to use for the speed prediction under possible conditions of times and places. Nevertheless, for other models that are not satisfying linear associations, we will further analyze and find some proper techniques to solves. As we learn, the future work for enhancing this research might be some non-linear regressors such as multinomial regression, exponential smoothing, support vector machine regression, long-short term memory (LSTM) networks, etc. [8], in order to improve the accuracy of overall prediction models.
+
+----- para_id: 13 -----
+Section: STONES IN NEXT N MINUTES
+
+Text:
+This paper demonstrates an approach to the prediction of speed at km stones using spatial and temporal aspects. Our work is one important task of building a model for travel time prediction in Thailand . This study makes prediction models based on the linear regression technique by the view of using speeds of each km stone as time series data. The experiment has done by four mains steps. First, GPS transaction and km stones information are mapped into time series data of speeds at each km stone. Second, more information of any date times is extracted to be hour durations and weekday groups. Third, the time series dataset is sliced into chunks of data in the same hour duration, and the same weekday group. Then, the Pearson correlation among all milestones with lag of 5, 10, 15, and 20 minutes are computed, and the dependency networks among km stones are constructed by selecting any pairs of km stones having high correlation and support. Last, in the fourth step, linear models of all target km stones under the spatial- temporal conditions were built. The overall accuracy is 9.23 in terms of RMSE processed by 5-fold cross-validation, and it better than the regression model without spatial-temporal aspects about 30.14%. It can be viewed that our proposed method can be applied in an application for monitoring traffic status and becomes a pathway to be a model for travel time prediction. However, not all km stones satisfy the linear behavior.
+
+----- para_id: 14 -----
+Section: STONES IN NEXT N MINUTES
+
+Text:
+Thus, in the next study, the association patterns of other km stones will be deeply investigated and some non- linear regressors will be applied to improve the performance of the prediction models. Prakash, "Role of big data and analytics in smart [2] A. Singh, "Survey of stock market prediction [3] R. Te Braak, "Temporal pattern matching for the [4] X. Liu, "Spatial and temporal dependence in house price prediction," [5] D. Singh, "Stock market [6] H. Nordin, "Regression techniques for the prediction [8] J. Hamilton, Time series analysis, Princeton university press, 2020. cities," International Journal of Science and Research (IJSR), vol. using machine learning approach," 2017 International conference of Electronics, Communication and Aerospace Technology (ICECA), vol. prediction of stock prices," in Proceedings of the 2nd International Workshop on Integrating Artificial Intelligence and Data Mining , Australian Computer Society, 2007, pp. The Journal of Real Estate Finance and Economics, vol. predication using a linear regression," in 2017 international conference of electronics, communication and aerospace technology (ICECA), IEEE, 3017, pp. of stock price trend," in 2012 International Conference on Statistics in Science, Business and Engineering (ICSSBE), IEEE, 2012, pp.

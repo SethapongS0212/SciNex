@@ -1,0 +1,86 @@
+You are continuing a structured extraction task. Apply the SYSTEM RULES exactly
+as given; they were supplied at the start of this conversation and still apply.
+
+Below are 12 numbered paragraphs. Treat EACH paragraph independently — do not carry facts
+from one paragraph into another, and do not merge them.
+
+Return ONE JSON object, no markdown fences, no commentary, in exactly this shape:
+
+{"results": [
+  {"para_id": <the id shown>, "triples": [ ... same triple objects as the SYSTEM RULES ... ]},
+  ...
+]}
+
+Include every para_id below, even those whose triples list is empty.
+
+----- para_id: 12 -----
+Section: Oversampling
+
+Text:
+While capable of handling both regression and classification tasks, SVM particu larly shines in classification scenarios. Originating in the 1990 s, SVM quickly garnered widespread acclaim and continues to be a preferred choice due to its high performance and minimal tuning requirements for optimal results. These techniques collectively showcase the potential of advanced technologies and machine learning algorithms to enhance various aspects of data analysis, model performance, and decision-making processes, as demonstrated in Fig.
+
+----- para_id: 13 -----
+Section: Methods
+
+Text:
+This study was approved by the Siriraj Institutional Review Board, Faculty of Medicine Siriraj Hospital, Mahidol University Panel 3 . Written informed consent was obtained from all participants and/or their legal guardians for participation in the study and for the publication of any potentially identifiable images or information in an open-access journal. All procedures were conducted in accordance with the Declaration of Helsinki. Images and demographic data were securely stored in password-protected files, accessible only to the project leader and authorized researchers. Personal identifiers (e.g., names, hospital numbers) were excluded and replaced with anonymized codes. A note documenting participation in the AI-based Eye Disease Screening Project was added to each subject's medical records. Between January 2023 and June 2024, 150 participants were recruited from a tertiary hospital, comprising 96 individuals with horizontal strabismus (54 exotropia , 42 esotropia ) and 54 controls with normal ocular alignment . Inclusion for the strabismus group required a confirmed diagnosis with a deviation angle of ≥ 10 prism diopters. Participants of all ages were eligible for both the strabismus and control groups , with the latter confirmed to have no ocular misalignment through comprehensive examination.
+
+----- para_id: 14 -----
+Section: Methods
+
+Text:
+Exclusion criteria consisted of inability to cooperate with clinical examination and image acquisition, coexisting ocular surface pathologies (including pterygium and pinguecula), and any congenital craniofacial anomalies. A single researcher performed the eye landmark annotation using a custom-developed desktop application designed to ensure consistency. Image patches centered on each landmark were then cropped with a 10-pixel margin for training. Subsequently, a two-stage analysis pipeline was implemented: first , the RT-DETR deep learning algorithm was employed to automate landmark localization; second, seven machine learning classifiers were evaluated for strabismus detection . These classifiers utilized 30 predefined geometric ratios derived from the localized landmark coordinates as input features for binary classification.
+
+----- para_id: 15 -----
+Section: Data acquisition
+
+Text:
+Image acquisition and preparation As outlined in Fig. 2(A), the study commenced with comprehensive eye examinations conducted by ophthalmologists to screen for strabismus ; volunteers with co-existing ocular diseases that could interfere with the assessment were excluded. A pediatric ophthalmologist evaluated ocular alignment at both distance and near fixation using the alternate prism cover test. Horizontal strabismus was defined as either an outward ( exotropia ) or inward ( esotropia ) deviation of ≥ 10 prism diopters (PD) at distance fixation. Subsequently, three gaze images were captured for each participant using an iPhone 11 Pro, adhering to the following protocol: Scientific Reports | (2026) 16:18278 4 | https://doi.org/10.1038/s41598-026-48893- 1) Each photograph was taken at an approximate distance of one arm's length (about 60–70 cm) from the pa tient's face, using the standard photo mode with the flash enabled. Three images were taken from different angles: left gaze, straight gaze, and right gaze, as visualized in Fig. In the straight gaze photograph, subjects were instructed to look into the distance, not toward the camera, by fixating on a dis tant target located at least 6 m away.
+
+----- para_id: 16 -----
+Section: Data acquisition
+
+Text:
+Scientific Reports | (2026) 16:18278 5 | https://doi.org/10.1038/s41598-026-48893-6 Scientific Reports | (2026) 16:18278 6 | https://doi.org/10.1038/s41598-026-48893-6 2) The minimum resolution was 300 dpi, and image dimensions were at least 720 × 720 pixels (height x width), with a maximum size of 1200 pixels x 1200 pixels (height x width). 3) Volunteers were instructed not to wear glasses and to display their entire head from the top to below the chin. All images were captured against a uniform white background to produce the best results. 4) Participants were seated to ensure uniform facial illumination and to minimize shadows on the face or background. Participants refrained from hats or head coverings that obscure the hair, unless required for religious reasons and worn daily. During photography, subjects were instructed to fixate on a distant target to minimize convergence, thereby reducing the risk of misinterpretation of strabismic deviation in the images . 5) A photograph was taken in the outpatient ophthalmology examination room at Siriraj Hospital. The light intensity was measured using a SEKONIC Flashmate L-308X light meter, with all lights in the room turned on, in conjunction with natural light from outside, resulting in a total illumination of 3,600 lx. 6) The captured images were pre-processed using OpenCV21 to resize them to 300 dpi and 720 × 720 pixels. Each facial image was cropped around the eye region for further analysis.
+
+----- para_id: 17 -----
+Section: Data acquisition
+
+Text:
+Following this protocol, a total of 450 facial photographs were obtained for further processing. Each of the 150 participants contributed three images —representing primary (straight), left, and right gaze positions—as illustrated in Fig.
+
+----- para_id: 18 -----
+Section: Landmark annotation
+
+Text:
+Landmark annotation and data formatting As illustrated in Fig. 2 (B), nine ocular landmarks per image were manually annotated using a custom OpenCV interface21, with the annotator blinded to strabismus status. 3(B)) were numbered in a clockwise spiral from the outer margins to the central light reflex: medial canthus (P1), superonasal cornea (P2), superotemporal cornea (P3), temporal canthus (P4), inferotemporal cornea (P5), inferonasal cornea (P6), medial limbus (P7), temporal limbus (P8), and central corneal light reflex (P9). Annotations were exported in YOLO format for object detection training, mapped onto the image in Fig. Each image included attributes such as participant and image identifiers, gaze direction, eye side, confidence scores, landmark indices, and Cartesian coordinates (x, y). For example, landmark P9 of the left eye in a middle-gaze image ('img0001') was recorded at coordinates (492, 419) (Fig.
+
+----- para_id: 19 -----
+Section: Data partitioning and experimental setup
+
+Text:
+Participants who met the exclusion criteria were excluded, resulting in a final cohort of 150 participants (54 exotropia , 42 esotropia and 54 orthotropia). This resulted in 450 raw facial images (three per participant), 900 eye crops (two per image ), and a total of 8,100 landmark instances. For eye landmark detection , a deep learning model was evaluated using 4-fold cross-validation. Although nine landmark types were defined, 18 classes were implemented to distinguish between left and right eyes. As the dataset size was not evenly divisible by four, each fold contained 37–38 participants. In each iteration, three folds were used for model development (80% training, 20% validation), and one-fold was reserved for testing. This resulted in approximate splits of 90:23:37 or 90:22:38 (train: validation: test). In a representative fold: training 90 participants (270 images ; 4,860 landmarks), validation 23 participants (69 images ; 1,242 landmarks), and test 37 participants (111 images ; 1,998 landmarks). For strabismus classification, seven machine learning models were trained using 30 features derived from landmark-based geometric ratios. A 4-fold cross-validation strategy was applied at the participant level, with development and test splits of either 113:37 or 112:38. In a representative fold: training 113 participants (72 strabismus , 41 orthotropia) augmented to 400 samples via SMOTE, and test 37 participants (24 strabismus , 13 orthotropia).
+
+----- para_id: 20 -----
+Section: Eye landmark detection
+
+Text:
+Deep learning model: RT-DETR for landmark detection The Real-Time Detection Transformer (RT-DETR) model was trained for ocular landmark localization, as illustrated in Fig. The model was implemented using PyTorch v2.0.1 with the following configuration. 2) Optimizer: AdamW (β1 = 0.9, β2 = 0.999, weight decay = 0.05). 3) Learning Rate: 1e-4 with cosine annealing scheduler. 6) Loss Function: Focal loss + GIoU + L1 loss. 7) Image Flipping: disabled (horizontal flipping off). 8) Hardware: NVIDIA Tesla T4 GPU (16 GB). The decoder in RT-DETR used IoU-aware query selection and iterative refinement to produce final bounding boxes and confidence scores for each predicted landmark. Moreover, the flipping parameter was set to zero in order to prevent inadvertent image flipping and ensure the integrity of the eye images throughout the training process. In this step, the backbone extracted multi- scale features from the input images . These were then processed by a hybrid encoder, which used intra- scale interaction and cross- scale fusion to combine them into a refined sequence. Then, an IoU-aware query selection mechanism identified the most precise features to serve as initial Scientific Reports | (2026) 16:18278 7 | https://doi.org/10.1038/s41598-026-48893-6 object queries for the decoder . After that, the decoder refined the object queries to generate candidate bounding boxes and confidence scores.
+
+----- para_id: 21 -----
+Section: Training process
+
+Text:
+In the eye landmark detection phase using RT-DETR, a 4-fold cross-validation approach was employed to separate the dataset according to participants. In each of the 4 iterations, each fold (n = 37–38) was reserved as an independent test set (unseen data). The remaining three folds (n = 112–113) were used for model development, further internal split into a training set (80%) and a validation set (20%) to optimize the RT-DETR model. The eye landmark coordinates predicted from the test set of each fold were saved for use in the next step.
+
+----- para_id: 22 -----
+Section: Eye landmark feature engineering
+
+Text:
+In the step of feature engineering, as performed in Fig. 2 (D), five geometric ratios (RT1–RT5) were computed using selected landmarks in the horizontal line. According to the clinical expertise of the ophthalmologists in our research team, the pupil and corneal light reflex are approximately centered in orthotropic eyes during primary gaze, with relatively balanced visible scleral exposure on the nasal and temporal sides. Horizontal strabismus changes this relationship by shifting the corneal light reflex and altering the relative scleral show across gaze positions. On that basis, the selected landmarks were intended to capture three complementary geometric domains: overall eye width for normalization, nasal and temporal exposed scleral segments, and the horizontal position of the corneal light reflex relative to the limbal boundaries. We therefore used horizontal distances between selected landmarks as key features, specifically the medial canthus (P1), temporal canthus (P4), medial limbus (P7), temporal limbus (P8), and central corneal light reflex (P9). These points created geometric ratios (RT1–RT5) as expressed in Fig. All distances were normalized to eye width. • EW: Eye width was defined as the distance between the medial canthus (P1) and temporal canthus (P4), as expressed by the following equation. • RT1: The medial scleral area is represented by the distance ratio between medial canthus (P1) and medial limbus (P7) normalized by the eye width.
+
+----- para_id: 23 -----
+Section: Eye landmark feature engineering
+
+Text:
+• RT2: The measure between the medial limbus (P7) and the central corneal light reflex (P9) to show the hori zontal position of the light reflex in the iris. • RT3: Similar to RT2, but the RT3 measures the lateral side of the eye. It is the distance between temporal limbus (P8) and the central corneal light reflex (P9). • RT4: RT4 follows the same concepts as RT1 but focuses on the outer eye region instead. In this case, the temporal canthus (P4) and the temporal limbus (P8) were used. • RT5: This equation calculates the width of the iris, so the distance between the medial limbus (P7) and the temporal limbus (P8) is used to normalize by EW, as the following formula. Based on prior ophthalmic knowledge within the research team, orthotropic eyes were expected to show relatively balanced nasal-versus- temporal relationships in primary gaze and predictable directional changes during lateral gaze. Accordingly, RT1 and RT4 were designed to reflect nasal and temporal scleral exposure, RT2 and RT3 to reflect the position of the corneal light reflex within the horizontal corneal span, and RT5 to reflect visible iris width as an internal reference during gaze change. In the primary position, RT1–RT4 were expected to remain relatively symmetric, particularly across the RT1:RT4 and RT2:RT3 pairs. During lateral gaze, directional shifts in these parameters were expected according to the side of fixation, with reciprocal changes between nasal and temporal measurements in the two eyes.

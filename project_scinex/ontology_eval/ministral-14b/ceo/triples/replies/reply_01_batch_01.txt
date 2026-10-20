@@ -1,0 +1,12 @@
+{"verdicts": [
+  {"triple_id": "05fc112fbf50", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "direction reversed: the sentence says the sensors are USED TO detect pavement failure, so the detection consumes the sensor, not the reverse"},
+  {"triple_id": "4553fa221881", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "INCORRECT", "note": "violates the predicate's explicit STRICT clause - 'corneal light reflection detection' is a ResearchTask, and tasks cannot address other contexts"},
+  {"triple_id": "44ed51829e35", "C1": "CORRECT", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "composition is implied by the processing order rather than stated; 'backbone' is also a generic architectural slot every model has"},
+  {"triple_id": "1ae4e250e626", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT", "note": "correctly picks one model's figure out of a three-way list in a single sentence"},
+  {"triple_id": "6cdbdfec6e35", "C1": "INCORRECT", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "near-tautology: the object is another metric NAME, not an experimental result, and it restates the subject ('F1 score' / 'macro-averaged F1 score')"},
+  {"triple_id": "a1ca1707a639", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "28e536249411", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "5284bd5aef4f", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "35f415ce093d", "C1": "INCORRECT", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "self-reference: the object is the subject plus the word 'technologies'; no containment is stated, and face verification is a task, not the broad domain encompasses requires"},
+  {"triple_id": "404910eae4b6", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "PARTIAL", "note": "explicitly stated, but trainedOn requires a NAMED corpus and 'a large Thai language dataset' names none"}
+]}

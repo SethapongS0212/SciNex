@@ -1,0 +1,17 @@
+{"verdicts": [
+  {"para_key": "osmotic2026#18", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["activity coefficients", "alkyl ammonium electrolytes", "quaternary ammonium salts (Quats)", "SMILES notation", "1,654 data points / 52 Quats", "14 descriptors", "training set / test set (70/30)", "seven selected algorithms"],
+   "missed_relations": ["dataset -> splitFrom -> training set (70%) and test set (30%)", "dataset -> comprises -> 14 structural descriptors", "model -> trainedOn -> training set", "models -> evaluatedOn -> test set", "Quats -> encodedUsing -> SMILES notation"],
+   "note": "this is the paper's whole methodology in one paragraph - dataset size, encoding, descriptor count, split ratio, algorithm count, winning algorithm - and exactly one triple came out of it"},
+  {"para_key": "microwave2018#7", "C2": "POOR", "C5": "POOR",
+   "missed_concepts": ["accuracy index", "True/False Positive/Negative", "cross-validation", "sliding windows", "intercept alpha and coefficients beta", "motion sensor"],
+   "missed_relations": ["each classifier model -> evaluatedOn/evaluates -> accuracy index", "accuracy index -> comprises -> TP, TN, FP, FN", "fitted logistic regression parameters -> deployedOn -> a controller"],
+   "note": "the closing third is genuine narrative motivation and correctly declined, but the evaluation setup - the metric, its components, and the cross-validation protocol - is all stated and all missed"},
+  {"para_key": "videoseg2025#12", "C2": "PARTIAL", "C5": "PARTIAL",
+   "missed_concepts": ["Dice score", "IoU score", "video segmentation", "5.5x speed factor", "detection precision"],
+   "missed_relations": ["SAM2 -> achieves -> superior Dice and IoU scores", "YOLOv8 -> achieves -> 5.5x faster processing than SAM2 (the quantity)", "both models -> addresses -> video segmentation"],
+   "note": "the comparison and both efficiency claims are captured, but the two metrics that make SAM2 the better model are absent, so the graph records only one side of a two-sided trade-off; also emits the comparison twice, once in each direction"},
+  {"para_key": "tripplanner2020#22", "C2": "COMPLETE", "C5": "COMPLETE",
+   "missed_concepts": [], "missed_relations": [],
+   "note": "pure future-work hedging ('should be considered', 'should be studied') with no asserted relation - empty is correct. Worth noting this model did NOT decline the same way on a future-work sentence in eyelandmark2024 (triple a6002e804476), so the behaviour is inconsistent rather than principled."}
+]}

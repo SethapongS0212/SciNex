@@ -1,0 +1,52 @@
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: 175bccadebc0 -----
+TRIPLE:     (U-GMo)  --addresses-->  (graduation ceremony video processing)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: U-GMo provides 2 parts depicted in Fig 1. The main part is the Artificial Intelligence (AI) part that process an input video into individual clips using the techniques of movement tracking, graduation identification, and video segment extraction.
+
+----- triple_id: ed9054724daa -----
+TRIPLE:     (Genetic Algorithm)  --comprises-->  (Population)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: The application of the Genetic Algorithm to generate chemicals with desirable properties, as illustrated in Figure 3, comprises five steps: Initialization, Population, Selection, Crossover, and Mutation.
+
+----- triple_id: 2499cd111746 -----
+TRIPLE:     (CNN)  --comparesagainst-->  (VGG16)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: This model is smaller than the state -of-the-art CNN models tested, which achieved over 90% accuracy (VGG16, InceptionV3, Yolo11m-cls, and ResNet50).
+
+----- triple_id: 3232901e7e37 -----
+TRIPLE:     (DeepSORT)  --evaluatedon-->  (four different surveillance datasets)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: For the DeepSORT algorithm, the MOTA scores were recorded as (1.0, 1.0, 0.96, 0.90) across four different surveillance datasets.
+
+----- triple_id: c6cd70782029 -----
+TRIPLE:     (ROUGE)  --evaluates-->  (discrepancies from the baseline outputs)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: The trials demonstrate that heightened corruption results in a more significant decline in model performance, as assessed by BERT and ROUGE scores.
+
+----- triple_id: 464ebcfde2f4 -----
+TRIPLE:     (RNN)  --trainedon-->  (observation steps)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: For the RNN, these parameters include data structuring elements (such as observation steps), model architecture (covering learning rate, the number of neurons, and activation functions in both the first and second layers), and model training configurations (incorporating epochs and batch size).
+
+----- triple_id: 4ed914a01663 -----
+TRIPLE:     (OpenCV21)  --produces-->  (resized images)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: The captured images were pre-processed using OpenCV21 to resize them to 300 dpi and 720 × 720 pixels.
+
+----- triple_id: 45568b614f18 -----
+TRIPLE:     (custom-developed desktop application)  --designedfor-->  (ensure consistency)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: A single researcher performed the eye landmark annotation using a custom-developed desktop application designed to ensure consistency.
+
+----- triple_id: dcab7bb13ac6 -----
+TRIPLE:     (LODAC)  --affiliatedwith-->  (National Museum of Nature and Science)
+PREDICATE DEFINITION: Agent → Organisation  |  use for institutional affiliation
+SOURCE SENTENCE: Linked Open Data for ACademia (LODAC) together with National Museum of Nature and Science have started collecting linked data of interspecies interaction and making link prediction for future observations.
+
+----- triple_id: b24ffc924b78 -----
+TRIPLE:     (Chorbngam et al. (2021))  --publishedin-->  (work)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  use for journal/conference names only
+SOURCE SENTENCE: In this study, the dataset from the work of Chorbngam et al. (2021) was utilised, comprising boiling point data for 560 hydrocarbons containing 1-12 carbon atoms.

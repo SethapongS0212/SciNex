@@ -1,0 +1,22 @@
+{"verdicts": [
+  {"paper": "llamacorrupt2025", "C6": "CONTRADICTORY",
+   "issues": ["CONTRADICTION: (Llama-3.2-1B-Instruct) --evaluatedOn--> (GLUE-QNLI dataset) AND (Llama-3.2-1B-Instruct) --trainedOn--> (GLUE-QNLI dataset) - the same dataset as both training and evaluation data. The paper only evaluates on GLUE-QNLI; the graph asserts a data-leakage setup the paper never describes",
+              "CONFLICTING LEVELS for BERT: used as a MODEL in (BERT) addresses (quality of language understanding) and as a METRIC in (BERT) evaluates (discrepancies from the baseline outputs). The paper means BERTScore in the second case",
+              "EXACT DUPLICATES: (Llama-3.2-1B-Instruct) uses (Transformer) and (Llama-3.2-1B-Instruct) trainedOn (Hugging Face) are each asserted twice",
+              "(Llama-3.2-1B-Instruct) --trainedOn--> (Hugging Face): a model-hosting platform in the TrainingDataset slot",
+              "surface splits: (Large Language Model) / (Large Language Model (LLM)); (feed-forward network) / (feed-forward components); (Down) / (Down matrices)",
+              "(performance) --evaluates--> (BERT's F1 score) and (ROUGE metrics): role confusion, the metric sits in the object slot"],
+   "note": "the self-attention decomposition (Query/Key/Value) is clean and correctly typed, but the train/eval contradiction on one dataset is decisive"},
+  {"paper": "traveltime2022", "C6": "CONTRADICTORY",
+   "issues": ["MUTUALLY EXCLUSIVE RELATIONS ON ONE PAIR: (SA-LSTM) --comprises--> (LSTM) AND (SA-LSTM) --comparesAgainst--> (LSTM). SA-LSTM cannot both contain LSTM and be benchmarked against it as a peer",
+              "SAME PAIR UNDER INCOMPATIBLE PREDICATES: (SA-LSTM) uses (Butterworth low-pass filter) AND (SA-LSTM) --evaluatedOn--> (Butterworth low-pass filter) - a filter is not a Dataset",
+              "SYMMETRIC DUPLICATION: every comparison is asserted in both directions - (ARIMA) comparesAgainst (LSTM) and (LSTM) comparesAgainst (ARIMA), same for SVR and ConvLSTM",
+              "ONE FACT IN THREE RENDERINGS: (LSTM) achieves (MAE of 27.12), (error of +/-27.12 min in every 100 km), (MAE of 27.12 min per 100 km)",
+              "(LSTM) --evaluatedOn--> (road segments): a geographic unit in the Dataset slot",
+              "(self- attention) and (Butterworth low-pass filter) placed in comparesAgainst, which requires named Models on both sides",
+              "surface splits: (SA-LSTM) / (SA-LSTM with the Butterworth low-pass filter); (Butterworth low-pass filter) / (Butterworth low-pass filter method)"],
+   "note": "the comprises-vs-comparesAgainst conflict is the clearest single defect: the graph asserts the same model is both a component and a rival of the same baseline"},
+  {"paper": "microwave2018", "C6": "MINOR_ISSUES",
+   "issues": ["(logistic regression) --uses--> (statistical technique): hyponymy encoded as consumption - logistic regression IS a statistical technique, it does not use one"],
+   "note": "ONLY ONE TRIPLE, so no contradiction is structurally possible - this is close to the vacuous pass that C6 gives an empty graph. Withheld CONSISTENT because the single triple is itself loosely typed. Read alongside C2/C5 for this paper, not on its own."}
+]}

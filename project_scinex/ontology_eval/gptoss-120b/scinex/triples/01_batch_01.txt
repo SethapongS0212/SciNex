@@ -1,0 +1,90 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 10 triples on C1, C3, C4.
+
+----- triple_id: b7206d045d79 -----
+TRIPLE:     (SMOT-EEN)  --achievesresult-->  (accuracy of 0.95)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: Our prediction approach with the replacing SMOTE with SMOT-EEN resulted in an accuracy of 0.95, which is close to the accuracy of the original experiment using SMOTE.
+
+----- triple_id: 1b56280a2ba3 -----
+TRIPLE:     (YOLOv8)  --comparesagainst-->  (SAM2)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: The findings underscore the superior efficiency of YOLOv8, which surpasses SAM2 in terms of both computational velocity and memory utilization.
+
+----- triple_id: 7c0c2a9dbbe2 -----
+TRIPLE:     (Experiment Method)  --comprises-->  (test data selection)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: The Experiment Method section consists of four key components: model selection, test data selection, evaluation methodology, and experimental procedures.
+
+----- triple_id: 24ead29ef33f -----
+TRIPLE:     (PCF)  --uses-->  (collaborative filtering)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Last, the predictive score of a missing link (ai,bi) using collaborative filtering , PCF(ai,bi), is 𝑃!"(𝑎𝑖, 𝑏𝑖) = 𝑤(𝑎𝑖, 𝑎𝑗)"!
+
+----- triple_id: 64bdc3bdf683 -----
+TRIPLE:     (kick activation method)  --addresses-->  (hand-free operation issue)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: A kick activation method is one of solutions for addressing a hand-free operation issue.
+
+----- triple_id: 93c024f3df1b -----
+TRIPLE:     (Convolutional Neural Networks (CNNs))  --designedfor-->  (image classification and recognition)
+PREDICATE DEFINITION: Model → ResearchTask  |  Associates a model with the research task it was specifically designed or optimised to solve, such as a transformer model designed for machine translation or a CNN designed for image classification
+SOURCE SENTENCE: Specifically, Convolutional Neural Networks (CNNs) are developed for image classification and recognition , and it is also applied to VMMR to enhance performance [1], [2], [3], [4], [5], [6].
+
+----- triple_id: 7e8c82ede0c7 -----
+TRIPLE:     (RT-DETR model)  --trainedon-->  (complete eye landmark dataset)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: The RT-DETR model was finalized by training on the complete eye landmark dataset.
+
+----- triple_id: c2d9389ac187 -----
+TRIPLE:     (training set)  --splitfrom-->  (ordered TTR dataset)
+PREDICATE DEFINITION: Dataset → Dataset  |  Records that a dataset partition was derived from a larger source dataset
+SOURCE SENTENCE: In this case, the ordered TTR dataset of each road was split into third sets: a training set (60%), a validation set (20%), and a test set (20%), as shown in Figure 7a.
+
+----- triple_id: f3b11c3abb16 -----
+TRIPLE:     (weighted averaging approach)  --produces-->  (final prediction)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: To derive the final prediction , we integrated the outputs from our Level-1 learners through a weighted averaging approach.
+
+----- triple_id: 358dcdc4d4de -----
+TRIPLE:     (IoU)  --evaluates-->  (0.612)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  Links an evaluation metric to the experimental result it quantitatively assesses
+SOURCE SENTENCE: In order to assess the model's accuracy and robustness, precision of 0.923, accuracy of 0.974 and IoU of 0.612 are evaluated.
