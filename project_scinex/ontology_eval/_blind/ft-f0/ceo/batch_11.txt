@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bf94700964b -----
+TRIPLE:     (Decision Trees)  --achieves-->  (macro-averaged F1 score of 89.79%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: In addition, the effectiveness of health assessment was achieved through Decision Trees with hyperparameter tuning, resulting in a macro- averaged F1 score of 89.79%.
+
+----- triple_id: bc44a7ad0d0 -----
+TRIPLE:     (Valente et al.)  --affiliatedwith-->  (University of California, San Francisco)
+PREDICATE DEFINITION: Agent → Organisation  |  use for institutional affiliation
+SOURCE SENTENCE: Valente et al.8 employed a cover-test–based automated diagnosis with digital video , reporting accuracy of 0.94, sensitivity of 0.97, and specificity = 0.73.
+
+----- triple_id: b505afacc02 -----
+TRIPLE:     (LTest)  --splitfrom-->  (LExist)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: 20% of LExist is split into LTest.
+
+----- triple_id: b92bdff2f13 -----
+TRIPLE:     (RT-DETR)  --evaluates-->  (mean center-point error of 6.52 pixels (Euclidean distance))
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: The summary of the evaluation metrics for the RT-DETR method using 4-fold cross-validation resulted in an intersection over union (IoU) of 0.62 and a mean center-point error of 6.52 pixels (Euclidean distance)
+
+----- triple_id: b4063319bca -----
+TRIPLE:     (DT)  --comparesagainst-->  (XGB)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: it can be observed that at higher values, DT, RF, and KNN demonstrate inferior performance compared to SVM, GP, or XGB.
+
+----- triple_id: b4194245a5e -----
+TRIPLE:     (BPEmb)  --uses-->  (BPE encoding)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: BPEmb uses BPE encoding which results in good enough subword segmentation without the need for tokens or linguistic analysis.
+
+----- triple_id: b5eb0f8842f -----
+TRIPLE:     (Random Forest)  --achieves-->  (sensitivity of 0.96)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Random Forest (RF) yielded the best overall performance: accuracy of 0.95, specificity of 0.94, sensitivity of 0.96, PPV (or precision) of 0.97, and NPV of 0.92.
+
+----- triple_id: b7d320e7e51 -----
+TRIPLE:     (PCF)  --comparesagainst-->  (PCS)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: P-Values of both PCF and PCS were lower than 0.05, whereas P-Value of PBC was higher than 0.05.
+
+----- triple_id: b2456a95526 -----
+TRIPLE:     (RT5)  --uses-->  (medial limbus (P7))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: RT5: This equation calculates the width of the iris, so the distance between the medial limbus (P7) and the temporal limbus (P8) is used to normalize by EW, as the following formula.
+
+----- triple_id: b7ace57eddd -----
+TRIPLE:     (Akbari et al.)  --publishedin-->  (Akbari et al.)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  use for journal/conference names only
+SOURCE SENTENCE: Akbari et al.40 predicted activity coefficients of alkyl ammonium Quats using the Extended UNIQUAC model.
+
+----- triple_id: b2075f8184f -----
+TRIPLE:     (cSysGuard)  --uses-->  (simple averaging)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In addition, we conducted an experiment that involves simple averaging in the third layer of cSysGuard.
+
+----- triple_id: b9da3925ac8 -----
+TRIPLE:     (IoU-aware query selection mechanism)  --uses-->  (num_queries)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The IoU-aware query selection mechanism uses a fixed number of num_queries = 300 and incorporates denoising with num_denoising = 100, label_noise_ratio = 0.5, and box_noise_scale = 1.0.
+
+----- triple_id: bf73a557700 -----
+TRIPLE:     (cSysGuard)  --produces-->  (averaged confusion matrix)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: It synthesized the outcomes from each iteration of cross-validation conducted with our sample data, offering a transparent and quantifiable measure of cSysGuard's predictive accuracy.
+
+----- triple_id: b668c8dc5ca -----
+TRIPLE:     (SMOTE-ENN)  --comparesagainst-->  (Edited Nearest Neighbors (SMOTE-ENN))
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: To mitigate the issue of noise amplification, we conducted analyses of the synthetic samples by comparing the results against Over-sampling using SMOTE and cleaning using Edited Nearest Neighbors (SMOTE-ENN)23, which is a variant of SMOTE reducing synthesis noise and borderline data.
+
+----- triple_id: b3bcd66b4f6 -----
+TRIPLE:     (intersection over union (IoU))  --evaluates-->  (0.62)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: The summary of the evaluation metrics for the RT-DETR method using 4-fold cross-validation resulted in an intersection over union (IoU) of 0.62, and a mean center-point error of 6.52 pixels (Euclidean distance), with a horizontal component of 5.31 pixels.
+
+----- triple_id: b6d28bafcf0 -----
+TRIPLE:     (Convolutional Neural Network (CNN))  --uses-->  (word embedding representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Gregorius Aria Neruda and Edi Winarko used a Convolutional Neural Network (CNN) for text classification, which involves transforming words in sentences into word embedding representations for feature extraction.
+
+----- triple_id: bb2bc2030a4 -----
+TRIPLE:     (SMOTE)  --addresses-->  (medical diagnoses)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The versatility of SMOTE makes it applicable across various domains, from fraud detection to medical diagnoses, where it significantly contributes to more equitable and accurate predictive modeling.
+
+----- triple_id: b02343fe749 -----
+TRIPLE:     (cSysGuard)  --addresses-->  (system performance metrics)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: To forecast performance metrics effectively, cSysGuard implements an advanced ensemble model using a stacking approach that integrates various predictors, such as the Level-0 and Level-1 models.
+
+----- triple_id: ba1ce295082 -----
+TRIPLE:     (LPII)  --addresses-->  (link prediction)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: This paper introduces LPII, a hybrid recommendation approach for link prediction.
+
+----- triple_id: bccd7de7f9b -----
+TRIPLE:     (Rule 9)  --addresses-->  (strabismus)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Furthermore, Rule 9 indicates that a wider iris width in primary gaze (MR_rt5 > 0.44), combined with reduced medial light reflex (ML_rt2 ≤ 0.28), is linked to strabismus , which may reflect restricted abduction.
+
+----- triple_id: b1e65b4eaaf -----
+TRIPLE:     (RF)  --comparesagainst-->  (SVM)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: it can be observed that at higher values, DT, RF, and KNN demonstrate inferior performance compared to SVM, GP, or XGB.
+
+----- triple_id: b9bfdd8a6b6 -----
+TRIPLE:     (Random Forest classifier)  --achieves-->  (0.92 negative predictive value)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The Random Forest classifier achieved an accuracy of 0.95, sensitivity of 0.96, specificity of 0.94, positive predictive value of 0.97, and negative predictive value of 0.92.
+
+----- triple_id: b1f8ce15baf -----
+TRIPLE:     (LPII)  --uses-->  (collaborative filtering)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Therefore, the contribution of our research is to introduce LPII, a hybrid approach that combines three concepts of collaborative filtering , community structure, and biological classification.
+
+----- triple_id: ba176a3b082 -----
+TRIPLE:     (Feedforward Neural Networks (FF))  --uses-->  (RMSE)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The PV is represented as a 3 × t matrix: where it consolidates the prediction errors, measured by RMSE, for Linear Regression (LR), Random Forest (RF), and Feedforward Neural Networks (FF) across t refinement iterations.
+
+----- triple_id: bbaf1a6f386 -----
+TRIPLE:     (cSysGuard)  --comparesagainst-->  (GRU)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: Each graph compares the performance of cSysGuard with commonly used models such as GRU, RNN, LSTM, ARIMA, and CNN.

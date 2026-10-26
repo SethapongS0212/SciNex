@@ -1,0 +1,463 @@
+{
+  "created": "2026-10-24",
+  "split_file": "ft_data\\split.json",
+  "folds": 4,
+  "split_seed": 13,
+  "eval_fold": 0,
+  "dev_fold": null,
+  "eval_papers": [
+    "csysguard2024",
+    "linkpred2015",
+    "osmotic2026",
+    "strabismus2026",
+    "textaug2023"
+  ],
+  "train_papers": [
+    "eyelandmark2024",
+    "gamlprop2025",
+    "llamacorrupt2025",
+    "microwave2018",
+    "oxidecrack2025",
+    "parkingyolo2023",
+    "pesticide2025",
+    "reststop2018",
+    "roadwaylight2018",
+    "trafficspeed2021",
+    "traveltime2022",
+    "tripplanner2020",
+    "ugmo2024",
+    "vehiclemake2025",
+    "videoseg2025"
+  ],
+  "dev_papers": [],
+  "teacher": "gptoss-120b",
+  "ontologies": [
+    "ceo",
+    "scinex"
+  ],
+  "consensus_models": [],
+  "consensus_min": null,
+  "system_prompt": "current",
+  "configures": "exclude",
+  "verdict_filter": "off",
+  "max_empty_frac": 0.3,
+  "counts": {
+    "extraction": 310,
+    "ontology": 700,
+    "vocabulary": 1966,
+    "dev_extraction": 0,
+    "empty_extraction_targets": 93
+  },
+  "files": {
+    "train.jsonl": "27599bfa326f6633d0abc11fbc3fea6b59f338ab98797cc362f8bf38fa128146"
+  },
+  "report": {
+    "extraction": {
+      "eyelandmark2024/ceo": {
+        "drops": {
+          "empty_content": 1
+        },
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\eyelandmark2024\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 15
+        },
+        "status": "ok",
+        "examples": 15
+      },
+      "gamlprop2025/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\gamlprop2025\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 23
+        },
+        "status": "ok",
+        "examples": 14
+      },
+      "llamacorrupt2025/ceo": {
+        "drops": {
+          "empty_content": 1
+        },
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\llamacorrupt2025\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 14
+        },
+        "status": "ok",
+        "examples": 18
+      },
+      "microwave2018/ceo": {
+        "drops": {
+          "empty_content": 1
+        },
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\microwave2018\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 12
+        },
+        "status": "ok",
+        "examples": 10
+      },
+      "oxidecrack2025/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\oxidecrack2025\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 40
+        },
+        "status": "ok",
+        "examples": 32
+      },
+      "parkingyolo2023/ceo": {
+        "drops": {
+          "unparseable": 1
+        },
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\parkingyolo2023\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 41
+        },
+        "status": "ok",
+        "examples": 25
+      },
+      "pesticide2025/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\pesticide2025\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 0.9333333333333333,
+          "n_sentences": 30
+        },
+        "status": "ok",
+        "examples": 40
+      },
+      "reststop2018/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\reststop2018\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 12
+        },
+        "status": "ok",
+        "examples": 22
+      },
+      "roadwaylight2018/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\roadwaylight2018\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 16
+        },
+        "status": "ok",
+        "examples": 31
+      },
+      "trafficspeed2021/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\trafficspeed2021\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 7
+        },
+        "status": "ok",
+        "examples": 15
+      },
+      "traveltime2022/ceo": {
+        "drops": {
+          "empty_content": 1
+        },
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\traveltime2022\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 0.9879518072289156,
+          "n_sentences": 83
+        },
+        "status": "ok",
+        "examples": 44
+      },
+      "tripplanner2020/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\tripplanner2020\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 0.8947368421052632,
+          "n_sentences": 19
+        },
+        "status": "misaligned (0.89 < 0.9)"
+      },
+      "ugmo2024/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\ugmo2024\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 19
+        },
+        "status": "ok",
+        "examples": 11
+      },
+      "vehiclemake2025/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\vehiclemake2025\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 0.8902439024390244,
+          "n_sentences": 82
+        },
+        "status": "misaligned (0.89 < 0.9)"
+      },
+      "videoseg2025/ceo": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\videoseg2025\\kg\\relation\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 25
+        },
+        "status": "ok",
+        "examples": 15
+      },
+      "eyelandmark2024/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\eyelandmark2024\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 8
+        },
+        "status": "ok",
+        "examples": 16
+      },
+      "gamlprop2025/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\gamlprop2025\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 23
+        },
+        "status": "ok",
+        "examples": 14
+      },
+      "llamacorrupt2025/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\llamacorrupt2025\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 9
+        },
+        "status": "ok",
+        "examples": 19
+      },
+      "microwave2018/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\microwave2018\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 10
+        },
+        "status": "ok",
+        "examples": 11
+      },
+      "oxidecrack2025/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\oxidecrack2025\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 17
+        },
+        "status": "ok",
+        "examples": 32
+      },
+      "parkingyolo2023/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\parkingyolo2023\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 16
+        },
+        "status": "ok",
+        "examples": 26
+      },
+      "pesticide2025/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\pesticide2025\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 24
+        },
+        "status": "ok",
+        "examples": 40
+      },
+      "reststop2018/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\reststop2018\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 6
+        },
+        "status": "ok",
+        "examples": 22
+      },
+      "roadwaylight2018/scinex": {
+        "drops": {
+          "failed_call": 2
+        },
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\roadwaylight2018\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 1
+        },
+        "status": "ok",
+        "examples": 29
+      },
+      "trafficspeed2021/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\trafficspeed2021\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 4
+        },
+        "status": "ok",
+        "examples": 15
+      },
+      "traveltime2022/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\traveltime2022\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 0.9743589743589743,
+          "n_sentences": 39
+        },
+        "status": "ok",
+        "examples": 45
+      },
+      "tripplanner2020/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\tripplanner2020\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 0.75,
+          "n_sentences": 12
+        },
+        "status": "misaligned (0.75 < 0.9)"
+      },
+      "ugmo2024/scinex": {
+        "drops": {},
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\ugmo2024\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 5
+        },
+        "status": "ok",
+        "examples": 11
+      },
+      "vehiclemake2025/scinex": {
+        "drops": {
+          "failed_call": 1
+        },
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\vehiclemake2025\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 1.0,
+          "n_sentences": 62
+        },
+        "status": "ok",
+        "examples": 33
+      },
+      "videoseg2025/scinex": {
+        "drops": {
+          "unparseable": 1
+        },
+        "reply_issues": {},
+        "stored_system_prompt_matches_used": true,
+        "paragraph_source": "output\\videoseg2025\\kg\\relation_scinex\\gptoss-120b\\prompts.jsonl",
+        "alignment": {
+          "rate": 0.9375,
+          "n_sentences": 16
+        },
+        "status": "ok",
+        "examples": 14
+      }
+    },
+    "notes": [],
+    "vocabulary": {
+      "paper_csvs": {
+        "eyelandmark2024": "output\\acl\\eyelandmark2024\\Entity_eyelandmark2024_enriched.csv",
+        "gamlprop2025": "output\\acl\\gamlprop2025\\Entity_gamlprop2025_enriched.csv",
+        "llamacorrupt2025": "output\\acl\\llamacorrupt2025\\Entity_llamacorrupt2025_enriched.csv",
+        "microwave2018": "output\\acl\\microwave2018\\Entity_microwave2018_enriched.csv",
+        "oxidecrack2025": "output\\acl\\oxidecrack2025\\Entity_oxidecrack2025_enriched.csv",
+        "parkingyolo2023": "output\\acl\\parkingyolo2023\\Entity_parkingyolo2023_enriched.csv",
+        "pesticide2025": "output\\acl\\pesticide2025\\Entity_pesticide2025_enriched.csv",
+        "reststop2018": "output\\acl\\reststop2018\\Entity_reststop2018_enriched.csv",
+        "roadwaylight2018": "output\\acl\\roadwaylight2018\\Entity_roadwaylight2018_enriched.csv",
+        "trafficspeed2021": "output\\acl\\trafficspeed2021\\Entity_trafficspeed2021_enriched.csv",
+        "traveltime2022": "output\\acl\\traveltime2022\\Entity_traveltime2022_enriched.csv",
+        "tripplanner2020": null,
+        "ugmo2024": "output\\acl\\ugmo2024\\Entity_ugmo2024_enriched.csv",
+        "vehiclemake2025": "output\\acl\\vehiclemake2025\\Entity_vehiclemake2025_enriched.csv",
+        "videoseg2025": "output\\acl\\videoseg2025\\Entity_videoseg2025_enriched.csv"
+      },
+      "gazetteer": {
+        "path": "output\\acl\\csner_gazetteer.csv",
+        "taken_per_type": {
+          "Model": 300,
+          "Method": 300,
+          "Dataset": 41,
+          "Task": 300,
+          "Tool": 218,
+          "Resource": 300,
+          "Language": 139
+        }
+      }
+    }
+  }
+}

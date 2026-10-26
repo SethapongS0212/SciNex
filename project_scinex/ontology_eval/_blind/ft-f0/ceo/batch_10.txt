@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bd313bb699f -----
+TRIPLE:     (WangchanBERTa)  --uses-->  (word corpus)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: To evaluate the similarity score of the sentences, we separated the word embedding from WangchanBERTa to create a word corpus.
+
+----- triple_id: b509f4d44de -----
+TRIPLE:     (random sampling)  --comprises-->  (oversampling)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: School of Engineering, King Mongkut's Institute of Technology Ladkrabang method is random sampling, either through undersampling or oversampling.
+
+----- triple_id: b33f48963af -----
+TRIPLE:     (data augmentation techniques)  --addresses-->  (imbalanced text data)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: To address imbalanced text data, researchers have proposed increasing the number of text categories through data augmentation techniques .
+
+----- triple_id: b9fca7ce552 -----
+TRIPLE:     (Indonesian pre-trained BERT)  --produces-->  (embedding values)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: They use the embedding values obtained from Indonesian pre-trained BERT feature extraction and pass them through a filter layer to find the highest feature value in the maxpooling layer [4].
+
+----- triple_id: bf75353da95 -----
+TRIPLE:     (Decision Tree (DT))  --achieves-->  (accuracy of 0.87)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The Decision Tree (DT) model followed closely with an accuracy of 0.87 and nearly identical sensitivity and specificity values.
+
+----- triple_id: bf52f248ad3 -----
+TRIPLE:     (Linear Regression (LR))  --uses-->  (RMSE)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The PV is represented as a 3 × t matrix: where it consolidates the prediction errors, measured by RMSE, for Linear Regression (LR), Random Forest (RF), and Feedforward Neural Networks (FF) across t refinement iterations.
+
+----- triple_id: b6d05ac7e88 -----
+TRIPLE:     (cSysGuard)  --comparesagainst-->  (LSTM)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: Each graph compares the performance of cSysGuard with commonly used models such as GRU, RNN, LSTM, ARIMA, and CNN.
+
+----- triple_id: bc983810eff -----
+TRIPLE:     (BERT)  --uses-->  (pre-trained embedding word approach)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: A recent method involves classifying tweets about traffic accidents into four categories using CNN's combination deep learning methodology and pre-trained BERT [4]
+
+----- triple_id: be18c5debd7 -----
+TRIPLE:     (SMOTE)  --addresses-->  (class imbalance)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In this study, SMOTE was employed to address class imbalance in a dataset of limited size, which is crucial for improving model training stability and representation of minority classes.
+
+----- triple_id: b6ce645dfe1 -----
+TRIPLE:     (SMOTE-ENN)  --comparesagainst-->  (Over-sampling using SMOTE)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: To mitigate the issue of noise amplification, we conducted analyses of the synthetic samples by comparing the results against Over-sampling using SMOTE and cleaning using Edited Nearest Neighbors (SMOTE-ENN)23, which is a variant of SMOTE reducing synthesis noise and borderline data.
+
+----- triple_id: b033733b012 -----
+TRIPLE:     (word embedding weights)  --uses-->  (large corpus)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Another approach involves word embedding weights based on word similarity in a large corpus.
+
+----- triple_id: bd0df3ceac2 -----
+TRIPLE:     (Random Forest classifier)  --achieves-->  (0.96 sensitivity)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The Random Forest classifier achieved an accuracy of 0.95, sensitivity of 0.96, specificity of 0.94, positive predictive value of 0.97, and negative predictive value of 0.92.
+
+----- triple_id: ba1ce97ebac -----
+TRIPLE:     (Random Forest method)  --addresses-->  (three-class classification)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: However, to expand the experiment for future research, the experiment was extended to a three-class classification ( esotropia , exotropia , and orthotropia) using the Random Forest method since the dataset contained cases of both esotropia and exotropia .
+
+----- triple_id: b0f73b340ab -----
+TRIPLE:     (GProjFungi)  --uses-->  (Jaccard index)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Jaccard index was selected because it gave the highest AUC, and it was used to construct GProjFungi.
+
+----- triple_id: bfee32a4b0f -----
+TRIPLE:     (ML techniques)  --addresses-->  (osmotic and activity coefficients)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Subsequently, ML techniques are applied to predict the osmotic and activity coefficients of these compounds.
+
+----- triple_id: bcec9635e2b -----
+TRIPLE:     (cSysGuard)  --uses-->  (stacking approach)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: cSysGuard implements an advanced ensemble model using a stacking approach that integrates various predictors, such as the Level-0 and Level-1 models.
+
+----- triple_id: b42e14e80e8 -----
+TRIPLE:     (cSysGuard)  --achieves-->  (significant proficiency)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: In our study, cSysGuard consistently outperformed the other standard models, encompassing traditional statistical and advanced deep learning approaches.
+
+----- triple_id: bacc30e36ec -----
+TRIPLE:     (Rule 5)  --addresses-->  (strabismus)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: For example, Rule 5 indicates that a discrepancy between MR_rt2 and MR_rt3 (MR_rt2 < 0.16 and MR_rt3 > 0.20) is associated with strabismus , whereas more balanced values are observed in orthotropic cases during primary gaze.
+
+----- triple_id: bf97518eb68 -----
+TRIPLE:     (ARIMA)  --addresses-->  (non-seasonal forecasting)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The Autoregressive Integrated Moving Average (ARIMA) model is essential for time-series analysis , effectively capturing temporality with autoregressive features and moving averages for non-seasonal forecasting [34].
+
+----- triple_id: b7ec56668eb -----
+TRIPLE:     (Kasikorn Business-Technology Group)  --locatedin-->  (Thailand)
+PREDICATE DEFINITION: Organisation → Place  |  use for physical location
+SOURCE SENTENCE: He is a Machine Learning Engineer with Kasikorn Business-Technology Group, Thailand.
+
+----- triple_id: bc2b4872571 -----
+TRIPLE:     (Feedforward Neural Networks)  --employs-->  (the TensorFlow library)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: For Feedforward Neural Networks, we replicated the deep learning structure and model-fitting parameters of Level-0 models using the TensorFlow library
+
+----- triple_id: b1b4f459a87 -----
+TRIPLE:     (Magableh)  --affiliatedwith-->  (Int. Challis)
+PREDICATE DEFINITION: Agent → Organisation  |  use for institutional affiliation
+SOURCE SENTENCE: Magableh, '' Predictive analytics in mental health leveraging LLM embeddings and machine learning models for social media analysis ,'' Int.
+
+----- triple_id: b52faa96933 -----
+TRIPLE:     (RT5)  --uses-->  (EW)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: RT5: This equation calculates the width of the iris, so the distance between the medial limbus (P7) and the temporal limbus (P8) is used to normalize by EW, as the following formula.
+
+----- triple_id: b2acacdaaf2 -----
+TRIPLE:     (Random Forest model)  --achieves-->  (specificity of 0.94)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: A Random Forest model, which showed high performance with an accuracy of 0.95, sensitivity of 0.96, and specificity of 0.94, was then used to classify these features.
+
+----- triple_id: b514b577934 -----
+TRIPLE:     (BPEmb)  --trainedon-->  (275 different languages)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: BPEmb is a pre-trained corpus that was trained using the byte-pair encoding technique and contains word embeddings for 275 different languages [9]

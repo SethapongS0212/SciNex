@@ -35,9 +35,11 @@ summary/
 # These carry FULL paragraphs of the (partly paywalled) papers, like prompts.jsonl
 # above, or adapter weights. Keep split.json / manifest.json / *_papers.txt /
 # run_manifest.json / report.json tracked — they are what makes a run reproducible.
-ft_data/*/train.jsonl
-ft_data/*/dev.jsonl
-ft_data/*/parts/
+# ** not * : the consensus variant nests one level deeper (ft_data/consensus/fold0/train.jsonl),
+# which a single-level pattern does NOT match. Session 35 found that file unignored.
+ft_data/**/train.jsonl
+ft_data/**/dev.jsonl
+ft_data/**/parts/
 ft_runs/*/adapter/
 ft_runs/*/checkpoints/
 ft_runs/*.cmd
@@ -67,6 +69,10 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+
+# derived from requirement.txt by the command in SETUP_NEW_MACHINE.md section 3; a committed
+# copy could only go stale
+req_no_torch.txt
 
 # stray archives
 *.zip

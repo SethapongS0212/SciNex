@@ -1,0 +1,77 @@
+
+Grade the following 15 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bd3cde8f688 -----
+TRIPLE:     (cSysGuard)  --evaluatedon-->  (host machine)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Subsequently, our analysis shifted towards assessing the impact on system performance, specifically examining the computational overhead. We experimented with cSysGuard on a host machine with a 2.9 GHz Intel Core i7-7820HK Quad-Core processor and 16GB DDR4 RAM.
+
+----- triple_id: b72dde719e5 -----
+TRIPLE:     (SMOTE)  --uses-->  (training data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In addition, the dataset was first divided into training and testing sets prior to oversampling, ensuring that SMOTE was applied to the training data and thus avoiding any data leakage into the test set.
+
+----- triple_id: bb7ead1ac6d -----
+TRIPLE:     (Random Forest classifier)  --uses-->  (RT1–RT5 features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Subsequently, the RT1–RT5 features were extracted from the detected landmarks of all participants to serve as structured inputs for the final Random Forest classifier.
+
+----- triple_id: ba428d8ab67 -----
+TRIPLE:     (Random Forest (RF))  --achieves-->  (PPV of 0.97)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Among the models tested, Random Forest (RF) yielded the best overall performance: accuracy of 0.95, specificity of 0.94, sensitivity of 0.96, PPV (or precision) of 0.97, and NPV of 0.92.
+
+----- triple_id: b72b08bd32f -----
+TRIPLE:     (Belvèze et al.)  --affiliatedwith-->  (Belvèze et al.)
+PREDICATE DEFINITION: Agent → Organisation  |  use for institutional affiliation
+SOURCE SENTENCE: Belvèze et al.39 predicted activity coefficients of alkyl ammonium Quats using the Electrolyte-NRTL model.
+
+----- triple_id: b0ff8522581 -----
+TRIPLE:     (Belvèze et al.)  --publishedin-->  (Belvèze et al.)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  use for journal/conference names only
+SOURCE SENTENCE: Belvèze et al.39 predicted activity coefficients of alkyl ammonium Quats using the Electrolyte-NRTL model.
+
+----- triple_id: b3931fd7f98 -----
+TRIPLE:     (Naïve Bayes (NB))  --achieves-->  (accuracy of 0.45)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: In contrast, the Naïve Bayes (NB) model showed limited utility, with an accuracy of only 0.45 and a sensitivity of 0.24.
+
+----- triple_id: b7d77532405 -----
+TRIPLE:     (RT-DETR method)  --achieves-->  (intersection over union (IoU) of 0.62)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The summary of the evaluation metrics for the RT-DETR method using 4-fold cross-validation resulted in an intersection over union (IoU) of 0.62, and a mean center-point error of 6.52 pixels (Euclidean distance), with a horizontal component of 5.31 pixels.
+
+----- triple_id: be32d028dbe -----
+TRIPLE:     (mean percentage absolute error (%MAPE))  --evaluates-->  (3.16%)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: Based on a dataset of 1,007 data points, a mean percentage absolute error (%MAPE) of 3.16% was yielded.
+
+----- triple_id: b54681b31aa -----
+TRIPLE:     (SMOTE)  --splitfrom-->  (dataset of limited size)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: In this study, SMOTE was employed to address class imbalance in a dataset of limited size, which is crucial for improving model training stability and representation of minority classes.
+
+----- triple_id: b7f1d80a795 -----
+TRIPLE:     (RT-DETR)  --addresses-->  (horizontal strabismus screening)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: This study represents a proof-of-concept application of RT-DETR in horizontal strabismus screening.
+
+----- triple_id: b9fce83a81f -----
+TRIPLE:     (Rule 3)  --addresses-->  (strabismus)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Similarly, Rule 3 shows that increased temporal light reflex in the left eye during rightward gaze (RL_rt3 > 0.08) serves as a classifier for strabismus , whereas lower values are more consistent with orthotropia.
+
+----- triple_id: b8610f5215c -----
+TRIPLE:     (feature engineering process)  --produces-->  (RT1-5 metrics)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: Then, RT1-5 metrics were computed by the feature engineering process, as exampled in Fig.
+
+----- triple_id: bb6a6dfe058 -----
+TRIPLE:     (Quats)  --designedfor-->  (40 types having %MAPE below 5%)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: Notably, this study achieves high accuracy for various Quats, with 40 types having %MAPE below 5%.
+
+----- triple_id: bdbff665fb6 -----
+TRIPLE:     (Feedforward Neural Networks)  --uses-->  (TensorFlow library)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For Feedforward Neural Networks, we replicated the deep learning structure and model-fitting parameters of Level-0 models using the TensorFlow library.

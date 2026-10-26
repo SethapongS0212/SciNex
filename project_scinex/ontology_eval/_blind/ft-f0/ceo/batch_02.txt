@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bd69ca4e945 -----
+TRIPLE:     (eye region segmentation)  --uses-->  (Viola–Jones algorithm)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The paper also incorporated eye region segmentation using the Viola–Jones algorithm as part of the detection pipeline.
+
+----- triple_id: b72da0096dc -----
+TRIPLE:     (deep learning model)  --uses-->  (4-fold cross-validation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For eye landmark detection , a deep learning model was evaluated using 4-fold cross-validation.
+
+----- triple_id: b293c344ae6 -----
+TRIPLE:     (cSysGuard)  --comparesagainst-->  (RNN)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: Each graph compares the performance of cSysGuard with commonly used models such as GRU, RNN, LSTM, ARIMA, and CNN.
+
+----- triple_id: bdbed22290f -----
+TRIPLE:     (Gaussian Process algorithm)  --achieves-->  (optimal for osmotic coefficient prediction)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Considering both performance and behavioral aspects, it can be concluded that the Gaussian Process algorithm is optimal for osmotic coefficient prediction.
+
+----- triple_id: b93c63270fa -----
+TRIPLE:     (RT-DETR)  --cites-->  (Random Forest classifier)
+PREDICATE DEFINITION: AcademicPaper → AcademicPaper  |  use when a paper cites another paper by name
+SOURCE SENTENCE: RT-DETR achieved an intersection over union of 0.62 and a mean center-point error of 6.52 pixels in landmark localization.
+
+----- triple_id: b3c88c8474e -----
+TRIPLE:     (Machine learning- driven predictive analytics)  --achieves-->  (identifying potential anomalies)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Machine learning- driven predictive analytics, widely used in many fields [29], can analyze complex data patterns to identity potential anomalies.
+
+----- triple_id: b5d84ebce23 -----
+TRIPLE:     (RT-DETR)  --employs-->  (Cross-validation)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: In the eye landmark detection phase using RT-DETR, a 4-fold cross-validation approach was employed to separate the dataset according to participants.
+
+----- triple_id: bba0647c38f -----
+TRIPLE:     (cSysGuard)  --evaluatedon-->  (2.9 GHz Intel Core i7-7820HK Quad-Core processor)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Subsequently, our analysis shifted towards assessing the impact on system performance, specifically examining the computational overhead. We experimented with cSysGuard on a host machine with a 2.9 GHz Intel Core i7-7820HK Quad-Core processor and 16GB DDR4 RAM.
+
+----- triple_id: bbf5772e161 -----
+TRIPLE:     (GP model)  --achieves-->  (RMSE of 0.034)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The GP model achieved a mean absolute percentage error (MAPE) of 5.29% and root mean square error (RMSE) of 0.034.
+
+----- triple_id: b91ffeacf1a -----
+TRIPLE:     (RT5)  --reports-->  (the width of the iris)
+PREDICATE DEFINITION: AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead
+SOURCE SENTENCE: • RT5: This equation calculates the width of the iris, so the distance between the medial limbus (P7) and the temporal limbus (P8) is used to normalize by EW, as the following formula. Based on prior ophthalmic knowledge within the research team, orthotropic eyes were expected to show relatively balanced nasal-versus- temporal relationships in primary gaze and predictable directional changes during lateral gaze. Accordingly, RT1 and RT4 were designed to reflect nasal and temporal scleral exposure, RT2 and RT3 to reflect the position of the corneal light reflex within the horizontal corneal span, and RT5 to reflect visible iris width as an internal reference during gaze change.
+
+----- triple_id: b729ccc2edb -----
+TRIPLE:     (RT-DETR)  --achieves-->  (robust performance across three gaze directions)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Our model expanded on this by using RT-DETR, which enabled real-time inference and robust performance across three gaze directions.
+
+----- triple_id: bba0e4a0c7b -----
+TRIPLE:     (GP)  --achieves-->  (R2 value greater than 0.97)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Specifically, GP achieves an R2 value greater than 0.97 and %MAPE below 5%, while other algorithms have R2 values below 0.96 and %MAPE exceeding 5%.
+
+----- triple_id: b895cee0209 -----
+TRIPLE:     (GP model)  --evaluatedon-->  (experimental data)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: The GP model yields a mean absolute percentage error (%MAPE) of 3.33% and an R2 value of 0.9805 when compared to experimental data.
+
+----- triple_id: be305bc3746 -----
+TRIPLE:     (LPII)  --uses-->  (biological classification)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Therefore, the contribution of our research is to introduce LPII, a hybrid approach that combines three concepts of collaborative filtering , community structure, and biological classification.
+
+----- triple_id: bd7086eec52 -----
+TRIPLE:     (SMOT-EEN)  --achieves-->  (0.95 accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Our prediction approach with the replacing SMOTE with SMOT-EEN resulted in an accuracy of 0.95, which is close to the accuracy of the original experiment using SMOTE.
+
+----- triple_id: bd47c22c176 -----
+TRIPLE:     (RT-DETR method)  --achieves-->  (horizontal component of 5.31 pixels)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The summary of the evaluation metrics for the RT-DETR method using 4-fold cross-validation resulted in an intersection over union (IoU) of 0.62, and a mean center-point error of 6.52 pixels (Euclidean distance), with a horizontal component of 5.31 pixels.
+
+----- triple_id: b7fc07abfe3 -----
+TRIPLE:     (this study)  --reports-->  (lower %MAPE values for each substance)
+PREDICATE DEFINITION: AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead
+SOURCE SENTENCE: Upon comparison of the outcomes of this study with those of Belvèze and Akbari, it is observed that the method employed here yields lower %MAPE values for each substance.
+
+----- triple_id: bdf422f1f1c -----
+TRIPLE:     (BPE)  --uses-->  (Byte-Pair Encoding)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: BPEmb uses BPE encoding which results in good enough subword segmentation without the need for tokens or linguistic analysis.
+
+----- triple_id: b6b4f6b1495 -----
+TRIPLE:     (deep feature fusion)  --addresses-->  (mixed-type presentations)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Future work could explore deep feature fusion between landmark geometry and convolutional texture information to address mixed-type presentations.
+
+----- triple_id: b213ce46fed -----
+TRIPLE:     (random forests)  --addresses-->  (regression problems)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Notably, random forests are adept at addressing both regression problems, where the target variable is numeric, and classification challenges, where the target variable is categorical.
+
+----- triple_id: b7d9f979721 -----
+TRIPLE:     (Random Forest model)  --achieves-->  (0.95 accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: A Random Forest model, which showed high performance with an accuracy of 0.95, sensitivity of 0.96, and specificity of 0.94, was then used to classify these features.
+
+----- triple_id: b73693f88f6 -----
+TRIPLE:     (Linear Regression)  --uses-->  (standard parameters)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For Linear Regression and Random Forest, we employed the standard parameters provided by the Scikit-learn library [56].
+
+----- triple_id: b8afde71ec9 -----
+TRIPLE:     (The synthetic minority over-sampling technique (SMOTE))  --addresses-->  (imbalanced data)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The synthetic minority over-sampling technique (SMOTE) addresses imbalanced data by generating synthetic samples for the minority class, thereby improving the data distribution for machine learning applications.
+
+----- triple_id: b5b41b58004 -----
+TRIPLE:     (Random Forest classifier)  --achieves-->  (specificity of 0.94)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The Random Forest classifier achieved an accuracy of 0.95, sensitivity of 0.96, specificity of 0.94, positive predictive value of 0.97, and negative predictive value of 0.92.
+
+----- triple_id: bb8e07115f4 -----
+TRIPLE:     (RT-DETR)  --writtenby-->  (Nature Machine Intelligence)
+PREDICATE DEFINITION: AcademicPaper → Author  |  use only for explicit author attribution
+SOURCE SENTENCE: This two-stage system combines Real-Time Detection Transformer (RT-DETR) to localize nine ocular landmarks per eye across three gaze directions (left, center, right), and supervised machine learning classifiers.

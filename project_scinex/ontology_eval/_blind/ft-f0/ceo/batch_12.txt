@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b09584ed8f2 -----
+TRIPLE:     (Decision Trees)  --evaluates-->  (F1 score)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: The results indicate that the optimized Decision Trees outperform the original model, showing enhancements of approximately 1.67% in the F1 score
+
+----- triple_id: b942ae8ffb2 -----
+TRIPLE:     (Krimsky test)  --addresses-->  (diagnosis of strabismus)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: However, diagnosis of strabismus typically requires direct examination by a pediatric ophthalmologist and the use of specialized tests, such as the Krimsky test, cover–uncover test, or alternate prism cover test, which require significant patient cooperation.
+
+----- triple_id: be82dc42cb6 -----
+TRIPLE:     (cSysGuard)  --uses-->  (sliding window technique)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: cSysGuard adopts this technique for system health assessment, concentrating on the ten latest forecast points from the regression layer to ascertain the current system status.
+
+----- triple_id: be8ea0c97a1 -----
+TRIPLE:     (Gaussian Process algorithm)  --addresses-->  (osmotic coefficient prediction)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Considering both performance and behavioral aspects, it can be concluded that the Gaussian Process algorithm is optimal for osmotic coefficient prediction.
+
+----- triple_id: b4b9bf401ee -----
+TRIPLE:     (RT-DETR)  --achieves-->  (real-time inference)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Our model expanded on this by using RT-DETR, which enabled real-time inference and robust performance across three gaze directions.
+
+----- triple_id: bcb0943bd7d -----
+TRIPLE:     (weighted averaging approach)  --produces-->  (final prediction)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: To derive the final prediction , we integrated the outputs from our Level-1 learners through a weighted averaging approach.
+
+----- triple_id: bd676b2d71f -----
+TRIPLE:     (Strabismus Classification)  --uses-->  (Random Forest)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Our technical approach consists of two main components: Eye Landmark Detection using RT-DETR and Strabismus Classification using Random Forest.
+
+----- triple_id: b296f474dd9 -----
+TRIPLE:     (Real-time Detection Transformer (RT-DETR) model)  --uses-->  (smartphone-acquired images)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Specifically, we utilize the Real-time Detection Transformer (RT-DETR) model to localize key ocular landmarks from smartphone-acquired images captured at three gaze angles—left, center, and right.
+
+----- triple_id: bb337f7bb0b -----
+TRIPLE:     (GP model)  --achieves-->  (MAPE of 5.29%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The GP model achieved a mean absolute percentage error (MAPE) of 5.29% and root mean square error (RMSE) of 0.034.
+
+----- triple_id: b88c4e79657 -----
+TRIPLE:     (BPEmb augmentation technique)  --achieves-->  (balanced F1-scores)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Therefore, adding text in some groups through the BPEmb augmentation technique resulted in F1-scores that were balanced in all classes.
+
+----- triple_id: b262540f471 -----
+TRIPLE:     (RT-DETR)  --publishedin-->  (Nature Machine Intelligence)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  use for journal/conference names only
+SOURCE SENTENCE: This two-stage system combines Real-Time Detection Transformer (RT-DETR) to localize nine ocular landmarks per eye across three gaze directions (left, center, right), and supervised machine learning classifiers.
+
+----- triple_id: b3f916a2be1 -----
+TRIPLE:     (RT-DETR)  --achieves-->  (53.0% mean average precision (mAP) on COCO val2017)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: For example, RT-DETR-L achieves 53.0% mean average precision (mAP) on COCO val2017 and 114 frames per second (FPS) on an NVIDIA Tesla T4 GPU, while RT-DETR-X achieves 54.8% AP, outperforming existing YOLO-based detectors18.
+
+----- triple_id: bf83dd50c6d -----
+TRIPLE:     (Random Forest)  --achieves-->  (NPV of 0.92)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Random Forest (RF) yielded the best overall performance: accuracy of 0.95, specificity of 0.94, sensitivity of 0.96, PPV (or precision) of 0.97, and NPV of 0.92.
+
+----- triple_id: b93c4c2a3d8 -----
+TRIPLE:     (InfoMap)  --uses-->  (information theoretic clustering)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: InfoMap that used an information theoretic clustering on a graph to be a map of random walks representing information flow on a network [16]
+
+----- triple_id: b663025dce3 -----
+TRIPLE:     (LR algorithm)  --achieves-->  (combined R2 0.5177)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Specifically, considering both R2 and %MAPE, the LR algorithm achieves the combined R2 values of 0.5177 and %MAPE values of 24.97%.
+
+----- triple_id: bec434bf6ca -----
+TRIPLE:     (Decision Trees)  --evaluates-->  (precision)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: The results indicate that the optimized Decision Trees outperform the original model, showing enhancements of approximately 1.56% in precision
+
+----- triple_id: be11dc02a83 -----
+TRIPLE:     (Level-1 learners)  --designedfor-->  (refining the regression outputs)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: Level-1 learners serve as meta-models designed for refining the regression outputs and constitute the second layer in our predictive framework.
+
+----- triple_id: b4f2ae12ba8 -----
+TRIPLE:     (RF)  --achieves-->  (lowest errors on random split)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: While XGB and RF achieve the lowest errors on the random split, GP demonstrates superior stability in the LOGO validation , maintaining a lower drop in performance compared to tree-based methods when predicting unseen salts.
+
+----- triple_id: b5fa5400da0 -----
+TRIPLE:     (Random Forest model)  --uses-->  (geometric features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: the classification of Random Forest model offers a methodological alternative that utilizes explicit geometric features, which are more accessible for clinical review than the latent representations in 'black-box' deep learning models.
+
+----- triple_id: b4ab9055f7e -----
+TRIPLE:     (RT2)  --uses-->  (central corneal light reflex (P9))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: RT2: The measure between the medial limbus (P7) and the central corneal light reflex (P9) to show the horizontal position of the light reflex in the iris.
+
+----- triple_id: b23c3d926f5 -----
+TRIPLE:     (Hoonlor)  --writtenby-->  (Buyya)
+PREDICATE DEFINITION: AcademicPaper → Author  |  use only for explicit author attribution
+SOURCE SENTENCE: Hoonlor, '' Workload prediction with regression for over and under provisioning problems in multi-agent dynamic resource provisioning framework ,'' in Proc. Buyya, '' Workload prediction using ARIMA model and its impact on cloud applications ' QoS,'' IEEE Trans.
+
+----- triple_id: be8792aec80 -----
+TRIPLE:     (Andiy)  --writtenby-->  (Zuva)
+PREDICATE DEFINITION: AcademicPaper → Author  |  use only for explicit author attribution
+SOURCE SENTENCE: Andiy, ''ARIMA forecast models for scheduling usage of resources in IT-infrastructure,'' in Proc. Zuva, ''Traffic flow prediction in cloud computing ,'' in Proc. (ICACCE), Durban, South Africa, Nov. Lee, '' Prediction of network throughput using ARIMA,'' in Proc. Dhar, '' Machine learning based workload prediction for auto-scaling cloud applications ,'' in Proc. Shen, '' Machine learning based workload prediction in cloud computing ,'' in Proc. (ICCCN), Honolulu, HI, USA, Aug. Muresan, ''Forecasting for grid and cloud computing on-demand resources based on pattern matching,'' in Proc. Humphrey, ''Forecasting cloud appli- cation workloads with CloudInsight for predictive resource management,'' IEEE Trans. Malik, '' Prediction of cloud computing resource utilization,'' in Proc. Smart Cities, Improving Quality Life Using ICT IoT (HONET-ICT), Islamabad, Pakistan, Oct. Zhang, ''Improved LSTM-based prediction method for highly variable workload and resources in clouds,'' in Proc. (SMC), Toronto, ON, Canada, Oct. Goyal, '' Workload analysis of cloud resources using time series and machine learning prediction ,'' in Proc. (CSDE), Melbourne, VIC, Australia, Dec.
+
+----- triple_id: b4a6e8a9f9a -----
+TRIPLE:     (Decision Trees)  --evaluates-->  (recall)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: The results indicate that the optimized Decision Trees outperform the original model, showing enhancements of approximately 1.66% in recall
+
+----- triple_id: bb13d41e090 -----
+TRIPLE:     (Random Forest classifier)  --achieves-->  (0.95 accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The Random Forest classifier achieved an accuracy of 0.95, sensitivity of 0.96, specificity of 0.94, positive predictive value of 0.97, and negative predictive value of 0.92.
+
+----- triple_id: b89d9e4bf84 -----
+TRIPLE:     (cSysGuard)  --designedfor-->  (system health monitoring)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: Our study introduces cSysGuard, a novel framework designed to enhance monitoring capabilities within cloud environments.

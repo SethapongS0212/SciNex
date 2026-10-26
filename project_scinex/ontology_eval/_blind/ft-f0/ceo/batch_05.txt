@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b10c0b17269 -----
+TRIPLE:     (Edge Betweenness)  --uses-->  (edge-betweenness scores)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Edge Betweenness that is a top-down clustering method where edges are removed in the decreasing order of their edge-betweenness scores [15]
+
+----- triple_id: b02f3cf44fd -----
+TRIPLE:     (Random Forest model)  --achieves-->  (0.96 sensitivity)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: A Random Forest model, which showed high performance with an accuracy of 0.95, sensitivity of 0.96, and specificity of 0.94, was then used to classify these features.
+
+----- triple_id: bf6592c8c0d -----
+TRIPLE:     (SMOTE)  --publishedin-->  (Chawla et al.)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  use for journal/conference names only
+SOURCE SENTENCE: SMOTE (Synthetic Minority Over-sampling Technique) is an oversampling method used to address class imbalance. It was introduced by Chawla et al.
+
+----- triple_id: bc731adb8ce -----
+TRIPLE:     (Random Forest model)  --uses-->  (explicit geometric features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: the classification of Random Forest model offers a methodological alternative that utilizes explicit geometric features, which are more accessible for clinical review than the latent representations in 'black-box' deep learning models.
+
+----- triple_id: bc8f6311ce4 -----
+TRIPLE:     (RT5)  --uses-->  (temporal limbus (P8))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: RT5: This equation calculates the width of the iris, so the distance between the medial limbus (P7) and the temporal limbus (P8) is used to normalize by EW, as the following formula.
+
+----- triple_id: bbf8b6cfe47 -----
+TRIPLE:     (Logistic Regression)  --uses-->  (logistic function)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Logistic Regression, essential for binary classification in machine learning [47], uses a logistic function to convert predictor variables into probabilities, thereby accommodating nonlinear variable relationships.
+
+----- triple_id: b9558f06762 -----
+TRIPLE:     (alternate prism cover test)  --addresses-->  (diagnosis of strabismus)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: However, diagnosis of strabismus typically requires direct examination by a pediatric ophthalmologist and the use of specialized tests, such as the Krimsky test, cover–uncover test, or alternate prism cover test, which require significant patient cooperation.
+
+----- triple_id: b25b225106c -----
+TRIPLE:     (RT-DETR)  --achieves-->  (mean center-point error of 6.52 pixels)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: RT-DETR achieved an intersection over union of 0.62 and a mean center-point error of 6.52 pixels in landmark localization.
+
+----- triple_id: b08472a19dd -----
+TRIPLE:     (LR algorithm)  --achieves-->  (%MAPE 24.97%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Specifically, considering both R2 and %MAPE, the LR algorithm achieves the combined R2 values of 0.5177 and %MAPE values of 24.97%.
+
+----- triple_id: bb8e09bbdeb -----
+TRIPLE:     (Random Forest (RF))  --achieves-->  (NPV of 0.92)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Among the models tested, Random Forest (RF) yielded the best overall performance: accuracy of 0.95, specificity of 0.94, sensitivity of 0.96, PPV (or precision) of 0.97, and NPV of 0.92.
+
+----- triple_id: b2abe4b3892 -----
+TRIPLE:     (Markov chains)  --addresses-->  (classification tasks)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: New techniques , such as algorithms using Markov chains to generate new text, are required for classification tasks.
+
+----- triple_id: b5ba9e2b140 -----
+TRIPLE:     (GProjFungi)  --uses-->  (RDF data of interspecies interaction)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The Section 4.1 demonstrated that GBipt and GProjFungi could be prepared from RDF data of interspecies interaction, so our approach was well compatible with RDF data.
+
+----- triple_id: bfe2faeb16a -----
+TRIPLE:     (F1-score)  --evaluates-->  (0.43)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: This illustrated by the high F1-score of 0.91 in Traffic, while the F1-score in Social- events is only 0.43.
+
+----- triple_id: b80be470e61 -----
+TRIPLE:     (Random Forest)  --uses-->  (Scikit-learn library)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For Linear Regression and Random Forest, we employed the standard parameters provided by the Scikit-learn library [56].
+
+----- triple_id: b64b77658fe -----
+TRIPLE:     (RT-DETR-L)  --evaluatedon-->  (COCO val2017)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: For example, RT-DETR-L achieves 53.0% mean average precision (mAP) on COCO val2017 and 114 frames per second (FPS) on an NVIDIA Tesla T4 GPU, while RT-DETR-X achieves 54.8% AP, outperforming existing YOLO-based detectors18.
+
+----- triple_id: bd100e0b6eb -----
+TRIPLE:     (RT-DETR)  --uses-->  (IoU-aware query selection mechanism)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The IoU-aware query selection mechanism in RT-DETR has an advantage in eye landmark identification, which requires precise localization of small areas.
+
+----- triple_id: b999207c2f2 -----
+TRIPLE:     (PCF + PCS + PBC)  --achieves-->  (best result)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: However, the summation of them, PCF + PCS + PBC, offered the best result among all combinations.
+
+----- triple_id: b25721d7bc0 -----
+TRIPLE:     (cSysGuard)  --evaluatedon-->  (16GB DDR4 RAM)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Subsequently, our analysis shifted towards assessing the impact on system performance, specifically examining the computational overhead. We experimented with cSysGuard on a host machine with a 2.9 GHz Intel Core i7-7820HK Quad-Core processor and 16GB DDR4 RAM.
+
+----- triple_id: b281a8ab90c -----
+TRIPLE:     (Decision Trees)  --comparesagainst-->  (other base models)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: The analysis reveals that the Decision Trees outperform the other base models by achieving the highest F1 score.
+
+----- triple_id: b012416bfe1 -----
+TRIPLE:     (XGB)  --achieves-->  (lowest errors on random split)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: While XGB and RF achieve the lowest errors on the random split, GP demonstrates superior stability in the LOGO validation , maintaining a lower drop in performance compared to tree-based methods when predicting unseen salts.
+
+----- triple_id: b9b1d89c33f -----
+TRIPLE:     (Liu)  --affiliatedwith-->  (Proc. Commun.)
+PREDICATE DEFINITION: Agent → Organisation  |  use for institutional affiliation
+SOURCE SENTENCE: Liu, ''DEARS: A deep learning based elastic and automatic resource scheduling framework for cloud applications ,'' in Proc. Commun., Big Data Cloud Comput., Social Comput. (ISPA/IUCC/BDCloud/SocialCom), Melbourne, VIC, Australia, Dec.
+
+----- triple_id: b3c559c143f -----
+TRIPLE:     (RT-DETR)  --achieves-->  (outperforming existing YOLO-based detectors)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: For example, RT-DETR-L achieves 53.0% mean average precision (mAP) on COCO val2017 and 114 frames per second (FPS) on an NVIDIA Tesla T4 GPU, while RT-DETR-X achieves 54.8% AP, outperforming existing YOLO-based detectors18.
+
+----- triple_id: bf479bf587a -----
+TRIPLE:     (AUC)  --evaluatedon-->  (LTest)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Area Under the receiver operating characteristic Curve (AUC) is always used to evaluate prediction algorithms because the comparison of the ranking of both LMiss and LTest is calculated [7].
+
+----- triple_id: b41c6ea8af2 -----
+TRIPLE:     (Random Forest (RF))  --achieves-->  (PPV (or precision) of 0.97)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Among the models tested, Random Forest (RF) yielded the best overall performance: accuracy of 0.95, specificity of 0.94, sensitivity of 0.96, PPV (or precision) of 0.97, and NPV of 0.92.
+
+----- triple_id: b128e8e74d8 -----
+TRIPLE:     (KNN)  --comparesagainst-->  (SVM)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: it can be observed that at higher values, DT, RF, and KNN demonstrate inferior performance compared to SVM, GP, or XGB.

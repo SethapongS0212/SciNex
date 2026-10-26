@@ -5,6 +5,24 @@
 **Per-triple numbers are read directly from `output/` and `gold/` at build time**, so this
 document cannot drift from the artefacts it describes. Re-run the builder after any new result.
 
+> ## ⚠ THIS DOCUMENT PREDATES PART 2 (FINETUNING). Last built 2026-08-28.
+> `build_results_report.py` reads only the per-triple gold track and the graph-level track, so it
+> emits **nothing about the finetuning experiment** — re-running the builder will not add it, and
+> this note is the only hand-written block in the file (keep it, or teach the builder about Part 2).
+>
+> **For the Part 2 result (2026-10-24) read [`results.md`](results.md) Tables 13–14.** In one
+> paragraph: a **Qwen3-1.7B** student finetuned with QLoRA on the CEO/scinex ontologies plus a
+> teacher's (GPT-OSS-120B) stored extractions was evaluated on **5 papers it never trained on**, and
+> every one of its kept triples was judged blind. Relation correctness (C4) rose from **29.4%
+> untuned to 85.4%**, against the **teacher's 86.4%** — i.e. a 1.7B student reached the 120B
+> teacher's per-triple quality, and outright relation errors fell from 63.6% of triples to ~7%.
+> **But it answers "no triples" for 90–95% of paragraphs** (coverage 7.5% vs the teacher's 42.0%),
+> so recall, not precision, is the open problem. Multi-model ("consensus") training data gives +62%
+> more triples at indistinguishable quality. Caveats: single rater, a different judge from the
+> C1–C6 tables below, one fold, CEO only.
+
+---
+
 > **Reading this for the first time?** §1-4 explain what the project is and how it works.
 > §5-10 are the results (three axes: model, ontology, graph-level). §11-15 are corpus,
 > methodology, engineering findings and negative results. §16-18 are limitations, next steps

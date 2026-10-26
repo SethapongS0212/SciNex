@@ -29,9 +29,10 @@ against the real papers.
 
 1. **Paper → knowledge graph** (built). PDF parser → paragraphs → an LLM extracts triples whose
    relation must come from the ontology → rule-based guards reject malformed triples.
-2. **Finetune an open-weight LLM on the ontology and vocabulary** (current work). A small student
-   (Qwen3, QLoRA) learns from a teacher model's stored extractions (GPT-OSS-120B), optionally
-   augmented with triples that other models agree on. It is evaluated on papers it never trained on.
+2. **Finetune an open-weight LLM on the ontology and vocabulary** (current work; **fold 0 done and
+   judged**). A small student (Qwen3-1.7B, QLoRA) learns from a teacher model's stored extractions
+   (GPT-OSS-120B), optionally augmented with triples that other models agree on, and is evaluated on
+   papers it never trained on. It now matches the teacher per triple but extracts far less.
 3. **Evaluate graphs by simulated Q&A** (tooling built, `qa_eval.py`). Questions verified against the
    paper text are answered from the graph alone and graded deterministically.
 
@@ -42,10 +43,14 @@ against the real papers.
   Gemma-4-31B 93.8 / 80.0 / 73.8, Qwen3-235B 75.0 / 60.0 / 47.5, Ministral-14B 70.0 / 52.5 / 41.2.
   The models differ most on relation typing (C4). At this sample size, gaps under ~10 points
   are not distinguishable. Details and caveats: `results.md`.
-- **Finetuning:** pipeline built; the first laptop test (Qwen3-4B) raised the share of triples
-  passing the guards from 38% to 86% on one held-out paper (the teacher: 88%). It still extracts
-  less than the teacher. The full experiment (Qwen3-8B, teacher-only vs multi-model training data,
-  blind judging) is next.
+- **⭐⭐⭐ Finetuning result (fold 0, judged 2026-10-24):** a finetuned **Qwen3-1.7B** student reaches
+  the **120B teacher's per-triple quality** on papers it never saw. Blind census of all 174 paragraphs
+  per extractor, CEO ontology — relation correctness (C4) **29.4% untuned → 85.4% finetuned**, against
+  the teacher's **86.4%**; outright relation errors fall from **63.6% of triples to ~7%** (teacher
+  1.7%). Valid JSON 87.9% → 100%. **But the student under-extracts badly:** it answers "no triples"
+  for 90–95% of paragraphs, giving 47 triples where the teacher gives 180 (coverage 7.5% vs 42%).
+  Multi-model ("consensus") training data beats teacher-only on volume (+62% triples) at
+  indistinguishable quality. Full tables and caveats: `project_scinex/results.md` Tables 13–14.
 - **Earlier result (ACL corpus, citation prediction):** RotatE knowledge-graph embeddings predict
   held-out citation links with MRR ≈ 0.60 and Hits@10 ≈ 0.85 (5 seeds, held-out test papers).
 

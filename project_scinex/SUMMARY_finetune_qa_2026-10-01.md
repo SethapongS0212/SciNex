@@ -1,4 +1,76 @@
-# Finetuning & Q&A Evaluation — Progress Summary (Sessions 32–34, 1 Oct 2026)
+# Finetuning & Q&A Evaluation — Progress Summary
+
+## ⭐⭐⭐ UPDATE — Session 36, 26 Oct 2026 (supersedes everything below)
+
+**Status in one line: the finetuning experiment worked. A finetuned 1.7-billion-parameter model
+extracts triples as accurately as the 120-billion-parameter teacher — but it stays silent on most
+paragraphs, and that is now the problem to solve.**
+
+Run on a laptop (RTX 4060, 8 GB). Student: **Qwen3-1.7B**. Teacher: **GPT-OSS-120B**'s stored
+extractions. Trained on 13 papers, evaluated on **5 papers it never saw**, every paragraph judged
+(not a sample).
+
+### 1. Accuracy: the student caught up with the teacher
+
+Each triple was graded blind — all four models' triples pooled, shuffled, names hidden until after
+grading — on concept correctness (C1), concept specificity (C3) and **relation correctness (C4)**.
+
+| model | C1 | C3 | **C4 relation correctness** | triples that were plainly wrong |
+|---|---|---|---|---|
+| Qwen3-1.7B, untuned | 59.8% | 52.3% | **29.4%** | **63.6%** |
+| Qwen3-1.7B, finetuned (one teacher) | 90.7% | 81.5% | **83.3%** | 7.4% |
+| **Qwen3-1.7B, finetuned (multi-model data)** | 90.2% | 87.8% | **85.4%** | 7.3% |
+| GPT-OSS-120B (the teacher) | 96.4% | 87.2% | **86.4%** | 1.7% |
+
+Relation typing — which relation holds, and in which direction — is what the ontology training fixes:
+**29.4% → 85.4%**, level with a model 70× its size. The output format problem disappeared too:
+valid JSON went **87.9% → 100%** and over-long replies **18 → 0**, which also makes the finetuned
+model **12.5× faster to run**.
+
+### 2. Multi-model training data: the same quality, but more of it
+
+Teacher-only vs multi-model (a triple the teacher missed is added when at least 2 of 3 other models
+extracted exactly the same one):
+- **Quality: a tie.** C4 differs by +2.0 points with a confidence interval of [−12.7, +16.8] — at
+  27 vs 41 judged triples, this experiment cannot separate them.
+- **Volume: multi-model wins.** **47 kept triples vs 29 (+62%)**, paragraph coverage 7.5% vs 4.6%,
+  and 73.4% vs 64.4% of its triples survive the rule checks.
+- **Recommendation: use the multi-model data.**
+
+### 3. ⛔ The open problem: it is too quiet
+
+Both finetuned models answer "no triples here" for **90–95% of paragraphs**, producing 29 and 47
+triples where the teacher produces 180 — paragraph coverage **4.6–7.5% against the teacher's 42%**.
+Accurate triples are of little use if there are too few of them.
+
+**The cause is in the training data: 402 of 619 training answers (65%) are empty**, because the
+teacher itself declines on most paragraphs. The student learned the teacher's silence along with its
+precision. **The fix is already built and not yet trained:** a dataset capped at 30% empty answers
+(310 examples). That is the next run.
+
+### 4. What is left
+
+1. Repeat the blind grading for the **second ontology** (scinex); the table above is CEO only.
+2. **Train the capped-empty variant** — the direct attack on the coverage problem.
+3. **4-fold cross-validation** so every paper is scored by a model that never saw it (~5.5 h/fold).
+4. **Part 3 (Q&A evaluation)** needs an independent model to write and answer the questions; the
+   grading is already automatic. This is what the OpenRouter credit would be for.
+
+### 5. Two engineering findings worth keeping
+
+- **Windows was running everything 8× slow.** The power-saving opt-out was being applied to a
+  launcher process, not to the real interpreter underneath it (a quirk of venvs made by the Python
+  Install Manager). Training went from 48 s/step to ~9 s/step once fixed — and the earlier 14-hour
+  extraction run had been throttled the same way. Diagnostic: the GPU reporting 0% use at under
+  10 W with no throttle reason means it is being starved by the CPU side, not throttled.
+- **A bigger generation batch made things worse, not better** — batch 6 was 2.85× slower than batch 4
+  on identical paragraphs, because VRAM residency hit 7.1 of 8 GB and Windows silently pages VRAM to
+  system memory instead of reporting an error.
+
+---
+
+*The Session 34 summary follows, kept for the record. Its numbers are Qwen3-4B on a single paper and
+are NOT comparable with the 1.7B figures above.*
 
 ## ⭐ UPDATE — Session 34 (supersedes the status line below)
 

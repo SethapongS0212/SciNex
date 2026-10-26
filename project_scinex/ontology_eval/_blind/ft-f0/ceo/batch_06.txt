@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bc31495ff49 -----
+TRIPLE:     (ResNet)  --addresses-->  (ocular alignment)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: For instance, Simoes et al.17 used U-Net and ResNet to detect ocular alignment in digital images , achieving strong detection performance but limited generalizability beyond controlled settings.
+
+----- triple_id: bd86d3717f3 -----
+TRIPLE:     (Random Forest model)  --comparesagainst-->  (geometric eye landmark ratios)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: geometric eye landmark ratios are used to classify strabismus in this study and the classification of Random Forest model offers a methodological alternative that utilizes explicit geometric features, which are more accessible for clinical review than the latent representations in 'black-box' deep learning models.
+
+----- triple_id: be745820d2f -----
+TRIPLE:     (RT-DETR)  --evaluatedon-->  (dataset of eye landmark annotations)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: The RT-DETR model was employed and trained on a dataset of eye landmark annotations.
+
+----- triple_id: b6c958f32d2 -----
+TRIPLE:     (freeze_backbone_batch_norms)  --trainedon-->  (True)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: Other parameters set precision and stability features like initializer_range = 0.01, layer_norm_eps=1e-5, and batch_norm_eps=1e-5, while the backbone is configured with use_pretrained_backbone=False and freeze_backbone_batch_norms=True.
+
+----- triple_id: b6ab40c23bb -----
+TRIPLE:     (National Museum of Nature and Science)  --produces-->  (RDF)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: Moreover, LODAC and National Museum of Nature and Science have started collecting links of fungus-host interactions from a list of fungi recorded in Japan and transforming them into RDF.
+
+----- triple_id: b2e4ee0b0c6 -----
+TRIPLE:     (%MAPE)  --evaluates-->  (3.33%)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: The GP model yields a mean absolute percentage error (%MAPE) of 3.33% and an R2 value of 0.9805 when compared to experimental data.
+
+----- triple_id: b30789e56d1 -----
+TRIPLE:     (SMOTE)  --addresses-->  (imbalance)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Third, although we used SMOTE and cross-validation to address imbalance, additional external datasets are needed to confirm generalizability.
+
+----- triple_id: bc86b96e332 -----
+TRIPLE:     (PBC)  --comparesagainst-->  (PCS)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: P-Values of both PCF and PCS were lower than 0.05, whereas P-Value of PBC was higher than 0.05.
+
+----- triple_id: b756a14625d -----
+TRIPLE:     (cSysGuard)  --designedfor-->  (prediction of system performance metrics)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: This paper introduces cSysGuard, a novel and resilient monitoring framework designed to enhance the prediction of system performance metrics and health assessments in dynamic cloud environments.
+
+----- triple_id: b1faa4bcf03 -----
+TRIPLE:     (SMOTE)  --comparesagainst-->  (Over-sampling using SMOTE)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: To mitigate the issue of noise amplification, we conducted analyses of the synthetic samples by comparing the results against Over-sampling using SMOTE and cleaning using Edited Nearest Neighbors (SMOTE-ENN)23
+
+----- triple_id: bb6593a1661 -----
+TRIPLE:     (SMOTE)  --addresses-->  (imbalanced dataset)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: To address this, we implemented SMOTE to enhance the representation of the minority class, thereby enhancing the model equity by creating synthetic instances of this class to improve its detection.
+
+----- triple_id: ba1e2d669e5 -----
+TRIPLE:     (health predictor)  --locatedin-->  (system)
+PREDICATE DEFINITION: Organisation → Place  |  use for physical location
+SOURCE SENTENCE: The health predictor represents the last layer in our predictive framework . It has a classification model designed to determine the system 's health .
+
+----- triple_id: b6a736a4389 -----
+TRIPLE:     (RT-DETR deep learning algorithm)  --uses-->  (localized landmark coordinates)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Subsequently, a two-stage analysis pipeline was implemented: first , the RT-DETR deep learning algorithm was employed to automate landmark localization; second, seven machine learning classifiers were evaluated for strabismus detection .
+
+----- triple_id: b5890841c12 -----
+TRIPLE:     (Random Forest model)  --achieves-->  (sensitivity of 0.96)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: A Random Forest model, which showed high performance with an accuracy of 0.95, sensitivity of 0.96, and specificity of 0.94, was then used to classify these features.
+
+----- triple_id: b68ef323d23 -----
+TRIPLE:     (Random Forest model)  --achieves-->  (0.94 specificity)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: A Random Forest model, which showed high performance with an accuracy of 0.95, sensitivity of 0.96, and specificity of 0.94, was then used to classify these features.
+
+----- triple_id: bf20dbcff4b -----
+TRIPLE:     (quaternary ammonium compounds (Quats) molecules)  --uses-->  (SMILES notation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: enhancing the description of quaternary ammonium compounds (Quats) molecules—currently represented using simple SMILES notation—could be achieved by adopting more sophisticated molecular fingerprints
+
+----- triple_id: baf9f8e6010 -----
+TRIPLE:     (cSysGuard)  --uses-->  (stacking approach)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: To forecast performance metrics effectively, cSysGuard implements an advanced ensemble model using a stacking approach that integrates various predictors, such as the Level-0 and Level-1 models.
+
+----- triple_id: b2c8647c993 -----
+TRIPLE:     (cSysGuard)  --comparesagainst-->  (CNN)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: Each graph compares the performance of cSysGuard with commonly used models such as GRU, RNN, LSTM, ARIMA, and CNN.
+
+----- triple_id: b5b383d04f3 -----
+TRIPLE:     (cSysGuard)  --comprises-->  (health assessment feature)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: cSysGuard comprises two main components: a system performance metric forecasting module and a health assessment feature.
+
+----- triple_id: ba5ee9b7dc8 -----
+TRIPLE:     (SMOTE)  --uses-->  (Synthetic Minority Over-sampling Technique)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: SMOTE (Synthetic Minority Over-sampling Technique) is an oversampling method used to address class imbalance.
+
+----- triple_id: bdb129dfcc9 -----
+TRIPLE:     (our framework)  --uses-->  (RT1–RT5)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: From an architectural perspective, prior mobile-based AI attempts typically used CNNs without landmark explanation6. In contrast, our framework uses human-readable input features (RT1–RT5) derived from ocular geometry, which may facilitate clinical inspection of model inputs and improve transparency relative to end- to-end image classifiers.
+
+----- triple_id: bf83d6c1535 -----
+TRIPLE:     (Linked Open Data for ACademia (LODAC))  --uses-->  (Resource Description Framework (RDF))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In Japan, Linked Open Data for ACademia (LODAC) has collected taxon concepts in Resource Description Framework (RDF) and provided Simple Protocol and RDF Query Language (SPARQL) endpoint for public access.
+
+----- triple_id: bcf35cfe6ab -----
+TRIPLE:     (PCF)  --achieves-->  (best AUC)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: It has been found that among all stand-alone scoring functions, the collaborative filtering approach, PCF, provided the best AUC.
+
+----- triple_id: b52478763c6 -----
+TRIPLE:     (Random Forest)  --achieves-->  (PPV (or precision) of 0.97)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Random Forest (RF) yielded the best overall performance: accuracy of 0.95, specificity of 0.94, sensitivity of 0.96, PPV (or precision) of 0.97, and NPV of 0.92.
+
+----- triple_id: bc1946f5f1b -----
+TRIPLE:     (two-stage analysis pipeline)  --comprises-->  (RT-DETR deep learning algorithm)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: Subsequently, a two-stage analysis pipeline was implemented: first , the RT-DETR deep learning algorithm was employed to automate landmark localization; second, seven machine learning classifiers were evaluated for strabismus detection.

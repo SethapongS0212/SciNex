@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b4d448b67c1 -----
+TRIPLE:     (Gaussian Process (GP))  --addresses-->  (predicting osmotic coefficients)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: it is determined that Gaussian Process (GP) is the optimal algorithm for predicting osmotic coefficients, considering both accuracy and continuity of predictions.
+
+----- triple_id: ba313f7cc4d -----
+TRIPLE:     (osmotic coefficients)  --reports-->  (activity coefficients)
+PREDICATE DEFINITION: AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead
+SOURCE SENTENCE: The osmotic coefficients predicted using GP are then converted into activity coefficients and compared with reported values from the literature.
+
+----- triple_id: bddb3788e88 -----
+TRIPLE:     (Random Forest)  --trainedon-->  (SMOTE-adjusted data balancing)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: The seven classifiers evaluated—Logistic Regression (LR), Decision Tree (DT), Naïve Bayes (NB), Random Forest (RF), K-Nearest Neighbors (KNN), Artificial Neural Networks (ANN), and Support Vector Machines (SVM)—were trained using 4-fold cross-validation with SMOTE-adjusted data balancing.
+
+----- triple_id: b41b6ad5cf1 -----
+TRIPLE:     (SMOTE)  --produces-->  (synthetic instances)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: To address this, we implemented SMOTE to enhance the representation of the minority class, thereby enhancing the model equity by creating synthetic instances of this class to improve its detection.
+
+----- triple_id: be39ef73104 -----
+TRIPLE:     (Walktrap)  --uses-->  (random walk)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Walktrap that employed random walk and estimated total Modularity in every step before merging clusters [14]
+
+----- triple_id: b3ab7b9d26a -----
+TRIPLE:     (Integrating machine learning with cloud computing)  --achieves-->  (improving system resource management)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Integrating machine learning with cloud computing represents a significant advancement in improving system resource management.
+
+----- triple_id: b3c8299e799 -----
+TRIPLE:     (Random Forest classifier)  --achieves-->  (accuracy of 0.95)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The Random Forest classifier achieved an accuracy of 0.95, sensitivity of 0.96, specificity of 0.94, positive predictive value of 0.97, and negative predictive value of 0.92.
+
+----- triple_id: bc1c0dcecb3 -----
+TRIPLE:     (Decision Trees)  --comparesagainst-->  (Decision Trees)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: The analysis reveals that the Decision Trees outperform the other base models by achieving the highest F1 score.
+
+----- triple_id: b7cfd59d33f -----
+TRIPLE:     (XGB)  --achieves-->  (lowest errors)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: While XGB and RF achieve the lowest errors on the random split, GP demonstrates superior stability in the LOGO validation , maintaining a lower drop in performance compared to tree-based methods when predicting unseen salts.
+
+----- triple_id: b17298bbf8a -----
+TRIPLE:     (BPEmbAug)  --achieves-->  (score range of 0.74)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: In Table II, the average scores of all four methods are shown , with BPEmbAug being the most effective method with a score range of 0.74; if the score is higher than 0.8, the generated sentences will not have significant changes.
+
+----- triple_id: b7cd0daaabc -----
+TRIPLE:     (cSysGuard)  --splitfrom-->  (the cSysGuard architecture)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: we constructed these frameworks and applied them to our dataset to determine their effectiveness and compare them to the cSysGuard architecture
+
+----- triple_id: bbf8a06ead8 -----
+TRIPLE:     (cosine similarity)  --uses-->  (evaluation method)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we evaluated the performance of the augmented data using cosine similarity.
+
+----- triple_id: bdbc4a57fc3 -----
+TRIPLE:     (RT-DETR)  --achieves-->  (intersection over union of 0.62)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: RT-DETR achieved an intersection over union of 0.62 and a mean center-point error of 6.52 pixels in landmark localization.
+
+----- triple_id: bf6aa8676b9 -----
+TRIPLE:     (RT-DETR)  --addresses-->  (landmark localization)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: By employing RT-DETR for landmark localization and biometric ratio–based classification via traditional ML models, we demonstrated promising screening performance under controlled image acquisition conditions.
+
+----- triple_id: bd2742ff8e3 -----
+TRIPLE:     (two-stage analysis pipeline)  --comprises-->  (seven machine learning classifiers)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: Subsequently, a two-stage analysis pipeline was implemented: first , the RT-DETR deep learning algorithm was employed to automate landmark localization; second, seven machine learning classifiers were evaluated for strabismus detection.
+
+----- triple_id: bb280a9c6e8 -----
+TRIPLE:     (collaborative filtering method)  --produces-->  (predictive scores)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: For link prediction in a bipartite graph, the collaborative filtering method [4], which gives predictive scores for missing fungus-host pairs based on number of common hosts among fungi, is used.
+
+----- triple_id: bc00cfae476 -----
+TRIPLE:     (LPII)  --produces-->  (a hybrid recommendation approach for link prediction)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: This paper introduces LPII, a hybrid recommendation approach for link prediction.
+
+----- triple_id: b980e00ca90 -----
+TRIPLE:     (LPII)  --uses-->  (community structure)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Therefore, the contribution of our research is to introduce LPII, a hybrid approach that combines three concepts of collaborative filtering , community structure, and biological classification.
+
+----- triple_id: b193f099aef -----
+TRIPLE:     (RT-DETR)  --achieves-->  (intersection over union (IoU) of 0.62)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The summary of the evaluation metrics for the RT-DETR method using 4-fold cross-validation resulted in an intersection over union (IoU) of 0.62
+
+----- triple_id: bef6050f9ec -----
+TRIPLE:     (eye landmark annotation)  --uses-->  (custom-developed desktop application)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: A single researcher performed the eye landmark annotation using a custom-developed desktop application designed to ensure consistency.
+
+----- triple_id: bf399f66729 -----
+TRIPLE:     (RT-DETR)  --uses-->  (loss functions)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The RT-DETR utilizes a mix of loss functions to enhance several facets of the detection process for assessing ocular alignment in strabismus.
+
+----- triple_id: bae726d88fe -----
+TRIPLE:     (Snyder)  --affiliatedwith-->  (Forecasting With Exponential Smoothing: The State Space Approach)
+PREDICATE DEFINITION: Agent → Organisation  |  use for institutional affiliation
+SOURCE SENTENCE: Snyder, Forecasting With Exponential Smoothing: The State Space Approach.
+
+----- triple_id: ba78f518002 -----
+TRIPLE:     (use_pretrained_backbone)  --trainedon-->  (False)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: Other parameters set precision and stability features like initializer_range = 0.01, layer_norm_eps=1e-5, and batch_norm_eps=1e-5, while the backbone is configured with use_pretrained_backbone=False and freeze_backbone_batch_norms=True.
+
+----- triple_id: b510ce22950 -----
+TRIPLE:     (system)  --uses-->  (weight-averaging method)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: To effectively leverage the contributions of each Level-1 model, the system receives predictive model outputs and refines the final prediction using a weight-averaging method [60] by assigning higher weights to more accurate models.
+
+----- triple_id: bd157141c9b -----
+TRIPLE:     (LODAC)  --produces-->  (RDF)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: Moreover, LODAC and National Museum of Nature and Science have started collecting links of fungus-host interactions from a list of fungi recorded in Japan and transforming them into RDF.

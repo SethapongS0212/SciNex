@@ -33,6 +33,7 @@ family. For numbers worth reporting, rerun `qa` with an independent model (hands
 import argparse
 import subprocess
 import sys
+import threading
 import time
 from datetime import datetime
 from pathlib import Path
@@ -66,6 +67,60 @@ def no_power_throttling(pid=None):
     if pid is not None:
         k32.CloseHandle(h)
     return ok
+
+
+def no_power_throttling_tree(pid, passes=3, settle=6.0):
+    """Opt out `pid` AND every descendant, repeatedly, because the PID we spawn is often not
+    the process that does the work.
+
+    ⛔ Measured 2026-10-24 (hands_off §36.11): on a venv created by the Windows **Python Install
+    Manager**, `.venv\\Scripts\\python.exe` is a trampoline that re-execs the real interpreter
+    (`pythoncore-3.12-64\\python.exe`) as a CHILD. `no_power_throttling(proc.pid)` therefore opted
+    out a launcher that does no work, while the trainer underneath stayed parked on the efficiency
+    cores: **48 s/step vs 6 s/step once the real PID was opted out — an 8x difference** — with the
+    GPU at 0% util and 9.75 W, starved by one throttled CPU thread. The 14 h `base_gen` and the
+    315.9 min training of the teacher-only run were both throttled this way.
+
+    Children appear a moment after launch, so sweep a few times. Uses psutil (pinned in
+    requirement.txt) and falls back to a WMI query."""
+    if sys.platform != "win32":
+        return
+    seen = set()
+    for i in range(passes):
+        for target in [pid] + _descendants(pid):
+            if target not in seen:
+                no_power_throttling(target)
+                seen.add(target)
+        if i < passes - 1:
+            time.sleep(settle)
+    return sorted(seen)
+
+
+def _descendants(pid):
+    try:
+        import psutil
+        return [c.pid for c in psutil.Process(pid).children(recursive=True)]
+    except Exception:
+        pass
+    try:                                    # no psutil: ask WMI for the parent/child table
+        out = subprocess.run(
+            ["powershell", "-NoProfile", "-Command",
+             "Get-CimInstance Win32_Process | Select-Object ProcessId,ParentProcessId |"
+             " ForEach-Object { \"$($_.ProcessId) $($_.ParentProcessId)\" }"],
+            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True, timeout=60).stdout
+        kids, found, frontier = {}, [], [pid]
+        for line in out.splitlines():
+            bits = line.split()
+            if len(bits) == 2 and bits[0].isdigit() and bits[1].isdigit():
+                kids.setdefault(int(bits[1]), []).append(int(bits[0]))
+        while frontier:
+            p = frontier.pop()
+            for c in kids.get(p, []):
+                if c not in found:
+                    found.append(c); frontier.append(c)
+        return found
+    except Exception:
+        return []
 
 
 def main():
@@ -113,7 +168,10 @@ def main():
         say("$ " + " ".join(cmd))
         with open(log, "a", encoding="utf-8") as f:
             proc = subprocess.Popen(cmd, stdout=f, stderr=subprocess.STDOUT)
-            no_power_throttling(proc.pid)
+            # the TREE, not just proc.pid: a Python-Install-Manager venv re-execs the real
+            # interpreter as a child, and opting out only the launcher left training 8x slow
+            # (§36.11). Runs in a thread so the sweeps do not delay the step.
+            threading.Thread(target=no_power_throttling_tree, args=(proc.pid,), daemon=True).start()
             rc = proc.wait()
         if rc:
             say(f"FAILED (exit {rc}) — see {log}")

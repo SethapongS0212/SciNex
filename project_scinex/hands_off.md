@@ -1,5 +1,620 @@
 # Hands-Off Notes
 
+## Session 36 — the unattended chain's post-mortem (a laptop sleep + MY deadline bug), then the real run starts (2026-10-23)
+
+> User: *"continue on where we left off"*, and mid-session: *"i think we still have credits left to
+> run the thing to run the model in openrouter, we might need to use that to run later after
+> finishing it. notify me so we can work and discuss on openrouter afterwards"* (§36.6).
+
+### 36.1 ⛔ POST-MORTEM: the §35.10 chain failed a step that had actually SUCCEEDED
+The chain was launched at 13:25 on 2026-10-20 and its log jumps straight from `14:38:45` to
+`2026-10-23 15:25:41  STEP B FAILED (torch not installed within 8 h)`. Two causes, compounding:
+1. **The laptop slept at ~14:39 on 10-20 and woke at ~15:25 on 10-23.** `step_a` holds
+   `SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED)`, which prevents **idle** sleep only
+   — it does **not** stop a lid close or a user-initiated sleep. The user went outside; the lid shut.
+2. **⭐ My bug, and the expensive half:** `step_b` tested its absolute wall-clock deadline
+   (`while time.time() < end`) **before** probing readiness, so on wake the loop fell straight
+   through to `fail()` without ever re-checking. **torch had finished installing at ~14:38, before
+   the sleep** — the step was already green. An 8 h deadline measured from the start cannot survive
+   a 3-day pause.
+**What was actually on disk on 10-23:** `torch 2.11.0+cu128` fully installed with all its
+dependencies, `torch.cuda.is_available() True`, capability **(8, 9)**,
+`NVIDIA GeForce RTX 4060 Laptop GPU`; `model-00001-of-00002.safetensors` **byte-exact**;
+shard 2 stopped at 31 of 622 MB; and two 3-day-old `pip install torch` processes still alive, hung
+on sockets the sleep had killed (they were killed by PID).
+
+### 36.2 Three fixes to the chain (`ft_runs/chain_session35.py`)
+1. **Probe before deadline, and count the deadline from the last PROGRESS, not from the start**
+   (`step_b`): sleeping now only *pauses* the chain. Same bug class fixed in `wait_for_snapshot`,
+   which now gives up only after 90 min with no new bytes.
+2. **`pip_busy()` ignores a pip older than 90 minutes.** A pip hung on a dead socket would
+   otherwise have made the chain wait on it forever.
+3. `numpy==2.4.4` added to the dep list (torch warns `Failed to initialize NumPy` without it).
+**Lesson, for any unattended runner on a laptop:** every wait must be *progress*-based, and the
+readiness check must come first. Also expect sleep: a keep-awake request does not stop a lid close.
+
+### 36.3 ⭐ The link is now ~6.8 MB/s — the reason for picking the 1.7B is GONE
+Measured against huggingface.co on 10-23: **6,813,384 B/s**, i.e. **~20x the 145–470 KB/s of
+10-20** (§35.5). At this speed `Qwen/Qwen3-4B-Instruct-2507` (8.05 GB) is a ~20-minute download, so
+the bandwidth argument that made the user choose the smaller student no longer applies.
+**The student for the run in flight is still `Qwen/Qwen3-1.7B` as decided** — but switching to (or
+adding) the 4B would restore comparability with the §33/§34 numbers. Put to the user; open
+decision 6 in `HANDOFF_NEXT_SESSION.md`.
+
+### 36.4 Setup finished, stack verified on sm_89
+Shard 2 downloaded to byte-exact (622,329,984 bytes; snapshot **3.80 GiB** total), the pinned deps
+installed into the venv, and the whole stack checked:
+`torch 2.11.0+cu128 | cuda True | cap (8, 9) | bnb 0.49.2 | peft 0.21.1 | transformers 5.5.4 |
+numpy 2.4.4 | VRAM 8.0 GiB`.
+
+### 36.5 ⭐ SMOKE TESTS PASS — and sm_89 does NOT hit the sm_120 attention trap
+| smoke | result |
+|---|---|
+| `ft_generate --limit 2` (osmotic2026, CEO, batch 2) | 2 paragraphs in **0.7 min**, **peak VRAM 2.3 GB**; valid JSON in the right schema (para 0: a `designedFor` triple with a real `source_sentence`; para 1: a correct `{"triples": []}` abstention) |
+| `ft_train_qlora --max-steps 2` (teacher-only data) | 2 steps in 28 s = **~14 s/step**, **peak VRAM 2.49 GB**, LoRA **17,432,576 trainable / 1,738,007,552 total (1.00%)**, loss 1.78, adapter written |
+- **The §33.3 SDPA→MATH blow-up does not happen here.** On sm_120 one layer peaked at 7.27 GB;
+  training the 1.7B on sm_89 peaked at **2.49 GB total**, so a real (flash) kernel is being used.
+  `fast_attention` still picks deliberately, but this machine does not depend on the cuDNN work-around.
+- ⚠ **The 14 s/step figure is pessimistic**: both smokes were run by hand from a windowless shell,
+  i.e. subject to EcoQoS (§34.5). `run_ft_pipeline` opts itself and its children out, so the real
+  rate should be better. At 14 s/step, 822 steps = ~3.2 h per variant.
+- Both smoke artefacts (`output/osmotic2026/kg/relation/qwen3-1.7b-smoke/`,
+  `ft_runs/qwen3-1.7b-smoke/`) were deleted; the chain re-runs its own copies of these two checks.
+
+### 36.6 ▶ OPEN, user-raised: OpenRouter credit for the evaluation models
+User, this session: credits are probably left on OpenRouter, to be used **after** the local run
+finishes, and they want to be notified and to discuss it then. Where it would actually go — this is
+exactly the project's one open evaluation gap:
+- **Q&A (Part 3) needs an independent question writer + answerer** (open decision 1, §34.13). The
+  pipeline default uses the base student itself, which makes every Q&A number a PIPELINE TEST, not a
+  result. An OpenRouter model from outside the training data would make Part 3 reportable.
+- **Second candidate: settling the qwen3-235b sentinel question** (§34.3/§34.10) — re-calling ~20
+  sentinel paragraphs costs about $0.01 and would tell us whether its Table 10 coverage and C6 are
+  real abstention or failed calls. Checking the OpenRouter activity log is free and comes first.
+- ⛔ **Unchanged:** Claude is never called through an API here, and no OpenRouter credit is ever
+  spent on Claude (§34.8). The C1/C3/C4 judge stays Claude-in-session via `blind_judge.py`.
+- ⚠ Not needed for the run in flight: training, generation and `ft_compare` are entirely local, and
+  Q&A grading is deterministic (§34.9).
+
+### 36.7 Chain relaunched — gates green, the long runs are in flight
+Relaunched hidden via WMI at **15:38** (same command as §35.10). This time every gate passed in
+14 seconds, because the work was already done:
+```
+15:38:01  A ok: keep-awake held, EcoQoS opt-out applied
+15:38:01  E ok: snapshot complete, 3.80 GiB, every file byte-exact
+15:38:03  B ok: torch 2.11.0+cu128 importable
+15:38:03  C ok: training/generation deps installed
+15:38:15  D ok: stable torch on sm_89, bitsandbytes + peft import
+15:38:15  F  (smoke generation running)
+```
+and then, confirmed on the log:
+```
+15:43:19  F ok: 2 paragraphs generated through the real extraction path (smoke slug deleted)
+15:45:48  G ok: 2 optimizer steps ran and an adapter was written (smoke run deleted)
+15:45:48  H starting: teacher-only variant
+          base_gen -> kg/relation*/qwen3-1.7b-base-hf/  10 paper x ontology runs, 348 paragraphs
+```
+→ **H** (teacher-only: `base_gen → train → ft_gen → compare`) → **I** (consensus:
+`train → ft_gen → compare`). Budget at the smoke rates: ~3 h training per variant plus ~1–2 h per
+generation pass over 348 paragraphs (5 papers × 2 ontologies), three passes — call it 10–12 h.
+Slugs the pipeline derives (checked against `run_ft_pipeline.py:98-99`, so the `blind_judge` command
+in `HANDOFF_NEXT_SESSION.md` matches): `qwen3-1.7b-base-hf`, `qwen3-1.7b-ft-cv`,
+`qwen3-1.7b-ft-cons-cv`; run dirs `ft_runs/qwen3-1.7b-f0` and `ft_runs/qwen3-1.7b-f0-cons`.
+⚠ **If the lid closes again the chain pauses and resumes, but a CUDA context may not survive the
+sleep**: a training step in flight can die with the GPU context, and only the completed pipeline
+steps are protected by `.done` markers. Keep the laptop plugged in and open for the long runs, or
+set the AC lid action to "do nothing".
+
+### 36.8 ⛔ MEASURED: raising the generation batch 4 → 6 made it 2.85× SLOWER. Batch 4 is the setting.
+A batch-size experiment, run and then **reverted**. Keep `--gen-args=--batch-size=4`.
+
+**Why it was tried.** The first `base_gen` at batch 4 (the Session 33 setting) looked wasteful:
+`csysguard2024/ceo` reached `12/57` in **8.0 min** (0.67 min/paragraph) at **peak VRAM 3.3 GB of 8**
+with the GPU **39% busy at 16 W**. 4-bit decode at small batch is bound by weight bandwidth, so
+batching usually comes close to free. KV cache here is **112 KiB/token** (28 layers × 8 KV heads ×
+128 head_dim × 2 for K+V × 2 bytes), so the worst case — a p50 3.2k prompt plus the full 3,072-token
+budget — projected 4.0 GiB of KV at batch 6 against 5.4 GiB at batch 8; 6 looked like the safe gain.
+
+**What actually happened — a clean A/B on the SAME 12 paragraphs of the same paper:**
+| setting | same 12 paragraphs | peak VRAM (script) | resident (nvidia-smi) |
+|---|---|---|---|
+| **batch 4** | **8.0 min** | 3.3 GB | 3.9 GB |
+| batch 6 | **22.8 min** | 5.5 GB | **7.1 GB of 8** |
+Per-batch, batch 6 went `6/57 (2.9 min)` → `12/57 (22.8 min)`: a single batch took **19.9 minutes**.
+Over 24 paragraphs it averaged **1.27 min/paragraph vs 0.67** at batch 4. On 348 paragraphs that is
+~7.4 h per pass instead of ~3.9 h — the "optimisation" would have cost ~10 h over three passes.
+
+**Two mechanisms, and the data does not fully separate them:**
+1. **VRAM pressure → WDDM paging (most likely dominant).** 7.1 GB resident of 8 GB is exactly where
+   Windows starts paging VRAM to system RAM, which does **not** raise OOM — the run just crawls
+   (the §33.3 trap). My 5.2 GiB estimate ignored the torch caching allocator, fragmentation and the
+   desktop's own reservation, so the real figure was ~2 GB higher than predicted.
+2. **Straggler gating.** A batch finishes only when its LONGEST sequence does, and base-model reply
+   lengths are heavy-tailed (up to the full 3,072-token budget). The bigger the batch, the more
+   likely one rambling reply holds up the rest. This cannot explain a 2.85× gap on its own.
+**Lesson: on an 8 GB Windows card, predict VRAM from `nvidia-smi` residency, not from a KV-cache
+calculation, and A/B any batch change on identical paragraphs before trusting it.** Batch 2 was not
+tested; batch 4 is both measured-good here and the Session 33 setting, so it is what the runs use.
+
+⚠ Both partial outputs from this experiment were deleted (12 paragraphs at batch 4, then 24 at
+batch 6) so the whole corpus is generated at ONE batch size: with left padding and greedy decoding
+the batch size can flip a token, and base / teacher-only / consensus must be compared on identical
+settings. Cost of the experiment: ~40 min of run time.
+
+⛔ **`--max-new-tokens` stays at the 3,072 default.** Lowering it would cap the slow batches, but the
+base model rambles (~1k-token replies) while a finetuned model emits short JSON, so a tighter budget
+would truncate the BASE model's replies into invalid JSON and flatter the finetuned one — biasing the
+very comparison this run exists to make.
+
+✔ `ft_generate` writes `responses.jsonl` **incrementally** (verified: 12 lines on disk at `12/57`)
+and `--resume` is on by default, so a crash or a sleep costs at most one batch.
+
+⚠ **Reading `ft_runs/_pipeline_qwen3-1.7b-f0/pipeline.log`:** it is appended across launches, so it
+contains all three `base_gen` attempts interleaved — the first batch-4 try (12 paragraphs), the
+batch-6 experiment (24), and the batch-4 run that counts (from **16:29:45**). Only the last one
+produced the `output/*/kg/relation*/qwen3-1.7b-base-hf/` files on disk; the first two were deleted.
+The batch-4 rate reproduced exactly on relaunch (`4/57 2.9 min`, `8/57 3.0 min`, peak 3.3 GB), which
+is the evidence that the 2.85× gap was batch 6 and not drift.
+
+**Honest budget for the whole chain, from these measurements:** base_gen 348 paragraphs ≈ 3.9 h ·
+train 822 steps at ~9–14 s/step ≈ 2–3 h · ft_gen faster than base_gen (a finetuned model emits short
+JSON instead of rambling) ≈ 1.5–2 h · then the consensus variant's train + ft_gen again ≈ 4–5 h.
+**Total ≈ 13–17 h.** The lever that would actually shorten it is fewer eval papers (`--papers
+strabismus2026 osmotic2026` = 148 paragraphs instead of 348), not a bigger batch.
+
+### 36.9 ⭐ base_gen measured end to end, and the untuned Qwen3-1.7B BASELINE (fold 0, 5 eval papers)
+`base_gen` ran 2026-10-23 16:29:45 → still finishing at 04:59 on 10-24, i.e. **~12.5 h for 311 of
+348 paragraphs**. Per paper × ontology, from the pipeline log (cumulative timer differenced):
+| job | paragraphs | minutes | min/paragraph |
+|---|---|---|---|
+| csysguard2024/ceo | 57 | 99.8 | 1.75 |
+| linkpred2015/ceo | 29 | 89.6 | 3.09 |
+| osmotic2026/ceo | 23 | 31.7 | 1.38 |
+| strabismus2026/ceo | 51 | 179.3 | 3.52 |
+| textaug2023/ceo | 14 | 35.7 | 2.55 |
+| csysguard2024/scinex | 57 | 120.2 | 2.11 |
+| linkpred2015/scinex | 29 | 64.4 | 2.22 |
+| osmotic2026/scinex | 23 | 50.9 | 2.21 |
+| strabismus2026/scinex | 28 of 51 | 76.0 | 2.71 |
+**Real throughput: 2.40 min/paragraph at batch 4, peak VRAM 4.2 GB.**
+⛔ **Correction to §36.8:** the 0.67 min/paragraph quoted there (and the "~3.9 h per pass" built on
+it) came from the FIRST 12 paragraphs of the first paper and is **3.6× too optimistic**. A
+generation pass over 348 paragraphs costs **~14 h**, not ~4 h. Within-job variance is large — single
+batches take 19+ min when one reply runs to the full 3,072-token budget — so **any throughput figure
+taken from the first few batches of a run is worthless**; difference the cumulative timer across
+whole jobs instead.
+
+**⭐ The baseline the finetuned models must beat** (`ft_compare.py --slugs qwen3-1.7b-base-hf
+gptoss-120b`, the 5 fold-0 eval papers; **CEO is complete at 174/174 paragraphs**, scinex was still
+running at 137/174 so its row is partial and NOT quotable):
+| ontology | run | valid JSON | truncated | proposed → kept | kept rate | coverage | agree w/ teacher P / R |
+|---|---|---|---|---|---|---|---|
+| CEO | **qwen3-1.7b-base-hf** | 87.9% | **18** | 366 → 123 | **33.6%** | 20.7% | 13.8% / 8.9% |
+| CEO | gptoss-120b (teacher) | 98.3% | 0 | 220 → 180 | **81.8%** | 42.0% | (teacher) |
+| scinex *(partial, 137/174)* | qwen3-1.7b-base-hf | 88.3% | 15 | 329 → 120 | 36.5% | 19.0% | 6.7% / 5.6% |
+| scinex | gptoss-120b (teacher) | 100.0% | 0 | 117 → 93 | 79.5% | 20.9% | (teacher) |
+Reading it:
+- **The untuned 1.7B lands at 33.6% kept, almost exactly where the untuned 4B did** (34.9% CEO in
+  §33.5/§35.4, on 2 papers). The guards reject two thirds of what either base model proposes, and
+  one less capable model generation did not change that much.
+- **18 of 174 base replies (10.3%) hit the 3,072-token limit**; the teacher truncates 0. Those
+  runaway replies are also what makes generation slow, and they are the concrete reason
+  `--max-new-tokens` was NOT lowered (§36.8): a tighter budget would corrupt the base model's JSON
+  and flatter the finetuned model in the very comparison being run.
+- The base model proposes **more** than the teacher (366 vs 220) and keeps **less** (123 vs 180) —
+  the over-extraction the finetuning is meant to fix, same shape as §33.5.
+
+### 36.10 ⭐⭐ FIRST REAL FINETUNING RESULT — teacher-only Qwen3-1.7B: format and precision LEARNED, coverage COLLAPSED
+Teacher-only variant finished at **13:02 on 2026-10-24** (`H ok`). Timings for the whole run:
+`base_gen` 16:29:45 → 06:38 (**~14.1 h**, 348 paragraphs, 2.40 min each) · `train` 06:38 → 11:54
+(**315.9 min**, 822 steps ≈ 23 s/step, loss **4.45 → ~0.10**, final points 0.03/0.08/0.14) ·
+`ft_gen` 11:54 → 13:02 (**67 min**, 348 paragraphs, **0.19 min each — 12.5× faster than the base
+model**, because the finetuned model stops rambling) · `compare` seconds.
+
+**`ft_compare.py --slugs qwen3-1.7b-base-hf qwen3-1.7b-ft-cv gptoss-120b`, 5 fold-0 eval papers,
+174 paragraphs per ontology (census, not a sample):**
+| ontology | run | valid JSON | truncated | proposed → kept | kept rate | coverage | vs teacher P / R |
+|---|---|---|---|---|---|---|---|
+| CEO | qwen3-1.7b-base-hf | 87.9% | 18 | 366 → 123 | 33.6% | 20.7% | 13.8% / 8.9% |
+| CEO | **qwen3-1.7b-ft-cv** | **100.0%** | **0** | 45 → 29 | **64.4%** | **4.6%** | **72.4%** / 12.8% |
+| CEO | gptoss-120b (teacher) | 98.3% | 0 | 220 → 180 | 81.8% | 42.0% | (teacher) |
+| scinex | qwen3-1.7b-base-hf | 87.9% | 20 | 434 → 155 | 35.7% | 21.3% | 6.5% / 7.5% |
+| scinex | **qwen3-1.7b-ft-cv** | **100.0%** | **0** | 33 → 21 | **63.6%** | **3.4%** | **66.7%** / 15.1% |
+| scinex | gptoss-120b (teacher) | 100.0% | 0 | 117 → 93 | 79.5% | 20.9% | (teacher) |
+
+**What finetuning bought (both ontologies, same direction):**
+1. **Output format: solved.** Valid JSON 87.9% → **100%**, truncated replies **18 → 0**. The base
+   model's runaway generations are gone entirely.
+2. **Guard pass rate: nearly doubled**, 33.6% → **64.4%** CEO (35.7% → 63.6% scinex), against the
+   teacher's 81.8% / 79.5%. The invented predicates and malformed triples largely stop.
+3. **Agreement with the teacher, when it does extract: 13.8% → 72.4% precision** (6.5% → 66.7%
+   scinex). What it emits is mostly what the teacher would have emitted.
+
+**⛔ What it cost — the §34.11 failure mode, worse than on the 4B:**
+- **Coverage 20.7% → 4.6%** (teacher 42.0%): it returns `{"triples": []}` for **162 of 174
+  paragraphs (93.1%)** on CEO and 165 of 174 (94.8%) on scinex. Not the §33.5b total collapse —
+  it does extract on 12 and 9 paragraphs respectively — but close.
+- **Recall against the teacher is only 12.8% / 15.1%**: it finds about an eighth of the teacher's
+  triples. Absolute volume 29 kept triples vs the teacher's 180.
+- Session 34's 4B kept 86% at 8-of-44 paragraphs; this 1.7B keeps 64% at 4.6% coverage. Same
+  disease, further along.
+
+**Cause, already identified before the run (§36.6): 402 of 619 extraction targets (65%) are
+empty.** Token-level loss (the §33.5b fix) stops the model abstaining on *everything*, but it cannot
+undo a 2:1 prior in favour of abstention. The student learned the teacher's precision and its
+silence.
+
+**Prepared fix, NOT yet run (open decision 5, the user's call):**
+`build_ft_data.py --eval-fold 0 --max-empty-frac 0.3 --out ft_data/maxempty30` → built, giving
+**310 extraction examples (164 CEO / 146 scinex) with 93 empty = 30%**, 309 empty examples capped
+away; 2,976 train examples → **744 optimizer steps**. It halves the extraction examples but fixes
+the abstain/extract prior. (Its `train.jsonl` is correctly ignored by the `ft_data/**` patterns from
+§35.8.)
+⚠ **The consensus variant, running now, will probably under-extract too:** its data is 380/619 = 61%
+empty, only 3.6 points better than teacher-only. It is still worth finishing — teacher-only vs
+consensus is the experiment of record — but the abstention prior, not the consensus additions, is
+what dominates this student.
+
+### 36.11 ⛔⛔ THE BIG ONE: the EcoQoS opt-out was applied to a TRAMPOLINE process — everything ran 8× slow
+**Symptom.** The consensus training started at **48.4 s/step** (ETA 11 h) while the teacher-only
+training had managed 23 s/step. `nvidia-smi` during it: **GPU util 0%, 9.75 W, SM clock 930 of
+3105 MHz, "Idle: Active"**, temperature 54 °C and **no** throttle reason flagged — i.e. the GPU was
+not throttled, it was **starved** by one CPU thread parked on an efficiency core. That is the §34.5
+EcoQoS signature, which `run_ft_pipeline` was supposed to have fixed.
+
+**Cause.** On this machine the venv was created by the Windows **Python Install Manager**, and
+`.venv\Scripts\python.exe` is a **trampoline**: it re-execs the real interpreter
+(`AppData\Local\Python\pythoncore-3.12-64\python.exe`) as a **child**. The process tree was:
+```
+31492 .venv launcher (chain)       -> 20980 pythoncore   REAL chain
+  24828 .venv launcher             ->  5460 pythoncore   REAL run_ft_pipeline
+    24948 .venv launcher           ->  8124 pythoncore   REAL ft_train_qlora  <- does the work
+```
+`run_ft_pipeline.py` called `no_power_throttling(proc.pid)` on **24948, the launcher** — a process
+that does nothing — while 8124, the trainer, kept Windows' throttling. Session 34 never saw this
+because that laptop's venv was a python.org install, where `.venv\Scripts\python.exe` IS the
+interpreter.
+
+**Fix, and the measurement.** Applying the opt-out to the real PIDs live (no restart, as in §34.5):
+| | step time | GPU util | power | SM clock |
+|---|---|---|---|---|
+| throttled | **48.4 s** | 0% | 9.8 W | 930 MHz |
+| opted out | **~9 s** (6–12 s, varies with example length) | 63–71% | 26–56 W | 1425–2475 MHz |
+**≈8× on the worst steps**, and the consensus training's ETA fell from **11 h to ~2 h**.
+
+**What it cost the runs already done** (speed only — greedy decoding is deterministic, so **no result
+is invalidated and nothing needs re-running**):
+- teacher-only `train`: **315.9 min**, would have been ~90–120 min;
+- teacher-only `base_gen`: **~14.1 h** for 348 paragraphs (2.40 min each), should be a few hours;
+- so the ~21 h spent to 13:00 on 10-24 was perhaps 4–8× more than necessary.
+
+**Two fixes landed:**
+1. **`run_ft_pipeline.no_power_throttling_tree(pid)`** (new) opts out the PID **and every
+   descendant**, sweeping 3× with a 6 s settle because children appear a moment after launch; it
+   uses `psutil` (pinned in `requirement.txt`) and falls back to a WMI parent/child query. `sh()`
+   now calls it in a thread for every step it spawns. **Any future run gets this automatically.**
+2. **`ft_runs/ecoqos_watchdog.py`** (new, machine-local) for a pipeline that is ALREADY running and
+   therefore still holds the old code: it sweeps every python process whose command line mentions
+   `chain_session35` / `run_ft_pipeline` / `ft_generate` / `ft_train_qlora` / `ft_compare` once a
+   minute, so each newly spawned step is opted out within 60 s, and it exits by itself ~5 min after
+   the chain disappears. Launched detached at 13:08; its first sweep opted out all 6 PIDs.
+
+**Lesson, worth more than this run:** when a fix depends on a PID, verify the PID is the process
+doing the work. `Get-CimInstance Win32_Process | Select ProcessId,ParentProcessId,CommandLine` shows
+the trampoline immediately, and `nvidia-smi` reporting **0% util at <10 W with no throttle reason**
+means the GPU is being starved by the CPU side, not throttled itself.
+
+### 36.12 ⭐⭐⭐ BLIND C1/C3/C4 CENSUS, CEO — finetuning takes a 1.7B student from 29% to 85% relation correctness, i.e. TEACHER LEVEL
+Run exactly as designed in §34.8: `blind_judge.py build` pooled every kept triple of all four
+extractors on the 5 fold-0 eval papers — **355 model-triples → 315 unique items** (40 duplicates
+judged once), shuffled, ids salted, `key.csv` **not opened until after `collect`** — judged in
+session by claude-opus-5-5 across 13 batches, then `collect` + `report`.
+
+| extractor | judged | C1 concept | C3 specificity | C4 relation | C4 strictly CORRECT |
+|---|---|---|---|---|---|
+| qwen3-1.7b-base-hf | 107 | 59.8 [52.3, 67.8] | 52.3 [43.0, 61.7] | **29.4** [22.0, 37.9] | 22.4 |
+| **qwen3-1.7b-ft-cv** (teacher-only) | 27 | 90.7 [81.5, 98.1] | 81.5 [66.7, 92.6] | **83.3** [72.2, 94.4] | 74.1 |
+| **qwen3-1.7b-ft-cons-cv** (consensus) | 41 | 90.2 [81.7, 97.6] | 87.8 [78.0, 97.6] | **85.4** [75.6, 93.9] | 78.0 |
+| gptoss-120b (teacher) | 180 | 96.4 [94.4, 98.3] | 87.2 [82.2, 92.2] | **86.4** [83.1, 89.7] | 74.4 |
+
+Verdict mix (the clearest way to read it):
+| | C4 CORRECT | C4 PARTIAL | **C4 INCORRECT** |
+|---|---|---|---|
+| base | 24 | 15 | **68 = 63.6%** |
+| teacher-only | 20 | 5 | **2 = 7.4%** |
+| consensus | 32 | 6 | **3 = 7.3%** |
+| teacher | 134 | 43 | **3 = 1.7%** |
+
+**⭐ The headline: on per-triple quality the finetuned 1.7B students are statistically
+indistinguishable from the 120B teacher.** C4 85.4 vs 86.4, C1 90.2 vs 96.4, and both finetuned
+models beat the teacher on *strict* C4 (78.0 / 74.1 vs 74.4). Outright relation errors fall from
+**63.6% of the base model's triples to ~7%**. A 1.7B student that has learned the ontology is a
+different instrument from the same 1.7B model prompted.
+
+**⚖ Teacher-only vs consensus — the experiment of record: NO significant difference in quality, but
+consensus produces more.** C1 **−0.5 pts [−12.7, +12.4]**, C4 **+2.0 pts [−12.7, +16.8]** — both CIs
+straddle zero at n=27 vs n=41, so quality is a tie. Consensus wins on everything countable:
+**47 vs 29 kept triples (+62%)**, coverage **7.5% vs 4.6%**, guard kept rate **73.4% vs 64.4%**, C3
+87.8 vs 81.5, strict C4 78.0 vs 74.1. **Recommendation: adopt the consensus variant** — same quality,
+more of it — while noting the quality difference itself is not resolved at this sample size.
+
+**⛔ The real limitation is unchanged, and the census makes it sharper:** the students are *precise
+but nearly silent*. 29 and 47 kept triples against the teacher's 180, from 4.6–7.5% paragraph
+coverage against 42.0%. High C1/C3/C4 on a handful of triples is not a usable knowledge graph. The
+next lever is the already-built `--max-empty-frac 0.3` data (§36.10).
+
+**Error types the census exposed** (useful for the next round of guards, and all from the base model
+unless noted): metric-as-subject domain violations (`AUC evaluatedOn LTest`, `Decision Trees
+evaluates F1 score`); hardware read as data (`cSysGuard trainedOn <Intel CPU>`, `evaluatedOn 16GB
+DDR4 RAM`); hyperparameters as datasets (`max_features trainedOn sqrt`,
+`use_pretrained_backbone trainedOn False`); **reference-list bleed** (`Hoonlor writtenBy Buyya`,
+`Magableh affiliatedWith 'Int. Challis'`, `Snyder affiliatedWith <book title>`) — the boilerplate
+guard is not catching merged bibliographies; **self-loops** (`Belvèze et al. affiliatedWith Belvèze
+et al.`, `Decision Trees comparesAgainst Decision Trees`); **tautologies** (`SMOTE uses Synthetic
+Minority Over-sampling Technique`); **fabricated objects absent from the sentence** (`RT-DETR
+publishedIn Nature Machine Intelligence`, `Valente et al. affiliatedWith University of California,
+San Francisco`); verb-phrase fragments as objects; and one **prompt-template leak**
+(`RT1 evaluates '88.5 F1 on <Dataset>'` — the placeholder from the system prompt). The teacher's
+43 PARTIALs are a different, milder failure: mostly loose typing (a metric or landmark as the object
+of `uses`) and variant attribution (RT-DETR-L's score credited to RT-DETR).
+
+⚠ **Caveats to state with these numbers:** single rater (claude-opus-5-5, in session, blind);
+**not comparable with the claude-opus-5 C1–C6 tables** (Tables 10–12) which used a different judge;
+n=27/41 for the finetuned models gives wide CIs; one fold and **CEO only** — the scinex census has
+not been run; and the CI is a bootstrap over triples, which ignores that triples within a paper are
+not independent, so read it as a lower bound on uncertainty.
+
+### 36.13 Session close (2026-10-26): docs updated and everything pushed to GitHub
+User: *"update all the md files. then upload the whole update and changes files to this github"*.
+
+**Every markdown file reviewed and brought to the current state:**
+| file | what changed |
+|---|---|
+| `hands_off.md` | §36.1–36.14 (this session): post-mortem, fixes, throughput, baseline, the result, the EcoQoS bug, the census |
+| `Claude.md` | new STATUS block (2026-10-26) with the census table and the open recall problem |
+| `HANDOFF_NEXT_SESSION.md` | rewritten: what is DONE, the result table, 5 ordered next steps with commands, decisions, traps |
+| `results.md` | **Table 13** gained the consensus rows (+ corrected footnote); **Table 14** is the blind census; "what is missing" updated |
+| `TASK.md` | the CURRENT TASK block replaced (it still described the abandoned RTX 5090 plan); Status line refreshed to 2026-10-26 |
+| `SUMMARY_finetune_qa_2026-10-01.md` | new plain-language Session 36 section on top (the slide-ready summary for the user) |
+| `SETUP_NEW_MACHINE.md` | new section: the EcoQoS trampoline trap + diagnostic, the lid/sleep warning, and the batch-size warning |
+| `README.md` (root) and `project_scinex/README.md` | finetuning headline added to the status/headline blocks |
+| `RESULTS_REPORT.md` | ⚠ banner: it is GENERATED and predates Part 2 — `build_results_report.py` has no Part 2 awareness, so the note points at `results.md` Tables 13–14. **Open item: teach the builder about Part 2 or that banner is the only hand-written block in a generated file.** |
+| `PAPERS.md` | no change needed — the corpus is unchanged |
+
+**Pushed to https://github.com/SethapongS0212/SciNex.** Public-repo audit before committing:
+- The new `ontology_eval/_blind/ft-f0/ceo/batch_NN.txt` files quote **one source sentence per
+  triple**. Checked against precedent: **64 equivalent triple-harness bundles with
+  `SOURCE SENTENCE` lines are already tracked**, and `.gitignore` excludes only the
+  *paragraph*-level bundles (`ontology_eval/*/*/paragraphs/*_batch_*.txt`), which print whole
+  paragraphs. So committing the census is consistent with the established line.
+- Per model-output directory: `responses.jsonl`, `triples.json`, `prompt_meta.json`,
+  `system_prompt.txt`, `kg_stats.json` committed (the documented convention); `prompts.jsonl` and
+  `kg.graphml` ignored. Verified with `git check-ignore` on every file of one directory.
+- `ft_data/maxempty30/`: manifest + paper lists committed, `train.jsonl` and `parts/` ignored by the
+  `ft_data/**` patterns fixed in §35.8.
+- `ft_runs/qwen3-1.7b-f0{,-cons}/`: `run_manifest.json` committed, `adapter/` ignored.
+- `req_no_torch.txt` added to `.gitignore` — it is derived from `requirement.txt` by a command the
+  setup doc gives, so a committed copy could only go stale.
+- `ft_runs/chain_session35.py` and `ft_runs/ecoqos_watchdog.py` committed. ⚠ The chain hardcodes this
+  machine's paths (`C:\Users\cei008\...`); it is committed because §35.10/§36 describe it as the
+  unattended runner, but it is machine-local and not meant to run elsewhere unedited.
+- Confirmed absent from the commit: PDFs, `.env`/keys, parsed HTML, `prompts.jsonl`, adapters,
+  `ft_data/**/train.jsonl`, pipeline `.done` markers.
+
+### 36.14 Smoke steps are now skippable (`chain_smoke.done`)
+The chain's own F/G children are **not** EcoQoS-opted-out — `run_ft_pipeline` opts out *its*
+children (`run_ft_pipeline.py:116`), but the chain spawns F and G directly, so the smoke that took
+0.7 min by hand took **4.7 min** under the chain. They now write
+`ft_runs/_pipeline_qwen3-1.7b-f0/chain_smoke.done` and are skipped on a relaunch, which saves ~7
+throttled minutes every time the chain restarts. The marker is gitignored by the existing
+`ft_runs/_pipeline_*/*.done` rule. Delete it to force the smokes to run again (worth doing after any
+change to the model, the data or the generation flags).
+
+## Session 35 — new machine (RTX 4060 Laptop, 8 GB): clone set up, private-bundle data recovered from an older local copy, student = Qwen3-1.7B (2026-10-20)
+
+> User: *"read all md files to catch up. then continue our process on here for now. this laptop is
+> using 4070 so run the model that fits this laptop"*. The GPU is actually an **RTX 4060 Laptop GPU**
+> (`nvidia-smi`: 8,188 MiB, compute capability **8.9**, driver 592.82 / CUDA 13.1), not a 4070 — the
+> 8 GB ceiling is what matters and it is the same as the Session 33 laptop.
+> **The RTX 5090 VM plan (§34.12) is NOT what happened; training runs on this laptop.**
+
+### 35.1 The machine — Ada sm_89 is the FIRST machine here that needs no torch nightly
+RTX 4060 Laptop GPU, 8 GB, **sm_89 (Ada)**, Windows 11 Home Single Language 10.0.26200.
+- **Only Python 3.14.7 was installed** (via the new Python Install Manager, `py list`), and neither
+  torch nor bitsandbytes publishes cp314 wheels. Installed the project's version with
+  **`py install 3.12`** → 3.12.10, the same as Session 33. venv at `project_scinex/.venv`.
+- **torch `2.11.0+cu128`, a STABLE release** (`--index-url .../whl/cu128`, cp312). sm_89 is covered by
+  stable cu128 wheels, so **`--allow-dev-torch` is NOT needed on this machine** — unlike the sm_120
+  RTX 5070/5090, which needed a nightly. The old "2.6.0+cu124" rule is still H100-vGPU-only.
+- Windows, so the EcoQoS trap (§34.5) still applies to hidden launches; `run_ft_pipeline.py` already
+  opts itself and its children out.
+- The sm_120 SDPA→MATH attention trap (§33.3) is an sm_120/nightly finding; on sm_89 + stable torch
+  flash SDPA is expected to be available. `ft_common.fast_attention(training=True)` covers either case
+  — watch the `peak VRAM` / s/step lines in `pipeline.log` rather than assuming.
+
+### 35.2 ⭐ The private bundle was not needed: an OLDER PROJECT COPY on this laptop held everything
+`SciNex_private_bundle.zip` (§34.14) is not on this machine, but two pre-finetuning copies of the
+project are: `C:\Users\cei008\Downloads\project_scinex` (its git log ends at *"Add PAPERS.md"*, i.e.
+before Session 32) and `C:\Users\cei008\project_scinex` (an older ACL-corpus copy). The first one
+carried every gitignored input. Copied into the clone (only gitignored paths; **`git status` stayed
+clean afterwards**, verified):
+| restored | count | from |
+|---|---|---|
+| corpus PDFs `papers/*.pdf` | **22** (the 20 + the 2 retired substitutes) | `papers/` |
+| parsed papers `output/<id>/no-llm/` | **22** | `output/` |
+| **stored prompts `output/<id>/kg/relation{,_scinex}/<model>/prompts.jsonl`** | **293** | `output/` |
+| CS-NER gazetteer + per-paper entity CSVs `output/acl/` | 21 files, 2.1 MB | `output/acl/` |
+So `enrich_entity_csv.py` did not have to be re-run and no PDF had to be re-downloaded (including
+the 10 paywalled ones). **Check an older local copy before chasing the private bundle.**
+
+### 35.3 ⭐ The Session 33 "3 usable training papers" limit is gone — 13 of 15 now contribute
+The laptop in §33/§34 had no `prompts.jsonl` (gitignored, absent from the clone), so it rendered
+paragraphs from HTML and lost `oxidecrack2025` (alignment 0.88 CEO / 0.71 scinex) and
+`roadwaylight2018` (30 rendered vs 31 teacher paragraphs). With the teacher's stored prompts restored,
+`load_paragraphs` prefers them (`ft_generate` passes `prefer_slugs=(teacher,)`), and
+**every one of the 15 training papers has prompts == replies on BOTH ontologies** (11–45 paragraphs
+each). Paragraph COUNTS pairing is not the same as the targets aligning, though: on the 0.9 alignment
+floor  (both ontologies) and  CEO still drop out, so **13 of the 15
+papers actually contribute** — see §35.6. The only count mismatch in fold 0 is `strabismus2026` scinex, 51 prompts vs **61** replies —
+that is the known §30.8 double-writer incident (7 duplicated para_ids), which `read_replies` drops.
+Also verified: for `strabismus2026` and `osmotic2026` the teacher's stored paragraph text is
+**byte-identical to today's render** (51/51 and 23/23), so the stored `qwen3-4b-base-hf` replies, the
+teacher's targets and any new run all sit on the same inputs.
+
+### 35.4 Install check PASSES exactly (`SETUP_NEW_MACHINE.md` §7)
+`ft_compare.py --slugs qwen3-4b-base-hf gptoss-120b --papers strabismus2026 osmotic2026`:
+| ontology | run | proposed → kept | kept rate | expected |
+|---|---|---|---|---|
+| CEO | qwen3-4b-base-hf | 493 → 172 | 34.9% | 493 → 172 (34.9%) ✔ |
+| CEO | gptoss-120b | 107 → 91 | 85.0% | 107 → 91 (85.0%) ✔ |
+| scinex | qwen3-4b-base-hf | 464 → 164 | 35.3% | 464 → 164 (35.3%) ✔ |
+| scinex | gptoss-120b | 70 → 57 | 81.4% | 70 → 57 (81.4%) ✔ |
+So this machine reproduces the committed numbers from the stored replies.
+
+### 35.5 ⛔ The binding constraint here is DOWNLOAD BANDWIDTH, not VRAM
+Measured sustained throughput on this laptop's Wi-Fi: **~145–470 KB/s** (default route is the Wi-Fi
+adapter, not the OpenVPN TAP, so it is the upstream link, not the VPN). Sizes that matter:
+torch cu128 wheel **2.75 GB**; `Qwen/Qwen3-4B-Instruct-2507` weights **8.05 GB**;
+`Qwen/Qwen3-1.7B` weights **3.88 GB** (3.28 GB + 0.59 GB shards). The documented 4B path therefore
+meant ~20 h of downloading before any GPU work.
+**Decision (user, 2026-10-20): student = `Qwen/Qwen3-1.7B`** ("smaller student") instead of the
+Session 33 choice `Qwen/Qwen3-4B-Instruct-2507`.
+- ⚠ **Not comparable with the §33/§34 numbers** (kept rate 38% → 86%, teacher 88%; 8 vs 21
+  paragraphs): those are Qwen3-4B. A 1.7B student is weaker, so an under-extraction result on it
+  cannot be separated from model size. State the model with every number.
+- Qwen3-1.7B is a hybrid-thinking model; thinking is already off — `ft_common.render_chat` passes
+  `enable_thinking=False`.
+- The weights are fetched to **`C:\Users\cei008\hf_local\Qwen3-1.7B`** (a plain snapshot, OUTSIDE the
+  repo so the public clone stays clean) and passed as `--base-model <that path>`; the HF id is
+  `Qwen/Qwen3-1.7B`. Slugs follow the existing scheme: `qwen3-1.7b-base-hf`, `qwen3-1.7b-ft-cv`,
+  `qwen3-1.7b-ft-cons-cv`.
+
+### 35.6 ⭐ Both fold-0 datasets REBUILT on the full training set — and they are much bigger
+Built here with the stored teacher prompts as the paragraph source for every paper
+(`paragraph_source: output\<id>\kg\relation*\gptoss-120b\prompts.jsonl` in both manifests).
+**13 of the 15 training papers contribute** (27 of 30 paper x ontology runs `ok`). Still excluded,
+automatically, on the 0.9 alignment floor: `tripplanner2020` (0.89 CEO / 0.75 scinex) and
+`vehiclemake2025` CEO (0.89) — the teacher's replies cite sentences that are not in the paragraph
+they are attributed to. `oxidecrack2025` and `roadwaylight2018`, which the rendered-HTML build of
+§33.4 lost, now align at **1.00** and are in.
+
+| | Session 33/34 laptop (3 papers) | **here (13 papers)** |
+|---|---|---|
+| extraction examples | 168 (83 CEO / 85 scinex) | **619 (292 CEO / 327 scinex)** |
+| teacher triples in the training targets | 192 | **495** |
+| consensus additions (>=2 of gemma4-31b / qwen3-235b / ministral-14b) | +66 (+34%) | **+129 (+26%)** |
+| teacher-empty paragraphs given a target by consensus | 7 | **22** |
+| empty extraction targets | 87 -> 80 | **402 -> 380** |
+| ontology / vocabulary cards | 700 / 1,612 | 700 / **1,966** |
+| total train examples | 2,480 | **3,285** |
+| optimizer steps (batch 1 x accum 8 x 2 epochs) | 620 | **822** |
+
+Consensus skips this time: teacher already related the pair 4, relation conflict 12, `configures` 1,
+sentence not in paragraph 0. `train.jsonl` sha256 — teacher-only `d0e3a2be…`, consensus `73dadf7c…`
+(recorded in each `manifest.json`; the byte-identity regression of §34.4 no longer applies, since
+both files are now built from 13 papers instead of 3).
+
+⚠ **The empty-target share is now 402/619 = 65%** (was 87/168 = 52%). Empty targets are what drove
+the §33.5b collapse and the §34.11 under-extraction, so this run is MORE exposed to that failure
+mode, not less — the consensus variant only brings it to 380/619 = 61%. If the finetuned model
+under-extracts again, `--max-empty-frac 0.3` (open decision 5) is the next lever, and it now has
+more data to drop from.
+
+### 35.7 Tokenizer dry run on Qwen3-1.7B — clean
+`ft_train_qlora.py --data ft_data/fold0 --base-model C:\Users\cei008\hf_local\Qwen3-1.7B --dry-run`
+(no GPU, no weights — only the tokenizer files, which download first):
+| part | n | p50 | p95 | max | dropped (>6144) |
+|---|---|---|---|---|---|
+| extraction | 619 | 3,192 | 3,508 | **4,437** | 0 |
+| ontology | 700 | 178 | 389 | 447 | 0 |
+| vocabulary | 1,966 | 73 | 77 | 89 | 0 |
+`chat template: {'template': 3285}` — every example split cleanly into prompt/target, **no
+`fallback`** rows, so Qwen3-1.7B's template works with `ft_common.render_chat` as-is. `--max-seq-len
+6144` keeps everything (the longest example is 4,437 tokens vs 3,821 on the 4B tokenizer).
+
+### 35.8 ⛔ SECURITY/LICENSING FIX — `ft_data/consensus/fold0/train.jsonl` was NOT gitignored
+`.gitignore` had `ft_data/*/train.jsonl`, which matches ONE directory level. The consensus variant
+introduced in §34.4 writes one level deeper (`ft_data/consensus/fold0/train.jsonl`), so
+`git check-ignore` did not match it and `git status` listed the file — **11 MB of full paragraphs
+from the corpus, 10 of whose papers are paywalled, in a PUBLIC repo**, with
+`SETUP_NEW_MACHINE.md` §8.4 telling the next session to run `git add -A`. The same applied to
+`ft_data/consensus/fold0/parts/`.
+- **Never committed** — verified with `git ls-files ft_data/` (only `manifest.json`,
+  `eval_papers.txt`, `train_papers.txt`, `split.json` are tracked) and
+  `git log --all -- ft_data/consensus/fold0/train.jsonl` (empty). A latent hole, not a leak.
+- **Fixed:** the three patterns are now `ft_data/**/train.jsonl`, `ft_data/**/dev.jsonl`,
+  `ft_data/**/parts/`, with a comment saying why. Re-verified with `git check-ignore -v` on both
+  the nested and the flat path.
+- **Lesson for any new nested output dir:** single-`*` ignore patterns silently stop matching. Check
+  `git check-ignore -v <the new path>` whenever a script starts writing to a deeper directory.
+
+### 35.10 ▶ UNATTENDED CHAIN LAUNCHED (user: *"start running what we can right now, i need to go outside"*)
+Everything left was download-bound, so the remaining work was handed to one detached driver,
+**`ft_runs/chain_session35.py`** (machine-local, untracked), started hidden via WMI at 13:25 so it
+**outlives the assistant's session**:
+```powershell
+$repo = "C:\Users\cei008\Downloads\SciNex\project_scinex"
+$si = New-CimInstance -ClassName Win32_ProcessStartup -ClientOnly -Property @{ ShowWindow = [uint16]0 }
+Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{
+  CommandLine = "`"$repo\.venv\Scripts\python.exe`" `"$repo\ft_runs\chain_session35.py`""
+  CurrentDirectory = $repo; ProcessStartupInformation = $si }
+```
+Steps, each gated on the one before, logged to **`ft_runs/chain_session35.log`**:
+| | step | note |
+|---|---|---|
+| A | keep-awake + EcoQoS opt-out | `SetThreadExecutionState` so the laptop cannot sleep mid-run, plus `run_ft_pipeline.no_power_throttling()` (§34.5) |
+| B | wait for torch | polls; only runs `pip install torch` itself if NO pip is working, so it can never start a second 2.75 GB download |
+| C | install the pinned training deps | minimal set — no pdfplumber/pymupdf/camelot/opencv/pandas/scipy; nothing on the train or generate path imports them |
+| D | verify the stack | asserts CUDA up, **capability (8, 9)**, torch not a nightly, bitsandbytes + peft import |
+| E | finish the Qwen3-1.7B snapshot | **runs in a thread from the start, in parallel with B/C**, since both are network-bound and the GPU is idle either way; `curl -C -` resume, **byte-exact** per-file size check against the HF `Content-Length` values |
+| F | SMOKE 2 paragraphs | `ft_generate --limit 2` — proves 4-bit load, decode and VRAM headroom before committing to hours; throwaway slug deleted |
+| G | SMOKE 2 optimizer steps | `ft_train_qlora --max-steps 2` — proves the training path; run dir deleted |
+| H | teacher-only pipeline | `base_gen → train → ft_gen → compare` |
+| I | consensus pipeline | `train → ft_gen → compare`, `--also-slugs qwen3-1.7b-ft-cv`, base_gen shared |
+
+A failing step writes `STEP <x> FAILED` and the chain **stops instead of cascading**; an unexpected
+exception writes `CHAIN CRASHED` plus the traceback. Re-launching resumes, because
+`run_ft_pipeline`'s `.done` markers skip finished steps and `ft_generate --resume` is on by default.
+- **Watch it:** `Get-Content ft_runs\chain_session35.log -Tail 20 -Wait`, and once step H starts,
+  `ft_runs\_pipeline_qwen3-1.7b-f0\pipeline.log` for per-step s/step and peak VRAM.
+- **Stop it:** kill the chain PID **and** its current child, by command line
+  (`Get-CimInstance Win32_Process`) — stopping a parent does not kill the child (§34.5).
+- ⚠ **One writer per file:** the chain's thread is the only thing allowed to `curl` into
+  `C:\Users\cei008\hf_local\Qwen3-1.7B`. A second `curl -C -` on the same shard interleaves into one
+  file and corrupts it. A leftover `curl` from the assistant's own earlier download had to be killed
+  by PID first — stopping the task that spawned it did NOT kill it, the §34.5 trap again.
+- State at launch: torch wheel ~870 MB of 2,626; shard 1 275 MB of 3,282; shard 2 9 MB of 594.
+
+### 35.11 Status at the end of this session
+**Done:** machine set up (Python 3.12.10, venv, stable torch 2.11.0+cu128 — §35.1) · all gitignored
+inputs restored from an older local copy (§35.2) · 13 of 15 training papers now pair (§35.3) ·
+install check green (§35.4) · both fold-0 datasets rebuilt, 619 extraction examples (§35.6) ·
+tokenizer dry run clean, 822 steps (§35.7) · nested-`ft_data` gitignore hole fixed (§35.8) ·
+`hands_off.md` / `Claude.md` / `HANDOFF_NEXT_SESSION.md` / `SETUP_NEW_MACHINE.md` / root `README.md`
+updated.
+
+**Not done when the session ended, and why:** nothing had been trained yet — the two large downloads
+were still running (torch 2.75 GB at ~35%, Qwen3-1.7B weights 3.88 GB at ~280 MB), and no GPU work
+can start before them. **The user left, so the rest was handed to the unattended chain in §35.10**,
+which finishes the downloads, installs, verifies, smoke-tests and then runs both variants on its own.
+Read `ft_runs/chain_session35.log` first on the next session: it says exactly how far it got.
+- `beautifulsoup4`, `networkx`, `rdflib`, `transformers==5.5.4` and `jinja2` were installed into a
+  side directory (`pip install --target`, put on `PYTHONPATH`) so the CPU-only steps — the install
+  check, the paragraph comparison, both data builds and the tokenizer dry run — could all run while
+  pip was still downloading torch. **Drop that `PYTHONPATH` once the venv has the real pinned set**
+  (`req_no_torch.txt` + `requirements_kg.txt` + `requirements_ft.txt`); two transformers on one path
+  is a debugging trap.
+- The model is a plain directory snapshot at `C:\Users\cei008\hf_local\Qwen3-1.7B` (fetched with
+  `curl`, so it could start before the venv existed), passed as `--base-model <path>`.
+
+**Next:** finish the installs and confirm `torch.cuda.get_device_capability() == (8, 9)` → train
+teacher-only, then consensus, on Qwen3-1.7B (822 steps each) → `ft_generate` on the 5 fold-0 eval
+papers → `ft_compare` → blind judge census here (§34.8) with the `qwen3-1.7b-*` slugs. Exact commands
+in `HANDOFF_NEXT_SESSION.md`. Budget for generation: **348 paragraphs per pass** (5 papers × 2
+ontologies) × 3 passes (base, teacher-only, consensus); Session 33 took 186.7 min for 148 paragraphs
+on a 4B at batch 4, so use `--gen-args=--batch-size=4` or higher for the 1.7B and expect hours per
+pass. `ft_generate --resume` is ON by default, so an interrupted pass continues.
+
 ## Session 34 — why ONE teacher? Census of every stored model's replies as finetuning targets (2026-10-01)
 
 > User: *"why did we only use one example result from models for finetuning? do we not have others

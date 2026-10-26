@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bfeca10d37f -----
+TRIPLE:     (low-pass Butterworth filter)  --achieves-->  (minimize data inconsistencies)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Eventually, the system performs a noise reduction process utilizing a low-pass Butterworth filter to minimize data inconsistencies.
+
+----- triple_id: b5956c361e6 -----
+TRIPLE:     (SMOTE)  --comparesagainst-->  (Edited Nearest Neighbors (SMOTE-ENN))
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: To mitigate the issue of noise amplification, we conducted analyses of the synthetic samples by comparing the results against Over-sampling using SMOTE and cleaning using Edited Nearest Neighbors (SMOTE-ENN)23
+
+----- triple_id: b1268c1b692 -----
+TRIPLE:     (LSTMs)  --produces-->  (final results)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: Sina Dabiri and Kevin Heaslip is one example where they utilized LSTMs as a layer following a CNN, processing the data that has been processed by maxpooling, and produced final results [1].
+
+----- triple_id: b51599d1f7b -----
+TRIPLE:     (max_features)  --trainedon-->  (sqrt)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: In addition, the tuned hyperparameter for a Random Forest contains 30 estimators or trees to be constructed, where each base decision tree will utilize the Gini impurity to evaluate the quality of a split. In addition, the feature subset size considered at each split is set to the square root of the maximum number of features via max_features='sqrt'.
+
+----- triple_id: bf64bb6b049 -----
+TRIPLE:     (Decision Trees)  --achieves-->  (macro-averaged F1 score of 89.79%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: In addition to the system health assessment, it leveraged Decision Trees refined through hyperparameter tuning, achieving a macro-averaged F1 score of 89.79%.
+
+----- triple_id: b12f93599b7 -----
+TRIPLE:     (ARIMA)  --addresses-->  (time-series analysis)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The Autoregressive Integrated Moving Average (ARIMA) model is essential for time-series analysis , effectively capturing temporality with autoregressive features and moving averages for non-seasonal forecasting [34].
+
+----- triple_id: b370ef81b0b -----
+TRIPLE:     (cSysGuard)  --uses-->  (fine-tuned classification model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Furthermore, cSysGuard examines these forecasts to determine system failover through a fine-tuned classification model.
+
+----- triple_id: bf2eabf7c30 -----
+TRIPLE:     (Decision Trees)  --produces-->  (macro-averaged precision, recall, and F1 score)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: The analysis reveals that the Decision Trees outperform the other base models by achieving the highest F1 score.
+
+----- triple_id: bf0dcc9538a -----
+TRIPLE:     (RT-DETR model)  --trainedon-->  (dataset of eye landmark annotations)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: For the eye landmark detection task, the RT-DETR model was employed and trained on a dataset of eye landmark annotations.
+
+----- triple_id: b4bc9bfb712 -----
+TRIPLE:     (cSysGuard)  --uses-->  (multi-layered stacking ensemble approach)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Rather than building upon a single meta-model or weight averaging, cSysGuard employs a multi-layered stacking ensemble approach with a weighted averaging strategy, effectively amalgamating the contributions of all models in the output generation.
+
+----- triple_id: bbb7b78abdc -----
+TRIPLE:     (Linear Regression)  --uses-->  (Scikit-learn library)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For Linear Regression and Random Forest, we employed the standard parameters provided by the Scikit-learn library [56].
+
+----- triple_id: b0950aae6e5 -----
+TRIPLE:     (RF)  --comparesagainst-->  (XGB)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: it can be observed that at higher values, DT, RF, and KNN demonstrate inferior performance compared to SVM, GP, or XGB.
+
+----- triple_id: bd6e1b2cb38 -----
+TRIPLE:     (cSysGuard)  --comparesagainst-->  (ARIMA)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: Each graph compares the performance of cSysGuard with commonly used models such as GRU, RNN, LSTM, ARIMA, and CNN.
+
+----- triple_id: b53b804a1a9 -----
+TRIPLE:     (Random Forest)  --achieves-->  (specificity of 0.94)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Random Forest (RF) yielded the best overall performance: accuracy of 0.95, specificity of 0.94, sensitivity of 0.96, PPV (or precision) of 0.97, and NPV of 0.92.
+
+----- triple_id: b410494fdcf -----
+TRIPLE:     (cSysGuard)  --achieves-->  (marginally higher processing times)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Based on the result, cSysGuard exhibits marginally higher processing times than the selected high-performing models.
+
+----- triple_id: bc76e5d9501 -----
+TRIPLE:     (Recurrent Neural Networks (RNN))  --addresses-->  (sequential data analysis)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Recurrent Neural Networks (RNN) are fundamental models for sequential data analysis .
+
+----- triple_id: b27595741cb -----
+TRIPLE:     (this study)  --comparesagainst-->  (Belvèze's approach)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: when considering Belvèze's approach, this study achieves lower %MAPE for 26 out of 32 alkyl ammonium Quats.
+
+----- triple_id: bc6700987a2 -----
+TRIPLE:     (Random Forest classifier)  --achieves-->  (positive predictive value of 0.97)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The Random Forest classifier achieved an accuracy of 0.95, sensitivity of 0.96, specificity of 0.94, positive predictive value of 0.97, and negative predictive value of 0.92.
+
+----- triple_id: b0e830e804a -----
+TRIPLE:     (cSysGuard)  --uses-->  (Level-1 model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: To forecast performance metrics effectively, cSysGuard implements an advanced ensemble model using a stacking approach that integrates various predictors, such as the Level-0 and Level-1 models.
+
+----- triple_id: b69b7c827cb -----
+TRIPLE:     (Real-Time Detection Transformer (RT-DETR))  --addresses-->  (high-precision eye landmark detection)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In conclusion, using Real-Time Detection Transformer (RT-DETR) for high-precision eye landmark detection across three gaze positions—straight, left, and right—this study created an automated framework for binary screening of horizontal strabismus versus orthotropia.
+
+----- triple_id: b996e26af8e -----
+TRIPLE:     (this study)  --evaluatedon-->  (1,654 Quats)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: This study utilises a larger dataset (1,654) of Quats compared to Belvèze (767) and Akbari (1,007), contributing to the observed differences in %MAPE.
+
+----- triple_id: b00addc5d0c -----
+TRIPLE:     (RF)  --achieves-->  (lowest errors)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: While XGB and RF achieve the lowest errors on the random split, GP demonstrates superior stability in the LOGO validation , maintaining a lower drop in performance compared to tree-based methods when predicting unseen salts.
+
+----- triple_id: b53d62b68a5 -----
+TRIPLE:     (Random Forest model)  --achieves-->  (accuracy of 0.95)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: A Random Forest model, which showed high performance with an accuracy of 0.95, sensitivity of 0.96, and specificity of 0.94, was then used to classify these features.
+
+----- triple_id: b382f3ce5b9 -----
+TRIPLE:     (cover–uncover test)  --addresses-->  (diagnosis of strabismus)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: However, diagnosis of strabismus typically requires direct examination by a pediatric ophthalmologist and the use of specialized tests, such as the Krimsky test, cover–uncover test, or alternate prism cover test, which require significant patient cooperation.
+
+----- triple_id: b4c7d11a6e6 -----
+TRIPLE:     (RT-DETR)  --achieves-->  (114 frames per second (FPS))
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: For example, RT-DETR-L achieves 53.0% mean average precision (mAP) on COCO val2017 and 114 frames per second (FPS) on an NVIDIA Tesla T4 GPU, while RT-DETR-X achieves 54.8% AP, outperforming existing YOLO-based detectors18.

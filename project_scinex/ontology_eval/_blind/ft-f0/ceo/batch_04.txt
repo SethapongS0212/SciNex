@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: ba111a4d52f -----
+TRIPLE:     (SMOTE)  --uses-->  (Over-sampling using SMOTE)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In this study, SMOTE was employed to address class imbalance in a dataset of limited size, which is crucial for improving model training stability and representation of minority classes.
+
+----- triple_id: b7ec28d5fc8 -----
+TRIPLE:     (Random Forest model)  --achieves-->  (methodological alternative)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: the classification of Random Forest model offers a methodological alternative that utilizes explicit geometric features, which are more accessible for clinical review than the latent representations in 'black-box' deep learning models.
+
+----- triple_id: b7334b8f8cc -----
+TRIPLE:     (SARIMA)  --addresses-->  (seasonal fluctuations)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The Seasonal Autoregressive Integrated Moving Average (SARIMA) builds on ARIMA by incorporating seasonality, making it adept at predicting seasonal fluctuations in time series data.
+
+----- triple_id: ba2cac082f4 -----
+TRIPLE:     (cSysGuard)  --designedfor-->  (ensemble learning)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: This paper introduces cSysGuard, a novel and resilient monitoring framework designed to enhance the prediction of system performance metrics and health assessments in dynamic cloud environments.
+
+----- triple_id: b9c37721cbd -----
+TRIPLE:     (WangchanBERTa)  --uses-->  (pre-trained embedding word approach)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we used the BPEmb data augmentation strategy with a WangchanBERTa pre-trained embedding word approach
+
+----- triple_id: b9ec4a8f6df -----
+TRIPLE:     (classification model)  --designedfor-->  (system's health)
+PREDICATE DEFINITION: Model → ResearchTask  |  use ONLY when the paper explicitly states the model was designed/built/intended for a specific task
+SOURCE SENTENCE: It has a classification model designed to determine the system's health.
+
+----- triple_id: bcd8943a919 -----
+TRIPLE:     (PBC)  --comparesagainst-->  (PCF)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: P-Values of both PCF and PCS were lower than 0.05, whereas P-Value of PBC was higher than 0.05.
+
+----- triple_id: bcc355bef6a -----
+TRIPLE:     (cSysGuard)  --uses-->  (advanced ensemble model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: To forecast performance metrics effectively, cSysGuard implements an advanced ensemble model using a stacking approach that integrates various predictors, such as the Level-0 and Level-1 models.
+
+----- triple_id: bcd1107d91f -----
+TRIPLE:     (cSysGuard)  --addresses-->  (forecasting diverse system metrics)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The visualizations clarify cSysGuard's predictive capabilities, highlighting its effectiveness in forecasting diverse system metrics.
+
+----- triple_id: b854521ef6c -----
+TRIPLE:     (Random Forest)  --achieves-->  (accuracy of 0.95)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Random Forest (RF) yielded the best overall performance: accuracy of 0.95, specificity of 0.94, sensitivity of 0.96, PPV (or precision) of 0.97, and NPV of 0.92.
+
+----- triple_id: ba143a1d1b6 -----
+TRIPLE:     (Random Forest classifier)  --achieves-->  (0.94 specificity)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The Random Forest classifier achieved an accuracy of 0.95, sensitivity of 0.96, specificity of 0.94, positive predictive value of 0.97, and negative predictive value of 0.92.
+
+----- triple_id: b1103cc3375 -----
+TRIPLE:     (cSysGuard)  --trainedon-->  (2.9 GHz Intel Core i7-7820HK Quad-Core processor)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: Subsequently, our analysis shifted towards assessing the impact on system performance, specifically examining the computational overhead. We experimented with cSysGuard on a host machine with a 2.9 GHz Intel Core i7-7820HK Quad-Core processor and 16GB DDR4 RAM.
+
+----- triple_id: b3515e5a31e -----
+TRIPLE:     (GP)  --achieves-->  (highest R2 value)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Finally, when evaluating the combined data, GP again achieves the highest R2 value, while DT exhibits the lowest %MAPE.
+
+----- triple_id: b869398ff46 -----
+TRIPLE:     (geometric feature extraction)  --uses-->  (human-readable geometric descriptors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: This study presented a two-stage, AI framework for binary screening of horizontal strabismus versus orthotropia using smartphone-acquired images under controlled conditions—an approach that combines deep-learning- based landmark localization with geometric feature extraction that provides feature-level transparency by utilizing human-readable geometric descriptors, rather than offering a mechanistic explanation of the underlying disease pathology.
+
+----- triple_id: b51ff774d37 -----
+TRIPLE:     (RT-DETR)  --uses-->  (supervised machine learning classifiers)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: This two-stage system combines Real-Time Detection Transformer (RT-DETR) to localize nine ocular landmarks per eye across three gaze directions (left, center, right), and supervised machine learning classifiers.
+
+----- triple_id: bb09e05dabf -----
+TRIPLE:     (Machine Learning models)  --addresses-->  (Quats' activity coefficients)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Machine Learning models can also be utilized to estimate Quats' activity coefficients for PTC systems.
+
+----- triple_id: b88cbd1c4ea -----
+TRIPLE:     (DT)  --comparesagainst-->  (GP)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: it can be observed that at higher values, DT, RF, and KNN demonstrate inferior performance compared to SVM, GP, or XGB.
+
+----- triple_id: b8f8b9a8a31 -----
+TRIPLE:     (Decision Trees)  --evaluates-->  (macro-averaged precision, recall, and F1 score)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: The analysis reveals that the Decision Trees outperform the other base models by achieving the highest F1 score.
+
+----- triple_id: b6036e2acfb -----
+TRIPLE:     (GRU)  --addresses-->  (vanishing gradient problem)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The GRU incorporates a simplified gating mechanism to address the vanishing gradient problem [42], balancing computational efficiency with the ability to learn long-term dependencies.
+
+----- triple_id: b65314c809d -----
+TRIPLE:     (cSysGuard)  --uses-->  (Level-0 model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: To forecast performance metrics effectively, cSysGuard implements an advanced ensemble model using a stacking approach that integrates various predictors, such as the Level-0 and Level-1 models.
+
+----- triple_id: bf101ce74e2 -----
+TRIPLE:     (cSys- Guard)  --achieves-->  (robust predictive capabilities)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: In contrast, cSys- Guard employs an ensemble machine -learning approach that leverages the unique strengths of various models to achieve robust predictive capabilities.
+
+----- triple_id: bac091e5714 -----
+TRIPLE:     (Random Forest)  --reports-->  (rule-based insights from the Random Forest)
+PREDICATE DEFINITION: AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead
+SOURCE SENTENCE: To provide the interpretation of the final model, the entire population was analyzed to derive rule-based insights from the Random Forest
+
+----- triple_id: bf4ead401ff -----
+TRIPLE:     (Eye Landmark Detection)  --uses-->  (RT-DETR)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Our technical approach consists of two main components: Eye Landmark Detection using RT-DETR and Strabismus Classification using Random Forest.
+
+----- triple_id: b562d5ebd6d -----
+TRIPLE:     (random forests)  --addresses-->  (classification challenges)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Notably, random forests are adept at addressing both regression problems, where the target variable is numeric, and classification challenges, where the target variable is categorical.
+
+----- triple_id: bc21fe400a9 -----
+TRIPLE:     (Long Short-Term Memory (LSTM))  --addresses-->  (predictive word processing)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Recently, there has been a major trend in using deep learning methods, such as Long Short-Term Memory (LSTM), for predictive word processing to create text.

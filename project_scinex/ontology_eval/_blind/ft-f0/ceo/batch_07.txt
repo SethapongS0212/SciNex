@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b663cd620cd -----
+TRIPLE:     (RT-DETR method)  --achieves-->  (mean center-point error of 6.52 pixels (Euclidean distance))
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The summary of the evaluation metrics for the RT-DETR method using 4-fold cross-validation resulted in an intersection over union (IoU) of 0.62, and a mean center-point error of 6.52 pixels (Euclidean distance), with a horizontal component of 5.31 pixels.
+
+----- triple_id: b910f248211 -----
+TRIPLE:     (WangchanBERTa)  --trainedon-->  (large Thai language dataset)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: developed a pre-trained Thai language model named WangchanBERTa, trained on a large Thai language dataset and used for multiple applications, including text augmentation
+
+----- triple_id: b7e7e85d8ee -----
+TRIPLE:     (GP)  --achieves-->  (%MAPE below 5%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Specifically, GP achieves an R2 value greater than 0.97 and %MAPE below 5%, while other algorithms have R2 values below 0.96 and %MAPE exceeding 5%.
+
+----- triple_id: b9820f8edc4 -----
+TRIPLE:     (WangchanBERTa)  --comprises-->  (word corpus)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: To evaluate the similarity score of the sentences, we separated the word embedding from WangchanBERTa to create a word corpus.
+
+----- triple_id: b0892bcbe12 -----
+TRIPLE:     (CNN)  --uses-->  (deep learning methodology)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: A recent method involves classifying tweets about traffic accidents into four categories using CNN's combination deep learning methodology and pre-trained BERT [4]
+
+----- triple_id: b82c21d5ce7 -----
+TRIPLE:     (RT-DETR)  --trainedon-->  (dataset of eye landmark annotations)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: The RT-DETR model was employed and trained on a dataset of eye landmark annotations.
+
+----- triple_id: b5b18820885 -----
+TRIPLE:     (RT1)  --evaluates-->  (88.5 F1 on <Dataset>)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: • RT1: The medial scleral area is represented by the distance ratio between medial canthus (P1) and medial limbus (P7) normalized by the eye width.
+
+----- triple_id: b302b20dbb6 -----
+TRIPLE:     (SMOTE)  --addresses-->  (fraud detection)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The versatility of SMOTE makes it applicable across various domains, from fraud detection to medical diagnoses, where it significantly contributes to more equitable and accurate predictive modeling.
+
+----- triple_id: bcf68265446 -----
+TRIPLE:     (SMILES notation)  --uses-->  (encode the structural characteristics of the substances)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The structural characteristics of these substances were then encoded using SMILES notation, facilitating numerical analysis by computer algorithms.
+
+----- triple_id: b6eb04f42ed -----
+TRIPLE:     (cSysGuard)  --uses-->  (host machine)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We experimented with cSysGuard on a host machine with a 2.9 GHz Intel Core i7-7820HK Quad-Core processor and 16GB DDR4 RAM.
+
+----- triple_id: b3b3cc23b9d -----
+TRIPLE:     (Gaussian Process algorithm)  --produces-->  (osmotic coefficients)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: The osmotic coefficients estimated from the Gaussian Process algorithm are subsequently utilized to calculate activity coefficients using Eq.
+
+----- triple_id: b38bd56822b -----
+TRIPLE:     (cSysGuard)  --employs-->  (simple averaging in the third layer)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: In addition, we conducted an experiment that involves simple averaging in the third layer of cSysGuard.
+
+----- triple_id: b6bfa8cd751 -----
+TRIPLE:     (Akbari et al.)  --affiliatedwith-->  (Akbari et al.)
+PREDICATE DEFINITION: Agent → Organisation  |  use for institutional affiliation
+SOURCE SENTENCE: Akbari et al.40 predicted activity coefficients of alkyl ammonium Quats using the Extended UNIQUAC model.
+
+----- triple_id: bc14c73802e -----
+TRIPLE:     (Random Forest (RF))  --achieves-->  (sensitivity of 0.96)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Among the models tested, Random Forest (RF) yielded the best overall performance: accuracy of 0.95, specificity of 0.94, sensitivity of 0.96, PPV (or precision) of 0.97, and NPV of 0.92.
+
+----- triple_id: b69f900f192 -----
+TRIPLE:     (Feedforward Neural Networks)  --uses-->  (deep learning structure)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For Feedforward Neural Networks, we replicated the deep learning structure and model-fitting parameters of Level-0 models using the TensorFlow library.
+
+----- triple_id: b88d2f385f3 -----
+TRIPLE:     (RT-DETR)  --achieves-->  (mean center-point error of 6.52 pixels (Euclidean distance))
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The summary of the evaluation metrics for the RT-DETR method using 4-fold cross-validation resulted in an intersection over union (IoU) of 0.62 and a mean center-point error of 6.52 pixels (Euclidean distance)
+
+----- triple_id: b7440abe9ac -----
+TRIPLE:     (cSysGuard)  --uses-->  (predictive models)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: cSysGuard still performs better than standalone deep learning models, owing to its incorporation of a diverse array of predictive models.
+
+----- triple_id: b621f69770a -----
+TRIPLE:     (GP)  --achieves-->  (R2 greater than 0.97)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Specifically, GP achieves an R2 value greater than 0.97 and %MAPE below 5%, while other algorithms have R2 values below 0.96 and %MAPE exceeding 5%.
+
+----- triple_id: bd47840d1ac -----
+TRIPLE:     (predictive methods)  --addresses-->  (auto-scaling)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: While certain providers also provide predictive methods [9] for auto-scaling, the systems are typically pattern-based [10].
+
+----- triple_id: bf7ca47b57b -----
+TRIPLE:     (LSTM method)  --uses-->  (seed word)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The LSTM method requires a seed word to generate a predicted later word as output, which is then used as input to generate another word.
+
+----- triple_id: bb0af535758 -----
+TRIPLE:     (weighted aggregation layer)  --addresses-->  (predicting forthcoming metrics)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The weighted aggregation layer is the final regression stage for predicting forthcoming metrics.
+
+----- triple_id: bb654d39c91 -----
+TRIPLE:     (LTrain)  --splitfrom-->  (LExist)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: The remaining 80% of LExist becomes LTrain.
+
+----- triple_id: b800b44b56a -----
+TRIPLE:     (Decision Trees)  --achieves-->  (macro-averaged precision, recall, and F1 score)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The analysis reveals that the Decision Trees outperform the other base models by achieving the highest F1 score.
+
+----- triple_id: bb7d516e47e -----
+TRIPLE:     (deep feature fusion)  --uses-->  (landmark geometry)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Future work could explore deep feature fusion between landmark geometry and convolutional texture information to address mixed-type presentations.
+
+----- triple_id: bf70fff3237 -----
+TRIPLE:     (SMOTE)  --trainedon-->  (dataset of limited size)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: In this study, SMOTE was employed to address class imbalance in a dataset of limited size, which is crucial for improving model training stability and representation of minority classes.

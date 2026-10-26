@@ -674,6 +674,129 @@ precision number cannot represent.
 
 ---
 
+## ⭐⭐ PART 2 — FINETUNING A STUDENT ON THE ONTOLOGY: fold-0 result (2026-10-24, Session 36)
+
+**Status: one fold, one student; CEO judged, scinex not yet.** Table 13 below is judge-free — it
+says the student's triples are **well-formed** and how often they **match the teacher**. The quality
+question is answered by the blind C1/C3/C4 census in **Table 14**, which HAS now run for CEO.
+
+**Setup.** Student **`Qwen/Qwen3-1.7B`** (QLoRA, 4-bit NF4, LoRA r16 on all attention+MLP
+projections, 17.4M trainable of 1.74B = 1.00%, token-level loss, 2 epochs = 822 steps, `--max-seq-len
+6144`). Teacher = **gptoss-120b**'s stored relation-mode replies. Training data from **13 of the 15
+fold-0 training papers** (2 excluded on the 0.9 source-sentence alignment floor): 619 extraction
+examples + 700 ontology cards + 1,966 vocabulary cards = 3,285 examples. Evaluated on the **5
+held-out fold-0 papers it never saw** (csysguard2024, linkpred2015, osmotic2026, strabismus2026,
+textaug2023), **as a census of all 174 paragraphs per ontology**, not a sample. Hardware: RTX 4060
+Laptop GPU, 8 GB, sm_89. Train/eval disjointness is enforced in code at build, train and generate
+time via the sticky fold file `ft_data/split.json`.
+
+### Table 13 — base vs finetuned vs teacher, judge-free (`ft_compare.py`)
+| ontology | run | replies | valid JSON | truncated | proposed | kept | kept rate | coverage | vs teacher P / R |
+|---|---|---|---|---|---|---|---|---|---|
+| CEO | qwen3-1.7b-base-hf | 174 | 87.9% | 18 | 366 | 123 | 33.6% | 20.7% | 13.8% / 8.9% |
+| CEO | **qwen3-1.7b-ft-cv** (teacher-only) | 174 | **100.0%** | **0** | 45 | 29 | 64.4% | 4.6% | **72.4%** / 12.8% |
+| CEO | **qwen3-1.7b-ft-cons-cv** (consensus) | 174 | 99.4% | 1 | 64 | **47** | **73.4%** | **7.5%** | 55.3% / 12.8% |
+| CEO | gptoss-120b (teacher) | 174 | 98.3% | 0 | 220 | 180 | 81.8% | 42.0% | (teacher) |
+| scinex | qwen3-1.7b-base-hf | 174 | 87.9% | 20 | 434 | 155 | 35.7% | 21.3% | 6.5% / 7.5% |
+| scinex | **qwen3-1.7b-ft-cv** (teacher-only) | 174 | **100.0%** | **0** | 33 | 21 | 63.6% | 3.4% | 66.7% / 15.1% |
+| scinex | **qwen3-1.7b-ft-cons-cv** (consensus) | 174 | **100.0%** | **0** | 37 | **27** | **73.0%** | 3.4% | **74.1%** / **17.2%** |
+| scinex | gptoss-120b (teacher) | 172 | 100.0% | 0 | 117 | 93 | 79.5% | 20.9% | (teacher) |
+*kept = survives the post-parse guards · coverage = share of paragraphs with at least one kept
+triple · "vs teacher" = exact normalised (s,p,o) match on the same paragraph, i.e. imitation, not
+correctness — and it is biased AGAINST the consensus variant by construction, since the consensus
+data deliberately adds triples the teacher missed.*
+
+### What the finetuning demonstrably achieved
+1. **Output format: solved.** Valid JSON **87.9% → 100%**, truncated replies **18 → 0**. The base
+   model's runaway generations (hitting the 3,072-token budget) disappear entirely. This also makes
+   it **12.5× faster to run** — 0.19 min/paragraph against the base model's 2.40.
+2. **Guard pass rate roughly doubled:** CEO **33.6% → 64.4%** (teacher-only) and **→ 73.4%**
+   (consensus); scinex 35.7% → 63.6% / **73.0%**, against the teacher's 81.8% / 79.5%. Invented
+   predicates and malformed triples largely stop, and the consensus variant lands within ~8 points
+   of the 120B teacher.
+3. **When it extracts, it extracts like the teacher:** exact-match precision against the teacher
+   **13.8% → 72.4%** CEO (6.5% → 66.7% scinex).
+
+### ⛔ The failure, stated plainly
+**Coverage collapsed: 20.7% → 4.6%** teacher-only / **7.5%** consensus, against the teacher's
+**42.0%**. The finetuned models answer `{"triples": []}` for **162 of 174 CEO paragraphs (93.1%)**
+(consensus 157, 90.2%) and ~95% of scinex paragraphs, recovering only **12.8–17.2%** of the
+teacher's triples — 29 and 47 kept triples where the teacher has 180. They learned the teacher's
+precision *and its silence*. Consensus helps (+62% triples, +2.9 pts coverage) but does not fix it.
+**Cause: 402 of the 619 extraction targets (65%) are empty**, because the teacher itself declines on
+most paragraphs. Token-level loss (the fix for the earlier total collapse, where the model abstained
+on *everything*) prevents degenerate abstention but cannot undo a 2:1 prior. The prepared remedy is
+`build_ft_data.py --max-empty-frac 0.3`, which rebuilds the data with 310 extraction examples at 30%
+empty; it has not been trained yet.
+
+### How to read this against the Sessions 33–34 figures
+Those numbers (kept 38% → 86%, teacher 88%; triples in 8 of 44 paragraphs) are **Qwen3-4B on a
+single paper, from partial output**. This is **Qwen3-1.7B on 5 papers, complete**. They are not
+comparable, and the student must be named with every number. One incidental observation: the
+**untuned** 1.7B (33.6% kept) and the **untuned** 4B (34.9%) are nearly identical, so the guards
+reject roughly two thirds of whatever either base model proposes.
+
+### ⭐⭐⭐ Table 14 — BLIND C1/C3/C4 CENSUS of the finetuning experiment (CEO, 2026-10-24)
+
+**This is the quality result for Part 2.** Table 13 above says the students' triples are
+well-formed; this table says whether they are *right*. Judge: **claude-opus-5-5, in session,
+BLIND** — every kept triple of all four extractors on the 5 held-out fold-0 papers was pooled
+(**355 model-triples → 315 unique items**, 40 duplicates judged once), shuffled, the ids salted and
+the model mapping withheld until after collection. A **census**, not a sample.
+
+| extractor | judged | C1 concept correctness | C3 specificity | C4 relation correctness | C4 strictly CORRECT |
+|---|---|---|---|---|---|
+| qwen3-1.7b-base-hf (untuned) | 107 | 59.8 [52.3, 67.8] | 52.3 [43.0, 61.7] | **29.4** [22.0, 37.9] | 22.4 |
+| **qwen3-1.7b-ft-cv** (teacher-only data) | 27 | 90.7 [81.5, 98.1] | 81.5 [66.7, 92.6] | **83.3** [72.2, 94.4] | 74.1 |
+| **qwen3-1.7b-ft-cons-cv** (consensus data) | 41 | 90.2 [81.7, 97.6] | 87.8 [78.0, 97.6] | **85.4** [75.6, 93.9] | 78.0 |
+| gptoss-120b (the teacher) | 180 | 96.4 [94.4, 98.3] | 87.2 [82.2, 92.2] | **86.4** [83.1, 89.7] | 74.4 |
+
+95% CI = bootstrap over triples. Triples within a paper are not independent, so treat the interval
+as a **lower bound** on uncertainty.
+
+Verdict mix for C4, which states the finding most directly:
+| | CORRECT | PARTIAL | **INCORRECT** |
+|---|---|---|---|
+| untuned 1.7B | 24 | 15 | **68 = 63.6%** |
+| finetuned, teacher-only | 20 | 5 | **2 = 7.4%** |
+| finetuned, consensus | 32 | 6 | **3 = 7.3%** |
+| teacher (120B) | 134 | 43 | **3 = 1.7%** |
+
+**Finding 1 — a finetuned 1.7B student reaches the 120B teacher's per-triple quality.** C4 85.4 vs
+86.4 and C1 90.2 vs 96.4, with overlapping intervals; both finetuned variants actually exceed the
+teacher on *strict* C4 (78.0 / 74.1 vs 74.4). Outright relation errors fall from **63.6% of the
+untuned model's triples to about 7%**. Teaching the ontology, not scaling the model, is what fixes
+relation typing — and it is the same lever the capability curve (§5b) identified from the other end.
+
+**Finding 2 — teacher-only vs consensus training data: quality is a tie, volume is not.**
+C1 **−0.5 pts [−12.7, +12.4]**, C4 **+2.0 pts [−12.7, +16.8]**; at n=27 vs n=41 the quality
+difference is unresolved. But the consensus variant yields **47 kept triples vs 29 (+62%)**,
+coverage **7.5% vs 4.6%**, guard pass rate **73.4% vs 64.4%**, C3 87.8 vs 81.5. **Adopt consensus:
+the same quality, more of it.** Note its "agreement with the teacher" is lower by construction
+(55.3% vs 72.4%), because the consensus data deliberately adds triples the teacher missed — that
+metric measures imitation, not quality, and must not be read as a regression.
+
+**Finding 3 — ⛔ precision without recall is not yet a usable graph.** The students produce 29 and 47
+kept triples where the teacher produces 180, from 4.6–7.5% paragraph coverage against 42.0%. The
+cause is in the training data, not the method: **402 of 619 extraction targets (65%) are empty**,
+because the teacher itself declines on most paragraphs, so the student learns the teacher's silence
+along with its precision. The prepared remedy is `--max-empty-frac 0.3` (310 examples at 30% empty),
+built and not yet trained.
+
+**Caveats:** single rater; **a different judge from Tables 10–12** (claude-opus-5-5 vs
+claude-opus-5), so the two sets must never be mixed; n=27/41 for the finetuned models; one fold;
+**CEO only — the scinex census is still to run**. Artefacts: `ontology_eval/_blind/ft-f0/ceo/`
+(`report.json`, `by_model/*/verdicts.csv`, `key.csv`).
+
+### What is still missing before this is a result
+- ✔ **DONE: blind C1/C3/C4 census for CEO** — Table 14 above.
+- ✔ **DONE: the consensus variant** (`qwen3-1.7b-ft-cons-cv`), trained, generated and judged.
+- **The scinex census** — Table 14 covers CEO only.
+- **4-fold cross-validation** with the winning variant, so every paper is scored by an adapter that
+  never saw it.
+- **Part 3 Q&A** with an independent (non-Claude, non-student) question writer and answerer; the
+  pipeline default uses the student itself and is a pipeline test only.
+
 ## ⭐⭐⭐ FINAL C1–C6 RESULTS (2026-09-08, Session 31) — supersedes every table above
 
 Post-junk-filter, post-redraw, 20-paper corpus, all eight runs on one code version.

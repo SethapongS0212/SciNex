@@ -1,0 +1,17 @@
+{"verdicts": [
+  {"triple_id": "bd3cde8f688", "C1": "CORRECT", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "a host machine is hardware, not a Dataset the model was tested on"},
+  {"triple_id": "b72dde719e5", "C1": "CORRECT", "C3": "TOO_BROAD", "C4": "CORRECT", "note": "'training data' is generic, but the sentence states SMOTE was applied to it"},
+  {"triple_id": "bb7ead1ac6d", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "ba428d8ab67", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "b72b08bd32f", "C1": "INCORRECT", "C3": "TOO_NARROW", "C4": "INCORRECT", "note": "self-loop on a citation key; no Organisation appears in the sentence"},
+  {"triple_id": "b0ff8522581", "C1": "INCORRECT", "C3": "TOO_NARROW", "C4": "INCORRECT", "note": "self-loop on a citation key; no PublicationVenue appears in the sentence"},
+  {"triple_id": "b3931fd7f98", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "b7d77532405", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "be32d028dbe", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "b54681b31aa", "C1": "PARTIAL", "C3": "TOO_BROAD", "C4": "INCORRECT", "note": "splitFrom is Dataset to Dataset; SMOTE is a method applied to a dataset, not a partition of one"},
+  {"triple_id": "b7f1d80a795", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "b9fce83a81f", "C1": "CORRECT", "C3": "TOO_NARROW", "C4": "PARTIAL", "note": "'Rule 3' is a paper-internal label; the sentence calls the pattern a classifier for strabismus"},
+  {"triple_id": "b8610f5215c", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"},
+  {"triple_id": "bb6a6dfe058", "C1": "INCORRECT", "C3": "TOO_NARROW", "C4": "INCORRECT", "note": "Quats are chemical compounds, not a Model, and the object is a result clause rather than a ResearchTask"},
+  {"triple_id": "bdbff665fb6", "C1": "CORRECT", "C3": "APPROPRIATE", "C4": "CORRECT"}
+]}

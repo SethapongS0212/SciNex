@@ -19,9 +19,14 @@ Turns scientific-paper PDFs into a machine-readable knowledge graph of
 | `hands_off.md` | session-by-session log, including every trap that cost a session to find |
 | `results.md` | full results including superseded rounds |
 
-**Headline result:** on identical paragraphs, prompt, guards and judge, extraction precision is
-**89.0%** (claude-opus-5) vs **25.6%** (qwen3:8b) — the extraction model dominates every other
-lever in the pipeline. See `RESULTS_REPORT.md` §5.
+**Headline result (extraction):** on identical paragraphs, prompt, guards and judge, extraction
+precision is **89.0%** (claude-opus-5) vs **25.6%** (qwen3:8b) — the extraction model dominates every
+other lever in the pipeline. See `RESULTS_REPORT.md` §5.
+
+**Headline result (finetuning, 2026-10-24):** a finetuned **Qwen3-1.7B** student matches the
+**120B teacher** on per-triple relation correctness — C4 **29.4% untuned → 85.4%** vs the teacher's
+**86.4%**, blind-judged over every paragraph of 5 held-out papers — but answers "no triples" for
+90–95% of paragraphs, so recall is the open problem. `results.md` Tables 13–14.
 
 ---
 

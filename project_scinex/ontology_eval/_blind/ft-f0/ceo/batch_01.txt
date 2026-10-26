@@ -1,0 +1,165 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b293d972382 -----
+TRIPLE:     (RT-DETR deep learning algorithm)  --addresses-->  (landmark localization)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Subsequently, a two-stage analysis pipeline was implemented: first , the RT-DETR deep learning algorithm was employed to automate landmark localization; second, seven machine learning classifiers were evaluated for strabismus detection.
+
+----- triple_id: bf2bcca60e8 -----
+TRIPLE:     (method employed here)  --achieves-->  (lower %MAPE values)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Upon comparison of the outcomes of this study with those of Belvèze and Akbari, it is observed that the method employed here yields lower %MAPE values for each substance.
+
+----- triple_id: b7d0b19acfb -----
+TRIPLE:     (Random Forest)  --uses-->  (standard parameters)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For Linear Regression and Random Forest, we employed the standard parameters provided by the Scikit-learn library [56].
+
+----- triple_id: b93dc6d401d -----
+TRIPLE:     (Random Forest (RF))  --achieves-->  (specificity of 0.94)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Among the models tested, Random Forest (RF) yielded the best overall performance: accuracy of 0.95, specificity of 0.94, sensitivity of 0.96, PPV (or precision) of 0.97, and NPV of 0.92.
+
+----- triple_id: b1772e9d196 -----
+TRIPLE:     (PCS)  --comparesagainst-->  (PCF)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: P-Values of both PCF and PCS were lower than 0.05, whereas P-Value of PBC was higher than 0.05.
+
+----- triple_id: b542e185b73 -----
+TRIPLE:     (Random Forest (RF))  --achieves-->  (accuracy of 0.95)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Among the models tested, Random Forest (RF) yielded the best overall performance: accuracy of 0.95, specificity of 0.94, sensitivity of 0.96, PPV (or precision) of 0.97, and NPV of 0.92.
+
+----- triple_id: b60e4e9538b -----
+TRIPLE:     (LPII)  --addresses-->  (link prediction)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: This shows that LPII can be applied to deal with other real-world situations of link prediction.
+
+----- triple_id: bee530f90b9 -----
+TRIPLE:     (Random Forest (RF))  --uses-->  (RMSE)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The PV is represented as a 3 × t matrix: where it consolidates the prediction errors, measured by RMSE, for Linear Regression (LR), Random Forest (RF), and Feedforward Neural Networks (FF) across t refinement iterations.
+
+----- triple_id: b1607905704 -----
+TRIPLE:     (deep feature fusion)  --uses-->  (convolutional texture information)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Future work could explore deep feature fusion between landmark geometry and convolutional texture information to address mixed-type presentations.
+
+----- triple_id: b0f510f0b9e -----
+TRIPLE:     (cSysGuard)  --comprises-->  (system performance metric forecasting module)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: cSysGuard comprises two main components: a system performance metric forecasting module and a health assessment feature.
+
+----- triple_id: bb30624b721 -----
+TRIPLE:     (AUC)  --evaluatedon-->  (LMiss)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Area Under the receiver operating characteristic Curve (AUC) is always used to evaluate prediction algorithms because the comparison of the ranking of both LMiss and LTest is calculated [7].
+
+----- triple_id: b4dbcb57984 -----
+TRIPLE:     (bipartite graph of fungus-host associations)  --uses-->  (to execute by our prediction model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: This bipartite graph of fungus-host associations is executed by our prediction model that combines three scoring functions based on different perspectives.
+
+----- triple_id: bde6f4984cf -----
+TRIPLE:     (this study)  --comparesagainst-->  (Akbari's method)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: when compared to Akbari's method, this study exhibits lower %MAPE for 25 out of 36 Quats.
+
+----- triple_id: b66e6b9ca02 -----
+TRIPLE:     (RT2)  --uses-->  (medial limbus (P7))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: RT2: The measure between the medial limbus (P7) and the central corneal light reflex (P9) to show the horizontal position of the light reflex in the iris.
+
+----- triple_id: bee14ef9184 -----
+TRIPLE:     (cSysGuard)  --comparesagainst-->  (GRU)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: Notably, this comparison also highlights cSysGuard's capability to surpass advanced deep learning models, such as GRU and LSTM, typically known for their strong performance in predictive tasks.
+
+----- triple_id: b88bef1bfdb -----
+TRIPLE:     (Fast Greedy)  --uses-->  (local Modularity)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Fast Greedy that used the same random walk as Walktrap but calculated only local Modularity [14]
+
+----- triple_id: b5efcea055a -----
+TRIPLE:     (cSysGuard)  --comparesagainst-->  (LSTM)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: Notably, this comparison also highlights cSysGuard's capability to surpass advanced deep learning models, such as GRU and LSTM, typically known for their strong performance in predictive tasks.
+
+----- triple_id: bb844e34f7d -----
+TRIPLE:     (weight normalization formula)  --uses-->  (RMSE)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The weight normalization formula is outlined in (7): where the weights are calculated by inversely relating them to their RMSE, expressed as exp(−α × PEk,j), ensuring that models with lower errors are more reliable than those with higher errors.
+
+----- triple_id: b8d31a66106 -----
+TRIPLE:     (Jaccard index)  --achieves-->  (highest AUC)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Jaccard index was selected because it gave the highest AUC, and it was used to construct GProjFungi.
+
+----- triple_id: b301b0f05dd -----
+TRIPLE:     (RF)  --comparesagainst-->  (GP)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: it can be observed that at higher values, DT, RF, and KNN demonstrate inferior performance compared to SVM, GP, or XGB.
+
+----- triple_id: b792403ae8d -----
+TRIPLE:     (DT)  --comparesagainst-->  (SVM)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: it can be observed that at higher values, DT, RF, and KNN demonstrate inferior performance compared to SVM, GP, or XGB.
+
+----- triple_id: b71e1215436 -----
+TRIPLE:     (SPARQL query)  --uses-->  (to generate a bipartite graph of fungus-host associations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: This bipartite graph of fungus-host associations is generated from linked data of interspecies interaction using SPARQL query.
+
+----- triple_id: b6cf1bc20ce -----
+TRIPLE:     (Decision Trees)  --achieves-->  (highest F1 score)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The analysis reveals that the Decision Trees outperform the other base models by achieving the highest F1 score.
+
+----- triple_id: be4c588556b -----
+TRIPLE:     (Naïve Bayes (NB))  --achieves-->  (sensitivity of 0.24)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: In contrast, the Naïve Bayes (NB) model showed limited utility, with an accuracy of only 0.45 and a sensitivity of 0.24.
+
+----- triple_id: bb9626a1e5e -----
+TRIPLE:     (GBipt)  --uses-->  (RDF data of interspecies interaction)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The Section 4.1 demonstrated that GBipt and GProjFungi could be prepared from RDF data of interspecies interaction, so our approach was well compatible with RDF data.

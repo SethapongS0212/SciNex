@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b7c29fa5e4f -----
+TRIPLE:     (Random Forest)  --uses-->  (Gini impurity)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In addition, the tuned hyperparameter for a Random Forest contains 30 estimators or trees to be constructed, where each base decision tree will utilize the Gini impurity to evaluate the quality of a split.
+
+----- triple_id: bc8526611e3 -----
+TRIPLE:     (random sampling)  --comprises-->  (undersampling)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: School of Engineering, King Mongkut's Institute of Technology Ladkrabang method is random sampling, either through undersampling or oversampling.
+
+----- triple_id: b3839990725 -----
+TRIPLE:     (U-Net)  --addresses-->  (ocular alignment)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: For instance, Simoes et al.17 used U-Net and ResNet to detect ocular alignment in digital images , achieving strong detection performance but limited generalizability beyond controlled settings.
+
+----- triple_id: b1fdd54daaa -----
+TRIPLE:     (cSysGuard)  --uses-->  (simple averaging in the third layer)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In addition, we conducted an experiment that involves simple averaging in the third layer of cSysGuard.
+
+----- triple_id: b94d4f69df9 -----
+TRIPLE:     (RMSE)  --evaluates-->  (performance across different metrics)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: We utilized RMSE to compare and benchmark the performance across different metrics.
+
+----- triple_id: b29331d5526 -----
+TRIPLE:     (KNN)  --comparesagainst-->  (XGB)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: it can be observed that at higher values, DT, RF, and KNN demonstrate inferior performance compared to SVM, GP, or XGB.
+
+----- triple_id: bd2f068363b -----
+TRIPLE:     (Fast Greedy)  --uses-->  (random walk)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Fast Greedy that used the same random walk as Walktrap but calculated only local Modularity [14]
+
+----- triple_id: bc08a5d4b12 -----
+TRIPLE:     (RT-DETR)  --evaluates-->  (intersection over union (IoU) of 0.62)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: The summary of the evaluation metrics for the RT-DETR method using 4-fold cross-validation resulted in an intersection over union (IoU) of 0.62
+
+----- triple_id: b2e904650e1 -----
+TRIPLE:     (RT-DETR)  --achieves-->  (54.8% AP)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: For example, RT-DETR-L achieves 53.0% mean average precision (mAP) on COCO val2017 and 114 frames per second (FPS) on an NVIDIA Tesla T4 GPU, while RT-DETR-X achieves 54.8% AP, outperforming existing YOLO-based detectors18.
+
+----- triple_id: bf26f189298 -----
+TRIPLE:     (Decision Trees)  --achieves-->  (the highest F1 score)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The analysis reveals that the Decision Trees outperform the other base models by achieving the highest F1 score.
+
+----- triple_id: be4b5d2c873 -----
+TRIPLE:     (Random Forest classifier)  --achieves-->  (0.97 positive predictive value)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The Random Forest classifier achieved an accuracy of 0.95, sensitivity of 0.96, specificity of 0.94, positive predictive value of 0.97, and negative predictive value of 0.92.
+
+----- triple_id: b800d5b2c54 -----
+TRIPLE:     (KNN)  --comparesagainst-->  (GP)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: it can be observed that at higher values, DT, RF, and KNN demonstrate inferior performance compared to SVM, GP, or XGB.
+
+----- triple_id: bfc76010e0e -----
+TRIPLE:     (cSysGuard)  --comparesagainst-->  (traditional models used in the Level-0 layer)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: Our approach evaluated cSysGuard's efficacy in forecasting system metrics by comparing its performance with traditional models used in the Level-0 layer.
+
+----- triple_id: be1a76d450b -----
+TRIPLE:     (cSysGuard)  --addresses-->  (health assessments)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: To forecast performance metrics effectively, cSysGuard implements an advanced ensemble model using a stacking approach that integrates various predictors, such as the Level-0 and Level-1 models.
+
+----- triple_id: b62081b75c7 -----
+TRIPLE:     (cross-validation)  --addresses-->  (imbalance)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Third, although we used SMOTE and cross-validation to address imbalance, additional external datasets are needed to confirm generalizability.
+
+----- triple_id: beb8294ff75 -----
+TRIPLE:     (RT-DETR model)  --trainedon-->  (complete eye landmark dataset)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: The RT-DETR model was finalized by training on the complete eye landmark dataset.
+
+----- triple_id: b9660bcdd07 -----
+TRIPLE:     (F1-score)  --evaluates-->  (0.91)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: This illustrated by the high F1-score of 0.91 in Traffic, while the F1-score in Social- events is only 0.43.
+
+----- triple_id: b777a53a68a -----
+TRIPLE:     (BPEmb data augmentation strategy)  --uses-->  (WangchanBERTa pre-trained embedding word approach)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In this paper, we used the BPEmb data augmentation strategy with a WangchanBERTa pre-trained embedding word approach and evaluated the performance of the augmented data using cosine similarity.
+
+----- triple_id: b7db4c67e6f -----
+TRIPLE:     (Random Forest classifier)  --achieves-->  (negative predictive value of 0.92)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The Random Forest classifier achieved an accuracy of 0.95, sensitivity of 0.96, specificity of 0.94, positive predictive value of 0.97, and negative predictive value of 0.92.
+
+----- triple_id: bea97d053eb -----
+TRIPLE:     (SMOTE)  --uses-->  (oversampling technique)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: the oversampling technique using SMOTE is utilized to aid in the training process
+
+----- triple_id: b083421c279 -----
+TRIPLE:     (Bert)  --employs-->  (Long Short-Term Memory (LSTM))
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: The study integrates the Long Short-Term Memory (LSTM) architecture with the pre-trained of Bert, and other research efforts, employing Convolutional Neural Network (CNN) architecture.
+
+----- triple_id: b6fdade0c76 -----
+TRIPLE:     (Random Forest classifier)  --achieves-->  (sensitivity of 0.96)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The Random Forest classifier achieved an accuracy of 0.95, sensitivity of 0.96, specificity of 0.94, positive predictive value of 0.97, and negative predictive value of 0.92.
+
+----- triple_id: b9c8ae57b65 -----
+TRIPLE:     (cSysGuard)  --trainedon-->  (16GB DDR4 RAM)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: Subsequently, our analysis shifted towards assessing the impact on system performance, specifically examining the computational overhead. We experimented with cSysGuard on a host machine with a 2.9 GHz Intel Core i7-7820HK Quad-Core processor and 16GB DDR4 RAM.
+
+----- triple_id: bdcb27bc8e9 -----
+TRIPLE:     (sliding window technique)  --uses-->  (data trends)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Moreover, we utilized the sliding window technique to incorporate data trends into the prediction process to enhance predictive accuracy.
+
+----- triple_id: b15a92b2e72 -----
+TRIPLE:     (SMOTE)  --comparesagainst-->  (Over-sampling using SMOTE)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: To mitigate the issue of noise amplification, we conducted analyses of the synthetic samples by comparing the results against Over-sampling using SMOTE and cleaning using Edited Nearest Neighbors (SMOTE-ENN)23, which is a variant of SMOTE reducing synthesis noise and borderline data.

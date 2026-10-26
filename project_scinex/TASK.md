@@ -1,19 +1,22 @@
 # TASK — Fixed-extraction accuracy on the 20-paper corpus
 
-> ## ⭐ CURRENT TASK (Session 34, 2026-10-01; updated 2026-10-20): Part 2 finetuning on an RTX 5090 VM
-> **Start with `HANDOFF_NEXT_SESSION.md`.** Detail: `hands_off.md` §34; 5090 VM commands: §34.12.
-> (Target changed from the DGX Spark to the RTX 5090 VM on 2026-10-20. sm_120, so torch must be CUDA 12.8+.)
-> * Two training-data variants are built: teacher-only (`ft_data/fold0/`) and **consensus**
->   (`ft_data/consensus/fold0/`, gptoss + triples ≥2 of gemma4-31b / qwen3-235b / ministral-14b agree on).
-> * The laptop test is DONE as far as it goes: teacher-only Qwen3-4B trained, no collapse, kept rate
->   38% → 86% (teacher 88%), but it under-extracts (8 vs 21 paragraphs). Local runs killed by the user.
-> * **Next (user runs it): Qwen3-8B on the RTX 5090 VM, fold 0, teacher-only vs consensus**, then a
->   **blind census judged by claude-opus-5-5 in session** (`blind_judge.py`, replaces step 5 below),
->   and Q&A with deterministic grading (`qa_eval.py grade` default = token overlap, replaces the LLM
->   grader in step 6). Then 4-fold CV with the winner (step 7).
-> * The table below is the Session 32 plan. Steps 1–4 and 7 still apply (on the 5090 VM; use
->   `run_ft_pipeline.py` per §34.12). Step 5's "non-Claude judge" is SUPERSEDED by the blind
->   Claude judge.
+> ## ⭐ CURRENT TASK (Session 36, 2026-10-26): Part 2 finetuning — FOLD 0 DONE AND JUDGED
+> **Start with `HANDOFF_NEXT_SESSION.md`.** Detail: `hands_off.md` §36; numbers: `results.md`
+> Tables 13–14. The RTX 5090 VM plan was dropped; everything below ran on a **Windows laptop with an
+> RTX 4060 Laptop GPU, 8 GB, sm_89**, student **`Qwen/Qwen3-1.7B`** (not the 4B/8B of earlier plans).
+> * **DONE:** both data variants built from 13 of 15 training papers (619 extraction examples;
+>   consensus +129), both trained, both generated on the 5 held-out fold-0 papers × both ontologies,
+>   compared judge-free, and **blind-judged on CEO** (census: 355 model-triples → 315 unique items).
+> * **⭐⭐⭐ RESULT (CEO):** C4 relation correctness **29.4% untuned → 83.3% (teacher-only) / 85.4%
+>   (consensus)** against the **120B teacher's 86.4%**; outright relation errors 63.6% → ~7%.
+>   **A finetuned 1.7B student matches the teacher per triple.**
+> * **⚖ Teacher-only vs consensus:** quality is a tie (C4 +2.0 pts [−12.7, +16.8]); consensus gives
+>   **+62% more triples**. **Adopt consensus.**
+> * **⛔ THE OPEN PROBLEM:** both students answer `{"triples": []}` for 90–95% of paragraphs —
+>   coverage 4.6–7.5% against the teacher's 42.0%. Cause: **402 of 619 training targets (65%) are
+>   empty**. The fix is built but untrained: `ft_data/maxempty30/` (`--max-empty-frac 0.3`).
+> * **NEXT:** scinex census → train the maxempty30 variant → 4-fold CV with the winner → Part 3 Q&A
+>   with an independent non-Claude model (OpenRouter credit earmarked). Commands in the handoff.
 >
 > ### Session 32 plan (kept; see the notes above for what changed)
 > Full narrative + open decisions: `hands_off.md` §32. Order of operations:
@@ -31,7 +34,12 @@
 > **Hard rule, enforced in code three times** (build, train, generate): training and eval papers are
 > disjoint, by paper id, via the sticky fold file `ft_data/split.json`.
 
-**Started:** 2026-08-13 · **Owner:** Sam · **Status:** relation extraction DONE locally (2,132 triples, 36/36 runs) and JUDGED at **n=240** (Claude as judge, two disjoint samples). **CEO vs scinex is a TIE — the earlier "CEO wins" reading is withdrawn** (`hands_off.md` §25). Next: apply the guard fixes, get a second labeller for κ, run `fixed`, then re-run everything on the VM with Qwen3-14B
+**Started:** 2026-08-13 · **Owner:** Sam · **Status (2026-10-26):** Part 1 and Part 2c complete
+(relation extraction over the 20-paper corpus, C1–C6 judged — see `results.md`). **Part 2
+finetuning: fold 0 complete and judged** (Tables 13–14) — a finetuned Qwen3-1.7B matches the 120B
+teacher per triple, but extracts ~6× less; recall is the open problem. **Part 3 Q&A: tooling built,
+needs an independent question writer/answerer.** Earlier note, still true: CEO vs scinex is a TIE —
+the "CEO wins" reading is withdrawn (`hands_off.md` §25).
 
 This file explains the *current* task end to end: what we are trying to measure, why the
 pipeline is set up this way, and what to run in what order. `Claude.md` is the persistent

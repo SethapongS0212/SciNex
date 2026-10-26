@@ -253,6 +253,123 @@ Regression-checked on 8 known-good papers: 0 spurious dotted-headings, section/c
 **Why not CS-NER abstract data per paper, and why not ITER:** the only ACL-id-keyed CS-NER slice (`acl/`) is title-only (`acl/train-abs.data` → 404); the abstract-level data belongs to other corpora (NCG/PWC/SciERC), not our ACL papers. So we use CS-NER as a **global gazetteer intersected with each paper's text**, not a per-paper lookup. ITER/SciERC (`--source iter`) is still available as a model-based non-circular fallback but is **not** the chosen path.
 - Columns expected by `entity_loader` / fixed extractor: Entity, Abbreviation, Aliases, TP, NER_Type, CEO_Type.
 
+### STATUS (2026-10-26, Session 36 close) — ⭐⭐⭐ FOLD-0 FINETUNING EXPERIMENT COMPLETE AND JUDGED. A finetuned 1.7B student matches the 120B teacher per triple, but under-extracts badly. READ `hands_off.md` §36.
+- **⭐⭐⭐ THE RESULT (CEO, blind census of all 174 paragraphs × 4 extractors, §36.12 / `results.md`
+  Table 14).** Judge: claude-opus-5-5 in session, BLIND, 355 model-triples → 315 unique items.
+  | extractor | C1 | C3 | C4 | C4 strict | kept triples | coverage |
+  |---|---|---|---|---|---|---|
+  | qwen3-1.7b-base-hf | 59.8 | 52.3 | **29.4** | 22.4 | 123 | 20.7% |
+  | qwen3-1.7b-ft-cv (teacher-only) | 90.7 | 81.5 | **83.3** | 74.1 | 29 | 4.6% |
+  | qwen3-1.7b-ft-cons-cv (consensus) | 90.2 | 87.8 | **85.4** | 78.0 | 47 | 7.5% |
+  | gptoss-120b (teacher) | 96.4 | 87.2 | **86.4** | 74.4 | 180 | 42.0% |
+  Outright relation errors (C4 INCORRECT) fall from **63.6% of the base model's triples to ~7%**
+  (teacher 1.7%). **Teaching the ontology, not scaling the model, is what fixes relation typing.**
+- **⚖ Teacher-only vs consensus = the experiment of record: quality is a TIE, volume is not.**
+  C4 **+2.0 pts [−12.7, +16.8]**, C1 **−0.5 [−12.7, +12.4]** (n=27 vs 41, unresolved). Consensus wins
+  on everything countable: **47 vs 29 kept triples (+62%)**, coverage 7.5% vs 4.6%, guard rate 73.4%
+  vs 64.4%, C3 87.8 vs 81.5. **Adopt consensus.** Its lower teacher-agreement (55.3% vs 72.4%) is by
+  construction, not a regression.
+- **⛔ The open problem: precision without recall.** Both students answer `{"triples": []}` for
+  90–95% of paragraphs. 29/47 triples against the teacher's 180. **Cause: 402 of 619 training
+  targets (65%) are empty.** Built and NOT yet trained: `ft_data/maxempty30/` (310 examples, 30%
+  empty, 744 steps) via `--max-empty-frac 0.3`.
+- **Also done:** format is solved (valid JSON 87.9% → 100%, truncations 18 → 0, and the finetuned
+  model is **12.5× faster to run**: 0.19 vs 2.40 min/paragraph).
+- **⛔⛔ THE EXPENSIVE BUG, FIXED (§36.11): `no_power_throttling(proc.pid)` was opting out a
+  TRAMPOLINE.** A Python-Install-Manager venv's `python.exe` re-execs the real interpreter as a
+  child, so the trainer stayed on efficiency cores: **48.4 s/step → ~9 s/step (8×)**, GPU 0% util /
+  9.8 W → 71% / 56 W; consensus training 96.7 min vs the teacher-only run's throttled 315.9 min.
+  Fixed by **`no_power_throttling_tree()`** (opts out the whole descendant tree; used by every
+  pipeline step) and **`ft_runs/ecoqos_watchdog.py`** for already-running pipelines.
+  **Diagnostic: `nvidia-smi` at 0% util / <10 W with no throttle reason = GPU starved by the CPU
+  side, not throttled.**
+- **Machine:** RTX 4060 Laptop, 8 GB, sm_89, stable torch 2.11.0+cu128 (no nightly, no
+  `--allow-dev-torch`). Student `Qwen/Qwen3-1.7B` at `C:\Users\cei008\hf_local\Qwen3-1.7B`.
+- **Next, in order:** scinex blind census (CEO only so far) → train `ft_data/maxempty30` as the
+  third variant → 4-fold CV with the winner (~5.5 h/fold now the throttling is fixed) → Part 3 Q&A
+  with an independent non-Claude model (the user has OpenRouter credit earmarked for this, §36.6).
+
+### STATUS (2026-10-24, Session 36) — ⭐⭐ FIRST FINETUNING RESULT: format+precision learned, coverage collapsed. ⛔ Everything had been running 8× slow. READ `hands_off.md` §36.
+- **⭐⭐ Teacher-only Qwen3-1.7B, fold 0, all 5 held-out papers, census of 174 paragraphs/ontology**
+  (§36.10). CEO: valid JSON **87.9% → 100%**, truncations **18 → 0**, guard kept rate
+  **33.6% → 64.4%** (teacher 81.8%), agreement with the teacher **13.8% → 72.4%** precision.
+  scinex moves identically (35.7% → 63.6%). **⛔ But coverage fell 20.7% → 4.6%** (teacher 42.0%):
+  the model returns `{"triples": []}` for **162 of 174 paragraphs (93.1%)**, recall vs teacher
+  12.8%. It learned the teacher's precision AND its silence — the §34.11 failure, worse than on the
+  4B. **Cause: 402 of 619 training targets (65%) are empty.**
+- **Prepared, NOT run (open decision 5):** `build_ft_data.py --eval-fold 0 --max-empty-frac 0.3
+  --out ft_data/maxempty30` is built — **310 extraction examples, 93 empty (30%)**, 744 steps.
+  Halves the examples, fixes the abstain prior.
+- **▶ RUNNING:** the consensus variant (`train` → `ft_gen` → `compare`), started 13:02.
+- **⛔⛔ THE EXPENSIVE BUG (§36.11): `no_power_throttling(proc.pid)` was opting out a TRAMPOLINE.**
+  On a venv built by the Windows **Python Install Manager**, `.venv\Scripts\python.exe` re-execs the
+  real interpreter (`pythoncore-3.12-64\python.exe`) as a **child**, so the opt-out landed on a
+  launcher that does no work while the trainer stayed on the efficiency cores. Measured:
+  **48.4 s/step → ~9 s/step (≈8×)**, GPU 0% util / 9.8 W / 930 MHz → 71% / 26–56 W / 2475 MHz;
+  consensus training ETA 11 h → ~2 h. The teacher-only run's 315.9 min training and 14.1 h
+  `base_gen` were both throttled. **Results are unaffected — greedy decoding is deterministic — so
+  nothing needs re-running**, it only cost wall-clock.
+  Fixed two ways: **`run_ft_pipeline.no_power_throttling_tree()`** opts out the PID *and every
+  descendant* (sweeps 3×, psutil with a WMI fallback) and `sh()` now uses it for every step;
+  **`ft_runs/ecoqos_watchdog.py`** covers an already-running pipeline by sweeping matching command
+  lines every 60 s. **Diagnostic to remember: `nvidia-smi` showing 0% util at <10 W with no
+  throttle reason means the GPU is STARVED by the CPU side, not throttled.**
+- **Measured generation cost** (§36.9): base model **2.40 min/paragraph** (348 paragraphs ≈ 14 h,
+  throttled); the finetuned model **0.19 min/paragraph** — 12.5× faster, because it stops rambling
+  (base truncated 18 replies at 3,072 tokens; finetuned and teacher truncate 0).
+
+### STATUS (2026-10-23, Session 36) — setup FINISHED and verified on the 4060; smokes pass; both Qwen3-1.7B variants RUNNING unattended. READ `hands_off.md` §36.
+- **▶ RUNNING NOW:** the detached chain `ft_runs/chain_session35.py` (relaunched 15:38) is doing
+  teacher-only then consensus on fold 0: `base_gen → train → ft_gen → compare` twice. Watch
+  `ft_runs/chain_session35.log`, then `ft_runs/_pipeline_qwen3-1.7b-f0/pipeline.log`. Budget
+  ~10–12 h. **Check the log before touching anything.**
+- **Stack verified:** `torch 2.11.0+cu128 | cuda True | cap (8, 9) | bnb 0.49.2 | peft 0.21.1 |
+  transformers 5.5.4 | numpy 2.4.4`, 8.0 GiB VRAM. Qwen3-1.7B snapshot 3.80 GiB, byte-exact, at
+  `C:\Users\cei008\hf_local\Qwen3-1.7B`.
+- **Smokes pass (§36.5):** generation 2 paragraphs in 0.7 min at **peak VRAM 2.3 GB** with valid
+  JSON; training 2 steps at **~14 s/step, peak 2.49 GB**, LoRA 17.4M trainable (1.00%). ⚠ 14 s/step
+  was measured under EcoQoS, so the pipeline should beat it; 822 steps ≈ 3 h per variant.
+- **⭐ sm_89 does NOT hit the sm_120 SDPA→MATH trap** (§33.3): training the 1.7B peaked at 2.49 GB
+  total, where sm_120 took 7.27 GB for ONE layer. This machine does not depend on the cuDNN work-around.
+- **⛔ POST-MORTEM of the first chain run (§36.1):** it reported `STEP B FAILED` on 10-23 for a step
+  that had SUCCEEDED on 10-20. The laptop slept at 14:39 (a keep-awake request stops idle sleep, not
+  a lid close) and `step_b` checked its absolute 8 h deadline BEFORE re-probing readiness. Fixed:
+  readiness first, and every wait is now measured from the last observed PROGRESS. Any unattended
+  runner on a laptop needs both.
+- **⭐ The link is now ~6.8 MB/s, ~20× faster than 10-20** (§36.3). The bandwidth reason for choosing
+  the 1.7B over `Qwen3-4B-Instruct-2507` (an 8.05 GB, ~20-minute download now) is gone. The run in
+  flight stays 1.7B; whether to add the 4B for comparability with §33/§34 is the user's call.
+- **OpenRouter credit is back on the table (§36.6, user-raised).** To be discussed AFTER this run.
+  The natural target is the Q&A writer/answerer (open decision 1), which is what currently makes
+  Part 3 a pipeline test rather than a result; second, the ~$0.01 qwen3-235b sentinel re-call.
+  ⛔ Still never Claude through an API.
+
+### STATUS (2026-10-20, Session 35) — NEW MACHINE: RTX 4060 Laptop 8 GB (sm_89). Data recovered locally, install green, student = Qwen3-1.7B. READ `hands_off.md` §35.
+- **Work moved to a new Windows laptop: RTX 4060 Laptop GPU, 8 GB, sm_89 (Ada), driver 592.82.**
+  The user called it a 4070; `nvidia-smi` says 4060 Laptop. **The RTX 5090 VM run (§34.12) did not
+  happen — training runs here.** Python **3.12.10** (installed with `py install 3.12`; the machine
+  had only 3.14.7, which has no torch/bitsandbytes wheels), venv at `project_scinex/.venv`.
+- **⭐ torch `2.11.0+cu128` — a STABLE wheel. `--allow-dev-torch` is NOT needed on sm_89.** Only the
+  sm_120 machines (RTX 5070/5090) needed a nightly; `2.6.0+cu124` remains H100-vGPU-only.
+- **⭐ The private bundle was unnecessary: an older local copy of the project
+  (`C:\Users\cei008\Downloads\project_scinex`) held every gitignored input.** Restored into the
+  clone: 22 PDFs, 22 parsed `no-llm/`, **293 `prompts.jsonl`**, `output/acl/` (gazetteer + per-paper
+  entity CSVs). `git status` stayed clean. Check an older local copy before chasing the bundle.
+- **⭐ The Session 33 "only 3 usable training papers" limit is GONE.** With the teacher's stored
+  prompts present, **all 15 fold-0 training papers pair on both ontologies** (prompts == replies).
+  Fold 0's only mismatch is `strabismus2026` scinex (51 vs 61 replies) = the known §30.8 double
+  write, dropped by `read_replies`. Teacher paragraphs are byte-identical to today's render for
+  `strabismus2026` (51/51) and `osmotic2026` (23/23), so old and new runs share identical inputs.
+  ⚠ The `ft_data` example counts in §33.4/§34.4 were built from 3 papers and will change.
+- **Install check green** (`SETUP_NEW_MACHINE.md` §7): CEO `qwen3-4b-base-hf` 493 → 172 (34.9%) and
+  `gptoss-120b` 107 → 91 (85.0%); scinex 464 → 164 (35.3%) and 70 → 57 (81.4%) — all as expected.
+- **⛔ The binding constraint on this machine is download bandwidth (~145–470 KB/s), not VRAM.**
+  torch wheel 2.75 GB; Qwen3-4B-Instruct-2507 8.05 GB; Qwen3-1.7B 3.88 GB.
+  **Student decided by the user: `Qwen/Qwen3-1.7B`** (weights kept OUTSIDE the repo at
+  `C:\Users\cei008\hf_local\Qwen3-1.7B`, passed as `--base-model <path>`; slugs
+  `qwen3-1.7b-base-hf` / `-ft-cv` / `-ft-cons-cv`). ⚠ **Its numbers are NOT comparable with the
+  Qwen3-4B figures of §33/§34** (38% → 86% kept, 8 vs 21 paragraphs) — always name the model.
+
 ### STATUS (2026-10-01, Session 34; updated 2026-10-20) — multi-model data BUILT; local runs KILLED; training moves to an RTX 5090 VM. START WITH `HANDOFF_NEXT_SESSION.md`, then `hands_off.md` §34.
 - **▶ NEXT = the RTX 5090 VM run, which the user runs** (changed from the DGX Spark on 2026-10-20;
   exact commands: `hands_off.md` §34.12): Qwen3-8B, fold 0, teacher-only (`qwen3-8b-ft-cv`) vs
