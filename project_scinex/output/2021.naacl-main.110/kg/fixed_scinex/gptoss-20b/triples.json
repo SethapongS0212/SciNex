@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "benchmark summarization datasets",
+    "object_type": "Dataset",
+    "source_sentence": "our experiments on benchmark summarization datasets suggest that this paradigm can surpass results of previous studies or rival state-of-the-art.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "example summaries",
+    "object_type": "Other",
+    "source_sentence": "In Table 3, we present example summaries produced by our new confidence-driven generator for a source input.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "14 Daiwa"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "token probabilities",
+    "object_type": "Metric",
+    "source_sentence": "Our generator predicts the token probabilities PL×|V| for all positions, conditioned on the source text and the summary tokens seen thus far.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "3.1 Position-Aware Beam Search"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "summary tokens",
+    "object_type": "Other",
+    "source_sentence": "The decoding process continues until all of the L positions are filled by summary tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "3.1 Position-Aware Beam Search"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "hidden vectors",
+    "object_type": "Other",
+    "source_sentence": "We encode them into hidden vectors using RoBERTa.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "4.1 Best Overall Quality"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Gigaword dataset",
+    "object_type": "Dataset",
+    "source_sentence": "our experiments are performed on the original Gigaword dataset without anonymization.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "multiple alternative summaries",
+    "object_type": "Other",
+    "source_sentence": "our generator produces multiple alternative summaries",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "5.1 Experimental Results"
+  },
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "7 alternative summaries",
+    "object_type": "Other",
+    "source_sentence": "Our generator produces 7 alternative summaries for each instance",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "5.1 Experimental Results"
+  }
+]

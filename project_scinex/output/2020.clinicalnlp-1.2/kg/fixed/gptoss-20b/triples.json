@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "BlueBERT",
+    "predicate": "trainedon",
+    "object": "PubMed abstracts",
+    "object_type": "Dataset",
+    "source_sentence": "Take for example BlueBERT, which has been further pretrained on over 4 billion words from PubMed abstracts and 500 million words from MIMIC-III and has been shown to outperform BERT on multilabel classification from the Hallmarks of Cancers corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BlueBERT",
+    "predicate": "trainedon",
+    "object": "MIMIC-III",
+    "object_type": "Dataset",
+    "source_sentence": "Take for example BlueBERT, which has been further pretrained on over 4 billion words from PubMed abstracts and 500 million words from MIMIC-III and has been shown to outperform BERT on multilabel classification from the Hallmarks of Cancers corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BlueBERT",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "Take for example BlueBERT, which has been further pretrained on over 4 billion words from PubMed abstracts and 500 million words from MIMIC-III and has been shown to outperform BERT on multilabel classification from the Hallmarks of Cancers corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "over 70,000 MS consult notes",
+    "object_type": "Dataset",
+    "source_sentence": "A publicly available BERT based model pre-trained on over 70,000 MS consult notes , which we call MS-BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "MS-BERT",
+    "object_type": "Model",
+    "source_sentence": "A comprehensive pipeline for target predictions that integrates MS-BERT into a classifier, which we call MSBC.",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "semi-supervised",
+    "predicate": "uses",
+    "object": "Snorkel framework",
+    "object_type": "Method",
+    "source_sentence": "[5] Semi-supervised labelling pipeline using the Snorkel framework that increased the training data available for EDSS prediction and provided a quantitative analysis of silver-labelling strategies on real clinical applications.",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "semi-supervised",
+    "predicate": "produces",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "[5] Semi-supervised labelling pipeline using the Snorkel framework that increased the training data available for EDSS prediction and provided a quantitative analysis of silver-labelling strategies on real clinical applications.",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "uses",
+    "object": "BlueBERT",
+    "object_type": "Model",
+    "source_sentence": "MS- BERT is a BERT model that uses BlueBERT as its starting point.",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "2 Methods"
+  },
+  {
+    "subject": "BlueBERT",
+    "predicate": "trainedon",
+    "object": "PubMed abstracts & MIMIC III note cohorts",
+    "object_type": "Dataset",
+    "source_sentence": "BlueBERT is a BERT model pre-trained on PubMed abstracts & MIMIC III note cohorts.",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "2 Methods"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "achieves",
+    "object": "understanding MS consult notes",
+    "object_type": "Concept",
+    "source_sentence": "This resulted in a language model that is optimized for understanding MS consult notes.",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "2 Methods"
+  },
+  {
+    "subject": "Baseline Models",
+    "predicate": "uses",
+    "object": "tf-idf features",
+    "object_type": "Features",
+    "source_sentence": "A number of baseline models were developed on top tf-idf features such as: support vector machines (SVM), logistic regression (LR) and linear discriminant analysis (LDA).",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "3.1 Data"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "Convolutional Neural Network",
+    "object_type": "Model",
+    "source_sentence": "Word2Vec embeddings used with a convolutional neural network (CNN)",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "3.2 Experiment 1: EDSS and Functional Subscore Prediction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "MSBC architecture",
+    "object_type": "Other",
+    "source_sentence": "Various models were trained using the MSBC architecture and are presented in Table 4.",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "3.3 Experiment 2: Semi-Supervised Labelling of EDSS"
+  },
+  {
+    "subject": "Reformer",
+    "predicate": "comparesagainst",
+    "object": "Clinical BERT",
+    "object_type": "Model",
+    "source_sentence": "Also, we would like to pre-train longer context transformer models such as the Reformer which targets longer context windows and compare it to Clinical BERT which is tailored for the clinical domain .",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "4.1 Future Work"
+  },
+  {
+    "subject": "Baseline Models",
+    "predicate": "uses",
+    "object": "tf-idf features",
+    "object_type": "Other",
+    "source_sentence": "We trained a number of baseline models on top of our tf-idf features",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "C Baseline Models"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "corpus of text",
+    "object_type": "Other",
+    "source_sentence": "Word2Vec models take a corpus of text and learn vector representations, called embeddings, for each word",
+    "extraction_mode": "fixed",
+    "paper": "2020.clinicalnlp-1.2",
+    "title": "Multiple Sclerosis Severity Classiﬁcation From Clinical Text",
+    "section": "C Baseline Models"
+  }
+]

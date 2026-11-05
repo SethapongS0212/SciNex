@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "training objective",
+    "object_type": "Task",
+    "source_sentence": "making it differentiable and calculable in expectation, which allows it to be used as a training objective.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1126",
+    "title": "Naveen Arivazhagan∗ Colin Cherry∗ Wolfgang Macherey Chung-Cheng Chiu",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "addresses",
+    "object": "Statistics Scores",
+    "object_type": "Concept",
+    "source_sentence": "Cherry and Foster (2019) provide further motivation and analysis for Statistics Scores",
+    "extraction_mode": "fixed",
+    "paper": "P19-1126",
+    "title": "Naveen Arivazhagan∗ Colin Cherry∗ Wolfgang Macherey Chung-Cheng Chiu",
+    "section": "4.2 Differentiable Average Lagging"
+  },
+  {
+    "subject": "Examples",
+    "predicate": "addresses",
+    "object": "DAL",
+    "object_type": "Metric",
+    "source_sentence": "several examples of cases where DAL yields more intuitive results than AL",
+    "extraction_mode": "fixed",
+    "paper": "P19-1126",
+    "title": "Naveen Arivazhagan∗ Colin Cherry∗ Wolfgang Macherey Chung-Cheng Chiu",
+    "section": "4.2 Differentiable Average Lagging"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "For each data set, we use BPE on the training data to construct a 32,000-type vocabulary that is shared between the source and target languages.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1126",
+    "title": "Naveen Arivazhagan∗ Colin Cherry∗ Wolfgang Macherey Chung-Cheng Chiu",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "28.4",
+    "object_type": "Metric",
+    "source_sentence": "MILk is able to retain the quality of full attention (28.4 BLEU) up to a lag of 8.5 tokens, while wait-k begins to fall off for lags below 13.3 tokens.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1126",
+    "title": "Naveen Arivazhagan∗ Colin Cherry∗ Wolfgang Macherey Chung-Cheng Chiu",
+    "section": "5.3 Comparison with the state-of-the-art"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "addresses",
+    "object": "MILk's adaptivity",
+    "object_type": "Concept",
+    "source_sentence": "We can also perform a quantitative analysis of MILk's adaptivity by monitoring its initial delays; that is, how many source tokens does it read before writing its first target token?",
+    "extraction_mode": "fixed",
+    "paper": "P19-1126",
+    "title": "Naveen Arivazhagan∗ Colin Cherry∗ Wolfgang Macherey Chung-Cheng Chiu",
+    "section": "5.4 Characterizing MILK’s schedule"
+  }
+]

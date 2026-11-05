@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Phrase Chunking",
+    "predicate": "uses",
+    "object": "tagging techniques with a BIO tag set",
+    "object_type": "Method",
+    "source_sentence": "The standard approach to phrase chunking is to use tagging techniques with a BIO tag set.",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "3.2 Sequence Labeling Approaches to Phrase Chunking"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "k-best extension",
+    "object_type": "Method",
+    "source_sentence": "In our implementation, the top k-best outputs are obtained with a straightforward k-best extension to the decoding algorithm in section 4.1.",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "5.1 Discriminative Online Training"
+  },
+  {
+    "subject": "Quadratic Programming",
+    "predicate": "uses",
+    "object": "Hildreth's algorithm",
+    "object_type": "Method",
+    "source_sentence": "the above quadratic programming (QP) problem can be solved using Hildreth's algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "5.1 Discriminative Online Training"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "CTB4 dataset",
+    "object_type": "Dataset",
+    "source_sentence": "our experiments were performed on the CTB4 dataset .",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "6.1 Data Sets and Evaluation"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "sentences",
+    "object_type": "Other",
+    "source_sentence": "The training set consists of 9878 sentences, and the test set consists of 5920 sentences.",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "6.1 Data Sets and Evaluation"
+  },
+  {
+    "subject": "Effective Feature Representation",
+    "predicate": "addresses",
+    "object": "phrase chunking",
+    "object_type": "Task",
+    "source_sentence": "Since we were interested in finding an effective feature representation at chunk -level for phrase chunking , we fixed N = 10 and k = 5 for all experiments.",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "6.1 Data Sets and Evaluation"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "achieves",
+    "object": "0.34% improvement in F-score",
+    "object_type": "Metric",
+    "source_sentence": "As shown, learning with F1 loss can improve the F-score by 0.34% over learning with 0-1 loss.",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "6.2 Chinese NP chunking"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "F1 loss",
+    "object_type": "Method",
+    "source_sentence": "learning with F1 loss can improve the F-score by 0.36% over learning with 0-1 loss",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "6.3 Chinese Text Chunking"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "0-1 loss",
+    "object_type": "Method",
+    "source_sentence": "learning with F1 loss can improve the F-score by 0.36% over learning with 0-1 loss",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "6.3 Chinese Text Chunking"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "achieves",
+    "object": "0.36% improvement in F-score",
+    "object_type": "Other",
+    "source_sentence": "learning with F1 loss can improve the F-score by 0.36% over learning with 0-1 loss",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "6.3 Chinese Text Chunking"
+  },
+  {
+    "subject": "SVMs",
+    "predicate": "comparesagainst",
+    "object": "CRFs",
+    "object_type": "Model",
+    "source_sentence": "(2006) compared the performance of the state-of-the-art machine learning models for Chinese chunking , and found that the SVMs approach yields higher accuracy than respective CRFs, Transformation-based Learning (TBL) , and Memory-based Learning (MBL) approaches.",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "6.4 Comparison with Other Models"
+  },
+  {
+    "subject": "SVMs",
+    "predicate": "comparesagainst",
+    "object": "TBL",
+    "object_type": "Model",
+    "source_sentence": "(2006) compared the performance of the state-of-the-art machine learning models for Chinese chunking , and found that the SVMs approach yields higher accuracy than respective CRFs, Transformation-based Learning (TBL) , and Memory-based Learning (MBL) approaches.",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "6.4 Comparison with Other Models"
+  },
+  {
+    "subject": "SVMs",
+    "predicate": "comparesagainst",
+    "object": "MBL",
+    "object_type": "Model",
+    "source_sentence": "(2006) compared the performance of the state-of-the-art machine learning models for Chinese chunking , and found that the SVMs approach yields higher accuracy than respective CRFs, Transformation-based Learning (TBL) , and Memory-based Learning (MBL) approaches.",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "6.4 Comparison with Other Models"
+  },
+  {
+    "subject": "Phrase Chunking",
+    "predicate": "uses",
+    "object": "chunk-level information",
+    "object_type": "Other",
+    "source_sentence": "Our phrase chunking model is highly dependent upon chunk -level information .",
+    "extraction_mode": "fixed",
+    "paper": "D12-1051",
+    "title": "Exploiting Chunk-level Features to Improve Phrase Chunking",
+    "section": "6.5 Impact of Different Types of Features"
+  }
+]

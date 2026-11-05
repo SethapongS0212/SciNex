@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "statistical MT",
+    "predicate": "achieves",
+    "object": "high quality translations",
+    "object_type": "Other",
+    "source_sentence": "Statistical MT (SMT) generates high quality translations provided that large parallel corpora (of millions of words) are available.",
+    "extraction_mode": "fixed",
+    "paper": "W14-1003",
+    "title": "giorg_t@ilsp.gr",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "PRESEMT",
+    "predicate": "uses",
+    "object": "small parallel corpus",
+    "object_type": "Dataset",
+    "source_sentence": "PRESEMT is phrase-based and uses a small parallel corpus from which to extract structural transformations from the source language (SL) to the target language (TL).",
+    "extraction_mode": "fixed",
+    "paper": "W14-1003",
+    "title": "giorg_t@ilsp.gr",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "large monolingual corpora",
+    "object_type": "Dataset",
+    "source_sentence": "On the other hand, the TL language model is extracted from large monolingual corpora.",
+    "extraction_mode": "fixed",
+    "paper": "W14-1003",
+    "title": "giorg_t@ilsp.gr",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "comparesagainst",
+    "object": "template-matching algorithm",
+    "object_type": "Method",
+    "source_sentence": "An established method based on Conditional Random Fields (CRF) is compared here to a much simpler template-matching algorithm to determine the most suitable approach for extracting an accurate model.",
+    "extraction_mode": "fixed",
+    "paper": "W14-1003",
+    "title": "giorg_t@ilsp.gr",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "PRESEMT",
+    "predicate": "uses",
+    "object": "word and phrase alignment of the parallel corpus",
+    "object_type": "Method",
+    "source_sentence": "For transferring a TL phrasing scheme into SL, PRESEMT relies on word and phrase alignment of the parallel corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W14-1003",
+    "title": "giorg_t@ilsp.gr",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "uses",
+    "object": "model that segments the SL text",
+    "object_type": "Model",
+    "source_sentence": "This alignment allows the extrapolation of a model that segments the SL text.",
+    "extraction_mode": "fixed",
+    "paper": "W14-1003",
+    "title": "giorg_t@ilsp.gr",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Linguistic knowledge",
+    "predicate": "addresses",
+    "object": "specific problems caused by limited training data",
+    "object_type": "Concept",
+    "source_sentence": "These largely consist of incorporating linguistic knowledge to allow the template-matching approach to improve language coverage and thus address specific problems caused by the limited training data.",
+    "extraction_mode": "fixed",
+    "paper": "W14-1003",
+    "title": "giorg_t@ilsp.gr",
+    "section": "2 Basic functionality & design of phras- ing model generator"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "0.02",
+    "object_type": "Metric",
+    "source_sentence": "Preliminary results with bilingual corpora of approximately 500 sentences have shown that the performance using PMG-simple remains superior to that with CRF, resulting in a difference of approx 0.02 for BLEU (equivalent to a 5%-6% improvement over the CRF baseline).",
+    "extraction_mode": "fixed",
+    "paper": "W14-1003",
+    "title": "giorg_t@ilsp.gr",
+    "section": "5 Conclusions"
+  }
+]

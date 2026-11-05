@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "Political Discourse",
+    "predicate": "encompasses",
+    "object": "estimating policy positions from political texts",
+    "object_type": "Task",
+    "source_sentence": "Modelling political discourse encompasses a broad spectrum of tasks, including estimating policy positions from political texts , identifying features that differentiate political rhetoric of opposing parties or predicting political affiliation of Twitter users (Conover et al., 2011; Pennacchiotti and Popescu, 2011; Preot¸iuc-Pietro et al., 2017).",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Political Discourse",
+    "predicate": "encompasses",
+    "object": "predicting political affiliation of Twitter users",
+    "object_type": "Task",
+    "source_sentence": "Modelling political discourse encompasses a broad spectrum of tasks, including estimating policy positions from political texts , identifying features that differentiate political rhetoric of opposing parties or predicting political affiliation of Twitter users (Conover et al., 2011; Pennacchiotti and Popescu, 2011; Preot¸iuc-Pietro et al., 2017).",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "political affiliation",
+    "object_type": "Concept",
+    "source_sentence": "Iyyer et al. (2014) used a recurrent neural network (RNN) to predict political affiliation from US congressional speeches.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "political perspective of news articles",
+    "object_type": "Concept",
+    "source_sentence": "Li and Goldwasser (2019) identified the political perspective of news articles using a hierarchical Long Short-Term Memory (LSTM) and modelled social media user data with Graph Convolutional Networks (GCN).",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "GCN",
+    "predicate": "uses",
+    "object": "social media user data",
+    "object_type": "Concept",
+    "source_sentence": "Li and Goldwasser (2019) identified the political perspective of news articles using a hierarchical Long Short-Term Memory (LSTM) and modelled social media user data with Graph Convolutional Networks (GCN).",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "bidirectional LSTMs",
+    "predicate": "uses",
+    "object": "frames at a sentence level",
+    "object_type": "Task",
+    "source_sentence": "(2019) classified frames at a sentence level using bidirectional LSTMs and GRUs and recently Khanehzar et al. (2019) compared a set of classifiers on frame identification in news.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Emotion Classification",
+    "predicate": "uses",
+    "object": "SemEval-2018 Task 1",
+    "object_type": "Dataset",
+    "source_sentence": "Emotion For emotion classification, we use a dataset from SemEval-2018 Task 1 , in which tweets were labelled for eleven emotion classes or as neutral (see Ap- pendix A.3.2).",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "3 Tasks and datasets"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "implementation by Wolf et al.",
+    "object_type": "Other",
+    "source_sentence": "We employ the Robustly optimized BERT approach (RoBERTa-base) presented by Liu et al. (2019) and use the implementation by Wolf et al.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "4 Methods"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "Byte-Pair Encodings (BPE)",
+    "object_type": "Subword Units",
+    "source_sentence": "RoBERTa contains twelve stacked transformer lay- ers and assumes an input sequence to be tokenised into subword units called Byte-Pair Encodings (BPE).",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "4 Methods"
+  },
+  {
+    "subject": "linear classification",
+    "predicate": "uses",
+    "object": "RoBERTa",
+    "object_type": "Model",
+    "source_sentence": "For word- level metaphor identification, the sub- word encodings from RoBERTa's last layer are processed by a linear classification layer.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "4 Methods"
+  },
+  {
+    "subject": "Documents",
+    "predicate": "uses",
+    "object": "Sentences",
+    "object_type": "Other",
+    "source_sentence": "We, therefore, split its documents into sentences and collect them in a maximum of 5 subdocuments with up to 256 sub- words.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "4 Methods"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "cross-entropy loss",
+    "object_type": "Concept",
+    "source_sentence": "All task models use the cross-entropy loss with a sigmoid activation function.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "4 Methods"
+  },
+  {
+    "subject": "detection",
+    "predicate": "uses",
+    "object": "class weights",
+    "object_type": "Concept",
+    "source_sentence": "For political perspective detection, the loss function includes class weights to account for class imbalance.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "4 Methods"
+  },
+  {
+    "subject": "Joint Learning",
+    "predicate": "uses",
+    "object": "metaphor",
+    "object_type": "Concept",
+    "source_sentence": "Example 1 of Table 1 presents an emotive article snippet containing the metaphors of \"boil over\" and \"simmering anger\", for which joint learning with metaphor corrected the STL prediction.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Joint Learning",
+    "predicate": "uses",
+    "object": "emotion",
+    "object_type": "Concept",
+    "source_sentence": "Appendix A.2.2, Table 7 contains example posts where joint learning using emotion corrected the STL setup.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Accurate Identification",
+    "predicate": "achieves",
+    "object": "more accurate identification of the class of democrats",
+    "object_type": "Concept",
+    "source_sentence": "For political affiliation, improvements from auxiliary tasks are due to a more accurate identification of the class of democrats.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Transformers",
+    "predicate": "uses",
+    "object": "Huggingface's Transformers library",
+    "object_type": "Artifact",
+    "source_sentence": "Our implementation is in Pytorch and uses Huggingface's Transformers library7 to load the pre-trained models and perform finetuning.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "A.1 Experimental Setup"
+  },
+  {
+    "subject": "Training Models",
+    "predicate": "uses",
+    "object": "utils nlp8 library",
+    "object_type": "Artifact",
+    "source_sentence": "Some code for training models was adapted from the utils nlp8 library.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.402",
+    "title": "Pere-Llu´ıs Huguet Cabot1, Verna Dankers1,3, David Abadi2, Agneta Fischer2, Ekaterina Shutova1",
+    "section": "A.1 Experimental Setup"
+  }
+]

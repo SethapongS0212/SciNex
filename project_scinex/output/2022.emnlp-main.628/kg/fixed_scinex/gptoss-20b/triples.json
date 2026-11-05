@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "generating",
+    "predicate": "produces",
+    "object": "head items",
+    "object_type": "Concept",
+    "source_sentence": "After generating 600K raw results (2,000 cycles for each category), we discard 30% results of high negative log-likelihood and merge the duplicates in the remaining part, resulting in 100K head items.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "3.2 Generating Head Items"
+  },
+  {
+    "subject": "mT5",
+    "predicate": "uses",
+    "object": "generation",
+    "object_type": "Concept",
+    "source_sentence": "We continue to use mT5-XXL model for generation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "3.3 Generating Triples"
+  },
+  {
+    "subject": "COMET",
+    "predicate": "trainedon",
+    "object": "CN-AutoMIC",
+    "object_type": "Dataset",
+    "source_sentence": "we also train commonsense knowledge models (COMET) on CN-AutoMIC or ATOMIC-zh triples.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "4.1 Evaluating the Graph"
+  },
+  {
+    "subject": "COMET",
+    "predicate": "trainedon",
+    "object": "ATOMIC-zh",
+    "object_type": "Dataset",
+    "source_sentence": "we also train commonsense knowledge models (COMET) on CN-AutoMIC or ATOMIC-zh triples.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "4.1 Evaluating the Graph"
+  },
+  {
+    "subject": "generation",
+    "predicate": "achieves",
+    "object": "better performance",
+    "object_type": "Other",
+    "source_sentence": "Converting them to head items and conducting generation can get better performance.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "4.2 Analyzing the Construction Steps"
+  },
+  {
+    "subject": "mT5",
+    "predicate": "trainedon",
+    "object": "Chinese corpora",
+    "object_type": "Dataset",
+    "source_sentence": "Since mT5 has been trained on Chinese corpora, it may generate commonsense knowledge specific to Chinese context.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "4.3 Case Study"
+  },
+  {
+    "subject": "mT5",
+    "predicate": "comparesagainst",
+    "object": "XGLM",
+    "object_type": "Model",
+    "source_sentence": "During the pilot studies, we also compared several alternative text generation backbones besides mT5, including a multilingual autoregressive model XGLM and two Chinese - specific models, Pangu-Alpha and CPM2.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "B Alternative Models for Generation"
+  },
+  {
+    "subject": "mT5",
+    "predicate": "comparesagainst",
+    "object": "Pangu-Alpha",
+    "object_type": "Model",
+    "source_sentence": "During the pilot studies, we also compared several alternative text generation backbones besides mT5, including a multilingual autoregressive model XGLM and two Chinese - specific models, Pangu-Alpha and CPM2.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "B Alternative Models for Generation"
+  },
+  {
+    "subject": "mT5",
+    "predicate": "comparesagainst",
+    "object": "CPM2",
+    "object_type": "Model",
+    "source_sentence": "During the pilot studies, we also compared several alternative text generation backbones besides mT5, including a multilingual autoregressive model XGLM and two Chinese - specific models, Pangu-Alpha and CPM2.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "B Alternative Models for Generation"
+  }
+]

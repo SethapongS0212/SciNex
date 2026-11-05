@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "neural networks",
+    "object_type": "Model",
+    "source_sentence": "Gal and Ghahramani (2016) develop a theoretical framework which shows that the use of dropout in neural networks can be interpreted as a Bayesian approximation of Gaussian Process.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "semantic parser",
+    "predicate": "addresses",
+    "object": "learning a semantic parser",
+    "object_type": "Task",
+    "source_sentence": "Various methods have been developed to learn a semantic parser from natural language descriptions paired with meaning representations.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "Word Vectors",
+    "object_type": "Other",
+    "source_sentence": "We add dropout layers in i) the word vectors of the encoder and decoder qt, at; ii) the output vectors of the encoder et; iii) bridge vectors e|q| used to initialize the hidden states of the first time step in the decoder ; and iv) decoding vectors datt t (Equation (4)).",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "4.1 Model Uncertainty"
+  },
+  {
+    "subject": "Boosting",
+    "predicate": "uses",
+    "object": "sentence- and token-level confidence metrics",
+    "object_type": "Metric",
+    "source_sentence": "The sentence- and token -level confidence metrics defined in Section 4 are fed into a gradient tree boosting model in order to predict the overall confidence score s (q, a).",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "4.4 Conﬁdence Scoring"
+  },
+  {
+    "subject": "Uncertainty",
+    "predicate": "uses",
+    "object": "normalized score ˆuqt",
+    "object_type": "Artifact",
+    "source_sentence": "We use the normalized score ˆuqt to indicate token qt's contribution to pre- diction uncertainty.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "5 Uncertainty Interpretation"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "IFTTT",
+    "object_type": "Dataset",
+    "source_sentence": "A two-layer LSTM was used for IFTTT",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "6.2 Settings"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "DJANGO",
+    "object_type": "Dataset",
+    "source_sentence": "a one-layer LSTM was employed for DJANGO",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "6.2 Settings"
+  },
+  {
+    "subject": "parser",
+    "predicate": "achieves",
+    "object": "53.7% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The accuracy of our parser is 53.7%, which is better than the result (45.1%) of the sequence-to-sequence model reported in Yin and Neubig (2017).",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "6.2 Settings"
+  },
+  {
+    "subject": "parser",
+    "predicate": "comparesagainst",
+    "object": "sequence-to-sequence model",
+    "object_type": "Model",
+    "source_sentence": "The accuracy of our parser is 53.7%, which is better than the result (45.1%) of the sequence-to-sequence model reported in Yin and Neubig (2017).",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "6.2 Settings"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "KenLM",
+    "object_type": "Other",
+    "source_sentence": "The language model was estimated using KenLM.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "6.2 Settings"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "addresses",
+    "object": "Uncertainty",
+    "object_type": "Concept",
+    "source_sentence": "We compare against a method that interprets uncertainty based on the attention mechanism (ATTENTION).",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "6.3 Results"
+  },
+  {
+    "subject": "Alignments",
+    "predicate": "uses",
+    "object": "Input",
+    "object_type": "Input",
+    "source_sentence": "As shown in Equation (2), attention scores rt,k can be used as soft alignments between the time step t of the decoder and the k-th input token.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "6.3 Results"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "comparesagainst",
+    "object": "BACKPROP",
+    "object_type": "Model",
+    "source_sentence": "The examples show that BACKPROP is qualitatively better compared to ATTENTION; attention scores often produce inaccurate alignments while BACKPROP can utilize information flowing through the LSTMs rather than only relying on the attention mechanism.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "0.8 Accuracy"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "produces",
+    "object": "Alignments",
+    "object_type": "Concept",
+    "source_sentence": "The examples show that BACKPROP is qualitatively better compared to ATTENTION; attention scores often produce inaccurate alignments while BACKPROP can utilize information flowing through the LSTMs rather than only relying on the attention mechanism.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1069",
+    "title": "Conﬁdence Modeling for Neural Semantic Parsing",
+    "section": "0.8 Accuracy"
+  }
+]

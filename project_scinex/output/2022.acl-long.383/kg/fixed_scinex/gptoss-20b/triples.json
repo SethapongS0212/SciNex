@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Named Entity Recognition",
+    "predicate": "achieves",
+    "object": "identify and classify entity mentions from unstructured text",
+    "object_type": "Task",
+    "source_sentence": "Named Entity Recognition (NER) aims to identify and classify entity mentions from unstructured text, e.g., extracting location mention \"Berlin\" from the sentence \"Berlin is wonderful in the winter\".",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "NER Models",
+    "predicate": "achievesresult",
+    "object": "state-of-the-art results on several public benchmarks",
+    "object_type": "Other",
+    "source_sentence": "Benefiting from the development of deep learning, neural- network-based NER models have achieved state- of-the-art results on several public benchmarks (Lample et al., 2016; Peters et al., 2018; Devlin et al., 2018; Yamada et al., 2020; Yan et al., 2021).",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Information Bottleneck",
+    "predicate": "addresses",
+    "object": "analyzing deep neural networks",
+    "object_type": "Task",
+    "source_sentence": "Information Bottleneck (IB) principle originated in information theory, and provides a theoretical framework for analyzing deep neural networks.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "2 Background"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "produces",
+    "object": "probability",
+    "object_type": "Concept",
+    "source_sentence": "Once the information bottleneck layer is finished, zi is fed into the classifier to obtain the probability of its label yi.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "3.4 Span Classification Layer"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "original training set",
+    "object_type": "Dataset",
+    "source_sentence": "For each mention in the sentence, we replace it by another mention from the original training set, which has the same entity type.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "4.1 Contrastive sample generation"
+  },
+  {
+    "subject": "Example",
+    "predicate": "mentions",
+    "object": "\"LOC\" mention \"Berlin\"",
+    "object_type": "Concept",
+    "source_sentence": "For example, \"LOC\" mention \"Berlin\" in sentence \"Berlin is wonderful in the winter\" is replaced by \"Iceland\".",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "4.1 Contrastive sample generation"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "mentions",
+    "object": "\"Iceland\"",
+    "object_type": "Concept",
+    "source_sentence": "For example, \"LOC\" mention \"Berlin\" in sentence \"Berlin is wonderful in the winter\" is replaced by \"Iceland\".",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "4.1 Contrastive sample generation"
+  },
+  {
+    "subject": "Information Bottleneck",
+    "predicate": "uses",
+    "object": "original information bottleneck constraint",
+    "object_type": "Concept",
+    "source_sentence": "Vanilla information bottleneck(VaniIB), a method employs the original information bot- tleneck constraint to the SpanNER, which is optimized based on Alemi et al. Com- pared with our method, it directly compresses all the information from the input.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "5.2 Baseline methods"
+  },
+  {
+    "subject": "Data Augmentation",
+    "predicate": "uses",
+    "object": "data augmentation strategy",
+    "object_type": "Concept",
+    "source_sentence": "Dai and Adel (2020) (DataAug), which trains model with data augmentation strategy , while keeps the same model architecture as Span- NER.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "5.2 Baseline methods"
+  },
+  {
+    "subject": "Contextual Information",
+    "predicate": "uses",
+    "object": "representation of OOV words",
+    "object_type": "Other",
+    "source_sentence": "Contextual information is used to enhance the representation of OOV words in this strategy.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "6.3 Contextualized Embedding"
+  },
+  {
+    "subject": "Contextualized Word Embeddings",
+    "predicate": "uses",
+    "object": "pretraining on large background corpora",
+    "object_type": "Other",
+    "source_sentence": "Pre-trained models contextualized word embeddings via pretraining on large background corpora.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "6.3 Contextualized Embedding"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "comparesagainst",
+    "object": "Gloe-based BiLSTM-CRFs",
+    "object_type": "Other",
+    "source_sentence": "(2021) shows that BERT is not always better at capturing context as compared to Gloe-based BiLSTM-CRFs.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "6.3 Contextualized Embedding"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "various datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Experiments on various datasets demonstrate that MINER achieves much better performance in predicting out-of-vocabulary entities.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "7 Conclusion"
+  }
+]

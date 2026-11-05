@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "copy mechanism",
+    "object_type": "Method",
+    "source_sentence": "They introduced the categories for different overlapping patterns as shown in Figure 1 and proposed a sequence-to-sequence (Seq2Seq) model with copy mechanism to extract triples.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "reinforcement learning",
+    "object_type": "Method",
+    "source_sentence": "Based on the Seq2Seq model, they further investigate the impact of extraction order and gain considerable improvement with reinforcement learning.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Graph Convolutional Networks",
+    "predicate": "uses",
+    "object": "relational graphs",
+    "object_type": "Concept",
+    "source_sentence": "(2019) also studied the overlapping triple problem by modeling text as relational graphs with a graph convolutional networks (GCNs) based model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Relational Triple Extraction",
+    "predicate": "addresses",
+    "object": "identifying all possible triples in a sentence",
+    "object_type": "Task",
+    "source_sentence": "The goal of relational triple extraction is to identify all possible ( subject , relation , object) triples in a sentence",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "3 The CASREL Framework"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "uses",
+    "object": "context information",
+    "object_type": "Concept",
+    "source_sentence": "We employ a pre-trained BERT model to encode the context information.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "3.1 BERT Encoder"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Transformer",
+    "object_type": "Other",
+    "source_sentence": "BERT is a multi-layer bidirectional Transformer based language representation model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "3.1 BERT Encoder"
+  },
+  {
+    "subject": "WordPiece",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We use WordPiece embeddings to represent words in vector space as in BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "3.1 BERT Encoder"
+  },
+  {
+    "subject": "Segmentation",
+    "predicate": "uses",
+    "object": "segmentation embedding",
+    "object_type": "Other",
+    "source_sentence": "hence the segmentation embedding as described in original BERT paper was not taken into account in Eq.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "3.1 BERT Encoder"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "produces",
+    "object": "encoded vector hN",
+    "object_type": "Artifact",
+    "source_sentence": "by directly decoding the encoded vector hN produced by the N-layer BERT encoder.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "3.2 Cascade Decoder"
+  },
+  {
+    "subject": "Tagging",
+    "predicate": "uses",
+    "object": "object taggers",
+    "object_type": "Method",
+    "source_sentence": "in the high level tagging module , the relation is also decided by the output of object tag- gers.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "3.2 Cascade Decoder"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "mini-batches",
+    "object_type": "Other",
+    "source_sentence": "We train the model by maximizing J(Θ) through Adam stochastic gradient descent over shuffled mini-batches.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "3.3 Data Log-likelihood Objective"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "Partial Match",
+    "object_type": "Metric",
+    "source_sentence": "Notably, there are two different evaluation metrics selectively adopted among previous works: (1) The widely used one is Partial Match as we described in Section 4.1, i.e., an extracted relational triple ( subject , relation , object) is regarded as correct only if the relation and the heads of both subject and object are all correct (Li and Ji, 2014; Miwa and Bansal, 2016; Katiyar and Cardie, 2017; Zheng et al., 2017; Zeng et al., 2018; Takanobu et al., 2019; Li et al., 2019; Fu et al., 2019); (2) The stricter but less popular one is Exact Match adopted by Dai et al. (2019), where an extracted relational triple ( subject , relation , object) is regarded as correct only if the relation and the heads and tails of both subject and object are all correct.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "C Supplemental Experiments"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "Exact Match",
+    "object_type": "Metric",
+    "source_sentence": "Notably, there are two different evaluation metrics selectively adopted among previous works: (1) The widely used one is Partial Match as we described in Section 4.1, i.e., an extracted relational triple ( subject , relation , object) is regarded as correct only if the relation and the heads of both subject and object are all correct (Li and Ji, 2014; Miwa and Bansal, 2016; Katiyar and Cardie, 2017; Zheng et al., 2017; Zeng et al., 2018; Takanobu et al., 2019; Li et al., 2019; Fu et al., 2019); (2) The stricter but less popular one is Exact Match adopted by Dai et al. (2019), where an extracted relational triple ( subject , relation , object) is regarded as correct only if the relation and the heads and tails of both subject and object are all correct.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "C Supplemental Experiments"
+  }
+]

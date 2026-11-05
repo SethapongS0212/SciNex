@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Neural Machine Translation",
+    "predicate": "addresses",
+    "object": "sequence to sequence learning problem",
+    "object_type": "Task",
+    "source_sentence": "Neural Machine Translation (NMT) has been successfully tackled as a sequence to sequence learning problem",
+    "extraction_mode": "fixed",
+    "paper": "P17-1175",
+    "title": "Doubly-Attentive Decoder for Multi-modal Neural Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "source-language words",
+    "object_type": "Concept",
+    "source_sentence": "Bahdanau et al. (2015) first proposed to use an attention mechanism in the decoder, which is trained to attend to the relevant source-language words as it generates each word of the target sentence",
+    "extraction_mode": "fixed",
+    "paper": "P17-1175",
+    "title": "Doubly-Attentive Decoder for Multi-modal Neural Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Multi-modal Neural Machine Translation",
+    "predicate": "uses",
+    "object": "source-language words",
+    "object_type": "Concept",
+    "source_sentence": "we propose an end-to-end attention-based multi-modal neural machine translation (MNMT) model which effectively incorporates two independent attention mechanisms, one over source-language words and the other over different areas of an image",
+    "extraction_mode": "fixed",
+    "paper": "P17-1175",
+    "title": "Doubly-Attentive Decoder for Multi-modal Neural Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Multi-modal Neural Machine Translation",
+    "predicate": "uses",
+    "object": "different areas of an image",
+    "object_type": "Concept",
+    "source_sentence": "we propose an end-to-end attention-based multi-modal neural machine translation (MNMT) model which effectively incorporates two independent attention mechanisms, one over source-language words and the other over different areas of an image",
+    "extraction_mode": "fixed",
+    "paper": "P17-1175",
+    "title": "Doubly-Attentive Decoder for Multi-modal Neural Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Multi-modal Neural Machine Translation",
+    "predicate": "addresses",
+    "object": "Neural Machine Translation",
+    "object_type": "Task",
+    "source_sentence": "we propose an end-to-end attention-based multi-modal neural machine translation (MNMT) model which effectively incorporates two independent attention mechanisms",
+    "extraction_mode": "fixed",
+    "paper": "P17-1175",
+    "title": "Doubly-Attentive Decoder for Multi-modal Neural Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "GRU",
+    "object_type": "Model",
+    "source_sentence": "The encoder is a bi-directional RNN with GRU , where a forward RNN −→ Φ enc reads X word by word, from left to right, and generates a sequence of forward annotation vectors (−→ h 1, −→ h 2, · · ·, −→ h N) at each encoder time step i ∈[1, N].",
+    "extraction_mode": "fixed",
+    "paper": "P17-1175",
+    "title": "Doubly-Attentive Decoder for Multi-modal Neural Machine Translation",
+    "section": "2.1 Attention-based NMT"
+  },
+  {
+    "subject": "Probabilities",
+    "predicate": "producedby",
+    "object": "softmax layer",
+    "object_type": "Method",
+    "source_sentence": "the probabilities for the next target word are computed using one projection layer followed by a softmax layer",
+    "extraction_mode": "fixed",
+    "paper": "P17-1175",
+    "title": "Doubly-Attentive Decoder for Multi-modal Neural Machine Translation",
+    "section": "2.1 Attention-based NMT"
+  },
+  {
+    "subject": "CNNs",
+    "predicate": "uses",
+    "object": "image feature extraction",
+    "object_type": "Task",
+    "source_sentence": "We use publicly available pre-trained CNNs for image feature extraction.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1175",
+    "title": "Doubly-Attentive Decoder for Multi-modal Neural Machine Translation",
+    "section": "3 Multi-modal NMT"
+  },
+  {
+    "subject": "Minimum Error Rate Training",
+    "predicate": "uses",
+    "object": "BLEU",
+    "object_type": "Metric",
+    "source_sentence": "We use minimum error rate training to tune the model with BLEU.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1175",
+    "title": "Doubly-Attentive Decoder for Multi-modal Neural Machine Translation",
+    "section": "5.1 Baselines"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "trainedon",
+    "object": "M30kT",
+    "object_type": "Dataset",
+    "source_sentence": "The text-only NMT baseline is the one described in §2.1 and is trained on the M30kT's English –German descriptions",
+    "extraction_mode": "fixed",
+    "paper": "P17-1175",
+    "title": "Doubly-Attentive Decoder for Multi-modal Neural Machine Translation",
+    "section": "5.1 Baselines"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "trainedon",
+    "object": "M30kC",
+    "object_type": "Dataset",
+    "source_sentence": "We first pre-trained the two text-only baselines PBSMT and NMT, and our MNMT model on the back-translated M30kC",
+    "extraction_mode": "fixed",
+    "paper": "P17-1175",
+    "title": "Doubly-Attentive Decoder for Multi-modal Neural Machine Translation",
+    "section": "5.2 Results"
+  }
+]

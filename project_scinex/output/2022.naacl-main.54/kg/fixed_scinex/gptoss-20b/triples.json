@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Response Generation",
+    "predicate": "addresses",
+    "object": "hard constraints",
+    "object_type": "Concept",
+    "source_sentence": "Response generation in dialogue can be controlled towards different topics and styles or towards a set of hard constraints (i.e., lexical control words need to appear in the generated text).",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "control words",
+    "object_type": "Other",
+    "source_sentence": "Naive constrained generation approaches use methods like beam search and stochastic search to force the generation of these control words for short-term control.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Stochastic Search",
+    "predicate": "uses",
+    "object": "control words",
+    "object_type": "Other",
+    "source_sentence": "Naive constrained generation approaches use methods like beam search and stochastic search to force the generation of these control words for short-term control.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "historical dataset of conversations",
+    "object_type": "Dataset",
+    "source_sentence": "We additionally assume access to a historical dataset of conversations D = {x(i)}, i ∈[1,..., N] and a fine-tuned language model M on this dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Bias",
+    "predicate": "addresses",
+    "object": "more natural dialogues",
+    "object_type": "Task",
+    "source_sentence": "the key insight here is that by looking at how people have used these control words in similar conversations in the past, we can bias the models towards more natural dialogues.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "5 Retrieval-based Control"
+  },
+  {
+    "subject": "user model",
+    "predicate": "trainedon",
+    "object": "training dataset",
+    "object_type": "Dataset",
+    "source_sentence": "we train a separate user model with the training dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "7.2 Long-term Success Rate"
+  },
+  {
+    "subject": "Novel Method",
+    "predicate": "uses",
+    "object": "retrieval",
+    "object_type": "Concept",
+    "source_sentence": "we propose a new set of metrics as well as a novel method that leverages retrieval of relevant conversations to control future generated responses.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "8 Conclusion"
+  }
+]

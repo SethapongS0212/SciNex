@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "precompiled candidate lists",
+    "object_type": "Other",
+    "source_sentence": "Candidate generation either uses precompiled candidate lists derived from labeled data or uses full-text search.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "full-text search",
+    "object_type": "Other",
+    "source_sentence": "Candidate generation either uses precompiled candidate lists derived from labeled data or uses full-text search.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "fuzzy search",
+    "object_type": "Method",
+    "source_sentence": "We use fuzzy search to help in cases where the mention and the knowledge base label are almost the same but not identical",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Learning-to-Rank",
+    "predicate": "uses",
+    "object": "LightGBM",
+    "object_type": "Model",
+    "source_sentence": "These preferences are used to train state-of-the-art pairwise learning-to-rank models from the literature: the gradient boosted trees variant LightGBM , RankSVM and RankNet .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "3 Architecture"
+  },
+  {
+    "subject": "Learning-to-Rank",
+    "predicate": "uses",
+    "object": "RankSVM",
+    "object_type": "Model",
+    "source_sentence": "These preferences are used to train state-of-the-art pairwise learning-to-rank models from the literature: the gradient boosted trees variant LightGBM , RankSVM and RankNet .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "3 Architecture"
+  },
+  {
+    "subject": "Learning-to-Rank",
+    "predicate": "uses",
+    "object": "RankNet",
+    "object_type": "Model",
+    "source_sentence": "These preferences are used to train state-of-the-art pairwise learning-to-rank models from the literature: the gradient boosted trees variant LightGBM , RankSVM and RankNet .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "3 Architecture"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "trainedon",
+    "object": "Natural Language Inference data",
+    "object_type": "Dataset",
+    "source_sentence": "we also leverage pretrained Sentence-BERT embeddings trained on Natural Language Inference data written in simple English.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "3 Architecture"
+  },
+  {
+    "subject": "WordPiece",
+    "predicate": "addresses",
+    "object": "spelling variance of our texts",
+    "object_type": "Concept",
+    "source_sentence": "Although they come from a different do- main, we conjecture that the WordPiece tokeniza- tion of BERT helps with the spelling variance of our texts in contrast to traditional word embeddings which would have many out-of-vocabulary words.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "3 Architecture"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "trainedon",
+    "object": "Natural Language Inference data",
+    "object_type": "Dataset",
+    "source_sentence": "Even though Sentence-BERT was trained on Natural Language Inference (NLI) data which contains only relatively simple sentences, it still is relied on by both models for all datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "5.2 Candidate ranking performance"
+  },
+  {
+    "subject": "Ranking",
+    "predicate": "uses",
+    "object": "Levenshtein recommender",
+    "object_type": "Other",
+    "source_sentence": "one uses our ranking and Levenshtein recommender",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "5.4 User Study"
+  },
+  {
+    "subject": "Ranking",
+    "predicate": "uses",
+    "object": "string matching recommender",
+    "object_type": "Other",
+    "source_sentence": "one uses the ranking of the full text search with the string matching recommender",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "5.4 User Study"
+  },
+  {
+    "subject": "Reranking",
+    "predicate": "achieves",
+    "object": "annotation time",
+    "object_type": "Concept",
+    "source_sentence": "meaning that we have ample evidence that our reranking speeds up annotation time.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "5.4 User Study"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "AIDA",
+    "object_type": "Dataset",
+    "source_sentence": "In this paper, we evaluate on three datasets: AIDA, which is often used to validate state-of-the-art entity linking systems as well as WWO and 1641 from the humanities.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "1641 Depositions"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "WWO",
+    "object_type": "Dataset",
+    "source_sentence": "In this paper, we evaluate on three datasets: AIDA, which is often used to validate state-of-the-art entity linking systems as well as WWO and 1641 from the humanities.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "1641 Depositions"
+  },
+  {
+    "subject": "SPARQL",
+    "predicate": "uses",
+    "object": "DBpedia",
+    "object_type": "Other",
+    "source_sentence": "we execute SPARQL queries against DBPedia",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.624",
+    "title": "From Zero to Hero: Human-In-The-Loop Entity Linking in Low Resource Domains",
+    "section": "A.1.1 Women Writers Online"
+  }
+]

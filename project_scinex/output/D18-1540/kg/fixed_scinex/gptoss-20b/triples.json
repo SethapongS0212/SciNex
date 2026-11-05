@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "training",
+    "predicate": "splitfrom",
+    "object": "development",
+    "object_type": "Dataset",
+    "source_sentence": "Finally, we split the data into 70% training, 10% development, and 20% test data.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1540",
+    "title": "Mapping natural language commands to web elements",
+    "section": "2.1 Dataset"
+  },
+  {
+    "subject": "training",
+    "predicate": "splitfrom",
+    "object": "test",
+    "object_type": "Dataset",
+    "source_sentence": "Finally, we split the data into 70% training, 10% development, and 20% test data.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1540",
+    "title": "Mapping natural language commands to web elements",
+    "section": "2.1 Dataset"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "command",
+    "object_type": "Other",
+    "source_sentence": "we first consider a simple retrieval-based model that uses the command as a search query to retrieve the most relevant element based on its TF-IDF score.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1540",
+    "title": "Mapping natural language commands to web elements",
+    "section": "3.1 Retrieval-based model"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "TF-IDF score",
+    "object_type": "Other",
+    "source_sentence": "we first consider a simple retrieval-based model that uses the command as a search query to retrieve the most relevant element based on its TF-IDF score.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1540",
+    "title": "Mapping natural language commands to web elements",
+    "section": "3.1 Retrieval-based model"
+  },
+  {
+    "subject": "Neural Models",
+    "predicate": "comparesagainst",
+    "object": "retrieval model",
+    "object_type": "Model",
+    "source_sentence": "Both neural models significantly outperform the retrieval model.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1540",
+    "title": "Mapping natural language commands to web elements",
+    "section": "4 Experiments"
+  }
+]

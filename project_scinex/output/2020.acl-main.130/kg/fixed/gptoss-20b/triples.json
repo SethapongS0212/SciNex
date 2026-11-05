@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Neural Dialogue Systems",
+    "predicate": "trainedon",
+    "object": "large dialogue corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Neural dialogue systems are trained over a large dialogue corpus and used to predict responses given a context.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "ESIM",
+    "predicate": "achieves",
+    "object": "88% on the Dialogue NLI",
+    "object_type": "Metric",
+    "source_sentence": "For instance, ESIM achieves 88% on the Dialogue NLI , and BERT achieves 85.8%, 93.1% and 98.5% in terms of R10@1, R10@2 and R10@5 on the Ubuntu Corpus .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "85.8% R10@1 on the Ubuntu Corpus",
+    "object_type": "Metric",
+    "source_sentence": "For instance, ESIM achieves 88% on the Dialogue NLI , and BERT achieves 85.8%, 93.1% and 98.5% in terms of R10@1, R10@2 and R10@5 on the Ubuntu Corpus .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "93.1% R10@2 on the Ubuntu Corpus",
+    "object_type": "Metric",
+    "source_sentence": "For instance, ESIM achieves 88% on the Dialogue NLI , and BERT achieves 85.8%, 93.1% and 98.5% in terms of R10@1, R10@2 and R10@5 on the Ubuntu Corpus .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "98.5% R10@5 on the Ubuntu Corpus",
+    "object_type": "Metric",
+    "source_sentence": "For instance, ESIM achieves 88% on the Dialogue NLI , and BERT achieves 85.8%, 93.1% and 98.5% in terms of R10@1, R10@2 and R10@5 on the Ubuntu Corpus .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "ASR",
+    "predicate": "uses",
+    "object": "speech",
+    "object_type": "Speech",
+    "source_sentence": "We adopt a commercial ASR system to convert speech to text",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "3.1 Collection"
+  },
+  {
+    "subject": "MuTual",
+    "predicate": "uses",
+    "object": "safe response",
+    "object_type": "Other",
+    "source_sentence": "To further increase the difficulty, we use safe response to replace one of the candidate responses for each instance in MuTual.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "3.3 MuTualplus"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "85.8 R10@1 on the Ubuntu Corpus",
+    "object_type": "Metric",
+    "source_sentence": "BERT gives 85.8 % R10@1 on the Ubuntu Corpus , but RoBERTa only gives 71.3% R4@1 on MuTual.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "4.2 Experiment Results"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achieves",
+    "object": "71.3 R4@1 on MuTual",
+    "object_type": "Metric",
+    "source_sentence": "BERT gives 85.8 % R10@1 on the Ubuntu Corpus , but RoBERTa only gives 71.3% R4@1 on MuTual.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "4.2 Experiment Results"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achieves",
+    "object": "89.2 % on R@2",
+    "object_type": "Metric",
+    "source_sentence": "Although RoBERTa only gets 71.3% on R@1, it achieves a surprising number, 89.2 %, on R@2, indicating that the model is able to rank the correct response to the top-2 position.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "4.2 Experiment Results"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achieves",
+    "object": "43.7%",
+    "object_type": "Metric",
+    "source_sentence": "RoBERTa and RoBERTa-MC achieve only 43.7% and 47.7% after ablating all utterances in the context , respectively, indicating the importance of each utterance and the quality of the dataset .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "4.3 Discussion"
+  },
+  {
+    "subject": "MuTual",
+    "predicate": "addresses",
+    "object": "reasoning ability of dialogue models",
+    "object_type": "Concept",
+    "source_sentence": "We introduced MuTual, a high-quality manually annotated multi -turn dialogue reasoning dataset , which contains 8,860 dialogues and aims to test reasoning ability of dialogue models.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "5 Conclusion"
+  }
+]

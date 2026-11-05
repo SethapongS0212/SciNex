@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "produces",
+    "object": "semantically meaningful representations of political speeches and motions",
+    "object_type": "Other",
+    "source_sentence": "Through fine-tuning BERT, we extract semantically meaningful representations of political speeches and motions.",
+    "extraction_mode": "fixed",
+    "paper": "2020.coling-main.426",
+    "title": "Ramit Sawhney Netaji Subhas Institute of Technology ramits.co@nsit.net.in",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Fine-tuning BERT",
+    "predicate": "achieves",
+    "object": "performance gains on downstream NLP tasks",
+    "object_type": "Concept",
+    "source_sentence": "Often, fine-tuning BERT on task-specific corpus yields performance gains on downstream NLP tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.coling-main.426",
+    "title": "Ramit Sawhney Netaji Subhas Institute of Technology ramits.co@nsit.net.in",
+    "section": "3.1 Encoding Parliamentary Debates and Motions through BERT"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "debate transcripts",
+    "object_type": "Other",
+    "source_sentence": "We adopt a transformer language model: Bidirectional Encoder Representations from Transformers (BERT) to encode debate transcripts t and motion descriptions m.",
+    "extraction_mode": "fixed",
+    "paper": "2020.coling-main.426",
+    "title": "Ramit Sawhney Netaji Subhas Institute of Technology ramits.co@nsit.net.in",
+    "section": "3.1 Encoding Parliamentary Debates and Motions through BERT"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "motion descriptions",
+    "object_type": "Other",
+    "source_sentence": "We adopt a transformer language model: Bidirectional Encoder Representations from Transformers (BERT) to encode debate transcripts t and motion descriptions m.",
+    "extraction_mode": "fixed",
+    "paper": "2020.coling-main.426",
+    "title": "Ramit Sawhney Netaji Subhas Institute of Technology ramits.co@nsit.net.in",
+    "section": "3.1 Encoding Parliamentary Debates and Motions through BERT"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "produces",
+    "object": "embeddings",
+    "object_type": "Concept",
+    "source_sentence": "we compute the cosine similarity between the fine-tuned BERT embeddings of each of the debate transcripts in ParlVote.",
+    "extraction_mode": "fixed",
+    "paper": "2020.coling-main.426",
+    "title": "Ramit Sawhney Netaji Subhas Institute of Technology ramits.co@nsit.net.in",
+    "section": "3.2 GPolS: Graph Political Stance analyzer: Context Modeling and Graph Creation"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "node features",
+    "object_type": "Feature",
+    "source_sentence": "The input to this layer is a set of node features h = {x1, x2,..., x|V |}, xi ∈RF where, F is the number of features for each node.",
+    "extraction_mode": "fixed",
+    "paper": "2020.coling-main.426",
+    "title": "Ramit Sawhney Netaji Subhas Institute of Technology ramits.co@nsit.net.in",
+    "section": "3.3 Graph Attention Network: Semi-Supervised Node Classiﬁcation for Stance Prediction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "text transcript",
+    "object_type": "Text",
+    "source_sentence": "For each debate transcript t, we set the node feature as the embedding extracted ht from the text transcript using BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.coling-main.426",
+    "title": "Ramit Sawhney Netaji Subhas Institute of Technology ramits.co@nsit.net.in",
+    "section": "3.3 Graph Attention Network: Semi-Supervised Node Classiﬁcation for Stance Prediction"
+  },
+  {
+    "subject": "Support Vector Machines",
+    "predicate": "uses",
+    "object": "unigram features",
+    "object_type": "Feature",
+    "source_sentence": "Support Vector Machines (SVM): A bag-of-words (BoW) model that uses unigram features as input with term frequency-inverse document frequency feature selection (TF-IDF).",
+    "extraction_mode": "fixed",
+    "paper": "2020.coling-main.426",
+    "title": "Ramit Sawhney Netaji Subhas Institute of Technology ramits.co@nsit.net.in",
+    "section": "4.3 Baselines"
+  },
+  {
+    "subject": "Support Vector Machines",
+    "predicate": "uses",
+    "object": "TF-IDF selection",
+    "object_type": "Feature Selection",
+    "source_sentence": "Support Vector Machines (SVM): A bag-of-words (BoW) model that uses unigram features as input with term frequency-inverse document frequency feature selection (TF-IDF).",
+    "extraction_mode": "fixed",
+    "paper": "2020.coling-main.426",
+    "title": "Ramit Sawhney Netaji Subhas Institute of Technology ramits.co@nsit.net.in",
+    "section": "4.3 Baselines"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "addresses",
+    "object": "political cohesion",
+    "object_type": "Concept",
+    "source_sentence": "The attention mechanism also provides insights into political cohesion across large volumes of transcripts to aid interpretability in fields such as Digital Humanities.",
+    "extraction_mode": "fixed",
+    "paper": "2020.coling-main.426",
+    "title": "Ramit Sawhney Netaji Subhas Institute of Technology ramits.co@nsit.net.in",
+    "section": "5.3 Analyzing Political Cohesion and Partisan Identities: Visualizing GPolS’s Graph Attention"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "addresses",
+    "object": "interpretability",
+    "object_type": "Concept",
+    "source_sentence": "The attention mechanism also provides insights into political cohesion across large volumes of transcripts to aid interpretability in fields such as Digital Humanities.",
+    "extraction_mode": "fixed",
+    "paper": "2020.coling-main.426",
+    "title": "Ramit Sawhney Netaji Subhas Institute of Technology ramits.co@nsit.net.in",
+    "section": "5.3 Analyzing Political Cohesion and Partisan Identities: Visualizing GPolS’s Graph Attention"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "addresses",
+    "object": "Digital Humanities",
+    "object_type": "Concept",
+    "source_sentence": "The attention mechanism also provides insights into political cohesion across large volumes of transcripts to aid interpretability in fields such as Digital Humanities.",
+    "extraction_mode": "fixed",
+    "paper": "2020.coling-main.426",
+    "title": "Ramit Sawhney Netaji Subhas Institute of Technology ramits.co@nsit.net.in",
+    "section": "5.3 Analyzing Political Cohesion and Partisan Identities: Visualizing GPolS’s Graph Attention"
+  }
+]

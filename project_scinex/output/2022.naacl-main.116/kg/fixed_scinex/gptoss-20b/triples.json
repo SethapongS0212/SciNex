@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "addresses",
+    "object": "pre-trained language models",
+    "object_type": "Concept",
+    "source_sentence": "The Transformer backbone has been widely adopted in pre-trained language models.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "2.1 Backbone: Transformer"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "achieves",
+    "object": "increasing inference speed",
+    "object_type": "Concept",
+    "source_sentence": "Such a property paves the way for increasing inference speed of a pre-trained model without decreasing the model capacity, i.e., we can adapt the FFNs in a pre- trained model into several smaller components, and only activate one of the components for a specific input token .",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "2.2 Mixture-of-Experts Models"
+  },
+  {
+    "subject": "training",
+    "predicate": "trainedon",
+    "object": "training dataset D",
+    "object_type": "Dataset",
+    "source_sentence": "Given the training dataset D and samples {(x, y)}, the training objective is where CE is the cross-entropy loss and λdistill is a hyper-parameter.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "3.3 Model Training"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "other routing strategies",
+    "object_type": "Concept",
+    "source_sentence": "We will discuss more about other routing strategies of the MoE model in the experiments.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "3.3 Model Training"
+  },
+  {
+    "subject": "adapting",
+    "predicate": "uses",
+    "object": "FFNs",
+    "object_type": "Concept",
+    "source_sentence": "Recall that we share important neurons among the experts when adapting the FFNs.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "4.5 Ablation Study"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "learning rate",
+    "object_type": "Other",
+    "source_sentence": "The learning rate is chosen from {1 × 10−5, 2 × 10−5, 3 × 10−5, 4 × 10−5}.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "B Training Details"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "maximum sequence length 512",
+    "object_type": "Other",
+    "source_sentence": "For the GLUE benchmark, we use a maximum sequence length of 512 except MNLI and QQP, where we set the maximum sequence length to 128.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "B Training Details"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "maximum sequence length 128",
+    "object_type": "Other",
+    "source_sentence": "For the GLUE benchmark, we use a maximum sequence length of 512 except MNLI and QQP, where we set the maximum sequence length to 128.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "B Training Details"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "maximum sequence length 384",
+    "object_type": "Other",
+    "source_sentence": "For the SQuAD datasets, the maximum sequence length is set to 384.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "B Training Details"
+  }
+]

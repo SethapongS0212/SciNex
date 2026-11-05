@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "Questions",
+    "predicate": "uses",
+    "object": "simple heuristic",
+    "object_type": "Method",
+    "source_sentence": "To identify questions , we use the simple heuristic of looking for sentences that end with '?' or start with why, how, am, is, are, do, does, did, can, could, should, would.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1052",
+    "title": "Asking the Right Question: Inferring Advice-Seeking Intentions from Personal Narratives",
+    "section": "3.1 Collection of candidate instances"
+  },
+  {
+    "subject": "Questions",
+    "predicate": "uses",
+    "object": "InferSent sentence embeddings",
+    "object_type": "Artifact",
+    "source_sentence": "we discard instances in which the questions have extremely high or low surface similarity according to their InferSent sentence embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1052",
+    "title": "Asking the Right Question: Inferring Advice-Seeking Intentions from Personal Narratives",
+    "section": "3.2 Finding alternative test answers"
+  },
+  {
+    "subject": "Questions",
+    "predicate": "uses",
+    "object": "tf-idf weighted GloVe embeddings",
+    "object_type": "Artifact",
+    "source_sentence": "we represent both narratives and questions with tf-idf weighted GloVe embeddings and compute the cosine similarity between them.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1052",
+    "title": "Asking the Right Question: Inferring Advice-Seeking Intentions from Personal Narratives",
+    "section": "3.2 Finding alternative test answers"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "achieves",
+    "object": "state-of-the-art results on the story cloze test",
+    "object_type": "Other",
+    "source_sentence": "We also use a Fine-tuned Transformer LM model , which was shown to perform competitively on a diverse set of NLP tasks, achieving state-of-the-art results on the story cloze test.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1052",
+    "title": "Asking the Right Question: Inferring Advice-Seeking Intentions from Personal Narratives",
+    "section": "5 Baseline systems performance"
+  },
+  {
+    "subject": "Understanding",
+    "predicate": "addresses",
+    "object": "human-computer interaction",
+    "object_type": "Concept",
+    "source_sentence": "A better understanding of these different (explicit or implicit ) intentions could lead to more personal - ized and empathetic human -computer interaction.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1052",
+    "title": "Asking the Right Question: Inferring Advice-Seeking Intentions from Personal Narratives",
+    "section": "7 Discussion"
+  }
+]

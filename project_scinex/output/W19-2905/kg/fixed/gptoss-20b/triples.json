@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "one word initial symbol <w>",
+    "object_type": "Other",
+    "source_sentence": "Bigram Markov Models append one word initial symbol <w> as the necessary context to estimate the probability of the first morpheme.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2905",
+    "title": "Modeling Hierarchical Syntactic Structures in Morphological Processing",
+    "section": "2.2 Computational Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "two word initial symbols <w>, <w>",
+    "object_type": "Other",
+    "source_sentence": "Trigram Markov Models append two word initial symbols <w>, <w> to provide the context for the first morpheme , and so on.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2905",
+    "title": "Modeling Hierarchical Syntactic Structures in Morphological Processing",
+    "section": "2.2 Computational Models"
+  },
+  {
+    "subject": "HMMs",
+    "predicate": "uses",
+    "object": "POS tags",
+    "object_type": "Other",
+    "source_sentence": "HMMs and PCFGs make different predictions even for bimorphemic words because derivational affixes are head-lexicalized in PCFGs (e.g. N →V er), while \"emitted\" from POS tags in HMMs.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2905",
+    "title": "Modeling Hierarchical Syntactic Structures in Morphological Processing",
+    "section": "2.2 Computational Models"
+  },
+  {
+    "subject": "Maximum Likelihood Estimation",
+    "predicate": "uses",
+    "object": "Lidstone smoothing",
+    "object_type": "Method",
+    "source_sentence": "Both nonterminal and terminal production probabilities are the model parameters empirically estimated from morphological tree structures in the training data via Maximum Likelihood Estimation with token weighting and Lidstone smoothing at α = 0.1.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2905",
+    "title": "Modeling Hierarchical Syntactic Structures in Morphological Processing",
+    "section": "2.2 Computational Models"
+  },
+  {
+    "subject": "Linear Regression Models",
+    "predicate": "uses",
+    "object": "lm function",
+    "object_type": "Other",
+    "source_sentence": "Ordinary linear regression models were fitted with the lm function in R.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2905",
+    "title": "Modeling Hierarchical Syntactic Structures in Morphological Processing",
+    "section": "2.4 Statistical Analyses"
+  },
+  {
+    "subject": "Regression Model",
+    "predicate": "uses",
+    "object": "log-transformed by-item average RTs",
+    "object_type": "Other",
+    "source_sentence": "The baseline regression model was first fitted with log-transformed by- item average RTs as the dependent variable and control predictors as independent variables.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2905",
+    "title": "Modeling Hierarchical Syntactic Structures in Morphological Processing",
+    "section": "2.4 Statistical Analyses"
+  },
+  {
+    "subject": "Regression Model",
+    "predicate": "uses",
+    "object": "cumulative surprisal",
+    "object_type": "Other",
+    "source_sentence": "For each computational model, the target regression model was then fitted with cumulative surprisal as the independent variable of interest on top of control predictors in the baseline regression model.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2905",
+    "title": "Modeling Hierarchical Syntactic Structures in Morphological Processing",
+    "section": "2.4 Statistical Analyses"
+  },
+  {
+    "subject": "Sentence Processing",
+    "predicate": "uses",
+    "object": "self-paced reading or eye-tracking experiments",
+    "object_type": "Other",
+    "source_sentence": "In sentence processing , the processing costs of words within sentences can be easily measured with self-paced reading or eye-tracking experiments, but the processing costs of morphemes within words cannot, so that cumulative surprisal should be computed to transform processing costs from morphemes to words.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2905",
+    "title": "Modeling Hierarchical Syntactic Structures in Morphological Processing",
+    "section": "2.4 Statistical Analyses"
+  },
+  {
+    "subject": "Log-likelihood ratio",
+    "predicate": "uses",
+    "object": "nested model comparisons",
+    "object_type": "Other",
+    "source_sentence": "Therefore, the cumulative surprisal estimated by computational models was evaluated with nested model comparisons via log-likelihood ratio tests based on the χ2-distribution with df = 1, the difference in the number of parameters between two nested regression models.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2905",
+    "title": "Modeling Hierarchical Syntactic Structures in Morphological Processing",
+    "section": "2.4 Statistical Analyses"
+  },
+  {
+    "subject": "Computational Models",
+    "predicate": "uses",
+    "object": "cumulative surprisal",
+    "object_type": "Concept",
+    "source_sentence": "In this paper, we performed a computational simulation experiment with human RTs in visual lexical decision experiments available from the ELP , a \"shared task\" in the morphological processing literature, and evaluated computational models with different representational assumptions via cumulative surprisal as a linking hypothesis , in order to investigate whether morphological processing tracks morphemes and parses them into hierarchical syntactic structures .",
+    "extraction_mode": "fixed",
+    "paper": "W19-2905",
+    "title": "Modeling Hierarchical Syntactic Structures in Morphological Processing",
+    "section": "5 Conclusion"
+  }
+]

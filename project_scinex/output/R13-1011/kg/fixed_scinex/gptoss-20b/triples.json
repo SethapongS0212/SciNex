@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Named Entity Recognition",
+    "predicate": "uses",
+    "object": "CRFs",
+    "object_type": "Model",
+    "source_sentence": "named entity recognition for Twitter using CRFs",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Named Entity Recognition",
+    "predicate": "uses",
+    "object": "Wikipedia-based topic and entity disambiguation",
+    "object_type": "Model",
+    "source_sentence": "named entity recognition for Twitter using CRFs , Wikipedia-based topic and entity disambiguation (van Erp et al., 2013)",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "topic models",
+    "predicate": "uses",
+    "object": "named entities",
+    "object_type": "Named Entities",
+    "source_sentence": "take a pipeline approach performing first tokenisation and POS tagging before using topic models to find named entities .",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "trainedon",
+    "object": "tweets",
+    "object_type": "Dataset",
+    "source_sentence": "We have also included in our evaluation of TwitIE, a Twitter-adapted version of the state-of-the-art Stanford NER, which we trained using both tweets and newswire.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "trainedon",
+    "object": "newswire",
+    "object_type": "Dataset",
+    "source_sentence": "We have also included in our evaluation of TwitIE, a Twitter-adapted version of the state-of-the-art Stanford NER, which we trained using both tweets and newswire.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "uses",
+    "object": "Stanford NER",
+    "object_type": "Model",
+    "source_sentence": "We have also included in our evaluation of TwitIE, a Twitter-adapted version of the state-of-the-art Stanford NER, which we trained using both tweets and newswire.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "addresses",
+    "object": "named entity recognition",
+    "object_type": "Task",
+    "source_sentence": "Since at present, TwitIE's focus is currently on named entity recognition, we will not compare against these methods.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "uses",
+    "object": "language identification",
+    "object_type": "Task",
+    "source_sentence": "The first step is language identification, which is discussed next (Section 3.2), followed by the TwitIE tokenizer (Section 3.3).",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "addresses",
+    "object": "microblog genre",
+    "object_type": "Concept",
+    "source_sentence": "For the rest of the TwitIE components, adaptation to the specifics of the microblog genre is required, in order to address the genre-specific challenges of nois- iness, brevity, idiosyncratic language, and social con-",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3 The TwitIE IE Pipeline"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "uses",
+    "object": "TextCat language identification algorithm",
+    "object_type": "Algorithm",
+    "source_sentence": "The TwitIE system uses the TextCat language identification algorithm, which re- lies on n-gram frequency models to discriminate be- tween languages.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.2 Language Identiﬁcation"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "comparesagainst",
+    "object": "Ritter's Twitter NER algorithm",
+    "object_type": "Model",
+    "source_sentence": "TwitIE also out- performs Ritter's Twitter NER algorithm and our adaptation of the Stanford NER, which we trained using both tweets and newswire",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.5 Part-of-speech Tagging"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "uses",
+    "object": "adapted Stanford tagger",
+    "object_type": "Model",
+    "source_sentence": "TwitIE contains an adapted Stanford tagger, trained on tweets tagged with the Penn TreeBank (PTB) tagset",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.5 Part-of-speech Tagging"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "trainedon",
+    "object": "hand-annotated tweets",
+    "object_type": "Dataset",
+    "source_sentence": "We trained this tagger using hand-annotated tweets, the NPS IRC corpus, and news text from PTB",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.5 Part-of-speech Tagging"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "trainedon",
+    "object": "NPS IRC corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We trained this tagger using hand-annotated tweets, the NPS IRC corpus, and news text from PTB",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.5 Part-of-speech Tagging"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "trainedon",
+    "object": "news text from PTB",
+    "object_type": "Dataset",
+    "source_sentence": "We trained this tagger using hand-annotated tweets, the NPS IRC corpus, and news text from PTB",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.5 Part-of-speech Tagging"
+  }
+]

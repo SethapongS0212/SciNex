@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "phrase-based machine translation",
+    "predicate": "uses",
+    "object": "Neural Language Models",
+    "object_type": "Method",
+    "source_sentence": "Some works also integrate neural language models to jointly learn the segmentation and correspondence, e.g., phrase-based machine translation , speech recognition and vision-grounded word segmentation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.641",
+    "title": "Neural Data-to-Text Generation via Jointly Learning the Segmentation and Correspondence",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "generation",
+    "predicate": "addresses",
+    "object": "previously generated text",
+    "object_type": "Other",
+    "source_sentence": "In contrast, the transition and generation in our model condition on all previously generated text.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.641",
+    "title": "Neural Data-to-Text Generation via Jointly Learning the Segmentation and Correspondence",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Data-to-Text Generation",
+    "predicate": "addresses",
+    "object": "proper text describing the content of the data",
+    "object_type": "Task",
+    "source_sentence": "The goal of data-to-text generation is to learn a distribution p(Y |X) to automatically generate proper text describing the content of the data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.641",
+    "title": "Neural Data-to-Text Generation via Jointly Learning the Segmentation and Correspondence",
+    "section": "3 Background: Data-to-Text"
+  },
+  {
+    "subject": "Neural Attention",
+    "predicate": "uses",
+    "object": "encode-attend-decode process",
+    "object_type": "Process",
+    "source_sentence": "The neural attention architecture handles this task with an encode-attend-decode process.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.641",
+    "title": "Neural Data-to-Text Generation via Jointly Learning the Segmentation and Correspondence",
+    "section": "3 Background: Data-to-Text"
+  },
+  {
+    "subject": "Segmentation",
+    "predicate": "addresses",
+    "object": "Discourse Structure",
+    "object_type": "Task",
+    "source_sentence": "The finer-grained segmentation might be useful if the focus is on modeling the detailed discourse structure instead of the information accuracy , which we leave for future work.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.641",
+    "title": "Neural Data-to-Text Generation via Jointly Learning the Segmentation and Correspondence",
+    "section": "4 Approach"
+  },
+  {
+    "subject": "rules",
+    "predicate": "uses",
+    "object": "Segmentation",
+    "object_type": "Method",
+    "source_sentence": "We can also utilize some heuristic rules to help segmentation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.641",
+    "title": "Neural Data-to-Text Generation via Jointly Learning the Segmentation and Correspondence",
+    "section": "4 Approach"
+  },
+  {
+    "subject": "Interpretability",
+    "predicate": "uses",
+    "object": "rules",
+    "object_type": "Method",
+    "source_sentence": "The interpretability of the segmental structure allows easy combination with these rules.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.641",
+    "title": "Neural Data-to-Text Generation via Jointly Learning the Segmentation and Correspondence",
+    "section": "4 Approach"
+  },
+  {
+    "subject": "Models",
+    "predicate": "comparesagainst",
+    "object": "Neural Attention Models",
+    "object_type": "Model",
+    "source_sentence": "For larger input data, our model can be significantly cheaper than neural attention models.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.641",
+    "title": "Neural Data-to-Text Generation via Jointly Learning the Segmentation and Correspondence",
+    "section": "4 Approach"
+  },
+  {
+    "subject": "rule-based",
+    "predicate": "addresses",
+    "object": "Segmentation Granularity",
+    "object_type": "Concept",
+    "source_sentence": "As rule-based systems are by design always faithful to the in- Segmentation Granularity",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.641",
+    "title": "Neural Data-to-Text Generation via Jointly Learning the Segmentation and Correspondence",
+    "section": "6 Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Patterns",
+    "object_type": "Method",
+    "source_sentence": "Most models do not have the fact repetition issue because of the relatively simple patterns in the E2E dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.641",
+    "title": "Neural Data-to-Text Generation via Jointly Learning the Segmentation and Correspondence",
+    "section": "6 Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "zero wrong facts",
+    "object_type": "Concept",
+    "source_sentence": "our model, despite relying on no heuristics or complex pipelines, made zero wrong facts with the lowest information missing rate, even surpassing rule-based models.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.641",
+    "title": "Neural Data-to-Text Generation via Jointly Learning the Segmentation and Correspondence",
+    "section": "6 Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "lowest information missing rate",
+    "object_type": "Concept",
+    "source_sentence": "our model, despite relying on no heuristics or complex pipelines, made zero wrong facts with the lowest information missing rate, even surpassing rule-based models.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.641",
+    "title": "Neural Data-to-Text Generation via Jointly Learning the Segmentation and Correspondence",
+    "section": "6 Results"
+  }
+]

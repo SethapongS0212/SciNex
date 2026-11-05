@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "achievesresult",
+    "object": "inferior performance compared to individually trained single-pair models",
+    "object_type": "Other",
+    "source_sentence": "using single encoder-decoder framework for all language pairs usually yields inferior performance compared to individually trained single-pair models in most cases.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1117",
+    "title": "A Compact and Language-Sensitive Multilingual Translation Method",
+    "section": "M Src N Tgt"
+  },
+  {
+    "subject": "translation process",
+    "predicate": "uses",
+    "object": "parameter set θ",
+    "object_type": "Concept",
+    "source_sentence": "Note that the translation process for all target languages uses the same parameter set θ.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1117",
+    "title": "A Compact and Language-Sensitive Multilingual Translation Method",
+    "section": "2.3 Multilingual Translation"
+  },
+  {
+    "subject": "hybrid",
+    "predicate": "uses",
+    "object": "independent cross-attention modules",
+    "object_type": "Other",
+    "source_sentence": "Different from the above attention mechanism, the hybrid-attention utilizes independent cross-attention modules but it is shared for all translation tasks.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1117",
+    "title": "A Compact and Language-Sensitive Multilingual Translation Method",
+    "section": "3.2 Language-Sensitive Modules"
+  },
+  {
+    "subject": "WordPiece",
+    "predicate": "uses",
+    "object": "source side sentences",
+    "object_type": "Task",
+    "source_sentence": "We use wordpiece method to encode the combination of both source side sentences and target side sentences.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1117",
+    "title": "A Compact and Language-Sensitive Multilingual Translation Method",
+    "section": "4.2 Training Details"
+  },
+  {
+    "subject": "WordPiece",
+    "predicate": "uses",
+    "object": "target side sentences",
+    "object_type": "Task",
+    "source_sentence": "We use wordpiece method to encode the combination of both source side sentences and target side sentences.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1117",
+    "title": "A Compact and Language-Sensitive Multilingual Translation Method",
+    "section": "4.2 Training Details"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "beam search",
+    "object_type": "Method",
+    "source_sentence": "For evaluation, we use beam search with a beam size of k = 4 and length penalty α = 0.6.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1117",
+    "title": "A Compact and Language-Sensitive Multilingual Translation Method",
+    "section": "4.2 Training Details"
+  }
+]

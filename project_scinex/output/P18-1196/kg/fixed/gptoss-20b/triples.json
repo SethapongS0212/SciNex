@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Language Models",
+    "predicate": "addresses",
+    "object": "speech recognition",
+    "object_type": "Task",
+    "source_sentence": "Language models can often help with other tasks, such as speech recognition , machine translation , text summarisation , question answering , semantic error detection , and fact checking .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Language Models",
+    "predicate": "addresses",
+    "object": "machine translation",
+    "object_type": "Task",
+    "source_sentence": "Language models can often help with other tasks, such as speech recognition , machine translation , text summarisation , question answering , semantic error detection , and fact checking .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Language Models",
+    "predicate": "addresses",
+    "object": "text summarisation",
+    "object_type": "Task",
+    "source_sentence": "Language models can often help with other tasks, such as speech recognition , machine translation , text summarisation , question answering , semantic error detection , and fact checking .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Language Models",
+    "predicate": "addresses",
+    "object": "question answering",
+    "object_type": "Task",
+    "source_sentence": "Language models can often help with other tasks, such as speech recognition , machine translation , text summarisation , question answering , semantic error detection , and fact checking .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Language Models",
+    "predicate": "addresses",
+    "object": "semantic error detection",
+    "object_type": "Task",
+    "source_sentence": "Language models can often help with other tasks, such as speech recognition , machine translation , text summarisation , question answering , semantic error detection , and fact checking .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Language Models",
+    "predicate": "addresses",
+    "object": "fact checking",
+    "object_type": "Task",
+    "source_sentence": "Language models can often help with other tasks, such as speech recognition , machine translation , text summarisation , question answering , semantic error detection , and fact checking .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Language Models",
+    "predicate": "addresses",
+    "object": "predicting numerals",
+    "object_type": "Task",
+    "source_sentence": "This paper focuses on evaluating and improving the ability of language models to predict numerals.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "Recurrent Neural Network",
+    "object_type": "Model",
+    "source_sentence": "Neural LMs estimate this probability by feeding embeddings, i.e. vectors that represent each token, into a Recurrent Neural Network (RNN).",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "2 Language Models"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "Score Function",
+    "object_type": "Concept",
+    "source_sentence": "The output probability is estimated using the softmax function, i.e. where ψ(.) is a score function.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "2 Language Models"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "cross entropy",
+    "object_type": "Concept",
+    "source_sentence": "Training and Evaluation Neural LMs are typi- cally trained to minimise the cross entropy on the training corpus:",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "2 Language Models"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "Score Function",
+    "object_type": "Concept",
+    "source_sentence": "The softmax model treats all tokens (words and numerals) alike and directly uses Equation 1 with score function:",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "3.1 Softmax Model and Variants"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "mini-batch gradient decent",
+    "object_type": "Method",
+    "source_sentence": "We train using mini-batch gradient decent with the Adam optimiser and regularise with early stopping and 0.1 dropout rate in the input and output of the token-based RNN.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "5 Experimental Results and Discussion"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "token-based RNN",
+    "object_type": "Model",
+    "source_sentence": "We train using mini-batch gradient decent with the Adam optimiser and regularise with early stopping and 0.1 dropout rate in the input and output of the token-based RNN.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "5 Experimental Results and Discussion"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "expectation-minimisation algorithm",
+    "object_type": "Method",
+    "source_sentence": "These models are initialised at percentile points from the data and trained with the expectation-minimisation algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "5 Experimental Results and Discussion"
+  },
+  {
+    "subject": "language modelling",
+    "predicate": "addresses",
+    "object": "generating rare or unknown words",
+    "object_type": "Task",
+    "source_sentence": "In language modelling, generating rare or unknown words has been a challenge, similar to our unknown numeral problem.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1196",
+    "title": "Georgios P. Spithourakis Department of Computer Science University College London g.spithourakis@cs.ucl.ac.uk",
+    "section": "6 Related Work"
+  }
+]

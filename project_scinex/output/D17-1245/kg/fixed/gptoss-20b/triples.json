@@ -1,0 +1,35 @@
+[
+  {
+    "subject": "Argument Mining",
+    "predicate": "addresses",
+    "object": "natural language arguments",
+    "object_type": "Concept",
+    "source_sentence": "Argument mining aims at automatically extracting natural language arguments and their relations from a variety of textual corpora",
+    "extraction_mode": "fixed",
+    "paper": "D17-1245",
+    "title": "Argument Mining on Twitter: Arguments, Facts and Sources",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "gazetteer",
+    "object_type": "Other",
+    "source_sentence": "implemented a simple string matching algorithm that relies on a gazetteer containing a set of Twitter usernames and hashtags extracted from the training data",
+    "extraction_mode": "fixed",
+    "paper": "D17-1245",
+    "title": "Argument Mining on Twitter: Arguments, Facts and Sources",
+    "section": "2.4 Task 3: Source identiﬁcation"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "heuristics",
+    "object_type": "Other",
+    "source_sentence": "If no matches are found, the algorithm extracts the NEs from the tweets through 's system, and applies the following two heuristics: i) if a NE is of type dbo:Organisation or dbo:Person, it considers such NE as the source; ii) it searches in the abstract of the DBpedia7 page linked to that NE if the words \"news\", \"newspaper\" or \"magazine\" appear (if found, such entity is considered as the source).",
+    "extraction_mode": "fixed",
+    "paper": "D17-1245",
+    "title": "Argument Mining on Twitter: Arguments, Facts and Sources",
+    "section": "2.4 Task 3: Source identiﬁcation"
+  }
+]

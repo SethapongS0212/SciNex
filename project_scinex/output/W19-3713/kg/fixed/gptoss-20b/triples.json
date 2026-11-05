@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "BERT Language Model",
+    "predicate": "uses",
+    "object": "bidirectional LSTM",
+    "object_type": "Method",
+    "source_sentence": "Our solution is based on BERT language model , use bidirectional LSTM , Multi-Head attention , NCRFpp (being neural network version of CRF++framework for sequence labelling) and Pooling Classifier (for language classification) on the top as additional information.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT Language Model",
+    "predicate": "uses",
+    "object": "Multi-Head attention",
+    "object_type": "Method",
+    "source_sentence": "Our solution is based on BERT language model , use bidirectional LSTM , Multi-Head attention , NCRFpp (being neural network version of CRF++framework for sequence labelling) and Pooling Classifier (for language classification) on the top as additional information.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "NCRF",
+    "predicate": "addresses",
+    "object": "Sequence Labeling",
+    "object_type": "Task",
+    "source_sentence": "NCRF++ inference layer for decoding, i.e. final sequence labelling",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "3 System Description"
+  },
+  {
+    "subject": "Text Sequence",
+    "predicate": "uses",
+    "object": "WordPiece",
+    "object_type": "Method",
+    "source_sentence": "Process input text sequence to WordPiece embeddings with a 30,000 token vocabulary and pad to 512 tokens.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "3.1.1 BERT Embedder"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "Text",
+    "object_type": "Other",
+    "source_sentence": "BERT neural network is used only to embed input text and don't fine-tune on the training stage.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "3.1.1 BERT Embedder"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "multihead-attention block",
+    "object_type": "Method",
+    "source_sentence": "In our architecture, we use multihead- attention block as proposed in the paper \"attention is all you need\".",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "3.1.2 BERT Weighting Here we sum all of BERT hidden outputs from previous part:"
+  },
+  {
+    "subject": "NCRF",
+    "predicate": "uses",
+    "object": "CRF",
+    "object_type": "Model",
+    "source_sentence": "NCRF++ supports CRF trained with the sentence - level maximum log-likelihood loss.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "3.1.5 Inference for NER Task"
+  },
+  {
+    "subject": "Viterbi",
+    "predicate": "uses",
+    "object": "Search",
+    "object_type": "Method",
+    "source_sentence": "During the decoding process, the Viterbi algorithm is used to search the label sequence with the highest probability.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "3.1.5 Inference for NER Task"
+  },
+  {
+    "subject": "Viterbi",
+    "predicate": "uses",
+    "object": "probability",
+    "object_type": "Concept",
+    "source_sentence": "During the decoding process, the Viterbi algorithm is used to search the label sequence with the highest probability.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "3.1.5 Inference for NER Task"
+  },
+  {
+    "subject": "NCRF",
+    "predicate": "uses",
+    "object": "Algorithm",
+    "object_type": "Method",
+    "source_sentence": "NCRF++ extends the decoding algorithm with the support of nbest output.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "3.1.5 Inference for NER Task"
+  },
+  {
+    "subject": "Classification",
+    "predicate": "uses",
+    "object": "classifier",
+    "object_type": "Model",
+    "source_sentence": "For the classification inference, we use Pooling Linear Classifier block as proposed in ULMFiT paper.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "3.1.5 Inference for NER Task"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Words",
+    "object_type": "Concept",
+    "source_sentence": "Because the input contains raw text and annotation, but BERT take words se- quence as input",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "4.1 Data Conversion"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "GPU",
+    "object_type": "Other",
+    "source_sentence": "Training of proposed neural network architecture was performed on one GPU with the batch size equal to 16, the number of epochs equal to 150, but stopped at epoch number 80 because the loss function has ceased to decrease.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "4.2 Training Procedure"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "achieves",
+    "object": "0.372 f1-score on development dataset",
+    "object_type": "Metric",
+    "source_sentence": "As baseline for BSNLP Shared Task we use a simple CRF tagger and obtain exact word level f1- score 0.372 on the development dataset.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "5.1 Evaluation Results"
+  },
+  {
+    "subject": "Language classification",
+    "predicate": "achieves",
+    "object": "0.998 f1-score on development set",
+    "object_type": "Metric",
+    "source_sentence": "For development set, we obtained the following scores: language classification quality (f1-score): 0.998 and Multilingual Named Entity Recognition quality (f1-score): 0.70 for exact word level matching and 0.578 for exact full entities matching.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "5.1 Evaluation Results"
+  },
+  {
+    "subject": "Multilingual Named Entity Recognition",
+    "predicate": "achieves",
+    "object": "0.70 f1-score on development set",
+    "object_type": "Metric",
+    "source_sentence": "For development set, we obtained the following scores: language classification quality (f1-score): 0.998 and Multilingual Named Entity Recognition quality (f1-score): 0.70 for exact word level matching and 0.578 for exact full entities matching.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "5.1 Evaluation Results"
+  },
+  {
+    "subject": "Multilingual Named Entity Recognition",
+    "predicate": "achieves",
+    "object": "0.578 f1-score on exact full entities matching",
+    "object_type": "Metric",
+    "source_sentence": "For development set, we obtained the following scores: language classification quality (f1-score): 0.998 and Multilingual Named Entity Recognition quality (f1-score): 0.70 for exact word level matching and 0.578 for exact full entities matching.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "5.1 Evaluation Results"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "addresses",
+    "object": "Multilingual Named Entity Recognition",
+    "object_type": "Task",
+    "source_sentence": "We have proposed neural network architecture that solves Multilingual Named Entity Recogni- tion without any additional labeled data for Bulgarian, Czech, Polish and Russian languages.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "7 Conclusion and Future Work"
+  },
+  {
+    "subject": "Fine-tune BERT",
+    "predicate": "uses",
+    "object": "Modern Language Models",
+    "object_type": "Model",
+    "source_sentence": "As improve- ments of the system , we can fine-tune BERT em- beddings and put additional layers on top of BERT or pass other modern language models as an input.",
+    "extraction_mode": "fixed",
+    "paper": "W19-3713",
+    "title": "Multilingual Named Entity Recognition Using Pretrained Embeddings, Attention Mechanism and NCRF",
+    "section": "7 Conclusion and Future Work"
+  }
+]

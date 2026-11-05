@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Recurrent Event Network",
+    "predicate": "addresses",
+    "object": "Temporal Knowledge Graphs",
+    "object_type": "Task",
+    "source_sentence": "To this end, we propose an autoregressive architecture, called Recurrent Event Network (RENET), for modeling temporal knowledge graphs.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "addresses",
+    "object": "inference problem",
+    "object_type": "Concept",
+    "source_sentence": "Key ideas of RE-NET are based on: (1) predicting future events over multiple time stamps can be formulated as a sequential and multi-step inference problem;",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "produces",
+    "object": "probability",
+    "object_type": "Concept",
+    "source_sentence": "Given these observations, RE-NET defines the joint probability distribution of all events in a TKG in an autoregressive fashion.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Events",
+    "predicate": "addresses",
+    "object": "structural dependencies",
+    "object_type": "Concept",
+    "source_sentence": "multiple events may co-occur within the same time window and exhibit structural dependencies between entities (i.e., local graph structural information ).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Events",
+    "predicate": "addresses",
+    "object": "temporal information",
+    "object_type": "Concept",
+    "source_sentence": "temporally adjacent events may carry related semantics and informative patterns, which can further help predict future events (i.e., temporal information );",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "produces",
+    "object": "joint probability of concurrent events",
+    "object_type": "Concept",
+    "source_sentence": "RE-NET defines the joint probability of concurrent events (or a graph ), which is conditioned on all the previous events.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "2 Problem Formulation"
+  },
+  {
+    "subject": "Models",
+    "predicate": "produces",
+    "object": "distribution p(G) over TKGs",
+    "object_type": "Concept",
+    "source_sentence": "The goal of learning generative models of events is to learn a distribution p(G) over TKGs, based on a set of observed event sets {G1,..., Gt}.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "2 Problem Formulation"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "comprises",
+    "object": "Recurrent Neural Network",
+    "object_type": "Model",
+    "source_sentence": "Specifically, RE-NET consists of a Recurrent Neural Network (RNN) as a recurrent event encoding module and a neighborhood aggregation module to capture the information of graph structures.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "2 Problem Formulation"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "comprises",
+    "object": "Recurrent Neural Network",
+    "object_type": "Method",
+    "source_sentence": "RE-NET consists of a Recurrent Neural Network (RNN) as a recurrent event encoder (Sec. 3.1) for temporal de- pendency and a neighborhood aggregator (Sec. 3.2) for graph structural dependency.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "3 Recurrent Event Network"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "uses",
+    "object": "sampling",
+    "object_type": "Method",
+    "source_sentence": "We also discuss parameter learning of RE-NET and define multi - step inference for distant future by sampling inter- mediate graphs in a sequential manner (Sec.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "3 Recurrent Event Network"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "achievesresult",
+    "object": "higher MRR",
+    "object_type": "Metric",
+    "source_sentence": "When RE-NET uses longer histories, MRR is getting higher.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "0.66 Hits@"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "achieves",
+    "object": "high performances",
+    "object_type": "Other",
+    "source_sentence": "RE-NET can learn (1) and (2) cases, so it achieves high performances.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "F Case Study"
+  }
+]

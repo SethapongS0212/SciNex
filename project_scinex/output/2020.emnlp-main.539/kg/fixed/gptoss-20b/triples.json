@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "parser",
+    "predicate": "trainedon",
+    "object": "CDT5.0",
+    "object_type": "Dataset",
+    "source_sentence": "To obtain the structures in the responses , we trained a parser on CDT5.0 (Chineses dependency treebank), achieving 90.72% and 88.38% unlabeled and la- beled attachment score.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "4.4 The Dependency Structures"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "unigram features",
+    "object_type": "Feature",
+    "source_sentence": "Here we choose SVM as the classifier, with unigram features and bigram features, i.e., SVM+uni+bi.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "5.2 Identifying Proﬁle Consistency"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "bigram features",
+    "object_type": "Feature",
+    "source_sentence": "Here we choose SVM as the classifier, with unigram features and bigram features, i.e., SVM+uni+bi.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "5.2 Identifying Proﬁle Consistency"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "overlap feature",
+    "object_type": "Feature",
+    "source_sentence": "the overlaps between profile values and responses are extracted as another feature, which is the SVM+uni+bi+overlap.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "5.2 Identifying Proﬁle Consistency"
+  },
+  {
+    "subject": "ESIM",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Other",
+    "source_sentence": "Rnn-based NLI model ESIM is a powerful natural language inference model, which enhanced the interactions in the LSTM.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "5.2 Identifying Proﬁle Consistency"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "original KvPI dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Other models are directly evaluated on the original KvPI dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "5.2 Identifying Proﬁle Consistency"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "4G Chinese news data",
+    "object_type": "Dataset",
+    "source_sentence": "First, we pre-train two models on 4G Chinese news data and finetune them on the PersonalDialog dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "5.3 Testing on Downstream Tasks"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "PersonalDialog dataset",
+    "object_type": "Dataset",
+    "source_sentence": "First, we pre-train two models on 4G Chinese news data and finetune them on the PersonalDialog dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "5.3 Testing on Downstream Tasks"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Gen, Con, Loc",
+    "object_type": "Dataset",
+    "source_sentence": "Then we use the trained models to generate responses on the test data Gen, Con, Loc, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "5.3 Testing on Downstream Tasks"
+  },
+  {
+    "subject": "Relations",
+    "predicate": "uses",
+    "object": "KvBERT",
+    "object_type": "Model",
+    "source_sentence": "In parallel, the KvBERT also predicts the relations between each profile and response.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "5.3 Testing on Downstream Tasks"
+  },
+  {
+    "subject": "Datasets",
+    "predicate": "uses",
+    "object": "Models",
+    "object_type": "Model",
+    "source_sentence": "These datasets success-fully inform models of how to incorporate attribute related information in the responses , but still can not teach models how to identify the consistency relations between their response and profile.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "6 Related Work"
+  }
+]

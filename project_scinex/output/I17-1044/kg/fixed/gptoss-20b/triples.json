@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Attention",
+    "predicate": "produces",
+    "object": "Context Information",
+    "object_type": "Concept",
+    "source_sentence": "attention modules produces context information ct at the time t based on the encoder and decoder hidden states.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "2 Attention-based Encoder Decoder Neural Network"
+  },
+  {
+    "subject": "Equations",
+    "predicate": "achieves",
+    "object": "monotonicity properties",
+    "object_type": "Concept",
+    "source_sentence": "Both equations guarantee monotonicity properties since ∀t ∈ [1..T], pt ≥(pt−1 + ∆pt).",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "3 Locality and Monotonicity Properties"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "TIMIT dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We conducted our experiments on the TIMIT 1 dataset with the same set- up for training, development, and test sets as de- fined in the Kaldi s5 recipe.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "4.1 Speech Data"
+  },
+  {
+    "subject": "Monotonicity",
+    "predicate": "produces",
+    "object": "Alignment",
+    "object_type": "Concept",
+    "source_sentence": "the monotonicity property strictly generates alignment left-to-right from beginning to the end of the grapheme source sequence.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "6 Experiment on Grapheme-to-Phoneme"
+  },
+  {
+    "subject": "Decoding Phase",
+    "predicate": "uses",
+    "object": "Beam Search",
+    "object_type": "Method",
+    "source_sentence": "In the decoding phase, we used beam search strategy with beam size 3 to generate the phonemes given the character sequences.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "6.2 Model Architectures"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "embedding matrix",
+    "object_type": "Artifact",
+    "source_sentence": "On both encoder and decoder sides, the input words were projected into 256 dims using embedding matrix.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "7.2 Model Architecture"
+  },
+  {
+    "subject": "Words",
+    "predicate": "uses",
+    "object": "embedding matrix",
+    "object_type": "Artifact",
+    "source_sentence": "On both encoder and decoder sides, the input words were projected into 256 dims using embedding matrix.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "7.2 Model Architecture"
+  },
+  {
+    "subject": "Bi-LSTM",
+    "predicate": "uses",
+    "object": "512 hidden units",
+    "object_type": "Concept",
+    "source_sentence": "We used three Bi-LSTM for our encoder with 512 hidden units for each LSTM (total 1024 hidden unit for Bi-LSTM).",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "7.2 Model Architecture"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "512 hidden units",
+    "object_type": "Concept",
+    "source_sentence": "For our decoder , we used three LSTM with 512 hidden units.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "7.2 Model Architecture"
+  },
+  {
+    "subject": "Decoding Phase",
+    "predicate": "uses",
+    "object": "beam search strategy",
+    "object_type": "Method",
+    "source_sentence": "In the decoding phase, we used beam search strategy with beam size 5 and normalized length penalty with α = 1.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "7.2 Model Architecture"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "global attention",
+    "object_type": "Method",
+    "source_sentence": "For comparison , we evaluate our model with standard global attention and local -m attention model as the baseline.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "7.2 Model Architecture"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "local-m attention model",
+    "object_type": "Method",
+    "source_sentence": "For comparison , we evaluate our model with standard global attention and local -m attention model as the baseline.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "7.2 Model Architecture"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "achieves",
+    "object": "monotonicity",
+    "object_type": "Concept",
+    "source_sentence": "This paper demonstrated a novel attention mech- anism for encoder decoder model that ensures monotonicity and locality properties.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "9 Conclusion"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "achieves",
+    "object": "locality",
+    "object_type": "Concept",
+    "source_sentence": "This paper demonstrated a novel attention mech- anism for encoder decoder model that ensures monotonicity and locality properties.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "9 Conclusion"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "achieves",
+    "object": "alignment generation",
+    "object_type": "Method",
+    "source_sentence": "We explored various ways to control these properties, including dynamic monotonicity-based position prediction and locality-based alignment generation.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "9 Conclusion"
+  },
+  {
+    "subject": "Computational Complexity",
+    "predicate": "achieves",
+    "object": "reduced computational complexity",
+    "object_type": "Concept",
+    "source_sentence": "The results reveal our proposed encoder - decoder model with local monotonic attention significantly im- proved the performance on three different tasks and able to reduced the computational complexity more than one that used standard global attention architecture.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "9 Conclusion"
+  }
+]

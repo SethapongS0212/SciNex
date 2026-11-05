@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Text Generation",
+    "predicate": "uses",
+    "object": "document",
+    "object_type": "Other",
+    "source_sentence": "The text generation module generates a document conditioned on the current tracking state.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "tracking",
+    "predicate": "uses",
+    "object": "data record",
+    "object_type": "Other",
+    "source_sentence": "when the module detects a saliency transition, the tracking module selects a new data record1 and updates the state of the tracking module.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Recurrent Neural Network",
+    "predicate": "uses",
+    "object": "saliency tracking",
+    "object_type": "Task",
+    "source_sentence": "our proposal differs from theirs in that ours uses a recurrent neural network for saliency tracking",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Memory Network",
+    "predicate": "uses",
+    "object": "Information",
+    "object_type": "Concept",
+    "source_sentence": "The memory network can be used to maintain and update representations of the salient information (Weston et al., 2015; Sukhbaatar et al., 2015; Distance (DLD) of content ordering, and 16.15% of BLEU score.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "2.2 Memory modules"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "data records",
+    "object_type": "Dataset",
+    "source_sentence": "At the core of our model is a neural language model with a memory state hLM to generate a summary y1:T = (y1,..., yT ) given a set of data records x.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "4 Saliency-Aware Text Generation"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "achieves",
+    "object": "summary generation",
+    "object_type": "Task",
+    "source_sentence": "At the core of our model is a neural language model with a memory state hLM to generate a summary y1:T = (y1,..., yT ) given a set of data records x.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "4 Saliency-Aware Text Generation"
+  },
+  {
+    "subject": "Recurrent Neural Network",
+    "predicate": "uses",
+    "object": "gated recurrent unit",
+    "object_type": "Method",
+    "source_sentence": "If the salient entity changes (et ≠ et−1), the model updates the hidden state of the tracking model hENT with a recurrent neural network with a gated recurrent unit:",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "4.3 Selection and tracking"
+  },
+  {
+    "subject": "Information Extraction",
+    "predicate": "uses",
+    "object": "information extraction system",
+    "object_type": "Other",
+    "source_sentence": "Instead of simple lexical matching with r ∈x, which is prone to errors in the annotation, we use the information extraction system provided by Wiseman et al.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "5.1 Experimental settings"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "writer embedding",
+    "object_type": "Concept",
+    "source_sentence": "concatenating writer embedding w with the input vector for LSTM in the content planning decoder (stage 1);",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "5.2 Models to be compared"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "writer embedding",
+    "object_type": "Concept",
+    "source_sentence": "concatenating writer embedding w with the input vector for LSTM in the text generator (stage 2);",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "5.2 Models to be compared"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "PCA",
+    "object_type": "Method",
+    "source_sentence": "We present a two-dimensional visualizations of both embeddings produced using PCA (Pearson, tracted from the summaries, and the corresponding attributes (e.g., \"TEAM NAME\", \"PTS\") found in the box- or line-score.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "6.2 Qualitative analysis of entity embedding"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "evaluates",
+    "object": "93.4%",
+    "object_type": "Metric",
+    "source_sentence": "The precision and the recall of this extraction model are respectively 93.4% and 75.0% in the test data.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "6.2 Qualitative analysis of entity embedding"
+  },
+  {
+    "subject": "generation",
+    "predicate": "addresses",
+    "object": "redundant relations",
+    "object_type": "Concept",
+    "source_sentence": "our model dramatically suppressed generation of redundant relations.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "4 LeBron James"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "achieves",
+    "object": "18.18",
+    "object_type": "Metric",
+    "source_sentence": "By adding w to content planning (stage 1), the method obtained improvements in CS (37.60 to 47.25), CO (16.97 to 22.16), and BLEU score (13.96 to 18.18).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "6.5 Use of writer information"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "achieves",
+    "object": "17.81",
+    "object_type": "Metric",
+    "source_sentence": "By adding w to the component for surface realization (stage 2), the method obtained an improvement in BLEU score (13.96 to 17.81), while the effects on the other metrics were not very significant.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "6.5 Use of writer information"
+  },
+  {
+    "subject": "Summaries",
+    "predicate": "achieves",
+    "object": "20.84 BLEU score",
+    "object_type": "Metric",
+    "source_sentence": "generated highest quality summaries that scored 20.84 points of BLEU score.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "7 Conclusion"
+  }
+]

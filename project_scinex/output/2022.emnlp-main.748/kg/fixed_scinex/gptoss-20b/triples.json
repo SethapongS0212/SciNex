@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Data Cleaning",
+    "predicate": "produces",
+    "object": "Datasets",
+    "object_type": "Dataset",
+    "source_sentence": "after carefully performing data cleaning and addressing pairing issues, we arrive at a total of 2,425 document- summary pairs as part of the dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "produces",
+    "object": "statistics",
+    "object_type": "Other",
+    "source_sentence": "Finally, we conduct an in-depth analysis of the dataset and report its statistics.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "3 Dataset"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "uses",
+    "object": "Sentence Representations",
+    "object_type": "Sentence Representations",
+    "source_sentence": "We replace this layer by FinBERT , a BERT model pre-trained on financial communication text, and use it to obtain the individual sentence representations.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "4.1 The Extractive Module"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "placeholders such as [num-one], [num-two], etc.",
+    "object_type": "Other",
+    "source_sentence": "During training we replace the numerical values in the input sentences with placeholders such as [num-one], [num-two], etc.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "4.2 The Paraphrasing Module"
+  },
+  {
+    "subject": "post-processing",
+    "predicate": "uses",
+    "object": "placeholders",
+    "object_type": "Other",
+    "source_sentence": "After obtaining the paraphrased sentences, we replace the placeholders with their original values by performing a simple post-processing step.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "4.2 The Paraphrasing Module"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Tesla",
+    "object_type": "Other",
+    "source_sentence": "All experiments were performed on a Tesla P100-PCIE (16GB) GPU.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "5.3 Experimental Setup"
+  },
+  {
+    "subject": "BART",
+    "predicate": "addresses",
+    "object": "input text length limitation",
+    "object_type": "Concept",
+    "source_sentence": "BART (1024), Pegasus (512), and T5 (512) have limitations on the length of input text that they can process.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "5.3 Experimental Setup"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "produces",
+    "object": "small summary",
+    "object_type": "Other",
+    "source_sentence": "During inference , a small summary (max 32 tokens ) was generated from each document chunk.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "5.3 Experimental Setup"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "document encoder",
+    "object_type": "Other",
+    "source_sentence": "an additional Transformer as the document encoder.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "A.2.2 Extractive Approaches"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "sentence representations",
+    "object_type": "Other",
+    "source_sentence": "A classifier on sentence representations is used for sentence selection.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "A.2.2 Extractive Approaches"
+  },
+  {
+    "subject": "Summaries",
+    "predicate": "uses",
+    "object": "SummaC",
+    "object_type": "Method",
+    "source_sentence": "We used the official implementation21 of SummaC to obtain the scores for all model-generated summaries.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "A.3 Evaluation Metrics"
+  }
+]

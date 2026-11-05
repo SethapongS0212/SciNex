@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Translating",
+    "predicate": "achieves",
+    "object": "increased BLEU scores",
+    "object_type": "Metric",
+    "source_sentence": "show that translating already translated texts results in increased BLEU scores.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Transformer Decoder",
+    "predicate": "uses",
+    "object": "shifted predicted sequence",
+    "object_type": "Other",
+    "source_sentence": "During training, the Transformer decoder is run once without accumulating gradients, and the (shifted) predicted sequence together with the encoder output are then fed into the Transformer decoder again to compute the unsupervised losses described above.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "3.2 Joint Training Architecture"
+  },
+  {
+    "subject": "Transformer Decoder",
+    "predicate": "uses",
+    "object": "encoder output",
+    "object_type": "Other",
+    "source_sentence": "During training, the Transformer decoder is run once without accumulating gradients, and the (shifted) predicted sequence together with the encoder output are then fed into the Transformer decoder again to compute the unsupervised losses described above.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "3.2 Joint Training Architecture"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "addresses",
+    "object": "supervised and unsupervised",
+    "object_type": "Concept",
+    "source_sentence": "Note that while validation happens only over the unsupervised loss, in the final joint training objective, both the supervised Lsup and the unsupervised loss Lunsup are considered.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "3.2 Joint Training Architecture"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "uses",
+    "object": "Transformer Decoder Language Model",
+    "object_type": "Model",
+    "source_sentence": "In Joint Training, we use the Fairseq implementation of a Transformer Decoder Language Model to compute Language Model Loss during training and validation.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "4.2 Model Specifications"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "achievesresult",
+    "object": "reference LD score on hTR",
+    "object_type": "Metric",
+    "source_sentence": "Interestingly, the LD scores from Joint Training [2]-hTR/mTR even surpass the reference LD score on hTR.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "5.2 Qualitative Analysis"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "achieves",
+    "object": "greater number of parallel pairs",
+    "object_type": "Other",
+    "source_sentence": "Joint Training with no threshold achieves a greater number of parallel pairs than its counterpart with threshold.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "A.2.1 Parallel Pairs for Joint Training"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "achieves",
+    "object": "source sentence's meaning",
+    "object_type": "Concept",
+    "source_sentence": "However, both Self-Supervised[2] and Joint Training[2]-hTR manage to maintain the source sentence's meaning, albeit with a slight shift in the intensity of the word \"schöne\" (beautiful).",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "A.3 Manual Inspection of German outputs"
+  }
+]

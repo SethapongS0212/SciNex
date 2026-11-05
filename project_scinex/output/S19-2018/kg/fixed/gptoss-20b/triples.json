@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "Google News",
+    "object_type": "Dataset",
+    "source_sentence": "We used the standard Google News Word2Vec embedding model by Mikolov et al.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2018",
+    "title": "Abstract",
+    "section": "2.1 Method"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "whole context vectors",
+    "object_type": "Other",
+    "source_sentence": "We used the ELMo contextualized embedding model by Peters et al. (2018) that generates vectors of a whole context.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2018",
+    "title": "Abstract",
+    "section": "2.1 Method"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "character-level word representations",
+    "object_type": "Other",
+    "source_sentence": "Similarly to fast-Text , ELMo can produce character-level word representations to handle out-of-vocabulary words.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2018",
+    "title": "Abstract",
+    "section": "2.1 Method"
+  },
+  {
+    "subject": "agglomerative clustering",
+    "predicate": "uses",
+    "object": "normalized vectors",
+    "object_type": "Other",
+    "source_sentence": "Our final submission (t) used agglomerative clustering of normalized vectors obtained by concatenating the context and verb vectors from the Word2Vec model.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2018",
+    "title": "Abstract",
+    "section": "2.2 Results and Discussion"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "comparesagainst",
+    "object": "Word2Vec",
+    "object_type": "Model",
+    "source_sentence": "During our post-competition experiments (¨), we found that ELMo performed better than Word2Vec when a higher number of clusters, 235, was specified.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2018",
+    "title": "Abstract",
+    "section": "2.2 Results and Discussion"
+  },
+  {
+    "subject": "FrameNet",
+    "predicate": "uses",
+    "object": "frames",
+    "object_type": "Concept",
+    "source_sentence": "The gold standard for this subtask is annotated with FrameNet frames and roles",
+    "extraction_mode": "fixed",
+    "paper": "S19-2018",
+    "title": "Abstract",
+    "section": "A Cluster Per Dependency Role 57.99 45.79 3 Winner 62.10 49."
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "word",
+    "object_type": "Other",
+    "source_sentence": "When addressing this subtask, we experimented with combining the embeddings of the word (W) filling the role, its sentence (context, C), and the highlighted verb (V).",
+    "extraction_mode": "fixed",
+    "paper": "S19-2018",
+    "title": "Abstract",
+    "section": "4.1 Method"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "context",
+    "object_type": "Other",
+    "source_sentence": "When addressing this subtask, we experimented with combining the embeddings of the word (W) filling the role, its sentence (context, C), and the highlighted verb (V).",
+    "extraction_mode": "fixed",
+    "paper": "S19-2018",
+    "title": "Abstract",
+    "section": "4.1 Method"
+  },
+  {
+    "subject": "dependency",
+    "predicate": "uses",
+    "object": "inbound dependencies",
+    "object_type": "Other",
+    "source_sentence": "During prototyping we developed several features that improved the performance score, namely inbound dependencies (ID), which represent the dependency label from the head to the role (dependent) and two trivial baselines: Boolean (B) and 123.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2018",
+    "title": "Abstract",
+    "section": "4.1 Method"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "inbound dependencies",
+    "object_type": "Other",
+    "source_sentence": "During prototyping we developed several features that improved the performance score, namely inbound dependencies (ID), which represent the dependency label from the head to the role (dependent) and two trivial baselines: Boolean (B) and 123.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2018",
+    "title": "Abstract",
+    "section": "4.1 Method"
+  }
+]

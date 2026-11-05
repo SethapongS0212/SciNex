@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "BPE",
+    "object_type": "Method",
+    "source_sentence": "They tweak their NMT embedding initialization method, such as using separately-trained BPE instead of joint, and word embeddings instead of BPE token embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2020.wmt-1.68",
+    "title": "When Does Unsupervised Machine Translation Work?",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Method",
+    "source_sentence": "They tweak their NMT embedding initialization method, such as using separately-trained BPE instead of joint, and word embeddings instead of BPE token embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2020.wmt-1.68",
+    "title": "When Does Unsupervised Machine Translation Work?",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "uses",
+    "object": "Language Model Pretraining",
+    "object_type": "Method",
+    "source_sentence": "Kim et al. (2020) arrived at similar conclusions to us using a different autoencoder/dual-learning unsupervised MT approach based on cross-lingual language model pretraining ; this complements our experiments and corroborates our results.",
+    "extraction_mode": "fixed",
+    "paper": "2020.wmt-1.68",
+    "title": "When Does Unsupervised Machine Translation Work?",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "models of Artetxe et al. (2018b, 2019)",
+    "object_type": "Model",
+    "source_sentence": "Our experiments employ the models of Artetxe et al. (2018b, 2019) as representative of state-of-the-art for the class of unsupervised MT methods that bootstrap from cross-lingual word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2020.wmt-1.68",
+    "title": "When Does Unsupervised Machine Translation Work?",
+    "section": "3 Background: Unsupervised MT"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "phrase translation probabilities",
+    "object_type": "Probabilities",
+    "source_sentence": "They use the softmax over the cosine similarity of the 100 nearest-neighbors of each source phrase embedding as the phrase translation probabilities.",
+    "extraction_mode": "fixed",
+    "paper": "2020.wmt-1.68",
+    "title": "When Does Unsupervised Machine Translation Work?",
+    "section": "3 Background: Unsupervised MT"
+  },
+  {
+    "subject": "SMT",
+    "predicate": "uses",
+    "object": "10,000 parallel sentences",
+    "object_type": "Parallel Sentences",
+    "source_sentence": "The SMT model weights are tuned using a variant of MERT designed for unsupervised scenarios, which uses 10,000 parallel sentences generated via backtranslation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.wmt-1.68",
+    "title": "When Does Unsupervised Machine Translation Work?",
+    "section": "3 Background: Unsupervised MT"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "trainedon",
+    "object": "backtranslated output from SMT",
+    "object_type": "Dataset",
+    "source_sentence": "An NMT system is trained using backtranslated output from SMT for one epoch.",
+    "extraction_mode": "fixed",
+    "paper": "2020.wmt-1.68",
+    "title": "When Does Unsupervised Machine Translation Work?",
+    "section": "3 Background: Unsupervised MT"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "uses",
+    "object": "newstest2018",
+    "object_type": "Dataset",
+    "source_sentence": "Supervised models use newstest2018 (Ru-En) or newstest2013 (Fr-En) for validation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.wmt-1.68",
+    "title": "When Does Unsupervised Machine Translation Work?",
+    "section": "6.6 Test and Validation Sets"
+  },
+  {
+    "subject": "Wikipedia",
+    "predicate": "uses",
+    "object": "dev and devtest sets",
+    "object_type": "Dataset",
+    "source_sentence": "For Si-En and Ne-En, we use the Wikipedia dev and devtest sets from Guzmán et al. (2019).",
+    "extraction_mode": "fixed",
+    "paper": "2020.wmt-1.68",
+    "title": "When Does Unsupervised Machine Translation Work?",
+    "section": "6.6 Test and Validation Sets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "Questions",
+    "object_type": "Other",
+    "source_sentence": "Next, we set up a series of experiments to assess the questions posed in Section 4.",
+    "extraction_mode": "fixed",
+    "paper": "2020.wmt-1.68",
+    "title": "When Does Unsupervised Machine Translation Work?",
+    "section": "7 Reinvestigation of Artetxe et. al."
+  },
+  {
+    "subject": "Supervised Models",
+    "predicate": "uses",
+    "object": "datasets10",
+    "object_type": "Dataset",
+    "source_sentence": "The supervised models and those in the Parallel column use the same datasets10 and can therefore be directly compared.",
+    "extraction_mode": "fixed",
+    "paper": "2020.wmt-1.68",
+    "title": "When Does Unsupervised Machine Translation Work?",
+    "section": "7.1 Unsupervised Quality Loss"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "3.2",
+    "object_type": "Metric",
+    "source_sentence": "We observe a BLEU score drop of ∼3.2 for Ru-En versus a drop of ∼2.3 for Fr-En when using the unsupervised architecture.",
+    "extraction_mode": "fixed",
+    "paper": "2020.wmt-1.68",
+    "title": "When Does Unsupervised Machine Translation Work?",
+    "section": "7.1 Unsupervised Quality Loss"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "achieves",
+    "object": "good solution",
+    "object_type": "Concept",
+    "source_sentence": "UNSUPERVISED methods are able to yield a good solution only when there is no domain mismatch and for the pair with two most similar languages ( English -Spanish), again questioning their robustness and portability to truly low-resource and more challenging setups",
+    "extraction_mode": "fixed",
+    "paper": "2020.wmt-1.68",
+    "title": "When Does Unsupervised Machine Translation Work?",
+    "section": "7.4 Training Stability"
+  }
+]

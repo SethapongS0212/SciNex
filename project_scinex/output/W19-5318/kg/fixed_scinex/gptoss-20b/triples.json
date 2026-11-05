@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "OpenNMT",
+    "predicate": "produces",
+    "object": "SentencePiece segmentation model",
+    "object_type": "Model",
+    "source_sentence": "For the OpenNMT-based systems , a vocabulary size of 32k entries was employed during training of a SentencePiece segmentation model2.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "2.2 Exploration of Byte-Pair Encoding Merge Sizes"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "evaluatedon",
+    "object": "Test Sets",
+    "object_type": "Dataset",
+    "source_sentence": "Results in Table 3 show that 40k BPE merge operations perform best across all test sets decoded for this language pair.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "2.2 Exploration of Byte-Pair Encoding Merge Sizes"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "uses",
+    "object": "Test Sets",
+    "object_type": "Dataset",
+    "source_sentence": "We then ensemble decoded test sets with all eight models.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.1 Marian"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "Expected Corpus BLEU",
+    "object_type": "Metric",
+    "source_sentence": "Borrowing from our Moses training approach, we utilize a multi-iteration decode and optimize feature weights using the \"Expected Corpus BLEU\" (ECB) metric with the Drem optimizer.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.1 Marian"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "uses",
+    "object": "system combination",
+    "object_type": "Other",
+    "source_sentence": "The best-performing ensemble (ensemble tune14) was used in system combination.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.1 Marian"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Sockeye EWC training procedure",
+    "object_type": "Method",
+    "source_sentence": "We also followed the Sockeye EWC training procedure, producing a model more resilient to overfitting due to continued training.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.2 Sockeye"
+  },
+  {
+    "subject": "System Combination",
+    "predicate": "uses",
+    "object": "ensemble",
+    "object_type": "Method",
+    "source_sentence": "For system combination outlined later in Section 4, we decoded test sets with an ensemble of the four highest-scoring model checkpoints from the best EWC training run.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.2 Sockeye"
+  },
+  {
+    "subject": "System Combination",
+    "predicate": "uses",
+    "object": "Test Sets",
+    "object_type": "Dataset",
+    "source_sentence": "For system combination outlined later in Section 4, we decoded test sets with an ensemble of the four highest-scoring model checkpoints from the best EWC training run.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.2 Sockeye"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "all permissible monolingual English news-crawl data",
+    "object_type": "Dataset",
+    "source_sentence": "The 5-gram English language model was trained with KenLM on all permissable monolingual En- glish news-crawl data.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.5 Moses"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "parallel training data",
+    "object_type": "Dataset",
+    "source_sentence": "The BPE model used was applied to both the parallel training data and the language modeling corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.5 Moses"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "language modeling corpus",
+    "object_type": "Dataset",
+    "source_sentence": "The BPE model used was applied to both the parallel training data and the language modeling corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.5 Moses"
+  }
+]

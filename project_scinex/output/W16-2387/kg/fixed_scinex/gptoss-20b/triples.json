@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "For the neural models, we used pre-trained word embeddings from Polyglot.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2387",
+    "title": "Unbabel’s Participation in the WMT16 Word-Level Translation Quality Estimation Shared Task",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Concept",
+    "source_sentence": "Finally, a dropout of 20% after the concatenation of the embeddings was applied.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2387",
+    "title": "Unbabel’s Participation in the WMT16 Word-Level Translation Quality Estimation Shared Task",
+    "section": "3.1 Feedforward Network"
+  },
+  {
+    "subject": "bidirectional",
+    "predicate": "produces",
+    "object": "OK/BAD tag",
+    "object_type": "Other",
+    "source_sentence": "We also implemented a bidirectional model which takes target words and their aligned source words as inputs, and outputs a OK/BAD tag for each target word.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2387",
+    "title": "Unbabel’s Participation in the WMT16 Word-Level Translation Quality Estimation Shared Task",
+    "section": "3.2 Bilingual, Bidirectional Recurrent Model"
+  },
+  {
+    "subject": "bidirectional",
+    "predicate": "uses",
+    "object": "feedforward network",
+    "object_type": "Other",
+    "source_sentence": "The internal representations of the bidirectional model are then passed to a feedforward network where the first layer performs a max-out transformation with two pieces.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2387",
+    "title": "Unbabel’s Participation in the WMT16 Word-Level Translation Quality Estimation Shared Task",
+    "section": "3.2 Bilingual, Bidirectional Recurrent Model"
+  },
+  {
+    "subject": "bidirectional",
+    "predicate": "uses",
+    "object": "max-out transformation",
+    "object_type": "Other",
+    "source_sentence": "The internal representations of the bidirectional model are then passed to a feedforward network where the first layer performs a max-out transformation with two pieces.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2387",
+    "title": "Unbabel’s Participation in the WMT16 Word-Level Translation Quality Estimation Shared Task",
+    "section": "3.2 Bilingual, Bidirectional Recurrent Model"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "recurrent transitions",
+    "object_type": "Other",
+    "source_sentence": "Gated Recurrent Units (GRU) are used for the recurrent transitions.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2387",
+    "title": "Unbabel’s Participation in the WMT16 Word-Level Translation Quality Estimation Shared Task",
+    "section": "3.2 Bilingual, Bidirectional Recurrent Model"
+  },
+  {
+    "subject": "Convolution",
+    "predicate": "uses",
+    "object": "POS tags",
+    "object_type": "Concept",
+    "source_sentence": "we use a convolution with a window of size 3 for words and 5 for POS tags.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2387",
+    "title": "Unbabel’s Participation in the WMT16 Word-Level Translation Quality Estimation Shared Task",
+    "section": "3.3 Multi-Feature Convolutional Recurrent Network"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "achievesresult",
+    "object": "additional boost (>3 points)",
+    "object_type": "Metric",
+    "source_sentence": "As expected, the ensemble system gave an additional boost (>3 points) over the linear model, which is consistent with the findings of the previous sections on the validation data.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2387",
+    "title": "Unbabel’s Participation in the WMT16 Word-Level Translation Quality Estimation Shared Task",
+    "section": "5 Final Results"
+  }
+]

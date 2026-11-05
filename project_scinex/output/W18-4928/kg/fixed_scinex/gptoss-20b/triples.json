@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "NER",
+    "predicate": "uses",
+    "object": "stacked BDLSTM layers",
+    "object_type": "Other",
+    "source_sentence": "Chiu and Nichols (2015) introduce a NER system that uses stacked BDLSTM layers over word- encodings that are obtained by concatenating word- embeddings with manually engineered word-lever features.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Character Level",
+    "predicate": "uses",
+    "object": "convolutional neural networks",
+    "object_type": "Other",
+    "source_sentence": "The character level embeddings that are computed using convolutional neural networks (CNNs).",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "word-level features",
+    "object_type": "Other",
+    "source_sentence": "They use word embeddings combined with word-level features as input for their networks.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "LSTM models",
+    "predicate": "addresses",
+    "object": "Sequence Labeling",
+    "object_type": "Task",
+    "source_sentence": "one could employ LSTM models for sequence labeling",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.1 Graph-based encoding with neural networks"
+  },
+  {
+    "subject": "Bidirectional LSTM",
+    "predicate": "produces",
+    "object": "vector embeddings",
+    "object_type": "Other",
+    "source_sentence": "After this, we use two stacked Bidirectional LSTM (BDLSTM) layers , obtaining a list of vector embeddings for each word inside the original sequence.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.1 Graph-based encoding with neural networks"
+  },
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "loss",
+    "object_type": "Other",
+    "source_sentence": "During training, we establish if words wi and wj are part of the same high-level entity and, for every pair (i, j) we infer as loss −log ai,j if the words are constituents of the same expression or −log(1.0 − ai,j) otherwise.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.1 Graph-based encoding with neural networks"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "Words",
+    "object_type": "Concept",
+    "source_sentence": "We only compute embeddings for frequently-occurring words and lemmas",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.2 Expression decoding and label selection"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "Softmax layer",
+    "object_type": "Method",
+    "source_sentence": "we fed the list in natural order into a single layer LSTM trained in a many-to-one fashion and use output of the final state as input for a Softmax layer trained to output the correct label for the sequence.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.2 Expression decoding and label selection"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "achieves",
+    "object": "correct label for the sequence",
+    "object_type": "Other",
+    "source_sentence": "Softmax layer trained to output the correct label for the sequence.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.2 Expression decoding and label selection"
+  }
+]

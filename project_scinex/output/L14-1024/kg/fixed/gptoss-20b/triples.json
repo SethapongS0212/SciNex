@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "similarity thresholds",
+    "object_type": "Other",
+    "source_sentence": "The noisiest data sets were extracted for the 0.1 and 0.2 similarity thresholds and we dropped them from SMT experiments.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "0.9 Pairs: 42,201 EN Words: 0.81M RO Words: 0.83M"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "lexical reordering wbe-msd-bidirectional-fe model",
+    "object_type": "Method",
+    "source_sentence": "As the standard SMT system we chose Moses surface to surface translation , lexical reordering wbe-msd-bidirectional-fe model, a maximum 4 words phrase-length, and the default values for the rest of parameters.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "0.9 Pairs: 42,201 EN Words: 0.81M RO Words: 0.83M"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "English Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "The target language model (LM) for all experiments was trained on all monolingual, sentence-split English Wikipedia after removing the administrative articles as described in Section 3.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "0.9 Pairs: 42,201 EN Words: 0.81M RO Words: 0.83M"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "5-grams",
+    "object_type": "Other",
+    "source_sentence": "The language model was limited to 5-grams and the counts were smoothed by the interpolated Knesser-Ney method.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "0.9 Pairs: 42,201 EN Words: 0.81M RO Words: 0.83M"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "interpolated Knesser-Ney method",
+    "object_type": "Method",
+    "source_sentence": "The language model was limited to 5-grams and the counts were smoothed by the interpolated Knesser-Ney method.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "0.9 Pairs: 42,201 EN Words: 0.81M RO Words: 0.83M"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "Moses' filtering constraints",
+    "object_type": "Other",
+    "source_sentence": "When sampling parallel sentence pairs (test- and dev-sets), we were careful to observe the Moses' filtering constraints: both the source and target sentences must have at least 4 words and at most 60 words and the ratio of the longer sentence (in tokens) of the pair over the shorter one must not exceed 2.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "0.9 Pairs: 42,201 EN Words: 0.81M RO Words: 0.83M"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "Romanian Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "the language model was built from entire Romanian Wikipedia",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "3.4 SMT experiments with Wiki-Train"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "the Romanian sentences paired to English sentences",
+    "object_type": "Dataset",
+    "source_sentence": "the language model in was built only from the Romanian sentences paired to English sentences",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "3.4 SMT experiments with Wiki-Train"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "uses",
+    "object": "Google Translate",
+    "object_type": "Other",
+    "source_sentence": "Their test-sets for English-Spanish and for English-German were translated (after being true-cased) with our best translation models and also with Google Translate (as of mid-February 2013).",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "3.4 SMT experiments with Wiki-Train"
+  },
+  {
+    "subject": "Translation Model",
+    "predicate": "trainedon",
+    "object": "Europarl",
+    "object_type": "Dataset",
+    "source_sentence": "In this table, \" Large +Wiki\" denotes the best translation model of Smith et al. (2010) which was trained on many corpora (including Europarl and JRC Acquis) and on more than 1.5M parallel sentences mined from Wikipedia .",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "3.4 SMT experiments with Wiki-Train"
+  },
+  {
+    "subject": "Translation Model",
+    "predicate": "trainedon",
+    "object": "JRC Acquis",
+    "object_type": "Dataset",
+    "source_sentence": "In this table, \" Large +Wiki\" denotes the best translation model of Smith et al. (2010) which was trained on many corpora (including Europarl and JRC Acquis) and on more than 1.5M parallel sentences mined from Wikipedia .",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "3.4 SMT experiments with Wiki-Train"
+  },
+  {
+    "subject": "Translation Model",
+    "predicate": "trainedon",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "In this table, \" Large +Wiki\" denotes the best translation model of Smith et al. (2010) which was trained on many corpora (including Europarl and JRC Acquis) and on more than 1.5M parallel sentences mined from Wikipedia .",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "3.4 SMT experiments with Wiki-Train"
+  }
+]

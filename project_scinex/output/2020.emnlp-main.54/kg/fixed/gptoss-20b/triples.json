@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "GPT-2",
+    "predicate": "trainedon",
+    "object": "synthetic data constructed from commonsense knowledge bases",
+    "object_type": "Dataset",
+    "source_sentence": "Recently, some work also attempted to integrate external commonsense knowledge into generative pre-trained language models such as GPT-2 . (2020) conducted post-training on synthetic data constructed from commonsense knowledge bases by translating triplets into natural language texts using templates.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.54",
+    "title": "Language Generation with Multi-Hop Reasoning on Commonsense Knowledge Graph",
+    "section": "2.1 Commonsense-Aware Neural Text Generation"
+  },
+  {
+    "subject": "GPT-2",
+    "predicate": "uses",
+    "object": "Transformer Decoder",
+    "object_type": "Method",
+    "source_sentence": "We adopt the GPT-2 model , a pre-trained multi-layer transformer decoder to model the contextual dependency of the text sequence.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.54",
+    "title": "Language Generation with Multi-Hop Reasoning on Commonsense Knowledge Graph",
+    "section": "3.2 Generation with Multi-Hop Reasoning Flow"
+  },
+  {
+    "subject": "Multi-hop Reasoning",
+    "predicate": "uses",
+    "object": "Input",
+    "object_type": "Concept",
+    "source_sentence": "The final hidden state at the t-th time step hLD t which encodes the context information is used as the input to the multi-hop reasoning module.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.54",
+    "title": "Language Generation with Multi-Hop Reasoning on Commonsense Knowledge Graph",
+    "section": "3.2 Generation with Multi-Hop Reasoning Flow"
+  },
+  {
+    "subject": "Automatic evaluation",
+    "predicate": "uses",
+    "object": "BLEU-4",
+    "object_type": "Metric",
+    "source_sentence": "For automatic evaluation, we use metrics including BLEU-4 , CIDEr , ROUGE-L and ME- TEOR to evaluate the abductive NLG and the explanation generation tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.54",
+    "title": "Language Generation with Multi-Hop Reasoning on Commonsense Knowledge Graph",
+    "section": "4.1 Datasets and Metrics"
+  },
+  {
+    "subject": "graph structure",
+    "predicate": "uses",
+    "object": "Information",
+    "object_type": "Concept",
+    "source_sentence": "Ablating the graph representation module (w/o SMGE) also degrades the performance since it encodes the graph structure with relational information that benefits concept selection.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.54",
+    "title": "Language Generation with Multi-Hop Reasoning on Commonsense Knowledge Graph",
+    "section": "4.7 Ablation Study"
+  }
+]

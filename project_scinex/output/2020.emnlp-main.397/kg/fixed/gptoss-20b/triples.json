@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "preprocessing",
+    "predicate": "uses",
+    "object": "PPDB 2.0",
+    "object_type": "Dataset",
+    "source_sentence": "For classification tasks, we first do preprocessing on PPDB 2.0, filtering out pairs containing hyperlinks, non-alphabetical symbols, and trivial paraphrases based on abbreviation or tense change.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "6 Results"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "ReLU",
+    "object_type": "Method",
+    "source_sentence": "We use a multi-layer perceptron classifier with a single hidden layer of size 256 with ReLU activation, and a softmax layer to generate binary labels.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "6 Results"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "Softmax",
+    "object_type": "Method",
+    "source_sentence": "We use a multi-layer perceptron classifier with a single hidden layer of size 256 with ReLU activation, and a softmax layer to generate binary labels.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "6 Results"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "Wikipedia dump",
+    "object_type": "Dataset",
+    "source_sentence": "To obtain sentence contexts, we search for instances of source phrases in a Wikipedia dump, and extract sentences containing them.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "6 Results"
+  },
+  {
+    "subject": "Search",
+    "predicate": "produces",
+    "object": "Sentences",
+    "object_type": "Other",
+    "source_sentence": "To obtain sentence contexts, we search for instances of source phrases in a Wikipedia dump, and extract sentences containing them.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "6 Results"
+  },
+  {
+    "subject": "XLM-RoBERTa",
+    "predicate": "achieves",
+    "object": "weakest overall correlations",
+    "object_type": "Concept",
+    "source_sentence": "Model-wise, XLM-RoBERTa shows the weakest overall correlations, potentially due to the fact that it is trained to infer input language and to handle multiple languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "6.1 Similarity correlation"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "fairly consistent correlations across layers",
+    "object_type": "Concept",
+    "source_sentence": "BERT retains fairly consistent correlations across layers, while RoBERTa and XLNet show rapid declines as layers progress, suggesting that these models increasingly incorporate information that deviates from human intuitions about phrase similarity.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "6.1 Similarity correlation"
+  },
+  {
+    "subject": "DistilBERT",
+    "predicate": "achieves",
+    "object": "competitive correlation",
+    "object_type": "Concept",
+    "source_sentence": "DistilBERT, despite being of smaller size, demonstrates competitive correlation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "6.1 Similarity correlation"
+  },
+  {
+    "subject": "DistilBERT",
+    "predicate": "achieves",
+    "object": "continuing rise in correlation strength across phrases",
+    "object_type": "Concept",
+    "source_sentence": "The CLS token in DistilBERT is notable for its continuing rise in correlation strength across phrases.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "6.1 Similarity correlation"
+  },
+  {
+    "subject": "DistilBERT",
+    "predicate": "addresses",
+    "object": "meaning",
+    "object_type": "Concept",
+    "source_sentence": "This suggests that the rise that we see in CLS correlations for DistilBERT in particular may correspond to some real compositional signal in this token, and for this model the CLS token may in fact correspond to something more like a representation of the meaning of the full input sequence.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "6.1 Similarity correlation"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "strong disambiguation with Head-Word token",
+    "object_type": "Task",
+    "source_sentence": "BERT and DistilBERT demonstrate strong disambiguation with this token.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "6.2 Paraphrase classiﬁcation"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achieves",
+    "object": "highest quality representation at layer 1",
+    "object_type": "Other",
+    "source_sentence": "As for the CLS token, RoBERTa produces the highest quality representation at layer 1, and BERT outperforms other models starting from layer 6, with DistilBERT also showing strong performance across layers.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "6.2 Paraphrase classiﬁcation"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "outperforms other models starting from layer 6",
+    "object_type": "Other",
+    "source_sentence": "As for the CLS token, RoBERTa produces the highest quality representation at layer 1, and BERT outperforms other models starting from layer 6, with DistilBERT also showing strong performance across layers.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "6.2 Paraphrase classiﬁcation"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "landmarks",
+    "object_type": "Other",
+    "source_sentence": "We feed landmarks and phrases respectively through each transformer, without context, to generate corresponding representations",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "7 Qualitative analysis: sense disambiguation"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "phrases",
+    "object_type": "Other",
+    "source_sentence": "We feed landmarks and phrases respectively through each transformer, without context, to generate corresponding representations",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.397",
+    "title": "Assessing Phrasal Representation and Composition in Transformers",
+    "section": "7 Qualitative analysis: sense disambiguation"
+  }
+]

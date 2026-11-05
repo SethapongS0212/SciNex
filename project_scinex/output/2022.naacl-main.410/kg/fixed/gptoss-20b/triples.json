@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "RoBERTa",
+    "predicate": "addresses",
+    "object": "generic supervised classification",
+    "object_type": "Task",
+    "source_sentence": "We consider RoBERTa as a base-line for generic supervised classification for English data.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "4 Supervised Classifiers and Evaluation"
+  },
+  {
+    "subject": "Pretrained Models",
+    "predicate": "uses",
+    "object": "FLAIR framework",
+    "object_type": "Other",
+    "source_sentence": "We fine-tune the pretrained models on the given task using the FLAIR framework.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "4 Supervised Classifiers and Evaluation"
+  },
+  {
+    "subject": "Measures",
+    "predicate": "uses",
+    "object": "macro-average precision",
+    "object_type": "Metric",
+    "source_sentence": "As evaluation measures, we use macro-average precision, recall, F1-score.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "4 Supervised Classifiers and Evaluation"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "designedfor",
+    "object": "English",
+    "object_type": "Concept",
+    "source_sentence": "We describe how this classifier is built for English.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "5 Linguistically Informed Classifier"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "each component comes with a separate classifier being built on training data different to the test data of our main task.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "5 Linguistically Informed Classifier"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "output of RoBERTa",
+    "object_type": "Other",
+    "source_sentence": "We use the output of RoBERTa in all subsequent experiments.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "5.1 Component 1: Aspectual Classifier"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "500 verbs",
+    "object_type": "Dataset",
+    "source_sentence": "Therefore, we train a classifier on our 500 verbs",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "5.2 Component 2: Perpetrator Classifier"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "word embedding induced on Common Crawl .10",
+    "object_type": "Other",
+    "source_sentence": "We trained a logistic regression classifier where each verb was represented by its (publicly available) word embedding induced on Common Crawl .10",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "5.2 Component 2: Perpetrator Classifier"
+  },
+  {
+    "subject": "lexicon-based",
+    "predicate": "uses",
+    "object": "491 verbs",
+    "object_type": "Dataset",
+    "source_sentence": "Our lexicon-based classifier identifies a perpetrator if it is observed as an agent of one of these 491 verbs",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "5.2 Component 2: Perpetrator Classifier"
+  },
+  {
+    "subject": "lexicon-based",
+    "predicate": "comparesagainst",
+    "object": "FrameNet",
+    "object_type": "Model",
+    "source_sentence": "Our lexicon-based classifier outperforms FrameNet, which is known to have a limited lexical coverage.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "5.2 Component 2: Perpetrator Classifier"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "annotated 500 verbs",
+    "object_type": "Dataset",
+    "source_sentence": "On these annotated 500 verbs we trained a logistic regression classifier.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "5.3 Component 3: Non-Conformist Views"
+  },
+  {
+    "subject": "Word Embedding",
+    "predicate": "uses",
+    "object": "Common Crawl",
+    "object_type": "Dataset",
+    "source_sentence": "As features, we represented each verb by its word embedding from Common Crawl.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "5.3 Component 3: Non-Conformist Views"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "evaluatedon",
+    "object": "1,700 negative verbs",
+    "object_type": "Dataset",
+    "source_sentence": "The resulting classifier was run on the same large set of 1,700 negative verbs we used in §5.2.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "5.3 Component 3: Non-Conformist Views"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "evaluatedon",
+    "object": "English dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate the linguistically informed classifier (Figure 1) on our new English dataset (for implicit abuse ) against other classifiers trained on existing datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "6 Evaluation on English Dataset"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "English dataset",
+    "object_type": "Dataset",
+    "source_sentence": "None of the classifiers, including our linguistically informed classifier, has been trained on our English dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "6 Evaluation on English Dataset"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "DynaB-dataset",
+    "object_type": "Dataset",
+    "source_sentence": "The best classifier among them is the one trained on the DynaB-dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "6 Evaluation on English Dataset"
+  },
+  {
+    "subject": "XLM-RoBERTa",
+    "predicate": "trainedon",
+    "object": "English dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Following previous work , we fine-tune the multilin- gual transformer XLM-RoBERTa on our English dataset .",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "7 Evaluation on German Dataset"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "comparesagainst",
+    "object": "baseline classifiers",
+    "object_type": "Classifier",
+    "source_sentence": "This allows us to compare our proposed classifier against baseline classifiers trained on these existing datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.410",
+    "title": "1http://thelawdictionary.org",
+    "section": "10 Ethical Considerations"
+  }
+]

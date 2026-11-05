@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "Meta-Learning",
+    "predicate": "addresses",
+    "object": "natural language processing tasks",
+    "object_type": "Task",
+    "source_sentence": "Meta-learning has recently emerged as a promising approach in solving many natural language processing tasks, such as few-shot text classification, low resource language understanding, and multi-domain dialogue systems.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.206",
+    "title": "Variance-reduced First-order Meta-learning for Natural Language Processing Tasks",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "variance reduction term",
+    "object_type": "Other",
+    "source_sentence": "The key idea of our algorithm is that we leverage a novel variance reduction term in the task adaptation steps to reduce the variance of the gradient estimator.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.206",
+    "title": "Variance-reduced First-order Meta-learning for Natural Language Processing Tasks",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Examples",
+    "predicate": "uses",
+    "object": "mini-batch stochastic gradients",
+    "object_type": "Concept",
+    "source_sentence": "use 10 examples, i.e., b = 10, to compute the mini- batch stochastic gradients.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.206",
+    "title": "Variance-reduced First-order Meta-learning for Natural Language Processing Tasks",
+    "section": "4.1 Simulation"
+  },
+  {
+    "subject": "MAML",
+    "predicate": "comparesagainst",
+    "object": "FO-MAML",
+    "object_type": "Model",
+    "source_sentence": "we also compare our proposed method with the MAML and FO-MAML methods proposed in on Amazon and FewRel datasets in 5-way 5-shot settings.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.206",
+    "title": "Variance-reduced First-order Meta-learning for Natural Language Processing Tasks",
+    "section": "3.0 Test Error 2."
+  }
+]

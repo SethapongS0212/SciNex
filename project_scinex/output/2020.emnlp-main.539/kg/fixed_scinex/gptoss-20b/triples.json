@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "improved response consistency",
+    "object_type": "Concept",
+    "source_sentence": "Although these models have improved the response consistency by explicitly modeling the profiles, they still face the consistency issue.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Natural Language Inference",
+    "predicate": "addresses",
+    "object": "dialogue consistency identification",
+    "object_type": "Concept",
+    "source_sentence": "(2019) made an early step towards reducing the dialogue consistency identification to natural language inference (NLI) , where they learn a mapping from two dialogue utterances to an entailment category.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Annotation",
+    "predicate": "achieves",
+    "object": "good quality",
+    "object_type": "Concept",
+    "source_sentence": "This result shows that the completed annotation is of good quality.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "2.4 Quality Control"
+  },
+  {
+    "subject": "parser",
+    "predicate": "trainedon",
+    "object": "CDT5.0 (Chineses dependency treebank)",
+    "object_type": "Dataset",
+    "source_sentence": "To obtain the structures in the responses , we trained a parser on CDT5.0 (Chineses dependency treebank), achieving 90.72% and 88.38% unlabeled and la- beled attachment score.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "4.4 The Dependency Structures"
+  },
+  {
+    "subject": "parser",
+    "predicate": "achievesresult",
+    "object": "90.72% unlabeled attachment score",
+    "object_type": "Metric",
+    "source_sentence": "To obtain the structures in the responses , we trained a parser on CDT5.0 (Chineses dependency treebank), achieving 90.72% and 88.38% unlabeled and la- beled attachment score.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "4.4 The Dependency Structures"
+  },
+  {
+    "subject": "parser",
+    "predicate": "achievesresult",
+    "object": "88.38% labeled attachment score",
+    "object_type": "Metric",
+    "source_sentence": "To obtain the structures in the responses , we trained a parser on CDT5.0 (Chineses dependency treebank), achieving 90.72% and 88.38% unlabeled and la- beled attachment score.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "4.4 The Dependency Structures"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "classifier",
+    "object_type": "Concept",
+    "source_sentence": "Here we choose SVM as the classifier, with unigram features and bigram features, i.e., SVM+uni+bi.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "5.2 Identifying Proﬁle Consistency"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "4G Chinese news data",
+    "object_type": "Dataset",
+    "source_sentence": "First, we pre-train two models on 4G Chinese news data and finetune them on the PersonalDialog dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "5.3 Testing on Downstream Tasks"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "PersonalDialog dataset",
+    "object_type": "Dataset",
+    "source_sentence": "First, we pre-train two models on 4G Chinese news data and finetune them on the PersonalDialog dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "5.3 Testing on Downstream Tasks"
+  },
+  {
+    "subject": "evidence",
+    "predicate": "addresses",
+    "object": "images as evidence",
+    "object_type": "Concept",
+    "source_sentence": "Be- sides the natural language evidence , Suhr et al. (2017) and Suhr et al. (2019) proposed to use images as the evidence for statement verification under the multi-modal setting.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Wikipedia",
+    "predicate": "addresses",
+    "object": "semi-structured tables as evidence",
+    "object_type": "Concept",
+    "source_sentence": "A more recent related work is the Chen et al. (2020), who proposed to use semi-structured Wikipedia tables as evidence.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Open-domain Dialogues",
+    "predicate": "addresses",
+    "object": "unique language patterns",
+    "object_type": "Concept",
+    "source_sentence": "The difference between our work and Chen et al. (2020) is noticeable: open-domain dialogues have unique language patterns, and the key-value profiles are highly structured, as analyzed in Sec 4.2.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Dialogue Generation",
+    "predicate": "addresses",
+    "object": "personalized dialogue generation task",
+    "object_type": "Task",
+    "source_sentence": "Another line of research related to this work is the personalized dialogue generation task (Zhang et al., 2018; Qian et al., 2018; Zheng et al., 2019; Song et al., 2020a,b).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Datasets",
+    "predicate": "addresses",
+    "object": "personalized dialogue datasets",
+    "object_type": "Dataset",
+    "source_sentence": "For this purpose, several personalized dialogue datasets have been introduced in recent years, such as PersonaChat and PersonalDialog.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.539",
+    "title": "Proﬁle Consistency Identiﬁcation for Open-domain Dialogue Agents",
+    "section": "6 Related Work"
+  }
+]

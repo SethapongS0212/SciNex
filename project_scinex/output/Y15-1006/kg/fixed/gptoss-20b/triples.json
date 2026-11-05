@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Word Similarities",
+    "predicate": "uses",
+    "object": "sentence similarity",
+    "object_type": "Concept",
+    "source_sentence": "The core idea of our method is to use the combination of word similarities to estimate sentence similarity, as lots of effective methods have been proposed to measure word-to-word similarity in recent years.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "3 Feature Generation"
+  },
+  {
+    "subject": "APIs",
+    "predicate": "uses",
+    "object": "WordNet-based similarities",
+    "object_type": "Concept",
+    "source_sentence": "We used the NLTK1 toolkit WordNet APIs to calculate WordNet- based similarities.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "3.1 WordNet-Based Features"
+  },
+  {
+    "subject": "Statistical Analysis",
+    "predicate": "uses",
+    "object": "Brown corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Based on WordNet and Brown corpus (to obtain IC through statistical analysis of Brown corpus)",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "3.1 WordNet-Based Features"
+  },
+  {
+    "subject": "LDA",
+    "predicate": "trainedon",
+    "object": "training set of SemEval 2015",
+    "object_type": "Dataset",
+    "source_sentence": "The LDA model is trained on the training set of SemEval 2015.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "3.2 Corpus-Based Features"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "gensim 3 toolkit",
+    "object_type": "Other",
+    "source_sentence": "In our experiments, we use the gensim 3 toolkit (Řehůřek & Sojka, 2010) to find the topic distribution of each sentence , and the cosine distance of the vectors could be regarded as the topic similarity of the sentence pair.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "3.2 Corpus-Based Features"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "style-related features",
+    "object_type": "Feature",
+    "source_sentence": "In our experiments, we also used plenty of style-related features, we call it \"literal-based\" features.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "3.4 Alignment-Based Features"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Numbers",
+    "object_type": "Dataset",
+    "source_sentence": "We implemented a simple algorithm to extract numbers from text.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "3.5 Literal-Based Features"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Text",
+    "object_type": "Dataset",
+    "source_sentence": "We implemented a simple algorithm to extract numbers from text.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "3.5 Literal-Based Features"
+  },
+  {
+    "subject": "Support Vector Regression",
+    "predicate": "uses",
+    "object": "WordNet-Based features",
+    "object_type": "Feature",
+    "source_sentence": "We employed a Support Vector Regression model combined with WordNet-Based features , Corpus-Based features , Word2Vec-based features , Binary Features and some other features to predict the semantic similarity score between sentence pairs.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Support Vector Regression",
+    "predicate": "uses",
+    "object": "Corpus-Based features",
+    "object_type": "Feature",
+    "source_sentence": "We employed a Support Vector Regression model combined with WordNet-Based features , Corpus-Based features , Word2Vec-based features , Binary Features and some other features to predict the semantic similarity score between sentence pairs.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Support Vector Regression",
+    "predicate": "uses",
+    "object": "Word2Vec-based features",
+    "object_type": "Feature",
+    "source_sentence": "We employed a Support Vector Regression model combined with WordNet-Based features , Corpus-Based features , Word2Vec-based features , Binary Features and some other features to predict the semantic similarity score between sentence pairs.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Support Vector Regression",
+    "predicate": "uses",
+    "object": "Binary Features",
+    "object_type": "Feature",
+    "source_sentence": "We employed a Support Vector Regression model combined with WordNet-Based features , Corpus-Based features , Word2Vec-based features , Binary Features and some other features to predict the semantic similarity score between sentence pairs.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Support Vector Regression",
+    "predicate": "achieves",
+    "object": "semantic similarity score",
+    "object_type": "Metric",
+    "source_sentence": "We employed a Support Vector Regression model combined with WordNet-Based features , Corpus-Based features , Word2Vec-based features , Binary Features and some other features to predict the semantic similarity score between sentence pairs.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Answering Questions",
+    "predicate": "uses",
+    "object": "advanced semantics and probabilistic inference",
+    "object_type": "Method",
+    "source_sentence": "Answering questions using advanced semantics and probabilistic inference.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "addresses",
+    "object": "automatic evaluation of machine translation",
+    "object_type": "Task",
+    "source_sentence": "BLEU: a method for automatic evaluation of machine translation.",
+    "extraction_mode": "fixed",
+    "paper": "Y15-1006",
+    "title": "Computing Semantic Text Similarity Using Rich Features",
+    "section": "5 Conclusion"
+  }
+]

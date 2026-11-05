@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "responses",
+    "object_type": "Other",
+    "source_sentence": "Finally, a personalized response generator combines user profiles and the current query to generate responses.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "pseudo-label",
+    "object_type": "Other",
+    "source_sentence": "The generator will construct a pseudo-label to guide the refiner's extraction.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "personalized response",
+    "object_type": "Other",
+    "source_sentence": "Finally, the query and the extracted tokens are fed into the generator and construct a personalized response.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "3.1 Problem Statement and Overview"
+  },
+  {
+    "subject": "Transformer Decoder",
+    "predicate": "uses",
+    "object": "Input",
+    "object_type": "Other",
+    "source_sentence": "We use a transformer decoder as to generate a per- sonalized response by using the similar users ' pro- file csim, current user's profile ccur, and query in- formation q as input.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "3.5 Generator"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Chinese Weibo dataset",
+    "object_type": "Dataset",
+    "source_sentence": "To evaluate our model's performance, we conduct experiments on a Chinese Weibo dataset and an English Reddit dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "English Reddit dataset",
+    "object_type": "Dataset",
+    "source_sentence": "To evaluate our model's performance, we conduct experiments on a Chinese Weibo dataset and an English Reddit dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "GPT-2",
+    "predicate": "designedfor",
+    "object": "dialogue generation",
+    "object_type": "Task",
+    "source_sentence": "DialoGPT is a variant of GPT-2 designed for dialogue generation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "4.2 Baseline Methods"
+  },
+  {
+    "subject": "generator",
+    "predicate": "achieves",
+    "object": "informative and personalized response",
+    "object_type": "Other",
+    "source_sentence": "our personalized generator gets an informative and personalized response close to ground-truth.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "B Case Study"
+  }
+]

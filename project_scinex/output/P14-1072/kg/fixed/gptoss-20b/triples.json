@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "expected KN smoothing",
+    "object_type": "Method",
+    "source_sentence": "train a language model using expected KN smoothing.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "6 Language model adaptation"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "probability distributions",
+    "object_type": "Concept",
+    "source_sentence": "the IBM models and related models define probability distributions p(a, f | e, θ)",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "7.1 Problem"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "lexical translation probabilities",
+    "object_type": "Concept",
+    "source_sentence": "Model 1 only models the lexical translation probabilities",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "7.1 Problem"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "word order",
+    "object_type": "Concept",
+    "source_sentence": "Models 2–5 and the HMM model introduce additional components to model word order and fertility",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "7.1 Problem"
+  },
+  {
+    "subject": "HMM",
+    "predicate": "uses",
+    "object": "word order",
+    "object_type": "Concept",
+    "source_sentence": "Models 2–5 and the HMM model introduce additional components to model word order and fertility",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "7.1 Problem"
+  },
+  {
+    "subject": "Smoothing",
+    "predicate": "uses",
+    "object": "lexical translation probabilities",
+    "object_type": "Concept",
+    "source_sentence": "Thus, here we only apply KN smoothing to the lexical translation probabilities",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "7.1 Problem"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "expected KN smoothing",
+    "object_type": "Method",
+    "source_sentence": "During the M step, we train a language model on bigrams ef using expected KN smoothing.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "7.2 Method"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "bigrams ef",
+    "object_type": "Concept",
+    "source_sentence": "During the M step, we train a language model on bigrams ef using expected KN smoothing.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "7.2 Method"
+  },
+  {
+    "subject": "Arabic",
+    "predicate": "uses",
+    "object": "NIST 2008 test set",
+    "object_type": "Dataset",
+    "source_sentence": "For the Arabic -English tasks, we used the NIST 2008 test set as development data and the NIST 2009 test set as test data;",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "7.4 Translation experiments"
+  },
+  {
+    "subject": "Arabic",
+    "predicate": "uses",
+    "object": "NIST 2009 test set",
+    "object_type": "Dataset",
+    "source_sentence": "For the Arabic -English tasks, we used the NIST 2008 test set as development data and the NIST 2009 test set as test data;",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "7.4 Translation experiments"
+  },
+  {
+    "subject": "Czech",
+    "predicate": "uses",
+    "object": "WMT 2008 test set",
+    "object_type": "Dataset",
+    "source_sentence": "for the Czech-English tasks, we used the WMT 2008 test set as development data and the WMT 2009 test set as test data.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "7.4 Translation experiments"
+  },
+  {
+    "subject": "Czech",
+    "predicate": "uses",
+    "object": "WMT 2009 test set",
+    "object_type": "Dataset",
+    "source_sentence": "for the Czech-English tasks, we used the WMT 2008 test set as development data and the WMT 2009 test set as test data.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "7.4 Translation experiments"
+  },
+  {
+    "subject": "Trigram Language Model",
+    "predicate": "trainedon",
+    "object": "Gigaword",
+    "object_type": "Dataset",
+    "source_sentence": "We used a trigram language model trained on Gigaword (AFP, AP World-stream, CNA, and Xinhua portions), and minimum error-rate training to tune the feature weights.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "7.4 Translation experiments"
+  },
+  {
+    "subject": "Trigram Language Model",
+    "predicate": "uses",
+    "object": "Gigaword",
+    "object_type": "Dataset",
+    "source_sentence": "We used a trigram language model trained on Gigaword (AFP, AP World-stream, CNA, and Xinhua portions), and minimum error-rate training to tune the feature weights.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1072",
+    "title": "Kneser-Ney Smoothing on Expected Counts",
+    "section": "7.4 Translation experiments"
+  }
+]

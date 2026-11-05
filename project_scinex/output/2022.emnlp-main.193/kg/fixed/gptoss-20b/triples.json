@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Graphs",
+    "predicate": "addresses",
+    "object": "relationship between tasks at the word level",
+    "object_type": "Concept",
+    "source_sentence": "In this work, inspired by some graph neural network models proposed in other tasks , we explore novel task-related pragmatics graphs to model the relationship between tasks at the word level.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Graphs",
+    "predicate": "uses",
+    "object": "Pragmatics",
+    "object_type": "Concept",
+    "source_sentence": "To harmonize the syntactic structural information and pragmatics information of words , the task-related graphs Gt are built by integrating the pragmatics information φt(wi) learned from the word-level perspective into the syntactic graph Gdep.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "2.3 Task-related Graphs Construction"
+  },
+  {
+    "subject": "Graphs",
+    "predicate": "uses",
+    "object": "syntactic",
+    "object_type": "Concept",
+    "source_sentence": "To harmonize the syntactic structural information and pragmatics information of words , the task-related graphs Gt are built by integrating the pragmatics information φt(wi) learned from the word-level perspective into the syntactic graph Gdep.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "2.3 Task-related Graphs Construction"
+  },
+  {
+    "subject": "transformation",
+    "predicate": "uses",
+    "object": "Word Representation",
+    "object_type": "Concept",
+    "source_sentence": "We conduct a positional-aware transformation ei on the word representation hi to mask out the target words and assign position weights.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "2.4 Multi-task Interaction Module"
+  },
+  {
+    "subject": "Word Representations",
+    "predicate": "uses",
+    "object": "task-related graphs iterative update",
+    "object_type": "Other",
+    "source_sentence": "We denote the transformed word representations as ˆh = {ˆh1, ˆh2, · · ·, ˆhn+m}, which is used for task-related graphs iterative update later.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "2.4 Multi-task Interaction Module"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "retrieval",
+    "object_type": "Other",
+    "source_sentence": "Then, we use a retrieval-based attention mechanism to retrieval significant target-specific stance clue α as below,",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "2.5 Task Representations"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "SemEval16",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct experiments on two benchmark datasets for stance detection and sentiment analysis tasks, SemEval16 and COVID19.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "3.1 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "COVID19",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct experiments on two benchmark datasets for stance detection and sentiment analysis tasks, SemEval16 and COVID19.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "3.1 Datasets"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "word embedding",
+    "object_type": "Other",
+    "source_sentence": "For all the experiments, we use pre-trained BERT- base2 model to initialize the word embedding.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "3.2 Implementation Details"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "input word embedding",
+    "object_type": "Other",
+    "source_sentence": "To alleviate overfitting, we apply dropout at a rate of 0.3 to input word embedding.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "3.2 Implementation Details"
+  },
+  {
+    "subject": "Evaluation metrics",
+    "predicate": "uses",
+    "object": "SemEval16",
+    "object_type": "Other",
+    "source_sentence": "Following by , we use official evaluation metrics of SemEval16 to evaluate the performance of stance detection task of MTIN, which is the Favg for the Favor and Against categories under all of the testing set.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "3.2 Implementation Details"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "correct stance",
+    "object_type": "Task",
+    "source_sentence": "BERT and MTIN accurately capture the relationship between those words and given target , so as to predict the correct stance.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "4.3 Case Study"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "manually engineered features",
+    "object_type": "Features",
+    "source_sentence": "Stance detection Early efforts on stance detec- tion focused on employing support vector machines (SVM) with manually engineered features to de- tect stance of users towards the given target (Mo- hammad et al., 2016; Sen et al., 2018; Kochkina et al., 2017; Darwish et al., 2020).",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "addresses",
+    "object": "stance detection task",
+    "object_type": "Task",
+    "source_sentence": "More recently, some pre-trained language models, for instance, BERT were applied to stance detection task for improved performance.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.193",
+    "title": "Improving Multi-task Stance Detection with Multi-task Interaction Network",
+    "section": "5 Related Work"
+  }
+]

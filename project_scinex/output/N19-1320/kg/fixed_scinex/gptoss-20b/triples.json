@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "copy mechanism",
+    "object_type": "Method",
+    "source_sentence": "by enriching a seq2seq model with a copy mechanism to replicate the source segments in target sentences.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "achieves",
+    "object": "style transfer",
+    "object_type": "Task",
+    "source_sentence": "a sequence -to- sequence (seq2seq) neural network has been successfully applied in a supervised setting. transfer modern English to Shakespearean English by enriching a seq2seq model with a copy mechanism to replicate the source segments in target sentences.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "addresses",
+    "object": "disentangling content and style",
+    "object_type": "Concept",
+    "source_sentence": "Most existing unsupervised approaches share a core idea of disentangling content and style of texts.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "Sentence",
+    "object_type": "Concept",
+    "source_sentence": "The generator in our system takes a sentence in the source style as input and trans-",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "3 Model"
+  },
+  {
+    "subject": "semantic",
+    "predicate": "produces",
+    "object": "semantic score",
+    "object_type": "Concept",
+    "source_sentence": "We take the negative of the WMD distance and divide it by the sequence length to yield the semantic score of a generated sentence.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "3 Model"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "produces",
+    "object": "fluency",
+    "object_type": "Concept",
+    "source_sentence": "This fluency is achieved using a language model.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "3 Model"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "corpus in the target style",
+    "object_type": "Dataset",
+    "source_sentence": "The language model we use is a two-layer recurrent neural network pre-trained on the corpus in the target style so as to maximize the likelihood of the target sentences.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "3 Model"
+  },
+  {
+    "subject": "Recurrent Neural Network",
+    "predicate": "trainedon",
+    "object": "corpus in the target style",
+    "object_type": "Dataset",
+    "source_sentence": "The language model we use is a two-layer recurrent neural network pre-trained on the corpus in the target style so as to maximize the likelihood of the target sentences.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "3 Model"
+  },
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "generator loss",
+    "object_type": "Metric",
+    "source_sentence": "we define the generator loss Lθ as the negative of reward J(Gθ), LG(θ) = −J(Gθ).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "3.1 Reinforcement Learning"
+  },
+  {
+    "subject": "generator",
+    "predicate": "trainedon",
+    "object": "target corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We pre-trained the generator to capture the target style from the respective target corpus.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "Input",
+    "object_type": "Other",
+    "source_sentence": "Taking a target sentence y = {y1,..., yT ′} as the input, the language model predicted the probability of the t-th word yt given the previous sub-sequence y1:t−1.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "training corpus",
+    "object_type": "Dataset",
+    "source_sentence": "The language model was pre- trained on the training corpus in target style to maximize the probability of yt (1 ≤t ≤T ′).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "training corpus",
+    "object_type": "Dataset",
+    "source_sentence": "An LSTM-based classifier was trained for style classification on a training corpus.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "4.1.1 Automatic evaluation"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "target style part of the corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We used a two-layer recurrent neural network with gated recurrent units as a language model, and trained it on the target style part of the corpus.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1320",
+    "title": "Reinforcement Learning Based Text Style Transfer without Parallel Training Corpus",
+    "section": "4.1.1 Automatic evaluation"
+  }
+]

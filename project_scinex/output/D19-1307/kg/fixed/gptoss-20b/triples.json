@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Reinforcement Learning",
+    "predicate": "addresses",
+    "object": "document summarisation systems",
+    "object_type": "Other",
+    "source_sentence": "Reinforcement Learning (RL) becomes an increasingly popular technique to build document summarisation systems in recent years.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Regression",
+    "predicate": "uses",
+    "object": "human judgement scores",
+    "object_type": "Other",
+    "source_sentence": "Louis and Nenkova (2013), Peyrard et al. (2017) and Peyrard and Gurevych (2018) build feature-rich regression models to learn a summary evaluation metric directly from the human judgement scores (Pyramid and Responsiveness) provided in the TAC'08 and '09 datasets1.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "reference summaries",
+    "object_type": "Other",
+    "source_sentence": "Some features they use require reference summaries (e.g. ROUGE metrics); the others are heuristic-based and do not use reference summaries (e.g. the Jensen- Shannon divergence between the word distributions in the summary and the documents).",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "CNNs",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We use convolutional neural networks (CNNs) to encode the sentences in the input text, and feed the sentence embeddings into an LSTM to generate the embedding of the whole input text.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "5.1 MLP"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We use convolutional neural networks (CNNs) to encode the sentences in the input text, and feed the sentence embeddings into an LSTM to generate the embedding of the whole input text.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "5.1 MLP"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "PMeans",
+    "object_type": "Method",
+    "source_sentence": "The output of PMeans is passed to an LSTM to produce the final document embedding.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "5.1 MLP"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "better human judgements",
+    "object_type": "Concept",
+    "source_sentence": "Experiments show that the summaries generated from our learned reward outperform those by the state-of-the-art systems, in terms of human judgements.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "8 Conclusion & Discussion"
+  }
+]

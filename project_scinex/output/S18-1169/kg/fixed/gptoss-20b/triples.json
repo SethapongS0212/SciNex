@@ -1,0 +1,35 @@
+[
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "WordNet",
+    "object_type": "Other",
+    "source_sentence": "We also introduce features based on word sense definitions in WordNet",
+    "extraction_mode": "fixed",
+    "paper": "S18-1169",
+    "title": "Abstract",
+    "section": "2.2 Word deﬁnition in WordNet"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "trainedon",
+    "object": "Wikipedia dump",
+    "object_type": "Dataset",
+    "source_sentence": "we firstly train word embeddings vt and context embeddings vc on a Wikipedia dump.",
+    "extraction_mode": "fixed",
+    "paper": "S18-1169",
+    "title": "Abstract",
+    "section": "2.3 Hypothesis and framework"
+  },
+  {
+    "subject": "Random Forest",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Feature",
+    "source_sentence": "We train a random forest classifier with the above five features to classify if the attribute word wA can distinguish two semantically similar words w1 and w2.",
+    "extraction_mode": "fixed",
+    "paper": "S18-1169",
+    "title": "Abstract",
+    "section": "2.3 Hypothesis and framework"
+  }
+]

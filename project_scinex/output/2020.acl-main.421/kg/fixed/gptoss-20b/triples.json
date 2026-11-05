@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "masked language modeling",
+    "object_type": "Method",
+    "source_sentence": "These methods work by jointly training a transformer model to perform masked language modeling (MLM) in multiple languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "mBERT",
+    "predicate": "achieves",
+    "object": "better performance in languages that share many sub-words",
+    "object_type": "Other",
+    "source_sentence": "Wu and Dredze (2019) further observed that mBERT performs better in languages that share many sub- words.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "MLM",
+    "object_type": "Method",
+    "source_sentence": "our method starts with a monolingual transformer trained with MLM",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "MLM",
+    "object_type": "Method",
+    "source_sentence": "Pre-train a monolingual BERT (i.e. a transformer) in L1 with masked language modeling (MLM) and next sentence prediction (NSP) objectives on an unlabeled L1 corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "2 Cross-lingual Transfer of Monolingual Representations"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "NSP",
+    "object_type": "Method",
+    "source_sentence": "Pre-train a monolingual BERT (i.e. a transformer) in L1 with masked language modeling (MLM) and next sentence prediction (NSP) objectives on an unlabeled L1 corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "2 Cross-lingual Transfer of Monolingual Representations"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "labeled data in L1",
+    "object_type": "Dataset",
+    "source_sentence": "Fine-tune the transformer for a downstream task using labeled data in L1, while keeping the L1 token embeddings frozen.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "2 Cross-lingual Transfer of Monolingual Representations"
+  },
+  {
+    "subject": "Zero-shot transfer",
+    "predicate": "uses",
+    "object": "swapping token embeddings",
+    "object_type": "Method",
+    "source_sentence": "Zero-shot transfer the resulting model to L2 by swapping the L1 token embeddings with the L2 embeddings learned in Step 2.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "2 Cross-lingual Transfer of Monolingual Representations"
+  },
+  {
+    "subject": "mBERT",
+    "predicate": "uses",
+    "object": "separate subword vocabulary",
+    "object_type": "Method",
+    "source_sentence": "Unlike mBERT, we use a separate subword vocabulary for each language, which is trained on its respective monolingual corpus, so the model has no notion of shared subwords.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "2 Cross-lingual Transfer of Monolingual Representations"
+  },
+  {
+    "subject": "mBERT",
+    "predicate": "uses",
+    "object": "monolingual corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Unlike mBERT, we use a separate subword vocabulary for each language, which is trained on its respective monolingual corpus, so the model has no notion of shared subwords.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "2 Cross-lingual Transfer of Monolingual Representations"
+  },
+  {
+    "subject": "Zero-shot transfer",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We zero-shot transfer to a new language by plugging in its respective mapped embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "3.1 Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "MultiNLI dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We train all models on the MultiNLI dataset in English and evaluate on XNLI —a cross - lingual NLI dataset consisting of 2,500 de- velopment and 5,000 test instances translated from English into 14 languages .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "3.3 XNLI: Natural Language Inference"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "uses",
+    "object": "larger model size",
+    "object_type": "Other",
+    "source_sentence": "XLM covers 15 languages and uses a larger model size with a shared vocabulary of 95k subwords, which contributes to its better performance.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "3.3 XNLI: Natural Language Inference"
+  },
+  {
+    "subject": "mBERT",
+    "predicate": "addresses",
+    "object": "sharing subwords across languages",
+    "object_type": "Concept",
+    "source_sentence": "We demonstrate that sharing subwords across languages is not necessary for mBERT to work, contrary to a previous hypothesis by Pires et al.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "5 Discussion"
+  },
+  {
+    "subject": "Masked Language Model",
+    "predicate": "uses",
+    "object": "sentence",
+    "object_type": "Sentence",
+    "source_sentence": "Following Goldberg (2019), we feed each sentence into the model masking the word in which it differs from its pair, and pick the one to which the masked language model assigns the highest probability mass.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "D Probing experiments"
+  }
+]

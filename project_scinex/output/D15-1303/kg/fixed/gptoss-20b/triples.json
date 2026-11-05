@@ -1,0 +1,233 @@
+[
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Input",
+    "object_type": "Concept",
+    "source_sentence": "However, the features that CNN builds internally can be extracted and used as input for another, more advanced classifier.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. The convolution layers of CNN can be seen"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "local features",
+    "object_type": "Concept",
+    "source_sentence": "The features it gives are based on a hierarchy of local features, reflecting well the context.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. The convolution layers of CNN can be seen"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "classifier",
+    "object_type": "Concept",
+    "source_sentence": "How- ever, inspired by ideas introduced in the context of computer vision , we, for the first time in the context of NLP, extract the features that CNN builds internally and feed them into a much more advanced classifier.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. The convolution layers of CNN can be seen"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "SVM",
+    "object_type": "Concept",
+    "source_sentence": "In our experiments, this was SVM, or roughly its multi -kernel version MKL, which is good at finding the global optimum.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. The convolution layers of CNN can be seen"
+  },
+  {
+    "subject": "dictionary",
+    "predicate": "trainedon",
+    "object": "100 million word corpus from Google News",
+    "object_type": "Dataset",
+    "source_sentence": "able word2vec dictionary , trained on a 100 mil- lion word corpus from Google News using the continuous bag of words architecture.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. Word embeddings. We used a publicly avail-"
+  },
+  {
+    "subject": "dictionary",
+    "predicate": "produces",
+    "object": "300-dimensional vector for each word",
+    "object_type": "Other",
+    "source_sentence": "This dictionary provides a 300-dimensional vector for each word.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. Word embeddings. We used a publicly avail-"
+  },
+  {
+    "subject": "parts of speech",
+    "predicate": "produces",
+    "object": "6-dimensional binary vector",
+    "object_type": "Other",
+    "source_sentence": "We used 6 basic parts of speech (noun, verb, adjective, adverb, preposition, conjunction) encoded as a 6- dimensional binary vector.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. Word embeddings. We used a publicly avail-"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "uses",
+    "object": "Stanford Tagger",
+    "object_type": "Other",
+    "source_sentence": "We used Stanford Tagger as a part of speech tagger.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. Word embeddings. We used a publicly avail-"
+  },
+  {
+    "subject": "Input",
+    "predicate": "produces",
+    "object": "concatenation of three parts",
+    "object_type": "Other",
+    "source_sentence": "For each input text, the input vectors for the CNN were a concatenation of three parts:",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. Word embeddings. We used a publicly avail-"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "achieves",
+    "object": "79.77% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "result (79.77%) obtained when CNN was used to extract trainable features for the SVM classifier.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. Left padding. Two dummy “words” with"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "achieves",
+    "object": "best accuracy",
+    "object_type": "Metric",
+    "source_sentence": "best accuracy was obtained using Google word2vec.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. Left padding. Two dummy “words” with"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "penultimate fully connected layer of the CNN",
+    "object_type": "Other",
+    "source_sentence": "As features of the given text, we used the values of the penultimate, fully connected, layer of the CNN.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. Left padding. Two dummy “words” with"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "openSMILE software",
+    "object_type": "Other",
+    "source_sentence": "We used the openSMILE software to extract audio features related to the pitch and voice intensity.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "5 Audio Features"
+  },
+  {
+    "subject": "Feature Selection",
+    "predicate": "achieves",
+    "object": "reduced number of features",
+    "object_type": "Concept",
+    "source_sentence": "We significantly reduced the number of features using feature selection.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "7 Feature Selection"
+  },
+  {
+    "subject": "Feature Subset Selection",
+    "predicate": "uses",
+    "object": "cyclic correlation-based feature subset selection",
+    "object_type": "Method",
+    "source_sentence": "one based on the cyclic correla- tion-based feature subset selection (CFS)",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "7 Feature Selection"
+  },
+  {
+    "subject": "Principal Component Analysis",
+    "predicate": "uses",
+    "object": "top K features",
+    "object_type": "Concept",
+    "source_sentence": "another based on principal component analysis (PCA) with top K features",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "7 Feature Selection"
+  },
+  {
+    "subject": "Feature Selection",
+    "predicate": "achieves",
+    "object": "slightly improved results",
+    "object_type": "Concept",
+    "source_sentence": "In all cases except for the unimodal ex- periment with audio modality , feature selection slightly improved the results",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "7 Feature Selection"
+  },
+  {
+    "subject": "Feature Selection",
+    "predicate": "achieves",
+    "object": "slightly deteriorated result",
+    "object_type": "Concept",
+    "source_sentence": "In the only case where feature selection slightly deteriorated the result",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "7 Feature Selection"
+  },
+  {
+    "subject": "Feature Extraction",
+    "predicate": "uses",
+    "object": "convolutional neural networks",
+    "object_type": "Method",
+    "source_sentence": "Feature extraction with convolutional neural networks for handwritten word recognition.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. Tadas Baltrušaitis, Peter Robinson, and Louis-"
+  },
+  {
+    "subject": "Multimodal Fusion",
+    "predicate": "addresses",
+    "object": "semantics and sentics",
+    "object_type": "Concept",
+    "source_sentence": "Sentic blending: Scalable multimodal fusion for the continuous interpretation of semantics and sentics.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. Tadas Baltrušaitis, Peter Robinson, and Louis-"
+  },
+  {
+    "subject": "kernel",
+    "predicate": "uses",
+    "object": "generalized multiple kernel learning",
+    "object_type": "Method",
+    "source_sentence": "SPF-GMKL: Generalized multiple kernel learning with a million kernels.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1303",
+    "title": "Soujanya Poria Temasek Laboratory, Nanyang Technological",
+    "section": "1. Tadas Baltrušaitis, Peter Robinson, and Louis-"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "acted emotional speech",
+    "object_type": "Dataset",
+    "source_sentence": "In addition, detection of similar emotional content in large number of audio calls are performed by using the emotion models trained with the freely available acted emotional speech.",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "detection",
+    "predicate": "uses",
+    "object": "emotion models",
+    "object_type": "Model",
+    "source_sentence": "In addition, detection of similar emotional content in large number of audio calls are performed by using the emotion models trained with the freely available acted emotional speech.",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Statistical models",
+    "predicate": "uses",
+    "object": "annotated data",
+    "object_type": "Dataset",
+    "source_sentence": "Like in other pattern classification problems, most often the statistical models are generated using the annotated data and then used to detect the affective states in the audio calls.",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "knowledge-based",
+    "predicate": "comprises",
+    "object": "audio segmentation",
+    "object_type": "Method",
+    "source_sentence": "The blocks are (i) affective content extractor that gives scores for different affective states in the two dimensional (arousal (A) and valence (V)) space, (ii) three knowledge-based systems ( audio segmentation, time lapse of the segment in the call, and voice to text analytics) (iii) decision block for deciding similar segments.",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "3 Mining similar audio segments"
+  },
+  {
+    "subject": "knowledge-based",
+    "predicate": "uses",
+    "object": "ASR",
+    "object_type": "Method",
+    "source_sentence": "The modified matrices are then passed through the last knowledge-based system (as shown in Figure 7), which converts the spoken utterances into the text format (by using an ASR), followed by the text analytics to generate a weight matrix wt that consists of the probabilities of affective state given a spoken word or phrase.",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "3.3 Speech to text analytics"
+  },
+  {
+    "subject": "knowledge-based",
+    "predicate": "comprises",
+    "object": "ASR engine",
+    "object_type": "Method",
+    "source_sentence": "This knowledge-based system consists of two sub-system , i) an ASR engine, and ii) a voice analytics.",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "3.3 Speech to text analytics"
+  },
+  {
+    "subject": "LIBSVM",
+    "predicate": "uses",
+    "object": "SVM classifier",
+    "object_type": "Model",
+    "source_sentence": "LibSVM toolkit is used for implementing SVM classifier.",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "4.2 Experimental Results"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "available acted emotional speech samples",
+    "object_type": "Dataset",
+    "source_sentence": "the classifier trained with the available acted emotional speech samples",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "5 Conclusions"
+  },
+  {
+    "subject": "Knowledge",
+    "predicate": "uses",
+    "object": "speaker information",
+    "object_type": "Other",
+    "source_sentence": "incorporation of the associated knowledge in terms of speaker information, time lapse of the segment in the call, and linguistic content has improved the performance",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "5 Conclusions"
+  },
+  {
+    "subject": "TAG",
+    "predicate": "uses",
+    "object": "similar emotional segments",
+    "object_type": "Other",
+    "source_sentence": "to tag the similar emotional segments",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "5 Conclusions"
+  }
+]

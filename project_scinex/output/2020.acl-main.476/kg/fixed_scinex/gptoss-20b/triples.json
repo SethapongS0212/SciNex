@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "transformers",
+    "object_type": "Concept",
+    "source_sentence": "The lower half of our architecture is based on BERT, which leverages transformers and acts as an efficient replacement for sequential models.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "4.1 Text Representation Layer"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "pretrained embedding",
+    "object_type": "Concept",
+    "source_sentence": "In our case, we use the BERT's pretrained embedding to form an initial representation for the textual information of the nodes in the legislative graph.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "4.1 Text Representation Layer"
+  },
+  {
+    "subject": "GCN",
+    "predicate": "comprises",
+    "object": "propagation",
+    "object_type": "Task",
+    "source_sentence": "From the message passing perspective, each (non-relational) GCN layer performs two operations: propagation and aggregation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "4.2 Relational Graph Convolutional Layers"
+  },
+  {
+    "subject": "GCN",
+    "predicate": "comprises",
+    "object": "aggregation",
+    "object_type": "Task",
+    "source_sentence": "From the message passing perspective, each (non-relational) GCN layer performs two operations: propagation and aggregation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "4.2 Relational Graph Convolutional Layers"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "square loss",
+    "object_type": "Concept",
+    "source_sentence": "(b) GloVe that is a popular word embed- ding model using the square loss;",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.2.1 Baselines"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "GloVe-840B-300D pre-trained word vectors",
+    "object_type": "Word Vectors",
+    "source_sentence": "(b) GloVe that is a popular word embed- ding model using the square loss; We used the GloVe-840B-300D pre-trained word vectors in our experiments.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.2.1 Baselines"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Transformer",
+    "object_type": "Model",
+    "source_sentence": "(c) BERT that is a transformer based architecture capable of capturing contextualized embedding.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.2.1 Baselines"
+  },
+  {
+    "subject": "DeepWalk",
+    "predicate": "uses",
+    "object": "Skip-Gram",
+    "object_type": "Model",
+    "source_sentence": "DeepWalk is an embedding model that generates node vectors by running Skip-Gram on random walks formed at different nodes in the graph.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.2.1 Baselines"
+  },
+  {
+    "subject": "DeepWalk",
+    "predicate": "uses",
+    "object": "random walks",
+    "object_type": "Concept",
+    "source_sentence": "DeepWalk is an embedding model that generates node vectors by running Skip-Gram on random walks formed at different nodes in the graph.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.2.1 Baselines"
+  },
+  {
+    "subject": "GCN",
+    "predicate": "uses",
+    "object": "single weight matrix",
+    "object_type": "Concept",
+    "source_sentence": "GCN is the basic two-layer GCN model that uses a single weight matrix in each layer and begins with the random node features in the first layer.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.2.1 Baselines"
+  },
+  {
+    "subject": "GCN",
+    "predicate": "uses",
+    "object": "random node features",
+    "object_type": "Concept",
+    "source_sentence": "GCN is the basic two-layer GCN model that uses a single weight matrix in each layer and begins with the random node features in the first layer.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.2.1 Baselines"
+  },
+  {
+    "subject": "GCN",
+    "predicate": "uses",
+    "object": "initial node features",
+    "object_type": "Other",
+    "source_sentence": "TA-GCN is the original GCN that takes as input an initial node features.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.2 Experimental Setup"
+  },
+  {
+    "subject": "logistic regression classifier",
+    "predicate": "uses",
+    "object": "one-hot encoded sponsors' info",
+    "object_type": "Other",
+    "source_sentence": "Sponsor: A logistic regression classifier that directly predicts bill survival and cleavages based on the one-hot encoded sponsors' info.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.2 Experimental Setup"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "our model",
+    "object_type": "Other",
+    "source_sentence": "we used Adam to optimize our model",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.2 Experimental Setup"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "improved F1 performance",
+    "object_type": "Other",
+    "source_sentence": "In the textual models, we observe BERT improves the F1 performance by 2%-8% compared to GloVe and BoW.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.3 Results and Analysis"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "improved bill survival prediction",
+    "object_type": "Task",
+    "source_sentence": "Among the naive models, the sponsor-based classifier improves the bill survival prediction compared to the majority model but has no positive impact on bill cleavages as expected intuitively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.3 Results and Analysis"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achievesresult",
+    "object": "macro precision 0.72",
+    "object_type": "Metric",
+    "source_sentence": "Compared to the other models, it improves recall while maintaining high precision, e.g., in the case of the bill survival prediction, the macro precision and recall values for BERT, TA-RGCN, and our model are (0.72, 0.67), (0.92, 0.66), (0.82, 0.84), respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.3 Results and Analysis"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achievesresult",
+    "object": "macro recall 0.67",
+    "object_type": "Metric",
+    "source_sentence": "Compared to the other models, it improves recall while maintaining high precision, e.g., in the case of the bill survival prediction, the macro precision and recall values for BERT, TA-RGCN, and our model are (0.72, 0.67), (0.92, 0.66), (0.82, 0.84), respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.476",
+    "title": "Understanding the Language of Political Agreement and Disagreement in Legislative Texts",
+    "section": "5.3 Results and Analysis"
+  }
+]

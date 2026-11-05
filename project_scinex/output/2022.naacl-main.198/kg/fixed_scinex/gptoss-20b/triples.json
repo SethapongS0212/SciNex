@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "Softmax",
+    "object_type": "Method",
+    "source_sentence": "the labels scores outputted by the transformer model are converted into probabilities by applying softmax",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "3.1 TSA Engine"
+  },
+  {
+    "subject": "Tagging",
+    "predicate": "addresses",
+    "object": "unified tagging scheme with IO labels",
+    "object_type": "Concept",
+    "source_sentence": "our tagging scheme falls under the category of a unified tagging scheme with IO labels",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "3.1 TSA Engine"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "Opinion Lexicon",
+    "object_type": "Lexicon",
+    "source_sentence": "For the sentiment filter, we used a general-purpose lexicon – the Opinion Lexicon that was automatically expanded by an SVM classifier and filtered as described in Bar-Haim et al.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "3.2 Unlabeled Data Set"
+  },
+  {
+    "subject": "Sentiment",
+    "predicate": "uses",
+    "object": "Opinion Lexicon",
+    "object_type": "Lexicon",
+    "source_sentence": "For the sentiment filter, we used a general-purpose lexicon – the Opinion Lexicon that was automatically expanded by an SVM classifier and filtered as described in Bar-Haim et al.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "3.2 Unlabeled Data Set"
+  },
+  {
+    "subject": "Sentences",
+    "predicate": "mentions",
+    "object": "different domains",
+    "object_type": "Concept",
+    "source_sentence": "We identified 18 different domains in the 2M extracted sentences.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "3.2 Unlabeled Data Set"
+  },
+  {
+    "subject": "Reviews",
+    "predicate": "mentions",
+    "object": "restaurants",
+    "object_type": "Concept",
+    "source_sentence": "60% of the extracted data is from restaurants reviews.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "3.2 Unlabeled Data Set"
+  },
+  {
+    "subject": "Domains",
+    "predicate": "mentions",
+    "object": "other domains",
+    "object_type": "Concept",
+    "source_sentence": "the other 40% of the data cover a variety of other domains.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "3.2 Unlabeled Data Set"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "produces",
+    "object": "Models",
+    "object_type": "Model",
+    "source_sentence": "Explicitly , several single- domain models were created by fine-tuning each pre- trained LM with training data from one SE domain , either restaurants (R) or laptops (L).",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "4.4 In-Domain Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "SE data",
+    "object_type": "Dataset",
+    "source_sentence": "Two more models were fine-tuned with SE data from one domain – restaurants (SER) or laptops (SEL).",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "4.6 Impact of the Initial LD Model"
+  },
+  {
+    "subject": "Self-Supervision",
+    "predicate": "addresses",
+    "object": "diversity of the training data",
+    "object_type": "Concept",
+    "source_sentence": "An empirical evaluation of our approach has demonstrated that the self-supervision technique, often used when having a training set of limited size, is also effective for enhancing the diversity of the training data.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "domain model",
+    "predicate": "achievesresult",
+    "object": "improves performance",
+    "object_type": "Other",
+    "source_sentence": "Specifically, our results show that the self-trained multi-domain model consistently improves performance, for various underlying LMs, and with different starting points: data from two domains , removing half of the data, or restricting to only one domain .",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "6 Conclusion"
+  }
+]

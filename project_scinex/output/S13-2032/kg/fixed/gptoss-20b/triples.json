@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Similarity",
+    "predicate": "uses",
+    "object": "Weighted Jaccard Coefficient",
+    "object_type": "Concept",
+    "source_sentence": "The pairwise similarity of the translation vectors is calculated using the Weighted Jaccard Coefficient.",
+    "extraction_mode": "fixed",
+    "paper": "S13-2032",
+    "title": "LIMSI : Cross-lingual Word Sense Disambiguation using Translation Sense Clustering",
+    "section": "P Ti pij log(pij)"
+  },
+  {
+    "subject": "WSD",
+    "predicate": "uses",
+    "object": "context information",
+    "object_type": "Concept",
+    "source_sentence": "WSD is performed by comparing context information separately to the vector of each clustered translation.",
+    "extraction_mode": "fixed",
+    "paper": "S13-2032",
+    "title": "LIMSI : Cross-lingual Word Sense Disambiguation using Translation Sense Clustering",
+    "section": "2.2 Word Sense Disambiguation"
+  },
+  {
+    "subject": "Translations",
+    "predicate": "addresses",
+    "object": "new context",
+    "object_type": "Context",
+    "source_sentence": "For selecting best translations , each translation of a target word w is scored separately by comparing its vector to the new context.",
+    "extraction_mode": "fixed",
+    "paper": "S13-2032",
+    "title": "LIMSI : Cross-lingual Word Sense Disambiguation using Translation Sense Clustering",
+    "section": "3 Evaluation"
+  },
+  {
+    "subject": "lemma",
+    "predicate": "uses",
+    "object": "alignment",
+    "object_type": "Alignment",
+    "source_sentence": "To note that frequency information differs from the one used in the MFT baseline because words in our corpus were replaced by a lemma and PoS tag pair prior to alignment.",
+    "extraction_mode": "fixed",
+    "paper": "S13-2032",
+    "title": "LIMSI : Cross-lingual Word Sense Disambiguation using Translation Sense Clustering",
+    "section": "3 Evaluation"
+  },
+  {
+    "subject": "Machine Translation",
+    "predicate": "addresses",
+    "object": "target language context",
+    "object_type": "Concept",
+    "source_sentence": "In an application setting like Machine Translation (MT), the translation clusters could be filtered using information from the target language context.",
+    "extraction_mode": "fixed",
+    "paper": "S13-2032",
+    "title": "LIMSI : Cross-lingual Word Sense Disambiguation using Translation Sense Clustering",
+    "section": "5 Discussion and future work"
+  },
+  {
+    "subject": "MT Systems",
+    "predicate": "addresses",
+    "object": "CLWSD predictions",
+    "object_type": "Concept",
+    "source_sentence": "Future work will focus on integrating this method into MT systems and examining ways for optimally taking advantage of CLWSD predictions in this context.",
+    "extraction_mode": "fixed",
+    "paper": "S13-2032",
+    "title": "LIMSI : Cross-lingual Word Sense Disambiguation using Translation Sense Clustering",
+    "section": "5 Discussion and future work"
+  }
+]

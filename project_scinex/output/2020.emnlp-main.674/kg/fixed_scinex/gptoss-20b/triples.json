@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Wikipedia Article",
+    "predicate": "uses",
+    "object": "dictionary",
+    "object_type": "Other",
+    "source_sentence": "More specifically if we encounter the main Wikipedia article Cleopatra, we remember it in a dictionary and seek to locate Talk:Cleopatra in future scans or vice versa.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.674",
+    "title": "NwQM: A neural quality assessment framework for Wikipedia",
+    "section": "3 Dataset"
+  },
+  {
+    "subject": "Sentence Embeddings",
+    "predicate": "uses",
+    "object": "Global Average Pooling",
+    "object_type": "Method",
+    "source_sentence": "These sentence embeddings are then passed through a global average pooling layer followed by a dense layer to get a 200 dimensional final representation of the talk page",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.674",
+    "title": "NwQM: A neural quality assessment framework for Wikipedia",
+    "section": "4.6 Talk page encoder"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "probability",
+    "object_type": "Other",
+    "source_sentence": "We further utilize dropout probability of 0.5 in the dense layers.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.674",
+    "title": "NwQM: A neural quality assessment framework for Wikipedia",
+    "section": "4.9 Model conﬁgurations"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "Wikipedia articles",
+    "object_type": "Task",
+    "source_sentence": "BILSTM+ is a hybrid model, where textual content of the Wikipedia articles are encoded using a BILSTM model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.674",
+    "title": "NwQM: A neural quality assessment framework for Wikipedia",
+    "section": "5 Experiment"
+  },
+  {
+    "subject": "H-LSTM",
+    "predicate": "uses",
+    "object": "Handcrafted Features",
+    "object_type": "Feature",
+    "source_sentence": "H-LSTM is an edit history based approach where every version of an article is represented by 17 dimensional handcrafted features.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.674",
+    "title": "NwQM: A neural quality assessment framework for Wikipedia",
+    "section": "5 Experiment"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "Classification",
+    "object_type": "Task",
+    "source_sentence": "This k length sequence is passed through a stacked LSTM for final representation used in classification.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.674",
+    "title": "NwQM: A neural quality assessment framework for Wikipedia",
+    "section": "5 Experiment"
+  },
+  {
+    "subject": "NwQM",
+    "predicate": "achieves",
+    "object": "best result",
+    "object_type": "Other",
+    "source_sentence": "Our experiment show that the combined approach (NwQM) obtains the best result.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.674",
+    "title": "NwQM: A neural quality assessment framework for Wikipedia",
+    "section": "5 Experiment"
+  },
+  {
+    "subject": "NwQM",
+    "predicate": "produces",
+    "object": "confusion matrix",
+    "object_type": "Other",
+    "source_sentence": "Confusion matrix: We first tabulate the confusion matrix obtained by NwQM on test data in Figure 2.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.674",
+    "title": "NwQM: A neural quality assessment framework for Wikipedia",
+    "section": "6 Discussion and qualitative analysis"
+  },
+  {
+    "subject": "NwQM",
+    "predicate": "achievesresult",
+    "object": "lower mistakes",
+    "object_type": "Other",
+    "source_sentence": "NwQM can capture class specific features significantly better thus showing lower mistakes for certain datapoints especially in case of Start, B and C classes.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.674",
+    "title": "NwQM: A neural quality assessment framework for Wikipedia",
+    "section": "6 Discussion and qualitative analysis"
+  },
+  {
+    "subject": "NwQM",
+    "predicate": "achievesresult",
+    "object": "improved prediction accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Results indi- cate that NwQM is not biased toward length and irrespective of the quantiles we obtain improved prediction accuracy almost always compared to the closest baseline.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.674",
+    "title": "NwQM: A neural quality assessment framework for Wikipedia",
+    "section": "6 Discussion and qualitative analysis"
+  },
+  {
+    "subject": "Classification",
+    "predicate": "comprises",
+    "object": "dense layer and softmax layer",
+    "object_type": "Other",
+    "source_sentence": "These embeddings are passed through classification layers comprising dense layer and softmax layer for prediction.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.674",
+    "title": "NwQM: A neural quality assessment framework for Wikipedia",
+    "section": "6 Discussion and qualitative analysis"
+  }
+]

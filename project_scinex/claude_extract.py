@@ -63,11 +63,12 @@ def build_extractor(kind: str, ontology: str, ontology_file: str,
                                    model_name=model_slug)
         return ex, None
 
-    from kg_extraction.entity_loader import load_entity_set
-    from kg_extraction.fixed_extractor import FixedTripleExtractor, _make_fixed_user_prompt
+    # as kg_main loads it for --extractor fixed (entity_loader has no load_entity_set)
+    from kg_extraction.entity_loader import load_entity_csv
+    from kg_extraction.fixed_extractor import FixedTripleExtractor
     if entity_csv is None:
         raise SystemExit("--entity-csv is required for --extractor fixed")
-    entity_set = load_entity_set(str(entity_csv))
+    entity_set = load_entity_csv(str(entity_csv), tp_only=True)
     ex = FixedTripleExtractor(entity_set=entity_set, relations=relations, schema=schema,
                               model_name=model_slug)
     return ex, entity_set
@@ -103,7 +104,7 @@ def cmd_prompts(args):
                 continue
             for para in ex._sentences_to_paragraphs(sentences):
                 if args.extractor == "fixed":
-                    present = entity_set.find_in_text(para) if entity_set else []
+                    present = entity_set.match_any_in_text(para) if entity_set else []
                     if not present:
                         continue
                     from kg_extraction.fixed_extractor import _make_fixed_user_prompt

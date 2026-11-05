@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "tracking",
+    "predicate": "designedfor",
+    "object": "procedural text",
+    "object_type": "Task",
+    "source_sentence": "state tracking techniques originally designed for procedural text have been successfully applied in this context also.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1006",
+    "title": "∗*Niket Tandon and Bhavana Dalvi Mishra contributed equally to this work.",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Neural Networks",
+    "predicate": "addresses",
+    "object": "tracking entity states",
+    "object_type": "Task",
+    "source_sentence": "Our work builds off a recent body of work that focuses on using neural networks to explicitly track the states of entities while reading long texts.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1006",
+    "title": "∗*Niket Tandon and Bhavana Dalvi Mishra contributed equally to this work.",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Background Knowledge",
+    "predicate": "addresses",
+    "object": "pruning state changes",
+    "object_type": "Task",
+    "source_sentence": "Our work extends these methods and addresses their most common issues by using background knowledge about entities to prune the set of state changes they can experience as the model reads new text.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1006",
+    "title": "∗*Niket Tandon and Bhavana Dalvi Mishra contributed equally to this work.",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Bidirectional LSTM",
+    "predicate": "uses",
+    "object": "encoder",
+    "object_type": "Model",
+    "source_sentence": "the encoder first uses a bidirectional LSTM to encode the sentence",
+    "extraction_mode": "fixed",
+    "paper": "D18-1006",
+    "title": "∗*Niket Tandon and Bhavana Dalvi Mishra contributed equally to this work.",
+    "section": "4.1 Overview"
+  },
+  {
+    "subject": "GloVe Vectors",
+    "predicate": "uses",
+    "object": "pre-trained embeddings",
+    "object_type": "Other",
+    "source_sentence": "We use GloVe vectors as pre-trained embeddings and a POS tagger to extract verbs.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1006",
+    "title": "∗*Niket Tandon and Bhavana Dalvi Mishra contributed equally to this work.",
+    "section": "4.2 Encoder"
+  },
+  {
+    "subject": "POS tagger",
+    "predicate": "uses",
+    "object": "verbs",
+    "object_type": "Other",
+    "source_sentence": "We use GloVe vectors as pre-trained embeddings and a POS tagger to extract verbs.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1006",
+    "title": "∗*Niket Tandon and Bhavana Dalvi Mishra contributed equally to this work.",
+    "section": "4.2 Encoder"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "word representations",
+    "object_type": "Other",
+    "source_sentence": "a BiLSTM is used to encode the word representations extracted above, yielding a contextualized vector hi for each embedded word xi",
+    "extraction_mode": "fixed",
+    "paper": "D18-1006",
+    "title": "∗*Niket Tandon and Bhavana Dalvi Mishra contributed equally to this work.",
+    "section": "4.2 Encoder"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "An attention over the contextualized embeddings hi is performed to predict a distribution of weights over the sentence:",
+    "extraction_mode": "fixed",
+    "paper": "D18-1006",
+    "title": "∗*Niket Tandon and Bhavana Dalvi Mishra contributed equally to this work.",
+    "section": "4.2 Encoder"
+  },
+  {
+    "subject": "Knowledge",
+    "predicate": "uses",
+    "object": "Constraints",
+    "object_type": "Concept",
+    "source_sentence": "By formulating procedural text comprehension as a structured prediction task, we can introduce commonsense knowledge as hard and soft constraints into the model, allowing nonsensical and unlikely predictions to be avoided, and allowing the system to recover from early mistakes.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1006",
+    "title": "∗*Niket Tandon and Bhavana Dalvi Mishra contributed equally to this work.",
+    "section": "5 Incorporating Commonsense Knowledge"
+  },
+  {
+    "subject": "Structured Prediction",
+    "predicate": "addresses",
+    "object": "inconsistent predictions",
+    "object_type": "Concept",
+    "source_sentence": "We have shown how the predicted effects of actions can be improved by treating the task as a structured prediction problem, allowing commonsense knowledge to be injected to avoid an overall inconsistent or improbable set of predictions.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1006",
+    "title": "∗*Niket Tandon and Bhavana Dalvi Mishra contributed equally to this work.",
+    "section": "8 Conclusions"
+  },
+  {
+    "subject": "Hard Constraints",
+    "predicate": "addresses",
+    "object": "impossible state changes",
+    "object_type": "Concept",
+    "source_sentence": "In particular, we have shown how two kinds of knowledge can be exploited: hard constraints to exclude impossible and nonsensical state changes , and soft constraints to encourage likely state changes .",
+    "extraction_mode": "fixed",
+    "paper": "D18-1006",
+    "title": "∗*Niket Tandon and Bhavana Dalvi Mishra contributed equally to this work.",
+    "section": "8 Conclusions"
+  },
+  {
+    "subject": "Commonsense Knowledge",
+    "predicate": "addresses",
+    "object": "inconsistent predictions",
+    "object_type": "Concept",
+    "source_sentence": "We have shown how the predicted effects of actions can be improved by treating the task as a structured prediction problem, allowing commonsense knowledge to be injected to avoid an overall inconsistent or improbable set of predictions.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1006",
+    "title": "∗*Niket Tandon and Bhavana Dalvi Mishra contributed equally to this work.",
+    "section": "8 Conclusions"
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "WordPiece",
+    "predicate": "uses",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "For segmenting texts into tokens, we rely on the training portion of each dataset only (Section 5) and employ the WordPiece subword tokenizer as used in BERT .5",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "4 Disentangling Lexical Artifacts"
+  },
+  {
+    "subject": "Annotation",
+    "predicate": "uses",
+    "object": "Categories",
+    "object_type": "Concept",
+    "source_sentence": "we perform lexical artifacts annotation (Section 4.3) following the categories defined in Section 2.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "4 Disentangling Lexical Artifacts"
+  },
+  {
+    "subject": "Texts",
+    "predicate": "uses",
+    "object": "WordPiece",
+    "object_type": "Method",
+    "source_sentence": "For segmenting texts into tokens, we rely on the training portion of each dataset only (Section 5) and employ the WordPiece subword tokenizer as used in BERT .5",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "4 Disentangling Lexical Artifacts"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "RoBERTa",
+    "object_type": "Model",
+    "source_sentence": "we found similar results when using the byte-level BPE tokenizer as used in RoBERTa",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "4.1 In-distribution artifacts"
+  },
+  {
+    "subject": "Normalization",
+    "predicate": "uses",
+    "object": "min-max normalization function",
+    "object_type": "Other",
+    "source_sentence": "we normalize it in [0, 1] by applying a min-max normalization function to enable cross-platform score comparability",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "4.2 Cross-distribution artifacts"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "MaChAmp v0.2 toolkit",
+    "object_type": "Other",
+    "source_sentence": "For all our experiments, we employ the uncased BERT-base model as implemented in the MaChAmp v0.2 toolkit (van der Goot et al., 2021), since it has been shown to achieve state-of-the-art performance in hate speech detection.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "5.1 Experimental setup"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "Devlin et al. (2019) search space",
+    "object_type": "Other",
+    "source_sentence": "We use default hyperparameters, and perform a grid search to determine the number of epochs, the learning rate, and the batch size, using the search space suggested by Devlin et al. (2019) – i.e., [2, 3, 4] for epochs, [2e-05, 3e- 05, 5e-05] for learning rate, and [16, 32] for batch size.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "5.1 Experimental setup"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Tesla V100-SXM2 GPU",
+    "object_type": "Other",
+    "source_sentence": "All experiments have been run on a NVIDIA Tesla V100-SXM2 GPU, with a training time ranging from 10 to 40 minutes each.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "5.1 Experimental setup"
+  },
+  {
+    "subject": "Hashtags",
+    "predicate": "uses",
+    "object": "wordsegment package",
+    "object_type": "Method",
+    "source_sentence": "We segment hashtags into constituent words using the wordsegment package,12 remove newlines, un- escape HTML tags, and lowercase the texts.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "A.1 Preprocessing and anonymization"
+  }
+]

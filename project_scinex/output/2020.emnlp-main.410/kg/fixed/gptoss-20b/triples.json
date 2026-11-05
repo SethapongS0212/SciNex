@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "Neural Models",
+    "predicate": "achieves",
+    "object": "High Accuracy",
+    "object_type": "Concept",
+    "source_sentence": "Despite the high accuracy achieved by neural models on intent detection and slot filling , training such models on a new language requires additional efforts to collect large amounts of training data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Transfer Learning",
+    "predicate": "addresses",
+    "object": "minimizing the efforts of data collection and annotation",
+    "object_type": "Concept",
+    "source_sentence": "One would consider transfer learning from high-resource to low-resource languages to minimize the efforts of data collection and annotation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Intent Detection",
+    "predicate": "achieves",
+    "object": "intent probability",
+    "object_type": "Concept",
+    "source_sentence": "For intent detection , we take the representation h0 corresponding to x0 as the sequence representation and apply a linear transformation and a softmax function to predict the intent probability",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "4.1 Joint Intent Detection and Slot Filling"
+  },
+  {
+    "subject": "Slot Filling",
+    "predicate": "achieves",
+    "object": "probability for each slot",
+    "object_type": "Concept",
+    "source_sentence": "For slot filling , we compute the probability for each slot using the representations h1...T",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "4.1 Joint Intent Detection and Slot Filling"
+  },
+  {
+    "subject": "Multilingual BERT",
+    "predicate": "uses",
+    "object": "monolingual corpora",
+    "object_type": "Dataset",
+    "source_sentence": "We use the multilingual BERT pre-trained in an unsupervised way on the concatenation of monolingual corpora from 104 languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "4.1 Joint Intent Detection and Slot Filling"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "First, we compare LSTM and BERT models trained on the target language data only.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "5 Multilingual NLU"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "ADAM",
+    "object_type": "Method",
+    "source_sentence": "Setup We train the models using the Adam optimizer for 20 epochs",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "5 Multilingual NLU"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "intent accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Following , we use intent accuracy and slot F1 as evaluation metrics.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "5 Multilingual NLU"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "slot F1",
+    "object_type": "Metric",
+    "source_sentence": "Following , we use intent accuracy and slot F1 as evaluation metrics.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "5 Multilingual NLU"
+  },
+  {
+    "subject": "Multilingual BERT",
+    "predicate": "achieves",
+    "object": "1–6% improvement on intent accuracy",
+    "object_type": "Other",
+    "source_sentence": "Multilingual BERT encoder brings significant improvements of 1–6% on intent accuracy and 1–11% on slot F1.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "5 Multilingual NLU"
+  },
+  {
+    "subject": "Multilingual BERT",
+    "predicate": "achieves",
+    "object": "1–11% improvement on slot F1",
+    "object_type": "Other",
+    "source_sentence": "Multilingual BERT encoder brings significant improvements of 1–6% on intent accuracy and 1–11% on slot F1.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "5 Multilingual NLU"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "97.5% intent accuracy",
+    "object_type": "Other",
+    "source_sentence": "Comparison with SOTA On English ATIS, Qin et al. (2019) report 97.5% intent accuracy and 96.1% slot F1 when using BERT with their proposed stack-propagation architecture.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "5 Multilingual NLU"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "96.1% slot F1",
+    "object_type": "Other",
+    "source_sentence": "Comparison with SOTA On English ATIS, Qin et al. (2019) report 97.5% intent accuracy and 96.1% slot F1 when using BERT with their proposed stack-propagation architecture.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "5 Multilingual NLU"
+  },
+  {
+    "subject": "MT Systems",
+    "predicate": "uses",
+    "object": "fast-align",
+    "object_type": "Method",
+    "source_sentence": "Use MT systems to translate the English data to the target language and project the slot labels using word alignment from fast-align.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "6 Cross-Lingual Transfer"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "achieves",
+    "object": "improvements of 13–33% on accuracy",
+    "object_type": "Metric",
+    "source_sentence": "es de zh ja pt fr hi tr accuracy – improvements of 13–33% when using LSTM and 1–24% when using BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "6.1 Zero-Shot Results"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "improvements of 1–24% on accuracy",
+    "object_type": "Metric",
+    "source_sentence": "es de zh ja pt fr hi tr accuracy – improvements of 13–33% when using LSTM and 1–24% when using BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "6.1 Zero-Shot Results"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "beneficial for languages dissimilar to English",
+    "object_type": "Concept",
+    "source_sentence": "this indicates that, while training directly on the target language data is beneficial especially for languages dissimilar to English , the noisy projection of the slot labels could also bring harm to the model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "6.1 Zero-Shot Results"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "initial learning rate 10−3",
+    "object_type": "Other",
+    "source_sentence": "We set the initial learning rate to 10−3 for the LSTM model and 10−5 for the BERT model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "A Model and Training Details"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "size 256",
+    "object_type": "Other",
+    "source_sentence": "The LSTM model has embeddings of size 256 and 128 hidden units.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.410",
+    "title": "End-to-End Slot Alignment and Recognition for Cross-Lingual NLU",
+    "section": "A Model and Training Details"
+  }
+]

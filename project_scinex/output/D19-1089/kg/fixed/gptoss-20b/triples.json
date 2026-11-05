@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Clustering",
+    "predicate": "uses",
+    "object": "prior knowledge",
+    "object_type": "Concept",
+    "source_sentence": "The first one is clustering based on prior knowledge , where we use the knowledge of language family to cluster languages.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "language embeddings",
+    "object_type": "Concept",
+    "source_sentence": "The second one is a purely learning based method that uses language embeddings for similarity measurement and clustering.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "universal NMT model",
+    "object_type": "Model",
+    "source_sentence": "We obtain the language embeddings by training all the languages in a universal NMT model, and add each language with a tag to give the universal model a sense of which language it currently processes.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "Translation",
+    "object_type": "Task",
+    "source_sentence": "focus on the design of better models for multilingual translation",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "model training",
+    "predicate": "produces",
+    "object": "embedding vector",
+    "object_type": "Other",
+    "source_sentence": "After model training, we get an embedding vector for each language.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "3.2 Language Embedding Based Clustering"
+  },
+  {
+    "subject": "cluster",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "We regard the embedding vector as the representation of a language and cluster all languages using the embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "3.2 Language Embedding Based Clustering"
+  },
+  {
+    "subject": "Clustering",
+    "predicate": "uses",
+    "object": "hierarchical clustering",
+    "object_type": "Method",
+    "source_sentence": "We choose hierarchical clustering to cluster the embedding vectors in our experiments.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "3.2 Language Embedding Based Clustering"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "BLEU",
+    "object_type": "Metric",
+    "source_sentence": "We evaluate the translation quality by tokenized case sensitive BLEU with multi-bleu.pl7.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "4 Experiment Setup"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "multi-bleu.pl7",
+    "object_type": "Other",
+    "source_sentence": "We evaluate the translation quality by tokenized case sensitive BLEU with multi-bleu.pl7.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "4 Experiment Setup"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "language embedding",
+    "object_type": "Other",
+    "source_sentence": "During inference, each source token is also added with the corresponding language embedding in order to give the model a sense of the language it is currently processing.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "4 Experiment Setup"
+  },
+  {
+    "subject": "Language Clustering",
+    "predicate": "achieves",
+    "object": "8 groups",
+    "object_type": "Other",
+    "source_sentence": "The language clustering based on language family is shown in Figure 2, which results in 8 groups given our 23 languages.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "5.1 Results of Language Clustering"
+  },
+  {
+    "subject": "Hierarchical clustering",
+    "predicate": "uses",
+    "object": "language embeddings",
+    "object_type": "Other",
+    "source_sentence": "We use hierarchical clustering method to group the languages based on language embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "5.1 Results of Language Clustering"
+  },
+  {
+    "subject": "Language",
+    "predicate": "addresses",
+    "object": "morphological typology",
+    "object_type": "Concept",
+    "source_sentence": "Language embeddings can also capture the knowledge of morphological typology.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "5.1 Results of Language Clustering"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "produces",
+    "object": "BLEU scores",
+    "object_type": "Metric",
+    "source_sentence": "After dividing the languages into several clusters, we train the models for the languages in each cluster with a multilingual NMT model based on different clustering methods and list the BLEU scores of each language→English in Table 1.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1089",
+    "title": "Multilingual Neural Machine Translation with Language Clustering",
+    "section": "5.2 Translation Accuracy"
+  }
+]

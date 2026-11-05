@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Densely connected LSTM",
+    "predicate": "uses",
+    "object": "Multitask Learning",
+    "object_type": "Method",
+    "source_sentence": "we propose a system2 based on a densely connected LSTM model with multitask learning techniques.",
+    "extraction_mode": "fixed",
+    "paper": "S18-1006",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Multitask Learning",
+    "predicate": "uses",
+    "object": "Information",
+    "object_type": "Concept",
+    "source_sentence": "By using multitask learning strategy, the model can combine the information in the different tasks to improve the performance.",
+    "extraction_mode": "fixed",
+    "paper": "S18-1006",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Sentiment Features",
+    "predicate": "uses",
+    "object": "Af- fectiveTweets5 package",
+    "object_type": "Other",
+    "source_sentence": "The sentiment features are generated via the Af- fectiveTweets5 package in weka provided by Mo- hammad et al.",
+    "extraction_mode": "fixed",
+    "paper": "S18-1006",
+    "title": "Abstract",
+    "section": "2 Densely Connected LSTM with Multi-task Learning"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "uses",
+    "object": "100-dim pre-trained embedding weights",
+    "object_type": "Other",
+    "source_sentence": "The embedding of a sentence is obtained by taking the average of all words in this sentence using the 100-dim pre-trained em- bedding weights provided by Bravo et al.",
+    "extraction_mode": "fixed",
+    "paper": "S18-1006",
+    "title": "Abstract",
+    "section": "2 Densely Connected LSTM with Multi-task Learning"
+  },
+  {
+    "subject": "ReLU",
+    "predicate": "uses",
+    "object": "dense layers",
+    "object_type": "Other",
+    "source_sentence": "Three dense layers with ReLU activation are used to predict for three different tasks including: determining the missing ironic hashtags (i.e. #not, # sarcasm , # irony or none of them) (task1); identifying ironic or non-ironic (task2); identifying the irony types (task3).",
+    "extraction_mode": "fixed",
+    "paper": "S18-1006",
+    "title": "Abstract",
+    "section": "2 Densely Connected LSTM with Multi-task Learning"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "trainedon",
+    "object": "400 million tweets",
+    "object_type": "Dataset",
+    "source_sentence": "the embeddings provided by Godin et al. (2015), which are trained on a corpus with 400 million tweets",
+    "extraction_mode": "fixed",
+    "paper": "S18-1006",
+    "title": "Abstract",
+    "section": "3.1 Dataset and Experimental Settings"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "trainedon",
+    "object": "20 million tweets",
+    "object_type": "Dataset",
+    "source_sentence": "the embeddings provided by Barbieri et al. (2016), which are trained on 20 million tweets",
+    "extraction_mode": "fixed",
+    "paper": "S18-1006",
+    "title": "Abstract",
+    "section": "3.1 Dataset and Experimental Settings"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "10% training data",
+    "object_type": "Dataset",
+    "source_sentence": "we use 10% training data for validation to select the hyperparameters above",
+    "extraction_mode": "fixed",
+    "paper": "S18-1006",
+    "title": "Abstract",
+    "section": "3.1 Dataset and Experimental Settings"
+  }
+]

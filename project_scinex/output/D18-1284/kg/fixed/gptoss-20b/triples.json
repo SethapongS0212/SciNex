@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "13,874 quotes",
+    "object_type": "Dataset",
+    "source_sentence": "Our models were trained on 13,874 quotes and validated and tested on a set of 1,734 quotes each.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "3.2 IMDB Dialogue Snippet Dataset"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "1,734 quotes",
+    "object_type": "Dataset",
+    "source_sentence": "Our models were trained on 13,874 quotes and validated and tested on a set of 1,734 quotes each.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "3.2 IMDB Dialogue Snippet Dataset"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "descriptions",
+    "object_type": "Other",
+    "source_sentence": "As we demonstrate in our experiments, the use of these descriptions improves classification performance.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "3.3 Character Trope Description Dataset"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "Words",
+    "object_type": "Concept",
+    "source_sentence": "with attention over the words in the snippet.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "5.1 Attentive Encoders"
+  },
+  {
+    "subject": "Recurrent Neural Network",
+    "predicate": "uses",
+    "object": "sequence",
+    "object_type": "Sequence",
+    "source_sentence": "we use a recurrent neural network to encode the sequence into hidden states",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "5.1 Attentive Encoders"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "LSTMs",
+    "object_type": "Model",
+    "source_sentence": "In our experiments, we use a gated recurrent network (GRU) over LSTMs because the latter is more computationally expensive",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "5.1 Attentive Encoders"
+  },
+  {
+    "subject": "bidirectional",
+    "predicate": "uses",
+    "object": "GRUs",
+    "object_type": "Model",
+    "source_sentence": "We use bidirectional GRUs and concatenate our forward and backwards hidden states to get ←→ ht",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "5.1 Attentive Encoders"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "GRU",
+    "object_type": "Model",
+    "source_sentence": "We define an attention mechanism Attn that computes s from the resultant hidden states ←→ ht of a GRU by learning to generate weights αt",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "5.1 Attentive Encoders"
+  },
+  {
+    "subject": "Triplet Loss",
+    "predicate": "uses",
+    "object": "trope descriptions",
+    "object_type": "Description",
+    "source_sentence": "we also test learning from the trope descriptions through a triplet loss.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "6.2 Trope Description Triplet Loss"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Prior Knowledge",
+    "object_type": "Concept",
+    "source_sentence": "Models that use a memory module should learn a representation ˆzM, based on either the prior knowledge stored in the memory (as in Knowledge-Store memory) or the top-k key matches (as in Read-Write memory), that is similar to the representation of the trope descriptions.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "6.2 Trope Description Triplet Loss"
+  },
+  {
+    "subject": "Attention Model",
+    "predicate": "achieves",
+    "object": "large improvement over the base-line models",
+    "object_type": "Other",
+    "source_sentence": "The attention model shows a large improvement over the base- line models.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "7.1 Ablation Results"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "marginal improvement",
+    "object_type": "Other",
+    "source_sentence": "Though our experiments showed marginal improvement between using the 'char' data and the '3' data, we found that using all 3 inputs had greater performance for models with the triplet loss and read-only memory.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "7.1 Ablation Results"
+  },
+  {
+    "subject": "agglomerative clustering",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "We use a simple agglomerative clustering method on our embeddings with a parameter k for the number of clusters.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "7.3 Purity scores of character clusters"
+  },
+  {
+    "subject": "Regression",
+    "predicate": "uses",
+    "object": "metadata features",
+    "object_type": "Other",
+    "source_sentence": "their better performing Persona Regression (PR) model also uses useful metadata features such as the movie genre and character gender.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1284",
+    "title": "Learning Personas from Dialogue with Attentive Memory Networks",
+    "section": "7.3 Purity scores of character clusters"
+  }
+]

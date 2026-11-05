@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Response Generation",
+    "predicate": "addresses",
+    "object": "topics",
+    "object_type": "Concept",
+    "source_sentence": "Response generation in dialogue can be controlled towards different topics and styles or towards a set of hard constraints",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Response Generation",
+    "predicate": "addresses",
+    "object": "styles",
+    "object_type": "Concept",
+    "source_sentence": "Response generation in dialogue can be controlled towards different topics and styles or towards a set of hard constraints",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Response Generation",
+    "predicate": "addresses",
+    "object": "hard constraints",
+    "object_type": "Concept",
+    "source_sentence": "Response generation in dialogue can be controlled towards different topics and styles or towards a set of hard constraints",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "beam search",
+    "object_type": "Method",
+    "source_sentence": "Naive constrained generation approaches use methods like beam search and stochastic search to force the generation of these control words",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "stochastic search",
+    "object_type": "Method",
+    "source_sentence": "Naive constrained generation approaches use methods like beam search and stochastic search to force the generation of these control words",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "CTRL",
+    "predicate": "uses",
+    "object": "CTRL codes",
+    "object_type": "Other",
+    "source_sentence": "fine-tuning can be used to guide language model outputs through the use of a latent variable or through CTRL codes.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Stochastic Search",
+    "predicate": "uses",
+    "object": "Metropolis-Hastings",
+    "object_type": "Method",
+    "source_sentence": "A method based on stochastic search uses Metropolis-Hastings with the constraint of keyword inclusion.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "historical dataset of conversations",
+    "object_type": "Dataset",
+    "source_sentence": "We additionally assume access to a historical dataset of conversations D = {x(i)}, i ∈[1,..., N] and a fine-tuned language model M on this dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "kNN",
+    "predicate": "uses",
+    "object": "FAISS",
+    "object_type": "Other",
+    "source_sentence": "Then, we use kNN search based on FAISS, a library for fast nearest neighbor retrieval , to identify k similar pasts from the historical data that closely match the current context x.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "5.1 Retrieval Futures of the Past (FOP-retrieval)"
+  },
+  {
+    "subject": "Equations",
+    "predicate": "uses",
+    "object": "count function",
+    "object_type": "Other",
+    "source_sentence": "In the above equations, the count function counts the number of control words W in the future f(i,j).",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "5.1 Retrieval Futures of the Past (FOP-retrieval)"
+  },
+  {
+    "subject": "Example",
+    "predicate": "uses",
+    "object": "ABCD dataset",
+    "object_type": "Dataset",
+    "source_sentence": "In Tables 5, 6, 7, 8, and 9, we show some example simulations on the ABCD dataset using a trained agent model for each of the methods .",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "A.2 Example simulations on ABCD"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Pre-Trained Language Model",
+    "object_type": "Model",
+    "source_sentence": "We used the GPT2-medium model from the hugging-face repository as the pre-trained language model for all of our experiments.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.54",
+    "title": "Long-term Control for Dialogue Generation: Methods and Evaluation",
+    "section": "A.3 Experiment details"
+  }
+]

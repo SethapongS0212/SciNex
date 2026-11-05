@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Paraphrasing",
+    "predicate": "uses",
+    "object": "SMT model",
+    "object_type": "Model",
+    "source_sentence": "paraphrasing has been used to enrich the SMT model.",
+    "extraction_mode": "fixed",
+    "paper": "P10-2001",
+    "title": "Paraphrase Lattice for Statistical Machine Translation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "paraphrasing",
+    "object_type": "Method",
+    "source_sentence": "augmented the training data by paraphrasing.",
+    "extraction_mode": "fixed",
+    "paper": "P10-2001",
+    "title": "Paraphrase Lattice for Statistical Machine Translation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "lattice decoding",
+    "object_type": "Other",
+    "source_sentence": "We use Moses as a decoder for lattice decoding.",
+    "extraction_mode": "fixed",
+    "paper": "P10-2001",
+    "title": "Paraphrase Lattice for Statistical Machine Translation",
+    "section": "3.3 Lattice decoding"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "uses",
+    "object": "IWSLT 2007 dataset",
+    "object_type": "Dataset",
+    "source_sentence": "In order to evaluate the proposed method, we conducted English-to-Japanese and English-to- Chinese translation experiments using IWSLT 2007 dataset.",
+    "extraction_mode": "fixed",
+    "paper": "P10-2001",
+    "title": "Paraphrase Lattice for Statistical Machine Translation",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Parameter Tuning",
+    "predicate": "uses",
+    "object": "dev1 set",
+    "object_type": "Dataset",
+    "source_sentence": "We used the dev1 set for parameter tuning, the dev2 set for choosing the setting of the proposed method, which is described below, and the dev3 set for testing.",
+    "extraction_mode": "fixed",
+    "paper": "P10-2001",
+    "title": "Paraphrase Lattice for Statistical Machine Translation",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "SMT",
+    "predicate": "uses",
+    "object": "MERT",
+    "object_type": "Other",
+    "source_sentence": "Weights of the feature and other features in SMT were optimized using MERT.",
+    "extraction_mode": "fixed",
+    "paper": "P10-2001",
+    "title": "Paraphrase Lattice for Statistical Machine Translation",
+    "section": "4.1 Baseline"
+  },
+  {
+    "subject": "Paraphrasing",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Concept",
+    "source_sentence": "As a criterion for limiting the number of paraphrasing, we use three features (p), (l) and (L), which are same as the features described in Sub-section 3.2.",
+    "extraction_mode": "fixed",
+    "paper": "P10-2001",
+    "title": "Paraphrase Lattice for Statistical Machine Translation",
+    "section": "4.2 Proposed method"
+  },
+  {
+    "subject": "Parameter Tuning",
+    "predicate": "uses",
+    "object": "dev1 set",
+    "object_type": "Dataset",
+    "source_sentence": "We conducted parameter tuning with the dev1 set for each setting and used as best the setting which got the highest BLEU score for the dev2 set.",
+    "extraction_mode": "fixed",
+    "paper": "P10-2001",
+    "title": "Paraphrase Lattice for Statistical Machine Translation",
+    "section": "4.2 Proposed method"
+  },
+  {
+    "subject": "Paraphrasing",
+    "predicate": "addresses",
+    "object": "SMT",
+    "object_type": "Concept",
+    "source_sentence": "As the relation of three systems is Moses < CCB < Proposed Method, paraphrasing is useful for SMT and using paraphrase lattices and lattice decoding is especially more useful than augmenting the phrase table.",
+    "extraction_mode": "fixed",
+    "paper": "P10-2001",
+    "title": "Paraphrase Lattice for Statistical Machine Translation",
+    "section": "4.3 Results"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "training corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We conducted experiments with various sizes of training corpus, using 10K, 20K, 40K, 80K, 160K and 1M.",
+    "extraction_mode": "fixed",
+    "paper": "P10-2001",
+    "title": "Paraphrase Lattice for Statistical Machine Translation",
+    "section": "4.3 Results"
+  }
+]

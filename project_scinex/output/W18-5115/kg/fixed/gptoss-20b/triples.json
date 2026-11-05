@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Lexicon",
+    "predicate": "uses",
+    "object": "unsupervised machine learning",
+    "object_type": "Other",
+    "source_sentence": "One way to alleviate this synonymy problem is to use unsupervised (or semi-supervised) machine learning to augment the compiled lexicon.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5115",
+    "title": "Learning Representations for Detecting Abusive Language",
+    "section": "2 Previous Work"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "weighted n-gram representations",
+    "object_type": "Other",
+    "source_sentence": "For the classification tasks, the weighted n-gram representations are fed into a Logistic Regression classifier with L2 penalization.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5115",
+    "title": "Learning Representations for Detecting Abusive Language",
+    "section": "3.1 Lexica"
+  },
+  {
+    "subject": "Text",
+    "predicate": "uses",
+    "object": "lexicon",
+    "object_type": "Other",
+    "source_sentence": "For the classification tasks using the lexica, a text is considered as abusive if it contains at least one term from a lexicon.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5115",
+    "title": "Learning Representations for Detecting Abusive Language",
+    "section": "3.1 Lexica"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "character n-grams",
+    "object_type": "Other",
+    "source_sentence": "In the following experiments, we augment standard BoW unigram features with character n-grams.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5115",
+    "title": "Learning Representations for Detecting Abusive Language",
+    "section": "3.2 Bag-of-Words"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "character n-grams",
+    "object_type": "Concept",
+    "source_sentence": "For those who are familiar with the word2vec model , this is es- sentially the same idea as the CBOW architecture, but using character n-grams instead of only word tokens.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5115",
+    "title": "Learning Representations for Detecting Abusive Language",
+    "section": "3.3 Embeddings"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "text representations",
+    "object_type": "Concept",
+    "source_sentence": "The resulting embeddings are used to pro- duce text representations by simply averaging the TF-IDF-weighted vectors for all words in a text.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5115",
+    "title": "Learning Representations for Detecting Abusive Language",
+    "section": "3.3 Embeddings"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "Logistic Regression classifier",
+    "object_type": "Model",
+    "source_sentence": "we use the same supervised classifier in all cases; a Logistic Regression classifier with L2 penalization.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5115",
+    "title": "Learning Representations for Detecting Abusive Language",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "Doc2Vec model",
+    "object_type": "Model",
+    "source_sentence": "The second flavor uses document-enhanced word embeddings trained using the Doc2Vec model , which also relies on the architectures from word2vec, but adds a document id as input signal in addition to the word tokens.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5115",
+    "title": "Learning Representations for Detecting Abusive Language",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "word2vec",
+    "object_type": "Model",
+    "source_sentence": "The second flavor uses document-enhanced word embeddings trained using the Doc2Vec model , which also relies on the architectures from word2vec, but adds a document id as input signal in addition to the word tokens.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5115",
+    "title": "Learning Representations for Detecting Abusive Language",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "Dropout",
+    "object_type": "Other",
+    "source_sentence": "We use a simple architecture consisting of one recurrent layer with Gated Recurrent Units (GRU) using recurrent dropout, followed by a dense output layer using softmax activation.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5115",
+    "title": "Learning Representations for Detecting Abusive Language",
+    "section": "4.1 Data for Pre-Training"
+  }
+]

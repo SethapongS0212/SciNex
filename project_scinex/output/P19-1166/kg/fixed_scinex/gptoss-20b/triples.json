@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "gender association",
+    "object_type": "Task",
+    "source_sentence": "our experiments in this paper focus on gender association.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1166",
+    "title": "Understanding Undesirable Word Embedding Associations",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "produces",
+    "object": "gender-appropriate terms",
+    "object_type": "Terms",
+    "source_sentence": "To create an exhaustive list of gender-appropriate words, Bolukbasi et al. (2016) started with a small, human-labelled set of words and then trained an SVM to predict more gender-appropriate terms in the vocabulary.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1166",
+    "title": "Understanding Undesirable Word Embedding Associations",
+    "section": "6.3 Debiasing without Supervision"
+  },
+  {
+    "subject": "Embedding Space",
+    "predicate": "produces",
+    "object": "new analogies",
+    "object_type": "Analogy",
+    "source_sentence": "they tested the ability of their debiased embedding space to generate new analogies.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1166",
+    "title": "Understanding Undesirable Word Embedding Associations",
+    "section": "6.3 Debiasing without Supervision"
+  },
+  {
+    "subject": "Embedding Space",
+    "predicate": "achieves",
+    "object": "94.9% preservation of gender-appropriate analogies",
+    "object_type": "Metric",
+    "source_sentence": "In our debiased embedding space, 94.9% of gender-appropriate analogies with a strength of at least 0.5 are preserved in the embedding space while only 36.7% of gender-biased analogies are.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1166",
+    "title": "Understanding Undesirable Word Embedding Associations",
+    "section": "6.3 Debiasing without Supervision"
+  }
+]

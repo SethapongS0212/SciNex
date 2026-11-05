@@ -1,5 +1,28 @@
 # Finetuning & Q&A Evaluation — Progress Summary
 
+## ⭐ UPDATE — Session 37, 26 Oct – 5 Nov 2026: the experiment moved to the ACL Anthology corpus
+
+**In one line: with the training data rebalanced, a finetuned 8-billion-parameter model extracts as
+many triples as its teacher, at the same pass rate, on papers it never saw. Correctness is not yet
+judged.**
+
+- **Why the change:** the user decided the finetuning runs should use the **ACL Anthology papers**,
+  because they come with fixed entity lists, rather than the professor's 20-paper corpus. That gives
+  805 papers, with extraction restricted to listed entities (the "fixed" extractor).
+- **Teacher:** gpt-oss-20b, run locally on two RTX 5090s, labelled all 37,970 paragraphs in 30.6
+  hours. Its output is clean (99.5% valid JSON, ~79% of triples pass the guards) but sparse: about
+  80% of its answers are "no triples".
+- **Students:** Qwen3-8B, trained on ~764 papers and tested on 41 papers it never saw:
+  - trained on the teacher's raw output, it **collapsed**: 15 triples on 980 paragraphs;
+  - trained with "no triples" answers capped at 30%, it kept **670 triples, 81.7% passing the guards**
+    (teacher: 501, 80.9%), with 99.9% valid JSON;
+  - the untuned model proposes 6,139 triples, but only 38.5% survive the guards.
+- **Caveats:** counts only, not correctness. The capped student also covers more paragraphs than
+  the teacher (43.8% vs 25.6%), which may be over-extraction.
+- **Incident:** one GPU failed mid-run (likely heat). The work was rescued from a checkpoint and
+  finished on the other GPU after a driver-module reload.
+- **Next:** blind per-triple judging of the base model, the capped student and the teacher.
+
 ## ⭐⭐⭐ UPDATE — Session 36, 26 Oct 2026 (supersedes everything below)
 
 **Status in one line: the finetuning experiment worked. A finetuned 1.7-billion-parameter model

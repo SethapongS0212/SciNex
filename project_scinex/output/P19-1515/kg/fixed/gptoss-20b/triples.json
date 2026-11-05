@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "ParaNet",
+    "predicate": "uses",
+    "object": "coverage attention",
+    "object_type": "Other",
+    "source_sentence": "we propose a parallel Seq2Seq network (ParaNet) with the coverage attention to alleviate the overlapping phrase problem.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "ParaNet",
+    "predicate": "addresses",
+    "object": "overlapping phrase problem",
+    "object_type": "Other",
+    "source_sentence": "we propose a parallel Seq2Seq network (ParaNet) with the coverage attention to alleviate the overlapping phrase problem.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "uses",
+    "object": "POS tags",
+    "object_type": "Other",
+    "source_sentence": "then applies multi-task learning framework to generate the keyphrases and part-of-speech (POS) tags for words in keyphrases on the target side.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "correlation constraints",
+    "object_type": "Concept",
+    "source_sentence": "Chen et al. (2018) proposed a Seq2Seq network with correlation constraints for keyphrase generation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "3 Related Works"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "title of source text",
+    "object_type": "Concept",
+    "source_sentence": "(2019) proposed a title-guided Seq2Seq network to use title of source text to improve performance.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "3 Related Works"
+  },
+  {
+    "subject": "PoS tags",
+    "predicate": "uses",
+    "object": "classifier",
+    "object_type": "Model",
+    "source_sentence": "In supervised approaches for keyphrase extraction, POS tags assigned to words have been chosen as one type of important syntactic features, used to train the classifier.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "4.4 Parallel Seq2Seq Model"
+  },
+  {
+    "subject": "PoS tags",
+    "predicate": "uses",
+    "object": "Seq2seq",
+    "object_type": "Model",
+    "source_sentence": "We incorporate the POS tags into Seq2Seq network to capture the syntactic combinations of keyphrases.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "4.4 Parallel Seq2Seq Model"
+  },
+  {
+    "subject": "POS",
+    "predicate": "uses",
+    "object": "Stanford Parser",
+    "object_type": "Other",
+    "source_sentence": "We use Stanford Parser1 to obtain the 32 POS tags and 16 phrase tags of words.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "4.4 Parallel Seq2Seq Model"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "source document x",
+    "object_type": "Dataset",
+    "source_sentence": "We use the RNN encoder to produce the set of word hidden vector {hw} from the source document x, and produce the set of syntactic tag hidden vector {ht} from the POS and phrase tags.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "4.4 Parallel Seq2Seq Model"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "word",
+    "object_type": "Other",
+    "source_sentence": "We create the look-up based embedding matrices for word, POS tag and phrase tag, and concatenate the embeddings of POS tag and phrase tag into a long vector as input of the tag encoder.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "4.4 Parallel Seq2Seq Model"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "POS tag",
+    "object_type": "Concept",
+    "source_sentence": "We create the look-up based embedding matrices for word, POS tag and phrase tag, and concatenate the embeddings of POS tag and phrase tag into a long vector as input of the tag encoder.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "4.4 Parallel Seq2Seq Model"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "phrase tag",
+    "object_type": "Concept",
+    "source_sentence": "We create the look-up based embedding matrices for word, POS tag and phrase tag, and concatenate the embeddings of POS tag and phrase tag into a long vector as input of the tag encoder.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "4.4 Parallel Seq2Seq Model"
+  },
+  {
+    "subject": "probability",
+    "predicate": "uses",
+    "object": "softmax function",
+    "object_type": "Other",
+    "source_sentence": "The probability of predicting each POS tag of word is given as follows: p(ti|t<i, x) = gt(ti−1, st i, ci) (16) where gt is a softmax function, st i is a hidden vector of POS tag decoder .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "4.4.2 Parallel Decoders"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "Phrases",
+    "object_type": "Concept",
+    "source_sentence": "We use the beam search to generate multiple phrases.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "5.2 Experimental Settings"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "addresses",
+    "object": "Keyphrase Generation",
+    "object_type": "Task",
+    "source_sentence": "we propose the multi-task Seq2Seq network for keyphrase generation",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "5.5.5 Inﬂuence of Weight Parameter"
+  },
+  {
+    "subject": "Auxiliary Task",
+    "predicate": "addresses",
+    "object": "PoS tags",
+    "object_type": "Concept",
+    "source_sentence": "the auxiliary task of predicting POS tags of keyphrases",
+    "extraction_mode": "fixed",
+    "paper": "P19-1515",
+    "title": "Incorporating Linguistic Constraints into Keyphrase Generation",
+    "section": "5.5.5 Inﬂuence of Weight Parameter"
+  }
+]

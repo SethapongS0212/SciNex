@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "greedy search",
+    "object_type": "Method",
+    "source_sentence": "All the experiments use greedy search as the decoding algorithm during testing.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "4.3 Training Details"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "NVIDIA Tesla V100",
+    "object_type": "Other",
+    "source_sentence": "We conduct experiments using single card NVIDIA Tesla V100.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "4.3 Training Details"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "gradient clipping",
+    "object_type": "Method",
+    "source_sentence": "We also apply gradient clipping with range [-1,1] during training.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "4.3 Training Details"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "21 Wikipedia infobox-to-text datasets",
+    "object_type": "Dataset",
+    "source_sentence": "To verify the effectiveness of KBAtt, we conduct experiments on 21 Wikipedia infobox-to-text datasets.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "4.4.1 Overall Results"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "achieves",
+    "object": "44.28",
+    "object_type": "Metric",
+    "source_sentence": "our baseline Seq2Seq+Copy gains a perfor- mance of 44.28 which is comparable to Sha et al. (2017) and Liu et al. (2017) and significantly bet- ter than Lebret et al. (2016) and Bao et al. (2018), and this baseline model is general without specific design, e.g., order planning from Sha et al. (2017) or field -gating encoder from Liu et al.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "4.4.2 Results on WikiBio"
+  },
+  {
+    "subject": "Neural Models",
+    "predicate": "uses",
+    "object": "external knowledge",
+    "object_type": "Concept",
+    "source_sentence": "incorporating external knowledge into neural models can improve model performances especially when the original data is sparse",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "4.5 Analysis of Few-Shot Learning Ability"
+  },
+  {
+    "subject": "Neural Models",
+    "predicate": "achieves",
+    "object": "generating fluent outputs",
+    "object_type": "Task",
+    "source_sentence": "The current state-of-the-art neural models are quite good at generating fluent outputs, but perform poorly in content selection and capturing long-term structure.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "bootstrapping",
+    "predicate": "addresses",
+    "object": "multi-sentence text generation",
+    "object_type": "Task",
+    "source_sentence": "Perez-Beltrachini and Lapata (2018) generalize this task to multi-sentence text generation, where they focus on bootstrapping generators from loosely aligned data.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Incorporating External Knowledge",
+    "predicate": "addresses",
+    "object": "single sentence generation",
+    "object_type": "Task",
+    "source_sentence": "Different from the previous work, we exploit incorporating external knowledge into this task to improve the fidelity of generated text.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "External Knowledge",
+    "predicate": "addresses",
+    "object": "neural models for other NLP tasks",
+    "object_type": "Task",
+    "source_sentence": "Our work is also relevant to recent works on integrating external knowledge into neural models for other NLP tasks.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "5 Related Work"
+  }
+]

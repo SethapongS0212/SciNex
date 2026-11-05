@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "explicit tracking of entities",
+    "object_type": "Concept",
+    "source_sentence": "(2017) introduced a language model, ENTITYNLM, that adds explicit tracking of entities, which have their own representations that are updated as the document progresses.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1204",
+    "title": "Neural Text Generation in Stories Using Entity Representations as Context",
+    "section": "2.2 Context from Entities"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "latent variables",
+    "object_type": "Concept",
+    "source_sentence": "Training with latent variables is also expensive.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1204",
+    "title": "Neural Text Generation in Stories Using Entity Representations as Context",
+    "section": "2.4 Learning"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "DyNet",
+    "object_type": "Other",
+    "source_sentence": "The models are implemented using DyNet with GPU support.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1204",
+    "title": "Neural Text Generation in Stories Using Entity Representations as Context",
+    "section": "3 Implementation Details"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "DyNet",
+    "object_type": "Other",
+    "source_sentence": "The input word embeddings are randomly initialized with the default method in DyNet and updated during training jointly with other parameters.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1204",
+    "title": "Neural Text Generation in Stories Using Entity Representations as Context",
+    "section": "3 Implementation Details"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "Brown clusters",
+    "object_type": "Other",
+    "source_sentence": "For class-factored softmax, we use 160 Brown clusters estimated from the training data.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1204",
+    "title": "Neural Text Generation in Stories Using Entity Representations as Context",
+    "section": "3 Implementation Details"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "312 adventure books from the Toronto Book Corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We trained all models on 312 adventure books from the Toronto Book Corpus , with development and test sets of an additional 39 books each.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1204",
+    "title": "Neural Text Generation in Stories Using Entity Representations as Context",
+    "section": "4 Data"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "candidates",
+    "object_type": "Other",
+    "source_sentence": "the language model scores are used to rank candidates.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1204",
+    "title": "Neural Text Generation in Stories Using Entity Representations as Context",
+    "section": "5 Experiment: Mention Generation"
+  }
+]

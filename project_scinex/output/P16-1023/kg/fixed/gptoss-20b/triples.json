@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "neural network models",
+    "object_type": "Model",
+    "source_sentence": "These models learn word embeddings for input and target spaces using neural network models.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4 Experimental setup and results"
+  },
+  {
+    "subject": "Learning Embeddings",
+    "predicate": "uses",
+    "object": "bag-of-word (BoW) models",
+    "object_type": "Model",
+    "source_sentence": "CBOW and SKIP are learning embeddings using bag-of-word (BoW) models",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4 Experimental setup and results"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "PPMI representations",
+    "object_type": "Other",
+    "source_sentence": "After learning embeddings with different models, the SVM trained on PPMI representations assigned all twenty test words to the negative class.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.2 Robustness against sparseness"
+  },
+  {
+    "subject": "SVMs",
+    "predicate": "uses",
+    "object": "learning-based representations",
+    "object_type": "Other",
+    "source_sentence": "The SVMs trained on learning-based representations classified all twenty test words correctly.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.2 Robustness against sparseness"
+  },
+  {
+    "subject": "Grammar",
+    "predicate": "produces",
+    "object": "two types of contexts",
+    "object_type": "Other",
+    "source_sentence": "The grammar in Figure 3 generates two types of contexts that we interpret as two different meanings: a-b contexts (lines 1,4) and c-d contexts (lines 2, 3).",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.3 Robustness against ambiguity"
+  },
+  {
+    "subject": "Grammar",
+    "predicate": "produces",
+    "object": "training corpus of 100,000 sentences",
+    "object_type": "Dataset",
+    "source_sentence": "The grammar specified in Figure 3 was used to generate a training corpus of 100,000 sentences.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.3 Robustness against ambiguity"
+  },
+  {
+    "subject": "Linear SVMs",
+    "predicate": "trainedon",
+    "object": "train set",
+    "object_type": "Dataset",
+    "source_sentence": "Linear SVMs were trained for the binary classification task on the train set.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.3 Robustness against ambiguity"
+  },
+  {
+    "subject": "data-driven",
+    "predicate": "uses",
+    "object": "clustering",
+    "object_type": "Method",
+    "source_sentence": "data-driven approaches like clustering have been used to create representations for different usage clusters of words that may capture some of its senses.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.3 Robustness against ambiguity"
+  },
+  {
+    "subject": "SVMs",
+    "predicate": "evaluatedon",
+    "object": "test",
+    "object_type": "Dataset",
+    "source_sentence": "SVMs are trained on the binary classification task femi-nine vs. masculine and evaluated on test.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.4 Accurate and consistent representation of multifacetedness"
+  },
+  {
+    "subject": "learning-based",
+    "predicate": "uses",
+    "object": "activation pattern over several dimensions",
+    "object_type": "Other",
+    "source_sentence": "learning-based models use an activation pattern over several dimensions.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.4 Accurate and consistent representation of multifacetedness"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "facets other than gender: syntactic categories and paradigms",
+    "object_type": "Other",
+    "source_sentence": "most of the capacity of the embeddings is used for encoding facets other than gender: syntactic categories and paradigms.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.4 Accurate and consistent representation of multifacetedness"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "achieves",
+    "object": "29% error on PPMI",
+    "object_type": "Metric",
+    "source_sentence": "Error rates were 29% for PPMI and 25% for LBL (similarity) and 16% for PPMI and 14% for LBL (analogy).",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.4 Accurate and consistent representation of multifacetedness"
+  },
+  {
+    "subject": "Analogy",
+    "predicate": "achieves",
+    "object": "16% error on PPMI",
+    "object_type": "Metric",
+    "source_sentence": "Error rates were 29% for PPMI and 25% for LBL (similarity) and 16% for PPMI and 14% for LBL (analogy).",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.4 Accurate and consistent representation of multifacetedness"
+  },
+  {
+    "subject": "SVM Classification",
+    "predicate": "achieves",
+    "object": "0% error",
+    "object_type": "Metric",
+    "source_sentence": "This high error, compared to 0% error for SVM classification, indicates it is not possible to determine the presence of a low entropy facet accurately and consistently when full-space similarity and analogy are used as test criteria.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.4 Accurate and consistent representation of multifacetedness"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "models",
+    "object_type": "Model",
+    "source_sentence": "We calculate embeddings using our different models.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "5.2 Extrinsic evaluation: entity typing"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "uses",
+    "object": "overall direction of vectors",
+    "object_type": "Other",
+    "source_sentence": "This supports our hypothesis that only part of the information about types that is present in the vectors can be determined by similarity-based methods that use the overall direction of vectors , i.e., full-space similarity.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "5.2 Extrinsic evaluation: entity typing"
+  }
+]

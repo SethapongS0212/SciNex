@@ -1,0 +1,233 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "GLUE benchmark",
+    "object_type": "Dataset",
+    "source_sentence": "These models are usually evaluated on classification tasks such as the GLUE benchmark , extractive question answering tasks , and dialogue context understanding .",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "language denoising objectives",
+    "object_type": "Other",
+    "source_sentence": "Recent works unified unidirectional LM and bidirectional LM pre-training approaches, and proposed a Seq2Seq LM, which are pre- trained with language denoising objectives.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Natural Language Generation",
+    "predicate": "addresses",
+    "object": "generating responses",
+    "object_type": "Task",
+    "source_sentence": "natural language generation (NLG) for generating responses.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "addresses",
+    "object": "NLP downstream tasks",
+    "object_type": "Task",
+    "source_sentence": "Language model (LM) pre-training , has been shown to be beneficial in NLP downstream tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Transfer Learning",
+    "predicate": "uses",
+    "object": "pre-trained Seq2Seq models",
+    "object_type": "Model",
+    "source_sentence": "we propose a simple transfer learning framework that can be easily set up with pre- trained Seq2Seq models",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Dialogue State",
+    "predicate": "uses",
+    "object": "Domain Information",
+    "object_type": "Concept",
+    "source_sentence": "When the dialogue state of domain di needs to be updated, i.e., L(di) ≠ ε, we append the domain information [di] at the beginning of L(di) to construct Lev of domain di:",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "H DecL"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "deterministic function f",
+    "object_type": "Method",
+    "source_sentence": "At inference time, the model first generates Levt at turn t, then edits the Bt−1 by using a deterministic function f",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "H DecL"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Lev generation losses",
+    "object_type": "Other",
+    "source_sentence": "During training, all parameters are jointly optimized by minimizing the sum of the Lev generation and response generation losses:",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "3.2 MinTL Framework"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "response generation losses",
+    "object_type": "Other",
+    "source_sentence": "During training, all parameters are jointly optimized by minimizing the sum of the Lev generation and response generation losses:",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "3.2 MinTL Framework"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "bidirectional encoder",
+    "object_type": "Method",
+    "source_sentence": "BART is implemented as a standard encoder-decoder Transformer with a bidirectional encoder and an autoregressive decoder.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "3.3 Backbone Models"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "autoregressive decoder",
+    "object_type": "Method",
+    "source_sentence": "BART is implemented as a standard encoder-decoder Transformer with a bidirectional encoder and an autoregressive decoder.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "3.3 Backbone Models"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "Token Masking",
+    "object_type": "Method",
+    "source_sentence": "BART applies five different document corruption methods in the pre-training, including Token Masking , To- ken Deletion, Text Infilling , Sentence Permutation, and Document Rotation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "3.3 Backbone Models"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "Token Deletion",
+    "object_type": "Method",
+    "source_sentence": "BART applies five different document corruption methods in the pre-training, including Token Masking , To- ken Deletion, Text Infilling , Sentence Permutation, and Document Rotation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "3.3 Backbone Models"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "Text Infilling",
+    "object_type": "Method",
+    "source_sentence": "BART applies five different document corruption methods in the pre-training, including Token Masking , To- ken Deletion, Text Infilling , Sentence Permutation, and Document Rotation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "3.3 Backbone Models"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "Sentence Permutation",
+    "object_type": "Method",
+    "source_sentence": "BART applies five different document corruption methods in the pre-training, including Token Masking , To- ken Deletion, Text Infilling , Sentence Permutation, and Document Rotation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "3.3 Backbone Models"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "Document Rotation",
+    "object_type": "Method",
+    "source_sentence": "BART applies five different document corruption methods in the pre-training, including Token Masking , To- ken Deletion, Text Infilling , Sentence Permutation, and Document Rotation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "3.3 Backbone Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "segment token embeddings and KB state embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "We add special segment token embeddings and KB state embeddings to pre-trained models by extending the token embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "4.2 Implementation Details"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "fluency of the generated response",
+    "object_type": "Concept",
+    "source_sentence": "BLEU for measuring the fluency of the generated response.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "4.3 Evaluation Metrics"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "Dialogue State",
+    "object_type": "Concept",
+    "source_sentence": "Oracle DST: Seq2Seq, fine-tuned GPT2-small, and GPT2-medium with oracle dialogue state as input .",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "4.4.1 End-to-end Modeling"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "comprises",
+    "object": "pre-trained dialogue modules",
+    "object_type": "Process",
+    "source_sentence": "SFN + RL: a seq2seq network comprised of several pre-trained dialogue modules that are connected through hidden states.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "4.4.1 End-to-end Modeling"
+  },
+  {
+    "subject": "Data Augmentation",
+    "predicate": "uses",
+    "object": "system act and user act annotations",
+    "object_type": "Concept",
+    "source_sentence": "The author also proposed the multi-action data augmentation method by leveraging system act and user act annotations.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.273",
+    "title": "MinTL: Minimalist Transfer Learning for Task-Oriented Dialogue Systems",
+    "section": "4.4.1 End-to-end Modeling"
+  }
+]

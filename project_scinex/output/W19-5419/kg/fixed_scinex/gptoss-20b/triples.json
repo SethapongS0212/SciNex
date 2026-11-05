@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "4.02",
+    "object_type": "Metric",
+    "source_sentence": "The study reports a gain of 4.02 BLEU points over the baseline through transfer learning.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5419",
+    "title": "Exploring Transfer Learning and Domain Data Selection for the Bio-medical translation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "adaptation",
+    "predicate": "achieves",
+    "object": "translation quality",
+    "object_type": "Concept",
+    "source_sentence": "Adaptation using existing parallel texts has shown to be beneficial for translation quality by distributing the probability mass associated with the existing translation phrases.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5419",
+    "title": "Exploring Transfer Learning and Domain Data Selection for the Bio-medical translation",
+    "section": "2.2 Domain adaptation using selective data training"
+  },
+  {
+    "subject": "Information retrieval",
+    "predicate": "addresses",
+    "object": "translation model adaptation",
+    "object_type": "Concept",
+    "source_sentence": "Information retrieval has been previously used in the context of translation model adaptation by , who use IR to find sentences similar to the test set from the parallel training data.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5419",
+    "title": "Exploring Transfer Learning and Domain Data Selection for the Bio-medical translation",
+    "section": "2.2 Domain adaptation using selective data training"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "15.65",
+    "object_type": "Metric",
+    "source_sentence": "The BLEU scores of the baseline system , calculated over test set from Medline titles corpus were 15.65.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5419",
+    "title": "Exploring Transfer Learning and Domain Data Selection for the Bio-medical translation",
+    "section": "4.1 Adding in-domain data to In-domain baseline"
+  },
+  {
+    "subject": "Transfer Learning",
+    "predicate": "achieves",
+    "object": "4 BLEU points",
+    "object_type": "Metric",
+    "source_sentence": "Transfer learning over selective data training improved the system (M2) performance by 4 BLEU points from the baseline.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5419",
+    "title": "Exploring Transfer Learning and Domain Data Selection for the Bio-medical translation",
+    "section": "4.1 Adding in-domain data to In-domain baseline"
+  },
+  {
+    "subject": "Transfer Learning",
+    "predicate": "uses",
+    "object": "selective data training",
+    "object_type": "Method",
+    "source_sentence": "The third experiment was done by applying transfer learning to initialize the selective data training from baseline model, but this time data selection was performed using English queries (ncSDE).",
+    "extraction_mode": "fixed",
+    "paper": "W19-5419",
+    "title": "Exploring Transfer Learning and Domain Data Selection for the Bio-medical translation",
+    "section": "4.1 Adding in-domain data to In-domain baseline"
+  },
+  {
+    "subject": "Data Selection",
+    "predicate": "uses",
+    "object": "English queries",
+    "object_type": "Other",
+    "source_sentence": "The third experiment was done by applying transfer learning to initialize the selective data training from baseline model, but this time data selection was performed using English queries (ncSDE).",
+    "extraction_mode": "fixed",
+    "paper": "W19-5419",
+    "title": "Exploring Transfer Learning and Domain Data Selection for the Bio-medical translation",
+    "section": "4.1 Adding in-domain data to In-domain baseline"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "News Commentary corpus",
+    "object_type": "Dataset",
+    "source_sentence": "In this experiment we continue to train the baseline system with full News Commentary corpus, which was used for finding domain related sentences for selective data training in above mentioned experiments (M2 and M3).",
+    "extraction_mode": "fixed",
+    "paper": "W19-5419",
+    "title": "Exploring Transfer Learning and Domain Data Selection for the Bio-medical translation",
+    "section": "4.1 Adding in-domain data to In-domain baseline"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "17.44",
+    "object_type": "Metric",
+    "source_sentence": "Interest- ingly, this is the best result achieved, giving a total improvement of 17.44 BLEU points from the out- domain books corpus baseline (4.53 ⇒21.97).",
+    "extraction_mode": "fixed",
+    "paper": "W19-5419",
+    "title": "Exploring Transfer Learning and Domain Data Selection for the Bio-medical translation",
+    "section": "4.2 Adding in-domain data to Out-domain baseline"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "3.21",
+    "object_type": "Metric",
+    "source_sentence": "It lost 3.21 BLEU points with respect to its corresponding system trained using tokenized corpora.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5419",
+    "title": "Exploring Transfer Learning and Domain Data Selection for the Bio-medical translation",
+    "section": "4.2 Adding in-domain data to Out-domain baseline"
+  }
+]

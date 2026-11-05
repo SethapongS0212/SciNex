@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "popular translation-evaluation metrics",
+    "object_type": "Metric",
+    "source_sentence": "Quantitative evaluation of our system is done using popular translation-evaluation metrics, and document similarity measurement metrics.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "document similarity measurement metrics",
+    "object_type": "Metric",
+    "source_sentence": "Quantitative evaluation of our system is done using popular translation-evaluation metrics, and document similarity measurement metrics.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "Filtering",
+    "object_type": "Method",
+    "source_sentence": "For simplicity, we use attention based filtering.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "2 Challenges in Sarcasm Generation"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "sarcasm scorer",
+    "object_type": "Method",
+    "source_sentence": "One possible idea to tackle such problems is to employ a sarcasm scorer that can determine the sarcasm content in the generated output, and use the scores given by the sarcasm scorer for better training of the generator.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "3.4 Sarcasm Synthesis"
+  },
+  {
+    "subject": "Reinforcement Learning",
+    "predicate": "uses",
+    "object": "sarcasm content score",
+    "object_type": "Concept",
+    "source_sentence": "For this, we apply reinforcement learning which considers sarcasm content score as a form of reward and use it to fine-tune the learning process.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "3.4 Sarcasm Synthesis"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Method",
+    "source_sentence": "The classifier is based on embedding, LSTM and softmax layers.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "3.4 Sarcasm Synthesis"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "Softmax",
+    "object_type": "Method",
+    "source_sentence": "The classifier is based on embedding, LSTM and softmax layers.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "3.4 Sarcasm Synthesis"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "validation accuracy of 96%",
+    "object_type": "Metric",
+    "source_sentence": "the classifier trains for 10 epochs with a batch size of 32, and achieves a validation accuracy of 96% and training accuracy of 98%.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "4.2 Model Conﬁguration"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "training accuracy of 98%",
+    "object_type": "Metric",
+    "source_sentence": "the classifier trains for 10 epochs with a batch size of 32, and achieves a validation accuracy of 96% and training accuracy of 98%.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "4.2 Model Conﬁguration"
+  },
+  {
+    "subject": "POS tagger",
+    "predicate": "uses",
+    "object": "Spacy5",
+    "object_type": "Other",
+    "source_sentence": "For bootstrapping negative situations and other purposes, the POS tagger from Spacy5 is used.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "4.2 Model Conﬁguration"
+  },
+  {
+    "subject": "bigram",
+    "predicate": "produces",
+    "object": "BLEU score of 62.25%",
+    "object_type": "Metric",
+    "source_sentence": "The positive sentiment induction module, at the end of the training, produces a bigram BLEU score of 62.25%.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "4.2 Model Conﬁguration"
+  },
+  {
+    "subject": "bigram",
+    "predicate": "produces",
+    "object": "BLEU score of 59.3%",
+    "object_type": "Metric",
+    "source_sentence": "At the end of the training, the bigram BLEU score on the validation set turns out to be 59.3%.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "4.2 Model Conﬁguration"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Method",
+    "source_sentence": "The embedding size for this classifier is 300 and it uses two layers of unidirectional LSTMs with a hidden dimension of 300.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "4.2 Model Conﬁguration"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "produces",
+    "object": "probability estimates",
+    "object_type": "Concept",
+    "source_sentence": "The probability estimates given by the classifier for any input text are taken as reward scores.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "4.2 Model Conﬁguration"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "addresses",
+    "object": "Text",
+    "object_type": "Task",
+    "source_sentence": "The probability estimates given by the classifier for any input text are taken as reward scores.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "4.2 Model Conﬁguration"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "uses",
+    "object": "cross entropy loss criterion",
+    "object_type": "Concept",
+    "source_sentence": "For optimization, cross entropy loss criterion is used.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "4.2 Model Conﬁguration"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "METEOR",
+    "object_type": "Metric",
+    "source_sentence": "For evaluation, we still use the popular translation and summarization evaluation metrics METEOR and ROUGE.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "4.3 Evaluation Criteria"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "ROUGE",
+    "object_type": "Metric",
+    "source_sentence": "For evaluation, we still use the popular translation and summarization evaluation metrics METEOR and ROUGE.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "4.3 Evaluation Criteria"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "literal opinionated texts",
+    "object_type": "Other",
+    "source_sentence": "We proposed a first of its kind approach for textual sarcasm generation from literal opinionated texts.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "7 Conclusion and Future Work"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "benchmark dataset",
+    "object_type": "Dataset",
+    "source_sentence": "For evaluation , we prepared a benchmark dataset containing literal opinions and their sarcastic versions.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1636",
+    "title": "A Modular Architecture for Unsupervised Sarcasm Generation",
+    "section": "7 Conclusion and Future Work"
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "addresses",
+    "object": "memorizing pretraining corpora",
+    "object_type": "Concept",
+    "source_sentence": "bidirectional LMs like BERT and pretraining strategies like larger training batches in RoBERTa are helpful for memorizing pretraining corpora",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "2 ElitePLM"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "addresses",
+    "object": "memorizing pretraining corpora",
+    "object_type": "Concept",
+    "source_sentence": "bidirectional LMs like BERT and pretraining strategies like larger training batches in RoBERTa are helpful for memorizing pretraining corpora",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "2 ElitePLM"
+  },
+  {
+    "subject": "XLNet",
+    "predicate": "addresses",
+    "object": "bidirectional context in language comprehension",
+    "object_type": "Concept",
+    "source_sentence": "permutation language modeling in XLNet is beneficial for modeling the bidirectional context in language comprehension",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "2 ElitePLM"
+  },
+  {
+    "subject": "ALBERT",
+    "predicate": "addresses",
+    "object": "sentence-level reasoning tasks",
+    "object_type": "Concept",
+    "source_sentence": "inter-sentence coherence objective in ALBERT is suitable for sentence-level reasoning tasks",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "2 ElitePLM"
+  },
+  {
+    "subject": "BART",
+    "predicate": "addresses",
+    "object": "short text generation",
+    "object_type": "Concept",
+    "source_sentence": "text-to-text LMs using denoising objective like BART perform better in short text generation",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "2 ElitePLM"
+  },
+  {
+    "subject": "GPT-2",
+    "predicate": "trainedon",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "we continuously train GPT-2 and T5 on Wikipedia using their pretraining objectives.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "3.2 Memory Tests"
+  },
+  {
+    "subject": "GPT-2",
+    "predicate": "uses",
+    "object": "auto-regressive self-attention",
+    "object_type": "Method",
+    "source_sentence": "Compared with bidirectional and hybrid LMs (e.g., BERT and XLNet), GPT-2 uses auto-regressive self-attention where every token can only attend to the context to BERT RoBERTa ALBERT GPT-2 XLNet UniLM ERNIE T5 BART ProphetNet its left.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "3.2 Memory Tests"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "bidirectional objectives",
+    "object_type": "Method",
+    "source_sentence": "During pretraining, RoBERTa adopts bidirectional objectives and novel strategies like larger training batches.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "3.2 Memory Tests"
+  },
+  {
+    "subject": "XLNet",
+    "predicate": "uses",
+    "object": "permutation language modeling",
+    "object_type": "Method",
+    "source_sentence": "Compared with bidirectional language modeling in BERT RoBERTa ALBERT GPT-2 XLNet UniLM ERNIE T5 BART ProphetNet BERT, permutation language modeling (relying on all permutations of the factorization order) used in XLNet enables PLMs to learn more context for enhancing PLMs' understanding of text, which seems to be effective for good comprehension ability.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "3.3 Comprehension Tests"
+  },
+  {
+    "subject": "ProphetNet",
+    "predicate": "achieves",
+    "object": "great performance on short text generation",
+    "object_type": "Other",
+    "source_sentence": "We can observe that ProphetNet and BART achieve great performance on short text generation , while GPT-2 and T5 show better results on long text generation .",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "3.5 Composition Tests"
+  },
+  {
+    "subject": "BART",
+    "predicate": "achieves",
+    "object": "great performance on short text generation",
+    "object_type": "Other",
+    "source_sentence": "We can observe that ProphetNet and BART achieve great performance on short text generation , while GPT-2 and T5 show better results on long text generation .",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "3.5 Composition Tests"
+  },
+  {
+    "subject": "GPT-2",
+    "predicate": "achieves",
+    "object": "better results on long text generation",
+    "object_type": "Other",
+    "source_sentence": "We can observe that ProphetNet and BART achieve great performance on short text generation , while GPT-2 and T5 show better results on long text generation .",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "3.5 Composition Tests"
+  },
+  {
+    "subject": "BART",
+    "predicate": "employs",
+    "object": "denoising objectives",
+    "object_type": "Other",
+    "source_sentence": "Specifically, BART employs denoising objectives for reconstructing the corrupted original text",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "3.5 Composition Tests"
+  },
+  {
+    "subject": "GPT-2",
+    "predicate": "employs",
+    "object": "left-to-right prediction objective",
+    "object_type": "Other",
+    "source_sentence": "the left-to-right prediction objective in GPT-2 can be more suitable",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "3.5 Composition Tests"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "bidirectional language modeling",
+    "object_type": "Method",
+    "source_sentence": "de- designing PLMs with special objectives like bidirectional language modeling in BERT and strategies like larger training batches in RoBERTa for larger memory capacity will further benefit PLMs in the downstream comprehension tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "4 Discussion"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "larger training batches",
+    "object_type": "Method",
+    "source_sentence": "de- designing PLMs with special objectives like bidirectional language modeling in BERT and strategies like larger training batches in RoBERTa for larger memory capacity will further benefit PLMs in the downstream comprehension tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "4 Discussion"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "n-grams",
+    "object_type": "Other",
+    "source_sentence": "For automatic metrics, BLEU-n and ROUGE-n compute the ratios of overlapping n-grams between generated and real text, while METEOR measures word-to-word matches based on WordNet between generated and real text.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "F Composition Tests"
+  },
+  {
+    "subject": "ROUGE",
+    "predicate": "uses",
+    "object": "n-grams",
+    "object_type": "Other",
+    "source_sentence": "For automatic metrics, BLEU-n and ROUGE-n compute the ratios of overlapping n-grams between generated and real text, while METEOR measures word-to-word matches based on WordNet between generated and real text.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.258",
+    "title": "Abstract",
+    "section": "F Composition Tests"
+  }
+]

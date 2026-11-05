@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Label Propagation",
+    "predicate": "uses",
+    "object": "Junto label propagation toolkit",
+    "object_type": "Other",
+    "source_sentence": "We used the Junto label prop- agation toolkit for label propagation.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1109",
+    "title": "Graph Propagation for Paraphrasing Out-of-Vocabulary Words in Statistical Machine Translation∗",
+    "section": "3.1 Label Propagation"
+  },
+  {
+    "subject": "Word Alignment",
+    "predicate": "uses",
+    "object": "GIZA++",
+    "object_type": "Other",
+    "source_sentence": "Word alignment is done using GIZA++.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1109",
+    "title": "Graph Propagation for Paraphrasing Out-of-Vocabulary Words in Statistical Machine Translation∗",
+    "section": "4.1 Experimental Setup"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "KenLM toolkit",
+    "object_type": "Other",
+    "source_sentence": "For the language model, we used the KenLM toolkit to create a 5-gram language model on the target side of the Europarl corpus (v7) with approximately 54M tokens with Kneser-Ney smoothing.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1109",
+    "title": "Graph Propagation for Paraphrasing Out-of-Vocabulary Words in Statistical Machine Translation∗",
+    "section": "4.1 Experimental Setup"
+  },
+  {
+    "subject": "log-linear",
+    "predicate": "uses",
+    "object": "new feature",
+    "object_type": "Feature",
+    "source_sentence": "The probability for new entries are added as a new feature in the log-linear framework to be tuned along with other features.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1109",
+    "title": "Graph Propagation for Paraphrasing Out-of-Vocabulary Words in Statistical Machine Translation∗",
+    "section": "4.1 Experimental Setup"
+  },
+  {
+    "subject": "Word Alignments",
+    "predicate": "uses",
+    "object": "translations for each oov",
+    "object_type": "Other",
+    "source_sentence": "The resulting word alignments are used to extract the translations for each oov.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1109",
+    "title": "Graph Propagation for Paraphrasing Out-of-Vocabulary Words in Statistical Machine Translation∗",
+    "section": "4.2 Evaluation"
+  },
+  {
+    "subject": "Evaluation metrics",
+    "predicate": "uses",
+    "object": "possible translations for oovs",
+    "object_type": "Other",
+    "source_sentence": "Two intrinsic evaluation metrics that we use to evaluate the possible translations for oovs are Mean Reciprocal Rank (MRR) and Recall.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1109",
+    "title": "Graph Propagation for Paraphrasing Out-of-Vocabulary Words in Statistical Machine Translation∗",
+    "section": "4.2 Evaluation"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "translations",
+    "object_type": "Concept",
+    "source_sentence": "Since Moses uses a certain number of translations per source phrase (called the translation table limit or ttl which we set to 20 in our experiments), we use the recall measure to evaluate the top ttl translations in the list.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1109",
+    "title": "Graph Propagation for Paraphrasing Out-of-Vocabulary Words in Statistical Machine Translation∗",
+    "section": "4.2.1 MRR"
+  },
+  {
+    "subject": "Context Similarity",
+    "predicate": "uses",
+    "object": "Bilingual Lexicon Induction",
+    "object_type": "Method",
+    "source_sentence": "Context similarity has been used effectively in bilingual lexicon induction",
+    "extraction_mode": "fixed",
+    "paper": "P13-1109",
+    "title": "Graph Propagation for Paraphrasing Out-of-Vocabulary Words in Statistical Machine Translation∗",
+    "section": "5 Related work"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "ResNet-encoded image Vt",
+    "object_type": "Image",
+    "source_sentence": "At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.1 Matterport Room-to-Room"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "previous action at−1",
+    "object_type": "Action",
+    "source_sentence": "At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.1 Matterport Room-to-Room"
+  },
+  {
+    "subject": "Language",
+    "predicate": "achieves",
+    "object": "50%",
+    "object_type": "Metric",
+    "source_sentence": "The language only models achieve nearly 50%, suggesting that despite the entropy filtering in Das et al. (2018a) each question has one answer that is as likely as all other answers combined (e.g. 50% of the answers for What color is the bathtub? are grey, and other examples in Figure 4).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "V ONLY 43.5 42.8 44.2 L ONLY 41.7 41.7 48."
+  },
+  {
+    "subject": "Neural Architectures",
+    "predicate": "addresses",
+    "object": "visual commonsense reasoning",
+    "object_type": "Task",
+    "source_sentence": "Modern approaches use neural architectures to map natural language to the (simulated) world and execute actions (Paxton et al., 2019; Chen et al., 2018; Nguyen et al., 2018; Blukis et al., 2018; Fried et al., 2018; Mei et al., 2016).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Neural Architectures",
+    "predicate": "addresses",
+    "object": "visual question answering",
+    "object_type": "Task",
+    "source_sentence": "Modern approaches use neural architectures to map natural language to the (simulated) world and execute actions (Paxton et al., 2019; Chen et al., 2018; Nguyen et al., 2018; Blukis et al., 2018; Fried et al., 2018; Mei et al., 2016).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "5 Related Work"
+  }
+]

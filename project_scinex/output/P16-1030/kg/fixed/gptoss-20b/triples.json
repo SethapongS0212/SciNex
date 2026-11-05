@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "dependency-based",
+    "predicate": "uses",
+    "object": "300-dimensional word embeddings",
+    "object_type": "Concept",
+    "source_sentence": "As input, we use the 300-dimensional dependency-based word embeddings from Levy and Goldberg (2014).",
+    "extraction_mode": "fixed",
+    "paper": "P16-1030",
+    "title": "Connotation Frames: A Data-Driven Investigation",
+    "section": "3.1 Aspect-Level"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "300 dimensional input vector",
+    "object_type": "Concept",
+    "source_sentence": "which is treated as a 300 dimensional input vector to the classifier.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1030",
+    "title": "Connotation Frames: A Data-Driven Investigation",
+    "section": "3.1 Aspect-Level"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "data examples",
+    "object_type": "Dataset",
+    "source_sentence": "The MaxEnt classifiers learn their weights using LBFGS on the training data examples with re-weighting of samples to maximize for the best average F1 score.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1030",
+    "title": "Connotation Frames: A Data-Driven Investigation",
+    "section": "3.1 Aspect-Level"
+  },
+  {
+    "subject": "log-linear",
+    "predicate": "uses",
+    "object": "feature vector f",
+    "object_type": "Other",
+    "source_sentence": "The potential ψemb is a log-linear function of a feature vector f, which is a one-hot feature vector representing the polarity of a node (+,−,or =).",
+    "extraction_mode": "fixed",
+    "paper": "P16-1030",
+    "title": "Connotation Frames: A Data-Driven Investigation",
+    "section": "3.2 Frame-Level"
+  },
+  {
+    "subject": "SGD",
+    "predicate": "uses",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "All weights were learned using stochastic gradient descent (SGD) over training data.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1030",
+    "title": "Connotation Frames: A Data-Driven Investigation",
+    "section": "3.2 Frame-Level"
+  },
+  {
+    "subject": "SGD",
+    "predicate": "uses",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "weights were learned using SGD over training data.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1030",
+    "title": "Connotation Frames: A Data-Driven Investigation",
+    "section": "3.2 Frame-Level"
+  },
+  {
+    "subject": "Belief Propagation",
+    "predicate": "uses",
+    "object": "connotation frames",
+    "object_type": "Concept",
+    "source_sentence": "We use belief propagation to induce the connotation frames of previously un- seen verbs.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1030",
+    "title": "Connotation Frames: A Data-Driven Investigation",
+    "section": "3.2 Frame-Level"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "addresses",
+    "object": "Context",
+    "object_type": "Concept",
+    "source_sentence": "For example, in the sentence 'his touch contaminated the food,' it is clear that the writer considers 'his touch' to be of negative value in the context of how it impacts the rest of the event.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1030",
+    "title": "Connotation Frames: A Data-Driven Investigation",
+    "section": "4.1 Data and Crowdsourcing"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "uses",
+    "object": "word embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "The most similar verbs are determined using the cosine similarity between word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1030",
+    "title": "Connotation Frames: A Data-Driven Investigation",
+    "section": "4.2 Connotation Frame Prediction"
+  }
+]

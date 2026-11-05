@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "KeLP",
+    "predicate": "uses",
+    "object": "Tree Kernels",
+    "object_type": "Method",
+    "source_sentence": "KeLP , which is based on Tree Kernels and provided top results for all the subtasks in the challenge.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "Qatar living corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Vi and Vj are originally 300-dimension embedding representations of the words, trained on the unannotated part of the Qatar living corpus using Word2Vec with a context window size of 10.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "2 Models"
+  },
+  {
+    "subject": "Support Vector Machines",
+    "predicate": "uses",
+    "object": "extracted kernel",
+    "object_type": "Kernel",
+    "source_sentence": "The extracted kernel is used in Support Vector Machines Φ, whose output decision function is the relevance score among TQ1 and TQ2.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "2 Models"
+  },
+  {
+    "subject": "Support Vector Machines",
+    "predicate": "uses",
+    "object": "Scikit-Learn toolkit",
+    "object_type": "Other",
+    "source_sentence": "Moreover, Support Vector Machines in SPTK and Logistic Regression in Ensemble were implemented based on the Scikit-Learn toolkit and had their hyperparameters tuned by cross-validation on the training set.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "3.2 Settings"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "Scikit-Learn toolkit",
+    "object_type": "Other",
+    "source_sentence": "Moreover, Support Vector Machines in SPTK and Logistic Regression in Ensemble were implemented based on the Scikit-Learn toolkit and had their hyperparameters tuned by cross-validation on the training set.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "3.2 Settings"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "word-translation probabilities",
+    "object_type": "Other",
+    "source_sentence": "we evaluated all the models using the word- translation probabilities, plus the cosine similarity measure depicted in Equation 2.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "3.5 Experiment 2: Word-Similarity"
+  },
+  {
+    "subject": "FastText",
+    "predicate": "uses",
+    "object": "Character-Level Information",
+    "object_type": "Concept",
+    "source_sentence": "we also tested fastText , a distribution which takes character-level information and tends to overcome spelling variations",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "3.5 Experiment 2: Word-Similarity"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "comparesagainst",
+    "object": "EnsSPTK",
+    "object_type": "Other",
+    "source_sentence": "Regarding the comparison between Ensemble and EnsSPTK in the test set of Semeval 2016, the approach without SPTK (Ensemble) is slightly better on re- ranking similar questions , but is sig- nificantly worse on classifying duplicates than En- sSPTK.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "4 Results"
+  }
+]

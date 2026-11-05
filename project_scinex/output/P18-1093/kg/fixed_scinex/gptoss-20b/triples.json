@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "input document",
+    "object_type": "Other",
+    "source_sentence": "In these works, compositional encoders such as gated recurrent units (GRU) or long short-term memory (LSTM) are often employed, with the input document being parsed one word at a time.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "input document",
+    "object_type": "Other",
+    "source_sentence": "In these works, compositional encoders such as gated recurrent units (GRU) or long short-term memory (LSTM) are often employed, with the input document being parsed one word at a time.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Twitter",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct extensive experiments on multiple benchmarks from Twitter, Reddit and the Internet Argument Corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Reddit",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct extensive experiments on multiple benchmarks from Twitter, Reddit and the Internet Argument Corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Internet Argument Corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct extensive experiments on multiple benchmarks from Twitter, Reddit and the Internet Argument Corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "addresses",
+    "object": "NLP Applications",
+    "object_type": "Concept",
+    "source_sentence": "Attention is also commonplace in many NLP applications such as sentiment classification , aspect-level sentiment analysis and entailment classification.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "2.3 Attention Models for NLP"
+  },
+  {
+    "subject": "Attention Model",
+    "predicate": "addresses",
+    "object": "Sarcasm Detection",
+    "object_type": "Task",
+    "source_sentence": "our work is not only the first work that only applies intra-attention to sarcasm detection but also the first attention model for sarcasm detection.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "2.3 Attention Models for NLP"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "word embeddings",
+    "object_type": "embeddings",
+    "source_sentence": "Note that the inputs to the LSTM encoder are the word embeddings right after the input encoding layer and not the output of the intra-attention layer.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "3.3 Long Short-Term Memory Encoder"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "Questions",
+    "object_type": "Concept",
+    "source_sentence": "Our experiments were designed to answer the following research questions (RQs).",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "4 Empirical Evaluation"
+  },
+  {
+    "subject": "Evaluation metrics",
+    "predicate": "addresses",
+    "object": "sarcasm detection task",
+    "object_type": "Task",
+    "source_sentence": "We adopt standard the evaluation metrics for the sarcasm detection task, i.e., macro-averaged F1 and accuracy score.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "4.3 Implementation Details and Metrics"
+  },
+  {
+    "subject": "Text",
+    "predicate": "uses",
+    "object": "NLTK5's Tweet tokenizer",
+    "object_type": "Other",
+    "source_sentence": "Text is preprocessed with NLTK5's Tweet tokenizer.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "4.3 Implementation Details and Metrics"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "RMSProp",
+    "object_type": "Other",
+    "source_sentence": "The learning optimizer used is the RMSProp with an initial learning rate of 0.001.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "4.3 Implementation Details and Metrics"
+  },
+  {
+    "subject": "Word Embedding",
+    "predicate": "uses",
+    "object": "GloVe",
+    "object_type": "Other",
+    "source_sentence": "We initialize the word embedding layer with GloVe.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "4.3 Implementation Details and Metrics"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "Tweets and Reddit dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We use the GloVe model trained on 2B Tweets for the Tweets and Reddit dataset.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "4.3 Implementation Details and Metrics"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "Debates corpus",
+    "object_type": "Dataset",
+    "source_sentence": "The Glove model trained on Common Crawl is used for the Debates corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "4.3 Implementation Details and Metrics"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "development set",
+    "object_type": "Dataset",
+    "source_sentence": "In all experiments, we use a development set to select the best hyperparameters.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "4.3 Implementation Details and Metrics"
+  },
+  {
+    "subject": "LSTMs",
+    "predicate": "comparesagainst",
+    "object": "CNNs",
+    "object_type": "Model",
+    "source_sentence": "On short text, LSTMs are overall better than CNNs.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "4.4 Experimental Results"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "six public benchmarks",
+    "object_type": "Dataset",
+    "source_sentence": "Extensive experiments over six public benchmarks confirm the empirical effectiveness of our proposed model.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "produces",
+    "object": "explainable neural sarcasm detection methods",
+    "object_type": "Concept",
+    "source_sentence": "Analysis of the intra-attention scores shows that our model learns highly interpretable attention weights, paving the way for more explainable neural sarcasm detection methods.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1093",
+    "title": "Reasoning with Sarcasm by Reading In-between",
+    "section": "5 Conclusion"
+  }
+]

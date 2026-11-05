@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Logistic Regression",
+    "predicate": "produces",
+    "object": "classifiers",
+    "object_type": "Classifier",
+    "source_sentence": "Therefore, we train two separate logistic regression classifiers, one for intra- sentence causal link detection and the other for cross- sentence causal link detection.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "4 The Feature Based Local Pairwise Classiﬁers"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "training instances",
+    "object_type": "Other",
+    "source_sentence": "We consider all event mention pairs within a sentence as training instances for the intra- sentence causal relation classifier.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "4 The Feature Based Local Pairwise Classiﬁers"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "training instances",
+    "object_type": "Other",
+    "source_sentence": "Then we pair event mentions from two sentences with one event mention from each sentence , which are used as training instances for the cross- sentence classifier.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "4 The Feature Based Local Pairwise Classiﬁers"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "balanced class weight option",
+    "object_type": "Other",
+    "source_sentence": "We applied the \"balanced\" class weight option3 in logistic regression classi- fiers to deal with the class imbalance problem.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "4 The Feature Based Local Pairwise Classiﬁers"
+  },
+  {
+    "subject": "Dependency Parsing",
+    "predicate": "addresses",
+    "object": "event modifiers",
+    "object_type": "Concept",
+    "source_sentence": "We run the dependency parsing tool from the Stanford CoreNLP and identify event modifiers as words that have a certain dependency relation with an event head word.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "4.1 The Common Feature Set"
+  },
+  {
+    "subject": "Similarity Features",
+    "predicate": "addresses",
+    "object": "similarity between two events",
+    "object_type": "Concept",
+    "source_sentence": "We created various similarity features between two events.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "4.1 The Common Feature Set"
+  },
+  {
+    "subject": "Event coreference",
+    "predicate": "produces",
+    "object": "event coreference links",
+    "object_type": "Other",
+    "source_sentence": "we implemented the within - document neural network based event coreference classifier as described in and used the system to obtain event coreference links.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "4.1 The Common Feature Set"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "produces",
+    "object": "predictions",
+    "object_type": "Other",
+    "source_sentence": "to intra- sentence cases through event coreference links, we use a heuristic method to improve causal relation prediction performance and replace the predictions from the cross- sentence classifier with the predictions from the intra- sentence classifier",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "4.1 The Common Feature Set"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "addresses",
+    "object": "causal relation prediction performance",
+    "object_type": "Other",
+    "source_sentence": "to intra- sentence cases through event coreference links, we use a heuristic method to improve causal relation prediction performance and replace the predictions from the cross- sentence classifier with the predictions from the intra- sentence classifier",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "4.1 The Common Feature Set"
+  },
+  {
+    "subject": "Relations",
+    "predicate": "addresses",
+    "object": "causal relations",
+    "object_type": "Concept",
+    "source_sentence": "Specific sentential syntactic relations may evoke causal relations between event pairs.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "5.2 Fine-grained Causal Structure Constraints"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "Lexical Features",
+    "object_type": "Feature",
+    "source_sentence": "LR (Lexical): the same logistic regression classifier as our local pairwise classifier but using the lexical features only.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "6.2 Baseline Systems"
+  }
+]

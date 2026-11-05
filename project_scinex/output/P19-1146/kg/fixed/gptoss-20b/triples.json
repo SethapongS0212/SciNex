@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "sparse transformations",
+    "object_type": "Other",
+    "source_sentence": "In this paper, we provide an affirmative answer to both questions by proposing neural sparse seq2seq models that replace the softmax transformations (both in the attention and output) by sparse transformations.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "achieves",
+    "object": "processing speed close to softmax",
+    "object_type": "Other",
+    "source_sentence": "We derive a novel exact algorithm for the case of 1.5-entmax, achieving processing speed close to softmax on the GPU, even with large vocabulary sizes.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "produces",
+    "object": "α-entmax mapping",
+    "object_type": "Other",
+    "source_sentence": "Algorithm 1 Compute α-entmax by bisection.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "3.3 Computing the entmax mapping"
+  },
+  {
+    "subject": "lemma",
+    "predicate": "produces",
+    "object": "α-entmax(z) formula",
+    "object_type": "Other",
+    "source_sentence": "(Appendix C.1, Lemma 2): α-entmax(z) = [(α −1)z −τ1] 1/α−1 +, (13)",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "3.3 Computing the entmax mapping"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "α-entmax",
+    "object_type": "Other",
+    "source_sentence": "The following result shows how to compute the backward pass through α-entmax, a requirement when using α-entmax as an attention mechanism.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "3.4 Gradient of the entmax mapping"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "OpenNMT-py",
+    "object_type": "Other",
+    "source_sentence": "We implemented all models with OpenNMT-py.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "achieves",
+    "object": "optimality guarantees",
+    "object_type": "Concept",
+    "source_sentence": "To our knowledge, this is the first instance of a neural seq2seq model that can offer optimality guarantees.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "4.1 Morphological Inﬂection"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "achieves",
+    "object": "13,000 words per second",
+    "object_type": "Other",
+    "source_sentence": "On DEEN, bisection is capable of processing about 10,500 target words per second on a single Nvidia GeForce GTX 1080 GPU, compared to 13,000 words per second for 1.5-entmax with Algorithm 2 and 14,500 words per second with softmax.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "4.2 Machine Translation"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "achieves",
+    "object": "14,500 words per second",
+    "object_type": "Other",
+    "source_sentence": "On DEEN, bisection is capable of processing about 10,500 target words per second on a single Nvidia GeForce GTX 1080 GPU, compared to 13,000 words per second for 1.5-entmax with Algorithm 2 and 14,500 words per second with softmax.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "4.2 Machine Translation"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "achieves",
+    "object": "near-softmax speeds",
+    "object_type": "Other",
+    "source_sentence": "Our proposed Algorithm 2 for 1.5-entmax runs on the GPU at near-softmax speeds (Figure 6).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "4.2 Machine Translation"
+  },
+  {
+    "subject": "Practical Applications",
+    "predicate": "addresses",
+    "object": "translation system",
+    "object_type": "Other",
+    "source_sentence": "This has potential practical applications as a predictive translation system , where the model's support set serves as a list of candidate auto-completions at each time step.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "4.2 Machine Translation"
+  },
+  {
+    "subject": "Meaning",
+    "predicate": "addresses",
+    "object": "words",
+    "object_type": "Other",
+    "source_sentence": "meaning that the supported set of words often has an intuitive interpretation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "4.2 Machine Translation"
+  },
+  {
+    "subject": "Words",
+    "predicate": "addresses",
+    "object": "Meaning",
+    "object_type": "Other",
+    "source_sentence": "meaning that the supported set of words often has an intuitive interpretation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "4.2 Machine Translation"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "addresses",
+    "object": "challenges of large vocabulary sizes",
+    "object_type": "Concept",
+    "source_sentence": "Mostly motivated by the challenges of large vocabulary sizes in seq2seq, an important research direction tackles replacing the cross-entropy loss with other losses or approximations.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "5 Related Work"
+  }
+]

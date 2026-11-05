@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Distant Supervision",
+    "predicate": "achieves",
+    "object": "large number of labeled data",
+    "object_type": "Other",
+    "source_sentence": "Thus, distant supervision can automatically generate a large number of labeled data without labor cost.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Deep Neural Networks",
+    "predicate": "addresses",
+    "object": "relation extraction",
+    "object_type": "Task",
+    "source_sentence": "Recently, significant progress has been made in applying deep neural networks for relation extraction under distant supervision.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "addresses",
+    "object": "wrong labeling problem",
+    "object_type": "Concept",
+    "source_sentence": "To alleviate the wrong labeling problem in distant supervision , attention models have been proposed to select valid instances.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "comprises",
+    "object": "typical attention models without external information",
+    "object_type": "Other",
+    "source_sentence": "As shown in Figure 1 (a), they can be divided into three categories: (1) typical attention models without external information , (2) attention models using KGs , (3) attention models using side information such as entity descriptions .",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "comprises",
+    "object": "attention models using KGs",
+    "object_type": "Other",
+    "source_sentence": "As shown in Figure 1 (a), they can be divided into three categories: (1) typical attention models without external information , (2) attention models using KGs , (3) attention models using side information such as entity descriptions .",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Label Embedding",
+    "predicate": "addresses",
+    "object": "Computer Vision",
+    "object_type": "Concept",
+    "source_sentence": "Label embedding has been widely exploited in computer vision including image classification and text recognition.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Neural Relation Extraction",
+    "predicate": "uses",
+    "object": "Label Embedding",
+    "object_type": "Method",
+    "source_sentence": "The latter leverages the label embeddings as another attention over the instances to select valid instances for improving neural relation extraction.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "4 Our Proposed Model"
+  },
+  {
+    "subject": "Label Information",
+    "predicate": "addresses",
+    "object": "Improving Relation Extraction",
+    "object_type": "Task",
+    "source_sentence": "Label information plays a vital role in selecting valid instances for improving relation extraction.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "4.1 Joint Label Embedding"
+  },
+  {
+    "subject": "Entity Descriptions",
+    "predicate": "addresses",
+    "object": "Label Embedding",
+    "object_type": "Task",
+    "source_sentence": "Entity descriptions provide rich background knowledge for entities and are supposed to benefit the label embedding and relation extraction.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "4.1 Joint Label Embedding"
+  },
+  {
+    "subject": "Entity Descriptions",
+    "predicate": "addresses",
+    "object": "Relation Extraction",
+    "object_type": "Task",
+    "source_sentence": "Entity descriptions provide rich background knowledge for entities and are supposed to benefit the label embedding and relation extraction.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "4.1 Joint Label Embedding"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "predicted probabilities of the relation classes",
+    "object_type": "Concept",
+    "source_sentence": "Therefore, we use softmax to get the predicted probabilities of the relation classes: where Mk is the transformation matrix, bk is the bias.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "4.1 Joint Label Embedding"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Pre-trained Word Embeddings",
+    "object_type": "Method",
+    "source_sentence": "For all the models, we use the pre-trained word embeddings with word2vec tool on NYT corpus for initialization.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "5.4 Parameter Settings"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "TransE",
+    "object_type": "Model",
+    "source_sentence": "The embeddings of entities mentioned in datasets are pre-trained through TransE model.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "5.4 Parameter Settings"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "achieves",
+    "object": "label embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "It demonstrates that the attention of KGs over entity descriptions can help reduce the noise in entity descriptions and thus improve the label embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "5.5.4 Comparison of Variant Models"
+  },
+  {
+    "subject": "Information",
+    "predicate": "addresses",
+    "object": "label embeddings",
+    "object_type": "Concept",
+    "source_sentence": "we will explore other useful information (e.g., correlations among the relations from KGs) available to improve the label embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "6 Conclusion"
+  }
+]

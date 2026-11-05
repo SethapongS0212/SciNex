@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "classifier",
+    "predicate": "addresses",
+    "object": "Sentiment",
+    "object_type": "Concept",
+    "source_sentence": "In this paper, we describe how we created one classifier to detect the sentiment of short messages such as tweets.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2062",
+    "title": "UAIC at SemEval-2019 Task 3: Extracting Much from Little",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "detection",
+    "object_type": "Task",
+    "source_sentence": "In this paper, we describe how we created one classifier to detect the sentiment of short messages such as tweets.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2062",
+    "title": "UAIC at SemEval-2019 Task 3: Extracting Much from Little",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "trainedon",
+    "object": "Large General Corpora",
+    "object_type": "Dataset",
+    "source_sentence": "When choosing the best representations for a certain training dataset , one can either use pre-trained word embeddings that were built using large general corpora or train their own embeddings on a specific corpus which is similar to the type of data the model will be working with.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2062",
+    "title": "UAIC at SemEval-2019 Task 3: Extracting Much from Little",
+    "section": "2.1 Word Embeddings"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "trainedon",
+    "object": "Specific Corpus",
+    "object_type": "Dataset",
+    "source_sentence": "When choosing the best representations for a certain training dataset , one can either use pre-trained word embeddings that were built using large general corpora or train their own embeddings on a specific corpus which is similar to the type of data the model will be working with.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2062",
+    "title": "UAIC at SemEval-2019 Task 3: Extracting Much from Little",
+    "section": "2.1 Word Embeddings"
+  },
+  {
+    "subject": "training",
+    "predicate": "trainedon",
+    "object": "Social Media Data",
+    "object_type": "Dataset",
+    "source_sentence": "training new representation on social media data can bring a number of advantages such as embedding the specific informal language that is used on these platforms and comprising numerous words that might not be very frequent in general corpora and .",
+    "extraction_mode": "fixed",
+    "paper": "S19-2062",
+    "title": "UAIC at SemEval-2019 Task 3: Extracting Much from Little",
+    "section": "2.1 Word Embeddings"
+  },
+  {
+    "subject": "Pre-Trained Embeddings",
+    "predicate": "uses",
+    "object": "GloVe",
+    "object_type": "Model",
+    "source_sentence": "we have tried to utilize pre-trained embeddings offered online such as GloVe, FastText and Word2vec.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2062",
+    "title": "UAIC at SemEval-2019 Task 3: Extracting Much from Little",
+    "section": "3.4 Feature Selection"
+  },
+  {
+    "subject": "Pre-Trained Embeddings",
+    "predicate": "uses",
+    "object": "FastText",
+    "object_type": "Model",
+    "source_sentence": "we have tried to utilize pre-trained embeddings offered online such as GloVe, FastText and Word2vec.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2062",
+    "title": "UAIC at SemEval-2019 Task 3: Extracting Much from Little",
+    "section": "3.4 Feature Selection"
+  },
+  {
+    "subject": "Pre-Trained Embeddings",
+    "predicate": "uses",
+    "object": "Word2vec",
+    "object_type": "Model",
+    "source_sentence": "we have tried to utilize pre-trained embeddings offered online such as GloVe, FastText and Word2vec.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2062",
+    "title": "UAIC at SemEval-2019 Task 3: Extracting Much from Little",
+    "section": "3.4 Feature Selection"
+  },
+  {
+    "subject": "artificial neural networks",
+    "predicate": "uses",
+    "object": "Keras python library",
+    "object_type": "Other",
+    "source_sentence": "In constructing our machine learning model, we chose to use artificial neural networks with the use of the \"Keras\" python library1.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2062",
+    "title": "UAIC at SemEval-2019 Task 3: Extracting Much from Little",
+    "section": "3.5 Model"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "trainable embedding layer of size 256",
+    "object_type": "Other",
+    "source_sentence": "As seen in Figure 2, we used a trainable embedding layer of size 256 as input to fit on our training data.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2062",
+    "title": "UAIC at SemEval-2019 Task 3: Extracting Much from Little",
+    "section": "3.5 Model"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "4 neuron layer",
+    "object_type": "Other",
+    "source_sentence": "Finally outputting the result in a 4 neuron layer using the softmax function to learn the correct expected labels.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2062",
+    "title": "UAIC at SemEval-2019 Task 3: Extracting Much from Little",
+    "section": "3.5 Model"
+  },
+  {
+    "subject": "RMSProp",
+    "predicate": "uses",
+    "object": "optimization algorithm",
+    "object_type": "Other",
+    "source_sentence": "The model was trained using the RMSprop optimization algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "S19-2062",
+    "title": "UAIC at SemEval-2019 Task 3: Extracting Much from Little",
+    "section": "3.5 Model"
+  }
+]

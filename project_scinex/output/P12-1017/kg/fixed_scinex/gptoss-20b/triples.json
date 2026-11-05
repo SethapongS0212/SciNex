@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "German-English news texts",
+    "object_type": "Dataset",
+    "source_sentence": "They perform their experiments on non- parallel German-English news texts",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Translation Model",
+    "predicate": "trainedon",
+    "object": "Monolingual Data",
+    "object_type": "Dataset",
+    "source_sentence": "the translation model that is trained using monolingual data.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "3 Translation Model"
+  },
+  {
+    "subject": "Context Vectors",
+    "predicate": "uses",
+    "object": "Similarity",
+    "object_type": "Concept",
+    "source_sentence": "Similar to this we represent source and target words in a high dimensional vector space of target word weights which we call context vectors and use a similarity coefficient to find possible translation pairs.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "4 Monolingual Context Similarity"
+  },
+  {
+    "subject": "EM Training",
+    "predicate": "uses",
+    "object": "Translation Model",
+    "object_type": "Model",
+    "source_sentence": "After initializa-tion we first perform EM training of the translation model for 20-30 iterations using a 2-gram or 3-gram language model in the target language.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "5 Training Algorithm and Implementation"
+  },
+  {
+    "subject": "EM Training",
+    "predicate": "uses",
+    "object": "Language Model",
+    "object_type": "Model",
+    "source_sentence": "After initializa-tion we first perform EM training of the translation model for 20-30 iterations using a 2-gram or 3-gram language model in the target language.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "5 Training Algorithm and Implementation"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "1.6",
+    "object_type": "Metric",
+    "source_sentence": "also resulted in a 1.6 BLEU point increase compared to previous approaches.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "7 Conclusion"
+  }
+]

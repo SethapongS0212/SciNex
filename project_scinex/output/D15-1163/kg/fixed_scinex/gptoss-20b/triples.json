@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Modified Adsorption (MAD) algorithm",
+    "object_type": "Other",
+    "source_sentence": "We use the Modified Adsorption (MAD) algorithm for graph propagation.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "3.2 Graph Propagation"
+  },
+  {
+    "subject": "Structured Label Propagation",
+    "predicate": "uses",
+    "object": "graph structure",
+    "object_type": "Concept",
+    "source_sentence": "The Structured Label Propagation algorithm (SLP) was used in which uses a graph structure on the target side phrases as well.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "3.2 Graph Propagation"
+  },
+  {
+    "subject": "pruning",
+    "predicate": "addresses",
+    "object": "error propagation",
+    "object_type": "Concept",
+    "source_sentence": "Pruning the graph avoids error propagation by re- moving unreliable edges.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "4.1.1 Graph pruning and PPDB sizes"
+  },
+  {
+    "subject": "Translation Candidates",
+    "predicate": "addresses",
+    "object": "Error Propagation",
+    "object_type": "Concept",
+    "source_sentence": "Another solution to the error propagation issue is to propagate all translation candidates but when providing translations to OOVs in the final phrase",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "4.1.2 Pruning the translation candidates"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "paraphrase pairs",
+    "object_type": "Other",
+    "source_sentence": "This can be done through additional features for paraphrase pairs.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "4.1.3 External Resources for Filtering"
+  },
+  {
+    "subject": "Edit Distance",
+    "predicate": "uses",
+    "object": "misspelled paraphrases",
+    "object_type": "Other",
+    "source_sentence": "For example, edit distance can be used to capture misspelled paraphrases.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "4.1.3 External Resources for Filtering"
+  },
+  {
+    "subject": "named entity recognizer",
+    "predicate": "uses",
+    "object": "names",
+    "object_type": "Other",
+    "source_sentence": "We use a Named Entity Recognizer to exclude names, numbers and dates from the paraphrase candidates.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "4.1.3 External Resources for Filtering"
+  },
+  {
+    "subject": "named entity recognizer",
+    "predicate": "uses",
+    "object": "numbers",
+    "object_type": "Other",
+    "source_sentence": "We use a Named Entity Recognizer to exclude names, numbers and dates from the paraphrase candidates.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "4.1.3 External Resources for Filtering"
+  },
+  {
+    "subject": "named entity recognizer",
+    "predicate": "uses",
+    "object": "dates",
+    "object_type": "Other",
+    "source_sentence": "We use a Named Entity Recognizer to exclude names, numbers and dates from the paraphrase candidates.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "4.1.3 External Resources for Filtering"
+  },
+  {
+    "subject": "Random Walk",
+    "predicate": "uses",
+    "object": "Probabilities",
+    "object_type": "Other",
+    "source_sentence": "A random walk through the graph will transfer labels from one node to another node, and probabilities Pcont and Pabnd control exploration of the graph.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "4.2.2 Graph random walks"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "achieves",
+    "object": "improving output translation",
+    "object_type": "Task",
+    "source_sentence": "This oracle experiment shows that translation of OOVs beyond named entities, dates, etc. is poten- tially very useful in improving output translation .",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "5.2 Impact of OOVs: Oracle experiment"
+  },
+  {
+    "subject": "SMT",
+    "predicate": "trainedon",
+    "object": "10K French-English sentences from the Europarl corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We trained a SMT system on 10K French-English sentences from the Europarl corpus (v7) .",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "5.2 Impact of OOVs: Oracle experiment"
+  },
+  {
+    "subject": "SMT",
+    "predicate": "trainedon",
+    "object": "685K sentence pairs",
+    "object_type": "Dataset",
+    "source_sentence": "We train the SMT system on 685K sentence pairs (randomly selected from LDC2007T08 and LDC2008T09)",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "5.5 Case 3: Morphologically Rich Languages"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "1.53",
+    "object_type": "Metric",
+    "source_sentence": "PPDB ( large ; with phrases ) resulted in +1.53 BLEU score improvement over DP",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "5.5 Case 3: Morphologically Rich Languages"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "achieves",
+    "object": "Arabic-English",
+    "object_type": "Task",
+    "source_sentence": "5) we obtained comparable BLEU score improvement on Arabic-English by using bilingual pivoting only on source phrases.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Comparable Corpora",
+    "predicate": "uses",
+    "object": "parallel sentences",
+    "object_type": "Task",
+    "source_sentence": "Using comparable corpora to extract parallel sentences and phrases are orthogonal to the approach we discuss here.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Neural Networks",
+    "predicate": "addresses",
+    "object": "Machine Translation",
+    "object_type": "Task",
+    "source_sentence": "Bilingual and multilingual word and phrase representation using neural networks have been applied to machine translation.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Translation Rules",
+    "predicate": "uses",
+    "object": "bilingual data",
+    "object_type": "Dataset",
+    "source_sentence": "also uses bilingual data to project new translation rules.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1163",
+    "title": "Improving Statistical Machine Translation with a Multilingual Paraphrase Database",
+    "section": "6 Related Work"
+  }
+]

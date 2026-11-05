@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Semantic Parsing",
+    "predicate": "addresses",
+    "object": "natural language questions",
+    "object_type": "Task",
+    "source_sentence": "For example, semantic parsing converts natural language questions into formal programs;",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Semantic Parsing",
+    "predicate": "uses",
+    "object": "customized decoders",
+    "object_type": "Method",
+    "source_sentence": "Some SKG tasks, e.g., semantic parsing, use customized decoders to generate programs.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Error Analysis",
+    "predicate": "addresses",
+    "object": "SKG tasks",
+    "object_type": "Task",
+    "source_sentence": "Finally, we conduct a comprehensive error analysis across SKG tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "beam search",
+    "object_type": "Method",
+    "source_sentence": "For decoding, we use beam search by default.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "3.2 Modeling"
+  },
+  {
+    "subject": "SBERT",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "We use the pretrained SBERT for sen- tence embeddings of the user request input (for tasks that only have structured input, we embed the linearized structured input) and sample five most similar examples measured by cosine similarity.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "4.3 Zero-Shot and Few-Shot Learning"
+  },
+  {
+    "subject": "Sparse Attention",
+    "predicate": "addresses",
+    "object": "model efficiency",
+    "object_type": "Concept",
+    "source_sentence": "designing sparse attention in T5 for structured knowledge or other means to improve model efficiency.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "6 Limitations"
+  },
+  {
+    "subject": "Zero-Shot Learning",
+    "predicate": "addresses",
+    "object": "SKG tasks",
+    "object_type": "Task",
+    "source_sentence": "UNIFIEDSKG promotes a systematic study on more general and robust advances in structured knowledge encoding, multi-task learning, zero-shot learning, and few-shot learning for SKG tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "6 Limitations"
+  },
+  {
+    "subject": "Few-Shot Learning",
+    "predicate": "addresses",
+    "object": "SKG tasks",
+    "object_type": "Task",
+    "source_sentence": "UNIFIEDSKG promotes a systematic study on more general and robust advances in structured knowledge encoding, multi-task learning, zero-shot learning, and few-shot learning for SKG tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "6 Limitations"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "addresses",
+    "object": "incorporating retrieval component in SKG",
+    "object_type": "Concept",
+    "source_sentence": "calling for future study on 1) incorporating retrieval component in SKG, 2) designing sparse attention in T5 for structured knowledge or other means to improve model efficiency.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "6 Limitations"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Spider",
+    "object_type": "Dataset",
+    "source_sentence": "We do experiments on Spider with different format of forming structured knowledge (e.g., linearization, description), but get a similar result.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "D.4.2 Prompts"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "greedy search",
+    "object_type": "Method",
+    "source_sentence": "For semantic parsing tasks, the decoding was done under the greedy search, where we set the beam size to 1 specially.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "D.6 Hyperparameters"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "Bi-LSTM",
+    "predicate": "uses",
+    "object": "input word embeddings",
+    "object_type": "Other",
+    "source_sentence": "InferSent; a bi-LSTM, encoder/decoder architecture that learns sentence embeddings from input word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3407",
+    "title": "Domain Adapted Word Embeddings for Improved Sentiment Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "LSA",
+    "predicate": "uses",
+    "object": "domain specific corpus",
+    "object_type": "Other",
+    "source_sentence": "Next we learn domain specific (DS) embeddings by applying algorithms such as Latent Semantic Analysis (LSA) on the domain specific corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3407",
+    "title": "Domain Adapted Word Embeddings for Improved Sentiment Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "trainedon",
+    "object": "test datasets",
+    "object_type": "Dataset",
+    "source_sentence": "We also retrained GloVe on our test datasets to obtain domain specific word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3407",
+    "title": "Domain Adapted Word Embeddings for Improved Sentiment Classiﬁcation",
+    "section": "4.2 Word embeddings, baselines and parameter settings"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "A logistic regression classifier is then trained on the training data and used to predict the sentiment labels on the test data sets.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3407",
+    "title": "Domain Adapted Word Embeddings for Improved Sentiment Classiﬁcation",
+    "section": "4.3 Results from standard classiﬁcation tasks"
+  }
+]

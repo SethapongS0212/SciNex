@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Language and Reasoning",
+    "predicate": "motivates",
+    "object": "datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Recently, the relatively simple language and reasoning in existing resources motivated datasets that focus on compositional language, mostly using synthetic data for language and vision.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1644",
+    "title": "A Corpus for Reasoning About Natural Language Grounded in Photographs",
+    "section": "2 Related Work and Datasets"
+  },
+  {
+    "subject": "Search Queries",
+    "predicate": "uses",
+    "object": "sets of images",
+    "object_type": "Other",
+    "source_sentence": "We retrieve sets of images with similar content using search queries generated from synsets from the ILSVRC2014 ImageNet challenge.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1644",
+    "title": "A Corpus for Reasoning About Natural Language Grounded in Photographs",
+    "section": "3.1 Image Collection"
+  },
+  {
+    "subject": "Query Expansion",
+    "predicate": "uses",
+    "object": "heuristics",
+    "object_type": "Other",
+    "source_sentence": "For each synset, we issue five queries to the Google Images search engine5 using query expansion heuristics.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1644",
+    "title": "A Corpus for Reasoning About Natural Language Grounded in Photographs",
+    "section": "3.1 Image Collection"
+  },
+  {
+    "subject": "Image Search",
+    "predicate": "uses",
+    "object": "Google Images search engine",
+    "object_type": "Other",
+    "source_sentence": "Image Search We use the Google Images search engine to find sets of similar images (Figure 2a).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1644",
+    "title": "A Corpus for Reasoning About Natural Language Grounded in Photographs",
+    "section": "3.1 Image Collection"
+  },
+  {
+    "subject": "Image",
+    "predicate": "uses",
+    "object": "two crowdsourcing tasks",
+    "object_type": "Other",
+    "source_sentence": "Image Pruning We use two crowdsourcing tasks to (1) prune the sets of images, and (2) construct sets of eight images to use in the sentence-writing phase.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1644",
+    "title": "A Corpus for Reasoning About Natural Language Grounded in Photographs",
+    "section": "3.1 Image Collection"
+  },
+  {
+    "subject": "Hypernyms",
+    "predicate": "uses",
+    "object": "WordNet",
+    "object_type": "Method",
+    "source_sentence": "Add direct or indirect hypernyms from WordNet.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1644",
+    "title": "A Corpus for Reasoning About Natural Language Grounded in Photographs",
+    "section": "3.2 Sentence Writing"
+  },
+  {
+    "subject": "Text",
+    "predicate": "uses",
+    "object": "recurrent neural network",
+    "object_type": "Method",
+    "source_sentence": "TEXT: encode the caption using a recurrent neural net- work , and use a multilayer perceptron to predict the truth value;",
+    "extraction_mode": "fixed",
+    "paper": "P19-1644",
+    "title": "A Corpus for Reasoning About Natural Language Grounded in Photographs",
+    "section": "6 Evaluation Systems"
+  },
+  {
+    "subject": "Text",
+    "predicate": "uses",
+    "object": "multilayer perceptron",
+    "object_type": "Method",
+    "source_sentence": "TEXT: encode the caption using a recurrent neural net- work , and use a multilayer perceptron to predict the truth value;",
+    "extraction_mode": "fixed",
+    "paper": "P19-1644",
+    "title": "A Corpus for Reasoning About Natural Language Grounded in Photographs",
+    "section": "6 Evaluation Systems"
+  },
+  {
+    "subject": "Image",
+    "predicate": "uses",
+    "object": "convolutional neural network",
+    "object_type": "Method",
+    "source_sentence": "IMAGE: encode the pair of images using a convolu- tional neural network (CNN), and use a multilayer perceptron to predict the truth value.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1644",
+    "title": "A Corpus for Reasoning About Natural Language Grounded in Photographs",
+    "section": "6 Evaluation Systems"
+  },
+  {
+    "subject": "Image",
+    "predicate": "uses",
+    "object": "multilayer perceptron",
+    "object_type": "Method",
+    "source_sentence": "IMAGE: encode the pair of images using a convolu- tional neural network (CNN), and use a multilayer perceptron to predict the truth value.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1644",
+    "title": "A Corpus for Reasoning About Natural Language Grounded in Photographs",
+    "section": "6 Evaluation Systems"
+  },
+  {
+    "subject": "Mask R-CNN",
+    "predicate": "uses",
+    "object": "COCO detection task",
+    "object_type": "Task",
+    "source_sentence": "We detect the objects in the images using a Mask R-CNN model pre-trained on the COCO detection task.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1644",
+    "title": "A Corpus for Reasoning About Natural Language Grounded in Photographs",
+    "section": "6 Evaluation Systems"
+  }
+]

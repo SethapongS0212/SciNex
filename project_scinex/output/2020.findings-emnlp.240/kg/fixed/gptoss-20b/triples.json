@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "m-BERT",
+    "predicate": "addresses",
+    "object": "problem of missing word-pieces",
+    "object_type": "Other",
+    "source_sentence": "While other approaches like MUSE and VecMap can work without any cross-lingual supervision, M-BERT alone often outperforms these approaches. (2019) has a continuing training setting that is similar to ours. However, their approach focuses on comparing between whether B-BERT (JointPair) learns cross-lingual features from overlapping word-pieces, while ours aims at improving M-BERT on target languages, and addresses the problem of missing word-pieces.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "2 Related works"
+  },
+  {
+    "subject": "m-BERT",
+    "predicate": "achieves",
+    "object": "outperforms these approaches",
+    "object_type": "Other",
+    "source_sentence": "M-BERT alone often outperforms these approaches.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "2 Related works"
+  },
+  {
+    "subject": "m-BERT",
+    "predicate": "achieves",
+    "object": "better than B-BERT in several languages",
+    "object_type": "Other",
+    "source_sentence": "We show that our EXTEND method works well on M-BERT, and is better than B-BERT in several languages, whereas their method (MonoTrans) has a similar performance as B-BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "2 Related works"
+  },
+  {
+    "subject": "m-BERT",
+    "predicate": "uses",
+    "object": "Wikipedia text",
+    "object_type": "Dataset",
+    "source_sentence": "M-BERT is a transformer language model pre- trained with Wikipedia text of the top 104 languages in Wikipedia.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "3.1 Multilingual BERT (M-BERT)"
+  },
+  {
+    "subject": "m-BERT",
+    "predicate": "uses",
+    "object": "masked language model",
+    "object_type": "Method",
+    "source_sentence": "M-BERT uses the same pre- training objectives as BERT – masked language model and next sentence prediction – and is surprisingly cross - lingual despite not being trained with any cross - lingual objective or aligned data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "3.1 Multilingual BERT (M-BERT)"
+  },
+  {
+    "subject": "m-BERT",
+    "predicate": "uses",
+    "object": "next sentence prediction",
+    "object_type": "Method",
+    "source_sentence": "M-BERT uses the same pre- training objectives as BERT – masked language model and next sentence prediction – and is surprisingly cross - lingual despite not being trained with any cross - lingual objective or aligned data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "3.1 Multilingual BERT (M-BERT)"
+  },
+  {
+    "subject": "m-BERT",
+    "predicate": "uses",
+    "object": "supervised data",
+    "object_type": "Dataset",
+    "source_sentence": "For cross - lingual transfer, M-BERT is fine- tuned on supervised data in high- resource languages and tested on the target language.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "3.1 Multilingual BERT (M-BERT)"
+  },
+  {
+    "subject": "m-BERT",
+    "predicate": "evaluatedon",
+    "object": "target language",
+    "object_type": "Language",
+    "source_sentence": "For cross - lingual transfer, M-BERT is fine- tuned on supervised data in high- resource languages and tested on the target language.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "3.1 Multilingual BERT (M-BERT)"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "Monolingual Data",
+    "object_type": "Dataset",
+    "source_sentence": "Continue pre-training with monolingual data of the target language.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "4 Our Method: Extend"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "tokenization method",
+    "object_type": "Method",
+    "source_sentence": "preprocessed using the tokenization method from BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "5.1 Experimental Settings"
+  },
+  {
+    "subject": "Bi-LSTM-CRF",
+    "predicate": "uses",
+    "object": "AllenNLP",
+    "object_type": "Other",
+    "source_sentence": "We use AllenNLP with a standard Bi-LSTM-CRF framework.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "5.1 Experimental Settings"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "batch size",
+    "object_type": "Other",
+    "source_sentence": "While extending, we use a batch size of 32 and a learning rate of 2e-5, and train for 500K iterations.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "5.1 Experimental Settings"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "learning rate",
+    "object_type": "Other",
+    "source_sentence": "While extending, we use a batch size of 32 and a learning rate of 2e-5, and train for 500K iterations.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "5.1 Experimental Settings"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "hyperparameters",
+    "object_type": "Other",
+    "source_sentence": "We follow BERT's setting for all other hyperparameters.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "5.1 Experimental Settings"
+  },
+  {
+    "subject": "m-BERT",
+    "predicate": "comparesagainst",
+    "object": "E-MBERT",
+    "object_type": "Model",
+    "source_sentence": "We compare the cross - lingual zero-shot NER per- formance of M-BERT and E-MBERT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "5.2 Comparing E-MBERT and M-BERT"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "comparesagainst",
+    "object": "B-BERT",
+    "object_type": "Model",
+    "source_sentence": "From Table 3, we can see that E-MBERT often outperforms B-BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "5.5 Comparing E-MBERT and B-BERT"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "better English performance than EXTEND",
+    "object_type": "Other",
+    "source_sentence": "We can see that English performance of B-BERT is mostly better than EXTEND.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.240",
+    "title": "Extending Multilingual BERT to Low-Resource Languages",
+    "section": "A.3 Comparison between B-BERT and E-MBERT:"
+  }
+]

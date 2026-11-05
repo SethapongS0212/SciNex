@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Dynamic Data Selection",
+    "predicate": "comprises",
+    "object": "Dynamic domain-data selection",
+    "object_type": "Other",
+    "source_sentence": "Our work is built on two types of dynamic data selection : Dynamic domain-data selection and dynamic clean-data selection.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1123",
+    "title": "Wei Wang and Isaac Caswell and Ciprian Chelba Google Research {wangwe,icaswell,ciprianchelba}@google.com",
+    "section": "2.2 Curriculum Learning for NMT"
+  },
+  {
+    "subject": "Dynamic Data Selection",
+    "predicate": "comprises",
+    "object": "dynamic clean-data selection",
+    "object_type": "Other",
+    "source_sentence": "Our work is built on two types of dynamic data selection : Dynamic domain-data selection and dynamic clean-data selection.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1123",
+    "title": "Wei Wang and Isaac Caswell and Ciprian Chelba Google Research {wangwe,icaswell,ciprianchelba}@google.com",
+    "section": "2.2 Curriculum Learning for NMT"
+  },
+  {
+    "subject": "Data Selection",
+    "predicate": "uses",
+    "object": "Monolingual Data",
+    "object_type": "Other",
+    "source_sentence": "Here we use monolingual data to seed data selection , rather than generating parallel data directly from it.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1123",
+    "title": "Wei Wang and Isaac Caswell and Ciprian Chelba Google Research {wangwe,icaswell,ciprianchelba}@google.com",
+    "section": "2.3 More Related Work"
+  },
+  {
+    "subject": "Dynamic Data Selection",
+    "predicate": "uses",
+    "object": "scoring function φ",
+    "object_type": "Method",
+    "source_sentence": "To facilitate the definition of co-curricular learning and following , we define a dynamic data selection function, Dφ λ(t, D), to return the top λ(t) of examples in a dataset D sorted by a scoring function φ at a training step t.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1123",
+    "title": "Wei Wang and Isaac Caswell and Ciprian Chelba Google Research {wangwe,icaswell,ciprianchelba}@google.com",
+    "section": "4.1 Curriculum Mini-Batching"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Adam",
+    "object_type": "Method",
+    "source_sentence": "Training on Paracrawl uses Adam in warmup and then SGD for a total of 3 million steps using batch size 128, learning rate 0.5 annealed, at step 2 million , down to 0.05.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1123",
+    "title": "Wei Wang and Isaac Caswell and Ciprian Chelba Google Research {wangwe,icaswell,ciprianchelba}@google.com",
+    "section": "5.1 Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "SGD",
+    "object_type": "Method",
+    "source_sentence": "Training on Paracrawl uses Adam in warmup and then SGD for a total of 3 million steps using batch size 128, learning rate 0.5 annealed, at step 2 million , down to 0.05.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1123",
+    "title": "Wei Wang and Isaac Caswell and Ciprian Chelba Google Research {wangwe,icaswell,ciprianchelba}@google.com",
+    "section": "5.1 Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Dropout",
+    "object_type": "Method",
+    "source_sentence": "Training on WMT 2014 uses batch size 96, dropout probability 0.2 for a total of 2 million steps, with learning rate 0.5 annealed, at step 1.2 million , down to 0.05, too.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1123",
+    "title": "Wei Wang and Isaac Caswell and Ciprian Chelba Google Research {wangwe,icaswell,ciprianchelba}@google.com",
+    "section": "5.1 Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Learning",
+    "object_type": "Method",
+    "source_sentence": "Training on Paracrawl uses Adam in warmup and then SGD for a total of 3 million steps using batch size 128, learning rate 0.5 annealed, at step 2 million , down to 0.05.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1123",
+    "title": "Wei Wang and Isaac Caswell and Ciprian Chelba Google Research {wangwe,icaswell,ciprianchelba}@google.com",
+    "section": "5.1 Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Learning",
+    "object_type": "Method",
+    "source_sentence": "Training on WMT 2014 uses batch size 96, dropout probability 0.2 for a total of 2 million steps, with learning rate 0.5 annealed, at step 1.2 million , down to 0.05, too.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1123",
+    "title": "Wei Wang and Isaac Caswell and Ciprian Chelba Google Research {wangwe,icaswell,ciprianchelba}@google.com",
+    "section": "5.1 Setup"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Cmix",
+    "object_type": "Method",
+    "source_sentence": "All single curriculum experiments use the same pace setting as Cmix.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1123",
+    "title": "Wei Wang and Isaac Caswell and Ciprian Chelba Google Research {wangwe,icaswell,ciprianchelba}@google.com",
+    "section": "5.1 Setup"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "achieves",
+    "object": "good improvements",
+    "object_type": "Concept",
+    "source_sentence": "Simple in- domain fine-tuning gives good improvements (P5 vs P1, W5 vs W1).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1123",
+    "title": "Wei Wang and Isaac Caswell and Ciprian Chelba Google Research {wangwe,icaswell,ciprianchelba}@google.com",
+    "section": "5.2 Baselines and Oracles"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Ccascade co",
+    "object_type": "Model",
+    "source_sentence": "So we use Ccascade co for the remaining experiments.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1123",
+    "title": "Wei Wang and Isaac Caswell and Ciprian Chelba Google Research {wangwe,icaswell,ciprianchelba}@google.com",
+    "section": "5.3 Co-Curricular Learning"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "achieves",
+    "object": "-0.2 on WMT14",
+    "object_type": "Metric",
+    "source_sentence": "On WMT14 training data, retraining (W9) seems to perform similarly to fine-tuning on a warmed-up model (W8): +0.3 on IWSLT15 but -0.2 on WMT14;",
+    "extraction_mode": "fixed",
+    "paper": "P19-1123",
+    "title": "Wei Wang and Isaac Caswell and Ciprian Chelba Google Research {wangwe,icaswell,ciprianchelba}@google.com",
+    "section": "5.5 Retraining"
+  }
+]

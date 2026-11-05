@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "Machine Learning",
+    "object_type": "Other",
+    "source_sentence": "The best performing system used machine learning, with a conditional random field classifier (CRF) for finding spans and a support vector machine classifier for classifying attributes.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Support Vector Machine",
+    "predicate": "uses",
+    "object": "Machine Learning",
+    "object_type": "Other",
+    "source_sentence": "The best performing system used machine learning, with a conditional random field classifier (CRF) for finding spans and a support vector machine classifier for classifying attributes.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Regular Expressions",
+    "predicate": "uses",
+    "object": "HeidelTime",
+    "object_type": "Model",
+    "source_sentence": "Other top approaches used adapted regular expressions on top of the offthe shelf Heideltime system (a general-domain NLP system for parsing time expressions).",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "global optimization",
+    "object_type": "Other",
+    "source_sentence": "like the global optimization of the CRF",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.2.2 Constituency Model"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "simple binary classifier",
+    "object_type": "Other",
+    "source_sentence": "using a simple binary classifier (like the SVM-based BIO taggers)",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.2.2 Constituency Model"
+  },
+  {
+    "subject": "gazetteer",
+    "predicate": "uses",
+    "object": "lookup table",
+    "object_type": "Other",
+    "source_sentence": "Gazetteer features rely on a lookup table that contains information about lexical items that are very likely to generalize.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.3.1 Sequence Features"
+  },
+  {
+    "subject": "gazetteer",
+    "predicate": "uses",
+    "object": "lexical items",
+    "object_type": "Other",
+    "source_sentence": "We define a small set of temporal word classes and created a gazetteer that maps lexical items to those classes.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.3.1 Sequence Features"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "combined training and development sets",
+    "object_type": "Dataset",
+    "source_sentence": "For the first four systems (the non-ensemble systems), we simply train each method on the combined training and development sets for each corpus, and test on the test set for that corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.4 Evaluation"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "uses",
+    "object": "outputs of other systems",
+    "object_type": "Other",
+    "source_sentence": "For the ensemble system, we note that since it is trained on the outputs of other systems, we must do an internal cross-validation of the component systems before performing the tests, to ensure that the labels provided to the ensemble method are representative of what it",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.4 Evaluation"
+  },
+  {
+    "subject": "Ensemble Method",
+    "predicate": "uses",
+    "object": "labels",
+    "object_type": "Other",
+    "source_sentence": "For the ensemble system, we note that since it is trained on the outputs of other systems, we must do an internal cross-validation of the component systems before performing the tests, to ensure that the labels provided to the ensemble method are representative of what it",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.4 Evaluation"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "trainedon",
+    "object": "THYME data",
+    "object_type": "Dataset",
+    "source_sentence": "train the best performing system (Backwards BIO tagger) on THYME data",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.3.2 Constituency Features"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "F-score of 0.889 on i2b2 Challenge data",
+    "object_type": "Metric",
+    "source_sentence": "Backwards BIO tagger achieved an F-score of 0.889 on the i2b2 Challenge data allowing for partial matches",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.3.2 Constituency Features"
+  },
+  {
+    "subject": "CRFs",
+    "predicate": "trainedon",
+    "object": "development data",
+    "object_type": "Dataset",
+    "source_sentence": "We extensively explored the parameter space for CRFs on development data and our sense was that through-out this entire space performance lagged SVM-based tagging systems.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "4 Discussion"
+  }
+]

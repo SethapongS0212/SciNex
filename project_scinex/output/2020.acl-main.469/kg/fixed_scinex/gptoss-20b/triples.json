@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "Flickr30K",
+    "object_type": "Dataset",
+    "source_sentence": "we perform additional pre-training on the training set of Flickr30K with the fore-mentioned masked language modeling objective with the image.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "2 Model"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "input",
+    "object_type": "Input",
+    "source_sentence": "BERT also refines its understanding of the input over the layers.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "3.1 Quantitative analysis"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "parser output",
+    "object_type": "Other",
+    "source_sentence": "For evaluation , we parse all sentences in the validation set of Flickr30K using AllenNLP and use the parser output as the gold parsing annotation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "3.1 Quantitative analysis"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "addresses",
+    "object": "understanding",
+    "object_type": "Concept",
+    "source_sentence": "little analysis has been done on understanding what vision-and-language models learn.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "4 Related Work"
+  },
+  {
+    "subject": "Image Captioning",
+    "predicate": "addresses",
+    "object": "grounding ability",
+    "object_type": "Concept",
+    "source_sentence": "Previous works on VQA and image captioning have only shown qualitative examples on the grounding ability of the models, while another line of work focuses on designing dedicated models for the entity grounding task.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "4 Related Work"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "addresses",
+    "object": "grounding ability",
+    "object_type": "Concept",
+    "source_sentence": "We, however, present a quantitative study on whether visually grounded language models acquire the grounding ability during pre-training without explicit supervision.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "4 Related Work"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "Transformer",
+    "object_type": "Model",
+    "source_sentence": "The core of our idea is to reuse the self- attention mechanism within the Transformer to implicitly align elements of the input text and regions in the input image.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "A.2 Model"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achievesresult",
+    "object": "67.4 accuracy",
+    "object_type": "Metric",
+    "source_sentence": "We tested models with 9, 18, 36, 72, and 144 proposals, which achieve an accuracy of 64.8, 65.5, 66.7, 67.1, and 67.4 respectively on the development set.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "B.4 Flickr30K Entities"
+  },
+  {
+    "subject": "Faster R-CNN",
+    "predicate": "uses",
+    "object": "image features",
+    "object_type": "Feature",
+    "source_sentence": "We adapt the setting of BAN , where image features from a Faster R-CNN pre-trained on Visual Genome are used.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "B.4 Flickr30K Entities"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "average attention weights",
+    "object_type": "Metric",
+    "source_sentence": "For task specific fine-tuning, we introduce an additional self-attention block and use the average attention weights from each head to predict the alignment between boxes and phrases.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "B.4 Flickr30K Entities"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "Images",
+    "object_type": "Other",
+    "source_sentence": "In pre-training, both the inclusion of additional COCO data and using both images and captions are paramount.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "C Ablation Study"
+  }
+]

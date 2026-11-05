@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Transformer Models",
+    "predicate": "achieves",
+    "object": "62.1 inter-system BLEU",
+    "object_type": "Metric",
+    "source_sentence": "As a reference for inter-system BLEU, two Transformer models trained with different random seeds achieve 62.1 inter-system BLEU.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.446",
+    "title": "Imitation Attacks and Defenses for Black-box Machine Translation Systems",
+    "section": "3.2 We Closely Imitate Local Models"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "Datasets",
+    "object_type": "Dataset",
+    "source_sentence": "We train Transformer Big models on both datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.446",
+    "title": "Imitation Attacks and Defenses for Black-box Machine Translation Systems",
+    "section": "3.3 We Closely Imitate Production Models"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Production Systems",
+    "object_type": "Other",
+    "source_sentence": "We collect training data for our imitation models by querying the production systems.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.446",
+    "title": "Imitation Attacks and Defenses for Black-box Machine Translation Systems",
+    "section": "3.3 We Closely Imitate Production Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "within 0.6 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "Our imitation models are always within 0.6 BLEU of the production models.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.446",
+    "title": "Imitation Attacks and Defenses for Black-box Machine Translation Systems",
+    "section": "3.3 We Closely Imitate Production Models"
+  },
+  {
+    "subject": "SYSTRAN",
+    "predicate": "achieves",
+    "object": "62.2 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "Systran achieves 62.2 and 58.8 BLEU when appending two different choices for the random seven tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.446",
+    "title": "Imitation Attacks and Defenses for Black-box Machine Translation Systems",
+    "section": "4.5 Results: Attacks on Production Systems"
+  },
+  {
+    "subject": "SYSTRAN",
+    "predicate": "achieves",
+    "object": "58.8 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "Systran achieves 62.2 and 58.8 BLEU when appending two different choices for the random seven tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.446",
+    "title": "Imitation Attacks and Defenses for Black-box Machine Translation Systems",
+    "section": "4.5 Results: Attacks on Production Systems"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "trainedon",
+    "object": "WMT14 training set",
+    "object_type": "Dataset",
+    "source_sentence": "To evaluate whether our imitation models are needed to generate transferable attacks , we also attack a Transformer Big model that is trained on the WMT14 training set.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.446",
+    "title": "Imitation Attacks and Defenses for Black-box Machine Translation Systems",
+    "section": "4.5 Results: Attacks on Production Systems"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "adversarial example transferability",
+    "object_type": "Concept",
+    "source_sentence": "This shows that the imitation models, which are designed to be high-fidelity imitations of the production systems , considerably enhance the adversarial example transferability.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.446",
+    "title": "Imitation Attacks and Defenses for Black-box Machine Translation Systems",
+    "section": "4.5 Results: Attacks on Production Systems"
+  },
+  {
+    "subject": "Transformer Models",
+    "predicate": "trainedon",
+    "object": "IWSLT",
+    "object_type": "Dataset",
+    "source_sentence": "For example, we train two transformer models on distinct halves of IWSLT and observe an 11.5% attack transfer rate between them.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.446",
+    "title": "Imitation Attacks and Defenses for Black-box Machine Translation Systems",
+    "section": "70 BLEU Match"
+  },
+  {
+    "subject": "Adversarial Training",
+    "predicate": "achieves",
+    "object": "robustness of MT systems",
+    "object_type": "Concept",
+    "source_sentence": "adversarial training can empirically improve the robustness of MT systems.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.446",
+    "title": "Imitation Attacks and Defenses for Black-box Machine Translation Systems",
+    "section": "E Existing Adversarial Defenses"
+  },
+  {
+    "subject": "NLP Models",
+    "predicate": "achieves",
+    "object": "provably robust to word replacements",
+    "object_type": "Concept",
+    "source_sentence": "Huang et al. train NLP models which are provably robust to word replacements.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.446",
+    "title": "Imitation Attacks and Defenses for Black-box Machine Translation Systems",
+    "section": "E Existing Adversarial Defenses"
+  },
+  {
+    "subject": "Simple Heuristics",
+    "predicate": "achieves",
+    "object": "robustness against adversarial attacks",
+    "object_type": "Concept",
+    "source_sentence": "simple heuristics may also provide some empirical robustness against our current adversarial attacks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.446",
+    "title": "Imitation Attacks and Defenses for Black-box Machine Translation Systems",
+    "section": "E Existing Adversarial Defenses"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "achieves",
+    "object": "detect ungrammatical source inputs",
+    "object_type": "Concept",
+    "source_sentence": "a language model can detect the ungrammatical source inputs of the malicious nonsense attack.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.446",
+    "title": "Imitation Attacks and Defenses for Black-box Machine Translation Systems",
+    "section": "E Existing Adversarial Defenses"
+  }
+]

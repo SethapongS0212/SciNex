@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Sentiment Analysis",
+    "predicate": "addresses",
+    "object": "analysis of such material",
+    "object_type": "Task",
+    "source_sentence": "Sentiment analysis plays a central role in the analysis of such material, by aiming to understand the sentiment expressed in a review document or in a single review sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Targeted Sentiment Analysis",
+    "predicate": "addresses",
+    "object": "detecting sentiment-bearing terms",
+    "object_type": "Task",
+    "source_sentence": "Targeted Sentiment Analysis (TSA) aimed at detecting sentiment-bearing terms in texts and classifying the sentiment towards them.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Targeted Sentiment Analysis",
+    "predicate": "addresses",
+    "object": "classifying the sentiment towards them",
+    "object_type": "Task",
+    "source_sentence": "Targeted Sentiment Analysis (TSA) aimed at detecting sentiment-bearing terms in texts and classifying the sentiment towards them.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Multilingual NLP",
+    "predicate": "addresses",
+    "object": "developing a single model",
+    "object_type": "Task",
+    "source_sentence": "This is reminiscent of works in multilingual NLP that develop a single model that handles multiple languages (e.g. M-BERT released by Devlin et al.)",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Multilingual NLP",
+    "predicate": "addresses",
+    "object": "handles multiple languages",
+    "object_type": "Task",
+    "source_sentence": "This is reminiscent of works in multilingual NLP that develop a single model that handles multiple languages (e.g. M-BERT released by Devlin et al.)",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "a diverse TSA dataset",
+    "object_type": "Dataset",
+    "source_sentence": "A possible approach to our setting is training on a diverse TSA dataset, potentially encompassing many of the domains that the system is applied to.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Self-training",
+    "predicate": "uses",
+    "object": "unlabeled data",
+    "object_type": "Other",
+    "source_sentence": "through self-training – one of the earliest ideas for utilizing unlabeled data in training.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Self-training",
+    "predicate": "uses",
+    "object": "weak-labels",
+    "object_type": "Other",
+    "source_sentence": "Our self-training approach augments a given TSA training set with weak-labels (WL) generated from a large multi-domain corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "3 Method"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "The process (depicted in Figure 1) starts by training an initial TSA model on that given training data.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "3 Method"
+  },
+  {
+    "subject": "Weak Labels",
+    "predicate": "uses",
+    "object": "training set",
+    "object_type": "Dataset",
+    "source_sentence": "Finally, some of the predictions are selected and added as weak labels to the original training set.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "3 Method"
+  },
+  {
+    "subject": "Tokenization",
+    "predicate": "uses",
+    "object": "sub-word pieces",
+    "object_type": "Other",
+    "source_sentence": "The S label was excluded since in practice tokenization was to sub-word pieces, making the prediction of a single S label redundant.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "3.1 TSA Engine"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "training data from one SE domain",
+    "object_type": "Dataset",
+    "source_sentence": "Explicitly , several single- domain models were created by fine-tuning each pre- trained LM with training data from one SE domain , either restau- rants (R) or laptops (L).",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "4.4 In-Domain Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "test data from same domain",
+    "object_type": "Dataset",
+    "source_sentence": "These models, denoted SER/L, were evaluated on test data from the same domain they were trained on.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "4.4 In-Domain Results"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "BERT-B",
+    "object_type": "Model",
+    "source_sentence": "The collected multi-domain labels (henceforth MD) were combined with the SE data for fine-tuning the BERT-B and BERT-MLM models.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "4.7 Diversifying the Training Set"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "BERT-MLM",
+    "object_type": "Model",
+    "source_sentence": "The collected multi-domain labels (henceforth MD) were combined with the SE data for fine-tuning the BERT-B and BERT-MLM models.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.198",
+    "title": "Multi-Domain Targeted Sentiment Analysis",
+    "section": "4.7 Diversifying the Training Set"
+  }
+]

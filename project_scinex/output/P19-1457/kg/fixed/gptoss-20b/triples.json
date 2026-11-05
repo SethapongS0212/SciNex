@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Dynamic Programming",
+    "predicate": "uses",
+    "object": "CYK algorithm",
+    "object_type": "Method",
+    "source_sentence": "T ∗can be found using dynamic programming such as the CYK algorithm for WG.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1457",
+    "title": "Latent Variable Sentiment Grammar∗",
+    "section": "4.4 Parsing"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "labels of all phrases and gold-standard tree structures",
+    "object_type": "Other",
+    "source_sentence": "Following previous work, we use the labels of all phrases and gold-standard tree structures for training and test- ing.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1457",
+    "title": "Latent Variable Sentiment Grammar∗",
+    "section": "5.1 Data"
+  },
+  {
+    "subject": "Word Vectors",
+    "predicate": "uses",
+    "object": "Glove 300-dimensional embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "word vectors are initialized using Glove 300-dimensional embeddings",
+    "extraction_mode": "fixed",
+    "paper": "P19-1457",
+    "title": "Latent Variable Sentiment Grammar∗",
+    "section": "5.2 Experimental Settings"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "learning rate 0.001",
+    "object_type": "Other",
+    "source_sentence": "Adam is used to optimize the parameters with learning rate is 0.001",
+    "extraction_mode": "fixed",
+    "paper": "P19-1457",
+    "title": "Latent Variable Sentiment Grammar∗",
+    "section": "5.2 Experimental Settings"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "probability 0.5",
+    "object_type": "Other",
+    "source_sentence": "We adopt Dropout after the Embedding layer with a probability of 0.5",
+    "extraction_mode": "fixed",
+    "paper": "P19-1457",
+    "title": "Latent Variable Sentiment Grammar∗",
+    "section": "5.2 Experimental Settings"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "achieves",
+    "object": "54.7 accuracy on sentence-level SST-5",
+    "object_type": "Metric",
+    "source_sentence": "(2018) combined bi-attentive classification network ) with a pretrained language model 1 2 3 4 5 6 7 8 Kr: number of gaussian components with character convolutions on a large-scale cor- pus (ELMo) and reported an accuracy of 54.7 on sentence -level SST-5.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1457",
+    "title": "Latent Variable Sentiment Grammar∗",
+    "section": "5.4 Main Results"
+  },
+  {
+    "subject": "Knowledge",
+    "predicate": "achieves",
+    "object": "best results on the SST dataset",
+    "object_type": "Other",
+    "source_sentence": "To our knowledge , we achieve the best re- sults on the SST dataset.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1457",
+    "title": "Latent Variable Sentiment Grammar∗",
+    "section": "5.4 Main Results"
+  }
+]

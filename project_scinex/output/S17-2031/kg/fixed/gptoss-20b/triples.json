@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "FastText",
+    "predicate": "uses",
+    "object": "English Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "In order to obtain subword embeddings we trained the \"fastText\" method for 20, 50, 100, 200 and 300 dimensions by using the English Wikipedia.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2031",
+    "title": "Ignacio Arroyo-Fern´andez Universidad Nacional Autonoma de Mexico, Mexico iaf@ciencias.unam.mx",
+    "section": "2 Data"
+  },
+  {
+    "subject": "FastText",
+    "predicate": "uses",
+    "object": "Character Level N-gram",
+    "object_type": "Method",
+    "source_sentence": "This advantage is mainly due to the fastText's character level n-gram approach, which represents a meaningful performance difference both in training and in testing.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2031",
+    "title": "Ignacio Arroyo-Fern´andez Universidad Nacional Autonoma de Mexico, Mexico iaf@ciencias.unam.mx",
+    "section": "2 Data"
+  },
+  {
+    "subject": "Neural Network Architectures",
+    "predicate": "uses",
+    "object": "similarity",
+    "object_type": "Concept",
+    "source_sentence": "Multiple Neural Network architectures were used to model similarity measuring in supervised settings.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2031",
+    "title": "Ignacio Arroyo-Fern´andez Universidad Nacional Autonoma de Mexico, Mexico iaf@ciencias.unam.mx",
+    "section": "3 Systems Description"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "evaluatedon",
+    "object": "evaluation dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Also an unsupervised system1 was directly tested on this year's evaluation dataset.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2031",
+    "title": "Ignacio Arroyo-Fern´andez Universidad Nacional Autonoma de Mexico, Mexico iaf@ciencias.unam.mx",
+    "section": "3 Systems Description"
+  },
+  {
+    "subject": "Maxout",
+    "predicate": "produces",
+    "object": "similarity score",
+    "object_type": "Metric",
+    "source_sentence": "This recurrent architecture is followed by a Maxout Network , which has a monolithic output layer (i.e. the similarity score yi ∈[1, 5] ⊂R).",
+    "extraction_mode": "fixed",
+    "paper": "S17-2031",
+    "title": "Ignacio Arroyo-Fern´andez Universidad Nacional Autonoma de Mexico, Mexico iaf@ciencias.unam.mx",
+    "section": "3.1 Word embeddings + RNN"
+  },
+  {
+    "subject": "Word Embedding",
+    "predicate": "uses",
+    "object": "word2vec",
+    "object_type": "Model",
+    "source_sentence": "which is based on the word2vec word embedding method",
+    "extraction_mode": "fixed",
+    "paper": "S17-2031",
+    "title": "Ignacio Arroyo-Fern´andez Universidad Nacional Autonoma de Mexico, Mexico iaf@ciencias.unam.mx",
+    "section": "3.2 Sentence embeddings + MLP"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "coreNLP2 library",
+    "object_type": "Other",
+    "source_sentence": "We extracted these predicates by using the openIE algorithm implemented in the coreNLP2 library.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2031",
+    "title": "Ignacio Arroyo-Fern´andez Universidad Nacional Autonoma de Mexico, Mexico iaf@ciencias.unam.mx",
+    "section": "1 Nn,a"
+  },
+  {
+    "subject": "FastText",
+    "predicate": "uses",
+    "object": "word embeddings",
+    "object_type": "Concept",
+    "source_sentence": "For this system we used FastText word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2031",
+    "title": "Ignacio Arroyo-Fern´andez Universidad Nacional Autonoma de Mexico, Mexico iaf@ciencias.unam.mx",
+    "section": "4.1 Word embeddings + RNN"
+  },
+  {
+    "subject": "Sentence Embeddings",
+    "predicate": "uses",
+    "object": "hidden states",
+    "object_type": "Concept",
+    "source_sentence": "We used the last-top hidden states (or time steps) of the two networks as sentence embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2031",
+    "title": "Ignacio Arroyo-Fern´andez Universidad Nacional Autonoma de Mexico, Mexico iaf@ciencias.unam.mx",
+    "section": "4.1 Word embeddings + RNN"
+  },
+  {
+    "subject": "FastText",
+    "predicate": "uses",
+    "object": "word embeddings",
+    "object_type": "Other",
+    "source_sentence": "We used fastText word embeddings of different dimensions.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2031",
+    "title": "Ignacio Arroyo-Fern´andez Universidad Nacional Autonoma de Mexico, Mexico iaf@ciencias.unam.mx",
+    "section": "4.3 Cross word aligner"
+  }
+]

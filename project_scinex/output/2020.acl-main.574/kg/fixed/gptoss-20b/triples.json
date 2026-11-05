@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "pre-trained models",
+    "object_type": "Concept",
+    "source_sentence": "The transfer learning approach, such as using ELMo and BERT , fine-tunes pre-trained models on the downstream task.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "pre-trained models",
+    "object_type": "Concept",
+    "source_sentence": "The transfer learning approach, such as using ELMo and BERT , fine-tunes pre-trained models on the downstream task.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "VAE",
+    "predicate": "uses",
+    "object": "variational inference",
+    "object_type": "Method",
+    "source_sentence": "VAE uses variational inference with variational distribution of z coming from a Gaussian density q(z|x) = N(µ, diag(σ2)),",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "2.2 Variational Autoencoder"
+  },
+  {
+    "subject": "VAE",
+    "predicate": "uses",
+    "object": "reparameterization trick",
+    "object_type": "Method",
+    "source_sentence": "VAE also uses reparameterization trick to obtain latent variable z as follows:",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "2.2 Variational Autoencoder"
+  },
+  {
+    "subject": "Adversarial Training",
+    "predicate": "addresses",
+    "object": "robustness to noise in image",
+    "object_type": "Concept",
+    "source_sentence": "Adversarial training , originally proposed to improve robustness to noise in image, is later extended to NLP tasks such as text classification and learning word representation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "2.3 Adversarial Training"
+  },
+  {
+    "subject": "Adversarial Training",
+    "predicate": "addresses",
+    "object": "NLP tasks",
+    "object_type": "Task",
+    "source_sentence": "Adversarial training , originally proposed to improve robustness to noise in image, is later extended to NLP tasks such as text classification and learning word representation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "2.3 Adversarial Training"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "fool the discriminator",
+    "object_type": "Concept",
+    "source_sentence": "Training aims at obtaining representations that can fool the discriminator, therefore achieving frequency-agnostics and entity-type-specificity.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "2.3 Adversarial Training"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "frequency-agnostics and entity-type-specificity",
+    "object_type": "Concept",
+    "source_sentence": "Training aims at obtaining representations that can fool the discriminator, therefore achieving frequency-agnostics and entity-type-specificity.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "2.3 Adversarial Training"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "Wf g",
+    "object_type": "Other",
+    "source_sentence": "we then use softmax to compute the distri- bution of word at position l as −→ P vae i = Softmax(Wf g ∗rf i )",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "3.1 Local Context Reconstruction"
+  },
+  {
+    "subject": "reconstruction",
+    "predicate": "uses",
+    "object": "backward RNN-encoder",
+    "object_type": "Method",
+    "source_sentence": "the same procedures of the above described for- ward reconstruction are conducted, except using the backward RNN-encoder ←−f (·) in lieu of the forward RNN-encoder",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "3.1 Local Context Reconstruction"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Gradient Ascent",
+    "object_type": "Method",
+    "source_sentence": "Finally, the algorithm updates both of θrnn and θemb in Bi-LSTM+CRF by gradient ascent according to Eq.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "4 Training Algorithm"
+  },
+  {
+    "subject": "VAE",
+    "predicate": "uses",
+    "object": "Optimization",
+    "object_type": "Method",
+    "source_sentence": "As VAE optimization of J vae has posterior collapse problem , we adopt KL cost annealing strategy and word dropout techniques.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "4 Training Algorithm"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Optimization",
+    "object_type": "Method",
+    "source_sentence": "During experiments, we also find it is beneficial to have a few epochs of pretraining of parameters θrnn and θemb with optimization of Eq.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "4 Training Algorithm"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "produces",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "we adopt the cased, 300d Glove to initialize word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "5.1 Settings"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "Models",
+    "object_type": "Other",
+    "source_sentence": "We utilize Adam algorithm to optimize the models",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "5.1 Settings"
+  },
+  {
+    "subject": "VAE",
+    "predicate": "addresses",
+    "object": "one-to-many generation of local context from entities",
+    "object_type": "Task",
+    "source_sentence": "This confirms that VAE is superior to deterministic model in dealing with the inherently one-to-many generation of local context from entities.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "6.1 Ablation Study"
+  },
+  {
+    "subject": "Transfer Learning",
+    "predicate": "uses",
+    "object": "pretrained models",
+    "object_type": "Model",
+    "source_sentence": "Transfer Learning This approach refers to methods that transfer knowledge from high- resources to low-resources or use models pretrained on large corpus to benefit downstream tasks .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "7 Related Work"
+  },
+  {
+    "subject": "Adversarial Training",
+    "predicate": "uses",
+    "object": "resource-adversarial discriminator",
+    "object_type": "Method",
+    "source_sentence": "The most recent work in applies adversarial training that uses a resource- adversarial discriminator to improve performances on low-resource data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "7 Related Work"
+  },
+  {
+    "subject": "Sequence Labeling",
+    "predicate": "achieves",
+    "object": "new state-of-the-art performances",
+    "object_type": "Concept",
+    "source_sentence": "Extensive experiments have been conducted on both slot filling and NER tasks on three benchmark datasets , showing that sequence labeling using the proposed methods achieve new state-of-the-art performances.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.574",
+    "title": "Handling Rare Entities for Neural Sequence Labeling",
+    "section": "8 Conclusion"
+  }
+]

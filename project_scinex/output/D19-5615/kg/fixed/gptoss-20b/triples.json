@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Data-to-Text Generation",
+    "predicate": "addresses",
+    "object": "challenges",
+    "object_type": "Concept",
+    "source_sentence": "Different from other NLG tasks (e.g., machine translation), data-to-text generation faces several additional challenges.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5615",
+    "title": "Enhanced Transformer Model for Data-to-Text Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Transformer Encoder",
+    "predicate": "uses",
+    "object": "record embedding",
+    "object_type": "Other",
+    "source_sentence": "the input embedding of Transformer encoder is replaced by our record embedding",
+    "extraction_mode": "fixed",
+    "paper": "D19-5615",
+    "title": "Enhanced Transformer Model for Data-to-Text Generation",
+    "section": "3 Data-to-Text Generation Model"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "Our data generation technique doubles the amount of training data available for learning.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5615",
+    "title": "Enhanced Transformer Model for Data-to-Text Generation",
+    "section": "4.1 Synthetic Data Generation"
+  },
+  {
+    "subject": "SETS",
+    "predicate": "uses",
+    "object": "existing data sets",
+    "object_type": "Dataset",
+    "source_sentence": "In our case, since it is difficult to find additional structured (table) data for the same kind of game matches, we use the existing data sets and introduce variations in the values of the table records.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5615",
+    "title": "Enhanced Transformer Model for Data-to-Text Generation",
+    "section": "4.1 Synthetic Data Generation"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "training examples",
+    "object_type": "Dataset",
+    "source_sentence": "Here, we present a straightforward method to bias our model to output more relations by means of fine-tuning on the training examples containing a greater number of relations.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5615",
+    "title": "Enhanced Transformer Model for Data-to-Text Generation",
+    "section": "4.2 Training Data Selection"
+  },
+  {
+    "subject": "Information Extraction",
+    "predicate": "uses",
+    "object": "IE system",
+    "object_type": "Method",
+    "source_sentence": "We use an information extraction (IE) system to extract the number of relations of each training summary.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5615",
+    "title": "Enhanced Transformer Model for Data-to-Text Generation",
+    "section": "4.2 Training Data Selection"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "ROTOWIRE dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We run the experiments with the ROTOWIRE dataset , a dataset of NBA basketball game summaries, paired with their corresponding box- and line-score tables.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5615",
+    "title": "Enhanced Transformer Model for Data-to-Text Generation",
+    "section": "5.1 Data and Preprocessing"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "our model",
+    "object_type": "Model",
+    "source_sentence": "In all experiments, we use our model with 1 en- coder layer and 6 decoder layers, 512 hidden units (hence, the record feature embedding size is 128, see Section 3), 8 heads, GELU activa- tions , a dropout rate of 0.1 and learned positional embedding for the decoder .",
+    "extraction_mode": "fixed",
+    "paper": "D19-5615",
+    "title": "Enhanced Transformer Model for Data-to-Text Generation",
+    "section": "5.3 Training Details"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "beam size 4",
+    "object_type": "Other",
+    "source_sentence": "As for inference, we use beam size 4 for all experiments, and the maximum decoding length is 600.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5615",
+    "title": "Enhanced Transformer Model for Data-to-Text Generation",
+    "section": "5.3 Training Details"
+  },
+  {
+    "subject": "Data Augmentation",
+    "predicate": "achieves",
+    "object": "improved evaluation results",
+    "object_type": "Other",
+    "source_sentence": "Combining these two data augmentation methods, all content - oriented evaluation results are improved compared to DATA-TRANS.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5615",
+    "title": "Enhanced Transformer Model for Data-to-Text Generation",
+    "section": "6 Results"
+  }
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "ELMo",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "In 3 out of 5 test sets, ELMo consistently outperforms BERT, while being much faster in training and inference;",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Distributional Semantic Models",
+    "predicate": "uses",
+    "object": "time-sensitive word representations",
+    "object_type": "Concept",
+    "source_sentence": "LSCD is often addressed using distributional semantic models: time-sensitive word representations are learned and then compared between different time periods.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "2 Background"
+  },
+  {
+    "subject": "Bidirectional LSTM",
+    "predicate": "uses",
+    "object": "convolutional layer",
+    "object_type": "Other",
+    "source_sentence": "The network architecture consists of a two-layer Bidirectional LSTM on top of a convolutional layer.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "2 Background"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "While Transformer architectures have been shown to outperform recurrent ones in many NLP tasks, ELMo allows faster training and inference than BERT, making it more convenient to experiment with different training corpora and hyperparameters.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "2 Background"
+  },
+  {
+    "subject": "Affinity Propagation",
+    "predicate": "uses",
+    "object": "cluster",
+    "object_type": "Concept",
+    "source_sentence": "We then standardise it and cluster its entries using Affinity Propagation",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "3 System overview"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "Wikipedia",
+    "object_type": "Corpus",
+    "source_sentence": "an ELMo model trained on the respective Wikipedia corpus (English, German, Latin or Swedish)",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "4 Experimental setup"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "The fine-tuning is done with BERT's standard objective",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "4 Experimental setup"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "cosine similarity change detection algorithm",
+    "object_type": "Algorithm",
+    "source_sentence": "In our 'official' shared task submission in the evaluation phase we used top-layer ELMo embeddings with the cosine similarity change detection algorithm for all languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "5 Results"
+  },
+  {
+    "subject": "Preliminary Experiments",
+    "predicate": "uses",
+    "object": "human-annotated semantic change datasets",
+    "object_type": "Datasets",
+    "source_sentence": "This combination of architectures and algorithms was chosen based on our preliminary experiments with the available human-annotated semantic change datasets for English , German and Russian .",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "5 Results"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "trainedon",
+    "object": "lemmatised Wikipedia corpora",
+    "object_type": "Dataset",
+    "source_sentence": "One possible explanation is that our ELMo models were pre- trained on lemmatised Wikipedia corpora and thus better fit the test corpora, provided in lemmatised form by the organisers.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "5 Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Raw Corpora",
+    "object_type": "Dataset",
+    "source_sentence": "models were pre- trained on raw corpora, and fine-tuning them on lemmatised data proves less successful.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "5 Results"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "achieves",
+    "object": "strong correlation with human judgements",
+    "object_type": "Concept",
+    "source_sentence": "using contextualised embeddings to rank words by the degree of their semantic change yields strong correlation with human judgements",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "the highest correlation results",
+    "object_type": "Concept",
+    "source_sentence": "Models pre- trained on large external corpora and fine-tuned on the historical test corpora produce the highest correlation results",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "6 Conclusion"
+  }
+]

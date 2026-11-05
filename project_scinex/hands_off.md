@@ -1,5 +1,284 @@
 # Hands-Off Notes
 
+## Session 37 — Linux box with 2× RTX 5090; ⛔ finetuning corpus switched to the ACL ANTHOLOGY papers + FIXED extractor; gpt-oss-20b teacher run launched (2026-10-26/27)
+
+> User: *"download the github https://github.com/SethapongS0212/SciNex to envsam and overwrite it over
+> what we had in there. then read the md files that comes along with it. and lastly we continue on
+> running our process. find a model that will suit to run on rtx 5090. make it run in the background
+> so when i close it and go out it will still run in the screen"*. "envsam" read as the
+> `project_scinex` workspace that the `envsam` venv serves — the venv itself was not touched beyond
+> one package.
+
+### 37.1 The machine — the first box here with stable torch on sm_120
+Linux (Ubuntu, kernel 6.8), **2× NVIDIA GeForce RTX 5090, 32 GB each, sm_120**, driver 590.48.01 /
+CUDA 13.1, 24 CPU threads, 125 GB RAM, 3.6 TB free disk.
+- venv **`/home/dev1/envsam`** (Python 3.12.3) already held **torch `2.13.0+cu130` — a STABLE build
+  with sm_120 kernels**, so unlike the RTX 5070 laptop (§33.1) no nightly and **no
+  `--allow-dev-torch`** (`ft_train_qlora` accepted it). bitsandbytes 0.49.2, transformers 5.5.4,
+  numpy 2.4.4. Only `peft==0.21.1` was missing → installed with `--no-deps`; `pip check` clean.
+- Repo cloned to **`/home/dev1/SciNex`**; `/home/dev1/project_scinex` is now a **symlink** to
+  `/home/dev1/SciNex/project_scinex`, so the old path still works and `git` works inside it. The
+  previous local folder (a July ACL-corpus copy from before Session 19) was **moved, not deleted**, to
+  `/home/dev1/project_scinex_old_2026-07`. Its `.env` (S2 key + HF token) and
+  `output/acl/csner_gazetteer.csv` (51,478 rows) were copied into the clone — both gitignored.
+- Install check (SETUP §7) reproduces exactly: CEO 493→172 (34.9%) / 107→91 (85.0%), scinex
+  464→164 (35.3%) / 70→57 (81.4%).
+
+### 37.2 ⛔⛔ THE FINETUNING RUNS USE THE ACL ANTHOLOGY PAPERS WITH THE FIXED EXTRACTOR (user, 2026-10-26)
+> User: *"no on these run we were supposed to be using the acl anthology paper, not the paywalled
+> professor noted papers anymore. change that and mark it on the md files to let them know its
+> supposed to run the aclanthology papers since we have fixed entity for that"*
+- **From Session 37 on, Part 2 (finetuning) runs on the ACL Anthology corpus with the FIXED
+  extractor**: subjects are restricted to each paper's CS-NER entity list
+  (`output/acl/<id>/Entity_<id>_enriched.csv`). It does **not** run on the 20-paper (professor's)
+  corpus, and not with the relation-only extractor. The 20-paper results (Tables 1–14, the
+  Qwen3-1.7B census) stand as they are and are not re-run. ⚠ `TASK.md` §1 used to say "the 315-paper
+  ACL corpus is not the corpus for this task". That is now corrected.
+- **Teacher (user, 2026-10-26): `openai/gpt-oss-20b`, run LOCALLY on the 5090s.** It is free and from
+  the same family as the old teacher, but weaker than gptoss-120b. **ACL numbers are therefore not
+  comparable with anything taught by gptoss-120b.** Name the teacher with every number.
+- **Corpus (user, 2026-10-26): all parsed ACL papers that have an entity CSV, i.e. 805 papers**
+  (`papers_acl.txt`). The July folder had 810 parsed papers and 802 enriched CSVs; 805 have both HTML
+  and an enriched or plain CSV.
+- **Where the data came from:** the July copy `/home/dev1/project_scinex_old_2026-07`. Copied into the
+  clone: `output/<id>/no-llm/` (parsed HTML) and `output/acl/<id>/Entity_*.csv`, both gitignored. ACL
+  papers are open access, but the paragraph text is still kept out of the repo by the existing
+  rules. **Not copied:** the July `kg/fixed/gemma-3-12b-it` triples (764 papers) and the
+  `kg/fixed*/Qwen3-14B` triples (314 papers). They hold only post-guard `triples.json` with no raw
+  replies, and they predate the Session 25–29 guards. They stay in the old folder as a possible
+  consensus source later. The PDFs also stay there, in `output/acl/pdfs/`.
+- The 20-paper open-access-subset run (§37.3) was **stopped** at ~04:35 on 10-26, before any variant
+  finished. Its artefacts were moved out of the repo to `/home/dev1/scinex_runs/abandoned_oa3/`.
+
+### 37.3 (ABANDONED) the 20-paper open-access subset — facts worth keeping
+- Only the 7 open-access PDFs of the 20-paper corpus can be fetched here (`fetch_corpus.sh`). Without
+  the teacher's `prompts.jsonl` they reproduce **exactly the Session 33 data**: 3 training papers
+  (168 extraction examples) and 2 eval papers (strabismus2026, osmotic2026). Those 7 papers stay
+  parsed in `output/<id>/no-llm/`.
+- ⚠ **`parse_check.py` overwrites the TRACKED `stats.json`.** Restore it with `git checkout -- stats.json`.
+- **Student smoke results that still apply: `Qwen/Qwen3-8B`** (the documented 32 GB choice, SETUP §6)
+  trains at **~2.3 s/step with an 8.2 GB peak**, LoRA 43,646,976 trainable / 8,234,382,336 (0.53%).
+  Generation: 2 paragraphs in 0.6 min, 7.3 GB peak at batch 2. Linux has no WDDM paging, so the §36.8
+  Windows batch trap cannot happen here (an over-large batch raises OOM instead).
+
+### 37.4 Code: the finetuning path now supports `--extractor fixed`
+- `ft_common.py`:
+  - `current_system_prompt(..., extractor)`
+  - `entity_csv_for` / `load_entity_set_for`: kg_main's resolution order, `load_entity_csv(tp_only=True)`
+  - `render_paragraphs(paper, extractor)`: in fixed mode a paragraph with no listed entity in it is
+    skipped (`match_any_in_text`), and the user prompt is `_make_fixed_user_prompt`, exactly as
+    kg_main's `FixedTripleExtractor` builds it
+  - `load_paragraphs(..., extractor)`, `guard_pass(..., entity_set)`, `render_chat(..., **template_kw)`
+- `ft_generate.py`:
+  - `--extractor fixed` writes `kg/fixed*/<slug>/` and ingests with the paper's entity CSV
+  - pre-quantized checkpoints load in their own format (gpt-oss MXFP4); bnb NF4 is used only for
+    other models
+  - harmony (gpt-oss) replies keep only the `final` channel; the `analysis` channel is dropped. A
+    reply with no final channel becomes `""`, i.e. empty_content, like an API failure
+  - new options `--reasoning-effort` and `--attn-implementation`; the title comes from the HTML when
+    no teacher metadata exists
+- `claude_extract.py`: **its fixed path had never run.** It imported `load_entity_set` and called
+  `find_in_text`, and neither exists in `entity_loader.py`. It now uses `load_entity_csv(tp_only=True)`
+  and `match_any_in_text`, as kg_main does.
+- Regression check: relation mode is unchanged. The install check gives identical numbers (493→172 /
+  107→91 / 464→164 / 70→57), and the relation dry run renders the same 148 paragraphs.
+- **`build_ft_data.py`, `ft_compare.py`, `run_ft_pipeline.py` now take `--extractor fixed`** (the
+  pipeline passes it, plus `--teacher`, to `ft_generate` and `ft_compare`). The ACL corpus uses its
+  OWN split file `ft_data/acl/split.json`. Never touch `ft_data/split.json`, which belongs to the
+  20-paper corpus.
+- ⛔ **Two builder bugs that only a LOCAL teacher exposes, both fixed:**
+  1. `build_ft_data` called `guard_pass` with the default `api_run=True`, so every reply that is
+     exactly `{"triples": []}` counted as a **failed API call** and was dropped. That string is
+     `run_api_extract`'s failure marker, but gpt-oss-20b run locally prints it as its genuine
+     abstention, so **all empty targets would have vanished** and the data would have been
+     silently "max-empty 0%". `teacher_run` now records `is_api_run(dir)`, which was already used
+     by `ft_compare`. API teachers (gptoss-120b and the consensus models) are unaffected.
+  2. **The alignment floor rejected every ACL paper (0.67–0.82).** The July-parsed ACL HTML keeps
+     PDF line-break hyphenation ("ad- dress", "docu- ment"), and the teacher repairs it when
+     quoting `source_sentence`. `alignment_rate(..., loose=True)` compares letters and digits only
+     and gives 72/73 on the same papers. Fixed builds use the loose test; relation builds keep the
+     strict one.
+- **Regression checks after all edits:** the install check is identical, and
+  `build_ft_data.py --eval-fold 0 --dry-run` on the 20-paper corpus gives the same 168 / 700 /
+  1,808 / 87 as before.
+- CPU-side validation of phase 2: a real fixed build into a scratch folder (151 extraction examples
+  from the first 6 teacher papers, all aligned 0.95–1.00); `ft_train_qlora --dry-run` on Qwen3-8B
+  (template 100% clean, max 3,666 tokens); `ft_compare --extractor fixed` on the teacher (kept rate
+  73.3%); `run_ft_pipeline --extractor fixed --steps compare` with a throwaway prefix (deleted).
+
+### 37.5 What it took to run gpt-oss-20b on the 5090
+- **`pip install kernels==0.12.3`.** transformers 5.5.4 pins `kernels>=0.12.0,<0.13`, and 0.17.2
+  crashes at import with "Either a revision or a version must be specified". Without `kernels`,
+  transformers dequantizes MXFP4 to bf16 (~42 GB), which spills to the CPU and fails with
+  `grouped_mm ... mat2 is on cpu`.
+- **`--attn-implementation flex_attention`.** gpt-oss has no SDPA (it uses attention sinks), and its
+  default eager attention runs out of memory at batch 8: 10.25 GiB for ONE layer's score matrix at
+  ~3.5k-token prompts. With flex attention the peak is **16.3 GB** at batch 8.
+- **Reasoning effort low.** Replies are typically 98–854 tokens. Occasionally the reasoning loops up
+  to the 3,072-token cap; such a reply has no final channel, becomes empty_content, and is dropped
+  from training like an API failure.
+- **Batch A/B on the same 16 paragraphs:** batch 4 took 2.5 min, **batch 8 0.8 min**, batch 16
+  1.6 min. Greedy outputs differ with batch size, and each slow run contained one runaway reply that
+  hit 3,072 tokens. So the gap comes from waiting on the slowest reply in a batch, not from batch
+  efficiency. Batch 8 is used.
+- ⛔ **Trap: a `--limit` smoke run writes a TRUNCATED `prompts.jsonl`, and `load_paragraphs` then
+  prefers it for every later run on that paper,** because it globs `kg/<exdir>/*/prompts.jsonl`. Two
+  A/B runs silently did 8 paragraphs instead of 16 because of this. Delete every smoke slug folder
+  before a real run.
+
+### 37.6 ▶ RUN IN FLIGHT — `screen -r scinexacl`
+Driver: **`/home/dev1/scinex_runs/run_acl.sh`** (machine-local, outside the repo), started
+**2026-10-27 06:39:01**. The detached screen session survives logout because logind has
+`KillUserProcesses=no`.
+- **Phase 1, teacher.** Command: `ft_generate.py --base-model openai/gpt-oss-20b --model-slug gptoss-20b
+  --teacher gptoss-20b --extractor fixed --batch-size 8 --reasoning-effort low --attn-implementation
+  flex_attention --ingest`. GPU0 takes the odd lines of `papers_acl.txt` (403 papers) and GPU1 the even
+  lines (402). Each GPU does CEO first, then scinex. That is **37,970 paragraphs** (18,985 per
+  ontology, mean 23.6 per paper). The early rate is ~0.04 min per paragraph per GPU; with runaway
+  replies, expect **~1–1.5 days**. Output goes to `output/<id>/kg/fixed{,_scinex}/gptoss-20b/`.
+- **Phase 2** (`/home/dev1/scinex_runs/run_acl_phase2.sh`, written and syntax-checked) starts
+  automatically when phase 1 ends:
+  | step | what | output |
+  |---|---|---|
+  | data | `build_ft_data.py --extractor fixed --teacher gptoss-20b --papers-file papers_acl.txt --split ft_data/acl/split.json --folds 20 --eval-fold 0`, two variants | `ft_data/acl/fold0` (teacher-only), `ft_data/acl_maxempty30/fold0` (`--max-empty-frac 0.3`) |
+  | GPU0 | teacher-only: train (**1 epoch**) → ft_gen | `qwen3-8b-acl-ft-cv` |
+  | GPU1 | max-empty-30%: train (1 epoch) → base_gen → ft_gen | `qwen3-8b-acl-ft-me30-cv`, `qwen3-8b-acl-base-hf` |
+  | final | ft_compare: base vs both finetunes vs teacher, 41 eval papers, `--extractor fixed` | `ft_runs/qwen3-8b-acl-f0/compare.json`, `/home/dev1/scinex_runs/acl_compare.log` |
+  - **ACL split:** `ft_data/acl/split.json`, 20 folds, seed 13. Fold 0 = **41 eval papers**, ~764
+    training papers. It is a separate file from the 20-paper `ft_data/split.json` and is just as
+    sticky: commit it, never regenerate it.
+  - **1 epoch, not 2:** there are ~36k extraction examples (vs 619 in Session 36), at p50 3,163 /
+    max 3,666 tokens with the Qwen3-8B tokenizer; the template splits cleanly.
+  - The max-empty-30% variant runs alongside teacher-only because **72% of the teacher's targets
+    were empty** in the first papers, the prior that silenced the Session 36 students.
+- **Estimated timeline** (measured ~0.1 min per paragraph per GPU over the first 82 paragraphs): phase
+  1 **~32 h**, then phase 2 ~15 h (the longest lane is me30 training ~5 h + base_gen ~8 h + ft_gen
+  ~2 h). Throughput from the first papers is unreliable (§36.9), so re-check it after a few hours.
+- Logs: `/home/dev1/scinex_runs/acl_driver.log` (one line per event), `acl_teacher_gpu{0,1}.log`.
+  Re-running the driver resumes, because `ft_generate --resume` works per paper × ontology.
+- To stop it: `screen -S scinexacl -X quit`, then kill the Python children by PID
+  (`pgrep -f ft_generate`). ⚠ Never `pkill -f` a pattern that your own shell's command line also
+  contains; this session that killed the assistant's shell.
+
+### 37.7 ⛔ 2026-10-28: GPU1 dropped off the bus mid-training; recovery queued
+- **Phase 1 finished cleanly:** gpu0 at 11:58, gpu1 at 13:15 on 10-28, i.e. **30.6 h** for all
+  37,970 paragraphs (18,985 CEO + 18,985 scinex), with no tracebacks or OOMs.
+- **The data is even more abstention-heavy than Session 36's.** Teacher-only:
+  **34,447 extraction examples, 27,715 empty (80.5%)**, plus 1,300 ontology and 8,191 vocabulary
+  examples, giving 5,493 steps. Max-empty-30%: 9,617 extraction examples (6,732 non-empty + 2,885
+  empty; 24,830 capped away), 19,108 examples in all, 2,389 steps. Eval: 41 papers, **1,960
+  paragraphs** over both ontologies.
+- **16:39: the max-empty-30% training on GPU1 died at step 1866/2389** (3 h 23 min in, 6.5 s/step)
+  with `CUDA error: unspecified launch failure` inside an RMSNorm kernel. Afterwards `nvidia-smi`
+  reports `Unable to determine the device handle for GPU1: 0000:85:00.0: Unknown Error`, so the card
+  is unreachable until a reset or reboot. This is a device/driver fault, not a code bug: 1,866
+  steps ran clean, and the same GPU had just run the 30 h teacher pass.
+  No checkpoint survives, because `save_strategy="epoch"` with 1 epoch means nothing is saved
+  mid-run. The variant restarts from step 0.
+- **GPU0 is unaffected:** teacher-only training at 2,564/5,493 steps, 9.9 s/step, at 20:24.
+- **Recovery** (`/home/dev1/scinex_runs/run_acl_recover.sh`, `screen -r scinexrecover`, started
+  20:26): it waits for `run_acl_phase2.sh` to exit, probes GPU1 with a CUDA op, and then runs
+  max-empty-30% train → ft_gen and base_gen (in parallel if GPU1 works, else serially on GPU0),
+  followed by the compare. Logs: `acl_me30_recover.log`, `acl_basegen_recover.log`, `acl_driver.log`.
+- **21:15, `sudo nvidia-smi -r -i 1` FAILED** ("No devices were found"). GPU1 is still on the PCI
+  bus (`lspci` lists 85:00.0), but only a reboot can bring it back.
+- ⛔ **Worse: after the fault, NO NEW PROCESS can initialise CUDA on this machine**, even with
+  `CUDA_VISIBLE_DEVICES=0` or the GPU0 UUID (`torch.cuda.is_available() False`, "CUDA unknown
+  error"). Only the already-running teacher-only trainer (PID 203416, context created before
+  16:39) keeps working. So its ft_gen, the recovery script and base_gen would all fail to start.
+  `run_acl_recover.sh` was stopped, and **the run continues only after a reboot.**
+- ⚠ **GPU0 is at its thermal limit:** 89–90 °C with the fan at 100%, 1 °C below max operating temp
+  and 6 °C from shutdown. SW thermal slowdown is active (SM clock 1,732 of 3,090 MHz) and the card
+  has already spent ~11 min in HW thermal slowdown. A power cap cannot help, because the minimum
+  limit is 400 W and it already draws ~385 W. Heat, or combined power draw (2 × 575 W), is the
+  likely cause of GPU1's failure. **Check the chassis cooling before loading both cards again.**
+- **Code: `ft_train_qlora.py --save-steps N`** (default 0 = unchanged) checkpoints every N steps,
+  keeping the latest, and a re-run with the same `--run-name` resumes from it
+  (`trainer.train(resume_from_checkpoint=True)`). It could not be smoke-tested, because no new CUDA
+  context can start until the reboot. **Smoke it first after the reboot**: `--max-steps 3
+  --save-steps 2`, then re-run with `--max-steps 4` and look for "resuming from".
+- **Plan:** reboot once PID 203416 exits (expected ~04:10 on 10-29; the adapter and
+  `run_manifest.json` are written before exit). Then
+  `/home/dev1/scinex_runs/run_acl_after_reboot.sh` probes both GPUs and runs the rest with
+  `--save-steps 200`. With two healthy GPUs: GPU0 runs teacher-only ft_gen → base_gen (~9.5 h) and
+  GPU1 runs max-empty-30% train → ft_gen (~6 h). With one GPU it runs serially (~16 h). Installing
+  an `@reboot` crontab entry to start it automatically was refused by the assistant's permission
+  rules (persistence), so the user installs it or runs the script after the reboot.
+- **Decision (user, 21:30): no reboot now; the fault goes to the professor.** The teacher-only
+  trainer is left to finish on its own (expected ~04:10 on 10-29). After that the phase-2 driver's
+  ft_gen fails to start (no CUDA) and `run_acl.sh` exits; that is expected and harmless. Whoever
+  reboots the server next runs `screen -dmS scinexacl2 /home/dev1/scinex_runs/run_acl_after_reboot.sh`.
+- Teacher statistics computed on the CPU in the meantime: `results.md` Table 15.
+- **2026-10-29 04:16: the teacher-only training FINISHED all 5,493/5,493 steps** (897.5 min; loss
+  1.844 → 0.075) and then **died with SIGBUS (exit -7) during the epoch-end save**, while writing
+  `optimizer.pt` (1.2 MB of ~87 MB). The paged 8-bit optimizer state sits in GPU-mapped memory and
+  the driver is broken. `adapter/` and `run_manifest.json` were never written.
+  `checkpoints/checkpoint-5493/adapter_model.safetensors` WAS complete: 504 tensors, 43,646,976
+  params, all finite, all 252 lora_B non-zero (mean norm 1.14).
+- **Adapter recovered (2026-10-29 ~22:00).** `ft_runs/qwen3-8b-acl-f0/adapter/` now holds the
+  checkpoint's adapter weights + config + the Qwen/Qwen3-8B tokenizer (as `ft_train_qlora` saves
+  it). `run_manifest.json` was rebuilt with a `RECOVERED_FROM_CHECKPOINT` note, the 1,098
+  log_history entries parsed from the pipeline log, and `train_loss: null`.
+  `_pipeline_qwen3-8b-acl-f0/train.done` was written so it is not retrained. Verified on CPU:
+  `PeftModel.from_pretrained` attaches all 504 LoRA params to Qwen3-8B. The training data's sha256
+  still matches its manifest.
+- **Still blocked:** teacher-only ft_gen, max-empty-30% training, base_gen and compare all need a
+  new CUDA context. `run_acl_after_reboot.sh` now first smoke-tests `--save-steps` save + resume
+  and uses `--save-steps 200` only if that passes. A watcher (`run_acl_wait_cuda.sh`,
+  `screen -r scinexwait`) polls CUDA every 5 min and starts it by itself if the driver is reset
+  without a reboot. After a reboot, run it by hand (command in `HANDOFF_NEXT_SESSION.md`).
+- **Lesson:** a multi-hour training with `save_strategy="epoch"` and 1 epoch has NO checkpoint. For
+  long single-epoch runs, add step checkpoints (`save_steps`) before relying on unattended hardware.
+
+### 37.8 ⭐ 2026-10-29/30: GPU0 recovered WITHOUT a reboot; both students trained and generated — the cap fixes recall
+- **Root cause of "no new CUDA process":** `cuInit` failed opening **`/dev/nvidia-uvm` → EIO**
+  (strace). The shared nvidia-uvm module had gone into an error state when GPU1 was lost; GPU0 itself
+  was fine. **Fix: `sudo rmmod nvidia_uvm && sudo modprobe nvidia_uvm`** (its use count was 0; the
+  device major stayed 508, so `nvidia-modprobe`, which is not installed, was not needed). After it,
+  CUDA ran on GPU0 at once. An LD_PRELOAD shim hiding `/dev/nvidia1` was tried first and did nothing,
+  because the failure was not per-GPU. Unprivileged mount namespaces are blocked by AppArmor here.
+- ⛔ Two of my own script bugs found along the way: `nvidia-smi -i N -L` is invalid (`-L` takes no
+  `-i`; use `--query-gpu=name`), so the first continuation thought both GPUs were dead. And
+  `pgrep -f <script>` inside a command whose own text contains `<script>` matches itself (the §37.6
+  trap again). `gpu_ok` now refuses any card NVML cannot see, so a lost GPU is never touched again.
+- `run_acl_after_reboot.sh` ran from 22:11 on 10-29, serially on GPU0 (GPU1 still lost):
+  checkpoint smoke **passed** (save + "resuming from"); teacher-only ft_gen **24.7 min** (with the
+  RECOVERED adapter, §37.7); max-empty-30% train **278.4 min** (2,389 steps, `--save-steps 200`,
+  train_loss 0.1126) + ft_gen **96.0 min**; base_gen **554.3 min**; compare at **14:06 on 10-30**.
+- **Result: `results.md` Table 16.** Teacher-only collapsed to abstention (CEO 15 triples, coverage
+  0.8%). **Max-empty-30% student: 670 kept (81.7% guard pass, teacher 80.9%), 100% valid JSON,
+  coverage 43.8% vs the teacher's 25.6%.** Not yet judged.
+- The server was rebooted later (up since 2026-11-05 10:34). Both GPUs are visible again, and
+  nothing is running.
+- **Next:** blind C1/C3/C4 census of base / me30 / teacher on the 41 eval papers (`blind_judge.py`
+  needs a fixed-extractor path first; the volumes are large: base ~4.8k kept triples, so sample per
+  extractor); then commit `papers_acl.txt`, `ft_data/acl/split.json`, the manifests and the
+  responses.
+
+### 37.9 Session close (2026-11-05): docs updated, commit prepared
+User: *"update all the md files to hand off to the next session. then i also want you to update
+the github"*. Before that the user asked four questions, answered in session: 805 papers were
+extracted by the teacher, and 41 by the students; teacher results Table 15; finetuning results
+Table 16. **No re-extraction is needed after finetuning**: the students were already run on the 41
+held-out papers, and running them on training papers would leak. Scoring more papers needs more
+folds (cross-validation).
+- `HANDOFF_NEXT_SESSION.md` was rewritten: a clean Session 37 block (state, result, next steps,
+  decisions, traps), with the Session 36 handoff kept below it as history. `TASK.md`, `Claude.md`,
+  `results.md`, `SUMMARY_finetune_qa_2026-10-01.md`, `SETUP_NEW_MACHINE.md` (new §0) and
+  `PAPERS.md` were updated, as was the root `README.md`.
+- `blind_judge.py build` gained `--extractor fixed` (passed to `ft_compare.run_stats`). It still
+  pools every kept triple (a census); a per-extractor sample cap is the next session's job.
+- The drivers were copied into `ft_runs/acl_scripts/` (machine-local paths, kept for the record).
+- A presentation page with Tables 15–16 was published as a private claude.ai artifact ("SciNex ACL
+  Finetuning Results").
+- **Commit audit:** 9,290 new files, 53 MB, largest 0.82 MB. They are the teacher's and students'
+  `responses.jsonl` / `triples.json` / `prompt_meta.json` / `system_prompt.txt` / `kg_stats.json`
+  under `output/<acl id>/kg/fixed*/`, the ACL split and manifests, and the run manifests.
+  `prompts.jsonl`, `no-llm/`, `train.jsonl`, adapters and checkpoints were verified ignored
+  (`git check-ignore -v`).
+- ⛔ **The server has no GitHub credentials** (no `gh`, no credential helper, no registered SSH key).
+  The commit was made locally on `main`; **the user runs `git push`**.
+
 ## Session 36 — the unattended chain's post-mortem (a laptop sleep + MY deadline bug), then the real run starts (2026-10-23)
 
 > User: *"continue on where we left off"*, and mid-session: *"i think we still have credits left to

@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Entity Descriptions",
+    "predicate": "uses",
+    "object": "instance embeddings",
+    "object_type": "Other",
+    "source_sentence": "We first use the entity descriptions to enhance instance embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "4.2 Neural Relation Extraction"
+  },
+  {
+    "subject": "Entity Descriptions",
+    "predicate": "uses",
+    "object": "instance representation",
+    "object_type": "Other",
+    "source_sentence": "Finally, we concatenate the original instance embedding s with the entity descriptions (dh, dt), obtaining the new instance representation s′.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "4.2 Neural Relation Extraction"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "Label Embedding",
+    "object_type": "Method",
+    "source_sentence": "λi is the attention score of the instance si, computed based on the label embedding l.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "4.2 Neural Relation Extraction"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "transformation",
+    "object_type": "Method",
+    "source_sentence": "we feed the representation of the textual relation ¯s into a softmax classifier after being processed by a linear transformation.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "4.2 Neural Relation Extraction"
+  },
+  {
+    "subject": "transformation",
+    "predicate": "uses",
+    "object": "Bias",
+    "object_type": "Method",
+    "source_sentence": "Formally, where Ms is the transformation matrix, and bs is the bias.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "4.2 Neural Relation Extraction"
+  },
+  {
+    "subject": "Pre-trained Word Embeddings",
+    "predicate": "uses",
+    "object": "word2vec tool",
+    "object_type": "Method",
+    "source_sentence": "For all the models, we use the pre-trained word embeddings with word2vec tool on NYT corpus for initialization.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "5.4 Parameter Settings"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "TransE model",
+    "object_type": "Method",
+    "source_sentence": "The embeddings of entities mentioned in datasets are pre-trained through TransE model.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "5.4 Parameter Settings"
+  },
+  {
+    "subject": "Neural Networks",
+    "predicate": "addresses",
+    "object": "relation extraction",
+    "object_type": "Task",
+    "source_sentence": "advancement of neural networks in relation extraction.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "5.5 Experiment Results"
+  },
+  {
+    "subject": "Joint Label Embedding",
+    "predicate": "uses",
+    "object": "potential label information",
+    "object_type": "Concept",
+    "source_sentence": "potential label information through joint label embedding.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "5.5 Experiment Results"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "achieves",
+    "object": "noise in entity descriptions",
+    "object_type": "Concept",
+    "source_sentence": "It demonstrates that the attention of KGs over entity descriptions can help reduce the noise in entity descriptions and thus improve the label embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "5.5.4 Comparison of Variant Models"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "achieves",
+    "object": "label embeddings",
+    "object_type": "Concept",
+    "source_sentence": "It demonstrates that the attention of KGs over entity descriptions can help reduce the noise in entity descriptions and thus improve the label embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1395",
+    "title": "Improving Distantly-Supervised Relation Extraction with Joint Label Embedding",
+    "section": "5.5.4 Comparison of Variant Models"
+  }
+]

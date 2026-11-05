@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "structured neural network parsers",
+    "object_type": "Other",
+    "source_sentence": "structured neural network parsers that use beam search and achieve state-of-the-art accuracies for English dependency parsing",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "Beam Search",
+    "object_type": "Method",
+    "source_sentence": "Our baseline model is the structured neural net- work transition -based parser with beam search of Weiss et al.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "2.1 Baseline Model"
+  },
+  {
+    "subject": "Structured Training",
+    "predicate": "uses",
+    "object": "Beam Search",
+    "object_type": "Method",
+    "source_sentence": "We use structured training and beam search during inference in all experiments.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "2.1 Baseline Model"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "class probabilities",
+    "object_type": "Other",
+    "source_sentence": "a softmax layer that outputs class probabilities for each possible decision.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "2.1 Baseline Model"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Treebank training set",
+    "object_type": "Dataset",
+    "source_sentence": "We train our models only on the treebank training set and do not use tri-training or other semi-supervised learning approaches (aside from using pre-trained word embeddings).",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "2.1 Baseline Model"
+  },
+  {
+    "subject": "Morphology",
+    "predicate": "achieves",
+    "object": "2.9% LAS in Czech",
+    "object_type": "Metric",
+    "source_sentence": "Morphology features (+morph) contributed a labeled accuracy score (LAS) gain of 2.9% in Czech, 1.5% in Spanish, and 0.9% in Catalan.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "2.2 New Features"
+  },
+  {
+    "subject": "Morphology",
+    "predicate": "achieves",
+    "object": "1.5% LAS in Spanish",
+    "object_type": "Metric",
+    "source_sentence": "Morphology features (+morph) contributed a labeled accuracy score (LAS) gain of 2.9% in Czech, 1.5% in Spanish, and 0.9% in Catalan.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "2.2 New Features"
+  },
+  {
+    "subject": "Morphology",
+    "predicate": "achieves",
+    "object": "0.9% LAS in Catalan",
+    "object_type": "Metric",
+    "source_sentence": "Morphology features (+morph) contributed a labeled accuracy score (LAS) gain of 2.9% in Czech, 1.5% in Spanish, and 0.9% in Catalan.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "2.2 New Features"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "CoNLL '09",
+    "object_type": "Dataset",
+    "source_sentence": "In this section we provide final test set results for our baseline and full models on three standard se- tups from the literature: CoNLL '09, English WSJ and English Treebank Union.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "3 Experiments"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "English WSJ",
+    "object_type": "Dataset",
+    "source_sentence": "In this section we provide final test set results for our baseline and full models on three standard se- tups from the literature: CoNLL '09, English WSJ and English Treebank Union.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "3 Experiments"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "English Treebank Union",
+    "object_type": "Dataset",
+    "source_sentence": "In this section we provide final test set results for our baseline and full models on three standard se- tups from the literature: CoNLL '09, English WSJ and English Treebank Union.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "3 Experiments"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "produces",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "embeddings generated by word2vec and using cluster features in our POS tagger",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "3.1 General Setup"
+  },
+  {
+    "subject": "POS tagger",
+    "predicate": "uses",
+    "object": "cluster features",
+    "object_type": "Other",
+    "source_sentence": "using cluster features in our POS tagger",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "3.1 General Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "treebank",
+    "object_type": "Dataset",
+    "source_sentence": "we train our model only on the treebank training set",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "3.1 General Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "higher labeled accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Our models achieve higher labeled accuracy than the winning systems in the shared task in all languages.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "3.2 CoNLL ’"
+  },
+  {
+    "subject": "parser",
+    "predicate": "addresses",
+    "object": "CoNLL'09 shared task",
+    "object_type": "Task",
+    "source_sentence": "The resulting parser is already competitive in the multi-lingual setting of the CoNLL'09 shared task, but can be further improved by utilizing an integrated POS tagging and parsing transition system.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "4 Conclusions"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "integrated POS tagging and parsing transition system",
+    "object_type": "Other",
+    "source_sentence": "The resulting parser is already competitive in the multi-lingual setting of the CoNLL'09 shared task, but can be further improved by utilizing an integrated POS tagging and parsing transition system.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "4 Conclusions"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "achieves",
+    "object": "higher POS tagging and parsing accuracy gains",
+    "object_type": "Metric",
+    "source_sentence": "We find that for all settings the dense neural network model produces higher POS tagging and parsing accuracy gains than its sparse linear counterpart.",
+    "extraction_mode": "fixed",
+    "paper": "D15-1159",
+    "title": "Improved Transition-Based Parsing and Tagging with Neural Networks",
+    "section": "4 Conclusions"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Chinese - English UN corpus",
+    "object_type": "Dataset",
+    "source_sentence": "A series of experiments on the Chinese - English UN corpus demonstrate that when fuzzy matches are over 50%, the proposed method can significantly improve NMT with the gated TM signal.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1340",
+    "title": "Encoding Gated Translation Memory into Neural Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "Other",
+    "source_sentence": "the highest cosine similarity which is calculated based on sentence embeddings",
+    "extraction_mode": "fixed",
+    "paper": "D18-1340",
+    "title": "Encoding Gated Translation Memory into Neural Machine Translation",
+    "section": "2 Encoding Gated TM into NMT"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "Context Representations",
+    "object_type": "Concept",
+    "source_sentence": "two separate attention networks are employed to obtain context representations for both src and tm t",
+    "extraction_mode": "fixed",
+    "paper": "D18-1340",
+    "title": "Encoding Gated Translation Memory into Neural Machine Translation",
+    "section": "2.1 Coupled Encoders"
+  },
+  {
+    "subject": "bidirectional",
+    "predicate": "uses",
+    "object": "GRU",
+    "object_type": "Model",
+    "source_sentence": "Both encoders are running independently of each other with bidirectional GRU recurrent neural networks",
+    "extraction_mode": "fixed",
+    "paper": "D18-1340",
+    "title": "Encoding Gated Translation Memory into Neural Machine Translation",
+    "section": "2.1 Coupled Encoders"
+  },
+  {
+    "subject": "Context Representations",
+    "predicate": "uses",
+    "object": "hidden state of the decoder",
+    "object_type": "Other",
+    "source_sentence": "In the TM-guided decoder, we integrate the gated TM information into the decoding process and use the context representations of src and tm t to pre- dict the hidden state of the decoder in each time step.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1340",
+    "title": "Encoding Gated Translation Memory into Neural Machine Translation",
+    "section": "2.3 TM-Guided Decoder"
+  },
+  {
+    "subject": "probability",
+    "predicate": "uses",
+    "object": "next word",
+    "object_type": "Other",
+    "source_sentence": "The conditional probability of the next word yt is calculated as follows:",
+    "extraction_mode": "fixed",
+    "paper": "D18-1340",
+    "title": "Encoding Gated Translation Memory into Neural Machine Translation",
+    "section": "2.3 TM-Guided Decoder"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Adam",
+    "object_type": "Method",
+    "source_sentence": "We used the stochastic gradient descent algorithm with Adam to train NMT models.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1340",
+    "title": "Encoding Gated Translation Memory into Neural Machine Translation",
+    "section": "3.1 Experimental Settings"
+  },
+  {
+    "subject": "FastText",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "To calculate the cosine similarity, we used the fasttext tool 2 with the dimension of 100 to obtain sentence embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1340",
+    "title": "Encoding Gated Translation Memory into Neural Machine Translation",
+    "section": "3.1 Experimental Settings"
+  },
+  {
+    "subject": "Semantic Similarity",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "embeddings",
+    "source_sentence": "First, we use semantic similarity based on sentence embeddings to detect the best TM matches rather than the fuzzy match score.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1340",
+    "title": "Encoding Gated Translation Memory into Neural Machine Translation",
+    "section": "4 Related Work"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "coupled encoders and a gating network",
+    "object_type": "Method",
+    "source_sentence": "Second, we encode the entire TM matched translation rather than segments into NMT with coupled encoders and a gating network.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1340",
+    "title": "Encoding Gated Translation Memory into Neural Machine Translation",
+    "section": "4 Related Work"
+  }
+]

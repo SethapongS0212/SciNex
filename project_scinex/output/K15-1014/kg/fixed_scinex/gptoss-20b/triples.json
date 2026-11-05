@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Named Entity Recognition",
+    "predicate": "uses",
+    "object": "strings",
+    "object_type": "Other",
+    "source_sentence": "Named entity recognition(NER), where strings representing named entities are extracted from the given text;",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Entity Linking",
+    "predicate": "uses",
+    "object": "knowledge base",
+    "object_type": "Knowledge Base",
+    "source_sentence": "entity linking (EL), where each named entity recognized from NER is mapped to a appropriate resource from a knowledge base;",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Wikipedia",
+    "predicate": "uses",
+    "object": "meta-data",
+    "object_type": "Other",
+    "source_sentence": "combining Wikipedia meta-data with information obtained through English-foreign language parallel Wikipedia sentences.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "preprocessing",
+    "predicate": "produces",
+    "object": "dictionary",
+    "object_type": "Other",
+    "source_sentence": "The preprocessing step of our system consists of querying the knowledge base to build a dictionary of entity URIs and their respective surface forms.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "3.1 Preprocessing"
+  },
+  {
+    "subject": "Korean",
+    "predicate": "comparesagainst",
+    "object": "Japanese",
+    "object_type": "Task",
+    "source_sentence": "We compare the performance of our system for Korean and Japanese by first training our system with 3,000 Wikipedia documents, and measuring the recall of our system for 100 Wikipedia documents for both respective languages while adjusting the confidence threshold γ from 0.01 to 0.99 in increments of 0.01.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "4.3 Application on Other Languages"
+  },
+  {
+    "subject": "dictionary",
+    "predicate": "addresses",
+    "object": "chunking",
+    "object_type": "Task",
+    "source_sentence": "Since our system does not re- quire this information to be completely accurate, a dictionary-based approach to chunking might be applicable as well.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "5 Future Work"
+  },
+  {
+    "subject": "Entity Linking",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Concept",
+    "source_sentence": "In this paper, we present an entity linking system for Korean that utilizes several features trained with plain text documents.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "6 Conclusion"
+  }
+]

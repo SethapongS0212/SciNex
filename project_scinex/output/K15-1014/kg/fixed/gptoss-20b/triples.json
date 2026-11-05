@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Named Entity Recognition",
+    "predicate": "addresses",
+    "object": "strings representing named entities",
+    "object_type": "Concept",
+    "source_sentence": "Named entity recognition(NER), where strings representing named entities are extracted from the given text;",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Entity Linking",
+    "predicate": "addresses",
+    "object": "a resource from a knowledge base",
+    "object_type": "Concept",
+    "source_sentence": "entity linking (EL), where each named entity recognized from NER is mapped to a appropriate resource from a knowledge base;",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "character-based features",
+    "object_type": "Feature",
+    "source_sentence": "It employs a SVM model trained with character-based features to perform named entity recognition.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "LDA",
+    "predicate": "uses",
+    "object": "TF*ICF metrics",
+    "object_type": "Metric",
+    "source_sentence": "It employs a SVM model trained with character-based features to perform named entity recognition, and uses the TF*ICF and LDA metrics to disambiguate between entity resources during entity linking.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Graph Ranking",
+    "predicate": "uses",
+    "object": "clique partitioning",
+    "object_type": "Method",
+    "source_sentence": "Alhelbawy (2014) uses graph ranking combined with clique partitioning.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "preprocessing",
+    "predicate": "uses",
+    "object": "knowledge base",
+    "object_type": "Other",
+    "source_sentence": "The preprocessing step of our system consists of querying the knowledge base to build a dictionary of entity URIs and their respective surface forms.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "3.1 Preprocessing"
+  },
+  {
+    "subject": "Part-Of-Speech Tagging",
+    "predicate": "uses",
+    "object": "morphemes",
+    "object_type": "Other",
+    "source_sentence": "For each document in the training set, we first perform part-of-speech tagging to split the text into individual morphemes.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "3.2 Training"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "listT",
+    "object_type": "Other",
+    "source_sentence": "After the entire training set is processed, we use the list of feature lists in listT and listF to train the SVM model.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "4.2.1 Using Feature Subsets"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "listF",
+    "object_type": "Other",
+    "source_sentence": "After the entire training set is processed, we use the list of feature lists in listT and listF to train the SVM model.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "4.2.1 Using Feature Subsets"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "3-degree polynomial kernel",
+    "object_type": "Other",
+    "source_sentence": "We choose this kernel according to Kim's (2014) work, where Kim compares the performance of SVM for the task of entity linking for Korean using multiple kernels.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "4.2.1 Using Feature Subsets"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "achieves",
+    "object": "0.569 F1-score",
+    "object_type": "Metric",
+    "source_sentence": "Our system, using a trained SVM model results in a F1-score of 0.569, which is about 0.07 lower than the best performance of our system using the confidence model.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "4.2.1 Using Feature Subsets"
+  },
+  {
+    "subject": "dictionary",
+    "predicate": "uses",
+    "object": "chunking",
+    "object_type": "Task",
+    "source_sentence": "Since our system does not re- quire this information to be completely accurate, a dictionary-based approach to chunking might be applicable as well.",
+    "extraction_mode": "fixed",
+    "paper": "K15-1014",
+    "title": "Entity Linking Korean Text: An Unsupervised Learning Approach using Semantic Relations",
+    "section": "5 Future Work"
+  }
+]

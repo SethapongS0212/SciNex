@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "datasets",
+    "object_type": "Dataset",
+    "source_sentence": "In this section, we first introduce datasets and basic settings used to learn embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1222",
+    "title": "hyperdoc2vec: Distributed Representations of Hypertext Documents",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "RBF kernel",
+    "object_type": "Artifact",
+    "source_sentence": "An SVM classifier with RBF kernel is used.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1222",
+    "title": "hyperdoc2vec: Distributed Representations of Hypertext Documents",
+    "section": "5.2 Document Classiﬁcation"
+  },
+  {
+    "subject": "DeepWalk",
+    "predicate": "achieves",
+    "object": "better classification performance",
+    "object_type": "Concept",
+    "source_sentence": "adding DeepWalk information almost always leads to better classification performance, except for Macro-F1 of the d2v-cac approach.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1222",
+    "title": "hyperdoc2vec: Distributed Representations of Hypertext Documents",
+    "section": "5.2.1 Classiﬁcation Performance"
+  },
+  {
+    "subject": "DeepWalk",
+    "predicate": "uses",
+    "object": "SVM classifiers",
+    "object_type": "Model",
+    "source_sentence": "when h-d2v IN and DeepWalk vectors have enough information to train the SVM classifiers",
+    "extraction_mode": "fixed",
+    "paper": "P18-1222",
+    "title": "hyperdoc2vec: Distributed Representations of Hypertext Documents",
+    "section": "5.2.1 Classiﬁcation Performance"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "DBLP testing set",
+    "object_type": "Dataset",
+    "source_sentence": "to train an SVM, and apply it to the DBLP testing set to get citation functions.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1222",
+    "title": "hyperdoc2vec: Distributed Representations of Hypertext Documents",
+    "section": "5.3.2 Impact of Newcomer Friendliness"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "subject": "Bi-LSTM",
+    "predicate": "uses",
+    "object": "sequence of word embedding vectors",
+    "object_type": "Other",
+    "source_sentence": "Given a t-length sequence of word embedding vectors S = {w0, w1,...wt}, a bi-directional long short-term memory (Bi-LSTM) layer is used to encode S to a hidden representation , H = {h0, h1,...ht} ∈Rt×d, where d is the hidden dimension.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1543",
+    "title": "Reading Turn by Turn: Hierarchical Attention Architecture for Spoken Dialogue Comprehension",
+    "section": "2.1 Sequence Encoding Layer"
+  },
+  {
+    "subject": "Dialogue",
+    "predicate": "uses",
+    "object": "Aturn",
+    "object_type": "Artifact",
+    "source_sentence": "broadcast each aturn i in Aturn with its turn length to obtain A′ in dialogue length.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1543",
+    "title": "Reading Turn by Turn: Hierarchical Attention Architecture for Spoken Dialogue Comprehension",
+    "section": "2.4 Word-Level Attention Layer"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "context modeling",
+    "object_type": "Concept",
+    "source_sentence": "Utterance-level attention has also been applied to context modeling for different dialogue tasks such as dialogue generation and state tracking.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1543",
+    "title": "Reading Turn by Turn: Hierarchical Attention Architecture for Spoken Dialogue Comprehension",
+    "section": "4 Related Work"
+  }
+]

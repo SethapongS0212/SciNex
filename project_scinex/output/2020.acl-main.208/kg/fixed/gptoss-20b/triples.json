@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Semantic Scaffolds",
+    "predicate": "uses",
+    "object": "semantic constraints",
+    "object_type": "Concept",
+    "source_sentence": "We propose the use of semantic scaffolds to add semantic constraints to models for long-form language-to-code generation tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Semantic Scaffolds",
+    "predicate": "uses",
+    "object": "global program context",
+    "object_type": "Concept",
+    "source_sentence": "We complement our results with a discussion of specific cases in which our semantic scaffolds use global program context to resolve ambiguities in the pseudocode.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "semantic constraints",
+    "object_type": "Concept",
+    "source_sentence": "We introduce a hierarchical beam search algorithm that incorporates these constraints, resulting in heightened efficiency, better coverage of the search space, and stronger performance when compared with the standard approach.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Neural machine translation system",
+    "predicate": "uses",
+    "object": "set of C candidate code pieces",
+    "object_type": "Other",
+    "source_sentence": "for each pseudocode line xl, we use an off-the-shelf neural machine translation system to obtain a set of C candidate code pieces Yl = {ylc | c ∈[C]}",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "2.2 Task"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "incremental parser",
+    "object_type": "Method",
+    "source_sentence": "we can efficiently compute whether a program prefix can possibly lead to a full program that satisfies the constraints by using an incremental parser and checking the symbol tables.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "3.3 Syntactic and Semantic Scaffolds"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "symbol tables",
+    "object_type": "Other",
+    "source_sentence": "we can efficiently compute whether a program prefix can possibly lead to a full program that satisfies the constraints by using an incremental parser and checking the symbol tables.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "3.3 Syntactic and Semantic Scaffolds"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "addresses",
+    "object": "Constraints",
+    "object_type": "Concept",
+    "source_sentence": "An alternative view on beam search is that it front loads the computation to reject invalid programs that do not satisfy the constraints earlier in the search process.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "4.3 Tradeoffs in Early Detection"
+  },
+  {
+    "subject": "OpenNMT",
+    "predicate": "uses",
+    "object": "default settings",
+    "object_type": "Other",
+    "source_sentence": "We use OpenNMT with its default settings to translate pseudocode into code piece candidates.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "5 Implementation"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "high level control information",
+    "object_type": "Other",
+    "source_sentence": "we implement our own primary expression parser to extract high level control information.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "5 Implementation"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "syntactic constraints",
+    "object_type": "Concept",
+    "source_sentence": "regular beam search under syntactic constraints with different beam widths W",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "7.1 Program Candidate Variations"
+  }
+]

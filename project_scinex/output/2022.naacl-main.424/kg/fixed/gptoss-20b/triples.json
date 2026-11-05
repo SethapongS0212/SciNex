@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Levenshtein Transformer",
+    "predicate": "achieves",
+    "object": "soft constrained translation",
+    "object_type": "Task",
+    "source_sentence": "(2020) injects constraints as the initial sequence for iterative editing in Levenshtein Transformer , achieving soft constrained translation .",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.424",
+    "title": "Neighbors Are Not Strangers: Improving Non-Autoregressive Translation under Low-Frequency Lexical Constraints",
+    "section": "3.2 Editing-based Iterative NAT"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "addresses",
+    "object": "lexically constrained NAT models",
+    "object_type": "Concept",
+    "source_sentence": "The findings and assumptions discussed above motivate us to propose a plug-in algorithm for lexically constrained NAT models, i.e., Aligned Constrained Training (ACT).",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.424",
+    "title": "Neighbors Are Not Strangers: Improving Non-Autoregressive Translation under Low-Frequency Lexical Constraints",
+    "section": "4 Proposed Approach"
+  },
+  {
+    "subject": "training",
+    "predicate": "addresses",
+    "object": "constrained inference",
+    "object_type": "Concept",
+    "source_sentence": "Constrained Training: bridging the discrepancy between training and constrained inference;",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.424",
+    "title": "Neighbors Are Not Strangers: Improving Non-Autoregressive Translation under Low-Frequency Lexical Constraints",
+    "section": "4 Proposed Approach"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "addresses",
+    "object": "context of the constraints",
+    "object_type": "Concept",
+    "source_sentence": "Alignment Prompting: helping the model understand the context of the constraints.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.424",
+    "title": "Neighbors Are Not Strangers: Improving Non-Autoregressive Translation under Low-Frequency Lexical Constraints",
+    "section": "4 Proposed Approach"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "test sets",
+    "object_type": "Dataset",
+    "source_sentence": "Given models trained on the above-mentioned training sets, we evaluate them on the test sets of several lexically constrained translation datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.424",
+    "title": "Neighbors Are Not Strangers: Improving Non-Autoregressive Translation under Low-Frequency Lexical Constraints",
+    "section": "5.1 Data and Evaluation"
+  },
+  {
+    "subject": "Constraints",
+    "predicate": "uses",
+    "object": "BPE",
+    "object_type": "Method",
+    "source_sentence": "These constraints are then tokenized with BPE, yielding a larger number of tokens as constraints.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.424",
+    "title": "Neighbors Are Not Strangers: Improving Non-Autoregressive Translation under Low-Frequency Lexical Constraints",
+    "section": "5.1 Data and Evaluation"
+  },
+  {
+    "subject": "Levenshtein Transformer",
+    "predicate": "uses",
+    "object": "ACT algorithm",
+    "object_type": "Method",
+    "source_sentence": "We use Levenshtein Transformer as the backbone model to ACT algorithm for constrained NAT.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.424",
+    "title": "Neighbors Are Not Strangers: Improving Non-Autoregressive Translation under Low-Frequency Lexical Constraints",
+    "section": "5.2 Models"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "employs",
+    "object": "GPUs",
+    "object_type": "Other",
+    "source_sentence": "All models are trained with a batch size of 16,000 tokens for maximum of 300,000 steps with Adam optimizer on 2 NVIDIA GeForce RTX 3090 GPUs with gradient accumulation of 4 batches.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.424",
+    "title": "Neighbors Are Not Strangers: Improving Non-Autoregressive Translation under Low-Frequency Lexical Constraints",
+    "section": "5.2 Models"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "checkpoint released by Ott et al.",
+    "object_type": "Other",
+    "source_sentence": "For Transformer , we use the checkpoint released by Ott et al.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.424",
+    "title": "Neighbors Are Not Strangers: Improving Non-Autoregressive Translation under Low-Frequency Lexical Constraints",
+    "section": "5.2 Models"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "pseudo lexical constraints",
+    "object_type": "Other",
+    "source_sentence": "The experiments in §6.1 create pseudo lexical con- straints by traversing the target-side reference for understanding the proposed ACT.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.424",
+    "title": "Neighbors Are Not Strangers: Improving Non-Autoregressive Translation under Low-Frequency Lexical Constraints",
+    "section": "6.2 How does ACT perform under different kinds of lexical constraints?"
+  },
+  {
+    "subject": "Words",
+    "predicate": "uses",
+    "object": "lexical constraints",
+    "object_type": "Other",
+    "source_sentence": "To simulate this, we randomly sample 1- 5 words from each reference as lexical constraints , and results are presented in Figure 4.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.424",
+    "title": "Neighbors Are Not Strangers: Improving Non-Autoregressive Translation under Low-Frequency Lexical Constraints",
+    "section": "6.2 How does ACT perform under different kinds of lexical constraints?"
+  }
+]

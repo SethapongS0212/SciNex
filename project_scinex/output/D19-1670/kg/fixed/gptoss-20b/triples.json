@@ -1,0 +1,35 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "restricted fraction of the available training data",
+    "object_type": "Dataset",
+    "source_sentence": "By conducting experiments using a restricted fraction of the available training data, we show that EDA has more significant improvements for smaller training sets.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1670",
+    "title": "Jason Wei1,2 Kai Zou3",
+    "section": "4.2 Training Set Sizing"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "training set fractions",
+    "object_type": "Dataset",
+    "source_sentence": "We run both normal training and EDA training for the following training set fractions (%): {1, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100}.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1670",
+    "title": "Jason Wei1,2 Kai Zou3",
+    "section": "4.2 Training Set Sizing"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "average accuracy of 88.6%",
+    "object_type": "Metric",
+    "source_sentence": "Models trained using EDA surpassed this number by achieving an average accuracy of 88.6% while only using 50% of the available training data.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1670",
+    "title": "Jason Wei1,2 Kai Zou3",
+    "section": "4.2 Training Set Sizing"
+  }
+]

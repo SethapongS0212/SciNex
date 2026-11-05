@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Natural Language Processing",
+    "predicate": "encompasses",
+    "object": "answer selection within question answering",
+    "object_type": "Task",
+    "source_sentence": "In order to limit the scope of this paper, we specifically focus our efforts on a single natural language processing task—answer selection within question answering—elaborated upon in Section 2.1.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "2 Experimental Setup"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "model released by Sequiera et al. (2017)",
+    "object_type": "Model",
+    "source_sentence": "To perform our experiments we utilize the model released by Sequiera et al. (2017), a simplified Py- Torch implementation of the model proposed by Severyn and Moschitti (2015).",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "2.2 Exemplar Model"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "TrecQA dataset",
+    "object_type": "Dataset",
+    "source_sentence": "The experiments reported in this paper are all performed against the TrecQA dataset that was first released by Wang et al. (2007) and further elaborated upon by Yao et al. (2013), as well as the WikiQA dataset released by Yang et al.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "2.3 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "WikiQA dataset",
+    "object_type": "Dataset",
+    "source_sentence": "The experiments reported in this paper are all performed against the TrecQA dataset that was first released by Wang et al. (2007) and further elaborated upon by Yao et al. (2013), as well as the WikiQA dataset released by Yang et al.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "2.3 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "RAW variant",
+    "object_type": "Dataset",
+    "source_sentence": "experiments in this paper are performed against the RAW variant.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "2.3 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Docker containers",
+    "object_type": "Other",
+    "source_sentence": "all experiments are performed using Docker containers that are derived from common, shared, base images.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "4 Confounding Variables"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "base images",
+    "object_type": "Other",
+    "source_sentence": "all experiments are performed using Docker containers that are derived from common, shared, base images.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "4 Confounding Variables"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "same results",
+    "object_type": "Other",
+    "source_sentence": "Training the sample model repeatedly achieves the same results, suggesting that these settings are being utilized inside the PyTorch library",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "4.2 Threads"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "number of threads",
+    "object_type": "Concept",
+    "source_sentence": "Using the OMP_NUM_THREADS and MKL_NUM_THREADS environment variables, as well as the set_num_threads function in Py- Torch, we can control the number of threads used in training.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "4.2 Threads"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Intel i7-6800K",
+    "object_type": "Other",
+    "source_sentence": "our model was written against PyTorch v0.1.12, and training was conducted on an Intel i7-6800K using a single thread and Intel's Math Kernel Library",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "5 Conclusions"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Intel's Math Kernel Library",
+    "object_type": "Other",
+    "source_sentence": "our model was written against PyTorch v0.1.12, and training was conducted on an Intel i7-6800K using a single thread and Intel's Math Kernel Library",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "5 Conclusions"
+  }
+]

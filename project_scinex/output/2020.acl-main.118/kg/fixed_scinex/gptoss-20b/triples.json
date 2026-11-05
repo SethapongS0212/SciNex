@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "Majority Voting",
+    "predicate": "produces",
+    "object": "final perceived sarcasm label",
+    "object_type": "Other",
+    "source_sentence": "We used majority voting to select the final perceived sarcasm label for each tweet.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.118",
+    "title": "iSarcasm: A Dataset of Intended Sarcasm",
+    "section": "5.2 Third-Party Labels"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "probability distribution",
+    "object_type": "Other",
+    "source_sentence": "then adds a binary softmax layer to output a probability distribution over labels ( sarcastic or non-sarcastic )",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.118",
+    "title": "iSarcasm: A Dataset of Intended Sarcasm",
+    "section": "6.2 Sarcasm Detection Models"
+  },
+  {
+    "subject": "Pre-Trained Embeddings",
+    "predicate": "uses",
+    "object": "tweet embedding S",
+    "object_type": "Other",
+    "source_sentence": "H is then concatenated with a tweet embedding S computed in advance by averaging embeddings of all words inside using the pre-trained embeddings provided by Bravo-Marquez et al.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.118",
+    "title": "iSarcasm: A Dataset of Intended Sarcasm",
+    "section": "6.2 Sarcasm Detection Models"
+  },
+  {
+    "subject": "Sentiment",
+    "predicate": "uses",
+    "object": "weka toolkit",
+    "object_type": "Other",
+    "source_sentence": "H and S are further concatenated with a sentiment feature vector of the tweet computed in advance using the weka toolkit , by applying the TweetToLexiconFeatureVector and TweetToSentiStrengthFeatureVector filters.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.118",
+    "title": "iSarcasm: A Dataset of Intended Sarcasm",
+    "section": "6.2 Sarcasm Detection Models"
+  }
+]

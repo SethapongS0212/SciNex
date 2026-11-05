@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "this dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Consequently, instead of learning to split and rephrase complex sentences, models that are trained on this dataset will be prone to learn to memorize entity-fact pairs.",
+    "extraction_mode": "fixed",
+    "paper": "W19-8615",
+    "title": "MINWIKISPLIT: A Sentence Splitting Corpus with Minimal Propositions",
+    "section": "2 Limitations of Existing Sentence Splitting Corpora"
+  },
+  {
+    "subject": "training",
+    "predicate": "splitfrom",
+    "object": "development set",
+    "object_type": "Dataset",
+    "source_sentence": "To fix this issue, Aharoni and Goldberg (2018) present a new train-development-test data split where nearly no simple sentence that is contained in the development or test set occurs verbatim in the training set.",
+    "extraction_mode": "fixed",
+    "paper": "W19-8615",
+    "title": "MINWIKISPLIT: A Sentence Splitting Corpus with Minimal Propositions",
+    "section": "2 Limitations of Existing Sentence Splitting Corpora"
+  },
+  {
+    "subject": "training",
+    "predicate": "splitfrom",
+    "object": "test set",
+    "object_type": "Dataset",
+    "source_sentence": "To fix this issue, Aharoni and Goldberg (2018) present a new train-development-test data split where nearly no simple sentence that is contained in the development or test set occurs verbatim in the training set.",
+    "extraction_mode": "fixed",
+    "paper": "W19-8615",
+    "title": "MINWIKISPLIT: A Sentence Splitting Corpus with Minimal Propositions",
+    "section": "2 Limitations of Existing Sentence Splitting Corpora"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "new dataset",
+    "object_type": "Dataset",
+    "source_sentence": "new dataset that can be used to train models for the task of decomposing sentences with a complex linguistic structure into a simplified representation",
+    "extraction_mode": "fixed",
+    "paper": "W19-8615",
+    "title": "MINWIKISPLIT: A Sentence Splitting Corpus with Minimal Propositions",
+    "section": "3 MINWIKISPLIT Corpus"
+  },
+  {
+    "subject": "NLP Systems",
+    "predicate": "uses",
+    "object": "Sentences",
+    "object_type": "Concept",
+    "source_sentence": "shorter sentences are generally better processed by NLP systems",
+    "extraction_mode": "fixed",
+    "paper": "W19-8615",
+    "title": "MINWIKISPLIT: A Sentence Splitting Corpus with Minimal Propositions",
+    "section": "3 MINWIKISPLIT Corpus"
+  },
+  {
+    "subject": "Sentence Simplification",
+    "predicate": "uses",
+    "object": "heuristics",
+    "object_type": "Method",
+    "source_sentence": "After running the sentence simplification framework DISSIM over the sentences from the WIKI-SPLIT corpus and applying the set of heuristics that we defined to ensure grammaticality and minimality of the output, 203K pairs of input and corresponding output sequences were left.",
+    "extraction_mode": "fixed",
+    "paper": "W19-8615",
+    "title": "MINWIKISPLIT: A Sentence Splitting Corpus with Minimal Propositions",
+    "section": "4 Corpus Construction"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "CoLA dataset",
+    "object_type": "Dataset",
+    "source_sentence": "we will train a classifier on the recently proposed CoLA dataset to eliminate instances with ungrammatical target sentences from our corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W19-8615",
+    "title": "MINWIKISPLIT: A Sentence Splitting Corpus with Minimal Propositions",
+    "section": "6 Conclusion"
+  }
+]

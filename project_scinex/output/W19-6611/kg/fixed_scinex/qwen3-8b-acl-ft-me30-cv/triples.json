@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "NMT",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance",
+    "object_type": "Other",
+    "source_sentence": "Neural machine translation (NMT) has achieved state -of-the-art performance for many language c⃝2019 The authors.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Nearest Neighbors",
+    "predicate": "uses",
+    "object": "WordNet",
+    "object_type": "Concept",
+    "source_sentence": "To this end, we analyze how much the nearest neighbors of words based on their hidden state representations are covered by direct relations in WordNet.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "multi-headed attention",
+    "object_type": "Method",
+    "source_sentence": "Our transformer model is a 6-layer transformer with multi-headed attention of 8 heads.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "2 Datasets and Models"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "Layer Normalization",
+    "object_type": "Method",
+    "source_sentence": "Our transformer model has hidden state dimensions of 512 and a batch size of 4096 tokens and uses layer normalization.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "2 Datasets and Models"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "cosine similarity",
+    "object_type": "Concept",
+    "source_sentence": "The nearest neighbors of the word embeddings are also computed using cosine similarity.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "3.1 Hidden States vs Embeddings"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "POS tag",
+    "object_type": "Concept",
+    "source_sentence": "we use the same POS tag and the same subtree of a word for its BPE segments",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "3.3 Syntactic Similarity"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "subtree",
+    "object_type": "Concept",
+    "source_sentence": "we use the same POS tag and the same subtree of a word for its BPE segments",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "3.3 Syntactic Similarity"
+  },
+  {
+    "subject": "POS tagger",
+    "predicate": "uses",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "To carry out an analysis based on POS tags, we tagged our training data using the Stanford POS tagger.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "4.1 Embedding Nearest Neighbors Coverage"
+  },
+  {
+    "subject": "Neural Machine Translation Architectures",
+    "predicate": "comparesagainst",
+    "object": "nearest neighbors",
+    "object_type": "Concept",
+    "source_sentence": "In this work, we introduce an intrinsic way of comparing neural machine translation architectures by looking at the nearest neighbors of the encoder hidden states.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "comparesagainst",
+    "object": "recurrent model",
+    "object_type": "Model",
+    "source_sentence": "Using the method, we compare recurrent and transformer models in terms of capturing syntax and lexical semantics.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "comparesagainst",
+    "object": "recurrent model",
+    "object_type": "Model",
+    "source_sentence": "We show that the transformer model is superior in terms of capturing lexical semantics, while the recurrent model better captures syntactic similarity.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "5 Conclusion"
+  }
+]

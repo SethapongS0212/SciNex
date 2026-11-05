@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "high accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Experiments suggest that human subjects can answer the questions with high accuracy by reading their generated summaries ;",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "summaries",
+    "object_type": "Other",
+    "source_sentence": "For each news article, four summarisation systems were used to generate summaries : the seq2seq and pointer models proposed by See et al. (2017), and the ml and ml+rl models by Paulus et al.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "addresses",
+    "object": "Regression",
+    "object_type": "Task",
+    "source_sentence": "We first consider reward learning as a regression problem, by measuring the \"closeness\" between R and R∗by their mean squared errors:",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "4 Problem Formulation"
+  },
+  {
+    "subject": "CNNs",
+    "predicate": "produces",
+    "object": "sentence embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We use convolutional neural networks (CNNs) to encode the sentences in the input text, and feed the sentence embeddings into an LSTM to generate the embedding of the whole input text.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "5.1 MLP"
+  },
+  {
+    "subject": "CNNs",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We use convolutional neural networks (CNNs) to encode the sentences in the input text, and feed the sentence embeddings into an LSTM to generate the embedding of the whole input text.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "5.1 MLP"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We use convolutional neural networks (CNNs) to encode the sentences in the input text, and feed the sentence embeddings into an LSTM to generate the embedding of the whole input text.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "5.1 MLP"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "produces",
+    "object": "embedding of the whole input text",
+    "object_type": "Concept",
+    "source_sentence": "We use convolutional neural networks (CNNs) to encode the sentences in the input text, and feed the sentence embeddings into an LSTM to generate the embedding of the whole input text.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "5.1 MLP"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "output of PMeans",
+    "object_type": "Concept",
+    "source_sentence": "The output of PMeans is passed to an LSTM to produce the final document embedding.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1307",
+    "title": "Better Rewards Yield Better Summaries: Learning to Summarise Without References",
+    "section": "5.1 MLP"
+  }
+]

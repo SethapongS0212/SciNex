@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "Pointwise Mutual Information",
+    "predicate": "uses",
+    "object": "keyword",
+    "object_type": "Concept",
+    "source_sentence": "In this step, we use pointwise mutual information (PMI) to predict a keyword for the reply.",
+    "extraction_mode": "fixed",
+    "paper": "C16-1316",
+    "title": "Lili Mou,1 Yiping Song,2 Rui Yan,3 Ge Li,1,∗Lu Zhang,1 Zhi Jin1,∗",
+    "section": "2.2 Keyword Prediction"
+  },
+  {
+    "subject": "Backward and Forward Sequences",
+    "predicate": "uses",
+    "object": "RNN",
+    "object_type": "Model",
+    "source_sentence": "The backward and forward sequences are generated synchronously using a single RNN, two output layers at each time step for the two sequences.",
+    "extraction_mode": "fixed",
+    "paper": "C16-1316",
+    "title": "Lili Mou,1 Yiping Song,2 Rui Yan,3 Ge Li,1,∗Lu Zhang,1 Zhi Jin1,∗",
+    "section": "2.3 The seq2BF Model"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "RNNs",
+    "object_type": "Model",
+    "source_sentence": "In both backward and forward seq2seq models, we use RNNs with gated recurrent units (GRUs) for information processing , given by where W's and U's are weights and b's are bias terms.",
+    "extraction_mode": "fixed",
+    "paper": "C16-1316",
+    "title": "Lili Mou,1 Yiping Song,2 Rui Yan,3 Ge Li,1,∗Lu Zhang,1 Zhi Jin1,∗",
+    "section": "2.3 The seq2BF Model"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "comparesagainst",
+    "object": "seq2BF",
+    "object_type": "Model",
+    "source_sentence": "Given a certain query, the volunteers were asked to judge whether pure seq2seq is better than, equal to, or worse than seq2BF (with content introducing).",
+    "extraction_mode": "fixed",
+    "paper": "C16-1316",
+    "title": "Lili Mou,1 Yiping Song,2 Rui Yan,3 Ge Li,1,∗Lu Zhang,1 Zhi Jin1,∗",
+    "section": "3.3 Performance"
+  },
+  {
+    "subject": "Ranking",
+    "predicate": "addresses",
+    "object": "different dialog systems",
+    "object_type": "Other",
+    "source_sentence": "the ranking of average scores reflects the comparison of different dialog systems.",
+    "extraction_mode": "fixed",
+    "paper": "C16-1316",
+    "title": "Lili Mou,1 Yiping Song,2 Rui Yan,3 Ge Li,1,∗Lu Zhang,1 Zhi Jin1,∗",
+    "section": "3.3 Performance"
+  }
+]

@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "evaluate",
+    "predicate": "addresses",
+    "object": "navigation and question answering tasks",
+    "object_type": "Task",
+    "source_sentence": "We evaluate on navigation and question answering tasks across three benchmark datasets:",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3 Benchmark Tasks"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "ResNet-encoded image Vt",
+    "object_type": "Image",
+    "source_sentence": "At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at (seen in Figure 2).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.1 Matterport Room-to-Room"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "previous action at−1",
+    "object_type": "Action",
+    "source_sentence": "At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at (seen in Figure 2).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.1 Matterport Room-to-Room"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "CNN encoded image Vt",
+    "object_type": "Image",
+    "source_sentence": "At each timestep, a planner LSTM takes in a CNN encoded image Vt, LSTM encoded question L, and the previous action at−1 and emits an action at.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "LSTM encoded question L",
+    "object_type": "Question",
+    "source_sentence": "At each timestep, a planner LSTM takes in a CNN encoded image Vt, LSTM encoded question L, and the previous action at−1 and emits an action at.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "previous action at−1",
+    "object_type": "Action",
+    "source_sentence": "At each timestep, a planner LSTM takes in a CNN encoded image Vt, LSTM encoded question L, and the previous action at−1 and emits an action at.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "uses",
+    "object": "majority class baseline",
+    "object_type": "Method",
+    "source_sentence": "We use a majority class baseline inspired by the data's entropy based filtering.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  },
+  {
+    "subject": "Language",
+    "predicate": "achieves",
+    "object": "50%",
+    "object_type": "Metric",
+    "source_sentence": "The language only models achieve nearly 50%, suggesting that despite the entropy filtering in Das et al. (2018a) each question has one answer that is as likely as all other answers combined (e.g. 50% of the answers for What color is the bathtub? are grey, and other examples in Figure 4).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "V ONLY 43.5 42.8 44.2 L ONLY 41.7 41.7 48."
+  },
+  {
+    "subject": "Neural Architectures",
+    "predicate": "addresses",
+    "object": "natural language",
+    "object_type": "Concept",
+    "source_sentence": "Modern approaches use neural architectures to map natural language to the (simulated) world and execute actions",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Neural Architectures",
+    "predicate": "addresses",
+    "object": "Actions",
+    "object_type": "Concept",
+    "source_sentence": "Modern approaches use neural architectures to map natural language to the (simulated) world and execute actions",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "multimodal",
+    "predicate": "addresses",
+    "object": "VQA",
+    "object_type": "Task",
+    "source_sentence": "Such issues also occur in multimodal data like VQA , where models can answer correctly with- out looking at the image .",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "L Only"
+  }
+]

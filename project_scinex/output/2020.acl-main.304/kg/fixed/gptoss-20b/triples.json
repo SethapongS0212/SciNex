@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "BiLSTM-CRF",
+    "predicate": "uses",
+    "object": "forward-backward algorithm",
+    "object_type": "Method",
+    "source_sentence": "In sequence labeling, however, local distributions in a BiLSTM-CRF can be computed exactly using the forward-backward algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "3.2 Posterior Distillation"
+  },
+  {
+    "subject": "POS Tagging",
+    "predicate": "uses",
+    "object": "universal POS tagging annotations",
+    "object_type": "Other",
+    "source_sentence": "Universal Dependencies (UD): We use universal POS tagging annotations in the UD datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "4.1 Setup"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "comparesagainst",
+    "object": "BiLSTM-CRF models",
+    "object_type": "Model",
+    "source_sentence": "BiLSTM-Softmax models per- form inferior to BiLSTM-CRF models in most cases in the multilingual setting:",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "4.2 Results"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "comparesagainst",
+    "object": "BiLSTM-Softmax approach",
+    "object_type": "Model",
+    "source_sentence": "BiLSTM-CRF approach is stronger than the BiLSTM-Softmax approach on three of the four tasks",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "4.2 Results"
+  },
+  {
+    "subject": "POS",
+    "predicate": "comparesagainst",
+    "object": "Pos.+Top-WK",
+    "object_type": "Model",
+    "source_sentence": "Posterior approach outperforms the baseline on 21 datasets and only underperforms the baseline by 0.12 on 2 languages in WikiAnn and by 0.01 on one language in UD POS tagging. It outperforms the other methods on average in all the tasks except that is slightly underperforms Pos.+Top-WK in the CoNLL NER task.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "4.2 Results"
+  },
+  {
+    "subject": "Multilingual Models",
+    "predicate": "comparesagainst",
+    "object": "Teacher Models",
+    "object_type": "Model",
+    "source_sentence": "the results show that multilingual models significantly outperform the teacher models.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "4.3 Zero-shot Transfer"
+  },
+  {
+    "subject": "POS",
+    "predicate": "comparesagainst",
+    "object": "Baseline Models",
+    "object_type": "Model",
+    "source_sentence": "our multilingual models, Posterior and Pos.+Top-WK outperform the baseline on all the languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "4.3 Zero-shot Transfer"
+  },
+  {
+    "subject": "POS",
+    "predicate": "comparesagainst",
+    "object": "Baseline Models",
+    "object_type": "Model",
+    "source_sentence": "our multilingual models, Posterior and Pos.+Top-WK outperform the baseline on all the languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "4.3 Zero-shot Transfer"
+  },
+  {
+    "subject": "POS",
+    "predicate": "comparesagainst",
+    "object": "Pos.+Top-WK",
+    "object_type": "Model",
+    "source_sentence": "the Posterior is stronger than Pos.+Top-WK by 0.29 F1 score on average.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "4.3 Zero-shot Transfer"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "achieves",
+    "object": "60% faster speed",
+    "object_type": "Metric",
+    "source_sentence": "proposed a distilled version of the BERT model which achieves a 60% faster speed and maintains 97% performance of the larger BERT model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "achieves",
+    "object": "97% performance",
+    "object_type": "Metric",
+    "source_sentence": "proposed a distilled version of the BERT model which achieves a 60% faster speed and maintains 97% performance of the larger BERT model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "achieves",
+    "object": "further performance gains",
+    "object_type": "Concept",
+    "source_sentence": "Wu and Dredze (2019) found that fine-tuning M-BERT with the bottom layers fixed provides further performance gains in multilingual setting.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "6 Discussion on Flair/M-BERT Fine-tuning"
+  }
+]

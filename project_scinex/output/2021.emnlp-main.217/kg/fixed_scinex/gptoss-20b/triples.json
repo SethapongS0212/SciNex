@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Taxonomy enrichment",
+    "predicate": "produces",
+    "object": "extended taxonomy ˜T",
+    "object_type": "Concept",
+    "source_sentence": "taxonomy enrichment estimates an extended taxonomy ˜T = ( ˜V, ˜E)",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "2.2 Problem Deﬁnition"
+  },
+  {
+    "subject": "Taxonomy enrichment",
+    "predicate": "addresses",
+    "object": "low-resource settings",
+    "object_type": "Concept",
+    "source_sentence": "The goal of low- resource taxonomy enrichment is to find the optimal parent v⋆∈V of each new term v′ ∈V ′ in low- resource settings.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "3 Method"
+  },
+  {
+    "subject": "probabilistic",
+    "predicate": "addresses",
+    "object": "taxonomy enrichment problem",
+    "object_type": "Concept",
+    "source_sentence": "We introduce a formulation of the taxonomy enrichment problem based on our probabilistic taxonomy model.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "3 Method"
+  },
+  {
+    "subject": "Classification",
+    "predicate": "addresses",
+    "object": "taxonomy enrichment",
+    "object_type": "Concept",
+    "source_sentence": "We introduce a formulation of the taxonomy enrichment problem based on our probabilistic taxonomy model, then elaborate on our classification approach based on pretrained LMs and Hearst patterns.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "3 Method"
+  },
+  {
+    "subject": "Patterns",
+    "predicate": "addresses",
+    "object": "classification approach",
+    "object_type": "Concept",
+    "source_sentence": "We introduce a formulation of the taxonomy enrichment problem based on our probabilistic taxonomy model, then elaborate on our classification approach based on pretrained LMs and Hearst patterns.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "3 Method"
+  },
+  {
+    "subject": "Probabilistic Model",
+    "predicate": "addresses",
+    "object": "taxonomy enrichment problem",
+    "object_type": "Concept",
+    "source_sentence": "By using the probabilistic model, we formulate the taxonomy enrichment problem to find the optimal enriched taxonomy",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "3.1 Probabilistic Model on Taxonomy"
+  },
+  {
+    "subject": "Terms",
+    "predicate": "uses",
+    "object": "training",
+    "object_type": "Other",
+    "source_sentence": "denote the leaf terms used for training, development, and testing, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "comparesagainst",
+    "object": "Octet",
+    "object_type": "Model",
+    "source_sentence": "The results show that our BERT-based approach outperformed Octet, which uses fasttext to extract semantic features.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "4.2 Evaluation Results"
+  },
+  {
+    "subject": "adapting",
+    "predicate": "addresses",
+    "object": "term relationships",
+    "object_type": "Concept",
+    "source_sentence": "Although LMs generally have term relationships, the LM-based classifier needs to be fine-tuned to adapting to term relationships in the seed taxonomy.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "4.2 Evaluation Results"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "FastText",
+    "object_type": "Model",
+    "source_sentence": "In our experiments, we used the public fasttext model trained on the Common Crawl corpus to extract semantic features from term pairs in TaxoExpan, MSejrKu, and Octet.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "4.2 Evaluation Results"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "lexical features",
+    "object_type": "Other",
+    "source_sentence": "We also used the lexical features proposed by Bansal et al.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "4.2 Evaluation Results"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "negative term pairs",
+    "object_type": "Other",
+    "source_sentence": "During training, we randomly sampled nine negative term pairs for each positive pair.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "4.2 Evaluation Results"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "addresses",
+    "object": "Hypernymy Detection",
+    "object_type": "Task",
+    "source_sentence": "Both unsupervised and supervised methods have been proposed for this task.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "5.1 Hypernymy Detection"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "addresses",
+    "object": "Hypernymy Detection",
+    "object_type": "Task",
+    "source_sentence": "Both unsupervised and supervised methods have been proposed for this task.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "5.1 Hypernymy Detection"
+  },
+  {
+    "subject": "Patterns",
+    "predicate": "uses",
+    "object": "syntactic patterns",
+    "object_type": "Concept",
+    "source_sentence": "Pattern-based approaches predict that the term pair (x, y) has an is-a relation if x and y satisfy syntactic patterns in given documents, for instance, Hearst patterns are as shown in Table 2.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "5.1 Hypernymy Detection"
+  },
+  {
+    "subject": "distributional",
+    "predicate": "uses",
+    "object": "distributional representations",
+    "object_type": "Concept",
+    "source_sentence": "Distributional approaches use the distributional representations of term pairs to measure the strength of their Is-A relationships.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "5.1 Hypernymy Detection"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "addresses",
+    "object": "Classification",
+    "object_type": "Task",
+    "source_sentence": "In contrast, the supervised methods follow a classification paradigm.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "5.1 Hypernymy Detection"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Concept",
+    "source_sentence": "In most of the supervised methods , each term pair transforms feature vectors constructed from word embeddings and identifies whether or not they have hypernymy relationships.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "5.1 Hypernymy Detection"
+  },
+  {
+    "subject": "SemEval-2016 Task 14",
+    "predicate": "produces",
+    "object": "semantic taxonomy enrichment task",
+    "object_type": "Task",
+    "source_sentence": "For instance, the SemEval-2016 Task 14 presents a semantic taxonomy enrichment task that extends the Word- Net taxonomy with new terms and their definitions.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "5.2 Taxonomy Construction and Enrichment"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "Hearst patterns",
+    "object_type": "Concept",
+    "source_sentence": "Musubu utilizes a novel classifier based on pretrained LMs and Hearst patterns for generating queries.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.217",
+    "title": "Low-resource Taxonomy Enrichment with Pretrained Language Models",
+    "section": "6 Conclusion"
+  }
+]

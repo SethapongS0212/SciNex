@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Learning",
+    "predicate": "addresses",
+    "object": "automatic data selection",
+    "object_type": "Concept",
+    "source_sentence": "Other learning modifications relate to automatic data selection, e.g., choosing examples for generative learning or automatically generating negative examples for discriminative unsupervised learning.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "2.1 Biasing Learning"
+  },
+  {
+    "subject": "log-linear",
+    "predicate": "uses",
+    "object": "feature vector f",
+    "object_type": "Concept",
+    "source_sentence": "we use a log-linear parameterization with feature vector f and weight vector θ",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "3 Unsupervised Structure Learning"
+  },
+  {
+    "subject": "log-linear",
+    "predicate": "uses",
+    "object": "weight vector θ",
+    "object_type": "Concept",
+    "source_sentence": "we use a log-linear parameterization with feature vector f and weight vector θ",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "3 Unsupervised Structure Learning"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "addresses",
+    "object": "poor structures",
+    "object_type": "Concept",
+    "source_sentence": "learning pays more attention to them",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "4 Modeling Corruption Costs"
+  },
+  {
+    "subject": "PoS induction",
+    "predicate": "uses",
+    "object": "one-tag-per-type constraints",
+    "object_type": "Concept",
+    "source_sentence": "Many POS induction systems use one-tag- per-type constraints , which often lead to higher",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "5.1 Output Cost Functions"
+  },
+  {
+    "subject": "greedy algorithm",
+    "predicate": "uses",
+    "object": "1-to-1 accuracy",
+    "object_type": "Metric",
+    "source_sentence": "It is common to use a greedy algorithm to compute 1-to-1 accuracy",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "8 Experiments"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "optimal mapping",
+    "object_type": "Method",
+    "source_sentence": "When we instead evaluate using the optimal mapping",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "8 Experiments"
+  },
+  {
+    "subject": "Brown Clusters",
+    "predicate": "uses",
+    "object": "mkcls tool",
+    "object_type": "Tool",
+    "source_sentence": "BROWN clusters , clusters obtained using the mkcls tool",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "8 Experiments"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "12 tags",
+    "object_type": "Concept",
+    "source_sentence": "We restrict our attention to systems that use 12 tags",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "8 Experiments"
+  },
+  {
+    "subject": "System Combination",
+    "predicate": "uses",
+    "object": "4 system outputs",
+    "object_type": "Other",
+    "source_sentence": "We consider the ways proposed in Section 7, namely tuning based on the contrastive estimation criterion computed on development data (CE), the log-likelihood estimate on development data with S = 10 (LL), and our two system combination algorithms : naive voting (NAIVE) and aligned voting (ALIGN), both of which use as input the 4 system outputs whose hyperparameters led to the highest values for the CE criterion on development data.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "8.1 CCE Setup"
+  },
+  {
+    "subject": "Kneser-Ney Smoothing",
+    "predicate": "uses",
+    "object": "SRILM",
+    "object_type": "Other",
+    "source_sentence": "We used modified Kneser-Ney smoothing as implemented by SRILM.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "8.1 CCE Setup"
+  },
+  {
+    "subject": "Model Selection",
+    "predicate": "achieves",
+    "object": "CE baselines",
+    "object_type": "Concept",
+    "source_sentence": "When using LL model selection and fixing the neighborhood, all average scores are better than their CE baselines.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "8.2 Results"
+  },
+  {
+    "subject": "Model Selection",
+    "predicate": "uses",
+    "object": "MATLM",
+    "object_type": "Model",
+    "source_sentence": "We find the best overall performance when using MATLM with LL model selection with the TRANS1 neighborhood, and we report this setting in our subsequent experiments.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "8.2 Results"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "TRANS1 neighborhood",
+    "object_type": "Other",
+    "source_sentence": "All (C)CE experiments used the TRANS1 neighborhood.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "8.2 Results"
+  },
+  {
+    "subject": "Model Selection",
+    "predicate": "uses",
+    "object": "ALIGN voting",
+    "object_type": "Other",
+    "source_sentence": "When doing model selection via ALIGN voting, we roughly match the average 1-1 of PR, and when using the CE criterion, we beat it by 1 point on average (51.3 vs.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "8.2 Results"
+  },
+  {
+    "subject": "Model Selection",
+    "predicate": "achieves",
+    "object": "LL",
+    "object_type": "Other",
+    "source_sentence": "When using the UNIV cost, we find that model selection via CE works better than LL.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1139",
+    "title": "Weakly-Supervised Learning with Cost-Augmented Contrastive Estimation",
+    "section": "8.2 Results"
+  }
+]

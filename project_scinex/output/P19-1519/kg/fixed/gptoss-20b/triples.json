@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "two real-world datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Showing the effectiveness of our model on two real-world datasets, and comparing with existing models as well as commercial NLU services.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Neural Network Structures",
+    "predicate": "uses",
+    "object": "context-aware word representations",
+    "object_type": "Concept",
+    "source_sentence": "Various neural network structures can be used to learn context-aware word representations.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "2.1 WordCaps"
+  },
+  {
+    "subject": "Recurrent Neural Network",
+    "predicate": "uses",
+    "object": "Bidirectional LSTM",
+    "object_type": "Model",
+    "source_sentence": "For example, a recurrent neural network such as a bidirectional LSTM can be applied to learn representations of each word in the utterance.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "2.1 WordCaps"
+  },
+  {
+    "subject": "cross entropy",
+    "predicate": "addresses",
+    "object": "Slot Filling",
+    "object_type": "Task",
+    "source_sentence": "Cross Entropy Loss for Slot Filling",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "2.2 SlotCaps"
+  },
+  {
+    "subject": "Recurrent Neural Network",
+    "predicate": "uses",
+    "object": "slot filling",
+    "object_type": "Task",
+    "source_sentence": "adopts a Recurrent Neural Network (RNN) for slot filling",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "3 Experiment Setup"
+  },
+  {
+    "subject": "Long Short-Term Memory",
+    "predicate": "uses",
+    "object": "slot-gated mechanism",
+    "object_type": "Other",
+    "source_sentence": "utilizes a slot-gated mechanism as a special gate function in Long Short-term Memory Network (LSTM) to improve slot filling by the learned intent context vector",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "3 Experiment Setup"
+  },
+  {
+    "subject": "Text Classification",
+    "predicate": "uses",
+    "object": "intent detection",
+    "object_type": "Task",
+    "source_sentence": "We used this capsule-based text classification model for intent detection only",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "3 Experiment Setup"
+  },
+  {
+    "subject": "Semantic Features",
+    "predicate": "uses",
+    "object": "utterances",
+    "object_type": "Other",
+    "source_sentence": "IntentCapsNet adopts a multi-head self-attention to extract intermediate semantic features from the utterances",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "3 Experiment Setup"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "slot filling",
+    "object_type": "Task",
+    "source_sentence": "adopt a Recurrent Neural Network (RNN) for slot filling",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "5 Related Works"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "intent detection",
+    "object_type": "Task",
+    "source_sentence": "the last hidden state of the RNN is used to predict the utterance intent",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "5 Related Works"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "intent detection",
+    "object_type": "Task",
+    "source_sentence": "An attention weighted sum of all encoded hidden states is used to predict the utterance intent",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "5 Related Works"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "slot filling",
+    "object_type": "Task",
+    "source_sentence": "utilize a slot-gated mechanism as a special gate function in Long Short-term Memory Network (LSTM) to improve slot filling",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "5 Related Works"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "context-aware word representations",
+    "object_type": "Other",
+    "source_sentence": "A recurrent neural network such as Gated Recurrent Unit (GRU) or Long Short-term Memory Network (LSTM) is used to learn context-aware word representations, and Conditional Random Fields (CRF) are used to annotate each word based on its slot type.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "5 Related Works"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "annotate each word based on its slot type",
+    "object_type": "Other",
+    "source_sentence": "A recurrent neural network such as Gated Recurrent Unit (GRU) or Long Short-term Memory Network (LSTM) is used to learn context-aware word representations, and Conditional Random Fields (CRF) are used to annotate each word based on its slot type.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "5 Related Works"
+  },
+  {
+    "subject": "Joint Models",
+    "predicate": "addresses",
+    "object": "error propagation",
+    "object_type": "Concept",
+    "source_sentence": "Joint Modeling via Sequence Labeling To overcome the error propagation in the word-level slot filling task and the utterance-level intent detection task in a pipeline, joint models are proposed to solve two tasks simultaneously in a unified framework.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "5 Related Works"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "Datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Experiments on two real-world datasets show the effectiveness of the proposed models when compared with other alternatives as well as existing NLU services.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "6 Conclusions"
+  },
+  {
+    "subject": "Routing",
+    "predicate": "addresses",
+    "object": "Slot Filling",
+    "object_type": "Task",
+    "source_sentence": "A re-routing schema is proposed to further synergize the slot filling performance using the inferred intent representation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "6 Conclusions"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Experiments on two real-world datasets show the effectiveness of the proposed models when compared with other alternatives as well as existing NLU services.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1519",
+    "title": "Joint Slot Filling and Intent Detection via Capsule Neural Networks",
+    "section": "6 Conclusions"
+  }
+]

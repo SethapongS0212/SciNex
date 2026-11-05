@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "contextualized word representations",
+    "object_type": "Other",
+    "source_sentence": "An analogous question has been explored recently in linguistic probing, which aims to explore the linguistic properties encoded in contextualized word representations —for example, by seeing if a classifier can predict that \"chef\" is the nominal subject of \"made\" given the representations returned from a language model (Figure 1).",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.398",
+    "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "LAMA",
+    "predicate": "uses",
+    "object": "Wikidata",
+    "object_type": "Dataset",
+    "source_sentence": "LAMA facts are drawn from a number of sources, including Wikidata, ConceptNet , and SQuAD.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.398",
+    "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+    "section": "2.1 LAMA"
+  },
+  {
+    "subject": "LAMA",
+    "predicate": "uses",
+    "object": "ConceptNet",
+    "object_type": "Dataset",
+    "source_sentence": "LAMA facts are drawn from a number of sources, including Wikidata, ConceptNet , and SQuAD.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.398",
+    "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+    "section": "2.1 LAMA"
+  },
+  {
+    "subject": "LAMA",
+    "predicate": "uses",
+    "object": "SQuAD",
+    "object_type": "Dataset",
+    "source_sentence": "LAMA facts are drawn from a number of sources, including Wikidata, ConceptNet , and SQuAD.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.398",
+    "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+    "section": "2.1 LAMA"
+  },
+  {
+    "subject": "LAMA",
+    "predicate": "addresses",
+    "object": "human-written prompts",
+    "object_type": "Other",
+    "source_sentence": "In the LAMA evaluation, each relation is associated with a human-written prompt that contains a single [MASK] token—for example, \"[X] was born in [MASK].\"",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.398",
+    "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+    "section": "2.1 LAMA"
+  },
+  {
+    "subject": "Link Prediction",
+    "predicate": "addresses",
+    "object": "predicting facts from other triples",
+    "object_type": "Other",
+    "source_sentence": "In knowledge base completion or link prediction, researchers study how to predict a fact (Barack Obama, nationality,?) from other triples such as (Barack Obama, place_of_birth, Honolulu) and (Honolulu, city_of, USA).",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.398",
+    "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+    "section": "2.1 LAMA"
+  },
+  {
+    "subject": "Knowledge",
+    "predicate": "addresses",
+    "object": "predicting facts from other facts",
+    "object_type": "Other",
+    "source_sentence": "In knowledge probing, the underlying assumption is that one can't predict facts from the other facts of the same relation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.398",
+    "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+    "section": "2.1 LAMA"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Wikidata",
+    "object_type": "Dataset",
+    "source_sentence": "They collect a training dataset from Wikidata",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.398",
+    "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+    "section": "2.2 LPAQA"
+  },
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "AUTO-PROMPT",
+    "object_type": "Model",
+    "source_sentence": "(2020) take prompt optimization one step further by training a statistical model, AUTO- PROMPT , to search over the space of input tokens for prompts that elicit correct predictions.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.398",
+    "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+    "section": "2.3 AUTOPROMPT"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "trainedon",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "Finally, we directly fine- tune a reinitialized BERT model on the training data with the goal of getting a better estimate of the number of LAMA facts that could be predicted from the training data.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.398",
+    "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+    "section": "4.2 Prompts can exploit training data"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "LAMA benchmark",
+    "object_type": "Dataset",
+    "source_sentence": "the qualitative examples reveal interesting patterns in the behavior of the different prompt models that could not be observed from the summary accuracy results on the LAMA benchmark",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.398",
+    "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+    "section": "5 How to Interpret Probing Results?"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Wikidata",
+    "object_type": "Dataset",
+    "source_sentence": "This problem is more pronounced if our training distribution comes from a source like Wikidata, which we find to be imbalanced.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.398",
+    "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+    "section": "7 Related Work"
+  },
+  {
+    "subject": "Probabilistic Models",
+    "predicate": "trainedon",
+    "object": "Wikidata training data",
+    "object_type": "Dataset",
+    "source_sentence": "In Section 4.2 we fit two simple probabilistic models to the Wikidata training data collected by .",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.398",
+    "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+    "section": "B.1 Prompt Optimization"
+  }
+]

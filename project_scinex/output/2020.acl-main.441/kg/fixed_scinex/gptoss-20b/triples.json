@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "training set",
+    "object_type": "Other",
+    "source_sentence": "we construct a new training set from the collected data, with accompanying development and test sets, which are constructed solely from verified correct examples.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "2.1 HAMLET"
+  },
+  {
+    "subject": "Test Sets",
+    "predicate": "producedby",
+    "object": "data collection",
+    "object_type": "Other",
+    "source_sentence": "we construct a new training set from the collected data, with accompanying development and test sets, which are constructed solely from verified correct examples.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "2.1 HAMLET"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "SNLI",
+    "object_type": "Dataset",
+    "source_sentence": "For the first round, we used a BERT-Large model trained on a concatenation of SNLI and MNLI , and selected the best-performing model we could train as the starting point for our dataset collection procedure.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "2.3 Round"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "MNLI",
+    "object_type": "Dataset",
+    "source_sentence": "For the first round, we used a BERT-Large model trained on a concatenation of SNLI and MNLI , and selected the best-performing model we could train as the starting point for our dataset collection procedure.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "2.3 Round"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "SNLI",
+    "object_type": "Dataset",
+    "source_sentence": "For the second round, we used a more powerful RoBERTa model trained on SNLI, MNLI, an NLI-version2 of FEVER , and the training data from the previous round (A1).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "2.4 Round"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "MNLI",
+    "object_type": "Dataset",
+    "source_sentence": "For the second round, we used a more powerful RoBERTa model trained on SNLI, MNLI, an NLI-version2 of FEVER , and the training data from the previous round (A1).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "2.4 Round"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "NLI-version2 of FEVER",
+    "object_type": "Dataset",
+    "source_sentence": "For the second round, we used a more powerful RoBERTa model trained on SNLI, MNLI, an NLI-version2 of FEVER , and the training data from the previous round (A1).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "2.4 Round"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "training data from the previous round (A1)",
+    "object_type": "Dataset",
+    "source_sentence": "For the second round, we used a more powerful RoBERTa model trained on SNLI, MNLI, an NLI-version2 of FEVER , and the training data from the previous round (A1).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "2.4 Round"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "training set from the second round (A2)",
+    "object_type": "Dataset",
+    "source_sentence": "We trained an even stronger RoBERTa ensemble by adding the training set from the second round (A2) to the training data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "2.5 Round"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "robustness",
+    "object_type": "Concept",
+    "source_sentence": "Training on more rounds improves robustness.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "4 Results"
+  },
+  {
+    "subject": "training",
+    "predicate": "addresses",
+    "object": "adversarial attacks",
+    "object_type": "Concept",
+    "source_sentence": "Simply training on more \"normal NLI\" data would not help a model be robust to adversarial attacks, but our data actively helps mitigate these.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "4 Results"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "However, the base (RoBERTa) models for rounds 2 and 3 are outperformed by both BERT and XL- Net (rows 5, 6 and 10).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "4 Results"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "comparesagainst",
+    "object": "hypothesis-only",
+    "object_type": "Model",
+    "source_sentence": "We observe that in rounds 2 and 3, RoBERTa is not much better than hypothesis-only.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "4.3 Hypothesis-only results"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "RoBERTa matches BERT when trained on the much larger, fully in-domain SNLI+MNLI combined dataset",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "4.3 Hypothesis-only results"
+  },
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "completely new examples",
+    "object_type": "Examples",
+    "source_sentence": "In this work, we employ both human and model-based strategies iteratively, in a form of human-and-model-in-the-loop training, to create completely new examples, in a potentially never-ending loop.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "6 Related work"
+  },
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "grounded language learning agents",
+    "object_type": "Other",
+    "source_sentence": "Mechanical Turker Descent proposes a gamified environment for the collaborative training of grounded language learning agents over multiple rounds.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "6 Related work"
+  },
+  {
+    "subject": "Image Captioning",
+    "predicate": "uses",
+    "object": "human feedback loops",
+    "object_type": "Other",
+    "source_sentence": "The QApedia framework continuously refines and updates its content repository using humans in the loop, while human feedback loops have been used to improve image captioning systems.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "6 Related work"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "state of the art on existing NLI benchmarks",
+    "object_type": "Other",
+    "source_sentence": "Training on this new data yielded the state of the art on existing NLI benchmarks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "6 Related work"
+  },
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "new benchmark for natural language understanding",
+    "object_type": "Other",
+    "source_sentence": "In this work, we used a human-and-model-in-the-loop training method to collect a new benchmark for natural language understanding.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "7 Discussion & Conclusion"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "addresses",
+    "object": "Genres",
+    "object_type": "Concept",
+    "source_sentence": "our sampling of A3 contexts from a wider range of genres",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.441",
+    "title": "Adversarial NLI: A New Benchmark for Natural Language Understanding",
+    "section": "B Further linguistic analysis"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "IR system",
+    "predicate": "uses",
+    "object": "evidence",
+    "object_type": "Other",
+    "source_sentence": "a blackbox IR system first chooses a closed set of evidence candidates.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "2.3 Existing Pipelined Models"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "vector representations",
+    "object_type": "Other",
+    "source_sentence": "In order for the retriever to be learnable, we define the retrieval score as the inner product of dense vector representations of the question q and the evidence block b.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "3 Open-Retrieval Question Answering (ORQA)"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "retrieval",
+    "object_type": "Other",
+    "source_sentence": "enabling dynamic yet fast top-k retrieval during fine-tuning",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "3 Open-Retrieval Question Answering (ORQA)"
+  },
+  {
+    "subject": "Bias",
+    "predicate": "uses",
+    "object": "retrieval",
+    "object_type": "Other",
+    "source_sentence": "bias the retrieval away from spurious ambiguities",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "3 Open-Retrieval Question Answering (ORQA)"
+  },
+  {
+    "subject": "evidence",
+    "predicate": "uses",
+    "object": "English Wikipedia snapshot",
+    "object_type": "Dataset",
+    "source_sentence": "We use the English Wikipedia snapshot from December 20, 2018 as the evidence corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "7.3 Implementation Details"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "default optimizer",
+    "object_type": "Other",
+    "source_sentence": "We use the default optimizer from BERT.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "7.3 Implementation Details"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "ICT",
+    "object_type": "Other",
+    "source_sentence": "When pre-training the retriever with ICT, we use a learning rate of 10−4 and a batch size of 4096 on Google Cloud TPUs for 100k steps.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "7.3 Implementation Details"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "bidirectional LSTM",
+    "object_type": "Method",
+    "source_sentence": "ELMO (small), a context -dependent bidirectional LSTM .5",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "8.1 Baselines"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "information need",
+    "object_type": "Concept",
+    "source_sentence": "Experiments show that learning to retrieve is crucial when the questions reflect an information need, i.e. the question writers do not already know the answer.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "11 Conclusion"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "addresses",
+    "object": "information need",
+    "object_type": "Concept",
+    "source_sentence": "Experiments show that learning to retrieve is crucial when the questions reflect an information need, i.e. the question writers do not already know the answer.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "11 Conclusion"
+  }
+]

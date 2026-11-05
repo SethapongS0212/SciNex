@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Classification Tasks",
+    "predicate": "uses",
+    "object": "baseline model",
+    "object_type": "Other",
+    "source_sentence": "We will first introduce our baseline model and its integration for multiple classification tasks in a multi -task learning (MTL) setup.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3 Models"
+  },
+  {
+    "subject": "Classification",
+    "predicate": "uses",
+    "object": "baseline model",
+    "object_type": "Other",
+    "source_sentence": "We will first introduce our baseline model and its integration for multiple classification tasks in a multi -task learning (MTL) setup.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3 Models"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "baseline model",
+    "object_type": "Other",
+    "source_sentence": "We will first introduce our baseline model and its integration for multiple classification tasks in a multi -task learning (MTL) setup.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3 Models"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "AUTOSEM framework",
+    "object_type": "Other",
+    "source_sentence": "Next, we will introduce our AUTOSEM framework , an automatic way of selecting auxiliary tasks and learning their optimal training mixing ratio w.r.t. the primary task, via a Beta-Bernoulli bandit with Thompson Sampling and a Gaussian Process framework .",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3 Models"
+  },
+  {
+    "subject": "Auxiliary Tasks",
+    "predicate": "uses",
+    "object": "AUTOSEM framework",
+    "object_type": "Other",
+    "source_sentence": "Next, we will introduce our AUTOSEM framework , an automatic way of selecting auxiliary tasks and learning their optimal training mixing ratio w.r.t. the primary task, via a Beta-Bernoulli bandit with Thompson Sampling and a Gaussian Process framework .",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3 Models"
+  },
+  {
+    "subject": "Gaussian Process",
+    "predicate": "uses",
+    "object": "AUTOSEM framework",
+    "object_type": "Other",
+    "source_sentence": "Next, we will introduce our AUTOSEM framework , an automatic way of selecting auxiliary tasks and learning their optimal training mixing ratio w.r.t. the primary task, via a Beta-Bernoulli bandit with Thompson Sampling and a Gaussian Process framework .",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3 Models"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "Beta-Bernoulli bandit",
+    "object_type": "Other",
+    "source_sentence": "Next, we will introduce our AUTOSEM framework , an automatic way of selecting auxiliary tasks and learning their optimal training mixing ratio w.r.t. the primary task, via a Beta-Bernoulli bandit with Thompson Sampling and a Gaussian Process framework .",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3 Models"
+  },
+  {
+    "subject": "Gaussian Process",
+    "predicate": "addresses",
+    "object": "Automatic Learning",
+    "object_type": "Concept",
+    "source_sentence": "The right side of Fig. 2 illustrates our Gaussian Process controller for automatic learning of the MTL training mixing ratio (see definition in Sec.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3.4 Automatic Mixing Ratio Learning via Gaussian Process"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "Kernels",
+    "object_type": "Method",
+    "source_sentence": "Next, we will discuss how we perform the sampling (based on acquisition functions) and the kernels used for calculating the covariance.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3.4 Automatic Mixing Ratio Learning via Gaussian Process"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "uses",
+    "object": "Information",
+    "object_type": "Concept",
+    "source_sentence": "Since we also have the variance of the estimates along with the mean value of each point xi, we can incorporate this information into the optimization.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3.4 Automatic Mixing Ratio Learning via Gaussian Process"
+  },
+  {
+    "subject": "Gaussian Process",
+    "predicate": "achievesresult",
+    "object": "Upper Bound",
+    "object_type": "Concept",
+    "source_sentence": "The Gaussian Process upper confidence bound (GP-UCB) algorithm measures the optimistic performance upper bound of the sampled mixing ratio , µi(xi) + λσi(xi), for some hyper-parameter λ.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3.4 Automatic Mixing Ratio Learning via Gaussian Process"
+  },
+  {
+    "subject": "kernel",
+    "predicate": "addresses",
+    "object": "Similarity",
+    "object_type": "Concept",
+    "source_sentence": "The covariance function (or kernel) defines the nearness or similarity of two points in the Gaussian Process.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3.4 Automatic Mixing Ratio Learning via Gaussian Process"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "RTE",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate our models on several datasets from the GLUE benchmark : RTE, QNLI, MRPC, SST-2, and CoLA.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "4 Experiment Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "QNLI",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate our models on several datasets from the GLUE benchmark : RTE, QNLI, MRPC, SST-2, and CoLA.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "4 Experiment Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "MRPC",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate our models on several datasets from the GLUE benchmark : RTE, QNLI, MRPC, SST-2, and CoLA.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "4 Experiment Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "SST-2",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate our models on several datasets from the GLUE benchmark : RTE, QNLI, MRPC, SST-2, and CoLA.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "4 Experiment Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "CoLA",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate our models on several datasets from the GLUE benchmark : RTE, QNLI, MRPC, SST-2, and CoLA.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "4 Experiment Setup"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "Adam Optimizer",
+    "object_type": "Method",
+    "source_sentence": "We use a two-layer LSTM-RNN with hidden size of 1024 for RTE and 512 for the rest of the models, and use Adam Optimizer.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "4 Experiment Setup"
+  },
+  {
+    "subject": "Search",
+    "predicate": "achieves",
+    "object": "improve upon the baseline",
+    "object_type": "Concept",
+    "source_sentence": "We can see that a grid search over hyper-parameters can improve upon the baseline, indicating the usefulness of stage -1 task selection",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "6.1 Ablation on MTL stages"
+  },
+  {
+    "subject": "Search",
+    "predicate": "comparesagainst",
+    "object": "stage-2 GP process",
+    "object_type": "Concept",
+    "source_sentence": "but a reasonable-sized fair-comparison grid search (i.e., not exhaustive over all ratio values) is not able to match our stage -2 GP process that lever-ages prior experimental results to more efficiently find the best setting",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "6.1 Ablation on MTL stages"
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Transformer architecture",
+    "object_type": "Concept",
+    "source_sentence": "The Fact Injected Language Model (FILM) model extends the Transformer architecture of BERT with additional entity and facts memories.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "2 Fact Injected Language Model Model"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Concept",
+    "source_sentence": "The result is then projected back to the dimension of the j-indexed contextual token embeddings, and added to what would have been the input to the next layer of the Transformer:",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "2.3 Entity Memory"
+  },
+  {
+    "subject": "Distant Supervision",
+    "predicate": "uses",
+    "object": "cross_entropy",
+    "object_type": "Other",
+    "source_sentence": "This distant supervision is encoded by a loss function: TOPk(vmans, A) = argmaxk,j∈{1,...,|A|}aT j vmans lossfact = cross_entropy(softmax(vmans, A), Iads)",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "2.4 Fact Memory"
+  },
+  {
+    "subject": "Examples",
+    "predicate": "uses",
+    "object": "Wikidata",
+    "object_type": "Concept",
+    "source_sentence": "two subsets of these benchmarks restricted to examples answerable with wikidata (§3.4)",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "3 Experiments"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "external knowledge",
+    "object_type": "Concept",
+    "source_sentence": "We are interested in the ability of models to use ex- ternal knowledge to answer questions , rather than learning to recognize paraphrases of semantically identical questions .",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "3.5 Train-Test Overlap"
+  },
+  {
+    "subject": "BART",
+    "predicate": "achieves",
+    "object": "less than 1% of answers correct",
+    "object_type": "Other",
+    "source_sentence": "In contrast, the majority of closed book models such as BART get less than 1% of answers correct.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "3.5 Train-Test Overlap"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "retrieval augmented language models",
+    "object_type": "Model",
+    "source_sentence": "There have been a few exploratory experiments on modifying the predictions of concept \">retrieval augmented language models\" by changing the underlying text corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "internet corpora",
+    "object_type": "Dataset",
+    "source_sentence": "These models require vast amounts of data to train on and therefore tend to rely on internet corpora which have skewed representations of particular groups, cultures, and languages, as well as variable levels of factuality.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "7 Ethics and Broader Impacts"
+  },
+  {
+    "subject": "RAG",
+    "predicate": "uses",
+    "object": "full 26 million passage wikipedia corpus",
+    "object_type": "Other",
+    "source_sentence": "The Memory parameter count for DPR, RAG, and FID includes the number of parameters required to cache and index the full 26 million pas- sage wikipedia corpus with dimension 768 used by those models.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "A.3 Model Parameters"
+  }
+]

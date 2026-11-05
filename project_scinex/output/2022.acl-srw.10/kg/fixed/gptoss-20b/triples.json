@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "CCG",
+    "predicate": "uses",
+    "object": "syntactic analysis",
+    "object_type": "Task",
+    "source_sentence": "This paper uses CCG to formalize the syntactic analysis of our method and analyzes the compositional semantics of temporal expressions based on the analysis by Kaufmann and Miyachi (2011).",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "2 Background"
+  },
+  {
+    "subject": "Meaning",
+    "predicate": "uses",
+    "object": "relative tense",
+    "object_type": "Concept",
+    "source_sentence": "the temporal meaning of embedded clauses is interpreted using \"relative tense.\"",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "3.2 Semantic Representations for Temporal Clause"
+  },
+  {
+    "subject": "Sentences",
+    "predicate": "uses",
+    "object": "logical formulas",
+    "object_type": "Concept",
+    "source_sentence": "the meanings of sentences with the embedded clauses can be expressed by the following logical formulas",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "3.2 Semantic Representations for Temporal Clause"
+  },
+  {
+    "subject": "Japanese",
+    "predicate": "uses",
+    "object": "Huggingface transformers1",
+    "object_type": "Other",
+    "source_sentence": "We used the Japanese BERT model (cl-tohoku/bert-base-japanese-whole-word-masking) of Huggingface transformers1 as a deep learning-based model.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "NLI",
+    "predicate": "trainedon",
+    "object": "JSNLI",
+    "object_type": "Dataset",
+    "source_sentence": "BERT_JSNLI is Japanese BERT fine-tuned on a large Japanese NLI dataset JSNLI (533,005 examples), a Japanese translation of the SNLI dataset, which is one of the most widely used NLI datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "PLMUTE_ja minimal training set",
+    "object_type": "Dataset",
+    "source_sentence": "BERT_few is Japanese BERT fine-tuned on the PLMUTE_ja minimal training set with two examples each of different combinations of tenses and sections (360 examples).",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "PLMUTE_ja training set",
+    "object_type": "Dataset",
+    "source_sentence": "BERT_all is Japanese BERT fine-tuned on the entire PLMUTE_ja training set (11,220 examples).",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "5.1 Experimental Setup"
+  }
+]

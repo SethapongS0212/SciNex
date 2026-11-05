@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "achieves",
+    "object": "learn universal sentence representation",
+    "object_type": "Task",
+    "source_sentence": "using attention mechanism, transformer in particular , is an effective way to learn universal sentence repre- sentation with unlabeled text, such as BERT and XLNet.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "2.1 Emotion Distribution Learning"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "achieves",
+    "object": "learn universal sentence representation",
+    "object_type": "Task",
+    "source_sentence": "using attention mechanism, transformer in particular , is an effective way to learn universal sentence repre- sentation with unlabeled text, such as BERT and XLNet.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "2.1 Emotion Distribution Learning"
+  },
+  {
+    "subject": "META",
+    "predicate": "achieves",
+    "object": "augmenting experience learning ability",
+    "object_type": "Concept",
+    "source_sentence": "Meta-learning in particular is an effective way of augmenting the experience learning ability.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "2.3 Learning from A Small Sample"
+  },
+  {
+    "subject": "Meta-Learning",
+    "predicate": "achieves",
+    "object": "increase the learning performance",
+    "object_type": "Concept",
+    "source_sentence": "Meta-learning aims to increase the learning performance through experience sharing among tasks (Thrun and Pratt, 1998; Vilalta and Drissi, 2002; Finn et al., 2017).",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "2.3.1 Meta-Learning"
+  },
+  {
+    "subject": "Meta-Learning",
+    "predicate": "addresses",
+    "object": "few-shot image recognition",
+    "object_type": "Task",
+    "source_sentence": "Meta-learning has been used for few-shot image recognition, agent navigation, low-resource machine translation, query generation, and so on.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "2.3.1 Meta-Learning"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "addresses",
+    "object": "specific domains",
+    "object_type": "Concept",
+    "source_sentence": "fine-tuning models on specific domains is non-trivial.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "2.3.1 Meta-Learning"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Nearest Neighbors",
+    "object_type": "Method",
+    "source_sentence": "As shown in Figure 1, to augment the learning ability on a small sample, we first partition the training data by finding K-nearest neighbors (KNNs) of each sample based on semantic similarity, and treat each K samples as a cluster.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "4 Method"
+  },
+  {
+    "subject": "META",
+    "predicate": "uses",
+    "object": "cluster",
+    "object_type": "Method",
+    "source_sentence": "We then train a meta-learner that is optimized to adapt to new data with only a few training samples on the clusters.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "4 Method"
+  },
+  {
+    "subject": "Meta-Learning",
+    "predicate": "achieves",
+    "object": "train a learner fθ using Ttrain",
+    "object_type": "Other",
+    "source_sentence": "The goal of meta-learning is to train a learner fθ using Ttrain so that given a new testing task T in Ttest, it can perform well on the query set Q of T by fine-tuning it with only a few samples in the support set S.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "4.1 Meta-Learning Preliminary"
+  },
+  {
+    "subject": "Meta-Learning",
+    "predicate": "addresses",
+    "object": "training a learner",
+    "object_type": "Other",
+    "source_sentence": "The goal of meta-learning is to train a learner fθ using Ttrain so that given a new testing task T in Ttest, it can perform well on the query set Q of T by fine-tuning it with only a few samples in the support set S.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "4.1 Meta-Learning Preliminary"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "SemEval 2007 Task 14",
+    "object_type": "Dataset",
+    "source_sentence": "we conduct intensive experiments on SemEval 2007 Task 14",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "5 Experiment"
+  },
+  {
+    "subject": "kNN",
+    "predicate": "comparesagainst",
+    "object": "EDL-CNN",
+    "object_type": "Model",
+    "source_sentence": "Even simple KNN can get slightly better results than EDL-CNN on most metrics.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "5.2 Results"
+  },
+  {
+    "subject": "META",
+    "predicate": "addresses",
+    "object": "small sample EDLs",
+    "object_type": "Other",
+    "source_sentence": "This indicates that EDL-Meta is more suitable for small sample EDLs.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "5.2 Results"
+  },
+  {
+    "subject": "Tensor Decomposition",
+    "predicate": "addresses",
+    "object": "small sample learning",
+    "object_type": "Task",
+    "source_sentence": "The tensor decomposition method is more suitable for small sample learning.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "5.3 Discussion"
+  },
+  {
+    "subject": "META",
+    "predicate": "comparesagainst",
+    "object": "EDL-CNN",
+    "object_type": "Model",
+    "source_sentence": "We compare the performance of EDL-CNN and EDL-Meta under different training/testing partition.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1408",
+    "title": "Text Emotion Distribution Learning from Small Sample: A Meta-Learning Approach",
+    "section": "5.3.3 Label Percentage"
+  }
+]

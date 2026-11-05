@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "embeddings",
+    "predicate": "addresses",
+    "object": "senses",
+    "object_type": "Concept",
+    "source_sentence": "Embeddings should fully represent all senses of an ambiguous word.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "3 Criteria for word representations"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "PPMI representations",
+    "object_type": "Other",
+    "source_sentence": "After learning embeddings with different models, the SVM trained on PPMI representations assigned all twenty test words to the negative class.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.2 Robustness against sparseness"
+  },
+  {
+    "subject": "SVMs",
+    "predicate": "uses",
+    "object": "learning-based representations",
+    "object_type": "Other",
+    "source_sentence": "The SVMs trained on learning-based representations classified all twenty test words correctly.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.2 Robustness against sparseness"
+  },
+  {
+    "subject": "SVMs",
+    "predicate": "achieves",
+    "object": "correct classification of all twenty test words",
+    "object_type": "Other",
+    "source_sentence": "The SVMs trained on learning-based representations classified all twenty test words correctly.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.2 Robustness against sparseness"
+  },
+  {
+    "subject": "Grammar",
+    "predicate": "produces",
+    "object": "training corpus of 100,000 sentences",
+    "object_type": "Dataset",
+    "source_sentence": "The grammar specified in Figure 3 was used to generate a training corpus of 100,000 sentences.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.3 Robustness against ambiguity"
+  },
+  {
+    "subject": "Linear SVMs",
+    "predicate": "trainedon",
+    "object": "train set",
+    "object_type": "Dataset",
+    "source_sentence": "Linear SVMs were trained for the binary classification task on the train set.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.3 Robustness against ambiguity"
+  },
+  {
+    "subject": "SVMs",
+    "predicate": "achievesresult",
+    "object": "100% accurate",
+    "object_type": "Metric",
+    "source_sentence": "All models perform well for balanced sense fre- quencies; e.g., for α = 1.0, β = 0.5, the SVMs were all close to 100% accurate in predicting that the wi can occur in a c-d context.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.3 Robustness against ambiguity"
+  },
+  {
+    "subject": "Multiple Representations",
+    "predicate": "addresses",
+    "object": "ambiguity",
+    "object_type": "Concept",
+    "source_sentence": "Another approach to ambiguity is to compute multiple representations for a word, one for each sense.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.3 Robustness against ambiguity"
+  },
+  {
+    "subject": "data-driven",
+    "predicate": "uses",
+    "object": "clustering",
+    "object_type": "Method",
+    "source_sentence": "We generally do not yet know what the sense of a word is when we want to use its word representation , so data-driven approaches like clustering have been used to create representations for different usage clusters of words that may capture some of its senses.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.3 Robustness against ambiguity"
+  },
+  {
+    "subject": "SVM Classification",
+    "predicate": "achieves",
+    "object": "0% error",
+    "object_type": "ExperimentalResult",
+    "source_sentence": "This high error, compared to 0% error for SVM classification, indicates it is not possible to determine the presence of a low entropy facet accurately and consistently when full-space similarity and analogy are used as test criteria.",
+    "extraction_mode": "fixed",
+    "paper": "P16-1023",
+    "title": "Intrinsic Subspace Evaluation of Word Embedding Representations",
+    "section": "4.4 Accurate and consistent representation of multifacetedness"
+  }
+]

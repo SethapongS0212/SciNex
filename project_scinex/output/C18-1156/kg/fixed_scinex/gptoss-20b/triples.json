@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Sarcasm Detection",
+    "predicate": "achieves",
+    "object": "high accuracy",
+    "object_type": "Concept",
+    "source_sentence": "When such lexical cues are present in sentences, sarcasm detection can achieve high accuracy.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1156",
+    "title": "CASCADE: Contextual Sarcasm Detection in Online Discussion Forums",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "CNNs",
+    "predicate": "produces",
+    "object": "abstract representations of text",
+    "object_type": "Concept",
+    "source_sentence": "CNNs generate abstract representations of text by extracting location-invariant local patterns.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1156",
+    "title": "CASCADE: Contextual Sarcasm Detection in Online Discussion Forums",
+    "section": "3.2 Summary of the Proposed Approach"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "achieves",
+    "object": "acquire discriminative information crucial for sarcasm detection",
+    "object_type": "Concept",
+    "source_sentence": "The aim of learning these contextual features is to acquire discriminative information crucial for sarcasm detection.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1156",
+    "title": "CASCADE: Contextual Sarcasm Detection in Online Discussion Forums",
+    "section": "3.3 Learning Contextual Features"
+  },
+  {
+    "subject": "User Embeddings",
+    "predicate": "produces",
+    "object": "single representation",
+    "object_type": "Other",
+    "source_sentence": "To generate user embeddings , we model their stylometric and personality features and then fuse them using CCA to create a single representation.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1156",
+    "title": "CASCADE: Contextual Sarcasm Detection in Online Discussion Forums",
+    "section": "3.4 User Embeddings"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "softmax prediction",
+    "object_type": "Other",
+    "source_sentence": "To predict a word within a window, we take the average of all the neighboring context word vectors along with the document vector ⃗di and use a neural network with softmax prediction:",
+    "extraction_mode": "fixed",
+    "paper": "C18-1156",
+    "title": "CASCADE: Contextual Sarcasm Detection in Online Discussion Forums",
+    "section": "3.4 User Embeddings"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "produces",
+    "object": "output",
+    "object_type": "Other",
+    "source_sentence": "Here, ⃗y = [y1,...,y∣V ∣] is the output of the neural network, i.e., ⃗bd ∈R∣V ∣,Ud ∈R∣V ∣×ds are parameters and h(⋅) represents the average of vectors ⃗di, ⃗wt−ks,..., ⃗wt+ks taken from D and Ws.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1156",
+    "title": "CASCADE: Contextual Sarcasm Detection in Online Discussion Forums",
+    "section": "3.4 User Embeddings"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "addresses",
+    "object": "multi-label classification",
+    "object_type": "Task",
+    "source_sentence": "We use sigmoid instead of softmax to facilitate multi-label classification.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1156",
+    "title": "CASCADE: Contextual Sarcasm Detection in Online Discussion Forums",
+    "section": "3.4 User Embeddings"
+  },
+  {
+    "subject": "multi-view",
+    "predicate": "addresses",
+    "object": "combining stylometric and personality features",
+    "object_type": "Concept",
+    "source_sentence": "We take a multi-view learning approach to combine both stylometric and personality features into a comprehensive embedding for each user.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1156",
+    "title": "CASCADE: Contextual Sarcasm Detection in Online Discussion Forums",
+    "section": "3.4 User Embeddings"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "probability",
+    "object_type": "Probability",
+    "source_sentence": "This gives a softmax-probability over whether a comment is sarcastic or not.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1156",
+    "title": "CASCADE: Contextual Sarcasm Detection in Online Discussion Forums",
+    "section": "3.6 Final Prediction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "SARC3",
+    "object_type": "Dataset",
+    "source_sentence": "We perform our experiments on a large -scale self-annotated corpus for sarcasm , SARC3 .",
+    "extraction_mode": "fixed",
+    "paper": "C18-1156",
+    "title": "CASCADE: Contextual Sarcasm Detection in Online Discussion Forums",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "Discourse",
+    "predicate": "uses",
+    "object": "Constraints",
+    "object_type": "Other",
+    "source_sentence": "This structure can be unraveled to a linear format, thus creating a discourse of the comments by keeping the topological constraints intact.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1156",
+    "title": "CASCADE: Contextual Sarcasm Detection in Online Discussion Forums",
+    "section": "4.1 Dataset"
+  }
+]

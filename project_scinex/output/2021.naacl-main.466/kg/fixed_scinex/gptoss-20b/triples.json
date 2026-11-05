@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "Probabilities",
+    "object_type": "Concept",
+    "source_sentence": "During training, the model is learned to estimate the probabilities of positive passages in a small candidate set for each question",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "BM25",
+    "object_type": "Method",
+    "source_sentence": "By only examining the top-K passages retrieved by a specific retrieval approach (e.g. BM25), the annotators are likely to miss relevant passages to a question.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Example",
+    "predicate": "mentions",
+    "object": "MSMARCO dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Taking the MSMARCO dataset as an example, each question has only 1.1 annotated positive passages on average, while there are 8.8M passages in the whole collection.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Datasets",
+    "predicate": "mentions",
+    "object": "MSMARCO dataset",
+    "object_type": "Dataset",
+    "source_sentence": "MSMARCO and Natural Questions are two largest datasets for open-domain QA.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Datasets",
+    "predicate": "mentions",
+    "object": "Natural Questions dataset",
+    "object_type": "Dataset",
+    "source_sentence": "MSMARCO and Natural Questions are two largest datasets for open-domain QA.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "addresses",
+    "object": "false negatives",
+    "object_type": "Concept",
+    "source_sentence": "Hence, it is likely to bring false negatives when sampling hard negatives from the top-k retrieved passages.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "dense passage retrieval",
+    "object_type": "Task",
+    "source_sentence": "We propose an optimized training approach, called RocketQA, to improving dense passage retrieval.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "pre-trained language models",
+    "object_type": "Model",
+    "source_sentence": "fine-tuning pre-trained language models on labeled data",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "addresses",
+    "object": "hard negatives",
+    "object_type": "Concept",
+    "source_sentence": "designing complicated sampling mechanism to generate hard negatives",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "retrieval-based question answering",
+    "object_type": "Task",
+    "source_sentence": "BERT-based rerankers have recently been applied to retrieval-based question answering and search-related tasks",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "search-related tasks",
+    "object_type": "Task",
+    "source_sentence": "BERT-based rerankers have recently been applied to retrieval-based question answering and search-related tasks",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "addresses",
+    "object": "dense passage retrieval",
+    "object_type": "Task",
+    "source_sentence": "In this section, we propose an optimized training approach to dense passage retrieval for open-domain QA, namely RocketQA.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "3 Approach"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "dense representations of questions and passages",
+    "object_type": "Other",
+    "source_sentence": "The training objective is to learn dense representations of questions and passages so that question-positive passage pairs have higher similarity than the question-negative passage pairs in training data.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "3.2 The Dual-Encoder Architecture"
+  },
+  {
+    "subject": "Data Augmentation",
+    "predicate": "addresses",
+    "object": "limited training data",
+    "object_type": "Concept",
+    "source_sentence": "Data Augmentation The third strategy aims to alleviate the issue of limited training data.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1. Train a dual-encoder with"
+  },
+  {
+    "subject": "training",
+    "predicate": "comprises",
+    "object": "training strategies",
+    "object_type": "Other",
+    "source_sentence": "we organize the above three training strategies into an effective training pipeline",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "3.4 The Training Procedure"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "MSMARCO Passage Ranking",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct the experiments on two popular QA benchmarks: MSMARCO Passage Ranking and Natural Questions (NQ).",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "4.1.1 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Natural Questions",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct the experiments on two popular QA benchmarks: MSMARCO Passage Ranking and Natural Questions (NQ).",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "4.1.1 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "MSMARCO dataset",
+    "object_type": "Dataset",
+    "source_sentence": "In this part, we conduct the extensive experiments on MSMARCO dataset to examine the effectiveness of the three strategies in RocketQA.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "4.2.2 The Effectiveness of The Three Training Strategies in RocketQA"
+  },
+  {
+    "subject": "Passage Retrieval",
+    "predicate": "comprises",
+    "object": "RocketQA approach",
+    "object_type": "Method",
+    "source_sentence": "Compared with prior solutions, our novelty mainly lies in the passage retrieval component, i.e., the RocketQA approach.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "85.3 Recall@"
+  }
+]

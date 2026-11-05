@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "fine-tuning",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance",
+    "object_type": "Other",
+    "source_sentence": "Fine-tuning pre-trained language models achieves state-of-the-art performance in tasks such that natural language understanding and natural language generation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "2.3 Pre-trained Language Models"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Pre-Trained Language Model",
+    "object_type": "Model",
+    "source_sentence": "we first present an algorithm that adapts a pre-trained language model into a MoE model.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "3 Method"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "achieves",
+    "object": "inference speedup",
+    "object_type": "Concept",
+    "source_sentence": "Such a structure enables inference speedup by reducing the number of parameters involved in computing an input token 's representation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "3 Method"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Hugging-face Transformers4 code-base",
+    "object_type": "Other",
+    "source_sentence": "We implement our algorithm using the Hugging-face Transformers4 code-base.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "DistilBERT",
+    "predicate": "uses",
+    "object": "temperature-controlled soft prediction probability",
+    "object_type": "Probability",
+    "source_sentence": "DistilBERT pre-trains a small language model by distilling the temperature- controlled soft prediction probability.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "4.2 Baselines"
+  },
+  {
+    "subject": "TinyBERT",
+    "predicate": "uses",
+    "object": "layer-wise distillation",
+    "object_type": "Method",
+    "source_sentence": "TinyBERT is a task-agnostic distillation method that adopts layer -wise distillation .",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "4.2 Baselines"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "BERT-base",
+    "object_type": "Model",
+    "source_sentence": "In the experiments , we use BERT-base as both the student model and the teacher model.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "adapting",
+    "predicate": "uses",
+    "object": "FFNs in the pre-trained BERT-base model",
+    "object_type": "Other",
+    "source_sentence": "After adapting the FFNs in the pre-trained BERT-base model into experts, we train MoEBERT using layer-wise knowledge distillation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "4.6 Analysis"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "uses",
+    "object": "sentence-based gating mechanism",
+    "object_type": "Concept",
+    "source_sentence": "Note that for MoEBERT, we use the sentence-based gat- ing mechanism as in Figure 3c.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "4.6 Analysis"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "BERT-large",
+    "object_type": "Model",
+    "source_sentence": "MoEBERT behaves on par or better than BERT-large in all of the experiments.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.116",
+    "title": "MoEBERT: from BERT to Mixture-of-Experts via Importance-Guided Adaptation",
+    "section": "4.6 Analysis"
+  }
+]

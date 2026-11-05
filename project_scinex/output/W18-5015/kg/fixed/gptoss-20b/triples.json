@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "DQN",
+    "predicate": "achieves",
+    "object": "human-level performance in Atari games",
+    "object_type": "Other",
+    "source_sentence": "The deep Q-Network (DQN) introduced by Mnih et al. (2015) achieved human-level performance in Atari games based on deep neural networks.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5015",
+    "title": "Multimodal Hierarchical Reinforcement Learning Policy for Task-Oriented Visual Dialog",
+    "section": "2.2 Reinforcement Learning"
+  },
+  {
+    "subject": "DQN",
+    "predicate": "uses",
+    "object": "deep neural networks",
+    "object_type": "Model",
+    "source_sentence": "The deep Q-Network (DQN) introduced by Mnih et al. (2015) achieved human-level performance in Atari games based on deep neural networks.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5015",
+    "title": "Multimodal Hierarchical Reinforcement Learning Policy for Task-Oriented Visual Dialog",
+    "section": "2.2 Reinforcement Learning"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "visual dialog state",
+    "object_type": "Concept",
+    "source_sentence": "hierarchical policy learning module takes the visual dialog state as the input to optimize the high-level control policy between question selection and image retrieval.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5015",
+    "title": "Multimodal Hierarchical Reinforcement Learning Policy for Task-Oriented Visual Dialog",
+    "section": "3 Proposed Framework"
+  },
+  {
+    "subject": "DQN",
+    "predicate": "uses",
+    "object": "ϵ-greedy policy",
+    "object_type": "Other",
+    "source_sentence": "During the training, the DQN uses the ϵ-greedy policy and the DRRN uses the softmax policy for exploration, where ϵ is linearly decreased from 1 to 0.1.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5015",
+    "title": "Multimodal Hierarchical Reinforcement Learning Policy for Task-Oriented Visual Dialog",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "DQN",
+    "predicate": "achieves",
+    "object": "win rate",
+    "object_type": "Metric",
+    "source_sentence": "We find that RL methods (DQN & DRRN) significantly improve the win rate as they learn to select the optimal list of questions to ask.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5015",
+    "title": "Multimodal Hierarchical Reinforcement Learning Policy for Task-Oriented Visual Dialog",
+    "section": "5.1 Experiment 1: Human Generated Question-Answer Pairs"
+  },
+  {
+    "subject": "adaptation",
+    "predicate": "achieves",
+    "object": "largest performance improvement",
+    "object_type": "Concept",
+    "source_sentence": "We also observe that our proposed state adaptation method for vision context state helps achieve the largest performance improvement.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5015",
+    "title": "Multimodal Hierarchical Reinforcement Learning Policy for Task-Oriented Visual Dialog",
+    "section": "5.1 Experiment 1: Human Generated Question-Answer Pairs"
+  },
+  {
+    "subject": "generative",
+    "predicate": "uses",
+    "object": "online generative version",
+    "object_type": "Model",
+    "source_sentence": "Another possible ex- tension of the framework is to update the off-line question and answer generation modules with an online generative version and retrain the module with reinforcement learning.",
+    "extraction_mode": "fixed",
+    "paper": "W18-5015",
+    "title": "Multimodal Hierarchical Reinforcement Learning Policy for Task-Oriented Visual Dialog",
+    "section": "6 Discussion and Future Work"
+  }
+]

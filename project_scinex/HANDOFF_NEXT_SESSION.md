@@ -1,5 +1,103 @@
 # Handoff — next session
 
+**Written at the end of Session 37 (2026-11-05).** Read this, then `hands_off.md` §37 (37.2 for
+the corpus decision, 37.7–37.8 for the hardware incident and the results).
+
+## ⛔⛔ The finetuning runs use the ACL ANTHOLOGY papers with the FIXED extractor
+User decision, 2026-10-26: *"we were supposed to be using the acl anthology paper, not the paywalled
+professor noted papers anymore … since we have fixed entity for that"*. Part 2 now runs on **805 ACL
+papers** (`papers_acl.txt`) with **`--extractor fixed`**: subjects come only from each paper's
+`output/acl/<id>/Entity_<id>_enriched.csv`, and outputs go to `kg/fixed{,_scinex}/<slug>/`.
+**Do not start new finetuning runs on the 20-paper corpus.** Its results (Tables 1–14) stand as they
+are.
+
+## Machine
+Linux box `kubegpu-g04`, **2× RTX 5090 (32 GB, sm_120)**, 125 GB RAM. venv **`/home/dev1/envsam`**
+(Python 3.12.3, stable torch `2.13.0+cu130`, so **no `--allow-dev-torch`**; plus `kernels==0.12.3`
+for gpt-oss and `peft==0.21.1`). Repo at `/home/dev1/SciNex`; `/home/dev1/project_scinex` is a
+symlink to its `project_scinex/`. Driver scripts: `/home/dev1/scinex_runs/` (copies in
+`ft_runs/acl_scripts/`). The July ACL copy (PDFs, parsed HTML, entity CSVs) is in
+`/home/dev1/project_scinex_old_2026-07`. Use `python` from the venv; long runs go in `screen`.
+
+## The result (judge-free, `results.md` Tables 15–16)
+**Teacher** `gpt-oss-20b` (local, MXFP4, reasoning low) over all 805 papers × both ontologies:
+37,970 paragraphs in 30.6 h. Valid JSON 99.5% (CEO) / 99.6% (scinex); kept triples 8,488 / 5,479
+(79.6% / 78.4% pass the guards); coverage 22.8% / 16.4%. About 80% of its answers are empty, and
+`uses` is 65% of its CEO triples.
+
+**Students** (Qwen3-8B QLoRA, 1 epoch) on the **41 held-out papers** (980 paragraphs per ontology):
+
+| CEO | valid JSON | proposed → kept | kept rate | coverage |
+|---|---|---|---|---|
+| `qwen3-8b-acl-base-hf` (untuned) | 95.3% | 6,139 → 2,363 | 38.5% | 74.5% |
+| `qwen3-8b-acl-ft-cv` (teacher-only data, 80.5% empty) | 100% | 15 → 15 | 100% | **0.8% (collapsed)** |
+| **`qwen3-8b-acl-ft-me30-cv` (empty targets ≤ 30%)** | **99.9%** | **820 → 670** | **81.7%** | **43.8%** |
+| `gptoss-20b` (teacher) | 99.2% | 619 → 501 | 80.9% | 25.6% |
+
+On scinex the pattern is the same: me30 keeps 548 triples (85.1%) against the teacher's 289
+(77.5%). **Capping empty targets fixes the recall collapse.** ⚠ These are counts, not correctness:
+nothing has been judged yet. A random sample mixes precise triples with vague ones whose generic
+subjects come from the entity lists.
+
+## State
+- **Everything has finished; nothing is running.** The server was rebooted on 2026-11-05 10:34 and
+  both GPUs are visible again (GPU1 had dropped off the bus on 10-28; §37.7).
+- Adapters (gitignored): `ft_runs/qwen3-8b-acl-f0/adapter/` (teacher-only, **recovered from
+  `checkpoint-5493`** after a crash at the final save; see its `run_manifest.json`) and
+  `ft_runs/qwen3-8b-acl-f0-me30/adapter/`.
+- A presentation page with the results was published as a private claude.ai artifact ("SciNex ACL
+  Finetuning Results").
+
+## Next steps, in order
+1. **Push to GitHub if it has not been pushed yet.** The Session 37 commit was made locally, but
+   this server has no GitHub credentials. Run `git push` from `/home/dev1/SciNex`; it asks for the
+   username and a personal access token.
+2. **Blind C1/C3/C4 judging on the 41 eval papers**, with Claude in session as the judge (its only
+   role). `blind_judge.py build --extractor fixed` now reads the ACL outputs, but it pools EVERY
+   kept triple (a census), and base alone has ~4.8k. Add a per-extractor sample cap (e.g. 40–60 per
+   extractor and ontology, seeded) before building for base / me30 / teacher. **Never open
+   `key.csv` before `collect`.**
+3. **Look at over-extraction.** me30 covers 43.8% of paragraphs against the teacher's 25.6%. If the
+   judge finds its extra triples wrong, try a milder cap (`--max-empty-frac 0.5`) as a third variant.
+4. **Entity-list quality.** Generic CS-NER entries ("Models", "Unsupervised Methods") become vague
+   subjects. Consider filtering them out of the fixed-entity lists, which needs a teacher re-run.
+5. **More folds** (`--eval-fold 1..`) with the winning variant, so more papers are scored by a model
+   that never saw them. The ACL split has 20 folds; pick a few, not all 20.
+6. **Part 3 Q&A** with an independent, non-Claude model (still open since Session 34).
+
+## Decisions already made — do not re-open
+- **Corpus = 805 ACL papers, extractor = fixed** (user, 2026-10-26). **Teacher = gpt-oss-20b run
+  locally; corpus = all parsed ACL papers with an entity CSV** (user, 2026-10-27). **Student =
+  `Qwen/Qwen3-8B`.**
+- **ACL split = `ft_data/acl/split.json`** (20 folds, seed 13; fold 0 = 41 eval papers). It is as
+  sticky as the 20-paper `ft_data/split.json`, which stays untouched. Never regenerate either file.
+- **Claude's only role is the in-session blind triple judge**: never an extractor, teacher,
+  training-data source or API-called model. Asked again in Session 37 and still declined.
+- Generation batch size 8 on the 5090 (measured); 1 epoch on the ACL data.
+
+## Traps hit in Session 37 — do not repeat
+- **"No new process can start CUDA" after a GPU fault = the shared `nvidia_uvm` module is in an
+  error state** (`/dev/nvidia-uvm` → EIO). Fix it without a reboot: `sudo rmmod nvidia_uvm && sudo
+  modprobe nvidia_uvm`. Never touch a card `nvidia-smi` cannot see.
+- **GPU heat:** under load GPU0 ran at 89–90 °C, fan 100%, thermally throttled. GPU1 died under the
+  same load. Check the cooling before loading both cards for days.
+- **A 1-epoch run with `save_strategy="epoch"` has no checkpoint.** Use `ft_train_qlora.py
+  --save-steps 200`; a re-run resumes from the latest checkpoint (smoke-tested).
+- **A local teacher's `{"triples": []}` is a genuine answer, not a failed API call.**
+  `build_ft_data` now asks `is_api_run()`. Before the fix, every empty target would have been dropped.
+- **The July ACL HTML keeps PDF hyphenation**, so the strict alignment check rejected correctly
+  paired papers. Fixed builds use `alignment_rate(..., loose=True)`.
+- **A `--limit` smoke run writes a truncated `prompts.jsonl` that later runs pick up.** Delete smoke
+  slug folders.
+- gpt-oss needs `kernels==0.12.3` (0.17 breaks transformers 5.5.4) and `--attn-implementation
+  flex_attention` (eager attention runs out of memory at batch 8).
+- `pkill -f` / `pgrep -f` with a pattern contained in your own command line matches your own shell.
+  `nvidia-smi -L` takes no `-i`; use `-i N --query-gpu=name --format=csv,noheader`.
+
+---
+
+## History — the Session 36 handoff (20-paper corpus, Windows laptop)
+
 **Written at the end of Session 36 (2026-10-26).**
 **⭐⭐⭐ The fold-0 finetuning experiment is COMPLETE AND JUDGED.** Both data variants were trained,
 generated and blind-judged on CEO. Headline: **a finetuned Qwen3-1.7B matches the 120B teacher on

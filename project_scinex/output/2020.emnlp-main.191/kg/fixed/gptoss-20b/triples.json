@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Entailment",
+    "predicate": "addresses",
+    "object": "rule text",
+    "object_type": "Other",
+    "source_sentence": "Zhong and Zettlemoyer (2019) adopt BERT to reason out the decision, and propose an entailment-driven extracting and editing framework to extract a span from the rule text and edit it into the follow-up question.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "concatenated sequence",
+    "object_type": "Other",
+    "source_sentence": "Then, DISCERN concatenates all sequences together, and uses RoBERTa to encode the concatenated sequence.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "2.2 Decision Making via Entailment Reasoning"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "inter-sentence transformer encoder",
+    "object_type": "Other",
+    "source_sentence": "We utilize an inter-sentence transformer encoder to predict the entailment states for all conditions simultaneously.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "2.2 Decision Making via Entailment Reasoning"
+  },
+  {
+    "subject": "Transformer Encoder",
+    "predicate": "uses",
+    "object": "linear transformation",
+    "object_type": "Other",
+    "source_sentence": "Let the transformer encoder output of the i-th condition as ˜ei, we use a linear transformation to predict its entailment state:",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "2.2 Decision Making via Entailment Reasoning"
+  },
+  {
+    "subject": "rule",
+    "predicate": "uses",
+    "object": "follow-up questions",
+    "object_type": "Other",
+    "source_sentence": "Given the rule text, we first collect all associated follow-up questions in the dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "2.2 Decision Making via Entailment Reasoning"
+  },
+  {
+    "subject": "Decision Making",
+    "predicate": "addresses",
+    "object": "logical reasoning",
+    "object_type": "Concept",
+    "source_sentence": "the remaining challenge for decision making is to perform logical reasoning over different rule types",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "2.2 Decision Making via Entailment Reasoning"
+  },
+  {
+    "subject": "Entailment",
+    "predicate": "uses",
+    "object": "cross entropy loss",
+    "object_type": "Metric",
+    "source_sentence": "The entailment predic- tion is weakly supervised by the following cross entropy loss",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "2.2 Decision Making via Entailment Reasoning"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "vectors grounded to tokens",
+    "object_type": "Other",
+    "source_sentence": "Then we use RoBERTa to encode them into vectors grounded to tokens",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "2.3 Follow-up Question Generation"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "achieves",
+    "object": "rephrase it into a question",
+    "object_type": "Task",
+    "source_sentence": "Lastly, following Gao et al. (2020), we concatenate the rule text and span as the input sequence, and finetune UniLM , a pre- trained language model to rephrase it into a question .",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "2.3 Follow-up Question Generation"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "RoBERTa backbone performs comparably with its BERT counterpart.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "3.2 Results"
+  },
+  {
+    "subject": "rule",
+    "predicate": "uses",
+    "object": "simple sentence splitting",
+    "object_type": "Other",
+    "source_sentence": "DISCERN (w/o EDU) replaces the discourse segmentation based rule parsing with simple sentence splitting",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "3.3 Ablation Study"
+  },
+  {
+    "subject": "Decision Making",
+    "predicate": "achieves",
+    "object": "75.75 accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The micro-accuracy of decision making is 75.75 for DISCERN while it is 70.98 for DISCERN (w/o EDU).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "3.3 Ablation Study"
+  },
+  {
+    "subject": "Decision Making",
+    "predicate": "achieves",
+    "object": "70.98 accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The micro-accuracy of decision making is 75.75 for DISCERN while it is 70.98 for DISCERN (w/o EDU).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "3.3 Ablation Study"
+  },
+  {
+    "subject": "Entailment",
+    "predicate": "uses",
+    "object": "RoBERTa encoded [CLS] representations",
+    "object_type": "Other",
+    "source_sentence": "Therefore, we remove the inter-sentence transformer layers and use the RoBERTa encoded [CLS] representations for entailment prediction and decision making.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "3.3 Ablation Study"
+  },
+  {
+    "subject": "Decision Making",
+    "predicate": "uses",
+    "object": "RoBERTa encoded [CLS] representations",
+    "object_type": "Other",
+    "source_sentence": "Therefore, we remove the inter-sentence transformer layers and use the RoBERTa encoded [CLS] representations for entailment prediction and decision making.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "3.3 Ablation Study"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "surface-level in-line conditions for entailment reasoning",
+    "object_type": "Other",
+    "source_sentence": "Different from their use of discourse information , we use it as a parser to segment surface- level in-line conditions for entailment reasoning .",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.191",
+    "title": "DISCERN: Discourse-Aware Entailment Reasoning Network for Conversational Machine Reading",
+    "section": "4 Related Work"
+  }
+]

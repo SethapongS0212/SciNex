@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Words",
+    "object_type": "Other",
+    "source_sentence": "However, given the nature of our training data (i.e., pairs of words and not sentences), we consider the full pre- trained LM's vocabulary.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.712",
+    "title": "Distilling Relation Embeddings from Pre-trained Language Models",
+    "section": "3.2 Fine-tuning the LM"
+  },
+  {
+    "subject": "SBERT",
+    "predicate": "uses",
+    "object": "classifier",
+    "object_type": "Model",
+    "source_sentence": "Classification Loss Following SBERT , we use a classifier to predict whether two word pairs belong to the same relation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.712",
+    "title": "Distilling Relation Embeddings from Pre-trained Language Models",
+    "section": "3.2 Fine-tuning the LM"
+  },
+  {
+    "subject": "Negative Sampling",
+    "predicate": "addresses",
+    "object": "information retrieval",
+    "object_type": "Task",
+    "source_sentence": "Similar in-batch negative sampling has been shown to be effective in information retrieval.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.712",
+    "title": "Distilling Relation Embeddings from Pre-trained Language Models",
+    "section": "4.1 RelBERT Training"
+  },
+  {
+    "subject": "Triplet Loss",
+    "predicate": "uses",
+    "object": "prompt optimization",
+    "object_type": "Process",
+    "source_sentence": "First we optimize the prompt over the training set with the triplet loss Lt while the parameters of the LM are frozen.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.712",
+    "title": "Distilling Relation Embeddings from Pre-trained Language Models",
+    "section": "4.1 RelBERT Training"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "vector difference",
+    "object_type": "Concept",
+    "source_sentence": "As baselines, we consider two standard word embedding models: GloVe and FastText , where word pairs are represented by the vector difference of their word embeddings (diff).",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.712",
+    "title": "Distilling Relation Embeddings from Pre-trained Language Models",
+    "section": "4.3 Baselines"
+  },
+  {
+    "subject": "FastText",
+    "predicate": "uses",
+    "object": "vector difference",
+    "object_type": "Concept",
+    "source_sentence": "As baselines, we consider two standard word embedding models: GloVe and FastText , where word pairs are represented by the vector difference of their word embeddings (diff).",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.712",
+    "title": "Distilling Relation Embeddings from Pre-trained Language Models",
+    "section": "4.3 Baselines"
+  },
+  {
+    "subject": "Relation Embeddings",
+    "predicate": "addresses",
+    "object": "analogy questions",
+    "object_type": "Task",
+    "source_sentence": "testing the relation embeddings learned by RelBERT on analogy questions (Section 5.1) and relation classification (Section 5.2).",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.712",
+    "title": "Distilling Relation Embeddings from Pre-trained Language Models",
+    "section": "5 Results"
+  },
+  {
+    "subject": "Relation Embeddings",
+    "predicate": "addresses",
+    "object": "relation classification",
+    "object_type": "Task",
+    "source_sentence": "testing the relation embeddings learned by RelBERT on analogy questions (Section 5.1) and relation classification (Section 5.2).",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.712",
+    "title": "Distilling Relation Embeddings from Pre-trained Language Models",
+    "section": "5 Results"
+  },
+  {
+    "subject": "Relation Embeddings",
+    "predicate": "achieves",
+    "object": "state-of-the-art on analogy and relation classification benchmarks",
+    "object_type": "Other",
+    "source_sentence": "In our experimental results, we found the resulting relation embeddings to be of high quality, outperforming state-of-the-art methods on several analogy and relation classification benchmarks.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.712",
+    "title": "Distilling Relation Embeddings from Pre-trained Language Models",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achieves",
+    "object": "best performance within the LMs",
+    "object_type": "Concept",
+    "source_sentence": "In both tasks, we can confirm that RoBERTa achieves the best performance within the LMs, by a relatively large margin in most cases.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.712",
+    "title": "Distilling Relation Embeddings from Pre-trained Language Models",
+    "section": "A.2 Comparison with ALBERT & BERT"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "custom prompt",
+    "object_type": "Concept",
+    "source_sentence": "Training a single RelBERT model with a custom prompt takes about half a day on two V100 GPUs.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.712",
+    "title": "Distilling Relation Embeddings from Pre-trained Language Models",
+    "section": "B.3 Training Time"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "two V100 GPUs",
+    "object_type": "Other",
+    "source_sentence": "Training a single RelBERT model with a custom prompt takes about half a day on two V100 GPUs.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.712",
+    "title": "Distilling Relation Embeddings from Pre-trained Language Models",
+    "section": "B.3 Training Time"
+  }
+]

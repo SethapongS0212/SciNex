@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "ensemble",
+    "predicate": "achieves",
+    "object": "conditional independence",
+    "object_type": "Concept",
+    "source_sentence": "We show that conditional independence can be achieved by ensuring each classifier makes individually optimal predictions, and we train the ensemble with this constraint using methods from bi-level optimization.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.272",
+    "title": "Learning to Model and Ignore Dataset Bias with Mixed Capacity Ensembles",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Training Models",
+    "predicate": "trainedon",
+    "object": "datasets with known biases",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate our method by training models on datasets with known biases, and then testing them on out-of-domain datasets built to penalize models that learn to use those biases.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.272",
+    "title": "Learning to Model and Ignore Dataset Bias with Mixed Capacity Ensembles",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "trainedon",
+    "object": "image-caption data",
+    "object_type": "Dataset",
+    "source_sentence": "a transformer based model that has been pretrained on image-caption data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.272",
+    "title": "Learning to Model and Ignore Dataset Bias with Mixed Capacity Ensembles",
+    "section": "4.2 VQA"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "achieves",
+    "object": "Upper Bound",
+    "object_type": "Concept",
+    "source_sentence": "report the best ensemble result from Clark et al. (2019) as an upper bound for the HANS dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.272",
+    "title": "Learning to Model and Ignore Dataset Bias with Mixed Capacity Ensembles",
+    "section": "4.3 MNLI"
+  },
+  {
+    "subject": "training",
+    "predicate": "addresses",
+    "object": "computational expense",
+    "object_type": "Concept",
+    "source_sentence": "Since training models on ImageNet is computationally expensive, and the large number of classes creates complications when applying our conditional independence approach",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.272",
+    "title": "Learning to Model and Ignore Dataset Bias with Mixed Capacity Ensembles",
+    "section": "4.4 ImageNet Animals"
+  },
+  {
+    "subject": "Datasets",
+    "predicate": "addresses",
+    "object": "filtering",
+    "object_type": "Concept",
+    "source_sentence": "Similarly to our approach to MNLI, and Hendrycks et al. (2019), we construct OOD datasets by filtering out correct predictions made by a biased classifier.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.272",
+    "title": "Learning to Model and Ignore Dataset Bias with Mixed Capacity Ensembles",
+    "section": "4.4 ImageNet Animals"
+  },
+  {
+    "subject": "Images",
+    "predicate": "addresses",
+    "object": "misleading background",
+    "object_type": "Concept",
+    "source_sentence": "Images where the classifier was unable to guess the correct class for most of the image patches are assumed to have a misleading background and are used for the OOD test set.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.272",
+    "title": "Learning to Model and Ignore Dataset Bias with Mixed Capacity Ensembles",
+    "section": "4.4 ImageNet Animals"
+  },
+  {
+    "subject": "Convolution",
+    "predicate": "uses",
+    "object": "Residual Block",
+    "object_type": "Other",
+    "source_sentence": "We branch the higher capacity model by adding a 1x1 convolution with 256 filters after the first residual block, followed by max-pooling and a 256 dimensional ReLU layer.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.272",
+    "title": "Learning to Model and Ignore Dataset Bias with Mixed Capacity Ensembles",
+    "section": "4.4 ImageNet Animals"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "Biases",
+    "object_type": "Concept",
+    "source_sentence": "Experiments show this approach successfully prevents the higher capacity model from adopting known biases on several real-world datasets , including achieving a 10-point gain on an out-of- domain VQA dataset .",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.272",
+    "title": "Learning to Model and Ignore Dataset Bias with Mixed Capacity Ensembles",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "Images",
+    "object_type": "Other",
+    "source_sentence": "by sampling images randomly from all its hyponyms in the ImageNet training data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.272",
+    "title": "Learning to Model and Ignore Dataset Bias with Mixed Capacity Ensembles",
+    "section": "A ImageNet Animals"
+  }
+]

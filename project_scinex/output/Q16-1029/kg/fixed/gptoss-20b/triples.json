@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Paraphrase Rules",
+    "predicate": "uses",
+    "object": "Bilingual Parallel Corpora",
+    "object_type": "Dataset",
+    "source_sentence": "large-scale paraphrase rules automatically derived from bilingual parallel corpora",
+    "extraction_mode": "fixed",
+    "paper": "Q16-1029",
+    "title": "Optimizing Statistical Machine Translation for Text Simpliﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "syntactic",
+    "predicate": "uses",
+    "object": "Input",
+    "object_type": "Other",
+    "source_sentence": "syntactic rewrite rules that simplify the input",
+    "extraction_mode": "fixed",
+    "paper": "Q16-1029",
+    "title": "Optimizing Statistical Machine Translation for Text Simpliﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Sentence Compression",
+    "predicate": "uses",
+    "object": "SMT",
+    "object_type": "Model",
+    "source_sentence": "The most related work to ours is that of Ganitkevitch et al. (2013) on sentence compression, in which compression of word and sentence lengths can be more straightforwardly implemented in features and the objective function in the SMT framework.",
+    "extraction_mode": "fixed",
+    "paper": "Q16-1029",
+    "title": "Optimizing Statistical Machine Translation for Text Simpliﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "0.1562",
+    "object_type": "Metric",
+    "source_sentence": "the BLEU scores are 0.1562, 0.6435, 0.6435 respectively.",
+    "extraction_mode": "fixed",
+    "paper": "Q16-1029",
+    "title": "Optimizing Statistical Machine Translation for Text Simpliﬁcation",
+    "section": "3.1 Simpliﬁcation-speciﬁc Objective Functions"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "0.6435",
+    "object_type": "Metric",
+    "source_sentence": "the BLEU scores are 0.1562, 0.6435, 0.6435 respectively.",
+    "extraction_mode": "fixed",
+    "paper": "Q16-1029",
+    "title": "Optimizing Statistical Machine Translation for Text Simpliﬁcation",
+    "section": "3.1 Simpliﬁcation-speciﬁc Objective Functions"
+  },
+  {
+    "subject": "rule",
+    "predicate": "uses",
+    "object": "rich features",
+    "object_type": "Feature",
+    "source_sentence": "we model the task by incorporating rich features into each rule",
+    "extraction_mode": "fixed",
+    "paper": "Q16-1029",
+    "title": "Optimizing Statistical Machine Translation for Text Simpliﬁcation",
+    "section": "3.2 Incorporating Large-Scale Paraphrase Rules"
+  },
+  {
+    "subject": "rule",
+    "predicate": "achieves",
+    "object": "simplification of input phrase",
+    "object_type": "Concept",
+    "source_sentence": "determine how well a rule simplifies an input phrase",
+    "extraction_mode": "fixed",
+    "paper": "Q16-1029",
+    "title": "Optimizing Statistical Machine Translation for Text Simpliﬁcation",
+    "section": "3.2 Incorporating Large-Scale Paraphrase Rules"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "Gigaword corpus",
+    "object_type": "Dataset",
+    "source_sentence": "the language model trained on the Gigaword corpus",
+    "extraction_mode": "fixed",
+    "paper": "Q16-1029",
+    "title": "Optimizing Statistical Machine Translation for Text Simpliﬁcation",
+    "section": "4.1 Qualitative Analysis"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "99.05",
+    "object_type": "Metric",
+    "source_sentence": "Tuning towards BLEU with all 8 references results in no transformation (same as input), as this can get a near-perfect BLEU score of 99.05 (out of 100).",
+    "extraction_mode": "fixed",
+    "paper": "Q16-1029",
+    "title": "Optimizing Statistical Machine Translation for Text Simpliﬁcation",
+    "section": "4.2 Quantitative Evaluation of Simpliﬁcation Systems"
+  },
+  {
+    "subject": "Paraphrase Rules",
+    "predicate": "uses",
+    "object": "Normal-Simple Wikipedia dataset",
+    "object_type": "Dataset",
+    "source_sentence": "using simplicity-enriched paraphrase rules derived from larger data than the Normal-Simple Wikipedia dataset.",
+    "extraction_mode": "fixed",
+    "paper": "Q16-1029",
+    "title": "Optimizing Statistical Machine Translation for Text Simpliﬁcation",
+    "section": "5 Conclusions and Future Work"
+  }
+]

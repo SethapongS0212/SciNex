@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "Matterport Room-to-Room",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate on navigation and question answering tasks across three benchmark datasets: Matterport Room-to-Room (no question answering component), and IQUAD V1 and EQA (question answering that requires navigating to the relevant scene in the environment) (Anderson et al., 2018; Gordon Is there an apple in the fridge? et al., 2018; Das et al., 2018a).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3 Benchmark Tasks"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "IQUAD V1",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate on navigation and question answering tasks across three benchmark datasets: Matterport Room-to-Room (no question answering component), and IQUAD V1 and EQA (question answering that requires navigating to the relevant scene in the environment) (Anderson et al., 2018; Gordon Is there an apple in the fridge? et al., 2018; Das et al., 2018a).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3 Benchmark Tasks"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "EQA",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate on navigation and question answering tasks across three benchmark datasets: Matterport Room-to-Room (no question answering component), and IQUAD V1 and EQA (question answering that requires navigating to the relevant scene in the environment) (Anderson et al., 2018; Gordon Is there an apple in the fridge? et al., 2018; Das et al., 2018a).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3 Benchmark Tasks"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "ResNet-encoded image Vt",
+    "object_type": "Image",
+    "source_sentence": "At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at (seen in Figure 2).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.1 Matterport Room-to-Room"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "LSTM language encoder (L)",
+    "object_type": "Model",
+    "source_sentence": "At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at (seen in Figure 2).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.1 Matterport Room-to-Room"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "CNN encoded image Vt",
+    "object_type": "Image",
+    "source_sentence": "At each timestep, a planner LSTM takes in a CNN encoded image Vt, LSTM encoded question L, and the previous action at−1 and emits an action at.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "LSTM encoded question L",
+    "object_type": "Questions",
+    "source_sentence": "At each timestep, a planner LSTM takes in a CNN encoded image Vt, LSTM encoded question L, and the previous action at−1 and emits an action at.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "produces",
+    "object": "action at",
+    "object_type": "Action",
+    "source_sentence": "At each timestep, a planner LSTM takes in a CNN encoded image Vt, LSTM encoded question L, and the previous action at−1 and emits an action at.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "new vision observations",
+    "object_type": "Image",
+    "source_sentence": "The action is executed in the environment , and then a lower-level controller LSTM continues to take in new vision observations and at, either repeating at again or returning control to the planner.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "new action",
+    "object_type": "Action",
+    "source_sentence": "This baseline model is trained and evaluated with the same inputs as the full model, but does not pass control to a lower-level controller, instead predicting a new action using the planner LSTM at each timestep.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  },
+  {
+    "subject": "Questions",
+    "predicate": "addresses",
+    "object": "a single unambiguous object",
+    "object_type": "Other",
+    "source_sentence": "EQA questions are program- matically generated to refer to a single, unambiguous object for a specific environment , and are filtered to avoid easy questions (e.g., What room is the bathtub in?).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "addresses",
+    "object": "a fixed number of actions",
+    "object_type": "Other",
+    "source_sentence": "At evaluation, an agent is placed a fixed number of actions away from the object.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  },
+  {
+    "subject": "Neural Architectures",
+    "predicate": "uses",
+    "object": "natural language",
+    "object_type": "Other",
+    "source_sentence": "Modern approaches use neural architectures to map natural language to the (simulated) world and execute actions (Paxton et al., 2019; Chen et al., 2018; Nguyen et al., 2018; Blukis et al., 2018; Fried et al., 2018; Mei et al., 2016).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "5 Related Work"
+  }
+]

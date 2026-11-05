@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Semantic Dependency Parsing",
+    "predicate": "produces",
+    "object": "graph-structured semantic dependency representations",
+    "object_type": "Other",
+    "source_sentence": "Semantic dependency parsing (Oepen et al.) aims to produce graph-structured semantic dependency representations of sentences instead of tree-structured syntactic dependency parses.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance in Semantic Dependency Parsing",
+    "object_type": "Other",
+    "source_sentence": "Our experiments show that our approach achieves state-of-the-art performance in semantic dependency parsing and outperforms our baseline with 0.3% and 0.4% labeled F1 score and previous state-of-the-art model with 1.3% and 1.4% labeled F1 score for in-domain and out-of-domain test sets respectively.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "Input",
+    "object_type": "Other",
+    "source_sentence": "Given an input sentence , we first compute word representations using a BiLSTM",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "3 Approach"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "we feed a BiLSTM with their word embeddings and POS tag embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "3.1 Part Scoring"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "POS Tag embeddings",
+    "object_type": "Other",
+    "source_sentence": "we feed a BiLSTM with their word embeddings and POS tag embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "3.1 Part Scoring"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "uses",
+    "object": "Words",
+    "object_type": "Other",
+    "source_sentence": "Given a sentence with n words [w1, w2,..., wn],",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "3.1 Part Scoring"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "probability of each label",
+    "object_type": "Concept",
+    "source_sentence": "s(label) i,j is fed into a softmax layer that outputs the probability of each label for edge (i, j).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "3.2 Inference"
+  },
+  {
+    "subject": "posterior inference",
+    "predicate": "uses",
+    "object": "CRF",
+    "object_type": "Model",
+    "source_sentence": "computing the edge probabilities can be seen as doing posterior inference on a Conditional Random Field (CRF).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "3.2 Inference"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "bilinear or biaffine layer",
+    "object_type": "Other",
+    "source_sentence": "Dozat and Manning (2018) proposed a graph-based simple but powerful neural network for semantic dependency parsing using a bilinear or biaffine layer to encode the interaction between words.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "5.1 Semantic Dependency Parsing"
+  },
+  {
+    "subject": "Dynamic Programming",
+    "predicate": "uses",
+    "object": "Decoding",
+    "object_type": "Task",
+    "source_sentence": "(2017) proposed a quasi-second- order parser and used dynamic programming for decoding with time complexity of O(n4).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "5.2 Higher-Order Dependency Parsing"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "image regions",
+    "object_type": "Concept",
+    "source_sentence": "with a CRF over image regions",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "5.3 CRF as Recurrent Neural Networks"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "trilinear function",
+    "object_type": "Other",
+    "source_sentence": "We constructed an end-to-end neural network that uses a trilinear function to score second-order parts and finds the highest-scoring parse graph by either mean field variational inference or loopy belief propagation algorithms unfolded as recurrent neural network layers.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "6 Conclusion"
+  }
+]

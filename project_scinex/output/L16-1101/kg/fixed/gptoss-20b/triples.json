@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Translation Model",
+    "predicate": "uses",
+    "object": "Paraphrases",
+    "object_type": "Method",
+    "source_sentence": "That is augmenting the translation model for the OOV words by using the translation knowledge of their paraphrases in the translation model.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1101",
+    "title": "Chenhui Chu1 and Sadao Kurohashi2",
+    "section": "1. Introduction"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "trainedon",
+    "object": "monolingual data",
+    "object_type": "Dataset",
+    "source_sentence": "Using the word embeddings trained on monolingual data and semantic lexicons, we obtain a list of paraphrases for each OOV word.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1101",
+    "title": "Chenhui Chu1 and Sadao Kurohashi2",
+    "section": "2. Paraphrasing Out-of-Vocabulary Words"
+  },
+  {
+    "subject": "Words",
+    "predicate": "uses",
+    "object": "Paraphrasing",
+    "object_type": "Concept",
+    "source_sentence": "In our experiments, we collected the words grouped in same frames and used them for paraphrasing.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1101",
+    "title": "Chenhui Chu1 and Sadao Kurohashi2",
+    "section": "2.1. Word Embeddings"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "segmenter proposed by Chu et al. (2012a)",
+    "object_type": "Method",
+    "source_sentence": "In all our experiments, we pre- processed the data by segmenting Chinese sentences using a segmenter proposed by Chu et al. (2012a), and tokenizing English sentences.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1101",
+    "title": "Chenhui Chu1 and Sadao Kurohashi2",
+    "section": "3. Experiments"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "Chinese side of the parallel corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We trained a 5-gram language model on the Chinese side of the parallel corpus using the SRILM toolkit with interpolated Kneser-Ney discounting, and used it for all the experiments.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1101",
+    "title": "Chenhui Chu1 and Sadao Kurohashi2",
+    "section": "3.2. Settings"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "English Gigaword version 5.0,5",
+    "object_type": "Dataset",
+    "source_sentence": "The skip-gram model ( Mikolov et al., 2013) was trained on the English Gigaword version 5.0,5 with the word2vec tool.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1101",
+    "title": "Chenhui Chu1 and Sadao Kurohashi2",
+    "section": "3.2. Settings"
+  }
+]

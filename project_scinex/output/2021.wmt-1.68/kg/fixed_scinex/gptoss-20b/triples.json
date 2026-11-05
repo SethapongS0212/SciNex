@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "kernel",
+    "predicate": "uses",
+    "object": "memory.max_usage",
+    "object_type": "Other",
+    "source_sentence": "Peak RAM consumption was measured using memory.max_usage in bytes from the kernel for the CPU and by polling nvidia-smi for the GPU.",
+    "extraction_mode": "fixed",
+    "paper": "2021.wmt-1.68",
+    "title": "Findings of the WMT 2021 Shared Task on Efﬁcient Translation",
+    "section": "4.1 Cost"
+  },
+  {
+    "subject": "rule-based",
+    "predicate": "uses",
+    "object": "tokenizer scripts",
+    "object_type": "Other",
+    "source_sentence": "Code could include simple rule-based tokenizer scripts and hard-coded model structure that could plausibly be used for another language pair.",
+    "extraction_mode": "fixed",
+    "paper": "2021.wmt-1.68",
+    "title": "Findings of the WMT 2021 Shared Task on Efﬁcient Translation",
+    "section": "4.1 Cost"
+  },
+  {
+    "subject": "Translation Quality",
+    "predicate": "evaluatedon",
+    "object": "WMT 2021 news test set",
+    "object_type": "Dataset",
+    "source_sentence": "Translation quality is measured on the WMT 2021 news test set.",
+    "extraction_mode": "fixed",
+    "paper": "2021.wmt-1.68",
+    "title": "Findings of the WMT 2021 Shared Task on Efﬁcient Translation",
+    "section": "4.2 Quality"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "uses",
+    "object": "document-level source-based direct assessments",
+    "object_type": "Other",
+    "source_sentence": "For human evaluation , as a source of the absolute quality measure we used document-level source-based direct assessments (DA) following the procedure established at the WMT20 News Translation Task.",
+    "extraction_mode": "fixed",
+    "paper": "2021.wmt-1.68",
+    "title": "Findings of the WMT 2021 Shared Task on Efﬁcient Translation",
+    "section": "4.2 Quality"
+  }
+]

@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "analysis",
+    "predicate": "addresses",
+    "object": "World Knowledge",
+    "object_type": "Concept",
+    "source_sentence": "Our analysis of the data shows that ascertaining the label typically requires the composing of multiple types of inferences across multiple rows from the tables in the context of world knowledge.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Paragraphs",
+    "predicate": "uses",
+    "object": "fixed template",
+    "object_type": "Concept",
+    "source_sentence": "We convert the premise table into paragraphs using fixed template applied to each row.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.1 Representing Tables"
+  },
+  {
+    "subject": "Sentences",
+    "predicate": "uses",
+    "object": "word mover distance",
+    "object_type": "Concept",
+    "source_sentence": "we use the word mover distance to select the closest and the three closest sentences to the hypothesis from the paragraph representation (denoted by WMD-1 and WMD-3, respectively).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.1 Representing Tables"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "key: value tokens",
+    "object_type": "Concept",
+    "source_sentence": "we represent tables by a sequence of key: value tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.1 Representing Tables"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "LibLinear library",
+    "object_type": "Other",
+    "source_sentence": "For this model (referred to as SVM), we used the LibLinear library.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.2 Modeling Table Inferences"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "classification token",
+    "object_type": "Other",
+    "source_sentence": "used the classification token to train a classifier",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.2 Modeling Table Inferences"
+  },
+  {
+    "subject": "Attention Model",
+    "predicate": "uses",
+    "object": "premise key-value embeddings",
+    "object_type": "Other",
+    "source_sentence": "we implemented the popular decomposable attention model using the premise key-value embeddings",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.2 Modeling Table Inferences"
+  },
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "inference problem",
+    "object_type": "Task",
+    "source_sentence": "we developed a collection of models for the table inference problem",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.2 Modeling Table Inferences"
+  },
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "hypothesis bias",
+    "object_type": "Concept",
+    "source_sentence": "We consider three classes of models to study hypothesis bias in INFOTABS.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.3 Results"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "unigrams and bigrams",
+    "object_type": "Concept",
+    "source_sentence": "We represent the hypothesis in two ways a) using unigrams and bigrams for an SVM, and b) using a single-sentence BERT-class model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.3 Results"
+  },
+  {
+    "subject": "Reasoning",
+    "predicate": "addresses",
+    "object": "complex reasoning",
+    "object_type": "Concept",
+    "source_sentence": "Reasoning Recently, challenging new datasets have emerged that emphasize complex reasoning.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "7 Related Work"
+  }
+]

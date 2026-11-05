@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "NLP",
+    "predicate": "encompasses",
+    "object": "Text Summarization",
+    "object_type": "Task",
+    "source_sentence": "It is important in many NLP tasks such as text summarization, question answering and retrieval-based dialogue.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "NLP",
+    "predicate": "encompasses",
+    "object": "Question Answering",
+    "object_type": "Task",
+    "source_sentence": "It is important in many NLP tasks such as text summarization, question answering and retrieval-based dialogue.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "graph structure",
+    "predicate": "uses",
+    "object": "graph flow attention",
+    "object_type": "Method",
+    "source_sentence": "We innovatively apply a graph flow attention to control the fusion process via the graph structure.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Sentence Fusion",
+    "predicate": "addresses",
+    "object": "generating abstractive summaries",
+    "object_type": "Task",
+    "source_sentence": "Sentence fusion has been considered as an essential step for generating abstractive summaries.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "2.1 Sentence Fusion in Text Summarization"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "links between the co-referred entities",
+    "object_type": "Concept",
+    "source_sentence": "To address this problem, (Lebanoff et al., 2020a,b) propose to utilize points of correspondence between sentences to fuse disparate sentences, and develop a transformer enhanced with the links between the co-referred entities.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "2.1 Sentence Fusion in Text Summarization"
+  },
+  {
+    "subject": "Sentence Fusion",
+    "predicate": "uses",
+    "object": "encoder-decoder architecture",
+    "object_type": "Other",
+    "source_sentence": "Our sentence fusion model follows the typical encoder-decoder architecture, as shown in Figure 2.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "3 Method"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "attention layer of BERT",
+    "object_type": "Concept",
+    "source_sentence": "Since each node only corresponds to several words in the input sentences , one node token will only be attended by the sentence tokens that belong to this node in the attention layer of BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "3.2 Encoder"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "mask matrix M",
+    "object_type": "Concept",
+    "source_sentence": "We use an additional mask matrix M similar to the one presented in to control the attention of the BERT-based encoder.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "3.2 Encoder"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "Softmax",
+    "object_type": "Method",
+    "source_sentence": "After defining the mask matrix M, we calculate attention with Equation (1) below, where Q, K and V refer to the query matrix, the key matrix and the value matrix, respectively, dk is a scaling factor. Attention(Q, K, V ) = softmax(QKT + M √ (1)",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "3.2 Encoder"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "BERT-base-uncased version of BERT",
+    "object_type": "Model",
+    "source_sentence": "We build the encoder using the BERT-base-uncased version of BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "4.1 Experimental Set-Up"
+  },
+  {
+    "subject": "Graph Attention",
+    "predicate": "achieves",
+    "object": "high Rouge scores",
+    "object_type": "Metric",
+    "source_sentence": "the graph attention leads to relatively high Rouge scores but a lower fusion rate.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "4.3 Ablation Study"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "addresses",
+    "object": "unfaithful errors and fusion quality",
+    "object_type": "Concept",
+    "source_sentence": "We further conduct human evaluation to analyze unfaithful errors and fusion quality.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "4.4 Human Evaluation"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "addresses",
+    "object": "Fluency",
+    "object_type": "Concept",
+    "source_sentence": "the following three questions. (1) Fluency: whether the generated sentence is grammatically correct and readable.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "4.4 Human Evaluation"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "addresses",
+    "object": "Fusion",
+    "object_type": "Concept",
+    "source_sentence": "the following three questions. (2) Fusion : whether the generated sentence is generated through sentence fusion.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.334",
+    "title": "The Hong Kong Polytechnic University csryuan@comp.polyu.edu.hk",
+    "section": "4.4 Human Evaluation"
+  }
+]

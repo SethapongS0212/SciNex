@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Building a Corpus",
+    "predicate": "addresses",
+    "object": "TED Talks",
+    "object_type": "Dataset",
+    "source_sentence": "These include building a corpus from TED talks and using Convolutional Neural Networks (CNNs) in the recognition.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Humor Recognition",
+    "predicate": "addresses",
+    "object": "Binary Classification",
+    "object_type": "Task",
+    "source_sentence": "In most of the previous studies (Mihalcea and Strapparava, 2005; Puran-dare and Litman, 2006; Yang et al., 2015), humor recognition was modeled as a binary classification task.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "2 Previous Research"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "Model Building",
+    "object_type": "ResearchProcess",
+    "source_sentence": "In addition, Word2Vec distributed representations were utilized in the model building.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "2 Previous Research"
+  },
+  {
+    "subject": "Distributed Representations",
+    "predicate": "uses",
+    "object": "Model Building",
+    "object_type": "ResearchProcess",
+    "source_sentence": "In addition, Word2Vec distributed representations were utilized in the model building.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "2 Previous Research"
+  },
+  {
+    "subject": "Convolutional Neural Networks",
+    "predicate": "uses",
+    "object": "text categorization tasks",
+    "object_type": "Task",
+    "source_sentence": "Convolutional Neural Networks (CNNs) have recently been successfully used in several text categorization tasks (e.g., review rating, senti- ment recognition, and question type recognition).",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "3 TED Talk Data"
+  },
+  {
+    "subject": "Humor Recognition",
+    "predicate": "addresses",
+    "object": "acoustic and lexical cues",
+    "object_type": "Concept",
+    "source_sentence": "In Bertero and Fung (2016b), CNN was found to be the best model that uses both acoustic and lexical cues for humor recognition.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "3 TED Talk Data"
+  },
+  {
+    "subject": "detection",
+    "predicate": "addresses",
+    "object": "binary classification task",
+    "object_type": "Task",
+    "source_sentence": "Beyond treating hu- mor detection as a binary classification task, Bert- ero and Fung (2016a) formulated the recognition to be a sequential labeling task and utilized Re- current Neural Networks (RNNs) on top of CNN models (serv- ing as feature extractors) to utilize context infor- mation among utterances.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "3 TED Talk Data"
+  },
+  {
+    "subject": "RNNs",
+    "predicate": "uses",
+    "object": "sequential labeling task",
+    "object_type": "Task",
+    "source_sentence": "Beyond treating hu- mor detection as a binary classification task, Bert- ero and Fung (2016a) formulated the recognition to be a sequential labeling task and utilized Re- current Neural Networks (RNNs) on top of CNN models (serv- ing as feature extractors) to utilize context infor- mation among utterances.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "3 TED Talk Data"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "Google News",
+    "object_type": "Dataset",
+    "source_sentence": "we utilized the Word2Vec embedding vectors (d = 300) that were trained on 100 billion words of Google News.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "4.2 CNN model"
+  },
+  {
+    "subject": "Convolution",
+    "predicate": "uses",
+    "object": "1D convolution network",
+    "object_type": "Model",
+    "source_sentence": "The embedding matrix was fed into a 1D convolution network with multiple filters.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "4.2 CNN model"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "cross-entropy",
+    "object_type": "Metric",
+    "source_sentence": "By using cross-entropy as the learning metric, the whole se- quential network (all weights and bias) could be (denoted as Pun).",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "4.2 CNN model"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "SKLL6",
+    "object_type": "Model",
+    "source_sentence": "When building conventional models, we de- veloped our own feature extraction scripts and used the SKLL6 python package for building Ran- dom Forest models.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "4.2 CNN model"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Random Forest",
+    "object_type": "Model",
+    "source_sentence": "When building conventional models, we de- veloped our own feature extraction scripts and used the SKLL6 python package for building Ran- dom Forest models.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "4.2 CNN model"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "feature extraction scripts",
+    "object_type": "Method",
+    "source_sentence": "When building conventional models, we de- veloped our own feature extraction scripts and used the SKLL6 python package for building Ran- dom Forest models.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "4.2 CNN model"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "comparesagainst",
+    "object": "CNN",
+    "object_type": "Model",
+    "source_sentence": "We compared two types of leading text-based humor recognition methods: a conventional classifier (e.g., Random Forest) based on human -engineered features vs. an end-to-end CNN method, which relies on its inherent representation learning.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Random Forest",
+    "predicate": "addresses",
+    "object": "Humor Recognition",
+    "object_type": "ResearchTask",
+    "source_sentence": "We compared two types of leading text-based humor recognition methods: a conventional classifier (e.g., Random Forest) based on human -engineered features vs. an end-to-end CNN method, which relies on its inherent representation learning.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "comprises",
+    "object": "Representation Learning",
+    "object_type": "ResearchProcess",
+    "source_sentence": "an end-to-end CNN method, which relies on its inherent representation learning.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "evaluates",
+    "object": "0.864",
+    "object_type": "Other",
+    "source_sentence": "In par- ticular, precision has been greatly increased from 0.762 to 0.864.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Stemming",
+    "predicate": "motivates",
+    "object": "more research is worth pursuing",
+    "object_type": "ResearchObjective",
+    "source_sentence": "Gener- Stemming from the present study, we envision that more research is worth pursuing: (a) for pre- sentations, cues from other modalities such as au- dio or video will be included, similar to Bertero and Fung (2016b);",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Context Information",
+    "predicate": "addresses",
+    "object": "modeling by using se- quential modeling methods",
+    "object_type": "ResearchProcess",
+    "source_sentence": "In addition, focusing on the system development time, gener- Stemming from the present study, we envision that more research is worth pursuing: (a) for pre- sentations, cues from other modalities such as au- dio or video will be included, similar to Bertero and Fung (2016b); (b) context information from multiple utterances will be modeled by using se- quential modeling methods.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "6 Discussion"
+  }
+]

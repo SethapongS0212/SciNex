@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Active Learning",
+    "predicate": "achieves",
+    "object": "incremental model improvement",
+    "object_type": "Other",
+    "source_sentence": "We then initiate an on-line active learning phase to interact with human users for incremental model improvement, where a unique single-character1 user-feedback mechanism is used as a form of reinforcement at each turn in the dialogue.",
+    "extraction_mode": "fixed",
+    "paper": "S17-1008",
+    "title": "Deep Active Learning for Dialogue Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "learning phase",
+    "predicate": "achieves",
+    "object": "incremental model improvement",
+    "object_type": "Other",
+    "source_sentence": "We then initiate an on-line active learning phase to interact with human users for incremental model improvement, where a unique single-character1 user-feedback mechanism is used as a form of reinforcement at each turn in the dialogue.",
+    "extraction_mode": "fixed",
+    "paper": "S17-1008",
+    "title": "Deep Active Learning for Dialogue Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "LSTM units",
+    "object_type": "Model",
+    "source_sentence": "The architectural backbone of our model is the Seq2Seq framework consisting of one encoder- decoder layer, each containing 300 LSTM units.",
+    "extraction_mode": "fixed",
+    "paper": "S17-1008",
+    "title": "Deep Active Learning for Dialogue Generation",
+    "section": "3 Model Overview"
+  },
+  {
+    "subject": "model training",
+    "predicate": "uses",
+    "object": "supervised",
+    "object_type": "Method",
+    "source_sentence": "The end-to-end model training consists of offline supervised learning (SL) with mini-batches of 10, followed by online active learning (AL).",
+    "extraction_mode": "fixed",
+    "paper": "S17-1008",
+    "title": "Deep Active Learning for Dialogue Generation",
+    "section": "3 Model Overview"
+  },
+  {
+    "subject": "model training",
+    "predicate": "uses",
+    "object": "Online Active Learning",
+    "object_type": "Method",
+    "source_sentence": "The end-to-end model training consists of offline supervised learning (SL) with mini-batches of 10, followed by online active learning (AL).",
+    "extraction_mode": "fixed",
+    "paper": "S17-1008",
+    "title": "Deep Active Learning for Dialogue Generation",
+    "section": "3 Model Overview"
+  },
+  {
+    "subject": "NLP Tasks",
+    "predicate": "encompasses",
+    "object": "image captioning",
+    "object_type": "Task",
+    "source_sentence": "DBS has been shown to outperform BS and other diverse decoding techniques on several NLP tasks, including image captioning, machine translation and visual question generation.",
+    "extraction_mode": "fixed",
+    "paper": "S17-1008",
+    "title": "Deep Active Learning for Dialogue Generation",
+    "section": "3.2 Online Active Learning"
+  },
+  {
+    "subject": "NLP Tasks",
+    "predicate": "encompasses",
+    "object": "machine translation",
+    "object_type": "Task",
+    "source_sentence": "DBS has been shown to outperform BS and other diverse decoding techniques on several NLP tasks, including image captioning, machine translation and visual question generation.",
+    "extraction_mode": "fixed",
+    "paper": "S17-1008",
+    "title": "Deep Active Learning for Dialogue Generation",
+    "section": "3.2 Online Active Learning"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "hamming diversity metric",
+    "object_type": "Metric",
+    "source_sentence": "We use the hamming diversity metric for decoding at each time step, which penalizes the selection of words that have already been chosen in other beams (Algorithm 1).",
+    "extraction_mode": "fixed",
+    "paper": "S17-1008",
+    "title": "Deep Active Learning for Dialogue Generation",
+    "section": "3.2 Online Active Learning"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Adam",
+    "object_type": "Method",
+    "source_sentence": "We control how quickly the model learns from user feedback by tuning the pa- rameter 'initial learning rate' (lr in Algorithm 1) of Adam, the stochastic optimizer.",
+    "extraction_mode": "fixed",
+    "paper": "S17-1008",
+    "title": "Deep Active Learning for Dialogue Generation",
+    "section": "3.2 Online Active Learning"
+  },
+  {
+    "subject": "Deep Active Learning",
+    "predicate": "uses",
+    "object": "Seq2Seq",
+    "object_type": "Method",
+    "source_sentence": "Our model augments the Seq2Seq framework with online Deep Active Learning to overcome some of its known short-comings with respect to dialogue generation.",
+    "extraction_mode": "fixed",
+    "paper": "S17-1008",
+    "title": "Deep Active Learning for Dialogue Generation",
+    "section": "5 Conclusion & Future Work"
+  }
+]

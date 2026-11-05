@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "NMT",
+    "predicate": "achieves",
+    "object": "state-of-the-art translation performance",
+    "object_type": "Other",
+    "source_sentence": "NMT yields the state-of-the-art translation performance in resource rich scenarios.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1111",
+    "title": "A Survey of Domain Adaptation for Neural Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Domain Adaptation",
+    "predicate": "addresses",
+    "object": "in-domain translation",
+    "object_type": "Task",
+    "source_sentence": "Leveraging out-of-domain parallel corpora and in-domain monolingual corpora to improve in-domain translation is known as domain adaptation for MT.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1111",
+    "title": "A Survey of Domain Adaptation for Neural Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "GRU",
+    "object_type": "Model",
+    "source_sentence": "Using a recurrent neural network (RNN) layer, gated recurrent unit (GRU) in this case, this can be accomplished.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1111",
+    "title": "A Survey of Domain Adaptation for Neural Machine Translation",
+    "section": "2 Neural Machine Translation"
+  },
+  {
+    "subject": "Convolutional Neural Network",
+    "predicate": "uses",
+    "object": "sentences",
+    "object_type": "Sentences",
+    "source_sentence": "LMs , as well as joint models , and more recently convolutional neural network (CNN) models can be used to score sentences.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1111",
+    "title": "A Survey of Domain Adaptation for Neural Machine Translation",
+    "section": "3.1 Data Centric"
+  },
+  {
+    "subject": "Information retrieval",
+    "predicate": "uses",
+    "object": "pseudo-parallel sentences",
+    "object_type": "Sentences",
+    "source_sentence": "there are also studies that generate pseudo-parallel sentences using information retrieval , self-enhancing or parallel word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1111",
+    "title": "A Survey of Domain Adaptation for Neural Machine Translation",
+    "section": "3.1 Data Centric"
+  },
+  {
+    "subject": "SMT",
+    "predicate": "comparesagainst",
+    "object": "NMT",
+    "object_type": "Model",
+    "source_sentence": "Unlike SMT, in-domain monolingual data cannot be used as an LM for conventional NMT directly,",
+    "extraction_mode": "fixed",
+    "paper": "C18-1111",
+    "title": "A Survey of Domain Adaptation for Neural Machine Translation",
+    "section": "4.1 Data Centric"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "uses",
+    "object": "NMT models",
+    "object_type": "Model",
+    "source_sentence": "ensemble that ensembles the multiple NMT models trained independently.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1111",
+    "title": "A Survey of Domain Adaptation for Neural Machine Translation",
+    "section": "4.1 Data Centric"
+  },
+  {
+    "subject": "Sentence Embedding",
+    "predicate": "uses",
+    "object": "sentence embedding similarity",
+    "object_type": "Concept",
+    "source_sentence": "To address this problem, Wang et al. (2017a) exploit the internal embedding of the source sentence in NMT, and use the sentence embedding similarity to select the sentences that are close to in-domain data from out-of-domain data.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1111",
+    "title": "A Survey of Domain Adaptation for Neural Machine Translation",
+    "section": "4.1 Data Centric"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "trainedon",
+    "object": "out-of-domain data",
+    "object_type": "Dataset",
+    "source_sentence": "Train an NMT model on out-of- domain data until convergence.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1111",
+    "title": "A Survey of Domain Adaptation for Neural Machine Translation",
+    "section": "4.2 Model Centric"
+  }
+]

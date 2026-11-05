@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "grid search",
+    "object_type": "Method",
+    "source_sentence": "We set learning rate to 5e-5 and batch size to 128 by grid search, and use early stopping to maximize the average precision (AP) on the validation data",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "3.4 Filtering Results"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "early stopping",
+    "object_type": "Method",
+    "source_sentence": "We set learning rate to 5e-5 and batch size to 128 by grid search, and use early stopping to maximize the average precision (AP) on the validation data",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "3.4 Filtering Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "best AP",
+    "object_type": "Metric",
+    "source_sentence": "We also tried other multilingual or Chinese PLMs of similar size, but the ELECTRA-based models obtain the best AP",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "3.4 Filtering Results"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "reports",
+    "object": "precision-recall curves",
+    "object_type": "Other",
+    "source_sentence": "Cascaded Filtering We report the precision- recall curves of the trained models in Figure 4, including all three classifiers",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "3.4 Filtering Results"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "reports",
+    "object": "performance",
+    "object_type": "Other",
+    "source_sentence": "We also report the performance of triple classifier on \"clean data\", 4The hfl/ chinese -electra-180g- large checkpoint",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "3.4 Filtering Results"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "better performance on clean data",
+    "object_type": "Other",
+    "source_sentence": "triple classifier perform better on \"clean data\"",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "3.4 Filtering Results"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "precision > 0.98",
+    "object_type": "Metric",
+    "source_sentence": "Finally, we set the thresholds for head and tail classifier to ensure precision > 0.98 on the test data",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "3.4 Filtering Results"
+  },
+  {
+    "subject": "generating",
+    "predicate": "uses",
+    "object": "trained filters",
+    "object_type": "Other",
+    "source_sentence": "We re-peat the generating and filtering process described in Section 3.3 and Section 3.4, using the trained filters.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "3.5 Bootstrapping Iteration"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "achieves",
+    "object": "87.2 acceptance",
+    "object_type": "Metric",
+    "source_sentence": "After filtering, the human acceptance reaches up to 87.2 from 47.6, indicating the effect of the filtering process.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "4.1 Evaluating the Graph"
+  },
+  {
+    "subject": "mT5",
+    "predicate": "trainedon",
+    "object": "Chinese corpora",
+    "object_type": "Dataset",
+    "source_sentence": "Since mT5 has been trained on Chinese corpora, it may generate commonsense knowledge specific to Chinese context.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "4.3 Case Study"
+  },
+  {
+    "subject": "GPUs",
+    "predicate": "uses",
+    "object": "T5-XXL model",
+    "object_type": "Model",
+    "source_sentence": "We use 4 RTX-A6000 GPUs for running the T5-XXL model.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Annotating",
+    "predicate": "addresses",
+    "object": "filters",
+    "object_type": "Concept",
+    "source_sentence": "In this study, we mainly have two kinds of annotation tasks, annotating training data for filters and human evaluation for results.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "A Annotation Details"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "addresses",
+    "object": "results",
+    "object_type": "Concept",
+    "source_sentence": "In this study, we mainly have two kinds of annotation tasks, annotating training data for filters and human evaluation for results.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "A Annotation Details"
+  },
+  {
+    "subject": "mT5",
+    "predicate": "comparesagainst",
+    "object": "XGLM",
+    "object_type": "Model",
+    "source_sentence": "During the pilot studies, we also compared several alternative text generation backbones besides mT5, including a multilingual autoregressive model XGLM and two Chinese - specific models, Pangu-Alpha and CPM2.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "B Alternative Models for Generation"
+  },
+  {
+    "subject": "mT5",
+    "predicate": "comparesagainst",
+    "object": "Pangu-Alpha",
+    "object_type": "Model",
+    "source_sentence": "During the pilot studies, we also compared several alternative text generation backbones besides mT5, including a multilingual autoregressive model XGLM and two Chinese - specific models, Pangu-Alpha and CPM2.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "B Alternative Models for Generation"
+  },
+  {
+    "subject": "mT5",
+    "predicate": "comparesagainst",
+    "object": "CPM2",
+    "object_type": "Model",
+    "source_sentence": "During the pilot studies, we also compared several alternative text generation backbones besides mT5, including a multilingual autoregressive model XGLM and two Chinese - specific models, Pangu-Alpha and CPM2.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.628",
+    "title": "CN-AutoMIC: Distilling Chinese Commonsense Knowledge from Pretrained Language Models",
+    "section": "B Alternative Models for Generation"
+  }
+]

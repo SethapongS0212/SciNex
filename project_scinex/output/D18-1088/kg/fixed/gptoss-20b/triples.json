@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "CNN/Dailymail dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Experiments on the CNN/Dailymail dataset show that our latent extractive model improves upon a strong extractive baseline trained on rule-based labels and also performs competitively to several recent models.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Bi-LSTM",
+    "predicate": "uses",
+    "object": "Long Short-Term Memory",
+    "object_type": "Model",
+    "source_sentence": "The sentence encoder first transforms Si into a list of hidden states (hi1, hi2,..., hi|Si|) using a Bi-directional Long Short-Term Memory Network (Bi-LSTM; Hochreiter and Schmidhuber 1997; Schuster and Paliwal 1997).",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "2.1 Neural Extractive Summarization"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "sequence of sentence representations",
+    "object_type": "Other",
+    "source_sentence": "After running the Bi- LSTM on a sequence of sentence representations (v1, v2,..., v|D|), we obtain context dependent sentence representations (hE 1, hE 2,..., hE |D|).",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "2.1 Neural Extractive Summarization"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "produces",
+    "object": "sentence labels",
+    "object_type": "Other",
+    "source_sentence": "The document decoder is also an LSTM which predicts sentence labels.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "2.1 Neural Extractive Summarization"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "predicted label distribution",
+    "object_type": "Other",
+    "source_sentence": "the predicted label distribution for yi is: p(yi|y1:i−1, hD i−1) = softmax(Wo hD i ) (3) where Wo ∈R2×d.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "2.1 Neural Extractive Summarization"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "negative log-likelihood of sentence labels in training documents",
+    "object_type": "Other",
+    "source_sentence": "The model described above is usually trained by minimizing the negative log-likelihood of sentence labels in training documents;",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "2.1 Neural Extractive Summarization"
+  },
+  {
+    "subject": "Long Short-Term Memory",
+    "predicate": "uses",
+    "object": "mean pooling",
+    "object_type": "Other",
+    "source_sentence": "we use a word-level long short-term memory network coupled with mean pooling to learn sentence representations",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "2.1 Neural Extractive Summarization"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "training documents",
+    "object_type": "Other",
+    "source_sentence": "The model described above is usually trained by minimizing the negative log-likelihood of sentence labels in training documents;",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "2.1 Neural Extractive Summarization"
+  },
+  {
+    "subject": "Label Embedding",
+    "predicate": "produces",
+    "object": "label embedding matrix",
+    "object_type": "Other",
+    "source_sentence": "where We ∈Rd×2 is the label embedding matrix",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "2.1 Neural Extractive Summarization"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "Models",
+    "object_type": "Model",
+    "source_sentence": "We used Adam to optimize our models",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "3 Experiments"
+  },
+  {
+    "subject": "LSTMs",
+    "predicate": "uses",
+    "object": "Dropout",
+    "object_type": "Other",
+    "source_sentence": "regularized all LSTMs with a dropout rate of 0.3",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "3 Experiments"
+  }
+]

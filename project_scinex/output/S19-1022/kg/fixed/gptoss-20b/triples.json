@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Classifiers",
+    "predicate": "uses",
+    "object": "Words",
+    "object_type": "Concept",
+    "source_sentence": "The input to our classifiers is a small set of seed words for each targeted semantic class.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "3.1 Seeding"
+  },
+  {
+    "subject": "Words",
+    "predicate": "uses",
+    "object": "semantic",
+    "object_type": "Concept",
+    "source_sentence": "The input to our classifiers is a small set of seed words for each targeted semantic class.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "3.1 Seeding"
+  },
+  {
+    "subject": "Words",
+    "predicate": "uses",
+    "object": "Corpora",
+    "object_type": "Concept",
+    "source_sentence": "The affec- tive events data set that we will use for our study ... was generated from the ICWSM 2009 and 2011 blog corpora , so we selected seed words from these corpora as well.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "3.1 Seeding"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "scikit-learn toolkit",
+    "object_type": "Other",
+    "source_sentence": "The first model is a one-vs.-rest logistic regression classifier , built using the scikit- learn toolkit with default parameters.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "3.2 Classiﬁcation"
+  },
+  {
+    "subject": "Semantic Classification",
+    "predicate": "addresses",
+    "object": "Human Needs categorization",
+    "object_type": "Concept",
+    "source_sentence": "Our goal is to explore whether semantic classification of terms can improve Human Needs categorization of affective events.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "4 Human Needs Categorization"
+  },
+  {
+    "subject": "Co-training",
+    "predicate": "uses",
+    "object": "Models",
+    "object_type": "Model",
+    "source_sentence": "which is a co-training model that iteratively trains two models with different views of the data:",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "4 Human Needs Categorization"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "Words",
+    "object_type": "Other",
+    "source_sentence": "(1) an event expression classifier that uses the words in an event expression as input",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "4 Human Needs Categorization"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "Sentence",
+    "object_type": "Other",
+    "source_sentence": "(2) an event con- text classifier that uses the sentence contexts that mention an event as input.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "4 Human Needs Categorization"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "Semantic Classification",
+    "object_type": "Other",
+    "source_sentence": "but in this paper we aim to improve the event expression classifier by incorporating semantic classification.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "4 Human Needs Categorization"
+  },
+  {
+    "subject": "Semantic Features",
+    "predicate": "uses",
+    "object": "Words",
+    "object_type": "Other",
+    "source_sentence": "we extract two types of semantic features from the head words of its 4 components.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "4 Human Needs Categorization"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Semantic Classes",
+    "object_type": "Other",
+    "source_sentence": "we create 10 real-valued features representing the confidence scores produced by the classifier for each of the 10 semantic classes.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "4 Human Needs Categorization"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Semantic Classes",
+    "object_type": "Other",
+    "source_sentence": "In addition, we create 10 binary features (one per semantic class) indicating whether any of the head words belongs to each class, based on the classifier 's predicted labels.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "4 Human Needs Categorization"
+  },
+  {
+    "subject": "Semantic Features",
+    "predicate": "uses",
+    "object": "event expression classifier",
+    "object_type": "Method",
+    "source_sentence": "First , we show the results of adding semantic features to the event expression classifier for Human Needs cate- gorization.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "5 Evaluation"
+  },
+  {
+    "subject": "Models",
+    "predicate": "comparesagainst",
+    "object": "original D&R model",
+    "object_type": "Model",
+    "source_sentence": "All of these models outperform the original D&R model.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "5.1 Human Needs Categorization Results"
+  },
+  {
+    "subject": "Co-training",
+    "predicate": "addresses",
+    "object": "Human Needs categorization",
+    "object_type": "Task",
+    "source_sentence": "In the next set of experiments, we evaluated the impact of the new event expression classifier in the co-training model for Human Needs categorization.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "5.1 Human Needs Categorization Results"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "macro-averaged F1 score of 68.8%",
+    "object_type": "Metric",
+    "source_sentence": "Overall, the classifier achieved a macro-averaged F1 score of 68.8%.",
+    "extraction_mode": "fixed",
+    "paper": "S19-1022",
+    "title": "Improving Human Needs Categorization of Events with Semantic Classiﬁcation",
+    "section": "5.2 Analysis of Semantic Classiﬁcation"
+  }
+]

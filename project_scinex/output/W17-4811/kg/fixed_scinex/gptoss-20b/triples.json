@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "special prefix",
+    "object_type": "Other",
+    "source_sentence": "we add the source language sentence (s) from the previous translation unit to the sentence to be translated and mark all tokens (BPE segments in our case) with a special prefix (cc ) to indicate that they come from contextual information.",
+    "extraction_mode": "fixed",
+    "paper": "W17-4811",
+    "title": "Neural Machine Translation with Extended Context",
+    "section": "4 Extended Context Models"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "sliding window",
+    "object_type": "Other",
+    "source_sentence": "We run through the training data with a sliding window, adding the contextual history to each sentence in the corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W17-4811",
+    "title": "Neural Machine Translation with Extended Context",
+    "section": "4 Extended Context Models"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "subword-units",
+    "object_type": "Concept",
+    "source_sentence": "The NMT models that we train rely on subword-units.",
+    "extraction_mode": "fixed",
+    "paper": "W17-4811",
+    "title": "Neural Machine Translation with Extended Context",
+    "section": "4 Extended Context Models"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "produces",
+    "object": "translation of the entire extended input",
+    "object_type": "Other",
+    "source_sentence": "Here, the neural network produces a translation of the entire extended input.",
+    "extraction_mode": "fixed",
+    "paper": "W17-4811",
+    "title": "Neural Machine Translation with Extended Context",
+    "section": "5 Experiments and Results"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "German- English subtitle data",
+    "object_type": "Dataset",
+    "source_sentence": "We run experiments on German- English subtitle data and we can find various examples in which referential expressions across sentence boundaries can be handled properly.",
+    "extraction_mode": "fixed",
+    "paper": "W17-4811",
+    "title": "Neural Machine Translation with Extended Context",
+    "section": "6 Conclusions and Future Work"
+  }
+]

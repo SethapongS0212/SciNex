@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Crowdsourcing",
+    "predicate": "uses",
+    "object": "Amazon Mechanical Turk",
+    "object_type": "Other",
+    "source_sentence": "We collect EXPLAGRAPHS data in two stages via crowdsourcing on Amazon Mechanical Turk (Fig.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "4 Dataset Collection"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Human-And-Model-in-the-Loop Enabled Training (HAMLET)",
+    "object_type": "Method",
+    "source_sentence": "For collecting such pairs, we use Human-And-Model-in-the-Loop Enabled Training (HAMLET) , a multi-round adversarial data collection procedure that enables the collection of trickier examples with more background commonsense knowledge .",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "4.1 Stage 1: (Belief, Argument, Stance)"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "Integer Linear Program",
+    "object_type": "Method",
+    "source_sentence": "(2020), during inference, we en- sure connectivity and acyclicity in the explanation graph through an Integer Linear Program.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "7 Models"
+  },
+  {
+    "subject": "Amazon Mechanical Turk",
+    "predicate": "locatedin",
+    "object": "US",
+    "object_type": "Place",
+    "source_sentence": "We select crowdworkers from Amazon Mechanical Turk (AMT) who are located in the US and Australia with a HIT approval rate higher than 96% and at least 1000 HITs approved.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "10 Conclusion"
+  },
+  {
+    "subject": "Amazon Mechanical Turk",
+    "predicate": "locatedin",
+    "object": "Australia",
+    "object_type": "Place",
+    "source_sentence": "We select crowdworkers from Amazon Mechanical Turk (AMT) who are located in the US and Australia with a HIT approval rate higher than 96% and at least 1000 HITs approved.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "10 Conclusion"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "pre-HAMLET data",
+    "object_type": "Dataset",
+    "source_sentence": "In the first round, we start by fine-tuning a RoBERTa model on the pre-HAMLET data that given a (belief, ar- gument) pair predicts the stance label.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "A.1 Stage 1: (Belief, Argument, Stance) Collection"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "pre-HAMLET data",
+    "object_type": "Dataset",
+    "source_sentence": "After each round, we divide the collected HAMLET data into train, dev and test splits based on their respective topics and update the RoBERTa model by training on the pre-HAMLET data and the train splits of the HAMLET rounds collected so far.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "A.1 Stage 1: (Belief, Argument, Stance) Collection"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "train splits of the HAMLET rounds",
+    "object_type": "Dataset",
+    "source_sentence": "After each round, we divide the collected HAMLET data into train, dev and test splits based on their respective topics and update the RoBERTa model by training on the pre-HAMLET data and the train splits of the HAMLET rounds collected so far.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "A.1 Stage 1: (Belief, Argument, Stance) Collection"
+  },
+  {
+    "subject": "Understanding",
+    "predicate": "addresses",
+    "object": "Graphs",
+    "object_type": "Concept",
+    "source_sentence": "we test the annotators' understanding of a commonsense fact because that is the basic building block of our graphs .",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "A.2 Stage 2: Commonsense Explanation Graph Collection"
+  },
+  {
+    "subject": "Data Collection",
+    "predicate": "uses",
+    "object": "Topics",
+    "object_type": "Concept",
+    "source_sentence": "In Figure 15, we show the full list of debate topics used in our data collection process.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "B Data Analysis"
+  },
+  {
+    "subject": "Relations",
+    "predicate": "uses",
+    "object": "ConceptNet",
+    "object_type": "Concept",
+    "source_sentence": "We broadly choose the relation set from ConceptNet , while removing generic relations like \"related to\" and adding a negative counterpart for every positive relation to enable the composition of supportive and counter graphs .",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "B Data Analysis"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "concatenated belief and the argument",
+    "object_type": "Other",
+    "source_sentence": "We build this module on top of RoBERTa , which takes in the concatenated belief and the argument (separated by a separator).",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "C.3 Commonsense-Augmented Structured Prediction Model"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "generating external nodes",
+    "object_type": "Other",
+    "source_sentence": "For generating external commonsense nodes which are neither part of the belief nor the argument, we separately fine-tune a BART model.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "C.3 Commonsense-Augmented Structured Prediction Model"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "RoBERTa",
+    "object_type": "Model",
+    "source_sentence": "The generated nodes from the BART model are fed to RoBERTa (from the previous module ) and concatenated with the belief and the argument as part of the input, so as to have an unified model.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "C.3 Commonsense-Augmented Structured Prediction Model"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Hugging Face transformers library",
+    "object_type": "Method",
+    "source_sentence": "We train all our models using the Hugging Face transformers library .7",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "D Experimental Setup"
+  },
+  {
+    "subject": "Graphs",
+    "predicate": "uses",
+    "object": "standard beam search decoding",
+    "object_type": "Method",
+    "source_sentence": "Graphs are generated from these models using standard beam search decoding with beam size of 4.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "D Experimental Setup"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "PuLP",
+    "object_type": "Method",
+    "source_sentence": "The ILP inference is modeled using PuLP.8",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "D Experimental Setup"
+  }
+]

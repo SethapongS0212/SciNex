@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "word embedding",
+    "object_type": "Concept",
+    "source_sentence": "During inference, we condition the dialogue response generation on the encoder outputs, noise samples, word embedding and the attribute embedding of the intended responder.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "3.2 Model Inference"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "Dialogue Response Generation",
+    "object_type": "Task",
+    "source_sentence": "During inference, we condition the dialogue response generation on the encoder outputs, noise samples, word embedding and the attribute embedding of the intended responder.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "3.2 Model Inference"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "TV Series Transcripts dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We train all models on transcripts from two popular TV drama series, Big Bang Theory and Friends.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Movie Triplets Corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Due to the small size of the combined transcripts dataset, we first train the models on the larger Movie Triplets Corpus (MTC) by Banchs (2012) which consists of 240,000 dialogue triples.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "attribute embeddings",
+    "object_type": "Other",
+    "source_sentence": "After pre-training on MTC, we reinitialize the attribute embeddings in the generator from a uniform distribution following a Xavier initialization for training on the combined person TV series dataset.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Ubuntu Dialogue Corpus dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We train the models on 1.85 million conversations of multi-turn dialogue from the Ubuntu community hub, with an average of 5 utterances per conversation.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Models",
+    "predicate": "comparesagainst",
+    "object": "hredGAN",
+    "object_type": "Model",
+    "source_sentence": "the performance of both SM and SAM models in Li et al. (2016b) compared to the hredGAN shows a strong baseline.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.6 Quantitative Analysis"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "speaker embeddings",
+    "object_type": "Concept",
+    "source_sentence": "conditioning the generator and discriminator of phredGAN on speaker embeddings does not compromise the systems ability to produce diverse responses.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.6 Quantitative Analysis"
+  },
+  {
+    "subject": "TV Series",
+    "predicate": "mentions",
+    "object": "several characters",
+    "object_type": "Other",
+    "source_sentence": "An additional qualitative assessment of these results are in Table 3 with responses from several characters in the TV series dataset and the two characters in UDC.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.7 Qualitative Analysis"
+  },
+  {
+    "subject": "TV Series",
+    "predicate": "mentions",
+    "object": "nearly all the characters",
+    "object_type": "Other",
+    "source_sentence": "Similar behavior is reported in Li et al. (2016b) where for the Speaker-Addressee model, nearly all the characters in the TV series respond with \"Of course I love you.\" to the dialogue context, \"Do you love me?\"",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.7 Qualitative Analysis"
+  }
+]

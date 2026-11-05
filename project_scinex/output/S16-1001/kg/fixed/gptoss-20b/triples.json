@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "Annotation",
+    "predicate": "uses",
+    "object": "Tweets",
+    "object_type": "Dataset",
+    "source_sentence": "process of collection and annotation of the training, development and test- ing tweets",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "3 Datasets"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Tweets",
+    "object_type": "Dataset",
+    "source_sentence": "process of collection and annotation of the training, development and test- ing tweets",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "3 Datasets"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "macroaveraged mean absolute error",
+    "object_type": "Metric",
+    "source_sentence": "As our evaluation measure, we use macroaveraged mean absolute error (MAEM): where yi denotes the true label of item xi, h(xi) is its predicted label, Tej denotes the set of test documents whose true class is cj, |h(xi) −yi| denotes the \"distance\" between classes h(xi) and yi (e.g., the distance between HIGHLYPOSITIVE and NEGATIVE is 3), and the \"M\" superscript indicates \"macroaveraging\".",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "4.3 Subtask C: Tweet classiﬁcation according to a ﬁve-point scale"
+  },
+  {
+    "subject": "Smoothing",
+    "predicate": "uses",
+    "object": "additive smoothing",
+    "object_type": "Method",
+    "source_sentence": "in computing KLD we smooth both p(cj) and ˆp(cj) via additive smoothing",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "4.4 Subtask D: Tweet quantiﬁcation according to a two-point scale"
+  },
+  {
+    "subject": "Smoothing",
+    "predicate": "uses",
+    "object": "smoothing factor ε",
+    "object_type": "Concept",
+    "source_sentence": "where ε = 1 2·|Te| is used as a smoothing factor",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "4.4 Subtask D: Tweet quantiﬁcation according to a two-point scale"
+  },
+  {
+    "subject": "Distant Supervision",
+    "predicate": "uses",
+    "object": "emoticons",
+    "object_type": "Other",
+    "source_sentence": "the use of distant supervision is ubiquitous; this is natural, since there is an abundance of freely available tweets labelled according to sentiment (possibly with silver labels only, e.g., emoticons)",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "5 Participants and Results"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "word2vec",
+    "object_type": "Other",
+    "source_sentence": "Another ubiquitous technique is the use of word embeddings, usually generated via either word2vec or GloVe",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "5 Participants and Results"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "GloVe",
+    "object_type": "Other",
+    "source_sentence": "Another ubiquitous technique is the use of word embeddings, usually generated via either word2vec or GloVe",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "5 Participants and Results"
+  },
+  {
+    "subject": "Neural Networks",
+    "predicate": "uses",
+    "object": "Distant Supervision",
+    "object_type": "Method",
+    "source_sentence": "neural networks were trained by using distant supervision",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "5.1 Subtask A: Message polarity classiﬁcation"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "uses",
+    "object": "ordinal regression approaches",
+    "object_type": "Concept",
+    "source_sentence": "PUT3, which uses an ensemble of ordinal regression approaches",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "5.3 Subtask C: Tweet classiﬁcation according to a ﬁve-point scale"
+  },
+  {
+    "subject": "Recurrent Neural Networks",
+    "predicate": "uses",
+    "object": "word embeddings",
+    "object_type": "Concept",
+    "source_sentence": "relying (as for Subtask B) on convolutional neural networks, recurrent neural networks, and word embeddings",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "5.3 Subtask C: Tweet classiﬁcation according to a ﬁve-point scale"
+  },
+  {
+    "subject": "Recurrent and Convolutional Neural Networks",
+    "predicate": "uses",
+    "object": "GloVe word embeddings",
+    "object_type": "Other",
+    "source_sentence": "the top-scoring team (Finki1) adopts an approach based on \"classify and count\", a classification - oriented (instead of quantification-oriented) approach, using recurrent and convolutional neural networks, and GloVe word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "5.4 Subtask D: Tweet quantiﬁcation according to a two-point scale"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "designedfor",
+    "object": "ordinal quantification",
+    "object_type": "Task",
+    "source_sentence": "the top-scoring team (QCRI1) used a novel algorithm explicitly designed for ordinal quantification, that leverages an ordinal hierarchy of binary probabilistic quantifiers.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "5.5 Subtask E: Tweet quantiﬁcation according to a ﬁve-point scale"
+  },
+  {
+    "subject": "Cost-Sensitive Learning",
+    "predicate": "uses",
+    "object": "quantification approach",
+    "object_type": "Other",
+    "source_sentence": "Team NRU-HSE4 uses an existing quantification approach based on cost-sensitive learning, and adapted it to the ordinal case.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "5.5 Subtask E: Tweet quantiﬁcation according to a ﬁve-point scale"
+  },
+  {
+    "subject": "adaptation",
+    "predicate": "uses",
+    "object": "quantification",
+    "object_type": "Task",
+    "source_sentence": "Team ISTI-CNR6 instead used a novel adaptation to quantification of a tree-based approach to ordinal regression.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "5.5 Subtask E: Tweet quantiﬁcation according to a ﬁve-point scale"
+  },
+  {
+    "subject": "Deep Learning",
+    "predicate": "uses",
+    "object": "convolutional NNs",
+    "object_type": "Method",
+    "source_sentence": "most teams who were ranked at the top in the various subtasks used deep learning, including convolutional NNs, recurrent NNs, and (general-purpose or task-specific) word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "6 Conclusion and Future Work"
+  },
+  {
+    "subject": "Deep Learning",
+    "predicate": "uses",
+    "object": "recurrent NNs",
+    "object_type": "Method",
+    "source_sentence": "most teams who were ranked at the top in the various subtasks used deep learning, including convolutional NNs, recurrent NNs, and (general-purpose or task-specific) word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "6 Conclusion and Future Work"
+  },
+  {
+    "subject": "Deep Learning",
+    "predicate": "uses",
+    "object": "word embeddings",
+    "object_type": "Method",
+    "source_sentence": "most teams who were ranked at the top in the various subtasks used deep learning, including convolutional NNs, recurrent NNs, and (general-purpose or task-specific) word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1001",
+    "title": "SemEval-2016 Task 4: Sentiment Analysis in Twitter",
+    "section": "6 Conclusion and Future Work"
+  }
+]

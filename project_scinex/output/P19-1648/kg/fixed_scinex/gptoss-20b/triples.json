@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Neural Network Models",
+    "predicate": "addresses",
+    "object": "Understanding",
+    "object_type": "Concept",
+    "source_sentence": "There has been a recent surge of interest in developing neural network models capable of understanding both visual information and natural language.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Visual Dialog",
+    "predicate": "addresses",
+    "object": "Question Answering",
+    "object_type": "Task",
+    "source_sentence": "a visual dialog system is designed to answer a series of questions regarding an image.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Neural Approaches",
+    "predicate": "addresses",
+    "object": "dialog modeling",
+    "object_type": "Other",
+    "source_sentence": "A recent survey on neural approaches to dialog modeling can be found in Gao et al.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Objects",
+    "predicate": "uses",
+    "object": "Image",
+    "object_type": "Image",
+    "source_sentence": "using an adaptive number of detected objects for an image",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "3.1 Memory Generation Module"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "Dialog",
+    "object_type": "Task",
+    "source_sentence": "After applying the same BiLSTM to each dialog-history snippet",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "3.1 Memory Generation Module"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "comprises",
+    "object": "GRU",
+    "object_type": "Method",
+    "source_sentence": "The question representation is then updated based on the current dialogue history and the image, via an RNN with Gated Recurrent Unit (GRU).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "3.2 Multi-step Reasoning Module"
+  },
+  {
+    "subject": "Multimodal Fusion",
+    "predicate": "produces",
+    "object": "final context vector",
+    "object_type": "Other",
+    "source_sentence": "After performing T steps of reasoning, multimodal fusion is then used to obtain the final context vector: c = [MFB(sT, vT ), MFB(sT, dT ), MFB(vT, dT )].",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "3.2 Multi-step Reasoning Module"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "addresses",
+    "object": "effectiveness of our proposed model",
+    "object_type": "Concept",
+    "source_sentence": "We compare our ReDAN model with state-of-the-art baselines, and conduct detailed analysis to validate the effectiveness of our proposed model.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "bidirectional LSTMs",
+    "predicate": "uses",
+    "object": "Self-Attention",
+    "object_type": "Method",
+    "source_sentence": "unidirectional LSTMs are used in these previous baselines, which are replaced by bidirectional LSTMs with self-attention mechanisms for fair comparison.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "4.2 Quantitative Results"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Vis-Dial dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Experiments on the Vis-Dial dataset validate the effectiveness of the proposed approach.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "5 Conclusion"
+  }
+]

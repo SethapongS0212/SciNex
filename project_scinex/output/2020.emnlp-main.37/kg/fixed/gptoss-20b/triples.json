@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "BERT model",
+    "predicate": "uses",
+    "object": "Transformer layers",
+    "object_type": "Other",
+    "source_sentence": "The BERT model is built with Transformer layers .",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "3.1 Quantization"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "TWN",
+    "object_type": "Method",
+    "source_sentence": "Thus in this work, to ternarize the weights of BERT, we use both approximation-based ternarization method TWN and loss-aware ternarization LAT , where the ternary weight ˆw can be represented by the multiplication of a scaling parameter ↵> 0 and a ternary vector b 2 {−1, 0, +1}n as ˆw = ↵b.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "3.1 Quantization"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "LAT",
+    "object_type": "Method",
+    "source_sentence": "Thus in this work, to ternarize the weights of BERT, we use both approximation-based ternarization method TWN and loss-aware ternarization LAT , where the ternary weight ˆw can be represented by the multiplication of a scaling parameter ↵> 0 and a ternary vector b 2 {−1, 0, +1}n as ˆw = ↵b.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "3.1 Quantization"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "low bits",
+    "object_type": "Concept",
+    "source_sentence": "The quantized BERT uses low bits to represent the model parameters and activations.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "3.2 Distillation-aware Ternarization"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Knowledge Distillation",
+    "object_type": "Method",
+    "source_sentence": "To alleviate this problem, we incorporate the technique of knowledge distillation to improve performance of the quantized BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "3.2 Distillation-aware Ternarization"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "distillation objective",
+    "object_type": "Concept",
+    "source_sentence": "the distillation objective for the Transformer layers Ltrm consists of two parts.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "3.2 Distillation-aware Ternarization"
+  },
+  {
+    "subject": "Knowledge",
+    "predicate": "uses",
+    "object": "distillation loss",
+    "object_type": "Concept",
+    "source_sentence": "The first part is the distillation loss which distills knowledge in the embedding layer and the outputs of all Transformer layers of the full- precision teacher model to the quantized student model, by the mean squared error (MSE) loss: PL+1 l ).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "3.2 Distillation-aware Ternarization"
+  },
+  {
+    "subject": "Knowledge",
+    "predicate": "uses",
+    "object": "distillation loss",
+    "object_type": "Concept",
+    "source_sentence": "The second part is the distillation loss that distills knowledge from the teacher model's attention scores from all heads AT l in each Transformer layer to the student model's attention scores AS l ).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "3.2 Distillation-aware Ternarization"
+  },
+  {
+    "subject": "Knowledge",
+    "predicate": "uses",
+    "object": "soft cross-entropy loss",
+    "object_type": "Concept",
+    "source_sentence": "Besides the Transformer layers, we also distill knowledge in the prediction layer which makes the student model's logits PS learn to fit PT from the teacher model by the soft cross-entropy (SCE) loss: Lpred = SCE(PS, PT ).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "3.2 Distillation-aware Ternarization"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "uses",
+    "object": "approximation-based and loss-aware ternarization",
+    "object_type": "Method",
+    "source_sentence": "In this paper, we proposed to use approximation- based and loss-aware ternarization to ternarize the weights in the BERT model, with different gran- ularities for word embedding and weights in the Transformer layers.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "5 Conclusion"
+  }
+]

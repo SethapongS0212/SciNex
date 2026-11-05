@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Support Vector Machines",
+    "predicate": "addresses",
+    "object": "automatic sentiment classification of Twitter posts",
+    "object_type": "Task",
+    "source_sentence": "In this paper, we present a supervised learning approach, using Support Vector Machines (SVMs) for the task of automatic sentiment classification of Twitter posts.",
+    "extraction_mode": "fixed",
+    "paper": "S15-2085",
+    "title": "DIEGOLab: An Approach for Message-level Sentiment Classiﬁcation in Twitter",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "SVM",
+    "object_type": "Model",
+    "source_sentence": "The features are used to train a SVM learner",
+    "extraction_mode": "fixed",
+    "paper": "S15-2085",
+    "title": "DIEGOLab: An Approach for Message-level Sentiment Classiﬁcation in Twitter",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "We derive a set of lexical, semantic, and distributive features from the training data.",
+    "extraction_mode": "fixed",
+    "paper": "S15-2085",
+    "title": "DIEGOLab: An Approach for Message-level Sentiment Classiﬁcation in Twitter",
+    "section": "3.2 Features"
+  },
+  {
+    "subject": "preprocessing",
+    "predicate": "uses",
+    "object": "Porter stemmer",
+    "object_type": "Method",
+    "source_sentence": "We perform standard preprocessing such as tok- enization, lowercasing and stemming of all the terms using the Porter stemmer2 .",
+    "extraction_mode": "fixed",
+    "paper": "S15-2085",
+    "title": "DIEGOLab: An Approach for Message-level Sentiment Classiﬁcation in Twitter",
+    "section": "3.2.1 Preprocessing"
+  },
+  {
+    "subject": "Terms",
+    "predicate": "uses",
+    "object": "Porter stemmer",
+    "object_type": "Method",
+    "source_sentence": "We perform standard preprocessing such as tok- enization, lowercasing and stemming of all the terms using the Porter stemmer2 .",
+    "extraction_mode": "fixed",
+    "paper": "S15-2085",
+    "title": "DIEGOLab: An Approach for Message-level Sentiment Classiﬁcation in Twitter",
+    "section": "3.2.1 Preprocessing"
+  },
+  {
+    "subject": "synonyms",
+    "predicate": "uses",
+    "object": "WordNet3",
+    "object_type": "Other",
+    "source_sentence": "For each adjective, noun or verb in a tweet , we use WordNet3 to identify the synonyms of that term and add the synonymous terms as features .",
+    "extraction_mode": "fixed",
+    "paper": "S15-2085",
+    "title": "DIEGOLab: An Approach for Message-level Sentiment Classiﬁcation in Twitter",
+    "section": "3.2.3 Synset"
+  },
+  {
+    "subject": "LIBSVM",
+    "predicate": "uses",
+    "object": "weighted SVM feature",
+    "object_type": "Other",
+    "source_sentence": "To address the problem of data imbalance, we utilized the weighted SVM feature of the LibSVM library , and we attempted to find optimal values for the weights in the same way using 10-fold cross validation over the training set.",
+    "extraction_mode": "fixed",
+    "paper": "S15-2085",
+    "title": "DIEGOLab: An Approach for Message-level Sentiment Classiﬁcation in Twitter",
+    "section": "3.3 Classiﬁcation"
+  },
+  {
+    "subject": "Sentiment Classification",
+    "predicate": "writtenby",
+    "object": "Bo Pang, Lillian Lee, and Shivakumar Vaithyanathan",
+    "object_type": "Author",
+    "source_sentence": "Bo Pang, Lillian Lee, and Shivakumar Vaithyanathan. Sentiment Classification using Machine Learning Techniques.",
+    "extraction_mode": "fixed",
+    "paper": "S15-2085",
+    "title": "DIEGOLab: An Approach for Message-level Sentiment Classiﬁcation in Twitter",
+    "section": "5 Conclusions and Future Work"
+  },
+  {
+    "subject": "Sentiment",
+    "predicate": "writtenby",
+    "object": "Bo Pang and Lillian Lee",
+    "object_type": "Author",
+    "source_sentence": "Bo Pang and Lillian Lee. Opinion Mining and Sentiment Analysis . Foundations and Trends in Information Retrieval, 2(1):1–135.",
+    "extraction_mode": "fixed",
+    "paper": "S15-2085",
+    "title": "DIEGOLab: An Approach for Message-level Sentiment Classiﬁcation in Twitter",
+    "section": "5 Conclusions and Future Work"
+  },
+  {
+    "subject": "Sentiment",
+    "predicate": "publishedin",
+    "object": "Foundations and Trends in Information Retrieval",
+    "object_type": "PublicationVenue",
+    "source_sentence": "Bo Pang and Lillian Lee. Opinion Mining and Sentiment Analysis . Foundations and Trends in Information Retrieval, 2(1):1–135.",
+    "extraction_mode": "fixed",
+    "paper": "S15-2085",
+    "title": "DIEGOLab: An Approach for Message-level Sentiment Classiﬁcation in Twitter",
+    "section": "5 Conclusions and Future Work"
+  }
+]

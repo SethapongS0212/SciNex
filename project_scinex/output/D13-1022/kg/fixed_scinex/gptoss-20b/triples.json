@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Beam Search",
+    "predicate": "addresses",
+    "object": "phrase- and syntax-based translation",
+    "object_type": "Task",
+    "source_sentence": "In this work we present a variant of beam search decoding for phrase- and syntax-based translation.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "addresses",
+    "object": "translation",
+    "object_type": "Task",
+    "source_sentence": "In this work we present a variant of beam search decoding for phrase- and syntax-based translation.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "achieves",
+    "object": "certificate of optimality",
+    "object_type": "Concept",
+    "source_sentence": "Section 3 introduces a variant of beam search that is, in theory, able to produce a certificate of optimality.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "weights derived from Lagrangian relaxation",
+    "object_type": "Concept",
+    "source_sentence": "Section 4 shows how to improve the effectiveness of beam search by using weights derived from Lagrangian relaxation.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Optimal Beam Search",
+    "predicate": "achieves",
+    "object": "99% of translation examples",
+    "object_type": "Metric",
+    "source_sentence": "The optimal beam search algorithm is able to find exact solutions with certificates of optimality on 99% of translation examples, significantly more than other baselines.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "addresses",
+    "object": "statistical machine translation",
+    "object_type": "Task",
+    "source_sentence": "The focus of this work is decoding for statistical machine translation.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "2 Background"
+  },
+  {
+    "subject": "pruning",
+    "predicate": "achieves",
+    "object": "tighter lower bounds",
+    "object_type": "Concept",
+    "source_sentence": "by adjusting the pruning parameter β we can produce tighter lower bounds and discard more hypotheses.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "3.1 Algorithm"
+  },
+  {
+    "subject": "Constraints",
+    "predicate": "uses",
+    "object": "binary matrix A",
+    "object_type": "Other",
+    "source_sentence": "the constraints for phrase-based translation consist of a binary matrix A ∈{0, 1}|w|×|E| and vector b = 1.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "3.1 Algorithm"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "modified weights from Lagrangian relaxation",
+    "object_type": "Other",
+    "source_sentence": "To utilize these improved bounds, we simply re-place the weights in beam search and the outside algorithm with the modified weights from Lagrangian relaxation, θ′ and τ′.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "4.2 Utilizing Upper Bounds in Beam Search"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "produces",
+    "object": "valid constrained hyperpath",
+    "object_type": "Concept",
+    "source_sentence": "Since the result of beam search must be a valid constrained hyperpath x ∈X′, and for all x ∈X′, θ⊤x + τ = θ′⊤x + τ ′, this sub- stitution does not alter the necessary properties of the algorithm ; i.e. if the algorithm returns with opt equal to true, then the solution is optimal.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "4.2 Utilizing Upper Bounds in Beam Search"
+  },
+  {
+    "subject": "Lagrangian Relaxation",
+    "predicate": "produces",
+    "object": "modified weights",
+    "object_type": "Other",
+    "source_sentence": "To utilize these improved bounds, we simply re-place the weights in beam search and the outside algorithm with the modified weights from Lagrangian relaxation, θ′ and τ′.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "4.2 Utilizing Upper Bounds in Beam Search"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "achieves",
+    "object": "optimal solution",
+    "object_type": "Concept",
+    "source_sentence": "Often beam search will be able to quickly find an optimal solution even with good but non-optimal λ.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "5 Optimal Beam Search"
+  },
+  {
+    "subject": "Traveling Salesman Problem",
+    "predicate": "addresses",
+    "object": "phrase-based decoding",
+    "object_type": "Method",
+    "source_sentence": "formulate phrase-based decoding as a traveling salesman problem (TSP) and use a TSP decoder.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Finite State Transducers",
+    "predicate": "addresses",
+    "object": "phrase-based models",
+    "object_type": "Model",
+    "source_sentence": "Exact decoding algorithms based on finite state transducers (FST) have been studied on phrase-based models with limited reordering.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Lagrangian Relaxation",
+    "predicate": "addresses",
+    "object": "exact machine translation",
+    "object_type": "Task",
+    "source_sentence": "Collins (2011) and Rush and Collins (2011) develop Lagrangian relaxation-based approaches for exact machine translation.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Column Generation",
+    "predicate": "addresses",
+    "object": "NLP",
+    "object_type": "Concept",
+    "source_sentence": "this paper is closely related to work on column generation for NLP.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Column Generation",
+    "predicate": "addresses",
+    "object": "Beam Search",
+    "object_type": "Method",
+    "source_sentence": "Belanger et al. (2012) relate column generation to beam search and produce exact solutions for parsing and tagging problems.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "addresses",
+    "object": "Decoding",
+    "object_type": "Method",
+    "source_sentence": "The latter work also gives conditions for when beam search-style decoding is optimal.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Beam Search",
+    "object_type": "Method",
+    "source_sentence": "The algorithm uses beam search to produce constrained solutions and bounds from Lagrangian relaxation to eliminate non-optimal solutions.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "8 Conclusion"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Lagrangian Relaxation",
+    "object_type": "Method",
+    "source_sentence": "The algorithm uses beam search to produce constrained solutions and bounds from Lagrangian relaxation to eliminate non-optimal solutions.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1022",
+    "title": "Optimal Beam Search for Machine Translation",
+    "section": "8 Conclusion"
+  }
+]

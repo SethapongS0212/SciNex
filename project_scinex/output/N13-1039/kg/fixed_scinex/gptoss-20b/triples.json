@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Brown Clustering",
+    "predicate": "produces",
+    "object": "hierarchical word clusters",
+    "object_type": "Other",
+    "source_sentence": "We obtained hierarchical word clusters via Brown clustering on a large set of unlabeled tweets.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.1 Clustering Method"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "produces",
+    "object": "1,000 clusters",
+    "object_type": "Other",
+    "source_sentence": "The algorithm partitions words into a base set of 1,000 clusters, and induces a hierarchy among those 1,000 clusters with a series of greedy agglomerative merges that heuristically optimize the likelihood of a hidden Markov model with a one-class-per-lexical-type constraint.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.1 Clustering Method"
+  },
+  {
+    "subject": "Brown Clustering",
+    "predicate": "produces",
+    "object": "effective features",
+    "object_type": "Other",
+    "source_sentence": "Not only does Brown clustering produce effective features for discriminative models, but its variants are better unsupervised POS taggers than some models developed nearly 20 years later; see comparisons in Blunsom and Cohn (2011).",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.1 Clustering Method"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "uses",
+    "object": "normalization techniques",
+    "object_type": "Method",
+    "source_sentence": "When checking to see if a word is associated with a cluster, the tagger first normalizes the word using the same techniques as described in §3.1, then creates a priority list of fuzzy match transformations",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.4 Cluster-Based Features"
+  },
+  {
+    "subject": "recognition",
+    "predicate": "uses",
+    "object": "Domains",
+    "object_type": "Concept",
+    "source_sentence": "We add recognition patterns for these by using a list of top-level and country domains.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "4 Tokenization and Emoticon Detection"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "93.2% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The full tagger attains 93.2% accuracy (final row of Table 2).",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "Clusters",
+    "predicate": "achieves",
+    "object": "89.2% accuracy on DAILY547",
+    "object_type": "Other",
+    "source_sentence": "When evaluating the clusters as unsupervised (hard) POS tags, we obtain a many-to-one accuracy of 89.2% on DAILY547.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "88.6%",
+    "object_type": "Metric",
+    "source_sentence": "A tagger that only uses word clusters achieves an accuracy of 88.6% on the OCT27 development set.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achievesresult",
+    "object": "90.0% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Tagger Accuracy This work 90.0 ± 0.5",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.2 Evaluation on RITTERTW"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achievesresult",
+    "object": "88.3% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Ritter et al.'s best tagger, trained on a concatenation of PTB, IRC, and Twitter, achieved 88.3% (Table 4).",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.2 Evaluation on RITTERTW"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achievesresult",
+    "object": "93.4% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The full tagger model achieved 93.4% (±0.3%) accuracy, significantly improving over the best result they reported, 90.8% accuracy with a tagger trained on a mix of several POS-annotated corpora.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.3 IRC: Evaluation on NPSCHAT"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "90% of the data",
+    "object_type": "Other",
+    "source_sentence": "In all cases, the models are trained on the same amount of data (90%).",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.3 IRC: Evaluation on NPSCHAT"
+  }
+]

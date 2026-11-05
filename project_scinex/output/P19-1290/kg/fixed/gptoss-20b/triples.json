@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "NMT",
+    "predicate": "comparesagainst",
+    "object": "soft-attention based NMT model",
+    "object_type": "Model",
+    "source_sentence": "The proposed hard-attention based NMT model consistently outperforms the soft-attention based NMT model, and the gap grows as the sequence length increases.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "achieves",
+    "object": "best translation quality",
+    "object_type": "Concept",
+    "source_sentence": "In recent years , among all the encoder-decoder architectures for NMT, Transformer has achieved the best translation quality .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "2 Background"
+  },
+  {
+    "subject": "packing",
+    "predicate": "uses",
+    "object": "attention vectors",
+    "object_type": "Other",
+    "source_sentence": "In practice we compute the attention vectors simultaneously for all the time steps by packing ˆyt's and zi's in to matrices.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "2 Background"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "addresses",
+    "object": "context vector",
+    "object_type": "Concept",
+    "source_sentence": "Section 3.1 introduces our proposed hard- attention mechanism to compute the context vector for each target token.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "3 Proposed Model"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Reward Shaping",
+    "object_type": "Concept",
+    "source_sentence": "We train the proposed model by de- signing a RL algorithm with reward shaping strat- egy - described in Section 3.2.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "3 Proposed Model"
+  },
+  {
+    "subject": "Reward Shaping",
+    "predicate": "addresses",
+    "object": "Sentence",
+    "object_type": "Task",
+    "source_sentence": "Reward Shaping To generate the complete target sentence, the agent needs to take actions at each target word, but only one reward is available for all these tens of thousands of actions.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "13 Return: θ"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "cumulative reward",
+    "object_type": "Other",
+    "source_sentence": "During training, we use cumulative reward Pn t=1 rt(y ′ t, y) achieved from the decoding step t to update the agent's policy.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "13 Return: θ"
+  },
+  {
+    "subject": "REINFORCE",
+    "predicate": "uses",
+    "object": "gradient",
+    "object_type": "Other",
+    "source_sentence": "We approximate the gradient ∆θh ˆJ2(θh) by using REINFORCE algorithm which allows us to jointly train J1(θe, θd) and ˆJ2(θh).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "13 Return: θ"
+  },
+  {
+    "subject": "Models",
+    "predicate": "comparesagainst",
+    "object": "soft-attention based Transformer model",
+    "object_type": "Model",
+    "source_sentence": "Models We compare the proposed model with the soft-attention based Transformer model.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "translation tasks",
+    "object_type": "Task",
+    "source_sentence": "Main Results Table 1 shows the performance of various models on EN-DE and EN-FR translation tasks.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "Transformer model",
+    "object_type": "Model",
+    "source_sentence": "This NMT method is built on top of the Transformer model and trained by combining cross-entropy loss and sequence reward (BLEU score).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "Reward Shaping",
+    "predicate": "uses",
+    "object": "BLEU score",
+    "object_type": "Metric",
+    "source_sentence": "The BLEU score used in the reward shaping is calculated similarly to Bahdanau et al. (2017);",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "SacreBLEU toolkit",
+    "object_type": "Tool",
+    "source_sentence": "These test set case sensitive BLEU scores are obtained using SacreBLEU toolkit1 .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "GPUs",
+    "object_type": "Other",
+    "source_sentence": "All the models are trained using 8 NVIDIA Tesla P40 GPUs on a single machine .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "addresses",
+    "object": "long sequence translation",
+    "object_type": "Task",
+    "source_sentence": "In this work, we proposed a hard- attention based NMT model which focuses solely on a few relevant source sequence tokens for each target token to effectively handle long sequence translation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1290",
+    "title": "Look Harder: A Neural Machine Translation Model with Hard Attention",
+    "section": "6 Conclusion"
+  }
+]

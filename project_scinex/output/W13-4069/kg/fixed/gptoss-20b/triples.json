@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Statistical Approaches",
+    "predicate": "achieves",
+    "object": "increased robustness to ASR errors",
+    "object_type": "Concept",
+    "source_sentence": "The results demonstrated that the use of statistical approaches helps estimate the true dialog state and achieves increased robustness to ASR errors.",
+    "extraction_mode": "fixed",
+    "paper": "W13-4069",
+    "title": "Structured Discriminative Model For Dialog State Tracking",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Conditional Random Field",
+    "predicate": "addresses",
+    "object": "dependencies between output variables",
+    "object_type": "Concept",
+    "source_sentence": "Conditional Random Field (CRF) was introduced which allows dependencies between output variables to be incorporated into the statistical model (Appendix B).",
+    "extraction_mode": "fixed",
+    "paper": "W13-4069",
+    "title": "Structured Discriminative Model For Dialog State Tracking",
+    "section": "3 Structured Discriminative Model"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "ASR N-best lists",
+    "object_type": "Other",
+    "source_sentence": "The sequence of observations includes not only ASR N-best lists but also system actions from the beginning of the dialog to the current time slice.",
+    "extraction_mode": "fixed",
+    "paper": "W13-4069",
+    "title": "Structured Discriminative Model For Dialog State Tracking",
+    "section": "3.1 Model Structure for Dialog State Tracking"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "system actions",
+    "object_type": "Other",
+    "source_sentence": "The sequence of observations includes not only ASR N-best lists but also system actions from the beginning of the dialog to the current time slice.",
+    "extraction_mode": "fixed",
+    "paper": "W13-4069",
+    "title": "Structured Discriminative Model For Dialog State Tracking",
+    "section": "3.1 Model Structure for Dialog State Tracking"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Hidden Markov Model",
+    "object_type": "Model",
+    "source_sentence": "models rely extensively on parameter tying, e.g., transition parameters in a Hidden Markov Model.",
+    "extraction_mode": "fixed",
+    "paper": "W13-4069",
+    "title": "Structured Discriminative Model For Dialog State Tracking",
+    "section": "3.1 Model Structure for Dialog State Tracking"
+  },
+  {
+    "subject": "Generative Models",
+    "predicate": "produces",
+    "object": "deficient probability distributions",
+    "object_type": "Concept",
+    "source_sentence": "Note that such feature functions as ( ) and ( ) are not independent of the others defined previously, which may cause generative models to produce deficient probability distributions (Appendix E).",
+    "extraction_mode": "fixed",
+    "paper": "W13-4069",
+    "title": "Structured Discriminative Model For Dialog State Tracking",
+    "section": "3.2 Model Features"
+  },
+  {
+    "subject": "spoken dialog systems",
+    "predicate": "addresses",
+    "object": "grounding actions",
+    "object_type": "Action",
+    "source_sentence": "One of the common grounding actions of spoken dialog systems is to ask a confirmation question about hypotheses which do not have sufficient marginal beliefs.",
+    "extraction_mode": "fixed",
+    "paper": "W13-4069",
+    "title": "Structured Discriminative Model For Dialog State Tracking",
+    "section": "3.3 Inference & Parameter Estimation"
+  },
+  {
+    "subject": "Belief Propagation",
+    "predicate": "uses",
+    "object": "optimization problem",
+    "object_type": "Concept",
+    "source_sentence": "Among many possible approximations, we adopt the Tree Reweighted Belief Propagation (TRBP) method which convexifies the optimization problem that it guarantees finding the global solution.",
+    "extraction_mode": "fixed",
+    "paper": "W13-4069",
+    "title": "Structured Discriminative Model For Dialog State Tracking",
+    "section": "3.3 Inference & Parameter Estimation"
+  },
+  {
+    "subject": "Belief Propagation",
+    "predicate": "achieves",
+    "object": "global solution",
+    "object_type": "Concept",
+    "source_sentence": "Among many possible approximations, we adopt the Tree Reweighted Belief Propagation (TRBP) method which convexifies the optimization problem that it guarantees finding the global solution.",
+    "extraction_mode": "fixed",
+    "paper": "W13-4069",
+    "title": "Structured Discriminative Model For Dialog State Tracking",
+    "section": "3.3 Inference & Parameter Estimation"
+  },
+  {
+    "subject": "Joint Inference",
+    "predicate": "addresses",
+    "object": "selecting a hypothesis to confirm",
+    "object_type": "Task",
+    "source_sentence": "joint inference also becomes important for either selecting a hypothesis to confirm or determining the final joint configuration when there exist strong relational dependencies between concepts.",
+    "extraction_mode": "fixed",
+    "paper": "W13-4069",
+    "title": "Structured Discriminative Model For Dialog State Tracking",
+    "section": "3.3 Inference & Parameter Estimation"
+  },
+  {
+    "subject": "Joint Inference",
+    "predicate": "addresses",
+    "object": "determining the final joint configuration",
+    "object_type": "Task",
+    "source_sentence": "joint inference also becomes important for either selecting a hypothesis to confirm or determining the final joint configuration when there exist strong relational dependencies between concepts.",
+    "extraction_mode": "fixed",
+    "paper": "W13-4069",
+    "title": "Structured Discriminative Model For Dialog State Tracking",
+    "section": "3.3 Inference & Parameter Estimation"
+  },
+  {
+    "subject": "Discriminative Models",
+    "predicate": "comparesagainst",
+    "object": "PBM",
+    "object_type": "Model",
+    "source_sentence": "Note that the discriminative models are far better than PBM on both dataset A and B.",
+    "extraction_mode": "fixed",
+    "paper": "W13-4069",
+    "title": "Structured Discriminative Model For Dialog State Tracking",
+    "section": "5 Results and Discussion"
+  }
+]

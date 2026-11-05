@@ -1,0 +1,35 @@
+[
+  {
+    "subject": "bootstrapping",
+    "predicate": "uses",
+    "object": "sampling",
+    "object_type": "Method",
+    "source_sentence": "Bootstrapping is a procedure that estimates the distribution of a test statistic by repeatedly sampling with replacement from the original dataset and calculating the test statistic on each sample.",
+    "extraction_mode": "fixed",
+    "paper": "2021.tacl-1.67",
+    "title": "A Statistical Analysis of Summarization Evaluation Metrics Using Resampling Methods",
+    "section": "3.2 Bootstrapping"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "produces",
+    "object": "new matrices",
+    "object_type": "Dataset",
+    "source_sentence": "Bootstrapping can be used to calculate a p-value in the form of a paired bootstrap test in which the sampling methods described in §3.2 can be used to resample new matrices from X, Y, and Z in parallel (details omitted for space).",
+    "extraction_mode": "fixed",
+    "paper": "2021.tacl-1.67",
+    "title": "A Statistical Analysis of Summarization Evaluation Metrics Using Resampling Methods",
+    "section": "4.2 Permutation Tests"
+  },
+  {
+    "subject": "bootstrapping",
+    "predicate": "produces",
+    "object": "p-value",
+    "object_type": "Concept",
+    "source_sentence": "Bootstrapping can be used to calculate a p-value in the form of a paired bootstrap test in which the sampling methods described in §3.2 can be used to resample new matrices from X, Y, and Z in parallel (details omitted for space).",
+    "extraction_mode": "fixed",
+    "paper": "2021.tacl-1.67",
+    "title": "A Statistical Analysis of Summarization Evaluation Metrics Using Resampling Methods",
+    "section": "4.2 Permutation Tests"
+  }
+]

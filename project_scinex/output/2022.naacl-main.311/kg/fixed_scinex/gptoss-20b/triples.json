@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "SimCSE",
+    "predicate": "uses",
+    "object": "Dropout",
+    "object_type": "Concept",
+    "source_sentence": "SimCSE creates a positive example x+ for it by applying different dropout masks.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.311",
+    "title": "DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings",
+    "section": "3 Difference-based Contrastive Learning"
+  },
+  {
+    "subject": "Sentence Embeddings",
+    "predicate": "uses",
+    "object": "ELECTRA",
+    "object_type": "Model",
+    "source_sentence": "we use the sentence embeddings as the input of ELECTRA to perform conditional ELECTRA training.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.311",
+    "title": "DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings",
+    "section": "6.3 Distribution of Sentence Embeddings"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "evaluates",
+    "object": "0.177",
+    "object_type": "Metric",
+    "source_sentence": "Compared to averaged BERT embeddings , SimCSE has similar alignment (0.177 v.s. 0.172) but better uniformity (-2.313).",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.311",
+    "title": "DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings",
+    "section": "6.3 Distribution of Sentence Embeddings"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "evaluates",
+    "object": "0.097",
+    "object_type": "Metric",
+    "source_sentence": "DiffCSE has similar uniformity as Avg. -1.468) but much better alignment (0.097).",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.311",
+    "title": "DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings",
+    "section": "6.3 Distribution of Sentence Embeddings"
+  }
+]

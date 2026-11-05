@@ -3,7 +3,8 @@
 ft_generate.py
 --------------
 Run a local open-weight model — the base model, or base + a QLoRA adapter — through
-the SAME relation-only extraction path the API models used, on held-out papers:
+the SAME extraction path the API models used (relation-only, or `--extractor fixed` with the
+paper's entity list for the ACL Anthology corpus), on held-out papers:
 
     prompts (current code) -> this script -> responses.jsonl -> claude_extract.py ingest
                                               (same {"para_id","raw"} format, so the guards,
@@ -38,8 +39,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from ft_common import (  # noqa: E402
     OUTPUT_DIR, SCINEX_OWL_DEFAULT, TEACHER_DEFAULT, build_messages, current_system_prompt,
-    exdir_for, fast_attention, load_paragraphs, read_jsonl, refuse_excluded, render_chat,
-    write_jsonl,
+    entity_csv_for, exdir_for, fast_attention, load_paragraphs, read_jsonl, refuse_excluded,
+    render_chat, write_jsonl,
 )
 
 
@@ -61,7 +62,15 @@ def resolve_papers(args, run_manifest):
     return papers
 
 
-def load_model(base_model, adapter_dir, trust_remote_code):
+def is_prequantized(base_model, trust_remote_code):
+    """True for checkpoints that ship their own quantization (gpt-oss: MXFP4). Those load
+    in their native format — stacking bnb NF4 on top is refused by transformers."""
+    from transformers import AutoConfig
+    cfg = AutoConfig.from_pretrained(base_model, trust_remote_code=trust_remote_code)
+    return getattr(cfg, "quantization_config", None) is not None
+
+
+def load_model(base_model, adapter_dir, trust_remote_code, attn_implementation=None):
     import torch
     import transformers
     from packaging import version
@@ -72,14 +81,24 @@ def load_model(base_model, adapter_dir, trust_remote_code):
     tok.padding_side = "left"                      # batched generation
     if tok.pad_token_id is None:
         tok.pad_token = tok.eos_token
-    bnb = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4",
-                             bnb_4bit_compute_dtype=torch.bfloat16,
-                             bnb_4bit_use_double_quant=True)
     dtype_kw = ("dtype" if version.parse(transformers.__version__) >= version.parse("4.56")
                 else "torch_dtype")
-    model = AutoModelForCausalLM.from_pretrained(
-        base_model, quantization_config=bnb, device_map={"": 0},
-        trust_remote_code=trust_remote_code, **{dtype_kw: torch.bfloat16})
+    attn_kw = {"attn_implementation": attn_implementation} if attn_implementation else {}
+    if is_prequantized(base_model, trust_remote_code):
+        # gpt-oss MXFP4 needs the `kernels` package (transformers 5.5 pins kernels<0.13);
+        # without it transformers dequantizes to bf16 (gpt-oss-20b: ~42 GB, spills off a
+        # 32 GB card). Its default eager attention materialises the score matrix: 10 GB for
+        # ONE layer at batch 8 on ~3.5k-token prompts — use flex_attention there.
+        model = AutoModelForCausalLM.from_pretrained(
+            base_model, device_map={"": 0}, trust_remote_code=trust_remote_code,
+            **{dtype_kw: "auto"}, **attn_kw)
+    else:
+        bnb = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4",
+                                 bnb_4bit_compute_dtype=torch.bfloat16,
+                                 bnb_4bit_use_double_quant=True)
+        model = AutoModelForCausalLM.from_pretrained(
+            base_model, quantization_config=bnb, device_map={"": 0},
+            trust_remote_code=trust_remote_code, **{dtype_kw: torch.bfloat16}, **attn_kw)
     if adapter_dir:
         from peft import PeftModel
         model = PeftModel.from_pretrained(model, adapter_dir)
@@ -90,20 +109,46 @@ def load_model(base_model, adapter_dir, trust_remote_code):
     return model, tok
 
 
+_HARMONY_FINAL = "<|channel|>final<|message|>"
+_HARMONY_STOPS = ("<|return|>", "<|end|>", "<|call|>", "<|endoftext|>")
+
+
+def harmony_final(text):
+    """The `final` channel of a gpt-oss (harmony format) reply; the `analysis` channel is
+    reasoning and is dropped. No final channel = the reasoning used up the token budget:
+    return "", which classify_raw counts as empty_content — as for the API runs (§26)."""
+    if _HARMONY_FINAL not in text:
+        return ""
+    body = text.rsplit(_HARMONY_FINAL, 1)[1]
+    for stop in _HARMONY_STOPS:
+        body = body.split(stop, 1)[0]
+    return body.strip()
+
+
 def generate_batch(model, tok, prompts, max_new_tokens):
     import torch
     enc = tok(prompts, return_tensors="pt", padding=True, add_special_tokens=False).to(model.device)
     with torch.no_grad(), fast_attention():
         out = model.generate(**enc, max_new_tokens=max_new_tokens, do_sample=False,
                              pad_token_id=tok.pad_token_id)
+    harmony = "<|channel|>" in tok.get_vocab()
     res = []
     n_in = enc["input_ids"].shape[1]
     for row in out:
         gen = row[n_in:]
         n_tok = int((gen != tok.pad_token_id).sum())
-        text = tok.decode(gen, skip_special_tokens=True).strip()
+        if harmony:
+            text = harmony_final(tok.decode(gen, skip_special_tokens=False))
+        else:
+            text = tok.decode(gen, skip_special_tokens=True).strip()
         res.append((text, n_tok, n_tok >= max_new_tokens))
     return res
+
+
+def paper_title(paper):
+    from kg_extraction.html_parser import parse_html
+    html = OUTPUT_DIR / paper / "no-llm" / "output.html"
+    return parse_html(str(html))[0] if html.exists() else ""
 
 
 def main():
@@ -115,6 +160,13 @@ def main():
     ap.add_argument("--papers-from", default=None, help="file of paper ids (e.g. eval_papers.txt)")
     ap.add_argument("--ontologies", nargs="+", choices=["ceo", "scinex"], default=["ceo", "scinex"])
     ap.add_argument("--ontology-file", default=SCINEX_OWL_DEFAULT)
+    ap.add_argument("--extractor", choices=["relation", "fixed"], default="relation",
+                    help="fixed = subjects from the paper's entity CSV (output/acl/<id>/), "
+                         "the ACL Anthology setup; writes kg/fixed*/<slug>/")
+    ap.add_argument("--reasoning-effort", choices=["low", "medium", "high"], default=None,
+                    help="gpt-oss chat templates only (harmony); other templates ignore it")
+    ap.add_argument("--attn-implementation", default=None,
+                    help="passed to from_pretrained, e.g. flex_attention for gpt-oss (no SDPA)")
     ap.add_argument("--teacher", default=TEACHER_DEFAULT,
                     help="prefer this run's prompts.jsonl so para_ids match the teacher's")
     ap.add_argument("--max-new-tokens", type=int, default=3072,
@@ -151,25 +203,30 @@ def main():
     # render every prompt first (cheap), so --dry-run and the real run see the same work list
     jobs = []
     for ont in args.ontologies:
-        system, relations = current_system_prompt(ont, args.ontology_file)
-        exdir = exdir_for("relation", ont)
+        system, relations = current_system_prompt(ont, args.ontology_file, args.extractor)
+        exdir = exdir_for(args.extractor, ont)
         for paper in papers:
-            rows, source = load_paragraphs(paper, exdir, prefer_slugs=(args.teacher,))
+            rows, source = load_paragraphs(paper, exdir, prefer_slugs=(args.teacher,),
+                                           extractor=args.extractor)
             if rows is None:
-                print(f"  ! {paper}/{ont}: no paragraphs (no prompts.jsonl, no parsed HTML) — skipped")
+                print(f"  ! {paper}/{ont}: no paragraphs (no prompts.jsonl, no parsed HTML"
+                      f"{', no entity CSV' if args.extractor == 'fixed' else ''}) — skipped")
                 continue
             if args.limit:
                 rows = rows[:args.limit]
             jobs.append((paper, ont, exdir, system, relations, rows, source))
     n_prompts = sum(len(j[5]) for j in jobs)
     print(f"{args.base_model}{' + ' + adapter_dir if adapter_dir else ''} -> "
-          f"kg/relation*/{args.model_slug}/  {len(jobs)} paper x ontology runs, {n_prompts} paragraphs")
+          f"kg/{args.extractor}*/{args.model_slug}/  {len(jobs)} paper x ontology runs, "
+          f"{n_prompts} paragraphs")
     if args.dry_run:
         for paper, ont, _e, _s, _r, rows, source in jobs:
             print(f"  {paper:20s} {ont:6s} {len(rows):3d} paragraphs  ({source})")
         return
 
-    model, tok = load_model(args.base_model, adapter_dir, args.trust_remote_code)
+    model, tok = load_model(args.base_model, adapter_dir, args.trust_remote_code,
+                            args.attn_implementation)
+    tmpl_kw = {"reasoning_effort": args.reasoning_effort} if args.reasoning_effort else {}
     t0 = time.time()
     for paper, ont, exdir, system, relations, rows, source in jobs:
         dest = OUTPUT_DIR / paper / "kg" / exdir / args.model_slug
@@ -177,15 +234,17 @@ def main():
         # the files claude_extract.py ingest reads
         write_jsonl(dest / "prompts.jsonl", rows)
         (dest / "system_prompt.txt").write_text(system, encoding="utf-8")
-        title = ""
         tmeta = OUTPUT_DIR / paper / "kg" / exdir / args.teacher / "prompt_meta.json"
         if tmeta.exists():
             title = json.loads(tmeta.read_text(encoding="utf-8")).get("title", "")
+        else:
+            title = paper_title(paper)
         (dest / "prompt_meta.json").write_text(json.dumps({
-            "paper": paper, "title": title, "extractor": "relation", "ontology": ont,
+            "paper": paper, "title": title, "extractor": args.extractor, "ontology": ont,
             "model_slug": args.model_slug, "n_paragraphs": len(rows),
             "n_relations": len(relations), "relations": relations,
             "base_model": args.base_model, "adapter": adapter_dir, "paragraph_source": source,
+            "reasoning_effort": args.reasoning_effort,
         }, indent=2), encoding="utf-8")
 
         out_f = dest / "responses.jsonl"
@@ -196,7 +255,8 @@ def main():
         with open(out_f, "a" if done else "w", encoding="utf-8") as f:
             for i in range(0, len(todo), args.batch_size):
                 chunk = todo[i:i + args.batch_size]
-                prompts = [render_chat(tok, build_messages(system, r["user_prompt"]), True) for r in chunk]
+                prompts = [render_chat(tok, build_messages(system, r["user_prompt"]), True, **tmpl_kw)
+                           for r in chunk]
                 for r, (text, n_tok, trunc) in zip(chunk, generate_batch(model, tok, prompts, args.max_new_tokens)):
                     f.write(json.dumps({"para_id": r["para_id"], "raw": text,
                                         "n_tokens": n_tok, "truncated": trunc},
@@ -207,8 +267,10 @@ def main():
                 print(f"    {paper}/{ont}: {min(i + args.batch_size, len(todo))}/{len(todo)} "
                       f"({(time.time() - t0) / 60:.1f} min, peak VRAM {peak:.1f} GB)", flush=True)
         if args.ingest:
+            ent = (["--entity-csv", str(entity_csv_for(paper))]
+                   if args.extractor == "fixed" else [])
             subprocess.run([sys.executable, "claude_extract.py", "ingest", "--paper", paper,
-                            "--extractor", "relation", "--ontology", ont,
+                            "--extractor", args.extractor, "--ontology", ont, *ent,
                             "--ontology-file", args.ontology_file, "--model-slug", args.model_slug,
                             "--responses", str(out_f)], check=False)
     print(f"done in {(time.time() - t0) / 60:.1f} min")

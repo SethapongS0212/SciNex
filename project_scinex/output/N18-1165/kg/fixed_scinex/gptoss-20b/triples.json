@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Convolutional Neural Network",
+    "predicate": "achieves",
+    "object": "multi-hop reasoning",
+    "object_type": "Task",
+    "source_sentence": "To mitigate this problem, a Convolutional Neural Network(CNN)- based model has been proposed to perform multi -hop reasoning.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "2.2 Multi-Hop Reasoning"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "mentions",
+    "object": "negative samples",
+    "object_type": "Other",
+    "source_sentence": "During training time, in contrast to the preceding methods like Das et al. (2017), we also exploit negative samples by introducing an pseudo \"n/a\" relation, Algorithm 1 The DIVA Algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "3.3 Optimization"
+  },
+  {
+    "subject": "probability",
+    "predicate": "mentions",
+    "object": "path reasoner",
+    "object_type": "Other",
+    "source_sentence": "where fre(L) = log pθ + wKL log pβ qϕ denotes the probability assigned by path reasoner.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "3.3 Optimization"
+  },
+  {
+    "subject": "training",
+    "predicate": "mentions",
+    "object": "KL-reward term",
+    "object_type": "Other",
+    "source_sentence": "In practice, we found that the KL-reward term log pβ qϕ causes severe instability during training, so we finally leave this term out by setting wKL as 0.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "3.3 Optimization"
+  },
+  {
+    "subject": "training",
+    "predicate": "mentions",
+    "object": "negative samples",
+    "object_type": "Other",
+    "source_sentence": "During training time, in contrast to the preceding methods like Das et al. (2017), we also exploit negative samples by introducing an pseudo \"n/a\" relation, Algorithm 1 The DIVA Algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "3.3 Optimization"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "SGD",
+    "object_type": "Other",
+    "source_sentence": "During training, we alternatively update three sub- modules with SGD.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "3.3 Optimization"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "produces",
+    "object": "pseudo code",
+    "object_type": "Other",
+    "source_sentence": "More specifically, we demonstrate the pseudo code in Algorithm 1.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "3.3 Optimization"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "achievesresult",
+    "object": "state-of-the-art results on FB15k",
+    "object_type": "Other",
+    "source_sentence": "our algorithm has significantly outperformed most of the existing algorithms and achieves a very similar result as MINERVA on NELL dataset and achieves state-of-the-art results on FB15k.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "4.2 Quantitative Results"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "achievesresult",
+    "object": "very similar result as MINERVA on NELL dataset",
+    "object_type": "Other",
+    "source_sentence": "our algorithm has significantly outperformed most of the existing algorithms and achieves a very similar result as MINERVA on NELL dataset and achieves state-of-the-art results on FB15k.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "4.2 Quantitative Results"
+  },
+  {
+    "subject": "errors",
+    "predicate": "mentions",
+    "object": "KG noise",
+    "object_type": "Concept",
+    "source_sentence": "We classify errors into three categories, 1) KG noise: This error is caused by the KG itself, e.g some important relations are missing; some entities are duplicate; some nodes do not have valid outgoing edges.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "4.4 Error Analysis"
+  },
+  {
+    "subject": "errors",
+    "predicate": "mentions",
+    "object": "Path-Finder error",
+    "object_type": "Concept",
+    "source_sentence": "We classify errors into three categories, 2) Path-Finder error: This error is caused by the path finder, which fails to arrive destination.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "4.4 Error Analysis"
+  },
+  {
+    "subject": "errors",
+    "predicate": "mentions",
+    "object": "Path-Reasoner error",
+    "object_type": "Concept",
+    "source_sentence": "We classify errors into three categories, 3) Path-Reasoner error: This error",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "4.4 Error Analysis"
+  },
+  {
+    "subject": "Categories",
+    "predicate": "mentions",
+    "object": "KG noise",
+    "object_type": "Concept",
+    "source_sentence": "We classify errors into three categories, 1) KG noise: This error is caused by the KG itself, e.g some important relations are missing; some entities are duplicate; some nodes do not have valid outgoing edges.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "4.4 Error Analysis"
+  },
+  {
+    "subject": "Categories",
+    "predicate": "mentions",
+    "object": "Path-Finder error",
+    "object_type": "Concept",
+    "source_sentence": "We classify errors into three categories, 2) Path-Finder error: This error is caused by the path finder, which fails to arrive destination.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "4.4 Error Analysis"
+  },
+  {
+    "subject": "Categories",
+    "predicate": "mentions",
+    "object": "Path-Reasoner error",
+    "object_type": "Concept",
+    "source_sentence": "We classify errors into three categories, 3) Path-Reasoner error: This error",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "4.4 Error Analysis"
+  }
+]

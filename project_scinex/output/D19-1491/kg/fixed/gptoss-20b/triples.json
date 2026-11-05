@@ -1,0 +1,233 @@
+[
+  {
+    "subject": "Lexical Simplification",
+    "predicate": "achieves",
+    "object": "readability of text",
+    "object_type": "Concept",
+    "source_sentence": "lexical simplification techniques positively impact the readability of text and improve reader understanding and information retention.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Lexical Simplification",
+    "predicate": "achieves",
+    "object": "reader understanding and information retention",
+    "object_type": "Concept",
+    "source_sentence": "lexical simplification techniques positively impact the readability of text and improve reader understanding and information retention.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Encoder-Decoder Model",
+    "predicate": "uses",
+    "object": "Deep Reinforcement Learning",
+    "object_type": "Method",
+    "source_sentence": "Zhang and Lapata (2017) combine a novel sequence-to-sequence encoder-decoder model with a deep reinforcement learning framework that rewards the system for providing simple, fluent output, similar in meaning to the input.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "2.1 Approaches"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Context",
+    "object_type": "Concept",
+    "source_sentence": "our algorithm takes context both at the complex word identification and substitution selection steps into account.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "2.1 Approaches"
+  },
+  {
+    "subject": "Lexical Simplification",
+    "predicate": "addresses",
+    "object": "complex word identification",
+    "object_type": "Task",
+    "source_sentence": "Lexical simplification can be viewed as a multi- stage process involving complex word identification, substitute generation, filtering and substitute ranking.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "4 Lexical Simpliﬁcation Pipeline"
+  },
+  {
+    "subject": "Lexical Simplification",
+    "predicate": "addresses",
+    "object": "substitute generation",
+    "object_type": "Task",
+    "source_sentence": "Lexical simplification can be viewed as a multi- stage process involving complex word identification, substitute generation, filtering and substitute ranking.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "4 Lexical Simpliﬁcation Pipeline"
+  },
+  {
+    "subject": "Lexical Simplification",
+    "predicate": "addresses",
+    "object": "filtering",
+    "object_type": "Task",
+    "source_sentence": "Lexical simplification can be viewed as a multi- stage process involving complex word identification, substitute generation, filtering and substitute ranking.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "4 Lexical Simpliﬁcation Pipeline"
+  },
+  {
+    "subject": "Lexical Simplification",
+    "predicate": "addresses",
+    "object": "substitute ranking",
+    "object_type": "Task",
+    "source_sentence": "Lexical simplification can be viewed as a multi- stage process involving complex word identification, substitute generation, filtering and substitute ranking.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "4 Lexical Simpliﬁcation Pipeline"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "To assess whether a substitution is semantically equivalent to the original we use ELMo embeddings",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "4.3 Substitution Filtering and Ranking"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "produces",
+    "object": "deep contextualized word representations",
+    "object_type": "Other",
+    "source_sentence": "ELMo provides deep contextualized word representations, which are learned from the internal states of a deep bi-directional language model",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "4.3 Substitution Filtering and Ranking"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "The similarity of words in a given sentential context is calculated using the ELMo embeddings associated with the target word and each of the substitutes.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "O Oak is strong and also gives shade g.c. Oak gives shade"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "word vectors",
+    "object_type": "Other",
+    "source_sentence": "The contextual similarity score (CS) is calculated by taking the cosine distance between the ELMo word vectors associated with the original word and the substitute.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "O Oak is strong and also gives shade g.c. Oak gives shade"
+  },
+  {
+    "subject": "Grammaticality",
+    "predicate": "uses",
+    "object": "bigram frequencies",
+    "object_type": "Concept",
+    "source_sentence": "Grammaticality: To assess whether a substitution results in a grammatically correct sentence , we calculate bigram frequencies of the candidate substitute and one word to the left and to the right of it using the 520 million word COCA corpus .",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "O Oak is strong and also gives shade g.c. Oak gives shade"
+  },
+  {
+    "subject": "bigram",
+    "predicate": "uses",
+    "object": "COCA corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Grammaticality: To assess whether a substitution results in a grammatically correct sentence , we calculate bigram frequencies of the candidate substitute and one word to the left and to the right of it using the 520 million word COCA corpus .",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "O Oak is strong and also gives shade g.c. Oak gives shade"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "uses",
+    "object": "CEFR-LS dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We test our filtering approach on the CEFR-LS dataset as it contains annotations for contextually suitable (value 1) as well as unsuitable (value 0) substitutions.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "4.3.1 Threshold-based ﬁltering"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "evaluates",
+    "object": "0.7968",
+    "object_type": "Metric",
+    "source_sentence": "With this optimal value, we can identify contextually suitable and grammatically correct substitutes on CEFR-LS with the precision of 0.7968, recall of 0.8081 and F1=0.8014.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "4.3.1 Threshold-based ﬁltering"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "evaluates",
+    "object": "0.7945",
+    "object_type": "Metric",
+    "source_sentence": "The best precision P=0.7945 on BENCHLS is achieved with threshold-based filtering of the unsuitable candidates and ranking of the candidates according to the combination of contextual simplicity (S) and contextual fit ( ¯C) scores.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "15 REPLACE(S, word, top substitute) REC-LS(S, c, ignore list)"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "achieves",
+    "object": "0.7945",
+    "object_type": "Metric",
+    "source_sentence": "The best precision P=0.7945 on BENCHLS is achieved with threshold-based filtering of the unsuitable candidates and ranking of the candidates according to the combination of contextual simplicity (S) and contextual fit ( ¯C) scores.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "15 REPLACE(S, word, top substitute) REC-LS(S, c, ignore list)"
+  },
+  {
+    "subject": "Ranking",
+    "predicate": "achieves",
+    "object": "0.7945",
+    "object_type": "Metric",
+    "source_sentence": "The best precision P=0.7945 on BENCHLS is achieved with threshold-based filtering of the unsuitable candidates and ranking of the candidates according to the combination of contextual simplicity (S) and contextual fit ( ¯C) scores.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "15 REPLACE(S, word, top substitute) REC-LS(S, c, ignore list)"
+  },
+  {
+    "subject": "generation",
+    "predicate": "produces",
+    "object": "lists of simplification candidates",
+    "object_type": "Other",
+    "source_sentence": "Next, the substitution generation and ranking produce lists of simplification candidates.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "15 REPLACE(S, word, top substitute) REC-LS(S, c, ignore list)"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "Precision",
+    "object_type": "Metric",
+    "source_sentence": "We evaluate these steps using precision and measuring the percentage of times that our system ranks one of the gold standard candidates as its top choice for substitution.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1491",
+    "title": "Recursive Context-Aware Lexical Simpliﬁcation",
+    "section": "15 REPLACE(S, word, top substitute) REC-LS(S, c, ignore list)"
+  }
+]

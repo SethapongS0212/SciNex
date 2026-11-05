@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "named entity recognizer",
+    "predicate": "uses",
+    "object": "entity mentions",
+    "object_type": "Concept",
+    "source_sentence": "first extract entity mentions using a named entity recognizer",
+    "extraction_mode": "fixed",
+    "paper": "P19-1136",
+    "title": "Tsu-Jui Fu Academia Sinica",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Bi-LSTM",
+    "predicate": "uses",
+    "object": "automatic feature learning",
+    "object_type": "Concept",
+    "source_sentence": "They use Bi-LSTM on each sentence for automatic feature learning",
+    "extraction_mode": "fixed",
+    "paper": "P19-1136",
+    "title": "Tsu-Jui Fu Academia Sinica",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Bi-LSTM",
+    "predicate": "uses",
+    "object": "last encoder hidden state",
+    "object_type": "Concept",
+    "source_sentence": "They encode each sentence by a Bi-LSTM, and use the last encoder hidden state to initialize one (OneDecoder) or multiple (MultiDecoder) LSTMs for dynamic decoding relation triplets",
+    "extraction_mode": "fixed",
+    "paper": "P19-1136",
+    "title": "Tsu-Jui Fu Academia Sinica",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "GCN",
+    "predicate": "uses",
+    "object": "sequential and regional dependency word features",
+    "object_type": "Concept",
+    "source_sentence": "we adopt bi-RNN and GCN to extract both sequential and regional de- pendency word features.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1136",
+    "title": "Tsu-Jui Fu Academia Sinica",
+    "section": "4 Methodology"
+  },
+  {
+    "subject": "GCN",
+    "predicate": "uses",
+    "object": "graph",
+    "object_type": "Concept",
+    "source_sentence": "to which we apply GCN on each graph to integrate each relation 's information",
+    "extraction_mode": "fixed",
+    "paper": "P19-1136",
+    "title": "Tsu-Jui Fu Academia Sinica",
+    "section": "4 Methodology"
+  },
+  {
+    "subject": "GCN",
+    "predicate": "uses",
+    "object": "regional dependency features",
+    "object_type": "Concept",
+    "source_sentence": "then use bi- directional GCN to further extract regional depen- dency features.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1136",
+    "title": "Tsu-Jui Fu Academia Sinica",
+    "section": "4 Methodology"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "pre-trained word embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We use pre- trained word embeddings from GloVe",
+    "extraction_mode": "fixed",
+    "paper": "P19-1136",
+    "title": "Tsu-Jui Fu Academia Sinica",
+    "section": "4 Methodology"
+  },
+  {
+    "subject": "Dependency Parser",
+    "predicate": "uses",
+    "object": "dependency tree",
+    "object_type": "Concept",
+    "source_sentence": "we use dependency parser to create a dependency tree for the input sentence.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1136",
+    "title": "Tsu-Jui Fu Academia Sinica",
+    "section": "4 Methodology"
+  },
+  {
+    "subject": "GCN",
+    "predicate": "uses",
+    "object": "dependency tree",
+    "object_type": "Concept",
+    "source_sentence": "We use the dependency tree as the input sentence 's adjacency matrix and use GCN to extract regional dependency features.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1136",
+    "title": "Tsu-Jui Fu Academia Sinica",
+    "section": "4 Methodology"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "word features",
+    "object_type": "Concept",
+    "source_sentence": "For the word entity, we predict for all words according to the word features over 1-layer LSTM and apply categorical loss, denoted as eloss1p, to train them.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1136",
+    "title": "Tsu-Jui Fu Academia Sinica",
+    "section": "4 Methodology"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "Word Embedding",
+    "object_type": "Concept",
+    "source_sentence": "In our implementation, we chose the pre-trained GloVe (300d) as a fixed word embedding.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1136",
+    "title": "Tsu-Jui Fu Academia Sinica",
+    "section": "5.1 Experimental Settings"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "Dropout",
+    "object_type": "Concept",
+    "source_sentence": "During training, we set the LSTM dropout rate to 0.5, the learning rate to 0.0008, and the loss weight α to 3.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1136",
+    "title": "Tsu-Jui Fu Academia Sinica",
+    "section": "5.1 Experimental Settings"
+  }
+]

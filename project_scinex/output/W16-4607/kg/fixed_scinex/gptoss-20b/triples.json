@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Reordering",
+    "predicate": "addresses",
+    "object": "simple distance-based reordering approach",
+    "object_type": "Method",
+    "source_sentence": "LRM addresses the problem of a simple distance-based reordering approach in distant language pairs.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "addresses",
+    "object": "reordering ambiguity",
+    "object_type": "Concept",
+    "source_sentence": "tackled the problem of reordering ambiguity by including much longer context information on the source side than other LRMs including NRMs to determine phrase orientations using Long Short-Term Memory (LSTM).",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Distributed Representation",
+    "predicate": "addresses",
+    "object": "Ambiguity",
+    "object_type": "Concept",
+    "source_sentence": "(2013) tackled the ambiguity and sparseness problem by distributed representation of phrases .",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "3 Neural Reordering Model"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "activation function tanh",
+    "object_type": "Concept",
+    "source_sentence": "f is an activation function such as tanh, which is used in our experiments.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "3.1 Distributed Representation of Phrases"
+  },
+  {
+    "subject": "Word Alignment",
+    "predicate": "comprises",
+    "object": "six dimensions",
+    "object_type": "Other",
+    "source_sentence": "We define a new word vector x′, which incorporates word alignment information \"WA\" comprising six dimensions to the word vector x to propagate alignment information to the phrase vector.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "4.2 Word Alignment"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "intrinsic evaluation of reordering accuracy",
+    "object_type": "Task",
+    "source_sentence": "We conduct two kinds of experiments: intrinsic evaluation of reordering accuracy and extrinsic evaluation of MT quality.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "5 Experiment"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "The word2vec model is pre-trained on English and Japanese versions of Wikipedia.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "5.1 Setting"
+  },
+  {
+    "subject": "Phrase translation",
+    "predicate": "achieves",
+    "object": "3.17 points accuracy",
+    "object_type": "Metric",
+    "source_sentence": "our proposed method using phrase translation and word alignment improves the accuracy by 3.17 points (1.5 points higher than that of all the test data) for instances including the NULL alignment.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "5.2.4 NULL Alignment"
+  }
+]

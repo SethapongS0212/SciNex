@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "L1 corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Pre-train a monolingual BERT (i.e. a transformer) in L1 with masked language modeling (MLM) and next sentence prediction (NSP) objectives on an unlabeled L1 corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "2 Cross-lingual Transfer of Monolingual Representations"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "trainedon",
+    "object": "L1 labeled data",
+    "object_type": "Dataset",
+    "source_sentence": "Fine-tune the transformer for a downstream task using labeled data in L1, while keeping the L1 token embeddings frozen.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "2 Cross-lingual Transfer of Monolingual Representations"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "position and segment embeddings",
+    "object_type": "Other",
+    "source_sentence": "BERT treats [CLS] as a regular word with its own position and segment embeddings, even if it always appears in the first position.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "2 Cross-lingual Transfer of Monolingual Representations"
+  },
+  {
+    "subject": "Zero-shot transfer",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "We zero-shot transfer to a new language by plugging in its respective mapped embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "3.1 Models"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "uses",
+    "object": "larger model size",
+    "object_type": "Other",
+    "source_sentence": "XLM covers 15 languages and uses a larger model size with a shared vocabulary of 95k subwords, which contributes to its better performance.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "3.3 XNLI: Natural Language Inference"
+  },
+  {
+    "subject": "mBERT",
+    "predicate": "uses",
+    "object": "Parallel Data",
+    "object_type": "Concept",
+    "source_sentence": "extensions to mBERT include scaling it up and incorporating parallel data , adding auxiliary pre-training tasks , and encouraging representations of translations to be similar.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "results similar to ours",
+    "object_type": "Other",
+    "source_sentence": "Tran (2020) propose a more complex approach to transfer a monolingual BERT to other languages that achieves results similar to ours.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "Adam",
+    "object_type": "Method",
+    "source_sentence": "For the fine-tuning, we use Adam with a learning rate of 2e-5, a batch size of 32, and train for 2 epochs.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.421",
+    "title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "section": "A Training details"
+  }
+]

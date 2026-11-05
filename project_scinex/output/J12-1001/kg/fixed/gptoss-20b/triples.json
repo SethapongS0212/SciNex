@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Discourse",
+    "predicate": "comprises",
+    "object": "context spaces",
+    "object_type": "Other",
+    "source_sentence": "Reichman (1985) proposes a model of discourse structure in which discourse comprises a collection of basic constituents called context spaces, organized hierarchically according to semantic and logical relations called conversational moves.",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "2. Previous Work"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Praat toolkit",
+    "object_type": "Other",
+    "source_sentence": "All acoustic features were extracted automatically for the whole corpus using the Praat toolkit.",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "3.3 Feature Extraction"
+  },
+  {
+    "subject": "Hidden Markov Model",
+    "predicate": "uses",
+    "object": "Hidden Markov Model Toolkit (HTK)",
+    "object_type": "Other",
+    "source_sentence": "For our phonetic features (listed in Table 8), we trained an automatic phone recognizer based on the Hidden Markov Model Toolkit (HTK) , using three corpora as training data:",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "3.3 Feature Extraction"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "polynomial kernel",
+    "object_type": "Method",
+    "source_sentence": "In the case of SVM, prior to the actual tests we experimented with two kernel types : polynomial (K(x, y) = (x + y)d) and Gaussian radial basis function (RBF) (K(x, y) = exp(−γ||x −y||2) for γ > 0).",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "5.1 Classiﬁers and Feature Types"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "Gaussian radial basis function (RBF)",
+    "object_type": "Method",
+    "source_sentence": "In the case of SVM, prior to the actual tests we experimented with two kernel types : polynomial (K(x, y) = (x + y)d) and Gaussian radial basis function (RBF) (K(x, y) = exp(−γ||x −y||2) for γ > 0).",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "5.1 Classiﬁers and Feature Types"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "grid search",
+    "object_type": "Method",
+    "source_sentence": "We performed a grid search for the optimal arguments for either kernel using the data portion left out after downsampling the corpus.",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "5.1 Classiﬁers and Feature Types"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "achieves",
+    "object": "best overall results",
+    "object_type": "Other",
+    "source_sentence": "For the general task of classifying any ACW into any discourse /pragmatic function, our full-model SVM classifier achieves the best overall results.",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "5.1 Classiﬁers and Feature Types"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "achieves",
+    "object": "13.3% error rate",
+    "object_type": "Metric",
+    "source_sentence": "When including session-specific features in the full model, such as identity and gender of both speakers (see Table 8), the error rate of the SVM classifier is significantly reduced for the general task (13.3%) and for the discourse boundary function identification task (6.4%) (Wilcoxon, p < 0.05).",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "5.2 Session-Speciﬁc and ToBI Prosodic Features"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "achieves",
+    "object": "6.4% error rate",
+    "object_type": "Metric",
+    "source_sentence": "When including session-specific features in the full model, such as identity and gender of both speakers (see Table 8), the error rate of the SVM classifier is significantly reduced for the general task (13.3%) and for the discourse boundary function identification task (6.4%) (Wilcoxon, p < 0.05).",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "5.2 Session-Speciﬁc and ToBI Prosodic Features"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "achieves",
+    "object": "4.91% error rate",
+    "object_type": "Metric",
+    "source_sentence": "an SVM classifier achieves a 4.91% error rate, slightly yet significantly outperforming a word-based baseline",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "5.5 Backchannel Detection"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "achieves",
+    "object": "error rate of 11.51%",
+    "object_type": "Metric",
+    "source_sentence": "An SVM classifier trained on features extracted from up to the current IPU (to simulate the on-line condition of a spoken dialogue system) fails to improve over this baseline , achieving an error rate of 11.51%, not significantly different from the baseline.",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "5.5 Backchannel Detection"
+  },
+  {
+    "subject": "word-based",
+    "predicate": "achieves",
+    "object": "error rate of 11.56%",
+    "object_type": "Metric",
+    "source_sentence": "The same word-based majority baseline described earlier achieves an error rate of 11.56%.",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "5.5 Backchannel Detection"
+  },
+  {
+    "subject": "decision-tree",
+    "predicate": "uses",
+    "object": "prosodic features",
+    "object_type": "Feature",
+    "source_sentence": "the best results are reached by decision-tree learners trained on prosodic and text-based features",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "5.6 Comparison with Previous Work"
+  },
+  {
+    "subject": "decision-tree",
+    "predicate": "uses",
+    "object": "text-based features",
+    "object_type": "Feature",
+    "source_sentence": "the best results are reached by decision-tree learners trained on prosodic and text-based features",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "5.6 Comparison with Previous Work"
+  },
+  {
+    "subject": "Automatic disambiguation",
+    "predicate": "uses",
+    "object": "dialogue acts",
+    "object_type": "Task",
+    "source_sentence": "experiments on the automatic disambiguation of dialogue acts (DA) on 1,155 spontaneous telephone conversations",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "5.6 Comparison with Previous Work"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "lexical",
+    "object_type": "Feature",
+    "source_sentence": "Our SVM models based on lexical, discourse, timing, and acoustic features approach the error rate of trained human labelers in all tasks, while our automatically computed phonetic features offer no improvement.",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "6. Discussion"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "discourse",
+    "object_type": "Feature",
+    "source_sentence": "Our SVM models based on lexical, discourse, timing, and acoustic features approach the error rate of trained human labelers in all tasks, while our automatically computed phonetic features offer no improvement.",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "6. Discussion"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "acoustic",
+    "object_type": "Feature",
+    "source_sentence": "Our SVM models based on lexical, discourse, timing, and acoustic features approach the error rate of trained human labelers in all tasks, while our automatically computed phonetic features offer no improvement.",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "6. Discussion"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "prosodic",
+    "object_type": "Feature",
+    "source_sentence": "Previous studies indicate that the pragmatic function of ambiguous expressions may be effectively predicted by models that combine information extracted from various sources, including lexical and prosodic.",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "6. Discussion"
+  },
+  {
+    "subject": "Prosody",
+    "predicate": "uses",
+    "object": "ToBI transcription framework",
+    "object_type": "Other",
+    "source_sentence": "Intonational patterns and other aspects of the prosody were identified using the ToBI transcription framework",
+    "extraction_mode": "fixed",
+    "paper": "J12-1001",
+    "title": "Afﬁrmative Cue Words in Task-Oriented Dialogue",
+    "section": "A.2 Subjects and Sessions"
+  }
+]

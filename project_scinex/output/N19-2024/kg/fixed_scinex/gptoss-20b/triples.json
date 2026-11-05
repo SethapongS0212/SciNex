@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Seq2seq",
+    "predicate": "trainedon",
+    "object": "window-based data",
+    "object_type": "Dataset",
+    "source_sentence": "Following Sproat and Jaitly (2016), we implement a seq2seq model trained on window-based data.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "3.1 Baseline models"
+  },
+  {
+    "subject": "Datasets",
+    "predicate": "splitfrom",
+    "object": "a set of 4.9M sentences",
+    "object_type": "Dataset",
+    "source_sentence": "Our datasets were randomly sampled from a set of 4.9M sentences in the training data portion of the Sproat and Jaitly (2016) data release and split into training, validation, and test data.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "best WER and SER",
+    "object_type": "Metric",
+    "source_sentence": "Our experiments find that an inventory size between 1K and 2K yields the best WER and SER.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "4.3 Subword inventory"
+  },
+  {
+    "subject": "Neural Approaches",
+    "predicate": "addresses",
+    "object": "text normalization",
+    "object_type": "Concept",
+    "source_sentence": "In this paper, we investigate neural approaches to text normalization which directly translate a written-form sentence to its spoken counterpart without the need of a tagger or grammar.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "subwords",
+    "predicate": "achieves",
+    "object": "OOV problem",
+    "object_type": "Concept",
+    "source_sentence": "We show that the use of subwords can effectively reduce the OOV problem of a baseline seq2seq model with character inputs and token outputs.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Linguistic Features",
+    "predicate": "achieves",
+    "object": "further gains",
+    "object_type": "Concept",
+    "source_sentence": "The addition of linguistic features including casing, word position, POS tags, and edit labels leads to further gains.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Features",
+    "predicate": "achieves",
+    "object": "best performance",
+    "object_type": "Concept",
+    "source_sentence": "We empirically test the addition of each linguistic feature revealing that all features make a contribution to the model, and combining features results in the best performance.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "WER",
+    "predicate": "achieves",
+    "object": "0.17%",
+    "object_type": "Metric",
+    "source_sentence": "Our model is an improvement over both window-based and sentence-based seq2seq baselines, yielding a WER of 0.17%.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "6 Conclusion"
+  }
+]

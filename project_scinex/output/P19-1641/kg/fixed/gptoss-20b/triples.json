@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Convolution",
+    "predicate": "uses",
+    "object": "features",
+    "object_type": "Feature",
+    "source_sentence": "Then we use temporal convolution to encode these features and generate procedure proposals.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "state-of-the-art results",
+    "object_type": "Concept",
+    "source_sentence": "Experiments on the YouCookII dataset (a cooking-domain instruc- tional video corpus) are conducted to show that our model can achieve state -of-the-art results and the ablation studies demonstrate that the transcript can not only improve procedure proposition per- formance but also be very effective for procedure captioning .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Long Short-Term Memory",
+    "predicate": "uses",
+    "object": "video content encoding",
+    "object_type": "Concept",
+    "source_sentence": "DAPs in apply a sliding window and a Long Short-Term Memory (LSTM) network for video content encoding and predicting proposals covered by the window.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "2 Related Works"
+  },
+  {
+    "subject": "Narrated Instructional Videos",
+    "predicate": "uses",
+    "object": "textual transcript",
+    "object_type": "Other",
+    "source_sentence": "We adopt this framework and inject the textual transcript of narrated instructional videos as our first step.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "2 Related Works"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "sentences",
+    "object_type": "Task",
+    "source_sentence": "Next, we encode these sentences by a Transformer and take the first output as the context-aware transcript embedding e ∈Re.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "3.1 Context-Aware Fusion Module"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "Context",
+    "object_type": "Concept",
+    "source_sentence": "Then we adopt another Transformer model to further encode the context information, and output X = {x1, · · ·, xT } ∈RT×d.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "3.1 Context-Aware Fusion Module"
+  },
+  {
+    "subject": "Bi-directional LSTM",
+    "predicate": "addresses",
+    "object": "Contextual Information",
+    "object_type": "Concept",
+    "source_sentence": "Finally, we combine each of the frame features in X with transcript feature e to get the fused feature C = {c1, · · ·, ct, · · ·, cT |ct = {xt ◦e}} and feed it into a Bi-directional LSTM in order to encode past and future contextual information of video frames: F = Bi-LSTM(C) where F = {f1 · · · fT } ∈ RT×f, and f is the hidden size of the LSTM layers.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "3.1 Context-Aware Fusion Module"
+  },
+  {
+    "subject": "Regression",
+    "predicate": "uses",
+    "object": "smooth l1-loss",
+    "object_type": "Other",
+    "source_sentence": "Lr: the regression loss with a smooth l1-loss of a time span between the extracted and the ground-truth procedure.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "3.4 Loss Functions"
+  },
+  {
+    "subject": "Transformer Models",
+    "predicate": "uses",
+    "object": "context-aware transcripts and video frame features",
+    "object_type": "Concept",
+    "source_sentence": "We use two transformer models with 2048 inner hidden sizes, 8 heads, and 6 layers to encode context-aware transcripts and video frame features separately.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "starting learning rate of 0.000025",
+    "object_type": "Metric",
+    "source_sentence": "We adopt an Adam optimizer with a starting learning rate of 0.000025 and α = 0.8 and β = 0.999 to train the model.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "probability of 0.5",
+    "object_type": "Metric",
+    "source_sentence": "We conduct a dropout for each layer with a probability of 0.5.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "GPUs",
+    "predicate": "uses",
+    "object": "4 GPUs",
+    "object_type": "Concept",
+    "source_sentence": "We use 4 GPUs to train our model so the overall batch size is 16.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "4.3 Implementation Details"
+  }
+]

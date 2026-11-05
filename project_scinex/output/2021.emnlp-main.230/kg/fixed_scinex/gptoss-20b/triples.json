@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "comparesagainst",
+    "object": "word2vec",
+    "object_type": "Model",
+    "source_sentence": "BERT 1One might even argue that BERT is not actually all that different from earlier distributional models like word2vec , see Appendix A.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Natural Language Inference",
+    "predicate": "achieves",
+    "object": "high accuracy on permuted examples",
+    "object_type": "Metric",
+    "source_sentence": "(2021) investigate the task of natural language inference (NLI) and find high accuracy on permuted examples for different Transformer and pre-Transformer era models, across English and Chinese datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achieves",
+    "object": "word order insensitivity across MNLI, QQP, SST-2",
+    "object_type": "Other",
+    "source_sentence": "(2021) use targeted permutations on RoBERTa-based models and show word order insensitivity across natural language inference (MNLI), para- phrase detection (QQP) and sentiment analysis tasks (SST-2).",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "BookWiki corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We train RoBERTa models on four permutation variants of BookWiki corpus, M1, M2, M3, M4 for each n-gram value ∈{1, 2, 3, 4}.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "3.1 Models"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "addresses",
+    "object": "sentence-level distributional information",
+    "object_type": "Concept",
+    "source_sentence": "Next, we observe a significant improvement on all tasks when we give models access to sentence- level distributional information during pre-training.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "4.1 Word order permuted pre-training"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achievesresult",
+    "object": "above 80% accuracy on MNLI, SST-2, and MRPC",
+    "object_type": "Metric",
+    "source_sentence": "Models can also achieve above 80% accuracy on MNLI, SST-2, and MRPC when 6Recall, MNP is fed natural sentences as MN while not having the ability to learn positional embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "4.2 Word order permuted ﬁne-tuning"
+  },
+  {
+    "subject": "PAWS",
+    "predicate": "addresses",
+    "object": "word order",
+    "object_type": "Concept",
+    "source_sentence": "which suggests that PAWS performance does in fact rely to some extent on natural word order at the fine-tuning stage.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "4.2 Word order permuted ﬁne-tuning"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "shuffled data",
+    "object_type": "Dataset",
+    "source_sentence": "We further study the domain mismatch problem by evaluating on shuffled data after fine-tuning on the shuffled data for models in Appendix F.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "5 Probing results"
+  },
+  {
+    "subject": "Pareto Probing",
+    "predicate": "addresses",
+    "object": "dependency parsing",
+    "object_type": "Task",
+    "source_sentence": "To probe our models for syntactic, semantic and other linguistic properties, we investigate dependency parsing using Pareto probing and the probing tasks from Conneau et al.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "5.1 Parametric Probing"
+  },
+  {
+    "subject": "Transformers",
+    "predicate": "achieves",
+    "object": "low perplexity in language modeling tasks",
+    "object_type": "Task",
+    "source_sentence": "O'Connor and Andreas (2021) also demonstrate the insensitivity of Transformers towards syntax manipulations while achieving low perplexity in language modeling tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Transformers",
+    "predicate": "achieves",
+    "object": "word order reconstruction",
+    "object_type": "Task",
+    "source_sentence": "Transformers are able to perform word order reconstruction based on distributional information",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "achieves",
+    "object": "optimal performance on downstream tasks",
+    "object_type": "Other",
+    "source_sentence": "Make sure to update the parameters in your model g when fine-tuning, rather than keeping them fixed, for optimal performance on downstream tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "A From Word2vec to BERT in 4 steps"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "BookWiki corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We use the Fairseq toolkit to pre-train RoBERTa (base) models on the different variants of the BookWiki corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "C Pre-training details"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Second Order Tree CRF Neural Dependency parser",
+    "object_type": "Model",
+    "source_sentence": "We also conduct extensive experiments with Second Order Tree CRF Neural Dependency parser from Zhang et al. (2020), using their provided code-base.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "G Dependency parsing using Second order Tree CRF Neural Dependency Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "multiple LSTMs",
+    "object_type": "Model",
+    "source_sentence": "Due to the presence of the complex Biaffine Dependency parser consisting of multiple LSTMs and individual MLP heads for each dependency arc (left and right), the majority of learning of the task is done by the parser itself;",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "G Dependency parsing using Second order Tree CRF Neural Dependency Parser"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achievesresult",
+    "object": "lowest perplexity",
+    "object_type": "Metric",
+    "source_sentence": "With the exception of M1, the models pre- trained on randomized data (M2, M3 and M4) all display the lowest perplexity for their respective n = 2, 3, 4 randomizations.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.230",
+    "title": "Koustuv Sinha†‡ Robin Jia† Dieuwke Hupkes† Joelle Pineau†‡",
+    "section": "H Perplexity analysis"
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Inference",
+    "predicate": "addresses",
+    "object": "Translation",
+    "object_type": "Task",
+    "source_sentence": "translate directly between language X and language Y at inference time without using the pivot language",
+    "extraction_mode": "fixed",
+    "paper": "D19-5610",
+    "title": "Zero-Resource Neural Machine Translation with Monolingual Pivot Data",
+    "section": "3.1 Initial Multilingual Models"
+  },
+  {
+    "subject": "Translating",
+    "predicate": "addresses",
+    "object": "Pivot Language",
+    "object_type": "Concept",
+    "source_sentence": "translating through the pivot language would double the amount of time it takes to translate",
+    "extraction_mode": "fixed",
+    "paper": "D19-5610",
+    "title": "Zero-Resource Neural Machine Translation with Monolingual Pivot Data",
+    "section": "3.1 Initial Multilingual Models"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "trainedon",
+    "object": "BT-pivot data",
+    "object_type": "Dataset",
+    "source_sentence": "we discard the initial NMT model and train a new NMT model from scratch using the BT- pivot data",
+    "extraction_mode": "fixed",
+    "paper": "D19-5610",
+    "title": "Zero-Resource Neural Machine Translation with Monolingual Pivot Data",
+    "section": "3.3 Using the BT-Pivot Corpus"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "trainedon",
+    "object": "subset of the original parallel corpora",
+    "object_type": "Dataset",
+    "source_sentence": "we discard the initial NMT model and train a new NMT model from scratch using the BT- pivot data (concatenated with the subset of the original parallel corpora)",
+    "extraction_mode": "fixed",
+    "paper": "D19-5610",
+    "title": "Zero-Resource Neural Machine Translation with Monolingual Pivot Data",
+    "section": "3.3 Using the BT-Pivot Corpus"
+  },
+  {
+    "subject": "Byte Pair Encoding",
+    "predicate": "trainedon",
+    "object": "Parallel Data",
+    "object_type": "Dataset",
+    "source_sentence": "We use a joint byte pair encoding vocab- ulary for all three languages (DE, EN, and RU) trained on all parallel data with 50k merge opera- tions.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5610",
+    "title": "Zero-Resource Neural Machine Translation with Monolingual Pivot Data",
+    "section": "4.1 Data"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "addresses",
+    "object": "zero-resource NMT",
+    "object_type": "Concept",
+    "source_sentence": "fine-tuning on back-translated parallel data is very helpful in improving zero-resource NMT.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5610",
+    "title": "Zero-Resource Neural Machine Translation with Monolingual Pivot Data",
+    "section": "5.1 Initial Models Without Monolingual Data"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "back-translated parallel data",
+    "object_type": "Other",
+    "source_sentence": "fine-tuning on back-translated parallel data is very helpful in improving zero-resource NMT.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5610",
+    "title": "Zero-Resource Neural Machine Translation with Monolingual Pivot Data",
+    "section": "5.1 Initial Models Without Monolingual Data"
+  }
+]

@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "Edge-Label guided Graph Convolution Network (AELGCN)",
+    "object_type": "Model",
+    "source_sentence": "The model obtains contextual information by BiLSTM and then by Attention and Edge-Label guided Graph Convolution Network (AELGCN) to integrate better contextual and structured information.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Datasets",
+    "object_type": "Dataset",
+    "source_sentence": "We have conducted extensive experiments on standard datasets across four languages.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "achieves",
+    "object": "contextual information from both directions",
+    "object_type": "Concept",
+    "source_sentence": "The BiLSTM enables the model to get contextual information from both directions",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "3.2 Context Encoder Layer"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "Viterbi",
+    "object_type": "Method",
+    "source_sentence": "The CRF takes vectors in the tagging space as input and produces the best sequence of labels using the Viterbi algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "3.4 CRF Layer"
+  },
+  {
+    "subject": "Catalan",
+    "predicate": "uses",
+    "object": "Subs2Vec 100-dimensional embeddings",
+    "object_type": "Other",
+    "source_sentence": "For Catalan and Spanish, we use Subs2Vec 100-dimensional embeddings to initialize the word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "Spanish",
+    "predicate": "uses",
+    "object": "Subs2Vec 100-dimensional embeddings",
+    "object_type": "Other",
+    "source_sentence": "For Catalan and Spanish, we use Subs2Vec 100-dimensional embeddings to initialize the word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "OntoNotes",
+    "predicate": "uses",
+    "object": "SGNS Word2vec 300-dimensional embeddings",
+    "object_type": "Other",
+    "source_sentence": "For OntoNotes 5.0 Chinese, we use SGNS Word2vec 300-dimensional embeddings to initialize the word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "OntoNotes",
+    "predicate": "uses",
+    "object": "GloVE 100-dimensional embeddings",
+    "object_type": "Other",
+    "source_sentence": "For OntoNotes 5.0 English, we adopt the publicly available GloVE 100-dimensional embeddings to initialize the word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "four datasets",
+    "object_type": "Dataset",
+    "source_sentence": "For experiments with the contextualized representation , we adopt the pre-trained language model BERT for the four datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "cased version of the BERT large model",
+    "object_type": "Other",
+    "source_sentence": "We use the cased version of the BERT large model for the OntoNotes 5.0 English data experiments.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "cased version of the BERT base model",
+    "object_type": "Other",
+    "source_sentence": "We use the cased version of the BERT base model for the experiments on the other three datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "CharacTer",
+    "predicate": "uses",
+    "object": "random initialization",
+    "object_type": "Other",
+    "source_sentence": "For the character embeddings, we randomly initialize the character embeddings, set the dimension as 30, and set the hidden size of character-level BiLSTM as 50.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "dependency",
+    "predicate": "uses",
+    "object": "random initialization",
+    "object_type": "Other",
+    "source_sentence": "For the dependency label embeddings, we randomly initialize dependency label embeddings with 50-dimension vectors and dependency label embedding adjacency matrix embeddings as 50.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "hidden size 200",
+    "object_type": "Other",
+    "source_sentence": "The hidden size of AELGCN and BiLSTM is set as 200, and the number of AELGCN layers L as 2.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "SGD",
+    "object_type": "Other",
+    "source_sentence": "Our models are optimized by mini-batch stochastic gradient descent (SGD) with a learning rate of 0.1 and batch size of 20.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Model",
+    "source_sentence": "Dropout is applied to word embeddings and hidden states with a rate of 0.5.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "head word representation",
+    "object_type": "Concept",
+    "source_sentence": "Dependency guided LSTM-CRF (DGLSTM- CRF) , which takes the concatenation of head word representation and word embeddings as input into BiLSTM.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.3 Baselines"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Word Embeddings",
+    "source_sentence": "Dependency guided LSTM-CRF (DGLSTM- CRF) , which takes the concatenation of head word representation and word embeddings as input into BiLSTM.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "4.3 Baselines"
+  },
+  {
+    "subject": "Multi-Head Self-Attention",
+    "predicate": "uses",
+    "object": "graph modeling process",
+    "object_type": "Other",
+    "source_sentence": "we introduce the dependency label information and multi-head self-attention mechanism into the graph modeling process.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.436",
+    "title": "Attention and Edge-Label Guided Graph Convolutional Networks for Named Entity Recognition",
+    "section": "6 Conclusion and Future Works"
+  }
+]

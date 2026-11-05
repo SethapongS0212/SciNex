@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Machine Learning",
+    "predicate": "encompasses",
+    "object": "topic-based microblog polarity classification",
+    "object_type": "Task",
+    "source_sentence": "In this paper we develop a machine learning system for topic-based microblog polarity classification.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3127",
+    "title": "NDMSCS: A Topic-Based Chinese Microblog Polarity Classiﬁcation System",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "probabilistic",
+    "predicate": "uses",
+    "object": "Latent Dirichlet allocation (LDA)",
+    "object_type": "Method",
+    "source_sentence": "People usually use the probabilistic methods, such as Latent Dirichlet allocation (LDA), to build the topic model.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3127",
+    "title": "NDMSCS: A Topic-Based Chinese Microblog Polarity Classiﬁcation System",
+    "section": "2 Non-negative Matrix Factorization"
+  },
+  {
+    "subject": "Matrix Factorization",
+    "predicate": "uses",
+    "object": "Non-negative Matrix Factorization (NM-F)",
+    "object_type": "Method",
+    "source_sentence": "However, an effective alternative is to use Non-negative Matrix Factorization (NM-F).",
+    "extraction_mode": "fixed",
+    "paper": "W15-3127",
+    "title": "NDMSCS: A Topic-Based Chinese Microblog Polarity Classiﬁcation System",
+    "section": "2 Non-negative Matrix Factorization"
+  },
+  {
+    "subject": "Traditional Chinese Text",
+    "predicate": "uses",
+    "object": "OpenCC2",
+    "object_type": "Other",
+    "source_sentence": "Handle Traditional Chinese Text: Some of the microblogs are written in traditional Chinese, so we first convert the traditional Chinese to the simplified Chinese based on the tool OpenCC2, which is an open source project for character conversion between Traditional and Simplified Chinese.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3127",
+    "title": "NDMSCS: A Topic-Based Chinese Microblog Polarity Classiﬁcation System",
+    "section": "3.1 Preprocessing"
+  },
+  {
+    "subject": "Microblogs",
+    "predicate": "uses",
+    "object": "http",
+    "object_type": "Other",
+    "source_sentence": "Thus we use 'http' to replace all the URLs in microblogs.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3127",
+    "title": "NDMSCS: A Topic-Based Chinese Microblog Polarity Classiﬁcation System",
+    "section": "3.1 Preprocessing"
+  },
+  {
+    "subject": "Microblogs",
+    "predicate": "uses",
+    "object": "Jieba3 Chinese text processing tool",
+    "object_type": "Other",
+    "source_sentence": "We use the Jieba3 Chinese text processing tool to segment the Chinese microblogs into words.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3127",
+    "title": "NDMSCS: A Topic-Based Chinese Microblog Polarity Classiﬁcation System",
+    "section": "3.1 Preprocessing"
+  },
+  {
+    "subject": "Events",
+    "predicate": "uses",
+    "object": "χ2 test",
+    "object_type": "Method",
+    "source_sentence": "We can use χ2 test, which is a statistic method to check if two events are independent.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3127",
+    "title": "NDMSCS: A Topic-Based Chinese Microblog Polarity Classiﬁcation System",
+    "section": "3.3 Feature Extraction"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Scikit library",
+    "object_type": "Method",
+    "source_sentence": "We use the Scikit library to select features according to the k highest scores.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3127",
+    "title": "NDMSCS: A Topic-Based Chinese Microblog Polarity Classiﬁcation System",
+    "section": "3.3 Feature Extraction"
+  },
+  {
+    "subject": "Random Forest",
+    "predicate": "uses",
+    "object": "decision tree classifiers",
+    "object_type": "Artifact",
+    "source_sentence": "Random Forest fits a number of decision tree classifiers on various sub-samples of the dataset and use averaging to improve the predictive accuracy and control over-fitting.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3127",
+    "title": "NDMSCS: A Topic-Based Chinese Microblog Polarity Classiﬁcation System",
+    "section": "3.5 Classiﬁcation"
+  },
+  {
+    "subject": "POS",
+    "predicate": "uses",
+    "object": "TFIDF weighting",
+    "object_type": "Method",
+    "source_sentence": "After combining POS features and polarity features with the TFIDF weighting, the model add features about the words , and the experiment result is improved.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3127",
+    "title": "NDMSCS: A Topic-Based Chinese Microblog Polarity Classiﬁcation System",
+    "section": "4.2 Results"
+  },
+  {
+    "subject": "polarity",
+    "predicate": "uses",
+    "object": "TFIDF weighting",
+    "object_type": "Method",
+    "source_sentence": "After combining POS features and polarity features with the TFIDF weighting, the model add features about the words , and the experiment result is improved.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3127",
+    "title": "NDMSCS: A Topic-Based Chinese Microblog Polarity Classiﬁcation System",
+    "section": "4.2 Results"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "Word Vectors",
+    "object_type": "Other",
+    "source_sentence": "Using the word vectors or neural network model for sentiment analysis tasks.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3127",
+    "title": "NDMSCS: A Topic-Based Chinese Microblog Polarity Classiﬁcation System",
+    "section": "5 Conclusion and Future Works"
+  },
+  {
+    "subject": "Coreference Resolution",
+    "predicate": "uses",
+    "object": "Syntax",
+    "object_type": "Other",
+    "source_sentence": "For example, consider the coreference resolution technology to deal with the complicated situation refers to introducing syntax analysis.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3127",
+    "title": "NDMSCS: A Topic-Based Chinese Microblog Polarity Classiﬁcation System",
+    "section": "5 Conclusion and Future Works"
+  }
+]

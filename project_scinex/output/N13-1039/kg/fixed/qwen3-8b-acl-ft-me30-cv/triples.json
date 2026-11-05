@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Tagger",
+    "predicate": "uses",
+    "object": "new large-scale distributive features",
+    "object_type": "Feature",
+    "source_sentence": "we create a new Twitter part-of-speech tagger—building on previous work by Gimpel et al. (2011)—that includes new large-scale distributive features.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Tagging",
+    "predicate": "addresses",
+    "object": "manual POS tagging of tweets",
+    "object_type": "Task",
+    "source_sentence": "We also annotated a new dataset of tweets with POS tags, improved the annotations in the previous dataset from Gimpel et al., and developed annotation guidelines for manual POS tagging of tweets.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "POS tagger",
+    "predicate": "uses",
+    "object": "features",
+    "object_type": "Concept",
+    "source_sentence": "Our POS tagger can make use of any number of possibly overlapping features.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3 Unsupervised Word Clusters"
+  },
+  {
+    "subject": "Brown Clustering",
+    "predicate": "produces",
+    "object": "effective features",
+    "object_type": "Concept",
+    "source_sentence": "Not only does Brown clustering produce effective features for discriminative models, but its variants are better unsupervised POS taggers than some models developed nearly 20 years later; see comparisons in Blunsom and Cohn (2011).",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.1 Clustering Method"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Tweets",
+    "object_type": "Dataset",
+    "source_sentence": "When training on tweets drawn from a single day, we observed time-specific biases (e.g., numerical dates appearing in the same cluster as the word tonight), so we assembled our unlabeled data from a random sample of 100,000 tweets per day from September 10, 2008 to August 14, 2012, and filtered out non-English tweets (about 60% of the sample) using langid.py .5 Each tweet was processed with our to-",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.1 Clustering Method"
+  },
+  {
+    "subject": "HMM",
+    "predicate": "uses",
+    "object": "orthographic variants",
+    "object_type": "Concept",
+    "source_sentence": "Finally, the HMM learns about orthographic variants, even though it treats all words as opaque symbols;",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.2 Cluster Examples"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "uses",
+    "object": "priority list of fuzzy match transformations",
+    "object_type": "Other",
+    "source_sentence": "When checking to see if a word is associated with a cluster, the tagger first normalizes the word using the same techniques as described in §3.1, then creates a priority list of fuzzy match transformations",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.4 Cluster-Based Features"
+  },
+  {
+    "subject": "rule-based",
+    "predicate": "uses",
+    "object": "tagger",
+    "object_type": "Model",
+    "source_sentence": "We rewrote twokenize , a rule-based tokenizer, emoticon, and URL detector, for use in the tagger.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "4 Tokenization and Emoticon Detection"
+  },
+  {
+    "subject": "POS",
+    "predicate": "uses",
+    "object": "Penn Treebank",
+    "object_type": "Other",
+    "source_sentence": "The annotators also consulted the POS annotations in the Penn Treebank as an additional reference.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "5.1 Annotation Methodology"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "93.2% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The full tagger attains 93.2% accuracy (final row of Table 2).",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "substantially higher accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Our tagger achieves substantially higher accuracy than Gimpel et al.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "Distributional Features",
+    "predicate": "trainedon",
+    "object": "unlabeled corpus",
+    "object_type": "Dataset",
+    "source_sentence": "distributional features trained on a much smaller unlabeled corpus",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "dictionary",
+    "predicate": "uses",
+    "object": "Phonetic Normalization",
+    "object_type": "Method",
+    "source_sentence": "We did include, however, a variant of the tag dictionary feature that uses phonetic normalization for lookup; it seemed to yield a small improvement.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "88.6% accuracy on the OCT27 development set",
+    "object_type": "Metric",
+    "source_sentence": "A tagger that only uses word clusters achieves an accuracy of 88.6% on the OCT27 development set.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "achieves",
+    "object": "85.3% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Ritter et al.'s CRF-based tagger had 85.3% accuracy, and their best tagger, trained on a concatenation of PTB, IRC, and Twitter, achieved 88.3% (Table 4).",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.2 Evaluation on RITTERTW"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "93.4% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The full tagger model achieved 93.4% (±0.3%) accuracy, significantly improving over the best result they report, 90.8% accuracy with a tagger trained on a mix of several POS-annotated corpora.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.3 IRC: Evaluation on NPSCHAT"
+  }
+]

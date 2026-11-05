@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "Transformers",
+    "predicate": "uses",
+    "object": "Adapter",
+    "object_type": "Other",
+    "source_sentence": "our proposed formulation for adapters, and their incorporation into Transformers is illustrated",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "3 Approach"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "ReLU",
+    "object_type": "Method",
+    "source_sentence": "Following the wiring choices of Transformer feed- forward network . hT i = relu(W T bd˜zT i ). (2) xT i = W T dbhT i + zi.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4 Domain Adaptation"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "WMT En-Fr training set",
+    "object_type": "Dataset",
+    "source_sentence": "We use the WMT En-Fr training set (36M pairs) as our out-of- domain (source) training corpus.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "trainedon",
+    "object": "WMT",
+    "object_type": "Dataset",
+    "source_sentence": "NMT models trained on WMT are then adapted to the IWSLT'15 En-Fr corpus, consisting of 237k sentence pairs.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "JRC-Acquis dataset 3",
+    "object_type": "Dataset",
+    "source_sentence": "We also evaluate adaptation performance on the JRC-Acquis dataset 3, which is an extremely narrow domain dataset containing 797k sentence pairs in the training split.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "newstest-2014",
+    "object_type": "Dataset",
+    "source_sentence": "We also evaluate the translation performance of the non-adapted base model on newstest-2014.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "trainedon",
+    "object": "large open-domain corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Pre-train the NMT model on a large open- domain corpus.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.2 Using Adapters for Domain Adaptation"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "learning rate schedule of (3.0, 40K)4",
+    "object_type": "Other",
+    "source_sentence": "a learning rate schedule of (3.0, 40K)4, following Chen et al.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.3 Models and Hyper-parameters"
+  },
+  {
+    "subject": "training",
+    "predicate": "trainedon",
+    "object": "in-domain corpus",
+    "object_type": "Dataset",
+    "source_sentence": "we continue training on the in-domain corpus without resetting the optimizer accumulators or the learning rate schedule.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.3 Models and Hyper-parameters"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "SGD",
+    "object_type": "Other",
+    "source_sentence": "We also conducted fine-tuning experiments with SGD, but report results with the approach described above, based on better performance on the validation sets.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.3 Models and Hyper-parameters"
+  },
+  {
+    "subject": "adapting",
+    "predicate": "uses",
+    "object": "LHUC",
+    "object_type": "Other",
+    "source_sentence": "When adapting with LHUC or lightweight adapters, we train using the same learning rate schedule and optimizer used during pre-training, but restart from the 0-th step, resetting the optimizer accumulators.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.3 Models and Hyper-parameters"
+  },
+  {
+    "subject": "adapting",
+    "predicate": "uses",
+    "object": "lightweight adapters",
+    "object_type": "Other",
+    "source_sentence": "When adapting with LHUC or lightweight adapters, we train using the same learning rate schedule and optimizer used during pre-training, but restart from the 0-th step, resetting the optimizer accumulators.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.3 Models and Hyper-parameters"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "Moses",
+    "object_type": "Other",
+    "source_sentence": "BLEU scores are computed on the checkpoint with the best validation performance, on tokenized, true-cased output and references using multi-bleu.perl from Moses.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.3 Models and Hyper-parameters"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Tensorflow Lingvo framework",
+    "object_type": "Other",
+    "source_sentence": "All our experiments were performed using the open source Tensorflow Lingvo framework.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.3 Models and Hyper-parameters"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Transformer architecture",
+    "object_type": "Model",
+    "source_sentence": "We perform all our experiments with variants of the Transformer architecture.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "5.3 Models and Hyper-parameters"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Transformer Big",
+    "object_type": "Model",
+    "source_sentence": "For most bilingual experiments, we use a larger version of Transformer Big containing 375M parameters , and a shared source-target sentence-piece model (SPM).",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "5.3 Models and Hyper-parameters"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "SPM",
+    "object_type": "Model",
+    "source_sentence": "For most bilingual experiments, we use a larger version of Transformer Big containing 375M parameters , and a shared source-target sentence-piece model (SPM).",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "5.3 Models and Hyper-parameters"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Adafactor",
+    "object_type": "Model",
+    "source_sentence": "All our models are trained with Adafactor with momentum factorization, a learning rate schedule of (3.0, 40K), and a per-parameter norm clipping threshold of 1.0.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "5.3 Models and Hyper-parameters"
+  },
+  {
+    "subject": "Adapter",
+    "predicate": "achieves",
+    "object": "further performance improvements when increasing adapter size",
+    "object_type": "Concept",
+    "source_sentence": "For high resource languages , especially when translating into English , we observe further performance improvements when increasing adapter size",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "5.4 Results and Analysis"
+  }
+]

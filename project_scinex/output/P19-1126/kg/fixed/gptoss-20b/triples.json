@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "WMT14 English-to-French",
+    "object_type": "Dataset",
+    "source_sentence": "We run our experiments on the standard WMT14 English -to-French (EnFr; 36.3M sentences) and WMT15 German-to- English (DeEn; 4.5M sentences) tasks.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1126",
+    "title": "Naveen Arivazhagan∗ Colin Cherry∗ Wolfgang Macherey Chung-Cheng Chiu",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "WMT15 German-to-English",
+    "object_type": "Dataset",
+    "source_sentence": "We run our experiments on the standard WMT14 English -to-French (EnFr; 36.3M sentences) and WMT15 German-to- English (DeEn; 4.5M sentences) tasks.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1126",
+    "title": "Naveen Arivazhagan∗ Colin Cherry∗ Wolfgang Macherey Chung-Cheng Chiu",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "For each data set, we use BPE on the training data to construct a 32,000-type vocabulary that is shared between the source and target languages.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1126",
+    "title": "Naveen Arivazhagan∗ Colin Cherry∗ Wolfgang Macherey Chung-Cheng Chiu",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "greedy decoding",
+    "object_type": "Method",
+    "source_sentence": "All streaming models use greedy decoding, while offline models use beam search with a beam size of 20.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1126",
+    "title": "Naveen Arivazhagan∗ Colin Cherry∗ Wolfgang Macherey Chung-Cheng Chiu",
+    "section": "5.1 Model"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "beam search",
+    "object_type": "Method",
+    "source_sentence": "All streaming models use greedy decoding, while offline models use beam search with a beam size of 20.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1126",
+    "title": "Naveen Arivazhagan∗ Colin Cherry∗ Wolfgang Macherey Chung-Cheng Chiu",
+    "section": "5.1 Model"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "28.4",
+    "object_type": "Metric",
+    "source_sentence": "MILk is able to retain the quality of full attention (28.4 BLEU) up to a lag of 8.5 tokens, while wait-k begins to fall off for lags below 13.3 tokens.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1126",
+    "title": "Naveen Arivazhagan∗ Colin Cherry∗ Wolfgang Macherey Chung-Cheng Chiu",
+    "section": "5.3 Comparison with the state-of-the-art"
+  }
+]

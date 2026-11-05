@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "FEVER dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We take a RoBERTa model pre- trained with a LM objective and fine-tune it to clas- sify claim - evidence pairs from the FEVER dataset as SUPPORTS, REFUTES, and NOT ENOUGH INFO (NEI).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.256",
+    "title": "Generating Label Cohesive and Well-Formed Adversarial Claims",
+    "section": "3.1 Models"
+  },
+  {
+    "subject": "Universal Adversarial Triggers",
+    "predicate": "achieves",
+    "object": "target class prediction",
+    "object_type": "Concept",
+    "source_sentence": "The Universal Adversarial Triggers method is de- veloped to find n-gram trigger tokens tα, which, appended to the original input x, f(x) = y, cause the model to predict a target class ey: f(tα, x) = ey.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.256",
+    "title": "Generating Label Cohesive and Well-Formed Adversarial Claims",
+    "section": "3.2 Universal Adversarial Triggers Method"
+  },
+  {
+    "subject": "STS",
+    "predicate": "addresses",
+    "object": "candidate triggers",
+    "object_type": "Concept",
+    "source_sentence": "To this end, we propose to include an auxiliary STS model objective when searching for candidate triggers.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.256",
+    "title": "Generating Label Cohesive and Well-Formed Adversarial Claims",
+    "section": "3.2 Universal Adversarial Triggers Method"
+  },
+  {
+    "subject": "NLI",
+    "predicate": "uses",
+    "object": "SNLI",
+    "object_type": "Dataset",
+    "source_sentence": "The latter is ensured by passing both evidence and claim through an external NLI model trained on SNLI .",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.256",
+    "title": "Generating Label Cohesive and Well-Formed Adversarial Claims",
+    "section": "3.3 Claim Generation"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "PPL",
+    "object_type": "Metric",
+    "source_sentence": "PPL is measured with a pretrained RoBERTa LM.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.256",
+    "title": "Generating Label Cohesive and Well-Formed Adversarial Claims",
+    "section": "4 Results"
+  },
+  {
+    "subject": "Meaning",
+    "predicate": "achieves",
+    "object": "flip of text",
+    "object_type": "Concept",
+    "source_sentence": "While this is a significant performance drop, these triggers also flip the meaning of the text.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.256",
+    "title": "Generating Label Cohesive and Well-Formed Adversarial Claims",
+    "section": "4.1 Adversarial Triggers"
+  },
+  {
+    "subject": "Semantic Similarity",
+    "predicate": "achieves",
+    "object": "decrease similarity between claim and trigger",
+    "object_type": "Concept",
+    "source_sentence": "the latter is again indicated by the decrease of the semantic similarity between the claim before and after prepending a trigger token",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.256",
+    "title": "Generating Label Cohesive and Well-Formed Adversarial Claims",
+    "section": "4.1 Adversarial Triggers"
+  },
+  {
+    "subject": "STS",
+    "predicate": "achieves",
+    "object": "increase similarity between claim and trigger",
+    "object_type": "Concept",
+    "source_sentence": "including the auxiliary STS objective increases the similarity between the claim before and after prepending the trigger for five out of six directions.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.256",
+    "title": "Generating Label Cohesive and Well-Formed Adversarial Claims",
+    "section": "4.1 Adversarial Triggers"
+  },
+  {
+    "subject": "GPT-2",
+    "predicate": "uses",
+    "object": "triggers",
+    "object_type": "Other",
+    "source_sentence": "A different GPT-2 model is trained to generate claims for each specific class , with triggers specific to attacking that class used as input .",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.256",
+    "title": "Generating Label Cohesive and Well-Formed Adversarial Claims",
+    "section": "4.2 Generation"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "RoBERTa large model",
+    "object_type": "Model",
+    "source_sentence": "For the models that measure the perplexity and the semantical similarity we use the pretrained models provided by HuggingFace– RoBERTa large model (125M parameters) fine tuned on the STS-b task and RoBERTa base model (355M parameters) pretrained on a LM objective.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.256",
+    "title": "Generating Label Cohesive and Well-Formed Adversarial Claims",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "RoBERTa base model",
+    "object_type": "Model",
+    "source_sentence": "For the models that measure the perplexity and the semantical similarity we use the pretrained models provided by HuggingFace– RoBERTa large model (125M parameters) fine tuned on the STS-b task and RoBERTa base model (355M parameters) pretrained on a LM objective.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.256",
+    "title": "Generating Label Cohesive and Well-Formed Adversarial Claims",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "GPT-2",
+    "predicate": "uses",
+    "object": "two NVIDIA Titan RTX GPUs",
+    "object_type": "GPU",
+    "source_sentence": "We used two NVIDIA Titan RTX GPUs with 12GB of RAM for training GPT-2",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.256",
+    "title": "Generating Label Cohesive and Well-Formed Adversarial Claims",
+    "section": "B.1 Computing Infrastructure"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "one NVIDIA Titan X GPU",
+    "object_type": "GPU",
+    "source_sentence": "one NVIDIA Titan X GPU with 8GB of RAM for training the FC models and finding the universal adversarial triggers",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.256",
+    "title": "Generating Label Cohesive and Well-Formed Adversarial Claims",
+    "section": "B.1 Computing Infrastructure"
+  }
+]

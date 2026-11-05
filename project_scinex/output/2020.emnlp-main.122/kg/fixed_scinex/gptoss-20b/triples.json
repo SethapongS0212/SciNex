@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "LSTMs",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "Other",
+    "source_sentence": "Many architectures including LSTMs, Transformers, and averaging models are capable of learning sentence embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.122",
+    "title": "A Bilingual Generative Transformer for Semantic Sentence Embedding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Transformers",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "Other",
+    "source_sentence": "Many architectures including LSTMs, Transformers, and averaging models are capable of learning sentence embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.122",
+    "title": "A Bilingual Generative Transformer for Semantic Sentence Embedding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "training data",
+    "object_type": "Other",
+    "source_sentence": "The training data for our models is a mixture of OpenSubtitles 20184 en-fr data and en-fr Giga- word5 data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.122",
+    "title": "A Bilingual Generative Transformer for Semantic Sentence Embedding",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "sentence pairs",
+    "object_type": "Other",
+    "source_sentence": "To create our dataset, we combined the complete corpora of each dataset and then randomly selected 1,000,000 sentence pairs to be used for training with 10,000 used for validation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.122",
+    "title": "A Bilingual Generative Transformer for Semantic Sentence Embedding",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "SentencePiece",
+    "predicate": "uses",
+    "object": "vocabulary size of 20,000",
+    "object_type": "Other",
+    "source_sentence": "We use sentencepiece with a vocabulary size of 20,000 to segment the sentences , and we chose sentence pairs whose sentences are between 5 and 100 tokens each.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.122",
+    "title": "A Bilingual Generative Transformer for Semantic Sentence Embedding",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "5 layer Transformer",
+    "object_type": "Model",
+    "source_sentence": "Due to better performance, we use a 5 layer Transformer for each of the encoders and a single layer decoder for each of the decoders.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.122",
+    "title": "A Bilingual Generative Transformer for Semantic Sentence Embedding",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "For all of our models, we set the dimension of the embeddings and hidden states for the encoders and decoders to 1024.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.122",
+    "title": "A Bilingual Generative Transformer for Semantic Sentence Embedding",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "uses",
+    "object": "two different optimization strategies",
+    "object_type": "Other",
+    "source_sentence": "Since we experiment with two different architectures, we follow two different optimization strategies.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.122",
+    "title": "A Bilingual Generative Transformer for Semantic Sentence Embedding",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Training Models",
+    "predicate": "uses",
+    "object": "LSTMs",
+    "object_type": "Model",
+    "source_sentence": "For training models 6We use LSTMs in our ablations.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.122",
+    "title": "A Bilingual Generative Transformer for Semantic Sentence Embedding",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "OpenSubtitles 2018 corpus",
+    "object_type": "Dataset",
+    "source_sentence": "All models are trained on the OpenSubtitles 2018 corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.122",
+    "title": "A Bilingual Generative Transformer for Semantic Sentence Embedding",
+    "section": "5.2 Probing"
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Region Proposal",
+    "predicate": "uses",
+    "object": "frame-level bounding boxes",
+    "object_type": "Other",
+    "source_sentence": "the region proposal network from Faster-RCNN is used to detect frame-level bounding boxes with corresponding confidence scores, which are then linked to produce spatio-temporal tubes.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1183",
+    "title": "Weakly-Supervised Spatio-Temporally Grounding Natural Sentence in Video",
+    "section": "3.1 Instance Extraction"
+  },
+  {
+    "subject": "Viterbi",
+    "predicate": "uses",
+    "object": "instance proposal",
+    "object_type": "Other",
+    "source_sentence": "We identify the instance proposal with the maximal energy by the Viterbi algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1183",
+    "title": "Weakly-Supervised Spatio-Temporally Grounding Natural Sentence in Video",
+    "section": "3.1 Instance Extraction"
+  },
+  {
+    "subject": "LSTMs",
+    "predicate": "uses",
+    "object": "instance proposal",
+    "object_type": "Other",
+    "source_sentence": "First, two long short-term memory networks (LSTMs) are utilized to encode the instance proposal and sentence , respectively:",
+    "extraction_mode": "fixed",
+    "paper": "P19-1183",
+    "title": "Weakly-Supervised Spatio-Temporally Grounding Natural Sentence in Video",
+    "section": "3.2.1 Interaction Given the sequential visual features Fp ∈Rtp×dp"
+  },
+  {
+    "subject": "LSTMs",
+    "predicate": "uses",
+    "object": "sentence",
+    "object_type": "Other",
+    "source_sentence": "First, two long short-term memory networks (LSTMs) are utilized to encode the instance proposal and sentence , respectively:",
+    "extraction_mode": "fixed",
+    "paper": "P19-1183",
+    "title": "Weakly-Supervised Spatio-Temporally Grounding Natural Sentence in Video",
+    "section": "3.2.1 Interaction Given the sequential visual features Fp ∈Rtp×dp"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "last hidden state",
+    "object_type": "Concept",
+    "source_sentence": "we use the last hidden state of an LSTM encoder as the sentence embedding for all the baselines.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1183",
+    "title": "Weakly-Supervised Spatio-Temporally Grounding Natural Sentence in Video",
+    "section": "5.1 Experimental Settings"
+  },
+  {
+    "subject": "SGD",
+    "predicate": "uses",
+    "object": "models",
+    "object_type": "Model",
+    "source_sentence": "SGD is used to opti- mize the models with a learning rate of 0.001 and momentum of 0.9.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1183",
+    "title": "Weakly-Supervised Spatio-Temporally Grounding Natural Sentence in Video",
+    "section": "5.1 Experimental Settings"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "bounding box localization accuracy",
+    "object_type": "Metric",
+    "source_sentence": "We use the bounding box localization accuracy for evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1183",
+    "title": "Weakly-Supervised Spatio-Temporally Grounding Natural Sentence in Video",
+    "section": "5.1 Experimental Settings"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "visual features",
+    "object_type": "Method",
+    "source_sentence": "the DVSA model using LSTM for encoding both the visual features and sentence features",
+    "extraction_mode": "fixed",
+    "paper": "P19-1183",
+    "title": "Weakly-Supervised Spatio-Temporally Grounding Natural Sentence in Video",
+    "section": "5.3 Ablation Study"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "sentence features",
+    "object_type": "Method",
+    "source_sentence": "the DVSA model using LSTM for encoding both the visual features and sentence features",
+    "extraction_mode": "fixed",
+    "paper": "P19-1183",
+    "title": "Weakly-Supervised Spatio-Temporally Grounding Natural Sentence in Video",
+    "section": "5.3 Ablation Study"
+  }
+]

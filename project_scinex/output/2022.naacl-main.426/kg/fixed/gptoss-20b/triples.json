@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Dialogue History",
+    "predicate": "addresses",
+    "object": "topic",
+    "object_type": "Concept",
+    "source_sentence": "After obtaining a group of similar users , we further refine their dialogue history according to the relevance to the current query's topic.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "3.1 Problem Statement and Overview"
+  },
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "personalized response",
+    "object_type": "Other",
+    "source_sentence": "Finally, the query and the extracted tokens are fed into the generator and construct a personalized response.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "3.1 Problem Statement and Overview"
+  },
+  {
+    "subject": "Sentence Matching",
+    "predicate": "uses",
+    "object": "dialogue history",
+    "object_type": "Concept",
+    "source_sentence": "Specifically, we design a sentence matching task to match the query with the dialogue history.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "3.6 Training and Optimization"
+  },
+  {
+    "subject": "generator",
+    "predicate": "achieves",
+    "object": "generation probability of the ground-truth y",
+    "object_type": "Metric",
+    "source_sentence": "The generator is optimized by maximizing the generation probability of the ground-truth y:",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "3.6 Training and Optimization"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "loss Lg",
+    "object_type": "Artifact",
+    "source_sentence": "we generate the personalized response ˆy and update the generator by optimizing the loss Lg (Eq.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "3.6 Training and Optimization"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "M dialogue triplets",
+    "object_type": "Dataset",
+    "source_sentence": "Input: M dialogue triplets:D = {⟨qi, yi, ri⟩}M i=1",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "3.6 Training and Optimization"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "attention mechanism",
+    "object_type": "Method",
+    "source_sentence": "Seq2Seq- Attention is a vanilla sequence-to-sequence model with attention mechanism.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "4.2 Baseline Methods"
+  },
+  {
+    "subject": "GPT-2",
+    "predicate": "designedfor",
+    "object": "dialogue generation",
+    "object_type": "Task",
+    "source_sentence": "DialoGPT is a variant of GPT-2 designed for dialogue generation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "4.2 Baseline Methods"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "memory module",
+    "object_type": "Method",
+    "source_sentence": "GPMN enhances the Seq2seq model with a memory module, which encodes and stores the persona profile as memory representations.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "4.2 Baseline Methods"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "user-ID embedding",
+    "object_type": "Method",
+    "source_sentence": "Speaker is based on seq2seq while using user-ID embedding as user representation to facilitate the response generation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "4.2 Baseline Methods"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "nucleus sampling",
+    "object_type": "Method",
+    "source_sentence": "we adopt nucleus sampling as our decoding strategy.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "Adam optimizer",
+    "object_type": "Method",
+    "source_sentence": "We use the Adam optimizer for training the refiners and AdamW with a warm-up method for the generator.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Adam optimizer",
+    "object_type": "Method",
+    "source_sentence": "We use the Adam optimizer for training the refiners and AdamW with a warm-up method for the generator.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "AdamW with a warm-up method",
+    "object_type": "Method",
+    "source_sentence": "We use the Adam optimizer for training the refiners and AdamW with a warm-up method for the generator.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "uses",
+    "object": "token refiner",
+    "object_type": "Model",
+    "source_sentence": "Finally, we conduct an experiment to validate our proposed joint training for the token refiner.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "70 Retrieval MSP"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "achieves",
+    "object": "comparable performance",
+    "object_type": "Other",
+    "source_sentence": "We can observe that the retrieval strategy achieves comparable performance with our model on word-overlap and embedding-based metrics.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "30 BLEU-1 BLEU-2 P-Cover"
+  },
+  {
+    "subject": "generator",
+    "predicate": "achieves",
+    "object": "informative and personalized response",
+    "object_type": "Other",
+    "source_sentence": "By combing two profiles, our personalized generator gets an informative and personalized response close to ground-truth.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.426",
+    "title": "Hanxun Zhong1, Zhicheng Dou2,∗, Yutao Zhu3, Hongjin Qian2, Ji-Rong Wen2",
+    "section": "B Case Study"
+  }
+]

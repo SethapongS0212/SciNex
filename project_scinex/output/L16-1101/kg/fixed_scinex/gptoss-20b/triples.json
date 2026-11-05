@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "Semantic Lexicons",
+    "predicate": "addresses",
+    "object": "paraphrasing",
+    "object_type": "Task",
+    "source_sentence": "We also propose using semantic lexicons including Word- Net , FrameNet , and the Paraphrase Database (PPDB) for paraphrasing.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1101",
+    "title": "Chenhui Chu1 and Sadao Kurohashi2",
+    "section": "1. Introduction"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "Parallel Corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We trained a 5-gram language model on the Chinese side of the parallel corpus using the SRILM toolkit4 with interpolated Kneser-Ney discounting, and used it for all the experiments.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1101",
+    "title": "Chenhui Chu1 and Sadao Kurohashi2",
+    "section": "3.2. Settings"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "English Gigaword",
+    "object_type": "Dataset",
+    "source_sentence": "The skip-gram model ( Mikolov et al., 2013) was trained on the English Gigaword version 5.0,5 with the word2vec tool.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1101",
+    "title": "Chenhui Chu1 and Sadao Kurohashi2",
+    "section": "3.2. Settings"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "Lexicons",
+    "object_type": "Concept",
+    "source_sentence": "Moreover, we propose using semantic lexicons together with word embeddings for OOV paraphrasing.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1101",
+    "title": "Chenhui Chu1 and Sadao Kurohashi2",
+    "section": "4. Related Work"
+  },
+  {
+    "subject": "SMT",
+    "predicate": "addresses",
+    "object": "OOV problem",
+    "object_type": "Concept",
+    "source_sentence": "In this paper, we addressed the OOV problem for low re- source SMT by paraphrasing with word embeddings and semantic lexicons.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1101",
+    "title": "Chenhui Chu1 and Sadao Kurohashi2",
+    "section": "5. Conclusion"
+  }
+]

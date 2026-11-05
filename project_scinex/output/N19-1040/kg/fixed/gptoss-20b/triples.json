@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Adversarial Training",
+    "predicate": "achieves",
+    "object": "learn unsupervised BWE",
+    "object_type": "Concept",
+    "source_sentence": "Adversarial training was the first successful attempt to learn unsupervised BWE",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "achieves",
+    "object": "learn BWE with minimum bilingual resources",
+    "object_type": "Concept",
+    "source_sentence": "Self-learning was proposed by to learn BWE with minimum bilingual resources",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "uses",
+    "object": "CSLS",
+    "object_type": "Method",
+    "source_sentence": "In this work, we propose a modified version of CSLS to be used as the similarity metric to preform nearest neighbour re- trieval",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "3.5 Bilingual Dictionary Induction"
+  },
+  {
+    "subject": "Induction",
+    "predicate": "achieves",
+    "object": "produces Ds→t and Dt→s",
+    "object_type": "Dataset",
+    "source_sentence": "We perform the induction in two directions to produce Ds→t and Dt→s",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "3.5 Bilingual Dictionary Induction"
+  },
+  {
+    "subject": "stochastic",
+    "predicate": "uses",
+    "object": "probability",
+    "object_type": "Concept",
+    "source_sentence": "We apply stochastic dictionary induction by randomly setting the elements of the similarity matrix used for nearest neighbour retrieval to zero with probability 1 −p, as described in . p is initialized to 0.1 and increased by 0.005 at each iteration.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "4.2 Implementation details"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "uses",
+    "object": "Adversarial Training",
+    "object_type": "Method",
+    "source_sentence": "Conneau et al. (2017) proposed an unsupervised BWE method based on adversarial training.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "4.3 Baselines"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "uses",
+    "object": "Learning",
+    "object_type": "Method",
+    "source_sentence": "(2018) proposed an unsupervised BWE learning framework.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "4.3 Baselines"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "uses",
+    "object": "dictionary",
+    "object_type": "Concept",
+    "source_sentence": "Artetxe et al. (2016) proposed a simple and effective supervised BWE method that requires a seed dictionary.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "4.3 Baselines"
+  },
+  {
+    "subject": "Adversarial Training",
+    "predicate": "uses",
+    "object": "Alignment",
+    "object_type": "Method",
+    "source_sentence": "After a near-orthogonal projection matrix is learned through adversarial training, a refinement procedure is applied to improve the quality of the alignment.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "4.3 Baselines"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "addresses",
+    "object": "cross-lingual sentiment analysis",
+    "object_type": "Task",
+    "source_sentence": "We use DAN as the classifier to preform cross - lingual sentiment analysis.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "4.4 Evaluation"
+  },
+  {
+    "subject": "Classifiers",
+    "predicate": "achieves",
+    "object": "average macro-F1 on the target test set",
+    "object_type": "Metric",
+    "source_sentence": "We train five classifiers for each method and report the average macro-F1 on the target test set.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "4.4 Evaluation"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "sentiment information",
+    "object_type": "Concept",
+    "source_sentence": "An iterative con- straint relaxation procedure is applied to grad- ually incorporate the sentiment information into the bilingual word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "uses",
+    "object": "sentiment information",
+    "object_type": "Concept",
+    "source_sentence": "An alignment objective that enables the transfer of sentiment information from the source language to the target language.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Sentiment",
+    "predicate": "uses",
+    "object": "sentiment polarity",
+    "object_type": "Concept",
+    "source_sentence": "with opposite sentiment polarity in the bilingual space",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Bilingual Supervision",
+    "predicate": "uses",
+    "object": "sentiment polarity",
+    "object_type": "Concept",
+    "source_sentence": "Bilingual Supervision Method ES CA EU ES CA EU with opposite sentiment polarity in the bilingual space",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Sentiment Analysis",
+    "predicate": "uses",
+    "object": "cross-lingual sentiment analysis",
+    "object_type": "Task",
+    "source_sentence": "We empirically evaluate our method on three language pairs for cross - lingual sentiment analysis and demonstrate its effectiveness.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "cross-lingual sentiment analysis",
+    "object_type": "Task",
+    "source_sentence": "We empirically evaluate our method on three language pairs for cross - lingual sentiment analysis and demonstrate its effectiveness.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1040",
+    "title": "Learning Bilingual Sentiment-Speciﬁc Word Embeddings without Cross-lingual Supervision",
+    "section": "5 Conclusion"
+  }
+]

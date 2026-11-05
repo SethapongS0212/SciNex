@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Unsupervised Neural Machine Translation",
+    "predicate": "addresses",
+    "object": "the need for large-scale parallel corpora",
+    "object_type": "Concept",
+    "source_sentence": "Unsupervised Neural Machine Translation was proposed to alleviate this issue by completely removing the need for parallel data and training an NMT system in a completely unsupervised manner, relying on nothing but monolingual corpora.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Unsupervised Neural Machine Translation",
+    "predicate": "uses",
+    "object": "monolingual corpora",
+    "object_type": "Dataset",
+    "source_sentence": "Unsupervised Neural Machine Translation was proposed to alleviate this issue by completely removing the need for parallel data and training an NMT system in a completely unsupervised manner, relying on nothing but monolingual corpora.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "addresses",
+    "object": "Unsupervised Machine Translation",
+    "object_type": "Task",
+    "source_sentence": "three training methods are indispensable for the feasibility of unsupervised machine translation: initialization, denoising generation, and iterative back translation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "2.1 Background"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "addresses",
+    "object": "Unsupervised Machine Translation",
+    "object_type": "Task",
+    "source_sentence": "three training methods are indispensable for the feasibility of unsupervised machine translation: initialization, denoising generation, and iterative back translation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "2.1 Background"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "geometric distribution",
+    "object_type": "Concept",
+    "source_sentence": "after obtaining span lengths by sampling a geometric distribution skewed towards shorter spans",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "2.3 BTLM and CONSTBTLM"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "2007-2018 News Crawl dataset",
+    "object_type": "Dataset",
+    "source_sentence": "As the source of monolingual corpus for training, we use the 2007-2018 News Crawl dataset for English (En), French (Fr), German (De), Romanian (Ro), and Chinese (Zh).",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "3.1 Setup"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluates",
+    "object": "En-Fr translation model",
+    "object_type": "Model",
+    "source_sentence": "IWSLT14.TED.dev2010, tst2010, tst2011, and tst2012 were merged to evaluate the En-Fr translation model",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "3.1 Setup"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluates",
+    "object": "En-De model",
+    "object_type": "Model",
+    "source_sentence": "IWSLT14.TED.dev2010, tst2010, tst2011, and tst2012 were merged to evaluate the En-Fr translation model and dev2010, dev2012, tst2010, tst2011, and tst2012 in IWSLT14.TED to evaluate the En-De model",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "3.1 Setup"
+  },
+  {
+    "subject": "SpanBERT",
+    "predicate": "uses",
+    "object": "non-syntax based span masking strategy",
+    "object_type": "Method",
+    "source_sentence": "SpanBERT which is with a non-syntax based span masking strategy",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "4.5 Effects of SpanBERT, LIMIT-BERT, and CONSTBTLM for UNMT"
+  },
+  {
+    "subject": "SpanBERT",
+    "predicate": "comparesagainst",
+    "object": "LIMIT-BERT",
+    "object_type": "Model",
+    "source_sentence": "SpanBERT outperforms LIMIT-BERT because syntactic annotation is costly",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "4.5 Effects of SpanBERT, LIMIT-BERT, and CONSTBTLM for UNMT"
+  },
+  {
+    "subject": "SpanBERT",
+    "predicate": "achieves",
+    "object": "performance improvement in translation over the XLM baseline",
+    "object_type": "Other",
+    "source_sentence": "The use of SpanBERT and LIMIT-BERT training approaches has resulted in a performance improvement in translation over the XLM baseline",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "4.5 Effects of SpanBERT, LIMIT-BERT, and CONSTBTLM for UNMT"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "Tree-LSTM",
+    "object_type": "Method",
+    "source_sentence": "augmented the RNN encoder for fea- ture extraction with an additional syntactic encoder as in Tree-LSTM and GCN ; and combined this with a stan- dard RNN decoder .",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "A.2 Parser Training and Evaluation"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "GCN",
+    "object_type": "Method",
+    "source_sentence": "augmented the RNN encoder for fea- ture extraction with an additional syntactic encoder as in Tree-LSTM and GCN ; and combined this with a stan- dard RNN decoder .",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "A.2 Parser Training and Evaluation"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "syntax-distance constraint",
+    "object_type": "Other",
+    "source_sentence": "(2018) extended the local attention in RNN-based NMT with a syntax-distance constraint that makes the model focus more on syntactically related source words .",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "A.2 Parser Training and Evaluation"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "addresses",
+    "object": "explicit syntactic information",
+    "object_type": "Concept",
+    "source_sentence": "(Wu et al., 2018; Zhang et al., 2019; Currey and Heafield, 2019; Duan et al., 2019) explored the role of explicit syntactic information in Transformer - based NMT.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "A.2 Parser Training and Evaluation"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "evaluatedon",
+    "object": "Language Data",
+    "object_type": "Dataset",
+    "source_sentence": "The results of the evaluation on each language data set are shown in Table 6.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "A.2 Parser Training and Evaluation"
+  },
+  {
+    "subject": "SpanBERT",
+    "predicate": "designedfor",
+    "object": "spans of text",
+    "object_type": "Task",
+    "source_sentence": "SpanBERT was designed to better represent and predict spans of text and masked random contiguous spans of text rather than random individual tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.261",
+    "title": "Unsupervised Neural Machine Translation with Universal Grammar",
+    "section": "A.3 Related Work"
+  }
+]

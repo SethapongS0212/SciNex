@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "detection",
+    "predicate": "uses",
+    "object": "emotion models",
+    "object_type": "Model",
+    "source_sentence": "detection of similar emotional content in large number of audio calls are performed by using the emotion models trained with the freely available acted emotional speech.",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "knowledge-based",
+    "predicate": "uses",
+    "object": "probability scores",
+    "object_type": "Metric",
+    "source_sentence": "The output probability matrices that we get from affective content extractor is passed through a knowledge-based system , which modifies the probability scores depending upon the time lapse of the segment in the audio call",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "3.2 Knowledge about the time lapse of the audio segment in the call"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "addresses",
+    "object": "duration of audio calls",
+    "object_type": "Concept",
+    "source_sentence": "We observed through analysis that the duration of the audio calls plays an important role in the induction (or change) in the user's affective state",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "3.2 Knowledge about the time lapse of the audio segment in the call"
+  },
+  {
+    "subject": "ASR",
+    "predicate": "uses",
+    "object": "spoken words",
+    "object_type": "Words",
+    "source_sentence": "The ASR engine converts the spoken words in the textual format.",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "3.3 Speech to text analytics"
+  },
+  {
+    "subject": "knowledge-based",
+    "predicate": "uses",
+    "object": "ASR",
+    "object_type": "Method",
+    "source_sentence": "The modified matrices are then passed through the last knowledge-based system (as shown in Figure 7), which converts the spoken utterances into the text format (by using an ASR).",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "3.3 Speech to text analytics"
+  },
+  {
+    "subject": "knowledge-based",
+    "predicate": "produces",
+    "object": "weight matrix",
+    "object_type": "Other",
+    "source_sentence": "For each utterance, we have the measure of the af- fective prominence for each affective states, which forms the weight matrix weight matrix wt to mod- ify the output of second knowledge-based system (as shown in Figure 7).",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "3.3 Speech to text analytics"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "acted emotional speech samples",
+    "object_type": "Dataset",
+    "source_sentence": "the classifier trained with the available acted emotional speech samples",
+    "extraction_mode": "fixed",
+    "paper": "Y16-3028",
+    "title": "MINING CALL CENTER CONVERSATIONS EXHIBITING SIMILAR AFFECTIVE STATES",
+    "section": "5 Conclusions"
+  }
+]

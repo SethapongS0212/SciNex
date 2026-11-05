@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "fine-tuning",
+    "predicate": "addresses",
+    "object": "Graph -to-text Generation",
+    "object_type": "Task",
+    "source_sentence": "Fine-tuning for Graph -to-text Generation . While previous approaches (Song et al., 2018; Ribeiro et al., 2019; Cai and Lam, 2020; Schmitt et al., 2021; Zhang et al., 2020b) have shown that explicitly encoding the graph structure is beneficial, fine-tuning PLMs on linearized structured data has established a new level of performance in data-to-text generation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.351",
+    "title": "Structural Adapters in Pretrained Language Models for AMR-to-Text Generation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "achieves",
+    "object": "new level of performance in data-to-text generation",
+    "object_type": "Other",
+    "source_sentence": "Fine-tuning for Graph -to-text Generation . While previous approaches (Song et al., 2018; Ribeiro et al., 2019; Cai and Lam, 2020; Schmitt et al., 2021; Zhang et al., 2020b) have shown that explicitly encoding the graph structure is beneficial, fine-tuning PLMs on linearized structured data has established a new level of performance in data-to-text generation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.351",
+    "title": "Structural Adapters in Pretrained Language Models for AMR-to-Text Generation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "GPT-2",
+    "predicate": "uses",
+    "object": "cycle consistency",
+    "object_type": "Method",
+    "source_sentence": "(2020) employ cycle consistency to improve the adequacy of generated texts from AMRs using GPT-2 , whereas Harkous et al. (2020) train a classifier to rank can- didate generations based on the semantic fidelity.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.351",
+    "title": "Structural Adapters in Pretrained Language Models for AMR-to-Text Generation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "addresses",
+    "object": "semantic fidelity",
+    "object_type": "Concept",
+    "source_sentence": "(2020) employ cycle consistency to improve the adequacy of generated texts from AMRs using GPT-2 , whereas Harkous et al. (2020) train a classifier to rank can- didate generations based on the semantic fidelity.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.351",
+    "title": "Structural Adapters in Pretrained Language Models for AMR-to-Text Generation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "stopping criterion",
+    "object_type": "Other",
+    "source_sentence": "BLEU is used for the stopping criterion.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.351",
+    "title": "Structural Adapters in Pretrained Language Models for AMR-to-Text Generation",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "Adapter",
+    "predicate": "addresses",
+    "object": "AMR-to-text Generation",
+    "object_type": "Task",
+    "source_sentence": "Overall, the results indicate that explicitly considering the graph structure using an adapter mechanism is effective for AMR-to-text generation , sig- nificantly reducing the number of trained parame- ters while improving generation quality .",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.351",
+    "title": "Structural Adapters in Pretrained Language Models for AMR-to-Text Generation",
+    "section": "5.1 Main Results"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "training",
+    "object_type": "Other",
+    "source_sentence": "sequence of node and edge labels using depth-first traversal and used for both training and evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.351",
+    "title": "Structural Adapters in Pretrained Language Models for AMR-to-Text Generation",
+    "section": "CANON RECONF RANDOM"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "Evaluation",
+    "object_type": "Other",
+    "source_sentence": "sequence of node and edge labels using depth-first traversal and used for both training and evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.351",
+    "title": "Structural Adapters in Pretrained Language Models for AMR-to-Text Generation",
+    "section": "CANON RECONF RANDOM"
+  },
+  {
+    "subject": "Examples",
+    "predicate": "uses",
+    "object": "graph linearizations",
+    "object_type": "Other",
+    "source_sentence": "Examples of such graph linearizations are shown in Appendix C.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.351",
+    "title": "Structural Adapters in Pretrained Language Models for AMR-to-Text Generation",
+    "section": "CANON RECONF RANDOM"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "5.9",
+    "object_type": "Metric",
+    "source_sentence": "gap between STRUCTADAPT and FINE-TUNE is widest (+5.9 BLEU)",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.351",
+    "title": "Structural Adapters in Pretrained Language Models for AMR-to-Text Generation",
+    "section": "CANON RECONF RANDOM"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "transformers library",
+    "object_type": "Other",
+    "source_sentence": "The experiments were executed using the version 3.3.1 of the transformers library released by Hug- ging Face .",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.351",
+    "title": "Structural Adapters in Pretrained Language Models for AMR-to-Text Generation",
+    "section": "A Details of Models and Hyperparameters"
+  }
+]

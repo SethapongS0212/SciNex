@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Novel Method",
+    "predicate": "uses",
+    "object": "pre-trained neural language model",
+    "object_type": "Model",
+    "source_sentence": "We present a novel method that (1) exploits a pre-trained neural language model to obtain contextualised representations for every occurrence of a word of interest, (2) clusters these representations into usage types, and (3) measures change along time.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Novel Method",
+    "predicate": "uses",
+    "object": "measures",
+    "object_type": "Concept",
+    "source_sentence": "We present a novel method that (1) exploits a pre-trained neural language model to obtain contextualised representations for every occurrence of a word of interest, (2) clusters these representations into usage types, and (3) measures change along time.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "uses",
+    "object": "state-of-the-art contextualised word representations",
+    "object_type": "Concept",
+    "source_sentence": "We present the first unsupervised approach to lexical semantic change that makes use of state-of-the-art contextualised word representations.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Deep Learning Models",
+    "predicate": "uses",
+    "object": "usage-dependent representations",
+    "object_type": "Concept",
+    "source_sentence": "Recently, neural contextualised word representations have gained widespread use in NLP, thanks to deep learning models which learn usage-dependent representations while optimising tasks such as machine translation and language modelling",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "stacked attention layers",
+    "object_type": "Concept",
+    "source_sentence": "State-of-the-art language models typically use stacked attention layers , they are pre-trained on a very large amount of textual data, and they can be fine-tuned for specific downstream tasks",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Contextualised Representations",
+    "predicate": "achieves",
+    "object": "high accuracy on WiC evaluation set",
+    "object_type": "Dataset",
+    "source_sentence": "Contextualised representations have been shown to encode lexical meaning dynamically, reaching high accuracy on, e.g., the binary usage similarity judgements of the WiC evaluation set , performing on a par with state-of-the-art word sense disambiguation models , and proving useful for the supervised derivation of time-specific sense representation",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BERT Language Model",
+    "predicate": "uses",
+    "object": "usage representations",
+    "object_type": "Concept",
+    "source_sentence": "we use the BERT language model to compute usage representations for each occurrence of these words.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "3 Method: A Usage-based Approach to Lexical Semantic Change"
+  },
+  {
+    "subject": "BERT Language Model",
+    "predicate": "uses",
+    "object": "Transformer Encoder",
+    "object_type": "Method",
+    "source_sentence": "We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence predic- tion, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "3.1 Language Model"
+  },
+  {
+    "subject": "BERT Language Model",
+    "predicate": "trainedon",
+    "object": "BooksCorpus",
+    "object_type": "Dataset",
+    "source_sentence": "We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence predic- tion, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "3.1 Language Model"
+  },
+  {
+    "subject": "BERT Language Model",
+    "predicate": "trainedon",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence predic- tion, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "3.1 Language Model"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "contextualised representation",
+    "object_type": "Other",
+    "source_sentence": "We collect a contextualised representation for each occurrence of these words in the second century of COHA, using BERT as described in Section 3.2.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "4 Data"
+  },
+  {
+    "subject": "cluster",
+    "predicate": "uses",
+    "object": "K-Means",
+    "object_type": "Method",
+    "source_sentence": "which we cluster into usage types using K-Means and silhouette coefficients.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "4 Data"
+  },
+  {
+    "subject": "cluster",
+    "predicate": "uses",
+    "object": "silhouette coefficients",
+    "object_type": "Metric",
+    "source_sentence": "which we cluster into usage types using K-Means and silhouette coefficients.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "4 Data"
+  },
+  {
+    "subject": "Contextualised Word Representations",
+    "predicate": "addresses",
+    "object": "capturing lexical semantic change",
+    "object_type": "Concept",
+    "source_sentence": "This is again a very encouraging result regarding the potential of contextualised word representations for capturing lexical semantic change.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "5.2 Evaluation of Semantic Change Scores"
+  },
+  {
+    "subject": "Contextualised Representations",
+    "predicate": "uses",
+    "object": "syntactic argument structures",
+    "object_type": "Concept",
+    "source_sentence": "contextualised representations also capture regularities in syntactic argument structures.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "6.1 What do Usage Types Capture?"
+  }
+]

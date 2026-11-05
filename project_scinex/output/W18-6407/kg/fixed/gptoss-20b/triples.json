@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Supervised neural machine translation",
+    "predicate": "employs",
+    "object": "encoder-decoder architecture",
+    "object_type": "Method",
+    "source_sentence": "Supervised neural machine translation (NMT) employs the encoder - decoder architecture, where the encoder reads the source sentence and produces its representation which is then fed to the decoder that tries to generate the target sentence word by word.",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "inference",
+    "object_type": "Other",
+    "source_sentence": "Cross - entropy loss is usually used as a training objective and beam search algorithm is used for inference.",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "preprocessing",
+    "predicate": "uses",
+    "object": "tokenization",
+    "object_type": "Method",
+    "source_sentence": "In order to compute vectors for words and subset of phrases (we treat phrases as single-unit vocabulary entries at this point) we first need to get a monolingual corpus and do some preprocessing like lowercasing / true- casing and tokenization.",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "3 Approach to Phrase Embeddings"
+  },
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "training data",
+    "object_type": "Other",
+    "source_sentence": "Step 4: obtain training data for compositional modeling.",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "3 Approach to Phrase Embeddings"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "datasets",
+    "object_type": "Dataset",
+    "source_sentence": "In our experiments we use datasets from the WMT'18 unsupervised translation task for Engish-Estonian language pair.",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "4.2.1 Setup"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "CBOW",
+    "object_type": "Model",
+    "source_sentence": "We use CBOW with character n-grams of size 3 to 6 as a core algorithm for embeddings learning.",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "4.2.1 Setup"
+  },
+  {
+    "subject": "MuSE",
+    "predicate": "uses",
+    "object": "CUDA GPUs",
+    "object_type": "Other",
+    "source_sentence": "Default parameters are kept and MUSE is used on CUDA GPUs.",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "4.2.1 Setup"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "ngram language models",
+    "object_type": "Other",
+    "source_sentence": "We train Moses style ngram language models with the order of 5.",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "4.2.1 Setup"
+  }
+]

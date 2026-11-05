@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "model training",
+    "predicate": "uses",
+    "object": "ADAM",
+    "object_type": "Algorithm",
+    "source_sentence": "For the model training, we use Adam with initial learning rate of 0.001 as the optimization algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "4.3 Training Details"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "TESLA",
+    "object_type": "Other",
+    "source_sentence": "We conduct experiments using single card NVIDIA Tesla V100.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "4.3 Training Details"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Search",
+    "object_type": "Method",
+    "source_sentence": "All the experiments use greedy search as the decoding algorithm during testing.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "4.3 Training Details"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "21 Wikipedia infobox-to-text datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Experiments on 21 Wikipedia infobox-to-text datasets show KBAtt consistently achieves better performance in BLEU than a state-of-the-art baseline on most of datasets.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "multi-hops knowledge graph",
+    "object_type": "Concept",
+    "source_sentence": "In the future, we plan to investigate integrating multi-hops knowledge graph behind the data which has potential to further improve the inference ability of neural models.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1299",
+    "title": "Enhancing Neural Data-To-Text Generation Models with External Background Knowledge",
+    "section": "6 Conclusion"
+  }
+]

@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Deep Learning Models",
+    "predicate": "achieves",
+    "object": "remarkable results in computer vision and speech recognition",
+    "object_type": "Other",
+    "source_sentence": "Deep learning models have achieved remarkable results in computer vision and speech recognition in recent years.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Convolutional Neural Networks",
+    "predicate": "uses",
+    "object": "local features",
+    "object_type": "Other",
+    "source_sentence": "Convolutional neural networks (CNN) utilize layers with convolving filters that are applied to local features.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Convolution",
+    "predicate": "uses",
+    "object": "filter",
+    "object_type": "Other",
+    "source_sentence": "A convolution operation involves a filter w ∈Rhk, which is applied to a window of h words to produce a new feature.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "2 Model"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Softmax",
+    "object_type": "Method",
+    "source_sentence": "These features form the penultimate layer and are passed to a fully connected softmax layer whose output is the probability distribution over labels.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "2 Model"
+  },
+  {
+    "subject": "Word Vectors",
+    "predicate": "uses",
+    "object": "training",
+    "object_type": "Other",
+    "source_sentence": "In one of the model variants, we experiment with having two 'channels' of word vectors—one that is kept static throughout training and one that is fine-tuned via backpropagation (section 3.2).",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "2 Model"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "grid search",
+    "object_type": "Method",
+    "source_sentence": "These values were chosen via a grid search on the SST-2 dev set.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "3.1 Hyperparameters and Training"
+  },
+  {
+    "subject": "AdaDelta",
+    "predicate": "uses",
+    "object": "update rule",
+    "object_type": "Method",
+    "source_sentence": "Training is done through stochastic gra- dend descent over shuffled mini-batches with the Adadelta update rule.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "3.1 Hyperparameters and Training"
+  },
+  {
+    "subject": "stochastic",
+    "predicate": "uses",
+    "object": "gradient descent",
+    "object_type": "Method",
+    "source_sentence": "Training is done through stochastic gra- dend descent over shuffled mini-batches with the Adadelta update rule.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "3.1 Hyperparameters and Training"
+  },
+  {
+    "subject": "rule",
+    "predicate": "uses",
+    "object": "Adadelta",
+    "object_type": "Method",
+    "source_sentence": "Training is done through stochastic gra- dend descent over shuffled mini-batches with the Adadelta update rule.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "3.1 Hyperparameters and Training"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "achieves",
+    "object": "2%–4% relative performance",
+    "object_type": "Metric",
+    "source_sentence": "Dropout consistently added 2%–4% relative performance.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "4.3 Further Observations"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "U[−a, a] distribution",
+    "object_type": "Other",
+    "source_sentence": "When randomly initializing words not in word2vec, we obtained slight improvements by sampling each dimension from U[−a, a] where a was chosen such that the randomly initialized vectors have the same variance as the pre-trained ones.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "4.3 Further Observations"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "achieves",
+    "object": "far superior performance",
+    "object_type": "Metric",
+    "source_sentence": "We briefly experimented with another set of publicly available word vectors trained by Collobert et al. (2011) on Wikipedia, and found that word2vec gave far superior performance.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "4.3 Further Observations"
+  },
+  {
+    "subject": "AdaDelta",
+    "predicate": "achieves",
+    "object": "similar results to Adagrad",
+    "object_type": "Metric",
+    "source_sentence": "Adadelta gave similar results to Adagrad but required fewer epochs.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "4.3 Further Observations"
+  },
+  {
+    "subject": "Convolutional Neural Networks",
+    "predicate": "uses",
+    "object": "word2vec",
+    "object_type": "Model",
+    "source_sentence": "In the present work we have described a series of experiments with convolutional neural networks built on top of word2vec.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Semantic Parsing",
+    "predicate": "addresses",
+    "object": "Single-Relation Question Answering",
+    "object_type": "Task",
+    "source_sentence": "Semantic Parsing for Single-Relation Question Answering.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "X Li, D. Roth. 2002. Learning Question Classiﬁers. In Proceedings of ACL 2002."
+  }
+]

@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "contextual embeddings",
+    "object_type": "Other",
+    "source_sentence": "Recent progress in text understanding has been driven by sophisticated neural networks based on contextual embeddings—e.g., BERT , and its descendants—trained on massive datasets, such as SNLI , MultiNLI , and SQuAD .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "SNLI",
+    "object_type": "Dataset",
+    "source_sentence": "Recent progress in text understanding has been driven by sophisticated neural networks based on contextual embeddings—e.g., BERT , and its descendants—trained on massive datasets, such as SNLI , MultiNLI , and SQuAD .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "MultiNLI",
+    "object_type": "Dataset",
+    "source_sentence": "Recent progress in text understanding has been driven by sophisticated neural networks based on contextual embeddings—e.g., BERT , and its descendants—trained on massive datasets, such as SNLI , MultiNLI , and SQuAD .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "SQuAD",
+    "object_type": "Dataset",
+    "source_sentence": "Recent progress in text understanding has been driven by sophisticated neural networks based on contextual embeddings—e.g., BERT , and its descendants—trained on massive datasets, such as SNLI , MultiNLI , and SQuAD .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Sentences",
+    "predicate": "uses",
+    "object": "Para approach",
+    "object_type": "Method",
+    "source_sentence": "we convert them into sentences using the Para approach above",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.1 Representing Tables"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "uses",
+    "object": "contextual encoder",
+    "object_type": "Method",
+    "source_sentence": "applying a contextual encoder to each sentence",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.1 Representing Tables"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "token embeddings",
+    "object_type": "Concept",
+    "source_sentence": "From the token embeddings, we obtain the embeddings corresponding of the keys and values by mean pooling over only those tokens",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.1 Representing Tables"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "LibLinear library",
+    "object_type": "Other",
+    "source_sentence": "For this model (referred to as SVM), we used the LibLinear library.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.2 Modeling Table Inferences"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Transformers",
+    "object_type": "Method",
+    "source_sentence": "We implemented all our models using the Py- (b) Number of examples per reasoning type in the α3 set (d) Number of reasonings per example in the α3 set Torch with the transformers library .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.2 Modeling Table Inferences"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "AdaGrad",
+    "object_type": "Method",
+    "source_sentence": "We trained our models using Adagrad with a learning rate of 10−4, chosen by preliminary experiments, and using a dropout value of 0.2.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.2 Modeling Table Inferences"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Dropout",
+    "object_type": "Method",
+    "source_sentence": "We trained our models using Adagrad with a learning rate of 10−4, chosen by preliminary experiments, and using a dropout value of 0.2.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.2 Modeling Table Inferences"
+  },
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "hypothesis bias",
+    "object_type": "Concept",
+    "source_sentence": "We consider three classes of models to study hypothesis bias in INFOTABS.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.3 Results"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "addresses",
+    "object": "hypothesis bias",
+    "object_type": "Concept",
+    "source_sentence": "The simplest way to check for hypothesis bias is to train a classifier using only the hypotheses.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.3 Results"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "unigrams and bigrams",
+    "object_type": "Other",
+    "source_sentence": "using unigrams and bigrams for an SVM",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.3 Results"
+  },
+  {
+    "subject": "NLI Systems",
+    "predicate": "evaluatedon",
+    "object": "INFOTABS",
+    "object_type": "Dataset",
+    "source_sentence": "pre-trained NLI systems do not perform well when tested on INFOTABS.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.210",
+    "title": "INFOTABS: Inference on Tables as Semi-structured Data",
+    "section": "6.3 Results"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "subject": "CRF",
+    "predicate": "addresses",
+    "object": "context",
+    "object_type": "Concept",
+    "source_sentence": "The CRF layer considers the correlations between labels in context and jointly decodes the optimal sequence of utterance labels for a given conversation",
+    "extraction_mode": "fixed",
+    "paper": "N19-1373",
+    "title": "Dialogue Act Classiﬁcation with Context-Aware Self-Attention",
+    "section": "3.3 Conversation-level RNN"
+  },
+  {
+    "subject": "Attention Mechanisms",
+    "predicate": "addresses",
+    "object": "limitations of vanilla attention and self-attention",
+    "object_type": "Concept",
+    "source_sentence": "As future work, we would like to experiment with other attention mechanisms such as multi-head attention, directional self-attention, block self-attention, or hierarchical attention, since they have been shown to address the limitations of vanilla attention and self-attention by either incorporating information from different representation subspaces at different positions to capture both local and long-range context dependencies, encoding temporal order information, or by attending to context dependencies at different levels of granularity.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1373",
+    "title": "Dialogue Act Classiﬁcation with Context-Aware Self-Attention",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "utterance embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "Dropout was applied to the utterance embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1373",
+    "title": "Dialogue Act Classiﬁcation with Context-Aware Self-Attention",
+    "section": "A.1 Training & Hyperparameters"
+  }
+]

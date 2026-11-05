@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "produces",
+    "object": "representation of the tweet",
+    "object_type": "Other",
+    "source_sentence": "First, we show the BERT-base representation of the tweet (Tweet-BERT).",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Neural Architecture",
+    "predicate": "uses",
+    "object": "Information",
+    "object_type": "Concept",
+    "source_sentence": "We propose a novel neural architecture that uni- fies all the information in the graph in one-shot.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "GAT",
+    "predicate": "uses",
+    "object": "Transformer",
+    "object_type": "Model",
+    "source_sentence": "Composer is a transformer-based graph attention network (GAT) followed by a pooling layer.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "4.3 Composer"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "Graph Attention",
+    "object_type": "Method",
+    "source_sentence": "We use the transformer encoding layer proposed by Vaswani et al. (2017), without the position-wise feed forward layer, as graph attention layer.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "4.3 Composer"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "achieves",
+    "object": "capturing meaningful author representations",
+    "object_type": "Concept",
+    "source_sentence": "Learning to understand such correlations by looking at other documents from the same author is effective in capturing meaningful author representations.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "5.2 Referenced Entity Prediction"
+  },
+  {
+    "subject": "Bi-LSTM",
+    "predicate": "uses",
+    "object": "mean-pooled sentence-wise BERT embeddings",
+    "object_type": "Artifact",
+    "source_sentence": "we pass the mean-pooled sentence-wise BERT embeddings of the node documents through a Bi-LSTM.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "6.1 Baselines"
+  },
+  {
+    "subject": "Bi-LSTM",
+    "predicate": "produces",
+    "object": "node embeddings",
+    "object_type": "Artifact",
+    "source_sentence": "We mean-pool the output of Bi-LSTM to get node embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "6.1 Baselines"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "node embeddings",
+    "object_type": "Artifact",
+    "source_sentence": "We use fine-tuning layers on top of thus obtained node embeddings for both the learning tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "6.1 Baselines"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "We compute BERT-base embeddings for the representative sentences to obtain ⃗ posNRA and ⃗ negNRA.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "6.1 Baselines"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "42.62%",
+    "object_type": "Metric",
+    "source_sentence": "In Grade Paraphrase task, we evaluate our representation Reader, 48.36% for Encoder, 42.62% for BERT adaptation and 38.52% for BERT-base.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "6.2 Grade Paraphrase Task"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "38.52%",
+    "object_type": "Metric",
+    "source_sentence": "In Grade Paraphrase task, we evaluate our representation Reader, 48.36% for Encoder, 42.62% for BERT adaptation and 38.52% for BERT-base.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "6.2 Grade Paraphrase Task"
+  },
+  {
+    "subject": "PCA",
+    "predicate": "uses",
+    "object": "issue embeddings",
+    "object_type": "Dataset",
+    "source_sentence": "We perform Principle Component Analysis (PCA) on issue embeddings (⃗nissue) of politicians obtained using the same method as in NRA Grade prediction.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "6.5 Qualitative Evaluation"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "contextualized embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We compute the representative embedding for each descriptor by mean-pooling the contextualized embeddings of that descriptor from all its occurrences in the politician's discourse.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "6.6 Opinion Descriptor Generation"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "Xavier uniform initialization",
+    "object_type": "Method",
+    "source_sentence": "For fine-tuning layers of learning tasks we initialize the models using Xavier uniform initialization with gain=1.0.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "B Reproducibility"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "Stochastic Gradient Descent",
+    "object_type": "Method",
+    "source_sentence": "We optimize the parameters using Stochastic Gradient Descent with an initial learning rate=0.0075 and momentum=0.4.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "B Reproducibility"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "batch size of 1",
+    "object_type": "Other",
+    "source_sentence": "We use a batch size of 1 for both training and evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "B Reproducibility"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "batch size of 1",
+    "object_type": "Other",
+    "source_sentence": "We use a batch size of 1 for both training and evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "B Reproducibility"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Compositional Reader model",
+    "object_type": "Model",
+    "source_sentence": "For Authorship Prediction and Referenced Entity Prediction tasks, Compositional Reader model is trained on one batch for 5 epochs, the best parameters are chosen according to the validation performance of that batch and we proceed to training on future batches.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.102",
+    "title": "Understanding Politics via Contextualized Discourse Processing",
+    "section": "B Reproducibility"
+  }
+]

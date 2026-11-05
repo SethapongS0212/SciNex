@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "SVMs",
+    "predicate": "uses",
+    "object": "bi-directional LSTMs",
+    "object_type": "Method",
+    "source_sentence": "The best result reported by Habernal and Gurevych (2016) was an F1 score of.35 for the task of predicting which of two arguments was better, using SVMs and bi-directional LSTMs.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "probability",
+    "object_type": "Concept",
+    "source_sentence": "A softmax function is used to compute the probability distribution over the predefined classes, and a cross-entropy loss is used for tuning.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.2 Deep learning models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "simple transformers library",
+    "object_type": "Artifact",
+    "source_sentence": "Models were fine-tuned using the simple transformers library.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.2 Deep learning models"
+  },
+  {
+    "subject": "XLNet",
+    "predicate": "uses",
+    "object": "bidirectional learning",
+    "object_type": "Concept",
+    "source_sentence": "XLNET: Finally, we evaluate the performance of XLNet , which combines bidirectional learning with the state-of-the-art autoregressive model such as Transformer- XL.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.2 Deep learning models"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "referral hyper-parameters",
+    "object_type": "Artifact",
+    "source_sentence": "In the case of CNN and BiLSTM based models, we used the referral hyper-parameters from the original implementation for all models4.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.2 Deep learning models"
+  },
+  {
+    "subject": "FastText",
+    "predicate": "uses",
+    "object": "implementations by original authors",
+    "object_type": "Artifact",
+    "source_sentence": "For Neural MT, FastText, and Transformer based models, implementations by original authors are used.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.2 Deep learning models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "5-fold cross-validation",
+    "object_type": "Process",
+    "source_sentence": "All the models were evaluated using 5-fold cross-validation with a split ratio of 80:20 for train and test set, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.2 Deep learning models"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "learning rate of 9e-6",
+    "object_type": "Concept",
+    "source_sentence": "In fine-tuning the RoBERTa model on editorial change, the model parameters included a learning rate of 9e-6, 3 epochs, and train batch size of 8.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.2 Deep learning models"
+  },
+  {
+    "subject": "TESLA",
+    "predicate": "uses",
+    "object": "Tesla k80",
+    "object_type": "Artifact",
+    "source_sentence": "The time taken was 6-8 minutes/epoch on Tesla k80, running on a Google Colab implementation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.2 Deep learning models"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "hyperparameter search trials",
+    "object_type": "Process",
+    "source_sentence": "Five hyperparameter search trials were conducted with cross-validation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.2 Deep learning models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "WikiTalkEdit dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We now examine the test-set performance of these models trained on a subset of the WikiTalkEdit dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "6 Results"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achieves",
+    "object": "F1 score 0.66 on emotional change",
+    "object_type": "Other",
+    "source_sentence": "The best performing deep learning classifier is trained on pre-trained RoBERTa features and reports an F1 score of.66 for emotional change and.54 for editorial change.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "6.1 Predictive performance"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achieves",
+    "object": "F1 score 0.54 on editorial change",
+    "object_type": "Other",
+    "source_sentence": "The best performing deep learning classifier is trained on pre-trained RoBERTa features and reports an F1 score of.66 for emotional change and.54 for editorial change.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "6.1 Predictive performance"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "differential attention models",
+    "object_type": "Model",
+    "source_sentence": "we expect that improvements in accuracy can be achieved by using differential attention models that focus on the emotions expressed in the first few words in the dialogic exchanges.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "9 Discussion and Limitations"
+  }
+]

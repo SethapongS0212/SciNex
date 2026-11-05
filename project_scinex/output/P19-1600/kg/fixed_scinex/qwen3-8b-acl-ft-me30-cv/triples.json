@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "g(st, hi)",
+    "object_type": "Other",
+    "source_sentence": "We use Bahdanau-style attention mechanism to calculate g(st, hi).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "2.2 Description Decoder"
+  },
+  {
+    "subject": "Reinforcement Learning",
+    "predicate": "addresses",
+    "object": "covering rare and seldom mentioned words and attributes",
+    "object_type": "Concept",
+    "source_sentence": "We also propose a reinforcement learning frame- work which encourages the generator to cover rare and seldom mentioned words and attributes in the table.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3.2 Reinforced Richness-oriented Learning"
+  },
+  {
+    "subject": "Information",
+    "predicate": "addresses",
+    "object": "description",
+    "object_type": "Concept",
+    "source_sentence": "The information rich- ness measures the ratio of covered information in the table by the description.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3.2.1 Information Richness"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "achieves",
+    "object": "100% Hit-1 coverage",
+    "object_type": "Metric",
+    "source_sentence": "The filtering ensures that the WB-filter dataset achieves 100% Hit-1 coverage.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Automatic Metrics",
+    "predicate": "uses",
+    "object": "BLEU-4",
+    "object_type": "Metric",
+    "source_sentence": "Automatic Metrics: Following the previous work , we use BLEU-4 and ROUGE-4 (F measure) for automatic evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.2 Evaluation Metrics"
+  },
+  {
+    "subject": "Automatic Metrics",
+    "predicate": "uses",
+    "object": "ROUGE-4",
+    "object_type": "Metric",
+    "source_sentence": "Automatic Metrics: Following the previous work , we use BLEU-4 and ROUGE-4 (F measure) for automatic evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.2 Evaluation Metrics"
+  },
+  {
+    "subject": "generator",
+    "predicate": "trainedon",
+    "object": "WIKIBIO dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Before the richness-oriented reinforced training, the neural generator is pre-trained 8 and 4 epochs for the WIKIBIO and WB-filter datasets (with or without force-attention module), respectively.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.3 Experimental Details"
+  },
+  {
+    "subject": "generator",
+    "predicate": "trainedon",
+    "object": "WB-filter dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Before the richness-oriented reinforced training, the neural generator is pre-trained 8 and 4 epochs for the WIKIBIO and WB-filter datasets (with or without force-attention module), respectively.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.3 Experimental Details"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "achieves",
+    "object": "1.11/0.98 BLEU/ROUGE",
+    "object_type": "Metric",
+    "source_sentence": "The proposed force- attention module achieves 1.11/0.98 and 2.04/1.32 BLEU/ROUGE increases on the WIKIBIO and WB-filter datasets , respectively.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.5 Analysis of Experimental Results"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "achieves",
+    "object": "2.04/1.32 BLEU/ROUGE",
+    "object_type": "Metric",
+    "source_sentence": "The proposed force- attention module achieves 1.11/0.98 and 2.04/1.32 BLEU/ROUGE increases on the WIKIBIO and WB-filter datasets , respectively.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.5 Analysis of Experimental Results"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "comparesagainst",
+    "object": "vanilla seq2seq model",
+    "object_type": "Model",
+    "source_sentence": "By observing the generated description in WIKIBIO, we find that 1) compared with the vanilla seq2seq model, our force-attention module can cover the information in the 'Notableworks' attribute.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.5 Analysis of Experimental Results"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "WIKIBIO dataset",
+    "object_type": "Dataset",
+    "source_sentence": "The experiments on the WIKIBIO and WB-filter datasets show the merits of our model.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "6 Conclusion and Future Work"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "WB-filter dataset",
+    "object_type": "Dataset",
+    "source_sentence": "The experiments on the WIKIBIO and WB-filter datasets show the merits of our model.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "6 Conclusion and Future Work"
+  }
+]

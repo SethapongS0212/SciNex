@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "semantic parser",
+    "predicate": "uses",
+    "object": "distillation",
+    "object_type": "Method",
+    "source_sentence": "Train a unified compressed semantic parser (student) using distillation from these expert policies.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Parsing",
+    "predicate": "addresses",
+    "object": "Ground Truth",
+    "object_type": "Concept",
+    "source_sentence": "we are the first to propose a unified multiple-domain parsing framework which does not assume the availability of ground truth programs.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "REINFORCE",
+    "predicate": "uses",
+    "object": "training",
+    "object_type": "Method",
+    "source_sentence": "We use REINFORCE for training, similar to prior work on Neural Symbolic Machine described briefly in Section 4.1.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "3 Proposed Framework"
+  },
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "uses",
+    "object": "Model Compression",
+    "object_type": "Method",
+    "source_sentence": "Knowledge distillation was first presented by Hinton et al. (2015) and has been popularly used for model compression of convolution neural networks in computer vision based tasks.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "3 Proposed Framework"
+  },
+  {
+    "subject": "training",
+    "predicate": "comprises",
+    "object": "weakly supervised training",
+    "object_type": "Method",
+    "source_sentence": "The training process in our proposed framework has the following two components (Figure 3): (i) weakly supervised training for domain specific semantic parsing experts E1,..., EK and, (ii) distilling multiple domain policies to the unified student S.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "4 Training"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "soft denotation accuracy",
+    "object_type": "Metric",
+    "source_sentence": "For computing the rewards during training, we use soft denotation accuracy i.e. F1 score between predicted and ground truth answer sets.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "5.1 Data"
+  }
+]

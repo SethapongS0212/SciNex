@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "all feedforward parameters of the models",
+    "object_type": "Other",
+    "source_sentence": "Dropout is applied to all feedforward parameters of the models, but not to the parameters of the recurrent transitions.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2387",
+    "title": "Unbabel’s Participation in the WMT16 Word-Level Translation Quality Estimation Shared Task",
+    "section": "3.2 Bilingual, Bidirectional Recurrent Model"
+  },
+  {
+    "subject": "AdaDelta",
+    "predicate": "uses",
+    "object": "all recurrent models",
+    "object_type": "Other",
+    "source_sentence": "All recurrent models are optimized using AdaDelta.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2387",
+    "title": "Unbabel’s Participation in the WMT16 Word-Level Translation Quality Estimation Shared Task",
+    "section": "3.2 Bilingual, Bidirectional Recurrent Model"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "uses",
+    "object": "RMSProp",
+    "object_type": "Method",
+    "source_sentence": "Optimization is carried out by RMSProp.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2387",
+    "title": "Unbabel’s Participation in the WMT16 Word-Level Translation Quality Estimation Shared Task",
+    "section": "3.3 Multi-Feature Convolutional Recurrent Network"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "achieves",
+    "object": "additional boost (>3 points)",
+    "object_type": "Other",
+    "source_sentence": "As expected, the ensemble system gave an additional boost (>3 points) over the linear model, which is consistent with the findings of the previous sections on the validation data.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2387",
+    "title": "Unbabel’s Participation in the WMT16 Word-Level Translation Quality Estimation Shared Task",
+    "section": "5 Final Results"
+  }
+]

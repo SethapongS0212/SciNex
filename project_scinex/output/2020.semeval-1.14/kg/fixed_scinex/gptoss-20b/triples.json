@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "ELMo",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "In 3 out of 5 test sets, ELMo consistently outperforms BERT, while being much faster in training and inference;",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "produces",
+    "object": "higher scores",
+    "object_type": "Other",
+    "source_sentence": "Since we want the algorithm to produce higher scores for the words which changed more, the inverted value of cosine similarity is used as the prediction.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "3 System overview"
+  },
+  {
+    "subject": "Affinity Propagation",
+    "predicate": "produces",
+    "object": "clusters",
+    "object_type": "Other",
+    "source_sentence": "We then standardise it and cluster its entries using Affinity Propagation , which automatically selects a number of clusters for each word.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "3 System overview"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "trainedon",
+    "object": "Wikipedia corpus",
+    "object_type": "Dataset",
+    "source_sentence": "an ELMo model trained on the respective Wikipedia corpus (English, German, Latin or Swedish)",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "4 Experimental setup"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "cosine similarity change detection algorithm",
+    "object_type": "Method",
+    "source_sentence": "In our 'official' shared task submission in the evaluation phase we used top-layer ELMo embeddings with the cosine similarity change detection algorithm for all languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "5 Results"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "trainedon",
+    "object": "English Wikipedia corpora",
+    "object_type": "Dataset",
+    "source_sentence": "English and German ELMo models were trained on the respective Wikipedia corpora.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "5 Results"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "trainedon",
+    "object": "German Wikipedia corpora",
+    "object_type": "Dataset",
+    "source_sentence": "English and German ELMo models were trained on the respective Wikipedia corpora.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "5 Results"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "trainedon",
+    "object": "union of the test corpora",
+    "object_type": "Dataset",
+    "source_sentence": "For Swedish and Latin, pre-trained ELMo models were not available, so we trained our own models on the union of the test corpora.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "5 Results"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "trainedon",
+    "object": "lemmatised Wikipedia corpora",
+    "object_type": "Dataset",
+    "source_sentence": "One possible explanation is that our ELMo models were pre-trained on lemmatised Wikipedia corpora and thus better fit the test corpora, provided in lemmatised form by the organisers.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "5 Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Raw Corpora",
+    "object_type": "Dataset",
+    "source_sentence": "models were pre- trained on raw corpora, and fine-tuning them on lemmatised data proves less successful.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "5 Results"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "achieves",
+    "object": "strong correlation with human judgements",
+    "object_type": "Metric",
+    "source_sentence": "using contextualised embeddings to rank words by the degree of their semantic change yields strong correlation with human judgements, outperforming approaches based on static embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "highest correlation results",
+    "object_type": "Metric",
+    "source_sentence": "Models pre- trained on large external corpora and fine-tuned on the historical test corpora produce the highest correlation results, with ELMo slightly but consistently outperforming BERT as a contextualiser.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "achieves",
+    "object": "outperforming BERT",
+    "object_type": "Other",
+    "source_sentence": "Models pre- trained on large external corpora and fine-tuned on the historical test corpora produce the highest correlation results, with ELMo slightly but consistently outperforming BERT as a contextualiser.",
+    "extraction_mode": "fixed",
+    "paper": "2020.semeval-1.14",
+    "title": "Andrey Kutuzov University of Oslo, Norway andreku@ifi.uio.no",
+    "section": "6 Conclusion"
+  }
+]

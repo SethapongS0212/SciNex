@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "averaging annotations from multiple translators",
+    "object_type": "Other",
+    "source_sentence": "models are built by averaging annotations from multiple translators on the same data points",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "collecting labelled data for each translator",
+    "object_type": "Other",
+    "source_sentence": "models are built for individual translators by collecting labelled data for each translator",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "multitask learning techniques",
+    "object_type": "Method",
+    "source_sentence": "models are built using multitask learning techniques to put together annotations from multiple translators while keeping track of the translators' identification to account for their individual biases",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "Questions",
+    "object_type": "Other",
+    "source_sentence": "Finally in Sections 5 and 6 we present the results of our experiments to answer the above mentioned questions for cross-annotator and crosslingual transfer, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Multitask Learning",
+    "predicate": "addresses",
+    "object": "data scarcity issue",
+    "object_type": "Concept",
+    "source_sentence": "The approach of using multitask learning to build models addresses the data scarcity issue and has been shown effective in previous work.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Multitask Learning",
+    "predicate": "addresses",
+    "object": "data scarcity issue",
+    "object_type": "Concept",
+    "source_sentence": "Similarly, de Souza et al. studied multitask learning to deal with data coming from different training/test set distributions or domains, and generally scenarios in which training data is scarce.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Phrase-Based",
+    "predicate": "trainedon",
+    "object": "domain-specific data",
+    "object_type": "Dataset",
+    "source_sentence": "An in-house phrase-based statistical MT system was built by WIPO , trained on domain-specific data, to translate the English segments.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "4.1 Data"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "0.71",
+    "object_type": "Metric",
+    "source_sentence": "The quality of the translations produced is considered high, with BLEU scores on a 1K-single reference test set reaching 0.71.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "4.1 Data"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "individual test sets",
+    "object_type": "Test Sets",
+    "source_sentence": "Setting-1: Individual models on individual test sets: each model is trained with data from an individual post-editor and tested on the test set for the same individual post-editor.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "4.3 Settings"
+  },
+  {
+    "subject": "Multitask Models",
+    "predicate": "evaluatedon",
+    "object": "test sets of individual post-editors",
+    "object_type": "Test Sets",
+    "source_sentence": "Setting-3: Multitask model on individual test sets: multitask models trained with data from all post-editors and tested on test sets of individual post-editors.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "4.3 Settings"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "pooled test set",
+    "object_type": "Test Sets",
+    "source_sentence": "Setting-4: Individual models tested on pooled test set: each model is trained with data from an individual post-editor and tested on a test set with data from all post-editors.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "4.3 Settings"
+  },
+  {
+    "subject": "Multitask Models",
+    "predicate": "trainedon",
+    "object": "en-es dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Setting-7 to 10: Similar to setting-2, 3, 5, 6 but with additional crosslingual data where pooled and multitask models are trained with both en- es and en-fr datasets together.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "4.3 Settings"
+  },
+  {
+    "subject": "Multitask Models",
+    "predicate": "trainedon",
+    "object": "en-fr dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Setting-7 to 10: Similar to setting-2, 3, 5, 6 but with additional crosslingual data where pooled and multitask models are trained with both en- es and en-fr datasets together.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "4.3 Settings"
+  },
+  {
+    "subject": "Multitask Learning",
+    "predicate": "comparesagainst",
+    "object": "Pooled Models",
+    "object_type": "Model",
+    "source_sentence": "Multitask learning models are significantly better than pooled models for both languages (0.511 vs 0.469 for en-es, and 0.481 vs 0.441 for en-fr).",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "5 Results with Multiple Annotators"
+  },
+  {
+    "subject": "Multitask Models",
+    "predicate": "achieves",
+    "object": "0.201 Pearson's correlation",
+    "object_type": "Metric",
+    "source_sentence": "Multitask models lead to further improvements, particularly visible for post-editor 3 (the one with less training data), where the crosslingual multitask learning model reaches 0.201 Pearson's correlation, while the monolingual multitask learning model performs at 0.171.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "6 Results with Multiple Languages"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "NMT",
+    "predicate": "trainedon",
+    "object": "product images",
+    "object_type": "Dataset",
+    "source_sentence": "One of the NMT models is a text-only attentional NMT and the other is a multi-modal attentional NMT model trained using the product images as additional data.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "PBSMT model",
+    "object_type": "Model",
+    "source_sentence": "We use a PBSMT model built with the Moses SMT Toolkit.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "2.1 Statistical Machine Translation (SMT)"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "modified Kneser-Ney smoothing",
+    "object_type": "Other",
+    "source_sentence": "The language model (LM) is a 5-gram LM with modified Kneser-Ney smoothing.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "2.1 Statistical Machine Translation (SMT)"
+  },
+  {
+    "subject": "Minimum Error Rate Training",
+    "predicate": "uses",
+    "object": "tuning the model parameters",
+    "object_type": "Other",
+    "source_sentence": "We use minimum error rate training for tuning the model parameters for BLEU scores.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "2.1 Statistical Machine Translation (SMT)"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "convolutional image features",
+    "object_type": "Concept",
+    "source_sentence": "We use a publicly available pre-trained Convolutional Neural Network (CNN), namely the 50-layer Residual network (ResNet-50) of He et al. (2015) to extract convolutional image features (a1, · · ·, aL) for all images in our dataset.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "2.3 Multi-modal Neural Machine Translation (NMTm)"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "parallel sentences",
+    "object_type": "Dataset",
+    "source_sentence": "The multi - modal NMT model we evaluate uses parallel sentences and an image as input.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "3 Data sets"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "image",
+    "object_type": "Image",
+    "source_sentence": "The multi - modal NMT model we evaluate uses parallel sentences and an image as input.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "3 Data sets"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "addresses",
+    "object": "shorter sentences",
+    "object_type": "Concept",
+    "source_sentence": "In order to check whether improvements observed in TER could be due to a preference of text-only and multi - modal NMT models for shorter sentences (Ta- ble 5), we also computed the average length of transla- tions for n-best lists re-ranked with each of our models, and note that there is no significant difference between the length of translations for the baseline and the re- ranked models.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "5 Results"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Semantic Parsing",
+    "predicate": "addresses",
+    "object": "compositional generalization",
+    "object_type": "Task",
+    "source_sentence": "In this paper we focus on compositional generalization for semantic parsing, the task of mapping utterances to logical forms with precisely defined semantics.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.624",
+    "title": "Linlu Qiu1∗ Peter Shaw2 Panupong Pasupat2 Tianze Shi2",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "PaLM",
+    "predicate": "uses",
+    "object": "in-context learning",
+    "object_type": "Task",
+    "source_sentence": "We follow Brown et al. (2020) and use the decoder-only model PaLM (8B, 62B, and 540B) for in- context learning.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.624",
+    "title": "Linlu Qiu1∗ Peter Shaw2 Panupong Pasupat2 Tianze Shi2",
+    "section": "3.2 Models"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "examples",
+    "object_type": "Examples",
+    "source_sentence": "To study the scaling behaviors on splits that are less saturated, we create smaller CFQ splits by randomly sampling 1000 examples from the original training sets.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.624",
+    "title": "Linlu Qiu1∗ Peter Shaw2 Panupong Pasupat2 Tianze Shi2",
+    "section": "4.3 Task Analysis"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "training sets",
+    "object_type": "Dataset",
+    "source_sentence": "To study the scaling behaviors on splits that are less saturated, we create smaller CFQ splits by randomly sampling 1000 examples from the original training sets.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.624",
+    "title": "Linlu Qiu1∗ Peter Shaw2 Panupong Pasupat2 Tianze Shi2",
+    "section": "4.3 Task Analysis"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "Compositional Generalization",
+    "object_type": "Task",
+    "source_sentence": "Our experiments also suggest the possibility of better leveraging scale to improve compositional generalization by designing better retrievers for in- context learning, using alternative output formats, and implementing constrained decoding to prevent invalid outputs.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.624",
+    "title": "Linlu Qiu1∗ Peter Shaw2 Panupong Pasupat2 Tianze Shi2",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "fixed prompt format",
+    "object_type": "Other",
+    "source_sentence": "Prompt Construction For in- context learning, we use a fixed prompt format described in Ap- pendix B.1, chosen based on recommended best practices and preliminary experiments.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.624",
+    "title": "Linlu Qiu1∗ Peter Shaw2 Panupong Pasupat2 Tianze Shi2",
+    "section": "6 Limitations"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "COGS",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate on the small subset of COGS and CFQ.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.624",
+    "title": "Linlu Qiu1∗ Peter Shaw2 Panupong Pasupat2 Tianze Shi2",
+    "section": "A.1 Dataset Sizes"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "CFQ",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate on the small subset of COGS and CFQ.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.624",
+    "title": "Linlu Qiu1∗ Peter Shaw2 Panupong Pasupat2 Tianze Shi2",
+    "section": "A.1 Dataset Sizes"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "greedy decoding",
+    "object_type": "Method",
+    "source_sentence": "We use greedy decoding for all models.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.624",
+    "title": "Linlu Qiu1∗ Peter Shaw2 Panupong Pasupat2 Tianze Shi2",
+    "section": "B.1 Experimental Setup"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "maximum number of exemplars up to 1,920 tokens",
+    "object_type": "Concept",
+    "source_sentence": "We use the maximum number of exemplars up to 1,920 tokens for all in- context learning experiments.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.624",
+    "title": "Linlu Qiu1∗ Peter Shaw2 Panupong Pasupat2 Tianze Shi2",
+    "section": "B.2 Number of Exemplars"
+  }
+]

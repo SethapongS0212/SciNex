@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "uses",
+    "object": "predictions of teacher model",
+    "object_type": "Other",
+    "source_sentence": "we also use the knowledge distillation to fit the predictions of teacher model as in Hinton et al.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.372",
+    "title": "TinyBERT: Distilling BERT for Natural Language Understanding",
+    "section": "3.1 Transformer Distillation"
+  },
+  {
+    "subject": "TinyBERT",
+    "predicate": "evaluatedon",
+    "object": "General Language Understanding Evaluation (GLUE) benchmark",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate TinyBERT on the General Language Understanding Evaluation (GLUE) benchmark, which consists of 2 single- sentence tasks: CoLA , SST- 2 , 3 sentence similarity tasks: MRPC , STS-B , QQP , and 4 natural language inference tasks: MNLI , QNLI , RTE and WNLI .",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.372",
+    "title": "TinyBERT: Distilling BERT for Natural Language Understanding",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Text",
+    "predicate": "uses",
+    "object": "English Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "use English Wikipedia (2,500M words) as the text corpus",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.372",
+    "title": "TinyBERT: Distilling BERT for Natural Language Understanding",
+    "section": "4.2 TinyBERT Settings"
+  },
+  {
+    "subject": "TinyBERT",
+    "predicate": "comparesagainst",
+    "object": "BERTTINY",
+    "object_type": "Model",
+    "source_sentence": "We compare TinyBERT with BERTTINY, BERTSMALL6 and several state-of-the-art KD baselines including BERT- PKD , PD , DistilBERT and Mobile- BERT .",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.372",
+    "title": "TinyBERT: Distilling BERT for Natural Language Understanding",
+    "section": "4.3 Baselines"
+  },
+  {
+    "subject": "TinyBERT",
+    "predicate": "comparesagainst",
+    "object": "BERTSMALL6",
+    "object_type": "Model",
+    "source_sentence": "We compare TinyBERT with BERTTINY, BERTSMALL6 and several state-of-the-art KD baselines including BERT- PKD , PD , DistilBERT and Mobile- BERT .",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.372",
+    "title": "TinyBERT: Distilling BERT for Natural Language Understanding",
+    "section": "4.3 Baselines"
+  },
+  {
+    "subject": "TinyBERT",
+    "predicate": "comparesagainst",
+    "object": "DistilBERT",
+    "object_type": "Model",
+    "source_sentence": "We compare TinyBERT with BERTTINY, BERTSMALL6 and several state-of-the-art KD baselines including BERT- PKD , PD , DistilBERT and Mobile- BERT .",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.372",
+    "title": "TinyBERT: Distilling BERT for Natural Language Understanding",
+    "section": "4.3 Baselines"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "achieves",
+    "object": "results on the test set",
+    "object_type": "Other",
+    "source_sentence": "We submitted our model predictions to the official GLUE evaluation server to obtain results on the test set9, as summarized in Table 1.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.372",
+    "title": "TinyBERT: Distilling BERT for Natural Language Understanding",
+    "section": "4.4 Experimental Results on GLUE"
+  },
+  {
+    "subject": "ELECTRA",
+    "predicate": "addresses",
+    "object": "replaced token detection",
+    "object_type": "Task",
+    "source_sentence": "Another concurrent work, ELECTRA proposes a sample- efficient task called replaced to- ken detection to accelerate pre-training",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.372",
+    "title": "TinyBERT: Distilling BERT for Natural Language Understanding",
+    "section": "4.5.2 Effects of Distillation Objective"
+  },
+  {
+    "subject": "Language Models",
+    "predicate": "uses",
+    "object": "low-rank approximation",
+    "object_type": "Method",
+    "source_sentence": "Pre- trained Language Models Compression Generally, pre- trained language models (PLMs) can be compressed by low-rank approximation (Ma 10",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.372",
+    "title": "TinyBERT: Distilling BERT for Natural Language Understanding",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "TinyBERT",
+    "predicate": "achieves",
+    "object": "comparable results with BERTTINY",
+    "object_type": "Other",
+    "source_sentence": "From the results of Table 7, we find that GD can effectively transfer the knowledge from the teacher BERT to the student TinyBERT and achieve comparable results with BERTTINY (61.1 vs. 63.9)",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.372",
+    "title": "TinyBERT: Distilling BERT for Natural Language Understanding",
+    "section": "C Initializing TinyBERT with BERTTINY"
+  }
+]

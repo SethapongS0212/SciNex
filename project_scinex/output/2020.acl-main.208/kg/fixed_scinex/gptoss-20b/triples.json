@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Beam Search",
+    "predicate": "addresses",
+    "object": "dependence between lines",
+    "object_type": "Concept",
+    "source_sentence": "beam search is inevitably needed to deal with the inherent dependence between lines.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "4.2 Scaffold Search"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "achieves",
+    "object": "approximate top B solutions",
+    "object_type": "Other",
+    "source_sentence": "Although beam search can approximate the top B solutions , the time complexity of beam search grows quadratically with the beam width W.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "4.2 Scaffold Search"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "addresses",
+    "object": "Constraints",
+    "object_type": "Concept",
+    "source_sentence": "An alternative view on beam search is that it front loads the computation to reject invalid programs that do not satisfy the constraints earlier in the search process.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "4.3 Tradeoffs in Early Detection"
+  },
+  {
+    "subject": "Search",
+    "predicate": "addresses",
+    "object": "information",
+    "object_type": "Concept",
+    "source_sentence": "replaced these empty pseudocode lines with the ground truth code, effectively giving this information away to the search algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "5 Implementation"
+  },
+  {
+    "subject": "parser",
+    "predicate": "produces",
+    "object": "high level control information",
+    "object_type": "Concept",
+    "source_sentence": "Since no off-the-shelf C++ parser extracts the information we need from code pieces, we implement our own primary expression parser to extract high level control information.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "5 Implementation"
+  },
+  {
+    "subject": "Search",
+    "predicate": "comparesagainst",
+    "object": "Algorithm",
+    "object_type": "Method",
+    "source_sentence": "We now compare scaffold search to the brute force algorithm as described in section 4.3.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "6.4 Scaffold Search vs. Brute Force Method"
+  },
+  {
+    "subject": "Grammar",
+    "predicate": "addresses",
+    "object": "exponential description complexity",
+    "object_type": "Concept",
+    "source_sentence": "We show that we cannot specify the SymTable constraint in a context free grammar without exponential description complexity w.r.t. the number of variables declared.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.208",
+    "title": "Semantic Scaffolds for Pseudocode-to-Code Generation",
+    "section": "A.1 Primary Expressions"
+  }
+]

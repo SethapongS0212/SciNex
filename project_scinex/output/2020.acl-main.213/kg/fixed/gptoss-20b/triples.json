@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "APC",
+    "predicate": "uses",
+    "object": "RNN",
+    "object_type": "Model",
+    "source_sentence": "APC incorporates an RNN to process each frame xt sequentially and update its hidden state ht accordingly.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.213",
+    "title": "Improved Speech Representations with Multi-Target Autoregressive Predictive Coding",
+    "section": "2 Autoregressive Predictive Coding"
+  },
+  {
+    "subject": "APC",
+    "predicate": "achieves",
+    "object": "more accurate prediction of xt+n given ht",
+    "object_type": "Other",
+    "source_sentence": "Our goal is to make APC's prediction of xt+n given ht more accurate.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.213",
+    "title": "Improved Speech Representations with Multi-Target Autoregressive Predictive Coding",
+    "section": "3 Proposed Methodology"
+  },
+  {
+    "subject": "APC",
+    "predicate": "trainedon",
+    "object": "LibriSpeech train-clean-360 subset",
+    "object_type": "Dataset",
+    "source_sentence": "We follow Chung et al. (2019) and use the audio portion of the LibriSpeech train-clean-360 subset, which contains 360 hours of read speech produced by 921 speakers, for training APC.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.213",
+    "title": "Improved Speech Representations with Multi-Target Autoregressive Predictive Coding",
+    "section": "4.1 Setup"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "log Mel spectrograms",
+    "object_type": "Other",
+    "source_sentence": "The input features are 80-dimensional log Mel spectrograms, i.e., xt ∈R80.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.213",
+    "title": "Improved Speech Representations with Multi-Target Autoregressive Predictive Coding",
+    "section": "4.1 Setup"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "GRU",
+    "object_type": "Method",
+    "source_sentence": "Both RNN and RNNaux are a 3-layer, 512-dim uni-directional GRU network with residual connections between two consecutive layers.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.213",
+    "title": "Improved Speech Representations with Multi-Target Autoregressive Predictive Coding",
+    "section": "4.1 Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "ADAM",
+    "object_type": "Method",
+    "source_sentence": "All models are trained for 100 epochs using Adam with a batch size of 32 and a learning rate of 10−3.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.213",
+    "title": "Improved Speech Representations with Multi-Target Autoregressive Predictive Coding",
+    "section": "4.1 Setup"
+  },
+  {
+    "subject": "APC",
+    "predicate": "evaluatedon",
+    "object": "LibriSpeech dev-clean subset",
+    "object_type": "Dataset",
+    "source_sentence": "Figures 2a and 2b present Lr (before multiplying λ) and Lf of the considered APC variants on the LibriSpeech dev-clean subset, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.213",
+    "title": "Improved Speech Representations with Multi-Target Autoregressive Predictive Coding",
+    "section": "4.1 Setup"
+  },
+  {
+    "subject": "Phonetic Classification",
+    "predicate": "uses",
+    "object": "TIMIT",
+    "object_type": "Dataset",
+    "source_sentence": "We use phonetic classification on TIMIT as the probing task to analyze the learned representations.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.213",
+    "title": "Improved Speech Representations with Multi-Target Autoregressive Predictive Coding",
+    "section": "4.3 Learned representation analysis"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "produces",
+    "object": "Features",
+    "object_type": "Feature",
+    "source_sentence": "we take the output of the last RNN layer as the extracted features, and provide them to a linear logistic regression classifier",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.213",
+    "title": "Improved Speech Representations with Multi-Target Autoregressive Predictive Coding",
+    "section": "4.3 Learned representation analysis"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "Attention",
+    "object_type": "Method",
+    "source_sentence": "the downstream model is an end-to-end, sequence-to-sequence RNN with attention.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.213",
+    "title": "Improved Speech Representations with Multi-Target Autoregressive Predictive Coding",
+    "section": "4.4 Speech recognition and translation"
+  }
+]

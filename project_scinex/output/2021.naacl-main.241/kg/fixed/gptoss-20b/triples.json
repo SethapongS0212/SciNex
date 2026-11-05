@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "state-of-the-art reranking performance for passages and documents",
+    "object_type": "Other",
+    "source_sentence": "Fine-tuned Transformer LM BERT achieved state-of-the- art reranking performance for passages and documents.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "CLS output token",
+    "object_type": "Concept",
+    "source_sentence": "the common approach is to feed the concatenated query document text through BERT and use BERT's [CLS] output token to produce a relevance score.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "relevance score",
+    "object_type": "Concept",
+    "source_sentence": "the common approach is to feed the concatenated query document text through BERT and use BERT's [CLS] output token to produce a relevance score.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "ColBERT",
+    "predicate": "uses",
+    "object": "dense index",
+    "object_type": "Artifact",
+    "source_sentence": "ColBERT performs interaction as dot product followed pooling operations, which allows it to also leverage a dense index to do full corpus retrieval.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "reranker",
+    "predicate": "addresses",
+    "object": "rerank task",
+    "object_type": "Task",
+    "source_sentence": "BERT reranker is added in the rerank task.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "5 Results"
+  },
+  {
+    "subject": "document retriever",
+    "predicate": "trainedon",
+    "object": "MSMARCO passage set",
+    "object_type": "Dataset",
+    "source_sentence": "train document retriever also on MSMARCO passage set",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "5 Results"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "addresses",
+    "object": "contextualized exact match",
+    "object_type": "Task",
+    "source_sentence": "We also provide qualitative analysis on contextualized exact match.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "5 Results"
+  },
+  {
+    "subject": "Documents",
+    "predicate": "uses",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "Documents are truncated to the first 512 tokens to fit in BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "5.1 Main Results"
+  },
+  {
+    "subject": "ColBERT",
+    "predicate": "uses",
+    "object": "approximate search",
+    "object_type": "Method",
+    "source_sentence": "We include ColBERT 's latency reported in the original paper, which was optimized by approximate search and quantization.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "5.2 Analysis of Dimensionality"
+  },
+  {
+    "subject": "ColBERT",
+    "predicate": "uses",
+    "object": "quantization",
+    "object_type": "Method",
+    "source_sentence": "We include ColBERT 's latency reported in the original paper, which was optimized by approximate search and quantization.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "5.2 Analysis of Dimensionality"
+  },
+  {
+    "subject": "Ranking",
+    "predicate": "produces",
+    "object": "final ranking",
+    "object_type": "Concept",
+    "source_sentence": "Afterwards a max-scatter of scores followed by a sort produces the final ranking .",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "A.2 Search Illustration"
+  }
+]

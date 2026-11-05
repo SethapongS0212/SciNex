@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Sentiment Analyzer",
+    "predicate": "uses",
+    "object": "unsupervised rule-based method",
+    "object_type": "Method",
+    "source_sentence": "To address the first challenge, the sentiment analyzer adopts three methods including an unsupervised rule-based method, a regression model, and a domain-adversarial regression model to acquire sentiment intensities of the story training corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "0.9 She won the game and was very proud of her team."
+  },
+  {
+    "subject": "Sentiment Analyzer",
+    "predicate": "uses",
+    "object": "regression model",
+    "object_type": "Method",
+    "source_sentence": "To address the first challenge, the sentiment analyzer adopts three methods including an unsupervised rule-based method, a regression model, and a domain-adversarial regression model to acquire sentiment intensities of the story training corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "0.9 She won the game and was very proud of her team."
+  },
+  {
+    "subject": "Sentiment Analyzer",
+    "predicate": "uses",
+    "object": "domain-adversarial regression model",
+    "object_type": "Method",
+    "source_sentence": "To address the first challenge, the sentiment analyzer adopts three methods including an unsupervised rule-based method, a regression model, and a domain-adversarial regression model to acquire sentiment intensities of the story training corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "0.9 She won the game and was very proud of her team."
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "SIC- Seq2Seq",
+    "object_type": "Model",
+    "source_sentence": "the sentimental generator uses a sentiment intensity controlled sequence-to-sequence model (SIC- Seq2Seq) to generate a story ending which expresses the given sentiment intensity.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "0.9 She won the game and was very proud of her team."
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "Gaussian Kernel Layer",
+    "object_type": "Concept",
+    "source_sentence": "It introduces an explicit sentiment intensity control variable into the Seq2Seq model via a Gaussian Kernel Layer to guide the generation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "0.9 She won the game and was very proud of her team."
+  },
+  {
+    "subject": "Bi-directional LSTM",
+    "predicate": "uses",
+    "object": "encoder",
+    "object_type": "Other",
+    "source_sentence": "we use a normal bi-directional LSTM as the encoder.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "2.3 Sentimental Generator"
+  },
+  {
+    "subject": "Words",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "All context words xi are represented by their semantic embeddings E as the input.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "2.3 Sentimental Generator"
+  },
+  {
+    "subject": "training",
+    "predicate": "splitfrom",
+    "object": "data",
+    "object_type": "Dataset",
+    "source_sentence": "We split the data into a training set with 93,126 stories , a validation set with 5,173 stories and a test set with 5,175 stories .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "3.1 Dataset"
+  },
+  {
+    "subject": "Sentiment Analyzer",
+    "predicate": "uses",
+    "object": "Bidirectional LSTM",
+    "object_type": "Method",
+    "source_sentence": "For the RM and DA sentiment analyzer, we implement the encoder as a 3-layer bidirectional LSTM with a hidden size of 512.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "3.3 Experiment Settings"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "Bidirectional LSTM",
+    "object_type": "Method",
+    "source_sentence": "For the sentimental generator, both the semantic and sentiment embeddings are 256 dimensions and randomly initialized. We implement both encoder and decoder as 1-layer bidirectional LSTM with a hidden size of 512.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "3.3 Experiment Settings"
+  },
+  {
+    "subject": "kernel",
+    "predicate": "uses",
+    "object": "Gaussian Kernel Layer",
+    "object_type": "Method",
+    "source_sentence": "The variance σ2 of Gaussian Kernel Layer is set as 1.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "3.3 Experiment Settings"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "Adam optimizer",
+    "object_type": "Method",
+    "source_sentence": "We use the Adam optimizer with an initial learning rate of 0.0003.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "3.3 Experiment Settings"
+  },
+  {
+    "subject": "Example",
+    "predicate": "uses",
+    "object": "target sentiment intensities",
+    "object_type": "Concept",
+    "source_sentence": "We provide an example of story ending generation with five different target sentiment intensities in Table 4.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "4 Case Study"
+  },
+  {
+    "subject": "Sentiment",
+    "predicate": "uses",
+    "object": "Gaussian Kernel Layer",
+    "object_type": "Method",
+    "source_sentence": "Therefore, we propose to introduce the numeric sentiment value via a Gaussian Ker- nel Layer.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "uses",
+    "object": "analyzer",
+    "object_type": "Method",
+    "source_sentence": "Future work can combine the analyzer and generator via joint training, hope-fully to achieve better results.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "6 Conclusion and Future Work"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "uses",
+    "object": "generator",
+    "object_type": "Method",
+    "source_sentence": "Future work can combine the analyzer and generator via joint training, hope-fully to achieve better results.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "6 Conclusion and Future Work"
+  }
+]

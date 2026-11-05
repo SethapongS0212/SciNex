@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "two well-known datasets",
+    "object_type": "Dataset",
+    "source_sentence": "experiments conducted on two well-known datasets exhibit that ZS-BERT can significantly outperform state-of-the-art methods for predicting unseen relations under the ZSL setting.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "Relation Extraction",
+    "object_type": "Concept",
+    "source_sentence": "These models aim to solve the general relation extraction task",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "3 Problem Deﬁnition"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "contextual representation of each token",
+    "object_type": "Other",
+    "source_sentence": "We utilize BERT to generate the contextual representation of each token.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "4.2 Input Sentence Encoder"
+  },
+  {
+    "subject": "Tokenization",
+    "predicate": "uses",
+    "object": "input sentences Xi",
+    "object_type": "Other",
+    "source_sentence": "We first tokenize the input sentences Xi with Word- Piece tokenization.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "4.2 Input Sentence Encoder"
+  },
+  {
+    "subject": "Relation Extraction",
+    "predicate": "uses",
+    "object": "entity marker vector",
+    "object_type": "Other",
+    "source_sentence": "Since the entity itself does matter in relation extraction , we use an entity marker vector, consisting of all zeros except the indices that entities appear in a sentence , to indicate the positions of entities ei1 and ei2.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "4.2 Input Sentence Encoder"
+  },
+  {
+    "subject": "entity",
+    "predicate": "uses",
+    "object": "entity marker vector and token hidden vector",
+    "object_type": "Other",
+    "source_sentence": "The entity can be recognized via simple element-wise multiplication between entity marker vector and token hidden vector.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "4.2 Input Sentence Encoder"
+  },
+  {
+    "subject": "Entities",
+    "predicate": "uses",
+    "object": "hidden state vectors of two entities",
+    "object_type": "Other",
+    "source_sentence": "We obtain the hidden state vectors of two entities , H1 e and H2 e, by averaging their respective tokens' hidden state vectors.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "4.2 Input Sentence Encoder"
+  },
+  {
+    "subject": "ESIM",
+    "predicate": "uses",
+    "object": "bi-LSTM",
+    "object_type": "Method",
+    "source_sentence": "ESIM uses bi-LSTM to encode two input sequences",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "5.1 Evaluation Settings"
+  },
+  {
+    "subject": "ESIM",
+    "predicate": "uses",
+    "object": "Softmax",
+    "object_type": "Method",
+    "source_sentence": "ESIM uses bi-LSTM to encode two input sequences, passes them through the local inference model, and produces the prediction via a softmax layer",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "5.1 Evaluation Settings"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "probability vector",
+    "object_type": "Other",
+    "source_sentence": "instead of originally using a softmax layer to output a probability vector",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "5.1 Evaluation Settings"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "Sentence Embeddings",
+    "object_type": "Other",
+    "source_sentence": "The nearest neighbor search is applied over input sentence embeddings and relation attribute vectors to generate zero-shot prediction.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "5.1 Evaluation Settings"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Other",
+    "source_sentence": "These SRE models use different ways to extract features from the input sentences",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "5.1 Evaluation Settings"
+  },
+  {
+    "subject": "Embedding Space",
+    "predicate": "uses",
+    "object": "t-SNE",
+    "object_type": "Other",
+    "source_sentence": "We visualize the embedding space by t-SNE , as shown in Fig- ure 5.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "5.3 Case Study"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "addresses",
+    "object": "zero-shot relation extraction task",
+    "object_type": "Task",
+    "source_sentence": "In this work, we present a novel and effective model, ZS-BERT, to tackle the zero-shot relation extraction task.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "6 Conclusions"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "Further- more, learning effective embeddings for relations might also be helpful to semi-supervised learning or few-shot learning by utilizing prototypes of relations as the auxiliary information.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.272",
+    "title": "ZS-BERT: Towards Zero-Shot Relation Extraction with Attribute Representation Learning",
+    "section": "6 Conclusions"
+  }
+]

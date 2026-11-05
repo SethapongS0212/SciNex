@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Deep Neural Networks",
+    "predicate": "uses",
+    "object": "acoustic features",
+    "object_type": "Feature",
+    "source_sentence": "Deep Neural Networks (DNN) has been successfully used for modelling both the acoustic features and the lexical features extracted from the words sequences.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Deep Neural Networks",
+    "predicate": "uses",
+    "object": "lexical features",
+    "object_type": "Feature",
+    "source_sentence": "Deep Neural Networks (DNN) has been successfully used for modelling both the acoustic features and the lexical features extracted from the words sequences.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Embedding Features",
+    "object_type": "Feature",
+    "source_sentence": "The inputs of the DNN models were once again the acoustic embedding features.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.2 Feed Forward Neural Network"
+  },
+  {
+    "subject": "N-gram",
+    "predicate": "produces",
+    "object": "vector",
+    "object_type": "Other",
+    "source_sentence": "N-gram vector is extracted for each utterance by counting the occurrences of each n-gram.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.7 GMM Tokenizer"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "n-gram vectors",
+    "object_type": "Other",
+    "source_sentence": "The n-gram vectors are then fed to a Multiclass SVM model.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.7 GMM Tokenizer"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "achieves",
+    "object": "51.47% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "A Multiclass SVM model was used to train and test the tf-idf vectors, the result was 51.47% accuracy .",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.8 Word TF-IDF Model"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "uses",
+    "object": "Jaccard similarity algorithm",
+    "object_type": "Method",
+    "source_sentence": "We used the Jaccard similarity algorithm to find the similarity between the utterances.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.9 Sentence Similarity Model"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "sequences",
+    "object_type": "Other",
+    "source_sentence": "The sequences were used as inputs to SVM models.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.10 PRLM Model"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "achieves",
+    "object": "41.12% accuracy in identifying development data",
+    "object_type": "Other",
+    "source_sentence": "An SVM was built to test the performance of the new features, and it scored 41.12% accuracy in identifying development data.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.11 Phoneme TF-IDF Model"
+  },
+  {
+    "subject": "Sentences",
+    "predicate": "uses",
+    "object": "word tf-idf vector extractor",
+    "object_type": "Other",
+    "source_sentence": "Then the sentences were introduced to the word tf-idf vector extractor.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.11 Phoneme TF-IDF Model"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Shallow Semantic Parsing",
+    "predicate": "addresses",
+    "object": "applications",
+    "object_type": "Concept",
+    "source_sentence": "The shallow semantic parsing paradigm enables many applications that only require relevant text spans.",
+    "extraction_mode": "fixed",
+    "paper": "Q17-1009",
+    "title": "Automatically Tagging Constructions of Causation and Their Slot-Fillers",
+    "section": "2.1 Causal Language Annotation Scheme"
+  },
+  {
+    "subject": "Matching",
+    "predicate": "addresses",
+    "object": "argument ID",
+    "object_type": "Task",
+    "source_sentence": "Thus, matching these patterns is the first step of argument ID, in addition to (tentative) connective discovery.",
+    "extraction_mode": "fixed",
+    "paper": "Q17-1009",
+    "title": "Automatically Tagging Constructions of Causation and Their Slot-Fillers",
+    "section": "4.1 Causeway-S: Syntax-Based Tagging"
+  },
+  {
+    "subject": "PoS tags",
+    "predicate": "uses",
+    "object": "matching",
+    "object_type": "Other",
+    "source_sentence": "At test time, each new sentence is turned into a string of lemmas with POS tags for matching.",
+    "extraction_mode": "fixed",
+    "paper": "Q17-1009",
+    "title": "Automatically Tagging Constructions of Causation and Their Slot-Fillers",
+    "section": "4.2 Causeway-L: Lexical Pattern-Based Tagging"
+  },
+  {
+    "subject": "Matching",
+    "predicate": "uses",
+    "object": "capturing groups",
+    "object_type": "Other",
+    "source_sentence": "Matching lemmas can be recovered from the capturing groups.",
+    "extraction_mode": "fixed",
+    "paper": "Q17-1009",
+    "title": "Automatically Tagging Constructions of Causation and Their Slot-Fillers",
+    "section": "4.2 Causeway-L: Lexical Pattern-Based Tagging"
+  },
+  {
+    "subject": "Syntactic Patterns",
+    "predicate": "comparesagainst",
+    "object": "regular expressions",
+    "object_type": "Other",
+    "source_sentence": "Unlike syntactic patterns, regular expressions can- not pinpoint the cause and effect arguments; they can only give ranges within which those arguments must appear.",
+    "extraction_mode": "fixed",
+    "paper": "Q17-1009",
+    "title": "Automatically Tagging Constructions of Causation and Their Slot-Fillers",
+    "section": "4.2 Causeway-L: Lexical Pattern-Based Tagging"
+  },
+  {
+    "subject": "Sequence Labeling",
+    "predicate": "addresses",
+    "object": "argument ID",
+    "object_type": "Other",
+    "source_sentence": "We treat the task of argument ID as a sequence labeling problem: given a particular regex-derived connective, the system must identify which tokens are in the cause, which are in the effect, and which are neither.",
+    "extraction_mode": "fixed",
+    "paper": "Q17-1009",
+    "title": "Automatically Tagging Constructions of Causation and Their Slot-Fillers",
+    "section": "4.2 Causeway-L: Lexical Pattern-Based Tagging"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "linear-chain",
+    "object_type": "Other",
+    "source_sentence": "We use a standard linear-chain CRF for this task, implemented with the CRFsuite library.",
+    "extraction_mode": "fixed",
+    "paper": "Q17-1009",
+    "title": "Automatically Tagging Constructions of Causation and Their Slot-Fillers",
+    "section": "4.2 Causeway-L: Lexical Pattern-Based Tagging"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "CRFsuite library",
+    "object_type": "Other",
+    "source_sentence": "We use a standard linear-chain CRF for this task, implemented with the CRFsuite library.",
+    "extraction_mode": "fixed",
+    "paper": "Q17-1009",
+    "title": "Automatically Tagging Constructions of Causation and Their Slot-Fillers",
+    "section": "4.2 Causeway-L: Lexical Pattern-Based Tagging"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "scikit-learn 0.17.1 implementation",
+    "object_type": "Other",
+    "source_sentence": "We use the scikit-learn 0.17.1 implementation of logistic regression with L1 regularization and balanced class weights.",
+    "extraction_mode": "fixed",
+    "paper": "Q17-1009",
+    "title": "Automatically Tagging Constructions of Causation and Their Slot-Fillers",
+    "section": "4.3 Voting Classiﬁer for Filtering"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "TimeML annotations",
+    "object_type": "Concept",
+    "source_sentence": "their classifier relies on gold-standard TimeML annotations.",
+    "extraction_mode": "fixed",
+    "paper": "Q17-1009",
+    "title": "Automatically Tagging Constructions of Causation and Their Slot-Fillers",
+    "section": "7 Related Work"
+  }
+]

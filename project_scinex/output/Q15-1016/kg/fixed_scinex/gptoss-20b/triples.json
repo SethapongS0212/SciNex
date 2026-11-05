@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Latent Semantic Analysis",
+    "predicate": "addresses",
+    "object": "NLP",
+    "object_type": "Task",
+    "source_sentence": "It was popularized in NLP via Latent Semantic Analysis (LSA).",
+    "extraction_mode": "fixed",
+    "paper": "Q15-1016",
+    "title": "Improving Distributional Similarity with Lessons Learned from Word Embeddings",
+    "section": "2.2 Singular Value Decomposition (SVD)"
+  },
+  {
+    "subject": "Negative Sampling",
+    "predicate": "produces",
+    "object": "negative examples",
+    "object_type": "Other",
+    "source_sentence": "The negative examples are created by stochastically corrupting observed (w, c) pairs from D – hence the name 'negative sampling'.",
+    "extraction_mode": "fixed",
+    "paper": "Q15-1016",
+    "title": "Improving Distributional Similarity with Lessons Learned from Word Embeddings",
+    "section": "2.3 Skip-Grams with Negative Sampling (SGNS)"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "weighting scheme",
+    "object_type": "Other",
+    "source_sentence": "Both GloVe and word2vec employ such a weighting scheme, and while less common, this approach was also explored in traditional count-based methods , e.g. GloVe's implementation weights contexts using the harmonic function, e.g. a context word three tokens away will be counted as 1 3 of an occurrence.",
+    "extraction_mode": "fixed",
+    "paper": "Q15-1016",
+    "title": "Improving Distributional Similarity with Lessons Learned from Word Embeddings",
+    "section": "3.1 Pre-processing Hyperparameters"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "weighting scheme",
+    "object_type": "Other",
+    "source_sentence": "Both GloVe and word2vec employ such a weighting scheme, and while less common, this approach was also explored in traditional count-based methods , e.g. GloVe's implementation weights contexts using the harmonic function, e.g. a context word three tokens away will be counted as 1 3 of an occurrence.",
+    "extraction_mode": "fixed",
+    "paper": "Q15-1016",
+    "title": "Improving Distributional Similarity with Lessons Learned from Word Embeddings",
+    "section": "3.1 Pre-processing Hyperparameters"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "uniform sampling",
+    "object_type": "Other",
+    "source_sentence": "The reason we call this modification dynamic context windows is because word2vec implements its weighting scheme by uniformly sampling the actual window size between 1 and L, for each token .",
+    "extraction_mode": "fixed",
+    "paper": "Q15-1016",
+    "title": "Improving Distributional Similarity with Lessons Learned from Word Embeddings",
+    "section": "3.1 Pre-processing Hyperparameters"
+  },
+  {
+    "subject": "Smoothing Techniques",
+    "predicate": "addresses",
+    "object": "bias towards rare words",
+    "object_type": "Concept",
+    "source_sentence": "Like other smoothing techniques, context distribution smoothing alleviates PMI's bias towards rare words.",
+    "extraction_mode": "fixed",
+    "paper": "Q15-1016",
+    "title": "Improving Distributional Similarity with Lessons Learned from Word Embeddings",
+    "section": "3.2 Association Metric Hyperparameters"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "English Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "All models were trained on English Wikipedia (August 2013 dump)",
+    "extraction_mode": "fixed",
+    "paper": "Q15-1016",
+    "title": "Improving Distributional Similarity with Lessons Learned from Word Embeddings",
+    "section": "4.2 Word Representations"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "comprises",
+    "object": "CBOW",
+    "object_type": "Method",
+    "source_sentence": "Another algorithm featured in word2vec is CBOW.",
+    "extraction_mode": "fixed",
+    "paper": "Q15-1016",
+    "title": "Improving Distributional Similarity with Lessons Learned from Word Embeddings",
+    "section": "5.4 Comparison with CBOW"
+  }
+]

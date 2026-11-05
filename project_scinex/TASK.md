@@ -1,6 +1,18 @@
 # TASK — Fixed-extraction accuracy on the 20-paper corpus
 
-> ## ⭐ CURRENT TASK (Session 36, 2026-10-26): Part 2 finetuning — FOLD 0 DONE AND JUDGED
+> ## ⛔⛔ CURRENT TASK (Session 37, 2026-10-26/27): Part 2 finetuning moves to the ACL ANTHOLOGY papers, FIXED extractor
+> **User decision:** the finetuning runs use the **ACL Anthology papers**, not the professor's
+> 20-paper corpus, **because the ACL papers have fixed entity lists**
+> (`output/acl/<id>/Entity_<id>_enriched.csv`). So: **805 ACL papers** (`papers_acl.txt`), extractor
+> **`fixed`** (subjects only from the paper's entity list), teacher **`openai/gpt-oss-20b` run
+> locally** (slug `gptoss-20b`), student **`Qwen/Qwen3-8B`**, on the Linux box with 2× RTX 5090.
+> **Status (2026-11-05): teacher pass and both students DONE.** The max-empty-30% student keeps
+> 670 CEO triples at the teacher's guard-pass rate (81.7% vs 80.9%); teacher-only collapsed
+> (`results.md` Table 16). **Next: blind C1/C3/C4 judging on the 41 eval papers.** Detail:
+> `hands_off.md` §37 and `HANDOFF_NEXT_SESSION.md`. Everything below about the 20-paper corpus is the finished earlier
+> phase. Its results stand, and no new finetuning runs go on it.
+>
+> ## ⭐ PREVIOUS TASK (Session 36, 2026-10-26): Part 2 finetuning — FOLD 0 DONE AND JUDGED
 > **Start with `HANDOFF_NEXT_SESSION.md`.** Detail: `hands_off.md` §36; numbers: `results.md`
 > Tables 13–14. The RTX 5090 VM plan was dropped; everything below ran on a **Windows laptop with an
 > RTX 4060 Laptop GPU, 8 GB, sm_89**, student **`Qwen/Qwen3-1.7B`** (not the 4B/8B of earlier plans).
@@ -72,7 +84,10 @@ that justifies trusting the judge, plus a before/after showing what the prompt f
 - **All existing KGE / citation-prediction results are frozen.** RotatE MRR ~0.60, the
   ontology tie, the text-baseline problem — untouched and still valid. Nothing here
   re-opens them.
-- **The 315-paper ACL corpus is not the corpus for this task.** Its results stand as they are.
+- ~~The 315-paper ACL corpus is not the corpus for this task.~~ **Superseded 2026-10-26 (Session 37,
+  user): the Part 2 finetuning runs DO use the ACL Anthology papers (805 with fixed entity lists),
+  with the fixed extractor.** The per-triple judging of §1–§9 stays on the 20-paper corpus, and the
+  old ACL KGE results stand as they are.
 
 ---
 

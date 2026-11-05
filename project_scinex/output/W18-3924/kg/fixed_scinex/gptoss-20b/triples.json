@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "acoustic embedding features",
+    "object_type": "Feature",
+    "source_sentence": "The inputs of the DNN models were once again the acoustic embedding features.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.2 Feed Forward Neural Network"
+  },
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "vocabulary of 68707 unique words",
+    "object_type": "Concept",
+    "source_sentence": "We gathered all the word files from training and development data to extract a vocabulary of 68707 unique words.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.8 Word TF-IDF Model"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "achieves",
+    "object": "51.47% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "A Multiclass SVM model was used to train and test the tf-idf vectors, the result was 51.47% accuracy.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.8 Word TF-IDF Model"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "trainedon",
+    "object": "training and development data",
+    "object_type": "Dataset",
+    "source_sentence": "the 16157 vectors of 16157 features of training and development were used to train an SVM model.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.9 Sentence Similarity Model"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "achievesresult",
+    "object": "41.12% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "An SVM was built to test the performance of the new features, and it scored 41.12% accuracy in identifying development data.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.11 Phoneme TF-IDF Model"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "SVM models",
+    "object_type": "Model",
+    "source_sentence": "In the embedding acoustic features system and the sentence similarity system a total of 16757 features were used to train the SVM models.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "3.12 Bottleneck Features"
+  },
+  {
+    "subject": "Sentence Similarity",
+    "predicate": "achieves",
+    "object": "51.89% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The result of the sentence similarity system with 51.89% accuracy was slightly better than that of the tf-idf;",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "4 Results and Discussion"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "achieves",
+    "object": "30% correct",
+    "object_type": "Metric",
+    "source_sentence": "Only 30% of the testing files were predicted correctly by both of the similarity model and the embedding feature SVM model.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "4 Results and Discussion"
+  },
+  {
+    "subject": "Features",
+    "predicate": "achieves",
+    "object": "61.3% performance",
+    "object_type": "Metric",
+    "source_sentence": "The use of bottleneck features improved the performance of the system to 61.3%.",
+    "extraction_mode": "fixed",
+    "paper": "W18-3924",
+    "title": "Birzeit Arabic Dialect Identiﬁcation System for the 2018 VarDial Challenge",
+    "section": "4 Results and Discussion"
+  }
+]

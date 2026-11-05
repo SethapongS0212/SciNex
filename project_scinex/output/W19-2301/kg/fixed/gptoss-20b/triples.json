@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Context",
+    "predicate": "uses",
+    "object": "source attribute ci",
+    "object_type": "Concept",
+    "source_sentence": "The context RNN, cRNN takes the source attribute ci as an additional input by concatenating its representation with the output of eRNN as in Figure 1.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "2 Model Architecture"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "output of eRNN",
+    "object_type": "Concept",
+    "source_sentence": "If the attribute ci is a sequence of tokens, then an attention (using the output of eRNN) over the source attribute representations is concatenated with the output of eRNN.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "2 Model Architecture"
+  },
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "context state for a turn i",
+    "object_type": "Concept",
+    "source_sentence": "This output is used by the generator to create a context state for a turn i.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "2 Model Architecture"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "dRNN",
+    "object_type": "Method",
+    "source_sentence": "If the attribute ci+1 is a sequence of tokens, then an attention (using the output of dRNN) over the attribute representations is concatenated with the rest of the decoder inputs.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "2 Model Architecture"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "comparesagainst",
+    "object": "hredGAN",
+    "object_type": "Other",
+    "source_sentence": "In this section, we explore the performance of PHRED, phredGANa and phredGANd on two conversational datasets and compare their performances to non-adversarial persona Seq2seq models as well as to the adversarial hredGAN with no explicit persona.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4 Experiments and Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "transcripts from Big Bang Theory and Friends",
+    "object_type": "Dataset",
+    "source_sentence": "We train all models on transcripts from two popular TV drama series, Big Bang Theory and Friends.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Movie Triplets Corpus (MTC)",
+    "object_type": "Dataset",
+    "source_sentence": "Due to the small size of the combined transcripts dataset, we first train the models on the larger Movie Triplets Corpus (MTC) by Banchs (2012) which consists of 240,000 dialogue triples.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "After pre-training on MTC, we reinitialize the attribute embeddings in the generator from a uniform distribution following a Xavier initialization for training on the combined person TV series dataset.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "1.85 million conversations of Ubuntu Dialogue Corpus (UDC)",
+    "object_type": "Dataset",
+    "source_sentence": "We train the models on 1.85 million conversations of multi-turn dialogue from the Ubuntu community hub, with an average of 5 utterances per conversation.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "generator",
+    "predicate": "addresses",
+    "object": "speaker embeddings",
+    "object_type": "Concept",
+    "source_sentence": "conditioning the generator and discriminator of phredGAN on speaker embeddings does not compromise the systems ability to produce diverse responses.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.6 Quantitative Analysis"
+  },
+  {
+    "subject": "Adversarial Training",
+    "predicate": "uses",
+    "object": "generator",
+    "object_type": "Model",
+    "source_sentence": "the adversarial training that encourages the generator model to produce longer, more informative, and diverse responses.",
+    "extraction_mode": "fixed",
+    "paper": "W19-2301",
+    "title": "An Adversarial Learning Framework For A Persona-Based Multi-Turn Dialogue Model",
+    "section": "4.6 Quantitative Analysis"
+  }
+]

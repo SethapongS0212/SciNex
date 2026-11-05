@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "RE-NET",
+    "predicate": "achieves",
+    "object": "better capability to model temporal, multi-relational graph data",
+    "object_type": "Concept",
+    "source_sentence": "Experimental results demonstrate that RE-NET outperforms state-of-the-art models of both static and temporal knowledge graph reasoning, showing its better capability to model temporal, multi-relational graph data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "achieves",
+    "object": "effective multi-step inference to predict unseen entity relationships",
+    "object_type": "Concept",
+    "source_sentence": "We further show that RE-NET can perform effective multi-step inference to predict unseen entity relationships in a distant future.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "uses",
+    "object": "Recurrent Neural Network (RNN)",
+    "object_type": "Model",
+    "source_sentence": "Specifically, RE-NET consists of a Recurrent Neural Network (RNN) as a recurrent event encoding module and a neighborhood aggregation module to capture the information of graph structures.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "2 Problem Formulation"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "uses",
+    "object": "Aggregation",
+    "object_type": "Method",
+    "source_sentence": "Specifically, RE-NET consists of a Recurrent Neural Network (RNN) as a recurrent event encoding module and a neighborhood aggregation module to capture the information of graph structures.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "2 Problem Formulation"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "uses",
+    "object": "Recurrent Neural Network",
+    "object_type": "Model",
+    "source_sentence": "RE-NET consists of a Recurrent Neural Network (RNN) as a recurrent event encoder (Sec. 3.1) for temporal dependency and a neighborhood aggregator (Sec. 3.2) for graph structural dependency.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "3 Recurrent Event Network"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "uses",
+    "object": "multi-step inference",
+    "object_type": "Other",
+    "source_sentence": "We also discuss parameter learning of RE-NET and define multi-step inference for distant future by sampling intermediate graphs in a sequential manner (Sec.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "3 Recurrent Event Network"
+  },
+  {
+    "subject": "Aggregation",
+    "predicate": "uses",
+    "object": "mean pooling aggregator",
+    "object_type": "Other",
+    "source_sentence": "We first introduce two simple aggregation functions: a mean pooling aggregator and an attentive pooling aggregator.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "3.2 Neighborhood Aggregators"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "v⊤tanh(W (es; er; eo))",
+    "object_type": "Other",
+    "source_sentence": "where αo = softmax(v⊤tanh(W (es; er; eo)))",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "3.2 Neighborhood Aggregators"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "uses",
+    "object": "zero vector",
+    "object_type": "Concept",
+    "source_sentence": "RE-NET with an attentive aggregator (RE-NET w. takes a zero vector instead of an aggregator.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "0.5 Hits@"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "addresses",
+    "object": "multi-step inference",
+    "object_type": "Task",
+    "source_sentence": "RE-NET can sequentially infer multi-step events",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "4.2 Performance Comparison on TKGs."
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "achieves",
+    "object": "accurate prediction results",
+    "object_type": "Other",
+    "source_sentence": "our proposed method consistently outperforms the static and temporal methods , which implies that RE-NET effectively infers new events using a powerful event encoder and an aggregator, and provides accurate prediction results.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "4.2 Performance Comparison on TKGs."
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "comparesagainst",
+    "object": "ConvE",
+    "object_type": "Model",
+    "source_sentence": "We notice that with increasing time steps, the difference between RE-NET and ConvE gets smaller as shown in Fig.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "4.2 Performance Comparison on TKGs."
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "comparesagainst",
+    "object": "RE-NET w/o multi-step",
+    "object_type": "Model",
+    "source_sentence": "In Table 2, we observe that RE-NET outperforms RE-NET w/o multi-step.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "4.3 Ablation Study"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "uses",
+    "object": "trained p(s)",
+    "object_type": "Other",
+    "source_sentence": "Note that RE-NET use a trained p(s) and p(r).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "4.3 Ablation Study"
+  },
+  {
+    "subject": "RE-NET",
+    "predicate": "uses",
+    "object": "trained p(r)",
+    "object_type": "Other",
+    "source_sentence": "Note that RE-NET use a trained p(s) and p(r).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.541",
+    "title": "Recurrent Event Network: Autoregressive Structure Inference over Temporal Knowledge Graphs",
+    "section": "4.3 Ablation Study"
+  }
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "semantic parser",
+    "predicate": "achieves",
+    "object": "85% accuracy on RUSS evaluation dataset",
+    "object_type": "Metric",
+    "source_sentence": "Our semantic parser maps natural language instructions to ThingTalk at 85% accuracy and our grounding model achieves 75% accuracy in resolving web element descriptions.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.80",
+    "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Grounding",
+    "predicate": "achieves",
+    "object": "75% accuracy in resolving web element descriptions",
+    "object_type": "Metric",
+    "source_sentence": "Our semantic parser maps natural language instructions to ThingTalk at 85% accuracy and our grounding model achieves 75% accuracy in resolving web element descriptions.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.80",
+    "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "parse",
+    "predicate": "uses",
+    "object": "@retrieve functions",
+    "object_type": "Other",
+    "source_sentence": "The orange ThingTalk parse demonstrates a query with 2 @retrieve func- tions.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.80",
+    "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+    "section": "3.1 ThingTalk"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Model",
+    "source_sentence": "BERT-LSTM is an encoder-decoder network that uses a pre-trained BERT encoder and LSTM decoder with a pointer-generator.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.80",
+    "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+    "section": "3.2 Semantic Parser Model"
+  },
+  {
+    "subject": "natural language",
+    "predicate": "uses",
+    "object": "entity extraction",
+    "object_type": "Other",
+    "source_sentence": "We preprocess the natural language by performing entity extraction, where entity strings are mapped to placeholder tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.80",
+    "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+    "section": "3.2 Semantic Parser Model"
+  },
+  {
+    "subject": "entity",
+    "predicate": "uses",
+    "object": "placeholder tokens",
+    "object_type": "Other",
+    "source_sentence": "We preprocess the natural language by performing entity extraction, where entity strings are mapped to placeholder tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.80",
+    "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+    "section": "3.2 Semantic Parser Model"
+  },
+  {
+    "subject": "web",
+    "predicate": "uses",
+    "object": "Puppeteer",
+    "object_type": "Method",
+    "source_sentence": "RUSS starts a new automated Chrome session for each task and uses Puppeteer to automate web actions in the browser.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.80",
+    "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+    "section": "3.4 The Run-Time"
+  },
+  {
+    "subject": "Actions",
+    "predicate": "uses",
+    "object": "Google Voice API",
+    "object_type": "Method",
+    "source_sentence": "RUSS uses a Google Voice API to implement actions involving user interactions (@say, @ask, or @read).",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.80",
+    "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+    "section": "3.4 The Run-Time"
+  },
+  {
+    "subject": "Actions",
+    "predicate": "uses",
+    "object": "Dialogue",
+    "object_type": "Method",
+    "source_sentence": "For @ask actions, RUSS uses a preprogrammed dialogue to ask the user for a dictionary key (such as \"name\").",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.80",
+    "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+    "section": "3.4 The Run-Time"
+  },
+  {
+    "subject": "Actions",
+    "predicate": "uses",
+    "object": "dictionary",
+    "object_type": "Other",
+    "source_sentence": "In @enter actions, we retrieve information to be entered by finding its closest match among the user's dictionary keys.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.80",
+    "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+    "section": "3.4 The Run-Time"
+  },
+  {
+    "subject": "Synthesizer",
+    "predicate": "uses",
+    "object": "templates",
+    "object_type": "Other",
+    "source_sentence": "The synthesizer compositionally expands the templates and sample values from the scraped dataset to construct a large training set of instructions mapped to ThingTalk automatically.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.80",
+    "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+    "section": "4.2 Synthetic Dataset"
+  },
+  {
+    "subject": "parser",
+    "predicate": "achieves",
+    "object": "87.0% accuracy on the test set",
+    "object_type": "Other",
+    "source_sentence": "The parser obtains 87.0% accuracy on the test set.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.80",
+    "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+    "section": "5.1 Semantic Parsing Accuracy"
+  },
+  {
+    "subject": "semantic parser",
+    "predicate": "achieves",
+    "object": "high accuracy on the challenging evaluation set",
+    "object_type": "Other",
+    "source_sentence": "Despite using no real-world training data, the semantic parser achieves high accuracy on the challenging evaluation set.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.80",
+    "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+    "section": "5.1 Semantic Parsing Accuracy"
+  }
+]

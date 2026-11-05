@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "four popular real-world benchmarks",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct extensive experiments on four popular real-world benchmarks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "addresses",
+    "object": "KG problem",
+    "object_type": "Task",
+    "source_sentence": "this is the first time the hierarchical decoding is explored in the KG problem.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "2.2 Keyphrase Generation"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "document encoder",
+    "object_type": "Other",
+    "source_sentence": "we employ a two-layered bidirectional GRU as the document encoder",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "4.1 Sequential Encoder"
+  },
+  {
+    "subject": "Search",
+    "predicate": "produces",
+    "object": "current token",
+    "object_type": "Other",
+    "source_sentence": "Finally, greedy search is applied to produce the current token.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "4.2.1 Phrase-level Decoder"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "produces",
+    "object": "[eopd] token",
+    "object_type": "Other",
+    "source_sentence": "The whole hierarchical decoding process ends if the word-level decoder produces a \"[eopd]\" token at the 0-th step, i.e., yi 0 is predicted as \"[eopd]\".",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "4.2.1 Phrase-level Decoder"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "probability distribution over a predefined vocabulary V",
+    "object_type": "Other",
+    "source_sentence": "P i j,V = softmax(W3˜hi,j + bV) ∈R|V| is the probability distribution over a predefined vocabulary V.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "4.2.1 Phrase-level Decoder"
+  },
+  {
+    "subject": "Search",
+    "predicate": "addresses",
+    "object": "inference stage",
+    "object_type": "Concept",
+    "source_sentence": "An exclusive search (ES) is introduced in the inference stage as shown in Algorithm 2.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "4.4 Soft and Hard Exclusion Mechanisms"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "produces",
+    "object": "Search",
+    "object_type": "Method",
+    "source_sentence": "An exclusive search (ES) is introduced in the inference stage as shown in Algorithm 2.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "4.4 Soft and Hard Exclusion Mechanisms"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "Decoding",
+    "object_type": "Method",
+    "source_sentence": "The exclusive search mechanism forces the word-level decoding to predict a different first word with the first words of previously-predicted keyphrases within the window size KES.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "4.4 Soft and Hard Exclusion Mechanisms"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "Words",
+    "object_type": "Concept",
+    "source_sentence": "The exclusive search mechanism forces the word-level decoding to predict a different first word with the first words of previously-predicted keyphrases within the window size KES.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "4.4 Soft and Hard Exclusion Mechanisms"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "KP20k validation dataset",
+    "object_type": "Dataset",
+    "source_sentence": "In experiments, the window size KEL is selected as 4 after tuning on the KP20k validation dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "5.2 Baselines"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Inspec",
+    "object_type": "Dataset",
+    "source_sentence": "In experiments, the values of the window size KES are selected as 4, 1, 1, 1 for Inspec, Krapivin, SemEval, and KP20k respectively after tuning on the corresponding validation datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "5.2 Baselines"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Krapivin",
+    "object_type": "Dataset",
+    "source_sentence": "In experiments, the values of the window size KES are selected as 4, 1, 1, 1 for Inspec, Krapivin, SemEval, and KP20k respectively after tuning on the corresponding validation datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "5.2 Baselines"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "SemEval",
+    "object_type": "Dataset",
+    "source_sentence": "In experiments, the values of the window size KES are selected as 4, 1, 1, 1 for Inspec, Krapivin, SemEval, and KP20k respectively after tuning on the corresponding validation datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "5.2 Baselines"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "KP20k",
+    "object_type": "Dataset",
+    "source_sentence": "In experiments, the values of the window size KES are selected as 4, 1, 1, 1 for Inspec, Krapivin, SemEval, and KP20k respectively after tuning on the corresponding validation datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "5.2 Baselines"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "KP20k dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct the experiments on KP20k dataset and list the results in Table 7.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.103",
+    "title": "Exclusive Hierarchical Decoding for Deep Keyphrase Generation",
+    "section": "6.5 ExHiRD-h: Window Size of Exclusive Search"
+  }
+]

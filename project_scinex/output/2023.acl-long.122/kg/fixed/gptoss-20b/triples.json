@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "fitness function",
+    "object_type": "Concept",
+    "source_sentence": "GA is a heuristic search algorithm defined by a fitness function, operators for combination (crossover) and modification (mutation) of the candidate solutions, and a selection method.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "3.1 Genetic algorithm"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "selection algorithm",
+    "object_type": "Concept",
+    "source_sentence": "The algorithm itself consists of evaluating each solution in the population using the fitness function and stochastically choosing parent solutions for the new generation by the selection algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "3.1 Genetic algorithm"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "transformer-big",
+    "object_type": "Model",
+    "source_sentence": "We train transformer-big using Marian- NMT with default hyperparameters.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.2 Model"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Quadro RTX 5000",
+    "object_type": "Other",
+    "source_sentence": "We ran all the experiments on a grid server with heterogeneous nodes, with Quadro RTX 5000, GeForce GTX 1080 Ti, RTX A4000, or GeForce Selection s1 x s2 x s4 => s4 s2 x s1 x s3 => s1 s3 x s1 x s2 => s1 s4 x s3 x s1 => s4 RTX 3090 GPUs.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.3 Hardware"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "GeForce GTX 1080 Ti",
+    "object_type": "Other",
+    "source_sentence": "We ran all the experiments on a grid server with heterogeneous nodes, with Quadro RTX 5000, GeForce GTX 1080 Ti, RTX A4000, or GeForce Selection s1 x s2 x s4 => s4 s2 x s1 x s3 => s1 s3 x s1 x s2 => s1 s4 x s3 x s1 => s4 RTX 3090 GPUs.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.3 Hardware"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "RTX A4000",
+    "object_type": "Other",
+    "source_sentence": "We ran all the experiments on a grid server with heterogeneous nodes, with Quadro RTX 5000, GeForce GTX 1080 Ti, RTX A4000, or GeForce Selection s1 x s2 x s4 => s4 s2 x s1 x s3 => s1 s3 x s1 x s2 => s1 s4 x s3 x s1 => s4 RTX 3090 GPUs.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.3 Hardware"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "RTX 3090 GPUs",
+    "object_type": "Other",
+    "source_sentence": "We ran all the experiments on a grid server with heterogeneous nodes, with Quadro RTX 5000, GeForce GTX 1080 Ti, RTX A4000, or GeForce Selection s1 x s2 x s4 => s4 s2 x s1 x s3 => s1 s3 x s1 x s2 => s1 s4 x s3 x s1 => s4 RTX 3090 GPUs.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.3 Hardware"
+  },
+  {
+    "subject": "COMET",
+    "predicate": "uses",
+    "object": "wmt20-comet-da",
+    "object_type": "Other",
+    "source_sentence": "For the most computationally intensive fitness (combination of wmt20-comet-da and wmt20-comet-qe-da-v2), optimizing 150 examples on RTX A4000 takes 5 days.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.3 Hardware"
+  },
+  {
+    "subject": "COMET",
+    "predicate": "uses",
+    "object": "wmt20-comet-qe-da-v2",
+    "object_type": "Other",
+    "source_sentence": "For the most computationally intensive fitness (combination of wmt20-comet-da and wmt20-comet-qe-da-v2), optimizing 150 examples on RTX A4000 takes 5 days.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.3 Hardware"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "SacreBLEU",
+    "object_type": "Method",
+    "source_sentence": "For BLEU and ChrF we use SacreBLEU .",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.4 Metrics"
+  },
+  {
+    "subject": "Resampling",
+    "predicate": "uses",
+    "object": "paired bootstrap resampling",
+    "object_type": "Method",
+    "source_sentence": "We use paired bootstrap resampling for significance testing.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.4 Metrics"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "20-best hypotheses",
+    "object_type": "Other",
+    "source_sentence": "The initial population is formed by 20-best hypotheses obtained by beam search and 20 sampled ones, copied 50 times over to obtain a population size of 2000.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.5 GA parameters"
+  },
+  {
+    "subject": "tournament",
+    "predicate": "uses",
+    "object": "parents",
+    "object_type": "Other",
+    "source_sentence": "We select parents for the new generation with tournament selection (n = 3) and then we combine them using a crossover rate c = 0.1.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.5 GA parameters"
+  },
+  {
+    "subject": "dictionary",
+    "predicate": "uses",
+    "object": "Translation",
+    "object_type": "Method",
+    "source_sentence": "we performed word-by-word dictionary translation of each the source sentence, resulting in a set of English tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.6 Possible mutation sources"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "knowledge",
+    "object_type": "Concept",
+    "source_sentence": "Experiments were again conducted with either the knowledge of the reference or with MBR decoding.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.7 Results"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "k-NN search",
+    "object_type": "Method",
+    "source_sentence": "Many parameters of the GA algorithm were left unexplored – the results could be improved by grid search over the values for mutation and crossover ratios, using a better list of mutation candidates (for example based on k-NN search ), experimenting with different selection methods, combining more metrics in the fitness function or using multi- objective GA like NSGA-II .",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "9 Limitations"
+  }
+]

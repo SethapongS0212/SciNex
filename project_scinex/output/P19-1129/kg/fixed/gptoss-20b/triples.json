@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "MRC",
+    "predicate": "produces",
+    "object": "answer spans",
+    "object_type": "Other",
+    "source_sentence": "Answers are text spans, extracted using the now standard machine reading comprehension (MRC) framework : predicting answer spans given context",
+    "extraction_mode": "fixed",
+    "paper": "P19-1129",
+    "title": "Entity-Relation Extraction as Multi-turn Question Answering",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Reinforcement Learning",
+    "predicate": "uses",
+    "object": "Minimum Risk Training",
+    "object_type": "Method",
+    "source_sentence": "Another way to bind the entity and the relation extraction models is to use reinforcement learning or Minimum Risk Training, in which the training signals are given based on the joint decision by the two models.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1129",
+    "title": "Entity-Relation Extraction as Multi-turn Question Answering",
+    "section": "2.1 Extracting Entities and Relations"
+  },
+  {
+    "subject": "Minimum Risk Training",
+    "predicate": "uses",
+    "object": "global loss function",
+    "object_type": "Concept",
+    "source_sentence": "(2018) optimized a global loss function to jointly train the two models under the framework work of Minimum Risk Training.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1129",
+    "title": "Entity-Relation Extraction as Multi-turn Question Answering",
+    "section": "2.1 Extracting Entities and Relations"
+  },
+  {
+    "subject": "REINFORCE",
+    "predicate": "uses",
+    "object": "Policy Gradient",
+    "object_type": "Method",
+    "source_sentence": "We use the REINFORCE algorithm , a kind of policy gradient method, to find the optimal policy",
+    "extraction_mode": "fixed",
+    "paper": "P19-1129",
+    "title": "Entity-Relation Extraction as Multi-turn Question Answering",
+    "section": "4.4 Reinforcement Learning"
+  },
+  {
+    "subject": "Entities",
+    "predicate": "uses",
+    "object": "BERT tagging models",
+    "object_type": "Model",
+    "source_sentence": "entities are extracted using BERT tagging models",
+    "extraction_mode": "fixed",
+    "paper": "P19-1129",
+    "title": "Entity-Relation Extraction as Multi-turn Question Answering",
+    "section": "5.1 Results on RESUME"
+  },
+  {
+    "subject": "Relations",
+    "predicate": "uses",
+    "object": "CNN",
+    "object_type": "Model",
+    "source_sentence": "relations are extracted by applying a CNN to representations output by BERT transformers",
+    "extraction_mode": "fixed",
+    "paper": "P19-1129",
+    "title": "Entity-Relation Extraction as Multi-turn Question Answering",
+    "section": "5.1 Results on RESUME"
+  }
+]

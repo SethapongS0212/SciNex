@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "inter-sentence context information",
+    "object_type": "Concept",
+    "source_sentence": "introducing the inter-sentence context information into the NMT system by augmenting the training data including document-level information , i.e., including coreference information , or just by increasing the training-sequence length in order to capture a larger data context , or introducing variations in the NMT architecture to take into account document-level information.",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "fusion approaches",
+    "object_type": "Method",
+    "source_sentence": "They present an approach to include document-level context into language modeling by implementing fusion approaches that help the LSTM maintain separated the inter- and the intra-sentence context dependencies.",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Neural Machine Translation",
+    "predicate": "uses",
+    "object": "shallow fusion",
+    "object_type": "Method",
+    "source_sentence": "We borrow the idea of (shallow) fusion and apply it to neural machine translation.",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "contextual information",
+    "object_type": "Concept",
+    "source_sentence": "Ji et al. (2015) presented new language models able to capture contextual information within and beyond the sentence level.",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "addresses",
+    "object": "wider context information",
+    "object_type": "Concept",
+    "source_sentence": "The interest in making NMT systems able to include wider context information in the translation process has increased in recent years , and even in some cases the necessity for exploring new approaches of document - level machine translation has been argued .",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "addresses",
+    "object": "larger contexts",
+    "object_type": "Concept",
+    "source_sentence": "(2017) propose a variation of an attentional recurrent NMT system by including an additional encoder and attentional model to encode as context sentence the previous source sentence , showing how NMT systems can also benefit from larger contexts.",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "addresses",
+    "object": "historical contextual information",
+    "object_type": "Concept",
+    "source_sentence": "(2017a) propose a cross-sentence context-aware approach that integrates the historical contextual information within the NMT system .",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Memory Network",
+    "predicate": "uses",
+    "object": "translation history",
+    "object_type": "Concept",
+    "source_sentence": "Tu et al. (2018) take into account the target side context by using a lightweight cache-like memory network which stores bilingual hidden representations as translation history.",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Memory Network",
+    "predicate": "addresses",
+    "object": "target side context",
+    "object_type": "Concept",
+    "source_sentence": "Tu et al. (2018) take into account the target side context by using a lightweight cache-like memory network which stores bilingual hidden representations as translation history.",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Language",
+    "predicate": "addresses",
+    "object": "translation choices",
+    "object_type": "Task",
+    "source_sentence": "an SSLM mimics a traditional n-gram language model, but it is computed over semantic information and its expected effect is to promote translation choices that are semantically similar to the target context.",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "3.1 Semantic Space Language Model (SSLM)"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "OPENNMT-LUA toolkit",
+    "object_type": "Other",
+    "source_sentence": "Our baseline NMT model follows the encoder– decoder architecture with attention of Bah- danau et al. (2015) and it is built using the OPENNMT-LUA toolkit .",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "4.1 Settings"
+  },
+  {
+    "subject": "stochastic",
+    "predicate": "uses",
+    "object": "optimizer algorithm for training",
+    "object_type": "Other",
+    "source_sentence": "Stochastic gradient descent is used as optimizer algorithm for training, setting an initial learning rate of 1 and a learning decay of 0.7 after epoch 10 or if there is no loss improvement over the validation set.",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "4.1 Settings"
+  },
+  {
+    "subject": "Sentence Length",
+    "predicate": "uses",
+    "object": "50 tokens",
+    "object_type": "Other",
+    "source_sentence": "Finally, a maximum sentence length of 50 tokens is used for both source and target sides and the vocabulary size is 50,000 for both target and source languages .",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "4.1 Settings"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "WORD2VEC",
+    "object_type": "Other",
+    "source_sentence": "The Word Vector Models (WVM) used as SSLMs are built using WORD2VEC with the CBOW algorithm , using a context window size of 5 and 600-dimensional vectors.",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "4.1 Settings"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "translation options",
+    "object_type": "Concept",
+    "source_sentence": "the number N of NMT translation options that are used in the fusion",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "4.3 System Results and Analysis"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "0.23",
+    "object_type": "Metric",
+    "source_sentence": "achieving a statistically significant improvement of +0.23 in BLEU score",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "4.3 System Results and Analysis"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "2.48",
+    "object_type": "Metric",
+    "source_sentence": "ORACLE3 is able to increase +2.48 BLEU",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "4.3 System Results and Analysis"
+  }
+]

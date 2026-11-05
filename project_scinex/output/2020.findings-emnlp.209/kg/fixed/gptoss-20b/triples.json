@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "Dialogue",
+    "predicate": "uses",
+    "object": "common RL methods",
+    "object_type": "Method",
+    "source_sentence": "Once we restore a high- quality reward model, we update the dialogue agent using common RL methods , in- cluding both on- policy and off- policy .",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "rule-based",
+    "predicate": "uses",
+    "object": "ConvLab dialogue state tracker",
+    "object_type": "Model",
+    "source_sentence": "We reuse the rule-based ConvLab dialogue state tracker to keep track of the information emerging in the interactions",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "3.1 Dialogue State Tracker"
+  },
+  {
+    "subject": "Dialogue State",
+    "predicate": "uses",
+    "object": "collected information",
+    "object_type": "Other",
+    "source_sentence": "Dialogue State The collected information from the dialogue state tracker is used to form a structured state representation",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "3.1 Dialogue State Tracker"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "Actions",
+    "object_type": "Other",
+    "source_sentence": "We utilize one-hot embeddings to represent the actions",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "3.1 Dialogue State Tracker"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "Multilayer Perceptron",
+    "object_type": "Model",
+    "source_sentence": "To simulate the dialogue actions , we use a Multilayer Perceptron (MLP) as the action generator Gena followed by a Gumbel-Softmax function with 300 dimensions, where each dimension corresponds to a specific action from the defined A.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "3.2.1 Action Simulation"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "Encω(s)",
+    "object_type": "Method",
+    "source_sentence": "Fig- ure 1 shows the overall process of learning the state projecting function Encω(s) given dialogue states from real human - human dialogues.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "3.2.2 State Simulation"
+  },
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "sample (s, a)sim",
+    "object_type": "Other",
+    "source_sentence": "During the adversarial training process, the generator Genθ takes noise zsa as input and outputs a sample (s, a)sim and it aims to get higher reward signal from the discriminator Dφ.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "3.2.3 Adversarial Training"
+  },
+  {
+    "subject": "rule-based",
+    "predicate": "uses",
+    "object": "dialogue state tracker",
+    "object_type": "Method",
+    "source_sentence": "We reuse the rule-based dialogue state tracker from ConvLab to track the information that emerges during interactions between users and the dialogue agent.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "4.1 Dataset and Training Environment"
+  },
+  {
+    "subject": "agenda-based",
+    "predicate": "uses",
+    "object": "user simulator",
+    "object_type": "Method",
+    "source_sentence": "Besides, an agenda-based user simulator is embedded and used for multi-domain dialogue scenarios.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "4.1 Dataset and Training Environment"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "real dialogue state-action pairs",
+    "object_type": "Concept",
+    "source_sentence": "the real dialogue state - action pairs from the training set are used to warm up the dialogue policy at the very beginning",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "4.3 Reinforcement Learning Methods"
+  },
+  {
+    "subject": "Adversarial Training",
+    "predicate": "uses",
+    "object": "real human dialogues in the training set",
+    "object_type": "Dataset",
+    "source_sentence": "During adversarial training, the real samples come from the real human dialogues in the training set while the simulated samples have three different sources.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "4.2 Architecture and Training Details"
+  },
+  {
+    "subject": "Variational Autoencoder",
+    "predicate": "uses",
+    "object": "discrete state representation (392 dimensions)",
+    "object_type": "Concept",
+    "source_sentence": "Variational AutoEncoder The encoder is a two- layer MLP that takes the discrete state represen- tation (392 dimensions) as input and outputs two intermediate embeddings (64 dimensions) corresponding to the mean and the variance, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "4.2 Architecture and Training Details"
+  },
+  {
+    "subject": "Variational Autoencoder",
+    "predicate": "produces",
+    "object": "two intermediate embeddings (64 dimensions)",
+    "object_type": "Concept",
+    "source_sentence": "Variational AutoEncoder The encoder is a two- layer MLP that takes the discrete state represen- tation (392 dimensions) as input and outputs two intermediate embeddings (64 dimensions) corresponding to the mean and the variance, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "4.2 Architecture and Training Details"
+  },
+  {
+    "subject": "Dialogue Agents",
+    "predicate": "uses",
+    "object": "imitation learning",
+    "object_type": "Method",
+    "source_sentence": "Before initiating training, we first warm-up all the dialogue agents with human dialogues via imitation learning.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "5.2 Results with PPO-based agents"
+  },
+  {
+    "subject": "Dialogue Policy Learning",
+    "predicate": "addresses",
+    "object": "multi-label classification task",
+    "object_type": "Task",
+    "source_sentence": "Takanobu et al. (2019) formulated dialogue policy learning as a multi-label classification task where it is easier to achieve a higher success rate by selecting as many actions as possible in one turn.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "5.2.1 Discussion"
+  },
+  {
+    "subject": "DQN",
+    "predicate": "achieves",
+    "object": "87%",
+    "object_type": "Metric",
+    "source_sentence": "As shown in Figure 2 and Figure 4, the agents trained using the hand-crafted reward function , such as DQN( Human ) and PPO( Human ), share a similar final performance ∼87%.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "5.2.1 Discussion"
+  },
+  {
+    "subject": "PPO",
+    "predicate": "achieves",
+    "object": "87%",
+    "object_type": "Metric",
+    "source_sentence": "As shown in Figure 2 and Figure 4, the agents trained using the hand-crafted reward function , such as DQN( Human ) and PPO( Human ), share a similar final performance ∼87%.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "5.2.1 Discussion"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "reward model",
+    "object_type": "Model",
+    "source_sentence": "First, we trained the reward model with an auxiliary generator.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Reinforcement Learning",
+    "predicate": "uses",
+    "object": "reward model",
+    "object_type": "Model",
+    "source_sentence": "Then the trained reward model was incorporated into a common reinforcement learning method to guide training of a high-quality dialogue agent.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.209",
+    "title": "Guided Dialogue Policy Learning without Adversarial Learning in the Loop",
+    "section": "6 Conclusion"
+  }
+]

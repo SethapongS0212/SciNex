@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Words",
+    "predicate": "uses",
+    "object": "Context Vectors",
+    "object_type": "Concept",
+    "source_sentence": "words are represented as context vectors",
+    "extraction_mode": "fixed",
+    "paper": "P15-1081",
+    "title": "Unifying Bayesian Inference and Vector Space Models for Improved Decipherment",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Improved Decipherment",
+    "predicate": "achieves",
+    "object": "improved accuracy",
+    "object_type": "Other",
+    "source_sentence": "Dou and Knight (2013), who improved decipherment accuracy with dependency relations between words.",
+    "extraction_mode": "fixed",
+    "paper": "P15-1081",
+    "title": "Unifying Bayesian Inference and Vector Space Models for Improved Decipherment",
+    "section": "2 Decipherment Model"
+  },
+  {
+    "subject": "Pre-Trained Language Model",
+    "predicate": "uses",
+    "object": "sampling",
+    "object_type": "Method",
+    "source_sentence": "In the previous section, we incorporated our pre-trained language model in αe,e′ to steer our sampling.",
+    "extraction_mode": "fixed",
+    "paper": "P15-1081",
+    "title": "Unifying Bayesian Inference and Vector Space Models for Improved Decipherment",
+    "section": "3 Base Distribution with Cross-Lingual Word Similarities"
+  },
+  {
+    "subject": "Pre-trained Word Embeddings",
+    "predicate": "uses",
+    "object": "model αe,f",
+    "object_type": "Method",
+    "source_sentence": "In the same vein, we model αe,f using pre-trained word embeddings, enabling us to improve our estimate of the posterior distribution.",
+    "extraction_mode": "fixed",
+    "paper": "P15-1081",
+    "title": "Unifying Bayesian Inference and Vector Space Models for Improved Decipherment",
+    "section": "3 Base Distribution with Cross-Lingual Word Similarities"
+  },
+  {
+    "subject": "topic models",
+    "predicate": "uses",
+    "object": "log-linear model",
+    "object_type": "Method",
+    "source_sentence": "the authors develop topic models where the base distribution over topics is a log-linear model of observed document features, which permits learning better priors over topic distributions for each document.",
+    "extraction_mode": "fixed",
+    "paper": "P15-1081",
+    "title": "Unifying Bayesian Inference and Vector Space Models for Improved Decipherment",
+    "section": "3 Base Distribution with Cross-Lingual Word Similarities"
+  },
+  {
+    "subject": "log-linear",
+    "predicate": "uses",
+    "object": "document features",
+    "object_type": "Feature",
+    "source_sentence": "the base distribution over topics is a log-linear model of observed document features, which permits learning better priors over topic distributions for each document.",
+    "extraction_mode": "fixed",
+    "paper": "P15-1081",
+    "title": "Unifying Bayesian Inference and Vector Space Models for Improved Decipherment",
+    "section": "3 Base Distribution with Cross-Lingual Word Similarities"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "uses",
+    "object": "stochastic EM",
+    "object_type": "Method",
+    "source_sentence": "Again, following Mimno and McCal- lum (2012), we train the similarity matrix M with stochastic EM.",
+    "extraction_mode": "fixed",
+    "paper": "P15-1081",
+    "title": "Unifying Bayesian Inference and Vector Space Models for Improved Decipherment",
+    "section": "2 P i,j M2 i,j ∂M = X ∂log P({fn | en} −λ"
+  },
+  {
+    "subject": "GPUs",
+    "predicate": "uses",
+    "object": "Matrix operations",
+    "object_type": "Other",
+    "source_sentence": "However, significant speedups can be achieved by precomputing vevT f and exploiting GPUs for Matrix operations.",
+    "extraction_mode": "fixed",
+    "paper": "P15-1081",
+    "title": "Unifying Bayesian Inference and Vector Space Models for Improved Decipherment",
+    "section": "2 P i,j M2 i,j ∂M = X ∂log P({fn | en} −λ"
+  },
+  {
+    "subject": "Decipherment",
+    "predicate": "uses",
+    "object": "Gigaword corpus",
+    "object_type": "Dataset",
+    "source_sentence": "In our Spanish/ English decipherment experiments, we use half of the Gigaword corpus as monolingual data, and a small amount of parallel data from Europarl for evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "P15-1081",
+    "title": "Unifying Bayesian Inference and Vector Space Models for Improved Decipherment",
+    "section": "4.1 Data"
+  },
+  {
+    "subject": "Decipherment",
+    "predicate": "uses",
+    "object": "Europarl",
+    "object_type": "Dataset",
+    "source_sentence": "In our Spanish/ English decipherment experiments, we use half of the Gigaword corpus as monolingual data, and a small amount of parallel data from Europarl for evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "P15-1081",
+    "title": "Unifying Bayesian Inference and Vector Space Models for Improved Decipherment",
+    "section": "4.1 Data"
+  },
+  {
+    "subject": "Decipherment",
+    "predicate": "uses",
+    "object": "GIZA",
+    "object_type": "Other",
+    "source_sentence": "We also use GIZA to align Europarl parallel data to build a dictionary for evaluating our decipherment.",
+    "extraction_mode": "fixed",
+    "paper": "P15-1081",
+    "title": "Unifying Bayesian Inference and Vector Space Models for Improved Decipherment",
+    "section": "4.1 Data"
+  },
+  {
+    "subject": "Language Models",
+    "predicate": "uses",
+    "object": "SRILM toolkit",
+    "object_type": "Other",
+    "source_sentence": "For all the systems, language models are built using the SRILM toolkit.",
+    "extraction_mode": "fixed",
+    "paper": "P15-1081",
+    "title": "Unifying Bayesian Inference and Vector Space Models for Improved Decipherment",
+    "section": "4.2 Systems"
+  },
+  {
+    "subject": "Turbo Parser",
+    "predicate": "trainedon",
+    "object": "Penn Treebank",
+    "object_type": "Dataset",
+    "source_sentence": "For English , we use the Turbo parser, trained on the Penn Treebank (Martins et",
+    "extraction_mode": "fixed",
+    "paper": "P15-1081",
+    "title": "Unifying Bayesian Inference and Vector Space Models for Improved Decipherment",
+    "section": "5.2 Systems"
+  }
+]

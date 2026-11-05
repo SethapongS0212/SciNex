@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Transfer Learning",
+    "predicate": "uses",
+    "object": "English datasets",
+    "object_type": "Dataset",
+    "source_sentence": "cross-lingual transfer learning aims to leverage large datasets available in one language—typically English—to build",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Translating",
+    "predicate": "uses",
+    "object": "machine translating the test set into English",
+    "object_type": "Task",
+    "source_sentence": "At test time, we try both machine translating the test set into English (TRANSLATE-TEST) and, in the case of XLM-R, using the actual test set in the target language (ZERO-SHOT)",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "3.3 Tasks and evaluation procedure"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "MultiNLI",
+    "object_type": "Dataset",
+    "source_sentence": "we fine-tune our models on MultiNLI for 10 epochs using the same settings as Liu et al.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "3.3 Tasks and evaluation procedure"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluates",
+    "object": "XNLI",
+    "object_type": "Dataset",
+    "source_sentence": "we evaluate on XNLI , which comprises 2490 development and 5010 test instances in 15 languages",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "3.3 Tasks and evaluation procedure"
+  },
+  {
+    "subject": "Translators",
+    "predicate": "uses",
+    "object": "professional translators",
+    "object_type": "Person",
+    "source_sentence": "These were originally annotated in English , and the resulting premises and hypotheses were independently translated into the rest of the languages by professional translators.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "3.3 Tasks and evaluation procedure"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "SentencePiece tokenization",
+    "object_type": "Method",
+    "source_sentence": "In order to train the machine translation systems for MT-XX and BT-XX, we use the big Transformer model with the same settings as Ott et al. (2018) and SentencePiece tokenization with a joint vocabulary of 32k subwords.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "3.2 Training variants"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "SQuAD v1.1",
+    "object_type": "Dataset",
+    "source_sentence": "We fine-tune our models on SQuAD v1.1 for 2 epochs using the same settings as Liu et al. (2019), and report test results for the last epoch.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "3.2 Training variants"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "Jieba",
+    "object_type": "Method",
+    "source_sentence": "we use Jieba for Chinese segmentation instead of the Moses tokenizer",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "3.2 Training variants"
+  },
+  {
+    "subject": "Word Alignment",
+    "predicate": "uses",
+    "object": "WikiMatrix",
+    "object_type": "Dataset",
+    "source_sentence": "we combine it with WikiMatrix to aid word alignment",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "3.2 Training variants"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "uses",
+    "object": "WikiMatrix",
+    "object_type": "Dataset",
+    "source_sentence": "we combine it with WikiMatrix to aid word alignment",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "3.2 Training variants"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "Test Sets",
+    "object_type": "Dataset",
+    "source_sentence": "inference is done in the test set in each target language",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "4.2 ZERO-SHOT results"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Text",
+    "object_type": "Concept",
+    "source_sentence": "training on original data (ORIG) nor training on machine translated data (BT-XX and MT-XX) makes use of the exact same type of text that the system is exposed to at test time",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "4.2 ZERO-SHOT results"
+  },
+  {
+    "subject": "Machine Translation System",
+    "predicate": "produces",
+    "object": "machine translated English version",
+    "object_type": "Dataset",
+    "source_sentence": "Finally, we create a human translated and a machine translated English version of the dataset using professional translators from Gengo and our machine translation system described in §3.2,6 respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "4.3 Original vs. translated test sets"
+  }
+]

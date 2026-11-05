@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Viterbi",
+    "predicate": "uses",
+    "object": "prediction",
+    "object_type": "Other",
+    "source_sentence": "For experiments reported in this paper, we use the O(|x|K2) Viterbi algorithm for prediction; K is the number of tags.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "2 MEMM Tagger"
+  },
+  {
+    "subject": "POS tagger",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Concept",
+    "source_sentence": "Our POS tagger can make use of any number of possibly overlapping features.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3 Unsupervised Word Clusters"
+  },
+  {
+    "subject": "Brown Clustering",
+    "predicate": "produces",
+    "object": "effective features",
+    "object_type": "Concept",
+    "source_sentence": "Not only does Brown clustering produce effective features for discriminative models, but its variants are better unsupervised POS taggers than some models developed nearly 20 years later; see comparisons in Blunsom and Cohn (2011).",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.1 Clustering Method"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Tweets",
+    "object_type": "Dataset",
+    "source_sentence": "When training on tweets drawn from a single day, we observed time-specific biases (e.g., numerical dates appearing in the same cluster as the word tonight), so we assembled our unlabeled data from a random sample of 100,000 tweets per day from September 10, 2008 to August 14, 2012, and filtered out non-English tweets (about 60% of the sample) using langid.py .5 Each tweet was processed with our to-",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.1 Clustering Method"
+  },
+  {
+    "subject": "HMM",
+    "predicate": "addresses",
+    "object": "orthographic variants",
+    "object_type": "Concept",
+    "source_sentence": "Finally, the HMM learns about orthographic variants, even though it treats all words as opaque symbols;",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.2 Cluster Examples"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "uses",
+    "object": "priority list of fuzzy match transformations",
+    "object_type": "Other",
+    "source_sentence": "When checking to see if a word is associated with a cluster, the tagger first normalizes the word using the same techniques as described in §3.1, then creates a priority list of fuzzy match transformations",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.4 Cluster-Based Features"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "93.2% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The full tagger attains 93.2% accuracy (final row of Table 2).",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "substantially higher accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Our tagger achieves substantially higher accuracy than Gimpel et al.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "Clusters",
+    "predicate": "achieves",
+    "object": "5.7 point improvement",
+    "object_type": "Other",
+    "source_sentence": "Without clusters, they are very difficult to classify (only 79.2% accuracy), but adding clusters generates a 5.7 point improvement—much larger than the effect on in-dictionary tokens (Table 3).",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "88.6% accuracy on OCT27 development set",
+    "object_type": "Metric",
+    "source_sentence": "A tagger that only uses word clusters achieves an accuracy of 88.6% on the OCT27 development set.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "achieves",
+    "object": "85.3% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Ritter et al.'s CRF-based tagger had 85.3% accuracy, and their best tagger, trained on a concatenation of PTB, IRC, and Twitter, achieved 88.3% (Table 4).",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.2 Evaluation on RITTERTW"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "93.4% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The full tagger model achieved 93.4% (±0.3%) accuracy, significantly improving over the best result they report, 90.8% accuracy with a tagger trained on a mix of several POS-annotated corpora.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.3 IRC: Evaluation on NPSCHAT"
+  }
+]

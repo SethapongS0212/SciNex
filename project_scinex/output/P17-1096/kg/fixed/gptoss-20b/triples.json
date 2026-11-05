@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "discriminative model",
+    "object_type": "Model",
+    "source_sentence": "The context-based question-answer pairs on U are combined with human-generated pairs on L for training the discriminative model.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "2.1 A Simple Baseline"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "embeddings of the sequence",
+    "object_type": "Embeddings",
+    "source_sentence": "Given the paragraph p, we apply a bidirectional Gated Recurrent Unit (GRU) network on top of the embeddings of the sequence (p1, p2, · · ·, pT ), and obtain the initial paragraph representation H0p",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3.1 Discriminative Model"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "gated-attention (GA) mechanism",
+    "object_type": "Method",
+    "source_sentence": "The question and paragraph representations are combined with the gated-attention (GA) mechanism",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3.1 Discriminative Model"
+  },
+  {
+    "subject": "discriminative",
+    "predicate": "uses",
+    "object": "domain tag",
+    "object_type": "Other",
+    "source_sentence": "We use a domain tag as an additional input to the discriminative model.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3.1.1 Domain Adaptation with Tags"
+  },
+  {
+    "subject": "generative",
+    "predicate": "uses",
+    "object": "copy mechanism",
+    "object_type": "Other",
+    "source_sentence": "We implement the generative model as a sequence-to-sequence model with a copy mechanism.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3.2 Generative Model"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "input paragraph",
+    "object_type": "Other",
+    "source_sentence": "An encoder is a GRU that encodes the input paragraph into a sequence of hidden states H.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3.2 Generative Model"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "attention mechanism",
+    "object_type": "Other",
+    "source_sentence": "The decoder is another GRU with an attention mechanism over the encoder hidden states H.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3.2 Generative Model"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "Softmax",
+    "object_type": "Method",
+    "source_sentence": "The generation probabilities pvocab are defined as a softmax function over the word types in the vocabulary, and the copying probabilities pcopy are defined as a softmax function over the word types in the paragraph.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3.2 Generative Model"
+  },
+  {
+    "subject": "Probabilities",
+    "predicate": "uses",
+    "object": "Softmax",
+    "object_type": "Method",
+    "source_sentence": "The generation probabilities pvocab are defined as a softmax function over the word types in the vocabulary, and the copying probabilities pcopy are defined as a softmax function over the word types in the paragraph.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3.2 Generative Model"
+  },
+  {
+    "subject": "Maximum Likelihood Estimation",
+    "predicate": "uses",
+    "object": "generative model",
+    "object_type": "Model",
+    "source_sentence": "We first pretrain the generative model on the labeled data L with maximum likelihood estimation (MLE):",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3.3 Training Algorithm"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "GDAN",
+    "object_type": "Model",
+    "source_sentence": "we present a training algorithm in Algorithm 1 to train a GDAN.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3.3 Training Algorithm"
+  }
+]

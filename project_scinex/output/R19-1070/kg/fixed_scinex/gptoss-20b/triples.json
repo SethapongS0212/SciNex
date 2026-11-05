@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "Question Similarity",
+    "predicate": "addresses",
+    "object": "querying and ranking semantically similar, relevant alternative questions",
+    "object_type": "Task",
+    "source_sentence": "Given a target question provided by a user, the automatic task of querying and ranking semantically similar, relevant alternative questions in CQA forums is called question similarity.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Information retrieval",
+    "predicate": "uses",
+    "object": "BM25",
+    "object_type": "Method",
+    "source_sentence": "Given a target question, the first step consists of retrieving relevant questions using a general information retrieval technique, such as BM25 , or a search engine such as Google.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "SemEval 2016-2017 - Task 3",
+    "object_type": "Dataset",
+    "source_sentence": "The experiments were mainly conducted on the data of SemEval 2016-2017 - Task 3, based on the Qatar Living corpus.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "Quora dataset",
+    "object_type": "Dataset",
+    "source_sentence": "As a secondary goal, we also evaluated our main models in classifying question duplicates on the Quora dataset , so as to assess whether the results that we find apply to different datasets.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "unannotated part of the Qatar living corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Vi and Vj are originally 300-dimension embedding representations of the words, trained on the unannotated part of the Qatar living corpus using Word2Vec with a context window size of 10.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "2 Models"
+  },
+  {
+    "subject": "FastText",
+    "predicate": "comparesagainst",
+    "object": "Word2Vec",
+    "object_type": "Model",
+    "source_sentence": "Surprisingly, we do not observe an improvement of fastText over Word2Vec representations.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "4 Results"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "achievesresult",
+    "object": "best results",
+    "object_type": "Other",
+    "source_sentence": "Using the top layer of ELMo concatenated with Word2Vec representations leads to the best results in encoding the relation between words, except with TRLM.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "4 Results"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "achievesresult",
+    "object": "outperform the competitive baselines",
+    "object_type": "Other",
+    "source_sentence": "As expected, our best models were the ensemble approaches (e.g., Ensemble and EnsSPTK), which combine the ranking scores of all the other evaluated approaches and outperform the competitive baselines of SemEval 2016 and 2017.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "4 Results"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "achievesresult",
+    "object": "slightly better on re-ranking similar questions",
+    "object_type": "Other",
+    "source_sentence": "Regarding the comparison between Ensemble and EnsSPTK in the test set of Semeval 2016, the approach without SPTK (Ensemble) is slightly better on re-ranking similar questions , but is significantly worse on classifying duplicates than EnsSPTK.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "4 Results"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "achievesresult",
+    "object": "significantly worse on classifying duplicates than EnsSPTK",
+    "object_type": "Other",
+    "source_sentence": "Regarding the comparison between Ensemble and EnsSPTK in the test set of Semeval 2016, the approach without SPTK (Ensemble) is slightly better on re-ranking similar questions , but is significantly worse on classifying duplicates than EnsSPTK.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "4 Results"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "comparesagainst",
+    "object": "EnsSPTK",
+    "object_type": "Model",
+    "source_sentence": "Regarding the comparison between Ensemble and EnsSPTK in the test set of Semeval 2016, the approach without SPTK (Ensemble) is slightly better on re-ranking similar questions , but is significantly worse on classifying duplicates than EnsSPTK.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "4 Results"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "achieves",
+    "object": "MAP",
+    "object_type": "Metric",
+    "source_sentence": "our best model, Ensemble, with considerably less features , obtains competitive results in terms of MAP.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "4 Results"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "comparesagainst",
+    "object": "SimBOW",
+    "object_type": "Model",
+    "source_sentence": "the Ensemble approach obtained competitive results with the winner SimBOW, also based on the SoftCosine metric, in terms of MAP, and outperforms it in F- Score.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "4 Results"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "evaluatedon",
+    "object": "Semeval dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Most of our experimentation was conducted on the Semeval dataset , in which similarity between questions is labeled.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "6 Discussion and Conclusion"
+  },
+  {
+    "subject": "preprocessing",
+    "predicate": "achieves",
+    "object": "identifying question duplicates",
+    "object_type": "Task",
+    "source_sentence": "We also showed that ad- justing preprocessing and word similarity settings leaded to better results in the task of identifying question duplicates, in the Quora dataset.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "6 Discussion and Conclusion"
+  },
+  {
+    "subject": "word similarity",
+    "predicate": "achieves",
+    "object": "identifying question duplicates",
+    "object_type": "Task",
+    "source_sentence": "We also showed that ad- justing preprocessing and word similarity settings leaded to better results in the task of identifying question duplicates, in the Quora dataset.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "6 Discussion and Conclusion"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "achieves",
+    "object": "best performance in terms of F1-score",
+    "object_type": "Other",
+    "source_sentence": "Combining several metrics implemented with these optimal settings into an ensemble sys- tem based on logistic regression yields the best performance in terms of F1-score, being compet- itive with the winners of the SemEval tasks, and using fewer components.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "6 Discussion and Conclusion"
+  },
+  {
+    "subject": "A/B testing",
+    "predicate": "uses",
+    "object": "CQA platform",
+    "object_type": "Concept",
+    "source_sentence": "In future work we aim to compare the optimal models from our current study in a real-world setting, by running A/B testing on a open-domain CQA platform.",
+    "extraction_mode": "fixed",
+    "paper": "R19-1070",
+    "title": "Abstract",
+    "section": "6 Discussion and Conclusion"
+  }
+]

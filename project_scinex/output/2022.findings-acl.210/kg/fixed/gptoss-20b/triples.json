@@ -1,0 +1,233 @@
+[
+  {
+    "subject": "GCN",
+    "predicate": "uses",
+    "object": "auxiliary task",
+    "object_type": "Task",
+    "source_sentence": "work (GCN), where an auxiliary task is introduced for better extracting label-specific components for each entity type.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance for cross-domain NER",
+    "object_type": "Other",
+    "source_sentence": "Jia and Zhang (2020) presented a multi-cell compositional LSTM (Multi- Cell LSTM) structure where modeled each entity type as a separate cell state, and it reaches the state-of-the-art (SOTA) performance for cross-domain NER.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Adapter",
+    "predicate": "uses",
+    "object": "backbone network",
+    "object_type": "Model",
+    "source_sentence": "Except from the pretrain-finetune paradigm, some approaches proposed adding adaptation layers Lin and Lu (2018) or adapter modules Houlsby et al. (2019) to the backbone network.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "GCN",
+    "predicate": "uses",
+    "object": "label-specific component",
+    "object_type": "Other",
+    "source_sentence": "Next, we utilize GCN to enhance the representations of each label- specific component by propagating messages between neighboring nodes.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "3.3 Label Semantics Fusion"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "aggregated label-specific component",
+    "object_type": "Other",
+    "source_sentence": "Last, we utilize the token-guided attention mechanism to fuse the aggregated label- specific component into the contextual representation for each word.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "3.3 Label Semantics Fusion"
+  },
+  {
+    "subject": "Classification",
+    "predicate": "uses",
+    "object": "NER tasks",
+    "object_type": "Task",
+    "source_sentence": "Followed by the task- specific FC layer, the classification loss for NER tasks can be calculated.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "3.3 Label Semantics Fusion"
+  },
+  {
+    "subject": "Auxiliary Task",
+    "predicate": "uses",
+    "object": "entity types",
+    "object_type": "Concept",
+    "source_sentence": "Besides, we introduce an auxiliary task to ensure the label- specific components focus on correct entity types.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "3.3 Label Semantics Fusion"
+  },
+  {
+    "subject": "Bias",
+    "predicate": "uses",
+    "object": "projection",
+    "object_type": "Other",
+    "source_sentence": "W′ p ∈Rdp×dh,b′ p ∈Rdh are the weight and bias for projection respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "3.3 Label Semantics Fusion"
+  },
+  {
+    "subject": "Auxiliary Task",
+    "predicate": "uses",
+    "object": "BCE",
+    "object_type": "Method",
+    "source_sentence": "where BCE is the Binary- Cross -Entropy loss, FCaux is the FC layer for auxiliary task, Cat is the concatenation operation for last dimension and Y ′ is the ground-truth label for the sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "3.3 Label Semantics Fusion"
+  },
+  {
+    "subject": "Auxiliary Task",
+    "predicate": "uses",
+    "object": "FCaux",
+    "object_type": "Method",
+    "source_sentence": "where BCE is the Binary- Cross -Entropy loss, FCaux is the FC layer for auxiliary task, Cat is the concatenation operation for last dimension and Y ′ is the ground-truth label for the sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "3.3 Label Semantics Fusion"
+  },
+  {
+    "subject": "Auxiliary Task",
+    "predicate": "uses",
+    "object": "Cat",
+    "object_type": "Method",
+    "source_sentence": "where BCE is the Binary- Cross -Entropy loss, FCaux is the FC layer for auxiliary task, Cat is the concatenation operation for last dimension and Y ′ is the ground-truth label for the sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "3.3 Label Semantics Fusion"
+  },
+  {
+    "subject": "Auxiliary Task",
+    "predicate": "uses",
+    "object": "Laux",
+    "object_type": "Method",
+    "source_sentence": "The loss for the auxiliary task is calculated as Laux = BCE(FCaux(Cat([h′ 1, · · ·, h′ ns])), Y ′) (9) where BCE is the Binary- Cross -Entropy loss, FCaux is the FC layer for auxiliary task, Cat is the concatenation operation for last dimension and Y ′ is the ground-truth label for the sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "3.3 Label Semantics Fusion"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "uses",
+    "object": "Laux",
+    "object_type": "Method",
+    "source_sentence": "The loss for the auxiliary task is calculated as Laux = BCE(FCaux(Cat([h′ 1, · · ·, h′ ns])), Y ′) (9) where BCE is the Binary- Cross -Entropy loss, FCaux is the FC layer for auxiliary task, Cat is the concatenation operation for last dimension and Y ′ is the ground-truth label for the sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "3.3 Label Semantics Fusion"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "backbone model",
+    "object_type": "Model",
+    "source_sentence": "Throughout the experiments, we use BERT-based model as our backbone model.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "4.1 Experimental Settings"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "standard evaluation metrics for NER",
+    "object_type": "Other",
+    "source_sentence": "For evaluation, we use the standard evaluation metrics for NER (i.e., micro averaged F1 score) and report the average results of five independent runs.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "4.1 Experimental Settings"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Pytorch on top of the BERT Huggingface implementation",
+    "object_type": "Other",
+    "source_sentence": "The models were implemented in Pytorch on top of the BERT Huggingface implementation , and training was performed on two GeForce RTX 2080 Ti GPU.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "4.1 Experimental Settings"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "two GeForce RTX 2080 Ti GPU",
+    "object_type": "Other",
+    "source_sentence": "The models were implemented in Pytorch on top of the BERT Huggingface implementation , and training was performed on two GeForce RTX 2080 Ti GPU.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "4.1 Experimental Settings"
+  },
+  {
+    "subject": "Tagging",
+    "predicate": "uses",
+    "object": "BIO tagging schema",
+    "object_type": "Other",
+    "source_sentence": "Besides, we use BIO tagging schema for evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "4.1 Experimental Settings"
+  },
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "few-shot training set",
+    "object_type": "Dataset",
+    "source_sentence": "we apply greedy sampling strategy to construct a few-shot training set.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "4.1 Experimental Settings"
+  },
+  {
+    "subject": "BiLSTM-CRF",
+    "predicate": "uses",
+    "object": "word-level embedding",
+    "object_type": "Artifact",
+    "source_sentence": "When training BiLSTM-CRF and Coach, we use word-level embedding from Pennington et al. and char-level embedding from Hashimoto et al.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "4.2 Cross-Domain Experiments"
+  },
+  {
+    "subject": "BiLSTM-CRF",
+    "predicate": "uses",
+    "object": "char-level embedding",
+    "object_type": "Artifact",
+    "source_sentence": "When training BiLSTM-CRF and Coach, we use word-level embedding from Pennington et al. and char-level embedding from Hashimoto et al.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "4.2 Cross-Domain Experiments"
+  }
+]

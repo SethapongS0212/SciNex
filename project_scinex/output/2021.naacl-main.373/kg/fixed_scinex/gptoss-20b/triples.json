@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "Pretrained Models",
+    "predicate": "uses",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "We use pretrained models (e.g., BERT) to predict the edge indicators I[ parent (vi, vj)], which denote whether vi is a parent of vj, for all pairs (vi, vj) in 6 and 7.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.373",
+    "title": "Constructing Taxonomies from Pretrained Language Models",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "GloVe vectors",
+    "object_type": "Other",
+    "source_sentence": "First, we used a one-layer LSTM on top of GloVe vectors instead of a pretrained language model as the input to the fine-tuning step, and then performed tree reconciliation as before.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.373",
+    "title": "Constructing Taxonomies from Pretrained Language Models",
+    "section": "5.7 Pretraining and Tree Reconciliation Both Contribute to Taxonomy Construction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "SemEval-2016 Task 13",
+    "object_type": "Dataset",
+    "source_sentence": "To test generalization to large subtrees, we tested our models on the English environment and science taxonomies from SemEval-2016 Task 13.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.373",
+    "title": "Constructing Taxonomies from Pretrained Language Models",
+    "section": "5.8 Models Struggle to Generalize to Large Taxonomies"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "WORD- NET datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Experiments on aligned multilingual WORD- NET datasets emphasize that more work is needed in investigating the differences between taxonomic relations in different languages , and in improving pretrained language models in non-English languages.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.373",
+    "title": "Constructing Taxonomies from Pretrained Language Models",
+    "section": "7 Discussion"
+  }
+]

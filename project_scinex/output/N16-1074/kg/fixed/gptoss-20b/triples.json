@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Questions",
+    "predicate": "addresses",
+    "object": "relations",
+    "object_type": "Concept",
+    "source_sentence": "These questions concern relations between organisms in an ecosystem and have challenging lexical diversity and question length.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "35-70% error reduction",
+    "object_type": "Metric",
+    "source_sentence": "Our models improve semantic parser accuracy (35-70% error reduction) over prior work despite using less human input.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "GEO880",
+    "object_type": "Dataset",
+    "source_sentence": "Our models also obtain competitive results on GEO880 without any dataset-specific engineering.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Patterns",
+    "object_type": "Concept",
+    "source_sentence": "We use indicator features for logical form patterns, where each pattern is produced by replacing all of a logical form's subexpressions below a certain depth with their types.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "3.4 Coupled Loglinear Model"
+  },
+  {
+    "subject": "Patterns",
+    "predicate": "produces",
+    "object": "Logical Form",
+    "object_type": "Concept",
+    "source_sentence": "We use indicator features for logical form patterns, where each pattern is produced by replacing all of a logical form's subexpressions below a certain depth with their types.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "3.4 Coupled Loglinear Model"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "FOODCHAINS",
+    "object_type": "Dataset",
+    "source_sentence": "We compare our lexicon learning models against several baselines on two data sets: FOODCHAINS, containing 4th grade science food chain questions, and GEO880, containing geography questions.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "4 Evaluation"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "GEO880",
+    "object_type": "Dataset",
+    "source_sentence": "We compare our lexicon learning models against several baselines on two data sets: FOODCHAINS, containing 4th grade science food chain questions, and GEO880, containing geography questions.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "4 Evaluation"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "lexicon",
+    "object_type": "Model",
+    "source_sentence": "We compare lexicon learning algorithms by performing an end-to-end evaluation, measuring the question answering accuracy of a CCG semantic parser trained with the learned lexicon.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "4.2 Methodology"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "lexicon entry features",
+    "object_type": "Concept",
+    "source_sentence": "The parser has a rich set of features, including lexicon entry features, dependency features, and dependency distance features.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "4.2 Methodology"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "stochastic",
+    "object_type": "Method",
+    "source_sentence": "We train the parser by optimizing data loglikelihood with 100 epochs of stochastic gradient descent.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "4.2 Methodology"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "5-fold cross validation",
+    "object_type": "Method",
+    "source_sentence": "All experiments on FOODCHAINS are performed using 5-fold cross validation.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "4.2 Methodology"
+  },
+  {
+    "subject": "Lexicon",
+    "predicate": "achieves",
+    "object": "96% parse of examples in FOODCHAINS",
+    "object_type": "Dataset",
+    "source_sentence": "the lexicon generated by these templates can correctly parse 96% of the examples in FOODCHAINS.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "4.4 Lexicon Learning Baselines"
+  },
+  {
+    "subject": "parser",
+    "predicate": "comparesagainst",
+    "object": "UW SPF parser",
+    "object_type": "Model",
+    "source_sentence": "In both cases, our parser was more accurate than the UW SPF parser.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "4.4 Lexicon Learning Baselines"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "lexicon",
+    "object_type": "Concept",
+    "source_sentence": "We applied PAL to generate a lexicon for this data set using its included logical form labels, then trained a CCG semantic parser with this lexicon.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "4.5 Geo880 Evaluation"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "lexicon",
+    "object_type": "Concept",
+    "source_sentence": "We therefore trained another CCG parser using a lexicon generated by postprocessing PAL's lexicon to include factored lexicon entries.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "4.5 Geo880 Evaluation"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "enumerate-and-test approach",
+    "object_type": "Method",
+    "source_sentence": "Every algorithm uses an enumerate-and-test approach to identify correct logical forms",
+    "extraction_mode": "fixed",
+    "paper": "N16-1074",
+    "title": "Probabilistic Models for Learning a Semantic Parser Lexicon",
+    "section": "5 Discussion"
+  }
+]

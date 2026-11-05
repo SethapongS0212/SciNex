@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "addresses",
+    "object": "Aspect-level sentiment classification",
+    "object_type": "Task",
+    "source_sentence": "attention mechanism has played an important role in state-of-the-art neural models for this task.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Autoencoder",
+    "predicate": "uses",
+    "object": "aspect embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We use an autoencoder structure to learn both the aspect embeddings as well as the representation of the target as a weighted combination of the aspect embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Autoencoder",
+    "predicate": "achieves",
+    "object": "high accuracy on the predicted sentiment",
+    "object_type": "Other",
+    "source_sentence": "The autoencoder structure is jointly trained with a neural attention -based sentiment classifier to provide a good target representation as well as a high accuracy on the predicted sentiment.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Syntax-based",
+    "predicate": "uses",
+    "object": "Attention Model",
+    "object_type": "Model",
+    "source_sentence": "Our second approach exploits syntactic information to construct a syntax-based attention model.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "Recurrent Neural Network",
+    "object_type": "Other",
+    "source_sentence": "(2017) also adopts multiple layers of attention and aggregates the attention outputs through a recurrent neural network.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "aspect embedding",
+    "object_type": "Other",
+    "source_sentence": "an aspect embedding is directly used to capture the importance of context words through an attention mechanism , where the authors assume that the aspect label is provided as an input.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Neural Attention",
+    "predicate": "uses",
+    "object": "classifier",
+    "object_type": "Other",
+    "source_sentence": "The probability distribution and the aspect embeddings are learned via an unsupervised objective, which is jointly trained with the neural attention -based sentiment classifier.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Two Approaches",
+    "predicate": "addresses",
+    "object": "attention mechanism",
+    "object_type": "Concept",
+    "source_sentence": "We propose two approaches to improve the effectiveness of the attention mechanism.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "3 Model Description"
+  },
+  {
+    "subject": "Attention Model",
+    "predicate": "uses",
+    "object": "hidden vector hi",
+    "object_type": "Other",
+    "source_sentence": "The value pi is computed by an attention model, which conditions on the hidden vector hi as well as the target representation.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "3.2 Attention-based LSTM"
+  },
+  {
+    "subject": "Attention Model",
+    "predicate": "uses",
+    "object": "target representation",
+    "object_type": "Other",
+    "source_sentence": "The value pi is computed by an attention model, which conditions on the hidden vector hi as well as the target representation.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "3.2 Attention-based LSTM"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "GloVe vectors",
+    "object_type": "Other",
+    "source_sentence": "We initialize word embeddings using the 300-dimension GloVe vectors supplied by Pennington et al. (2014) and we use the dependency parser from spaCy3 to obtain dependency paths of review sentences.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Dependency Parser",
+    "predicate": "uses",
+    "object": "spaCy3",
+    "object_type": "Other",
+    "source_sentence": "We initialize word embeddings using the 300-dimension GloVe vectors supplied by Pennington et al. (2014) and we use the dependency parser from spaCy3 to obtain dependency paths of review sentences.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "test set",
+    "object_type": "Dataset",
+    "source_sentence": "and evaluate it on the test set.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "word embeddings",
+    "object_type": "Concept",
+    "source_sentence": "An LSTM network is built on top of word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "4.2 Model Comparisons"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "achieves",
+    "object": "strong baseline",
+    "object_type": "Concept",
+    "source_sentence": "Feature -based SVM is still a strong baseline, our best model achieves competitive results on D1 and D2 without relying on so many manually-designed features and external resources.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "4.2 Model Comparisons"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "addresses",
+    "object": "this type of errors",
+    "object_type": "Concept",
+    "source_sentence": "Although the proposed attention mechanism aims to address this type of errors, it still fails on complex examples;",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "4.4 Remaining Error Analysis"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "addresses",
+    "object": "aspect-level sentiment classification",
+    "object_type": "Task",
+    "source_sentence": "We propose two novel approaches to improve the effectiveness of attention mechanism for aspect-level sentiment classification.",
+    "extraction_mode": "fixed",
+    "paper": "C18-1096",
+    "title": "Effective Attention Modeling for Aspect-Level Sentiment Classiﬁcation",
+    "section": "5 Conclusion"
+  }
+]

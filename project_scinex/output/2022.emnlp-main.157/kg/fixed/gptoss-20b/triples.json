@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "cross entropy",
+    "predicate": "uses",
+    "object": "loss function",
+    "object_type": "Concept",
+    "source_sentence": "Finally, we use cross entropy as loss function.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.157",
+    "title": "Exploiting domain-slot related keywords description for Few-Shot Cross-Domain Dialogue State Tracking",
+    "section": "2.4 Keywords-prompt DST"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "AdamW optimizer",
+    "object_type": "Other",
+    "source_sentence": "All models are trained using an AdamW optimizer with a base learning rate of 0.0001.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.157",
+    "title": "Exploiting domain-slot related keywords description for Few-Shot Cross-Domain Dialogue State Tracking",
+    "section": "3.3 Implementation"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Domains",
+    "object_type": "Domain",
+    "source_sentence": "For our few-shot cross-domain experiments, the models are first trained on 4 domains with batch size 8 for 2 epochs then fine-tuned with 1%, 5% and 10% of target domain data for 5 epochs respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.157",
+    "title": "Exploiting domain-slot related keywords description for Few-Shot Cross-Domain Dialogue State Tracking",
+    "section": "3.3 Implementation"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "NVIDIA 3090 GPU",
+    "object_type": "Other",
+    "source_sentence": "We use 1 NVIDIA 3090 GPU for all of our experiments.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.157",
+    "title": "Exploiting domain-slot related keywords description for Few-Shot Cross-Domain Dialogue State Tracking",
+    "section": "3.3 Implementation"
+  },
+  {
+    "subject": "transformation",
+    "predicate": "uses",
+    "object": "slot name",
+    "object_type": "Concept",
+    "source_sentence": "Simple transformation of the slot name from \" domain -slot\" pair to \"[slot] of the [ domain ]\".",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.157",
+    "title": "Exploiting domain-slot related keywords description for Few-Shot Cross-Domain Dialogue State Tracking",
+    "section": "3.4 Prompt Description Variants"
+  },
+  {
+    "subject": "Description",
+    "predicate": "achieves",
+    "object": "better results on all 5 domain",
+    "object_type": "Other",
+    "source_sentence": "It can be seen that our slot related verbs & nouns description achieves better results on all 5 domain compared to the T5 slot type description, which further proves the effec- tiveness of our method.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.157",
+    "title": "Exploiting domain-slot related keywords description for Few-Shot Cross-Domain Dialogue State Tracking",
+    "section": "3.5 Main Results"
+  }
+]

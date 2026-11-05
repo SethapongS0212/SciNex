@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "Seq2seq",
+    "predicate": "achieves",
+    "object": "promising performance on dialog response generation",
+    "object_type": "Other",
+    "source_sentence": "Specifically, with the progress on sequence -to- sequence (seq2seq) learn- ing , neural generative mod- els have achieved promising performance on dialog response generation .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "paraphrase generation",
+    "object_type": "Method",
+    "source_sentence": "We leverage the multi- stage seq2seq structure for both paraphrase and response generation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "response generation",
+    "object_type": "Method",
+    "source_sentence": "We leverage the multi- stage seq2seq structure for both paraphrase and response generation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Global Attention",
+    "predicate": "uses",
+    "object": "decoders",
+    "object_type": "Other",
+    "source_sentence": "these two models are connected through an additional global attention between their decoders, so they can be optimized jointly during training.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "paraphrase dataset",
+    "object_type": "Dataset",
+    "source_sentence": "In this section, we first introduce how to construct a paraphrase dataset to train paraphrase generation models.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "3 Proposed Framework"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "0.2",
+    "object_type": "Metric",
+    "source_sentence": "If the BLEU score is too low (below 0.2 in our experiments), we consider the paraphrase pair as semantically irrelevant and filter it out.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Paraphrase Generation",
+    "predicate": "uses",
+    "object": "attention",
+    "object_type": "Concept",
+    "source_sentence": "we still utilize the paraphrase generation model to compute attention between the paraphrase decoder and the belief span decoder.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "3.2 Paraphrase Augmented Response Generation"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "CamRest676",
+    "object_type": "Dataset",
+    "source_sentence": "We utilize the same dataset (CamRest676 or MultiWOZ) to train all the models for fair comparison.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "5 Results and Analysis"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "MultiWOZ",
+    "object_type": "Dataset",
+    "source_sentence": "We utilize the same dataset (CamRest676 or MultiWOZ) to train all the models for fair comparison.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "5 Results and Analysis"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "trainedon",
+    "object": "User Utterances",
+    "object_type": "Other",
+    "source_sentence": "Specifically, we use all the user utterances in the training corpus of CamRest676 or MultiWOZ to train the LSTM language model of WordSub and the policy network of TextSub.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "5 Results and Analysis"
+  },
+  {
+    "subject": "Response Generation",
+    "predicate": "uses",
+    "object": "dialog data",
+    "object_type": "Dataset",
+    "source_sentence": "the response generation process can benefit more through incorporating additional dialog data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "5 Results and Analysis"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "addresses",
+    "object": "simplifying the training process",
+    "object_type": "Concept",
+    "source_sentence": "joint training has additional advantages in simplifying the training process.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "5 Results and Analysis"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "evaluatedon",
+    "object": "full MultiWOZ dataset",
+    "object_type": "Dataset",
+    "source_sentence": "then do model training and evaluation on the full MultiWOZ dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "6 Ablation Study"
+  },
+  {
+    "subject": "Paraphrase",
+    "predicate": "uses",
+    "object": "Data Augmentation",
+    "object_type": "Other",
+    "source_sentence": "In this paper, we propose to use dialog paraphrase as data augmentation to improve the response generation quality of task-oriented dialog systems.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "9 Conclusion"
+  },
+  {
+    "subject": "Dialog State Tracking",
+    "predicate": "uses",
+    "object": "reinforced data augmentation",
+    "object_type": "Method",
+    "source_sentence": "Dialog state tracking with reinforced data augmentation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "I Sutskever, O Vinyals, and QV Le. 2014. Sequence to sequence learning with neural networks. Advances in NIPS."
+  },
+  {
+    "subject": "Data Augmentation",
+    "predicate": "uses",
+    "object": "joint variational generation",
+    "object_type": "Method",
+    "source_sentence": "Data augmentation for spoken language understanding via joint variational generation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "I Sutskever, O Vinyals, and QV Le. 2014. Sequence to sequence learning with neural networks. Advances in NIPS."
+  },
+  {
+    "subject": "Convolutional Networks",
+    "predicate": "uses",
+    "object": "text classification",
+    "object_type": "Task",
+    "source_sentence": "Character-level convolutional networks for text classification.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "I Sutskever, O Vinyals, and QV Le. 2014. Sequence to sequence learning with neural networks. Advances in NIPS."
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "semantic augmentation",
+    "object_type": "Method",
+    "source_sentence": "para- phrase generation with semantic augmentation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.60",
+    "title": "Paraphrase Augmented Task-Oriented Dialog Generation",
+    "section": "I Sutskever, O Vinyals, and QV Le. 2014. Sequence to sequence learning with neural networks. Advances in NIPS."
+  }
+]

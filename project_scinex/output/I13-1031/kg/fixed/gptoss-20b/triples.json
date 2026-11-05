@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Summarization System",
+    "predicate": "uses",
+    "object": "MT knowledge",
+    "object_type": "Concept",
+    "source_sentence": "We incorporate MT knowledge into a summarization system which results in high quality translation summaries.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Summarization System",
+    "predicate": "achieves",
+    "object": "high quality translation summaries",
+    "object_type": "Other",
+    "source_sentence": "We incorporate MT knowledge into a summarization system which results in high quality translation summaries.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Summarization System",
+    "predicate": "uses",
+    "object": "translation quality score",
+    "object_type": "Metric",
+    "source_sentence": "We summarize the English document using our MT-aware summarization system (c), which incorporates the translation quality score (output of (b)) in its sentence selection process.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "3 An overview of the approach"
+  },
+  {
+    "subject": "MT Evaluation",
+    "predicate": "uses",
+    "object": "BLEU",
+    "object_type": "Metric",
+    "source_sentence": "We deliberately use two different metrics for gold standard labeling (TER) and the final MT evaluation (using BLEU ) to reduce the bias that a metric can introduce to the framework.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "4.1 Labeling gold-standard data"
+  },
+  {
+    "subject": "Parallel Corpus",
+    "predicate": "uses",
+    "object": "Documents",
+    "object_type": "Dataset",
+    "source_sentence": "In this task, we use a parallel corpus that is composed of a set of documents.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "4.1 Labeling gold-standard data"
+  },
+  {
+    "subject": "Support Vector Machine",
+    "predicate": "uses",
+    "object": "features",
+    "object_type": "Concept",
+    "source_sentence": "We use a Support Vector Machine (SVM) classifier and exploit a rich set of features to represent a source language sentence and its translation.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "4.2 MT quality classiﬁer"
+  },
+  {
+    "subject": "summarizer",
+    "predicate": "addresses",
+    "object": "linguistic and translation quality",
+    "object_type": "Concept",
+    "source_sentence": "Our MT-aware summarizer focuses on the linguistic and translation quality of a given sentence , as well as its position, length, and the content in its sentence ranking procedure.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "5 MT-aware Summarization"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "trainedon",
+    "object": "standard English-Arabic parallel corpus",
+    "object_type": "Dataset",
+    "source_sentence": "The baseline MT system is the open-source MOSES phrase-based decoder trained on a standard English-Arabic parallel corpus.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.3 MT Setup"
+  },
+  {
+    "subject": "Tokenization",
+    "predicate": "uses",
+    "object": "simple punctuation-based rules",
+    "object_type": "Other",
+    "source_sentence": "We perform the standard preprocessing and tokenization on the English side using simple punctuation-based rules.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.3 MT Setup"
+  },
+  {
+    "subject": "morphological",
+    "predicate": "uses",
+    "object": "MADA+TOKAN morphological analyzer",
+    "object_type": "Other",
+    "source_sentence": "We also use the MADA+TOKAN morphological analyzer to preprocess and tokenize the Arabic side of the corpus.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.3 MT Setup"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "5-gram language model",
+    "object_type": "Other",
+    "source_sentence": "We use the 5-gram language model with modified Kneser-Ney smoothing.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.3 MT Setup"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "LDC Arabic Gigaword corpus",
+    "object_type": "Dataset",
+    "source_sentence": "The language model for our system is trained using the LDC Arabic Gigaword corpus.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.3 MT Setup"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "El Kholy and Habash Arabic detokenization framework",
+    "object_type": "Other",
+    "source_sentence": "After decoding, we use the El Kholy and Habash (2010) Arabic detokenization framework to prepare the Arabic output for evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.3 MT Setup"
+  },
+  {
+    "subject": "Support Vector Machine",
+    "predicate": "uses",
+    "object": "LIBSVM package",
+    "object_type": "Other",
+    "source_sentence": "We use the models described in Section 4 to build a Support Vector Machine (SVM) binary classi- fier using the LIBSVM package .",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.4 MT-quality classiﬁer"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "2670 sentence pairs",
+    "object_type": "Dataset",
+    "source_sentence": "To train our classifier we use a total of 2670 sentence pairs extracted from 259 documents of NIST 2008 and 2009 data sets.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.4 MT-quality classiﬁer"
+  },
+  {
+    "subject": "Summarization",
+    "predicate": "uses",
+    "object": "Parallel Corpus",
+    "object_type": "Dataset",
+    "source_sentence": "we use the parallel corpus to project the summarization from the source language (English) to the corresponding Arabic translations.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "7.2 Model-based summarization evaluation"
+  },
+  {
+    "subject": "Text Summarization",
+    "predicate": "addresses",
+    "object": "MT in various end-user applications",
+    "object_type": "Concept",
+    "source_sentence": "Considering the poor translation quality of many language pairs, text summarization can provide effective support for MT in various end-user applications.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "8 Conclusion and Future work"
+  }
+]

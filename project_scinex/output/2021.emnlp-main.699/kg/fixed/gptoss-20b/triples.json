@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "GPT-2",
+    "predicate": "achieves",
+    "object": "zero-shot transfer",
+    "object_type": "Concept",
+    "source_sentence": "GPT-2 , and later GPT-3 , demonstrated that language models can perform zero-shot transfer to downstream tasks via generation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.699",
+    "title": "IndoNLG: Benchmark and Resources for Evaluating Indonesian Natural Language Generation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "GPT-3",
+    "predicate": "achieves",
+    "object": "zero-shot transfer",
+    "object_type": "Concept",
+    "source_sentence": "GPT-2 , and later GPT-3 , demonstrated that language models can perform zero-shot transfer to downstream tasks via generation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.699",
+    "title": "IndoNLG: Benchmark and Resources for Evaluating Indonesian Natural Language Generation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Encoder-Decoder Model",
+    "predicate": "uses",
+    "object": "mBART",
+    "object_type": "Model",
+    "source_sentence": "We build an encoder-decoder model using the mBART architecture , which we train from scratch directly on each downstream task",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.699",
+    "title": "IndoNLG: Benchmark and Resources for Evaluating Indonesian Natural Language Generation",
+    "section": "4.1 Models"
+  },
+  {
+    "subject": "mT5",
+    "predicate": "trainedon",
+    "object": "mC4 dataset",
+    "object_type": "Dataset",
+    "source_sentence": "In contrast, mT5 is trained on 101 languages using the mC4 dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.699",
+    "title": "IndoNLG: Benchmark and Resources for Evaluating Indonesian Natural Language Generation",
+    "section": "4.1 Models"
+  },
+  {
+    "subject": "SentencePiece",
+    "predicate": "uses",
+    "object": "BPE tokenizer",
+    "object_type": "Method",
+    "source_sentence": "For both our Indo- BART and IndoGPT models, we use SentencePiece with a byte-pair encoding (BPE) tokenizer learnt on the full rebalanced Indo4B-Plus dataset , with a vocabulary size of 40,000.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.699",
+    "title": "IndoNLG: Benchmark and Resources for Evaluating Indonesian Natural Language Generation",
+    "section": "4.2 Pretraining Setup"
+  },
+  {
+    "subject": "Encoder-decoder models",
+    "predicate": "uses",
+    "object": "Sequence",
+    "object_type": "Concept",
+    "source_sentence": "To ensure a fair comparison, we limit the encoder and decoder sequence lengths to 512 for the encoder-decoder models, while for the decoder- only IndoGPT, we limit both the maximum prefix length and the maximum decoding length to 512.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.699",
+    "title": "IndoNLG: Benchmark and Resources for Evaluating Indonesian Natural Language Generation",
+    "section": "4.3 Fine-tuning Setup"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "learning rate",
+    "object_type": "Concept",
+    "source_sentence": "We perform a hyperparameter search for the learning rate over the range [1e-3, 1e-4, 5e-5, 1e-5, 5e-6] and report the best results.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.699",
+    "title": "IndoNLG: Benchmark and Resources for Evaluating Indonesian Natural Language Generation",
+    "section": "4.3 Fine-tuning Setup"
+  }
+]

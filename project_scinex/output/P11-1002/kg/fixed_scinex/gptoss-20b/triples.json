@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "Gibbs Sampling",
+    "object_type": "Method",
+    "source_sentence": "We perform inference using point-wise Gibbs sampling.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "2.2 Bayesian Decipherment"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "produces",
+    "object": "trained version of the channel model",
+    "object_type": "Model",
+    "source_sentence": "After the sampling run has finished, we choose the final sample and extract a trained version of the channel model Pθ(c|e) from this sample following the technique of Chiang et al.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "2.2 Bayesian Decipherment"
+  },
+  {
+    "subject": "Decipherment",
+    "predicate": "achieves",
+    "object": "maximizing probability of foreign corpus f",
+    "object_type": "Task",
+    "source_sentence": "During decipherment training, our objective is to estimate the model parameters θ in order to maximize the probability of the foreign corpus f.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "3 Machine Translation as a Decipherment Task"
+  },
+  {
+    "subject": "word n-gram",
+    "predicate": "uses",
+    "object": "monolingual English data",
+    "object_type": "Dataset",
+    "source_sentence": "For P(e), we use a word n-gram LM trained on monolingual English data.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "3 Machine Translation as a Decipherment Task"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "estimating parameters of the translation model",
+    "object_type": "Task",
+    "source_sentence": "We then estimate parameters of the translation model Pθ(f|e) during training.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "3 Machine Translation as a Decipherment Task"
+  },
+  {
+    "subject": "MT training",
+    "predicate": "achieves",
+    "object": "presenting two novel decipherment approaches",
+    "object_type": "Task",
+    "source_sentence": "Next, we present two novel decipherment approaches for MT training without parallel data.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "3 Machine Translation as a Decipherment Task"
+  },
+  {
+    "subject": "EM Decipherment",
+    "predicate": "achieves",
+    "object": "proposing a new translation model for MT decipherment",
+    "object_type": "Task",
+    "source_sentence": "EM Decipherment : We propose a new translation model for MT decipherment which can be efficiently trained using the EM algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "3 Machine Translation as a Decipherment Task"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "efficient inference during training",
+    "object_type": "Task",
+    "source_sentence": "Unlike EM, this method does not face any memory issues and we use sampling to perform efficient inference during training.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "3 Machine Translation as a Decipherment Task"
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "Sentence",
+    "object_type": "Sentence",
+    "source_sentence": "We apply a separately trained language model to calculate the likelihood of the given sentence",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "3.1.3 Language Fluency Objective"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "Sentences",
+    "object_type": "Task",
+    "source_sentence": "We apply a separately trained language model to calculate the likelihood of the given sentence, which is similar to previous works . However, in our method, to make the objective differentiable to the input (words' representation), we apply the language model to sentences in vector level instead of token level.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "3.1.3 Language Fluency Objective"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "probabilities",
+    "object_type": "Concept",
+    "source_sentence": "Finally, the probabilities are obtained by softmax: [pins, pdel, prep] = Softmax([Lnorm ins, Lnorm del, Lnorm rep ]).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "3.2 Gradient-guided Editing"
+  },
+  {
+    "subject": "Pre-Trained Language Model",
+    "predicate": "uses",
+    "object": "top 50 possible words",
+    "object_type": "Other",
+    "source_sentence": "we use the pre-trained language model to obtain the top 50 possible words to be filled in the ∗place.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "3.2 Gradient-guided Editing"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "Word Representation",
+    "object_type": "Word Representation",
+    "source_sentence": "So, we use the language model to coarsely update the word.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "3.2 Gradient-guided Editing"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "uses",
+    "object": "Adam",
+    "object_type": "Method",
+    "source_sentence": "Note that we can use any optimization method here, including Adam , Adagrad , LBFGS , etc.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "3.2.3 Word Selection and Update"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "uses",
+    "object": "Adagrad",
+    "object_type": "Method",
+    "source_sentence": "Note that we can use any optimization method here, including Adam , Adagrad , LBFGS , etc.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "3.2.3 Word Selection and Update"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "One-Billion-Word Corpus",
+    "object_type": "Dataset",
+    "source_sentence": "The language model is trained using One-Billion-Word Corpus 6.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.1.1 Dataset & Preprocessing"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Model",
+    "source_sentence": "The architecture of the language model is a forward 2-layer LSTM RNN.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.1.1 Dataset & Preprocessing"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "generator",
+    "object_type": "Model",
+    "source_sentence": "Grid-beam search (GBS) method is proposed by Hokamp and Liu (2017), which applies an enhanced beam search to find a valid solution in the constrained search space of the generator.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.1.1 Dataset & Preprocessing"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "keywords",
+    "object_type": "Other",
+    "source_sentence": "For our method, we simply use a sequence composed of the keywords as the initial sentence , which is the same as CGMH.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.1.1 Dataset & Preprocessing"
+  },
+  {
+    "subject": "English",
+    "predicate": "uses",
+    "object": "WMT18",
+    "object_type": "Dataset",
+    "source_sentence": "This language model is trained using the English monolingual corpus in WMT18 7, which is again consistent with previous work.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.1.1 Dataset & Preprocessing"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "paraphrasing recognition model (Lss)",
+    "object_type": "Model",
+    "source_sentence": "For the training of the paraphrasing recognition model (Lss), we mix the rest paraphrased sentence pairs and the non-paraphrased sentence pairs together, and then take out 1K and 3K for validation and testing, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.2.1 Datasets & Implementation details"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "lexical constraints",
+    "object_type": "Concept",
+    "source_sentence": "We also conduct experiments that require the target sentence to satisfy the lexical constraints simultaneously.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.2.1 Datasets & Implementation details"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "17.02",
+    "object_type": "Metric",
+    "source_sentence": "we evaluate the performance of the paraphrasing generation model by BLEU value, which achieves 17.02 on the test set.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.2.1 Datasets & Implementation details"
+  },
+  {
+    "subject": "Supervised Methods",
+    "predicate": "uses",
+    "object": "Seq2seq",
+    "object_type": "Method",
+    "source_sentence": "(1) Supervised methods are usually Seq2Seq methods",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.2.1 Datasets & Implementation details"
+  },
+  {
+    "subject": "VAE",
+    "predicate": "trainedon",
+    "object": "non-paraphrased sentences",
+    "object_type": "Dataset",
+    "source_sentence": "VAE is trained using non-paraphrased sentences by minimizing reconstruction loss and KL loss.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.2.1 Datasets & Implementation details"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "paraphrase generator Lplug",
+    "object_type": "Model",
+    "source_sentence": "G2LC (Generator) is optimized by Lgen, which is a plug-in of a pretrained paraphrase generator, and Lplug is part of the score function.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.2.1 Datasets & Implementation details"
+  }
+]

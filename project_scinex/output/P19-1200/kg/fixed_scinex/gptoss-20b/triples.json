@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "CNNs",
+    "predicate": "uses",
+    "object": "sentence-level CNNs",
+    "object_type": "Model",
+    "source_sentence": "We use sentence-level CNNs to encode each sentence into a fixed-length vector, which are then aggregated and send to paragraph-level CNN encoder.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "3.2 Double Latent Variables (ml-VAE-D):"
+  },
+  {
+    "subject": "CNNs",
+    "predicate": "uses",
+    "object": "paragraph-level CNN encoder",
+    "object_type": "Model",
+    "source_sentence": "We use sentence-level CNNs to encode each sentence into a fixed-length vector, which are then aggregated and send to paragraph-level CNN encoder.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "3.2 Double Latent Variables (ml-VAE-D):"
+  },
+  {
+    "subject": "Inference Networks",
+    "predicate": "uses",
+    "object": "lower-level CNN",
+    "object_type": "Model",
+    "source_sentence": "The inference networks parameterizing q(z1|x) and q(z2|x) share the same parameters as the lower-level CNN.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "3.2 Double Latent Variables (ml-VAE-D):"
+  },
+  {
+    "subject": "VAE",
+    "predicate": "addresses",
+    "object": "text generation",
+    "object_type": "Task",
+    "source_sentence": "VAE trained under the neural variational inference (NVI) framework, has been widely used for generating text sequences.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "4 Related Work"
+  },
+  {
+    "subject": "Generative Models",
+    "predicate": "addresses",
+    "object": "text generation",
+    "object_type": "Task",
+    "source_sentence": "Generative Adversarial Networks (GANs) (Yu et al., 2017; Hu et al., 2017; Zhang et al., 2017; Fedus et al., 2018; Chen et al., 2018a), is another type of generative models that are commonly used for text generation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "4 Related Work"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "addresses",
+    "object": "strong autoregressive nature",
+    "object_type": "Concept",
+    "source_sentence": "argue that the small KL term relates to the strong autoregressive nature of an LSTM generative network",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "4 Related Work"
+  },
+  {
+    "subject": "VAE",
+    "predicate": "addresses",
+    "object": "additional mutual information term",
+    "object_type": "Concept",
+    "source_sentence": "proposed to augment the VAE training objective with an additional mutual information term",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "4 Related Work"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "addresses",
+    "object": "hierarchical representations",
+    "object_type": "Concept",
+    "source_sentence": "Previous work used multi-level LSTM encoders or hierarchical autoencoders to learn hierarchical representations for long text",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "4 Related Work"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "training",
+    "object_type": "Dataset",
+    "source_sentence": "The classifier is trained on the entire training set and achieves a test accuracy of 94.2%.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "5.5 Analysis"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achievesresult",
+    "object": "83.4% positive-sentiment predictions",
+    "object_type": "Metric",
+    "source_sentence": "With this pre-trained classifier, 83.4% of the transferred reviews are predicted as positive-sentiment, indicating that \"attribute vector arithmetic\" consistently produces the intended manipulation of sentiment.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "5.5 Analysis"
+  }
+]

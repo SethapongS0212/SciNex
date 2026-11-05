@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Sentiment Analyzer",
+    "predicate": "uses",
+    "object": "unsupervised rule-based method",
+    "object_type": "Method",
+    "source_sentence": "the sentiment analyzer adopts three methods including an unsupervised rule-based method, a regression model, and a domain-adversarial regression model to acquire sentiment intensities of the story training corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "0.9 She won the game and was very proud of her team."
+  },
+  {
+    "subject": "Sentiment Analyzer",
+    "predicate": "uses",
+    "object": "regression model",
+    "object_type": "Method",
+    "source_sentence": "the sentiment analyzer adopts three methods including an unsupervised rule-based method, a regression model, and a domain-adversarial regression model to acquire sentiment intensities of the story training corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "0.9 She won the game and was very proud of her team."
+  },
+  {
+    "subject": "Sentiment Analyzer",
+    "predicate": "uses",
+    "object": "domain-adversarial regression model",
+    "object_type": "Method",
+    "source_sentence": "the sentiment analyzer adopts three methods including an unsupervised rule-based method, a regression model, and a domain-adversarial regression model to acquire sentiment intensities of the story training corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "0.9 She won the game and was very proud of her team."
+  },
+  {
+    "subject": "Regression Model",
+    "predicate": "trainedon",
+    "object": "Stanford Sentiment Treebank dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We first train a linear regression model R on the Stanford Sentiment Treebank (SST) dataset",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "2.2 Sentiment Analyzer"
+  },
+  {
+    "subject": "generator",
+    "predicate": "achieves",
+    "object": "generate story endings that match target sentiment intensities",
+    "object_type": "Task",
+    "source_sentence": "The sentimental generator G aims to generate story endings that match the target sentiment intensities s.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "2.3 Sentimental Generator"
+  },
+  {
+    "subject": "kernel",
+    "predicate": "uses",
+    "object": "words",
+    "object_type": "Words",
+    "source_sentence": "A Gaussian Kernel Layer is used to encourage words with sentiment intensity near to target sentiment s",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "2.3 Sentimental Generator"
+  },
+  {
+    "subject": "Sentiment Analyzer",
+    "predicate": "uses",
+    "object": "3-layer bidirectional LSTM",
+    "object_type": "Model",
+    "source_sentence": "For the RM and DA sentiment analyzer, we implement the encoder as a 3-layer bidirectional LSTM with a hidden size of 512.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "3.3 Experiment Settings"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "semantic embeddings",
+    "object_type": "Concept",
+    "source_sentence": "For the sentimen- tal generator, both the semantic and sentiment embeddings are 256 dimensions and randomly initial- ized.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "3.3 Experiment Settings"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "initial learning rate of 0.0003",
+    "object_type": "Metric",
+    "source_sentence": "We use the Adam opti- mizer with an initial learn- ing rate of 0.0003.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "3.3 Experiment Settings"
+  },
+  {
+    "subject": "Domain Adaption",
+    "predicate": "uses",
+    "object": "MLP",
+    "object_type": "Model",
+    "source_sentence": "For domain adaption, we implement a do- main discriminator as a MLP with 1 hidden layer of size 32.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1603",
+    "title": "Learning to Control the Fine-grained Sentiment for",
+    "section": "3.3 Experiment Settings"
+  }
+]

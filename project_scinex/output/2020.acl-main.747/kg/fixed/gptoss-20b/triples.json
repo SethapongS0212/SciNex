@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "mBERT",
+    "predicate": "achieves",
+    "object": "state-of-the-art on cross-lingual understanding tasks",
+    "object_type": "Task",
+    "source_sentence": "Multilingual masked language models (MLM) like mBERT and XLM have pushed the state-of-the-art on cross-lingual understanding tasks by jointly pretraining large Transformer models on many languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "achieves",
+    "object": "state-of-the-art on cross-lingual understanding tasks",
+    "object_type": "Task",
+    "source_sentence": "Multilingual masked language models (MLM) like mBERT and XLM have pushed the state-of-the-art on cross-lingual understanding tasks by jointly pretraining large Transformer models on many languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "XLM-RoBERTa",
+    "predicate": "comparesagainst",
+    "object": "mBERT",
+    "object_type": "Model",
+    "source_sentence": "Our best model XLM-RoBERTa (XLM-R) out- performs mBERT on cross - lingual classification by up to 23% accuracy on low-resource languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "XLM-RoBERTa",
+    "predicate": "achieves",
+    "object": "23% accuracy on low-resource languages",
+    "object_type": "Metric",
+    "source_sentence": "Our best model XLM-RoBERTa (XLM-R) out- performs mBERT on cross - lingual classification by up to 23% accuracy on low-resource languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Wikipedia Data",
+    "object_type": "Dataset",
+    "source_sentence": "we pretrain models on Wikipedia Data in 7, 30 and 100 languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "trainedon",
+    "object": "Wikipedia data",
+    "object_type": "Dataset",
+    "source_sentence": "To illustrate this effect, we train XLM-100 models on Wikipedia data with different vocabulary sizes.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "comparesagainst",
+    "object": "Unicoder",
+    "object_type": "Model",
+    "source_sentence": "While XLM-R handles 100 languages , we also show that it outperforms the former state of the art Unicoder and XLM (MLM+TLM), which handle only 15 languages , by 5.5% and 5.8% average accuracy respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "comparesagainst",
+    "object": "XLM",
+    "object_type": "Model",
+    "source_sentence": "While XLM-R handles 100 languages , we also show that it outperforms the former state of the art Unicoder and XLM (MLM+TLM), which handle only 15 languages , by 5.5% and 5.8% average accuracy respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "achieves",
+    "object": "83.6% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Using the multilingual training of translate-train-all, XLM-R further improves performance and reaches 83.6% accuracy, a new overall state of the art for XNLI, outperforming Unicoder by 5.1%.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "mBERT",
+    "predicate": "uses",
+    "object": "language-specific tokenization tools",
+    "object_type": "Concept",
+    "source_sentence": "The different language-specific tokenization tools used by mBERT and XLM-100 make these models more difficult to use on raw text.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "uses",
+    "object": "language-specific tokenization tools",
+    "object_type": "Concept",
+    "source_sentence": "The different language-specific tokenization tools used by mBERT and XLM-100 make these models more difficult to use on raw text.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "uses",
+    "object": "raw text data",
+    "object_type": "Concept",
+    "source_sentence": "Instead, we train a Sentence Piece model (SPM) and apply it directly on raw text data for all languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "89.43%",
+    "object_type": "Metric",
+    "source_sentence": "Training on all languages leads to an average F1 score of 89.43%, outperforming cross-lingual transfer approach by 8.49%.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.2 Cross-lingual Understanding Results"
+  },
+  {
+    "subject": "training",
+    "predicate": "trainedon",
+    "object": "English training data",
+    "object_type": "Dataset",
+    "source_sentence": "We follow their procedure by training on the English training data and evaluating on the 7 languages of the dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.2 Cross-lingual Understanding Results"
+  },
+  {
+    "subject": "training",
+    "predicate": "evaluatedon",
+    "object": "7 languages of the dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We follow their procedure by training on the English training data and evaluating on the 7 languages of the dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.2 Cross-lingual Understanding Results"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "trainedon",
+    "object": "CC",
+    "object_type": "Dataset",
+    "source_sentence": "Specifically, in the translate-train-all setting, we observe that the biggest gains for XLM models trained on CC, compared to their Wikipedia counterparts, are on low-resource languages",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.4 Representation Learning for Low-resource Languages"
+  }
+]

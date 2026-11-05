@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "MRC",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance on both datasets",
+    "object_type": "Concept",
+    "source_sentence": "The results show that our answer verification MRC model outperforms the baseline models by a large margin and achieves the state-of-the-art performance on both datasets.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1178",
+    "title": "Multi-Passage Machine Reading Comprehension with Cross-Passage Answer Veriﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "DuReader",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct extensive experiments on the MS- MARCO and DuReader datasets.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1178",
+    "title": "Multi-Passage Machine Reading Comprehension with Cross-Passage Answer Veriﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "MRC",
+    "predicate": "uses",
+    "object": "answer candidate",
+    "object_type": "Other",
+    "source_sentence": "First, we follow the boundary-based MRC models to find an answer candidate for each passage by identifying the start and end position of the answer.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1178",
+    "title": "Multi-Passage Machine Reading Comprehension with Cross-Passage Answer Veriﬁcation",
+    "section": "2 Our Approach"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "Contextual Information",
+    "object_type": "Concept",
+    "source_sentence": "Next, another BiLSTM is applied in order to fuse the contextual information and get the new representation for each word in the passage , which is regarded as the match output:",
+    "extraction_mode": "fixed",
+    "paper": "P18-1178",
+    "title": "Multi-Passage Machine Reading Comprehension with Cross-Passage Answer Veriﬁcation",
+    "section": "2.1 Question and Passage Modeling"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "comparesagainst",
+    "object": "ensemble model in Tan et al. (2017)",
+    "object_type": "Model",
+    "source_sentence": "If we ensemble the models trained with different random seeds and hyper-parameters, the results can be further improved and outperform the ensemble model in Tan et al. (2017), especially in terms of the BLEU-1.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1178",
+    "title": "Multi-Passage Machine Reading Comprehension with Cross-Passage Answer Veriﬁcation",
+    "section": "3.3 Results on MS-MARCO"
+  },
+  {
+    "subject": "Models",
+    "predicate": "comparesagainst",
+    "object": "Baseline Models",
+    "object_type": "Model",
+    "source_sentence": "our model outperforms the baseline models by a large margin and achieves the state-of-the-art performance on two challenging datasets",
+    "extraction_mode": "fixed",
+    "paper": "P18-1178",
+    "title": "Multi-Passage Machine Reading Comprehension with Cross-Passage Answer Veriﬁcation",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance on two challenging datasets",
+    "object_type": "Metric",
+    "source_sentence": "our model outperforms the baseline models by a large margin and achieves the state-of-the-art performance on two challenging datasets",
+    "extraction_mode": "fixed",
+    "paper": "P18-1178",
+    "title": "Multi-Passage Machine Reading Comprehension with Cross-Passage Answer Veriﬁcation",
+    "section": "6 Conclusion"
+  }
+]

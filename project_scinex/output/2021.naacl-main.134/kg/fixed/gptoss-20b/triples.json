@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Abstractive Text Summarization",
+    "predicate": "uses",
+    "object": "bag of extracted key words",
+    "object_type": "Other",
+    "source_sentence": "In abstractive text summarization , the summary can be generated according to a bag of extracted key words ;",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Set Transformer",
+    "predicate": "designedfor",
+    "object": "interactions among input elements",
+    "object_type": "Task",
+    "source_sentence": "On this basis of the transformer architecture, Lee et al. (2019) presented an Set Transformer designed to model interactions among elements in the input set.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "word ordering problem",
+    "object_type": "Task",
+    "source_sentence": "Previous, researchers usually employed N-gram based language models , syntactic- based language models or combined models to solve this problem.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Combined Models",
+    "predicate": "addresses",
+    "object": "word ordering problem",
+    "object_type": "Task",
+    "source_sentence": "Previous, researchers usually employed N-gram based language models , syntactic- based language models or combined models to solve this problem.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "word embeddings",
+    "object_type": "Concept",
+    "source_sentence": "More recently, Hasler et al. (2017) proposed a bag-to- sequence model, where the decoder RNN directly attended to the word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Model",
+    "source_sentence": "In this paper, we introduce an RNN with long short-term memory units (LSTMs) as a baseline encoder for a comparison.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "4.1 Compared Encoders"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "produces",
+    "object": "context representation",
+    "object_type": "Concept",
+    "source_sentence": "The final hidden state of LSTM is regarded as the context representation of the input bag.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "4.1 Compared Encoders"
+  },
+  {
+    "subject": "memory-based",
+    "predicate": "uses",
+    "object": "attention",
+    "object_type": "Concept",
+    "source_sentence": "The memory-based approach encodes a bag of words through performing multiple rounds of attention over the word representations, alike to the memory network.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "4.1 Compared Encoders"
+  },
+  {
+    "subject": "Sentences",
+    "predicate": "uses",
+    "object": "NLTK package",
+    "object_type": "Method",
+    "source_sentence": "We tokenize all articles into sentences using the NLTK package4, and replace all numbers with \"__num__\".",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "5.1 Datasets"
+  },
+  {
+    "subject": "Sentences",
+    "predicate": "uses",
+    "object": "data preprocessed by",
+    "object_type": "Method",
+    "source_sentence": "To facilitate fair comparisons, we use the data preprocessed by , which consists of 39, 832 training sentences, 1, 700 validation sentences and 2, 416 test sentences.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "5.1 Datasets"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "overlapping lexical units",
+    "object_type": "Metric",
+    "source_sentence": "BLEU measures the quality of generated sentences by computing overlapping lexical units (e.g., unigram, bigram) with the reference sentences.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "5.3 Evaluation Metrics"
+  },
+  {
+    "subject": "ROUGE",
+    "predicate": "uses",
+    "object": "longest common subsequence",
+    "object_type": "Metric",
+    "source_sentence": "ROUGE -L measures the longest common subsequence (LCS) between the reference sentence and the generated sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "5.3 Evaluation Metrics"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "PTB dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We further run experiments on the PTB dataset, which is a benchmark for the word ordering task.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "5.4 Overall Results"
+  },
+  {
+    "subject": "Neural Models",
+    "predicate": "uses",
+    "object": "Beam Search",
+    "object_type": "Method",
+    "source_sentence": "Despite the lack of order information , neural models can still organize all possible sentences through beam search.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.134",
+    "title": "Abstract",
+    "section": "5.5 Discussions"
+  }
+]

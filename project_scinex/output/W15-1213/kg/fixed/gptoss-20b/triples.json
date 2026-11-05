@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Linguistic Annotations",
+    "predicate": "uses",
+    "object": "annotation syntax",
+    "object_type": "Concept",
+    "source_sentence": "but also detailed linguistic annotations using a complex and unforgiving annotation syntax that itself takes significant effort to master.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Morphological Annotations",
+    "predicate": "uses",
+    "object": "MLUM",
+    "object_type": "Metric",
+    "source_sentence": "In the next section, we describe mean length of utterance in morphemes (MLUM), a widely used measure of linguistic productivity, and associated morphological annotations needed to compute this measure.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Manual Annotation",
+    "predicate": "produces",
+    "object": "estimates of MLUM",
+    "object_type": "Metric",
+    "source_sentence": "Our evaluation demonstrates that this model produces estimates of MLUM which are very similar to those produced by manual annotation.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "near-ceiling performance at this task",
+    "object_type": "Other",
+    "source_sentence": "While it would certainly be possible to adapt existing unsupervised morphological analyzers to implement the SALT specification, the experiments presented below demonstrate that simple statistical models, trained on a small amount of data, achieve near-ceiling performance at this task.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "2 Mean length of utterance and morphological annotations"
+  },
+  {
+    "subject": "Statistical models",
+    "predicate": "achieves",
+    "object": "near-ceiling performance at this task",
+    "object_type": "Other",
+    "source_sentence": "While it would certainly be possible to adapt existing unsupervised morphological analyzers to implement the SALT specification, the experiments presented below demonstrate that simple statistical models, trained on a small amount of data, achieve near-ceiling performance at this task.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "2 Mean length of utterance and morphological annotations"
+  },
+  {
+    "subject": "Classifiers",
+    "predicate": "uses",
+    "object": "perceptron learning algorithm",
+    "object_type": "Method",
+    "source_sentence": "Both classifiers are trained with held-out-data using the perceptron learning algorithm and weight averaging.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "3.2 Suffix prediction"
+  },
+  {
+    "subject": "Finite-State",
+    "predicate": "uses",
+    "object": "acceptor",
+    "object_type": "Other",
+    "source_sentence": "Let W be a weighted finite-state acceptor in which each path represents a stem",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "3.3 Stem analysis"
+  },
+  {
+    "subject": "Manual Annotation",
+    "predicate": "uses",
+    "object": "stratified sample",
+    "object_type": "Dataset",
+    "source_sentence": "Manual annotation quality was assessed using a stratified sample of the full data set, consisting of randomly-selected utterances per child .",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "4.2 Interannotator agreement"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Concept",
+    "source_sentence": "we extracted these features using an automated tagger similar to the one described in .3",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "4.4 Discussion"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "trainedon",
+    "object": "150,000 utterances of child-directed speech",
+    "object_type": "Dataset",
+    "source_sentence": "The tagger was trained on a corpus of approximately 150,000 utterances of child-directed speech annotated with a 39-tag set comparable to the familiar PTB tagset.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "4.4 Discussion"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "evaluatedon",
+    "object": "Penn Treebank",
+    "object_type": "Dataset",
+    "source_sentence": "The tagger was tested using the traditional \"standard split\" of the Wall St. Journal portion of the Penn Treebank, with sections 0–18 for training, sections 19–21 for development, and sections 22–24 for evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "4.4 Discussion"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "96.69% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The tagger correctly assigned 96.69% of the tags for the evaluation set.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "4.4 Discussion"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "OpenFst",
+    "object_type": "Other",
+    "source_sentence": "All experiments were conducted using OpenFst , OpenGrm-Thrax , and Python 3.4.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "4.4 Discussion"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "OpenGrm-Thrax",
+    "object_type": "Other",
+    "source_sentence": "All experiments were conducted using OpenFst , OpenGrm-Thrax , and Python 3.4.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "4.4 Discussion"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Python 3.4",
+    "object_type": "Other",
+    "source_sentence": "All experiments were conducted using OpenFst , OpenGrm-Thrax , and Python 3.4.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "4.4 Discussion"
+  }
+]

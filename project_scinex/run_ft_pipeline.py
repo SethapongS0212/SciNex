@@ -131,6 +131,8 @@ def main():
     ap.add_argument("--papers", nargs="+", required=True,
                     help="held-out papers to generate on (must be in the fold's eval_papers.txt)")
     ap.add_argument("--teacher", default="gptoss-120b")
+    ap.add_argument("--extractor", choices=["relation", "fixed"], default="relation",
+                    help="fixed = the ACL Anthology setup (entity-CSV subjects, kg/fixed*/)")
     ap.add_argument("--steps", nargs="+", default=["base_gen", "train", "ft_gen", "compare", "qa"])
     ap.add_argument("--train-args", default="", help="extra args for ft_train_qlora.py, quoted")
     ap.add_argument("--gen-args", default="", help="extra args for ft_generate.py, quoted")
@@ -187,15 +189,17 @@ def main():
     qa_compare = [x for other in [base_slug, *args.also_slugs, args.teacher]
                   for x in ("--compare", f"kg__relation__{ft_slug}", f"kg__relation__{other}")]
 
+    ex = ["--extractor", args.extractor]
+    gen_ex = ex + ["--teacher", args.teacher]   # prompts paired with the teacher's para_ids
     steps = {
         "base_gen": [[PY, "ft_generate.py", "--base-model", args.base_model, "--model-slug", base_slug,
-                      "--papers", *args.papers, "--ingest", *args.gen_args.split()]],
+                      "--papers", *args.papers, "--ingest", *gen_ex, *args.gen_args.split()]],
         "train": [[PY, "ft_train_qlora.py", "--data", data, "--base-model", args.base_model,
                    "--run-name", run, *(["--allow-dev-torch"] if args.allow_dev_torch else []),
                    *args.train_args.split()]],
         "ft_gen": [[PY, "ft_generate.py", "--adapter", f"ft_runs/{run}", "--model-slug", ft_slug,
-                    "--papers", *args.papers, "--ingest", *args.gen_args.split()]],
-        "compare": [[PY, "ft_compare.py", "--slugs", *slugs,
+                    "--papers", *args.papers, "--ingest", *gen_ex, *args.gen_args.split()]],
+        "compare": [[PY, "ft_compare.py", "--slugs", *slugs, "--teacher", args.teacher, *ex,
                      "--papers", *args.papers, "--out", f"ft_runs/{run}/compare.json"]],
         "qa": [
             [PY, "qa_eval.py", "generate", "--run", qa_run, "--papers", *args.papers, *qa_api],

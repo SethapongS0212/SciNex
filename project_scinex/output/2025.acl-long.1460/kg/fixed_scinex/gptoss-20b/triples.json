@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Counting events",
+    "predicate": "addresses",
+    "object": "live text",
+    "object_type": "Other",
+    "source_sentence": "For example, for counting events from live text as in the LIVESUM benchmark, cell values keep increasing with every statement processed.",
+    "extraction_mode": "fixed",
+    "paper": "2025.acl-long.1460",
+    "title": "Map&Make: Schema Guided Text to Table Generation",
+    "section": "2.3 Table Generation"
+  },
+  {
+    "subject": "Aggregation",
+    "predicate": "addresses",
+    "object": "team summary tables",
+    "object_type": "Other",
+    "source_sentence": "Aggregation of various events into team summary tables.",
+    "extraction_mode": "fixed",
+    "paper": "2025.acl-long.1460",
+    "title": "Map&Make: Schema Guided Text to Table Generation",
+    "section": "2.3 Table Generation"
+  },
+  {
+    "subject": "Commentary",
+    "predicate": "addresses",
+    "object": "aggregation of various events",
+    "object_type": "Other",
+    "source_sentence": "Livesum consists of live football commentary, requiring the aggregation of various events into team summary tables.",
+    "extraction_mode": "fixed",
+    "paper": "2025.acl-long.1460",
+    "title": "Map&Make: Schema Guided Text to Table Generation",
+    "section": "2.3 Table Generation"
+  },
+  {
+    "subject": "GPT",
+    "predicate": "comparesagainst",
+    "object": "Gemini",
+    "object_type": "Model",
+    "source_sentence": "The largest observed difference is a 4.8-point delta in Column CHRF score for CoT prompting, where GPT slightly outperforms Gemini, and a 6- point delta in Column CHRF for M&M prompting, favoring Gemini.",
+    "extraction_mode": "fixed",
+    "paper": "2025.acl-long.1460",
+    "title": "Map&Make: Schema Guided Text to Table Generation",
+    "section": "5.4 Performance Across LLMs:"
+  },
+  {
+    "subject": "BART",
+    "predicate": "trainedon",
+    "object": "Rotowire dataset",
+    "object_type": "Dataset",
+    "source_sentence": "They developed a seq2seq model with a fine-tuned version of BART for text-to-table translation using the Rotowire dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2025.acl-long.1460",
+    "title": "Map&Make: Schema Guided Text to Table Generation",
+    "section": "7 Related Works"
+  },
+  {
+    "subject": "generating",
+    "predicate": "addresses",
+    "object": "Constraints",
+    "object_type": "Concept",
+    "source_sentence": "As our problem statement involves generating summary tables with- out any schematic constraints, we find extra events such as Passes, Assists, Through Balls that are contextually relevant but cannot be evaluated using the ground truth.",
+    "extraction_mode": "fixed",
+    "paper": "2025.acl-long.1460",
+    "title": "Map&Make: Schema Guided Text to Table Generation",
+    "section": "A.2 Rotowire"
+  },
+  {
+    "subject": "Paraphrasing",
+    "predicate": "uses",
+    "object": "Ground Truth",
+    "object_type": "Concept",
+    "source_sentence": "Hence, we employ a paraphrasing agent to transform our outputs as per the ground truth's structure.",
+    "extraction_mode": "fixed",
+    "paper": "2025.acl-long.1460",
+    "title": "Map&Make: Schema Guided Text to Table Generation",
+    "section": "A.2 Rotowire"
+  }
+]

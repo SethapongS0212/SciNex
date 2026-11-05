@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "dictionary",
+    "predicate": "uses",
+    "object": "dictionary constraint",
+    "object_type": "Concept",
+    "source_sentence": "Then we build on top of this system by incorporating a dictionary constraint and rescoring the model's hypotheses with token frequency information to address the suffix ambiguity problem.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "3 Sequence Models and Corpus Knowledge"
+  },
+  {
+    "subject": "Bidirectional LSTM",
+    "predicate": "uses",
+    "object": "Sequence",
+    "object_type": "Model",
+    "source_sentence": "The input to the bidirectional LSTM encoder is the sequence #, x1, x2,... xm, #, t, where # is a special symbol to denote the start and end of a word, and the encoding of the derivational transformation t is concatenated to the input characters.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "3.1 Baseline Architecture"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "splits provided by Cotterell et al. (2017b)",
+    "object_type": "Artifact",
+    "source_sentence": "In all of our experiments, we use the training, development, and testing splits provided by Cotterell et al. (2017b) and average over 30 random restarts.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "7 Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "DyNet deep learning library",
+    "object_type": "Other",
+    "source_sentence": "Our models are implemented in Python using the DyNet deep learning library.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "9 Implementation Details"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "character embeddings of size 20",
+    "object_type": "Other",
+    "source_sentence": "The sequence -to- sequence model uses character embeddings of size 20, which are shared across the encoder and decoder , with a vocabulary size of 63.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "9 Implementation Details"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "vocabulary size of 63",
+    "object_type": "Other",
+    "source_sentence": "The sequence -to- sequence model uses character embeddings of size 20, which are shared across the encoder and decoder , with a vocabulary size of 63.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "9 Implementation Details"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Adam",
+    "object_type": "Other",
+    "source_sentence": "For training, we use Adam with an initial learning rate of 0.005, a batch size of 5, and train for a maximum of 30 epochs.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "9 Implementation Details"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "initial learning rate of 0.005",
+    "object_type": "Other",
+    "source_sentence": "For training, we use Adam with an initial learning rate of 0.005, a batch size of 5, and train for a maximum of 30 epochs.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "9 Implementation Details"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "batch size of 5",
+    "object_type": "Other",
+    "source_sentence": "For training, we use Adam with an initial learning rate of 0.005, a batch size of 5, and train for a maximum of 30 epochs.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "9 Implementation Details"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "maximum of 30 epochs",
+    "object_type": "Other",
+    "source_sentence": "For training, we use Adam with an initial learning rate of 0.005, a batch size of 5, and train for a maximum of 30 epochs.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "9 Implementation Details"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "top 1 most probable sequence",
+    "object_type": "Other",
+    "source_sentence": "During decoding, we find the top 1 most probable sequence as discussed in Section 6 unless rescoring is used, in which we use the top 10.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "9 Implementation Details"
+  }
+]

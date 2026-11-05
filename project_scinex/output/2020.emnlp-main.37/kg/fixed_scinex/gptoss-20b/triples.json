@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "achieves",
+    "object": "compress BERT",
+    "object_type": "Task",
+    "source_sentence": "Besides quantization , knowledge distillation which transfers knowledge learned in the prediction layer of a cumbersome teacher model to a smaller student model, is also widely used to compress BERT (Sanh et al., 2019; Sun et al., 2019; Jiao et al., 2019; Wang et al., 2020).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "achieves",
+    "object": "improve performance of ternarized student model",
+    "object_type": "Task",
+    "source_sentence": "Instead of directly using knowledge distillation to compress a model, we use it to improve the performance of ternarized student model with the same size as the teacher model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Knowledge",
+    "predicate": "uses",
+    "object": "Intermediate Representations",
+    "object_type": "Concept",
+    "source_sentence": "Besides the logits , knowledge from the intermediate representations and attentions are also used to guide the training of a smaller BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "2.1 Knowledge Distillation"
+  },
+  {
+    "subject": "Knowledge",
+    "predicate": "uses",
+    "object": "Attention",
+    "object_type": "Concept",
+    "source_sentence": "Besides the logits , knowledge from the intermediate representations and attentions are also used to guide the training of a smaller BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "2.1 Knowledge Distillation"
+  },
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "uses",
+    "object": "pruning",
+    "object_type": "Method",
+    "source_sentence": "Instead of directly being used for compression , knowledge distillation can also be used in combination with other compression methods like pruning , low-rank approximation and dynamic networks , to fully leverage the knowledge of the teacher BERT model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "2.1 Knowledge Distillation"
+  },
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "uses",
+    "object": "low-rank approximation",
+    "object_type": "Method",
+    "source_sentence": "Instead of directly being used for compression , knowledge distillation can also be used in combination with other compression methods like pruning , low-rank approximation and dynamic networks , to fully leverage the knowledge of the teacher BERT model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "2.1 Knowledge Distillation"
+  },
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "uses",
+    "object": "dynamic networks",
+    "object_type": "Method",
+    "source_sentence": "Instead of directly being used for compression , knowledge distillation can also be used in combination with other compression methods like pruning , low-rank approximation and dynamic networks , to fully leverage the knowledge of the teacher BERT model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "2.1 Knowledge Distillation"
+  },
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "uses",
+    "object": "quantization",
+    "object_type": "Method",
+    "source_sentence": "Al- though combining quantization and distillation has been explored in convolutional neural networks (CNNs) , using knowledge distillation to train quantized BERT has not been studied.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "2.1 Knowledge Distillation"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Multi-Head Attention",
+    "object_type": "Concept",
+    "source_sentence": "Compared with CNNs which simply perform convolution in each layer , the BERT model is more complicated with each Transformer layer containing both a Multi-Head Attention mechanism and a position-wise Feed-forward Network.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "2.1 Knowledge Distillation"
+  },
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "achieves",
+    "object": "performance of the quantized BERT",
+    "object_type": "Concept",
+    "source_sentence": "To alleviate this problem, we incorporate the technique of knowledge distillation to improve performance of the quantized BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "3.2 Distillation-aware Ternarization"
+  },
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "addresses",
+    "object": "training",
+    "object_type": "Other",
+    "source_sentence": "The overall objective of knowledge distillation in the training process of TernaryBERT is thus",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "3.2 Distillation-aware Ternarization"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "3-bit weights",
+    "object_type": "Other",
+    "source_sentence": "In mixed precision Q-BERT, weights in Transformer layers with steeper curvature are quantized to 3-bit, otherwise 2-bit, while word embedding is quantized to 8-bit.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "4.4 Comparison with Other Methods"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "2-bit weights",
+    "object_type": "Other",
+    "source_sentence": "In mixed precision Q-BERT, weights in Transformer layers with steeper curvature are quantized to 3-bit, otherwise 2-bit, while word embedding is quantized to 8-bit.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "4.4 Comparison with Other Methods"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "8-bit word embedding",
+    "object_type": "Other",
+    "source_sentence": "In mixed precision Q-BERT, weights in Transformer layers with steeper curvature are quantized to 3-bit, otherwise 2-bit, while word embedding is quantized to 8-bit.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "4.4 Comparison with Other Methods"
+  },
+  {
+    "subject": "DistilBERT",
+    "predicate": "achieves",
+    "object": "smaller, faster, cheaper and lighter",
+    "object_type": "Other",
+    "source_sentence": "Distilbert, a distilled version of bert: smaller, faster, cheaper and lighter.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "V Sanh, L. Debut, J. Chaumond, and T. Wolf. 2019."
+  },
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "achieves",
+    "object": "bert model compression",
+    "object_type": "Task",
+    "source_sentence": "knowledge distillation for bert model compression.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.37",
+    "title": "TernaryBERT: Distillation-aware Ultra-low Bit BERT",
+    "section": "V Sanh, L. Debut, J. Chaumond, and T. Wolf. 2019."
+  }
+]

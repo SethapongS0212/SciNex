@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "parser",
+    "predicate": "comparesagainst",
+    "object": "MSTParser",
+    "object_type": "Model",
+    "source_sentence": "The graph-based parser is similar to, except much faster, and performs slightly better than the MSTParser, which is known to perform well on long-distance dependencies often important for down-stream applications.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Dependency Parsing",
+    "predicate": "addresses",
+    "object": "NLP applications",
+    "object_type": "Other",
+    "source_sentence": "Dependency parsing has proven useful for a wide range of NLP applications , including statistical machine translation (Galley and Manning, 2009; Xu et al., 2009; Elming and Haulrich, 2011) and sentiment analysis.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "2 Applications"
+  },
+  {
+    "subject": "Semantic Role Labeling System",
+    "predicate": "uses",
+    "object": "word form of the head",
+    "object_type": "Other",
+    "source_sentence": "In perspective classification, we use dependency triples (e.g. SUBJ(John, snore)) as features, while the semantic role labeling system conditions on a lot of information, including the word form of the head, the dependent and the argument candidates, the concatenation of the dependency labels of the predicate, and the labeled dependency relations between predicate and its head, its arguments, dependents or siblings.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "2 Applications"
+  },
+  {
+    "subject": "English",
+    "predicate": "uses",
+    "object": "data from the English -German restricted task",
+    "object_type": "Dataset",
+    "source_sentence": "We used data from the English -German restricted task: ∼3M parallel words of news, ∼46M parallel words of Europarl, and ∼309M words of monolingual Europarl and news.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "2.3 Statistical machine translation"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "the entire monolingual data set",
+    "object_type": "Dataset",
+    "source_sentence": "The 5-gram language model is trained on the entire monolingual data set.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "2.3 Statistical machine translation"
+  },
+  {
+    "subject": "discriminative",
+    "predicate": "uses",
+    "object": "MIRA",
+    "object_type": "Method",
+    "source_sentence": "Here we learn a discriminative HMM model of sentence compression using MIRA , comparable to previously explored models of noun phrase chunking.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "2.4 Sentence compression"
+  },
+  {
+    "subject": "Support Vector Machine",
+    "predicate": "uses",
+    "object": "kernel",
+    "object_type": "Kernel",
+    "source_sentence": "We used soft-margin support vector machine learning , tuning the kernel (linear or polynomial with degree 3) and C = {0.1, 1, 5, 10}.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "2.5 Perspective classiﬁcation"
+  },
+  {
+    "subject": "MaltParser",
+    "predicate": "uses",
+    "object": "pre-trained parsing model for English",
+    "object_type": "Model",
+    "source_sentence": "(2012) used Maltparser with the freely available pre-trained parsing model for English ,14 we decided to also run that parser with the gold-standard cues, in ad- REFERENCE: Zum Gl¨uck kam ich beim Strassenbahnfahren an die richtige Stelle.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "3 Results and discussion"
+  },
+  {
+    "subject": "MaltParser",
+    "predicate": "uses",
+    "object": "gold-standard cues",
+    "object_type": "Other",
+    "source_sentence": "(2012) used Maltparser with the freely available pre-trained parsing model for English ,14 we decided to also run that parser with the gold-standard cues, in ad- REFERENCE: Zum Gl¨uck kam ich beim Strassenbahnfahren an die richtige Stelle.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "3 Results and discussion"
+  },
+  {
+    "subject": "Noisy Channel Model",
+    "predicate": "achieves",
+    "object": "14.58% F1 compression score",
+    "object_type": "Metric",
+    "source_sentence": "Their noisy channel model obtains an F1 compression score of 14.58%, whereas the decision tree-based model obtains an F1 compression score of 31.71%.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "3 Results and discussion"
+  },
+  {
+    "subject": "Syntactic Models",
+    "predicate": "achieves",
+    "object": "correct the error",
+    "object_type": "Concept",
+    "source_sentence": "most of our syntactic models correct the error leading to ungrammaticality.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "0.25 Labels"
+  },
+  {
+    "subject": "Syntactic Features",
+    "predicate": "achieves",
+    "object": "lead to improvements",
+    "object_type": "Concept",
+    "source_sentence": "In perspective classification we see that syntactic features based on yamada and lth annotations lead to improvements.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "0.25 Labels"
+  },
+  {
+    "subject": "Negation Resolution",
+    "predicate": "uses",
+    "object": "Punctuation",
+    "object_type": "Other",
+    "source_sentence": "the negation resolution data is literary text with shorter sentences, which therefore uses more punctuation and has more root dependencies than newspaper articles.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "0.25 Labels"
+  },
+  {
+    "subject": "Negation Resolution",
+    "predicate": "uses",
+    "object": "dependencies",
+    "object_type": "Other",
+    "source_sentence": "the negation resolution data is literary text with shorter sentences, which therefore uses more punctuation and has more root dependencies than newspaper articles.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1070",
+    "title": "Down-stream effects of tree-to-dependency conversions",
+    "section": "0.25 Labels"
+  }
+]

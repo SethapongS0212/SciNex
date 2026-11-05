@@ -1,0 +1,233 @@
+[
+  {
+    "subject": "Cro36WSD",
+    "predicate": "designedfor",
+    "object": "Cro36WSD-M",
+    "object_type": "Dataset",
+    "source_sentence": "we decided to use the following two multi-label aggregation schemes, producing two dataset variants: • Cro36WSD-M – a multi-label variant of the dataset , in which the final label of each instance is obtained as a union of all annotators' labels;",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "2.4. Cro36WSD Variants"
+  },
+  {
+    "subject": "Cro36WSD",
+    "predicate": "designedfor",
+    "object": "Cro36WSD-S",
+    "object_type": "Dataset",
+    "source_sentence": "we decided to use the following two multi-label aggregation schemes, producing two dataset variants: • Cro36WSD-S – a single-label variant of the dataset , in which the final label of each instance is obtained as an intersection of all annotators' labels.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "2.4. Cro36WSD Variants"
+  },
+  {
+    "subject": "Cro36WSD",
+    "predicate": "addresses",
+    "object": "Precision",
+    "object_type": "Concept",
+    "source_sentence": "The relationship between these two variants mirrors the one between recall and precision – Cro36WSD-M provides more diverse and lenient annotations, whereas Cro36WSD-S of- fers a more strict, and thus a more reliable set of annota- tions (with 774 instances being discarded).",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "2.4. Cro36WSD Variants"
+  },
+  {
+    "subject": "Cro36WSD",
+    "predicate": "addresses",
+    "object": "Precision",
+    "object_type": "Concept",
+    "source_sentence": "The relationship between these two variants mirrors the one between recall and precision – Cro36WSD-M provides more diverse and lenient annotations, whereas Cro36WSD-S of- fers a more strict, and thus a more reliable set of annota- tions (with 774 instances being discarded).",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "2.4. Cro36WSD Variants"
+  },
+  {
+    "subject": "Annotation",
+    "predicate": "addresses",
+    "object": "correlations",
+    "object_type": "Concept",
+    "source_sentence": "In this section, we first present the annotation statistics, in- cluding the correlations among the relevant variables.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "3. Annotation Analysis"
+  },
+  {
+    "subject": "Annotation",
+    "predicate": "addresses",
+    "object": "Multi-label Annotation",
+    "object_type": "Concept",
+    "source_sentence": "To work around the problem of calculating IAA on multi-label annotation data, we decided to calcu- late agreement only on single-label instance annotations.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "3. Annotation Analysis"
+  },
+  {
+    "subject": "Crowdsourcing Annotation",
+    "predicate": "addresses",
+    "object": "Polysemy",
+    "object_type": "Concept",
+    "source_sentence": "The same observation has been made by Kapelner et al. (2012), but within a crowdsourcing annotation context .",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "3. Annotation Analysis"
+  },
+  {
+    "subject": "Annotating",
+    "predicate": "addresses",
+    "object": "sequence",
+    "object_type": "Concept",
+    "source_sentence": "While annotating the words with fairly skewed sense distributions (e.g., oduzeti (to take away)), annotators would often encounter a lengthy sequence of instances in which the word always bears the same sense.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "3. Annotation Analysis"
+  },
+  {
+    "subject": "Annotating",
+    "predicate": "addresses",
+    "object": "senses",
+    "object_type": "Concept",
+    "source_sentence": "While annotating the words with fairly skewed sense distributions (e.g., oduzeti (to take away)), annotators would often encounter a lengthy sequence of instances in which the word always bears the same sense.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "3. Annotation Analysis"
+  },
+  {
+    "subject": "Words",
+    "predicate": "addresses",
+    "object": "senses",
+    "object_type": "Concept",
+    "source_sentence": "While annotating the words with fairly skewed sense distributions (e.g., oduzeti (to take away)), annotators would often encounter a lengthy sequence of instances in which the word always bears the same sense.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "3. Annotation Analysis"
+  },
+  {
+    "subject": "training",
+    "predicate": "splitfrom",
+    "object": "test set",
+    "object_type": "Dataset",
+    "source_sentence": "We randomly split the dataset into a training and a test set: for each of the selected words , we use around 200 instances for training (the number varies across dataset variants and words ) and 100 instances for testing.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "4. Baseline WSD Experiments"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "trainedon",
+    "object": "training set",
+    "object_type": "Dataset",
+    "source_sentence": "We optimize the hy- perparameters of the SVM using a 5-fold cross-validation (optimizing for micro-F1 score) on the training set.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "4. Baseline WSD Experiments"
+  },
+  {
+    "subject": "Baseline Models",
+    "predicate": "reports",
+    "object": "micro-F1 scores",
+    "object_type": "Metric",
+    "source_sentence": "We report micro-F1 scores of the baseline models in Table 4.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "4. Baseline WSD Experiments"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "addresses",
+    "object": "inherent skewness of word sense distributions",
+    "object_type": "Concept",
+    "source_sentence": "Note, however, that MFS classifier still performs competitively (as noted by Agirre and Edmonds (2007)), which is mostly due to the inherent skewness of word sense distributions.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "4. Baseline WSD Experiments"
+  },
+  {
+    "subject": "PoS tags",
+    "predicate": "addresses",
+    "object": "average WSD performance",
+    "object_type": "Task",
+    "source_sentence": "We also analyze the average WSD performance across POS tags and models.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "4. Baseline WSD Experiments"
+  },
+  {
+    "subject": "Verbs",
+    "predicate": "addresses",
+    "object": "best performance",
+    "object_type": "Task",
+    "source_sentence": "In all but one case, models exhibit the best Word (hr) Word (en) POS MFS BoW SG MFS BoW SG performance on verbs, followed by nouns, and adjectives.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "4. Baseline WSD Experiments"
+  },
+  {
+    "subject": "nouns",
+    "predicate": "addresses",
+    "object": "best performance",
+    "object_type": "Task",
+    "source_sentence": "In all but one case, models exhibit the best Word (hr) Word (en) POS MFS BoW SG MFS BoW SG performance on verbs, followed by nouns, and adjectives.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "4. Baseline WSD Experiments"
+  },
+  {
+    "subject": "Adjectives",
+    "predicate": "addresses",
+    "object": "best performance",
+    "object_type": "Task",
+    "source_sentence": "In all but one case, models exhibit the best Word (hr) Word (en) POS MFS BoW SG MFS BoW SG performance on verbs, followed by nouns, and adjectives.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "4. Baseline WSD Experiments"
+  },
+  {
+    "subject": "SemEval-2015 Task 13",
+    "predicate": "addresses",
+    "object": "Word Sense Disambiguation",
+    "object_type": "Task",
+    "source_sentence": "SemEval-2015 task 13: Multilingual all-words sense disambiguation and entity linking .",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "4. Baseline WSD Experiments"
+  },
+  {
+    "subject": "SemEval-2015 Task 13",
+    "predicate": "addresses",
+    "object": "Entity Linking",
+    "object_type": "Task",
+    "source_sentence": "SemEval-2015 task 13: Multilingual all-words sense disambiguation and entity linking .",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "4. Baseline WSD Experiments"
+  },
+  {
+    "subject": "Distributed Representations of Words",
+    "predicate": "addresses",
+    "object": "Phrases",
+    "object_type": "Task",
+    "source_sentence": "Distributed representations of words and phrases and their compositionality.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1267",
+    "title": "Cro36WSD: A Lexical Sample for Croatian Word Sense Disambiguation",
+    "section": "4. Baseline WSD Experiments"
+  }
+]

@@ -1,0 +1,29 @@
+{"para_id": 0, "raw": "{\"triples\": []}", "n_tokens": 318, "truncated": false}
+{"para_id": 1, "raw": "{\"triples\": []}", "n_tokens": 158, "truncated": false}
+{"para_id": 2, "raw": "{\"triples\": []}", "n_tokens": 155, "truncated": false}
+{"para_id": 3, "raw": "{\"triples\": []}", "n_tokens": 546, "truncated": false}
+{"para_id": 4, "raw": "{\"triples\": []}", "n_tokens": 353, "truncated": false}
+{"para_id": 5, "raw": "{\"triples\": []}", "n_tokens": 75, "truncated": false}
+{"para_id": 6, "raw": "{\"triples\": []}", "n_tokens": 429, "truncated": false}
+{"para_id": 7, "raw": "{\n  \"triples\": [\n    {\n      \"subject\": \"Contrastive Learning\",\n      \"predicate\": \"uses\",\n      \"object\": \"InfoNCE\",\n      \"object_type\": \"Method\",\n      \"source_sentence\": \"We use contrastive learning with the InfoNCE loss : exp s(a(i), b(i)) P a exp s(a, b(i)) + exp s(a(i), b(i)) P b exp s(a(i), b), (1) where A, B are two sets of data points from two different modal domains, respectively; a(i), b(i) are vector representations of the co-occuring pair (a(i), b(i)) which are encoded by gA(a(i)) and gB(b(i)), respectively; s(a, b) computes the simi- larity between a and b, which we take to be scaled cosine similarity .\"\n    }\n  ]\n}", "n_tokens": 467, "truncated": false}
+{"para_id": 8, "raw": "{\"triples\": []}", "n_tokens": 542, "truncated": false}
+{"para_id": 9, "raw": "{\"triples\": []}", "n_tokens": 323, "truncated": false}
+{"para_id": 10, "raw": "{\"triples\": []}", "n_tokens": 368, "truncated": false}
+{"para_id": 11, "raw": "{\"triples\": []}", "n_tokens": 501, "truncated": false}
+{"para_id": 12, "raw": "{\"triples\": []}", "n_tokens": 292, "truncated": false}
+{"para_id": 13, "raw": "{\"triples\": []}", "n_tokens": 439, "truncated": false}
+{"para_id": 14, "raw": "{\"triples\":[{\"subject\":\"retrieval\",\"predicate\":\"uses\",\"object\":\"CLIP\",\"object_type\":\"Artifact\",\"source_sentence\":\"We perform caption retrieval by using CLIP and the prompt \\\"the sound of\\\".\"},{\"subject\":\"retrieval\",\"predicate\":\"uses\",\"object\":\"CLIP\",\"object_type\":\"Artifact\",\"source_sentence\":\"We perform caption retrieval by using CLIP and the prompt \\\"a photo of\\\".\"},{\"subject\":\"Alignment\",\"predicate\":\"uses\",\"object\":\"caption\",\"object_type\":\"Artifact\",\"source_sentence\":\"As a base- line, we also consider a random caption alignment , which assigns a random caption from AC to each clip.\"},{\"subject\":\"sampling\",\"predicate\":\"uses\",\"object\":\"caption\",\"object_type\":\"Artifact\",\"source_sentence\":\"RC Random Captions indicates that we break the gold AL alignment in AudioCaps by randomly sampling a caption for each audio clip.\"},{\"subject\":\"training\",\"predicate\":\"uses\",\"object\":\"AudioCaps\",\"object_type\":\"Dataset\",\"source_sentence\":\"audio-focused captions from the training set of AudioCaps and Clotho (AC).\"},{\"subject\":\"Example\",\"predicate\":\"uses\",\"object\":\"caption\",\"object_type\":\"Artifact\",\"source_sentence\":\"example A balloon is rubbed quickly and slowly to make squeaking sounds.\"}]}", "n_tokens": 741, "truncated": false}
+{"para_id": 15, "raw": "{\"triples\": []}", "n_tokens": 298, "truncated": false}
+{"para_id": 16, "raw": "{\"triples\": []}", "n_tokens": 220, "truncated": false}
+{"para_id": 17, "raw": "{\"triples\": []}", "n_tokens": 274, "truncated": false}
+{"para_id": 18, "raw": "{\"triples\": []}", "n_tokens": 155, "truncated": false}
+{"para_id": 19, "raw": "{\"triples\": []}", "n_tokens": 831, "truncated": false}
+{"para_id": 20, "raw": "{\n  \"triples\": [\n    {\n      \"subject\": \"MAP\",\n      \"predicate\": \"evaluates\",\n      \"object\": \"18.9%\",\n      \"object_type\": \"Metric\",\n      \"source_sentence\": \"obtain the highest accuracy (18.9% mAP) on AS\"\n    },\n    {\n      \"subject\": \"retrieval\",\n      \"predicate\": \"uses\",\n      \"object\": \"audio labels\",\n      \"object_type\": \"Concept\",\n      \"source_sentence\": \"For retrieval , GL uses only audio labels as the text\"\n    },\n    {\n      \"subject\": \"Language\",\n      \"predicate\": \"achieves\",\n      \"object\": \"per-class accuracy\",\n      \"object_type\": \"Concept\",\n      \"source_sentence\": \"Clearly, language supervision improves per-class accuracy in general.\"\n    },\n    {\n      \"subject\": \"Supervision\",\n      \"predicate\": \"achieves\",\n      \"object\": \"per-class accuracy\",\n      \"object_type\": \"Concept\",\n      \"source_sentence\": \"Supervision improves per-class accuracy in general.\"\n    }\n  ]\n}", "n_tokens": 1363, "truncated": false}
+{"para_id": 21, "raw": "{\"triples\": []}", "n_tokens": 301, "truncated": false}
+{"para_id": 22, "raw": "{\"triples\": []}", "n_tokens": 238, "truncated": false}
+{"para_id": 23, "raw": "{\n  \"triples\": [\n    {\n      \"subject\": \"Pre-training\",\n      \"predicate\": \"uses\",\n      \"object\": \"unbalanced AudioSet training set\",\n      \"object_type\": \"Dataset\",\n      \"source_sentence\": \"Since the audio encoder has been pre-trained on the unbalanced AudioSet training set, it can be directly used without further fine-tuning.\"\n    },\n    {\n      \"subject\": \"fine-tuning\",\n      \"predicate\": \"uses\",\n      \"object\": \"Transformer architecture\",\n      \"object_type\": \"Model\",\n      \"source_sentence\": \"We fine-tune the last k layers of the Transformer architecture of vip-AnT\"\n    }\n  ]\n}", "n_tokens": 641, "truncated": false}
+{"para_id": 24, "raw": "{\"triples\": []}", "n_tokens": 325, "truncated": false}
+{"para_id": 25, "raw": "{\"triples\": []}", "n_tokens": 311, "truncated": false}
+{"para_id": 26, "raw": "{\"triples\": []}", "n_tokens": 267, "truncated": false}
+{"para_id": 27, "raw": "{\"triples\": []}", "n_tokens": 336, "truncated": false}
+{"para_id": 28, "raw": "{\"triples\": []}", "n_tokens": 383, "truncated": false}

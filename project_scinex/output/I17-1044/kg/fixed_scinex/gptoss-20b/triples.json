@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Attention",
+    "predicate": "produces",
+    "object": "context information",
+    "object_type": "Other",
+    "source_sentence": "attention modules produces context information ct at the time t based on the encoder and decoder hidden states.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "2 Attention-based Encoder Decoder Neural Network"
+  },
+  {
+    "subject": "Speech",
+    "predicate": "uses",
+    "object": "sequence of feature vectors",
+    "object_type": "Other",
+    "source_sentence": "For speech recognition task, most common input x is a sequence of feature vectors like Mel-spectral filterbank and/or MFCC.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "2 Attention-based Encoder Decoder Neural Network"
+  },
+  {
+    "subject": "Bi-LSTM",
+    "predicate": "produces",
+    "object": "encoded states",
+    "object_type": "Other",
+    "source_sentence": "which is encoded by the stack of Bi-LSTM into S encoded states he = [he1,...,heS].",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "3 Locality and Monotonicity Properties"
+  },
+  {
+    "subject": "Monotonicity",
+    "predicate": "achieves",
+    "object": "Alignment",
+    "object_type": "Task",
+    "source_sentence": "the monotonicity property strictly generates alignment left-to-right from beginning to the end of the speech.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "4 Experiment on Speech Recognition"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "addresses",
+    "object": "Speech",
+    "object_type": "Task",
+    "source_sentence": "the local property helps our attention module focus on certain parts from the speech that the decoder wants to transcribe",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "4 Experiment on Speech Recognition"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "Sequence",
+    "object_type": "Model",
+    "source_sentence": "The local property helps our attention module focus on certain parts from the grapheme source sequence that the decoder wants to convert into phoneme, and the monotonicity property strictly generates alignment left-to-right from beginning to the end of the grapheme source sequence.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "6 Experiment on Grapheme-to-Phoneme"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "embedding matrix",
+    "object_type": "Other",
+    "source_sentence": "On both encoder and decoder sides, the input words were projected into 256 dims using embedding matrix.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "7.2 Model Architecture"
+  },
+  {
+    "subject": "Bi-LSTM",
+    "predicate": "uses",
+    "object": "encoder",
+    "object_type": "Other",
+    "source_sentence": "We used three Bi-LSTM for our encoder with 512 hidden units for each LSTM (total 1024 hidden unit for Bi-LSTM).",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "7.2 Model Architecture"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "decoder",
+    "object_type": "Other",
+    "source_sentence": "For our decoder , we used three LSTM with 512 hidden units.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "7.2 Model Architecture"
+  },
+  {
+    "subject": "Decoding Phase",
+    "predicate": "uses",
+    "object": "beam search strategy",
+    "object_type": "Other",
+    "source_sentence": "In the decoding phase, we used beam search strategy with beam size 5 and normalized length penalty with α = 1 .",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "7.2 Model Architecture"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "global attention",
+    "object_type": "Other",
+    "source_sentence": "For comparison , we evaluate our model with standard global attention and local-m attention model as the baseline.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1044",
+    "title": "Local Monotonic Attention Mechanism for End-to-End Speech and Language Processing",
+    "section": "7.2 Model Architecture"
+  }
+]

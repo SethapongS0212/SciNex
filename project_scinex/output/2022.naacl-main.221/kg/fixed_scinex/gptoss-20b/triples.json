@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "WordPiece",
+    "predicate": "uses",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "and employ the WordPiece subword tokenizer as used in BERT .5",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "4 Disentangling Lexical Artifacts"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "WordPiece",
+    "object_type": "Method",
+    "source_sentence": "For segmenting texts into tokens, we rely on the training portion of each dataset only (Section 5) and employ the WordPiece subword tokenizer as used in BERT .5",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "4 Disentangling Lexical Artifacts"
+  },
+  {
+    "subject": "Annotation",
+    "predicate": "uses",
+    "object": "Categories",
+    "object_type": "Concept",
+    "source_sentence": "Finally, we perform lexical artifacts annotation (Section 4.3) following the categories defined in Section 2.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "4 Disentangling Lexical Artifacts"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "RoBERTa",
+    "object_type": "Model",
+    "source_sentence": "In preliminary experiments we found similar results when using the byte-level BPE tokenizer as used in RoBERTa.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "4.1 In-distribution artifacts"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "comprises",
+    "object": "training",
+    "object_type": "Method",
+    "source_sentence": "We carry out in-distribution and OOD experiments, namely training and testing all models on the same or different platform data, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "comprises",
+    "object": "testing",
+    "object_type": "Method",
+    "source_sentence": "We carry out in-distribution and OOD experiments, namely training and testing all models on the same or different platform data, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluates",
+    "object": "macro F1 score",
+    "object_type": "Metric",
+    "source_sentence": "We evaluate performance of models using macro F1 score, whereas for fairness we use false positive rate (FPR) on test instances containing SI mentions, consistently to previous work.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluates",
+    "object": "false positive rate",
+    "object_type": "Metric",
+    "source_sentence": "We evaluate performance of models using macro F1 score, whereas for fairness we use false positive rate (FPR) on test instances containing SI mentions, consistently to previous work.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "NVIDIA Tesla V100-SXM2 GPU",
+    "object_type": "Other",
+    "source_sentence": "All experiments have been run on a NVIDIA Tesla V100-SXM2 GPU",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.221",
+    "title": "Alan Ramponi Fondazione Bruno Kessler Trento, Italy alramponi@fbk.eu",
+    "section": "5.1 Experimental setup"
+  }
+]

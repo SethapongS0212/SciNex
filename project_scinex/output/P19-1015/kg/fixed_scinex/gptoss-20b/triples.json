@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "100 sentences annotated with POS tags",
+    "object_type": "Other",
+    "source_sentence": "Training a model on the target 4Garrette and Baldridge (2013) showed that about 100 sentences can be annotated with POS tags in two hours by non-native annotators.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "2.2 Few-Shot Transfer"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "supervised data",
+    "object_type": "Other",
+    "source_sentence": "we also perform model fine-tuning using the supervised data.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "2.2 Few-Shot Transfer"
+  },
+  {
+    "subject": "Ranking",
+    "predicate": "produces",
+    "object": "scores sh (using the F1 score)",
+    "object_type": "Other",
+    "source_sentence": "The ranking step in RaRe proceeds by evaluating each of the H transfer models on the target gold set, to produce scores sh (using the F1 score ).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "2.2 Few-Shot Transfer"
+  },
+  {
+    "subject": "BiLSTM-CRF",
+    "predicate": "achieves",
+    "object": "state-of-the-art results",
+    "object_type": "Other",
+    "source_sentence": "As the sequential tagger, we use a BiLSTM-CRF , which has been shown to re- sult in state-of-the-art results in high resource set- tings .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "3.2 Model Variations"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "41 languages",
+    "object_type": "Dataset",
+    "source_sentence": "We trained models on all 41 languages in both high- resource (HSup) and naive supervised low- resource (LSup) settings, where HSup pre-trained models were used for transfer in a leave-one-out setting, i.e., taking the predictions of 40 models into a single target language.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "3.2 Model Variations"
+  },
+  {
+    "subject": "annotation projection",
+    "predicate": "addresses",
+    "object": "POS tagging",
+    "object_type": "Task",
+    "source_sentence": "annotation projection has been applied to POS tagging",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "annotation projection",
+    "predicate": "addresses",
+    "object": "NER",
+    "object_type": "Task",
+    "source_sentence": "annotation projection has been applied to NER",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "annotation projection",
+    "predicate": "addresses",
+    "object": "parsing",
+    "object_type": "Task",
+    "source_sentence": "annotation projection has been applied to parsing",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Majority Voting",
+    "predicate": "uses",
+    "object": "noisy annotations",
+    "object_type": "Other",
+    "source_sentence": "majority voting is often used to aggregate noisy annotations",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "addresses",
+    "object": "parsing",
+    "object_type": "Task",
+    "source_sentence": "Our work is also related to knowledge distillation from multiple source models applied in parsing and machine translation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "addresses",
+    "object": "machine translation",
+    "object_type": "Task",
+    "source_sentence": "Our work is also related to knowledge distillation from multiple source models applied in parsing and machine translation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Few-Shot Learning",
+    "predicate": "achieves",
+    "object": "average F1 of 77.9",
+    "object_type": "Metric",
+    "source_sentence": "This finding also applies to few-shot learning over larger ensembles: running RaRe over 40 source languages achieves an average F1 of 77.9 when using embeddings trained with a dictionary, versus 76.9 using string identity instead.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "A.2 Cross-lingual Word Embeddings"
+  }
+]

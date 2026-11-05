@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "achievesresult",
+    "object": "success rate under all evaluation setups",
+    "object_type": "Other",
+    "source_sentence": "our fine-tuned model based on back-translation with environmental dropout substantially outperforms the previous state-of-the-art models, and achieves the most recent rank-1 on the Vision and Language Navigation (VLN) R2R challenge leaderboard's private test data, outperforming all other entries in success rate under all evaluation setups (single run, beam search, and pre-exploration).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "addresses",
+    "object": "neural machine translation",
+    "object_type": "Task",
+    "source_sentence": "Back-translation Back translation , a popular semi-supervised learning method, has been well studied in neural machine translation",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "addresses",
+    "object": "navigation",
+    "object_type": "Task",
+    "source_sentence": "Back translation was introduced to the task of navigation in Fried et al.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "3.4.1 Back Translation"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "uses",
+    "object": "environmental dropout",
+    "object_type": "Other",
+    "source_sentence": "We apply the environmental dropout to the back translation model as mentioned in Sec.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "3.4.2 Environmental Dropout"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "ground truth actions",
+    "object_type": "Task",
+    "source_sentence": "The route encoder takes features of ground truth actions {a∗ t }T t=1 from the route as inputs.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "3.4.2 Environmental Dropout"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "state factored Dijkstra algorithm",
+    "object_type": "Algorithm",
+    "source_sentence": "We use the same beam-search algorithm, state factored Dijkstra algorithm, to navigate the unseen test environment.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "5 Results"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "uses",
+    "object": "dropout",
+    "object_type": "Other",
+    "source_sentence": "For submitting to the leaderboard, we simply train our agent via back translation with environmental dropout on test unseen environments.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "5 Results"
+  },
+  {
+    "subject": "ResNet",
+    "predicate": "trainedon",
+    "object": "ImageNet",
+    "object_type": "Dataset",
+    "source_sentence": "We use ResNet-152 pretrained on the ImageNet to extract the 2048-dimensional image feature.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  }
+]

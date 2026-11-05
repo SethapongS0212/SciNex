@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Automatic Metrics",
+    "predicate": "uses",
+    "object": "generated text",
+    "object_type": "Other",
+    "source_sentence": "automatic metrics that compare the generated text to one or more reference texts are routinely used to compare models.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Automatic evaluation",
+    "predicate": "uses",
+    "object": "BLEU",
+    "object_type": "Metric",
+    "source_sentence": "For table-to-text generation , automatic evaluation has largely relied on BLEU and ROUGE.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Automatic evaluation",
+    "predicate": "uses",
+    "object": "ROUGE",
+    "object_type": "Metric",
+    "source_sentence": "For table-to-text generation , automatic evaluation has largely relied on BLEU and ROUGE.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "evaluatedon",
+    "object": "WikiBio dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct a large-scale human evaluation of the outputs from 16 table-to-text models on 1100 examples from the WikiBio dataset",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Information Extraction",
+    "predicate": "uses",
+    "object": "training",
+    "object_type": "Method",
+    "source_sentence": "We also develop information extraction based metrics , inspired from Wiseman et al. (2017), by training a model to extract tables from the reference texts (§4).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "single sentence",
+    "object_type": "Other",
+    "source_sentence": "BLEU is usually computed at the corpus-level , however here we show its value for a single sentence purely for illustration purposes.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "3 PARENT"
+  },
+  {
+    "subject": "Precision and Recall",
+    "predicate": "uses",
+    "object": "generation",
+    "object_type": "Other",
+    "source_sentence": "Next we discuss how to compute the precision and recall of the generation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "3 PARENT"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "comparesagainst",
+    "object": "Ground Truth",
+    "object_type": "Concept",
+    "source_sentence": "Relation Generation (RG): Precision for the (attribute, value) pairs extracted from the generated text compared to those in the ground truth table.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "4 Evaluation via Information Extraction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "WikiBio dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We developed several models of varying quality for generating text from the tables in WikiBio.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "5.1 Data & Models"
+  },
+  {
+    "subject": "Information Extraction",
+    "predicate": "uses",
+    "object": "WikiBio",
+    "object_type": "Dataset",
+    "source_sentence": "For evaluation via information extraction we train a model for WikiBio which accepts text as input and generates a table as the output.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.1 Information Extraction System"
+  },
+  {
+    "subject": "parse",
+    "predicate": "uses",
+    "object": "special tokens <R> and <C>",
+    "object_type": "Other",
+    "source_sentence": "After training, we can parse the output sequence along the special tokens <R> and <C> to get a set of (attribute, value) pairs.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.1 Information Extraction System"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "embeddings of the tokens in the vocabulary",
+    "object_type": "Other",
+    "source_sentence": "The embeddings of the tokens in the vocabulary were initialized with Glove.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.2 Hyperparameters"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "outputs of the biLSTM",
+    "object_type": "Other",
+    "source_sentence": "a dropout of 0.2 was also applied to the outputs of the biLSTM.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.2 Hyperparameters"
+  }
+]

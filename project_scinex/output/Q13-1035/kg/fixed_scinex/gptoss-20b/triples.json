@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "SMT Systems",
+    "predicate": "trainedon",
+    "object": "Parliament proceedings",
+    "object_type": "Dataset",
+    "source_sentence": "we train SMT systems on Parliament proceedings",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1035",
+    "title": "Measuring Machine Translation Errors in New Domains",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "monolingual new-domain language data",
+    "object_type": "Dataset",
+    "source_sentence": "The baseline SMT system is not adapted, except for the use of (1) a language model trained on monolingual new-domain language data, 1 and (2) a few thousand parallel sentences of tuning data in the new domain.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1035",
+    "title": "Measuring Machine Translation Errors in New Domains",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "MT Systems",
+    "predicate": "addresses",
+    "object": "domain adaptation setting",
+    "object_type": "Concept",
+    "source_sentence": "A small amount of work (discussed next) addresses issues of analyzing MT systems in a domain adaptation setting.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1035",
+    "title": "Measuring Machine Translation Errors in New Domains",
+    "section": "3 Related Work"
+  },
+  {
+    "subject": "Translation Model",
+    "predicate": "addresses",
+    "object": "potential sources of improvement",
+    "object_type": "Concept",
+    "source_sentence": "The key idea is to enhance the translation model of OLD, an MT system trained on old domain parallel text, to compare the impact of potential sources of improvement.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1035",
+    "title": "Measuring Machine Translation Errors in New Domains",
+    "section": "5.2 Macro-analysis: TETRA"
+  },
+  {
+    "subject": "SMT Systems",
+    "predicate": "uses",
+    "object": "Moses toolkit",
+    "object_type": "Method",
+    "source_sentence": "We build standard phrase -based SMT systems using the Moses toolkit for all experiments.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1035",
+    "title": "Measuring Machine Translation Errors in New Domains",
+    "section": "6.2 MT systems"
+  },
+  {
+    "subject": "log-linear",
+    "predicate": "uses",
+    "object": "n-best batch MIRA algorithm",
+    "object_type": "Method",
+    "source_sentence": "Features are combined using a log-linear model optimized for BLEU, using the n-best batch MIRA algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1035",
+    "title": "Measuring Machine Translation Errors in New Domains",
+    "section": "6.2 MT systems"
+  },
+  {
+    "subject": "log-linear",
+    "predicate": "uses",
+    "object": "BLEU",
+    "object_type": "Metric",
+    "source_sentence": "Features are combined using a log-linear model optimized for BLEU, using the n-best batch MIRA algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1035",
+    "title": "Measuring Machine Translation Errors in New Domains",
+    "section": "6.2 MT systems"
+  },
+  {
+    "subject": "HMM",
+    "predicate": "uses",
+    "object": "word alignments",
+    "object_type": "Concept",
+    "source_sentence": "We use (unadapted) HMM word alignments (Vogel et language models and tuning sets are kept constant across all experiments per domain.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1035",
+    "title": "Measuring Machine Translation Errors in New Domains",
+    "section": "6.2 MT systems"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "37.41",
+    "object_type": "Metric",
+    "source_sentence": "For comparison, using the OLD system to translate a test set in the old (Hansard) domain yields a BLEU score of 37.41",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1035",
+    "title": "Measuring Machine Translation Errors in New Domains",
+    "section": "7 Results"
+  },
+  {
+    "subject": "Phrase Tables",
+    "predicate": "addresses",
+    "object": "errors",
+    "object_type": "Concept",
+    "source_sentence": "The enhanced phrase tables of TE- TRA can also automatically estimate the errors due to poor lexical choice when moving to a new domain, and can select a more lucid translation term.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1035",
+    "title": "Measuring Machine Translation Errors in New Domains",
+    "section": "7 Results"
+  },
+  {
+    "subject": "adaptation",
+    "predicate": "achieves",
+    "object": "best of both worlds",
+    "object_type": "Concept",
+    "source_sentence": "This suggests that a more fine-grained adaptation approach might achieve the best of both worlds.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1035",
+    "title": "Measuring Machine Translation Errors in New Domains",
+    "section": "7.3 Results on an Adapted System"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "phrase-based translation",
+    "object_type": "Method",
+    "source_sentence": "All of our experiments are carried out using phrase-based translation, as implemented in the open-source Moses translation system to ensure that they are reproducible.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1035",
+    "title": "Measuring Machine Translation Errors in New Domains",
+    "section": "8 Limiting Assumptions"
+  },
+  {
+    "subject": "Error Analysis",
+    "predicate": "addresses",
+    "object": "specific error categories",
+    "object_type": "Concept",
+    "source_sentence": "Error analysis opens the door to building adapted machine translation systems that directly target specific error categories.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1035",
+    "title": "Measuring Machine Translation Errors in New Domains",
+    "section": "9 Discussion"
+  }
+]

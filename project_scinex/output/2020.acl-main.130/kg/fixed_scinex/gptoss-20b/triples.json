@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Neural Dialogue Systems",
+    "predicate": "uses",
+    "object": "context",
+    "object_type": "Concept",
+    "source_sentence": "Neural dialogue systems are trained over a large dialogue corpus and used to predict responses given a context.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Reasoning",
+    "predicate": "addresses",
+    "object": "social etiquette and relationship",
+    "object_type": "Concept",
+    "source_sentence": "It requires reasoning ability on social etiquette and relationship to make the correct choice, which is not considered by existing dialogue benchmarks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "addresses",
+    "object": "reasoning-based chit-chat dialogue systems",
+    "object_type": "Concept",
+    "source_sentence": "We provide detailed analysis to provide insights into developing potentially reasoning-based chit-chat dialogue systems.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Reasoning",
+    "predicate": "addresses",
+    "object": "Language Understanding",
+    "object_type": "Task",
+    "source_sentence": "Reasoning : Recently, efforts have been made to develop benchmarks and tasks to address reasoning for language understanding.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "addresses",
+    "object": "multi-choice and reasoning tasks",
+    "object_type": "Task",
+    "source_sentence": "BERT : Pre-training models have shown promising results on various multi - choice and reasoning tasks . (2019)",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "4.1 Baselines"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "85.8 % R10@1 on the Ubuntu Corpus",
+    "object_type": "Metric",
+    "source_sentence": "BERT gives 85.8 % R10@1 on the Ubuntu Corpus , but RoBERTa only gives 71.3% R4@1 on MuTual.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "4.2 Experiment Results"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achieves",
+    "object": "71.3 % R4@1 on MuTual",
+    "object_type": "Metric",
+    "source_sentence": "BERT gives 85.8 % R10@1 on the Ubuntu Corpus , but RoBERTa only gives 71.3% R4@1 on MuTual.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "4.2 Experiment Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "large corpus",
+    "object_type": "Other",
+    "source_sentence": "This is mainly because models learn reasoning capability during the pre-training on a large corpus .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "4.2 Experiment Results"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achievesresult",
+    "object": "71.3% on R@1",
+    "object_type": "Metric",
+    "source_sentence": "Although RoBERTa only gets 71.3% on R@1, it achieves a surprising number, 89.2 %, on R@2, indicating that the model is able to rank the correct response to the top-2 position.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "4.2 Experiment Results"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achievesresult",
+    "object": "89.2% on R@2",
+    "object_type": "Metric",
+    "source_sentence": "Although RoBERTa only gets 71.3% on R@1, it achieves a surprising number, 89.2 %, on R@2, indicating that the model is able to rank the correct response to the top-2 position.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "4.2 Experiment Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "MuTual",
+    "object_type": "Dataset",
+    "source_sentence": "in which models are trained on MuTual but tested on MuTualplus without fine-tuning.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "4.2.2 Results on MuTualplus"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "comparesagainst",
+    "object": "RoBERTa-MC",
+    "object_type": "Model",
+    "source_sentence": "the individual scoring RoBERTa outperforms RoBERTa-MC, showing that the individual scoring method is more robust, when the safe response is not fed during training.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.130",
+    "title": "MuTual: A Dataset for Multi-Turn Dialogue Reasoning",
+    "section": "4.2.2 Results on MuTualplus"
+  }
+]

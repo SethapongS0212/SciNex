@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Algorithm",
+    "predicate": "addresses",
+    "object": "Simultaneous Translation",
+    "object_type": "Task",
+    "source_sentence": "We apply this algorithm to two representative approaches to simultaneous translation : the fixed policy method and the adaptive policy method.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1144",
+    "title": "Speculative Beam Search for Simultaneous Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "chunk",
+    "object_type": "Other",
+    "source_sentence": "conventional beam search can be applied on each chunk to improve the search quality within that chunk, which is already used in that work.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1144",
+    "title": "Speculative Beam Search for Simultaneous Translation",
+    "section": "3.2 Chunk-based SBS"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "all texts",
+    "object_type": "Other",
+    "source_sentence": "We first apply BPE on all texts in order to reduce the vocabulary sizes.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1144",
+    "title": "Speculative Beam Search for Simultaneous Translation",
+    "section": "4.1 Datasets and Latency Metrics"
+  },
+  {
+    "subject": "English",
+    "predicate": "uses",
+    "object": "source text",
+    "object_type": "Other",
+    "source_sentence": "For English→Chinese, we use the second among the four English references as the source text.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1144",
+    "title": "Speculative Beam Search for Simultaneous Translation",
+    "section": "4.1 Datasets and Latency Metrics"
+  },
+  {
+    "subject": "OpenNMT",
+    "predicate": "uses",
+    "object": "PyTorch",
+    "object_type": "Other",
+    "source_sentence": "We re-implement wait-k model , test-time wait-k model and adaptive policy based on PyTorch-based OpenNMT.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1144",
+    "title": "Speculative Beam Search for Simultaneous Translation",
+    "section": "4.1 Datasets and Latency Metrics"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "wait-k model",
+    "object_type": "Other",
+    "source_sentence": "To reach state-of-the-art performance, we use Transformer based wait-k model and also use Transformer based pre-trained full sentence model for learning adaptive policy.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1144",
+    "title": "Speculative Beam Search for Simultaneous Translation",
+    "section": "4.1 Datasets and Latency Metrics"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "base model",
+    "object_type": "Other",
+    "source_sentence": "The architecture of Transformer is the same as the base model from the original paper.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1144",
+    "title": "Speculative Beam Search for Simultaneous Translation",
+    "section": "4.1 Datasets and Latency Metrics"
+  },
+  {
+    "subject": "Speculative Beam Search",
+    "predicate": "addresses",
+    "object": "real simultaneous translation",
+    "object_type": "Concept",
+    "source_sentence": "our proposed speculative beam search algorithm can be used in real simultaneous translation.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1144",
+    "title": "Speculative Beam Search for Simultaneous Translation",
+    "section": "0.15 Time (sec)"
+  },
+  {
+    "subject": "Speculative Beam Search",
+    "predicate": "addresses",
+    "object": "Simultaneous Translation",
+    "object_type": "Task",
+    "source_sentence": "We have proposed speculative beam search for simultaneous translation.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1144",
+    "title": "Speculative Beam Search for Simultaneous Translation",
+    "section": "5 Conclusions and Future Work"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "Simultaneous Translation",
+    "object_type": "Task",
+    "source_sentence": "Experiments on three approaches to simultaneous translation demonstrate effectiveness of our method.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1144",
+    "title": "Speculative Beam Search for Simultaneous Translation",
+    "section": "5 Conclusions and Future Work"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "addresses",
+    "object": "Streaming ASR",
+    "object_type": "Task",
+    "source_sentence": "This algorithm has the potential in other incremental tasks such as streaming ASR and incremental TTS.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1144",
+    "title": "Speculative Beam Search for Simultaneous Translation",
+    "section": "5 Conclusions and Future Work"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "German↔English corpora",
+    "object_type": "Dataset",
+    "source_sentence": "per- form experiments on German↔English corpora available from WMT153.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1144",
+    "title": "Speculative Beam Search for Simultaneous Translation",
+    "section": "A Supplemental Material"
+  }
+]

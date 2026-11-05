@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "100 billion words of Google News",
+    "object_type": "Dataset",
+    "source_sentence": "We utilized the Word2Vec embedding vectors (d = 300) that were trained on 100 billion words of Google News.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "4.2 CNN model"
+  },
+  {
+    "subject": "Random Forest",
+    "predicate": "uses",
+    "object": "human-engineered features",
+    "object_type": "Features",
+    "source_sentence": "We compared two types of leading text-based humor recognition methods: a conventional classifier (e.g., Random Forest) based on human-engineered features vs. an end-to-end CNN method, which relies on its inherent representation learning.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "uses",
+    "object": "Adam",
+    "object_type": "Other",
+    "source_sentence": "After running 200 iterations of tweaking, we ended up with the following selection: fw is 6 (entailing that the various filter sizes are (5, 6, 7)), nf is 100, dropout1 is 0.7 and dropout2 is 0.35, optimization uses Adam.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "evaluates",
+    "object": "0.864",
+    "object_type": "Metric",
+    "source_sentence": "precision has been greatly increased from 0.762 to 0.864.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "evaluates",
+    "object": "0.582",
+    "object_type": "Metric",
+    "source_sentence": "On the TED data, we also observed that the CNN model helps to increase precision (from 0.515 to 0.582)",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "6 Discussion"
+  }
+]

@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "orthographic",
+    "object_type": "Concept",
+    "source_sentence": "one from a seq2seq model with only orthographic information",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "distributional",
+    "predicate": "uses",
+    "object": "semantic",
+    "object_type": "Concept",
+    "source_sentence": "one from a feed-forward network using only distributional semantic information",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "dictionary",
+    "predicate": "addresses",
+    "object": "suffix ambiguity problem",
+    "object_type": "Concept",
+    "source_sentence": "Then we build on top of this system by incorporating a dictionary constraint and rescoring the model's hypotheses with token frequency information to address the suffix ambiguity problem.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "3 Sequence Models and Corpus Knowledge"
+  },
+  {
+    "subject": "Bidirectional LSTM",
+    "predicate": "uses",
+    "object": "sequence",
+    "object_type": "Sequence",
+    "source_sentence": "The input to the bidirectional LSTM encoder is the sequence #, x1, x2,... xm, #, t, where # is a special symbol to denote the start and end of a word, and the encoding of the derivational transformation t is concatenated to the input characters.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "3.1 Baseline Architecture"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "dictionary",
+    "object_type": "Other",
+    "source_sentence": "In this section we describe the derivational morphology dataset used in our experiments and how we collected the dictionary and token frequencies used in the dictionary constraint and rescorer.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "5 Datasets"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "comparesagainst",
+    "object": "Greedy Search",
+    "object_type": "Method",
+    "source_sentence": "beam search and shortest path have higher accuracies than greedy search",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "3 The remaining 2% is mostly words with hyphens or mistakes in the dataset."
+  },
+  {
+    "subject": "Aggregation",
+    "predicate": "achieves",
+    "object": "3.8 points accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Our open-vocabulary aggregation model AGGR improves performance by 3.8 points accuracy over SEQ, indicating that the sequence models and the distributional model are contributing complementary signals.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "7 Results"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "character embeddings of size 20",
+    "object_type": "Other",
+    "source_sentence": "The sequence -to- sequence model uses character embeddings of size 20, which are shared across the encoder and decoder , with a vocabulary size of 63.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "9 Implementation Details"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "vocabulary size of 63",
+    "object_type": "Other",
+    "source_sentence": "The sequence -to- sequence model uses character embeddings of size 20, which are shared across the encoder and decoder , with a vocabulary size of 63.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "9 Implementation Details"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Adam",
+    "object_type": "Method",
+    "source_sentence": "For training, we use Adam with an initial learning rate of 0.005, a batch size of 5, and train for a maximum of 30 epochs.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "9 Implementation Details"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "top 1 most probable sequence",
+    "object_type": "Other",
+    "source_sentence": "During decoding, we find the top 1 most probable sequence as discussed in Section 6 unless rescoring is used, in which we use the top 10.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "9 Implementation Details"
+  },
+  {
+    "subject": "Constrained Decoding",
+    "predicate": "achieves",
+    "object": "further improvements to our main contribution",
+    "object_type": "Other",
+    "source_sentence": "Two ways of incorporating corpus knowledge – constrained decoding and rescoring – demonstrate further improvements to our main contribution.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1180",
+    "title": "A Distributional and Orthographic Aggregation Model for English Derivational Morphology",
+    "section": "10 Conclusion"
+  }
+]

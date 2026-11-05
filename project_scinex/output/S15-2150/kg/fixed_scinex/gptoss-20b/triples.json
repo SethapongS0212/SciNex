@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Spatial Role Labeling",
+    "predicate": "addresses",
+    "object": "detect spatial and motion relations in text",
+    "object_type": "Task",
+    "source_sentence": "(2011) proposed the task of Spatial Role Labeling (SpRL) to detect spatial and motion relations in text.",
+    "extraction_mode": "fixed",
+    "paper": "S15-2150",
+    "title": "SpRL-CWW: Spatial Relation Classiﬁcation with Independent Multi-class Models",
+    "section": "2 SpaceEval Task Deﬁnition"
+  },
+  {
+    "subject": "SpRL-CWW",
+    "predicate": "uses",
+    "object": "CRF model",
+    "object_type": "Model",
+    "source_sentence": "SpRL-CWW uses a feature-rich CRF model to jointly label spatial elements and spatial /motion signals.",
+    "extraction_mode": "fixed",
+    "paper": "S15-2150",
+    "title": "SpRL-CWW: Spatial Relation Classiﬁcation with Independent Multi-class Models",
+    "section": "4.1 Approach"
+  },
+  {
+    "subject": "Word Vectors",
+    "predicate": "uses",
+    "object": "Web-scale corpora",
+    "object_type": "Dataset",
+    "source_sentence": "We use word vectors trained on Web-scale corpora for a fine-grained lexical representation.",
+    "extraction_mode": "fixed",
+    "paper": "S15-2150",
+    "title": "SpRL-CWW: Spatial Relation Classiﬁcation with Independent Multi-class Models",
+    "section": "4.1 Approach"
+  },
+  {
+    "subject": "Independent Classifiers",
+    "predicate": "uses",
+    "object": "Vowpal Wabbit",
+    "object_type": "Other",
+    "source_sentence": "Three independent classifiers are trained, one for each spatial relation type, using Vowpal Wabbit .",
+    "extraction_mode": "fixed",
+    "paper": "S15-2150",
+    "title": "SpRL-CWW: Spatial Relation Classiﬁcation with Independent Multi-class Models",
+    "section": "5.1 Approach"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "classes",
+    "object_type": "Other",
+    "source_sentence": "The classes used by the MOVELINK classifier are: Class 1 - REL(arg1=mover,arg2=goal) Class 2 - REL(arg1=goal,arg2=mover) Class 3 - NONE",
+    "extraction_mode": "fixed",
+    "paper": "S15-2150",
+    "title": "SpRL-CWW: Spatial Relation Classiﬁcation with Independent Multi-class Models",
+    "section": "5.1 Approach"
+  },
+  {
+    "subject": "Feature Generation",
+    "predicate": "addresses",
+    "object": "precision of relation classification",
+    "object_type": "Task",
+    "source_sentence": "feature generation may be useful for increasing precision of relation classification",
+    "extraction_mode": "fixed",
+    "paper": "S15-2150",
+    "title": "SpRL-CWW: Spatial Relation Classiﬁcation with Independent Multi-class Models",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Feature Engineering",
+    "predicate": "uses",
+    "object": "phrase vector-based model",
+    "object_type": "Model",
+    "source_sentence": "We are exploring feature engineering reduction further with a phrase vector-based model inspired by .",
+    "extraction_mode": "fixed",
+    "paper": "S15-2150",
+    "title": "SpRL-CWW: Spatial Relation Classiﬁcation with Independent Multi-class Models",
+    "section": "6 Discussion"
+  }
+]

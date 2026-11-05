@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "NMT",
+    "predicate": "achieves",
+    "object": "significant improvement in translation quality",
+    "object_type": "Concept",
+    "source_sentence": "Neural machine translation (briefly, NMT), which is built upon deep neural networks, has gained rapid progress in recent years (Bahdanau et al., 2014; Sutskever et al., 2014; Sennrich et al., 2015; He et al., 2016a; Sennrich et al., 2016a; Xia et al., 2017; Wang et al., 2019) and achieved signifi- cant improvement in translation quality .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1558",
+    "title": "Depth Growing for Neural Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "1.0",
+    "object_type": "Metric",
+    "source_sentence": "Specifically, we achieve 1.0 and 0.6 BLEU score improvement over the strong Transformer baseline in English →German and English →French translations.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1558",
+    "title": "Depth Growing for Neural Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "0.6",
+    "object_type": "Metric",
+    "source_sentence": "Specifically, we achieve 1.0 and 0.6 BLEU score improvement over the strong Transformer baseline in English →German and English →French translations.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1558",
+    "title": "Depth Growing for Neural Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Decoding Phase",
+    "predicate": "uses",
+    "object": "netS",
+    "object_type": "Model",
+    "source_sentence": "At the decoding phase, enc1 and dec1 work together accord- ing to Eqn.(1) and Eqn.(2) as a shallow net- work netS, integrate both bottom and top mod- ule works as a deep network netD according to Eqn.(1)∼Eqn.(3).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1558",
+    "title": "Depth Growing for Neural Machine Translation",
+    "section": "2 Approach"
+  },
+  {
+    "subject": "Decoding Phase",
+    "predicate": "uses",
+    "object": "netD",
+    "object_type": "Model",
+    "source_sentence": "At the decoding phase, enc1 and dec1 work together accord- ing to Eqn.(1) and Eqn.(2) as a shallow net- work netS, integrate both bottom and top mod- ule works as a deep network netD according to Eqn.(1)∼Eqn.(3).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1558",
+    "title": "Depth Growing for Neural Machine Translation",
+    "section": "2 Approach"
+  },
+  {
+    "subject": "Ensemble Learning",
+    "predicate": "produces",
+    "object": "single deeper model with hierarchical contextual information",
+    "object_type": "Model",
+    "source_sentence": "Ensemble learning: What we propose in this paper is a single deeper model with hierarchical contextual information , although the deep-shallow decoding is similar to the ensemble methods in terms of inference complexity .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1558",
+    "title": "Depth Growing for Neural Machine Translation",
+    "section": "2 Approach"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "sub-word units",
+    "object_type": "Other",
+    "source_sentence": "All words are segmented into sub-word units using byte pair encoding (BPE)3 , forming a vocabulary shared by the source and target languages with 32k and 45k tokens for En→De and En→Fr respectively.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1558",
+    "title": "Depth Growing for Neural Machine Translation",
+    "section": "3.1 Experiment Design"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "encoder-decoder framework",
+    "object_type": "Other",
+    "source_sentence": "The basic encoder-decoder framework we use is the strong Transformer model.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1558",
+    "title": "Depth Growing for Neural Machine Translation",
+    "section": "3.1 Experiment Design"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "optimization settings",
+    "object_type": "Other",
+    "source_sentence": "Training We use Adam optimizer following the optimization settings and default learning rate schedule in Vaswani et al.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1558",
+    "title": "Depth Growing for Neural Machine Translation",
+    "section": "3.1 Experiment Design"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "8 M40 GPUs",
+    "object_type": "Other",
+    "source_sentence": "All models are trained on 8 M40 GPUs.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1558",
+    "title": "Depth Growing for Neural Machine Translation",
+    "section": "3.1 Experiment Design"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "achievesresult",
+    "object": "over 0.8 BLEU improvement",
+    "object_type": "Metric",
+    "source_sentence": "As expected, the ensemble method improves translation quality over the single model baselines by a large margin (over 0.8 BLEU improvement).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1558",
+    "title": "Depth Growing for Neural Machine Translation",
+    "section": "29.92 Baseline Direct Stacking Ensemble Ours"
+  }
+]

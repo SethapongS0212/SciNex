@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "reconstruction objective",
+    "object_type": "Concept",
+    "source_sentence": "Training is performed with a reconstruction objective.",
+    "extraction_mode": "fixed",
+    "paper": "2021.eacl-main.229",
+    "title": "Informative and Controllable Opinion Summarization",
+    "section": "3.1 The CONDENSE Model"
+  },
+  {
+    "subject": "Words",
+    "predicate": "uses",
+    "object": "softmax classifier",
+    "object_type": "Method",
+    "source_sentence": "Words w′ t are generated using a softmax classifier:",
+    "extraction_mode": "fixed",
+    "paper": "2021.eacl-main.229",
+    "title": "Informative and Controllable Opinion Summarization",
+    "section": "3.1 The CONDENSE Model"
+  },
+  {
+    "subject": "Reviews",
+    "predicate": "uses",
+    "object": "attentive pooling method",
+    "object_type": "Method",
+    "source_sentence": "Review encodings are fused using an attentive pooling method which gives more weight to important reviews.",
+    "extraction_mode": "fixed",
+    "paper": "2021.eacl-main.229",
+    "title": "Informative and Controllable Opinion Summarization",
+    "section": "3.2 The ABSTRACT Model"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "attention",
+    "object_type": "Concept",
+    "source_sentence": "We use a simple LSTM decoder enhanced with attention and copy mechanisms.",
+    "extraction_mode": "fixed",
+    "paper": "2021.eacl-main.229",
+    "title": "Informative and Controllable Opinion Summarization",
+    "section": "3.2 The ABSTRACT Model"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "word-level encodings",
+    "object_type": "Artifact",
+    "source_sentence": "At each time step t, we use an attention mechanism over word-level encodings to output the attention weight vector at and context vector ct:",
+    "extraction_mode": "fixed",
+    "paper": "2021.eacl-main.229",
+    "title": "Informative and Controllable Opinion Summarization",
+    "section": "3.2 The ABSTRACT Model"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "token encodings",
+    "object_type": "Artifact",
+    "source_sentence": "Given a review, we obtain its encoding as the average of its token encodings obtained from BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2021.eacl-main.229",
+    "title": "Informative and Controllable Opinion Summarization",
+    "section": "3.2 The ABSTRACT Model"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "sequence",
+    "object_type": "Other",
+    "source_sentence": "The selected reviews are concatenated into a long sequence and encoded using a separate BiLSTM whose output serves as input to an LSTM decoder.",
+    "extraction_mode": "fixed",
+    "paper": "2021.eacl-main.229",
+    "title": "Informative and Controllable Opinion Summarization",
+    "section": "3.2 The ABSTRACT Model"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "objective functions",
+    "object_type": "Other",
+    "source_sentence": "Training We use two objective functions to train the ABSTRACT model.",
+    "extraction_mode": "fixed",
+    "paper": "2021.eacl-main.229",
+    "title": "Informative and Controllable Opinion Summarization",
+    "section": "3.2 The ABSTRACT Model"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "sequence of words",
+    "object_type": "Sequence",
+    "source_sentence": "To generate the former, we run the trained model as is and use beam search to find the sequence of words with the highest cumulative probability.",
+    "extraction_mode": "fixed",
+    "paper": "2021.eacl-main.229",
+    "title": "Informative and Controllable Opinion Summarization",
+    "section": "3.3 Zero-shot Customization"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "GloVe",
+    "object_type": "Method",
+    "source_sentence": "For all experiments, our model used word embeddings with 128 dimensions, pretrained using GloVe.",
+    "extraction_mode": "fixed",
+    "paper": "2021.eacl-main.229",
+    "title": "Informative and Controllable Opinion Summarization",
+    "section": "4 Experimental Setup"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "length-normalized beam search",
+    "object_type": "Method",
+    "source_sentence": "For decoding summaries , we use a length-normalized beam search with beam size of 5.",
+    "extraction_mode": "fixed",
+    "paper": "2021.eacl-main.229",
+    "title": "Informative and Controllable Opinion Summarization",
+    "section": "4 Experimental Setup"
+  }
+]

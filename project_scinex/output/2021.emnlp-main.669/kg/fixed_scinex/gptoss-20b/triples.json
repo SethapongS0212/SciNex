@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "Transformer",
+    "object_type": "Model",
+    "source_sentence": "We propose a simple MTL approach that consists of using a vanilla NMT system —in our experiments, it is a transformer system as defined by Vaswani et al. (2017)— where all (main and auxiliary) tasks share the encoder and the decoder.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "2 Multi-task learning approach and auxiliary tasks"
+  },
+  {
+    "subject": "transformation",
+    "predicate": "uses",
+    "object": "one-to-many word alignments",
+    "object_type": "Concept",
+    "source_sentence": "This transformation uses one-to-many word alignments and is inspired by the concept of biwords introduced by Sánchez-Martínez et al. (2012) for the compression of parallel corpora.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "2 Multi-task learning approach and auxiliary tasks"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "translation from English to German, Hebrew and Vietnamese",
+    "object_type": "Task",
+    "source_sentence": "We have conducted experiments for the translation from English to German, Hebrew and Vietnamese , and for the translation in the reverse direction, us- ing corpora commonly used for evaluating DA tech- niques in low- resource scenarios.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "3 Experimental settings"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "1.6",
+    "object_type": "Metric",
+    "source_sentence": "line system (on average around 1.6 BLEU points)",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "6 Related work"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "parallel corpora",
+    "object_type": "Dataset",
+    "source_sentence": "training additional systems, or data besides the available training parallel corpora",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "6 Related work"
+  },
+  {
+    "subject": "Boosting",
+    "predicate": "achieves",
+    "object": "NMT quality",
+    "object_type": "Concept",
+    "source_sentence": "making the encoder representation essential to minimize the loss during training should be embraced as a potential way of boosting NMT quality.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "6 Related work"
+  },
+  {
+    "subject": "Translating",
+    "predicate": "addresses",
+    "object": "new tasks",
+    "object_type": "Task",
+    "source_sentence": "Translating into these augmented sentences constitute new tasks that provide new contexts during training where the target prefix is not informative enough to predict the next word, thus strengthening the encoder and forcing the system to rely more on it.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "7 Concluding remarks"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "six low-resource translation tasks",
+    "object_type": "Task",
+    "source_sentence": "Experiments carried out on six low- resource translation tasks that usually serve as benchmark for DA show consistent improvements over a base-",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "7 Concluding remarks"
+  }
+]

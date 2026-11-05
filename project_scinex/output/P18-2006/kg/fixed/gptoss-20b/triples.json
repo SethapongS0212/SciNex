@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "function evaluation",
+    "object_type": "Other",
+    "source_sentence": "Our algorithm requires just one function evaluation (forward pass) and one gradient computation (backward pass) to estimate the best possible flip.",
+    "extraction_mode": "fixed",
+    "paper": "P18-2006",
+    "title": "HotFlip: White-Box Adversarial Examples for Text Classiﬁcation",
+    "section": "3.2 Derivatives of Operations"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "gradient computation",
+    "object_type": "Other",
+    "source_sentence": "Our algorithm requires just one function evaluation (forward pass) and one gradient computation (backward pass) to estimate the best possible flip.",
+    "extraction_mode": "fixed",
+    "paper": "P18-2006",
+    "title": "HotFlip: White-Box Adversarial Examples for Text Classiﬁcation",
+    "section": "3.2 Derivatives of Operations"
+  },
+  {
+    "subject": "Adversarial Training",
+    "predicate": "uses",
+    "object": "flip operation",
+    "object_type": "Other",
+    "source_sentence": "For our adversarial training, we use only use the flip operation, and evaluate models' robustness to this operation only.",
+    "extraction_mode": "fixed",
+    "paper": "P18-2006",
+    "title": "HotFlip: White-Box Adversarial Examples for Text Classiﬁcation",
+    "section": "4.1 Robustness"
+  },
+  {
+    "subject": "Adversarial Training",
+    "predicate": "comparesagainst",
+    "object": "white-box (supervised) adversarial training",
+    "object_type": "Other",
+    "source_sentence": "we compare HotFlip adversarial training with the white-box (supervised) adversarial training that perturbs word embeddings",
+    "extraction_mode": "fixed",
+    "paper": "P18-2006",
+    "title": "HotFlip: White-Box Adversarial Examples for Text Classiﬁcation",
+    "section": "4.1 Robustness"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "correct classification on AG's-news dataset",
+    "object_type": "Task",
+    "source_sentence": "This set contains 150 examples of each class of AG's-news dataset, all of which are correctly classified by the classifier.",
+    "extraction_mode": "fixed",
+    "paper": "P18-2006",
+    "title": "HotFlip: White-Box Adversarial Examples for Text Classiﬁcation",
+    "section": "4.2 Human Perception"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "achieves",
+    "object": "misclassification of 300 adversarial examples",
+    "object_type": "Task",
+    "source_sentence": "We manipulate half of this set by our algorithm, which can successfully trick the classifier to misclassify these 300 adversarial examples.",
+    "extraction_mode": "fixed",
+    "paper": "P18-2006",
+    "title": "HotFlip: White-Box Adversarial Examples for Text Classiﬁcation",
+    "section": "4.2 Human Perception"
+  }
+]

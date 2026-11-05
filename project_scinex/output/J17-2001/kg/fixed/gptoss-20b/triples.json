@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "vector space models",
+    "predicate": "uses",
+    "object": "co-occurrence patterns",
+    "object_type": "Concept",
+    "source_sentence": "vector space models can be used to compute the similarity between two words in one language by creating vectors that represent their co-occurrence patterns with other words",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "2.1 Contextual Similarity"
+  },
+  {
+    "subject": "Bilingual Lexicon Induction",
+    "predicate": "uses",
+    "object": "surrounding context",
+    "object_type": "Concept",
+    "source_sentence": "The earliest work in bilingual lexicon induction by Rapp (1995) and Fung (1995) used the surrounding context of a given word as a clue to its translation",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "2.1 Contextual Similarity"
+  },
+  {
+    "subject": "discriminative",
+    "predicate": "uses",
+    "object": "seed bilingual dictionary",
+    "object_type": "Other",
+    "source_sentence": "In our approach, we also use the seed bilingual dictionary as supervision for a discriminative model.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "2.1 Contextual Similarity"
+  },
+  {
+    "subject": "Temporal Similarity",
+    "predicate": "uses",
+    "object": "English words",
+    "object_type": "Other",
+    "source_sentence": "using temporal similarity to rank English words for several Spanish words",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "2.2 Temporal Similarity"
+  },
+  {
+    "subject": "Temporal Similarity",
+    "predicate": "uses",
+    "object": "Spanish words",
+    "object_type": "Other",
+    "source_sentence": "using temporal similarity to rank English words for several Spanish words",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "2.2 Temporal Similarity"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "list of English names",
+    "object_type": "Dataset",
+    "source_sentence": "We use a character-based language model trained on a list of English names.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "2.3 Orthographic Similarity"
+  },
+  {
+    "subject": "Lexicon induction",
+    "predicate": "uses",
+    "object": "Edit Distance",
+    "object_type": "Metric",
+    "source_sentence": "For purposes of bilingual lexicon induction , we use the top-1 transliteration to compute edit distance.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "2.3 Orthographic Similarity"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "uses",
+    "object": "cosine similarity",
+    "object_type": "Metric",
+    "source_sentence": "Again, the similarity between a pair of suffixal contextual vectors is measured using cosine similarity.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "2.7 Variations and Additional Signals"
+  },
+  {
+    "subject": "Monolingual Data",
+    "predicate": "uses",
+    "object": "Web crawls of online newspapers",
+    "object_type": "Other",
+    "source_sentence": "We draw monolingual data from two sources: (1) Web crawls of online newspapers, and (2) Wikipedia.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "3.3 Monolingual Data"
+  },
+  {
+    "subject": "Monolingual Data",
+    "predicate": "uses",
+    "object": "Wikipedia",
+    "object_type": "Other",
+    "source_sentence": "We draw monolingual data from two sources: (1) Web crawls of online newspapers, and (2) Wikipedia.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "3.3 Monolingual Data"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "18 features",
+    "object_type": "Other",
+    "source_sentence": "In our experiments, we use a total of 18 features to rank English words as potential translations of the input foreign word.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "3.5 Monolingual Signals"
+  },
+  {
+    "subject": "POS tagger",
+    "predicate": "uses",
+    "object": "Natural Language Toolkit",
+    "object_type": "Tool",
+    "source_sentence": "using the English POS tagger in the Natural Language Toolkit to tag English words in isolation.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "4.2 Relative Strength of Individual Signals"
+  },
+  {
+    "subject": "Supervised Models",
+    "predicate": "achieves",
+    "object": "11% accuracy on Uzbek",
+    "object_type": "Metric",
+    "source_sentence": "Results using the supervised models vary from 11% accuracy on Uzbek to 57% accuracy on Bulgarian.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "6 Among those that appear at least ten times in our monolingual data, consistent with our candidate set."
+  },
+  {
+    "subject": "Supervised Models",
+    "predicate": "achieves",
+    "object": "57% accuracy on Bulgarian",
+    "object_type": "Metric",
+    "source_sentence": "Results using the supervised models vary from 11% accuracy on Uzbek to 57% accuracy on Bulgarian.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "6 Among those that appear at least ten times in our monolingual data, consistent with our candidate set."
+  },
+  {
+    "subject": "Supervised Approach",
+    "predicate": "achieves",
+    "object": "34.2% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The average accuracy across languages using the MRR baseline is 15.8% and using a supervised approach is 34.2%, or greater than twice the average baseline accuracy.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "6 Among those that appear at least ten times in our monolingual data, consistent with our candidate set."
+  },
+  {
+    "subject": "discriminative",
+    "predicate": "uses",
+    "object": "orthographic and contextual features",
+    "object_type": "Features",
+    "source_sentence": "We first measure the performance of our discriminative model using the orthographic and contextual features used by MCCA.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "GGG GGG GGGG"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "trainedon",
+    "object": "seed lexicon",
+    "object_type": "Lexicon",
+    "source_sentence": "We use the seed lexicon of 100 word pairs to train our supervised discriminative model.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "GGG GGG GGGG"
+  },
+  {
+    "subject": "Oracle Experiments",
+    "predicate": "uses",
+    "object": "phrase-table",
+    "object_type": "Other",
+    "source_sentence": "we performed oracle experiments where the translations were given by an existing phrase-table",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "7.3 Integration with Machine Translation"
+  },
+  {
+    "subject": "discriminative",
+    "predicate": "achieves",
+    "object": "dramatically improved performance",
+    "object_type": "Other",
+    "source_sentence": "Our discriminative approach to combining the signals achieves dramatically improved performance.",
+    "extraction_mode": "fixed",
+    "paper": "J17-2001",
+    "title": "A Comprehensive Analysis of Bilingual Lexicon Induction",
+    "section": "8. Conclusions"
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "addresses",
+    "object": "keyphrase generation",
+    "object_type": "Task",
+    "source_sentence": "we propose a multi-task learning (MTL) framework by jointly learning the main task of keyphrase generation based on labeled samples, and an auxiliary task of title generation on unlabeled documents.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "addresses",
+    "object": "title generation",
+    "object_type": "Task",
+    "source_sentence": "we propose a multi-task learning (MTL) framework by jointly learning the main task of keyphrase generation based on labeled samples, and an auxiliary task of title generation on unlabeled documents.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "performance gain",
+    "object_type": "Other",
+    "source_sentence": "Finally, we also show that training with unlabeled samples can further produce performance gain even when a large amount of labeled data is available.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "addresses",
+    "object": "Sequence Labeling Tasks",
+    "object_type": "Task",
+    "source_sentence": "Multi-task learning is also examined for sequence labeling tasks.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "addresses",
+    "object": "contextual information",
+    "object_type": "Concept",
+    "source_sentence": "the seq2seq model is capable to generate all possible keyphrases in one sequence as well as capture the contextual information between the keyphrases from the same sequence.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "3 Neural Keyphrase Generation Model"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "Decoding",
+    "object_type": "Method",
+    "source_sentence": "Beam search is utilized for decoding",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "3 Neural Keyphrase Generation Model"
+  },
+  {
+    "subject": "model training",
+    "predicate": "uses",
+    "object": "labeled data",
+    "object_type": "Dataset",
+    "source_sentence": "The first is to provide synthetic keyphrases using unsupervised keyphrase extraction methods or self-learning algorithm, then mixed with labeled data for model training, which is described in Section 4.1.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "4 Semi-Supervised Learning for Keyphrase Generation"
+  },
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "addresses",
+    "object": "keyphrase generation",
+    "object_type": "Task",
+    "source_sentence": "We introduce multi-task learning that jointly generates keyphrases and the title of the document (Section 4.2).",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "4 Semi-Supervised Learning for Keyphrase Generation"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "seq2seq model",
+    "object_type": "Model",
+    "source_sentence": "Concretely, we first build a base- line model by training the seq2seq model on the labeled corpus Dp.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "4.1 Synthetic Keyphrase Construction"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "synthetic keyphrase sequences",
+    "object_type": "Sequence",
+    "source_sentence": "We adopt beam search to generate the synthetic keyphrase sequences and beam size is set as 10.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "4.1 Synthetic Keyphrase Construction"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "trainedon",
+    "object": "small-scale labeled dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We train a baseline seq2seq model on the small-scale labeled dataset.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "5.3 Comparisons with Baselines"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "Copying Mechanism",
+    "object_type": "Method",
+    "source_sentence": "our baseline seq2seq model with copying mechanism still achieves better F1@5 scores",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "5.3 Comparisons with Baselines"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "synthetic data5",
+    "object_type": "Other",
+    "source_sentence": "we use beam search with a smaller beam size of 3 to generate synthetic data5.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "5.4 Effect of Synthetic Keyphrase Quality"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "better performance (i.e., lower perplexity)",
+    "object_type": "Other",
+    "source_sentence": "when models are pre- trained with synthetic keyphrases of better quality , results by \"Trained-model\" consistently produce better performance (i.e., lower perplexity).",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "5.4 Effect of Synthetic Keyphrase Quality"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "keyphrase sequences",
+    "object_type": "Artifact",
+    "source_sentence": "After models being trained, we adopt beam search to generate keyphrase sequences with beam size of 50.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "5.5 Effect of Amount of Unlabeled Data"
+  },
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "uses",
+    "object": "unlabeled documents",
+    "object_type": "Dataset",
+    "source_sentence": "multi-task learning to effectively leverage abundant unlabeled documents.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1447",
+    "title": "Semi-Supervised Learning for Neural Keyphrase Generation",
+    "section": "6 Conclusion and Future Work"
+  }
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Statistical Machine Translation",
+    "predicate": "uses",
+    "object": "text in a NEW-domain",
+    "object_type": "Task",
+    "source_sentence": "When a statistical machine translation (SMT) model trained on OLD- domain (e.g. parliamentary proceedings) parallel text is used to translate text in a NEW- domain (e.g. medical or scientific), performance de- grades drastically.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1109",
+    "title": "Monolingual Marginal Matching for Translation Model Adaptation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Parallel Data",
+    "predicate": "uses",
+    "object": "Word Alignments",
+    "object_type": "Other",
+    "source_sentence": "Given word-aligned parallel data in the OLD- domain and source and target comparable corpora in the NEW- domain , we first estimate a joint distribution pold(s, t) over word pairs (s, t) in the OLD- domain , where s and t range over source and target language words , respectively.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1109",
+    "title": "Monolingual Marginal Matching for Translation Model Adaptation",
+    "section": "3.1 Marginal Matching Objective"
+  },
+  {
+    "subject": "Frequency Estimates",
+    "predicate": "uses",
+    "object": "Comparable Corpora",
+    "object_type": "Other",
+    "source_sentence": "Next, we find source and target marginal distributions, q(s) and q(t), by relative frequency estimates over the source and target comparable corpora.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1109",
+    "title": "Monolingual Marginal Matching for Translation Model Adaptation",
+    "section": "3.1 Marginal Matching Objective"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "MT test sets",
+    "object_type": "Dataset",
+    "source_sentence": "We could have targeted our learning even more by using our NEW- domain MT test sets.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1109",
+    "title": "Monolingual Marginal Matching for Translation Model Adaptation",
+    "section": "3.3 Comparable Data Selection"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "French side of the training data",
+    "object_type": "Dataset",
+    "source_sentence": "However, to avoid overfitting any particular test set, we use the French side of the training data.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1109",
+    "title": "Monolingual Marginal Matching for Translation Model Adaptation",
+    "section": "3.3 Comparable Data Selection"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "log-linear model",
+    "object_type": "Model",
+    "source_sentence": "Features are combined using a log-linear model optimized for BLEU, using the n-best batch MIRA algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1109",
+    "title": "Monolingual Marginal Matching for Translation Model Adaptation",
+    "section": "4.2 Machine translation"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "n-best batch MIRA algorithm",
+    "object_type": "Method",
+    "source_sentence": "Features are combined using a log-linear model optimized for BLEU, using the n-best batch MIRA algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1109",
+    "title": "Monolingual Marginal Matching for Translation Model Adaptation",
+    "section": "4.2 Machine translation"
+  },
+  {
+    "subject": "Oracle Experiments",
+    "predicate": "uses",
+    "object": "Phrase Tables",
+    "object_type": "Other",
+    "source_sentence": "We also perform oracle experiments in which we identify translations for French words in word- aligned development and test sets and append these translations to baseline phrase tables.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1109",
+    "title": "Monolingual Marginal Matching for Translation Model Adaptation",
+    "section": "4.3 Experiments"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "achieves",
+    "object": "higher semi-extrinsic performance gains",
+    "object_type": "Other",
+    "source_sentence": "In all experiments, learning from some number of additional new document pairs resulted in higher semi-extrinsic performance gains",
+    "extraction_mode": "fixed",
+    "paper": "D13-1109",
+    "title": "Monolingual Marginal Matching for Translation Model Adaptation",
+    "section": "5.1 Semi-extrinsic evaluation"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "achieves",
+    "object": "domain-specific new-translation senses",
+    "object_type": "Other",
+    "source_sentence": "our learning method also learns domain-specific new-translation senses (NTS).",
+    "extraction_mode": "fixed",
+    "paper": "D13-1109",
+    "title": "Monolingual Marginal Matching for Translation Model Adaptation",
+    "section": "5.1 Semi-extrinsic evaluation"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "achieves",
+    "object": "translating a previously unobserved French word",
+    "object_type": "Other",
+    "source_sentence": "it's clear that learning something about how to translate a previously unobserved French word is beneficial.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1109",
+    "title": "Monolingual Marginal Matching for Translation Model Adaptation",
+    "section": "5.1 Semi-extrinsic evaluation"
+  },
+  {
+    "subject": "Moses decoder",
+    "predicate": "produces",
+    "object": "translated output",
+    "object_type": "Other",
+    "source_sentence": "By default, the Moses decoder copies OOV words directly into its translated output.",
+    "extraction_mode": "fixed",
+    "paper": "D13-1109",
+    "title": "Monolingual Marginal Matching for Translation Model Adaptation",
+    "section": "5.2 MT evaluation"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "0.8",
+    "object_type": "Metric",
+    "source_sentence": "performance gains of 0.8 BLEU points for both the EMEA and the Sci- ence domains",
+    "extraction_mode": "fixed",
+    "paper": "D13-1109",
+    "title": "Monolingual Marginal Matching for Translation Model Adaptation",
+    "section": "5.2 MT evaluation"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "Kneser-Ney Smoothing",
+    "object_type": "Method",
+    "source_sentence": "The language model is a 5-gram KenLM model, trained using lmplz, with modified Kneser-Ney smoothing and no pruning.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "3 Baseline Machine Translation System"
+  },
+  {
+    "subject": "training",
+    "predicate": "trainedon",
+    "object": "Parallel Sentences",
+    "object_type": "Dataset",
+    "source_sentence": "By restricting the training data to sentences of 80 or fewer tokens, the baseline SMT system is trained on 27,481 fewer parallel sentences than the shared task baseline.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "3 Baseline Machine Translation System"
+  },
+  {
+    "subject": "Word Alignments",
+    "predicate": "uses",
+    "object": "automatic post-editing",
+    "object_type": "Method",
+    "source_sentence": "The decoder is set to output word alignments, which are used later for automatic post-editing.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "3 Baseline Machine Translation System"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "34.57",
+    "object_type": "Metric",
+    "source_sentence": "baseline SMT system scores nearly one BLEU point higher than the shared task baseline for the IWSLT 2010 (34.57 vs. 33.86)",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "3 Baseline Machine Translation System"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "41.07",
+    "object_type": "Metric",
+    "source_sentence": "baseline SMT system scores nearly one BLEU point higher than the shared task baseline for the IWSLT 2010 (34.57 vs. 33.86) and 2012 (41.07 vs.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "3 Baseline Machine Translation System"
+  },
+  {
+    "subject": "rule",
+    "predicate": "addresses",
+    "object": "Pronouns",
+    "object_type": "Concept",
+    "source_sentence": "This rule is applied to all instances of \"they\" and subject-position \"it\" that are identified as anaphoric , both inter- and intra-sentential.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "5.1 Anaphoric Rule"
+  },
+  {
+    "subject": "rule",
+    "predicate": "addresses",
+    "object": "translation",
+    "object_type": "Task",
+    "source_sentence": "If the pronoun in the SMT output and the predicted translation disagree, the post-editing rule replaces the translation in the SMT output with the predicted value.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "5.2 Non-Anaphoric Rule"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "36.91",
+    "object_type": "Metric",
+    "source_sentence": "The official shared task results report a BLEU score of 36.91 for the post-edited SMT output.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "8 Results"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "0.36",
+    "object_type": "Metric",
+    "source_sentence": "There is a small decrease of 0.36 BLEU between the baseline system used to provide SMT output and the post-edited version for the test set (38.83 vs. 38.47 respectively, as calculated using case-insensitive multi-bleu7).",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "8 Results"
+  },
+  {
+    "subject": "post-editing",
+    "predicate": "uses",
+    "object": "two pronoun-specific rules",
+    "object_type": "Method",
+    "source_sentence": "The post-editing approach makes use of two pronoun-specific rules applied to the output of a baseline English -to-French phrase-based SMT system.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "10 Summary and Future Work"
+  }
+]

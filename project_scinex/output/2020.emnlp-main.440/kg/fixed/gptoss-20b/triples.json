@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "RoBERTa",
+    "object_type": "Model",
+    "source_sentence": "In our experiments, we show considerable improvements in performance over directly fine-tuning an underlying RoBERTa- large LM on multiple tasks in the IT domain : extractive reading comprehension (RC), document ranking (DR) and duplicate question de- tection (DQD).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "considerable improvements in performance",
+    "object_type": "Other",
+    "source_sentence": "In our experiments, we show considerable improvements in performance over directly fine-tuning an underlying RoBERTa- large LM on multiple tasks in the IT domain : extractive reading comprehension (RC), document ranking (DR) and duplicate question de- tection (DQD).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "Match@1",
+    "object_type": "Metric",
+    "source_sentence": "For TechQA-DR, models are evaluated by Match@1 and Match@5.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "5.1 Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "Match@5",
+    "object_type": "Metric",
+    "source_sentence": "For TechQA-DR, models are evaluated by Match@1 and Match@5.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "5.1 Setup"
+  },
+  {
+    "subject": "adapting",
+    "predicate": "achieves",
+    "object": "0.2 points over the RoBERTa-large baseline",
+    "object_type": "Metric",
+    "source_sentence": "Adapting the LM without extending the vocabu- lary yields just 0.2 points over the RoBERTa- large baseline.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "5.3 Results and Analysis"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "achieves",
+    "object": "2.8 points on HA F1",
+    "object_type": "Metric",
+    "source_sentence": "our RC-style synthetic pre-training yields a considerable improvement of 2.8 points on HA F1 and 0.5 points on F1.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "5.3 Results and Analysis"
+  },
+  {
+    "subject": "Data Augmentation",
+    "predicate": "achieves",
+    "object": "about a point on HA F1 and F1",
+    "object_type": "Metric",
+    "source_sentence": "data augmentation further boosts performance by about a point on both HA F1 and F1, suggesting that data augmentation via simple perturbations can be effective in a very-low resource setting.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "5.3 Results and Analysis"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achieves",
+    "object": "substantially outperform the IR system",
+    "object_type": "Other",
+    "source_sentence": "We see that the RoBERTa models substantially outperform the IR system.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "5.3 Results and Analysis"
+  },
+  {
+    "subject": "vocabulary expansion",
+    "predicate": "achieves",
+    "object": "0.3 points in Match@1",
+    "object_type": "Metric",
+    "source_sentence": "Although vocabulary expansion only helps by 0.3 points in Match@1",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "5.3 Results and Analysis"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "achieves",
+    "object": "Match@1 improvement of 2.9 points",
+    "object_type": "Metric",
+    "source_sentence": "The 'RC Pre-training' entry shows a Match@1 improvement of 2.9 points over the language modelling.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "5.3 Results and Analysis"
+  },
+  {
+    "subject": "Data Augmentation",
+    "predicate": "achieves",
+    "object": "1.3 points",
+    "object_type": "Metric",
+    "source_sentence": "We further see an improvement of 1.3 points from data augmentation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "5.3 Results and Analysis"
+  },
+  {
+    "subject": "Preliminary Experiments",
+    "predicate": "achieves",
+    "object": "improvements in performance",
+    "object_type": "Other",
+    "source_sentence": "In our preliminary experiments, we empirically show considerable improvements in performance over a standard RoBERTa-large LM on multiple tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Fairseq toolkit",
+    "object_type": "Other",
+    "source_sentence": "In our experiments, we used the Fairseq toolkit for language modelling and the Transformers library for downstream tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Transformers library",
+    "object_type": "Other",
+    "source_sentence": "In our experiments, we used the Fairseq toolkit for language modelling and the Transformers library for downstream tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.440",
+    "title": "Multi-Stage Pre-training for Low-Resource Domain Adaptation",
+    "section": "A.1 Implementation Details"
+  }
+]

@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Probabilistic Model",
+    "predicate": "trainedon",
+    "object": "semantic structures of Simple Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "where sentences are split based on a probabilistic model trained on the semantic structures of Simple Wikipedia as well as a language model trained on the same corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "Simple Wikipedia corpus",
+    "object_type": "Dataset",
+    "source_sentence": "where sentences are split based on a probabilistic model trained on the semantic structures of Simple Wikipedia as well as a language model trained on the same corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Lexical Simplification",
+    "predicate": "uses",
+    "object": "unsupervised model",
+    "object_type": "Model",
+    "source_sentence": "Lexical simplification is there performed using the unsupervised model of Biran et al.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "rule-based",
+    "predicate": "uses",
+    "object": "event extraction",
+    "object_type": "Task",
+    "source_sentence": "combined rule-based simplification conditioned on event extraction, together with an unsupervised lexical simplifier.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "uses",
+    "object": "lexical simplification",
+    "object_type": "Simplification",
+    "source_sentence": "combined rule-based simplification conditioned on event extraction, together with an unsupervised lexical simplifier.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Split and Rephrase",
+    "predicate": "addresses",
+    "object": "sentence splitting",
+    "object_type": "Task",
+    "source_sentence": "Recently proposed the Split and Rephrase task, focusing on sentence splitting.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "generating sentences",
+    "object_type": "Method",
+    "source_sentence": "sequence-to-sequence methods for generating sentences from the source text and its semantic forms.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Split and Rephrase",
+    "predicate": "produces",
+    "object": "semantic forms",
+    "object_type": "Other",
+    "source_sentence": "Another difference is that the semantic forms in Split and Rephrase are derived semi-automatically (during corpus compilation), while we automatically extract the semantic form, using a UCCA parser .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Split and Rephrase",
+    "predicate": "uses",
+    "object": "UCCA parser",
+    "object_type": "Method",
+    "source_sentence": "Another difference is that the semantic forms in Split and Rephrase are derived semi-automatically (during corpus compilation), while we automatically extract the semantic form, using a UCCA parser .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "rule",
+    "predicate": "produces",
+    "object": "sentence",
+    "object_type": "Other",
+    "source_sentence": "this rule converts the sentence 'He observed the planet which has 14 known satellites' to 'He ob- served the planet| Planet has 14 known satellites.'.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "3.2 The Semantic Rules"
+  },
+  {
+    "subject": "OpenNMT",
+    "predicate": "uses",
+    "object": "NTS system",
+    "object_type": "Other",
+    "source_sentence": "The split sentences are run through the NTS state- of-the-art neural TS system , built using the OpenNMT neural machine transla- tion framework .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "4 Neural Component"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Dropout",
+    "object_type": "Other",
+    "source_sentence": "Training is done with a 0.3 dropout probability .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "4 Neural Component"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Alignment",
+    "object_type": "Other",
+    "source_sentence": "This model uses alignment probabilities between the predictions and the original sentences , rather than character- based models, to retrieve the original words.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "4 Neural Component"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "Google News",
+    "object_type": "Dataset",
+    "source_sentence": "where word2vec embeddings of size 300 are trained on Google News and local embeddings of size 200 are trained on the training simplification corpus",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "4 Neural Component"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "trainedon",
+    "object": "training simplification corpus",
+    "object_type": "Dataset",
+    "source_sentence": "where word2vec embeddings of size 300 are trained on Google News and local embeddings of size 200 are trained on the training simplification corpus",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "4 Neural Component"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "Decoding",
+    "object_type": "Method",
+    "source_sentence": "For sampling multiple outputs from the system, beam search is performed during decoding by generating the first 5 hypotheses at each step ordered by the log-likelihood of the target sentence given the input sentence .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "4 Neural Component"
+  },
+  {
+    "subject": "rules",
+    "predicate": "produces",
+    "object": "SENTS-h1",
+    "object_type": "Model",
+    "source_sentence": "The pipeline application of the rules and the neural system results in two corresponding models: SENTS-h1 and SENTS-h4.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "4 Neural Component"
+  },
+  {
+    "subject": "rules",
+    "predicate": "produces",
+    "object": "SENTS-h4",
+    "object_type": "Model",
+    "source_sentence": "The pipeline application of the rules and the neural system results in two corresponding models: SENTS-h1 and SENTS-h4.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "4 Neural Component"
+  },
+  {
+    "subject": "Tokenization",
+    "predicate": "uses",
+    "object": "Moses",
+    "object_type": "Other",
+    "source_sentence": "Uniform tokenization and truecasing styles for all systems are obtained using the Moses toolkit.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "5 Experimental Setup"
+  },
+  {
+    "subject": "semantic",
+    "predicate": "uses",
+    "object": "manual UCCA annotation",
+    "object_type": "Annotation",
+    "source_sentence": "we implement a semi-automatic version of the semantic component, which uses manual UCCA annotation instead of the parser",
+    "extraction_mode": "fixed",
+    "paper": "P18-1016",
+    "title": "Simple and Effective Text Simpliﬁcation Using Semantic and Neural Methods",
+    "section": "7 Additional Experiments"
+  }
+]

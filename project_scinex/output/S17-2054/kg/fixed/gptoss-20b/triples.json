@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "MAP",
+    "predicate": "evaluates",
+    "object": "86.2",
+    "object_type": "Metric",
+    "source_sentence": "Our system ranked 7th place, achieving a MAP score of 86.2 which was outperformed by 2 points by the 1st ranked system.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2054",
+    "title": "Jan Deriu Zurich University of Applied Sciences deri@zhaw.ch",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "word2vec",
+    "object_type": "Model",
+    "source_sentence": "We use word embeddings based on word2vec as input to the convolutions.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2054",
+    "title": "Jan Deriu Zurich University of Applied Sciences deri@zhaw.ch",
+    "section": "2.1 Language Model"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "skip-gram model",
+    "object_type": "Model",
+    "source_sentence": "The word embeddings are generated using the skip-gram model setting the context window to 5 and the dimensionality to d = 200.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2054",
+    "title": "Jan Deriu Zurich University of Applied Sciences deri@zhaw.ch",
+    "section": "2.1 Language Model"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Concept",
+    "source_sentence": "The attention matrix A ∈ Rsq×sa is derived from the sentence matrices Sq and Sa by computing the pairwise Euclidean similarity between the word embeddings of Sq and the word embeddings of Sa.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2054",
+    "title": "Jan Deriu Zurich University of Applied Sciences deri@zhaw.ch",
+    "section": "2.3 Attention Mechanism"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "Convolution",
+    "object_type": "Model",
+    "source_sentence": "The first mechanism modifies the input to the convolution by applying a linear transformation to the attention matrix A to create the attention features.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2054",
+    "title": "Jan Deriu Zurich University of Applied Sciences deri@zhaw.ch",
+    "section": "2.3 Attention Mechanism"
+  },
+  {
+    "subject": "transformation",
+    "predicate": "uses",
+    "object": "Attention",
+    "object_type": "Concept",
+    "source_sentence": "The first mechanism modifies the input to the convolution by applying a linear transformation to the attention matrix A to create the attention features.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2054",
+    "title": "Jan Deriu Zurich University of Applied Sciences deri@zhaw.ch",
+    "section": "2.3 Attention Mechanism"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Convolution",
+    "object_type": "Model",
+    "source_sentence": "The attention features are stacked on top of the sentence matrix, creating an order-3-tensor: S2q ∈ Rsq×d×2 for the question and S2a ∈ Rsa×d×2 for the answer candidate. These tensors are used as the input into the convolution layer, giving more weight to the relevant regions in the sentence.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2054",
+    "title": "Jan Deriu Zurich University of Applied Sciences deri@zhaw.ch",
+    "section": "2.3 Attention Mechanism"
+  },
+  {
+    "subject": "KeLP",
+    "predicate": "achieves",
+    "object": "outperformed our system by 2 points",
+    "object_type": "Other",
+    "source_sentence": "Our system is outperformed by 2 points by the KeLP and the Beihang-MSRA submission and by only 0.6 points by the IIT-UHH submission.",
+    "extraction_mode": "fixed",
+    "paper": "S17-2054",
+    "title": "Jan Deriu Zurich University of Applied Sciences deri@zhaw.ch",
+    "section": "3.3 Results"
+  }
+]

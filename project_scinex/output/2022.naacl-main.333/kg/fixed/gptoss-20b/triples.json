@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Contrastive Learning",
+    "predicate": "uses",
+    "object": "InfoNCE",
+    "object_type": "Method",
+    "source_sentence": "We use contrastive learning with the InfoNCE loss : exp s(a(i), b(i)) P a exp s(a, b(i)) + exp s(a(i), b(i)) P b exp s(a(i), b), (1) where A, B are two sets of data points from two different modal domains, respectively; a(i), b(i) are vector representations of the co-occuring pair (a(i), b(i)) which are encoded by gA(a(i)) and gB(b(i)), respectively; s(a, b) computes the simi- larity between a and b, which we take to be scaled cosine similarity .",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.333",
+    "title": "∗Work was partially done during an internship at AI2.",
+    "section": "3.1 Tri-modal representation learning"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "CLIP",
+    "object_type": "Artifact",
+    "source_sentence": "We perform caption retrieval by using CLIP and the prompt \"the sound of\".",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.333",
+    "title": "∗Work was partially done during an internship at AI2.",
+    "section": "3.3 Unsupervised and few-shot curation"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "CLIP",
+    "object_type": "Artifact",
+    "source_sentence": "We perform caption retrieval by using CLIP and the prompt \"a photo of\".",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.333",
+    "title": "∗Work was partially done during an internship at AI2.",
+    "section": "3.3 Unsupervised and few-shot curation"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "uses",
+    "object": "caption",
+    "object_type": "Artifact",
+    "source_sentence": "As a base- line, we also consider a random caption alignment , which assigns a random caption from AC to each clip.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.333",
+    "title": "∗Work was partially done during an internship at AI2.",
+    "section": "3.3 Unsupervised and few-shot curation"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "caption",
+    "object_type": "Artifact",
+    "source_sentence": "RC Random Captions indicates that we break the gold AL alignment in AudioCaps by randomly sampling a caption for each audio clip.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.333",
+    "title": "∗Work was partially done during an internship at AI2.",
+    "section": "3.3 Unsupervised and few-shot curation"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "AudioCaps",
+    "object_type": "Dataset",
+    "source_sentence": "audio-focused captions from the training set of AudioCaps and Clotho (AC).",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.333",
+    "title": "∗Work was partially done during an internship at AI2.",
+    "section": "3.3 Unsupervised and few-shot curation"
+  },
+  {
+    "subject": "MAP",
+    "predicate": "evaluates",
+    "object": "18.9%",
+    "object_type": "Metric",
+    "source_sentence": "obtain the highest accuracy (18.9% mAP) on AS",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.333",
+    "title": "∗Work was partially done during an internship at AI2.",
+    "section": "4.1 Main results"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "audio labels",
+    "object_type": "Concept",
+    "source_sentence": "For retrieval , GL uses only audio labels as the text",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.333",
+    "title": "∗Work was partially done during an internship at AI2.",
+    "section": "4.1 Main results"
+  },
+  {
+    "subject": "Language",
+    "predicate": "achieves",
+    "object": "per-class accuracy",
+    "object_type": "Concept",
+    "source_sentence": "Clearly, language supervision improves per-class accuracy in general.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.333",
+    "title": "∗Work was partially done during an internship at AI2.",
+    "section": "4.1 Main results"
+  },
+  {
+    "subject": "supervision",
+    "predicate": "achieves",
+    "object": "per-class accuracy",
+    "object_type": "Concept",
+    "source_sentence": "Supervision improves per-class accuracy in general.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.333",
+    "title": "∗Work was partially done during an internship at AI2.",
+    "section": "4.1 Main results"
+  }
+]

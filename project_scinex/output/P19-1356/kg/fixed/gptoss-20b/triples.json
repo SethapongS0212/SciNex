@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Transformer networks",
+    "object_type": "Method",
+    "source_sentence": "BERT builds on Transformer networks to pre-train bidi- rectional representations by conditioning on both left and right contexts jointly in all layers.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "2 BERT"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "state-of-the-art for a range of NLP benchmarks",
+    "object_type": "Other",
+    "source_sentence": "Indeed, BERT improved the state-of-the-art for a range of NLP benchmarks by a significant margin.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "2 BERT"
+  },
+  {
+    "subject": "K-means Clustering",
+    "predicate": "uses",
+    "object": "Span Representations",
+    "object_type": "Method",
+    "source_sentence": "We further quantify this claim by performing a k-means clustering on span representations with k = 10, i.e. the number of distinct chunk types.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "3 Phrasal Syntax"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "previously published results for BShift and CoordInv",
+    "object_type": "Other",
+    "source_sentence": "BERT has also surpassed the previously published results for two tasks: BShift and CoordInv.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "PRT CONJP"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "predicting sentence length",
+    "object_type": "Task",
+    "source_sentence": "We find that the untrained version of BERT corresponding to the higher layers outperforms the trained version in the task of predicting sentence length (SentLen).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "PRT CONJP"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "learning syntactic phenomenon",
+    "object_type": "Concept",
+    "source_sentence": "Goldberg (2019) has shown that BERT learns syntactic phenomenon surprisingly well using various stimuli for subject-verb agreement.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "5 Subject-Verb Agreement"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "activations from the verb",
+    "object_type": "Feature",
+    "source_sentence": "In our study, we use the stimuli created by Linzen et al. (2016) and the SentEval toolkit to build the binary classifier with the recommended hyperparameter space, using as features the activations from the (masked) verb at hand.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "5 Subject-Verb Agreement"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "addresses",
+    "object": "NLP tasks",
+    "object_type": "Task",
+    "source_sentence": "This highlights the need for BERT to have deeper layers to perform competitively on NLP tasks.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "5 Subject-Verb Agreement"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Attention",
+    "object_type": "Method",
+    "source_sentence": "BERT encodes classical, tree-like structures despite relying purely on attention mechanisms.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "6 Compositional Structure"
+  },
+  {
+    "subject": "Case Study",
+    "predicate": "addresses",
+    "object": "Dependency Trees",
+    "object_type": "Task",
+    "source_sentence": "we perform a case study on dependency trees induced from self attention weight following the work done by Raganato and Tiedemann (2018).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "6 Compositional Structure"
+  },
+  {
+    "subject": "Predicate-Argument Structure",
+    "predicate": "uses",
+    "object": "dependencies",
+    "object_type": "Concept",
+    "source_sentence": "Surprisingly, the predicate-argument structure seems to be partly modeled as shown by the chain of dependencies between \"key\",\"cabinet\" and \"table\".",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "6 Compositional Structure"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "addresses",
+    "object": "traditional syntactic analysis",
+    "object_type": "Task",
+    "source_sentence": "the compositionality modelling underlying BERT mimics traditional syntactic analysis.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "7 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "addresses",
+    "object": "learning syntactic structures",
+    "object_type": "Task",
+    "source_sentence": "our work complements the growing literature with additional evidences about the ability of BERT in learning syntactic structures.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "7 Related Work"
+  },
+  {
+    "subject": "CNNs",
+    "predicate": "uses",
+    "object": "language model pretraining",
+    "object_type": "Process",
+    "source_sentence": "the choice of neural architecture such as CNNs, Transformers and RNNs used for language model pretraining affects the downstream task accuracy",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "7 Related Work"
+  },
+  {
+    "subject": "Transformers",
+    "predicate": "uses",
+    "object": "language model pretraining",
+    "object_type": "Process",
+    "source_sentence": "the choice of neural architecture such as CNNs, Transformers and RNNs used for language model pretraining affects the downstream task accuracy",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "7 Related Work"
+  },
+  {
+    "subject": "RNNs",
+    "predicate": "uses",
+    "object": "language model pretraining",
+    "object_type": "Process",
+    "source_sentence": "the choice of neural architecture such as CNNs, Transformers and RNNs used for language model pretraining affects the downstream task accuracy",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "7 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "model long-range dependency information",
+    "object_type": "Task",
+    "source_sentence": "We have shown that BERT requires deeper layers to model long-range dependency information.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "8 Conclusion"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "addresses",
+    "object": "traditional syntactic analysis",
+    "object_type": "Task",
+    "source_sentence": "Finally, we have shown that BERT's internal representations reflect a compositional modelling that shares parallels with traditional syntactic analysis.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "8 Conclusion"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "achieves",
+    "object": "our probing task results",
+    "object_type": "Other",
+    "source_sentence": "Their result using BERT model on capturing linguistic hierarchy confirms our probing task results although using a set of relatively simple probing tasks.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "8 Conclusion"
+  },
+  {
+    "subject": "Language Model Pretraining",
+    "predicate": "achieves",
+    "object": "better performance",
+    "object_type": "Other",
+    "source_sentence": "pretraining on a closely related task yields better performance than language model pretraining.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1356",
+    "title": "What does BERT learn about the structure of language?",
+    "section": "8 Conclusion"
+  }
+]

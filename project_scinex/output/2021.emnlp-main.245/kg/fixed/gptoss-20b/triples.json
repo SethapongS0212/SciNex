@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Q-learning",
+    "predicate": "uses",
+    "object": "action policy model",
+    "object_type": "Model",
+    "source_sentence": "LSTM-DQN is an early work on text-based RL that used an LSTM- based encoder for feature extraction from textual observations and Q-learning for learning the action policy model.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.245",
+    "title": "Neuro-Symbolic Approaches for Text-Based Policy Learning",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "improved generalization",
+    "object_type": "Concept",
+    "source_sentence": "CREST showed that previous methods overfit the training data and improved generalization by training a bootstrapped model on context -relevant observation text only.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.245",
+    "title": "Neuro-Symbolic Approaches for Text-Based Policy Learning",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Knowledge Graphs",
+    "predicate": "achieves",
+    "object": "improved performance",
+    "object_type": "Concept",
+    "source_sentence": "Previous works that extract knowledge graphs from observations showed improved performance compared to processing raw textual observations.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.245",
+    "title": "Neuro-Symbolic Approaches for Text-Based Policy Learning",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Graph Learning",
+    "predicate": "achieves",
+    "object": "better generalization",
+    "object_type": "Concept",
+    "source_sentence": "The recent method of Adhikari et al. (2020) use a dynamic belief graph learning for better generalization than text-based policy learning.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.245",
+    "title": "Neuro-Symbolic Approaches for Text-Based Policy Learning",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Q-learning",
+    "predicate": "achieves",
+    "object": "learning the action policy model",
+    "object_type": "Task",
+    "source_sentence": "LSTM-DQN is an early work on text-based RL that used an LSTM- based encoder for feature extraction from textual observations and Q-learning for learning the action policy model.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.245",
+    "title": "Neuro-Symbolic Approaches for Text-Based Policy Learning",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "probabilities",
+    "object_type": "Probabilities",
+    "source_sentence": "passed through a softmax to convert into probabilities.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.245",
+    "title": "Neuro-Symbolic Approaches for Text-Based Policy Learning",
+    "section": "3.2 Differentiable Logical Rule Learning"
+  },
+  {
+    "subject": "symbolic",
+    "predicate": "uses",
+    "object": "policy",
+    "object_type": "Other",
+    "source_sentence": "We outline two major methods for training the symbolic policy corresponding to the mainstream idea of (i) reinforcement learning from rewards obtained from the environment via policy rollouts, (ii) imitation learning by bootstrapping from the trajectories of a teacher agent (typically text-based LSTM agent ) that overfits the training data.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.245",
+    "title": "Neuro-Symbolic Approaches for Text-Based Policy Learning",
+    "section": "3.3 Training"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "policy rollouts",
+    "object_type": "Other",
+    "source_sentence": "We outline two major methods for training the symbolic policy corresponding to the mainstream idea of (i) reinforcement learning from rewards obtained from the environment via policy rollouts, (ii) imitation learning by bootstrapping from the trajectories of a teacher agent (typically text-based LSTM agent ) that overfits the training data.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.245",
+    "title": "Neuro-Symbolic Approaches for Text-Based Policy Learning",
+    "section": "3.3 Training"
+  },
+  {
+    "subject": "Imitation Learning",
+    "predicate": "uses",
+    "object": "behavior cloning",
+    "object_type": "Other",
+    "source_sentence": "Teacher imitation: This corresponds to the imitation learning framework where we collect samples from an overfitted LSTM-based textual teacher model on the training games and learn the rules on the SLATE-based policies using behavior cloning.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.245",
+    "title": "Neuro-Symbolic Approaches for Text-Based Policy Learning",
+    "section": "3.3 Training"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "cross-entropy loss",
+    "object_type": "Other",
+    "source_sentence": "The model parameters are then trained using maximum likelihood training with cross-entropy loss.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.245",
+    "title": "Neuro-Symbolic Approaches for Text-Based Policy Learning",
+    "section": "3.3 Training"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "difficulty levels",
+    "object_type": "Other",
+    "source_sentence": "We perform experiments on three difficulty levels: easy, medium and hard games having 0, 1 and 2 distractor rooms respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.245",
+    "title": "Neuro-Symbolic Approaches for Text-Based Policy Learning",
+    "section": "3.3 Training"
+  }
+]

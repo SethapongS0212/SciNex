@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "MAssistant",
+    "predicate": "uses",
+    "object": "Concepts",
+    "object_type": "Concept",
+    "source_sentence": "When a user opens the webpage of a video lecture in the browser, the browser extension of MAssistant extracts important concepts from the transcript of the video, and presents them in a timeline to the user.",
+    "extraction_mode": "fixed",
+    "paper": "D19-3023",
+    "title": "MAssistant: A Personal Knowledge Assistant for MOOC Learners",
+    "section": "3.1 Browser Extension"
+  },
+  {
+    "subject": "MAssistant",
+    "predicate": "uses",
+    "object": "Video",
+    "object_type": "Task",
+    "source_sentence": "When a user opens the webpage of a video lecture in the browser, the browser extension of MAssistant extracts important concepts from the transcript of the video, and presents them in a timeline to the user.",
+    "extraction_mode": "fixed",
+    "paper": "D19-3023",
+    "title": "MAssistant: A Personal Knowledge Assistant for MOOC Learners",
+    "section": "3.1 Browser Extension"
+  },
+  {
+    "subject": "MAssistant",
+    "predicate": "produces",
+    "object": "Structured Data",
+    "object_type": "Artifact",
+    "source_sentence": "When a user opens the webpage of a video lecture in the browser, the browser extension of MAssistant extracts important concepts from the transcript of the video, and presents them in a timeline to the user.",
+    "extraction_mode": "fixed",
+    "paper": "D19-3023",
+    "title": "MAssistant: A Personal Knowledge Assistant for MOOC Learners",
+    "section": "3.1 Browser Extension"
+  },
+  {
+    "subject": "MAssistant",
+    "predicate": "uses",
+    "object": "Annotations",
+    "object_type": "Other",
+    "source_sentence": "MAssistant will record users ' annotations on the concepts",
+    "extraction_mode": "fixed",
+    "paper": "D19-3023",
+    "title": "MAssistant: A Personal Knowledge Assistant for MOOC Learners",
+    "section": "3.1 Browser Extension"
+  },
+  {
+    "subject": "Relations",
+    "predicate": "encompasses",
+    "object": "IsA",
+    "object_type": "Concept",
+    "source_sentence": "Three kinds of relations are shown, including IsA, Prerequisite, and RelatedTo.",
+    "extraction_mode": "fixed",
+    "paper": "D19-3023",
+    "title": "MAssistant: A Personal Knowledge Assistant for MOOC Learners",
+    "section": "3.2 Web Application"
+  },
+  {
+    "subject": "Relations",
+    "predicate": "encompasses",
+    "object": "Prerequisite",
+    "object_type": "Concept",
+    "source_sentence": "Three kinds of relations are shown, including IsA, Prerequisite, and RelatedTo.",
+    "extraction_mode": "fixed",
+    "paper": "D19-3023",
+    "title": "MAssistant: A Personal Knowledge Assistant for MOOC Learners",
+    "section": "3.2 Web Application"
+  },
+  {
+    "subject": "Relations",
+    "predicate": "encompasses",
+    "object": "RelatedTo",
+    "object_type": "Concept",
+    "source_sentence": "Three kinds of relations are shown, including IsA, Prerequisite, and RelatedTo.",
+    "extraction_mode": "fixed",
+    "paper": "D19-3023",
+    "title": "MAssistant: A Personal Knowledge Assistant for MOOC Learners",
+    "section": "3.2 Web Application"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "features",
+    "object_type": "Concept",
+    "source_sentence": "and then feed the features to a logistic regression model to determine whether they have the prerequisite relation.",
+    "extraction_mode": "fixed",
+    "paper": "D19-3023",
+    "title": "MAssistant: A Personal Knowledge Assistant for MOOC Learners",
+    "section": "4.2 Creating Relations"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "trainedon",
+    "object": "Wikipedia concept map dataset",
+    "object_type": "Dataset",
+    "source_sentence": "The logistic regression model is pre-trained on the Wikipedia concept map dataset built by Wang et al.",
+    "extraction_mode": "fixed",
+    "paper": "D19-3023",
+    "title": "MAssistant: A Personal Knowledge Assistant for MOOC Learners",
+    "section": "4.2 Creating Relations"
+  },
+  {
+    "subject": "node2vec",
+    "predicate": "uses",
+    "object": "embeddings of concepts in the network",
+    "object_type": "Embeddings",
+    "source_sentence": "The node2vec model is used to learn embeddings of concepts in the network.",
+    "extraction_mode": "fixed",
+    "paper": "D19-3023",
+    "title": "MAssistant: A Personal Knowledge Assistant for MOOC Learners",
+    "section": "4.2 Creating Relations"
+  }
+]

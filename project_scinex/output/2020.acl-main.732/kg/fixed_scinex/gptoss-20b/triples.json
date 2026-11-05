@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Diacritic Restoration",
+    "predicate": "addresses",
+    "object": "word sense disambiguation",
+    "object_type": "Task",
+    "source_sentence": "Diacritic restoration can specify pronunciation and can be viewed as a relaxed variant of word sense disambiguation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "produces",
+    "object": "denser vectors",
+    "object_type": "Other",
+    "source_sentence": "apply a Bidirectional Long Short Term Memory ( BiLSTM ) layer to generate denser vectors.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "3.1 Input Representation"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "achieves",
+    "object": "better results",
+    "object_type": "Other",
+    "source_sentence": "but a BiLSTM layer yielded better results.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "3.1 Input Representation"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance",
+    "object_type": "Other",
+    "source_sentence": "For all architectures, the main component is BiLSTM, which preserves the temporal order of the sequence and has been shown to provide the state-of-the-art performance in terms of accuracy.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "3.2 The Joint Model"
+  },
+  {
+    "subject": "Pretrained Embeddings",
+    "predicate": "uses",
+    "object": "representing words",
+    "object_type": "Other",
+    "source_sentence": "After representing characters through random initialization and representing words using pretrained embeddings obtained from fastText, the learning process for each batch runs as follows:",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "3.2 The Joint Model"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "Words",
+    "object_type": "Other",
+    "source_sentence": "Improvements also extend to lexical diacritics , and this is because word relationships are captured during learning syntactic diacritics in which BiLSTM modeling for words is integrated.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "5 Results and Analysis"
+  },
+  {
+    "subject": "WER",
+    "predicate": "evaluates",
+    "object": "0.22%",
+    "object_type": "Metric",
+    "source_sentence": "For ALL, the WER score increased by 0.22%.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "5 Results and Analysis"
+  },
+  {
+    "subject": "syntactic",
+    "predicate": "uses",
+    "object": "hybrid network of BiLSTM and Maximum Entropy",
+    "object_type": "Other",
+    "source_sentence": "For SYN, we compare our results with which uses a hybrid network of BiLSTM and Maximum Entropy to solve syntactic diacritization.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "5 Results and Analysis"
+  },
+  {
+    "subject": "Maximum Entropy",
+    "predicate": "addresses",
+    "object": "diacritization",
+    "object_type": "Concept",
+    "source_sentence": "The problem of diacritization has been addressed using classical machine learning approaches (e.g. Maximum Entropy and Support Vector Machine) or neural based approaches for different languages that include diacritics such as Arabic , Vietnamese, and Yoruba.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Support Vector Machine",
+    "predicate": "addresses",
+    "object": "diacritization",
+    "object_type": "Concept",
+    "source_sentence": "The problem of diacritization has been addressed using classical machine learning approaches (e.g. Maximum Entropy and Support Vector Machine) or neural based approaches for different languages that include diacritics such as Arabic , Vietnamese, and Yoruba.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Bidirectional LSTM",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance for diacritic restoration",
+    "object_type": "Other",
+    "source_sentence": "Neural based approaches yield state- of-the-art performance for diacritic restoration by using Bidirectional LSTM or temporal convolu- tional networks (Zalmout and Habash, 2017; Orife, 2018; Alqahtani et al., 2019; Alqahtani and Diab, 2019a).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "addresses",
+    "object": "syntactic diacritization",
+    "object_type": "Concept",
+    "source_sentence": "Hifny (2018) addresses syntactic diacritization by building BiLSTM model in which its input em- beddings are augmented with manually generated features of context, POS tags, and word segments.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "context",
+    "object_type": "Concept",
+    "source_sentence": "Hifny (2018) addresses syntactic diacritization by building BiLSTM model in which its input em- beddings are augmented with manually generated features of context, POS tags, and word segments.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "POS tags",
+    "object_type": "Concept",
+    "source_sentence": "Hifny (2018) addresses syntactic diacritization by building BiLSTM model in which its input em- beddings are augmented with manually generated features of context, POS tags, and word segments.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "6 Related Work"
+  }
+]

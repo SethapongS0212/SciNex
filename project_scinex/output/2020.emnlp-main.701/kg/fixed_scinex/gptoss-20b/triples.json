@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "English monolingual corpus in WMT18",
+    "object_type": "Dataset",
+    "source_sentence": "This language model is trained using the English monolingual corpus in WMT18",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.1.1 Dataset & Preprocessing"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "paraphrased sentence pairs",
+    "object_type": "Other",
+    "source_sentence": "for the training of the paraphrasing recognition model (Lss), we mix the rest paraphrased sentence pairs and the non-paraphrased sentence pairs together, and then take out 1K and 3K for validation and testing, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.2.1 Datasets & Implementation details"
+  },
+  {
+    "subject": "Paraphrasing",
+    "predicate": "achieves",
+    "object": "85%",
+    "object_type": "Metric",
+    "source_sentence": "The accuracy of the trained paraphrasing recognition model achieved 85%.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.2.1 Datasets & Implementation details"
+  },
+  {
+    "subject": "Paraphrase Generation",
+    "predicate": "addresses",
+    "object": "language fluency",
+    "object_type": "Concept",
+    "source_sentence": "In the paraphrase generation task, the target sentence should be the paraphrase of the input sentence, also we require the target sentence to ensure language fluency.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.2.1 Datasets & Implementation details"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "Lexical Constraints",
+    "object_type": "Concept",
+    "source_sentence": "We also conduct experiments that require the target sentence to satisfy the lexical constraints simultaneously.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.2.1 Datasets & Implementation details"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "17.02",
+    "object_type": "Other",
+    "source_sentence": "We evaluate the performance of the paraphrasing generation model by BLEU value, which achieves 17.02 on the test set.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.701",
+    "title": "Gradient-guided Unsupervised Lexically Constrained Text Generation",
+    "section": "4.2.1 Datasets & Implementation details"
+  }
+]

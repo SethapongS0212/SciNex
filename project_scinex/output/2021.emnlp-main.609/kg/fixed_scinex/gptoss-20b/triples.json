@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "BART",
+    "predicate": "achieves",
+    "object": "20% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "BART/T5 based models for this task, and find that they are relatively weak at generating reasoning graphs, obtaining 20% accuracy",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "beliefs and corresponding human-verified graphs",
+    "object_type": "Dataset",
+    "source_sentence": "Specifically, we fine-tune RoBERTa on the beliefs and corresponding human-verified graphs from our data collection phase.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "6 Evaluation Metrics"
+  },
+  {
+    "subject": "Graphs",
+    "predicate": "uses",
+    "object": "concatenated edges",
+    "object_type": "Other",
+    "source_sentence": "Graphs are fed as concatenated edges to the model.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "6 Evaluation Metrics"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "Concept- Net",
+    "object_type": "Dataset",
+    "source_sentence": "To augment our model with external commonsense , we first fine- tune RoBERTa and the edge module on Concept- Net.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "7 Models"
+  },
+  {
+    "subject": "Stance Prediction",
+    "predicate": "addresses",
+    "object": "sentence-pair inference tasks",
+    "object_type": "Task",
+    "source_sentence": "We show the promise of explanation graphs by considering the task of stance prediction as a motivating use-case because it is representative of many sentence-pair inference tasks (consider the belief as the premise, argument as the hypothesis and the support/counter labels as entailment/contradiction).",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "9 Discussion and Future Work"
+  },
+  {
+    "subject": "Graphs",
+    "predicate": "addresses",
+    "object": "any NLU task",
+    "object_type": "Task",
+    "source_sentence": "We believe that our definition of explanation graphs (Sec. 3) is quite generic and should extend naturally to any NLU task, e.g., the internal nodes are concepts that are part of a context (context could mean premise-hypothesis for NLI, passage for sentiment classification, passage- question for QA, etc)...",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "9 Discussion and Future Work"
+  },
+  {
+    "subject": "Semantic Relations",
+    "predicate": "addresses",
+    "object": "concepts",
+    "object_type": "Concept",
+    "source_sentence": "the edges are semantic relations between concepts, and the DAG-like constraints ensure the presence of explicit reasoning structures.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "9 Discussion and Future Work"
+  },
+  {
+    "subject": "Constraints",
+    "predicate": "addresses",
+    "object": "reasoning",
+    "object_type": "Reasoning",
+    "source_sentence": "the edges are semantic relations between concepts, and the DAG-like constraints ensure the presence of explicit reasoning structures.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "9 Discussion and Future Work"
+  },
+  {
+    "subject": "Concepts",
+    "predicate": "addresses",
+    "object": "context",
+    "object_type": "Context",
+    "source_sentence": "the internal nodes are concepts that are part of a context (context could mean premise-hypothesis for NLI, passage for sentiment classification, passage- question for QA, etc)",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "9 Discussion and Future Work"
+  },
+  {
+    "subject": "Amazon Mechanical Turk",
+    "predicate": "locatedin",
+    "object": "US",
+    "object_type": "Place",
+    "source_sentence": "We select crowdworkers from Amazon Mechanical Turk (AMT) who are located in the US and Australia with a HIT approval rate higher than 96% and at least 1000 HITs approved.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "10 Conclusion"
+  },
+  {
+    "subject": "Amazon Mechanical Turk",
+    "predicate": "locatedin",
+    "object": "Australia",
+    "object_type": "Place",
+    "source_sentence": "We select crowdworkers from Amazon Mechanical Turk (AMT) who are located in the US and Australia with a HIT approval rate higher than 96% and at least 1000 HITs approved.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "10 Conclusion"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "pre-HAMLET data",
+    "object_type": "Dataset",
+    "source_sentence": "In the first round, we start by fine-tuning a RoBERTa model on the pre-HAMLET data that given a (belief, argument) pair predicts the stance label.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "A.1 Stage 1: (Belief, Argument, Stance) Collection"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "train splits of HAMLET rounds",
+    "object_type": "Dataset",
+    "source_sentence": "After each round, we divide the collected HAMLET data into train, dev and test splits based on their respective topics and update the RoBERTa model by training on the pre-HAMLET data and the train splits of the HAMLET rounds collected so far.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "A.1 Stage 1: (Belief, Argument, Stance) Collection"
+  },
+  {
+    "subject": "Graphs",
+    "predicate": "uses",
+    "object": "Relations",
+    "object_type": "Concept",
+    "source_sentence": "the relations used to construct the facts in our graphs",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "B Data Analysis"
+  },
+  {
+    "subject": "First approach",
+    "predicate": "produces",
+    "object": "reasoning model",
+    "object_type": "Model",
+    "source_sentence": "Our first approach towards generating both stance and explanation graphs is through a reasoning model that first predicts the explanation graph by conditioning on the belief and the argument and then uses the generated graph , augmented with the belief and the argument, to predict the stance label.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "C.1 Reasoning Model (First-Graph-Then-Stance)"
+  },
+  {
+    "subject": "BART",
+    "predicate": "produces",
+    "object": "nodes",
+    "object_type": "Other",
+    "source_sentence": "The generated nodes from the BART model are fed to RoBERTa (from the previous module ) and concatenated with the belief and the argument as part of the input, so as to have an unified model.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "C.3 Commonsense-Augmented Structured Prediction Model"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "produces",
+    "object": "representation of each token",
+    "object_type": "Other",
+    "source_sentence": "Given the representation of each token from RoBERTa, we construct the representation of each node by mean-pooling over the representations of the constituent tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "C.3 Commonsense-Augmented Structured Prediction Model"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "produces",
+    "object": "probability",
+    "object_type": "Other",
+    "source_sentence": "The edge embeddings are also passed to a standard 2-layer classifier which predicts the probability of each edge belonging to any one of the classes.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "C.3 Commonsense-Augmented Structured Prediction Model"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "ConceptNet triples",
+    "object_type": "Dataset",
+    "source_sentence": "we initially fine-tune the RoBERTa pre-trained weights and the edge classifier on ConceptNet triples.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.609",
+    "title": "EXPLAGRAPHS: An Explanation Graph Generation Task for Structured Commonsense Reasoning",
+    "section": "C.3 Commonsense-Augmented Structured Prediction Model"
+  }
+]

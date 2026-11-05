@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Translation",
+    "predicate": "uses",
+    "object": "mined dictionaries",
+    "object_type": "Other",
+    "source_sentence": "Develop methods for integrating these mined dictionaries into a phrase-based translation system.",
+    "extraction_mode": "fixed",
+    "paper": "P11-2071",
+    "title": "Domain Adaptation for Machine Translation by Mining Unseen Words",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "frequent words",
+    "predicate": "uses",
+    "object": "context vectors",
+    "object_type": "Concept",
+    "source_sentence": "For each of the frequent words we extract the con- text vectors using a window of length five.",
+    "extraction_mode": "fixed",
+    "paper": "P11-2071",
+    "title": "Domain Adaptation for Machine Translation by Mining Unseen Words",
+    "section": "4 Dictionary Mining"
+  },
+  {
+    "subject": "Word Similarities",
+    "predicate": "uses",
+    "object": "linear dot product kernel",
+    "object_type": "Method",
+    "source_sentence": "We convert this data into word similarities using linear dot product kernel.",
+    "extraction_mode": "fixed",
+    "paper": "P11-2071",
+    "title": "Domain Adaptation for Machine Translation by Mining Unseen Words",
+    "section": "4 Dictionary Mining"
+  },
+  {
+    "subject": "Orthographic Features",
+    "predicate": "uses",
+    "object": "linear kernel",
+    "object_type": "Method",
+    "source_sentence": "We also represent each word using the orthographic features, with n-grams of length 1-3 and convert them into TFIDF form and subsequently turn them into word similarities (again using the linear kernel).",
+    "extraction_mode": "fixed",
+    "paper": "P11-2071",
+    "title": "Domain Adaptation for Machine Translation by Mining Unseen Words",
+    "section": "4 Dictionary Mining"
+  },
+  {
+    "subject": "Orthographic Features",
+    "predicate": "uses",
+    "object": "kernel matrices",
+    "object_type": "Concept",
+    "source_sentence": "For each language we linearly combine the kernel matrices obtained using the context vectors and the orthographic features.",
+    "extraction_mode": "fixed",
+    "paper": "P11-2071",
+    "title": "Domain Adaptation for Machine Translation by Mining Unseen Words",
+    "section": "4 Dictionary Mining"
+  },
+  {
+    "subject": "Context Vectors",
+    "predicate": "uses",
+    "object": "kernel matrices",
+    "object_type": "Concept",
+    "source_sentence": "For each language we linearly combine the kernel matrices obtained using the context vectors and the orthographic features.",
+    "extraction_mode": "fixed",
+    "paper": "P11-2071",
+    "title": "Domain Adaptation for Machine Translation by Mining Unseen Words",
+    "section": "4 Dictionary Mining"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "0.5",
+    "object_type": "Metric",
+    "source_sentence": "It led to an average improvement of only about 0.5 Bleu points, on development data.",
+    "extraction_mode": "fixed",
+    "paper": "P11-2071",
+    "title": "Domain Adaptation for Machine Translation by Mining Unseen Words",
+    "section": "5 Integration into MT System"
+  },
+  {
+    "subject": "Translation Model",
+    "predicate": "uses",
+    "object": "Parliament proceedings",
+    "object_type": "Dataset",
+    "source_sentence": "we built a translation model based only on the Parliament proceedings.",
+    "extraction_mode": "fixed",
+    "paper": "P11-2071",
+    "title": "Domain Adaptation for Machine Translation by Mining Unseen Words",
+    "section": "6.1 Baselines and Oracles"
+  }
+]

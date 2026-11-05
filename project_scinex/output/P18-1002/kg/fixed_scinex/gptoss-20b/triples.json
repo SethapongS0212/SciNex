@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Word Embeddings",
+    "predicate": "addresses",
+    "object": "NLP",
+    "object_type": "Concept",
+    "source_sentence": "Distributional word embeddings , which represent the \"meaning\" of a word via a low-dimensional vector, have been widely applied by many natural language processing (NLP) pipelines and algorithms.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "A La Carte Embedding",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We propose an alternative, novel solution via `a la carte embedding , a method which bootstraps existing high-quality word vectors to learn a feature representation in the same semantic space via a linear transformation of the average word embeddings in the feature's available contexts.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "trainedon",
+    "object": "collection information",
+    "object_type": "Dataset",
+    "source_sentence": "We further assume that we have trained word embeddings vw ∈Rd on this collection information using a standard algorithm",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "3 Method Speciﬁcation"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "achievesresult",
+    "object": "Spearman correlation of 0.45",
+    "object_type": "Metric",
+    "source_sentence": "However, if we train Additive Additive, all-but-the-top Additive, no stop words SIF weighted SIF weighted + all-but-the-top 1 2 4 8 16 32 64 128 Number of Contexts word2vec embeddings from scratch on the subcor- pus together with the sampled contexts we achieve a Spearman correlation of 0.45; this gap between word2vec and our method shows that there re- mains room for even better approaches for few- shot learning of word embeddings .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "4.1 Similarity Correlation vs. Sample Size"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "Using 259,376 word2vec embeddings trained on Wikipedia as the base vectors, Herbelot and Baroni (2017) heavily modify the skip-gram algorithm to successfully learn on one definition, creating the nonce2vec system.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "4.2 Learning Embeddings of New Concepts: Nonces and Chimeras"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "trainedon",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "Using 259,376 word2vec embeddings trained on Wikipedia as the base vectors, Herbelot and Baroni (2017) heavily modify the skip-gram algorithm to successfully learn on one definition, creating the nonce2vec system.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "4.2 Learning Embeddings of New Concepts: Nonces and Chimeras"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "trainedon",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "we use GloVe trained on Wikipedia instead of on BC itself.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "5.1 Supervised Synset Embeddings for Word-Sense Disambiguation"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "evaluatedon",
+    "object": "MR movie reviews",
+    "object_type": "Dataset",
+    "source_sentence": "In Table 4 we display the result of running cross-validated, ℓ2-regularized logistic regression on documents from MR movie reviews , CR customer reviews , SUBJ subjectivity dataset , MPQA opinion polarity subtask , TREC question classification , SST sentiment classification (binary and fine-grained) , and IMDB movie reviews .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "5.2 N-Gram Embeddings for Classiﬁcation"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "evaluatedon",
+    "object": "CR customer reviews",
+    "object_type": "Dataset",
+    "source_sentence": "In Table 4 we display the result of running cross-validated, ℓ2-regularized logistic regression on documents from MR movie reviews , CR customer reviews , SUBJ subjectivity dataset , MPQA opinion polarity subtask , TREC question classification , SST sentiment classification (binary and fine-grained) , and IMDB movie reviews .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "5.2 N-Gram Embeddings for Classiﬁcation"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "evaluatedon",
+    "object": "SUBJ subjectivity dataset",
+    "object_type": "Dataset",
+    "source_sentence": "In Table 4 we display the result of running cross-validated, ℓ2-regularized logistic regression on documents from MR movie reviews , CR customer reviews , SUBJ subjectivity dataset , MPQA opinion polarity subtask , TREC question classification , SST sentiment classification (binary and fine-grained) , and IMDB movie reviews .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "5.2 N-Gram Embeddings for Classiﬁcation"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "evaluatedon",
+    "object": "MPQA opinion polarity subtask",
+    "object_type": "Dataset",
+    "source_sentence": "In Table 4 we display the result of running cross-validated, ℓ2-regularized logistic regression on documents from MR movie reviews , CR customer reviews , SUBJ subjectivity dataset , MPQA opinion polarity subtask , TREC question classification , SST sentiment classification (binary and fine-grained) , and IMDB movie reviews .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "5.2 N-Gram Embeddings for Classiﬁcation"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "evaluatedon",
+    "object": "TREC question classification",
+    "object_type": "Dataset",
+    "source_sentence": "In Table 4 we display the result of running cross-validated, ℓ2-regularized logistic regression on documents from MR movie reviews , CR customer reviews , SUBJ subjectivity dataset , MPQA opinion polarity subtask , TREC question classification , SST sentiment classification (binary and fine-grained) , and IMDB movie reviews .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "5.2 N-Gram Embeddings for Classiﬁcation"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "evaluatedon",
+    "object": "SST sentiment classification",
+    "object_type": "Dataset",
+    "source_sentence": "In Table 4 we display the result of running cross-validated, ℓ2-regularized logistic regression on documents from MR movie reviews , CR customer reviews , SUBJ subjectivity dataset , MPQA opinion polarity subtask , TREC question classification , SST sentiment classification (binary and fine-grained) , and IMDB movie reviews .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "5.2 N-Gram Embeddings for Classiﬁcation"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "evaluatedon",
+    "object": "IMDB movie reviews",
+    "object_type": "Dataset",
+    "source_sentence": "In Table 4 we display the result of running cross-validated, ℓ2-regularized logistic regression on documents from MR movie reviews , CR customer reviews , SUBJ subjectivity dataset , MPQA opinion polarity subtask , TREC question classification , SST sentiment classification (binary and fine-grained) , and IMDB movie reviews .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "5.2 N-Gram Embeddings for Classiﬁcation"
+  }
+]

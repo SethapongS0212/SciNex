@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "NMT",
+    "predicate": "comparesagainst",
+    "object": "PBSMT system",
+    "object_type": "Other",
+    "source_sentence": "To that end, we compare eBay's production system, due to service-level agreements a classic phrase-based statistical MT (PBSMT) system, with two neural MT (NMT) systems.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "PBSMT model",
+    "object_type": "Model",
+    "source_sentence": "We use a PBSMT model built with the Moses SMT Toolkit.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "2.1 Statistical Machine Translation (SMT)"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "5-gram LM",
+    "object_type": "Other",
+    "source_sentence": "The language model (LM) is a 5-gram LM with modified Kneser-Ney smoothing.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "2.1 Statistical Machine Translation (SMT)"
+  },
+  {
+    "subject": "Minimum Error Rate Training",
+    "predicate": "uses",
+    "object": "tuning the model parameters",
+    "object_type": "Other",
+    "source_sentence": "We use minimum error rate training for tuning the model parameters for BLEU scores.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "2.1 Statistical Machine Translation (SMT)"
+  },
+  {
+    "subject": "Recurrent Neural Network",
+    "predicate": "uses",
+    "object": "bidirectional",
+    "object_type": "Other",
+    "source_sentence": "The encoder is a bidirectional recurrent neural network with GRU units.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "2.2 Text-only Neural Machine Translation (NMTt)"
+  },
+  {
+    "subject": "Recurrent Neural Network",
+    "predicate": "uses",
+    "object": "GRU",
+    "object_type": "Other",
+    "source_sentence": "The encoder is a bidirectional recurrent neural network with GRU units.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "2.2 Text-only Neural Machine Translation (NMTt)"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "Context",
+    "object_type": "Other",
+    "source_sentence": "The attention mechanism computes a context vector ct for each time step t of the decoder where this vector is a weighted sum of the source annotation vectors C.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "2.2 Text-only Neural Machine Translation (NMTt)"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "visual component",
+    "object_type": "Other",
+    "source_sentence": "It can be seen as an expansion of the attentive NMT framework described in §2.2 with the addition of a visual component to incorporate visual features.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "2.3 Multi-modal Neural Machine Translation (NMTm)"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "visual features",
+    "object_type": "Other",
+    "source_sentence": "It can be seen as an expansion of the attentive NMT framework described in §2.2 with the addition of a visual component to incorporate visual features.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "2.3 Multi-modal Neural Machine Translation (NMTm)"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "convolutional image features",
+    "object_type": "Concept",
+    "source_sentence": "We use a publicly available pre-trained Convolutional Neural Network (CNN), namely the 50-layer Residual network (ResNet-50) of He et al. (2015) to extract convolutional image features.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "2.3 Multi-modal Neural Machine Translation (NMTm)"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "parallel sentences",
+    "object_type": "Dataset",
+    "source_sentence": "The multi - modal NMT model we evaluate uses parallel sentences and an image as input.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "3 Data sets"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "image",
+    "object_type": "Other",
+    "source_sentence": "The multi - modal NMT model we evaluate uses parallel sentences and an image as input.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "3 Data sets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "n-best lists",
+    "object_type": "Other",
+    "source_sentence": "we report results of re- ranking experiments using n-best lists generated by eBay's best-performing PBSMT production system.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "4 Experimental setup"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "29.0",
+    "object_type": "Metric",
+    "source_sentence": "Its BLEU score on the eBay test set is 29.0.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "5 Results"
+  },
+  {
+    "subject": "N-best",
+    "predicate": "uses",
+    "object": "Models",
+    "object_type": "Model",
+    "source_sentence": "we also computed the average length of translations for n-best lists re-ranked with each of our models",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "5 Results"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "images",
+    "object_type": "Concept",
+    "source_sentence": "different research groups have proposed to include images in re-ranking n-best lists generated by an SMT system or directly in a NMT framework with some success",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "6 Related work"
+  },
+  {
+    "subject": "SMT",
+    "predicate": "uses",
+    "object": "images",
+    "object_type": "Concept",
+    "source_sentence": "different research groups have proposed to include images in re-ranking n-best lists generated by an SMT system or directly in a NMT framework with some success",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "6 Related work"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "comparesagainst",
+    "object": "SMT",
+    "object_type": "Model",
+    "source_sentence": "With only a limited amount of multi - modal and multilingual training data available, both text-only and multi - modal NMT models still fail to out- perform a productive SMT system, contrary to recent findings.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "7 Conclusions and Future work"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "trainedon",
+    "object": "small in-domain data sets",
+    "object_type": "Dataset",
+    "source_sentence": "we also found that NMT models trained on small in-domain data sets can still be successfully used to rescore a standard PBSMT system with significant improvements in TER.",
+    "extraction_mode": "fixed",
+    "paper": "E17-2101",
+    "title": "Using Images to Improve Machine-Translating E-Commerce Product Listings",
+    "section": "7 Conclusions and Future work"
+  }
+]

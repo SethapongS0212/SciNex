@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "character level information",
+    "object_type": "Other",
+    "source_sentence": "Most of these models are built on character level information which help generalize the model to unseen data, but presumably lose some useful information at the word level.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Linguistic Information",
+    "predicate": "uses",
+    "object": "Morphology",
+    "object_type": "Other",
+    "source_sentence": "we integrate additional linguistic information that considers word morphology as well as word relationships within a sentence to partially compensate for this loss.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Word Segmentation",
+    "predicate": "addresses",
+    "object": "NLP applications",
+    "object_type": "Other",
+    "source_sentence": "Word segmentation is commonly used as a preprocessing step for different NLP applications",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "2 Diacritization and Auxiliary Tasks"
+  },
+  {
+    "subject": "Word Segmentation",
+    "predicate": "uses",
+    "object": "IOB tagging scheme",
+    "object_type": "Other",
+    "source_sentence": "Word segmentation can be formulated in the following way: each character in the input is tagged following IOB tagging scheme",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "2 Diacritization and Auxiliary Tasks"
+  },
+  {
+    "subject": "Part-Of-Speech Tagging",
+    "predicate": "addresses",
+    "object": "syntactic role",
+    "object_type": "Other",
+    "source_sentence": "Part-Of-Speech Tagging (POS): This refers to the task of determining the syntactic role of a word (i.e. part of speech) within a sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "2 Diacritization and Auxiliary Tasks"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "produces",
+    "object": "denser vectors",
+    "object_type": "Other",
+    "source_sentence": "and then apply a Bidirectional Long Short Term Memory ( BiLSTM ) layer to generate denser vectors.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "3.1 Input Representation"
+  },
+  {
+    "subject": "Word Embedding",
+    "predicate": "uses",
+    "object": "characters",
+    "object_type": "Other",
+    "source_sentence": "composing a word embedding from the word's characters.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "3.1 Input Representation"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "achieves",
+    "object": "better results",
+    "object_type": "Other",
+    "source_sentence": "but a BiLSTM layer yielded better results.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "3.1 Input Representation"
+  },
+  {
+    "subject": "Diacritic Restoration",
+    "predicate": "produces",
+    "object": "diacritic outputs",
+    "object_type": "Other",
+    "source_sentence": "we pass all outputs from all tasks as well as WordToChar embedding vectors as input to the diacritic restoration model and obtain our diacritic outputs.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "4 Experimental Setups"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "learning optimization",
+    "object_type": "Other",
+    "source_sentence": "We use Adam for learning optimization with a learning rate of 0.001.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "4 Experimental Setups"
+  },
+  {
+    "subject": "Evaluation metrics",
+    "predicate": "uses",
+    "object": "accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Evaluation metrics: We use accuracy for all tasks except diacritic restoration.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "4 Experimental Setups"
+  },
+  {
+    "subject": "Diacritic Restoration",
+    "predicate": "uses",
+    "object": "Word Error Rate",
+    "object_type": "Metric",
+    "source_sentence": "For diacritic restoration , the two most typically used metrics are Word Error Rate (WER) and Diacritic Error Rate (DER)",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "4 Experimental Setups"
+  },
+  {
+    "subject": "Diacritic Restoration",
+    "predicate": "uses",
+    "object": "Diacritic Error Rate",
+    "object_type": "Metric",
+    "source_sentence": "For diacritic restoration , the two most typically used metrics are Word Error Rate (WER) and Diacritic Error Rate (DER)",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "4 Experimental Setups"
+  },
+  {
+    "subject": "syntactic",
+    "predicate": "uses",
+    "object": "Last Diacritic Error Rate",
+    "object_type": "Metric",
+    "source_sentence": "In order to approximate errors in the syntactic diacritics , we use Last Diacritic Error Rate (LER)",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "4 Experimental Setups"
+  },
+  {
+    "subject": "Diacritic Restoration",
+    "predicate": "achieves",
+    "object": "WER",
+    "object_type": "Metric",
+    "source_sentence": "By enforcing inflectional diacritics through an additional focused layer within the diacritic restoration model, we observe improvements on WER compared to the baselines.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "5 Results and Analysis"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "Words",
+    "object_type": "Other",
+    "source_sentence": "BiLSTM modeling for words is integrated.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "5 Results and Analysis"
+  },
+  {
+    "subject": "Maximum Entropy",
+    "predicate": "addresses",
+    "object": "diacritization",
+    "object_type": "Task",
+    "source_sentence": "The problem of diacritization has been addressed using classical machine learning approaches (e.g. Maximum Entropy and Support Vector Machine) or neural based approaches for different languages that include diacritics such as Arabic , Vietnamese, and Yoruba.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Support Vector Machine",
+    "predicate": "addresses",
+    "object": "diacritization",
+    "object_type": "Task",
+    "source_sentence": "The problem of diacritization has been addressed using classical machine learning approaches (e.g. Maximum Entropy and Support Vector Machine) or neural based approaches for different languages that include diacritics such as Arabic , Vietnamese, and Yoruba.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Bidirectional LSTM",
+    "predicate": "addresses",
+    "object": "diacritic restoration",
+    "object_type": "Task",
+    "source_sentence": "Neural based approaches yield state- of-the-art performance for diacritic restoration by using Bidirectional LSTM or temporal convolu- tional networks (Zalmout and Habash, 2017; Orife, 2018; Alqahtani et al., 2019; Alqahtani and Diab, 2019a).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "addresses",
+    "object": "syntactic diacritization",
+    "object_type": "Task",
+    "source_sentence": "Hifny (2018) addresses syntactic diacritization by building BiLSTM model in which its input em- beddings are augmented with manually generated features of context, POS tags, and word segments.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.732",
+    "title": "A Multitask Learning Approach for Diacritic Restoration",
+    "section": "6 Related Work"
+  }
+]

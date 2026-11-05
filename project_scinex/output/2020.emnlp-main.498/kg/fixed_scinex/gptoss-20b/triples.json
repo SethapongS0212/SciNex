@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Examples",
+    "predicate": "uses",
+    "object": "BERT masked language model",
+    "object_type": "Model",
+    "source_sentence": "In this paper, we present BAE (BERT-based Adversarial Examples ), a novel technique using the BERT masked language model (MLM) for word replacements to better fit the overall context of the English language.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.498",
+    "title": "BAE: BERT-based Adversarial Examples for Text Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achievesresult",
+    "object": "over 80% reduction in accuracy on some datasets",
+    "object_type": "Metric",
+    "source_sentence": "just a few replace/insert operations can reduce the accuracy of even a powerful BERT classifier by over 80% on some datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.498",
+    "title": "BAE: BERT-based Adversarial Examples for Text Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "We train models on the training data",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.498",
+    "title": "BAE: BERT-based Adversarial Examples for Text Classiﬁcation",
+    "section": "3 Experiments"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "evaluates",
+    "object": "0.8",
+    "object_type": "Metric",
+    "source_sentence": "set a threshold of 0.8 for the cosine similarity between USE based embeddings of the adversarial and input text",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.498",
+    "title": "BAE: BERT-based Adversarial Examples for Text Classiﬁcation",
+    "section": "3 Experiments"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "300 dimensional pre-trained counter fitted word embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "For both models, we use the 300 dimensional pre-trained counter fitted word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.498",
+    "title": "BAE: BERT-based Adversarial Examples for Text Classiﬁcation",
+    "section": "A Experimental Reproducibility"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "standard BERT uncased vocabulary",
+    "object_type": "Other",
+    "source_sentence": "Across all models and datasets, we use the standard BERT uncased vocabulary of size 30522.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.498",
+    "title": "BAE: BERT-based Adversarial Examples for Text Classiﬁcation",
+    "section": "A Experimental Reproducibility"
+  }
+]

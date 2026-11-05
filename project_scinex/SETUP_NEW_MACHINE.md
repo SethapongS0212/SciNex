@@ -8,6 +8,25 @@ folder **`project_scinex/`**. Run every command below from `project_scinex/`.
 
 ---
 
+## 0. ⭐ Session 37: the ACL setup on the Linux 2× RTX 5090 box (read this first)
+The finetuning runs now use the **ACL Anthology corpus with the fixed extractor**
+(`HANDOFF_NEXT_SESSION.md`). What that needs beyond the steps below:
+- **ACL inputs (gitignored):** `output/<acl id>/no-llm/` (parsed HTML) and
+  `output/acl/<acl id>/Entity_<id>_enriched.csv` for the 805 ids in `papers_acl.txt`, plus
+  `output/acl/csner_gazetteer.csv`. On `kubegpu-g04` they were copied from the July project copy
+  `/home/dev1/project_scinex_old_2026-07` (which also holds the PDFs in `output/acl/pdfs/`).
+  Elsewhere: download the PDFs from aclanthology.org, parse them with `main.py --no-llm`, and run
+  `enrich_entity_csv.py --paper <id> --source csner`. ⚠ A fresh parse is not byte-identical to the
+  July one, so it will not pair with the stored `gptoss-20b` replies.
+- **torch:** a stable `2.13.0+cu130` covers sm_120, so no nightly and no `--allow-dev-torch`. Add
+  `peft==0.21.1 --no-deps` and, for the gpt-oss teacher, **`kernels==0.12.3`** (transformers 5.5.4
+  pins `<0.13`).
+- **If one GPU fails and then no new process can start CUDA, even on the healthy card:** the shared
+  `nvidia_uvm` module is in an error state. Run `sudo rmmod nvidia_uvm && sudo modprobe nvidia_uvm`;
+  no reboot is needed (`hands_off.md` §37.8).
+- Run long jobs inside `screen`. The drivers used are in `ft_runs/acl_scripts/`; they hardcode this
+  box's paths.
+
 ## 1. What is in GitHub, and what is NOT
 
 The repo is **public**, so three kinds of files are deliberately kept out (see `.gitignore`):

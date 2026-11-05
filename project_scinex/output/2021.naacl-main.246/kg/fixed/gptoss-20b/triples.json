@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "conversational",
+    "predicate": "uses",
+    "object": "external knowledge",
+    "object_type": "Concept",
+    "source_sentence": "which combines conversational context with external knowledge, such as movie reviews, to predict users ' ratings of unseen movies.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.246",
+    "title": "Sergey Volokhin*, Joyce Ho*, Oleg Rokhlenko+, and Eugene Agichtein*+",
+    "section": "1 Introduction and Background"
+  },
+  {
+    "subject": "conversational",
+    "predicate": "uses",
+    "object": "movie reviews",
+    "object_type": "Other",
+    "source_sentence": "which combines conversational context with external knowledge, such as movie reviews, to predict users ' ratings of unseen movies.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.246",
+    "title": "Sergey Volokhin*, Joyce Ho*, Oleg Rokhlenko+, and Eugene Agichtein*+",
+    "section": "1 Introduction and Background"
+  },
+  {
+    "subject": "construction",
+    "predicate": "produces",
+    "object": "MovieSent dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Section 3 provides details of the models evaluated, and construction of the MovieSent dataset;",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.246",
+    "title": "Sergey Volokhin*, Joyce Ho*, Oleg Rokhlenko+, and Eugene Agichtein*+",
+    "section": "1 Introduction and Background"
+  },
+  {
+    "subject": "Conversation",
+    "predicate": "uses",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "Specifically, we first construct the conversation representation and use pre-trained BERT to embed it using the sequence-encoder functionality of the model, which gives us one vector per conversation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.246",
+    "title": "Sergey Volokhin*, Joyce Ho*, Oleg Rokhlenko+, and Eugene Agichtein*+",
+    "section": "2.1 Problem Statement and model overview"
+  },
+  {
+    "subject": "Random Forest",
+    "predicate": "trainedon",
+    "object": "MovieSent",
+    "object_type": "Dataset",
+    "source_sentence": "Then we infer the fine-grained user sentiment for the movies discussed in the conversation using a Random Forest model, trained on the labeled dataset MovieSent (described in 3.1).",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.246",
+    "title": "Sergey Volokhin*, Joyce Ho*, Oleg Rokhlenko+, and Eugene Agichtein*+",
+    "section": "2.1 Problem Statement and model overview"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "Other",
+    "source_sentence": "We then calculate BERT based sentence embeddings for all reviews of those critics and represent each critic as a centroid of their review vectors.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.246",
+    "title": "Sergey Volokhin*, Joyce Ho*, Oleg Rokhlenko+, and Eugene Agichtein*+",
+    "section": "2.1 Problem Statement and model overview"
+  },
+  {
+    "subject": "Manual Annotation",
+    "predicate": "uses",
+    "object": "External Knowledge",
+    "object_type": "Concept",
+    "source_sentence": "additional manual annotation to benefit from external knowledge.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.246",
+    "title": "Sergey Volokhin*, Joyce Ho*, Oleg Rokhlenko+, and Eugene Agichtein*+",
+    "section": "3.1 MovieSent : Sentiment Elicitation Dataset"
+  },
+  {
+    "subject": "Collaborative Filtering",
+    "predicate": "uses",
+    "object": "sentiment scores",
+    "object_type": "Other",
+    "source_sentence": "These sentiment scores were used as a proxy for a user's explicit ratings which could be used by traditional Collaborative Filtering algorithms, applied to extensive external data of movie reviews and ratings.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.246",
+    "title": "Sergey Volokhin*, Joyce Ho*, Oleg Rokhlenko+, and Eugene Agichtein*+",
+    "section": "4 Results and Discussion"
+  },
+  {
+    "subject": "Collaborative Filtering",
+    "predicate": "achieves",
+    "object": "improved recommendation performance",
+    "object_type": "Other",
+    "source_sentence": "Our results demonstrated that incorporating conversation content to select a more similar group of users for Collaborative Filtering, improves the recommendation performance, compared to using the inferred ratings alone.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.246",
+    "title": "Sergey Volokhin*, Joyce Ho*, Oleg Rokhlenko+, and Eugene Agichtein*+",
+    "section": "4 Results and Discussion"
+  }
+]

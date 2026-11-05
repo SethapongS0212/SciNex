@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Dialogue",
+    "predicate": "uses",
+    "object": "Arguments",
+    "object_type": "Concept",
+    "source_sentence": "Persuasion occurs through dialogue when a listener favorably evaluates the authority, claims, and evidentiality through the cues and arguments made by the speaker.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "achieves",
+    "object": "emotional and editorial change",
+    "object_type": "Task",
+    "source_sentence": "We used logistic regression and many deep learning implementations from the pytorch-pretrained-bert package to predict both the emotional and editorial change of the user.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5 Predicting the response to Editor’s Feedback"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "deep learning implementations",
+    "object_type": "Other",
+    "source_sentence": "We used logistic regression and many deep learning implementations from the pytorch-pretrained-bert package to predict both the emotional and editorial change of the user.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5 Predicting the response to Editor’s Feedback"
+  },
+  {
+    "subject": "Features",
+    "predicate": "comprises",
+    "object": "cognitive features",
+    "object_type": "Feature",
+    "source_sentence": "These include cognitive features (discrepancy, past tense, present tense, work) and emotional features (positive emotion, negative emotion, reward) from LIWC.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.1 Feature extraction"
+  },
+  {
+    "subject": "Features",
+    "predicate": "comprises",
+    "object": "emotional features",
+    "object_type": "Feature",
+    "source_sentence": "These include cognitive features (discrepancy, past tense, present tense, work) and emotional features (positive emotion, negative emotion, reward) from LIWC.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.1 Feature extraction"
+  },
+  {
+    "subject": "Features",
+    "predicate": "comprises",
+    "object": "LDA",
+    "object_type": "Feature",
+    "source_sentence": "General lexical features (500 features and 50 LDA topics): The most frequent unigrams, and 50 topics modeled using Latent Dirichlet Allocation in Python's MALLET package, with α=5.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.1 Feature extraction"
+  },
+  {
+    "subject": "Syntactic Features",
+    "predicate": "comprises",
+    "object": "dependency parses",
+    "object_type": "Feature",
+    "source_sentence": "Syntactic features (4 features): The Stanford parser was used to generate dependency parses.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.1 Feature extraction"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "probability distribution",
+    "object_type": "Other",
+    "source_sentence": "A softmax function is used to compute the probability distribution over the predefined classes.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "5.2 Deep learning models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "WikiTalkEdit dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We now examine the test-set performance of these models trained on a subset of the WikiTalkEdit dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "6 Results"
+  },
+  {
+    "subject": "Emotion Analysis",
+    "predicate": "comprises",
+    "object": "15% of overall dataset",
+    "object_type": "Other",
+    "source_sentence": "The dataset for emotion analysis comprises the 15% of overall dataset where editorial feedback yielded a substantial positive or negative change in the emotion vector.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "6 Results"
+  },
+  {
+    "subject": "Actions",
+    "predicate": "comprises",
+    "object": "10% of the conversations",
+    "object_type": "Other",
+    "source_sentence": "Similarly, the dataset for editorial actions (edits performed) comprises the 10% of the conversations that started within 24 hours since an OP edited the page.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "6 Results"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achieves",
+    "object": "0.66 F1 score for emotional change",
+    "object_type": "Metric",
+    "source_sentence": "The best performing deep learning classifier is trained on pre-trained RoBERTa features and reports an F1 score of .66 for emotional change and .54 for editorial change.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "6.1 Predictive performance"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "achieves",
+    "object": "0.54 F1 score for editorial change",
+    "object_type": "Metric",
+    "source_sentence": "The best performing deep learning classifier is trained on pre-trained RoBERTa features and reports an F1 score of .66 for emotional change and .54 for editorial change.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "6.1 Predictive performance"
+  },
+  {
+    "subject": "Topics",
+    "predicate": "addresses",
+    "object": "Wikipedia 's content guidelines",
+    "object_type": "Concept",
+    "source_sentence": "The topics in black are related to Wikipedia 's content guidelines (i.e., mentions of NPOV, sources, cite, information ).",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.177",
+    "title": "WikiTalkEdit: A Dataset for modeling Editors’ behaviors on Wikipedia",
+    "section": "8 Insights from topics"
+  }
+]

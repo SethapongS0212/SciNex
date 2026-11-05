@@ -1,0 +1,34 @@
+{"para_id": 0, "raw": "{\"triples\": []}", "n_tokens": 367, "truncated": false}
+{"para_id": 1, "raw": "{\"triples\": []}", "n_tokens": 236, "truncated": false}
+{"para_id": 2, "raw": "{\"triples\": []}", "n_tokens": 356, "truncated": false}
+{"para_id": 3, "raw": "{\"triples\": []}", "n_tokens": 436, "truncated": false}
+{"para_id": 4, "raw": "{\"triples\": []}", "n_tokens": 456, "truncated": false}
+{"para_id": 5, "raw": "{\"triples\": []}", "n_tokens": 345, "truncated": false}
+{"para_id": 6, "raw": "{\"triples\": []}", "n_tokens": 546, "truncated": false}
+{"para_id": 7, "raw": "{\"triples\": []}", "n_tokens": 509, "truncated": false}
+{"para_id": 8, "raw": "{\"triples\": []}", "n_tokens": 159, "truncated": false}
+{"para_id": 9, "raw": "{\n  \"triples\": [\n    {\n      \"subject\": \"WordPiece\",\n      \"predicate\": \"uses\",\n      \"object\": \"BERT\",\n      \"object_type\": \"Model\",\n      \"source_sentence\": \"For segmenting texts into tokens, we rely on the training portion of each dataset only (Section 5) and employ the WordPiece subword tokenizer as used in BERT .5\"\n    },\n    {\n      \"subject\": \"Annotation\",\n      \"predicate\": \"uses\",\n      \"object\": \"Categories\",\n      \"object_type\": \"Concept\",\n      \"source_sentence\": \"we perform lexical artifacts annotation (Section 4.3) following the categories defined in Section 2.\"\n    },\n    {\n      \"subject\": \"Texts\",\n      \"predicate\": \"uses\",\n      \"object\": \"WordPiece\",\n      \"object_type\": \"Method\",\n      \"source_sentence\": \"For segmenting texts into tokens, we rely on the training portion of each dataset only (Section 5) and employ the WordPiece subword tokenizer as used in BERT .5\"\n    }\n  ]\n}", "n_tokens": 691, "truncated": false}
+{"para_id": 10, "raw": "{\n  \"triples\": [\n    {\n      \"subject\": \"Models\",\n      \"predicate\": \"uses\",\n      \"object\": \"WordPiece\",\n      \"object_type\": \"Method\",\n      \"source_sentence\": \"the same tokenizer used by models employed in our experiments\"\n    },\n    {\n      \"subject\": \"BPE\",\n      \"predicate\": \"uses\",\n      \"object\": \"RoBERTa\",\n      \"object_type\": \"Model\",\n      \"source_sentence\": \"we found similar results when using the byte-level BPE tokenizer as used in RoBERTa\"\n    }\n  ]\n}", "n_tokens": 602, "truncated": false}
+{"para_id": 11, "raw": "{\"triples\": []}", "n_tokens": 95, "truncated": false}
+{"para_id": 12, "raw": "{\"triples\": [\n    {\n      \"subject\": \"Normalization\",\n      \"predicate\": \"uses\",\n      \"object\": \"min-max normalization function\",\n      \"object_type\": \"Other\",\n      \"source_sentence\": \"we normalize it in [0, 1] by applying a min-max normalization function to enable cross-platform score comparability\"\n    }\n  ]}", "n_tokens": 456, "truncated": false}
+{"para_id": 13, "raw": "", "n_tokens": 3072, "truncated": true}
+{"para_id": 14, "raw": "{\"triples\": []}", "n_tokens": 328, "truncated": false}
+{"para_id": 15, "raw": "{\"triples\": []}", "n_tokens": 288, "truncated": false}
+{"para_id": 16, "raw": "{\n  \"triples\": [\n    {\n      \"subject\": \"BERT\",\n      \"predicate\": \"uses\",\n      \"object\": \"MaChAmp v0.2 toolkit\",\n      \"object_type\": \"Other\",\n      \"source_sentence\": \"For all our experiments, we employ the uncased BERT-base model as implemented in the MaChAmp v0.2 toolkit (van der Goot et al., 2021), since it has been shown to achieve state-of-the-art performance in hate speech detection.\"\n    },\n    {\n      \"subject\": \"Search\",\n      \"predicate\": \"uses\",\n      \"object\": \"Devlin et al. (2019) search space\",\n      \"object_type\": \"Other\",\n      \"source_sentence\": \"We use default hyperparameters, and perform a grid search to determine the number of epochs, the learning rate, and the batch size, using the search space suggested by Devlin et al. (2019) – i.e., [2, 3, 4] for epochs, [2e-05, 3e- 05, 5e-05] for learning rate, and [16, 32] for batch size.\"\n    },\n    {\n      \"subject\": \"Experiments\",\n      \"predicate\": \"uses\",\n      \"object\": \"stratified splits\",\n      \"object_type\": \"Other\",\n      \"source_sentence\": \"We use stratified 80% train, 10% development, 10% test splits for each dataset , selecting the best model based on the average macro F1 score on the development test across all platforms.\"\n    },\n    {\n      \"subject\": \"Experiments\",\n      \"predicate\": \"uses\",\n      \"object\": \"Tesla V100-SXM2 GPU\",\n      \"object_type\": \"Other\",\n      \"source_sentence\": \"All experiments have been run on a NVIDIA Tesla V100-SXM2 GPU, with a training time ranging from 10 to 40 minutes each.\"\n    }\n  ]\n}", "n_tokens": 1090, "truncated": false}
+{"para_id": 17, "raw": "{\"triples\": []}", "n_tokens": 200, "truncated": false}
+{"para_id": 18, "raw": "{\"triples\": []}", "n_tokens": 146, "truncated": false}
+{"para_id": 19, "raw": "{\"triples\": []}", "n_tokens": 216, "truncated": false}
+{"para_id": 20, "raw": "{\"triples\": []}", "n_tokens": 68, "truncated": false}
+{"para_id": 21, "raw": "{\"triples\": []}", "n_tokens": 394, "truncated": false}
+{"para_id": 22, "raw": "{\"triples\": []}", "n_tokens": 494, "truncated": false}
+{"para_id": 23, "raw": "{\"triples\": []}", "n_tokens": 281, "truncated": false}
+{"para_id": 24, "raw": "{\"triples\": []}", "n_tokens": 496, "truncated": false}
+{"para_id": 25, "raw": "{\"triples\": []}", "n_tokens": 242, "truncated": false}
+{"para_id": 26, "raw": "{\"triples\": []}", "n_tokens": 281, "truncated": false}
+{"para_id": 27, "raw": "{\"triples\": []}", "n_tokens": 250, "truncated": false}
+{"para_id": 28, "raw": "{\"triples\": []}", "n_tokens": 471, "truncated": false}
+{"para_id": 29, "raw": "{\"triples\":[{\"subject\":\"Hashtags\",\"predicate\":\"uses\",\"object\":\"wordsegment package\",\"object_type\":\"Method\",\"source_sentence\":\"We segment hashtags into constituent words using the wordsegment package,12 remove newlines, un- escape HTML tags, and lowercase the texts.\"}]}", "n_tokens": 251, "truncated": false}
+{"para_id": 30, "raw": "{\"triples\": []}", "n_tokens": 215, "truncated": false}
+{"para_id": 31, "raw": "{\"triples\": []}", "n_tokens": 272, "truncated": false}
+{"para_id": 32, "raw": "{\"triples\": []}", "n_tokens": 362, "truncated": false}
+{"para_id": 33, "raw": "{\"triples\": []}", "n_tokens": 282, "truncated": false}

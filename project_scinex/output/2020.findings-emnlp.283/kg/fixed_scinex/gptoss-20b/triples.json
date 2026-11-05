@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Neural Machine Translation",
+    "predicate": "addresses",
+    "object": "bilingual supervised machine translation",
+    "object_type": "Task",
+    "source_sentence": "Neural Machine Translation : In bilingual supervised machine translation we are given a training dataset Dx,y.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "2 Background and Overview"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "language modeling",
+    "object_type": "Method",
+    "source_sentence": "They first perform pre-training and learn an initial set of parameters θ based on a variety of language modeling or noisy reconstruction objectives over Dx and Dy.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "2 Background and Overview"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "back-translation",
+    "object_type": "Method",
+    "source_sentence": "A fine-tuning stage then follows which typically uses back-translation that involves translating x to the target language Y, translating it back to a sentence x1 in X, and penalizing the reconstruction error between x and x1.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "2 Background and Overview"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "addresses",
+    "object": "UNMT",
+    "object_type": "Task",
+    "source_sentence": "Pre-training is known to be crucial for UNMT.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "4 Training algorithms"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "achieves",
+    "object": "intermediate translation model",
+    "object_type": "Model",
+    "source_sentence": "The aim of the pre-training phase is to produce an intermediate translation model pθ, to be refined during the fine-tuning step.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "4.1 Pre-training"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "English -French parallel data",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct experiments on the language triplets English -French-Romanian with English -French parallel data, English -Czech-German with English - Czech parallel data and English -Spanish-French with English -Spanish parallel data, with the unsu- pervised directions chosen solely for the purposes of comparing with previous recent work (Lample and Conneau, 2019; Song et al., 2019; Ren et al., 2019; Artetxe et al., 2019).",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "English -Czech parallel data",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct experiments on the language triplets English -French-Romanian with English -French parallel data, English -Czech-German with English - Czech parallel data and English -Spanish-French with English -Spanish parallel data, with the unsu- pervised directions chosen solely for the purposes of comparing with previous recent work (Lample and Conneau, 2019; Song et al., 2019; Ren et al., 2019; Artetxe et al., 2019).",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "English -Spanish parallel data",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct experiments on the language triplets English -French-Romanian with English -French parallel data, English -Czech-German with English - Czech parallel data and English -Spanish-French with English -Spanish parallel data, with the unsu- pervised directions chosen solely for the purposes of comparing with previous recent work (Lample and Conneau, 2019; Song et al., 2019; Ren et al., 2019; Artetxe et al., 2019).",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "Moses",
+    "object_type": "Tool",
+    "source_sentence": "Evaluation We use tokenized BLEU to measure the performance of our models, using the multi- bleu.pl script from Moses.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "5.4 Results"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "sacreBLEU",
+    "object_type": "Tool",
+    "source_sentence": "we chose to follow the same evaluation procedures used by the majority of the baselines that we consider, which involves the use of tokenized BLEU as opposed to the scores given by sacreBLEU.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "5.4 Results"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "French",
+    "object_type": "Language",
+    "source_sentence": "Given the rise of popularity of SacreBLEU , we also include BLEU scores computed from sacreBLEU7 on the detokenized text for French and German.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "5.4 Results"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "Tagging",
+    "predicate": "uses",
+    "object": "pre-trained tagging model",
+    "object_type": "Model",
+    "source_sentence": "Specifically, we used a pre-trained tagging model to extract opinion phrases, their polarity, and aspect categories.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.513",
+    "title": "OPINIONDIGEST: A Simple Framework for Opinion Summarization",
+    "section": "2.1 Opinion Extraction"
+  },
+  {
+    "subject": "Summarization",
+    "predicate": "uses",
+    "object": "Transformer",
+    "object_type": "Model",
+    "source_sentence": "Summarization : At summarization time, we use the textualization of the selected opinions , T(Se), as input to the trained Transformer, which generates a natural language summary se as output (Figure 1, Step 3b).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.513",
+    "title": "OPINIONDIGEST: A Simple Framework for Opinion Summarization",
+    "section": "2.3 Summary Generation"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "produces",
+    "object": "natural language summary",
+    "object_type": "Concept",
+    "source_sentence": "Summarization : At summarization time, we use the textualization of the selected opinions , T(Se), as input to the trained Transformer, which generates a natural language summary se as output (Figure 1, Step 3b).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.513",
+    "title": "OPINIONDIGEST: A Simple Framework for Opinion Summarization",
+    "section": "2.3 Summary Generation"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "YELP dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Our experiments on the YELP dataset showed that OPINIONDIGEST outperforms baseline methods, including a state-of-the-art unsupervised abstractive summarization technique.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.513",
+    "title": "OPINIONDIGEST: A Simple Framework for Opinion Summarization",
+    "section": "4 Conclusion"
+  },
+  {
+    "subject": "Best-Worst Scaling",
+    "predicate": "addresses",
+    "object": "NLP annotation tasks",
+    "object_type": "Concept",
+    "source_sentence": "The Best-Worst Scaling is known to be more robust for NLP annotation tasks and requires less annotations than rating- scale methods.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.513",
+    "title": "OPINIONDIGEST: A Simple Framework for Opinion Summarization",
+    "section": "B Human Evaluation Setup"
+  }
+]

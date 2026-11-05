@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Indexing",
+    "predicate": "addresses",
+    "object": "retrieval of information",
+    "object_type": "Task",
+    "source_sentence": "Indexing is the process of describing and identifying a document in terms of its subject content, in order to facilitate the retrieval of information from a collection of documents.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1304",
+    "title": "TermITH-Eval: a French Standard-Based Resource for Keyphrase Extraction Evaluation",
+    "section": "1. Introduction and Motivation"
+  },
+  {
+    "subject": "Pattern Matching",
+    "predicate": "uses",
+    "object": "Text",
+    "object_type": "Text",
+    "source_sentence": "The pre-indexing system relies on pattern matching between text and predefined expressions related to potential keyphrases.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1304",
+    "title": "TermITH-Eval: a French Standard-Based Resource for Keyphrase Extraction Evaluation",
+    "section": "1. Introduction and Motivation"
+  },
+  {
+    "subject": "Naive Bayes classifier",
+    "predicate": "uses",
+    "object": "features",
+    "object_type": "Features",
+    "source_sentence": "The two properties (TF-IDF and first position) are used as features of a Naive Bayes classifier that labels either the class of 'keyphrase' or 'non keyphrase' to every textual unit of the document.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1304",
+    "title": "TermITH-Eval: a French Standard-Based Resource for Keyphrase Extraction Evaluation",
+    "section": "2.2. Automatic Keyphrase Extraction"
+  },
+  {
+    "subject": "Sentence segmentation",
+    "predicate": "uses",
+    "object": "PunktSentenceTokenizer",
+    "object_type": "Method",
+    "source_sentence": "We performed sentence segmentation with the PunktSentenceTokenizer provided by the Python Natural Language ToolKit (NLTK), word tokenization using the French tokenizer Bonsai included with the French POS tagger MElt , which we use for POS tagging.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1304",
+    "title": "TermITH-Eval: a French Standard-Based Resource for Keyphrase Extraction Evaluation",
+    "section": "2.2. Automatic Keyphrase Extraction"
+  },
+  {
+    "subject": "POS Tagging",
+    "predicate": "uses",
+    "object": "French POS tagger MElt",
+    "object_type": "Method",
+    "source_sentence": "We performed sentence segmentation with the PunktSentenceTokenizer provided by the Python Natural Language ToolKit (NLTK), word tokenization using the French tokenizer Bonsai included with the French POS tagger MElt , which we use for POS tagging.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1304",
+    "title": "TermITH-Eval: a French Standard-Based Resource for Keyphrase Extraction Evaluation",
+    "section": "2.2. Automatic Keyphrase Extraction"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "addresses",
+    "object": "subjectivity",
+    "object_type": "Concept",
+    "source_sentence": "Given that the current automatic keyphrase evaluation measurements is too pessimistic because they cannot manage subjectivity",
+    "extraction_mode": "fixed",
+    "paper": "L16-1304",
+    "title": "TermITH-Eval: a French Standard-Based Resource for Keyphrase Extraction Evaluation",
+    "section": "5. Conclusion and Perspectives"
+  }
+]

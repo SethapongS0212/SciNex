@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "Example",
+    "predicate": "uses",
+    "object": "Natural Logic Inference",
+    "object_type": "Method",
+    "source_sentence": "An example search using natural logic inference is given in Figure 1.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "2.3 Natural Logic Inference"
+  },
+  {
+    "subject": "Natural Logic",
+    "predicate": "addresses",
+    "object": "question answering",
+    "object_type": "Task",
+    "source_sentence": "In this paper we propose the Neural Natural Logic Inference (NeuNLI) framework , aiming to combine the advantages of natural logic and deep neural networks for question answering , which builds explainability in the model and leverages the powerful capacity and robustness of neural models.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "3 Method"
+  },
+  {
+    "subject": "Natural Logic",
+    "predicate": "achieves",
+    "object": "explainability",
+    "object_type": "Concept",
+    "source_sentence": "In this paper we propose the Neural Natural Logic Inference (NeuNLI) framework , aiming to combine the advantages of natural logic and deep neural networks for question answering , which builds explainability in the model and leverages the powerful capacity and robustness of neural models.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "3 Method"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "Given a hypothesis hi, we obtain the representation of hi and each pj in K by computing the average Glove word embeddings of it, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "3.1 Candidate Premises Retrieval"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "masked token",
+    "object_type": "Other",
+    "source_sentence": "We first mask a word in the hypothesis and then feed it into BERT to predict the masked token as shown in the upper-left subfigure of Figure 2.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "3.2 Contextualized Neural Natural Logic Prover"
+  },
+  {
+    "subject": "generating",
+    "predicate": "uses",
+    "object": "mask mechanism",
+    "object_type": "Concept",
+    "source_sentence": "Generating candidate words for insertion also utilizes the mask mechanism: we insert a mask in front of the corresponding noun.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "3.2 Contextualized Neural Natural Logic Prover"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "logical relation prediction module",
+    "object_type": "Method",
+    "source_sentence": "First , we use the fine-tuned RoBERTa to predict the logical relation between \"shortest\" and \"longest\".",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "3.2 Contextualized Neural Natural Logic Prover"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "uses",
+    "object": "representation of intermediate hypothesis and candidate premise",
+    "object_type": "Other",
+    "source_sentence": "The representation of intermediate hypothesis and candidate premise in Euclidean space is calculated by BERT model with the input [CLS] pj [SEP] h1 i [SEP].",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "3.2 Contextualized Neural Natural Logic Prover"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "uses",
+    "object": "vocab",
+    "object_type": "Other",
+    "source_sentence": "where wi is the i'th token that appears in the vocab of BERT model.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "3.3 Gumbel-Softmax Training"
+  },
+  {
+    "subject": "Lexical Knowledge Base",
+    "predicate": "uses",
+    "object": "WordNet",
+    "object_type": "Other",
+    "source_sentence": "These lexical pairs are built upon the lexical knowledge base WordNet.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "4 Experiment Set-Up"
+  },
+  {
+    "subject": "Hypernyms",
+    "predicate": "addresses",
+    "object": "alternation relation",
+    "object_type": "Concept",
+    "source_sentence": "For a synset in WordNet, the relation between its hypernyms (or between its hyponyms) is regarded as the alternation relation ë in natural logic.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "4 Experiment Set-Up"
+  },
+  {
+    "subject": "antonym",
+    "predicate": "addresses",
+    "object": "cover relation",
+    "object_type": "Concept",
+    "source_sentence": "Besides, for a synset in WordNet, its hy- ponymy and its antonym have the cover relation ⌣in natural logic.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "4 Experiment Set-Up"
+  },
+  {
+    "subject": "WordNet",
+    "predicate": "addresses",
+    "object": "alternation relation",
+    "object_type": "Concept",
+    "source_sentence": "For a synset in WordNet, the relation between its hypernyms (or between its hyponyms) is regarded as the alternation relation ë in natural logic.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "4 Experiment Set-Up"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "comparesagainst",
+    "object": "RoBERTa",
+    "object_type": "Model",
+    "source_sentence": "we compare two pre-trained language models (BERT and RoBERTa) for lexical relation prediction.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "5 Experiment Results"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "we compare two pre-trained language models (BERT and RoBERTa) for lexical relation prediction.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "5 Experiment Results"
+  },
+  {
+    "subject": "Reasoning",
+    "predicate": "addresses",
+    "object": "QA",
+    "object_type": "Task",
+    "source_sentence": "It indicates that exploiting natural logic -based reasoning is very effective for QA.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "5 Experiment Results"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "addresses",
+    "object": "noise information",
+    "object_type": "Concept",
+    "source_sentence": "the accuracy starts to decrease, as there may be noise information included in the model by the retrieval method.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "5 Experiment Results"
+  },
+  {
+    "subject": "Transformers",
+    "predicate": "uses",
+    "object": "sentence representation",
+    "object_type": "Task",
+    "source_sentence": "Many works first adopt learnable encoders for sentence representation like convolutional encoders , recurrent encoders and transformers .",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Natural Logic Inference",
+    "predicate": "uses",
+    "object": "interpretable question answering",
+    "object_type": "Task",
+    "source_sentence": "(2016) proposed a Natural Logic Inference framework to utilize natural logic to conduct interpretable question answering and viewed the open-domain question answering as a textual entailment problem.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.298",
+    "title": "Neural Natural Logic Inference for Interpretable Question Answering",
+    "section": "6 Related Work"
+  }
+]

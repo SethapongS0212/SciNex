@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Relation Discovery",
+    "predicate": "addresses",
+    "object": "learning atomic facts",
+    "object_type": "Task",
+    "source_sentence": "In contrast to work in relation discovery that focuses on learning atomic facts , templates can extract a richer representation of a particular domain.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Classifiers",
+    "predicate": "uses",
+    "object": "labeled examples",
+    "object_type": "Dataset",
+    "source_sentence": "Classifiers rely on the labeled examples' surrounding context for features such as nearby tokens, document position, syntax, named entities, semantic classes, and discourse relations.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "2 Previous Work"
+  },
+  {
+    "subject": "Classifiers",
+    "predicate": "uses",
+    "object": "named entities",
+    "object_type": "Concept",
+    "source_sentence": "Classifiers rely on the labeled examples' surrounding context for features such as nearby tokens, document position, syntax, named entities, semantic classes, and discourse relations.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "2 Previous Work"
+  },
+  {
+    "subject": "Weakly Supervised Approaches",
+    "predicate": "addresses",
+    "object": "fully labeled data",
+    "object_type": "Dataset",
+    "source_sentence": "Weakly supervised approaches remove some of the need for fully labeled data.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "2 Previous Work"
+  },
+  {
+    "subject": "bootstrapping",
+    "predicate": "uses",
+    "object": "seed examples of known slot fillers",
+    "object_type": "Concept",
+    "source_sentence": "Bootstrapping with seed examples of known slot fillers has been shown to be effective.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "2 Previous Work"
+  },
+  {
+    "subject": "Unrestricted Relation Discovery",
+    "predicate": "uses",
+    "object": "unlabeled documents",
+    "object_type": "Dataset",
+    "source_sentence": "They present unrestricted relation discovery as a means of discovering relations in unlabeled documents, and extract their fillers.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "2 Previous Work"
+  },
+  {
+    "subject": "Unrestricted Relation Discovery",
+    "predicate": "addresses",
+    "object": "discovering relations in unlabeled documents",
+    "object_type": "Task",
+    "source_sentence": "They present unrestricted relation discovery as a means of discovering relations in unlabeled documents, and extract their fillers.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "2 Previous Work"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "MUC-4",
+    "object_type": "Dataset",
+    "source_sentence": "In order to measure performance in both tasks (learning structure and extracting instances), we use the terrorism corpus of MUC-4 as our target domain.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "3 The Domain and its Templates"
+  },
+  {
+    "subject": "cluster",
+    "predicate": "produces",
+    "object": "templates",
+    "object_type": "Other",
+    "source_sentence": "We cluster event patterns to create templates.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "4.1 Clustering Events to Learn Templates"
+  },
+  {
+    "subject": "NER",
+    "predicate": "uses",
+    "object": "corpus",
+    "object_type": "Other",
+    "source_sentence": "We also tag the corpus with an NER system and allow patterns to include named entity types, e.g., 'kidnap:PERSON'.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "4.1 Clustering Events to Learn Templates"
+  },
+  {
+    "subject": "Patterns",
+    "predicate": "uses",
+    "object": "named entity types",
+    "object_type": "Other",
+    "source_sentence": "We also tag the corpus with an NER system and allow patterns to include named entity types, e.g., 'kidnap:PERSON'.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "4.1 Clustering Events to Learn Templates"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "patterns",
+    "object_type": "Other",
+    "source_sentence": "However, we first need an algorithm to cluster these patterns to learn the domain's core events.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "4.1 Clustering Events to Learn Templates"
+  },
+  {
+    "subject": "agglomerative clustering",
+    "predicate": "uses",
+    "object": "pairwise similarity metric",
+    "object_type": "Concept",
+    "source_sentence": "We use agglomerative clustering with the above pairwise similarity metric.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "4.3 Inducing Semantic Roles (Slots)"
+  },
+  {
+    "subject": "labeling",
+    "predicate": "uses",
+    "object": "role type",
+    "object_type": "Concept",
+    "source_sentence": "We implement the second assumption by automatically labeling each syntactic function with a role type based on its observed arguments.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "4.3 Inducing Semantic Roles (Slots)"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "evaluates",
+    "object": "88%",
+    "object_type": "Metric",
+    "source_sentence": "we report 92% slot recall, and precision as 14 of 16 (88%) learned slots.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1098",
+    "title": "Template-Based Information Extraction without the Templates",
+    "section": "4.4 Template Evaluation"
+  }
+]

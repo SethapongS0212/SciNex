@@ -1,0 +1,32 @@
+{"para_id": 0, "raw": "{\"triples\": []}", "n_tokens": 521, "truncated": false}
+{"para_id": 1, "raw": "{\"triples\":[{\"subject\":\"Question Answering\",\"predicate\":\"addresses\",\"object\":\"Language Understanding\",\"object_type\":\"Concept\",\"source_sentence\":\"Question answering as a task is a classic probe for language understanding.\"}]}", "n_tokens": 353, "truncated": false}
+{"para_id": 2, "raw": "{\"triples\": []}", "n_tokens": 218, "truncated": false}
+{"para_id": 3, "raw": "{\"triples\":[{\"subject\":\"BERT\",\"predicate\":\"trainedOn\",\"object\":\"L1 corpus\",\"object_type\":\"Dataset\",\"source_sentence\":\"Pre-train a monolingual BERT (i.e. a transformer) in L1 with masked language modeling (MLM) and next sentence prediction (NSP) objectives on an unlabeled L1 corpus.\"},{\"subject\":\"Transformer\",\"predicate\":\"trainedOn\",\"object\":\"L1 labeled data\",\"object_type\":\"Dataset\",\"source_sentence\":\"Fine-tune the transformer for a downstream task using labeled data in L1, while keeping the L1 token embeddings frozen.\"},{\"subject\":\"Zero-shot transfer\",\"predicate\":\"achieves\",\"object\":\"L2\",\"object_type\":\"Language\",\"source_sentence\":\"Zero-shot transfer the resulting model to L2 by swapping the L1 token embeddings with the L2 embeddings learned in Step 2.\"},{\"subject\":\"subwords\",\"predicate\":\"trainedOn\",\"object\":\"monolingual corpus\",\"object_type\":\"Dataset\",\"source_sentence\":\"we use a separate subword vocabulary for each language, which is trained on its respective monolingual corpus.\"}]}", "n_tokens": 688, "truncated": false}
+{"para_id": 4, "raw": "{\n  \"triples\": [\n    {\n      \"subject\": \"BERT\",\n      \"predicate\": \"uses\",\n      \"object\": \"position and segment embeddings\",\n      \"object_type\": \"Other\",\n      \"source_sentence\": \"BERT treats [CLS] as a regular word with its own position and segment embeddings, even if it always appears in the first position.\"\n    }\n  ]\n}", "n_tokens": 894, "truncated": false}
+{"para_id": 5, "raw": "{\"triples\": []}", "n_tokens": 170, "truncated": false}
+{"para_id": 6, "raw": "{\"triples\": []}", "n_tokens": 244, "truncated": false}
+{"para_id": 7, "raw": "{\"triples\": []}", "n_tokens": 472, "truncated": false}
+{"para_id": 8, "raw": "{\"triples\": [\n    {\n      \"subject\": \"Zero-shot transfer\",\n      \"predicate\": \"uses\",\n      \"object\": \"embeddings\",\n      \"object_type\": \"Other\",\n      \"source_sentence\": \"We zero-shot transfer to a new language by plugging in its respective mapped embeddings.\"\n    }\n  ]}", "n_tokens": 391, "truncated": false}
+{"para_id": 9, "raw": "{\"triples\": []}", "n_tokens": 342, "truncated": false}
+{"para_id": 10, "raw": "{\"triples\": []}", "n_tokens": 601, "truncated": false}
+{"para_id": 11, "raw": "{\n  \"triples\": [\n    {\n      \"subject\": \"mBERT\",\n      \"predicate\": \"covers\",\n      \"object\": \"102 languages\",\n      \"object_type\": \"Concept\",\n      \"source_sentence\": \"mBERT covers 102 languages and has a shared vocabulary of 110k subwords.\"\n    },\n    {\n      \"subject\": \"XLM\",\n      \"predicate\": \"covers\",\n      \"object\": \"15 languages\",\n      \"object_type\": \"Concept\",\n      \"source_sentence\": \"XLM covers 15 languages and uses a larger model size with a shared vocabulary of 95k subwords, which contributes to its better performance.\"\n    },\n    {\n      \"subject\": \"XLM\",\n      \"predicate\": \"uses\",\n      \"object\": \"larger model size\",\n      \"object_type\": \"Other\",\n      \"source_sentence\": \"XLM covers 15 languages and uses a larger model size with a shared vocabulary of 95k subwords, which contributes to its better performance.\"\n    }\n  ]\n}", "n_tokens": 945, "truncated": false}
+{"para_id": 12, "raw": "{\"triples\": []}", "n_tokens": 397, "truncated": false}
+{"para_id": 13, "raw": "{\"triples\": []}", "n_tokens": 343, "truncated": false}
+{"para_id": 14, "raw": "{\"triples\": []}", "n_tokens": 193, "truncated": false}
+{"para_id": 15, "raw": "{\"triples\": []}", "n_tokens": 193, "truncated": false}
+{"para_id": 16, "raw": "{\"triples\": []}", "n_tokens": 693, "truncated": false}
+{"para_id": 17, "raw": "{\"triples\": []}", "n_tokens": 472, "truncated": false}
+{"para_id": 18, "raw": "{\"triples\": []}", "n_tokens": 228, "truncated": false}
+{"para_id": 19, "raw": "{\"triples\": []}", "n_tokens": 389, "truncated": false}
+{"para_id": 20, "raw": "{\"triples\": []}", "n_tokens": 556, "truncated": false}
+{"para_id": 21, "raw": "{\"triples\": []}", "n_tokens": 155, "truncated": false}
+{"para_id": 22, "raw": "{\"triples\":[{\"subject\":\"mBERT\",\"predicate\":\"uses\",\"object\":\"Parallel Data\",\"object_type\":\"Concept\",\"source_sentence\":\"extensions to mBERT include scaling it up and incorporating parallel data , adding auxiliary pre-training tasks , and encouraging representations of translations to be similar.\"},{\"subject\":\"BERT\",\"predicate\":\"achieves\",\"object\":\"results similar to ours\",\"object_type\":\"Other\",\"source_sentence\":\"Tran (2020) propose a more complex approach to transfer a monolingual BERT to other languages that achieves results similar to ours.\"}]}", "n_tokens": 758, "truncated": false}
+{"para_id": 23, "raw": "{\"triples\": []}", "n_tokens": 432, "truncated": false}
+{"para_id": 24, "raw": "{\"triples\": []}", "n_tokens": 243, "truncated": false}
+{"para_id": 25, "raw": "{\"triples\":[{\"subject\":\"fine-tuning\",\"predicate\":\"uses\",\"object\":\"Adam\",\"object_type\":\"Method\",\"source_sentence\":\"For the fine-tuning, we use Adam with a learning rate of 2e-5, a batch size of 32, and train for 2 epochs.\"}]}", "n_tokens": 780, "truncated": false}
+{"para_id": 26, "raw": "{\"triples\": []}", "n_tokens": 495, "truncated": false}
+{"para_id": 27, "raw": "{\"triples\": []}", "n_tokens": 215, "truncated": false}
+{"para_id": 28, "raw": "{\"triples\": []}", "n_tokens": 533, "truncated": false}
+{"para_id": 29, "raw": "{\"triples\": []}", "n_tokens": 355, "truncated": false}
+{"para_id": 30, "raw": "{\"triples\": []}", "n_tokens": 23, "truncated": false}
+{"para_id": 31, "raw": "{\"triples\": []}", "n_tokens": 24, "truncated": false}

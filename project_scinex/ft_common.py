@@ -171,16 +171,44 @@ def split_sets(split, corpus, eval_fold, dev_fold=None):
 
 # ── ontology / prompts ───────────────────────────────────────────────────────
 
-def current_system_prompt(ontology, ontology_file=SCINEX_OWL_DEFAULT):
+def current_system_prompt(ontology, ontology_file=SCINEX_OWL_DEFAULT, extractor="relation"):
     """(system_prompt, relations) exactly as claude_extract.py / kg_main would build them
-    for relation-only extraction today. scinex needs rdflib (the OWL loader)."""
+    today. scinex needs rdflib (the OWL loader). The fixed extractor's system prompt does
+    not depend on the paper — its entity list goes in each paragraph's user prompt."""
+    from kg_extraction.fixed_extractor import FixedTripleExtractor
     from kg_extraction.relation_extractor import RelationOnlyExtractor
     relations = schema = None
     if ontology == "scinex":
         from kg_extraction.ontology_loader import load_ontology
         relations, schema = load_ontology(ontology_file)
-    ex = RelationOnlyExtractor(relations=relations, schema=schema, model_name="n/a")
+    if extractor == "fixed":
+        ex = FixedTripleExtractor(entity_set=None, relations=relations, schema=schema,
+                                  model_name="n/a")
+    else:
+        ex = RelationOnlyExtractor(relations=relations, schema=schema, model_name="n/a")
     return ex._system_prompt, list(ex.relations)
+
+
+# ── fixed-entity lists (ACL Anthology papers) ────────────────────────────────
+
+ENTITY_DIR_DEFAULT = OUTPUT_DIR / "acl"
+
+
+def entity_csv_for(paper, entity_dir=ENTITY_DIR_DEFAULT):
+    """The paper's fixed-entity CSV, resolved in kg_main.resolve_entity_csv's order
+    (enriched CS-NER list first, then the title-only list). None if it has neither."""
+    for name in (f"Entity_{paper}_enriched.csv", f"Entity_{paper}.csv"):
+        f = Path(entity_dir) / paper / name
+        if f.exists():
+            return f
+    return None
+
+
+def load_entity_set_for(paper, entity_dir=ENTITY_DIR_DEFAULT):
+    """EntitySet for a paper exactly as kg_main loads it for --extractor fixed, or None."""
+    from kg_extraction import load_entity_csv
+    f = entity_csv_for(paper, entity_dir)
+    return load_entity_csv(f, tp_only=True) if f else None
 
 
 _REL_LINE = re.compile(r"^  - (\w+)  \((.*)\)\s*$")
@@ -218,17 +246,25 @@ def parse_definition(hint):
 
 # ── paragraphs ───────────────────────────────────────────────────────────────
 
-def render_paragraphs(paper):
-    """Paragraph prompts for relation-only extraction, rendered from the parsed HTML with
-    the same code path as `claude_extract.py prompts` (which is what every API run used).
-    Returns None if the paper has no parsed HTML."""
-    from kg_extraction.fixed_extractor import _is_garbled_section
+def render_paragraphs(paper, extractor="relation"):
+    """Paragraph prompts rendered from the parsed HTML with the same code path as
+    `claude_extract.py prompts` (which is what every API run used). Returns None if the
+    paper has no parsed HTML — or, for `fixed`, no entity CSV.
+
+    fixed: as kg_main's FixedTripleExtractor — a paragraph with no listed entity in it is
+    skipped, and the user prompt lists only the entities present (match_any_in_text)."""
+    from kg_extraction.fixed_extractor import _is_garbled_section, _make_fixed_user_prompt
     from kg_extraction.html_parser import parse_html, split_into_sentences
     from kg_extraction.relation_extractor import RelationOnlyExtractor, _make_relation_user_prompt
 
     html = OUTPUT_DIR / paper / "no-llm" / "output.html"
     if not html.exists():
         return None
+    entity_set = None
+    if extractor == "fixed":
+        entity_set = load_entity_set_for(paper)
+        if entity_set is None:
+            return None
     _title, sections = parse_html(str(html))
     splitter = RelationOnlyExtractor(model_name="n/a")   # no weights are loaded
     rows = []
@@ -240,12 +276,19 @@ def render_paragraphs(paper):
         if not sentences:
             continue
         for para in splitter._sentences_to_paragraphs(sentences):
+            if entity_set is not None:
+                present = entity_set.match_any_in_text(para)
+                if not present:
+                    continue
+                user = _make_fixed_user_prompt(para, section, present, entity_set.abbreviations)
+            else:
+                user = _make_relation_user_prompt(para, section)
             rows.append({"para_id": len(rows), "section": section, "paragraph": para,
-                         "user_prompt": _make_relation_user_prompt(para, section)})
+                         "user_prompt": user})
     return rows
 
 
-def load_paragraphs(paper, exdir, prefer_slugs=()):
+def load_paragraphs(paper, exdir, prefer_slugs=(), extractor="relation"):
     """(rows, source) for a paper. Prefers a stored prompts.jsonl — the exact prompts a
     run sent — then renders from the parsed HTML. rows=None when neither exists.
 
@@ -263,22 +306,32 @@ def load_paragraphs(paper, exdir, prefer_slugs=()):
             rows = read_jsonl(f)
             if rows and all("user_prompt" in r and "paragraph" in r for r in rows):
                 return rows, str(f)
-    rows = render_paragraphs(paper)
+    rows = render_paragraphs(paper, extractor)
     if rows is not None:
         return rows, f"rendered:{OUTPUT_DIR / paper / 'no-llm' / 'output.html'}"
     return None, "missing"
 
 
-def alignment_rate(pairs):
+def _alnum(s):
+    return re.sub(r"[^a-z0-9]", "", norm(s))
+
+
+def alignment_rate(pairs, loose=False):
     """pairs: [(paragraph_text, [source_sentence, ...])]. Share of source sentences found
     in the paragraph they are attributed to (first 60 normalised chars, as ontology_eval
     does). A low rate means para_ids do not line up and every target would be attached
-    to the wrong input."""
+    to the wrong input.
+
+    loose=True compares letters and digits only (first 50). The July-parsed ACL HTML keeps
+    PDF line-break hyphenation ("ad- dress", "docu- ment") and a teacher quoting it repairs
+    the word, so the strict test scored 0.67–0.82 on correctly paired papers while the loose
+    one scored 72/73 (hands_off §37). Used for the fixed/ACL build only; the relation build
+    keeps the strict test, so its data is unchanged."""
     hit = tot = 0
     for text, sents in pairs:
-        nt = norm(text)
+        nt = _alnum(text) if loose else norm(text)
         for s in sents:
-            key = norm(s)[:60]
+            key = _alnum(s)[:50] if loose else norm(s)[:60]
             if not key:
                 continue
             tot += 1
@@ -350,18 +403,19 @@ def classify_raw(raw, api_run=True):
     return "ok", data
 
 
-def guard_pass(raw, relations, api_run=True):
+def guard_pass(raw, relations, api_run=True, entity_set=None):
     """(status, raw_triples, survivors) — survivors are what `claude_extract.py ingest`
     would write to triples.json today: the current `_parse_fixed_output` guards, then the
     graph builder's entity filter. Predicates come back LOWERCASED (as in triples.json);
-    `canonical_predicate` restores the ontology spelling for training targets."""
+    `canonical_predicate` restores the ontology spelling for training targets.
+    entity_set=None is relation mode; pass the paper's EntitySet for the fixed extractor."""
     from kg_extraction.fixed_extractor import _parse_fixed_output
     from kg_extraction.kg_builder import _is_valid_entity
     status, data = classify_raw(raw, api_run)
     if status != "ok":
         return status, [], []
     raw_triples = [t for t in data.get("triples", []) if isinstance(t, dict)]
-    kept = _parse_fixed_output(raw, None, relations)      # relation mode, as ingest does
+    kept = _parse_fixed_output(raw, entity_set, relations)   # as ingest does, per extractor
     survivors = [t for t in kept
                  if _is_valid_entity(t["subject"], t["predicate"], "subject")
                  and _is_valid_entity(t["object"], t["predicate"], "object")]
@@ -438,11 +492,12 @@ def _merge_system(messages):
     return messages
 
 
-def render_chat(tokenizer, messages, add_generation_prompt):
+def render_chat(tokenizer, messages, add_generation_prompt, **template_kw):
     """Render with thinking OFF (Qwen3: an empty <think></think> block, exactly what
     `enable_thinking=False` produces at inference). Templates that don't know the flag
-    ignore it."""
-    kw = dict(tokenize=False, add_generation_prompt=add_generation_prompt, enable_thinking=False)
+    ignore it. `template_kw` reaches the template too (gpt-oss: reasoning_effort)."""
+    kw = dict(tokenize=False, add_generation_prompt=add_generation_prompt, enable_thinking=False,
+              **template_kw)
     try:
         return tokenizer.apply_chat_template(messages, **kw)
     except Exception:

@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "LSTM-CRF",
+    "predicate": "addresses",
+    "object": "real-world clinical text datasets",
+    "object_type": "Dataset",
+    "source_sentence": "In this paper, we define a hybrid LSTM-CRF model that is effective for real-world clinical text datasets.",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "LSTM LSTM LSTM"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "trainedon",
+    "object": "1 billion word benchmark",
+    "object_type": "Dataset",
+    "source_sentence": "The ELMo embeddings were trained on the 1 billion word benchmark of Chelba et al. (2013) – general newswire text not specialized to the healthcare space.",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "LSTM LSTM LSTM"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "addresses",
+    "object": "linguistic context",
+    "object_type": "Concept",
+    "source_sentence": "What is special about ELMo embeddings , as compared to more standard word representation learning, is that they are obtained from the parameters of a full language model, so that each word's representation varies by, and is sensitive to, its linguistic context;",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "LSTM LSTM LSTM"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "word and part-of-speech tag",
+    "object_type": "Other",
+    "source_sentence": "All the models featurize each word in part using the word and part-of-speech tag of the current word and the preceding and following four words.",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "LSTM LSTM LSTM"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "markers of negation, uncertainty, hedging",
+    "object_type": "Other",
+    "source_sentence": "They also include features that seek to characterize the nature of the semantic environment: markers of negation, uncertainty, hedging, and other core task-specific contextual cues.",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "LSTM LSTM LSTM"
+  },
+  {
+    "subject": "Healthcare",
+    "predicate": "uses",
+    "object": "these sources",
+    "object_type": "Other",
+    "source_sentence": "The wealth and diversity of these sources is typical of healthcare and highlights the potential for taking advantage of such resources to help overcome the challenges of small datasets.",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "LSTM LSTM LSTM"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Concept",
+    "source_sentence": "for a CRF that includes hand-built features as well as features based on the cluster indices of distributional word representations.",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "3.3 Penn Adverse Drug Reactions (ADR)"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "Word Representations",
+    "object_type": "Concept",
+    "source_sentence": "for a CRF that includes hand-built features as well as features based on the cluster indices of distributional word representations.",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "3.3 Penn Adverse Drug Reactions (ADR)"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "features",
+    "object_type": "Concept",
+    "source_sentence": "The combined model is able to achieve better performance for both short and long texts, and for words in any position, by utilizing features from both base models.",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "0.7 Drug-Disease Relations"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Drug– Disease dataset",
+    "object_type": "Dataset",
+    "source_sentence": "our experiments on our new Drug– Disease dataset suggest that our combined model is especially robust to learning from noisy labels compared with base models.",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "5.2 Efﬁcient Annotation"
+  },
+  {
+    "subject": "LSTM-CRF",
+    "predicate": "uses",
+    "object": "character embedding information",
+    "object_type": "Concept",
+    "source_sentence": "Lample et al. (2016) utilize character embedding information as the input to a LSTM-CRF.",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "5.3 Related Models"
+  },
+  {
+    "subject": "LSTM-CRF",
+    "predicate": "uses",
+    "object": "pairwise potentials",
+    "object_type": "Concept",
+    "source_sentence": "Jagannatha and Yu (2016) integrate pairwise potentials into the LSTM-CRF model, which improves sequence-labeling performance in clinical text.",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "5.3 Related Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "dense and sparse feature representations",
+    "object_type": "Concept",
+    "source_sentence": "There are also a number of models that mix dense and sparse feature representations.",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "5.3 Related Models"
+  },
+  {
+    "subject": "Combined Models",
+    "predicate": "achieves",
+    "object": "learn effectively in noisy settings",
+    "object_type": "Other",
+    "source_sentence": "combined models like ours can learn effectively in noisy settings.",
+    "extraction_mode": "fixed",
+    "paper": "W19-1901",
+    "title": "Effective Feature Representation for Clinical Text Concept Extraction",
+    "section": "6 Conclusion"
+  }
+]

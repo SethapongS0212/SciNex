@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "local contextual features",
+    "object_type": "Features",
+    "source_sentence": "They use a classifier trained on local contextual features to predict whether to add or remove determiners for the target-side of translation rules.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "trainedon",
+    "object": "4.592.139 parallel sentences",
+    "object_type": "Dataset",
+    "source_sentence": "We used 4.592.139 parallel sen- tences aligned with GIZA++ for translation model training, and 45M sentences (News14+parallel data) to build a 5-gram language model.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "6.1 Experimental Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "parallel data",
+    "object_type": "Dataset",
+    "source_sentence": "To predict the four morphological features number, gender, case and strong/weak for inflecting the stemmed output, we trained 4 CRF sequence models on the target-side of the parallel data.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "6.1 Experimental Setup"
+  },
+  {
+    "subject": "Maximum Entropy Model",
+    "predicate": "trainedon",
+    "object": "parallel training data",
+    "object_type": "Dataset",
+    "source_sentence": "For the prediction of the place- holder prepositions, we trained a maximum entropy model on the parallel training data.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "6.1 Experimental Setup"
+  },
+  {
+    "subject": "Normalization",
+    "predicate": "achieves",
+    "object": "best overall score",
+    "object_type": "Other",
+    "source_sentence": "For system SP-3, in which new phrase- translation probabilities replace the placeholder probabilities, we compare a version with and without normalized p(e|f) scores: the normalization leads to a best overall score; all synthetic-phrases systems score in a similar range, however.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "6.3 Results"
+  },
+  {
+    "subject": "training",
+    "predicate": "addresses",
+    "object": "unbalanced training set",
+    "object_type": "Concept",
+    "source_sentence": "We assume that removing a subset of training triples leads to a somewhat unbalanced training set.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "7.3 Side-Effects on the Phrase-Table"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance",
+    "object_type": "Other",
+    "source_sentence": "In NLP, deep self-attention networks have enabled large-scale pretrained language models such as BERT and GPT to boost state-of-the-art performance on downstream applications.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1083",
+    "title": "Improving Deep Transformer with Depth-Scaled Initialization and Merged Attention",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "GPT",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance",
+    "object_type": "Other",
+    "source_sentence": "In NLP, deep self-attention networks have enabled large-scale pretrained language models such as BERT and GPT to boost state-of-the-art performance on downstream applications.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1083",
+    "title": "Improving Deep Transformer with Depth-Scaled Initialization and Merged Attention",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "achieves",
+    "object": "best results",
+    "object_type": "Other",
+    "source_sentence": "the Transformer , a currently SOTA architecture , achieves best results with merely 6 encoder and decoder layers",
+    "extraction_mode": "fixed",
+    "paper": "D19-1083",
+    "title": "Improving Deep Transformer with Depth-Scaled Initialization and Merged Attention",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "addresses",
+    "object": "gradient vanishing",
+    "object_type": "Concept",
+    "source_sentence": "DS-Init aims at solving gradient vanishing in deep Transformer caused by the structure of RC followed by LN.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1083",
+    "title": "Improving Deep Transformer with Depth-Scaled Initialization and Merged Attention",
+    "section": "5 Depth-Scaled Initialization"
+  },
+  {
+    "subject": "training",
+    "predicate": "addresses",
+    "object": "gradient explosion",
+    "object_type": "Concept",
+    "source_sentence": "Fixup focuses on overcoming gradient explosion cased by consecutive RCs and seeks to enable training without LN but at the cost of carefully handling parameter initialization of each matrix transformation, including manipulating initialization of different bias and scale terms.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1083",
+    "title": "Improving Deep Transformer with Depth-Scaled Initialization and Merged Attention",
+    "section": "5 Depth-Scaled Initialization"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "achieves",
+    "object": "27.89",
+    "object_type": "Metric",
+    "source_sentence": "Results show that this fails for decoder and achieves only 27.89 BLEU for encoder , losing 0.66 BLEU compared with the full variant (28.55).",
+    "extraction_mode": "fixed",
+    "paper": "D19-1083",
+    "title": "Improving Deep Transformer with Depth-Scaled Initialization and Merged Attention",
+    "section": "28.50 BLEU Score"
+  }
+]

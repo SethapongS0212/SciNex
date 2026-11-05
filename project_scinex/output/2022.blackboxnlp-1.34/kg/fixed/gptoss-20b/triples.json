@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "BERT model",
+    "predicate": "produces",
+    "object": "12 layers of embedding vectors",
+    "object_type": "Other",
+    "source_sentence": "The BERT model generates 12 layers of embedding vectors with each layer containing a separate 768-dimensional embedding for each word, so we average the word embeddings in BERT's final layer, resulting in a 768-dimensional sentence embedding.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.1 Models and Implementation"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "produces",
+    "object": "768-dimensional sentence embedding",
+    "object_type": "Other",
+    "source_sentence": "The BERT model generates 12 layers of embedding vectors with each layer containing a separate 768-dimensional embedding for each word, so we average the word embeddings in BERT's final layer, resulting in a 768-dimensional sentence embedding.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.1 Models and Implementation"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "produces",
+    "object": "300-dimensional sentence embedding",
+    "object_type": "Other",
+    "source_sentence": "We take the same mean pooling approach with GloVe, which yields a 300-dimensional sentence embedding for each sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.1 Models and Implementation"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "MLP classifier",
+    "object_type": "Method",
+    "source_sentence": "In each set of experiments, the sentence embeddings are used as input to a Multi -Layered Perceptron (MLP) classifier, which labels them accord- ing to the probing task.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.1 Models and Implementation"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "addresses",
+    "object": "probing task",
+    "object_type": "Task",
+    "source_sentence": "In each set of experiments, the sentence embeddings are used as input to a Multi -Layered Perceptron (MLP) classifier, which labels them accord- ing to the probing task.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.1 Models and Implementation"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "Other",
+    "source_sentence": "In each set of experiments, the sentence embeddings are used as input to a Multi -Layered Perceptron (MLP) classifier, which labels them accord- ing to the probing task.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.1 Models and Implementation"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "AUC-ROC score",
+    "object_type": "Metric",
+    "source_sentence": "We evaluate the perfor- mance of all probes using the AUC-ROC score.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.1 Models and Implementation"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "pytorch_pretrained_bert library",
+    "object_type": "Other",
+    "source_sentence": "we used the bert-base-uncased BERT model from the pytorch_pretrained_bert library",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.1 Models and Implementation"
+  },
+  {
+    "subject": "GloVe Vectors",
+    "predicate": "achieves",
+    "object": "outperform random baselines on all tasks except BS",
+    "object_type": "Other",
+    "source_sentence": "GloVe results: The vanilla GloVe vectors outperform the random baselines on all tasks except BS.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.3 Results"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "norm",
+    "object_type": "Other",
+    "source_sentence": "specifically BERT stores information pertinent to the BS, SOMO and TC tasks in the norm",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.3 Results"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "outperform random baselines across all tasks",
+    "object_type": "Other",
+    "source_sentence": "The vanilla BERT vectors out- perform random baselines across all tasks, including the BS task.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.4 Norm Correlation Analysis"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "surface-level and syntactic information",
+    "object_type": "Concept",
+    "source_sentence": "GloVe uses the norm to store surface-level and syntactic information.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.4 Norm Correlation Analysis"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "norm",
+    "object_type": "Concept",
+    "source_sentence": "GloVe uses the norm to encode sentence length",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.4 Norm Correlation Analysis"
+  }
+]

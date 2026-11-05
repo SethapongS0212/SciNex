@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "Transformer",
+    "object_type": "Model",
+    "source_sentence": "We propose a simple MTL approach that consists of using a vanilla NMT system —in our experiments, it is a transformer system as defined by Vaswani et al. (2017)— where all (main and auxiliary) tasks share the encoder and the decoder.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "2 Multi-task learning approach and auxiliary tasks"
+  },
+  {
+    "subject": "transformation",
+    "predicate": "uses",
+    "object": "one-to-many word alignments",
+    "object_type": "Word Alignments",
+    "source_sentence": "This transformation uses one-to-many word alignments and is inspired by the concept of biwords introduced by Sánchez-Martínez et al. (2012) for the compression of parallel corpora.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "2 Multi-task learning approach and auxiliary tasks"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "uses",
+    "object": "IWSLT 2014 text translation track",
+    "object_type": "Other",
+    "source_sentence": "for English –German and English – Hebrew we used the training data (speeches of TED and TEDx talks) of the IWSLT 2014 text translation track ;2",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "3 Experimental settings"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "uses",
+    "object": "IWSLT 2015 text translation track",
+    "object_type": "Other",
+    "source_sentence": "for English – Vietnamese we used the training data (also TED talks) of the IWSLT 2015 text translation track ;3",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "3 Experimental settings"
+  },
+  {
+    "subject": "Preliminary Experiments",
+    "predicate": "uses",
+    "object": "English –German WMT 2014 dataset",
+    "object_type": "Dataset",
+    "source_sentence": "As for SwitchOut 10Even though MTL DA is intended for low- resource language pairs, we conducted preliminary experiments on large training data using the English –German WMT 2014 dataset , which contains around 4.5M training parallel sentences.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "4 Results and discussion"
+  },
+  {
+    "subject": "Layer-wise Relevance Propagation",
+    "predicate": "uses",
+    "object": "transformers",
+    "object_type": "Model",
+    "source_sentence": "We used layer-wise relevance propagation (LRP), as adapted to transformers by Voita et al. (2021), to compute the relative contribution of source and target tokens to each prediction made by the system.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "5 Explainability"
+  },
+  {
+    "subject": "probabilistic",
+    "predicate": "uses",
+    "object": "word-alignment model",
+    "object_type": "Model",
+    "source_sentence": "Once the source words to be re- placed are identified, a word-alignment model and a probabilistic dictionary are used to also replace the corresponding counterpart by the most probable translation of the new source word.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "6 Related work"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "uses",
+    "object": "bigrams",
+    "object_type": "Concept",
+    "source_sentence": "weighting the precision ratio for bigrams with a weight (0.2) four times smaller than that of unigrams (0.8).",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.669",
+    "title": "Abstract",
+    "section": "A Training details"
+  }
+]

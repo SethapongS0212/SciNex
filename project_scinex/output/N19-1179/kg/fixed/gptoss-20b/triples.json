@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "Causal Relations",
+    "predicate": "addresses",
+    "object": "events within a sentence",
+    "object_type": "Concept",
+    "source_sentence": "Causal relations can occur between any two events in a document, both between events within a sentence and between events across sentences.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Causal Relations",
+    "predicate": "addresses",
+    "object": "events across sentences",
+    "object_type": "Concept",
+    "source_sentence": "Causal relations can occur between any two events in a document, both between events within a sentence and between events across sentences.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "uses",
+    "object": "linguistic patterns",
+    "object_type": "Method",
+    "source_sentence": "both unsupervised and supervised causal relation identification approaches have been proposed including linguistic patterns, statistical measures and supervised classifiers",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "uses",
+    "object": "statistical measures",
+    "object_type": "Method",
+    "source_sentence": "both unsupervised and supervised causal relation identification approaches have been proposed including linguistic patterns, statistical measures and supervised classifiers",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "uses",
+    "object": "supervised classifiers",
+    "object_type": "Method",
+    "source_sentence": "both unsupervised and supervised causal relation identification approaches have been proposed including linguistic patterns, statistical measures and supervised classifiers",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "uses",
+    "object": "linguistic patterns",
+    "object_type": "Method",
+    "source_sentence": "both unsupervised and supervised causal relation identification approaches have been proposed including linguistic patterns, statistical measures and supervised classifiers",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "uses",
+    "object": "statistical measures",
+    "object_type": "Method",
+    "source_sentence": "both unsupervised and supervised causal relation identification approaches have been proposed including linguistic patterns, statistical measures and supervised classifiers",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "uses",
+    "object": "supervised classifiers",
+    "object_type": "Method",
+    "source_sentence": "both unsupervised and supervised causal relation identification approaches have been proposed including linguistic patterns, statistical measures and supervised classifiers",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Integer Linear Programming",
+    "predicate": "uses",
+    "object": "temporal relations",
+    "object_type": "Concept",
+    "source_sentence": "Integer linear programming (ILP) approaches have been applied to predict a set of temporal relations or an event timeline in a document",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Causal Relations",
+    "predicate": "uses",
+    "object": "explicit causal cue phrases",
+    "object_type": "Phrases",
+    "source_sentence": "Out of the annotated causal links, only 117 Caselli and Vossen (2017) causal relations are indicated by explicit causal cue phrases while the others are implicit.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "3 The EventStoryLine Corpus"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "gold event mentions",
+    "object_type": "Event Mentions",
+    "source_sentence": "In our experiments, we use the gold event mentions in EventStoryLine and exclude aspectual, causative, perception and reporting event mentions2, most of which were not annotated with any causal relation according to Caselli and Vossen (2017).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "3 The EventStoryLine Corpus"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "produces",
+    "object": "highest score",
+    "object_type": "Other",
+    "source_sentence": "we will use the highest score produced by the intra- sentence classifier over all the event mention pairs.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "4.1 The Common Feature Set"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "system predicted event coreference links",
+    "object_type": "Other",
+    "source_sentence": "to intra- sentence cases through event coreference links, we use a heuristic method to improve causal relation prediction performance and replace the predictions from the cross- sentence classifier with the predictions from the intra- sentence classifier5, by using system predicted event coreference links.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "4.1 The Common Feature Set"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "context",
+    "object_type": "Other",
+    "source_sentence": "Cheng and Miyao (2017): a dependency path based sequential neural network model that extensively models compositional meanings of the context between two event mentions for causal relation identification.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "6.2 Baseline Systems"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "addresses",
+    "object": "temporal relations",
+    "object_type": "Task",
+    "source_sentence": "Choubey and Huang (2017b): another dependency path based sequential neural network model that was first developed for identifying temporal relations between event mentions within a sentence.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "6.2 Baseline Systems"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "lexical features",
+    "object_type": "Other",
+    "source_sentence": "LR (Lexical): the same logistic regression classifier as our local pairwise classifier but using the lexical features only.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "6.2 Baseline Systems"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "causal potential features",
+    "object_type": "Feature",
+    "source_sentence": "LR ( Causal Potential): the same logistic regres- sion classifier as our local pairwise classifier but using the causal potential features only.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "6.2 Baseline Systems"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "full set of features",
+    "object_type": "Feature",
+    "source_sentence": "LR (Full): our local pairwise classifier using the full set of features.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1179",
+    "title": "Modeling Document-level Causal Structures for Event Causal Relation Identiﬁcation",
+    "section": "6.2 Baseline Systems"
+  }
+]

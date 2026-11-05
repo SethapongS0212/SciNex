@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Edit Distance",
+    "predicate": "uses",
+    "object": "pwiki",
+    "object_type": "Other",
+    "source_sentence": "Specifically, rather than using rwiki alone, we linearly combine the Levenstein edit distance , with the scores pwiki and rwiki.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1187",
+    "title": "Boosting Entity Linking Performance by Leveraging Unlabeled Documents",
+    "section": "3.3 Aggregate scoring function"
+  },
+  {
+    "subject": "Edit Distance",
+    "predicate": "uses",
+    "object": "rwiki",
+    "object_type": "Other",
+    "source_sentence": "Specifically, rather than using rwiki alone, we linearly combine the Levenstein edit distance , with the scores pwiki and rwiki.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1187",
+    "title": "Boosting Entity Linking Performance by Leveraging Unlabeled Documents",
+    "section": "3.3 Aggregate scoring function"
+  },
+  {
+    "subject": "entity",
+    "predicate": "uses",
+    "object": "DeepEd6",
+    "object_type": "Model",
+    "source_sentence": "We used DeepEd6 from Ganea and Hofmann (2017) to obtain entity embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1187",
+    "title": "Boosting Entity Linking Performance by Leveraging Unlabeled Documents",
+    "section": "4.1 Parameters and Resources"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "local score function",
+    "object_type": "Concept",
+    "source_sentence": "We also used Word2vec word embeddings7 to compute the local score function and GloVe embeddings8 within the attention model in Figure 2.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1187",
+    "title": "Boosting Entity Linking Performance by Leveraging Unlabeled Documents",
+    "section": "4.1 Parameters and Resources"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "Attention Model",
+    "object_type": "Model",
+    "source_sentence": "We also used Word2vec word embeddings7 to compute the local score function and GloVe embeddings8 within the attention model in Figure 2.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1187",
+    "title": "Boosting Entity Linking Performance by Leveraging Unlabeled Documents",
+    "section": "4.1 Parameters and Resources"
+  },
+  {
+    "subject": "AIDA",
+    "predicate": "uses",
+    "object": "AIDA CoNLL development set",
+    "object_type": "Dataset",
+    "source_sentence": "Hyper-parameter selection was performed on the AIDA CoNLL development set.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1187",
+    "title": "Boosting Entity Linking Performance by Leveraging Unlabeled Documents",
+    "section": "4.1 Parameters and Resources"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "In this work we advocated for learning our model on unlabeled non-Wikipedia documents and using Wikipedia to constraint the space of potential entity assignments.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1187",
+    "title": "Boosting Entity Linking Performance by Leveraging Unlabeled Documents",
+    "section": "4.4 Analysis and ablations"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "Unlabeled Data",
+    "object_type": "Dataset",
+    "source_sentence": "In this work we advocated for learning our model on unlabeled non-Wikipedia documents and using Wikipedia to constraint the space of potential entity assignments.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1187",
+    "title": "Boosting Entity Linking Performance by Leveraging Unlabeled Documents",
+    "section": "4.4 Analysis and ablations"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "Unlabeled Documents",
+    "object_type": "Dataset",
+    "source_sentence": "Still, in order to show that our learning approach and using unlabeled documents is indeed preferable, we estimate our model on Wikipedia articles.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1187",
+    "title": "Boosting Entity Linking Performance by Leveraging Unlabeled Documents",
+    "section": "4.4 Analysis and ablations"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "list of mentions and contexts",
+    "object_type": "Other",
+    "source_sentence": "The algorithm receives a list of mentions and contexts D = {(m1, c1), (m2, c2),..., (mM, cM)}.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1187",
+    "title": "Boosting Entity Linking Performance by Leveraging Unlabeled Documents",
+    "section": "B Candidate selection"
+  }
+]

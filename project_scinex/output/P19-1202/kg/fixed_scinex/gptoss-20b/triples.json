@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "generation",
+    "predicate": "addresses",
+    "object": "information overload",
+    "object_type": "Concept",
+    "source_sentence": "in order to address the information overload caused by the massive data, data-to-text generation technology , which expresses the contents of data in natural language, becomes more important .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achievesresult",
+    "object": "94.38% precision of relation generation",
+    "object_type": "Metric",
+    "source_sentence": "The experimental results demonstrate that, even without writer information, our model achieves the best performance among the previous models in all evaluation metrics: 94.38% precision of relation generation , 42.40% F1 score of content selection, 19.38% normalized Damerau-Levenshtein",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achievesresult",
+    "object": "42.40% F1 score of content selection",
+    "object_type": "Metric",
+    "source_sentence": "The experimental results demonstrate that, even without writer information, our model achieves the best performance among the previous models in all evaluation metrics: 94.38% precision of relation generation , 42.40% F1 score of content selection, 19.38% normalized Damerau-Levenshtein",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achievesresult",
+    "object": "19.38% normalized Damerau-Levenshtein",
+    "object_type": "Metric",
+    "source_sentence": "The experimental results demonstrate that, even without writer information, our model achieves the best performance among the previous models in all evaluation metrics: 94.38% precision of relation generation , 42.40% F1 score of content selection, 19.38% normalized Damerau-Levenshtein",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Memory Network",
+    "predicate": "uses",
+    "object": "Information",
+    "object_type": "Concept",
+    "source_sentence": "The memory network can be used to maintain and update representations of the salient information (Weston et al., 2015; Sukhbaatar et al., 2015; Distance (DLD) of content ordering, and 16.15% of BLEU score.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "2.2 Memory modules"
+  },
+  {
+    "subject": "Example",
+    "predicate": "mentions",
+    "object": "box- score in Table 1",
+    "object_type": "Other",
+    "source_sentence": "For example, the box- score in Table 1 has a record r such that e = ANTHONY DAVIS, a = PTS, and x[e, a] = 20.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "4 Saliency-Aware Text Generation"
+  },
+  {
+    "subject": "tracking",
+    "predicate": "addresses",
+    "object": "word repetition problem",
+    "object_type": "Concept",
+    "source_sentence": "we observed a word repetition problem when the tracking model is not updated during generating each sentence.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "4.6 Learning objective"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "log-likelihood",
+    "object_type": "Concept",
+    "source_sentence": "We apply fully supervised training that maximizes the following log-likelihood: log p(Y1:T, Z1:T, E1:T, A1:T, N1:T | x) T X t=1 log p(Zt = zt | hLM t−1, hENT t−1) t:Zt=1 log p(Et = et | hLM t−1, hENT t−1) t:Zt=1 log p(At = at | et, hLM t−1, hENT′ t ) t:Zt=1,atis num attr log p(Nt = nt | hLM t−1, hENT t ) t:Zt=0 log p(Yt = yt | h′ t)",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "4.6 Learning objective"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "evaluates",
+    "object": "93.4%",
+    "object_type": "Metric",
+    "source_sentence": "The precision and the recall of this extraction model are respectively 93.4% and 75.0% in the test data.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1202",
+    "title": "Learning to Select, Track, and Generate for Data-to-Text",
+    "section": "6.2 Qualitative analysis of entity embedding"
+  }
+]

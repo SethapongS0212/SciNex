@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "UD_English-EWT treebank",
+    "object_type": "Dataset",
+    "source_sentence": "enabling consistency (e.g., when we exploit the existing UD_English-EWT treebank in our parser for tweets , §3).",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "2.2 Tokenization"
+  },
+  {
+    "subject": "Guidelines",
+    "predicate": "designedfor",
+    "object": "annotating tweets",
+    "object_type": "Task",
+    "source_sentence": "Before annotating, they were given a tutorial overview of the general UD annotation conventions and our guidelines specifically for annotating tweets.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "2.6.2 Annotation Process"
+  },
+  {
+    "subject": "Tokenization",
+    "predicate": "addresses",
+    "object": "Tweets",
+    "object_type": "Dataset",
+    "source_sentence": "Tokenization, as the initial step of many NLP tasks, is non-trivial for informal tweets , which include hashtags, at-mentions, and emoticons .",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.1 Tokenizer"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "achieves",
+    "object": "best accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Our bi-LSTM tokenizer achieves the best accuracy among all these tokenizers.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.1 Tokenizer"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "character representations",
+    "object_type": "Concept",
+    "source_sentence": "We therefore begin with the neural greedy stack LSTM parser introduced by Ballesteros et al. (2015), which can parse a sentence in linear time and harnesses character representations to construct word vectors, which should help mitigate the challenge of spelling variation.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "word vectors",
+    "object_type": "Concept",
+    "source_sentence": "We therefore begin with the neural greedy stack LSTM parser introduced by Ballesteros et al. (2015), which can parse a sentence in linear time and harnesses character representations to construct word vectors, which should help mitigate the challenge of spelling variation.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "trainedon",
+    "object": "UD_English-EWT training set",
+    "object_type": "Dataset",
+    "source_sentence": "In our initial experiments, we train our parser on the combination of UD_English-EWT and TWEEBANK V2 training sets.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "trainedon",
+    "object": "TWEEBANK V2 training set",
+    "object_type": "Dataset",
+    "source_sentence": "In our initial experiments, we train our parser on the combination of UD_English-EWT and TWEEBANK V2 training sets.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "produces",
+    "object": "structured loss function",
+    "object_type": "Other",
+    "source_sentence": "they transformed the votes of the ensemble into a structured loss function.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "transition-based parser",
+    "object_type": "Model",
+    "source_sentence": "Note that training a transition-based parser typically involves the transformation of the training data into a sequence of \"oracle\" state-action pairs.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  }
+]

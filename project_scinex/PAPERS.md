@@ -1,5 +1,9 @@
 # The corpus — 20 papers
 
+> **Session 37 (2026-10-26):** the Part 2 *finetuning* runs use a different corpus: **805 ACL
+> Anthology papers** with fixed entity lists, listed in `papers_acl.txt` (ACL ids; open access on
+> aclanthology.org). This file still describes the 20-paper corpus used for the C1–C6 judging.
+
 Every paper the C1–C6 experiment was run on. All twenty come from **R. Chawuthai's group**
 and span applied machine learning across ophthalmology, chemistry, materials science,
 traffic and ITS, cloud systems, computer vision and NLP — deliberately diverse, so the

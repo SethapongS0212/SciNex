@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "CTRL",
+    "predicate": "addresses",
+    "object": "controllable generation",
+    "object_type": "Task",
+    "source_sentence": "Class- conditional language models (CC-LMs), as the Conditional Transformer Language (CTRL) model , train or fine-tune the weights θ of a single neural model directly for controllable generation , by appending a control code in the beginning of a training sequence.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.215",
+    "title": "PPL-MCTS: Constrained Textual Generation Through Discriminator-Guided MCTS Decoding",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "addresses",
+    "object": "automatic metrics",
+    "object_type": "Concept",
+    "source_sentence": "Since automatic metrics can be biased and may not faithfully represent the human judgement, we conduct a human evaluation to compare with the results obtained through oracles and confirm the results and the relevance of automatic metrics.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.215",
+    "title": "PPL-MCTS: Constrained Textual Generation Through Discriminator-Guided MCTS Decoding",
+    "section": "4.6 Human evaluation"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "evaluatedon",
+    "object": "CLS dataset",
+    "object_type": "Dataset",
+    "source_sentence": "The evaluation has been performed on the CLS dataset by three volunteering colleagues, French native speakers.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.215",
+    "title": "PPL-MCTS: Constrained Textual Generation Through Discriminator-Guided MCTS Decoding",
+    "section": "4.6 Human evaluation"
+  },
+  {
+    "subject": "generation",
+    "predicate": "addresses",
+    "object": "Constraints",
+    "object_type": "Concept",
+    "source_sentence": "In this paper, we show that it is possible to control generation with the help of a discriminator that implements some expected constraints on the text during decoding .",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.215",
+    "title": "PPL-MCTS: Constrained Textual Generation Through Discriminator-Guided MCTS Decoding",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "generation",
+    "object_type": "Task",
+    "source_sentence": "used for the generation : the guiding classifier, the \"vanilla\" LM and the CC-LM.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.215",
+    "title": "PPL-MCTS: Constrained Textual Generation Through Discriminator-Guided MCTS Decoding",
+    "section": "A.1 Data splits"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "accuracy",
+    "object_type": "Metric",
+    "source_sentence": "the classifier used to measure the accuracy.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.215",
+    "title": "PPL-MCTS: Constrained Textual Generation Through Discriminator-Guided MCTS Decoding",
+    "section": "A.1 Data splits"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Models",
+    "object_type": "Model",
+    "source_sentence": "used to train and control the training of models used for the generation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.215",
+    "title": "PPL-MCTS: Constrained Textual Generation Through Discriminator-Guided MCTS Decoding",
+    "section": "A.1 Data splits"
+  }
+]

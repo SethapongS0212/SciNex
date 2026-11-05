@@ -286,6 +286,9 @@ def main():
                     default=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
                     help="or: all-linear")
     ap.add_argument("--seed", type=int, default=13)
+    ap.add_argument("--save-steps", type=int, default=0,
+                    help="checkpoint every N optimizer steps (keeps the latest); a re-run with the "
+                         "same --run-name resumes from it. 0 = once per epoch")
     ap.add_argument("--upcast-fp32", action="store_true",
                     help="peft's prepare_model_for_kbit_training (fp32 non-quantised weights); "
                          "costs ~0.8 GB extra on Qwen3-4B — fine on the VM, not on 8 GB")
@@ -338,7 +341,10 @@ def main():
         learning_rate=args.lr, lr_scheduler_type="cosine",
         warmup_steps=max(1, math.ceil(args.warmup_ratio * total_steps)),   # warmup_ratio is deprecated
         optim="paged_adamw_8bit", bf16=True, logging_steps=5,
-        save_strategy="epoch", save_total_limit=1,
+        # --save-steps: a 1-epoch run with save_strategy="epoch" has NO checkpoint until it ends —
+        # a GPU that dropped off the bus at step 1866/2389 lost 3.4 h (hands_off §37.7)
+        save_strategy="steps" if args.save_steps > 0 else "epoch",
+        save_steps=args.save_steps if args.save_steps > 0 else 500, save_total_limit=1,
         eval_strategy="epoch" if dev_feats else "no",
         gradient_checkpointing=True, gradient_checkpointing_kwargs={"use_reentrant": False},
         report_to=[], seed=args.seed, remove_unused_columns=False,
@@ -350,8 +356,13 @@ def main():
         eval_dataset=dev_strip or None, data_collator=Collator(tok.pad_token_id),
         callbacks=[progress_callback(torch.cuda.get_device_properties(0).total_memory / 2**30)])
     t0 = time.time()
+    # resume from the newest step checkpoint of an interrupted run (optimizer, LR schedule, RNG
+    # and data position included); a fresh run has none
+    resume = any((run_dir / "checkpoints").glob("checkpoint-*"))
+    if resume:
+        print(f"resuming from the latest checkpoint in {run_dir / 'checkpoints'}", flush=True)
     with fast_attention(training=True):   # backward + checkpoint recompute run inside this block too
-        result = trainer.train()
+        result = trainer.train(resume_from_checkpoint=True if resume else None)
     model.save_pretrained(run_dir / "adapter")
     tok.save_pretrained(run_dir / "adapter")
 

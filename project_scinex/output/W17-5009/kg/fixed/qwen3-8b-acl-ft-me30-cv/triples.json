@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Building a Corpus",
+    "predicate": "uses",
+    "object": "TED Talks",
+    "object_type": "Dataset",
+    "source_sentence": "These include building a corpus from TED talks and using Convolutional Neural Networks (CNNs) in the recognition.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Convolutional Neural Networks",
+    "predicate": "uses",
+    "object": "recognition",
+    "object_type": "Task",
+    "source_sentence": "These include building a corpus from TED talks and using Convolutional Neural Networks (CNNs) in the recognition.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "distributed representations",
+    "object_type": "Concept",
+    "source_sentence": "In addition, Word2Vec distributed representations were utilized in the model building.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "2 Previous Research"
+  },
+  {
+    "subject": "Convolutional Neural Networks",
+    "predicate": "uses",
+    "object": "text categorization tasks",
+    "object_type": "Task",
+    "source_sentence": "Convolutional Neural Networks (CNNs) have recently been successfully used in several text categorization tasks (e.g., review rating, sentiment recognition, and question type recognition).",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "3 TED Talk Data"
+  },
+  {
+    "subject": "Deep Learning",
+    "predicate": "addresses",
+    "object": "computational humor research",
+    "object_type": "ResearchContext",
+    "source_sentence": "Deep learning recently has been applied to computational humor research (Bertero and Fung, 2016b,a).",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "3 TED Talk Data"
+  },
+  {
+    "subject": "RNNs",
+    "predicate": "uses",
+    "object": "context information",
+    "object_type": "Concept",
+    "source_sentence": "Bert- ero and Fung (2016a) formulated the recognition to be a sequential labeling task and utilized Re- current Neural Networks (RNNs) on top of CNN models (serv- ing as feature extractors) to utilize context infor- mation among utterances.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "3 TED Talk Data"
+  },
+  {
+    "subject": "Random Forest",
+    "predicate": "uses",
+    "object": "features",
+    "object_type": "Features",
+    "source_sentence": "we applied Random Forest to perform humor recognition by using the following two groups of features.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "4 Methods 4.1 Conventional Model"
+  },
+  {
+    "subject": "Random Forest",
+    "predicate": "uses",
+    "object": "kNN",
+    "object_type": "Method",
+    "source_sentence": "we applied Random Forest to perform humor recognition by using the following two groups of features. The second group are semantic distance features, including the humor label classes from 5 sentences in the training set that are closest to the sentence being evaluated (found by using a k-Nearest Neighbors (kNN)",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "4 Methods 4.1 Conventional Model"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "Google News",
+    "object_type": "Dataset",
+    "source_sentence": "In this study, we utilized the Word2Vec embedding vectors (d = 300) that were trained on 100 billion words of Google News.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "4.2 CNN model"
+  },
+  {
+    "subject": "Feature Extraction",
+    "predicate": "uses",
+    "object": "SKLL6 python package",
+    "object_type": "Other",
+    "source_sentence": "When building conventional models, we developed our own feature extraction scripts and used the SKLL6 python package for building Random Forest models.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "4.2 CNN model"
+  },
+  {
+    "subject": "Random Forest",
+    "predicate": "uses",
+    "object": "human-engineered features",
+    "object_type": "Features",
+    "source_sentence": "a conventional classifier (e.g., Random Forest) based on human-engineered features vs. an end-to-end CNN method, which relies on its inherent representation learning.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5009",
+    "title": "Predicting Audience’s Laughter During Presentations Using Convolutional Neural Network",
+    "section": "6 Discussion"
+  }
+]

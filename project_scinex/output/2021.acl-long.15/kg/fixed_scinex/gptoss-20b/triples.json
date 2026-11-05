@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Joint Models",
+    "predicate": "addresses",
+    "object": "correlation between the two tasks",
+    "object_type": "Concept",
+    "source_sentence": "dominant single - intent SLU systems in the literature adopt joint models to consider the correlation between the two tasks, which have obtained remarkable success.",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Slot Filling",
+    "predicate": "addresses",
+    "object": "sequence labeling task",
+    "object_type": "Task",
+    "source_sentence": "Slot filling can be seen as a sequence labeling task that maps the input utterance x into a slot output sequence oS = (oS1,..., oSn).",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "2 Problem Deﬁnition"
+  },
+  {
+    "subject": "Joint Learning",
+    "predicate": "achieves",
+    "object": "Intent Detection",
+    "object_type": "Task",
+    "source_sentence": "Both intent detection and slot filling are optimized simultaneously via a joint learning scheme.",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "3 Approach"
+  },
+  {
+    "subject": "Joint Learning",
+    "predicate": "achieves",
+    "object": "Slot Filling",
+    "object_type": "Task",
+    "source_sentence": "Both intent detection and slot filling are optimized simultaneously via a joint learning scheme.",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "3 Approach"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "addresses",
+    "object": "Sequence Labeling Tasks",
+    "object_type": "Task",
+    "source_sentence": "BiLSTM The bidirectional LSTM (BiL- STM) have been successfully applied to sequence labeling tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "3.1 Self-attentive Encoder"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "Contextual Encoding",
+    "object_type": "Concept",
+    "source_sentence": "we first feed the contextual encoding E into an intent-aware BiLSTM to enhance its task-specific representations",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "3.2 Token-Level Intent Detection Decoder"
+  },
+  {
+    "subject": "Intent Detection",
+    "predicate": "uses",
+    "object": "LeakyReLU",
+    "object_type": "Method",
+    "source_sentence": "Then, hI t is used for intent detection , using: It =σ(W I(LeakyReLU(W h hI t +bh))+bI)",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "3.2 Token-Level Intent Detection Decoder"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "produces",
+    "object": "slot-aware hidden representation",
+    "object_type": "Other",
+    "source_sentence": "We utilize a BiLSTM to produce the slot-aware hidden representation",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "3.3 Slot Filling Decoder"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "yS t",
+    "object_type": "Other",
+    "source_sentence": "yS t = softmax W sg[S,L+1] t",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "3.3.3 Slot Prediction After L layers’ propagation, we obtain the ﬁnal slot representation G[S,L+1] for slot prediction."
+  },
+  {
+    "subject": "Models",
+    "predicate": "achievesresult",
+    "object": "×8.2 speedup",
+    "object_type": "Other",
+    "source_sentence": "We observe that our model achieves the ×8.2, ×10.8 and ×11.5 speedup compared with SOTA models stack-propagation, Joint Multiple ID-SF and AGIF.",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "4.5 Analysis"
+  },
+  {
+    "subject": "GIN",
+    "predicate": "achievesresult",
+    "object": "×17.2 speedup",
+    "object_type": "Other",
+    "source_sentence": "In addition, it's worth noting that as the batch size gets larger, GL-GIN can achieve better acceleration where our model could achieve ×17.2 speedup compared with AGIF when batch size is 64.",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "4.5 Analysis"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "addresses",
+    "object": "structural information",
+    "object_type": "Concept",
+    "source_sentence": "Graph Neural Network for NLP Graph neural networks that operate directly on graph structures to model the structural information , which has been applied successfully in various NLP tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "GAT",
+    "predicate": "addresses",
+    "object": "classification task",
+    "object_type": "Task",
+    "source_sentence": "(2019) and Huang and Carley (2019) explore graph attention network (GAT) for classification task to incorporate the de- pendency parser information .",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "addresses",
+    "object": "non-local contextual information",
+    "object_type": "Concept",
+    "source_sentence": "(2017) and Liu et al. (2019a) apply graph neural network to model the non-local contextual information for sequence labeling tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.15",
+    "title": "Abstract",
+    "section": "5 Related Work"
+  }
+]

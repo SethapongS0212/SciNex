@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "local contextual features",
+    "object_type": "Dataset",
+    "source_sentence": "They use a classifier trained on local contextual features to predict whether to add or remove determiners for the target-side of translation rules.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "SMT",
+    "predicate": "uses",
+    "object": "post-processing step",
+    "object_type": "Other",
+    "source_sentence": "which first translates into a stemmed representation with a component for inflecting the SMT output in a post-processing step.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "3 Inﬂection Prediction System"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "morphological features",
+    "object_type": "Other",
+    "source_sentence": "Inflected forms are generated based on the morphological features number, case, gender and strong/weak, which are predicted on the SMT output using a sequence model and a morphological tool.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "3 Inﬂection Prediction System"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "morphological tool",
+    "object_type": "Other",
+    "source_sentence": "Inflected forms are generated based on the morphological features number, case, gender and strong/weak, which are predicted on the SMT output using a sequence model and a morphological tool.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "3 Inﬂection Prediction System"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "trainedon",
+    "object": "parallel data",
+    "object_type": "Dataset",
+    "source_sentence": "we trained 4 CRF sequence models on the target-side of the parallel data.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "6.1 Experimental Setup"
+  },
+  {
+    "subject": "Maximum Entropy Model",
+    "predicate": "trainedon",
+    "object": "parallel training data",
+    "object_type": "Dataset",
+    "source_sentence": "we trained a maximum entropy model on the parallel training data.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "6.1 Experimental Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Wapiti",
+    "object_type": "Other",
+    "source_sentence": "For all models, we used the toolkit Wapiti.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "6.1 Experimental Setup"
+  },
+  {
+    "subject": "Prepositions",
+    "predicate": "uses",
+    "object": "post-processing",
+    "object_type": "Method",
+    "source_sentence": "Portmanteau prepositions are split into preposition and article prior to translation and merged in a post-processing step.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2205",
+    "title": "Modeling Complement Types in Phrase-Based SMT",
+    "section": "6.2 Baselines"
+  }
+]

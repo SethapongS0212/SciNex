@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "addresses",
+    "object": "keyphrase generation",
+    "object_type": "Task",
+    "source_sentence": "a new multi-task learning framework that leverages an extractive model and external knowledge to improve keyphrase generation",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Sequence Labeling",
+    "predicate": "uses",
+    "object": "Recurrent Neural Network",
+    "object_type": "Model",
+    "source_sentence": "Sequence labeling models are built on a recurrent neural network to sequentially go through a source text and learn the likelihood of each word in the source text to be a keyphrase word.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "2.1 Automatic Keyphrase Extraction"
+  },
+  {
+    "subject": "Keyphrase Generation",
+    "predicate": "addresses",
+    "object": "source text",
+    "object_type": "Text",
+    "source_sentence": "Keyphrase generation aims at predicting both present and absent keyphrases for a source text.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "2.2 Automatic Keyphrase Generation"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "Jaccard similarities",
+    "object_type": "Concept",
+    "source_sentence": "The retrieval is based on the Jaccard similarities of the non-stop-word sets between x and the corpus documents.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.1 Retriever"
+  },
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "addresses",
+    "object": "keyphrase extraction",
+    "object_type": "Task",
+    "source_sentence": "We propose a multi-task learning framework which simultaneously learns to extract keyphrases from the source text and generate keyphrases word by word with external knowledge.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2 Joint Extraction and Generation"
+  },
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "addresses",
+    "object": "keyphrase generation",
+    "object_type": "Task",
+    "source_sentence": "We propose a multi-task learning framework which simultaneously learns to extract keyphrases from the source text and generate keyphrases word by word with external knowledge.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2 Joint Extraction and Generation"
+  },
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "uses",
+    "object": "bidirectional GRU layer",
+    "object_type": "Method",
+    "source_sentence": "Two encoders are employed in our multi-task learning framework. One is for the source text encoding (i.e., \"Encoder1\" in Figure 2) and the other is for retrieved keyphrases encoding (i.e., \"Encoder2\" in Figure 2). Both of them employ a bidirectional GRU layer to obtain a context-aware representation of each word:",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2.2 Encoders"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "produces",
+    "object": "generated keyphrase candidates",
+    "object_type": "Other",
+    "source_sentence": "The generated keyphrase candidates directly come from the beam search process of the decoder.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.3.1 Keyphrase Candidate Collection"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "produces",
+    "object": "input representations",
+    "object_type": "Other",
+    "source_sentence": "we learn the word embeddings and use two bi-directional GRU to obtain the input representations.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.3.2 Merging"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "uniform distribution",
+    "object_type": "Other",
+    "source_sentence": "During training, all the trainable parameters including the embeddings are randomly initialized with uniform distribution in [-0.1, 0.1].",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "generative",
+    "predicate": "addresses",
+    "object": "keyphrase extraction ability",
+    "object_type": "Concept",
+    "source_sentence": "which manifests such a combination can improve the keyphrase extraction ability of the generative model.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "5.2 Present and Absent Keyphrase Prediction"
+  },
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "addresses",
+    "object": "keyphrase extraction and generation",
+    "object_type": "Task",
+    "source_sentence": "First, an end-to-end multi-task learning framework is introduced, which not only combines the keyphrase extraction and generation but also leverages the retrieved keyphrases from similar documents to guide the generation process.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "6 Conclusion and Future Work"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "addresses",
+    "object": "merging candidates",
+    "object_type": "Task",
+    "source_sentence": "Furthermore, we introduce a neural-based merging algorithm to merge the candidates from three different components.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "6 Conclusion and Future Work"
+  },
+  {
+    "subject": "Empirical Studies",
+    "predicate": "addresses",
+    "object": "effectiveness of our approach",
+    "object_type": "Concept",
+    "source_sentence": "Comprehensive empirical studies demonstrate the effectiveness of our approach.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "6 Conclusion and Future Work"
+  }
+]

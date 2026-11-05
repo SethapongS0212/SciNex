@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "model transfer",
+    "object_type": "Process",
+    "source_sentence": "where we use cross - lingual embeddings for model transfer.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "2 Approach"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "supervised data",
+    "object_type": "Dataset",
+    "source_sentence": "and for this reason we also perform model fine-tuning using the supervised data.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "2.2 Few-Shot Transfer"
+  },
+  {
+    "subject": "Ranking",
+    "predicate": "produces",
+    "object": "scores",
+    "object_type": "Other",
+    "source_sentence": "The ranking step in RaRe proceeds by evaluating each of the H transfer models on the target gold set, to produce scores sh (using the F1 score ).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "2.2 Few-Shot Transfer"
+  },
+  {
+    "subject": "FastText",
+    "predicate": "uses",
+    "object": "Wikipedia embeddings",
+    "object_type": "Other",
+    "source_sentence": "For language-independent word embedding features we use fastText 300 dimensional Wikipedia embeddings",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "3.1 Data"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "uses",
+    "object": "bilingual dictionaries",
+    "object_type": "Dataset",
+    "source_sentence": "including: supervised learning over bilingual dictionaries, which barely affected system performance;",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "3.2 Model Variations"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "41 languages",
+    "object_type": "Other",
+    "source_sentence": "We trained models on all 41 languages in both high-resource (HSup) and naive supervised low-resource (LSup) settings",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "3.2 Model Variations"
+  },
+  {
+    "subject": "annotation projection",
+    "predicate": "addresses",
+    "object": "POS tagging",
+    "object_type": "Task",
+    "source_sentence": "Annotation projection has been applied to POS tagging (Yarowsky et al., 2001; Das and Petrov, 2011; Duong et al., 2014; Fang and Cohn, 2016), NER (Zitouni and Florian, 2008; Ehrmann et al., 2011; Agerri et al., 2018), and parsing (Hwa et al., 2005; Ma and Xia, 2014; Rasooli and Collins, 2015a,b).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "annotation projection",
+    "predicate": "addresses",
+    "object": "NER",
+    "object_type": "Task",
+    "source_sentence": "Annotation projection has been applied to POS tagging (Yarowsky et al., 2001; Das and Petrov, 2011; Duong et al., 2014; Fang and Cohn, 2016), NER (Zitouni and Florian, 2008; Ehrmann et al., 2011; Agerri et al., 2018), and parsing (Hwa et al., 2005; Ma and Xia, 2014; Rasooli and Collins, 2015a,b).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "annotation projection",
+    "predicate": "addresses",
+    "object": "parsing",
+    "object_type": "Task",
+    "source_sentence": "Annotation projection has been applied to POS tagging (Yarowsky et al., 2001; Das and Petrov, 2011; Duong et al., 2014; Fang and Cohn, 2016), NER (Zitouni and Florian, 2008; Ehrmann et al., 2011; Agerri et al., 2018), and parsing (Hwa et al., 2005; Ma and Xia, 2014; Rasooli and Collins, 2015a,b).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "annotation projection",
+    "predicate": "uses",
+    "object": "parallel corpus",
+    "object_type": "Dataset",
+    "source_sentence": "In annotation projection, the annotations of tokens in a source sentence are projected to their aligned tokens in the target language through a parallel corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Majority Voting",
+    "predicate": "uses",
+    "object": "noisy annotations",
+    "object_type": "Concept",
+    "source_sentence": "majority voting is often used to aggregate noisy annotations (e.g. Fang and Cohn (2016) show the importance of modelling the annotation biases that the source language(s) might project to the target language.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Unsupervised Mappings",
+    "predicate": "comparesagainst",
+    "object": "Supervised Methods",
+    "object_type": "Other",
+    "source_sentence": "Experiments with unsupervised mappings performed substantially worse than supervised methods, and so we didn't explore these further.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "A.2 Cross-lingual Word Embeddings"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "uses",
+    "object": "bilingual dictionaries",
+    "object_type": "Other",
+    "source_sentence": "Each of the 41 languages is mapped to English embedding space using three methods from MUSE: 1) supervised with bilingual dictionaries; 2) seeding using identical character sequences; and 3) unsupervised training using ad- versarial learning.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "A.2 Cross-lingual Word Embeddings"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "uses",
+    "object": "adversarial learning",
+    "object_type": "Other",
+    "source_sentence": "Each of the 41 languages is mapped to English embedding space using three methods from MUSE: 1) supervised with bilingual dictionaries; 2) seeding using identical character sequences; and 3) unsupervised training using ad- versarial learning.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1015",
+    "title": "Massively Multilingual Transfer for NER",
+    "section": "A.2 Cross-lingual Word Embeddings"
+  }
+]

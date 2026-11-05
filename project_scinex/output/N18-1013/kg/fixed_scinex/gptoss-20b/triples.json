@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Bidirectional LSTM",
+    "predicate": "achieves",
+    "object": "current best universal sentence representation method",
+    "object_type": "Other",
+    "source_sentence": "max-pooling along with bidirectional LSTM (Bi-LSTM) yields the current best universal sentence representation method",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "2.1 Implicit Discourse Relation Recognition"
+  },
+  {
+    "subject": "LSTMs",
+    "predicate": "uses",
+    "object": "hidden state size of 300",
+    "object_type": "Other",
+    "source_sentence": "All the LSTMs in our neural network use the hidden state size of 300.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.2 Parameter Settings and Model Training"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "dropout ratio of 0.5",
+    "object_type": "Other",
+    "source_sentence": "To avoid overfitting, we applied dropout with dropout ratio of 0.5 to both input and output of LSTM layers.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.2 Parameter Settings and Model Training"
+  },
+  {
+    "subject": "LSTMs",
+    "predicate": "uses",
+    "object": "gradient clipping with gradient L2-norm threshold of 5.0",
+    "object_type": "Other",
+    "source_sentence": "To prevent the exploding gradient problem in training LSTMs, we adopt gradient clipping with gradient L2-norm threshold of 5.0.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.2 Parameter Settings and Model Training"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "initial learning rate of 5e-4",
+    "object_type": "Other",
+    "source_sentence": "We chose the standard cross-entropy loss function for training our neural network model and adopted Adam optimizer with the initial learning rate of 5e-4 and a mini-batch size of 1286.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.2 Parameter Settings and Model Training"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "long paragraphs",
+    "object_type": "Other",
+    "source_sentence": "paragraph-level models achieve clear performance gains on long paragraphs (with more than 5 DUs) by extensively modeling mutual influences of DUs in a paragraph.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.7 Impact of Paragraph Length"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "short paragraphs",
+    "object_type": "Other",
+    "source_sentence": "paragraph-level models achieve noticeable performance gains on short paragraphs (with 2 or 3 DUs) as well.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.7 Impact of Paragraph Length"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "discourse relation patterns",
+    "object_type": "Concept",
+    "source_sentence": "On the contrary, the full model corrected this mistake by modeling discourse relation patterns with the CRF layer.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.8 Example Analysis"
+  }
+]

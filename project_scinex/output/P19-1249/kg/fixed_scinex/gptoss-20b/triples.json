@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "Author Profiling",
+    "predicate": "addresses",
+    "object": "Personal Traits",
+    "object_type": "Task",
+    "source_sentence": "Author profiling is about predicting personal traits of individual authors based on their writing style.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1249",
+    "title": "Matti Wiegmann1,2 Benno Stein1 Martin Potthast3",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Corpus Construction",
+    "predicate": "addresses",
+    "object": "Distant Supervision",
+    "object_type": "Concept",
+    "source_sentence": "Corpus construction for author profiling has always been difficult for lack of large-scale distant supervision sources that provide for genuine pieces of writing from many different authors alongside personal information.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1249",
+    "title": "Matti Wiegmann1,2 Benno Stein1 Martin Potthast3",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "gender inference",
+    "object_type": "Concept",
+    "source_sentence": "Instead of retraining their prediction models, we use the models for gender inference as they have been trained on the PAN training datasets provided to participants of the respective years.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1249",
+    "title": "Matti Wiegmann1,2 Benno Stein1 Martin Potthast3",
+    "section": "4 Evaluation"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "PAN training datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Instead of retraining their prediction models, we use the models for gender inference as they have been trained on the PAN training datasets provided to participants of the respective years.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1249",
+    "title": "Matti Wiegmann1,2 Benno Stein1 Martin Potthast3",
+    "section": "4 Evaluation"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "English-speaking profiles",
+    "object_type": "Dataset",
+    "source_sentence": "For our experiments, we extracted a subset of 45,475 English-speaking profiles from our corpus with the traits gender and occupation and split it 70/30 into training and test sets.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1249",
+    "title": "Matti Wiegmann1,2 Benno Stein1 Martin Potthast3",
+    "section": "4.1 Preprocessing and Baselines"
+  }
+]

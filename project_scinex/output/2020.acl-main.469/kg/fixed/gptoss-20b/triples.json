@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "new records on vision-language reasoning tasks",
+    "object_type": "Other",
+    "source_sentence": "Recently, BERT variants with vision such as ViLBERT , LXMERT , and UNITER have achieved new records on several vision -and-language reasoning tasks, e.g. VQA , NLVR2 , and VCR .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Transformers",
+    "object_type": "Model",
+    "source_sentence": "These pre- trained visually grounded language models use Transformers to jointly model words and image regions.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "Flickr30K training set",
+    "object_type": "Dataset",
+    "source_sentence": "we perform additional pre-training on the training set of Flickr30K with the fore-mentioned masked language modeling objective with the image.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "2 Model"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "AllenNLP",
+    "object_type": "Other",
+    "source_sentence": "For evaluation , we parse all sentences in the validation set of Flickr30K using AllenNLP and use the parser output as the gold parsing annotation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "3.1 Quantitative analysis"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "parser output",
+    "object_type": "Other",
+    "source_sentence": "For evaluation , we parse all sentences in the validation set of Flickr30K using AllenNLP and use the parser output as the gold parsing annotation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "3.1 Quantitative analysis"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "subwords",
+    "object_type": "Other",
+    "source_sentence": "BERT is a Transformer with subwords as input and trained using language modeling objectives.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "A.1 Background"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "input embeddings",
+    "object_type": "Other",
+    "source_sentence": "The input embeddings E are then passed through a multi-layer Transformer that builds up a contextualized representation of the subwords.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "A.1 Background"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "masked language modeling",
+    "object_type": "Other",
+    "source_sentence": "Pre-training is done using a combination of two language modeling objectives: (1) masked language modeling, where some parts of the input tokens are randomly replaced with a special token (i.e., [MASK]), and the model needs to predict the identity of those tokens and (2) next sentence prediction, where the model is given a sentence pair and trained to classify whether they are two consecutive sentences from a document.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "A.1 Background"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "next sentence prediction",
+    "object_type": "Other",
+    "source_sentence": "Pre-training is done using a combination of two language modeling objectives: (1) masked language modeling, where some parts of the input tokens are randomly replaced with a special token (i.e., [MASK]), and the model needs to predict the identity of those tokens and (2) next sentence prediction, where the model is given a sentence pair and trained to classify whether they are two consecutive sentences from a document.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "A.1 Background"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "Transformer",
+    "object_type": "Model",
+    "source_sentence": "The core of our idea is to reuse the self- attention mechanism within the Transformer to implicitly align elements of the input text and regions in the input image.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "A.2 Model"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "Image",
+    "object_type": "Model",
+    "source_sentence": "In addition to all the components of BERT, we introduce a set of visual embeddings, F, to model an image.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "A.2 Model"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "Alignments",
+    "object_type": "Task",
+    "source_sentence": "fp, a position embedding, which is used when alignments between words and bounding regions are provided as part of the input, and set to the sum of the position embeddings corresponding to the aligned words.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "A.2 Model"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "Transformer",
+    "object_type": "Model",
+    "source_sentence": "The visual embeddings are then passed to a multi-layer Transformer along with the original set of text embeddings, allowing the model to implicitly discover alignments between both sets of inputs, and build up a joint representation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "A.2 Model"
+  },
+  {
+    "subject": "Image",
+    "predicate": "uses",
+    "object": "ResNeXt-based Faster RCNN",
+    "object_type": "Model",
+    "source_sentence": "We train the model to predict the 3,129 most frequent answers and use image features from a ResNeXt-based Faster RCNN pre-trained on Visual Genome.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "B Experiment"
+  },
+  {
+    "subject": "Image",
+    "predicate": "uses",
+    "object": "ResNet50",
+    "object_type": "Model",
+    "source_sentence": "Image features are obtained from a ResNet50 and \"gold\" detection bounding boxes and segmentations provided in the dataset are used.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "B Experiment"
+  },
+  {
+    "subject": "Image",
+    "predicate": "uses",
+    "object": "\"gold\" detection bounding boxes",
+    "object_type": "Other",
+    "source_sentence": "Image features are obtained from a ResNet50 and \"gold\" detection bounding boxes and segmentations provided in the dataset are used.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "B Experiment"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "accuracy of 64.8 on the development set",
+    "object_type": "Metric",
+    "source_sentence": "We tested models with 9, 18, 36, 72, and 144 proposals, which achieve an accuracy of 64.8, 65.5, 66.7, 67.1, and 67.4 respectively on the development set.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "B.4 Flickr30K Entities"
+  },
+  {
+    "subject": "Faster R-CNN",
+    "predicate": "uses",
+    "object": "image features from Visual Genome",
+    "object_type": "Other",
+    "source_sentence": "We adapt the setting of BAN , where image features from a Faster R-CNN pre-trained on Visual Genome are used.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.469",
+    "title": "What Does BERT with Vision Look At?",
+    "section": "B.4 Flickr30K Entities"
+  }
+]

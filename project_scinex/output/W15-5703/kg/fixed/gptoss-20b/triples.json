@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "German language",
+    "object_type": "Language",
+    "source_sentence": "Our experiments are based on the German language, in which compound - ing is a highly productive phenomenon allowing for a potentially infinite number of combinations of words into compounds.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Morphology Induction",
+    "predicate": "uses",
+    "object": "string edits",
+    "object_type": "Method",
+    "source_sentence": "Our methodology follows from recent work on morphology induction , which combines string edits with distributional semantics to split words into morphemes.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Morphology Induction",
+    "predicate": "uses",
+    "object": "distributional semantics",
+    "object_type": "Method",
+    "source_sentence": "Our methodology follows from recent work on morphology induction , which combines string edits with distributional semantics to split words into morphemes.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Morphology Induction",
+    "predicate": "addresses",
+    "object": "split words into morphemes",
+    "object_type": "Task",
+    "source_sentence": "Our methodology follows from recent work on morphology induction , which combines string edits with distributional semantics to split words into morphemes.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "German",
+    "predicate": "uses",
+    "object": "component frequency",
+    "object_type": "Concept",
+    "source_sentence": "Koehn and Knight (2003) address German compound splitting using a straightforward approach based on component frequency.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "2.1 Splitting compounds for SMT"
+  },
+  {
+    "subject": "German",
+    "predicate": "uses",
+    "object": "morphological analyzers",
+    "object_type": "Method",
+    "source_sentence": "Nießen and Ney (2000), Popovi´c et al. (2006) and Fritzinger and Fraser (2010) explore using morpho- logical analyzers for German compound splitting , with mixed results.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "2.1 Splitting compounds for SMT"
+  },
+  {
+    "subject": "Morphological Analyzer",
+    "predicate": "uses",
+    "object": "heavy supervision",
+    "object_type": "Concept",
+    "source_sentence": "Since these approaches use heavy supervision within the morphological analyzer, they are orthogonal to our unsupervised approach.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "2.1 Splitting compounds for SMT"
+  },
+  {
+    "subject": "Principal Component Analysis",
+    "predicate": "uses",
+    "object": "Vector Space",
+    "object_type": "Concept",
+    "source_sentence": "All visualizations are produced by performing principal component analysis (PCA) to reduce the vector space from 500 to 2 dimensions.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "3.2 Compound words and the semantic vector space"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "produces",
+    "object": "direction vector",
+    "object_type": "Concept",
+    "source_sentence": "Algorithm initially computes the direction vector for each (modifier, compound ) pair in the support set by subtracting the embedding of the head from the embedding of the compound",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "4.1 Compound extraction"
+  },
+  {
+    "subject": "German",
+    "predicate": "uses",
+    "object": "News Crawl Corpora",
+    "object_type": "Dataset",
+    "source_sentence": "We use the German data of the News Crawl Corpora (2007-2014).",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "4.2 Implementation considerations"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "word embeddings",
+    "object_type": "Model",
+    "source_sentence": "We use word2vec to estimate the word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "4.2 Implementation considerations"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "skip-gram model",
+    "object_type": "Model",
+    "source_sentence": "We train 500-dimensional word embeddings using the skip-gram model, a window size of 5 and a minimum word frequency threshold of 2.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "4.2 Implementation considerations"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "frequency-based method",
+    "object_type": "Method",
+    "source_sentence": "The algorithm's coverage can be increased by backing off to a frequency- based method if conditions (a) or (c) are violated.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "4.3 Compound splitting"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "addresses",
+    "object": "evaluation of meaning",
+    "object_type": "Concept",
+    "source_sentence": "The core of the algorithm is the evaluation of meaning.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "4.3 Compound splitting"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "rank-based and cosine similarity-based evaluation functions",
+    "object_type": "Method",
+    "source_sentence": "This evaluation is performed using the rank-based and cosine similarity-based evaluation functions.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "4.3 Compound splitting"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "addresses",
+    "object": "Compound Splitting",
+    "object_type": "Task",
+    "source_sentence": "proposed an algorithm for applying these structures to compound splitting.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "6 Conclusion"
+  }
+]

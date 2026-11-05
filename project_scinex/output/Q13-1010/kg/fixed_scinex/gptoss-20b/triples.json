@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "parser",
+    "predicate": "comparesagainst",
+    "object": "n-gram model",
+    "object_type": "Model",
+    "source_sentence": "We show that our parser outperforms an n-gram model in predicting more than one upcoming word.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1010",
+    "title": "Incremental Tree Substitution Grammar for Parsing and Sentence Prediction",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "produces",
+    "object": "incremental derivations",
+    "object_type": "Other",
+    "source_sentence": "We introduce a probabilistic chart- parsing algorithm to efficiently compute all possible incremental derivations that an ITSG can generate given an input sentence (presented one word at the time).",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1010",
+    "title": "Incremental Tree Substitution Grammar for Parsing and Sentence Prediction",
+    "section": "3 Probabilistic ITSG Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "trainedon",
+    "object": "Penn WSJ Treebank",
+    "object_type": "Dataset",
+    "source_sentence": "For training and evaluating the ITSG parser , we employ the Penn WSJ Treebank .",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1010",
+    "title": "Incremental Tree Substitution Grammar for Parsing and Sentence Prediction",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Grammar",
+    "predicate": "produces",
+    "object": "2.2M fragments mapping to 2.0M fringes",
+    "object_type": "Other",
+    "source_sentence": "The final grammar consists of 2.2M fragments mapping to 2.0M fringes.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1010",
+    "title": "Incremental Tree Substitution Grammar for Parsing and Sentence Prediction",
+    "section": "4.1 Grammar Extraction"
+  },
+  {
+    "subject": "Smoothing",
+    "predicate": "produces",
+    "object": "simple CFG rewriting rules",
+    "object_type": "Other",
+    "source_sentence": "Open class smoothing adds simple CFG rewriting rules to the grammar for open-class pairs not encountered in the training corpus, with frequency 10−6.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1010",
+    "title": "Incremental Tree Substitution Grammar for Parsing and Sentence Prediction",
+    "section": "4.1 Grammar Extraction"
+  },
+  {
+    "subject": "Smoothing",
+    "predicate": "produces",
+    "object": "each lex-first fragment f",
+    "object_type": "Other",
+    "source_sentence": "Initial fragments smoothing adds each lex-first fragment f to the initial fragment set with frequency 10−2 ·freq(f).",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1010",
+    "title": "Incremental Tree Substitution Grammar for Parsing and Sentence Prediction",
+    "section": "4.1 Grammar Extraction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "exhaustive search",
+    "object_type": "Other",
+    "source_sentence": "All ITSG experiments we report used exhaustive search (no beam was used to prune the search space).",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1010",
+    "title": "Incremental Tree Substitution Grammar for Parsing and Sentence Prediction",
+    "section": "4.1 Grammar Extraction"
+  },
+  {
+    "subject": "parser",
+    "predicate": "comparesagainst",
+    "object": "Roark (2001) parser",
+    "object_type": "Model",
+    "source_sentence": "We compare the ITSG parser with the incremental parsers of Schuler et al. (2010) and Demberg et al. (2014) for full-sentence parsing , with the Roark (2001) parser for full-sentence and partial pars- 17We also evaluated our ITSG model using perplexity; the results obtained were substantially worse than those obtained using Roark's parsers .",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1010",
+    "title": "Incremental Tree Substitution Grammar for Parsing and Sentence Prediction",
+    "section": "4.2 Evaluation"
+  },
+  {
+    "subject": "parser",
+    "predicate": "comparesagainst",
+    "object": "n-gram model",
+    "object_type": "Model",
+    "source_sentence": "our parser outperforms an n-gram model in predicting more than one upcoming word.",
+    "extraction_mode": "fixed",
+    "paper": "Q13-1010",
+    "title": "Incremental Tree Substitution Grammar for Parsing and Sentence Prediction",
+    "section": "6 Conclusions"
+  }
+]

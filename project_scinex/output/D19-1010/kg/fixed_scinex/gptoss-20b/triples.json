@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Reinforcement Learning",
+    "predicate": "uses",
+    "object": "dialog policy",
+    "object_type": "Concept",
+    "source_sentence": "Among many models, Reinforcement Learning (RL) is commonly used to learn dialog policy (Fatemi et al., 2016; Peng et al., 2017; Chen et al., 2017; Yarats and Lewis, 2018; Lei et al., 2018; He et al., 2018; Su et al., 2018), where users are mod- eled as a part of the environment and the policy is learned through interactions with users .",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Dialog System",
+    "predicate": "uses",
+    "object": "conversational corpora",
+    "object_type": "Dataset",
+    "source_sentence": "samples to train, most existing studies use data- driven approaches to build a dialog system from conversational corpora (Zhao and Eskenazi, 2016; Dhingra et al., 2017; Shah et al., 2018; Shi and Yu, 2018), where a common strategy is to build a user simulator , and then to learn dialog policy through making simulated interactions between an agent and the simulator .",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Adversarial Learning",
+    "predicate": "uses",
+    "object": "policy",
+    "object_type": "Concept",
+    "source_sentence": "We integrate Adversarial Learning (AL) to train the policy and estimator simultaneously, and evaluate the policy using state-action pairs to better guide dialog policy learning.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "policy",
+    "object_type": "Concept",
+    "source_sentence": "We integrate Adversarial Learning (AL) to train the policy and estimator simultaneously, and evaluate the policy using state-action pairs to better guide dialog policy learning.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "multi-domain, multi-intent task-oriented dialog corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct experiments on the multi-domain, multi-intent task-oriented dialog corpus, with different types of user simulators.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Guided Dialog Policy Learning",
+    "predicate": "addresses",
+    "object": "joint reward learning and policy optimization",
+    "object_type": "Task",
+    "source_sentence": "We propose Guided Dialog Policy Learning (GDPL), a flexible and practical method on joint reward learning and policy optimization for multi-domain task-oriented dialog systems.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "3 Guided Dialog Policy Learning"
+  },
+  {
+    "subject": "Dialog",
+    "predicate": "produces",
+    "object": "dialog sessions DΠ",
+    "object_type": "Dataset",
+    "source_sentence": "Collect the dialog sessions DΠ by executing the dialog policy π and interacting with µ, au ∼µ(·|su), a ∼π(·|s), where s is maintained by DST",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "2 Sample human dialog sessions DH from D randomly"
+  },
+  {
+    "subject": "PPO",
+    "predicate": "achievesresult",
+    "object": "high performance in inform F1 and match rate",
+    "object_type": "Other",
+    "source_sentence": "ACER and PPO obtain high performance in inform F1 and match rate as well.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "5.1 Main Results"
+  },
+  {
+    "subject": "PPO",
+    "predicate": "comparesagainst",
+    "object": "GDPL",
+    "object_type": "Model",
+    "source_sentence": "Note that the difference between PPO and GDPL is only in the reward signal.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "5.5 Human Evaluation"
+  }
+]

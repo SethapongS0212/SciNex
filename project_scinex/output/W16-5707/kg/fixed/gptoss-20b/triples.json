@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "NASTEA",
+    "predicate": "uses",
+    "object": "schemas",
+    "object_type": "Other",
+    "source_sentence": "NASTEA's reliance on schemas should add more transparency to the evaluation process, with schemas providing clear representations of patterns at the discourse level.",
+    "extraction_mode": "fixed",
+    "paper": "W16-5707",
+    "title": "NASTEA: Investigating Narrative Schemas through Annotated Entities",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Documents",
+    "predicate": "uses",
+    "object": "Stanford CoreNLP",
+    "object_type": "Other",
+    "source_sentence": "Once the documents of these categories were extracted, they were pre-processed using Stanford CoreNLP.",
+    "extraction_mode": "fixed",
+    "paper": "W16-5707",
+    "title": "NASTEA: Investigating Narrative Schemas through Annotated Entities",
+    "section": "3 Data"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "coreference resolution",
+    "object_type": "Task",
+    "source_sentence": "Of particular importance are the Stanford Parser (de Marneffe et al. 2006) and dcoref , used for coreference resolution.",
+    "extraction_mode": "fixed",
+    "paper": "W16-5707",
+    "title": "NASTEA: Investigating Narrative Schemas through Annotated Entities",
+    "section": "3 Data"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Documents",
+    "object_type": "Dataset",
+    "source_sentence": "Separate models are trained for each document category, only on documents contained in that category.",
+    "extraction_mode": "fixed",
+    "paper": "W16-5707",
+    "title": "NASTEA: Investigating Narrative Schemas through Annotated Entities",
+    "section": "4 Modiﬁcations to Schema Generation"
+  },
+  {
+    "subject": "Words",
+    "predicate": "uses",
+    "object": "Meaning",
+    "object_type": "Concept",
+    "source_sentence": "in part, this is to allow for the words meaning to be captured across multiple contexts.",
+    "extraction_mode": "fixed",
+    "paper": "W16-5707",
+    "title": "NASTEA: Investigating Narrative Schemas through Annotated Entities",
+    "section": "4 Modiﬁcations to Schema Generation"
+  },
+  {
+    "subject": "NASTEA",
+    "predicate": "achieves",
+    "object": "F1 score",
+    "object_type": "Metric",
+    "source_sentence": "NASTEA scores are reported as the F1 score of both of these values.",
+    "extraction_mode": "fixed",
+    "paper": "W16-5707",
+    "title": "NASTEA: Investigating Narrative Schemas through Annotated Entities",
+    "section": "5.2 Extracting Salient Entities with a Schema"
+  },
+  {
+    "subject": "NASTEA",
+    "predicate": "uses",
+    "object": "schemas",
+    "object_type": "Other",
+    "source_sentence": "Since NASTEA is applying schemas to documents, those schemas can be retained and counted allowing for 2p < 0.001 including the baseline with the heterogeneous categories; p < 0.005 excluding the baseline from the analysis.",
+    "extraction_mode": "fixed",
+    "paper": "W16-5707",
+    "title": "NASTEA: Investigating Narrative Schemas through Annotated Entities",
+    "section": "6 Results"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Semantic Parsing",
+    "predicate": "uses",
+    "object": "customized decoders",
+    "object_type": "Method",
+    "source_sentence": "Some SKG tasks, e.g., semantic parsing, use customized decoders to generate programs.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "beam search",
+    "object_type": "Method",
+    "source_sentence": "For decoding, we use beam search by default.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "3.2 Modeling"
+  },
+  {
+    "subject": "Zero-Shot Learning",
+    "predicate": "addresses",
+    "object": "natural language descriptions",
+    "object_type": "Concept",
+    "source_sentence": "Zero-shot learning enables models to solve tasks with natural language descriptions without training samples.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "4.3 Zero-Shot and Few-Shot Learning"
+  },
+  {
+    "subject": "Structured Data",
+    "predicate": "uses",
+    "object": "natural language",
+    "object_type": "Concept",
+    "source_sentence": "Given ample training data, PLMs adapt well to SKG tasks, as shown in Table 2. However, under the low-resource setting, converting structured data to natural language might be helpful.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "4.4 Structured Knowledge Encoding"
+  },
+  {
+    "subject": "Case Study",
+    "predicate": "mentions",
+    "object": "model output",
+    "object_type": "Other",
+    "source_sentence": "Case study We summarize some interesting observations about the model output",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "4.6 Error Analysis"
+  },
+  {
+    "subject": "Error Analysis",
+    "predicate": "addresses",
+    "object": "SKG tasks",
+    "object_type": "Task",
+    "source_sentence": "Also, the error analysis of SKG can more fine-grained, and we hope our findings can promote future work on systematically studying and decomposing the behavior of PLMs on SKG tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "6 Limitations"
+  },
+  {
+    "subject": "training",
+    "predicate": "addresses",
+    "object": "linguistic phenomena",
+    "object_type": "Concept",
+    "source_sentence": "Furthermore, training and evalua- tion data should reflect the intents and linguistic phenomena in the real world (de Vries et al., 2020), suggesting more realistic tasks to be added into UNIFIEDSKG.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "6 Limitations"
+  },
+  {
+    "subject": "Fact Verification",
+    "predicate": "achieves",
+    "object": "accuracy",
+    "object_type": "Metric",
+    "source_sentence": "For fact verification, we report the accuracy.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "D.2 Metric Details"
+  },
+  {
+    "subject": "Data-to-Text Generation",
+    "predicate": "achieves",
+    "object": "sacre-BLEU .5",
+    "object_type": "Metric",
+    "source_sentence": "For data-to-text generation , we re- Structure Input Tokens Text Input Tokens Structure Input + Text Input Tokens Sequence Output Tokens Structure Input Tokens Text Input Tokens Structure Input + Text Input Tokens Sequence Output Tokens port sacre-BLEU .5",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "D.2 Metric Details"
+  },
+  {
+    "subject": "NLG",
+    "predicate": "achieves",
+    "object": "BLEC",
+    "object_type": "Metric",
+    "source_sentence": "For high- fidelity NLG, we report BLEC , which is the exact match between keywords in the formal language and the natural language.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.39",
+    "title": "UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models",
+    "section": "D.2 Metric Details"
+  }
+]

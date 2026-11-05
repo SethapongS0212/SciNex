@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "state-of-the-art on three standard benchmarks",
+    "object_type": "Other",
+    "source_sentence": "Our model establishes the new state-of-the-art on three standard benchmarks and surpasses all previous joint models.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.5",
+    "title": "A Frustratingly Easy Approach for Entity and Relation Extraction",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Relation Classification",
+    "predicate": "uses",
+    "object": "Head Selection",
+    "object_type": "Method",
+    "source_sentence": "the approach of Bekoulis et al. (2018) is similar except that they model relation classification as a multi-label head selection problem.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.5",
+    "title": "A Frustratingly Easy Approach for Entity and Relation Extraction",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Pre-Trained Language Model",
+    "predicate": "uses",
+    "object": "contextualized representations",
+    "object_type": "Other",
+    "source_sentence": "We first use a pre-trained language model (e.g., BERT) to obtain contextualized representations xt for each input token xt.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.5",
+    "title": "A Frustratingly Easy Approach for Entity and Relation Extraction",
+    "section": "3.2 Our Approach"
+  },
+  {
+    "subject": "Evaluation metrics",
+    "predicate": "uses",
+    "object": "micro F1 measure",
+    "object_type": "Metric",
+    "source_sentence": "Evaluation metrics We follow the standard evaluation protocol and use micro F1 measure as the evaluation metric.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.5",
+    "title": "A Frustratingly Easy Approach for Entity and Relation Extraction",
+    "section": "4.1 Setup"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "ACE05",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate this approximation model on ACE05 and SciERC.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.5",
+    "title": "A Frustratingly Easy Approach for Entity and Relation Extraction",
+    "section": "4.3 Batch Computations and Speedup"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "SciERC",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate this approximation model on ACE05 and SciERC.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.5",
+    "title": "A Frustratingly Easy Approach for Entity and Relation Extraction",
+    "section": "4.3 Batch Computations and Speedup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Transformers",
+    "object_type": "Other",
+    "source_sentence": "We implement our models based on Hugging- Face's Transformers library.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.5",
+    "title": "A Frustratingly Easy Approach for Entity and Relation Extraction",
+    "section": "B Implementation Details"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "ADAM",
+    "object_type": "Method",
+    "source_sentence": "We train our models with Adam optimizer of a linear scheduler with a warmup ratio of 0.1.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.5",
+    "title": "A Frustratingly Easy Approach for Entity and Relation Extraction",
+    "section": "B Implementation Details"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "entity",
+    "object_type": "Model",
+    "source_sentence": "For all the experiments, we train the entity model for 100 epochs, and a learning rate of 1e-5 for weights in pre-trained LMs, 5e-4 for others and a batch size of 16.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.5",
+    "title": "A Frustratingly Easy Approach for Entity and Relation Extraction",
+    "section": "B Implementation Details"
+  }
+]

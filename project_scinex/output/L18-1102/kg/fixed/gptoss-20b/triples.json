@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "Common Crawl GloVe embeddings",
+    "object_type": "Other",
+    "source_sentence": "we featurize all statements using the normalized sum of Common Crawl GloVe embeddings of the words and pick from only those non-sarcastic statements that have similarity ≤0.95 with the sarcastic statement",
+    "extraction_mode": "fixed",
+    "paper": "L18-1102",
+    "title": "Keywords: sarcasm, classiﬁcation, conversation",
+    "section": "5.1 Evaluation Task"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "Amazon product corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We use 1600-dimensional GloVe representations trained on the Amazon product corpus , which is used instead of Common Crawl because of the semantic closeness between sentiment and sarcasm.",
+    "extraction_mode": "fixed",
+    "paper": "L18-1102",
+    "title": "Keywords: sarcasm, classiﬁcation, conversation",
+    "section": "5.2 Methods"
+  },
+  {
+    "subject": "Sarcasm Detection",
+    "predicate": "addresses",
+    "object": "determining which of two statements is sarcastic",
+    "object_type": "Task",
+    "source_sentence": "5 Human sarcasm detection performance was measured by giving 5 human evaluators 100 samples and asking them to perform the same task as the algorithm: determining which of two statements is sarcastic.",
+    "extraction_mode": "fixed",
+    "paper": "L18-1102",
+    "title": "Keywords: sarcasm, classiﬁcation, conversation",
+    "section": "5.2 Methods"
+  },
+  {
+    "subject": "probability",
+    "predicate": "uses",
+    "object": "training set",
+    "object_type": "Dataset",
+    "source_sentence": "This probability is chosen as the average fraction of responses that are sarcastic in the training set.",
+    "extraction_mode": "fixed",
+    "paper": "L18-1102",
+    "title": "Keywords: sarcasm, classiﬁcation, conversation",
+    "section": "5.2 Methods"
+  },
+  {
+    "subject": "Machine Learning Methods",
+    "predicate": "uses",
+    "object": "context",
+    "object_type": "Concept",
+    "source_sentence": "There is clear scope for improvement for machine learning methods, starting with the use of context provided to make better decisions about sarcasm.",
+    "extraction_mode": "fixed",
+    "paper": "L18-1102",
+    "title": "Keywords: sarcasm, classiﬁcation, conversation",
+    "section": "5.3 Results"
+  }
+]

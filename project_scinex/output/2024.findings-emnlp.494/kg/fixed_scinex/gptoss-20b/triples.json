@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "labeling",
+    "predicate": "produces",
+    "object": "high-quality goals",
+    "object_type": "Other",
+    "source_sentence": "We build a scalable labeling pipeline that combines GPT-4 and human annotators to construct high-quality goals from keyphrases.",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "produces",
+    "object": "METAKP evaluation benchmark",
+    "object_type": "Other",
+    "source_sentence": "In this section, we formulate the on-demand keyphrase generation task and introduce the METAKP evaluation benchmark.",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "3 METAKP Benchmark"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "produces",
+    "object": "final goal annotations",
+    "object_type": "Other",
+    "source_sentence": "two of the authors conduct a round of filtering to obtain the final goal annotations.",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "3.2 Benchmark Creation Pipeline"
+  },
+  {
+    "subject": "Large Language Models",
+    "predicate": "uses",
+    "object": "self-consistency decoding approach",
+    "object_type": "Method",
+    "source_sentence": "a self-consistency decoding approach for prompting large language models (LLMs)",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "4 Modeling Approach"
+  },
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "multi-task learning procedure",
+    "object_type": "Other",
+    "source_sentence": "Training We design a multi-task learning procedure to directly supervise the model on P(<n/a>|X, gi) and P(Ygi|X, gi) with a mixture of relevant and irrelevant goals.",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "4.1 Multi-Task Supervised Fine-tuning"
+  },
+  {
+    "subject": "Preliminary Experiments",
+    "predicate": "achieves",
+    "object": "strong performance in deciding the goal relevance",
+    "object_type": "Other",
+    "source_sentence": "Our preliminary experiments show that the first instruction already achieves a strong performance in deciding the goal relevance, even approaching supervised models (Section 5.2).",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "4.2 Prompting Large Language Models"
+  },
+  {
+    "subject": "Reranking",
+    "predicate": "uses",
+    "object": "supervised models",
+    "object_type": "Model",
+    "source_sentence": "(1) reranking the outputs from supervised models by their similarity to the goal",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "5.2 Main Results"
+  },
+  {
+    "subject": "Keyphrase Generation",
+    "predicate": "addresses",
+    "object": "real-world use cases",
+    "object_type": "Concept",
+    "source_sentence": "we further discuss the real-world use cases of the on-demand keyphrase generation.",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "generation",
+    "predicate": "achieves",
+    "object": "sets of keyphrases focusing on different categories",
+    "object_type": "Other",
+    "source_sentence": "With an on-demand keyphrase generation model, it is possible to generate sets of keyphrases focusing on different categories.",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "6.1 Applications"
+  },
+  {
+    "subject": "generation",
+    "predicate": "achieves",
+    "object": "expand output of existing keyphrase systems",
+    "object_type": "Other",
+    "source_sentence": "On-demand keyphrase generation allows the user to expand output of existing keyphrase systems by prompting the model with the desired goal.",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "6.1 Applications"
+  },
+  {
+    "subject": "Keyphrase Generation",
+    "predicate": "addresses",
+    "object": "event detection",
+    "object_type": "Task",
+    "source_sentence": "Finally, we demonstrate the potential of on-demand keyphrase generation as general NLP infrastructure, using event detection (ED) as a case study.",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "6.2 METAKP in the Wild: Event Detection"
+  },
+  {
+    "subject": "Keyphrase Generation",
+    "predicate": "addresses",
+    "object": "epidemic control",
+    "object_type": "Concept",
+    "source_sentence": "Intuitively, given a sentence containing 'getting vaccination', instead of focusing on the trigger 'get', on-demand keyphrase generation is able to focus more on 'vaccination', given the goal 'epidemic control'.",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "6.2 METAKP in the Wild: Event Detection"
+  },
+  {
+    "subject": "supervised and unsupervised",
+    "predicate": "evaluatedon",
+    "object": "METAKP",
+    "object_type": "Dataset",
+    "source_sentence": "We designed and evaluated both supervised and unsupervised methods on METAKP, highlighting the strengths of self-consistency prompting with large language models.",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "produces",
+    "object": "training and evaluation data",
+    "object_type": "Other",
+    "source_sentence": "To construct the training and evaluation data for evaluating the model's ability to reject irrelevant goals, we design a simple algorithm to sample irrelevant goals.",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "A.3 Negative sampling Algorithm"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "comparesagainst",
+    "object": "Reranking",
+    "object_type": "Method",
+    "source_sentence": "we compare fine-tuning with the proposed objective with directly reranking the outputs from the \"No Goal\" model.",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "C.1 Additional Baselines"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "addresses",
+    "object": "sensitivity to variation of the prompt",
+    "object_type": "Concept",
+    "source_sentence": "we conduct an analysis of our LLM-based method's sensitivity to the variation of the prompt.",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "C.2 Prompt Sensitivity"
+  },
+  {
+    "subject": "Transcription",
+    "predicate": "addresses",
+    "object": "reverse transcription polymerase chain reaction",
+    "object_type": "Concept",
+    "source_sentence": "Goal 2: molecular biology technique Reference: reverse transcription polymerase chain reaction",
+    "extraction_mode": "fixed",
+    "paper": "2024.findings-emnlp.494",
+    "title": "METAKP: On-Demand Keyphrase Generation",
+    "section": "D Qualitative Study"
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Seq2Seq Models",
+    "predicate": "uses",
+    "object": "beam search",
+    "object_type": "Method",
+    "source_sentence": "Since standard Seq2Seq models generate only one sequence at a time, thus to generate multiple phrases, a common approach is to over-generate using beam search with a large beam width.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.710",
+    "title": "Xingdi Yuan†∗ Tong Wang†∗ Rui Meng‡∗ Khushboo Thaker‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Seq2Seq Models",
+    "predicate": "addresses",
+    "object": "summary generation tasks",
+    "object_type": "Task",
+    "source_sentence": "(2017) applied Seq2Seq models on summary generation tasks, while Du et al. (2017) generated questions conditioned on documents and answers from machine comprehension datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.710",
+    "title": "Xingdi Yuan†∗ Tong Wang†∗ Rui Meng‡∗ Khushboo Thaker‡",
+    "section": "2.2 Sequence to Sequence Generation"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "addresses",
+    "object": "neural sentence simplification and paraphrase generation tasks",
+    "object_type": "Task",
+    "source_sentence": "Seq2Seq was also applied on neural sentence simplification and paraphrase generation tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.710",
+    "title": "Xingdi Yuan†∗ Tong Wang†∗ Rui Meng‡∗ Khushboo Thaker‡",
+    "section": "2.2 Sequence to Sequence Generation"
+  },
+  {
+    "subject": "Neural Models",
+    "predicate": "uses",
+    "object": "additional data (e.g., title)",
+    "object_type": "Other",
+    "source_sentence": "two neural models that use additional data (e.g., title)",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.710",
+    "title": "Xingdi Yuan†∗ Tong Wang†∗ Rui Meng‡∗ Khushboo Thaker‡",
+    "section": "5 Datasets and Experiments"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "GRU states",
+    "object_type": "Concept",
+    "source_sentence": "Dropout is applied to both the embeddings xd and the GRU states hd.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.710",
+    "title": "Xingdi Yuan†∗ Tong Wang†∗ Rui Meng‡∗ Khushboo Thaker‡",
+    "section": "A.1 The Encoder-Decoder Model"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Concept",
+    "source_sentence": "the encoder converts their corresponding embeddings x1 e,..., xN e into a set of N real- valued vectors he = (h1 e,..., hN e ) with a bidirectional GRU : ht e = ⟨ht e,fwd, ht e,bwd⟩.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.710",
+    "title": "Xingdi Yuan†∗ Tong Wang†∗ Rui Meng‡∗ Khushboo Thaker‡",
+    "section": "A.1 The Encoder-Decoder Model"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "word embedding",
+    "object_type": "Concept",
+    "source_sentence": "The decoder is a uni-directional GRU, which generates a new state ht d at each time-step t from the word embedding xt d and the recurrent state ht−1 d: ht d = GRUd(xt d, ht−1 d ).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.710",
+    "title": "Xingdi Yuan†∗ Tong Wang†∗ Rui Meng‡∗ Khushboo Thaker‡",
+    "section": "A.1 The Encoder-Decoder Model"
+  },
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "ground truth target token at previous time-step",
+    "object_type": "Other",
+    "source_sentence": "During training (with teacher forcing), wt d is the ground truth target token at previous time-step t−1;",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.710",
+    "title": "Xingdi Yuan†∗ Tong Wang†∗ Rui Meng‡∗ Khushboo Thaker‡",
+    "section": "A.2 Attentive Decoding"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "produces",
+    "object": "prediction at the previous time-step",
+    "object_type": "Other",
+    "source_sentence": "During evaluation, wt d = yt−1, is the prediction at the previous time-step.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.710",
+    "title": "Xingdi Yuan†∗ Tong Wang†∗ Rui Meng‡∗ Khushboo Thaker‡",
+    "section": "A.2 Attentive Decoding"
+  }
+]

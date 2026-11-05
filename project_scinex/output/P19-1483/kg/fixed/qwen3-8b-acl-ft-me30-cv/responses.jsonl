@@ -1,0 +1,30 @@
+{"para_id": 0, "raw": "{\"triples\": [{\"subject\": \"Automatic Metrics\", \"predicate\": \"uses\", \"object\": \"generated text\", \"object_type\": \"Other\", \"source_sentence\": \"automatic metrics that compare the generated text to one or more reference texts are routinely used to compare models.\"}, {\"subject\": \"Automatic evaluation\", \"predicate\": \"uses\", \"object\": \"BLEU\", \"object_type\": \"Metric\", \"source_sentence\": \"For table-to-text generation , automatic evaluation has largely relied on BLEU and ROUGE.\"}, {\"subject\": \"Automatic evaluation\", \"predicate\": \"uses\", \"object\": \"ROUGE\", \"object_type\": \"Metric\", \"source_sentence\": \"For table-to-text generation , automatic evaluation has largely relied on BLEU and ROUGE.\"}]}", "n_tokens": 161, "truncated": false}
+{"para_id": 1, "raw": "{\"triples\": [{\"subject\": \"Human Evaluation\", \"predicate\": \"evaluatedOn\", \"object\": \"WikiBio dataset\", \"object_type\": \"Dataset\", \"source_sentence\": \"We conduct a large-scale human evaluation of the outputs from 16 table-to-text models on 1100 examples from the WikiBio dataset\"}]}", "n_tokens": 72, "truncated": false}
+{"para_id": 2, "raw": "{\"triples\": [{\"subject\": \"Information Extraction\", \"predicate\": \"uses\", \"object\": \"training\", \"object_type\": \"Method\", \"source_sentence\": \"We also develop information extraction based metrics , inspired from Wiseman et al. (2017), by training a model to extract tables from the reference texts (§4).\"}]}", "n_tokens": 74, "truncated": false}
+{"para_id": 3, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 4, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 5, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 6, "raw": "{\"triples\": [{\"subject\": \"BLEU\", \"predicate\": \"uses\", \"object\": \"single sentence\", \"object_type\": \"Other\", \"source_sentence\": \"BLEU is usually computed at the corpus-level , however here we show its value for a single sentence purely for illustration purposes.\"}, {\"subject\": \"Precision and Recall\", \"predicate\": \"uses\", \"object\": \"generation\", \"object_type\": \"Other\", \"source_sentence\": \"Next we discuss how to compute the precision and recall of the generation.\"}]}", "n_tokens": 111, "truncated": false}
+{"para_id": 7, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 8, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 9, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 10, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 11, "raw": "{\"triples\": [{\"subject\": \"Precision\", \"predicate\": \"comparesAgainst\", \"object\": \"Ground Truth\", \"object_type\": \"Concept\", \"source_sentence\": \"Relation Generation (RG): Precision for the (attribute, value) pairs extracted from the generated text compared to those in the ground truth table.\"}]}", "n_tokens": 68, "truncated": false}
+{"para_id": 12, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 13, "raw": "{\"triples\": [{\"subject\": \"Models\", \"predicate\": \"uses\", \"object\": \"WikiBio dataset\", \"object_type\": \"Dataset\", \"source_sentence\": \"We developed several models of varying quality for generating text from the tables in WikiBio.\"}]}", "n_tokens": 56, "truncated": false}
+{"para_id": 14, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 15, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 16, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 17, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 18, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 19, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 20, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 21, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 22, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 23, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 24, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 25, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 26, "raw": "{\"triples\": [{\"subject\": \"Information Extraction\", \"predicate\": \"uses\", \"object\": \"WikiBio\", \"object_type\": \"Dataset\", \"source_sentence\": \"For evaluation via information extraction we train a model for WikiBio which accepts text as input and generates a table as the output.\"}]}", "n_tokens": 64, "truncated": false}
+{"para_id": 27, "raw": "{\"triples\": [{\"subject\": \"parse\", \"predicate\": \"uses\", \"object\": \"special tokens <R> and <C>\", \"object_type\": \"Other\", \"source_sentence\": \"After training, we can parse the output sequence along the special tokens <R> and <C> to get a set of (attribute, value) pairs.\"}]}", "n_tokens": 76, "truncated": false}
+{"para_id": 28, "raw": "{\"triples\": [{\"subject\": \"GloVe\", \"predicate\": \"uses\", \"object\": \"embeddings of the tokens in the vocabulary\", \"object_type\": \"Other\", \"source_sentence\": \"The embeddings of the tokens in the vocabulary were initialized with Glove.\"}, {\"subject\": \"Dropout\", \"predicate\": \"uses\", \"object\": \"outputs of the biLSTM\", \"object_type\": \"Other\", \"source_sentence\": \"a dropout of 0.2 was also applied to the outputs of the biLSTM.\"}]}", "n_tokens": 116, "truncated": false}
+{"para_id": 29, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}

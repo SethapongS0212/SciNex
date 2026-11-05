@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Linguistic Analyses",
+    "predicate": "uses",
+    "object": "Text Annotation Structure",
+    "object_type": "Other",
+    "source_sentence": "All linguistic analyses are performed sequentially by adding and/or removing linguistic annotations to/from a Text Annotation Structure (TAS);",
+    "extraction_mode": "fixed",
+    "paper": "W17-3801",
+    "title": "From FOAF to English: Linguistic Contribution to Web Semantics",
+    "section": "2 The linguistic framework"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "annotations",
+    "object_type": "Other",
+    "source_sentence": "at each level of the analysis, each parser uses the annotations that were added to the TAS by preceding parsers, and then adds new annotations to the TAS, or deletes annotations that have been proven to be incorrect.",
+    "extraction_mode": "fixed",
+    "paper": "W17-3801",
+    "title": "From FOAF to English: Linguistic Contribution to Web Semantics",
+    "section": "2 The linguistic framework"
+  },
+  {
+    "subject": "linguistic",
+    "predicate": "uses",
+    "object": "Constraints",
+    "object_type": "Other",
+    "source_sentence": "The linguistic module can, however, perform simple equality tests by using constraints such as <$gender=\"Male\">",
+    "extraction_mode": "fixed",
+    "paper": "W17-3801",
+    "title": "From FOAF to English: Linguistic Contribution to Web Semantics",
+    "section": "6 Aspect and Tense"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "operators",
+    "object_type": "Other",
+    "source_sentence": "Operators can be sent to the linguistic module with a '+' or a '-' prefix, to control whether the generator wants to activate, or filter out, the corresponding sentences and phrases.",
+    "extraction_mode": "fixed",
+    "paper": "W17-3801",
+    "title": "From FOAF to English: Linguistic Contribution to Web Semantics",
+    "section": "7 Controlling the linguistic module"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "[-Neg-Pro0-Pro1]",
+    "object_type": "Other",
+    "source_sentence": "For instance, the generator may filter out sentences that contain a negation or a pronoun with the following sequence of operators: [-Neg-Pro0-Pro1].",
+    "extraction_mode": "fixed",
+    "paper": "W17-3801",
+    "title": "From FOAF to English: Linguistic Contribution to Web Semantics",
+    "section": "7 Controlling the linguistic module"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "operators +AspCont and +PresentPerfect",
+    "object_type": "Concept",
+    "source_sentence": "the generator can send the operators +AspCont and +PresentPerfect to the linguistic module.",
+    "extraction_mode": "fixed",
+    "paper": "W17-3801",
+    "title": "From FOAF to English: Linguistic Contribution to Web Semantics",
+    "section": "8.4 How current is a currentProject?"
+  }
+]

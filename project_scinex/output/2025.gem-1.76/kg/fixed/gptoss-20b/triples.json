@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "Keyphrase Generation",
+    "predicate": "addresses",
+    "object": "Summarization",
+    "object_type": "Task",
+    "source_sentence": "Keyphrase generation involves generating a set of words or phrases that summarise the content of a source document.",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Intrinsic Evaluation",
+    "object_type": "Other",
+    "source_sentence": "With the exception of , all the proposed models are solely assessed through intrinsic evaluation, which involves comparing their output with a single ground truth, typically using exact matching.",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "3.3 Evaluation Metrics"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "Ground Truth",
+    "object_type": "Other",
+    "source_sentence": "With the exception of , all the proposed models are solely assessed through intrinsic evaluation, which involves comparing their output with a single ground truth, typically using exact matching.",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "3.3 Evaluation Metrics"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "Matching",
+    "object_type": "Other",
+    "source_sentence": "With the exception of , all the proposed models are solely assessed through intrinsic evaluation, which involves comparing their output with a single ground truth, typically using exact matching.",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "3.3 Evaluation Metrics"
+  },
+  {
+    "subject": "Normalization",
+    "predicate": "uses",
+    "object": "Evaluation metrics",
+    "object_type": "Metric",
+    "source_sentence": "Second, we find that some form of normalization procedure is frequently applied prior to computing evaluation metrics, as observed in at least 30 out of 50 papers (60%).",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "3.3 Evaluation Metrics"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Normalization",
+    "object_type": "Other",
+    "source_sentence": "To gain insights on this issue, we conducted a series of replication experiments by reassessing the performance of three models—catSeqTG-2RF1 , ExHiRD-h and SetTrans —for which the authors stated that they applied this normalization and provided the outputs of their model.",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "3.3 Evaluation Metrics"
+  },
+  {
+    "subject": "BART",
+    "predicate": "achieves",
+    "object": "SOTA results",
+    "object_type": "Other",
+    "source_sentence": "Subsequent studies confirmed that fine-tuning a PLM, namely BART , for keyphrase generation achieves SOTA results",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "3.4 Proposed Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "KP20k benchmark dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We conclude our analysis by conducting a large- scale comparison of the performance of the proposed models in our sample of papers, focusing on the best scores they achieve on the KP20k benchmark dataset",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "3.5 Empirical Results"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "addresses",
+    "object": "lack of standardized evaluation procedures",
+    "object_type": "Concept",
+    "source_sentence": "draw- ing attention to the lack of standardized evalua- tion procedures",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "4 A strong baseline model"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "achieves",
+    "object": "best performance",
+    "object_type": "Concept",
+    "source_sentence": "fine-tuning a PLM for the task consistently yields the best performance",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "4 A strong baseline model"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "greedy decoding",
+    "object_type": "Method",
+    "source_sentence": "evaluate the model using greedy decoding",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "4 A strong baseline model"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "keyphrases",
+    "object_type": "Phrases",
+    "source_sentence": "beam search (K=20) to assemble the top-k keyphrases across all beams",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "4 A strong baseline model"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "Source Text",
+    "object_type": "Source Text",
+    "source_sentence": "given a source text as input",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "4 A strong baseline model"
+  },
+  {
+    "subject": "Models",
+    "predicate": "comparesagainst",
+    "object": "previously proposed models",
+    "object_type": "Other",
+    "source_sentence": "Here, we evaluate the performance of our base- line model on KP20k test set and compare it against previously proposed models.",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "32 Combined"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "BART-large model weights6",
+    "object_type": "Artifact",
+    "source_sentence": "We use the BART-large model weights6 as our initial pre-trained language model and perform fine-tuning on the KP20k training set7 for 10 epochs.",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "A.5 Implementation Details"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "pre-trained language model",
+    "object_type": "Concept",
+    "source_sentence": "We use the BART-large model weights6 as our initial pre-trained language model and perform fine-tuning on the KP20k training set7 for 10 epochs.",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "A.5 Implementation Details"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "KP20k training set",
+    "object_type": "Dataset",
+    "source_sentence": "We use the BART-large model weights6 as our initial pre-trained language model and perform fine-tuning on the KP20k training set7 for 10 epochs.",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "A.5 Implementation Details"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "Nvidia GeForce RTX 2080",
+    "object_type": "Other",
+    "source_sentence": "Fine-tuning the model using 2 Nvidia GeForce RTX 2080 took 400 hours.",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "A.5 Implementation Details"
+  },
+  {
+    "subject": "Pre-Trained Language Model",
+    "predicate": "uses",
+    "object": "BART-large model weights6",
+    "object_type": "Artifact",
+    "source_sentence": "We use the BART-large model weights6 as our initial pre-trained language model and perform fine-tuning on the KP20k training set7 for 10 epochs.",
+    "extraction_mode": "fixed",
+    "paper": "2025.gem-1.76",
+    "title": "An Analysis of Datasets, Metrics and Models in Keyphrase Generation",
+    "section": "A.5 Implementation Details"
+  }
+]

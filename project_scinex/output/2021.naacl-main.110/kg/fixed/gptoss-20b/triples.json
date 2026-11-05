@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "summarizer",
+    "predicate": "addresses",
+    "object": "identifying admissible summaries with desired properties",
+    "object_type": "Task",
+    "source_sentence": "Identifying admissible summaries with desired properties is critical for a summarizer.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "achieves",
+    "object": "high-likelihood sequences",
+    "object_type": "Task",
+    "source_sentence": "standard neural language generators with beam search only produce high-likelihood sequences rather than diverse ones.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "3 A Conﬁdence-Driven Generator"
+  },
+  {
+    "subject": "generator",
+    "predicate": "achieves",
+    "object": "varying lengths",
+    "object_type": "Task",
+    "source_sentence": "we devise a new generator that is capable of producing summaries of varying lengths.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "3 A Conﬁdence-Driven Generator"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "denoising objective",
+    "object_type": "Artifact",
+    "source_sentence": "Our generator is trained with a denoising objective.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "3 A Conﬁdence-Driven Generator"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "negative data log-likelihood",
+    "object_type": "Artifact",
+    "source_sentence": "Our learning objective is to minimize the negative data log-likelihood (Eq. (2)).",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "3 A Conﬁdence-Driven Generator"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "Beam Search",
+    "object_type": "Method",
+    "source_sentence": "our generator requires a position-aware beam search algorithm",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "14 Daiwa"
+  },
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "example summaries",
+    "object_type": "Other",
+    "source_sentence": "In Table 3, we present example summaries produced by our new confidence-driven generator for a source input.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "14 Daiwa"
+  },
+  {
+    "subject": "generator",
+    "predicate": "achieves",
+    "object": "paraphrase",
+    "object_type": "Task",
+    "source_sentence": "our generator learns to add or remove content , and even paraphrase to produce a summary of a given length.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "14 Daiwa"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "common bigrams",
+    "object_type": "Concept",
+    "source_sentence": "Distinguishing our work from that of Kry´sci´nski et al. (2020) are (i) Search and Replace, we swap the ground-truth summary with a similar summary in the training set that have ≥4 common bigrams to form a negative instance.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "4.1 Best Overall Quality"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "uses",
+    "object": "hidden vectors",
+    "object_type": "Other",
+    "source_sentence": "We encode them into hidden vectors using RoBERTa.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "4.1 Best Overall Quality"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "addresses",
+    "object": "admissible summaries",
+    "object_type": "Concept",
+    "source_sentence": "The classifier allows us to identify admissible summaries that are not only true-to-original but has the best overall quality.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "4.1 Best Overall Quality"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "best overall quality",
+    "object_type": "Concept",
+    "source_sentence": "The classifier allows us to identify admissible summaries that are not only true-to-original but has the best overall quality.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "4.1 Best Overall Quality"
+  },
+  {
+    "subject": "Byte Pair Encoding",
+    "predicate": "uses",
+    "object": "a vocabulary of 50,265 tokens",
+    "object_type": "Other",
+    "source_sentence": "We use Byte Pair Encoding with a vocabulary of 50,265 tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "Automatic evaluation",
+    "predicate": "evaluatedon",
+    "object": "Gigaword test sets",
+    "object_type": "Dataset",
+    "source_sentence": "Automatic Evaluation In Table 6, we present results on Gigaword and Newsroom test sets evaluated by ROUGE.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "5.1 Experimental Results"
+  },
+  {
+    "subject": "Automatic evaluation",
+    "predicate": "evaluatedon",
+    "object": "Newsroom test sets",
+    "object_type": "Dataset",
+    "source_sentence": "Automatic Evaluation In Table 6, we present results on Gigaword and Newsroom test sets evaluated by ROUGE.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "5.1 Experimental Results"
+  },
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "multiple alternative summaries",
+    "object_type": "Other",
+    "source_sentence": "For each summarization instance, our generator produces multiple alternative summaries , ranging from L=7 to 16 tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "5.1 Experimental Results"
+  },
+  {
+    "subject": "Summaries",
+    "predicate": "achieves",
+    "object": "highest R-2 F1-score of 20.4%",
+    "object_type": "Metric",
+    "source_sentence": "The summaries selected by it achieve the highest R-2 F1-score of 20.4%.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "5.1 Experimental Results"
+  },
+  {
+    "subject": "generator",
+    "predicate": "achieves",
+    "object": "74.2% admissible summaries",
+    "object_type": "Other",
+    "source_sentence": "We observe that, 74.2% of summaries produced by our generator are admissible under all three criteria.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "5.1 Experimental Results"
+  },
+  {
+    "subject": "Grammaticality",
+    "predicate": "achieves",
+    "object": "96.5%",
+    "object_type": "Other",
+    "source_sentence": "Grammaticality has the best performance (96.5%)",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.110",
+    "title": "A New Approach to Overgenerating and Scoring Abstractive Summaries",
+    "section": "5.1 Experimental Results"
+  }
+]

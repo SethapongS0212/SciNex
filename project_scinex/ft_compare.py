@@ -29,8 +29,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from ft_common import (  # noqa: E402
-    OUTPUT_DIR, TEACHER_DEFAULT, exdir_for, guard_pass, is_api_run, norm, quiet_guard_logs,
-    read_replies,
+    OUTPUT_DIR, TEACHER_DEFAULT, exdir_for, guard_pass, is_api_run, load_entity_set_for, norm,
+    quiet_guard_logs, read_replies,
 )
 
 
@@ -56,8 +56,17 @@ def agreement(student, teacher):
     return ms, mt
 
 
-def run_stats(paper, ontology, slug):
-    d = OUTPUT_DIR / paper / "kg" / exdir_for("relation", ontology) / slug
+_ENTITY_SETS = {}
+
+
+def entity_set_for(paper):
+    if paper not in _ENTITY_SETS:
+        _ENTITY_SETS[paper] = load_entity_set_for(paper)
+    return _ENTITY_SETS[paper]
+
+
+def run_stats(paper, ontology, slug, extractor="relation"):
+    d = OUTPUT_DIR / paper / "kg" / exdir_for(extractor, ontology) / slug
     if not (d / "responses.jsonl").exists():
         return None
     meta = json.loads((d / "prompt_meta.json").read_text(encoding="utf-8"))
@@ -69,8 +78,9 @@ def run_stats(paper, ontology, slug):
     proposed = kept_n = covered = 0
     kept = []
     api_run = is_api_run(d)
+    entity_set = entity_set_for(paper) if extractor == "fixed" else None
     for pid, raw in replies.items():
-        status, raw_t, surv = guard_pass(raw, relations, api_run)
+        status, raw_t, surv = guard_pass(raw, relations, api_run, entity_set)
         st[status] += 1
         proposed += len(raw_t)
         kept_n += len(surv)
@@ -92,6 +102,8 @@ def main():
     ap.add_argument("--papers", nargs="+", required=True)
     ap.add_argument("--ontologies", nargs="+", choices=["ceo", "scinex"], default=["ceo", "scinex"])
     ap.add_argument("--teacher", default=TEACHER_DEFAULT)
+    ap.add_argument("--extractor", choices=["relation", "fixed"], default="relation",
+                    help="fixed = ACL Anthology runs under kg/fixed*/, guarded with each paper's entity CSV")
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
     quiet_guard_logs()
@@ -107,7 +119,7 @@ def main():
             ms = mt = n_teacher = n_papers = 0
             preds = Counter()
             for paper in args.papers:
-                s = run_stats(paper, ont, slug)
+                s = run_stats(paper, ont, slug, args.extractor)
                 if s is None:
                     continue
                 n_papers += 1
@@ -116,7 +128,7 @@ def main():
                 agg["valid"] += s["status"].get("ok", 0)
                 agg["covered"] += round(s["coverage"] * s["replies"]) if s["coverage"] is not None else 0
                 preds.update(dict(s["predicates"]))
-                t = run_stats(paper, ont, args.teacher) if slug != args.teacher else None
+                t = run_stats(paper, ont, args.teacher, args.extractor) if slug != args.teacher else None
                 if t is not None:
                     a, b = agreement(s["_kept"], t["_kept"])
                     ms += a

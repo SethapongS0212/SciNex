@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "state-of-the-art reranking performance for passages and documents",
+    "object_type": "Other",
+    "source_sentence": "Fine-tuned Transformer LM BERT achieved state-of-the- art reranking performance for passages and documents.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "produces",
+    "object": "relevance score",
+    "object_type": "Metric",
+    "source_sentence": "the common approach is to feed the concatenated query document text through BERT and use BERT's [CLS] output token to produce a relevance score.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "comparesagainst",
+    "object": "GLoVe",
+    "object_type": "Model",
+    "source_sentence": "Early attempts compute similarity between pre-trained word embedding such as word2vec and GLoVe to produce matching score.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "ColBERT",
+    "predicate": "addresses",
+    "object": "engineering",
+    "object_type": "Concept",
+    "source_sentence": "Consequently, ColBERT is engineering and hardware demanding.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "document retriever",
+    "predicate": "trainedon",
+    "object": "MSMARCO passage set",
+    "object_type": "Dataset",
+    "source_sentence": "However since these systems use a robust version of BERT, RoBERTa as the LM and train document retriever also on MSMARCO passage set, we in addition reproduce a third dense retriever, that uses the exact same training setup as COIL.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "5 Results"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "addresses",
+    "object": "rerank task",
+    "object_type": "Task",
+    "source_sentence": "BERT reranker is added in the rerank task.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "5 Results"
+  },
+  {
+    "subject": "Queries",
+    "predicate": "achieves",
+    "object": "better MRR",
+    "object_type": "Metric",
+    "source_sentence": "On the DL2019 queries , we observe that reducing dimension actually achieves better MRR.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.241",
+    "title": "Abstract",
+    "section": "5.2 Analysis of Dimensionality"
+  }
+]

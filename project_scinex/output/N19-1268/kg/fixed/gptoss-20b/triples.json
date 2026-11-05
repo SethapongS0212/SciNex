@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "The generated pairs are then incorporated into the training data for fine-tuning the forward translator",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "achieves",
+    "object": "improved performance",
+    "object_type": "Other",
+    "source_sentence": "The generated pairs are then incorporated into the training data for fine-tuning the forward translator, which proves to improve the translation performance",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "environmental dropout mask",
+    "object_type": "Other",
+    "source_sentence": "The view feature f′ t,i observed from the new environment E′ is calculated as an element-wise multiplication of the original feature ft,i and the environmental dropout mask ξE",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "3.4.2 Environmental Dropout"
+  },
+  {
+    "subject": "ResNet",
+    "predicate": "uses",
+    "object": "image",
+    "object_type": "Other",
+    "source_sentence": "only the image feature ResNet(vt,i) is dropped while the orientation feature (cos(θt,i), sin(θt,i), cos(φt,i), sin(φt,i)) is fixed",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "3.4.2 Environmental Dropout"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "uses",
+    "object": "environmental dropout",
+    "object_type": "Other",
+    "source_sentence": "We apply the environmental dropout to the back translation model as mentioned in Sec.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "3.4.2 Environmental Dropout"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "private unseen test set",
+    "object_type": "Dataset",
+    "source_sentence": "The models on the leaderboard are evaluated on a private unseen test set which contains 18 new environments.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "5 Results"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "produces",
+    "object": "upper bound",
+    "object_type": "Concept",
+    "source_sentence": "Besides showing an upper bound, beam search is usable when the environment is explored and saved in the agent 's memory but the agent does not have enough computational capacity to fine- tune its navigational model.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "5 Results"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "instruction-aware hidden",
+    "object_type": "Concept",
+    "source_sentence": "The hidden input of the LSTM is the instruction-aware hidden from the previous step",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "6 Ablation Studies"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "uses",
+    "object": "environmental dropout",
+    "object_type": "Concept",
+    "source_sentence": "back translation with environmental dropout improves the best supervised model",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "6 Ablation Studies"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "achieves",
+    "object": "5.7% improvement",
+    "object_type": "Other",
+    "source_sentence": "back translation with environmental dropout improves the best supervised model by 5.7%",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "6 Ablation Studies"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "uses",
+    "object": "Dropout",
+    "object_type": "Method",
+    "source_sentence": "the agent applies back translation with environmental dropout",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "6 Ablation Studies"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Beam Search",
+    "object_type": "Method",
+    "source_sentence": "The state- factored Dijkstra algorithm is used for the beam search result.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "6 Ablation Studies"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "achieves",
+    "object": "46.5% success rate",
+    "object_type": "Metric",
+    "source_sentence": "while the back translation on the training environments only achieves 46.5%",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "7.2 Back Translation on Unseen Environments"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "achieves",
+    "object": "64.5% success rate",
+    "object_type": "Metric",
+    "source_sentence": "our environmental dropout on testing environments could further improve the result to 64.5%",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "7.2 Back Translation on Unseen Environments"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "uses",
+    "object": "new data triplets from testing environments",
+    "object_type": "Concept",
+    "source_sentence": "back translation could significantly improve the performance when it uses new data triplets from testing environments",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "7.2 Back Translation on Unseen Environments"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "testing environments",
+    "object_type": "Concept",
+    "source_sentence": "our environmental dropout on testing environments could further improve the result",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "7.2 Back Translation on Unseen Environments"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "semantic view feature",
+    "object_type": "Other",
+    "source_sentence": "dropout on the semantic view feature would remove the object from the view.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "7.3 Semantic Views"
+  },
+  {
+    "subject": "semantic",
+    "predicate": "uses",
+    "object": "Matterport3D dataset",
+    "object_type": "Dataset",
+    "source_sentence": "semantic views (as shown in Fig. 6) are rendered from the Matterport3D dataset",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "7.3 Semantic Views"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "achieves",
+    "object": "50.5%",
+    "object_type": "Metric",
+    "source_sentence": "Back translation (without dropout) slightly improves the result to 50.5%.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "7.3 Semantic Views"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "achieves",
+    "object": "52.0%",
+    "object_type": "Metric",
+    "source_sentence": "the environmental dropout could boost the result to 52.0%",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "7.3 Semantic Views"
+  }
+]

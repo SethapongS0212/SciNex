@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "BPE",
+    "object_type": "Algorithm",
+    "source_sentence": "The original transformer model uses BPE.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.786",
+    "title": "Improving Tokenisation by Alternative Treatment of Spaces",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "WordPiece",
+    "object_type": "Algorithm",
+    "source_sentence": "BERT , which consists of a transformer encoder pretrained with a masked language modelling objective, uses WordPiece tokenisation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.786",
+    "title": "Improving Tokenisation by Alternative Treatment of Spaces",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "DistilBERT",
+    "predicate": "uses",
+    "object": "WordPiece",
+    "object_type": "Algorithm",
+    "source_sentence": "WordPiece is also used by ERNIE , DistilBERT , ELEC- TRA , StructBERT and NEZHA.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.786",
+    "title": "Improving Tokenisation by Alternative Treatment of Spaces",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "trainedon",
+    "object": "1 million sentences from English Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "We train our modified algorithms and the defaults on 1 million sentences from English Wikipedia for BPE and Unigram, with a fixed vocabulary size of 16,000, and then run evaluation on four morphological datasets: LADEC, MorphoLex, MorphyNet and DagoBERT.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.786",
+    "title": "Improving Tokenisation by Alternative Treatment of Spaces",
+    "section": "4 Intrinsic Evaluation: Morphological Correctness"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "tokeniser",
+    "object_type": "Other",
+    "source_sentence": "We evaluate a tokeniser on these datasets using the evaluation method introduced by Creutz et al.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.786",
+    "title": "Improving Tokenisation by Alternative Treatment of Spaces",
+    "section": "4 Intrinsic Evaluation: Morphological Correctness"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "English Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "For each of the tokenisers, we pretrain RoBERTa (base) on the full text of English Wikipedia, and then finetune on downstream tasks, keeping all hyperparameters fixed, changing only the tokenisation algorithm used.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.786",
+    "title": "Improving Tokenisation by Alternative Treatment of Spaces",
+    "section": "5 Extrinsic Evaluation: Pretrain-Finetune"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "achieves",
+    "object": "shortest mean sequence length",
+    "object_type": "Metric",
+    "source_sentence": "with BPE′ without spaces giving the shortest mean sequence length.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.786",
+    "title": "Improving Tokenisation by Alternative Treatment of Spaces",
+    "section": "5 Extrinsic Evaluation: Pretrain-Finetune"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "addresses",
+    "object": "NLP Tasks",
+    "object_type": "Task",
+    "source_sentence": "In order to definitively compare our modified tokenisation algorithms with the defaults, a more thorough evaluation across many types of encoder-architecture NLP tasks would be required (e.g. token classification, question answering, multiple-choice).",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.786",
+    "title": "Improving Tokenisation by Alternative Treatment of Spaces",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "WordPiece",
+    "predicate": "uses",
+    "object": "Vocabulary Size",
+    "object_type": "Concept",
+    "source_sentence": "It is also worth noting that the Superbizarre dataset consists of entries constructed using elements from BERT's WordPiece vocabulary.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.786",
+    "title": "Improving Tokenisation by Alternative Treatment of Spaces",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Vocabulary Size",
+    "predicate": "addresses",
+    "object": "Robustness",
+    "object_type": "Concept",
+    "source_sentence": "In this paper, we have chosen a single vocabulary size for all of our evaluation, which limits the robustness of our results.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.786",
+    "title": "Improving Tokenisation by Alternative Treatment of Spaces",
+    "section": "6 Related Work"
+  }
+]

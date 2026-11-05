@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Question Answering",
+    "predicate": "achieves",
+    "object": "identifying that broadcast and air are synonymous",
+    "object_type": "Other",
+    "source_sentence": "In question answering, for instance, identifying that broadcast and air are synonymous enables answering the question \"When was 'Friends' first aired?\" given the text \"'Friends' was first broadcast in 1994\".",
+    "extraction_mode": "fixed",
+    "paper": "S16-2013",
+    "title": "Adding Context to Semantic Data-Driven Paraphrasing",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Semantic Relations",
+    "predicate": "uses",
+    "object": "infer the meaning of one term from another",
+    "object_type": "Other",
+    "source_sentence": "Semantic relations such as synonymy (tall, high) and hypernymy (cat, pet) are used to infer the meaning of one term from another, in order to overcome lexical variability.",
+    "extraction_mode": "fixed",
+    "paper": "S16-2013",
+    "title": "Adding Context to Semantic Data-Driven Paraphrasing",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "logistic regression classifier",
+    "predicate": "trainedon",
+    "object": "our train set",
+    "object_type": "Dataset",
+    "source_sentence": "We also trained a context-sensitive logistic regression classifier on our train set, using the available PPDB 2.0 features, plus additional context-sensitive features.",
+    "extraction_mode": "fixed",
+    "paper": "S16-2013",
+    "title": "Adding Context to Semantic Data-Driven Paraphrasing",
+    "section": "4.1 Baseline Results"
+  },
+  {
+    "subject": "logistic regression classifier",
+    "predicate": "uses",
+    "object": "PPDB 2.0 features",
+    "object_type": "Features",
+    "source_sentence": "We also trained a context-sensitive logistic regression classifier on our train set, using the available PPDB 2.0 features, plus additional context-sensitive features.",
+    "extraction_mode": "fixed",
+    "paper": "S16-2013",
+    "title": "Adding Context to Semantic Data-Driven Paraphrasing",
+    "section": "4.1 Baseline Results"
+  },
+  {
+    "subject": "logistic regression classifier",
+    "predicate": "uses",
+    "object": "additional context-sensitive features",
+    "object_type": "Features",
+    "source_sentence": "We also trained a context-sensitive logistic regression classifier on our train set, using the available PPDB 2.0 features, plus additional context-sensitive features.",
+    "extraction_mode": "fixed",
+    "paper": "S16-2013",
+    "title": "Adding Context to Semantic Data-Driven Paraphrasing",
+    "section": "4.1 Baseline Results"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "trainedon",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "To represent words as vectors, we used pretrained GloVe embeddings of 300 dimensions, trained on Wikipedia , and added the following features: (1) and (2) measure similarities between a term and its most similar term in the other term's context, and (3) measures the maximal word similarity across the contexts.",
+    "extraction_mode": "fixed",
+    "paper": "S16-2013",
+    "title": "Adding Context to Semantic Data-Driven Paraphrasing",
+    "section": "4.1 Baseline Results"
+  }
+]

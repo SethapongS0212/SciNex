@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "produces",
+    "object": "context entities",
+    "object_type": "Concept",
+    "source_sentence": "After the final transformer layer T, h(T) mi is used to predict the context entities ˆ emi and produce a loss with Iemi, the one-hot label of entity emi.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "2.3 Entity Memory"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "u(l) mi",
+    "object_type": "Other",
+    "source_sentence": "u(l) mi = softmax(h(l) mi, E) × E",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "2.3 Entity Memory"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "comprises",
+    "object": "Contextual Embeddings",
+    "object_type": "Concept",
+    "source_sentence": "The last step is to integrate this retrieved set into the Transformer's contextual embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "2.5 Integrating Knowledge and Context"
+  },
+  {
+    "subject": "RAG",
+    "predicate": "uses",
+    "object": "DPR retrieval",
+    "object_type": "Method",
+    "source_sentence": "Retrieval Augmented Generation (RAG) and Fusion in Decoder (FID) use DPR retrieval , followed 7All data is English.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "3.2 Baselines"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achievesresult",
+    "object": "state-of-the-art on the LAMA benchmark",
+    "object_type": "Other",
+    "source_sentence": "K-Adapter and Bert-KNN are recent BERT ex- tensions that perform at or near state-of-the-art on the LAMA benchmark.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "3.2 Baselines"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "addresses",
+    "object": "finetuning train/test overlap",
+    "object_type": "Concept",
+    "source_sentence": "The filtering procedure from Lewis et al. (2020b) addresses finetuning train/test overlap but does not account for overlap with the pretraining data.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "3.6 Filtering to Avoid Pretrain, Finetune, and Test Overlap"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "addresses",
+    "object": "pretraining / test-set overlap",
+    "object_type": "Concept",
+    "source_sentence": "This filtering procedure is reminiscent of that used by Lewis et al. (2020b), but also addresses pretraining / test-set overlap.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "4 Modifying the Knowledge Base"
+  },
+  {
+    "subject": "Questions",
+    "predicate": "uses",
+    "object": "natural language",
+    "object_type": "Concept",
+    "source_sentence": "questions are posed in natural language",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "A.2 Training Details"
+  },
+  {
+    "subject": "Questions",
+    "predicate": "uses",
+    "object": "entities",
+    "object_type": "Concept",
+    "source_sentence": "open-domain questions that are answerable using entities from a knowledge base",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.288",
+    "title": "Adaptable and Interpretable Neural Memory Over Symbolic Knowledge",
+    "section": "A.2 Training Details"
+  }
+]

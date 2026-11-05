@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Automatic evaluation",
+    "predicate": "uses",
+    "object": "BLEU",
+    "object_type": "Metric",
+    "source_sentence": "For table-to-text generation , automatic evaluation has largely relied on BLEU and ROUGE.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Automatic evaluation",
+    "predicate": "uses",
+    "object": "ROUGE",
+    "object_type": "Metric",
+    "source_sentence": "For table-to-text generation , automatic evaluation has largely relied on BLEU and ROUGE.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "comparesagainst",
+    "object": "BLEU-T",
+    "object_type": "Metric",
+    "source_sentence": "A similar trend is seen comparing BLEU and BLEU-T.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "5.6 WebNLG Dataset"
+  },
+  {
+    "subject": "parse",
+    "predicate": "uses",
+    "object": "Sequence",
+    "object_type": "Other",
+    "source_sentence": "After training, we can parse the output sequence along the special tokens <R> and <C> to get a set of (attribute, value) pairs.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.1 Information Extraction System"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "embeddings of the tokens in the vocabulary",
+    "object_type": "Other",
+    "source_sentence": "The embeddings of the tokens in the vocabulary were initialized with Glove.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.2 Hyperparameters"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "training",
+    "object_type": "Other",
+    "source_sentence": "Learning rate of 0.0003 was used during training, with the Adam optimizer, and a dropout of 0.2 was also applied to the outputs of the biLSTM.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.2 Hyperparameters"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "outputs of the biLSTM",
+    "object_type": "Other",
+    "source_sentence": "Learning rate of 0.0003 was used during training, with the Adam optimizer, and a dropout of 0.2 was also applied to the outputs of the biLSTM.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.2 Hyperparameters"
+  },
+  {
+    "subject": "Information Extraction",
+    "predicate": "uses",
+    "object": "beam size of 8",
+    "object_type": "Other",
+    "source_sentence": "For the information extraction system , we found a beam size of 8 and no length penalty to produce the highest F- score on the dev set.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.2 Hyperparameters"
+  }
+]

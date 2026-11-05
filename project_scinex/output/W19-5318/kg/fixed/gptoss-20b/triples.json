@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "OpenNMT",
+    "predicate": "uses",
+    "object": "Jane system combination method",
+    "object_type": "Method",
+    "source_sentence": "For Russian– English we again submitted an entry comprising our best systems trained with Marian , Sockeye with Elastic Weight Consolidation (EWC) , OpenNMT , and Moses combined using the Jane system combination method .",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "Jane system combination method",
+    "object_type": "Method",
+    "source_sentence": "For Russian– English we again submitted an entry comprising our best systems trained with Marian , Sockeye with Elastic Weight Consolidation (EWC) , OpenNMT , and Moses combined using the Jane system combination method .",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "BPE",
+    "object_type": "Method",
+    "source_sentence": "We first trained a baseline transformer system using the best-performing BPE parameters from Section 2.2, 512-dimension word embeddings, 6 layer encoder and decoder, 8 attention heads, label smoothing and transformer attention dropout of 0.1.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.2 Sockeye"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Method",
+    "source_sentence": "We first trained a baseline transformer system using the best-performing BPE parameters from Section 2.2, 512-dimension word embeddings, 6 layer encoder and decoder, 8 attention heads, label smoothing and transformer attention dropout of 0.1.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.2 Sockeye"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "label smoothing",
+    "object_type": "Method",
+    "source_sentence": "We first trained a baseline transformer system using the best-performing BPE parameters from Section 2.2, 512-dimension word embeddings, 6 layer encoder and decoder, 8 attention heads, label smoothing and transformer attention dropout of 0.1.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.2 Sockeye"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "Dropout",
+    "object_type": "Method",
+    "source_sentence": "We first trained a baseline transformer system using the best-performing BPE parameters from Section 2.2, 512-dimension word embeddings, 6 layer encoder and decoder, 8 attention heads, label smoothing and transformer attention dropout of 0.1.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.2 Sockeye"
+  },
+  {
+    "subject": "System Combination",
+    "predicate": "uses",
+    "object": "ensemble",
+    "object_type": "Method",
+    "source_sentence": "For system combination outlined later in Section 4, we decoded test sets with an ensemble of the four highest-scoring model checkpoints from the best EWC training run.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.2 Sockeye"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "WMT17",
+    "object_type": "Dataset",
+    "source_sentence": "Training data for this system utilized the training corpus from our WMT17 Russian– English system consisting of provided parallel and backtranslated data.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.3 OpenNMT-T"
+  },
+  {
+    "subject": "SentencePiece",
+    "predicate": "trainedon",
+    "object": "WMT news test data",
+    "object_type": "Dataset",
+    "source_sentence": "WMT news test data from all years except 2014 and 2017 were used to train SentencePiece.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.4 OpenNMT-G"
+  },
+  {
+    "subject": "OpenNMT",
+    "predicate": "uses",
+    "object": "Transformer",
+    "object_type": "Method",
+    "source_sentence": "OpenNMT-tf was used to create the system, using the stock 'Transformer' model.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.4 OpenNMT-G"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "ParaCrawl corpus",
+    "object_type": "Dataset",
+    "source_sentence": "These data, with the addition of the language ID filtered ParaCrawl corpus outlined in Section 2.1, were used for training the system.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.4 OpenNMT-G"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "KenLM",
+    "object_type": "Other",
+    "source_sentence": "The 5-gram English language model was trained with KenLM on all permissable monolingual English news-crawl data.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.5 Moses"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "all permissable monolingual English news-crawl data",
+    "object_type": "Dataset",
+    "source_sentence": "The 5-gram English language model was trained with KenLM on all permissable monolingual English news-crawl data.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.5 Moses"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "parallel training data",
+    "object_type": "Dataset",
+    "source_sentence": "The BPE model used was applied to both the parallel training data and the language modeling corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.5 Moses"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "language modeling corpus",
+    "object_type": "Dataset",
+    "source_sentence": "The BPE model used was applied to both the parallel training data and the language modeling corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5318",
+    "title": "The AFRL WMT19 Systems: Old Favorites and New Tricks",
+    "section": "3.5 Moses"
+  }
+]

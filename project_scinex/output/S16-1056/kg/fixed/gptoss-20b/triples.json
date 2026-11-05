@@ -1,0 +1,233 @@
+[
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "syntactic features",
+    "object_type": "Feature",
+    "source_sentence": "For OTE, a CRF model is proposed with several groups of features including syntactic and lexical features.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "4. Aspect Category Polarity"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "lexical features",
+    "object_type": "Feature",
+    "source_sentence": "For OTE, a CRF model is proposed with several groups of features including syntactic and lexical features.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "4. Aspect Category Polarity"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "lexical features",
+    "object_type": "Feature",
+    "source_sentence": "For polarity detection, a logistic regression classifier is trained with the weighting schema for positive and negative labels and several groups of features are extracted including lexical , syntactic , semantic and sentiment lexicon features.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "4. Aspect Category Polarity"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "syntactic features",
+    "object_type": "Feature",
+    "source_sentence": "For polarity detection, a logistic regression classifier is trained with the weighting schema for positive and negative labels and several groups of features are extracted including lexical , syntactic , semantic and sentiment lexicon features.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "4. Aspect Category Polarity"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "semantic features",
+    "object_type": "Feature",
+    "source_sentence": "For polarity detection, a logistic regression classifier is trained with the weighting schema for positive and negative labels and several groups of features are extracted including lexical , syntactic , semantic and sentiment lexicon features.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "4. Aspect Category Polarity"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "sentiment lexicon features",
+    "object_type": "Feature",
+    "source_sentence": "For polarity detection, a logistic regression classifier is trained with the weighting schema for positive and negative labels and several groups of features are extracted including lexical , syntactic , semantic and sentiment lexicon features.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "4. Aspect Category Polarity"
+  },
+  {
+    "subject": "Supervised Methods",
+    "predicate": "uses",
+    "object": "Conditional Random Fields",
+    "object_type": "Method",
+    "source_sentence": "Supervised methods use normally Conditional Random Fields (CRF) or Hidden Markov models (HMM).",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Supervised Methods",
+    "predicate": "uses",
+    "object": "Hidden Markov models",
+    "object_type": "Method",
+    "source_sentence": "Supervised methods use normally Conditional Random Fields (CRF) or Hidden Markov models (HMM).",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "features",
+    "object_type": "Concept",
+    "source_sentence": "A CRF model was used by with the following features : tokens, POS tags, syntactic dependency (if the opinion target has a relation with the opinionated word), word distance (the distance between the word in the closest noun phrase and the opinionated word), and opinion sen- tences (each token in the sentence containing an opinionated expression is labeled by this feature), the input of this method is also the opinionated ex- pressions, they use these expressions for predicting the opinion target polarity using dependency pars- ing for retrieving the pair target-expression from the training set.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "uses",
+    "object": "NTLK tokenizer1",
+    "object_type": "Method",
+    "source_sentence": "We tokenize each sentence using NTLK tokenizer1 which extracts the words, numbers and punctuations.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "2. Sentence Tokenizing"
+  },
+  {
+    "subject": "POS",
+    "predicate": "uses",
+    "object": "NLTK parser2",
+    "object_type": "Other",
+    "source_sentence": "POS: We use NLTK parser2 to attach a part of speech tag to each term.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "4. Feature Extraction"
+  },
+  {
+    "subject": "Conditional Random Fields",
+    "predicate": "uses",
+    "object": "feature representation",
+    "object_type": "Artifact",
+    "source_sentence": "we have used a Conditional Random Fields (CRF) which receives the feature representa- tion of each term in each sentence and builds a tagging model in order to use it for predicting the tags of the new sentences.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "5. Training Method"
+  },
+  {
+    "subject": "Conditional Random Fields",
+    "predicate": "produces",
+    "object": "tagging model",
+    "object_type": "Model",
+    "source_sentence": "we have used a Conditional Random Fields (CRF) which receives the feature representa- tion of each term in each sentence and builds a tagging model in order to use it for predicting the tags of the new sentences.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "5. Training Method"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "Word n-grams Features",
+    "object_type": "Concept",
+    "source_sentence": "Thus,We propose to use a logistic regression classifier with weighting schema of positive and negative labels with the following features : - Word n-grams Features Unigrams and bigrams are extracted for each word in the text without any stemming or stop-word removing, all terms with occurrence less than 3 are removed from the feature space.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "4 Sentiment Polarity"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "weighting schema of positive and negative labels",
+    "object_type": "Concept",
+    "source_sentence": "Thus,We propose to use a logistic regression classifier with weighting schema of positive and negative labels with the following features : - Word n-grams Features Unigrams and bigrams are extracted for each word in the text without any stemming or stop-word removing, all terms with occurrence less than 3 are removed from the feature space.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "4 Sentiment Polarity"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "addresses",
+    "object": "Negation",
+    "object_type": "Concept",
+    "source_sentence": "This algorithm appends a negation suffix to all words that appear within a negation scope",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "4 Sentiment Polarity"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "training data set",
+    "object_type": "Dataset",
+    "source_sentence": "The classifier is trained on the training data set using the previous features with the three polarities (positive, negative, and neutral) as labels.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "4.1 Experiments"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Feature",
+    "source_sentence": "The classifier is trained on the training data set using the previous features with the three polarities (positive, negative, and neutral) as labels.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "4.1 Experiments"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "features",
+    "object_type": "Feature",
+    "source_sentence": "trained a CRF model with several features.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "logistic regression classifier",
+    "predicate": "addresses",
+    "object": "sentiment polarity",
+    "object_type": "Task",
+    "source_sentence": "A Logistic regression classifier is used for sentiment polarity where we adopted a weighting schema.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "subjectivity analysis",
+    "predicate": "publishedin",
+    "object": "Proceedings of HLT/EMNLP on Interactive Demonstrations, HLT-Demo '05",
+    "object_type": "Other",
+    "source_sentence": "Wilson, T., Hoffmann, P., Somasundaran, S., Kessler, J., Wiebe, J., Choi, Y., Cardie, C., Riloff, E., and Pat- wardhan, S. OpinionFinder: A System for Subjectivity Analysis . In Proceedings of HLT/EMNLP on Interactive Demonstrations, HLT-Demo '05, pages 34–35, Stroudsburg, PA, USA.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1056",
+    "title": "Abstract",
+    "section": "5 Conclusion"
+  }
+]

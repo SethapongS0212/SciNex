@@ -61,7 +61,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from ft_common import (  # noqa: E402
     CORPUS_FILE_DEFAULT, FT_DIR, OUTPUT_DIR, SCINEX_OWL_DEFAULT, SPLIT_FILE, TEACHER_DEFAULT,
     alignment_rate, assign_folds, canonical_predicate, current_system_prompt, exdir_for,
-    guard_pass, load_paragraphs, load_split, norm, parse_definition, quiet_guard_logs, read_corpus,
+    guard_pass, is_api_run, load_entity_set_for, load_paragraphs, load_split, norm, parse_definition,
+    quiet_guard_logs, read_corpus,
     read_replies, refuse_excluded, schema_from_system_prompt, sha256_file, split_sets,
     target_json, triple_id, write_jsonl,
 )
@@ -75,9 +76,9 @@ EXCLUDED_BY_DEFAULT = {"configures"}   # open human decision, hands_off.md §29.
 
 # ── teacher run (per paper x ontology) ───────────────────────────────────────
 
-def teacher_run(paper, ontology, teacher, sys_mode, cur_prompts):
+def teacher_run(paper, ontology, teacher, sys_mode, cur_prompts, extractor="relation"):
     """Load one teacher run: system prompt, relations, replies. None if absent."""
-    d = OUTPUT_DIR / paper / "kg" / exdir_for("relation", ontology) / teacher
+    d = OUTPUT_DIR / paper / "kg" / exdir_for(extractor, ontology) / teacher
     resp = d / "responses.jsonl"
     if not resp.exists():
         return None
@@ -92,8 +93,11 @@ def teacher_run(paper, ontology, teacher, sys_mode, cur_prompts):
             sys.exit(f"--system-prompt stored needs system_prompt.txt + prompt_meta.json in {d}")
         system, relations = stored, meta["relations"]
     replies, issues = read_replies(resp)
+    # a local teacher (ft_generate.py) prints '{"triples": []}' as a GENUINE abstention; only
+    # run_api_extract.py writes it as a failed-call marker (is_api_run)
     return {"dir": d, "meta": meta, "system": system, "relations": relations,
-            "stored_system": stored, "replies": replies, "issues": issues}
+            "stored_system": stored, "replies": replies, "issues": issues,
+            "api_run": is_api_run(d)}
 
 
 def load_bad_ids(teacher, ontology, level):
@@ -123,8 +127,9 @@ def consensus_votes(paper, ontology, args, cur_prompts, by_id, n_teacher, rep):
     A model is skipped for this paper when its run is absent or does not line up with
     the teacher's paragraphs (count or source-sentence alignment)."""
     votes = defaultdict(dict)
+    entity_set = load_entity_set_for(paper, args.entity_dir) if args.extractor == "fixed" else None
     for m in args.consensus_models:
-        run = teacher_run(paper, ontology, m, args.system_prompt, cur_prompts)
+        run = teacher_run(paper, ontology, m, args.system_prompt, cur_prompts, args.extractor)
         if run is None:
             rep["models_skipped"][m] = "no_run"
             continue
@@ -134,7 +139,7 @@ def consensus_votes(paper, ontology, args, cur_prompts, by_id, n_teacher, rep):
             continue
         surv_by_pid = {}
         for pid, raw in run["replies"].items():
-            status, raw_t, surv = guard_pass(raw, run["relations"])
+            status, raw_t, surv = guard_pass(raw, run["relations"], run["api_run"], entity_set)
             if status == "ok":
                 surv_by_pid[pid] = (raw_t, surv)
         rate, _n = alignment_rate([(by_id[pid]["paragraph"], [t.get("source_sentence", "") for t in raw_t])
@@ -189,10 +194,17 @@ def extraction_examples(papers, ontology, args, cur_prompts, report, bad_ids):
     for paper in papers:
         key = f"{paper}/{ontology}"
         rep = report["extraction"][key] = {"drops": Counter()}
-        run = teacher_run(paper, ontology, args.teacher, args.system_prompt, cur_prompts)
+        run = teacher_run(paper, ontology, args.teacher, args.system_prompt, cur_prompts,
+                          args.extractor)
         if run is None:
             rep["status"] = "no_teacher_run"
             continue
+        entity_set = None
+        if args.extractor == "fixed":
+            entity_set = load_entity_set_for(paper, args.entity_dir)
+            if entity_set is None:
+                rep["status"] = "no_entity_csv"
+                continue
         rep["reply_issues"] = dict(run["issues"])
         if run["stored_system"] is not None:
             rep["stored_system_prompt_matches_used"] = run["stored_system"] == run["system"]
@@ -201,15 +213,16 @@ def extraction_examples(papers, ontology, args, cur_prompts, report, bad_ids):
         # when the paragraphs are unavailable
         parsed = {}
         for pid, raw in run["replies"].items():
-            status, raw_triples, surv = guard_pass(raw, run["relations"])
+            status, raw_triples, surv = guard_pass(raw, run["relations"], run["api_run"],
+                                                   entity_set)
             parsed[pid] = (status, raw_triples, surv)
             if status == "ok":
                 for t in surv:
                     survivors_all[paper].append(dict(t, _ontology=ontology,
                                                      _relations=run["relations"]))
 
-        rows, source = load_paragraphs(paper, exdir_for("relation", ontology),
-                                       prefer_slugs=(args.teacher,))
+        rows, source = load_paragraphs(paper, exdir_for(args.extractor, ontology),
+                                       prefer_slugs=(args.teacher,), extractor=args.extractor)
         rep["paragraph_source"] = source
         if rows is None:
             rep["status"] = "no_paragraphs"
@@ -221,7 +234,8 @@ def extraction_examples(papers, ontology, args, cur_prompts, report, bad_ids):
         by_id = {r["para_id"]: r for r in rows}
         rate, n_checked = alignment_rate(
             [(by_id[pid]["paragraph"], [t.get("source_sentence", "") for t in raw_t])
-             for pid, (st, raw_t, _s) in parsed.items() if st == "ok" and pid in by_id])
+             for pid, (st, raw_t, _s) in parsed.items() if st == "ok" and pid in by_id],
+            loose=args.extractor == "fixed")
         rep["alignment"] = {"rate": rate, "n_sentences": n_checked}
         if rate is not None and rate < args.min_alignment:
             rep["status"] = f"misaligned ({rate:.2f} < {args.min_alignment})"
@@ -415,7 +429,7 @@ def vocabulary_examples(train_papers, args, rng, report):
         if f is None:
             continue
         title = ""
-        meta_f = OUTPUT_DIR / paper / "kg" / "relation" / args.teacher / "prompt_meta.json"
+        meta_f = OUTPUT_DIR / paper / "kg" / args.extractor / args.teacher / "prompt_meta.json"
         if meta_f.exists():
             title = json.loads(meta_f.read_text(encoding="utf-8")).get("title", "")
         with open(f, newline="", encoding="utf-8-sig") as fh:
@@ -464,6 +478,9 @@ def vocabulary_examples(train_papers, args, rng, report):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--papers-file", default=CORPUS_FILE_DEFAULT)
+    ap.add_argument("--extractor", choices=["relation", "fixed"], default="relation",
+                    help="fixed = the ACL Anthology setup: subjects from output/acl/<id>/ entity "
+                         "CSVs, teacher replies under kg/fixed*/. Give it its own --split file")
     ap.add_argument("--teacher", default=TEACHER_DEFAULT, help="model slug of the stored replies")
     ap.add_argument("--consensus-models", nargs="*", default=[],
                     help="other stored runs (e.g. gemma4-31b qwen3-235b ministral-14b) whose agreed "
@@ -537,14 +554,14 @@ def main():
     for ont in args.ontologies:
         if args.system_prompt == "current":
             try:
-                cur_prompts[ont] = current_system_prompt(ont, args.ontology_file)
+                cur_prompts[ont] = current_system_prompt(ont, args.ontology_file, args.extractor)
             except ImportError as e:
                 sys.exit(f"cannot render the current {ont} system prompt ({e}). Install rdflib, "
                          f"or pass --system-prompt stored.")
             schemas[ont] = schema_from_system_prompt(cur_prompts[ont][0])
         else:
-            probe = next((OUTPUT_DIR / p / "kg" / exdir_for("relation", ont) / args.teacher / "system_prompt.txt"
-                          for p in train if (OUTPUT_DIR / p / "kg" / exdir_for("relation", ont) / args.teacher / "system_prompt.txt").exists()), None)
+            probe = next((OUTPUT_DIR / p / "kg" / exdir_for(args.extractor, ont) / args.teacher / "system_prompt.txt"
+                          for p in train if (OUTPUT_DIR / p / "kg" / exdir_for(args.extractor, ont) / args.teacher / "system_prompt.txt").exists()), None)
             if probe is None:
                 sys.exit(f"no stored {ont} system prompt for teacher {args.teacher}")
             schemas[ont] = schema_from_system_prompt(probe.read_text(encoding="utf-8"))
@@ -644,7 +661,7 @@ def main():
         "split_file": str(args.split), "folds": args.folds, "split_seed": args.seed,
         "eval_fold": args.eval_fold, "dev_fold": args.dev_fold,
         "eval_papers": heldout, "train_papers": train, "dev_papers": dev,
-        "teacher": args.teacher, "ontologies": args.ontologies,
+        "teacher": args.teacher, "extractor": args.extractor, "ontologies": args.ontologies,
         "consensus_models": args.consensus_models,
         "consensus_min": args.consensus_min if args.consensus_models else None,
         "system_prompt": args.system_prompt, "configures": args.configures,

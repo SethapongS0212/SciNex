@@ -72,7 +72,7 @@ def cmd_build(args):
             # the SAME triple set ft_compare counts as "kept": today's guards over the stored
             # replies, conflicting duplicate replies dropped (triples.json can be stale or
             # inflated — gptoss scinex strabismus2026, §32.2)
-            st = run_stats(p, args.ontology, slug)
+            st = run_stats(p, args.ontology, slug, args.extractor)
             if st is None:
                 missing.append(f"{slug}/{p}")
                 continue
@@ -262,6 +262,8 @@ def main():
     b.add_argument("--size", type=int, default=25)
     b.add_argument("--seed", type=int, default=17)
     b.add_argument("--allow-missing", action="store_true")
+    b.add_argument("--extractor", choices=["relation", "fixed"], default="relation",
+                   help="fixed = ACL Anthology runs under kg/fixed*/ (hands_off §37)")
     b.add_argument("--force", action="store_true")
     for name in ("status", "collect", "report"):
         s = sub.add_parser(name)

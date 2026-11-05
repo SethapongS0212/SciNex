@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Multiple NLP tasks",
+    "predicate": "encompasses",
+    "object": "Entity Recognition",
+    "object_type": "Task",
+    "source_sentence": "Second, to the best of our knowledge, this is the first proposal to conduct numerical studies on multiple NLP tasks, including Entity Recognition and Sentiment Analysis, for feature attribution.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.159",
+    "title": "Locally Aggregated Feature Attribution on Natural Language Model Understanding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Multiple NLP tasks",
+    "predicate": "encompasses",
+    "object": "Sentiment Analysis",
+    "object_type": "Task",
+    "source_sentence": "Second, to the best of our knowledge, this is the first proposal to conduct numerical studies on multiple NLP tasks, including Entity Recognition and Sentiment Analysis, for feature attribution.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.159",
+    "title": "Locally Aggregated Feature Attribution on Natural Language Model Understanding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "FAISS",
+    "object_type": "Other",
+    "source_sentence": "During inference time, we apply the hidden layer encoder Hencoder to all the input datasets and index, then using FAISS 1 offline.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.159",
+    "title": "Locally Aggregated Feature Attribution on Natural Language Model Understanding",
+    "section": "3 The Proposed Framework: LAFA"
+  },
+  {
+    "subject": "SHAP",
+    "predicate": "uses",
+    "object": "zero references",
+    "object_type": "Other",
+    "source_sentence": "\"SHAP + Zero\" means zero references are used in SHAP and \"SHAP + Ref.\" means Xsim is used as references.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.159",
+    "title": "Locally Aggregated Feature Attribution on Natural Language Model Understanding",
+    "section": "5.1 Case I: Feature Attribution on Relation Classification Model"
+  },
+  {
+    "subject": "SHAP",
+    "predicate": "uses",
+    "object": "Xsim",
+    "object_type": "Other",
+    "source_sentence": "\"SHAP + Zero\" means zero references are used in SHAP and \"SHAP + Ref.\" means Xsim is used as references.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.159",
+    "title": "Locally Aggregated Feature Attribution on Natural Language Model Understanding",
+    "section": "5.1 Case I: Feature Attribution on Relation Classification Model"
+  },
+  {
+    "subject": "SHAP",
+    "predicate": "uses",
+    "object": "average aggregation",
+    "object_type": "Other",
+    "source_sentence": "SHAP-based methods show low AUC values, because such methods aggregate the gradients of input and reference by simply taking average aggregation (see details in Section 4), which is not meaningful in NLP tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.159",
+    "title": "Locally Aggregated Feature Attribution on Natural Language Model Understanding",
+    "section": "5.1 Case I: Feature Attribution on Relation Classification Model"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "collected catalog data",
+    "object_type": "Dataset",
+    "source_sentence": "We use BERT-base model and fine-tuned on collected catalog data for price regression.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.159",
+    "title": "Locally Aggregated Feature Attribution on Natural Language Model Understanding",
+    "section": "5.3 Case III: Feature Attribution on Regression Model"
+  },
+  {
+    "subject": "kernel",
+    "predicate": "uses",
+    "object": "cosine function",
+    "object_type": "Other",
+    "source_sentence": "we adopt the cosine function as the kernel function",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.159",
+    "title": "Locally Aggregated Feature Attribution on Natural Language Model Understanding",
+    "section": "A Model Implementation Detail"
+  },
+  {
+    "subject": "kernel",
+    "predicate": "uses",
+    "object": "Polynomial function",
+    "object_type": "Other",
+    "source_sentence": "we adopt the Polynomial function as the kernel function",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.159",
+    "title": "Locally Aggregated Feature Attribution on Natural Language Model Understanding",
+    "section": "A Model Implementation Detail"
+  },
+  {
+    "subject": "kernel",
+    "predicate": "uses",
+    "object": "indicator function",
+    "object_type": "Other",
+    "source_sentence": "The indicator function as the kernel function",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.159",
+    "title": "Locally Aggregated Feature Attribution on Natural Language Model Understanding",
+    "section": "A Model Implementation Detail"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "GPUs",
+    "object_type": "Other",
+    "source_sentence": "All experiments are conducted with eight NVIDIA Tesla V100 GPUs",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.159",
+    "title": "Locally Aggregated Feature Attribution on Natural Language Model Understanding",
+    "section": "A Model Implementation Detail"
+  },
+  {
+    "subject": "BERT-Based Models",
+    "predicate": "uses",
+    "object": "WordPiece embedding",
+    "object_type": "Other",
+    "source_sentence": "Admittedly, we can directly use the WordPiece embedding as the encoder, which is the input of BERT-based models and enable us to find neighbors in the sense of \"Word Similarity\".",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.159",
+    "title": "Locally Aggregated Feature Attribution on Natural Language Model Understanding",
+    "section": "D Experiment on Different Layer as Neighbor Encoder"
+  },
+  {
+    "subject": "BERT-Based Models",
+    "predicate": "addresses",
+    "object": "Word Similarity",
+    "object_type": "Concept",
+    "source_sentence": "Admittedly, we can directly use the WordPiece embedding as the encoder, which is the input of BERT-based models and enable us to find neighbors in the sense of \"Word Similarity\".",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.159",
+    "title": "Locally Aggregated Feature Attribution on Natural Language Model Understanding",
+    "section": "D Experiment on Different Layer as Neighbor Encoder"
+  }
+]

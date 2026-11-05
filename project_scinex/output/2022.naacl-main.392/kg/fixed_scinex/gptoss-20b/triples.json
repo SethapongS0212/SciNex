@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "rule",
+    "predicate": "achieves",
+    "object": "one aspect of model understanding",
+    "object_type": "Concept",
+    "source_sentence": "Since a single EXSUM rule is designed to capture one aspect of model understanding , multiple rules are often necessary for comprehensive understanding.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.392",
+    "title": "EXSUM: From Local Explanations to Model Understanding",
+    "section": "3.4 EXSUM Rule Unions"
+  },
+  {
+    "subject": "rule",
+    "predicate": "uses",
+    "object": "part-of-speech",
+    "object_type": "Concept",
+    "source_sentence": "For example, if we want to split positive adjec- tives into a separate rule from other positive words, we create a rule to test for part-of-speech and senti- ment score, and assign a higher precedence to this rule, such that the original rule is only applicable to the remaining non-adjectives.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.392",
+    "title": "EXSUM: From Local Explanations to Model Understanding",
+    "section": "3.4 EXSUM Rule Unions"
+  },
+  {
+    "subject": "rule",
+    "predicate": "produces",
+    "object": "EXSUM rule unions",
+    "object_type": "Other",
+    "source_sentence": "We construct EXSUM rule unions for SST and QQP models (details in App.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.392",
+    "title": "EXSUM: From Local Explanations to Model Understanding",
+    "section": "5 Evaluation"
+  },
+  {
+    "subject": "construction",
+    "predicate": "produces",
+    "object": "rule union",
+    "object_type": "Other",
+    "source_sentence": "We split the test set into a construction set to create the rule union and tune its parameters (analogous to the training and validation set in supervised model training) and an evaluation set to compute unbiased estimates of the metric values (analogous to the test set).",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.392",
+    "title": "EXSUM: From Local Explanations to Model Understanding",
+    "section": "5 Evaluation"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "produces",
+    "object": "unbiased estimates of the metric values",
+    "object_type": "Other",
+    "source_sentence": "We split the test set into a construction set to create the rule union and tune its parameters (analogous to the training and validation set in supervised model training) and an evaluation set to compute unbiased estimates of the metric values (analogous to the test set).",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.392",
+    "title": "EXSUM: From Local Explanations to Model Understanding",
+    "section": "5 Evaluation"
+  },
+  {
+    "subject": "rule",
+    "predicate": "produces",
+    "object": "behavior range",
+    "object_type": "Other",
+    "source_sentence": "The final behavior range as predicted by the behavior function of this rule is the average of these two: [−(0.05 + α)/2, (0.05 + β)/2].",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.392",
+    "title": "EXSUM: From Local Explanations to Model Understanding",
+    "section": "B.1.1 Details of Current Practices"
+  },
+  {
+    "subject": "rules",
+    "predicate": "addresses",
+    "object": "positive-sentiment",
+    "object_type": "Task",
+    "source_sentence": "For the two rules for positive-sentiment and stop words, the set of words (and hence the applicability functions) is defined in the same way as for the BG method above.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.392",
+    "title": "EXSUM: From Local Explanations to Model Understanding",
+    "section": "B.1.1 Details of Current Practices"
+  },
+  {
+    "subject": "rules",
+    "predicate": "addresses",
+    "object": "stop words",
+    "object_type": "Task",
+    "source_sentence": "For the two rules for positive-sentiment and stop words, the set of words (and hence the applicability functions) is defined in the same way as for the BG method above.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.392",
+    "title": "EXSUM: From Local Explanations to Model Understanding",
+    "section": "B.1.1 Details of Current Practices"
+  },
+  {
+    "subject": "Decision Tree Model",
+    "predicate": "uses",
+    "object": "second feature",
+    "object_type": "Feature",
+    "source_sentence": "One straightforward example is the decision tree model shown in Fig. 9, where the root node splits on the second feature at a threshold value of 3.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.392",
+    "title": "EXSUM: From Local Explanations to Model Understanding",
+    "section": "C.2 Robustness"
+  }
+]

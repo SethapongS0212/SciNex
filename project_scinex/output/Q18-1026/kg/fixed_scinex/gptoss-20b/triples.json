@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "GloVe",
+    "predicate": "achieves",
+    "object": "substantially better performance",
+    "object_type": "Metric",
+    "source_sentence": "mean GloVe embeddings produced sub- stantially better performance in all tests.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1026",
+    "title": "Finding Convincing Arguments Using Scalable Bayesian Preference Learning",
+    "section": "6.2 Method Comparison"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "argument-level ling features",
+    "object_type": "Feature",
+    "source_sentence": "To input the argument-level ling features to BiLSTM, we ex- tend the network by adding a dense layer with 64 nodes.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1026",
+    "title": "Finding Convincing Arguments Using Scalable Bayesian Preference Learning",
+    "section": "6.2 Method Comparison"
+  },
+  {
+    "subject": "kernel",
+    "predicate": "comparesagainst",
+    "object": "RBF",
+    "object_type": "Kernel",
+    "source_sentence": "For the kernel function, kd, we used the Mat´ern 3 2 function as it has been shown to outperform other commonly- used kernels, such as RBF, across a wide range of tasks.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1026",
+    "title": "Finding Convincing Arguments Using Scalable Bayesian Preference Learning",
+    "section": "6.2 Method Comparison"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "comparesagainst",
+    "object": "median heuristic",
+    "object_type": "Method",
+    "source_sentence": "To set length-scales, ld, we compare the median heuris- tic ( labeled \"medi.\") with MLII optimization using an L-BFGS optimizer (\"opt.\").",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1026",
+    "title": "Finding Convincing Arguments Using Scalable Bayesian Preference Learning",
+    "section": "6.2 Method Comparison"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "LIBSVM",
+    "object_type": "Other",
+    "source_sentence": "For SVM we used LibSVM version 3.2, which could be sped up if probability estimates were not required.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1026",
+    "title": "Finding Convincing Arguments Using Scalable Bayesian Preference Learning",
+    "section": "6.4 Experiment 2: Scalability"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "TESLA",
+    "object_type": "Other",
+    "source_sentence": "BiLSTM was run with Theano 0.72 on an Nvidia Tesla P100 GPU.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1026",
+    "title": "Finding Convincing Arguments Using Scalable Bayesian Preference Learning",
+    "section": "6.4 Experiment 2: Scalability"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "evaluatedon",
+    "object": "UKPConvArgStrict",
+    "object_type": "Dataset",
+    "source_sentence": "For UKPConvArgStrict, the mean Shannon entropy of the pairwise predictions from GPPL was .129 for correct predictions and 2.443 for errors, while for SVM, the mean Shannon entropy was .188 for correct predictions and 1.583 for incorrect.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1026",
+    "title": "Finding Convincing Arguments Using Scalable Bayesian Preference Learning",
+    "section": "6.9 Error Analysis"
+  }
+]

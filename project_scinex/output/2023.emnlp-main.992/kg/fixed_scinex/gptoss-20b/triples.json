@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "learning data",
+    "object_type": "Dataset",
+    "source_sentence": "We train all models with 10 seeds on random splits of learning data into train and validation sets to observe training stability.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.992",
+    "title": "Do Differences in Values Inﬂuence Disagreements in Online Discussions?",
+    "section": "3.2 Value Extraction"
+  },
+  {
+    "subject": "training",
+    "predicate": "comprises",
+    "object": "general texts",
+    "object_type": "Texts",
+    "source_sentence": "We formulate the value estimation task as recog- nizing whether a comment is related to a value by means of binary classification per value, matching the setup of Qiu et al. Our training data comprises general texts annotated for the presence of values across multiple domains.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.992",
+    "title": "Do Differences in Values Inﬂuence Disagreements in Online Discussions?",
+    "section": "3.2 Value Extraction"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "comprises",
+    "object": "test sets",
+    "object_type": "SETS",
+    "source_sentence": "For both datasets, we split data into predefined learning (training and validation) and evaluation (test) sets.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.992",
+    "title": "Do Differences in Values Inﬂuence Disagreements in Online Discussions?",
+    "section": "3.2 Value Extraction"
+  },
+  {
+    "subject": "Text",
+    "predicate": "uses",
+    "object": "value-specific token",
+    "object_type": "Other",
+    "source_sentence": "Each text sample is presented to our model ten times, once for each value by prepending a value- specific token.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.992",
+    "title": "Do Differences in Values Inﬂuence Disagreements in Online Discussions?",
+    "section": "3.2 Value Extraction"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "comprises",
+    "object": "train and validation sets",
+    "object_type": "SETS",
+    "source_sentence": "We train all models with 10 seeds on random splits of learning data into train and validation sets to observe training stability.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.992",
+    "title": "Do Differences in Values Inﬂuence Disagreements in Online Discussions?",
+    "section": "3.2 Value Extraction"
+  },
+  {
+    "subject": "Binary Classification",
+    "predicate": "achieves",
+    "object": "value estimation task",
+    "object_type": "Other",
+    "source_sentence": "We formulate the value estimation task as recog- nizing whether a comment is related to a value by means of binary classification per value, matching the setup of Qiu et al.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.992",
+    "title": "Do Differences in Values Inﬂuence Disagreements in Online Discussions?",
+    "section": "3.2 Value Extraction"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "uses",
+    "object": "ValueNet dataset",
+    "object_type": "Dataset",
+    "source_sentence": "to allow joint training with the ValueNet dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.992",
+    "title": "Do Differences in Values Inﬂuence Disagreements in Online Discussions?",
+    "section": "3.2 Value Extraction"
+  },
+  {
+    "subject": "Domains",
+    "predicate": "comprises",
+    "object": "multiple domains",
+    "object_type": "Other",
+    "source_sentence": "Our training data comprises general texts annotated for the presence of values across multiple domains.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.992",
+    "title": "Do Differences in Values Inﬂuence Disagreements in Online Discussions?",
+    "section": "3.2 Value Extraction"
+  },
+  {
+    "subject": "SETS",
+    "predicate": "comprises",
+    "object": "training, validation, and test sets",
+    "object_type": "SETS",
+    "source_sentence": "For both datasets, we split data into predefined learning (training and validation) and evaluation (test) sets.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.992",
+    "title": "Do Differences in Values Inﬂuence Disagreements in Online Discussions?",
+    "section": "3.2 Value Extraction"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "Context",
+    "object_type": "Concept",
+    "source_sentence": "We create embeddings (TF-IDF or BERT) for p and c and concatenate them to the user-specific context.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.992",
+    "title": "Do Differences in Values Inﬂuence Disagreements in Online Discussions?",
+    "section": "4.4 Use Case: Predicting (Dis-)agreement"
+  },
+  {
+    "subject": "Classifiers",
+    "predicate": "uses",
+    "object": "Information",
+    "object_type": "Concept",
+    "source_sentence": "Classifiers using TF-IDF embeddings fail to use the information effectively.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.992",
+    "title": "Do Differences in Values Inﬂuence Disagreements in Online Discussions?",
+    "section": "4.4 Use Case: Predicting (Dis-)agreement"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "addresses",
+    "object": "value conflicts influence disagreement",
+    "object_type": "Concept",
+    "source_sentence": "We perform a qualitative analysis of some instances (comment pairs) from the dataset that follow our hypothesis and some that do not to gain a better understanding of when value conflicts influence disagreement.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.992",
+    "title": "Do Differences in Values Inﬂuence Disagreements in Online Discussions?",
+    "section": "B.3 Qualitative Examples of Value Conﬂicts and (Dis-)agreement"
+  },
+  {
+    "subject": "Understanding",
+    "predicate": "addresses",
+    "object": "value conflicts influence disagreement",
+    "object_type": "Concept",
+    "source_sentence": "We perform a qualitative analysis of some instances (comment pairs) from the dataset that follow our hypothesis and some that do not to gain a better understanding of when value conflicts influence disagreement.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.992",
+    "title": "Do Differences in Values Inﬂuence Disagreements in Online Discussions?",
+    "section": "B.3 Qualitative Examples of Value Conﬂicts and (Dis-)agreement"
+  }
+]

@@ -1,0 +1,39 @@
+{"para_id": 0, "raw": "{\"triples\": []}", "n_tokens": 360, "truncated": false}
+{"para_id": 1, "raw": "{\"triples\":[{\"subject\":\"Smoothing\",\"predicate\":\"addresses\",\"object\":\"Bias\",\"object_type\":\"Concept\",\"source_sentence\":\"We suspect that this smoothing partially addresses the \\\"Achilles' heel\\\" of PMI: its bias towards co-occurrences of rare words.\"}]}", "n_tokens": 440, "truncated": false}
+{"para_id": 2, "raw": "{\"triples\": []}", "n_tokens": 307, "truncated": false}
+{"para_id": 3, "raw": "{\"triples\": []}", "n_tokens": 440, "truncated": false}
+{"para_id": 4, "raw": "{\"triples\": []}", "n_tokens": 248, "truncated": false}
+{"para_id": 5, "raw": "{\"triples\": []}", "n_tokens": 344, "truncated": false}
+{"para_id": 6, "raw": "{\"triples\": []}", "n_tokens": 274, "truncated": false}
+{"para_id": 7, "raw": "{\"triples\": []}", "n_tokens": 413, "truncated": false}
+{"para_id": 8, "raw": "{\"triples\": []}", "n_tokens": 108, "truncated": false}
+{"para_id": 9, "raw": "{\"triples\": []}", "n_tokens": 502, "truncated": false}
+{"para_id": 10, "raw": "{\"triples\": []}", "n_tokens": 438, "truncated": false}
+{"para_id": 11, "raw": "{\"triples\":[{\"subject\":\"GloVe\",\"predicate\":\"uses\",\"object\":\"weighting scheme\",\"object_type\":\"Concept\",\"source_sentence\":\"Both GloVe and word2vec employ such a weighting scheme, and while less common, this approach was also explored in traditional count-based methods , e.g. GloVe's implementation weights contexts using the harmonic function, e.g. a context word three tokens away will be counted as 1 3 of an occurrence.\"},{\"subject\":\"word2vec\",\"predicate\":\"uses\",\"object\":\"weighting scheme\",\"object_type\":\"Concept\",\"source_sentence\":\"Both GloVe and word2vec employ such a weighting scheme, and while less common, this approach was also explored in traditional count-based methods , e.g. GloVe's implementation weights contexts using the harmonic function, e.g. a context word three tokens away will be counted as 1 3 of an occurrence.\"},{\"subject\":\"GloVe\",\"predicate\":\"uses\",\"object\":\"harmonic function\",\"object_type\":\"Concept\",\"source_sentence\":\"Both GloVe and word2vec employ such a weighting scheme, and while less common, this approach was also explored in traditional count-based methods , e.g. GloVe's implementation weights contexts using the harmonic function, e.g. a context word three tokens away will be counted as 1 3 of an occurrence.\"},{\"subject\":\"word2vec\",\"predicate\":\"uses\",\"object\":\"distance weighting divided by window size\",\"object_type\":\"Concept\",\"source_sentence\":\"word2vec's implementation is equivalent to weighing by the distance from the focus word divided by the window size.\"},{\"subject\":\"word2vec\",\"predicate\":\"uses\",\"object\":\"uniform sampling of window size between 1 and L\",\"object_type\":\"Concept\",\"source_sentence\":\"word2vec implements its weighting scheme by uniformly sampling the actual window size between 1 and L, for each token .\"}]}", "n_tokens": 658, "truncated": false}
+{"para_id": 12, "raw": "{\"triples\": []}", "n_tokens": 445, "truncated": false}
+{"para_id": 13, "raw": "{\"triples\": []}", "n_tokens": 232, "truncated": false}
+{"para_id": 14, "raw": "{\"triples\": []}", "n_tokens": 408, "truncated": false}
+{"para_id": 15, "raw": "{\"triples\": []}", "n_tokens": 238, "truncated": false}
+{"para_id": 16, "raw": "{\"triples\":[{\"subject\":\"Adding Context Vectors\",\"predicate\":\"uses\",\"object\":\"context vectors\",\"object_type\":\"Other\",\"source_sentence\":\"Adding Context Vectors (w+c) Pennington et al. (2014) propose using the context vectors in addition to the word vectors as GloVe's output.\"}]}", "n_tokens": 791, "truncated": false}
+{"para_id": 17, "raw": "{\"triples\": []}", "n_tokens": 178, "truncated": false}
+{"para_id": 18, "raw": "{\"triples\": []}", "n_tokens": 651, "truncated": false}
+{"para_id": 19, "raw": "{\"triples\": []}", "n_tokens": 371, "truncated": false}
+{"para_id": 20, "raw": "{\"triples\": []}", "n_tokens": 48, "truncated": false}
+{"para_id": 21, "raw": "{\n  \"triples\": [\n    {\n      \"subject\": \"Models\",\n      \"predicate\": \"trainedOn\",\n      \"object\": \"English Wikipedia\",\n      \"object_type\": \"Dataset\",\n      \"source_sentence\": \"All models were trained on English Wikipedia (August 2013 dump)\"\n    },\n    {\n      \"subject\": \"Models\",\n      \"predicate\": \"uses\",\n      \"object\": \"windows of 2, 5, and 10 tokens\",\n      \"object_type\": \"Other\",\n      \"source_sentence\": \"Models were derived using windows of 2, 5, and 10 tokens to each side of the focus word\"\n    },\n    {\n      \"subject\": \"word2vec\",\n      \"predicate\": \"uses\",\n      \"object\": \"sequence of pre-extracted word-context pairs\",\n      \"object_type\": \"Other\",\n      \"source_sentence\": \"SGNS was trained using a modified version of word2vec which receives a sequence of pre-extracted word-context pairs\"\n    },\n    {\n      \"subject\": \"GloVe\",\n      \"predicate\": \"uses\",\n      \"object\": \"pre-extracted word-context pairs\",\n      \"object_type\": \"Other\",\n      \"source_sentence\": \"GloVe was trained with 50 itera- tions using the original implementation , applied to the pre-extracted word- context pairs\"\n    }\n  ]\n}", "n_tokens": 1870, "truncated": false}
+{"para_id": 22, "raw": "{\"triples\": []}", "n_tokens": 480, "truncated": false}
+{"para_id": 23, "raw": "{\"triples\":[{\"subject\":\"Analogy\",\"predicate\":\"uses\",\"object\":\"3CosAdd\",\"object_type\":\"Method\",\"source_sentence\":\"The analogy questions are answered using 3CosAdd (addition and subtraction): arg max b∗∈VW \\{a∗,b,a} cos(b∗, a∗−a + b) = arg max b∗∈VW \\{a∗,b,a} (cos(b∗, a∗) −cos(b∗, a) + cos(b∗, b))\"}]}", "n_tokens": 588, "truncated": false}
+{"para_id": 24, "raw": "{\"triples\": []}", "n_tokens": 344, "truncated": false}
+{"para_id": 25, "raw": "{\"triples\": []}", "n_tokens": 109, "truncated": false}
+{"para_id": 26, "raw": "{\"triples\": []}", "n_tokens": 539, "truncated": false}
+{"para_id": 27, "raw": "{\"triples\": []}", "n_tokens": 430, "truncated": false}
+{"para_id": 28, "raw": "{\"triples\": []}", "n_tokens": 175, "truncated": false}
+{"para_id": 29, "raw": "{\"triples\": []}", "n_tokens": 607, "truncated": false}
+{"para_id": 30, "raw": "{\"triples\":[{\"subject\":\"GloVe\",\"predicate\":\"uses\",\"object\":\"bias parameters\",\"object_type\":\"Concept\",\"source_sentence\":\"GloVe learns a set of bias parameters that subsumes these two modifications\"}]}", "n_tokens": 509, "truncated": false}
+{"para_id": 31, "raw": "{\"triples\": []}", "n_tokens": 268, "truncated": false}
+{"para_id": 32, "raw": "{\"triples\": []}", "n_tokens": 361, "truncated": false}
+{"para_id": 33, "raw": "{\"triples\": [\n    {\n      \"subject\": \"word2vec\",\n      \"predicate\": \"uses\",\n      \"object\": \"CBOW\",\n      \"object_type\": \"Method\",\n      \"source_sentence\": \"Another algorithm featured in word2vec is CBOW.\"\n    }\n  ]}", "n_tokens": 585, "truncated": false}
+{"para_id": 34, "raw": "{\"triples\": []}", "n_tokens": 39, "truncated": false}
+{"para_id": 35, "raw": "{\"triples\": []}", "n_tokens": 295, "truncated": false}
+{"para_id": 36, "raw": "{\"triples\":[{\"subject\":\"GloVe\",\"predicate\":\"uses\",\"object\":\"w+c variant\",\"object_type\":\"Artifact\",\"source_sentence\":\"for both SGNS and GloVe, it is worthwhile to experiment with the ⃗w +⃗c variant, which is cheap to apply (does not require retraining) and can result in substantial gains (as well as substantial losses).\"}]}", "n_tokens": 355, "truncated": false}
+{"para_id": 37, "raw": "{\"triples\": []}", "n_tokens": 311, "truncated": false}
+{"para_id": 38, "raw": "{\"triples\": []}", "n_tokens": 26, "truncated": false}

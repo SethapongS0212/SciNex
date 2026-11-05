@@ -1,0 +1,35 @@
+[
+  {
+    "subject": "Language",
+    "predicate": "addresses",
+    "object": "Translation",
+    "object_type": "Task",
+    "source_sentence": "an SSLM mimics a traditional n-gram language model, but it is computed over semantic information and its expected effect is to promote translation choices that are semantically similar to the target context.",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "3.1 Semantic Space Language Model (SSLM)"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "OPENNMT-LUA toolkit",
+    "object_type": "Other",
+    "source_sentence": "Our baseline NMT model follows the encoder– decoder architecture with attention of Bah- danau et al. (2015) and it is built using the OPENNMT-LUA toolkit .",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "4.1 Settings"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "0.23",
+    "object_type": "Metric",
+    "source_sentence": "We reach improvements in the BLEU and METEOR scores of up to +0.23 and +0.31 respectively for English-to-Spanish translations.",
+    "extraction_mode": "fixed",
+    "paper": "D19-6502",
+    "title": "Context-Aware Neural Machine Translation Decoding",
+    "section": "5 Summary and Conclusions"
+  }
+]

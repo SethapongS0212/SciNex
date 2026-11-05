@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "resolved (as BERT is trained on Wikipedia articles and has almost no understanding of opinion text)",
+    "extraction_mode": "fixed",
+    "paper": "N19-1242",
+    "title": "BERT Post-Training for Review Reading Comprehension and Aspect-based Sentiment Analysis",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance on MRC",
+    "object_type": "Other",
+    "source_sentence": "This work adopts BERT as the base model as it achieves the state-of-the-art performance on MRC.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1242",
+    "title": "BERT Post-Training for Review Reading Comprehension and Aspect-based Sentiment Analysis",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "ASC",
+    "predicate": "uses",
+    "object": "aspect",
+    "object_type": "Input",
+    "source_sentence": "There are two inputs to ASC: an aspect and a review sentence mentioning that aspect.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1242",
+    "title": "BERT Post-Training for Review Reading Comprehension and Aspect-based Sentiment Analysis",
+    "section": "3.4 Aspect Sentiment Classiﬁcation"
+  },
+  {
+    "subject": "ASC",
+    "predicate": "uses",
+    "object": "review sentence",
+    "object_type": "Input",
+    "source_sentence": "There are two inputs to ASC: an aspect and a review sentence mentioning that aspect.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1242",
+    "title": "BERT Post-Training for Review Reading Comprehension and Aspect-based Sentiment Analysis",
+    "section": "3.4 Aspect Sentiment Classiﬁcation"
+  },
+  {
+    "subject": "cross entropy",
+    "predicate": "uses",
+    "object": "polarities",
+    "object_type": "Polarity",
+    "source_sentence": "Training loss is the cross entropy on the polarities.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1242",
+    "title": "BERT Post-Training for Review Reading Comprehension and Aspect-based Sentiment Analysis",
+    "section": "3.4 Aspect Sentiment Classiﬁcation"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "SQuAD (1.1)",
+    "object_type": "Dataset",
+    "source_sentence": "To post-train BERT on task-aware knowledge, we use SQuAD (1.1), which is a popular large-scale MRC dataset.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1242",
+    "title": "BERT Post-Training for Review Reading Comprehension and Aspect-based Sentiment Analysis",
+    "section": "3.4 Aspect Sentiment Classiﬁcation"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "DDK",
+    "object_type": "Dataset",
+    "source_sentence": "Algorithm 1 describes one training step and takes one batch of data on domain knowledge (DK) DDK and one batch of MRC training data DMRC to update the parameters Θ of BERT.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1242",
+    "title": "BERT Post-Training for Review Reading Comprehension and Aspect-based Sentiment Analysis",
+    "section": "3.4 Aspect Sentiment Classiﬁcation"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "DMRC",
+    "object_type": "Dataset",
+    "source_sentence": "Algorithm 1 describes one training step and takes one batch of data on domain knowledge (DK) DDK and one batch of MRC training data DMRC to update the parameters Θ of BERT.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1242",
+    "title": "BERT Post-Training for Review Reading Comprehension and Aspect-based Sentiment Analysis",
+    "section": "3.4 Aspect Sentiment Classiﬁcation"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "produces",
+    "object": "hyper-parameter settings",
+    "object_type": "Other",
+    "source_sentence": "We detail the hyper-parameter settings of this algorithm in Sec.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1242",
+    "title": "BERT Post-Training for Review Reading Comprehension and Aspect-based Sentiment Analysis",
+    "section": "5 Lpartial ←LDK(DDK,i)+LMRC(DMRC,i) u 6 ∇ΘL ←∇ΘL + BackProp(Lpartial)"
+  }
+]

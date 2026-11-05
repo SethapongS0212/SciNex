@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "iterative segmentation process",
+    "object_type": "Other",
+    "source_sentence": "we adopt LSTM to model the iterative segmentation process",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.116",
+    "title": "Neural Sequence Segmentation as Determining the Leftmost Segments",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "3 datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Extensive experiments have been conducted on syntactic chunking and Chinese part-of-speech (POS) tagging across 3 datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.116",
+    "title": "Neural Sequence Segmentation as Determining the Leftmost Segments",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "teacher forcing",
+    "object_type": "Method",
+    "source_sentence": "During training, we use teacher forcing where every segment yk is predicted using its previous ground-truth segments [y1, y2, · · ·, yk−1].",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.116",
+    "title": "Neural Sequence Segmentation as Determining the Leftmost Segments",
+    "section": "2.3 Training and Inference"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "greedy search",
+    "object_type": "Method",
+    "source_sentence": "Note that Algorithm 1 uses greedy search to get ˆy because it is both fast in speed and effective in accuracy in our experiments, although beam search may be better in accuracy.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.116",
+    "title": "Neural Sequence Segmentation as Determining the Leftmost Segments",
+    "section": "2.3 Training and Inference"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "token embedding",
+    "object_type": "Other",
+    "source_sentence": "For CoNLL-2000 dataset, the cased, 300d Glove is used to initialize token embedding.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.116",
+    "title": "Neural Sequence Segmentation as Determining the Leftmost Segments",
+    "section": "3.1 Settings"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "NVIDIA Tesla P100",
+    "object_type": "Other",
+    "source_sentence": "All our models in experiments are running on NVIDIA Tesla P100.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.116",
+    "title": "Neural Sequence Segmentation as Determining the Leftmost Segments",
+    "section": "3.1 Settings"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "bidirectional LSTM",
+    "object_type": "Method",
+    "source_sentence": "Bi-LSTM + CRF It utilizes bidirectional LSTM to read the input sentence and CRF to decode the label sequence ;",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.116",
+    "title": "Neural Sequence Segmentation as Determining the Leftmost Segments",
+    "section": "3.2 Results on Syntactic Chunking"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "CRF",
+    "object_type": "Method",
+    "source_sentence": "Bi-LSTM + CRF It utilizes bidirectional LSTM to read the input sentence and CRF to decode the label sequence ;",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.116",
+    "title": "Neural Sequence Segmentation as Determining the Leftmost Segments",
+    "section": "3.2 Results on Syntactic Chunking"
+  },
+  {
+    "subject": "Cross-View Training",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Method",
+    "source_sentence": "Cross-view Training It designs a LSTM based sentence encoder to facilitate semi-supervised learning.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.116",
+    "title": "Neural Sequence Segmentation as Determining the Leftmost Segments",
+    "section": "3.2 Results on Syntactic Chunking"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "GCDT w/ BERT It adopts BERT as additional token embeddings to improve GCDT.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.116",
+    "title": "Neural Sequence Segmentation as Determining the Leftmost Segments",
+    "section": "3.2 Results on Syntactic Chunking"
+  },
+  {
+    "subject": "Lattice LSTM",
+    "predicate": "uses",
+    "object": "Chinese Characters",
+    "object_type": "Concept",
+    "source_sentence": "Lattice LSTM It's a lattice-structured LSTM that encodes Chinese characters as well as all potential tokens that match a lexicon;",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.116",
+    "title": "Neural Sequence Segmentation as Determining the Leftmost Segments",
+    "section": "3.3 Results on Chinese POS Tagging"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "IOB tags",
+    "object_type": "Concept",
+    "source_sentence": "BERT uses the representations from the last layer to predict IOB tags;",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.116",
+    "title": "Neural Sequence Segmentation as Determining the Leftmost Segments",
+    "section": "3.3 Results on Chinese POS Tagging"
+  }
+]

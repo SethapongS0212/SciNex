@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Reverse Engineering",
+    "predicate": "uses",
+    "object": "optimization scheme",
+    "object_type": "Method",
+    "source_sentence": "In CV tasks, one popular direction is reverse engineering; one reconstructs possible triggers through optimization scheme, and determines whether a model is Trojaned by inspecting the reconstructed triggers' quality.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "1.1 Related Work"
+  },
+  {
+    "subject": "Reverse Engineering",
+    "predicate": "uses",
+    "object": "algebraic topology",
+    "object_type": "Method",
+    "source_sentence": "Beside the reverse engineering approach, Zheng et al. (2021) inspects neuron interaction through algebraic topology, i.e., persistent homology.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "1.1 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Input",
+    "object_type": "Other",
+    "source_sentence": "Fx(·) represent the BERT model, which takes A as the model input",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "3.2 Attention Focus Drifting"
+  },
+  {
+    "subject": "pruning",
+    "predicate": "addresses",
+    "object": "impact of drifting heads",
+    "object_type": "Concept",
+    "source_sentence": "Please note here the pruning is only to study the impact of drifting heads, not to propose a defense algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "3.3 Measuring the Impact of Drifting Through Head Pruning"
+  },
+  {
+    "subject": "pruning",
+    "predicate": "achieves",
+    "object": "improvement of classification accuracy",
+    "object_type": "Other",
+    "source_sentence": "The improvement of classification accuracy due to pruning reflects how much those pruned heads (the ones with drifting behavior) are causing the Trojan effect.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "3.3 Measuring the Impact of Drifting Through Head Pruning"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "addresses",
+    "object": "Trojan detection task",
+    "object_type": "Task",
+    "source_sentence": "We demonstrate the application of the attention fo- cus drifting phenomenon in the Trojan detection task.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "4 Attention-Based Trojan Detector"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "addresses",
+    "object": "Trojan detection problem",
+    "object_type": "Task",
+    "source_sentence": "We focus on an unsupervised setting, in which the Trojan detection problem is essentially a binary classification problem.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "4 Attention-Based Trojan Detector"
+  },
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "Trojan probability",
+    "object_type": "Other",
+    "source_sentence": "the generator will record the Trojan probability ptroj of all perturbations as a feature for next stage",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "4.1 Method"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "comprises",
+    "object": "LSTM",
+    "object_type": "Model",
+    "source_sentence": "We also set up different classifier architectures for downstream task - FC: 1 linear layer, LSTM: 2 bidirectional LSTM layers + 1 linear layer, GRU: 2 bidirectional GRU layers + 1 linear layer.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "A Training Details of Suspect Models"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "comprises",
+    "object": "GRU",
+    "object_type": "Model",
+    "source_sentence": "We also set up different classifier architectures for downstream task - FC: 1 linear layer, LSTM: 2 bidirectional LSTM layers + 1 linear layer, GRU: 2 bidirectional GRU layers + 1 linear layer.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "A Training Details of Suspect Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "attention analyzing",
+    "object_type": "Concept",
+    "source_sentence": "We experiment on those models for attention analyzing and Trojan detection.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "B Statistics of Suspect Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "Trojan detection",
+    "object_type": "Concept",
+    "source_sentence": "We experiment on those models for attention analyzing and Trojan detection.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "B Statistics of Suspect Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "IMDB",
+    "object_type": "Dataset",
+    "source_sentence": "We train our suspect models on four corpora: IMDB, SST-2, Yelp and Amazon.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "C Corpora Datasets"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "SST-2",
+    "object_type": "Dataset",
+    "source_sentence": "We train our suspect models on four corpora: IMDB, SST-2, Yelp and Amazon.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "C Corpora Datasets"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Yelp",
+    "object_type": "Dataset",
+    "source_sentence": "We train our suspect models on four corpora: IMDB, SST-2, Yelp and Amazon.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "C Corpora Datasets"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Amazon",
+    "object_type": "Dataset",
+    "source_sentence": "We train our suspect models on four corpora: IMDB, SST-2, Yelp and Amazon.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "C Corpora Datasets"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "addresses",
+    "object": "SST-2",
+    "object_type": "Dataset",
+    "source_sentence": "Here we show the attention focus head and attention focus drifting head number per layer on other three corpora: SST-2, Yelp and Amazon, in Fig.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "D Attention Heads Per Layer"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "addresses",
+    "object": "Yelp",
+    "object_type": "Dataset",
+    "source_sentence": "Here we show the attention focus head and attention focus drifting head number per layer on other three corpora: SST-2, Yelp and Amazon, in Fig.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "D Attention Heads Per Layer"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "addresses",
+    "object": "Amazon",
+    "object_type": "Dataset",
+    "source_sentence": "Here we show the attention focus head and attention focus drifting head number per layer on other three corpora: SST-2, Yelp and Amazon, in Fig.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "D Attention Heads Per Layer"
+  },
+  {
+    "subject": "Models",
+    "predicate": "comparesagainst",
+    "object": "clean models",
+    "object_type": "Model",
+    "source_sentence": "when we consider the average attention pointing to the trigger tokens, it is much higher if the true trigger exists in sentences in Trojaned models comparing with clean models.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.348",
+    "title": "A Study of the Attention Abnormality in Trojaned BERTs",
+    "section": "E.1 Attention Weights"
+  }
+]

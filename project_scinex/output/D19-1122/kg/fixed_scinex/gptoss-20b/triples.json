@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Neural Network",
+    "predicate": "produces",
+    "object": "attribute annotations",
+    "object_type": "Concept",
+    "source_sentence": "using a neural network with a CRF layer to produce attribute annotations",
+    "extraction_mode": "fixed",
+    "paper": "D19-1122",
+    "title": "Mahmoud Azab1, Stephane Dadian1, Vivi Nastase2, Larry An1, Rada Mihalcea1",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "addresses",
+    "object": "quality of the annotations",
+    "object_type": "Concept",
+    "source_sentence": "To evaluate the quality of the annotations, four full questionnaires were annotated by two judges.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1122",
+    "title": "Mahmoud Azab1, Stephane Dadian1, Vivi Nastase2, Larry An1, Rada Mihalcea1",
+    "section": "3 Dataset"
+  },
+  {
+    "subject": "Inter-Annotator Agreement",
+    "predicate": "evaluates",
+    "object": "0.8908",
+    "object_type": "Metric",
+    "source_sentence": "The Cohens Kappa inter-annotator agreement score for these questionnaires for annotation types and their corresponding attributes is 0.8908, showing high agreement.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1122",
+    "title": "Mahmoud Azab1, Stephane Dadian1, Vivi Nastase2, Larry An1, Rada Mihalcea1",
+    "section": "3 Dataset"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "entity identification",
+    "object_type": "Task",
+    "source_sentence": "We model entity identification as a sequence labeling problem using a conditional random field (CRF) classifier.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1122",
+    "title": "Mahmoud Azab1, Stephane Dadian1, Vivi Nastase2, Larry An1, Rada Mihalcea1",
+    "section": "4 Relation Extraction"
+  },
+  {
+    "subject": "Relation Classification",
+    "predicate": "addresses",
+    "object": "Binary Classification",
+    "object_type": "Task",
+    "source_sentence": "We model the relation classification between entities as a binary classification task.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1122",
+    "title": "Mahmoud Azab1, Stephane Dadian1, Vivi Nastase2, Larry An1, Rada Mihalcea1",
+    "section": "4 Relation Extraction"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "pretrained 300 dimensional Glove embeddings",
+    "object_type": "Other",
+    "source_sentence": "Word embeddings: we use pretrained 300 dimensional Glove embeddings",
+    "extraction_mode": "fixed",
+    "paper": "D19-1122",
+    "title": "Mahmoud Azab1, Stephane Dadian1, Vivi Nastase2, Larry An1, Rada Mihalcea1",
+    "section": "4 Relation Extraction"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "best results on both test subsets",
+    "object_type": "Other",
+    "source_sentence": "Using all available training data leads to best results on both test subsets",
+    "extraction_mode": "fixed",
+    "paper": "D19-1122",
+    "title": "Mahmoud Azab1, Stephane Dadian1, Vivi Nastase2, Larry An1, Rada Mihalcea1",
+    "section": "5 Results"
+  }
+]

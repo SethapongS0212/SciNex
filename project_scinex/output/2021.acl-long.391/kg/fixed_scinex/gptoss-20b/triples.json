@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "VAE",
+    "predicate": "trainedon",
+    "object": "unlabeled texts",
+    "object_type": "Dataset",
+    "source_sentence": "For instance, the VAriational Methods for Pretraining In Resource- limited Environments (VAMPIRE) first pre-trains a Variational Auto- Encoder (VAE) model on unlabeled texts , and then trains a classifier on the augmentation representa- tions of labeled texts computed by the pre-trained VAE.",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.391",
+    "title": "Semi-Supervised Text Classiﬁcation with Balanced Deep Representation Distributions",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "augmentation representations of labeled texts",
+    "object_type": "Other",
+    "source_sentence": "For instance, the VAriational Methods for Pretraining In Resource- limited Environments (VAMPIRE) first pre-trains a Variational Auto- Encoder (VAE) model on unlabeled texts , and then trains a classifier on the augmentation representa- tions of labeled texts computed by the pre-trained VAE.",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.391",
+    "title": "Semi-Supervised Text Classiﬁcation with Balanced Deep Representation Distributions",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Virtual Adversarial Training",
+    "predicate": "addresses",
+    "object": "robustness against random and local perturbation",
+    "object_type": "Concept",
+    "source_sentence": "For example, the Virtual Adversarial Training (VAT) method follows the philosophy of making the classifier robust against random and local pertur- bation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.391",
+    "title": "Semi-Supervised Text Classiﬁcation with Balanced Deep Representation Distributions",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "training dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Given a training dataset, it first trains a fine-tuned deep classifier based on the pre-trained BERT model",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.391",
+    "title": "Semi-Supervised Text Classiﬁcation with Balanced Deep Representation Distributions",
+    "section": "3.1 Overview of S2TC-BDD"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "BERT model",
+    "object_type": "Model",
+    "source_sentence": "Given a training dataset, it first trains a fine-tuned deep classifier based on the pre-trained BERT model",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.391",
+    "title": "Semi-Supervised Text Classiﬁcation with Balanced Deep Representation Distributions",
+    "section": "3.1 Overview of S2TC-BDD"
+  },
+  {
+    "subject": "Self-training",
+    "predicate": "uses",
+    "object": "classifier",
+    "object_type": "Model",
+    "source_sentence": "During the self-training loops, we employ the current deep classifier to predict unlabeled texts as pseudo-labels",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.391",
+    "title": "Semi-Supervised Text Classiﬁcation with Balanced Deep Representation Distributions",
+    "section": "3.1 Overview of S2TC-BDD"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "produces",
+    "object": "augmented unlabeled data",
+    "object_type": "Dataset",
+    "source_sentence": "In experiments, we utilize the default parameters, and generate the augmented unlabeled data by using FairSeq with German as the intermediate language.",
+    "extraction_mode": "fixed",
+    "paper": "2021.acl-long.391",
+    "title": "Semi-Supervised Text Classiﬁcation with Balanced Deep Representation Distributions",
+    "section": "4.1 Experimental Settings"
+  }
+]

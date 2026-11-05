@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "syntactic parse tree",
+    "object_type": "Other",
+    "source_sentence": "composing the meaning of a phrase or sentence requires a syntactic parse tree, which is, in most current systems, given by a statistical parser.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3202",
+    "title": "Learning from errors: Using vector-based compositional semantics for parse reranking",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Hybrid System",
+    "predicate": "uses",
+    "object": "symbolic probabilistic grammar",
+    "object_type": "Other",
+    "source_sentence": "We thus developed a hybrid system, which parses its input sentences on the basis of a symbolic probabilistic grammar",
+    "extraction_mode": "fixed",
+    "paper": "W13-3202",
+    "title": "Learning from errors: Using vector-based compositional semantics for parse reranking",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "generating",
+    "predicate": "produces",
+    "object": "50-best lists",
+    "object_type": "Other",
+    "source_sentence": "the latest implementation (version 1.7) of the Berkeley parser is used for generating 50-best lists.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3202",
+    "title": "Learning from errors: Using vector-based compositional semantics for parse reranking",
+    "section": "2 Experimental Setup"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "produces",
+    "object": "vector representations",
+    "object_type": "Concept",
+    "source_sentence": "This section describes how a neural network is used to construct vector representations for phrases given parse trees and to identify if those trees are syntactically correct or not.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3202",
+    "title": "Learning from errors: Using vector-based compositional semantics for parse reranking",
+    "section": "3 Parse-Correctness Classiﬁcation"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "addresses",
+    "object": "binary classification",
+    "object_type": "Task",
+    "source_sentence": "SVM was initially used for binary classification.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3202",
+    "title": "Learning from errors: Using vector-based compositional semantics for parse reranking",
+    "section": "4 Reranking"
+  },
+  {
+    "subject": "reranker",
+    "predicate": "trainedon",
+    "object": "WSJ02-21",
+    "object_type": "Dataset",
+    "source_sentence": "Using the classifier in Section 3, we implemented the reranker in Torch7, trained it on WSJ02-21.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3202",
+    "title": "Learning from errors: Using vector-based compositional semantics for parse reranking",
+    "section": "4.1 Experiments"
+  }
+]

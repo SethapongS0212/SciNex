@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Deep Learning",
+    "predicate": "produces",
+    "object": "distributed representation",
+    "object_type": "Concept",
+    "source_sentence": "Deep learning systems give each word a distributed representation, i.e., a dense low-dimensional real-valued vector or an embedding.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3512",
+    "title": "Better Word Representations with Recursive Neural Networks for Morphology",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Recursive Neural Networks",
+    "predicate": "uses",
+    "object": "morphology",
+    "object_type": "Concept",
+    "source_sentence": "In this work, we use recursive neural networks , in a novel way to model morphology and its compositionality.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3512",
+    "title": "Better Word Representations with Recursive Neural Networks for Morphology",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "RNNs",
+    "predicate": "uses",
+    "object": "morphemes",
+    "object_type": "Concept",
+    "source_sentence": "Essentially, we treat each morpheme as a basic unit in the RNNs and construct representations for morphologically complex words on the fly from their morphemes.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3512",
+    "title": "Better Word Representations with Recursive Neural Networks for Morphology",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "syntactic information",
+    "object_type": "Concept",
+    "source_sentence": "The detailed analysis in Section 6 reveals that our models can blend well syntactic information , i.e., the word structure, and the semantics in grouping related words.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3512",
+    "title": "Better Word Representations with Recursive Neural Networks for Morphology",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "RNNs",
+    "predicate": "uses",
+    "object": "morphemes",
+    "object_type": "Concept",
+    "source_sentence": "Our work does not simply concatenate vectors of morphemes, but rather combines them using RNNs, which captures morphological compositionality.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3512",
+    "title": "Better Word Representations with Recursive Neural Networks for Morphology",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "NLM",
+    "object_type": "Model",
+    "source_sentence": "word embeddings learned from an NLM could, in general, blend well both the semantic and syntactic information",
+    "extraction_mode": "fixed",
+    "paper": "W13-3512",
+    "title": "Better Word Representations with Recursive Neural Networks for Morphology",
+    "section": "3.2 Context-sensitive Morphological RNN"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "existing word representations",
+    "object_type": "Other",
+    "source_sentence": "initialize our models with existing word representations.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3512",
+    "title": "Better Word Representations with Recursive Neural Networks for Morphology",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "local context",
+    "predicate": "uses",
+    "object": "10-word windows of text",
+    "object_type": "Other",
+    "source_sentence": "For csmRNN, we use 10-word windows of text as the local context, 100 hidden units, and no weight regularization.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3512",
+    "title": "Better Word Representations with Recursive Neural Networks for Morphology",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "evaluatedon",
+    "object": "WordSim-353 dataset",
+    "object_type": "Dataset",
+    "source_sentence": "we evaluate the quality of our morphologically -aware embeddings on the popu- lar WordSim-353 dataset , WS353 for short.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3512",
+    "title": "Better Word Representations with Recursive Neural Networks for Morphology",
+    "section": "5.1 Word Similarity Task"
+  },
+  {
+    "subject": "RNNs",
+    "predicate": "uses",
+    "object": "neural language models",
+    "object_type": "Model",
+    "source_sentence": "This paper combines recursive neural networks (RNNs) and neural language models (NLMs) in a novel way to learn better word representations.",
+    "extraction_mode": "fixed",
+    "paper": "W13-3512",
+    "title": "Better Word Representations with Recursive Neural Networks for Morphology",
+    "section": "7 Conclusion"
+  }
+]

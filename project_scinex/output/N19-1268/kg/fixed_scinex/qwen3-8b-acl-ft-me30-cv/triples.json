@@ -1,0 +1,233 @@
+[
+  {
+    "subject": "Back Translation",
+    "predicate": "addresses",
+    "object": "Neural Machine Translation",
+    "object_type": "Task",
+    "source_sentence": "Back-translation Back translation , a popular semi-supervised learning method, has been well studied in neural machine translation (Hoang et al., 2018; Wang et al., 2018b; Edunov et al., 2018; Prabhumoye et al., 2018).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "achieves",
+    "object": "translation performance",
+    "object_type": "Concept",
+    "source_sentence": "The generated pairs are then incorporated into the training data for fine-tuning the forward translator, which proves to improve the translation performance.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Encoder-Decoder Model",
+    "predicate": "uses",
+    "object": "Bi-LSTM",
+    "object_type": "Model",
+    "source_sentence": "For our base instruction-to- navigation translation agent , we implement an encoder-decoder model similar to Fried et al. The encoder is a bidi- rectional LSTM-RNN with an embedding layer: u1, u2, · · ·, uL = Bi-LSTM( ˆw1, · · ·, ˆwL) (3) where uj is the j-th word in the instruction with a length of L.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "3.2 Base Agent Model"
+  },
+  {
+    "subject": "Reinforcement Learning",
+    "predicate": "uses",
+    "object": "Advantage Actor-Critic",
+    "object_type": "Model",
+    "source_sentence": "To overcome these misleading actions , the on- policy reinforcement learning method Advantage Actor-Critic is applied, where the agent takes a sampled action from the distribution {pt(at,k)} and learns from rewards.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "3.3 Supervised Learning: Mixture of Imitation+Reinforcement Learning"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "addresses",
+    "object": "navigation",
+    "object_type": "Task",
+    "source_sentence": "Back translation was introduced to the task of navigation in Fried et al.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "3.4.1 Back Translation"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "addresses",
+    "object": "computational capacity",
+    "object_type": "Concept",
+    "source_sentence": "Besides showing an upper bound, beam search is usable when the environment is explored and saved in the agent 's memory but the agent does not have enough computational capacity to fine- tune its navigational model.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "5 Results"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "uses",
+    "object": "Dropout",
+    "object_type": "Method",
+    "source_sentence": "For submitting to the leaderboard, we simply train our agent via back translation with environmental dropout on test unseen environments (see Sec.7.2).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "5 Results"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "achieves",
+    "object": "5.7% improvement",
+    "object_type": "Metric",
+    "source_sentence": "back translation with environmental dropout improves the best supervised model by 5.7%",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "6 Ablation Studies"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "beam search result",
+    "object_type": "Other",
+    "source_sentence": "The state-factored Dijkstra algorithm is used for the beam search result.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "6 Ablation Studies"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "addresses",
+    "object": "limited environments bottleneck",
+    "object_type": "Concept",
+    "source_sentence": "In this section, we present analysis experiments that first exposed the limited environments bottle- neck to us, and hence inspired us to develop our environmental dropout method to break this bot- tleneck.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "7 Analysis"
+  },
+  {
+    "subject": "Supervised Learning",
+    "predicate": "uses",
+    "object": "data-selection methods",
+    "object_type": "Method",
+    "source_sentence": "In order to show that more environments are crucial for better performance of agents, in Fig. 5, we present the result of Supervised Learning (SL) with different amounts of data selected by two different data-selection methods.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "7.1 More Environments vs. More Data"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "achieves",
+    "object": "46.5%",
+    "object_type": "Metric",
+    "source_sentence": "the back translation on the training environments only achieves 46.5%.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "7.2 Back Translation on Unseen Environments"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "achieves",
+    "object": "50.5%",
+    "object_type": "Metric",
+    "source_sentence": "Back translation (without dropout) slightly improves the result to 50.5%.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "7.3 Semantic Views"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "addresses",
+    "object": "limited variety of environments",
+    "object_type": "Concept",
+    "source_sentence": "Here, we showed that the limited variety of environments is the bottleneck of back translation and we overcome it via 'environmental dropout' to generate new unseen environments.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "8 Conclusion"
+  },
+  {
+    "subject": "ResNet",
+    "predicate": "trainedon",
+    "object": "ImageNet",
+    "object_type": "Dataset",
+    "source_sentence": "We use ResNet-152 pretrained on the ImageNet to extract the 2048-dimensional image feature.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "uses",
+    "object": "mixture of imitation and reinforcement learning",
+    "object_type": "Method",
+    "source_sentence": "The agent model is first trained with supervised learning via the mixture of imitation and reinforcement learning.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "uses",
+    "object": "environmental dropout",
+    "object_type": "Method",
+    "source_sentence": "The model is then fine-tuned by back translation with environmental dropout.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "Word Embedding",
+    "predicate": "trainedon",
+    "object": "size 256",
+    "object_type": "Other",
+    "source_sentence": "The word embedding is trained from scratch with size 256 and the dimension of the action embedding is 64.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "512 units",
+    "object_type": "Other",
+    "source_sentence": "The size of the LSTM units is set to 512 (256 for the bidirectional LSTM).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "RMSProp",
+    "predicate": "uses",
+    "object": "fixed learning rate 1e-4",
+    "object_type": "Other",
+    "source_sentence": "For optimizing the loss, we use RMSprop (as suggested in Mnih et al. (2016)) with a fixed learning rate 1e-4 and the batch size is 64.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "0.4 dropout rate",
+    "object_type": "Other",
+    "source_sentence": "We apply dropout rate 0.4 to the environmental dropout and 0.5 to the dropout layers which regularize the network.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  }
+]

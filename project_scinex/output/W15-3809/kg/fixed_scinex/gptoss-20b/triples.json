@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "machine learning",
+    "object_type": "Method",
+    "source_sentence": "The best performing system used machine learning, with a conditional random field classifier (CRF) for finding spans and a support vector machine classifier for classifying attributes.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Support Vector Machine",
+    "predicate": "uses",
+    "object": "machine learning",
+    "object_type": "Method",
+    "source_sentence": "The best performing system used machine learning, with a conditional random field classifier (CRF) for finding spans and a support vector machine classifier for classifying attributes.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Regular Expressions",
+    "predicate": "uses",
+    "object": "Heideltime system",
+    "object_type": "Method",
+    "source_sentence": "Other top approaches used adapted regular expressions on top of the offthe shelf Heideltime system (a general-domain NLP system for parsing time expressions).",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Hybrid System",
+    "predicate": "uses",
+    "object": "CRF-based system",
+    "object_type": "Method",
+    "source_sentence": "Another approach used a hybrid system where the output from a CRF-based system was combined with the output of a rule-based system.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Hybrid System",
+    "predicate": "uses",
+    "object": "rule-based system",
+    "object_type": "Method",
+    "source_sentence": "Another approach used a hybrid system where the output from a CRF-based system was combined with the output of a rule-based system.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Machine Learning Methods",
+    "predicate": "produces",
+    "object": "Time Expressions",
+    "object_type": "Concept",
+    "source_sentence": "we develop and evaluate several machine learning methods for extracting time expressions from clinical text.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.1 Corpora"
+  },
+  {
+    "subject": "Machine Learning Models",
+    "predicate": "produces",
+    "object": "comparison and analysis",
+    "object_type": "Concept",
+    "source_sentence": "The contributions of this work are the comparison and analysis of a large number of different machine learning models for this task, the first use of deep syntactic features for this task, and an evaluation on two different corpora, including the first evaluation of these methods on the THYME corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.1 Corpora"
+  },
+  {
+    "subject": "Machine Learning Models",
+    "predicate": "produces",
+    "object": "first use of deep syntactic features",
+    "object_type": "Concept",
+    "source_sentence": "The contributions of this work are the comparison and analysis of a large number of different machine learning models for this task, the first use of deep syntactic features for this task, and an evaluation on two different corpora, including the first evaluation of these methods on the THYME corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.1 Corpora"
+  },
+  {
+    "subject": "Machine Learning Models",
+    "predicate": "produces",
+    "object": "evaluation on two different corpora",
+    "object_type": "Concept",
+    "source_sentence": "The contributions of this work are the comparison and analysis of a large number of different machine learning models for this task, the first use of deep syntactic features for this task, and an evaluation on two different corpora, including the first evaluation of these methods on the THYME corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.1 Corpora"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "produces",
+    "object": "sequence labeler",
+    "object_type": "Concept",
+    "source_sentence": "The third system is a conditional random field (CRF) sequence labeler.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.1 Corpora"
+  },
+  {
+    "subject": "Time Expressions",
+    "predicate": "produces",
+    "object": "noun phrases",
+    "object_type": "Concept",
+    "source_sentence": "time expressions are of- ten noun phrases",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.1 Corpora"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "uses",
+    "object": "Support Vector Machine",
+    "object_type": "Model",
+    "source_sentence": "The first system is perhaps the simplest, a standard BIO (Begin-Inside-Outside) tagger using an off-the-shelf support vector machine (SVM) classifier.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.2 Systems"
+  },
+  {
+    "subject": "Feature Extraction",
+    "predicate": "uses",
+    "object": "gold standard treebank",
+    "object_type": "Dataset",
+    "source_sentence": "using gold standard treebank for feature extraction",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.3.2 Constituency Features"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "comparesagainst",
+    "object": "SVM-based taggers",
+    "object_type": "Model",
+    "source_sentence": "The CRF, despite being theoretically globally optimal, is not competitive in terms of F-score with the SVM-based taggers.",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.3.2 Constituency Features"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "0.889 F-score on i2b2 Challenge data",
+    "object_type": "Metric",
+    "source_sentence": "The backwards BIO tagger achieved an F- score of 0.889 on the i2b2 Challenge data allowing for partial matches (the Overlapping column).",
+    "extraction_mode": "fixed",
+    "paper": "W15-3809",
+    "title": "Extracting Time Expressions from Clinical Text",
+    "section": "2.3.2 Constituency Features"
+  }
+]

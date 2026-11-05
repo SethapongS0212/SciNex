@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "SETIMES parallel corpora",
+    "object_type": "Dataset",
+    "source_sentence": "In the experiments the SETIMES parallel corpora provided were used as training data.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.1 Overview"
+  },
+  {
+    "subject": "Word Alignment",
+    "predicate": "uses",
+    "object": "GIZA++ toolkit",
+    "object_type": "Other",
+    "source_sentence": "GIZA++ toolkit for the word alignment and Moses' base decoders for both HPB and PB systems were utilized.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.1 Overview"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "base decoders",
+    "object_type": "Other",
+    "source_sentence": "GIZA++ toolkit for the word alignment and Moses' base decoders for both HPB and PB systems were utilized.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.1 Overview"
+  },
+  {
+    "subject": "SMT",
+    "predicate": "uses",
+    "object": "Morphology",
+    "object_type": "Concept",
+    "source_sentence": "incorporating morphology when working with morphologically rich(er) languages in SMT is expected to perform better than the word-level approach.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.2 Word Representation vs. Full Segmentation"
+  },
+  {
+    "subject": "Turkish",
+    "predicate": "uses",
+    "object": "Moses tokenizer",
+    "object_type": "Other",
+    "source_sentence": "The word-level representation of Turkish and English were produced using the default Moses tokenizer.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.3 Pre-processing"
+  },
+  {
+    "subject": "Turkish",
+    "predicate": "uses",
+    "object": "morphological analyzer",
+    "object_type": "Other",
+    "source_sentence": "A morphological analyzer was used to produce the feature-based representation of the Turkish language.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.3 Pre-processing"
+  },
+  {
+    "subject": "Disambiguation",
+    "predicate": "uses",
+    "object": "morphological analyses",
+    "object_type": "Other",
+    "source_sentence": "Then morphological disambiguation is performed on the morphological analyses.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.3 Pre-processing"
+  },
+  {
+    "subject": "Language Models",
+    "predicate": "uses",
+    "object": "SRILM toolkit",
+    "object_type": "Other",
+    "source_sentence": "The language models were trained using SRILM toolkit.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.4 Language Models"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Common Crawl Corpus",
+    "object_type": "Dataset",
+    "source_sentence": "For En- glish to Turkish experiments we used the monolingual Common Crawl Corpus hosted by Amazon Web Services as a public data set.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.4 Language Models"
+  },
+  {
+    "subject": "Language Models",
+    "predicate": "trainedon",
+    "object": "Parallel Corpora",
+    "object_type": "Dataset",
+    "source_sentence": "two 5-gram language models were trained using the parallel corpora",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.4 Language Models"
+  },
+  {
+    "subject": "Language Models",
+    "predicate": "uses",
+    "object": "SRILM",
+    "object_type": "Other",
+    "source_sentence": "interpolated with the aforementioned language models using SRILM",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.4 Language Models"
+  },
+  {
+    "subject": "generation",
+    "predicate": "trainedon",
+    "object": "large Turkish corpus",
+    "object_type": "Dataset",
+    "source_sentence": "This generation tool has been trained on a large Turkish corpus and works by simply creating a reverse-map through morphological segmentation of the corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.6.1 Turkish Word Generation"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "morphological segmentation",
+    "object_type": "Method",
+    "source_sentence": "This generation tool has been trained on a large Turkish corpus and works by simply creating a reverse-map through morphological segmentation of the corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.6.1 Turkish Word Generation"
+  },
+  {
+    "subject": "System Combination",
+    "predicate": "addresses",
+    "object": "Machine Translation Output",
+    "object_type": "Concept",
+    "source_sentence": "System combination attempts to improve the quality of machine translation output by combining the outputs of different translation systems which usually are based on different paradigms such as phrase -based, hierarchical , etc.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.6.1 Turkish Word Generation"
+  },
+  {
+    "subject": "System Combination",
+    "predicate": "uses",
+    "object": "MEMT",
+    "object_type": "Other",
+    "source_sentence": "We combined the outputs of some of the best performing (best tuning run in terms of BLEU score) hierarchical phrase -based systems using the open- source system combination tool, MEMT.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "4.6.1 Turkish Word Generation"
+  },
+  {
+    "subject": "morphological",
+    "predicate": "uses",
+    "object": "Segmentation",
+    "object_type": "Task",
+    "source_sentence": "a morphological analyzer was used to apply full segmentation to the Turkish side.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "5 Conclusions"
+  },
+  {
+    "subject": "System Combination",
+    "predicate": "achieves",
+    "object": "0.5 BLEU increase",
+    "object_type": "Metric",
+    "source_sentence": "Employing system combination of different SMT paradigms resulted in 0.5 BLEU increase for Turkish -to- English and 0.3 BLEU increase for English -to- Turkish.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "5 Conclusions"
+  },
+  {
+    "subject": "System Combination",
+    "predicate": "achieves",
+    "object": "0.3 BLEU increase",
+    "object_type": "Metric",
+    "source_sentence": "Employing system combination of different SMT paradigms resulted in 0.5 BLEU increase for Turkish -to- English and 0.3 BLEU increase for English -to- Turkish.",
+    "extraction_mode": "fixed",
+    "paper": "W16-2305",
+    "title": "T ¨UB˙ITAK SMT System Submissions for WMT 2016",
+    "section": "5 Conclusions"
+  }
+]

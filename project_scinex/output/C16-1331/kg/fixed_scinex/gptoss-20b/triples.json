@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "evaluating semantic similarity",
+    "object_type": "Task",
+    "source_sentence": "The models underlying the latter paradigm, which we focus on in the current work, project word vectors of two (or multiple) languages into a joint semantic space, thereby allowing to evaluate semantic similarity of words from different languages",
+    "extraction_mode": "fixed",
+    "paper": "C16-1331",
+    "title": "Language classiﬁcation from bilingual word embedding graphs",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "Europarl data",
+    "object_type": "Dataset",
+    "source_sentence": "We first train d = 200 dimensional skip-gram word2vec vectors 3 on the union of the Europarl and Wikipedia data for each language in the respective All21 and Big10 setting.",
+    "extraction_mode": "fixed",
+    "paper": "C16-1331",
+    "title": "Language classiﬁcation from bilingual word embedding graphs",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "Wikipedia data",
+    "object_type": "Dataset",
+    "source_sentence": "We first train d = 200 dimensional skip-gram word2vec vectors 3 on the union of the Europarl and Wikipedia data for each language in the respective All21 and Big10 setting.",
+    "extraction_mode": "fixed",
+    "paper": "C16-1331",
+    "title": "Language classiﬁcation from bilingual word embedding graphs",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Bilingual Embeddings",
+    "predicate": "uses",
+    "object": "Word Alignments",
+    "object_type": "Concept",
+    "source_sentence": "For CCA, we then obtain bilingual embeddings for each possible combination (ℓ, ℓ′) of languages in each of the two setups, by projecting these vectors in a joint space via word alignments obtained on the respective Europarl data pair.",
+    "extraction_mode": "fixed",
+    "paper": "C16-1331",
+    "title": "Language classiﬁcation from bilingual word embedding graphs",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Bilingual Constraints",
+    "predicate": "uses",
+    "object": "Sentence Alignments",
+    "object_type": "Concept",
+    "source_sentence": "For BBA, we use the monolingual Wikipedias of ℓand ℓ′ for the monolinugal constraints, and the Europarl sentence alignments of ℓand ℓ′ for the bilingual constraints.",
+    "extraction_mode": "fixed",
+    "paper": "C16-1331",
+    "title": "Language classiﬁcation from bilingual word embedding graphs",
+    "section": "4 Experiments"
+  }
+]

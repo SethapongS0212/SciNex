@@ -1,0 +1,233 @@
+[
+  {
+    "subject": "CRFs",
+    "predicate": "uses",
+    "object": "dependencies",
+    "object_type": "Concept",
+    "source_sentence": "Conditional Random Fields (CRFs) are often used to model dependencies among linguistic variables.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "CRFs",
+    "predicate": "uses",
+    "object": "exact inference",
+    "object_type": "Method",
+    "source_sentence": "Robust and theoretically sound training procedures have been developed for CRFs when the model can be used with exact inference and decoding.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "CRFs",
+    "predicate": "uses",
+    "object": "decoding",
+    "object_type": "Method",
+    "source_sentence": "Robust and theoretically sound training procedures have been developed for CRFs when the model can be used with exact inference and decoding.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "78.2% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "By using a more principled probabilistic approach, we are able to improve the state-of-the-art accuracy from 71.2% to 78.2% when training to maximize the approximate log-likelihood of the training data.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Maximum Entropy Model",
+    "predicate": "achieves",
+    "object": "improvement in F-measure from 81.6 to 84.0",
+    "object_type": "Other",
+    "source_sentence": "switching from a maximum entropy model that does not model label dependencies to a loopy CRF leads to an improvement in F-measure from 81.6 to 84.0",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "achieves",
+    "object": "improvement in F-measure from 81.6 to 84.0",
+    "object_type": "Other",
+    "source_sentence": "switching from a maximum entropy model that does not model label dependencies to a loopy CRF leads to an improvement in F-measure from 81.6 to 84.0",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "sum-product BP",
+    "object_type": "Method",
+    "source_sentence": "(2011) specifically showed how to train a system that will use sum-product BP for inference at test time (un- like margin-based methods).",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "3.1 Related Structured Learning Methods"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "sum-product BP",
+    "object_type": "Method",
+    "source_sentence": "In the annealed case we evaluate (4) and its gradient under sum-product BP, except that we perform inference under p(θ/T) instead of pθ.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "3.1 Related Structured Learning Methods"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "addresses",
+    "object": "congressional votes together with references between speakers",
+    "object_type": "Other",
+    "source_sentence": "We observe that congressional votes together with references between speakers can be naturally modeled with a CRF.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "3.2 Minimum-Risk Training"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "better test set performance",
+    "object_type": "Other",
+    "source_sentence": "For all three models, we show that ERMA training results in better test set performance.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "4 Modeling Natural Language with CRFs"
+  },
+  {
+    "subject": "Minimum Risk Training",
+    "predicate": "achieves",
+    "object": "performance",
+    "object_type": "Concept",
+    "source_sentence": "minimum risk training improved performance significantly",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "4.1 Modeling Congressional Votes"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "addresses",
+    "object": "two-way classification",
+    "object_type": "Task",
+    "source_sentence": "Their test-time Min-Cut algorithm is exact in this case: bi- nary variables and a two-way classification .",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "4.1 Modeling Congressional Votes"
+  },
+  {
+    "subject": "Belief Propagation",
+    "predicate": "uses",
+    "object": "max-product loopy belief propagation",
+    "object_type": "Method",
+    "source_sentence": "Sutton and McCal- lum (2005) use max-product loopy belief propaga- tion for test-time inference, and compare a train- ing procedure that uses a piecewise approximation of the partition function against using sum-product loopy belief propagation to compute output variable marginals.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "4.2 Information Extraction from Semi-Structured Text"
+  },
+  {
+    "subject": "Belief Propagation",
+    "predicate": "uses",
+    "object": "sum-product loopy belief propagation",
+    "object_type": "Method",
+    "source_sentence": "Sutton and McCal- lum (2005) use max-product loopy belief propaga- tion for test-time inference, and compare a train- ing procedure that uses a piecewise approximation of the partition function against using sum-product loopy belief propagation to compute output variable marginals.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "4.2 Information Extraction from Semi-Structured Text"
+  },
+  {
+    "subject": "Information",
+    "predicate": "addresses",
+    "object": "label dependencies",
+    "object_type": "Concept",
+    "source_sentence": "previous work has shown that incorporating information about label dependencies can lead to improvement in performance",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "4.3 Multi-Label Classiﬁcation"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "motivates",
+    "object": "ERMA training",
+    "object_type": "Other",
+    "source_sentence": "The resulting intractability of inference (and decoding) motivates the use of ERMA training",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "4.3 Multi-Label Classiﬁcation"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "argmax function",
+    "object_type": "Other",
+    "source_sentence": "This decoding procedure is not differentiable due to the use of the argmax function.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "4.3 Multi-Label Classiﬁcation"
+  },
+  {
+    "subject": "stochastic",
+    "predicate": "uses",
+    "object": "soft-max version",
+    "object_type": "Other",
+    "source_sentence": "To make the decoder differentiable, we replace argmax with a stochastic (soft-max) version during training, averaging loss over all possible values v in proportion to their exponentiated probability p(yi = v | x)1/Tdecode.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "4.3 Multi-Label Classiﬁcation"
+  },
+  {
+    "subject": "Minimum-Risk Training",
+    "predicate": "cites",
+    "object": "Stoy-anov et al. (2011)",
+    "object_type": "Other",
+    "source_sentence": "Motivated by the recently proposed method of Stoy- anov et al. (2011) for minimum-risk training of CRF-based systems, we revisited three NLP do- mains that can naturally be modeled with approx- imate CRF-based systems.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "7 Conclusions"
+  },
+  {
+    "subject": "CRFs",
+    "predicate": "uses",
+    "object": "approximate inference",
+    "object_type": "Other",
+    "source_sentence": "we show that (i) the NLP models are improved by moving to richer CRFs that require approximate inference, and (ii) empirical performance is always significantly im- proved by training to reduce the loss that would be achieved by approximate inference, even compared to another state-of-the-art training method (softmax- margin) that also considers loss and uses approxi- mate inference.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "7 Conclusions"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "approximate inference",
+    "object_type": "Other",
+    "source_sentence": "we show that (i) the NLP models are improved by moving to richer CRFs that require approximate inference, and (ii) empirical performance is always significantly im- proved by training to reduce the loss that would be achieved by approximate inference, even compared to another state-of-the-art training method (softmax- margin) that also considers loss and uses approxi- mate inference.",
+    "extraction_mode": "fixed",
+    "paper": "N12-1013",
+    "title": "Minimum-Risk Training of Approximate CRF-Based NLP Systems",
+    "section": "7 Conclusions"
+  }
+]

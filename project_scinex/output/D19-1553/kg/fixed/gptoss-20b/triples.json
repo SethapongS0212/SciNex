@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "80% F1 score",
+    "object_type": "Metric",
+    "source_sentence": "Exploratory experiments show that the separation model can achieve more than 80% F1 score.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "3.3 Emotionalization Module"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "trainedon",
+    "object": "new positive corpus N +",
+    "object_type": "Dataset",
+    "source_sentence": "We train a Seq2Seq model S2Sθpe on the new positive corpus N +",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "3.3 Emotionalization Module"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "trainedon",
+    "object": "new negative corpus N −",
+    "object_type": "Dataset",
+    "source_sentence": "Another Seq2Seq model S2Sθne is trained on the new negative corpus N −",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "3.3 Emotionalization Module"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "87% accuracy on Yelp dataset",
+    "object_type": "Metric",
+    "source_sentence": "The pre-trained sentiment classifier achieves the accuracy of 87% and 89% on Yelp and Amazon datasets, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "4.2.1 Automatic Evaluation"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "89% accuracy on Amazon dataset",
+    "object_type": "Metric",
+    "source_sentence": "The pre-trained sentiment classifier achieves the accuracy of 87% and 89% on Yelp and Amazon datasets, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "4.2.1 Automatic Evaluation"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "English Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "We train word2vec on an English Wikipedia corpus dump to get 300- dimensional word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "4.4 Experiment Settings"
+  },
+  {
+    "subject": "VAE",
+    "predicate": "uses",
+    "object": "attribute discriminator",
+    "object_type": "Method",
+    "source_sentence": "Hu et al. (2017) combines VAE and attribute discriminator while Shen et al. (2017) strives to align latent representations in hidden layers.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Specificity-Driven Cascading Approach",
+    "predicate": "addresses",
+    "object": "unsupervised sentiment modification",
+    "object_type": "Task",
+    "source_sentence": "In this paper, we propose a simple but effective specificity-driven cascading approach for unsupervised sentiment modification.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "7 Conclusion"
+  }
+]

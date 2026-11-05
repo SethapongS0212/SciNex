@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "XLM-RoBERTa",
+    "predicate": "comparesagainst",
+    "object": "mBERT",
+    "object_type": "Model",
+    "source_sentence": "Our best model XLM-RoBERTa (XLM-R) out- performs mBERT on cross - lingual classification by up to 23% accuracy on low-resource languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "XLM-RoBERTa",
+    "predicate": "achievesresult",
+    "object": "23% accuracy on low-resource languages",
+    "object_type": "Metric",
+    "source_sentence": "Our best model XLM-RoBERTa (XLM-R) out- performs mBERT on cross - lingual classification by up to 23% accuracy on low-resource languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "GPT",
+    "predicate": "addresses",
+    "object": "scaling the amount of data",
+    "object_type": "Concept",
+    "source_sentence": "GPT also highlights the importance of scaling the amount of data",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "addresses",
+    "object": "training BERT longer on more data",
+    "object_type": "Concept",
+    "source_sentence": "RoBERTa shows that training BERT longer on more data leads to significant boost in performance",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "addresses",
+    "object": "discriminative tasks",
+    "object_type": "Task",
+    "source_sentence": "Our work, in contrast, focuses on the unsupervised learning of cross-lingual representations and their transfer to discriminative tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "achievesresult",
+    "object": "overall XNLI accuracy decreases from 71.8% to 67.7%",
+    "object_type": "Metric",
+    "source_sentence": "Specifically, the overall XNLI accuracy decreases from 71.8% to 67.7% as we go from XLM-7 to XLM-100.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Wikipedia Data",
+    "object_type": "Dataset",
+    "source_sentence": "To show this, we pretrain models on Wikipedia Data in 7, 30 and 100 languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "achieves",
+    "object": "75% average accuracy on XNLI",
+    "object_type": "Other",
+    "source_sentence": "Combining this observation with our implementation of the unsupervised XLM-MLM objective, we were able to improve the performance of Lample and Conneau (2019) from 71.3% to more than 75% average accuracy on XNLI, which was on par with their supervised translation language modeling (TLM) objective.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "achievesresult",
+    "object": "5.5% average accuracy",
+    "object_type": "Metric",
+    "source_sentence": "While XLM-R handles 100 languages , we also show that it outperforms the former state of the art Unicoder and XLM (MLM+TLM), which handle only 15 languages , by 5.5% and 5.8% average accuracy respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "achievesresult",
+    "object": "5.8% average accuracy",
+    "object_type": "Metric",
+    "source_sentence": "While XLM-R handles 100 languages , we also show that it outperforms the former state of the art Unicoder and XLM (MLM+TLM), which handle only 15 languages , by 5.5% and 5.8% average accuracy respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "achievesresult",
+    "object": "83.6% accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Using the multilingual training of translate-train-all, XLM-R further improves performance and reaches 83.6% accuracy, a new overall state of the art for XNLI, outperforming Unicoder by 5.1%.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.1 Improving and Understanding Multilingual Masked Language Models"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "evaluates",
+    "object": "GLUE benchmark",
+    "object_type": "Dataset",
+    "source_sentence": "we evaluate XLM-R on the GLUE benchmark.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.3 Multilingual versus Monolingual"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "We train 14 monolingual BERT models on Wikipedia and CommonCrawl (capped at 60 GiB).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.3 Multilingual versus Monolingual"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "CommonCrawl",
+    "object_type": "Dataset",
+    "source_sentence": "We train 14 monolingual BERT models on Wikipedia and CommonCrawl (capped at 60 GiB).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.3 Multilingual versus Monolingual"
+  },
+  {
+    "subject": "Multilingual Models",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "We found that multilingual models can outperform their monolingual BERT counter- parts.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.3 Multilingual versus Monolingual"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "achievesresult",
+    "object": "1.6% average accuracy",
+    "object_type": "Metric",
+    "source_sentence": "monolingual baselines out- perform XLM-7 for both Wikipedia and CC by 1.6% and 1.3% average accuracy.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.3 Multilingual versus Monolingual"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "achievesresult",
+    "object": "80.0% average accuracy",
+    "object_type": "Metric",
+    "source_sentence": "XLM-7 trained on CC obtains 80.0% average accuracy on the 7 languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.3 Multilingual versus Monolingual"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "XLM-7 can outperform the BERT models",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.3 Multilingual versus Monolingual"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "achievesresult",
+    "object": "7% improvement on Swahili",
+    "object_type": "Metric",
+    "source_sentence": "Specifically, in the translate-train-all setting, we observe that the biggest gains for XLM models trained on CC, compared to their Wikipedia counterparts, are on low-resource languages ; 7% and 4.8% improvement on Swahili and Urdu respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.4 Representation Learning for Low-resource Languages"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "achievesresult",
+    "object": "4.8% improvement on Urdu",
+    "object_type": "Metric",
+    "source_sentence": "Specifically, in the translate-train-all setting, we observe that the biggest gains for XLM models trained on CC, compared to their Wikipedia counterparts, are on low-resource languages ; 7% and 4.8% improvement on Swahili and Urdu respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.747",
+    "title": "Unsupervised Cross-lingual Representation Learning at Scale",
+    "section": "5.4 Representation Learning for Low-resource Languages"
+  }
+]

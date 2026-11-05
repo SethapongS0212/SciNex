@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Natural Language Processing",
+    "predicate": "encompasses",
+    "object": "answer selection",
+    "object_type": "Task",
+    "source_sentence": "In order to limit the scope of this paper, we specifically focus our efforts on a single natural language processing task—answer selection within question answering—elaborated upon in Section 2.1.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "2 Experimental Setup"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "model released by Sequiera et al. (2017)",
+    "object_type": "Model",
+    "source_sentence": "To perform our experiments we utilize the model released by Sequiera et al. (2017), a simplified PyTorch implementation of the model proposed by Severyn and Moschitti (2015).",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "2.2 Exemplar Model"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "TrecQA dataset",
+    "object_type": "Dataset",
+    "source_sentence": "The experiments reported in this paper are all performed against the TrecQA dataset that was first released by Wang et al. (2007) and further elaborated upon by Yao et al. (2013), as well as the WikiQA dataset released by Yang et al.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "2.3 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "WikiQA dataset",
+    "object_type": "Dataset",
+    "source_sentence": "The experiments reported in this paper are all performed against the TrecQA dataset that was first released by Wang et al. (2007) and further elaborated upon by Yao et al. (2013), as well as the WikiQA dataset released by Yang et al.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "2.3 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "RAW variant",
+    "object_type": "Dataset",
+    "source_sentence": "Results on these two variants are not directly comparable to each other , and experiments in this paper are performed against the RAW variant.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "2.3 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Docker containers",
+    "object_type": "Artifact",
+    "source_sentence": "all experiments are performed using Docker containers that are derived from common, shared, base images.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "4 Confounding Variables"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "the same results",
+    "object_type": "Other",
+    "source_sentence": "Training the sample model repeatedly achieves the same results, suggesting that these settings are being utilized inside the PyTorch library, although we implore readers to discover this for their library of choice.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "4.2 Threads"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "PyTorch v0.1.12",
+    "object_type": "Other",
+    "source_sentence": "For these experiments we use PyTorch v0.1.12 with Intel's MKL library on an Intel i7-6800K processor.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "4.2 Threads"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "fixed seed",
+    "object_type": "Other",
+    "source_sentence": "Thus far the experiments in this paper have used a fixed seed, and like most prior research this was only implied rather than explicitly stated.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "4.4 Random Seed"
+  },
+  {
+    "subject": "statistical",
+    "predicate": "uses",
+    "object": "statistical testing",
+    "object_type": "Method",
+    "source_sentence": "It is simply no longer adequate to report a single value when evaluating results from neural networks, especially without the presence of statistical testing on those results.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "5 Conclusions"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "random starting points",
+    "object_type": "Concept",
+    "source_sentence": "By far the largest source of variability in the experiments presented in this paper was when the network was seeded with different random starting points.",
+    "extraction_mode": "fixed",
+    "paper": "Q18-1018",
+    "title": "David R. Cheriton School of Computer Science, University of Waterloo",
+    "section": "5 Conclusions"
+  }
+]

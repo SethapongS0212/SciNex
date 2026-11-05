@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Inter-Annotator Agreement",
+    "predicate": "evaluates",
+    "object": "0.924",
+    "object_type": "Metric",
+    "source_sentence": "We calculated inter-annotator agreement for the guidelines; three annotators native in Dutch annotated 100 samples, and reached a Fleiss Kappa score of 0.924, which is very high agreement.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "2.2 XSID"
+  },
+  {
+    "subject": "Data Collection",
+    "predicate": "comprises",
+    "object": "Translation",
+    "object_type": "Method",
+    "source_sentence": "Ultimately, the data collection process proceeded in two steps: translation of the data from English , and slot annotation in the target language.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "2.2 XSID"
+  },
+  {
+    "subject": "Data Collection",
+    "predicate": "comprises",
+    "object": "Annotation",
+    "object_type": "Method",
+    "source_sentence": "Ultimately, the data collection process proceeded in two steps: translation of the data from English , and slot annotation in the target language.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "2.2 XSID"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "contextual embeddings",
+    "object_type": "Concept",
+    "source_sentence": "it uses contextual embeddings, and fine- tunes them during training.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.1 Baseline"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "softmax layer",
+    "object_type": "Concept",
+    "source_sentence": "a greedy decoding with a softmax layer is used",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.1 Baseline"
+  },
+  {
+    "subject": "Classification",
+    "predicate": "uses",
+    "object": "linear classification layer",
+    "object_type": "Concept",
+    "source_sentence": "for intents it uses a linear classification layer over the [CLS] token",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.1 Baseline"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "default hyperparameters",
+    "object_type": "Concept",
+    "source_sentence": "we use the default hyperparameters of MaChAmp for all experiments",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.1 Baseline"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "proportional sampling option",
+    "object_type": "Concept",
+    "source_sentence": "we enable the proportional sampling option of MaChAmp (multinomial sampling α = 0.5) in all multi-task experiments",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.1 Baseline"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "CRF layer",
+    "object_type": "Concept",
+    "source_sentence": "We also tried to use a CRF layer for slots",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.1 Baseline"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "attention",
+    "object_type": "Concept",
+    "source_sentence": "For comparison, we trained a NMT model to translate the NLU training data into the target language, and map the annotations using attention.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "Sentences",
+    "predicate": "uses",
+    "object": "BPE",
+    "object_type": "Method",
+    "source_sentence": "Sentences were encoded using byte-pair encoding (BPE) , with a shared vocabulary of 32,000 tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "uses",
+    "object": "Annotation",
+    "object_type": "Concept",
+    "source_sentence": "These scores are used to align annotation labels to target language outputs; we map the label of each token to the highest scoring alignment target token.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "Machine Translation data",
+    "predicate": "uses",
+    "object": "Parallel Data",
+    "object_type": "Dataset",
+    "source_sentence": "Data To ensure that our machine translation data is suitable for the target domain , we choose to use a combination of transcribed spoken parallel data.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "Languages",
+    "predicate": "uses",
+    "object": "IWSLT 2016 Ted talks dataset",
+    "object_type": "Dataset",
+    "source_sentence": "For languages included in the IWSLT 2016 Ted talks dataset , we use the train and development data included, and enlarge the training data with the training split from Open-subtitles10 2018 , and Tatoeba.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "Languages",
+    "predicate": "uses",
+    "object": "Open-subtitles10 2018",
+    "object_type": "Dataset",
+    "source_sentence": "For languages included in the IWSLT 2016 Ted talks dataset , we use the train and development data included, and enlarge the training data with the training split from Open-subtitles10 2018 , and Tatoeba.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "Languages",
+    "predicate": "uses",
+    "object": "Tatoeba",
+    "object_type": "Dataset",
+    "source_sentence": "For languages included in the IWSLT 2016 Ted talks dataset , we use the train and development data included, and enlarge the training data with the training split from Open-subtitles10 2018 , and Tatoeba.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "Translation Model",
+    "predicate": "trainedon",
+    "object": "out-of-domain data",
+    "object_type": "Dataset",
+    "source_sentence": "Results on Kazakh (kk) confirm this, where the translation model is trained on out-of- domain data, because in- domain data was not available (§ 3.2).",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "4.1 Experimental Setup"
+  }
+]

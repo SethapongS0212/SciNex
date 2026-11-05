@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "parsing- based algorithm",
+    "object_type": "Method",
+    "source_sentence": "Decoding is typically carried out with a parsing- based algorithm, in our case a customized version of CYK+.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "rules",
+    "predicate": "uses",
+    "object": "training instances",
+    "object_type": "Dataset",
+    "source_sentence": "rules are extracted from training instances which consist of a source sentence, a target sentence along with its constituent parse tree, and a word alignment matrix.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "3.1 GHKM String-to-Tree Translation"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "source sentence",
+    "object_type": "Sentence",
+    "source_sentence": "training instances which consist of a source sentence, a target sentence along with its constituent parse tree, and a word alignment matrix.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "3.1 GHKM String-to-Tree Translation"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "target sentence",
+    "object_type": "Sentence",
+    "source_sentence": "training instances which consist of a source sentence, a target sentence along with its constituent parse tree, and a word alignment matrix.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "3.1 GHKM String-to-Tree Translation"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "parse tree",
+    "object_type": "Other",
+    "source_sentence": "training instances which consist of a source sentence, a target sentence along with its constituent parse tree, and a word alignment matrix.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "3.1 GHKM String-to-Tree Translation"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "word alignment matrix",
+    "object_type": "Other",
+    "source_sentence": "training instances which consist of a source sentence, a target sentence along with its constituent parse tree, and a word alignment matrix.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "3.1 GHKM String-to-Tree Translation"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Moses implementations",
+    "object_type": "Method",
+    "source_sentence": "The experiments are conducted with the open- source Moses implementations of GHKM rule ex- traction and decoding with CYK+ parsing and cube pruning .",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "5 Empirical Evaluation"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "GHKM rule extraction",
+    "object_type": "Method",
+    "source_sentence": "The experiments are conducted with the open- source Moses implementations of GHKM rule ex- traction and decoding with CYK+ parsing and cube pruning .",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "5 Empirical Evaluation"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "decoding",
+    "object_type": "Method",
+    "source_sentence": "The experiments are conducted with the open- source Moses implementations of GHKM rule ex- traction and decoding with CYK+ parsing and cube pruning .",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "5 Empirical Evaluation"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "CYK+ parsing",
+    "object_type": "Method",
+    "source_sentence": "The experiments are conducted with the open- source Moses implementations of GHKM rule ex- traction and decoding with CYK+ parsing and cube pruning .",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "5 Empirical Evaluation"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "cube pruning",
+    "object_type": "Method",
+    "source_sentence": "The experiments are conducted with the open- source Moses implementations of GHKM rule ex- traction and decoding with CYK+ parsing and cube pruning .",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "5 Empirical Evaluation"
+  },
+  {
+    "subject": "Word Alignments",
+    "predicate": "uses",
+    "object": "MGIZA++",
+    "object_type": "Other",
+    "source_sentence": "Word alignments are created by aligning the data in both directions with MGIZA++ and symmetrizing the two trained alignments.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "German",
+    "predicate": "uses",
+    "object": "BitPar",
+    "object_type": "Other",
+    "source_sentence": "For string-to-tree translation , we parse the German target side with BitPar .3",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "English",
+    "predicate": "uses",
+    "object": "Berkeley Parser",
+    "object_type": "Other",
+    "source_sentence": "For tree-to-string translation , we parse the English source side of the parallel data with the English Berkeley Parser.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "uses",
+    "object": "Good-Turing smoothing",
+    "object_type": "Method",
+    "source_sentence": "Phrase translation probabilities are smoothed via Good-Turing smoothing.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "modified Kneser-Ney smoothing",
+    "object_type": "Method",
+    "source_sentence": "The language model (LM) is a large interpolated 5-gram LM with modified Kneser-Ney smoothing.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "0.6 points",
+    "object_type": "Metric",
+    "source_sentence": "The authors report improvements of 0.6 points BLEU on the 2005 NIST Chinese→ English task with four reference translations.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "2.6 points",
+    "object_type": "Metric",
+    "source_sentence": "On a French→ English translation task, Hanneman and Lavie (2009) report improvements of around 2.6 points BLEU by adding non-syntactic phrases on top of their Stat-XFER syntactic baselines.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "1.6 points",
+    "object_type": "Metric",
+    "source_sentence": "Their best setup however does not reach the performance of a standard phrase-based system , which is still 1.6 points BLEU better .",
+    "extraction_mode": "fixed",
+    "paper": "W14-3362",
+    "title": "Augmenting String-to-Tree and Tree-to-String Translation with Non-Syntactic Phrases",
+    "section": "6 Related Work"
+  }
+]

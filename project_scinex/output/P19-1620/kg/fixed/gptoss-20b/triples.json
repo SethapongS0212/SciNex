@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "labeled QA data",
+    "object_type": "Dataset",
+    "source_sentence": "We train a separate model on labeled QA data for each of the first three steps, and then apply the models in sequence on a large number of unlabeled text passages.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1620",
+    "title": "Synthetic QA Corpora Generation with Roundtrip Consistency",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "models",
+    "object_type": "Model",
+    "source_sentence": "We train a separate model on labeled QA data for each of the first three steps, and then apply the models in sequence on a large number of unlabeled text passages.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1620",
+    "title": "Synthetic QA Corpora Generation with Roundtrip Consistency",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Generative Models",
+    "predicate": "produces",
+    "object": "synthetic data",
+    "object_type": "Dataset",
+    "source_sentence": "our work uses generative models to generate synthetic data to be used for pretraining.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1620",
+    "title": "Synthetic QA Corpora Generation with Roundtrip Consistency",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "attention mask",
+    "object_type": "Other",
+    "source_sentence": "This model can be trained efficiently by using an attention mask that forces to zero all the attention weights from c to q and from qi to qi+1...",
+    "extraction_mode": "fixed",
+    "paper": "P19-1620",
+    "title": "Synthetic QA Corpora Generation with Roundtrip Consistency",
+    "section": "3.2 Question Generation: Fine-tuning Only"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "achieves",
+    "object": "high value on β(θA′)",
+    "object_type": "Concept",
+    "source_sentence": "constraining the parameters θA′ to achieve a relatively high value on β(θA′) is achieved by pre-training the model on these examples.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1620",
+    "title": "Synthetic QA Corpora Generation with Roundtrip Consistency",
+    "section": "3.4 Why Does Roundtrip Consistency Work?"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "SQuAD2",
+    "object_type": "Dataset",
+    "source_sentence": "We then fine-tuned the the resulting models on SQuAD2 and NQ.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1620",
+    "title": "Synthetic QA Corpora Generation with Roundtrip Consistency",
+    "section": "4.1 Experimental Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "NQ",
+    "object_type": "Dataset",
+    "source_sentence": "We then fine-tuned the the resulting models on SQuAD2 and NQ.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1620",
+    "title": "Synthetic QA Corpora Generation with Roundtrip Consistency",
+    "section": "4.1 Experimental Setup"
+  }
+]

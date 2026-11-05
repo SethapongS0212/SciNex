@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "CRF",
+    "predicate": "produces",
+    "object": "label sequence",
+    "object_type": "Other",
+    "source_sentence": "Finally, a CRF layer outputs the label sequence y = l1,..., lm.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.524",
+    "title": "Multi-Cell Compositional LSTM for NER Domain Adaptation",
+    "section": "C Cell"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "addresses",
+    "object": "in-domain NER",
+    "object_type": "Task",
+    "source_sentence": "The multi-cell LSTM structure above is domain agnostic, and can therefore be used for in- domain NER too.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.524",
+    "title": "Multi-Cell Compositional LSTM for NER Domain Adaptation",
+    "section": "3 Transfer Learning"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "PubMed 200-dimension vectors",
+    "object_type": "Other",
+    "source_sentence": "word embeddings for all models are initialized with PubMed 200-dimension vectors in BioNLP experiments",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.524",
+    "title": "Multi-Cell Compositional LSTM for NER Domain Adaptation",
+    "section": "4.1 Experimental Settings"
+  },
+  {
+    "subject": "dictionary",
+    "predicate": "uses",
+    "object": "target-domain auxiliary tasks training",
+    "object_type": "Other",
+    "source_sentence": "a named entity dictionary from Web resource collected by Peng et al. (2019) is used for target-domain auxiliary tasks training",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.524",
+    "title": "Multi-Cell Compositional LSTM for NER Domain Adaptation",
+    "section": "4.1 Experimental Settings"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "state-of-the-art results on NER",
+    "object_type": "Task",
+    "source_sentence": "Recently, LM pre-training based methods such as ELMO/BIOELMO , BERT and BIOBERT achieve state-of-the-art results on NER.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.524",
+    "title": "Multi-Cell Compositional LSTM for NER Domain Adaptation",
+    "section": "0.94 Accuracy 0."
+  },
+  {
+    "subject": "BioBERT",
+    "predicate": "achieves",
+    "object": "state-of-the-art results on NER",
+    "object_type": "Task",
+    "source_sentence": "Recently, LM pre-training based methods such as ELMO/BIOELMO , BERT and BIOBERT achieve state-of-the-art results on NER.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.524",
+    "title": "Multi-Cell Compositional LSTM for NER Domain Adaptation",
+    "section": "0.94 Accuracy 0."
+  },
+  {
+    "subject": "BERT Fine-tuning",
+    "predicate": "uses",
+    "object": "Adam optimizer",
+    "object_type": "Other",
+    "source_sentence": "In particular, we use the same batch size as our method and the Adam optimizer with an initial learning rate 3e-5 in BERT fine-tuning baselines.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.524",
+    "title": "Multi-Cell Compositional LSTM for NER Domain Adaptation",
+    "section": "0.94 Accuracy 0."
+  },
+  {
+    "subject": "Domain Adaptation",
+    "predicate": "uses",
+    "object": "CoNLL-2003",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct unsupervised domain adaptation on the CBS SciTech News test set, using CoNLL-2003 as the source - domain dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.524",
+    "title": "Multi-Cell Compositional LSTM for NER Domain Adaptation",
+    "section": "4.4 Unsupervised Domain Adaptation"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "achieves",
+    "object": "significant F1 improvement over the target-domain only baseline",
+    "object_type": "Other",
+    "source_sentence": "both MULTI (Multi-Task baseline) and Ours achieve significant F1 improvement over the target - domain only base- line LSTM on the biochemistry entity groups that appear in both the target and the source datasets, such as CHEM, CC and GGP",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.524",
+    "title": "Multi-Cell Compositional LSTM for NER Domain Adaptation",
+    "section": "4.5 Analysis"
+  },
+  {
+    "subject": "Multi-Cell Compositional LSTM",
+    "predicate": "addresses",
+    "object": "cross-domain NER",
+    "object_type": "Task",
+    "source_sentence": "We have investigated a multi-cell compositional LSTM structure for cross - domain NER under the multi-task learning strategy.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.524",
+    "title": "Multi-Cell Compositional LSTM for NER Domain Adaptation",
+    "section": "5 Conclusion"
+  },
+  {
+    "subject": "Multi-Cell Compositional LSTM",
+    "predicate": "comparesagainst",
+    "object": "BiLSTM",
+    "object_type": "Model",
+    "source_sentence": "Results on a range of cross - domain datasets show that multi-cell compositional LSTM outperforms BiLSTM under the multi-task learning strategy.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.524",
+    "title": "Multi-Cell Compositional LSTM for NER Domain Adaptation",
+    "section": "5 Conclusion"
+  }
+]

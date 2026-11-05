@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "discriminative",
+    "predicate": "uses",
+    "object": "domain tags",
+    "object_type": "Concept",
+    "source_sentence": "We condition the discriminative model on the domain tags so that the discriminative model can learn to factor out domain-specific and domain-invariant representations.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "generative",
+    "predicate": "uses",
+    "object": "reinforcement learning algorithm",
+    "object_type": "Method",
+    "source_sentence": "Second, we employ a reinforcement learning algorithm to fine-tune the generative model to minimize the loss of the discriminative model in an adversarial way.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "produces",
+    "object": "discriminative model",
+    "object_type": "Model",
+    "source_sentence": "The context-based question-answer pairs on U are combined with human-generated pairs on L for training the discriminative model.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "2.1 A Simple Baseline"
+  },
+  {
+    "subject": "Question Answering",
+    "predicate": "produces",
+    "object": "answer a(i)",
+    "object_type": "Other",
+    "source_sentence": "The goal of question answering is to produce the answer a(i) given the question q(i) along with the paragraph p(i).",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "2 Semi-Supervised Question Answering"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Reinforcement Learning",
+    "object_type": "Method",
+    "source_sentence": "We will first discuss the two models in detail in the context of question answering , and then present an algorithm based on reinforcement learning to combine the two models.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3 Generative Domain-Adaptive Nets"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "Given the paragraph p, we apply a bidirectional Gated Recurrent Unit (GRU) network on top of the embeddings of the sequence (p1, p2, · · ·, pT ), and obtain the initial paragraph representation H0 p.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3.1 Discriminative Model"
+  },
+  {
+    "subject": "discriminative",
+    "predicate": "uses",
+    "object": "domain tag",
+    "object_type": "Concept",
+    "source_sentence": "We use a domain tag as an additional input to the discriminative model.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3.1.1 Domain Adaptation with Tags"
+  },
+  {
+    "subject": "generative",
+    "predicate": "trainedon",
+    "object": "labeled data L",
+    "object_type": "Dataset",
+    "source_sentence": "We first pretrain the generative model on the labeled data L with maximum likelihood estimation (MLE):",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "3.3 Training Algorithm"
+  },
+  {
+    "subject": "Domain Adaptation",
+    "predicate": "addresses",
+    "object": "classification",
+    "object_type": "Task",
+    "source_sentence": "Domain adaptation has been successfully applied to various tasks, such as classification and machine translation.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Domain Adaptation",
+    "predicate": "addresses",
+    "object": "machine translation",
+    "object_type": "Task",
+    "source_sentence": "Domain adaptation has been successfully applied to various tasks, such as classification and machine translation.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "plan",
+    "predicate": "addresses",
+    "object": "question answering datasets in different domains",
+    "object_type": "Dataset",
+    "source_sentence": "In the future , we plan to apply our approach to more question answering datasets in different domains.",
+    "extraction_mode": "fixed",
+    "paper": "P17-1096",
+    "title": "Semi-Supervised QA with Generative Domain-Adaptive Nets",
+    "section": "6 Conclusions"
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Learning",
+    "predicate": "achieves",
+    "object": "primary model's generalization performance",
+    "object_type": "Concept",
+    "source_sentence": "Multi -task Learning (MTL) is an inductive transfer mechanism which lever- ages information from related tasks to improve the primary model's generalization performance.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Bayesian Optimization",
+    "predicate": "uses",
+    "object": "Gaussian Process",
+    "object_type": "Model",
+    "source_sentence": "selected in the first stage and automatically learns the training mixing ratio of these tasks, through the framework of Bayesian optimization , by modeling the performance of each mixing ratio as a sam- ple from a Gaussian Process (GP) to sequentially search for the optimal values .",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "GLUE natural language understanding benchmark",
+    "object_type": "Other",
+    "source_sentence": "We conduct several experiments on the GLUE natural language understanding benchmark , where we choose each of RTE, MRPC, QNLI, CoLA, and SST-2 as the primary task, and treat the rest of the classification tasks from the GLUE benchmark as candidate auxiliary tasks.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "bidirectional",
+    "predicate": "uses",
+    "object": "LSTM-RNN",
+    "object_type": "Model",
+    "source_sentence": "Let s1 and s2 be the input sentence pair in our classification task, where we encode these sentences via bidirectional LSTM-RNN, similar to that of Conneau et al.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3.1 Bi-Text Classiﬁcation Model"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "word embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We also use ELMo representations for word embeddings in our model.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3.1 Bi-Text Classiﬁcation Model"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "acquisition functions",
+    "object_type": "Method",
+    "source_sentence": "we perform the sampling (based on acquisition functions) and the kernels used for calculating the covariance.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3.4 Automatic Mixing Ratio Learning via Gaussian Process"
+  },
+  {
+    "subject": "Kernels",
+    "predicate": "uses",
+    "object": "covariance matrix",
+    "object_type": "Artifact",
+    "source_sentence": "the kernels used for calculating the covariance.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "3.4 Automatic Mixing Ratio Learning via Gaussian Process"
+  },
+  {
+    "subject": "Gaussian Process",
+    "predicate": "uses",
+    "object": "Scikit-Optimize",
+    "object_type": "Other",
+    "source_sentence": "The Gaussian Process implementation is based on Scikit-Optimize5, and we adopt most of the default configurations.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "4 Experiment Setup"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "uses",
+    "object": "models",
+    "object_type": "Model",
+    "source_sentence": "use the ensemble of models across runs for reporting the test results.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1355",
+    "title": "AUTOSEM: Automatic Task Selection and Mixing in Multi-Task Learning",
+    "section": "4 Experiment Setup"
+  }
+]

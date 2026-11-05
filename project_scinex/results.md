@@ -1,5 +1,56 @@
 # Results — Scientific-Paper Knowledge-Graph Pipeline
 
+> ### ⛔ SESSION 37 (2026-10-26): PART 2 FINETUNING MOVES TO THE ACL ANTHOLOGY CORPUS
+> From here on the finetuning experiments run on the **ACL Anthology papers (805, fixed entity
+> lists) with the FIXED extractor**, teacher **gpt-oss-20b (local)**, student **Qwen3-8B**. User
+> decision; see `hands_off.md` §37. Tables 13–14 (20-paper corpus, relation extractor, gptoss-120b
+> teacher, Qwen3-1.7B student) stay valid for what they measured. **Do not mix them with the
+> coming ACL tables**: different corpus, extractor, teacher and student.
+>
+> **Table 15 (ACL, teacher only, judge-free).** `gpt-oss-20b` (local, MXFP4, reasoning low),
+> FIXED extractor, all 805 ACL papers (`ft_compare.py --extractor fixed --teacher gptoss-20b
+> --slugs gptoss-20b --papers $(cat papers_acl.txt)`, 2026-10-28; file
+> `/home/dev1/scinex_runs/acl_teacher_stats.json`):
+>
+> | ontology | replies | valid JSON | truncated | proposed → kept | kept rate | coverage |
+> |---|---|---|---|---|---|---|
+> | CEO | 18,985 | 99.5% | 89 | 10,665 → 8,488 | 79.6% | 22.8% |
+> | scinex | 18,985 | 99.6% | 76 | 6,991 → 5,479 | 78.4% | 16.4% |
+>
+> Top kept predicates — CEO: uses 5,521 (65%), addresses 873, achieves 839, trainedOn 378,
+> produces 302; scinex: uses 1,750, addresses 1,304, achieves 701, produces 449, trainedOn 363.
+> Coverage is paragraphs with ≥ 1 kept triple. Only paragraphs containing a listed entity are
+> prompted at all. This measures the teacher's output, not its correctness (no judge yet). Its
+> 80% empty share is why the max-empty-30% variant exists.
+>
+> **Table 16 (ACL, ⭐ FIRST STUDENT RESULT, judge-free).** Qwen3-8B QLoRA students vs the base
+> model and the teacher, FIXED extractor, **41 held-out ACL papers (fold 0 of
+> `ft_data/acl/split.json`), 980 paragraphs per ontology**, census (2026-10-30;
+> `ft_runs/qwen3-8b-acl-f0/compare.json`). Students trained 1 epoch on ~764 training papers.
+>
+> | ontology | run | valid JSON | truncated | proposed → kept | kept rate | coverage | vs teacher P / R |
+> |---|---|---|---|---|---|---|---|
+> | CEO | qwen3-8b-acl-base-hf (untuned) | 95.3% | 39 | 6,139 → 2,363 | 38.5% | 74.5% | 4.4% / 19.6% |
+> | CEO | qwen3-8b-acl-ft-cv (teacher-only data, 80.5% empty) | 100.0% | 0 | 15 → 15 | 100.0% | **0.8%** | 60.0% / 2.2% |
+> | CEO | **qwen3-8b-acl-ft-me30-cv (empty targets capped at 30%)** | **99.9%** | 1 | **820 → 670** | **81.7%** | **43.8%** | 23.6% / 30.7% |
+> | CEO | gptoss-20b (teacher) | 99.2% | 8 | 619 → 501 | 80.9% | 25.6% | (teacher) |
+> | scinex | qwen3-8b-acl-base-hf (untuned) | 95.0% | 41 | 6,349 → 2,469 | 38.9% | 77.1% | 2.6% / 19.7% |
+> | scinex | qwen3-8b-acl-ft-cv (teacher-only) | 100.0% | 0 | 2 → 2 | 100.0% | **0.2%** | 100.0% / 0.7% |
+> | scinex | **qwen3-8b-acl-ft-me30-cv** | **99.8%** | 2 | **644 → 548** | **85.1%** | **35.6%** | 13.5% / 24.6% |
+> | scinex | gptoss-20b (teacher) | 99.6% | 4 | 373 → 289 | 77.5% | 17.3% | (teacher) |
+>
+> Reading: **(1)** teacher-only training COLLAPSED to abstention (15 and 2 triples), the Session 36
+> failure in its extreme form, predicted by its 80.5% empty targets. **(2) Capping empty targets at
+> 30% fixes it:** the max-empty-30% student passes the guards at the teacher's rate (81.7% vs 80.9%
+> CEO; 85.1% vs 77.5% scinex), emits 100% valid JSON, and keeps MORE triples than the teacher (670
+> vs 501; 548 vs 289), on papers it never saw. **(3)** The untuned base over-extracts (6,139 proposed,
+> 61% rejected by the guards, `addresses` 1,359 times). ⚠ **Caveats:** counts, not correctness; no
+> judge has looked at these triples yet. "vs teacher" measures imitation, and low agreement (23.6%
+> P) means the student extracts DIFFERENT triples, which may be right or wrong. Its coverage (43.8%)
+> exceeds the teacher's (25.6%), which can mean over-extraction. A random sample mixes good triples
+> (`LSTM uses lexical features`) with vague ones (`Unsupervised Methods achieves very strong
+> result`), and vague subjects come from the CS-NER entity lists. Next: blind C1/C3/C4 census.
+
 > ### ⚠ SESSION 27: THE EVALUATION CRITERIA CHANGED
 > Every precision number in this file uses the **old** CORRECT/PARTIAL/INCORRECT rubric and the
 > **20-paper** corpus. As of 2026-09-05 the project evaluates on **six criteria (C1-C6)** over a

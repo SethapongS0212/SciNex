@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "BiLSTM",
+    "predicate": "produces",
+    "object": "contextualized embeddings",
+    "object_type": "Concept",
+    "source_sentence": "A biLSTM is used to obtain contextualized embeddings hk for each token xk in the two sentences, as shown in Figure 1.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "Dependency Parser",
+    "predicate": "produces",
+    "object": "dependency paths",
+    "object_type": "Concept",
+    "source_sentence": "We use the Stanford Dependency Parser to extract the dependency paths for both events to their lowest common ancestor.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "produces",
+    "object": "output hupper",
+    "object_type": "Concept",
+    "source_sentence": "Each vector along the dependency path is fed into an upper biLSTM to produce output hupper.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "achieves",
+    "object": "97.6% accuracy for the temporal relation classification objective",
+    "object_type": "Metric",
+    "source_sentence": "Using ELMo embeddings in this manner does not lead to a sub- stantial improvement over previous results, with an accuracy of 97.6% for the temporal relation classification objective on the same test set.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "3.1 Timex Pair Ordering"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "achieves",
+    "object": "88.7% performance",
+    "object_type": "Metric",
+    "source_sentence": "However, the performance using GloVe embeddings drops to 88.7%.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "3.1 Timex Pair Ordering"
+  }
+]

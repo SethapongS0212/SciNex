@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "similarity thresholds",
+    "object_type": "Concept",
+    "source_sentence": "The noisiest data sets were extracted for the 0.1 and 0.2 similarity thresholds and we dropped them from SMT experiments.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "0.9 Pairs: 42,201 EN Words: 0.81M RO Words: 0.83M"
+  },
+  {
+    "subject": "Sentence Pairs",
+    "predicate": "uses",
+    "object": "translation similarity measure",
+    "object_type": "Concept",
+    "source_sentence": "By random manual inspection of the generated sentence pairs, we saw that, in general, irrespective of the language pair, sentence pairs with a translation similarity measure equal or higher than 0.7 are parallel .",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "0.9 Pairs: 42,201 EN Words: 0.81M RO Words: 0.83M"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "lexical reordering wbe-msd-bidirectional-fe model",
+    "object_type": "Model",
+    "source_sentence": "As the standard SMT system we chose Moses surface to surface translation , lexical reordering wbe-msd-bidirectional-fe model, a maximum 4 words phrase-length, and the default values for the rest of parameters.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "0.9 Pairs: 42,201 EN Words: 0.81M RO Words: 0.83M"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "English Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "The target language model (LM) for all experiments was trained on all monolingual, sentence-split English Wikipedia after removing the administrative articles as described in Section 3.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "0.9 Pairs: 42,201 EN Words: 0.81M RO Words: 0.83M"
+  },
+  {
+    "subject": "translation systems",
+    "predicate": "achievesresult",
+    "object": "BLUE score",
+    "object_type": "Metric",
+    "source_sentence": "The quality of the translation systems was measured as usual in terms of their BLUE score on the same test data.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "0.9 Pairs: 42,201 EN Words: 0.81M RO Words: 0.83M"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "concatenation of all seven specific corpora",
+    "object_type": "Dataset",
+    "source_sentence": "global language model named \"ALL\", trained on the concatenation of all seven specific corpora.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "3.4 SMT experiments with Wiki-Train"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "29.99",
+    "object_type": "Metric",
+    "source_sentence": "the herein BLEU score (41.09) and 29.99",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "3.4 SMT experiments with Wiki-Train"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "entire Romanian Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "the language model was built from entire Romanian Wikipedia",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "3.4 SMT experiments with Wiki-Train"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "Romanian sentences paired to English sentences",
+    "object_type": "Dataset",
+    "source_sentence": "the language model in was built only from the Romanian sentences paired to English sentences",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "3.4 SMT experiments with Wiki-Train"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "6.89",
+    "object_type": "Metric",
+    "source_sentence": "For Spanish-English test-set of Smith et al. (2010) our result is significantly better (6.89 BLEU points) than theirs, in spite of almost 4 times less training data.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "3.4 SMT experiments with Wiki-Train"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "13",
+    "object_type": "Metric",
+    "source_sentence": "For the German-English pair, the BLEU score difference between TM[0.5, 1] and Large +Wiki systems is smaller, but still 13",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "3.4 SMT experiments with Wiki-Train"
+  },
+  {
+    "subject": "Similarity Metrics",
+    "predicate": "achieves",
+    "object": "0.4 or 0.5",
+    "object_type": "Metric",
+    "source_sentence": "However, there is an optimum level of similarity between the comparable sentences , which, according to our similarity metrics (for the language pairs we worked with), is around 0.4 or 0.5.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1024",
+    "title": "Large SMT data-sets extracted from Wikipedia",
+    "section": "5. Conclusions"
+  }
+]

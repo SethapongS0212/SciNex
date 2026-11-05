@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Encoder-Decoder Model",
+    "predicate": "uses",
+    "object": "abstractive summarization",
+    "object_type": "Method",
+    "source_sentence": "Such short summaries can be generated using abstractive summarization with an RNN encoder-decoder model, e.g., .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1211",
+    "title": "Adversarial Domain Adaptation Using Artiﬁcial Titles for Abstractive Title Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Adversarial Domain Adaptation",
+    "predicate": "uses",
+    "object": "merge the embedded feature representations across domains",
+    "object_type": "Method",
+    "source_sentence": "Vo- cabulary expansion may be used to address the different vocabularies in source and target domains , and adversarial domain adaptation (ADA) may be used to merge the embedded feature representations across domains.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1211",
+    "title": "Adversarial Domain Adaptation Using Artiﬁcial Titles for Abstractive Title Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "domain adaptation",
+    "object_type": "Other",
+    "source_sentence": "We use an encoder-decoder RNN model with domain adaptation (Figure 1) for title generation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1211",
+    "title": "Adversarial Domain Adaptation Using Artiﬁcial Titles for Abstractive Title Generation",
+    "section": "3.1 Adversarial Domain Adaptation (ADA)"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "addresses",
+    "object": "Title Generation",
+    "object_type": "Other",
+    "source_sentence": "We use an encoder-decoder RNN model with domain adaptation (Figure 1) for title generation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1211",
+    "title": "Adversarial Domain Adaptation Using Artiﬁcial Titles for Abstractive Title Generation",
+    "section": "3.1 Adversarial Domain Adaptation (ADA)"
+  },
+  {
+    "subject": "Bidirectional LSTM",
+    "predicate": "produces",
+    "object": "concept representation vector",
+    "object_type": "Other",
+    "source_sentence": "The concept representation vector is computed as the bidirectional LSTM encoder's final forward and backward hidden states concatenated into a single state.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1211",
+    "title": "Adversarial Domain Adaptation Using Artiﬁcial Titles for Abstractive Title Generation",
+    "section": "3.1 Adversarial Domain Adaptation (ADA)"
+  },
+  {
+    "subject": "Bidirectional LSTM",
+    "predicate": "uses",
+    "object": "source data",
+    "object_type": "Other",
+    "source_sentence": "At the same time, the source data and unlabeled target domain data are encoded by a bidirectional LSTM as their concept representations, and the domain classifier tries to learn to differentiate between the representations of two domains.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1211",
+    "title": "Adversarial Domain Adaptation Using Artiﬁcial Titles for Abstractive Title Generation",
+    "section": "3.1 Adversarial Domain Adaptation (ADA)"
+  },
+  {
+    "subject": "Bidirectional LSTM",
+    "predicate": "uses",
+    "object": "unlabeled target domain data",
+    "object_type": "Other",
+    "source_sentence": "At the same time, the source data and unlabeled target domain data are encoded by a bidirectional LSTM as their concept representations, and the domain classifier tries to learn to differentiate between the representations of two domains.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1211",
+    "title": "Adversarial Domain Adaptation Using Artiﬁcial Titles for Abstractive Title Generation",
+    "section": "3.1 Adversarial Domain Adaptation (ADA)"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "cross-entropy loss",
+    "object_type": "Other",
+    "source_sentence": "the domain classifier loss, Ld, is the cross -entropy loss between the predicted and true domain label probabilities",
+    "extraction_mode": "fixed",
+    "paper": "P19-1211",
+    "title": "Adversarial Domain Adaptation Using Artiﬁcial Titles for Abstractive Title Generation",
+    "section": "3.1 Adversarial Domain Adaptation (ADA)"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "negative log likelihood",
+    "object_type": "Other",
+    "source_sentence": "the decoder (sequence) loss is the negative log likelihood of the target word w∗ t at position t",
+    "extraction_mode": "fixed",
+    "paper": "P19-1211",
+    "title": "Adversarial Domain Adaptation Using Artiﬁcial Titles for Abstractive Title Generation",
+    "section": "3.1 Adversarial Domain Adaptation (ADA)"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "validation performance",
+    "object_type": "Other",
+    "source_sentence": "training continued until val- idation performance for title generation reached an asymptote",
+    "extraction_mode": "fixed",
+    "paper": "P19-1211",
+    "title": "Adversarial Domain Adaptation Using Artiﬁcial Titles for Abstractive Title Generation",
+    "section": "3.1 Adversarial Domain Adaptation (ADA)"
+  },
+  {
+    "subject": "Title Generation",
+    "predicate": "uses",
+    "object": "validation performance",
+    "object_type": "Other",
+    "source_sentence": "training continued until val- idation performance for title generation reached an asymptote",
+    "extraction_mode": "fixed",
+    "paper": "P19-1211",
+    "title": "Adversarial Domain Adaptation Using Artiﬁcial Titles for Abstractive Title Generation",
+    "section": "3.1 Adversarial Domain Adaptation (ADA)"
+  },
+  {
+    "subject": "Classification",
+    "predicate": "uses",
+    "object": "loss",
+    "object_type": "Other",
+    "source_sentence": "In contrast to the two classification losses used by for training the model",
+    "extraction_mode": "fixed",
+    "paper": "P19-1211",
+    "title": "Adversarial Domain Adaptation Using Artiﬁcial Titles for Abstractive Title Generation",
+    "section": "3.1 Adversarial Domain Adaptation (ADA)"
+  },
+  {
+    "subject": "Models",
+    "predicate": "produces",
+    "object": "embedded points",
+    "object_type": "Other",
+    "source_sentence": "Embedded points produced by models (d), (e) and (f) (see Section 5.1) are compared in the visual- ization in Figure 4.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1211",
+    "title": "Adversarial Domain Adaptation Using Artiﬁcial Titles for Abstractive Title Generation",
+    "section": "5.3 Visualization of Adaptation Models"
+  }
+]

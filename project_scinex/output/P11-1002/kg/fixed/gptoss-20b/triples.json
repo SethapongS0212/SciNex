@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "SMT decoding",
+    "object_type": "Method",
+    "source_sentence": "A language model P(e) is typically used in SMT decoding",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "English text",
+    "object_type": "Dataset",
+    "source_sentence": "P(e) is a language model built from large amounts of English text that is unrelated to the foreign strings.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "EM algorithm",
+    "object_type": "Method",
+    "source_sentence": "Retrain the new channel using EM algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "2.1 Iterative EM"
+  },
+  {
+    "subject": "Decipherment",
+    "predicate": "uses",
+    "object": "Bayesian learning",
+    "object_type": "Method",
+    "source_sentence": "Here, we propose a novel decipherment approach using Bayesian learning.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "2.2 Bayesian Decipherment"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "smart sampling strategies",
+    "object_type": "Method",
+    "source_sentence": "inference using smart sampling strategies permits efficient training",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "2.2 Bayesian Decipherment"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "incremental scoring of derivations",
+    "object_type": "Method",
+    "source_sentence": "incremental scoring of derivations during sampling allows efficient inference",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "2.2 Bayesian Decipherment"
+  },
+  {
+    "subject": "Decipherment",
+    "predicate": "uses",
+    "object": "generative story",
+    "object_type": "Method",
+    "source_sentence": "We use the same generative story as before for decipherment",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "2.2 Bayesian Decipherment"
+  },
+  {
+    "subject": "English",
+    "predicate": "uses",
+    "object": "bi-gram LM",
+    "object_type": "Method",
+    "source_sentence": "We use an English word bi-gram LM as the base distribution (P0) for the source model",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "2.2 Bayesian Decipherment"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "point-wise Gibbs sampling",
+    "object_type": "Method",
+    "source_sentence": "We perform inference using point-wise Gibbs sampling",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "2.2 Bayesian Decipherment"
+  },
+  {
+    "subject": "Viterbi",
+    "predicate": "uses",
+    "object": "English",
+    "object_type": "Concept",
+    "source_sentence": "We then use the Viterbi algorithm to choose the English plaintext e that maximizes P(e) · Pθtrained(c|e)",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "2.2 Bayesian Decipherment"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "Inference",
+    "object_type": "Method",
+    "source_sentence": "we use sampling to perform efficient inference during training.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "3 Machine Translation as a Decipherment Task"
+  },
+  {
+    "subject": "Translation Model",
+    "predicate": "uses",
+    "object": "IBM Model 3",
+    "object_type": "Model",
+    "source_sentence": "For the translation model Pθ(f|e), we would like to use a well-known statistical model such as IBM Model 3 and subsequently train it using the EM algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "3.1 EM Decipherment"
+  },
+  {
+    "subject": "Gibbs Sampling",
+    "predicate": "uses",
+    "object": "IBM Model 3 parameters",
+    "object_type": "Other",
+    "source_sentence": "We use point-wise Gibbs sampling to estimate the IBM Model 3 parameters.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "3.2 Bayesian Method"
+  },
+  {
+    "subject": "Fast Decoding and Optimal Decoding",
+    "predicate": "writtenby",
+    "object": "Ulrich Germann",
+    "object_type": "Other",
+    "source_sentence": "Ulrich Germann, Michael Jahr, Kevin Knight, Daniel Marcu, and Kenji Yamada. Fast decoding and optimal decoding for machine translation . In Proceed- ings of the 39th Annual Meeting on Association for Computational Linguistics, pages 228–235.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "4 Conclusion"
+  },
+  {
+    "subject": "Fast Decoding and Optimal Decoding",
+    "predicate": "writtenby",
+    "object": "Michael Jahr",
+    "object_type": "Other",
+    "source_sentence": "Ulrich Germann, Michael Jahr, Kevin Knight, Daniel Marcu, and Kenji Yamada. Fast decoding and optimal decoding for machine translation . In Proceed- ings of the 39th Annual Meeting on Association for Computational Linguistics, pages 228–235.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "4 Conclusion"
+  },
+  {
+    "subject": "Fast Decoding and Optimal Decoding",
+    "predicate": "writtenby",
+    "object": "Kevin Knight",
+    "object_type": "Other",
+    "source_sentence": "Ulrich Germann, Michael Jahr, Kevin Knight, Daniel Marcu, and Kenji Yamada. Fast decoding and optimal decoding for machine translation . In Proceed- ings of the 39th Annual Meeting on Association for Computational Linguistics, pages 228–235.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "4 Conclusion"
+  },
+  {
+    "subject": "Fast Decoding and Optimal Decoding",
+    "predicate": "writtenby",
+    "object": "Daniel Marcu",
+    "object_type": "Other",
+    "source_sentence": "Ulrich Germann, Michael Jahr, Kevin Knight, Daniel Marcu, and Kenji Yamada. Fast decoding and optimal decoding for machine translation . In Proceed- ings of the 39th Annual Meeting on Association for Computational Linguistics, pages 228–235.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "4 Conclusion"
+  },
+  {
+    "subject": "Fast Decoding and Optimal Decoding",
+    "predicate": "writtenby",
+    "object": "Kenji Yamada",
+    "object_type": "Other",
+    "source_sentence": "Ulrich Germann, Michael Jahr, Kevin Knight, Daniel Marcu, and Kenji Yamada. Fast decoding and optimal decoding for machine translation . In Proceed- ings of the 39th Annual Meeting on Association for Computational Linguistics, pages 228–235.",
+    "extraction_mode": "fixed",
+    "paper": "P11-1002",
+    "title": "Deciphering Foreign Language",
+    "section": "4 Conclusion"
+  }
+]

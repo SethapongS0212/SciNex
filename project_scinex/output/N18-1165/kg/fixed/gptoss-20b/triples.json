@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "First approach",
+    "predicate": "uses",
+    "object": "Random Walk",
+    "object_type": "Method",
+    "source_sentence": "The Path-Ranking Algorithm (PRA) method is the first approach to use a random walk with restart mechanism to perform multi -hop reasoning.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "2.2 Multi-Hop Reasoning"
+  },
+  {
+    "subject": "Convolutional Neural Network",
+    "predicate": "addresses",
+    "object": "multi-hop reasoning",
+    "object_type": "Task",
+    "source_sentence": "To mitigate this problem, a Convolutional Neural Network(CNN)- based model has been proposed to perform multi -hop reasoning.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "2.2 Multi-Hop Reasoning"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "heuristic rewards",
+    "object_type": "Method",
+    "source_sentence": "These two methods are reported to achieve state-of-the-art results, however, these two models both use heuristic rewards to drive the policy search, which could make their models sensitive to noises and adversarial examples.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "2.2 Multi-Hop Reasoning"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "state-of-the-art results",
+    "object_type": "Other",
+    "source_sentence": "These two methods are reported to achieve state-of-the-art results, however, these two models both use heuristic rewards to drive the policy search, which could make their models sensitive to noises and adversarial examples.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "2.2 Multi-Hop Reasoning"
+  },
+  {
+    "subject": "Recurrent Neural Network",
+    "predicate": "uses",
+    "object": "vector similarity",
+    "object_type": "Concept",
+    "source_sentence": "while applies recurrent neural network to recursively encode the paths into hidden features and uses vector similarity for classification.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "3.1 Background"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "history embedding",
+    "object_type": "Other",
+    "source_sentence": "The history embedding ht is obtained using an LSTM network to encode all the previous decisions as follows:",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "3.2 Variational KG Reasoner (DIVA)"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "relation embedding",
+    "object_type": "Other",
+    "source_sentence": "while the feed-forward neural network is distinctive in that it takes the relation embedding also into account.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "3.2 Variational KG Reasoner (DIVA)"
+  },
+  {
+    "subject": "VAE",
+    "predicate": "uses",
+    "object": "negative ELBO",
+    "object_type": "Other",
+    "source_sentence": "we follow VAE to interpret the negative ELBO",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "3.3 Optimization"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "SGD",
+    "object_type": "Method",
+    "source_sentence": "During training, we alternatively update three sub- modules with SGD.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "3.3 Optimization"
+  },
+  {
+    "subject": "REINFORCE",
+    "predicate": "uses",
+    "object": "sampling",
+    "object_type": "Method",
+    "source_sentence": "We here interpret the update of the posterior approximator in equation Equation 10 as a special case of REINFORCE , where we use Monte-Carlo sampling to estimate the expected return log pθ(r|L) for current posterior policy.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "3.4 Discussion"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Monte-Carlo REINFORCE algorithm",
+    "object_type": "Method",
+    "source_sentence": "During training, we set number of rollouts to 20 for each training sample and update the posterior distribution using Monte-Carlo REINFORCE algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "4.1 Dataset and Setting"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "comparesagainst",
+    "object": "chain- RNN",
+    "object_type": "Model",
+    "source_sentence": "Here we compare with chain- RNN and CNN Path-Reasoner model, the results are demonstrated as Table 4.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "4.2 Quantitative Results"
+  },
+  {
+    "subject": "Relation Classification",
+    "predicate": "uses",
+    "object": "Input",
+    "object_type": "Other",
+    "source_sentence": "Since our model only deals with the relation classification problem (es,?, ed) with ed as input, so it's hard for us to directly compare with MINERVA.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "4.2 Quantitative Results"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "achieves",
+    "object": "NELL dataset",
+    "object_type": "Dataset",
+    "source_sentence": "our algorithm has significantly outperformed most of the existing algorithms and achieves a very similar result as MINERVA on NELL dataset and achieves state-of-the-art results on FB15k.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "4.2 Quantitative Results"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "achieves",
+    "object": "FB15k",
+    "object_type": "Dataset",
+    "source_sentence": "our algorithm has significantly outperformed most of the existing algorithms and achieves a very similar result as MINERVA on NELL dataset and achieves state-of-the-art results on FB15k.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1165",
+    "title": "Variational Knowledge Graph Reasoning",
+    "section": "4.2 Quantitative Results"
+  }
+]

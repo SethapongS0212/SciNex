@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "Patterns",
+    "predicate": "uses",
+    "object": "corpus CN",
+    "object_type": "Dataset",
+    "source_sentence": "The patterns are matched in a corpus CN of news articles.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "2 Task Description"
+  },
+  {
+    "subject": "Patterns",
+    "predicate": "uses",
+    "object": "news articles",
+    "object_type": "Dataset",
+    "source_sentence": "The patterns are matched in a corpus CN of news articles.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "2 Task Description"
+  },
+  {
+    "subject": "Patterns",
+    "predicate": "mentions",
+    "object": "'X * vs * Y '",
+    "object_type": "Other",
+    "source_sentence": "Sample patterns include 'X * vs * Y ', 'X * better than * Y ', and 'difference between * X * and * Y ',",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "3.1 Candidate Extraction"
+  },
+  {
+    "subject": "Patterns",
+    "predicate": "mentions",
+    "object": "'X * better than * Y '",
+    "object_type": "Other",
+    "source_sentence": "Sample patterns include 'X * vs * Y ', 'X * better than * Y ', and 'difference between * X * and * Y ',",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "3.1 Candidate Extraction"
+  },
+  {
+    "subject": "Patterns",
+    "predicate": "mentions",
+    "object": "difference between * X * and * Y",
+    "object_type": "Other",
+    "source_sentence": "Sample patterns include 'X * vs * Y ', 'X * better than * Y ', and 'difference between * X * and * Y ',",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "3.1 Candidate Extraction"
+  },
+  {
+    "subject": "Search",
+    "predicate": "mentions",
+    "object": "Blekko search engine",
+    "object_type": "Other",
+    "source_sentence": "(450 million distinct queries) from the Blekko search engine.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "3.1 Candidate Extraction"
+  },
+  {
+    "subject": "Classifiers",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Feature",
+    "source_sentence": "The classifiers make use of novel sets of features designed for this task.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "5.1 Feature-Based Classiﬁcation"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "single sentiment feature",
+    "object_type": "Feature",
+    "source_sentence": "We take the product of the classifier's scores for DC and EC as a single sentiment feature.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "5.1 Feature-Based Classiﬁcation"
+  },
+  {
+    "subject": "Classification",
+    "predicate": "addresses",
+    "object": "Distant Supervision",
+    "object_type": "Concept",
+    "source_sentence": "The other classification approach we experimented with is based on distant supervision.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "5.2 Distantly Supervised Neural Network"
+  },
+  {
+    "subject": "Sentences",
+    "predicate": "uses",
+    "object": "Neural Network",
+    "object_type": "Model",
+    "source_sentence": "The sentences collected for the whole training set are then used to train a neural network.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "5.2 Distantly Supervised Neural Network"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "produces",
+    "object": "distributive similarity measure sD",
+    "object_type": "Other",
+    "source_sentence": "(i) SIM: the distributive similarity measure sD;",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "0.85 Precision@"
+  },
+  {
+    "subject": "logistic regression classifier",
+    "predicate": "produces",
+    "object": "output score",
+    "object_type": "Other",
+    "source_sentence": "(i) LR: the output score of the logistic regression classifier (Section 5.1);",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "0.85 Precision@"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "produces",
+    "object": "output score",
+    "object_type": "Other",
+    "source_sentence": "(ii) DNN: the output score of the distantly-supervised neural network (Section 5.2);",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "0.85 Precision@"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "evaluates",
+    "object": "80%",
+    "object_type": "Metric",
+    "source_sentence": "For example, by setting the threshold appropriately, we can find consistent expansions for 38.3% of the debate concepts with (at least) 80% precision.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "6.2 Results"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "evaluates",
+    "object": "70%",
+    "object_type": "Metric",
+    "source_sentence": "For example, when requiring precision of 70%, we can make predictions for nearly 20% of the topics.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "6.2 Results"
+  },
+  {
+    "subject": "Distant Supervision",
+    "predicate": "addresses",
+    "object": "relation extraction",
+    "object_type": "Task",
+    "source_sentence": "(2009) introduced the concept of distant supervision for relation extraction.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "7 Related Work"
+  },
+  {
+    "subject": "Co-occurrence",
+    "predicate": "comparesagainst",
+    "object": "distributional methods",
+    "object_type": "Method",
+    "source_sentence": "co-occurrence measures of pairs extracted by Hearst patterns outperforms the distributional methods.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "7 Related Work"
+  },
+  {
+    "subject": "Debate Topic Expansion",
+    "predicate": "addresses",
+    "object": "Argumentation Mining",
+    "object_type": "Task",
+    "source_sentence": "Debate topic expansion may be highly valuable for argumentation mining.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1094",
+    "title": "From Surrogacy to Adoption; From Bitcoin to Cryptocurrency: Debate Topic Expansion",
+    "section": "8 Conclusion"
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "regularization term",
+    "object_type": "Concept",
+    "source_sentence": "Our work applies a regularization term to continued training",
+    "extraction_mode": "fixed",
+    "paper": "N19-1209",
+    "title": "Overcoming Catastrophic Forgetting During Domain Adaptation of Neural Machine Translation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "standard negative log likelihood loss",
+    "object_type": "Other",
+    "source_sentence": "obtained by training the network on DG with standard negative log likelihood (NLL) loss",
+    "extraction_mode": "fixed",
+    "paper": "N19-1209",
+    "title": "Overcoming Catastrophic Forgetting During Domain Adaptation of Neural Machine Translation",
+    "section": "3.2 Approximating log p(θ|DG)"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "uses",
+    "object": "Fisher Information Matrix",
+    "object_type": "Other",
+    "source_sentence": "diagonal precision matrix (inverse of the covariance matrix) given by the diagonal of the Fisher Information Matrix F",
+    "extraction_mode": "fixed",
+    "paper": "N19-1209",
+    "title": "Overcoming Catastrophic Forgetting During Domain Adaptation of Neural Machine Translation",
+    "section": "3.2 Approximating log p(θ|DG)"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "BPE",
+    "object_type": "Method",
+    "source_sentence": "We apply the Moses tokenizer and byte-pair encoding (BPE).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1209",
+    "title": "Overcoming Catastrophic Forgetting During Domain Adaptation of Neural Machine Translation",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "trainedon",
+    "object": "out-of-domain corpus",
+    "object_type": "Dataset",
+    "source_sentence": "BPE is trained on the out-of-domain corpus only and then applied to the training, development, and test data for both out-of-domain and in-domain datasets.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1209",
+    "title": "Overcoming Catastrophic Forgetting During Domain Adaptation of Neural Machine Translation",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "learning rates",
+    "object_type": "Other",
+    "source_sentence": "For MCL, we do a grid search over learning rates (10−4, 10−5, 10−6) and α values of (0.1, 0.3, 0.5, 0.7, 0.9).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1209",
+    "title": "Overcoming Catastrophic Forgetting During Domain Adaptation of Neural Machine Translation",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "α values",
+    "object_type": "Other",
+    "source_sentence": "For MCL, we do a grid search over learning rates (10−4, 10−5, 10−6) and α values of (0.1, 0.3, 0.5, 0.7, 0.9).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1209",
+    "title": "Overcoming Catastrophic Forgetting During Domain Adaptation of Neural Machine Translation",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "weight decay values",
+    "object_type": "Other",
+    "source_sentence": "For EWC, we do a grid search over the same learning rates and weight decay values of (10−2, 10−3, 10−4, 10−5).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1209",
+    "title": "Overcoming Catastrophic Forgetting During Domain Adaptation of Neural Machine Translation",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "grid search",
+    "object_type": "Method",
+    "source_sentence": "This is computed by taking the convex hull of a grid search over learning rate and regularization amount for each method.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1209",
+    "title": "Overcoming Catastrophic Forgetting During Domain Adaptation of Neural Machine Translation",
+    "section": "5 Results"
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "voting record",
+    "object_type": "Other",
+    "source_sentence": "All the models we explore take as input the voting record (denoted V) for a politician p, the text of a bill b, and (optional) knowledge about the politician (denoted K), and output a probability P(y = Yea|b, V, K) that politician p will vote Yea on bill b.",
+    "extraction_mode": "fixed",
+    "paper": "K19-1053",
+    "title": "Roll Call Vote Prediction with Knowledge Augmented Models",
+    "section": "2 Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "text of a bill",
+    "object_type": "Other",
+    "source_sentence": "All the models we explore take as input the voting record (denoted V) for a politician p, the text of a bill b, and (optional) knowledge about the politician (denoted K), and output a probability P(y = Yea|b, V, K) that politician p will vote Yea on bill b.",
+    "extraction_mode": "fixed",
+    "paper": "K19-1053",
+    "title": "Roll Call Vote Prediction with Knowledge Augmented Models",
+    "section": "2 Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "knowledge about the politician",
+    "object_type": "Other",
+    "source_sentence": "All the models we explore take as input the voting record (denoted V) for a politician p, the text of a bill b, and (optional) knowledge about the politician (denoted K), and output a probability P(y = Yea|b, V, K) that politician p will vote Yea on bill b.",
+    "extraction_mode": "fixed",
+    "paper": "K19-1053",
+    "title": "Roll Call Vote Prediction with Knowledge Augmented Models",
+    "section": "2 Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "produces",
+    "object": "probability",
+    "object_type": "Other",
+    "source_sentence": "All the models we explore take as input the voting record (denoted V) for a politician p, the text of a bill b, and (optional) knowledge about the politician (denoted K), and output a probability P(y = Yea|b, V, K) that politician p will vote Yea on bill b.",
+    "extraction_mode": "fixed",
+    "paper": "K19-1053",
+    "title": "Roll Call Vote Prediction with Knowledge Augmented Models",
+    "section": "2 Models"
+  },
+  {
+    "subject": "Universal Schema",
+    "predicate": "uses",
+    "object": "probability",
+    "object_type": "Other",
+    "source_sentence": "The final representation for the contextual knowledge from the KB for politician p is therefore a sum of the Freebase triple Universal Schema embeddings weighted by the probability that p would participate in each triple.",
+    "extraction_mode": "fixed",
+    "paper": "K19-1053",
+    "title": "Roll Call Vote Prediction with Knowledge Augmented Models",
+    "section": "2.3 Knowledge Base Augmented Model"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "bill embedding (vb) of size 50",
+    "object_type": "Other",
+    "source_sentence": "All the models we train (KJR16, NWGL, NWFR, KBUS) use a bill embedding (vb) of size 50, and a per-politician embedding vV of size 10.",
+    "extraction_mode": "fixed",
+    "paper": "K19-1053",
+    "title": "Roll Call Vote Prediction with Knowledge Augmented Models",
+    "section": "3.4 Model Hyperparameters and Training"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "vanilla SGD",
+    "object_type": "Method",
+    "source_sentence": "All models were trained using vanilla SGD with a learning rate of 0.1 for up to 20 epochs.",
+    "extraction_mode": "fixed",
+    "paper": "K19-1053",
+    "title": "Roll Call Vote Prediction with Knowledge Augmented Models",
+    "section": "3.4 Model Hyperparameters and Training"
+  }
+]

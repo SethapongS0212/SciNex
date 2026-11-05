@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "softmax function",
+    "object_type": "Method",
+    "source_sentence": "However, conventional seq2seq models are dense : they compute both attention weights and output probabilities with the softmax function , which always returns positive values.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "sparse transformations",
+    "object_type": "Method",
+    "source_sentence": "In this paper, we provide an affirmative answer to both questions by proposing neural sparse seq2seq models that replace the softmax transformations (both in the attention and output) by sparse transformations.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "produces",
+    "object": "Sparse Attention",
+    "object_type": "Concept",
+    "source_sentence": "our models are able to produce both sparse attention, a form of inductive bias that increases focus on relevant source words and makes align- ments more interpretable, and sparse output prob-abilities",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "OpenNMT-py",
+    "object_type": "Other",
+    "source_sentence": "We implemented all models with OpenNMT-py .2",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "uses",
+    "object": "Models",
+    "object_type": "Model",
+    "source_sentence": "we use an ensemble of those models",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "4.1 Morphological Inﬂection"
+  },
+  {
+    "subject": "Sparse Attention",
+    "predicate": "addresses",
+    "object": "inductive bias",
+    "object_type": "Concept",
+    "source_sentence": "Sparse attention can be justified as a form of inductive bias, since for tasks such as machine translation one expects only a few source words to be relevant for each translated word.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "addresses",
+    "object": "large vocabulary sizes",
+    "object_type": "Concept",
+    "source_sentence": "Mostly motivated by the challenges of large vocabulary sizes in seq2seq, an important research direction tackles replacing the cross-entropy loss with other losses or approximations (Bengio and Sen´ecal, 2008; Morin and Bengio, 2005; Kumar and Tsvetkov, 2019).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "addresses",
+    "object": "NLP",
+    "object_type": "Task",
+    "source_sentence": "Given the ubiquity of softmax in NLP, entmax has many potential applications.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "6 Conclusion and Future Work"
+  },
+  {
+    "subject": "Morphological Inflection",
+    "predicate": "addresses",
+    "object": "speech recognition",
+    "object_type": "Task",
+    "source_sentence": "the strong morphological inflection results point to usefulness in other tasks where probability is concentrated in a small number of hypotheses, such as speech recognition.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1146",
+    "title": "Sparse Sequence-to-Sequence Models",
+    "section": "6 Conclusion and Future Work"
+  }
+]

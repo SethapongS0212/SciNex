@@ -38,6 +38,15 @@ against the real papers.
 
 ## Status (October 2026)
 
+- **⛔ Corpus change for Part 2 (2026-10-26):** the finetuning runs now use the **ACL Anthology
+  papers** (805 papers with fixed entity lists) with the **fixed extractor**, not the 20-paper
+  corpus. Teacher `gpt-oss-20b` (local), student `Qwen3-8B`, on 2× RTX 5090.
+- **⭐ ACL finetuning result (2026-10-30, judge-free):** on 41 held-out ACL papers a Qwen3-8B
+  student trained with empty targets capped at 30% keeps **670 CEO triples at an 81.7% guard-pass
+  rate**, against the gpt-oss-20b teacher's 501 at 80.9%, with 99.9% valid JSON. Trained on the
+  teacher's raw mix (80% empty answers), the student collapsed to 15 triples. Not yet judged for
+  correctness. `project_scinex/results.md` Tables 15–16, `project_scinex/hands_off.md` §37.
+
 - **Extraction comparison, 20 papers, CEO ontology** (C1 concept correctness / C3 specificity /
   C4 relation correctness, ~40 judged triples per model): GPT-OSS-120B 88.8 / 80.0 / **86.2**,
   Gemma-4-31B 93.8 / 80.0 / 73.8, Qwen3-235B 75.0 / 60.0 / 47.5, Ministral-14B 70.0 / 52.5 / 41.2.

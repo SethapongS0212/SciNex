@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Tokenization",
+    "predicate": "uses",
+    "object": "Stanford Parser",
+    "object_type": "Method",
+    "source_sentence": "For English , Japanese , and Chinese, tokenization was performed using the Stanford Parser , the KyTea toolkit , and the Stanford Segmenter respectively.",
+    "extraction_mode": "fixed",
+    "paper": "W14-7002",
+    "title": "Forest-to-String SMT for Asian Language Translation: NAIST at WAT 2014",
+    "section": "2.2 Tokenization and Preprocessing"
+  },
+  {
+    "subject": "Tokenization",
+    "predicate": "uses",
+    "object": "KyTea toolkit",
+    "object_type": "Method",
+    "source_sentence": "For English , Japanese , and Chinese, tokenization was performed using the Stanford Parser , the KyTea toolkit , and the Stanford Segmenter respectively.",
+    "extraction_mode": "fixed",
+    "paper": "W14-7002",
+    "title": "Forest-to-String SMT for Asian Language Translation: NAIST at WAT 2014",
+    "section": "2.2 Tokenization and Preprocessing"
+  },
+  {
+    "subject": "Tokenization",
+    "predicate": "uses",
+    "object": "Stanford Segmenter",
+    "object_type": "Method",
+    "source_sentence": "For English , Japanese , and Chinese, tokenization was performed using the Stanford Parser , the KyTea toolkit , and the Stanford Segmenter respectively.",
+    "extraction_mode": "fixed",
+    "paper": "W14-7002",
+    "title": "Forest-to-String SMT for Asian Language Translation: NAIST at WAT 2014",
+    "section": "2.2 Tokenization and Preprocessing"
+  },
+  {
+    "subject": "Preliminary Analysis",
+    "predicate": "uses",
+    "object": "error analysis method of Akabe et al.",
+    "object_type": "Method",
+    "source_sentence": "Finally, in a preliminary analysis of our ja-en system using the error analysis method of Akabe et al.",
+    "extraction_mode": "fixed",
+    "paper": "W14-7002",
+    "title": "Forest-to-String SMT for Asian Language Translation: NAIST at WAT 2014",
+    "section": "2.2 Tokenization and Preprocessing"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "English Penn Treebank",
+    "object_type": "Dataset",
+    "source_sentence": "For the parsing models in English and Chinese, we use models trained on the English and Chinese Penn Treebanks respectively.",
+    "extraction_mode": "fixed",
+    "paper": "W14-7002",
+    "title": "Forest-to-String SMT for Asian Language Translation: NAIST at WAT 2014",
+    "section": "2.3 Syntactic Parsing"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "Chinese Penn Treebank",
+    "object_type": "Dataset",
+    "source_sentence": "For the parsing models in English and Chinese, we use models trained on the English and Chinese Penn Treebanks respectively.",
+    "extraction_mode": "fixed",
+    "paper": "W14-7002",
+    "title": "Forest-to-String SMT for Asian Language Translation: NAIST at WAT 2014",
+    "section": "2.3 Syntactic Parsing"
+  },
+  {
+    "subject": "Language Models",
+    "predicate": "trainedon",
+    "object": "Japanese data (en-ja and zh-ja)",
+    "object_type": "Dataset",
+    "source_sentence": "In addition , because we had two different data sets containing Japanese data (en-ja and zh-ja), we trained two separate language models and interpolated them together.",
+    "extraction_mode": "fixed",
+    "paper": "W14-7002",
+    "title": "Forest-to-String SMT for Asian Language Translation: NAIST at WAT 2014",
+    "section": "3.3 Language Model Training"
+  },
+  {
+    "subject": "Minimum Error Rate Training",
+    "predicate": "uses",
+    "object": "parameters of the log-linear model",
+    "object_type": "Other",
+    "source_sentence": "In order to optimize the parameters of the log- linear model, we use standard minimum error rate training.",
+    "extraction_mode": "fixed",
+    "paper": "W14-7002",
+    "title": "Forest-to-String SMT for Asian Language Translation: NAIST at WAT 2014",
+    "section": "3.4 Parameter Optimization"
+  },
+  {
+    "subject": "N-gram",
+    "predicate": "addresses",
+    "object": "sub-sentential context",
+    "object_type": "Context",
+    "source_sentence": "Sub-sentential context is considered to a lesser extent by the n-gram LM, and to a greater extent by the RNNLM, the theoretically infinite history of which could potentially capture syntactic or semantic agreement of words that are beyond the scope of traditional n-grams.",
+    "extraction_mode": "fixed",
+    "paper": "W14-7002",
+    "title": "Forest-to-String SMT for Asian Language Translation: NAIST at WAT 2014",
+    "section": "4 Issues for Context-aware Machine Translation"
+  },
+  {
+    "subject": "Continuous Space Language Models",
+    "predicate": "addresses",
+    "object": "Translation",
+    "object_type": "Task",
+    "source_sentence": "adding further evidence to the observation that continuous space language models are beneficial for translation.",
+    "extraction_mode": "fixed",
+    "paper": "W14-7002",
+    "title": "Forest-to-String SMT for Asian Language Translation: NAIST at WAT 2014",
+    "section": "5 Experimental Results"
+  }
+]

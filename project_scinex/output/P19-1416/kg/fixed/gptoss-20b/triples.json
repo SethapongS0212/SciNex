@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "performance competitive with the state of the art",
+    "object_type": "Other",
+    "source_sentence": "First, we design a single-hop QA model based on BERT , which, despite having no ability to reason across paragraphs, achieves performance competitive with the state of the art.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1416",
+    "title": "Compositional Questions Do Not Necessitate Multi-hop Reasoning",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "max-pooling",
+    "object_type": "Method",
+    "source_sentence": "Next, a classifier uses max-pooling and learned parameters W1 ∈Rh×4 to generate four scalars:",
+    "extraction_mode": "fixed",
+    "paper": "P19-1416",
+    "title": "Compositional Questions Do Not Necessitate Multi-hop Reasoning",
+    "section": "3.1 Model Description"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "learned parameters W1",
+    "object_type": "Method",
+    "source_sentence": "Next, a classifier uses max-pooling and learned parameters W1 ∈Rh×4 to generate four scalars:",
+    "extraction_mode": "fixed",
+    "paper": "P19-1416",
+    "title": "Compositional Questions Do Not Necessitate Multi-hop Reasoning",
+    "section": "3.1 Model Description"
+  },
+  {
+    "subject": "bigram",
+    "predicate": "uses",
+    "object": "TF-IDF similarity with the question",
+    "object_type": "Other",
+    "source_sentence": "We follow Chen et al. (2017) and retrieve paragraphs using bigram TF-IDF similarity with the question.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1416",
+    "title": "Compositional Questions Do Not Necessitate Multi-hop Reasoning",
+    "section": "3.2 Model Results"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "46.84 F1 on new distractors",
+    "object_type": "Metric",
+    "source_sentence": "We report the F1 score of single-paragraph BERT on these new distractors in Table 4: the accuracy declines from 67.08 F1 to 46.84 F1.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1416",
+    "title": "Compositional Questions Do Not Necessitate Multi-hop Reasoning",
+    "section": "5 Can We Find Better Distractors?"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "addresses",
+    "object": "multi-hop questions",
+    "object_type": "Task",
+    "source_sentence": "We largely attribute this to the insufficiencies of standard TF-IDF retrieval for multi-hop questions.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1416",
+    "title": "Compositional Questions Do Not Necessitate Multi-hop Reasoning",
+    "section": "6 Conclusions"
+  },
+  {
+    "subject": "Questions",
+    "predicate": "addresses",
+    "object": "RC questions",
+    "object_type": "Task",
+    "source_sentence": "However, as we demonstrate in Section 5, selecting strong distractors for RC questions is non-trivial.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1416",
+    "title": "Compositional Questions Do Not Necessitate Multi-hop Reasoning",
+    "section": "6 Conclusions"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "classifier",
+    "object_type": "Method",
+    "source_sentence": "Single-paragraph BERT is a pipeline which first retrieves a single paragraph using a classifier and then selects the associated answer.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1416",
+    "title": "Compositional Questions Do Not Necessitate Multi-hop Reasoning",
+    "section": "B Full Model Details"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "BERT-BASE",
+    "object_type": "Model",
+    "source_sentence": "The sequence is fed into BERT-BASE: where h is the hidden dimension of BERT.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1416",
+    "title": "Compositional Questions Do Not Necessitate Multi-hop Reasoning",
+    "section": "B Full Model Details"
+  }
+]

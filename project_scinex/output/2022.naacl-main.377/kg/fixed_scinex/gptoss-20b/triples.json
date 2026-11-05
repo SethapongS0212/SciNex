@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "paired texts",
+    "object_type": "Other",
+    "source_sentence": "One line of the studies addresses unsupervised text style transfer by constructing pseudo-paired texts and training a model on those paired texts.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.377",
+    "title": "Hyperconnect {seungju.han,beomsu.kim,jeffrey,seokjun.seo,airdish,enkhbayar.erdenee,",
+    "section": "A.1 Text Style Transfer"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "HLA-chat dataset",
+    "object_type": "Dataset",
+    "source_sentence": "For the StyleProb metric, we train a character style classifier using the utterances from ten selected characters in the HLA-chat dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.377",
+    "title": "Hyperconnect {seungju.han,beomsu.kim,jeffrey,seokjun.seo,airdish,enkhbayar.erdenee,",
+    "section": "C Evaluation Details"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "RoBERTa-base model",
+    "object_type": "Model",
+    "source_sentence": "train a 10-class classifier by fine-tuning the RoBERTa-base model.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.377",
+    "title": "Hyperconnect {seungju.han,beomsu.kim,jeffrey,seokjun.seo,airdish,enkhbayar.erdenee,",
+    "section": "C Evaluation Details"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "uses",
+    "object": "Amazon MTurk",
+    "object_type": "Other",
+    "source_sentence": "We use Amazon MTurk for collecting assessments, and Figure 2 shows the instructions and the interface for the human evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.377",
+    "title": "Hyperconnect {seungju.han,beomsu.kim,jeffrey,seokjun.seo,airdish,enkhbayar.erdenee,",
+    "section": "C Evaluation Details"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "HLA-Chat dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We mainly used HLA-Chat dataset for our evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.377",
+    "title": "Hyperconnect {seungju.han,beomsu.kim,jeffrey,seokjun.seo,airdish,enkhbayar.erdenee,",
+    "section": "C Evaluation Details"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "HLA-chat dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Style classi- fier for each task is trained using the same codebase and hyperparameters as in training the character style classifier in the HLA-chat dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.377",
+    "title": "Hyperconnect {seungju.han,beomsu.kim,jeffrey,seokjun.seo,airdish,enkhbayar.erdenee,",
+    "section": "E Failure Modes of Dynamic Match"
+  }
+]

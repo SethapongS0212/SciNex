@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "BART",
+    "predicate": "trainedon",
+    "object": "Common Crawl corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We use the Common Crawl (CC) corpus (§2.1) to pre-train BART models (§2.2).",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "2 Multilingual Denoising Pre-training"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "fine-tuning",
+    "object_type": "Method",
+    "source_sentence": "Our experiments in the later sections involve fine-tuning a range of models pre-trained on different subsets (§2.3).",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "2 Multilingual Denoising Pre-training"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "uses",
+    "object": "Nvidia V100 GPUs",
+    "object_type": "Other",
+    "source_sentence": "Optimization Our full model (including 25 languages) is trained on 256 Nvidia V100 GPUs (32GB) for 500K steps.",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "2.2 Model: mBART"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "dropout",
+    "object_type": "Other",
+    "source_sentence": "We started the training with dropout 0.1 and reduced it to 0.05 at 250K steps and 0 at 400K steps.",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "2.2 Model: mBART"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Fairseq",
+    "object_type": "Other",
+    "source_sentence": "All experiments are done with Fairseq .",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "2.2 Model: mBART"
+  },
+  {
+    "subject": "mBART",
+    "predicate": "trainedon",
+    "object": "Monolingual Data",
+    "object_type": "Dataset",
+    "source_sentence": "Compared to conventional semi-supervised methods (e.g., back-translation) and other pre- training for MT , we pre-train mBART on much more monolingual data with relatively deeper architecture.",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "2.4 Scaling-up Matters"
+  },
+  {
+    "subject": "mBART",
+    "predicate": "achieves",
+    "object": "consistent performance gains",
+    "object_type": "Other",
+    "source_sentence": "mBART pre-training provides consistent performance gains in low to medium resource sentence-level MT settings, including bi-text only and with back translation, and outperforms other existing pre-training schemes (§3.2).",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "3 Sentence-level Machine Translation"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achievesresult",
+    "object": "over 3 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "The models keep improving by over 3 BLEU for the rest of pre-training and have not fully converged after 500K steps.",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "3.3 Analysis"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "addresses",
+    "object": "Translation",
+    "object_type": "Task",
+    "source_sentence": "This result confirms our observation in §3.2 that our pre-training does not help translation in high-resource pairs.",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "3.3 Analysis"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "document-level translation",
+    "object_type": "Task",
+    "source_sentence": "We show that this pre-training significantly improves document-level translation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "4 Document-level Machine Translation"
+  },
+  {
+    "subject": "Models",
+    "predicate": "comparesagainst",
+    "object": "Hierarchical Attention Networks",
+    "object_type": "Model",
+    "source_sentence": "We also compare our models with Hierarchical Attention Networks on Zh-En",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "4.1 Experimental Settings"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "addresses",
+    "object": "Machine Translation",
+    "object_type": "Task",
+    "source_sentence": "unsupervised pre-training methods were also explored to improve the performance",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "addresses",
+    "object": "Machine Translation",
+    "object_type": "Task",
+    "source_sentence": "we focus on pre-training one denoising autoencoder, and adapt the weights of the entire model for various MT applications",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "achieves",
+    "object": "transfer learning ability",
+    "object_type": "Concept",
+    "source_sentence": "Our results also show the transfer learning ability of the learned representations from multilingual pre-training.",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "achieves",
+    "object": "more languages",
+    "object_type": "Languages",
+    "source_sentence": "In future work, we will scale-up the current pre-training to more languages, for example, an mBART100 model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "achieves",
+    "object": "more efficient models",
+    "object_type": "Model",
+    "source_sentence": "The size of our model makes it expensive to deploy in production—future work will explore pre-training more efficient models.",
+    "extraction_mode": "fixed",
+    "paper": "2020.tacl-1.47",
+    "title": "Multilingual Denoising Pre-training for Neural Machine Translation",
+    "section": "7 Conclusion"
+  }
+]

@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Named Entity Recognition",
+    "predicate": "uses",
+    "object": "CRFs",
+    "object_type": "Method",
+    "source_sentence": "named entity recognition for Twitter using CRFs",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Entity Disambiguation",
+    "predicate": "uses",
+    "object": "Wikipedia-based topic and entity disambiguation",
+    "object_type": "Method",
+    "source_sentence": "Wikipedia-based topic and entity disambiguation (van Erp et al., 2013)",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "POS Tagging",
+    "predicate": "addresses",
+    "object": "Named Entities",
+    "object_type": "Concept",
+    "source_sentence": "take a pipeline approach performing first tokenisation and POS tagging before using topic models to find named entities .",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "topic models",
+    "predicate": "addresses",
+    "object": "Named Entities",
+    "object_type": "Concept",
+    "source_sentence": "take a pipeline approach performing first tokenisation and POS tagging before using topic models to find named entities .",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "trainedon",
+    "object": "tweets",
+    "object_type": "Dataset",
+    "source_sentence": "We have also included in our evaluation of TwitIE, a Twitter-adapted version of the state-of-the-art Stanford NER, which we trained using both tweets and newswire.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "trainedon",
+    "object": "newswire",
+    "object_type": "Dataset",
+    "source_sentence": "We have also included in our evaluation of TwitIE, a Twitter-adapted version of the state-of-the-art Stanford NER, which we trained using both tweets and newswire.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "uses",
+    "object": "sentence splitter",
+    "object_type": "Method",
+    "source_sentence": "TwitIE re-uses the sentence splitter and name gazetteer components unmodified, though we re-trained and adapted all other components to the specifics of this genre.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3 The TwitIE IE Pipeline"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "uses",
+    "object": "name gazetteer components",
+    "object_type": "Method",
+    "source_sentence": "TwitIE re-uses the sentence splitter and name gazetteer components unmodified, though we re-trained and adapted all other components to the specifics of this genre.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3 The TwitIE IE Pipeline"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "uses",
+    "object": "gazetteer lists",
+    "object_type": "Method",
+    "source_sentence": "However, the TwitIE POS tagger does come with customised in-built gazetteer lists, used for tagging unambiguous named entities , e.g.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3 The TwitIE IE Pipeline"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "addresses",
+    "object": "genre-specific challenges",
+    "object_type": "Concept",
+    "source_sentence": "For the rest of the TwitIE components, adaptation to the specifics of the microblog genre is required, in order to address the genre-specific challenges of noisiness, brevity, idiosyncratic language, and social con-",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3 The TwitIE IE Pipeline"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "uses",
+    "object": "TextCat language identification algorithm",
+    "object_type": "Method",
+    "source_sentence": "The TwitIE system uses the TextCat language identification algorithm, which re- lies on n-gram frequency models to discriminate be- tween languages.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.2 Language Identiﬁcation"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "uses",
+    "object": "Tweet annotation",
+    "object_type": "Annotation",
+    "source_sentence": "TwitIE TextCat was used to as- sign automatically the lang feature to the tweet text (de- noted by the Tweet annotation).",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.2 Language Identiﬁcation"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "uses",
+    "object": "named entity recogniser",
+    "object_type": "Method",
+    "source_sentence": "Reliable tweet language identification allows us to only process those tweets written in English with the TwitIE English POS tagger and named entity recogniser.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.2 Language Identiﬁcation"
+  },
+  {
+    "subject": "Hashtags",
+    "predicate": "uses",
+    "object": "annotation HashTag",
+    "object_type": "Concept",
+    "source_sentence": "Hashtags and user mentions are two tokens (i.e., \\# and nike in the above example) with a separate annotation HashTag covering both.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.3 Tokenisation"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "90.54% token accuracy",
+    "object_type": "Metric",
+    "source_sentence": "we further improve the performance of our Twitter-adapted tagger to 90.54% token accuracy using the PTB tagset (better than state-of-the-art).",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.4 Normalisation"
+  },
+  {
+    "subject": "POS tagger",
+    "predicate": "achieves",
+    "object": "30% absolute precision",
+    "object_type": "Metric",
+    "source_sentence": "Thanks to adaptation in the earlier components in TwitIE (especially the POS tagger ), we demonstrate a +30% absolute precision and +20% absolute F1 performance increase, as compared to ANNIE, mainly with respect to Date, Organization and in particular Person.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.5 Part-of-speech Tagging"
+  },
+  {
+    "subject": "POS tagger",
+    "predicate": "achieves",
+    "object": "20% absolute F1 performance increase",
+    "object_type": "Metric",
+    "source_sentence": "Thanks to adaptation in the earlier components in TwitIE (especially the POS tagger ), we demonstrate a +30% absolute precision and +20% absolute F1 performance increase, as compared to ANNIE, mainly with respect to Date, Organization and in particular Person.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.5 Part-of-speech Tagging"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "comparesagainst",
+    "object": "Ritter's Twitter NER algorithm",
+    "object_type": "Model",
+    "source_sentence": "TwitIE also out- performs Ritter's Twitter NER algorithm and our adaptation of the Stanford NER, which we trained using both tweets and newswire (see for details).",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.5 Part-of-speech Tagging"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "comparesagainst",
+    "object": "our adaptation of the Stanford NER",
+    "object_type": "Model",
+    "source_sentence": "TwitIE also out- performs Ritter's Twitter NER algorithm and our adaptation of the Stanford NER, which we trained using both tweets and newswire (see for details).",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "3.5 Part-of-speech Tagging"
+  },
+  {
+    "subject": "TwitIE",
+    "predicate": "addresses",
+    "object": "microblogs",
+    "object_type": "Concept",
+    "source_sentence": "This paper presented the TwitIE open-source NER pipeline, specifically developed to handle microblogs.",
+    "extraction_mode": "fixed",
+    "paper": "R13-1011",
+    "title": "TwitIE: An Open-Source Information Extraction Pipeline for Microblog Text",
+    "section": "4 Conclusion"
+  }
+]

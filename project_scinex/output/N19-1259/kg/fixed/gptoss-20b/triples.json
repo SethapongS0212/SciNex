@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Lexicons",
+    "predicate": "uses",
+    "object": "word lists",
+    "object_type": "Other",
+    "source_sentence": "(2006) utilize lexicons and human-built word lists to extract the targets and opinion words in the corpus, and then identify valid feature-opinion pairs with syntactic rule templates based on dependency parsing trees.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "2 Related works"
+  },
+  {
+    "subject": "rule",
+    "predicate": "uses",
+    "object": "syntactic",
+    "object_type": "Other",
+    "source_sentence": "(2006) utilize lexicons and human-built word lists to extract the targets and opinion words in the corpus, and then identify valid feature-opinion pairs with syntactic rule templates based on dependency parsing trees.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "2 Related works"
+  },
+  {
+    "subject": "Target-oriented Opinion Words Extraction",
+    "predicate": "addresses",
+    "object": "downstream tasks in ABSA",
+    "object_type": "Task",
+    "source_sentence": "We propose a sequence labeling subtask for ABSA: TOWE (Target-oriented Opinion Words Extraction), which can offer assistance and interpretability for downstream tasks in ABSA.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "2 Related works"
+  },
+  {
+    "subject": "Sequence Labeling",
+    "predicate": "addresses",
+    "object": "detecting the corresponding opinion words",
+    "object_type": "Task",
+    "source_sentence": "Our model for TOWE aims at detecting the corresponding opinion words in one step with sequence labeling.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "2 Related works"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "whole sentence embeddings",
+    "object_type": "Other",
+    "source_sentence": "We use a BiLSTM to model the whole sentence embeddings e = {e1, e2, · · ·, ei,..., en} and obtain global contextualized representation HG as follows:",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "3.3.4 IOG: IO-LSTM + Global context"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "probability",
+    "object_type": "Probability",
+    "source_sentence": "We use softmax to compute the probability: p(yi|ri) = softmax (Wsri + bs).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "3.4 Decoder and Training"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "tag",
+    "object_type": "Tag",
+    "source_sentence": "Greedy decoding just simply selects the tag with highest point-wise probability.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "3.4 Decoder and Training"
+  },
+  {
+    "subject": "Word Embedding",
+    "predicate": "uses",
+    "object": "GloVe Vectors",
+    "object_type": "Artifact",
+    "source_sentence": "we initialize word embedding vectors with 300-dimension GloVe vectors which are pre-trained on unlabeled data of 840 billion tokens .",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "4.2 Settings"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "testing sets",
+    "object_type": "Dataset",
+    "source_sentence": "Then we test the models on testing sets and the average result of five runs is reported.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "4.2 Settings"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "This method is an LSTM/BiLSTM network built on top of word embeddings proposed by .",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "4.4 Compared Methods"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "This method is an LSTM/BiLSTM network built on top of word embeddings proposed by .",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "4.4 Compared Methods"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "softmax layer",
+    "object_type": "Method",
+    "source_sentence": "We pass the whole sentence into the LSTM/BiLSTM and each hidden state is fed to a softmax layer for three-class classification, which works as sentence-level opinion words extraction.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "4.4 Compared Methods"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "softmax layer",
+    "object_type": "Method",
+    "source_sentence": "We pass the whole sentence into the LSTM/BiLSTM and each hidden state is fed to a softmax layer for three-class classification, which works as sentence-level opinion words extraction.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "4.4 Compared Methods"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "Distance-rule method",
+    "object_type": "Method",
+    "source_sentence": "Pipeline: This method combines BiLSTM and Distance-rule method in a pipelined way.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "4.4 Compared Methods"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "sentence-level opinion words extraction model",
+    "object_type": "Model",
+    "source_sentence": "We first train a sentence-level opinion words extraction model with BiLSTM and extract all the opinion words in the test sentences; then we select the closest extracted opinion words of the target as the result.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "4.4 Compared Methods"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "word representation",
+    "object_type": "Concept",
+    "source_sentence": "The word representation at each position is the concatenation of word embedding and target vector, which is then fed into a BiLSTM for sequence labeling.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "4.4 Compared Methods"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "sequence labeling",
+    "object_type": "Task",
+    "source_sentence": "The word representation at each position is the concatenation of word embedding and target vector, which is then fed into a BiLSTM for sequence labeling.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "4.4 Compared Methods"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "word embedding",
+    "object_type": "Concept",
+    "source_sentence": "The word representation at each position is the concatenation of word embedding and target vector, which is then fed into a BiLSTM for sequence labeling.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "4.4 Compared Methods"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "three-class classification",
+    "object_type": "Task",
+    "source_sentence": "We pass the whole sentence into the LSTM/BiLSTM and each hidden state is fed to a softmax layer for three-class classification, which works as sentence-level opinion words extraction.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "4.4 Compared Methods"
+  },
+  {
+    "subject": "Target-oriented Opinion Words Extraction",
+    "predicate": "addresses",
+    "object": "extracting the corresponding opinion words",
+    "object_type": "Task",
+    "source_sentence": "In this paper, we propose a novel subtask for aspect - based sentiment analysis : Target-oriented Opinion Words Extraction (TOWE) which aims at extracting the corresponding opinion words for a given opinion target.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1259",
+    "title": "Target-oriented Opinion Words Extraction with Target-fused Neural Sequence Labeling",
+    "section": "5 Conclusion and Future Works"
+  }
+]

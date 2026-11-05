@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "training",
+    "object_type": "Other",
+    "source_sentence": "Algorithm 1 outlines one epoch of training for learning the embeddings as well as the parameters of the φ function.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "stochastic",
+    "object_type": "Other",
+    "source_sentence": "The training is performed using stochastic gradient descent with mini-batches.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Score Function",
+    "object_type": "Artifact",
+    "source_sentence": "Different models have been proposed in the literature by mainly changing the score function.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "2 Background and Notation"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Artifact",
+    "source_sentence": "Note that some models may break the vector embeddings into multiple pieces and reshape each piece before using it in the score function.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "2 Background and Notation"
+  },
+  {
+    "subject": "Score Function",
+    "predicate": "uses",
+    "object": "DistMult",
+    "object_type": "Model",
+    "source_sentence": "Having the embeddings for v, r and u, we use a score function (e.g., DistMult) to compute the score for this triple being true.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "3.1 Proposed Training Procedure"
+  },
+  {
+    "subject": "Aggregation",
+    "predicate": "uses",
+    "object": "DistMult",
+    "object_type": "Model",
+    "source_sentence": "While we proposed the aggregation functions for DistMult, note that they can be easily extended to other models such as SimplE, ComplEx , and QuatE that have 2, 4 and 8 ⟨.,.,.⟩terms respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "3.2 Proposed Models"
+  },
+  {
+    "subject": "Graph Convolutional Networks",
+    "predicate": "achieves",
+    "object": "inductive and out-of-sample learning",
+    "object_type": "Task",
+    "source_sentence": "Graph convolutional networks (GCNs) have proved effective for inductive and out-of-sample learning when initial entity features are available.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "5.1 Baselines"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "hyperparameters",
+    "object_type": "Concept",
+    "source_sentence": "selected the hyperparameters corresponding to learning rate and L2 regularization via a grid search over {0.1, 0.01} and {0.1, 0.01, 0.001, 0.0001} respectively validating the models every 100 epochs and selecting the best hyperparameters and epoch based on validation filtered MRR.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "5.2 Implementation Details"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "training",
+    "object_type": "Other",
+    "source_sentence": "using Algorithm 2 for training as opposed to Algorithm 1 results in a boost of performance.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "5.3 Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Algorithm",
+    "object_type": "Method",
+    "source_sentence": "the models whose names start with an \"o\" use Algorithm 2 and the models without \"o\" correspond to the variants where Algorithm 1 is used instead.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "5.3 Results"
+  }
+]

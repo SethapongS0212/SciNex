@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "YouCookII dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Experiments on the YouCookII dataset (a cooking-domain instruc- tional video corpus) are conducted to show that our model can achieve state -of-the-art results and the ablation studies demonstrate that the transcript can not only improve procedure proposition per- formance but also be very effective for procedure captioning .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "cooking-domain instructional video corpus",
+    "object_type": "Concept",
+    "source_sentence": "Experiments on the YouCookII dataset (a cooking-domain instruc- tional video corpus) are conducted to show that our model can achieve state -of-the-art results and the ablation studies demonstrate that the transcript can not only improve procedure proposition per- formance but also be very effective for procedure captioning .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "sliding window",
+    "object_type": "Other",
+    "source_sentence": "To embed transcripts, we first split all tokens in the transcript by a sliding window and input them into a uncased BERT-large model.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "3.1 Context-Aware Fusion Module"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "sentences",
+    "object_type": "Task",
+    "source_sentence": "Next, we encode these sentences by a Transformer and take the first output as the context-aware transcript embedding e ∈Re.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "3.1 Context-Aware Fusion Module"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "Context",
+    "object_type": "Concept",
+    "source_sentence": "Then we adopt another Transformer model to further encode the context information, and output X = {x1, · · ·, xT } ∈RT×d.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "3.1 Context-Aware Fusion Module"
+  },
+  {
+    "subject": "Bi-directional LSTM",
+    "predicate": "uses",
+    "object": "fused feature C",
+    "object_type": "Other",
+    "source_sentence": "Finally, we combine each of the frame features in X with transcript feature e to get the fused feature C = {c1, · · ·, ct, · · ·, cT |ct = {xt ◦e}} and feed it into a Bi-directional LSTM in order to encode past and future contextual information of video frames: F = Bi-LSTM(C) where F = {f1 · · · fT } ∈ RT×f, and f is the hidden size of the LSTM layers.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "3.1 Context-Aware Fusion Module"
+  },
+  {
+    "subject": "Bi-directional LSTM",
+    "predicate": "uses",
+    "object": "Contextual Information",
+    "object_type": "Concept",
+    "source_sentence": "Finally, we combine each of the frame features in X with transcript feature e to get the fused feature C = {c1, · · ·, ct, · · ·, cT |ct = {xt ◦e}} and feed it into a Bi-directional LSTM in order to encode past and future contextual information of video frames: F = Bi-LSTM(C) where F = {f1 · · · fT } ∈ RT×f, and f is the hidden size of the LSTM layers.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "3.1 Context-Aware Fusion Module"
+  },
+  {
+    "subject": "Bi-directional LSTM",
+    "predicate": "uses",
+    "object": "Frames",
+    "object_type": "Task",
+    "source_sentence": "Finally, we combine each of the frame features in X with transcript feature e to get the fused feature C = {c1, · · ·, ct, · · ·, cT |ct = {xt ◦e}} and feed it into a Bi-directional LSTM in order to encode past and future contextual information of video frames: F = Bi-LSTM(C) where F = {f1 · · · fT } ∈ RT×f, and f is the hidden size of the LSTM layers.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "3.1 Context-Aware Fusion Module"
+  },
+  {
+    "subject": "Classification",
+    "predicate": "produces",
+    "object": "classification result",
+    "object_type": "Other",
+    "source_sentence": "The pl is the classification result of the procedure extraction module and the value of 1 will be 1 if the predicted class of extracted procedure proposal is identical to the class of the ground-truth proposal with the maximal IoU and 0 otherwise.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "3.4 Loss Functions"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "effectiveness of utilizing transcripts",
+    "object_type": "Concept",
+    "source_sentence": "We conduct the ablation experiments to show the effectiveness of utilizing transcripts.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1641",
+    "title": "Dense Procedure Captioning in Narrated Instructional Videos",
+    "section": "4.6 Ablation and analysis"
+  }
+]

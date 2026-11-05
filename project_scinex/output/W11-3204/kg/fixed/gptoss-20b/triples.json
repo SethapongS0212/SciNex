@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "our model",
+    "object_type": "Model",
+    "source_sentence": "train our model using the Margin Infused Relaxed Algorithm (MIRA)",
+    "extraction_mode": "fixed",
+    "paper": "W11-3204",
+    "title": "Simple Discriminative Training for Machine Transliteration",
+    "section": "2.1 Motivation"
+  },
+  {
+    "subject": "SMT",
+    "predicate": "uses",
+    "object": "word alignment tool",
+    "object_type": "Method",
+    "source_sentence": "At the first step, we can apply any word alignment tool commonly used in SMT.",
+    "extraction_mode": "fixed",
+    "paper": "W11-3204",
+    "title": "Simple Discriminative Training for Machine Transliteration",
+    "section": "3 Strategies for Generating Training Examples"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "aligner",
+    "object_type": "Method",
+    "source_sentence": "Given a training corpus containing parallel name pairs, we use the aligner to obtain initial character alignments.",
+    "extraction_mode": "fixed",
+    "paper": "W11-3204",
+    "title": "Simple Discriminative Training for Machine Transliteration",
+    "section": "3 Strategies for Generating Training Examples"
+  },
+  {
+    "subject": "Example",
+    "predicate": "produces",
+    "object": "tuple of character pairs",
+    "object_type": "Other",
+    "source_sentence": "Thus, our training example can be directly written as (⟨x1, y1⟩, ⟨x2, y2⟩,..., ⟨x5, y5⟩).",
+    "extraction_mode": "fixed",
+    "paper": "W11-3204",
+    "title": "Simple Discriminative Training for Machine Transliteration",
+    "section": "3 Strategies for Generating Training Examples"
+  },
+  {
+    "subject": "Example",
+    "predicate": "produces",
+    "object": "sequence of B-y1, I-y1, B-y2, B-y3, B-y4",
+    "object_type": "Other",
+    "source_sentence": "Our training example becomes (⟨x1, B-y1⟩, ⟨x2, I-y1⟩, ⟨x3, B-y2⟩, ⟨x4, B-y3⟩, ⟨x5, B-y4⟩).",
+    "extraction_mode": "fixed",
+    "paper": "W11-3204",
+    "title": "Simple Discriminative Training for Machine Transliteration",
+    "section": "3 Strategies for Generating Training Examples"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "uses",
+    "object": "GIZA++",
+    "object_type": "Tool",
+    "source_sentence": "We used two popular alignment tools, including GIZA++ and BerkeleyAligner.",
+    "extraction_mode": "fixed",
+    "paper": "W11-3204",
+    "title": "Simple Discriminative Training for Machine Transliteration",
+    "section": "5 Development and Final Results"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "uses",
+    "object": "BerkeleyAligner",
+    "object_type": "Tool",
+    "source_sentence": "We used two popular alignment tools, including GIZA++ and BerkeleyAligner.",
+    "extraction_mode": "fixed",
+    "paper": "W11-3204",
+    "title": "Simple Discriminative Training for Machine Transliteration",
+    "section": "5 Development and Final Results"
+  }
+]

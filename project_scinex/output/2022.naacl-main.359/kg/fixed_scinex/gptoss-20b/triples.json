@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "XLM",
+    "predicate": "comparesagainst",
+    "object": "mBERT",
+    "object_type": "Model",
+    "source_sentence": "For example, XLM-R is worse than mBERT on quantifier reasoning on XQuAD Chinese, especially at proportional quantifiers, but this is not the case on MLQA Chinese.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.359",
+    "title": "Generalized Quantiﬁers as a Source of Error in Multilingual NLU Benchmarks",
+    "section": "5 Quantiﬁers in Cross-lingual NLU Benchmarks"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "MNLI",
+    "object_type": "Dataset",
+    "source_sentence": "To construct the hypotheses, we rely on RoBERTa fine-tuned on MNLI and manually select examples about which the model is unsure or incorrect.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.359",
+    "title": "Generalized Quantiﬁers as a Source of Error in Multilingual NLU Benchmarks",
+    "section": "6 GQNLI"
+  },
+  {
+    "subject": "BART",
+    "predicate": "comparesagainst",
+    "object": "RoBERTa",
+    "object_type": "Model",
+    "source_sentence": "BART is no longer the second best model, replaced by RoBERTa.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.359",
+    "title": "Generalized Quantiﬁers as a Source of Error in Multilingual NLU Benchmarks",
+    "section": "7 Discussion"
+  },
+  {
+    "subject": "Cross-Lingual Transfer",
+    "predicate": "addresses",
+    "object": "a large cross-lingual transfer gap on LMs",
+    "object_type": "Concept",
+    "source_sentence": "(2021) incorporated quantifiers into the Logic class and found a large cross-lingual transfer gap on LMs.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.359",
+    "title": "Generalized Quantiﬁers as a Source of Error in Multilingual NLU Benchmarks",
+    "section": "7 Discussion"
+  }
+]

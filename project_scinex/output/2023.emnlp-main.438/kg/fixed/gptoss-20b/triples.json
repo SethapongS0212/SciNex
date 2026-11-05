@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "Cross-lingual Models",
+    "predicate": "evaluatedon",
+    "object": "translated test sets",
+    "object_type": "Dataset",
+    "source_sentence": "Artetxe et al. (2020a) observed that cross-lingual models when evaluated on translated test sets show false improvements simply due to induced translation artifacts.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "translated training data",
+    "object_type": "Dataset",
+    "source_sentence": "When investigating the effects of translationese in cross-lingual summarization , Wang et al. (2021) found that models trained on translated training data suffer in real-world scenarios.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Extensive Evaluation",
+    "predicate": "reports",
+    "object": "Quantitive Analysis",
+    "object_type": "Other",
+    "source_sentence": "We present an extensive evaluation that measures (i) the extent to which our methods mitigate translationese as well as adequacy and fluency of the outputs (Quantitive Analysis)",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "2.1 Text Style Transfer"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "probability vectors",
+    "object_type": "Other",
+    "source_sentence": "During the training phase, we use these vectors to compute the language model loss and the semantic similarity loss.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "3.2 Joint Training Architecture"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "We feed the approximated decoder output πj (from the j-th decoding step) to the pretrained language model LMog by computing the expected embeddings Elmπj.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "3.2 Joint Training Architecture"
+  },
+  {
+    "subject": "Language Model Pretraining",
+    "predicate": "uses",
+    "object": "EuroParl Corpus",
+    "object_type": "Dataset",
+    "source_sentence": "For DAE and Language Model pretraining (for Joint Training), English and German monolingual data are collected from the EuroParl Corpus from the OPUS website7 .",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "4.1 Data"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "uses",
+    "object": "EuroParl Corpus",
+    "object_type": "Dataset",
+    "source_sentence": "For DAE and Language Model pretraining (for Joint Training), English and German monolingual data are collected from the EuroParl Corpus from the OPUS website7 .",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "4.1 Data"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "uses",
+    "object": "Transformer Decoder Language Model",
+    "object_type": "Model",
+    "source_sentence": "In Joint Training, we use the Fairseq implementation of a Transformer Decoder Language Model to compute Language Model Loss during training and validation.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "4.2 Model Specifications"
+  },
+  {
+    "subject": "Style Transfer",
+    "predicate": "uses",
+    "object": "BERT-based binary classifier",
+    "object_type": "Model",
+    "source_sentence": "The style transfer models are evaluated using a BERT-based binary classifier trained to distinguish human-translated data from originals.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "4.2 Model Specifications"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "MPDE data",
+    "object_type": "Dataset",
+    "source_sentence": "The binary classifier is trained on the MPDE data with equal amounts of human-translated and original data (hTR,og).",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "4.2 Model Specifications"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "achieves",
+    "object": "style transfer",
+    "object_type": "Task",
+    "source_sentence": "Next, we examine if the same holds true for the Joint Training architecture and if joint training further improves the style transfer.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "5.1 Quantitative Analysis"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "achieves",
+    "object": "higher LMog perplexities",
+    "object_type": "Other",
+    "source_sentence": "The TTR and LD scores for Joint Training [2]- (hTR/mTR) models are higher than for the models without a threshold, although they achieve higher LMog perplexities.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "5.2 Qualitative Analysis"
+  },
+  {
+    "subject": "Training Classifiers",
+    "predicate": "uses",
+    "object": "original and translated text",
+    "object_type": "Dataset",
+    "source_sentence": "Detecting translationese reliably involves analyzing large quantities of data or training classifiers on original and translated text.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Style Transfer",
+    "predicate": "uses",
+    "object": "oracle-based style transfer approach",
+    "object_type": "Method",
+    "source_sentence": "Future work aims to address this phenomenon using an oracle-based style transfer approach.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "preprocessing",
+    "predicate": "uses",
+    "object": "Moses",
+    "object_type": "Method",
+    "source_sentence": "Data Preprocessing: First, the paragraphs are split into sentences using NLTK and then tokenized and truecased using standard Moses scripts.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "A.1 Dataset Statistics for Style Transfer System"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "SLURM cluster",
+    "object_type": "Other",
+    "source_sentence": "We run our experiments on SLURM cluster using GPU instances of V100-32GB or RTXA6000.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "A.4 Experimental Setup"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "GPU instances of V100-32GB or RTXA6000",
+    "object_type": "GPUs",
+    "source_sentence": "We run our experiments on SLURM cluster using GPU instances of V100-32GB or RTXA6000.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "A.4 Experimental Setup"
+  },
+  {
+    "subject": "Joint Training",
+    "predicate": "uses",
+    "object": "single GPU",
+    "object_type": "GPUs",
+    "source_sentence": "Both the baseline and the joint training approach are run on a single GPU while for DAE pretraining and LM training (pretraining and finetuning), we use 2 GPUs with 16 CPUs with each CPU containing 12 GB memory.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "A.4 Experimental Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "our datasets",
+    "object_type": "Datasets",
+    "source_sentence": "One training on our datasets takes approximately 4 hours with the Baseline Approach and 7-9 hours for the Joint Training Approach.",
+    "extraction_mode": "fixed",
+    "paper": "2023.emnlp-main.438",
+    "title": "*Work done while the author was a student at Saarland University.",
+    "section": "A.4 Experimental Setup"
+  }
+]

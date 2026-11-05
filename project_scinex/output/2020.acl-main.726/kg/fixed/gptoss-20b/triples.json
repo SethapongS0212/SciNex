@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Transformer",
+    "object_type": "Model",
+    "source_sentence": "Bert combines Transformer and a large corpus to produce an even more complete and better sentence -level represen- tation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.726",
+    "title": "Feature Projection for Improved Text Classiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "softmax",
+    "object_type": "Method",
+    "source_sentence": "which is then fed to the classifier Cc: YGRL = softmax( efc · Wc + bc), (7) where Wc and bc are the weights and bias of Cc respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.726",
+    "title": "Feature Projection for Improved Text Classiﬁcation",
+    "section": "YOPL YGRL"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "Dataset D",
+    "object_type": "Dataset",
+    "source_sentence": "Input: Dataset D = {(xi, yi)}N i=1, xi's embedding matrix Xi ∈RLk; Randomly initialized FP- Net's parameters θ.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.726",
+    "title": "Feature Projection for Improved Text Classiﬁcation",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "two-layer LSTM for feature extraction",
+    "object_type": "Method",
+    "source_sentence": "For the RNN-based models, we use a two- layer LSTM for feature extraction and the hidden state of each layer is set to 256.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.726",
+    "title": "Feature Projection for Improved Text Classiﬁcation",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "Transformer's encoder",
+    "object_type": "Method",
+    "source_sentence": "For the Transformer-based models, we use Transformer's encoder as the feature extractor, specifically with single-head and 3 blocks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.726",
+    "title": "Feature Projection for Improved Text Classiﬁcation",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "fine-tuned pre-trained Bert-base parameters",
+    "object_type": "Method",
+    "source_sentence": "For the Bert-based models, we fine-tuned the pre-trained Bert-base parameters.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.726",
+    "title": "Feature Projection for Improved Text Classiﬁcation",
+    "section": "4.3 Implementation Details"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "stochastic gradient",
+    "object_type": "Method",
+    "source_sentence": "In the training of the C-net module, we use a stochastic gradient with 0.9 as the momentum and the following annealing learning rate.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.726",
+    "title": "Feature Projection for Improved Text Classiﬁcation",
+    "section": "4.3 Implementation Details"
+  }
+]

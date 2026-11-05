@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance on multiple language pairs",
+    "object_type": "Other",
+    "source_sentence": "Recently, the self-attention based Transformer model has achieved state-of-the- art performance on multiple language pairs.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1298",
+    "title": "Lattice-Based Transformer Encoder for Neural Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "Input",
+    "object_type": "Other",
+    "source_sentence": "All the edges in the lattice G are the actual input tokens for NMT.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1298",
+    "title": "Lattice-Based Transformer Encoder for Neural Machine Translation",
+    "section": "3.1 Lattices"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "OpenNMT",
+    "object_type": "Other",
+    "source_sentence": "We implemented our model based on the OpenNMT and trained and evaluated all models on a single NVIDIA GeForce GTX 1080 Ti GPU.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1298",
+    "title": "Lattice-Based Transformer Encoder for Neural Machine Translation",
+    "section": "4.1 Setup"
+  },
+  {
+    "subject": "LSA",
+    "predicate": "achieves",
+    "object": "0.42 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "our LPE and LSA models both outperform the Transformer baseline model of 0.58 and 0.42 BLEU respectively.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1298",
+    "title": "Lattice-Based Transformer Encoder for Neural Machine Translation",
+    "section": "4.2 Overall Performance"
+  },
+  {
+    "subject": "LSA",
+    "predicate": "achieves",
+    "object": "0.23 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "our LPE and LSA method outperforms normal positional encodings by 0.39 and 0.23 BLEU respectively which shows that our methods are effective.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1298",
+    "title": "Lattice-Based Transformer Encoder for Neural Machine Translation",
+    "section": "4.3 Analysis"
+  },
+  {
+    "subject": "LSA",
+    "predicate": "addresses",
+    "object": "local disorder",
+    "object_type": "Concept",
+    "source_sentence": "While our LSA method treats all preceding and succeeding edges equally which seems to address local disorder better but ignore long-range order.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1298",
+    "title": "Lattice-Based Transformer Encoder for Neural Machine Translation",
+    "section": "4.3 Analysis"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "simple labeled graph",
+    "object_type": "Other",
+    "source_sentence": "Different from Veliˇckovi´c et al. (2017), our work also provides an attempt to encode a simple labeled graph into Transformer and can be used in any tasks which need Transformer encoder to learn sequence representation .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1298",
+    "title": "Lattice-Based Transformer Encoder for Neural Machine Translation",
+    "section": "6 Conclusions"
+  },
+  {
+    "subject": "Transformer Encoder",
+    "predicate": "uses",
+    "object": "sequence representation",
+    "object_type": "Other",
+    "source_sentence": "Different from Veliˇckovi´c et al. (2017), our work also provides an attempt to encode a simple labeled graph into Transformer and can be used in any tasks which need Transformer encoder to learn sequence representation .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1298",
+    "title": "Lattice-Based Transformer Encoder for Neural Machine Translation",
+    "section": "6 Conclusions"
+  }
+]

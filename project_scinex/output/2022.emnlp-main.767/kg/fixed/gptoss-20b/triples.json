@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Sentences",
+    "predicate": "uses",
+    "object": "Direct Assessment scores",
+    "object_type": "Metric",
+    "source_sentence": "The sentences were annotated with direct assessment (DA) scores , instead of labels based on post-editing .",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.767",
+    "title": "PreQuEL: Quality Estimation of Machine Translation Outputs in Advance",
+    "section": "3.1 Quality Estimation Data"
+  },
+  {
+    "subject": "Translations",
+    "predicate": "uses",
+    "object": "MT model",
+    "object_type": "Model",
+    "source_sentence": "Translations were produced with a state-of-the-art MT model built using the fairseq toolkit (Ott et al.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.767",
+    "title": "PreQuEL: Quality Estimation of Machine Translation Outputs in Advance",
+    "section": "3.1 Quality Estimation Data"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "achieves",
+    "object": "DA score of 70-90",
+    "object_type": "Metric",
+    "source_sentence": "According to the FLORES guidelines, a translation that closely preserves the semantics of the source sentence gets a DA score of 70-90.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.767",
+    "title": "PreQuEL: Quality Estimation of Machine Translation Outputs in Advance",
+    "section": "8 Determining whether to MT"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "achieves",
+    "object": "DA score of 91-100",
+    "object_type": "Metric",
+    "source_sentence": "Only a perfect translation gets a score of 91-100.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.767",
+    "title": "PreQuEL: Quality Estimation of Machine Translation Outputs in Advance",
+    "section": "8 Determining whether to MT"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "uses",
+    "object": "Sentences",
+    "object_type": "Concept",
+    "source_sentence": "Moreover, to assert reliance on the source , trans- lation of unrelated sentences should be included in the translation as well.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.767",
+    "title": "PreQuEL: Quality Estimation of Machine Translation Outputs in Advance",
+    "section": "9.1 Augmentations for Quality Estimation"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "xlm-roberta-large",
+    "object_type": "Model",
+    "source_sentence": "When training a PreQuEL model with a source language that is not English, we replace roberta-large with xlm-roberta-large.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.767",
+    "title": "PreQuEL: Quality Estimation of Machine Translation Outputs in Advance",
+    "section": "A Computing Infrastructure"
+  },
+  {
+    "subject": "COMET",
+    "predicate": "achieves",
+    "object": "average correlation of 0.219",
+    "object_type": "Metric",
+    "source_sentence": "The COMET model gets an average correlation of 0.219 and std 0.005.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.767",
+    "title": "PreQuEL: Quality Estimation of Machine Translation Outputs in Advance",
+    "section": "C Additional Experiments"
+  },
+  {
+    "subject": "COMET",
+    "predicate": "achieves",
+    "object": "correlation of 0.652",
+    "object_type": "Metric",
+    "source_sentence": "Running the COMET model on the full data results with correlation of 0.652.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.767",
+    "title": "PreQuEL: Quality Estimation of Machine Translation Outputs in Advance",
+    "section": "C Additional Experiments"
+  }
+]

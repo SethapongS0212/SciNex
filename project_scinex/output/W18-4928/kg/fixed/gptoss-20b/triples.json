@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Convolutional Neural Networks",
+    "predicate": "uses",
+    "object": "character level embeddings",
+    "object_type": "Other",
+    "source_sentence": "The character level embeddings that are computed using convolutional neural networks (CNNs).",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Bidirectional LSTM",
+    "predicate": "uses",
+    "object": "vector embeddings",
+    "object_type": "Other",
+    "source_sentence": "After this, we use two stacked Bidirectional LSTM (BDLSTM) layers , obtaining a list of vector embeddings for each word inside the original sequence.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.1 Graph-based encoding with neural networks"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "adjacency matrix",
+    "object_type": "Other",
+    "source_sentence": "In order to extract the entities, we use an algorithm to compute all complete subgraphs from the adjacency matrix.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.2 Expression decoding and label selection"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "backtracking",
+    "object_type": "Other",
+    "source_sentence": "In our experiments we used backtracking to perform the extraction of complete subgraphs.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.2 Expression decoding and label selection"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "mini- graph",
+    "object_type": "Other",
+    "source_sentence": "The algorithm starts by building a mini- graph with two nodes that are adjacent.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.2 Expression decoding and label selection"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "words",
+    "object_type": "Other",
+    "source_sentence": "We only compute embeddings for frequently-occurring words and lemmas",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.2 Expression decoding and label selection"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "lemmas",
+    "object_type": "Other",
+    "source_sentence": "We only compute embeddings for frequently-occurring words and lemmas",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.2 Expression decoding and label selection"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "achieves",
+    "object": "correct label for the sequence",
+    "object_type": "Other",
+    "source_sentence": "We fed the list in natural order into a single layer LSTM trained in a many-to-one fashion and use output of the final state as input for a Softmax layer trained to output the correct label for the sequence.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.2 Expression decoding and label selection"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "achieves",
+    "object": "single entity",
+    "object_type": "Concept",
+    "source_sentence": "the decoding algorithm will always find a single entity, because all the nodes are adjacent and there is no reason to perform a split into two subgraphs.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.2 Expression decoding and label selection"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "achieves",
+    "object": "probability distribution",
+    "object_type": "Concept",
+    "source_sentence": "the Softmax layer is designed to output the probability distribution over all possible labels.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "3.2 Expression decoding and label selection"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "designedfor",
+    "object": "dependencies",
+    "object_type": "Concept",
+    "source_sentence": "Our algorithm was originally designed to work by detecting dependencies between each pair of tokens inside a MWE, which is not the case here because the MWEs only contain one word.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "4 Experimental validation"
+  },
+  {
+    "subject": "MWEs",
+    "predicate": "uses",
+    "object": "Bidirectional LSTMS",
+    "object_type": "Method",
+    "source_sentence": "We have described a new methodology of extracting MWEs using Bidirectional LSTMS and a graph - based representation.",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "5 Conclusions and future work"
+  },
+  {
+    "subject": "MWEs",
+    "predicate": "uses",
+    "object": "fixed subordination dependency",
+    "object_type": "Concept",
+    "source_sentence": "given that to our knowledge, in the Universal Dependencies Corpus words that form MWEs are marked using the \"fixed\" subordination dependency , at least for some languages .",
+    "extraction_mode": "fixed",
+    "paper": "W18-4928",
+    "title": "Tiberiu Boros Adobe Romania boros@adobe.com",
+    "section": "5 Conclusions and future work"
+  }
+]

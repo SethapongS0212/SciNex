@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Human Evaluation",
+    "predicate": "evaluatedon",
+    "object": "WikiBio dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct a large-scale human evaluation of the outputs from 16 table-to-text models on 1100 examples from the WikiBio dataset",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "evaluates",
+    "object": "88.5",
+    "object_type": "Metric",
+    "source_sentence": "Precision for the (attribute, value) pairs extracted from the generated text compared to those in the ground truth table.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "4 Evaluation via Information Extraction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "produces",
+    "object": "Generating Text",
+    "object_type": "Task",
+    "source_sentence": "We developed several models of varying quality for generating text from the tables in WikiBio.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "5.1 Data & Models"
+  },
+  {
+    "subject": "parse",
+    "predicate": "produces",
+    "object": "set of (attribute, value) pairs",
+    "object_type": "Other",
+    "source_sentence": "After training, we can parse the output sequence along the special tokens <R> and <C> to get a set of (attribute, value) pairs.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.1 Information Extraction System"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "embeddings of the tokens",
+    "object_type": "Other",
+    "source_sentence": "The embeddings of the tokens in the vocabulary were initialized with Glove.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.2 Hyperparameters"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "outputs of the biLSTM",
+    "object_type": "Other",
+    "source_sentence": "a dropout of 0.2 was also applied to the outputs of the biLSTM.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.2 Hyperparameters"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "subject": "classifier",
+    "predicate": "produces",
+    "object": "probability",
+    "object_type": "Probability",
+    "source_sentence": "Once the information bottleneck layer is finished, zi is fed into the classifier to obtain the probability of its label yi.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "3.4 Span Classification Layer"
+  },
+  {
+    "subject": "Score Function",
+    "predicate": "uses",
+    "object": "Neural Network",
+    "object_type": "Model",
+    "source_sentence": "gw(·, ·) is a compatible score function approximated by a neural network.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "4 MI-based objectives"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "comparesagainst",
+    "object": "Gloe-based BiLSTM-CRFs",
+    "object_type": "Model",
+    "source_sentence": "(2021) shows that BERT is not always better at capturing context as compared to Gloe-based BiLSTM-CRFs.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-long.383",
+    "title": "MINER: Improving Out-of-Vocabulary Named Entity Recognition from an Information Theoretic Perspective",
+    "section": "6.3 Contextualized Embedding"
+  }
+]

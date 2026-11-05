@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "FastText",
+    "predicate": "trainedon",
+    "object": "Common Crawl corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Typical examples of large, well-trained word embeddings are those trained on the CC corpus with 600 billion tokens by fastText and with 840 billion tokens by GloVe , which we refer to as fastText.600B3 and GloVe.840B4, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1353",
+    "title": "Subword-based Compact Reconstruction of Word Embeddings",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "trainedon",
+    "object": "Common Crawl corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Typical examples of large, well-trained word embeddings are those trained on the CC corpus with 600 billion tokens by fastText and with 840 billion tokens by GloVe , which we refer to as fastText.600B3 and GloVe.840B4, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1353",
+    "title": "Subword-based Compact Reconstruction of Word Embeddings",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "FastText",
+    "predicate": "uses",
+    "object": "character N-gram embeddings",
+    "object_type": "Other",
+    "source_sentence": "(2017) have proposed a method called fastText, which also incorporates character N-gram embeddings in addition to word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1353",
+    "title": "Subword-based Compact Reconstruction of Word Embeddings",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "FastText",
+    "predicate": "uses",
+    "object": "word embeddings",
+    "object_type": "Other",
+    "source_sentence": "(2017) have proposed a method called fastText, which also incorporates character N-gram embeddings in addition to word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1353",
+    "title": "Subword-based Compact Reconstruction of Word Embeddings",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "Glove.840B",
+    "object_type": "Other",
+    "source_sentence": "ELMo still takes advantage of Glove.840B to achieve its state-of-the-art performance.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1353",
+    "title": "Subword-based Compact Reconstruction of Word Embeddings",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "evaluation datasets",
+    "object_type": "Dataset",
+    "source_sentence": "We conducted experiments on well-studied linguistic benchmark datasets, i.e., nine for word similarity (WordSim) tasks and two for word analogy (Analogy) tasks.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1353",
+    "title": "Subword-based Compact Reconstruction of Word Embeddings",
+    "section": "6.1.1 Settings"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "trainedon",
+    "object": "Google News",
+    "object_type": "Dataset",
+    "source_sentence": "The target word embeddings for the reconstruction were the embeddings trained on Google News with 100 billion tokens",
+    "extraction_mode": "fixed",
+    "paper": "N19-1353",
+    "title": "Subword-based Compact Reconstruction of Word Embeddings",
+    "section": "6.2.1 Settings Evaluation data: We used the identical nine WordSim datasets used in Section 6.1."
+  },
+  {
+    "subject": "reconstruction",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Model",
+    "source_sentence": "The target word embeddings for the reconstruction were the embeddings trained on Google News with 100 billion tokens",
+    "extraction_mode": "fixed",
+    "paper": "N19-1353",
+    "title": "Subword-based Compact Reconstruction of Word Embeddings",
+    "section": "6.2.1 Settings Evaluation data: We used the identical nine WordSim datasets used in Section 6.1."
+  }
+]

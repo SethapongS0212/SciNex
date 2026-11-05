@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "large unlabeled text corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Some studies have shown the advantage of further pre-training the language model on a large unlabeled text corpus collected from a specific domain.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "small domain-related text corpora",
+    "object_type": "Dataset",
+    "source_sentence": "Han and Eisenstein (2019) investigate the effectiveness of further pre-training of the language model on small domain-related text corpora.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "generator",
+    "predicate": "addresses",
+    "object": "unseen context",
+    "object_type": "Context",
+    "source_sentence": "In this section, we describe our model, Neural Mask Generator (NMG), which learns the masking policy to generate an optimal mask on an unseen context using deep RL with the detailed descrip- tions of the framework setup.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "4 Neural Mask Generator"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "training set Dtr",
+    "object_type": "Dataset",
+    "source_sentence": "For the evaluation, we randomly split the training set Dtr to generate a hold-out validation set Dval and replace Dte in equation 7 to Dval while meta-training where Dte is unobservable.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "4.1 Reinforcement Learning Details"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "hold-out validation set Dval",
+    "object_type": "Dataset",
+    "source_sentence": "For the evaluation, we randomly split the training set Dtr to generate a hold-out validation set Dval and replace Dte in equation 7 to Dval while meta-training where Dte is unobservable.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "4.1 Reinforcement Learning Details"
+  },
+  {
+    "subject": "META",
+    "predicate": "uses",
+    "object": "objective function",
+    "object_type": "Other",
+    "source_sentence": "At each episode of meta-training, we update the NMG parameter λ by optimizing the above objective function.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "4.1 Reinforcement Learning Details"
+  },
+  {
+    "subject": "Reinforcement Learning",
+    "predicate": "uses",
+    "object": "off-policy actor-critic method",
+    "object_type": "Method",
+    "source_sentence": "As for reinforcement learning (RL), we use the off-policy actor-critic method described in Section 4.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "5 Experiment"
+  },
+  {
+    "subject": "Question Answering",
+    "predicate": "uses",
+    "object": "SQuAD v1.1",
+    "object_type": "Dataset",
+    "source_sentence": "For question answering, we use three datasets , namely SQuAD v1.1 , NewsQA , and emrQA to validate our model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "5 Experiment"
+  },
+  {
+    "subject": "Question Answering",
+    "predicate": "uses",
+    "object": "NewsQA",
+    "object_type": "Dataset",
+    "source_sentence": "For question answering, we use three datasets , namely SQuAD v1.1 , NewsQA , and emrQA to validate our model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "5 Experiment"
+  },
+  {
+    "subject": "Question Answering",
+    "predicate": "uses",
+    "object": "emrQA",
+    "object_type": "Dataset",
+    "source_sentence": "For question answering, we use three datasets , namely SQuAD v1.1 , NewsQA , and emrQA to validate our model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "5 Experiment"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "collection of contexts from the given NLU task",
+    "object_type": "Dataset",
+    "source_sentence": "As for the text corpus S to pre-train the language model, we use the collection of contexts from the given NLU task.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "5 Experiment"
+  },
+  {
+    "subject": "Engineering",
+    "predicate": "affiliatedwith",
+    "object": "National Research Foundation of Korea (NRF)",
+    "object_type": "Organisation",
+    "source_sentence": "the Engineering Research Center Program through the National Research Foundation of Korea (NRF) funded by the Korea Government MSIT",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Machine Learning",
+    "predicate": "affiliatedwith",
+    "object": "Korea Government (MSIT)",
+    "object_type": "Organisation",
+    "source_sentence": "Research on Adaptive Machine Learning Technology Development for Intelligent Autonomous Digital Companion",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Artificial Intelligence",
+    "predicate": "affiliatedwith",
+    "object": "KAIST",
+    "object_type": "Organisation",
+    "source_sentence": "Artificial Intelligence Gradu- ate School Program (KAIST)",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "IITP",
+    "predicate": "affiliatedwith",
+    "object": "Korea Government (MSIT)",
+    "object_type": "Organisation",
+    "source_sentence": "Institute for Infor- mation & communications Technology Promo- tion(IITP) grant funded by the Korea Government (MSIT)",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "ICT",
+    "predicate": "affiliatedwith",
+    "object": "Ministry of Science and ICT",
+    "object_type": "Organisation",
+    "source_sentence": "supported by the 'Ministry of Science and ICT'",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.493",
+    "title": "Minki Kang1∗ Moonsu Han1∗ Sung Ju Hwang1,2",
+    "section": "6 Conclusion"
+  }
+]

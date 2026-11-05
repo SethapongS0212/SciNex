@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "generating",
+    "predicate": "addresses",
+    "object": "decision-making and reasoning processes",
+    "object_type": "Task",
+    "source_sentence": "Generating high quality arguments plays a crucial role in decision-making and reasoning processes.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1021",
+    "title": "Neural Argument Generation Augmented with Externally Retrieved Evidence",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "designedfor",
+    "object": "argument decoding",
+    "object_type": "Task",
+    "source_sentence": "attention mechanism is designed for argument decoding by attending both input and the previously generated keyphrases.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1021",
+    "title": "Neural Argument Generation Augmented with Externally Retrieved Evidence",
+    "section": "4 Model"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "Input",
+    "object_type": "Other",
+    "source_sentence": "attention mechanism is designed for argument decoding by attending both input and the previously generated keyphrases.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1021",
+    "title": "Neural Argument Generation Augmented with Externally Retrieved Evidence",
+    "section": "4 Model"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "produces",
+    "object": "GloVe embeddings",
+    "object_type": "Embeddings",
+    "source_sentence": "Word representations are initialized with 200-dimensional pre-trained GloVe embeddings , and updated during training.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1021",
+    "title": "Neural Argument Generation Augmented with Externally Retrieved Evidence",
+    "section": "4.1 Model Formulation"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "Softmax",
+    "object_type": "Method",
+    "source_sentence": "In the standard beam search, the top k words of highest probability are selected deterministically based on the softmax output to expand each hypothesis.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1021",
+    "title": "Neural Argument Generation Augmented with Externally Retrieved Evidence",
+    "section": "4.2 Hybrid Beam Search Decoding"
+  },
+  {
+    "subject": "Seq2Seq Models",
+    "predicate": "uses",
+    "object": "beam search decoder",
+    "object_type": "Method",
+    "source_sentence": "All seq2seq models use a regular beam search decoder with the same beam size as ours.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1021",
+    "title": "Neural Argument Generation Augmented with Externally Retrieved Evidence",
+    "section": "6.3 Baseline and Comparisons"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "queries",
+    "object_type": "Concept",
+    "source_sentence": "retrieved with queries constructed from OP (System Retrieval ).",
+    "extraction_mode": "fixed",
+    "paper": "P18-1021",
+    "title": "Neural Argument Generation Augmented with Externally Retrieved Evidence",
+    "section": "6.3 Baseline and Comparisons"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "user arguments",
+    "object_type": "Concept",
+    "source_sentence": "retrieved based on user arguments , to indicate how much gain can be expected with better retrieval results.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1021",
+    "title": "Neural Argument Generation Augmented with Externally Retrieved Evidence",
+    "section": "6.3 Baseline and Comparisons"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "comparesagainst",
+    "object": "separate decoder model with attention over keyphrases",
+    "object_type": "Model",
+    "source_sentence": "For the seq2seq model, more than 75% of its outputs contain at least one generic argument , compared to 16.2% by our separate decoder model with attention over keyphrases.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1021",
+    "title": "Neural Argument Generation Augmented with Externally Retrieved Evidence",
+    "section": "7.2 Topic-Relevance Evaluation"
+  }
+]

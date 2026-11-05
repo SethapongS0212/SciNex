@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Memory Network",
+    "predicate": "evaluatedon",
+    "object": "TriviaQA",
+    "object_type": "Dataset",
+    "source_sentence": "We validate our proposed memory network on a large-scale QA task (TriviaQA) and video question answering task (TVQA) where the context is too large to fit into the external memory , against rule-based and an RL-based scheduling method without consideration of relative importance between memories.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Memory Network",
+    "predicate": "evaluatedon",
+    "object": "TVQA",
+    "object_type": "Dataset",
+    "source_sentence": "We validate our proposed memory network on a large-scale QA task (TriviaQA) and video question answering task (TVQA) where the context is too large to fit into the external memory , against rule-based and an RL-based scheduling method without consideration of relative importance between memories.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "attentions and memory augmented networks",
+    "object_type": "Method",
+    "source_sentence": "Several models propose to solve video QA using attentions and memory augmented networks, to perform composite reasoning over both videos and texts; however, they only focus on short-length videos.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "composite reasoning",
+    "object_type": "Method",
+    "source_sentence": "Several models propose to solve video QA using attentions and memory augmented networks, to perform composite reasoning over both videos and texts; however, they only focus on short-length videos.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Reinforcement Learning",
+    "predicate": "uses",
+    "object": "addressing agent",
+    "object_type": "Method",
+    "source_sentence": "(2016) propose to train an addressing agent using reinforcement learning in order to dynamically decide which memory to overwrite based on the query.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "3 Learning What to Remember from Streaming Data"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "Vaswani et al.",
+    "object_type": "Other",
+    "source_sentence": "we further adopt the self-attention mechanism from Vaswani et al.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "3.2.2 Memory Encoder"
+  },
+  {
+    "subject": "Self-Attention Mechanism",
+    "predicate": "uses",
+    "object": "Vaswani et al.",
+    "object_type": "Other",
+    "source_sentence": "we further adopt the self-attention mechanism from Vaswani et al.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "3.2.2 Memory Encoder"
+  },
+  {
+    "subject": "Self-Attention",
+    "predicate": "uses",
+    "object": "Vaswani et al.",
+    "object_type": "Other",
+    "source_sentence": "we further adopt the self-attention mechanism from Vaswani et al.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "3.2.2 Memory Encoder"
+  },
+  {
+    "subject": "BiGRU",
+    "predicate": "uses",
+    "object": "MLP",
+    "object_type": "Model",
+    "source_sentence": "MLP is the same 3-layer multi-layer perceptron used in EMR-biGRU.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "3.2.2 Memory Encoder"
+  },
+  {
+    "subject": "Sentences",
+    "predicate": "uses",
+    "object": "Context",
+    "object_type": "Concept",
+    "source_sentence": "storing the evidence sentences that precede span words may be useful as they may provide useful context.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "3.2.3 Value Network"
+  },
+  {
+    "subject": "evidence",
+    "predicate": "uses",
+    "object": "Context",
+    "object_type": "Concept",
+    "source_sentence": "storing the evidence sentences that precede span words may be useful as they may provide useful context.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "3.2.3 Value Network"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "set representation",
+    "object_type": "Concept",
+    "source_sentence": "Then, we further process the set representation ρ(PN i=1 h(t) i ) by a GRU with the hidden state from the previous time step.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "3.2.3 Value Network"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "MLP",
+    "object_type": "Concept",
+    "source_sentence": "we sum up all h(t) i and input them into an MLP (ρ)",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "3.2.3 Value Network"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "learning rate 0.0005",
+    "object_type": "Other",
+    "source_sentence": "We train our model and the baselines using ADAM optimizer with the learning rate 0.0005 for 400K steps on both tasks.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "4 Experiment"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "ADAM optimizer",
+    "object_type": "Method",
+    "source_sentence": "We train our model and the baselines using ADAM optimizer with the learning rate 0.0005 for 400K steps on both tasks.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "4 Experiment"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "QA pairs",
+    "object_type": "Concept",
+    "source_sentence": "Since conventional QA models (Seo et al., 2016; Back et al., 2018; Yu et al., 2018; Devlin et al., 2018) are span prediction models, on TriviaQA they only train on QA pairs whose answers can be found in the given context.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "4.2 TriviaQA"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "memory cell",
+    "object_type": "Concept",
+    "source_sentence": "We embed 20 words into each memory cell using a GRU",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "4.2 TriviaQA"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "ResNet-101 pretrained on ImageNet dataset",
+    "object_type": "Model",
+    "source_sentence": "We use features extracted from a ResNet-101 pretrained on the ImageNet dataset.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "4.2 TriviaQA"
+  },
+  {
+    "subject": "REINFORCE",
+    "predicate": "uses",
+    "object": "policy",
+    "object_type": "Concept",
+    "source_sentence": "we use REINFORCE to train the policy.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "4.2 TriviaQA"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "optimizer",
+    "object_type": "Concept",
+    "source_sentence": "we train our model and the baseline models using the ADAM optimizer",
+    "extraction_mode": "fixed",
+    "paper": "P19-1434",
+    "title": "Moonsu Han1∗ Minki Kang1∗ Hyunwoo Jung1 Sung Ju Hwang1,2",
+    "section": "4.2 TriviaQA"
+  }
+]

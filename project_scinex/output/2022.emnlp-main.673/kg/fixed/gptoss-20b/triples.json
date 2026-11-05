@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Contrastive Learning",
+    "predicate": "addresses",
+    "object": "explicit alignment",
+    "object_type": "Concept",
+    "source_sentence": "In this paper, we propose a novel multi-level contrastive learning (CL) framework to perform explicit alignment.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.673",
+    "title": "Label-aware Multi-level Contrastive Learning for Cross-lingual Spoken Language Understanding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "produces",
+    "object": "hard negative examples",
+    "object_type": "Other",
+    "source_sentence": "Furthermore, we introduce a novel algorithm to generate hard negative examples from similar slot values.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.673",
+    "title": "Label-aware Multi-level Contrastive Learning for Cross-lingual Spoken Language Understanding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "achieves",
+    "object": "semantic alignment",
+    "object_type": "Concept",
+    "source_sentence": "We design a slot-guided value similarity for CL, which leverages the probability distributions on the slot set of the slot values to achieve semantic alignment instead of computing similarity between them directly.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.673",
+    "title": "Label-aware Multi-level Contrastive Learning for Cross-lingual Spoken Language Understanding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Machine Translation",
+    "predicate": "addresses",
+    "object": "model performance",
+    "object_type": "Concept",
+    "source_sentence": "Machine translation is widely adopted to translate utterances from source languages to target languages and has been shown to effectively improve model performance.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.673",
+    "title": "Label-aware Multi-level Contrastive Learning for Cross-lingual Spoken Language Understanding",
+    "section": "2.1 Cross-lingual SLU"
+  },
+  {
+    "subject": "Contrastive Learning",
+    "predicate": "addresses",
+    "object": "learning example representations",
+    "object_type": "Task",
+    "source_sentence": "Contrastive learning targets at learning example representations by minimiz- ing the distance between the positive pairs in the vector space and maximizing the distance between the negative pairs.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.673",
+    "title": "Label-aware Multi-level Contrastive Learning for Cross-lingual Spoken Language Understanding",
+    "section": "2.2 Contrastive Learning"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "uses",
+    "object": "Intent Detection",
+    "object_type": "Task",
+    "source_sentence": "Optimization For intent detection , we lever- age the hidden state of ECLS and take LI = −yI log pI as the loss function.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.673",
+    "title": "Label-aware Multi-level Contrastive Learning for Cross-lingual Spoken Language Understanding",
+    "section": "3.1 Label-aware Joint Model"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "intent classifier output",
+    "object_type": "Artifact",
+    "source_sentence": "Here pI = softmax(ECLSWI + bI) is the intent classifier output",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.673",
+    "title": "Label-aware Multi-level Contrastive Learning for Cross-lingual Spoken Language Understanding",
+    "section": "3.1 Label-aware Joint Model"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "prediction",
+    "object_type": "Artifact",
+    "source_sentence": "pS t = softmax(Ht{∥Hk∥2}T), is utilized for prediction",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.673",
+    "title": "Label-aware Multi-level Contrastive Learning for Cross-lingual Spoken Language Understanding",
+    "section": "3.1 Label-aware Joint Model"
+  },
+  {
+    "subject": "Similarity between Words",
+    "predicate": "uses",
+    "object": "prediction",
+    "object_type": "Artifact",
+    "source_sentence": "the similarity between words and slot labels, pS t = softmax(Ht{∥Hk∥2}T), is utilized for prediction",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.673",
+    "title": "Label-aware Multi-level Contrastive Learning for Cross-lingual Spoken Language Understanding",
+    "section": "3.1 Label-aware Joint Model"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "addresses",
+    "object": "Semantics",
+    "object_type": "Concept",
+    "source_sentence": "we introduce a slot-guided value similarity to focus on the slot-level semantics.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.673",
+    "title": "Label-aware Multi-level Contrastive Learning for Cross-lingual Spoken Language Understanding",
+    "section": "3.2 Multi-level Contrastive Learning"
+  },
+  {
+    "subject": "SCL",
+    "predicate": "uses",
+    "object": "label semantics",
+    "object_type": "Concept",
+    "source_sentence": "SCL and WCL leverage label semantics to perform fine-grained alignment across and within utterances by focusing on slot-value and slot label-word relations, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.673",
+    "title": "Label-aware Multi-level Contrastive Learning for Cross-lingual Spoken Language Understanding",
+    "section": "4.4 Further Analysis"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "GPUs",
+    "object_type": "Other",
+    "source_sentence": "All the experiments are conducted on NVIDIA A100 and A6000 GPUs with NVIDIA's Automatic Mixed Precision.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.673",
+    "title": "Label-aware Multi-level Contrastive Learning for Cross-lingual Spoken Language Understanding",
+    "section": "C.2 Implement Details"
+  }
+]

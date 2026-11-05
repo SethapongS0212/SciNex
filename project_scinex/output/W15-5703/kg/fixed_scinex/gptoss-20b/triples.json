@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Word Vector",
+    "predicate": "uses",
+    "object": "cosine distance",
+    "object_type": "Metric",
+    "source_sentence": "the implementation of this evaluation function E requires the calculation of the cosine distance between a newly created vector and the word vector of every item in the vocabulary.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "4.2 Implementation considerations"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "approximate k-nearest neighbor search method",
+    "object_type": "Method",
+    "source_sentence": "For more efficient computation, we use an approximate k-nearest neighbor search method.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "4.2 Implementation considerations"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "trainedon",
+    "object": "English– German Common crawl parallel corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We use the Moses decoder to train a phrase-based MT system on the English– German Common crawl parallel corpus and WMT news test 2010 (tuning).",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "5 Compound splitting for machine translation"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "trainedon",
+    "object": "WMT news test 2010",
+    "object_type": "Dataset",
+    "source_sentence": "We use the Moses decoder to train a phrase-based MT system on the English– German Common crawl parallel corpus and WMT news test 2010 (tuning).",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "5 Compound splitting for machine translation"
+  },
+  {
+    "subject": "translation system",
+    "predicate": "uses",
+    "object": "Moses compound splitter tool",
+    "object_type": "Method",
+    "source_sentence": "We translate a German text using a translation baseline system with no compound handling (a), a translation system integrating the standard Moses compound splitter tool trained using the best-performing settings, and a translation system using our analogy-based compound splitter.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "5 Compound splitting for machine translation"
+  },
+  {
+    "subject": "translation system",
+    "predicate": "uses",
+    "object": "analogy-based compound splitter",
+    "object_type": "Method",
+    "source_sentence": "We translate a German text using a translation baseline system with no compound handling (a), a translation system integrating the standard Moses compound splitter tool trained using the best-performing settings, and a translation system using our analogy-based compound splitter.",
+    "extraction_mode": "fixed",
+    "paper": "W15-5703",
+    "title": "Splitting Compounds by Semantic Analogy",
+    "section": "5 Compound splitting for machine translation"
+  }
+]

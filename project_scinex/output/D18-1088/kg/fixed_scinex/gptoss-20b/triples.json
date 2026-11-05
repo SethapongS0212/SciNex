@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "CNN/Dailymail dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Experiments on the CNN/Dailymail dataset show that our latent extractive model improves upon a strong extractive baseline trained on rule-based labels and also performs competitively to several recent models.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Latent Variable Model",
+    "predicate": "uses",
+    "object": "sentences",
+    "object_type": "Other",
+    "source_sentence": "Our latent variable model views sentences in a document as binary variables (i.e., zeros and ones) and uses sentences with activated latent variables (i.e., ones) to infer gold summaries.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "2.3 Latent Extractive Summarization"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "produces",
+    "object": "probability distributions",
+    "object_type": "Other",
+    "source_sentence": "We use the extractive model from Section 2.1 to produce probability distributions for latent variables (see Equation (3)) and obtain them by sampling zi ∼p(zi|z1:i−1, hD i−1) (see The score Rp measures the extent to which H can be inferred from C:",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "2.3 Latent Extractive Summarization"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "pre-trained extractive model",
+    "object_type": "Model",
+    "source_sentence": "To avoid random label sequences during sampling, we use a pre-trained extractive model to initialize our latent model.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "2.3 Latent Extractive Summarization"
+  },
+  {
+    "subject": "LSTMs",
+    "predicate": "uses",
+    "object": "dropout",
+    "object_type": "Concept",
+    "source_sentence": "regularized all LSTMs with a dropout rate of 0.3.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "3 Experiments"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "models",
+    "object_type": "Model",
+    "source_sentence": "We used Adam to optimize our models with a learning rate of 0.001, β1 = 0.9, and β2 = 0.999.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1088",
+    "title": "Neural Latent Extractive Document Summarization",
+    "section": "3 Experiments"
+  }
+]

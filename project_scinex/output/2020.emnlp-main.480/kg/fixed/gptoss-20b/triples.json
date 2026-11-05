@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "matching",
+    "object_type": "Method",
+    "source_sentence": "many techniques applied retrieval and matching on translated 5-grams to query, retrieve, and align documents.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.480",
+    "title": "CCAligned: A Massive Collection of Cross-Lingual Web-Document Pairs",
+    "section": "2 Related Works"
+  },
+  {
+    "subject": "language modeling",
+    "predicate": "uses",
+    "object": "Common Crawl corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Previous works have leveraged the data from Common Crawl for mining ngram counts to perform language modeling.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.480",
+    "title": "CCAligned: A Massive Collection of Cross-Lingual Web-Document Pairs",
+    "section": "2 Related Works"
+  },
+  {
+    "subject": "Machine Translation",
+    "predicate": "uses",
+    "object": "Common Crawl corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Other works have mined Common Crawl for bitexts for machine translation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.480",
+    "title": "CCAligned: A Massive Collection of Cross-Lingual Web-Document Pairs",
+    "section": "2 Related Works"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "Fast-Text",
+    "object_type": "Model",
+    "source_sentence": "We utilize a lightweight text classifier such as Fast-Text that has been trained to detect a variety of languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.480",
+    "title": "CCAligned: A Massive Collection of Cross-Lingual Web-Document Pairs",
+    "section": "3.2 Language ID & URL Matching"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "uses",
+    "object": "candidate documents",
+    "object_type": "Other",
+    "source_sentence": "a similarity function φ(ds, dt) which is used to score a set of candidate documents according to their relatedness;",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.480",
+    "title": "CCAligned: A Massive Collection of Cross-Lingual Web-Document Pairs",
+    "section": "5.1 Problem Deﬁnition"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "uses",
+    "object": "scores",
+    "object_type": "Other",
+    "source_sentence": "an alignment or matching algorithm which uses the scores for each of the pairs in Ds × Dt to produce an alignment of size min(|Ds|, |Dt|) representing the best mapping according to φ(ds, dt).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.480",
+    "title": "CCAligned: A Massive Collection of Cross-Lingual Web-Document Pairs",
+    "section": "5.1 Problem Deﬁnition"
+  },
+  {
+    "subject": "Document Embedding",
+    "predicate": "uses",
+    "object": "Sentence",
+    "object_type": "Sentence",
+    "source_sentence": "After embedding each sentence in a document , document embedding is performed by averaging the sentence vectors into a document vector vd as follows:",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.480",
+    "title": "CCAligned: A Massive Collection of Cross-Lingual Web-Document Pairs",
+    "section": "5.2 Embedding-Based Document Similarity"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Sentence",
+    "object_type": "Sentence",
+    "source_sentence": "In our experiments we compute wi for sentence si in document d in these three ways.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.480",
+    "title": "CCAligned: A Massive Collection of Cross-Lingual Web-Document Pairs",
+    "section": "5.2 Embedding-Based Document Similarity"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "extracted bitexts",
+    "object_type": "Dataset",
+    "source_sentence": "We use the extracted bitexts for training our NMT systems.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.480",
+    "title": "CCAligned: A Massive Collection of Cross-Lingual Web-Document Pairs",
+    "section": "6 Case Study: MT as an Application"
+  },
+  {
+    "subject": "SentencePiece",
+    "predicate": "uses",
+    "object": "subword vocabulary",
+    "object_type": "Other",
+    "source_sentence": "First the data is processed to induce a 5000 subword vocabulary using SentencePiece.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.480",
+    "title": "CCAligned: A Massive Collection of Cross-Lingual Web-Document Pairs",
+    "section": "6 Case Study: MT as an Application"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "The model used is a transformer model from fairseq with embeddings shared in the encoder and decoder, 5 encoder and decoder layers with dimensionality 512 are used, encoder and decoder FFN with 2 attention heads each with an embedding dimension of 2048 are used along with encoder and decoder normalization.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.480",
+    "title": "CCAligned: A Massive Collection of Cross-Lingual Web-Document Pairs",
+    "section": "6 Case Study: MT as an Application"
+  }
+]

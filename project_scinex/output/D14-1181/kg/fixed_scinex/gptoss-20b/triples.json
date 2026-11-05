@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Learning",
+    "predicate": "achieves",
+    "object": "further improvements",
+    "object_type": "Concept",
+    "source_sentence": "Learning task-specific vectors through fine-tuning results in further improvements.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Deep Learning",
+    "predicate": "achieves",
+    "object": "performance on a variety of tasks",
+    "object_type": "Task",
+    "source_sentence": "feature extractors obtained from a pre-trained deep learning model perform well on a variety of tasks",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "probability distribution over labels",
+    "object_type": "Concept",
+    "source_sentence": "These features form the penultimate layer and are passed to a fully connected softmax layer whose output is the probability distribution over labels.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "2 Model"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "penultimate layer",
+    "object_type": "Concept",
+    "source_sentence": "For regularization we employ dropout on the penultimate layer with a constraint on l2-norms of the weight vectors.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "2.1 Regularization"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "element-wise multiplication operator",
+    "object_type": "Concept",
+    "source_sentence": "Dropout uses y = w · (z ◦r) + b, (5) where ◦is the element-wise multiplication operator and r ∈Rm is a 'masking' vector of Bernoulli random variables with probability p of being 1.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "2.1 Regularization"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "masking vector",
+    "object_type": "Concept",
+    "source_sentence": "Dropout uses y = w · (z ◦r) + b, (5) where ◦is the element-wise multiplication operator and r ∈Rm is a 'masking' vector of Bernoulli random variables with probability p of being 1.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "2.1 Regularization"
+  },
+  {
+    "subject": "Language",
+    "predicate": "uses",
+    "object": "computer vision",
+    "object_type": "Concept",
+    "source_sentence": "We employ language from computer vision where a color image has red, green, and blue channels.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "2.1 Regularization"
+  },
+  {
+    "subject": "Computer Vision",
+    "predicate": "uses",
+    "object": "color image",
+    "object_type": "Concept",
+    "source_sentence": "We employ language from computer vision where a color image has red, green, and blue channels.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "2.1 Regularization"
+  },
+  {
+    "subject": "Classification",
+    "predicate": "achieves",
+    "object": "detecting positive/negative reviews",
+    "object_type": "Task",
+    "source_sentence": "Classification involves detecting posi- tive/negative reviews.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "3 Datasets and Experimental Setup"
+  },
+  {
+    "subject": "subjectivity",
+    "predicate": "achieves",
+    "object": "classifying a sentence as subjective or objective",
+    "object_type": "Task",
+    "source_sentence": "Subj: Subjectivity dataset where the task is to classify a sentence as being subjective or objective.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "3 Datasets and Experimental Setup"
+  },
+  {
+    "subject": "Customer Reviews",
+    "predicate": "achieves",
+    "object": "predicting positive/negative reviews",
+    "object_type": "Task",
+    "source_sentence": "CR: Customer reviews of various products (cameras, MP3s etc.). Task is to predict pos- itive/negative reviews.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "3 Datasets and Experimental Setup"
+  },
+  {
+    "subject": "Movie Reviews",
+    "predicate": "achieves",
+    "object": "one sentence per review",
+    "object_type": "Other",
+    "source_sentence": "MR: Movie reviews with one sentence per re- view.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "3 Datasets and Experimental Setup"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "100 billion words from Google News",
+    "object_type": "Dataset",
+    "source_sentence": "We use the publicly available word2vec vectors that were trained on 100 billion words from Google News.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "3.2 Pre-trained Word Vectors"
+  },
+  {
+    "subject": "channel model",
+    "predicate": "comparesagainst",
+    "object": "single channel model",
+    "object_type": "Model",
+    "source_sentence": "We had initially hoped that the multichannel architecture would prevent overfitting (by ensuring that the learned vectors do not deviate too far from the original values) and thus work better than the single channel model, especially on smaller datasets.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "4.1 Multichannel vs. Single Channel Models"
+  },
+  {
+    "subject": "AdaDelta",
+    "predicate": "comparesagainst",
+    "object": "Adagrad",
+    "object_type": "Model",
+    "source_sentence": "Adadelta gave similar results to Adagrad but required fewer epochs.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "4.3 Further Observations"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Convolutional Neural Networks",
+    "object_type": "Model",
+    "source_sentence": "In the present work we have described a series of experiments with convolutional neural networks built on top of word2vec.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1181",
+    "title": "Convolutional Neural Networks for Sentence Classiﬁcation",
+    "section": "5 Conclusion"
+  }
+]

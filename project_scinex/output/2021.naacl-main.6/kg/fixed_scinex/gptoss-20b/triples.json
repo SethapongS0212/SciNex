@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "pre-trained language model encoder",
+    "object_type": "Model",
+    "source_sentence": "Our baseline extraction model is an event -time pair classifier based on a pre-trained language model encoder.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.6",
+    "title": "Event Time Extraction and Propagation via Graph Attention Networks",
+    "section": "3.2 Baseline Extraction Model"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "produces",
+    "object": "probability",
+    "object_type": "Probability",
+    "source_sentence": "The classifier estimates the probability of filling tj in ei's 4-tuple time elements.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.6",
+    "title": "Event Time Extraction and Propagation via Graph Attention Networks",
+    "section": "3.2 Baseline Extraction Model"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "produces",
+    "object": "Probabilities",
+    "object_type": "Other",
+    "source_sentence": "These representations are fed into the 2-layer feed-forward neural classifier in Eq. (2) to generate the corresponding probabilities.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.6",
+    "title": "Event Time Extraction and Propagation via Graph Attention Networks",
+    "section": "3.4 Event Graph-based Time Propagation"
+  },
+  {
+    "subject": "Classifiers",
+    "predicate": "achieves",
+    "object": "log loss",
+    "object_type": "Other",
+    "source_sentence": "Since we model the 4-tuple extraction task by four binary classifiers, we adopt the log loss as our model objective:",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.6",
+    "title": "Event Time Extraction and Propagation via Graph Attention Networks",
+    "section": "3.5 Training Objective"
+  },
+  {
+    "subject": "GAIA",
+    "predicate": "achieves",
+    "object": "top performance at intrinsic temporal evaluation",
+    "object_type": "Other",
+    "source_sentence": "Our time propagation framework has also been integrated into the state-of-the-art multimedia multilanguage knowledge extraction system GAIA (Li et al., 2020a,b) for NIST SM-KBP 2020 evaluation and achieves top performance at intrinsic temporal evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.6",
+    "title": "Event Time Extraction and Propagation via Graph Attention Networks",
+    "section": "4.2 Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "TimeBank",
+    "object_type": "Dataset",
+    "source_sentence": "Models trained on TimeBank often formulate the problem as a pair-wise classification for TLINKS.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.6",
+    "title": "Event Time Extraction and Propagation via Graph Attention Networks",
+    "section": "4.4 Remaining Challenges"
+  }
+]

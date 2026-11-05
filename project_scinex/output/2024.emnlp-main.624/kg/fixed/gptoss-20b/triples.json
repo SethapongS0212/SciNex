@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Keyphrase Generation",
+    "predicate": "addresses",
+    "object": "sequence generation",
+    "object_type": "Task",
+    "source_sentence": "The former treats KPG as a sequence generation task, while the latter treats it as a set generation by introducing multiple control codes for parallel keyphrase generation and dynamically assigning keyphrase ground-truths to control codes as supervision based on bipartite matching.",
+    "extraction_mode": "fixed",
+    "paper": "2024.emnlp-main.624",
+    "title": "ONE2SET + Large Language Model: Best Partners for Keyphrase Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Pre-trained Language Models",
+    "predicate": "addresses",
+    "object": "Keyphrase Generation",
+    "object_type": "Task",
+    "source_sentence": "Recently, pre-trained language models (PLMs) have been widely incorporated into KPG via ONE2SEQ paradigm (Chowdhury et al., 2022; Zhao et al., 2022; Wu et al., 2023a; Dong et al., 2023).",
+    "extraction_mode": "fixed",
+    "paper": "2024.emnlp-main.624",
+    "title": "ONE2SET + Large Language Model: Best Partners for Keyphrase Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "Transformer",
+    "object_type": "Model",
+    "source_sentence": "our generator also uses Transformer as the backbone",
+    "extraction_mode": "fixed",
+    "paper": "2024.emnlp-main.624",
+    "title": "ONE2SET + Large Language Model: Best Partners for Keyphrase Generation",
+    "section": "3.1 The ONE2SET-based Generator"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "Sinkhorn-Knopp Iteration",
+    "object_type": "Method",
+    "source_sentence": "search the optimal assignments with Sinkhorn-Knopp Iteration",
+    "extraction_mode": "fixed",
+    "paper": "2024.emnlp-main.624",
+    "title": "ONE2SET + Large Language Model: Best Partners for Keyphrase Generation",
+    "section": "3.1 The ONE2SET-based Generator"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "probability",
+    "object_type": "Concept",
+    "source_sentence": "By contrast, during inference, candidates are sorted by their quality measured with the average log probability of the generator.",
+    "extraction_mode": "fixed",
+    "paper": "2024.emnlp-main.624",
+    "title": "ONE2SET + Large Language Model: Best Partners for Keyphrase Generation",
+    "section": "3.2 The LLM-based Selector"
+  },
+  {
+    "subject": "generator",
+    "predicate": "trainedon",
+    "object": "keyphrase generation data",
+    "object_type": "Dataset",
+    "source_sentence": "We adopt a two-stage training strategy to train our framework, where the generator is first trained with the keyphrase generation data, and the selector is then trained with the instruction data.",
+    "extraction_mode": "fixed",
+    "paper": "2024.emnlp-main.624",
+    "title": "ONE2SET + Large Language Model: Best Partners for Keyphrase Generation",
+    "section": "3.3 Two-stage Training"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "Beam Search",
+    "object_type": "Method",
+    "source_sentence": "During inference, we employ beam search with beam size = 10",
+    "extraction_mode": "fixed",
+    "paper": "2024.emnlp-main.624",
+    "title": "ONE2SET + Large Language Model: Best Partners for Keyphrase Generation",
+    "section": "4.1 Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "semantic repetition",
+    "object_type": "Concept",
+    "source_sentence": "the semantic repetition in the original candidate set is severe but significantly reduced by selection models.",
+    "extraction_mode": "fixed",
+    "paper": "2024.emnlp-main.624",
+    "title": "ONE2SET + Large Language Model: Best Partners for Keyphrase Generation",
+    "section": "4.4 Diversity of Predicted Keyphrases"
+  },
+  {
+    "subject": "generator",
+    "predicate": "achieves",
+    "object": "best performance at 10",
+    "object_type": "Other",
+    "source_sentence": "the generator achieves the best performance at 10.",
+    "extraction_mode": "fixed",
+    "paper": "2024.emnlp-main.624",
+    "title": "ONE2SET + Large Language Model: Best Partners for Keyphrase Generation",
+    "section": "B.3 Effect of τ"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "achieves",
+    "object": "polynomial-time complexity",
+    "object_type": "Concept",
+    "source_sentence": "In order to tackle the OT problem efficiently, we employ the Sinkhorn-Knopp Iterative algorithm , which demonstrates polynomial- time complexity.",
+    "extraction_mode": "fixed",
+    "paper": "2024.emnlp-main.624",
+    "title": "ONE2SET + Large Language Model: Best Partners for Keyphrase Generation",
+    "section": "C.2 Optimal Transport"
+  }
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "SMT",
+    "predicate": "uses",
+    "object": "feature values",
+    "object_type": "Feature",
+    "source_sentence": "The measure is based on feature values extracted from the underlying SMT system and also its training data.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Summarization System",
+    "predicate": "uses",
+    "object": "information about MT quality",
+    "object_type": "Concept",
+    "source_sentence": "We pair summarization and MT (SUMT) by including information about the MT quality into the summarization system.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "5 MT-aware Summarization"
+  },
+  {
+    "subject": "extractive summarizer",
+    "predicate": "uses",
+    "object": "sentence length",
+    "object_type": "Concept",
+    "source_sentence": "MEAD is a centroid-based extractive summarizer which selects the most important sentences from a sequence of sentences based on a linear combination of three parameters: the sentence length, the centroid score and the position score.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "5.1 The MEAD Summarization system"
+  },
+  {
+    "subject": "reranker",
+    "predicate": "uses",
+    "object": "cosine reranker",
+    "object_type": "Other",
+    "source_sentence": "MEAD also employs a cosine reranker to eliminate redundant sentences.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "5.1 The MEAD Summarization system"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "standard English- Arabic NIST test corpora",
+    "object_type": "Dataset",
+    "source_sentence": "For our experiments, we use the standard English- Arabic NIST test corpora which are commonly used MT evaluations.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.1 Translation and Summarization Corpora"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "documents provided in NIST 2008 and 2009",
+    "object_type": "Dataset",
+    "source_sentence": "We use the documents provided in NIST 2008 and 2009 for the training and development, and those in the NIST 2005 for testing.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.1 Translation and Summarization Corpora"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "trainedon",
+    "object": "English-Arabic parallel corpus",
+    "object_type": "Dataset",
+    "source_sentence": "The baseline MT system is the open-source MOSES phrase-based decoder trained on a standard English-Arabic parallel corpus.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.3 MT Setup"
+  },
+  {
+    "subject": "Tokenization",
+    "predicate": "uses",
+    "object": "simple punctuation-based rules",
+    "object_type": "Other",
+    "source_sentence": "We perform the standard preprocessing and tokenization on the English side using simple punctuation-based rules.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.3 MT Setup"
+  },
+  {
+    "subject": "morphological",
+    "predicate": "uses",
+    "object": "MADA+TOKAN morphological analyzer",
+    "object_type": "Other",
+    "source_sentence": "We also use the MADA+TOKAN morphological analyzer to preprocess and tokenize the Arabic side of the corpus.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.3 MT Setup"
+  },
+  {
+    "subject": "Moses",
+    "predicate": "uses",
+    "object": "grow-diagonal-final heuristic",
+    "object_type": "Other",
+    "source_sentence": "The corpus is word-aligned using the standard setting of GIZA++ and the grow-diagonal-final heuristic of MOSES.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.3 MT Setup"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "modified Kneser-Ney smoothing",
+    "object_type": "Other",
+    "source_sentence": "We use the 5-gram language model with modified Kneser-Ney smoothing.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.3 MT Setup"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "LDC Arabic Gigaword corpus",
+    "object_type": "Dataset",
+    "source_sentence": "The language model for our system is trained using the LDC Arabic Gigaword corpus.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "6.3 MT Setup"
+  },
+  {
+    "subject": "Summarization System",
+    "predicate": "achieves",
+    "object": "major (over 4 points BLEU score) improvements",
+    "object_type": "Metric",
+    "source_sentence": "We reached the sweet spot of performance in both dimensions in our MT-aware summarization system in which we achieved major (over 4 points BLEU score) improvements while maintaining an acceptable summarization quality.",
+    "extraction_mode": "fixed",
+    "paper": "I13-1031",
+    "title": "SUMT: A Framework of Summarization and MT",
+    "section": "7 Evaluation and results"
+  }
+]

@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "multilingual representations",
+    "object_type": "Concept",
+    "source_sentence": "Current cross-lingual models work by pre-training multilingual representations using some form of language modeling, which are then fine-tuned on the relevant task and transferred to different languages.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "model akin to BERT",
+    "object_type": "Model",
+    "source_sentence": "training a model akin to BERT on the combination of monolingual corpora in multiple languages is also effective.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "monolingual corpora in multiple languages",
+    "object_type": "Dataset",
+    "source_sentence": "training a model akin to BERT on the combination of monolingual corpora in multiple languages is also effective.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "produces",
+    "object": "benchmarks",
+    "object_type": "Other",
+    "source_sentence": "Most benchmarks covering a wide set of languages have been created through translation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Multilingual Resources",
+    "predicate": "uses",
+    "object": "MLDoc",
+    "object_type": "Dataset",
+    "source_sentence": "Other cross-lingual datasets leverage existing multilingual resources, as it is the case of MLDoc for document classification and Wikiann for named entity recognition.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Multilingual Resources",
+    "predicate": "uses",
+    "object": "Wikiann",
+    "object_type": "Dataset",
+    "source_sentence": "Other cross-lingual datasets leverage existing multilingual resources, as it is the case of MLDoc for document classification and Wikiann for named entity recognition.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "well-known methods",
+    "object_type": "Model",
+    "source_sentence": "Hu et al. (2020) combine some of these datasets into a single multilingual benchmark, and evaluate some well-known methods on it.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "MultiNLI",
+    "object_type": "Dataset",
+    "source_sentence": "we fine-tune our models on MultiNLI for 10 epochs using the same settings as Liu et al.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "3.3 Tasks and evaluation procedure"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "original English data",
+    "object_type": "Dataset",
+    "source_sentence": "training is typically done on original English data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "4.1 TRANSLATE-TEST results"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "machine translated Spanish or Finnish data",
+    "object_type": "Dataset",
+    "source_sentence": "training is done in machine translated Spanish or Finnish, while inference is done in machine translated English.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "4.1 TRANSLATE-TEST results"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "machine translated English data",
+    "object_type": "Dataset",
+    "source_sentence": "training is done in machine translated Spanish or Finnish, while inference is done in machine translated English.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "4.1 TRANSLATE-TEST results"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "Test Sets",
+    "object_type": "Dataset",
+    "source_sentence": "inference is done in the test set in each target language which, in the case of XNLI, was human translated from English.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "4.2 ZERO-SHOT results"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Text",
+    "object_type": "Other",
+    "source_sentence": "neither training on original data (ORIG) nor training on machine translated data (BT-XX and MT-XX) makes use of the exact same type of text that the system is exposed to at test time.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "4.2 ZERO-SHOT results"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "produces",
+    "object": "translation artifacts",
+    "object_type": "Concept",
+    "source_sentence": "We conclude that the translation artifacts revealed by our analysis are not exclusive to NLI, as they also show up on QA for the TRANSLATE-TEST approach, but their actual impact can be highly dependent on the translation procedure used and the nature of the task.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "5 QA experiments"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "addresses",
+    "object": "translation artifacts",
+    "object_type": "Concept",
+    "source_sentence": "Future evaluation should better account for translation artifacts.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.618",
+    "title": "Translation Artifacts in Cross-lingual Transfer Learning",
+    "section": "6 Discussion"
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Hybrid Approach",
+    "predicate": "achieves",
+    "object": "0.51 F1 on a question-answering task",
+    "object_type": "Metric",
+    "source_sentence": "We are able to surpass human recall and achieve an F1 of 0.51 on a question-answering task with less than 50 hours of effort using a hybrid approach that mixes active learning, bootstrapping, and limited (5 hours) manual rule writing.",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "10 Moulton St. Cambridge, MA 02138 mfreedma,lramshaw,eboschee,rgabbard,kratkiewicz,"
+  },
+  {
+    "subject": "Machine Learning",
+    "predicate": "achieves",
+    "object": "80% precision",
+    "object_type": "Metric",
+    "source_sentence": "machine learning, though achieving 80% precision,3",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "addresses",
+    "object": "relation mention detection task",
+    "object_type": "Task",
+    "source_sentence": "This evaluation is loosely based on the relation mention detection task in ACE.",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "3 Handwritten patterns achieved 52% precision. 4 http://trec.nist.gov/data/qamain.html"
+  },
+  {
+    "subject": "Active Learning",
+    "predicate": "uses",
+    "object": "Unsupervised Word Clusters",
+    "object_type": "Concept",
+    "source_sentence": "We annotated 1064 sentences (~31K words) using active learning combined with unsupervised word clusters for the following classes: Substance-Name, Substance-Description, Condition-Name, and Condition-Description.",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "4.1 Class Extraction"
+  },
+  {
+    "subject": "Annotation",
+    "predicate": "uses",
+    "object": "lists of substances and treatments from the web",
+    "object_type": "Concept",
+    "source_sentence": "We supplemented our annotation with lists of substances and treatments from the web, which took 1 hour.",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "4.1 Class Extraction"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "addresses",
+    "object": "ability to find every instance of a fact",
+    "object_type": "Task",
+    "source_sentence": "Unlike the question answering evaluation, this evaluation measures the ability to find every instance of a fact.",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "6 Evaluators wanted some queries with no answers."
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "addresses",
+    "object": "missing coreference",
+    "object_type": "Concept",
+    "source_sentence": "The extraction evaluation does not penalize systems for missing coreference.",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "6 Evaluators wanted some queries with no answers."
+  },
+  {
+    "subject": "heuristics",
+    "predicate": "addresses",
+    "object": "coreference",
+    "object_type": "Task",
+    "source_sentence": "Our heuristics for core- ference of the new classes did not account for pro- nouns.",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "1. The combined system‘s recall and F-Score"
+  },
+  {
+    "subject": "learned patterns",
+    "predicate": "uses",
+    "object": "same language",
+    "object_type": "Concept",
+    "source_sentence": "While handwritten rules and learned patterns use the same language, they make use of it differently.",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "7.2 Learned Patterns"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "20 relation pairs",
+    "object_type": "Other",
+    "source_sentence": "so little training data is required: ~20 relation pairs out of context",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "8 Conclusions and Lessons Learned"
+  },
+  {
+    "subject": "Active Learning",
+    "predicate": "achieves",
+    "object": "6 hours",
+    "object_type": "Other",
+    "source_sentence": "~6 hours of active learning for the new classes",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "8 Conclusions and Lessons Learned"
+  },
+  {
+    "subject": "learned patterns",
+    "predicate": "achieves",
+    "object": "0.80 precision",
+    "object_type": "Metric",
+    "source_sentence": "Though the learned patterns have high precision (0.80 on average)",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "8 Conclusions and Lessons Learned"
+  },
+  {
+    "subject": "learned patterns",
+    "predicate": "addresses",
+    "object": "structure between the two arguments",
+    "object_type": "Concept",
+    "source_sentence": "Learned patterns tend to focus on the structure that appears between the two arguments",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "8 Conclusions and Lessons Learned"
+  },
+  {
+    "subject": "Bootstrapping Approach",
+    "predicate": "addresses",
+    "object": "need for a trained expert during domain adaptation",
+    "object_type": "Concept",
+    "source_sentence": "improving the bootstrapping approach to reach the level of recall achieved by the human pattern writer eliminating the need for a trained expert during domain adaptation",
+    "extraction_mode": "fixed",
+    "paper": "D11-1133",
+    "title": "Extreme Extraction -- Machine Reading in a Week",
+    "section": "8 Conclusions and Lessons Learned"
+  }
+]

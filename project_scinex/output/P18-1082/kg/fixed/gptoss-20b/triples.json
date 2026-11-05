@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Seq2seq",
+    "predicate": "achieves",
+    "object": "building dependencies between input and output",
+    "object_type": "Task",
+    "source_sentence": "For the first time, we show that fusion mechanisms can help seq2seq models build dependencies between their input and output.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "deep convolutional networks",
+    "object_type": "Model",
+    "source_sentence": "To transform prompts into stories, we instead build on the convolutional seq2seq model of Gehring et al. (2017), which uses deep convolutional net- works as the encoder and decoder.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "3.2 Efﬁcient Learning with Convolutional Sequence-to-Sequence Model"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "weighted sum of encoder outputs",
+    "object_type": "Other",
+    "source_sentence": "In the Conv seq2seq model, the encoder and decoder are connected with attention modules that perform a weighted sum of encoder outputs, using attention at each layer of the decoder.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "3.2 Efﬁcient Learning with Convolutional Sequence-to-Sequence Model"
+  },
+  {
+    "subject": "Summaries",
+    "predicate": "uses",
+    "object": "RNN",
+    "object_type": "Model",
+    "source_sentence": "(2017) generate summaries of movies as sequences of events using an RNN, then sample event representations using MCMC.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "4.1 Story Generation"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Concept",
+    "source_sentence": "Li et al. (2015b) use an LSTM to hierarchically learn word, then sentence, then paragraph embeddings, then transform the paragraph embeddings into text.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "4.2 Hierarchical Text Generation"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "LSTMs",
+    "object_type": "Model",
+    "source_sentence": "(2) seq2seq: using LSTMs and convolutional seq2seq architectures, and Conv seq2seq with decoder self-attention.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "5.1 Baselines"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "convolutional seq2seq architectures",
+    "object_type": "Method",
+    "source_sentence": "(2) seq2seq: using LSTMs and convolutional seq2seq architectures, and Conv seq2seq with decoder self-attention.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "5.1 Baselines"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "Self-Attention",
+    "object_type": "Method",
+    "source_sentence": "To train the fusion model, we first pretrain a Conv seq2seq with self-attention model on the WRIT-",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "5.2 Fusion Training"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "trainedon",
+    "object": "WRIT-",
+    "object_type": "Dataset",
+    "source_sentence": "To train the fusion model, we first pretrain a Conv seq2seq with self-attention model on the WRIT-",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "5.2 Fusion Training"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "uses",
+    "object": "Random Search",
+    "object_type": "Method",
+    "source_sentence": "We perform hyperparameter optimization on each of our models by cross-validating with random search on a validation set.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "5.3 Training"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "comparesagainst",
+    "object": "beam search",
+    "object_type": "Other",
+    "source_sentence": "We find this sampling strategy substantially more effective than beam search, which tends to produce common phrases and repetitive text from the training set.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "5.4 Generation"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "temperature parameter",
+    "object_type": "Other",
+    "source_sentence": "For each model, we tune a temperature parameter for the softmax at generation time.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "5.4 Generation"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "self-attentive GCNN",
+    "object_type": "Other",
+    "source_sentence": "For prompt generation , we use a self-attentive GCNN language model trained with the same prompt-side vocabulary as the sequence-to-sequence story generation models.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "5.4 Generation"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "uses",
+    "object": "Amazon Mechanical Turk",
+    "object_type": "Other",
+    "source_sentence": "For human evaluation, we use Amazon Mechanical Turk to conduct a triple pairing task.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "5.5 Evaluation"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "achieves",
+    "object": "perplexity",
+    "object_type": "Metric",
+    "source_sentence": "In combination these additions to the Conv seq2seq baseline reduce the perplexity by 9 points.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "5.5 Evaluation"
+  },
+  {
+    "subject": "generative",
+    "predicate": "produces",
+    "object": "stories",
+    "object_type": "Other",
+    "source_sentence": "The real value in our generative approach is that it can produce an unlimited number of stories, whereas KNN can never generalize from its training data.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "6 Results"
+  },
+  {
+    "subject": "longest common subsequence",
+    "predicate": "evaluates",
+    "object": "8.9",
+    "object_type": "Metric",
+    "source_sentence": "When analyzing 500 150-word generated stories from test-set prompts, the average longest common subsequence is 8.9.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1082",
+    "title": "Hierarchical Neural Story Generation",
+    "section": "7.1 Generation Quality"
+  }
+]

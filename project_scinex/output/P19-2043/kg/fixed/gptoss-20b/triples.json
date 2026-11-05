@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Self-Attention",
+    "predicate": "uses",
+    "object": "representation of the sequence",
+    "object_type": "Concept",
+    "source_sentence": "This model relies on self-attention to compute the representation of the sequence.",
+    "extraction_mode": "fixed",
+    "paper": "P19-2043",
+    "title": "English-Indonesian Neural Machine Translation for Spoken Language Domains",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "encoder-decoder architecture",
+    "object_type": "Other",
+    "source_sentence": "Neural machine translation (NMT) uses an encoder-decoder architecture, in which the encoder encodes the source sentence x = (x1,..., xn) to a continuous representation sequence z = (z1,..., zk) and the decoder translates the representation z into a sentence y = (y1,..., ym) in the target language.",
+    "extraction_mode": "fixed",
+    "paper": "P19-2043",
+    "title": "English-Indonesian Neural Machine Translation for Spoken Language Domains",
+    "section": "2.2 Neural Machine Translation"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "comparesagainst",
+    "object": "RNN-based models",
+    "object_type": "Model",
+    "source_sentence": "While some works empirically compare the performance of Transformer and RNN-based models , this is not the aim of this paper.",
+    "extraction_mode": "fixed",
+    "paper": "P19-2043",
+    "title": "English-Indonesian Neural Machine Translation for Spoken Language Domains",
+    "section": "2.2 Neural Machine Translation"
+  },
+  {
+    "subject": "model training",
+    "predicate": "uses",
+    "object": "in-domain data",
+    "object_type": "Other",
+    "source_sentence": "After that we fine- tune the model using in-domain data, which means the model training is continued on only in-domain data for a few more steps.",
+    "extraction_mode": "fixed",
+    "paper": "P19-2043",
+    "title": "English-Indonesian Neural Machine Translation for Spoken Language Domains",
+    "section": "2.3 Domain-adaptation"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "TEDtalk train set",
+    "object_type": "Dataset",
+    "source_sentence": "Then, for the second phase of training (fine-tuning), we use TEDtalk train set while keeping the vocabulary from the first phase train set.",
+    "extraction_mode": "fixed",
+    "paper": "P19-2043",
+    "title": "English-Indonesian Neural Machine Translation for Spoken Language Domains",
+    "section": "3.1 Dataset"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Tensor2Tensor",
+    "object_type": "Other",
+    "source_sentence": "We run our experiments using Tensor2Tensor (T2T) on a GeForce GTX 1080 machine using a single GPU.",
+    "extraction_mode": "fixed",
+    "paper": "P19-2043",
+    "title": "English-Indonesian Neural Machine Translation for Spoken Language Domains",
+    "section": "3.2 Training details"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "transformer_base",
+    "object_type": "Other",
+    "source_sentence": "We use Transformer model with hyperparameter set transformer_base.",
+    "extraction_mode": "fixed",
+    "paper": "P19-2043",
+    "title": "English-Indonesian Neural Machine Translation for Spoken Language Domains",
+    "section": "3.2 Training details"
+  },
+  {
+    "subject": "Subword Units",
+    "predicate": "uses",
+    "object": "Sub- wordTextEncoder (STE)",
+    "object_type": "Other",
+    "source_sentence": "For the vocabulary, we use the default subword units implemented in T2T, Sub- wordTextEncoder (STE), which is shared between source and target languages with approximate size of 32,678 units.",
+    "extraction_mode": "fixed",
+    "paper": "P19-2043",
+    "title": "English-Indonesian Neural Machine Translation for Spoken Language Domains",
+    "section": "3.2 Training details"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "achieves",
+    "object": "highest BLEU score on development set",
+    "object_type": "Metric",
+    "source_sentence": "However, we find an overfit on baseline systems during the training so we stop early and select the model from the checkpoint re- sulting the highest BLEU score on development set.",
+    "extraction_mode": "fixed",
+    "paper": "P19-2043",
+    "title": "English-Indonesian Neural Machine Translation for Spoken Language Domains",
+    "section": "3.2 Training details"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "last value of learning rate",
+    "object_type": "Other",
+    "source_sentence": "We use the last value of learning rate in the first training phase for the second training phase.",
+    "extraction_mode": "fixed",
+    "paper": "P19-2043",
+    "title": "English-Indonesian Neural Machine Translation for Spoken Language Domains",
+    "section": "3.2 Training details"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "beam search",
+    "object_type": "Other",
+    "source_sentence": "During decoding, we use beam search with beam size of 4 and alpha value (length normaliza- tion penalty) of 0.6.",
+    "extraction_mode": "fixed",
+    "paper": "P19-2043",
+    "title": "English-Indonesian Neural Machine Translation for Spoken Language Domains",
+    "section": "3.2 Training details"
+  }
+]

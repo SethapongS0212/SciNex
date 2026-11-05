@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "labeled data",
+    "object_type": "Dataset",
+    "source_sentence": "fine-tuning pre-trained language models on labeled data.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "hard negatives",
+    "object_type": "Concept",
+    "source_sentence": "designing complicated sampling mechanism to generate hard negatives.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Labeled Training Data",
+    "predicate": "uses",
+    "object": "MC",
+    "object_type": "Method",
+    "source_sentence": "STEP 4: Construct pseudo training data DU by using MC to label the top-k passages retrieved by M(1) D from C for each question q ∈QU, and then train a dual-encoder M(2) D on both the manually labeled training data DL and the automatically augmented training data DU.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "2. Train a cross-encoder optimized for the output"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "cross-batch negative strategy",
+    "object_type": "Method",
+    "source_sentence": "Note that the cross-batch negative strategy is applied through all the steps for training the dual-",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "2. Train a cross-encoder optimized for the output"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "PaddlePaddle",
+    "object_type": "Other",
+    "source_sentence": "We conduct all experiments with the deep learning framework PaddlePaddle on up to eight NVIDIA Tesla V100 GPUs (with 32G RAM).",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "4.1.3 Implementation Details"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "GPUs",
+    "object_type": "Other",
+    "source_sentence": "We conduct all experiments with the deep learning framework PaddlePaddle on up to eight NVIDIA Tesla V100 GPUs (with 32G RAM).",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "4.1.3 Implementation Details"
+  },
+  {
+    "subject": "Deep Learning",
+    "predicate": "uses",
+    "object": "PaddlePaddle",
+    "object_type": "Other",
+    "source_sentence": "We conduct all experiments with the deep learning framework PaddlePaddle on up to eight NVIDIA Tesla V100 GPUs (with 32G RAM).",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "4.1.3 Implementation Details"
+  },
+  {
+    "subject": "Hard Negatives",
+    "predicate": "uses",
+    "object": "cross-encoder",
+    "object_type": "Other",
+    "source_sentence": "We use the cross-encoder for both denoising hard negatives and data augmentation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "4.1.3 Implementation Details"
+  },
+  {
+    "subject": "Denoising",
+    "predicate": "uses",
+    "object": "cross-encoder",
+    "object_type": "Other",
+    "source_sentence": "We use the cross-encoder for both denoising hard negatives and data augmentation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "4.1.3 Implementation Details"
+  },
+  {
+    "subject": "Data Augmentation",
+    "predicate": "uses",
+    "object": "cross-encoder",
+    "object_type": "Other",
+    "source_sentence": "We use the cross-encoder for both denoising hard negatives and data augmentation.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "4.1.3 Implementation Details"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "all-gather operator",
+    "object_type": "Other",
+    "source_sentence": "The cross-batch negative sampling is implemented with differentiable all-gather operation provided in FleetX , that is a highly scalable distributed training engine of PaddlePaddle.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "4.1.3 Implementation Details"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "MSMARCO dataset",
+    "object_type": "Dataset",
+    "source_sentence": "In this part, we conduct the extensive experiments on MSMARCO dataset to examine the effectiveness of the three strategies in RocketQA.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.466",
+    "title": "Yingqi Qu1, Yuchen Ding1, Jing Liu1∗, Kai Liu1, Ruiyang Ren2†",
+    "section": "4.2.2 The Effectiveness of The Three Training Strategies in RocketQA"
+  }
+]

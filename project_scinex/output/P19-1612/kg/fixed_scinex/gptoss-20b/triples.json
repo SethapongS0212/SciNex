@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Unsupervised Pre-training",
+    "predicate": "addresses",
+    "object": "challenges",
+    "object_type": "Concept",
+    "source_sentence": "We address these challenges by carefully initializing the retriever with unsupervised pre-training (Section 4).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "3 Open-Retrieval Question Answering (ORQA)"
+  },
+  {
+    "subject": "Answer Spans",
+    "predicate": "uses",
+    "object": "Wikipedia paragraph",
+    "object_type": "Other",
+    "source_sentence": "Answer spans were selected from a Wikipedia paragraph, and the questions were written by annotators who were instructed to ask questions that are answered by a given answer in a given context.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "7.1 Open Domain QA Datasets"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "addresses",
+    "object": "supervision",
+    "object_type": "Concept",
+    "source_sentence": "We mainly evaluate in the setting where only question -answer string pairs are available for supervision.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "7.3 Implementation Details"
+  },
+  {
+    "subject": "Wikipedia",
+    "predicate": "uses",
+    "object": "evidence corpus",
+    "object_type": "Other",
+    "source_sentence": "We use the English Wikipedia snapshot from December 20, 2018 as the evidence corpus.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "7.3 Implementation Details"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "ICT",
+    "object_type": "Method",
+    "source_sentence": "When pre-training the retriever with ICT, we use a learning rate of 10−4 and a batch size of 4096 on Google Cloud TPUs for 100k steps.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "7.3 Implementation Details"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "Inverse Cloze Task",
+    "object_type": "Task",
+    "source_sentence": "This is made possible by pre-training the retriever using an Inverse Cloze Task (ICT).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1612",
+    "title": "Latent Retrieval for Weakly Supervised Open Domain Question Answering",
+    "section": "11 Conclusion"
+  }
+]

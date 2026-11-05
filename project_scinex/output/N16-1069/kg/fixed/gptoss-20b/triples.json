@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "quality annotations",
+    "object_type": "Dataset",
+    "source_sentence": "models are learnt from quality annotations that reflect post-editing effort, for instance, 1-5 judgements on estimated post-editing effort or actual post-editing effort measured as post-editing time or edit distance between the MT output and its post-edited version.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "designedfor",
+    "object": "individual translators",
+    "object_type": "Other",
+    "source_sentence": "models are built for individual translators by collecting labelled data for each translator",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "multitask learning",
+    "object_type": "Method",
+    "source_sentence": "models are built using multitask learning techniques to put together annotations from multiple translators while keeping track of the translators' identification to account for their individual biases",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "kernel",
+    "predicate": "uses",
+    "object": "Radial Basis Function",
+    "object_type": "Method",
+    "source_sentence": "kdata is a kernel (Radial Basis Function, in our experiments) on the input points",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "3.1 Multitask Learning"
+  },
+  {
+    "subject": "kernel",
+    "predicate": "uses",
+    "object": "input points",
+    "object_type": "Other",
+    "source_sentence": "kdata is a kernel (Radial Basis Function, in our experiments) on the input points",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "3.1 Multitask Learning"
+  },
+  {
+    "subject": "phrase-based statistical",
+    "predicate": "trainedon",
+    "object": "domain-specific data",
+    "object_type": "Dataset",
+    "source_sentence": "An in-house phrase-based statistical MT system was built by WIPO , trained on domain-specific data, to translate the English segments.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "4.1 Data"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "0.71",
+    "object_type": "Metric",
+    "source_sentence": "The quality of the translations produced is considered high, with BLEU scores on a 1K-single reference test set reaching 0.71.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "4.1 Data"
+  },
+  {
+    "subject": "Multitask Learning",
+    "predicate": "achieves",
+    "object": "0.201 Pearson's correlation",
+    "object_type": "Metric",
+    "source_sentence": "crosslin- gual multitask learning model reaches 0.201 Pear- son's correlation, while the monolingual multitask learning model performs at 0.171.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "6 Results with Multiple Languages"
+  },
+  {
+    "subject": "Multitask Learning",
+    "predicate": "achieves",
+    "object": "0.171",
+    "object_type": "Metric",
+    "source_sentence": "crosslin- gual multitask learning model reaches 0.201 Pear- son's correlation, while the monolingual multitask learning model performs at 0.171.",
+    "extraction_mode": "fixed",
+    "paper": "N16-1069",
+    "title": "Large-scale Multitask Learning for Machine Translation Quality Estimation",
+    "section": "6 Results with Multiple Languages"
+  }
+]

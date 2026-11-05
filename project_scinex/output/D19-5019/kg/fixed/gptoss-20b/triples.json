@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "Precision",
+    "predicate": "evaluates",
+    "object": "0.54",
+    "object_type": "Metric",
+    "source_sentence": "with 0.54 precision and 0.60 recall",
+    "extraction_mode": "fixed",
+    "paper": "D19-5019",
+    "title": "Understanding BERT Performance in Propaganda Analysis",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "training set",
+    "object_type": "Dataset",
+    "source_sentence": "We retrieved the uncased BERT-large model from github2 and fine tuned the model on the training set.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5019",
+    "title": "Understanding BERT Performance in Propaganda Analysis",
+    "section": "3 Fine Tuned BERT models"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "uses",
+    "object": "cross validation",
+    "object_type": "Method",
+    "source_sentence": "We used 10-fold cross validation to create an ensemble of models.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5019",
+    "title": "Understanding BERT Performance in Propaganda Analysis",
+    "section": "3 Fine Tuned BERT models"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "achieves",
+    "object": "0.62 F1 on test set",
+    "object_type": "Metric",
+    "source_sentence": "Our ensemble of models scored 0.62 F1 on the test set and ranked third among 25 teams, likely because the ensemble decreases the degree of overfiting.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5019",
+    "title": "Understanding BERT Performance in Propaganda Analysis",
+    "section": "3 Fine Tuned BERT models"
+  }
+]

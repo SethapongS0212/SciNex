@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "supervised",
+    "predicate": "comparesagainst",
+    "object": "unsupervised",
+    "object_type": "Other",
+    "source_sentence": "compare supervised against unsupervised (using automatic transcriptions) in- domain data for LM training for the task of ASR.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "language modeling",
+    "predicate": "achieves",
+    "object": "artificial perplexity improvement",
+    "object_type": "Other",
+    "source_sentence": "We also performed ini- tial experiments of \"self-training\" for language modeling, where (artificial) perplexity improvement was achieved but without an impact on the machine translation (MT) quality.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "selected portions of the training data",
+    "object_type": "Dataset",
+    "source_sentence": "Our models are then trained on the selected portions of the training data",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "3.1 Filtering"
+  },
+  {
+    "subject": "Word Alignment",
+    "predicate": "uses",
+    "object": "heuristics",
+    "object_type": "Other",
+    "source_sentence": "cr(˜f,˜e) denotes the count of (˜f,˜e) being a translation of each other (usually according to word alignment and heuristics) in sentence pair (fr, er).",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "3.2 Weighted Phrase Extraction"
+  },
+  {
+    "subject": "Word Alignment",
+    "predicate": "uses",
+    "object": "sentence pair",
+    "object_type": "Other",
+    "source_sentence": "cr(˜f,˜e) denotes the count of (˜f,˜e) being a translation of each other (usually according to word alignment and heuristics) in sentence pair (fr, er).",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "3.2 Weighted Phrase Extraction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "Translation Task",
+    "object_type": "Task",
+    "source_sentence": "The experiments are done on the recent German- to- English WMT 2013 translation task 1.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "4.1 Training Data"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "monolingual and bilingual training data",
+    "object_type": "Dataset",
+    "source_sentence": "The baseline systems are built using all (unfiltered) available monolingual and bilingual training data.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "4.1 Training Data"
+  },
+  {
+    "subject": "Minimum Error Rate Training",
+    "predicate": "uses",
+    "object": "BLEU error rate measure",
+    "object_type": "Metric",
+    "source_sentence": "The SMT system was tuned on the development set newstest10 with minimum error rate training (MERT) using the BLEU error rate measure as the optimization criterion.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "4.2 SMT System"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "bounds estimation",
+    "object_type": "Other",
+    "source_sentence": "We perform bootstrap re-sampling with bounds estimation as described by .",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "4.2 SMT System"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "test sets automatic translation",
+    "object_type": "Other",
+    "source_sentence": "In the LM adaptation experiments, we found that using the test sets automatic translation as the adaptation set (HYP system ) for filtering performed best, in terms of LM quality (perplexity) and translation quality, when compared to the other suggested adaptation sets, especially on the blind test set.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "5.2 TM Adaptation"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "uses",
+    "object": "bilingual corpora",
+    "object_type": "Dataset",
+    "source_sentence": "To perform filtering, we concatenate all the bilingual corpora in Table 1 and sort them according to the combined LM+M1 cross -entropy score.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "5.2 TM Adaptation"
+  },
+  {
+    "subject": "adaptation",
+    "predicate": "uses",
+    "object": "source side of the test sets",
+    "object_type": "Other",
+    "source_sentence": "We perform an experiment using the source side of the test sets as an adaptation set to score the source side of the bilingual corpora (de- noted TST in the experiments).",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "5.2 TM Adaptation"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "26.4%",
+    "object_type": "Metric",
+    "source_sentence": "The ppl.HYP system is comparable to the best single system of WMT 2013 4 (26.4% BLEU vs 26.8% BLEU for Edinburgh submission, RWTH submission is a system combination).",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "5.2 TM Adaptation"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "26.8%",
+    "object_type": "Metric",
+    "source_sentence": "The ppl.HYP system is comparable to the best single system of WMT 2013 4 (26.4% BLEU vs 26.8% BLEU for Edinburgh submission, RWTH submission is a system combination).",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "5.2 TM Adaptation"
+  },
+  {
+    "subject": "adaptation",
+    "predicate": "achieves",
+    "object": "significant gains",
+    "object_type": "Other",
+    "source_sentence": "TM adaptation shows further improvements on top of LM adap- tation and achieves significant gains.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "5.2 TM Adaptation"
+  },
+  {
+    "subject": "Unsupervised Adaptation",
+    "predicate": "uses",
+    "object": "automatic translations of the test sets",
+    "object_type": "Other",
+    "source_sentence": "We experiment with unsupervised adaptation for SMT, using automatic translations of the test sets, focusing on adaptation for the LM and the TM components.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "uses",
+    "object": "LM adaptation",
+    "object_type": "Other",
+    "source_sentence": "We utilize filtering for LM adaptation, while we compare filtering and weighting for TM adaptation.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "uses",
+    "object": "automatic translation of the test data",
+    "object_type": "Other",
+    "source_sentence": "We compose three different adaptation sets for filtering using automatic translation of the test data (HYP), a pseudo in-domain set (NC) and the references (REF) of the test sets.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "achieves",
+    "object": "best perplexity on the blind test set",
+    "object_type": "Metric",
+    "source_sentence": "The best performing target set in our experiments is the unsupervised HYP adaptation set, achieving the best perplexity as well as the best translation quality on the blind test set.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "achieves",
+    "object": "best translation quality on the blind test set",
+    "object_type": "Metric",
+    "source_sentence": "The best performing target set in our experiments is the unsupervised HYP adaptation set, achieving the best perplexity as well as the best translation quality on the blind test set.",
+    "extraction_mode": "fixed",
+    "paper": "W14-3359",
+    "title": "Unsupervised Adaptation for Statistical Machine Translation",
+    "section": "6 Conclusion"
+  }
+]

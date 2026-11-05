@@ -1,0 +1,42 @@
+{"para_id": 0, "raw": "{\"triples\": []}", "n_tokens": 464, "truncated": false}
+{"para_id": 1, "raw": "{\"triples\": []}", "n_tokens": 400, "truncated": false}
+{"para_id": 2, "raw": "{\n  \"triples\": [\n    {\n      \"subject\": \"ensemble\",\n      \"predicate\": \"achieves\",\n      \"object\": \"conditional independence\",\n      \"object_type\": \"Concept\",\n      \"source_sentence\": \"We show that conditional independence can be achieved by ensuring each classifier makes individually optimal predictions, and we train the ensemble with this constraint using methods from bi-level optimization.\"\n    },\n    {\n      \"subject\": \"Training Models\",\n      \"predicate\": \"trainedOn\",\n      \"object\": \"datasets with known biases\",\n      \"object_type\": \"Dataset\",\n      \"source_sentence\": \"We evaluate our method by training models on datasets with known biases, and then testing them on out-of-domain datasets built to penalize models that learn to use those biases.\"\n    }\n  ]\n}", "n_tokens": 1173, "truncated": false}
+{"para_id": 3, "raw": "{\"triples\": []}", "n_tokens": 183, "truncated": false}
+{"para_id": 4, "raw": "{\"triples\": []}", "n_tokens": 38, "truncated": false}
+{"para_id": 5, "raw": "{\"triples\": []}", "n_tokens": 317, "truncated": false}
+{"para_id": 6, "raw": "{\"triples\": []}", "n_tokens": 333, "truncated": false}
+{"para_id": 7, "raw": "{\"triples\": []}", "n_tokens": 245, "truncated": false}
+{"para_id": 8, "raw": "{\"triples\": []}", "n_tokens": 271, "truncated": false}
+{"para_id": 9, "raw": "{\"triples\": []}", "n_tokens": 226, "truncated": false}
+{"para_id": 10, "raw": "{\"triples\": []}", "n_tokens": 322, "truncated": false}
+{"para_id": 11, "raw": "{\"triples\": []}", "n_tokens": 565, "truncated": false}
+{"para_id": 12, "raw": "{\"triples\": []}", "n_tokens": 175, "truncated": false}
+{"para_id": 13, "raw": "{\"triples\": []}", "n_tokens": 307, "truncated": false}
+{"para_id": 14, "raw": "{\"triples\": []}", "n_tokens": 161, "truncated": false}
+{"para_id": 15, "raw": "{\"triples\":[{\"subject\":\"linear classifiers\",\"predicate\":\"uses\",\"object\":\"log-space output of either the higher or lower capacity model\",\"object_type\":\"Other\",\"source_sentence\":\"This approach trains linear classifiers that use the log-space output of either the higher or lower capacity model, and a one-hot encoding of the label, to predict the output of the other model.\"},{\"subject\":\"linear classifiers\",\"predicate\":\"uses\",\"object\":\"higher capacity model\",\"object_type\":\"Other\",\"source_sentence\":\"The two classifiers are trained simultaneously with the higher and lower capacity models, which in turn are adversarially trained to increase the loss of those classifiers.\"},{\"subject\":\"linear classifiers\",\"predicate\":\"uses\",\"object\":\"lower capacity model\",\"object_type\":\"Other\",\"source_sentence\":\"The two classifiers are trained simultaneously with the higher and lower capacity models, which in turn are adversarially trained to increase the loss of those classifiers.\"}]}", "n_tokens": 679, "truncated": false}
+{"para_id": 16, "raw": "{\"triples\": []}", "n_tokens": 273, "truncated": false}
+{"para_id": 17, "raw": "{\"triples\": []}", "n_tokens": 199, "truncated": false}
+{"para_id": 18, "raw": "{\"triples\": []}", "n_tokens": 209, "truncated": false}
+{"para_id": 19, "raw": "{\"triples\": []}", "n_tokens": 454, "truncated": false}
+{"para_id": 20, "raw": "{\"triples\": []}", "n_tokens": 601, "truncated": false}
+{"para_id": 21, "raw": "{\"triples\": []}", "n_tokens": 356, "truncated": false}
+{"para_id": 22, "raw": "{\"triples\": []}", "n_tokens": 323, "truncated": false}
+{"para_id": 23, "raw": "{\"triples\":[{\"subject\":\"Transformer\",\"predicate\":\"trainedOn\",\"object\":\"image-caption data\",\"object_type\":\"Dataset\",\"source_sentence\":\"a transformer based model that has been pretrained on image-caption data.\"}]}", "n_tokens": 335, "truncated": false}
+{"para_id": 24, "raw": "{\"triples\": []}", "n_tokens": 420, "truncated": false}
+{"para_id": 25, "raw": "{\"triples\":[{\"subject\":\"ensemble\",\"predicate\":\"achieves\",\"object\":\"Upper Bound\",\"object_type\":\"Concept\",\"source_sentence\":\"report the best ensemble result from Clark et al. (2019) as an upper bound for the HANS dataset.\"}]}", "n_tokens": 533, "truncated": false}
+{"para_id": 26, "raw": "{\"triples\":[{\"subject\":\"Datasets\",\"predicate\":\"addresses\",\"object\":\"background-class correlations\",\"object_type\":\"Concept\",\"source_sentence\":\"We build an image recognition dataset that tests the ability of models to avoid learning background- class correlations.\"},{\"subject\":\"training\",\"predicate\":\"addresses\",\"object\":\"computational expense\",\"object_type\":\"Concept\",\"source_sentence\":\"Since training models on ImageNet is computationally expensive, and the large number of classes creates complications when applying our conditional independence approach\"},{\"subject\":\"Datasets\",\"predicate\":\"addresses\",\"object\":\"filtering\",\"object_type\":\"Concept\",\"source_sentence\":\"Similarly to our approach to MNLI, and Hendrycks et al. (2019), we construct OOD datasets by filtering out correct predictions made by a biased classifier.\"},{\"subject\":\"Images\",\"predicate\":\"addresses\",\"object\":\"misleading background\",\"object_type\":\"Concept\",\"source_sentence\":\"Images where the classifier was unable to guess the correct class for most of the image patches are assumed to have a misleading background and are used for the OOD test set.\"}]}", "n_tokens": 792, "truncated": false}
+{"para_id": 27, "raw": "{\"triples\":[{\"subject\":\"Convolution\",\"predicate\":\"uses\",\"object\":\"Residual Block\",\"object_type\":\"Other\",\"source_sentence\":\"We branch the higher capacity model by adding a 1x1 convolution with 256 filters after the first residual block, followed by max-pooling and a 256 dimensional ReLU layer.\"},{\"subject\":\"training\",\"predicate\":\"achieves\",\"object\":\"81% on dev set\",\"object_type\":\"Metric\",\"source_sentence\":\"This model gets approximately 81% on our dev set if trained alone.\"}]}", "n_tokens": 598, "truncated": false}
+{"para_id": 28, "raw": "{\"triples\": []}", "n_tokens": 548, "truncated": false}
+{"para_id": 29, "raw": "{\"triples\": []}", "n_tokens": 462, "truncated": false}
+{"para_id": 30, "raw": "{\"triples\": []}", "n_tokens": 339, "truncated": false}
+{"para_id": 31, "raw": "{\"triples\": []}", "n_tokens": 137, "truncated": false}
+{"para_id": 32, "raw": "{\"triples\":[{\"subject\":\"Experiments\",\"predicate\":\"addresses\",\"object\":\"Biases\",\"object_type\":\"Concept\",\"source_sentence\":\"Experiments show this approach successfully prevents the higher capacity model from adopting known biases on several real-world datasets , including achieving a 10-point gain on an out-of- domain VQA dataset .\"}]}", "n_tokens": 887, "truncated": false}
+{"para_id": 33, "raw": "{\"triples\":[{\"subject\":\"sampling\",\"predicate\":\"uses\",\"object\":\"Images\",\"object_type\":\"Other\",\"source_sentence\":\"by sampling images randomly from all its hyponyms in the ImageNet training data.\"}]}", "n_tokens": 437, "truncated": false}
+{"para_id": 34, "raw": "{\"triples\": []}", "n_tokens": 109, "truncated": false}
+{"para_id": 35, "raw": "{\"triples\": []}", "n_tokens": 546, "truncated": false}
+{"para_id": 36, "raw": "{\"triples\": []}", "n_tokens": 185, "truncated": false}
+{"para_id": 37, "raw": "{\"triples\": []}", "n_tokens": 187, "truncated": false}
+{"para_id": 38, "raw": "{\"triples\": []}", "n_tokens": 2565, "truncated": false}
+{"para_id": 39, "raw": "{\"triples\": []}", "n_tokens": 175, "truncated": false}
+{"para_id": 40, "raw": "{\"triples\": []}", "n_tokens": 364, "truncated": false}
+{"para_id": 41, "raw": "{\"triples\": []}", "n_tokens": 192, "truncated": false}

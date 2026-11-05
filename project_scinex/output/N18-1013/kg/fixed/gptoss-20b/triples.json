@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "discourse relation prediction layer",
+    "object_type": "Concept",
+    "source_sentence": "Second, we add a CRF layer on top of the discourse relation prediction layer to fine-tune a sequence of predicted discourse relations by modeling discourse relation continuity and patterns in a paragraph.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Attention Mechanisms",
+    "predicate": "uses",
+    "object": "neural tensor",
+    "object_type": "Concept",
+    "source_sentence": "Recent research (Zhang et al., 2015; Rutherford et al., 2016; Ji and Eisenstein, 2015; Ji et al., 2016) tried to model compositional meanings of two discourse units by exploiting interactions between words in two units with more and more complicated neural network models, including the ones using neural tensor and attention mechanisms.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Joint Learning",
+    "predicate": "uses",
+    "object": "multi-task joint learning framework",
+    "object_type": "Concept",
+    "source_sentence": "An- other trend is to alleviate the shortage of annotated data by leveraging related external data, such as explicit discourse relations in PDTB and un- labeled data obtained elsewhere , often in a multi -task joint learning framework .",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "discourse relation",
+    "object_type": "Concept",
+    "source_sentence": "Finally, we concatenate two adjacent discourse unit representations hDUt−1 and hDUt and predict the discourse relation between them using a softmax function: yt−1 = softmax(Wy ∗[hDUt−1, hDUt] + by) (3)",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "3.1 The Basic Model Architecture"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Viterbi algorithm",
+    "object_type": "Other",
+    "source_sentence": "Both training and decoding of the CRF layer can be solved efficiently by using the Viterbi algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "3.3 Fine-tune Discourse Relation Predictions Using a CRF Layer"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "Viterbi algorithm",
+    "object_type": "Other",
+    "source_sentence": "Both training and decoding of the CRF layer can be solved efficiently by using the Viterbi algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "3.3 Fine-tune Discourse Relation Predictions Using a CRF Layer"
+  },
+  {
+    "subject": "LSTMs",
+    "predicate": "uses",
+    "object": "hidden state size of 300",
+    "object_type": "Concept",
+    "source_sentence": "All the LSTMs in our neural network use the hidden state size of 300.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.2 Parameter Settings and Model Training"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "dropout ratio of 0.5",
+    "object_type": "Concept",
+    "source_sentence": "To avoid overfitting, we applied dropout with dropout ratio of 0.5 to both input and output of LSTM layers.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.2 Parameter Settings and Model Training"
+  },
+  {
+    "subject": "LSTMs",
+    "predicate": "uses",
+    "object": "gradient L2-norm threshold of 5.0",
+    "object_type": "Concept",
+    "source_sentence": "To prevent the exploding gradient problem in training LSTMs, we adopt gradient clipping with gradient L2-norm threshold of 5.0.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.2 Parameter Settings and Model Training"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "initial learning rate of 5e-4",
+    "object_type": "Concept",
+    "source_sentence": "We chose the standard cross-entropy loss function for training our neural network model and adopted Adam optimizer with the initial learning rate of 5e-4 and a mini-batch size of 1286.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.2 Parameter Settings and Model Training"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Pytorch",
+    "object_type": "Concept",
+    "source_sentence": "All the proposed models were implemented with Pytorch and converged to the best performance within 20-40 epochs.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.2 Parameter Settings and Model Training"
+  },
+  {
+    "subject": "Bi-LSTM",
+    "predicate": "achieves",
+    "object": "improved implicit relation classification performance",
+    "object_type": "Other",
+    "source_sentence": "In addition, compared with the baseline Bi-LSTM model with tensor, this model improved implicit relation classification performance across the three small classes, with clear performance gains of around 2 and 8 percents on contingency and temporal relations respectively, and overall improved the macro-average F1- score by 2.2 percents.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.5 Experimental Results"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "achieves",
+    "object": "improved implicit discourse relation classification performance",
+    "object_type": "Other",
+    "source_sentence": "After untying parameters in the softmax pre- diction layer, implicit discourse relation classifi- cation performance was improved across all four relations , meanwhile, the explicit discourse re- lation classification performance was also im- proved.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.5 Experimental Results"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "achieves",
+    "object": "improved implicit discourse relation recognition performance",
+    "object_type": "Other",
+    "source_sentence": "The CRF layer further improved im- plicit discourse relation recognition performance on the three small classes.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.5 Experimental Results"
+  },
+  {
+    "subject": "Ensemble Models",
+    "predicate": "uses",
+    "object": "majority voting",
+    "object_type": "Method",
+    "source_sentence": "Then we also created ensemble models by applying majority voting to combine results of ten runs.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "4.6 Ensemble Model"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "overall discourse structure",
+    "object_type": "Other",
+    "source_sentence": "By building wider- context informed discourse unit representations and capturing the overall discourse structure , the paragraph- level neural network model outper- forms the best previous models for implicit dis- course relation recognition on the PDTB dataset.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1013",
+    "title": "Abstract",
+    "section": "5 Conclusion"
+  }
+]

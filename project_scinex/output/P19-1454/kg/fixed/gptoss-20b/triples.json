@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "scores",
+    "object_type": "Other",
+    "source_sentence": "we use a neural network to compute scores for both first and second-order parts of parse graphs",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "standard gradient-based methods",
+    "object_type": "Other",
+    "source_sentence": "During training, we maximize the probability of the gold parses by using standard gradient-based methods",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "semantic dependency parsing",
+    "object_type": "Task",
+    "source_sentence": "our experiments show that our approach achieves state-of-the-art performance in semantic dependency parsing",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "Input",
+    "object_type": "Other",
+    "source_sentence": "Given an input sentence , we first compute word representations using a BiLSTM, which are then fed into two parallel modules",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "3 Approach"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "produces",
+    "object": "word representations",
+    "object_type": "Other",
+    "source_sentence": "Given an input sentence , we first compute word representations using a BiLSTM, which are then fed into two parallel modules",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "3 Approach"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "we feed a BiLSTM with their word embeddings and POS tag embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "3.1 Part Scoring"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "POS tag embeddings",
+    "object_type": "Other",
+    "source_sentence": "we feed a BiLSTM with their word embeddings and POS tag embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "3.1 Part Scoring"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "probability",
+    "object_type": "Probability",
+    "source_sentence": "s(label) i,j is fed into a softmax layer that outputs the probability of each label for edge (i, j).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "3.2 Inference"
+  },
+  {
+    "subject": "posterior inference",
+    "predicate": "uses",
+    "object": "CRF",
+    "object_type": "Model",
+    "source_sentence": "computing the edge probabilities can be seen as doing posterior inference on a Conditional Random Field (CRF).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "3.2 Inference"
+  },
+  {
+    "subject": "Belief Propagation",
+    "predicate": "comparesagainst",
+    "object": "mean field variational inference",
+    "object_type": "Method",
+    "source_sentence": "We compare mean field variational inference and loopy belief propagation algorithms in Table 4.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "4.3 Analysis"
+  },
+  {
+    "subject": "CRFs",
+    "predicate": "uses",
+    "object": "Recurrent Neural Network",
+    "object_type": "Model",
+    "source_sentence": "(2015) are probably the first to propose the idea of unfolding iterative inference algorithms on CRFs as a stack of recurrent neural network layers.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "5.3 CRF as Recurrent Neural Networks"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "Recurrent Neural Network",
+    "object_type": "Model",
+    "source_sentence": "For example, Zhu et al. (2017) proposed a structured attention neural model for Visual Question Answering with a CRF over image regions and unfolded both mean field variational inference and loopy belief propagation algorithms as recurrent layers.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "5.3 CRF as Recurrent Neural Networks"
+  },
+  {
+    "subject": "Belief Propagation",
+    "predicate": "uses",
+    "object": "Recurrent Neural Network",
+    "object_type": "Model",
+    "source_sentence": "For example, Zhu et al. (2017) proposed a structured attention neural model for Visual Question Answering with a CRF over image regions and unfolded both mean field variational inference and loopy belief propagation algorithms as recurrent layers.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "5.3 CRF as Recurrent Neural Networks"
+  },
+  {
+    "subject": "Variational Inference",
+    "predicate": "uses",
+    "object": "Recurrent Neural Network",
+    "object_type": "Model",
+    "source_sentence": "For example, Zhu et al. (2017) proposed a structured attention neural model for Visual Question Answering with a CRF over image regions and unfolded both mean field variational inference and loopy belief propagation algorithms as recurrent layers.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "5.3 CRF as Recurrent Neural Networks"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "trilinear function",
+    "object_type": "Other",
+    "source_sentence": "We constructed an end-to-end neural network that uses a trilinear function to score second-order parts and finds the highest-scoring parse graph by either mean field variational inference or loopy belief propagation algorithms unfolded as recurrent neural network layers.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "parser",
+    "predicate": "addresses",
+    "object": "semantic dependency parsing",
+    "object_type": "Task",
+    "source_sentence": "We proposed a novel graph-based second-order parser for semantic dependency parsing.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1454",
+    "title": "Second-Order Semantic Dependency Parsing with End-to-End Neural Networks",
+    "section": "6 Conclusion"
+  }
+]

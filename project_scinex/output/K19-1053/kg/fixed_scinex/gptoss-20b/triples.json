@@ -1,0 +1,24 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "produces",
+    "object": "probability",
+    "object_type": "Probability",
+    "source_sentence": "All the models we explore take as input the voting record (denoted V) for a politician p, the text of a bill b, and (optional) knowledge about the politician (denoted K), and output a probability P(y = Yea|b, V, K) that politician p will vote Yea on bill b.",
+    "extraction_mode": "fixed",
+    "paper": "K19-1053",
+    "title": "Roll Call Vote Prediction with Knowledge Augmented Models",
+    "section": "2 Models"
+  },
+  {
+    "subject": "bag of words",
+    "predicate": "uses",
+    "object": "bill b",
+    "object_type": "Other",
+    "source_sentence": "a bag of words of the 1,000 most frequent unigrams across all bills",
+    "extraction_mode": "fixed",
+    "paper": "K19-1053",
+    "title": "Roll Call Vote Prediction with Knowledge Augmented Models",
+    "section": "2.1 Baseline Model"
+  }
+]

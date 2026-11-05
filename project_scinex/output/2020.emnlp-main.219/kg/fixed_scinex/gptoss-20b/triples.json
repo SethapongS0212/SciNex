@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Algorithm",
+    "predicate": "addresses",
+    "object": "discontinuous constituency trees",
+    "object_type": "Concept",
+    "source_sentence": "we propose a new span-based algorithm for parsing discontinuous constituency trees of block degree two with exact decoding and reasonable average execution time;",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.219",
+    "title": "Université Paris-Saclay, CNRS, LIMSI, 91400, Orsay, France.",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Parsing Results",
+    "predicate": "achieves",
+    "object": "state-of-the-art",
+    "object_type": "Concept",
+    "source_sentence": "we report state-of-the-art parsing results on these treebanks in a fully supervised setting and experiment with pre-trained word embeddings, including Bert based models.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.219",
+    "title": "Université Paris-Saclay, CNRS, LIMSI, 91400, Orsay, France.",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "A* search algorithm",
+    "object_type": "Algorithm",
+    "source_sentence": "Maier et al. (2012) proposed an experimentally faster parser based on the A* search algorithm together with a block degree two restriction.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.219",
+    "title": "Université Paris-Saclay, CNRS, LIMSI, 91400, Orsay, France.",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "unary rules",
+    "predicate": "produces",
+    "object": "single constituent labeled SBARQ_SQ",
+    "object_type": "Other",
+    "source_sentence": "Unary rules: We follow Stern et al. (2017) and merge unary chains into a single constituent with a new label, e.g. SQ will result in a single constituent labeled SBARQ_SQ.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.219",
+    "title": "Université Paris-Saclay, CNRS, LIMSI, 91400, Orsay, France.",
+    "section": "3 Parsing Algorithm"
+  },
+  {
+    "subject": "Binarization",
+    "predicate": "produces",
+    "object": "supplementary constituency label with a fixed null score",
+    "object_type": "Other",
+    "source_sentence": "Binarization: Interestingly, span-based parsers do not require explicit binarization of the constituency structure . Although grammar based parsers require binarization of the grammar production rules and therefore of the constituency structure to ensure tractable complexity, span-based parsers can take care of binarization implicitly by introducing a supplementary constituency label with a fixed null score.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.219",
+    "title": "Université Paris-Saclay, CNRS, LIMSI, 91400, Orsay, France.",
+    "section": "3 Parsing Algorithm"
+  },
+  {
+    "subject": "rule",
+    "predicate": "addresses",
+    "object": "continuous constituency parsing",
+    "object_type": "Task",
+    "source_sentence": "Note that rule (a) is the only rule needed for continuous constituency parsing.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.219",
+    "title": "Université Paris-Saclay, CNRS, LIMSI, 91400, Orsay, France.",
+    "section": "3.3 Deduction rules"
+  },
+  {
+    "subject": "rule",
+    "predicate": "addresses",
+    "object": "building well-nested trees",
+    "object_type": "Task",
+    "source_sentence": "Rule (d) is the only such rule that is allowed for building well-nested trees.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.219",
+    "title": "Université Paris-Saclay, CNRS, LIMSI, 91400, Orsay, France.",
+    "section": "3.3 Deduction rules"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "achieves",
+    "object": "lower time complexity",
+    "object_type": "Other",
+    "source_sentence": "We instantiate variants of the algorithm than can not parse the full family of block degree two trees but that can still fit most actual linguistic structures present in treebanks, with a lower time complexity.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.219",
+    "title": "Université Paris-Saclay, CNRS, LIMSI, 91400, Orsay, France.",
+    "section": "3.5 Complexity"
+  },
+  {
+    "subject": "parser",
+    "predicate": "achieves",
+    "object": "O(n4) time complexity",
+    "object_type": "Other",
+    "source_sentence": "By using only rules (a), (b) and (c) we can build a parser with a O(n4) time complexity.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.219",
+    "title": "Université Paris-Saclay, CNRS, LIMSI, 91400, Orsay, France.",
+    "section": "3.5 Complexity"
+  },
+  {
+    "subject": "parser",
+    "predicate": "achieves",
+    "object": "O(n5) time parser",
+    "object_type": "Other",
+    "source_sentence": "By adding rules (e), (f), (g), (h) and (i) we build a O(n5) parser.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.219",
+    "title": "Université Paris-Saclay, CNRS, LIMSI, 91400, Orsay, France.",
+    "section": "3.5 Complexity"
+  },
+  {
+    "subject": "Parsers",
+    "predicate": "achieves",
+    "object": "O(n5) and O(n6) well-nested parsers",
+    "object_type": "Other",
+    "source_sentence": "Finally, we construct O(n5) and O(n6) well-nested parsers by excluding rules (i), (j), (k) and (l).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.219",
+    "title": "Université Paris-Saclay, CNRS, LIMSI, 91400, Orsay, France.",
+    "section": "3.5 Complexity"
+  },
+  {
+    "subject": "Constituency Parsing",
+    "predicate": "achieves",
+    "object": "state-of-the-art results",
+    "object_type": "Other",
+    "source_sentence": "We proposed a novel family of algorithms for dis- continuous constituency parsing achieving state- of-the art results.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.219",
+    "title": "Université Paris-Saclay, CNRS, LIMSI, 91400, Orsay, France.",
+    "section": "5 Conclusion"
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "semantic parser",
+    "predicate": "addresses",
+    "object": "multiple domains",
+    "object_type": "Domain",
+    "source_sentence": "To overcome these limitations, in this work, we focus on the problem of developing a semantic parser for multiple domains in the weak supervision setting using denotations.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "semantic parser",
+    "predicate": "uses",
+    "object": "denotations",
+    "object_type": "Other",
+    "source_sentence": "To overcome these limitations, in this work, we focus on the problem of developing a semantic parser for multiple domains in the weak supervision setting using denotations.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Weak Supervision",
+    "predicate": "uses",
+    "object": "denotations",
+    "object_type": "Concept",
+    "source_sentence": "Due to the cost of obtaining annotated programs , there has been an increasing interest in using weak supervision based methods (Clarke et al., 2010; Liang et al., 2017; Neelakantan et al., 2016; Chen et al., 2018; Goldman et al., 2018) which uses denotations, i.e. final answers obtained on executing a program on the knowledge base, for training.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Unified Semantic Parsing",
+    "predicate": "produces",
+    "object": "program",
+    "object_type": "Other",
+    "source_sentence": "our goal is to learn a unified semantic parsing model which takes as input a user utterance xk i = {xk i1, · · ·, xk in} ∈ Xk from any domain k and produces the corresponding program zk i = {zk i1, · · ·, zk im}",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "3 Proposed Framework"
+  },
+  {
+    "subject": "REINFORCE",
+    "predicate": "uses",
+    "object": "training",
+    "object_type": "Concept",
+    "source_sentence": "We use REINFORCE for training, similar to prior work on Neural Symbolic Machine described briefly in Section 4.1.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "3 Proposed Framework"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "input utterances",
+    "object_type": "Concept",
+    "source_sentence": "an L-layer encoder LSTM for encoding the input utterances",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "3.1 Model"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "output program token",
+    "object_type": "Concept",
+    "source_sentence": "the decoder updates its hidden state st using st = LSTM(ct−1, st−1; θdec) where st−1 is the embedding of output program token zt−1 at last step t −1",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "3.1 Model"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "output program tokens",
+    "object_type": "Other",
+    "source_sentence": "The output program {z1,..., zm} is generated token-wise by applying softmax over the vocabulary weights derived by transforming the corresponding hidden state s",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "3.1 Model"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "Decoding",
+    "object_type": "Method",
+    "source_sentence": "Further, we employ beam search during decoding which generates a set of parses B for every utterance.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "3.1 Model"
+  },
+  {
+    "subject": "Weakly Supervised",
+    "predicate": "uses",
+    "object": "REINFORCE algorithm",
+    "object_type": "Method",
+    "source_sentence": "These are the set of weakly supervised semantic parsers , trained indepen- dently for each domain using REINFORCE algorithm as described in Section 4.1.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "5.2 Baselines"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "uses",
+    "object": "sequence-to-sequence model",
+    "object_type": "Model",
+    "source_sentence": "we also compute the skyline SUPERVISED i.e. the sequence -to- sequence model described in Section 3.1 trained with ground truth parses.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "5.2 Baselines"
+  },
+  {
+    "subject": "Unified Semantic Parsing",
+    "predicate": "addresses",
+    "object": "weak supervision setup",
+    "object_type": "Other",
+    "source_sentence": "Performance of Unified Semantic Parsing framework: The results show the proposed uni- DOMAIN WEAK- WEAK- DISTILL- DISTILL- INDEPENDENT COMBINED INDEPENDENT COMBINED SUPERVISED fied semantic parser using multi-policy distilla- tion (DISTILL-COMBINED) (as described in sec- tion 3) on an average has the highest performance in predicting programs under weak supervision setup.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "6 Results and Discussion"
+  },
+  {
+    "subject": "semantic parser",
+    "predicate": "uses",
+    "object": "multi-policy distillation",
+    "object_type": "Method",
+    "source_sentence": "Performance of Unified Semantic Parsing framework: The results show the proposed uni- DOMAIN WEAK- WEAK- DISTILL- DISTILL- INDEPENDENT COMBINED INDEPENDENT COMBINED SUPERVISED fied semantic parser using multi-policy distilla- tion (DISTILL-COMBINED) (as described in sec- tion 3) on an average has the highest performance in predicting programs under weak supervision setup.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "6 Results and Discussion"
+  },
+  {
+    "subject": "semantic parser",
+    "predicate": "addresses",
+    "object": "weak supervision setup",
+    "object_type": "Other",
+    "source_sentence": "Performance of Unified Semantic Parsing framework: The results show the proposed uni- DOMAIN WEAK- WEAK- DISTILL- DISTILL- INDEPENDENT COMBINED INDEPENDENT COMBINED SUPERVISED fied semantic parser using multi-policy distilla- tion (DISTILL-COMBINED) (as described in sec- tion 3) on an average has the highest performance in predicting programs under weak supervision setup.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "6 Results and Discussion"
+  },
+  {
+    "subject": "Weak Supervision",
+    "predicate": "uses",
+    "object": "denotations",
+    "object_type": "Concept",
+    "source_sentence": "We propose a novel unified neural framework using multi-policy distillation mechanism with two stages of training through weak supervision from denotations i.e. final answers corresponding to utterances.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "7 Conclusions and Future Work"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "denotations based training",
+    "object_type": "Concept",
+    "source_sentence": "We plan to explore if further fine-tuning using denotations based training on the distilled model can lead to improvements in the unified parser.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "7 Conclusions and Future Work"
+  },
+  {
+    "subject": "bootstrapping",
+    "predicate": "uses",
+    "object": "shared templates",
+    "object_type": "Concept",
+    "source_sentence": "We also plan to investigate the possibility of augmenting the parallel corpus by bootstrapping from shared templates across domains.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "7 Conclusions and Future Work"
+  },
+  {
+    "subject": "Transfer Learning",
+    "predicate": "uses",
+    "object": "new domain",
+    "object_type": "Domain",
+    "source_sentence": "This would further make it feasible to perform transfer learning on a new domain.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1473",
+    "title": "Uniﬁed Semantic Parsing with Weak Supervision",
+    "section": "7 Conclusions and Future Work"
+  }
+]

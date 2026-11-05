@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "CNN/DailyMail news corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Many of the introduced models are trained on the CNN/DailyMail news corpus, a popular benchmark for the field, and are evaluated based on n-gram overlap between the generated and target summaries with the ROUGE package.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1051",
+    "title": "Salesforce Research {kryscinski,nkeskar,bmccann,cxiong,rsocher}@salesforce.com",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "CNN/DailyMail news corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Many of the introduced models are trained on the CNN/DailyMail news corpus, a popular benchmark for the field, and are evaluated based on n-gram overlap between the generated and target summaries with the ROUGE package.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1051",
+    "title": "Salesforce Research {kryscinski,nkeskar,bmccann,cxiong,rsocher}@salesforce.com",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "ROUGE",
+    "object_type": "Metric",
+    "source_sentence": "Many of the introduced models are trained on the CNN/DailyMail news corpus, a popular benchmark for the field, and are evaluated based on n-gram overlap between the generated and target summaries with the ROUGE package.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1051",
+    "title": "Salesforce Research {kryscinski,nkeskar,bmccann,cxiong,rsocher}@salesforce.com",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Hybrid Models",
+    "predicate": "addresses",
+    "object": "summarization process",
+    "object_type": "Task",
+    "source_sentence": "Hybrid models (Hsu et al., 2018; Liu et al., 2018; Gehrmann et al., 2018; Chen and Bansal, 2018) include both extractive and abstractive modules and allow to separate the summarization process into two phases – content selection and paraphrasing.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1051",
+    "title": "Salesforce Research {kryscinski,nkeskar,bmccann,cxiong,rsocher}@salesforce.com",
+    "section": "2.3 Models"
+  },
+  {
+    "subject": "Hybrid Models",
+    "predicate": "addresses",
+    "object": "content selection",
+    "object_type": "Task",
+    "source_sentence": "Hybrid models (Hsu et al., 2018; Liu et al., 2018; Gehrmann et al., 2018; Chen and Bansal, 2018) include both extractive and abstractive modules and allow to separate the summarization process into two phases – content selection and paraphrasing.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1051",
+    "title": "Salesforce Research {kryscinski,nkeskar,bmccann,cxiong,rsocher}@salesforce.com",
+    "section": "2.3 Models"
+  },
+  {
+    "subject": "Neural Models",
+    "predicate": "addresses",
+    "object": "content selection across different data domains",
+    "object_type": "Task",
+    "source_sentence": "(2018) offered a thorough analysis of how neural models perform content selection across different data domains, and exposed data biases that dominate the learning signal in the news domain and architectural limitations of current approaches in learning robust sentence-level representations.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1051",
+    "title": "Salesforce Research {kryscinski,nkeskar,bmccann,cxiong,rsocher}@salesforce.com",
+    "section": "2.4 Analysis and Critique"
+  },
+  {
+    "subject": "ROUGE",
+    "predicate": "addresses",
+    "object": "correlation between ROUGE scores and human judgments",
+    "object_type": "Concept",
+    "source_sentence": "Liu and Liu (2010) examine the correlation between ROUGE scores and human judgments when evaluating meeting summarization data and show that the correlation strength is low, but can be improved by leveraging unique meeting characteristics, such as available speaker information.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1051",
+    "title": "Salesforce Research {kryscinski,nkeskar,bmccann,cxiong,rsocher}@salesforce.com",
+    "section": "2.4 Analysis and Critique"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "achieves",
+    "object": "strong correlations with human assessments",
+    "object_type": "Concept",
+    "source_sentence": "shows that the BLEU metric achieves strong correlations with human assessments of generated summaries.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1051",
+    "title": "Salesforce Research {kryscinski,nkeskar,bmccann,cxiong,rsocher}@salesforce.com",
+    "section": "2.4 Analysis and Critique"
+  },
+  {
+    "subject": "ROUGE",
+    "predicate": "evaluatedon",
+    "object": "DUC datasets",
+    "object_type": "Dataset",
+    "source_sentence": "The effectiveness of ROUGE was previously evaluated through statistical correlations with human judgment on the DUC datasets.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1051",
+    "title": "Salesforce Research {kryscinski,nkeskar,bmccann,cxiong,rsocher}@salesforce.com",
+    "section": "4.1 Weak correlation with human judgment"
+  },
+  {
+    "subject": "ROUGE",
+    "predicate": "uses",
+    "object": "CNN/DM reference summaries",
+    "object_type": "Other",
+    "source_sentence": "We computed ROUGE scores for collected models in two settings: first using the CNN/DM reference summaries as the ground-truth, and second where the leading three sentences of the source article were used as the ground-truth.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1051",
+    "title": "Salesforce Research {kryscinski,nkeskar,bmccann,cxiong,rsocher}@salesforce.com",
+    "section": "5.1 Layout bias in news data"
+  },
+  {
+    "subject": "ROUGE",
+    "predicate": "uses",
+    "object": "leading three sentences of the source article",
+    "object_type": "Other",
+    "source_sentence": "We computed ROUGE scores for collected models in two settings: first using the CNN/DM reference summaries as the ground-truth, and second where the leading three sentences of the source article were used as the ground-truth.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1051",
+    "title": "Salesforce Research {kryscinski,nkeskar,bmccann,cxiong,rsocher}@salesforce.com",
+    "section": "5.1 Layout bias in news data"
+  }
+]

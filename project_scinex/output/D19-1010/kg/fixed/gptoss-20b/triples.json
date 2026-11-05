@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Dialog System",
+    "predicate": "uses",
+    "object": "conversational corpora",
+    "object_type": "Dataset",
+    "source_sentence": "samples to train, most existing studies use data-driven approaches to build a dialog system from conversational corpora",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Adversarial Learning",
+    "predicate": "uses",
+    "object": "policy",
+    "object_type": "Concept",
+    "source_sentence": "We integrate Adversarial Learning (AL) to train the policy and estimator simultaneously, and evaluate the policy using state-action pairs to better guide dialog policy learning.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "multi-domain, multi-intent task-oriented dialog corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct experiments on the multi-domain, multi-intent task-oriented dialog corpus, with different types of user simulators.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Guided Dialog Policy Learning",
+    "predicate": "addresses",
+    "object": "multi-domain task-oriented dialog systems",
+    "object_type": "Task",
+    "source_sentence": "We propose Guided Dialog Policy Learning (GDPL), a flexible and practical method on joint reward learning and policy optimization for multi - domain task- oriented dialog systems .",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "3 Guided Dialog Policy Learning"
+  },
+  {
+    "subject": "Dialog",
+    "predicate": "produces",
+    "object": "dialog sessions DΠ",
+    "object_type": "Other",
+    "source_sentence": "3 Collect the dialog sessions DΠ by executing the dialog policy π and interacting with µ, au ∼µ(·|su), a ∼π(·|s), where s is maintained by DST",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "2 Sample human dialog sessions DH from D randomly"
+  },
+  {
+    "subject": "Reward Estimation",
+    "predicate": "uses",
+    "object": "entire session τ",
+    "object_type": "Other",
+    "source_sentence": "the reward estimation uses the entire ses- sion τ",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "3.4 State-Action Level Reward Estimation"
+  },
+  {
+    "subject": "PPO",
+    "predicate": "uses",
+    "object": "constant clipping mechanism",
+    "object_type": "Concept",
+    "source_sentence": "In practice, we apply Proximal Policy Opti- mization (PPO) , a simple and stable policy based RL algorithm using a con- stant clipping mechanism as the soft constraint for dialog policy optimization, where Vθ is the approximate value function, βt = πθ(at|st) πθold(at|st) is the ratio of the probability under the new and old policies , ˆA is the estimated advantage, δ is TD residual, λ and ϵ are hyper-parameters.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "3.4 State-Action Level Reward Estimation"
+  },
+  {
+    "subject": "PPO",
+    "predicate": "addresses",
+    "object": "dialog policy optimization",
+    "object_type": "Task",
+    "source_sentence": "In practice, we apply Proximal Policy Opti- mization (PPO) , a simple and stable policy based RL algorithm using a con- stant clipping mechanism as the soft constraint for dialog policy optimization, where Vθ is the approximate value function, βt = πθ(at|st) πθold(at|st) is the ratio of the probability under the new and old policies , ˆA is the estimated advantage, δ is TD residual, λ and ϵ are hyper-parameters.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "3.4 State-Action Level Reward Estimation"
+  },
+  {
+    "subject": "Adversarial Learning",
+    "predicate": "uses",
+    "object": "Bi-LSTM",
+    "object_type": "Method",
+    "source_sentence": "ALDM : Adversarial Learning Dialog Model that learns dialog rewards with a Bi-LSTM encoding the dialog sequence as the discriminator to predict the task success.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "4.4 Baselines"
+  },
+  {
+    "subject": "Adversarial Learning",
+    "predicate": "uses",
+    "object": "Sequence",
+    "object_type": "Other",
+    "source_sentence": "ALDM : Adversarial Learning Dialog Model that learns dialog rewards with a Bi-LSTM encoding the dialog sequence as the discriminator to predict the task success.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "4.4 Baselines"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "automatic metrics",
+    "object_type": "Metric",
+    "source_sentence": "The agreement on the superiority of GDPL between objective rating in Table 3 and human preference here also indicates that the automatic metrics used in our experiments is reliable to reflect user satisfaction to some extent.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "5.5 Human Evaluation"
+  },
+  {
+    "subject": "NLU",
+    "predicate": "uses",
+    "object": "dialog acts",
+    "object_type": "Concept",
+    "source_sentence": "GDPL can be equipped with NLU modules that identify the dialog acts expressed in utterance",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "NLG",
+    "predicate": "uses",
+    "object": "dialog acts",
+    "object_type": "Concept",
+    "source_sentence": "GDPL can be equipped with NLU modules that identify the dialog acts expressed in utterance, and with NLG modules that generate utterances from dialog acts",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "agenda-based",
+    "predicate": "produces",
+    "object": "simulated interaction",
+    "object_type": "Concept",
+    "source_sentence": "The agenda-based user simulator is powerful to provide a simulated interaction for the dialog policy learning, however, it needs careful design and is lack of generalization.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1010",
+    "title": "Guided Dialog Policy Learning: Reward Estimation for Multi-Domain Task-Oriented Dialog",
+    "section": "6 Discussion"
+  }
+]

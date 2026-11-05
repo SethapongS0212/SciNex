@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "A La Carte Embedding",
+    "predicate": "uses",
+    "object": "GloVe-like embeddings",
+    "object_type": "Concept",
+    "source_sentence": "This paper introduces `a la carte embedding , a sim- ple and general alternative to the usual word2vec-based approaches for building such representations that is based upon re- cent theoretical results for GloVe-like em- beddings.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "A La Carte Embedding: Cheap but Effective Induction of Semantic Feature Vectors"
+  },
+  {
+    "subject": "A La Carte Embedding",
+    "predicate": "uses",
+    "object": "high-quality word vectors",
+    "object_type": "Model",
+    "source_sentence": "We propose an alternative, novel solution via `a la carte embedding , a method which bootstraps existing high-quality word vectors to learn a feature representation in the same semantic space via a linear transformation of the average word embeddings in the feature's available contexts.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "standard algorithm",
+    "object_type": "Method",
+    "source_sentence": "We further assume that we have trained word embeddings vw ∈Rd on this collection information using a standard algorithm",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "3 Method Speciﬁcation"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Model",
+    "source_sentence": "We further assume that we have trained word embeddings vw ∈Rd on this collection information using a standard algorithm",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "3 Method Speciﬁcation"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "removing common components and frequent words",
+    "object_type": "Concept",
+    "source_sentence": "These experiments consolidate our intuitions from Section 3 that removing common components and frequent words is important",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "4.1 Similarity Correlation vs. Sample Size"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "achieves",
+    "object": "Spearman correlation of 0.45",
+    "object_type": "Metric",
+    "source_sentence": "However, if we train Additive Additive, all-but-the-top Additive, no stop words SIF weighted SIF weighted + all-but-the-top 1 2 4 8 16 32 64 128 Number of Contexts word2vec embeddings from scratch on the subcor- pus together with the sampled contexts we achieve a Spearman correlation of 0.45; this gap between word2vec and our method shows that there re- mains room for even better approaches for few- shot learning of word embeddings .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "4.1 Similarity Correlation vs. Sample Size"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "Wikipedia corpus",
+    "object_type": "Dataset",
+    "source_sentence": "we use their word2vec embeddings along with contexts from the Wikipedia corpus",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "4.2 Learning Embeddings of New Concepts: Nonces and Chimeras"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "word embeddings",
+    "object_type": "Model",
+    "source_sentence": "An embedding for each nonce can then be constructed by multiplying A by the sum over all word embeddings in the nonce's definition.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "4.2 Learning Embeddings of New Concepts: Nonces and Chimeras"
+  },
+  {
+    "subject": "Chimera",
+    "predicate": "uses",
+    "object": "related words",
+    "object_type": "Concept",
+    "source_sentence": "combining two related words into a fake nonce word (the \"chimera\")",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "4.2 Learning Embeddings of New Concepts: Nonces and Chimeras"
+  },
+  {
+    "subject": "Example",
+    "predicate": "uses",
+    "object": "Sentences",
+    "object_type": "Other",
+    "source_sentence": "provide two, four, or six example sentences for this nonce drawn from sentences containing one of the two component words.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "4.2 Learning Embeddings of New Concepts: Nonces and Chimeras"
+  },
+  {
+    "subject": "Text Representations",
+    "predicate": "uses",
+    "object": "bigram",
+    "object_type": "Concept",
+    "source_sentence": "While we concatenate across unigram, bigram, and trigram embeddings to construct our text representations",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "5.2 N-Gram Embeddings for Classiﬁcation"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "Documents",
+    "object_type": "Concept",
+    "source_sentence": "running cross-validated, ℓ2-regularized logistic regression on documents from MR movie reviews , CR customer reviews , SUBJ subjectivity dataset , MPQA opinion polarity subtask , TREC question classification , SST sentiment classification (binary and fine-grained) , and IMDB movie reviews",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "5.2 N-Gram Embeddings for Classiﬁcation"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "latest pretrained models",
+    "object_type": "Model",
+    "source_sentence": "Evaluation conducted using latest pretrained models.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "5.2 N-Gram Embeddings for Classiﬁcation"
+  },
+  {
+    "subject": "A La Carte Embedding",
+    "predicate": "uses",
+    "object": "unsupervised context information",
+    "object_type": "Concept",
+    "source_sentence": "We have introduced `a la carte embedding , a simple method for representing semantic features using unsupervised context information.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1002",
+    "title": "Mikhail Khodak∗, Nikunj Saunshi∗",
+    "section": "6 Conclusion"
+  }
+]

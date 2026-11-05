@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "German",
+    "predicate": "uses",
+    "object": "German task data",
+    "object_type": "Dataset",
+    "source_sentence": "For South Tyrolean, a German dialect, no labeled target data of any sort is available ; we use the German task data instead.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3 Models"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "softmax layer",
+    "object_type": "Other",
+    "source_sentence": "For slot prediction, a greedy decoding with a softmax layer is used",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.1 Baseline"
+  },
+  {
+    "subject": "linear classification",
+    "predicate": "uses",
+    "object": "CLS token",
+    "object_type": "Other",
+    "source_sentence": "for intents it uses a linear classification layer over the [CLS] token",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.1 Baseline"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "slots",
+    "object_type": "Other",
+    "source_sentence": "We also tried to use a CRF layer for slots which consistently led to lower performance",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.1 Baseline"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "proportional sampling option",
+    "object_type": "Other",
+    "source_sentence": "We enable the proportional sampling option of MaChAmp (multinomial sampling α = 0.5) in all multi-task experiments",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.1 Baseline"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "trainedon",
+    "object": "NLU training data",
+    "object_type": "Dataset",
+    "source_sentence": "For comparison, we trained a NMT model to translate the NLU training data into the target language, and map the annotations using attention.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "Sentences",
+    "predicate": "uses",
+    "object": "BPE",
+    "object_type": "Method",
+    "source_sentence": "Sentences were encoded using byte-pair encoding (BPE), with a shared vocabulary of 32,000 tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "Machine Translation data",
+    "predicate": "uses",
+    "object": "transcribed spoken parallel data",
+    "object_type": "Dataset",
+    "source_sentence": "Data To ensure that our machine translation data is suitable for the target domain , we choose to use a combination of transcribed spoken parallel data.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "train and development data",
+    "object_type": "Dataset",
+    "source_sentence": "For languages included in the IWSLT 2016 Ted talks dataset , we use the train and development data included, and enlarge the training data with the training split from Open-subtitles10 2018 , and Tatoeba.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "training split from Open-subtitles10 2018",
+    "object_type": "Dataset",
+    "source_sentence": "For languages included in the IWSLT 2016 Ted talks dataset , we use the train and development data included, and enlarge the training data with the training split from Open-subtitles10 2018 , and Tatoeba.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Tatoeba",
+    "object_type": "Dataset",
+    "source_sentence": "For languages included in the IWSLT 2016 Ted talks dataset , we use the train and development data included, and enlarge the training data with the training split from Open-subtitles10 2018 , and Tatoeba.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Opensubtitles data",
+    "object_type": "Dataset",
+    "source_sentence": "For languages absent in IWSLT2016, we used the Opensubtitles data for training and Tatoeba as development set.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.2 Neural Machine Translation with Attention (nmt-transfer)"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "MLM objective",
+    "object_type": "Method",
+    "source_sentence": "Previous work has shown that continuing to train a language model with an MLM objective on raw data close to the target domain leads to performance improvements.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.3 Masked Language Modeling (aux-mlm)"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "achieves",
+    "object": "performance improvements",
+    "object_type": "Other",
+    "source_sentence": "Previous work has shown that continuing to train a language model with an MLM objective on raw data close to the target domain leads to performance improvements.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.3 Masked Language Modeling (aux-mlm)"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "original BERT masking strategy",
+    "object_type": "Method",
+    "source_sentence": "We apply the original BERT masking strategy and we do not include next sentence prediction following Liu et al.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.3 Masked Language Modeling (aux-mlm)"
+  },
+  {
+    "subject": "Machine Translation data",
+    "predicate": "uses",
+    "object": "target language machine translation data",
+    "object_type": "Dataset",
+    "source_sentence": "Data For our masked language modeling objective, we use the target language machine translation data described above.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "3.3 Masked Language Modeling (aux-mlm)"
+  },
+  {
+    "subject": "Translation Model",
+    "predicate": "trainedon",
+    "object": "out-of-domain data",
+    "object_type": "Dataset",
+    "source_sentence": "where the translation model is trained on out-of- domain data",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "4.1 Experimental Setup"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "addresses",
+    "object": "span detection",
+    "object_type": "Task",
+    "source_sentence": "Our analysis further shows that nmt-transfer struggles with span detection.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.197",
+    "title": "Abstract",
+    "section": "7 Conclusions"
+  }
+]

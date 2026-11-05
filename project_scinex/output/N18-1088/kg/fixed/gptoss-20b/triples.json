@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "character-based word representations",
+    "object_type": "Other",
+    "source_sentence": "a stack LSTM parser with character-based word representations",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Annotations",
+    "predicate": "uses",
+    "object": "rule-based tokenization",
+    "object_type": "Method",
+    "source_sentence": "annotations added unlabeled dependencies to a portion of the data annotated with POS tags by Gimpel et al. (2011) and Owoputi et al. (2013) after rule-based tokenization.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "2.1 Background: TWEEBANK"
+  },
+  {
+    "subject": "Annotation",
+    "predicate": "uses",
+    "object": "non-syntactic tokens",
+    "object_type": "Other",
+    "source_sentence": "we include non-syntactic tokens in our annotation following the conventions above.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "2.4 Universal Dependencies Applied to Tweets"
+  },
+  {
+    "subject": "definition",
+    "predicate": "produces",
+    "object": "non-syntactic tokens",
+    "object_type": "Other",
+    "source_sentence": "we also gave a clear definition of non-syntactic tokens, which helped us avoid confusion during annotation.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "2.4 Universal Dependencies Applied to Tweets"
+  },
+  {
+    "subject": "Annotation",
+    "predicate": "uses",
+    "object": "Arborator",
+    "object_type": "Other",
+    "source_sentence": "An exam- 11Manual annotation was done with Arborator , a web platform for drawing dependency trees.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "2.6.2 Annotation Process"
+  },
+  {
+    "subject": "Tokenization",
+    "predicate": "addresses",
+    "object": "informal tweets",
+    "object_type": "Concept",
+    "source_sentence": "Tokenization, as the initial step of many NLP tasks, is non-trivial for informal tweets , which include hashtags, at-mentions, and emoticons .",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.1 Tokenizer"
+  },
+  {
+    "subject": "Bi-LSTM",
+    "predicate": "addresses",
+    "object": "tokenization",
+    "object_type": "Concept",
+    "source_sentence": "We introduce a new character-level bidirectional LSTM (bi-LSTM) sequence-labeling model for tokenization.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.1 Tokenizer"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "achieves",
+    "object": "best accuracy among all these tokenizers",
+    "object_type": "Metric",
+    "source_sentence": "Our bi-LSTM tokenizer achieves the best accuracy among all these tokenizers.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.1 Tokenizer"
+  },
+  {
+    "subject": "Statistical Modeling",
+    "predicate": "addresses",
+    "object": "tokenization",
+    "object_type": "Other",
+    "source_sentence": "These results speak to the value of statistical modeling in tokenization for informal texts.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.1 Tokenizer"
+  },
+  {
+    "subject": "Tagging",
+    "predicate": "achieves",
+    "object": "93%",
+    "object_type": "Metric",
+    "source_sentence": "We see that errors in tokenization do propagate, but tagging performance is above 93% with our tokenizer.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.2 Part-of-Speech Tagger"
+  },
+  {
+    "subject": "parser",
+    "predicate": "trainedon",
+    "object": "UD_English-EWT training set",
+    "object_type": "Dataset",
+    "source_sentence": "we train our parser on the combination of UD_English-EWT and TWEEBANK V2 training sets.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "trainedon",
+    "object": "TWEEBANK V2 training set",
+    "object_type": "Dataset",
+    "source_sentence": "we train our parser on the combination of UD_English-EWT and TWEEBANK V2 training sets.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "dual decomposition",
+    "object_type": "Method",
+    "source_sentence": "Kong et al.'s parser is a graph-based parser with lexical features and word cluster and it uses dual decomposition for decoding.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "lexical features",
+    "object_type": "Concept",
+    "source_sentence": "Kong et al.'s parser is a graph-based parser with lexical features and word cluster and it uses dual decomposition for decoding.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "word cluster",
+    "object_type": "Concept",
+    "source_sentence": "Kong et al.'s parser is a graph-based parser with lexical features and word cluster and it uses dual decomposition for decoding.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "biaffine classifier",
+    "object_type": "Method",
+    "source_sentence": "The parser in Dozat et al. (2017) is also a graph-based parser but includes character-based word representations and uses a biaffine classifier to predict whether an attachment exists between two words.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "character-based word representations",
+    "object_type": "Method",
+    "source_sentence": "The parser in Dozat et al. (2017) is also a graph-based parser but includes character-based word representations and uses a biaffine classifier to predict whether an attachment exists between two words.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "produces",
+    "object": "single greedy transition-based parser",
+    "object_type": "Model",
+    "source_sentence": "Distilling from this parser leads to a single greedy transition-based parser with 77.8 LAS— better than past systems but worse than our more expensive ensemble.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1088",
+    "title": "Parsing Tweets into Universal Dependencies",
+    "section": "3.3 Parser"
+  }
+]

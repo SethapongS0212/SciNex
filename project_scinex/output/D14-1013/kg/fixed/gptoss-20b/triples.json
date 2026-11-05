@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "POS tagger",
+    "predicate": "uses",
+    "object": "CRF",
+    "object_type": "Model",
+    "source_sentence": "Since some of the feature templates require predicted filler labels and part-of- speech (POS) tags, we have trained a POS tagger and a filler predictor both using CRF (i.e., using the same approach as that in Qian and Liu (2013)).",
+    "extraction_mode": "fixed",
+    "paper": "D14-1013",
+    "title": "Combining Punctuation and Disﬂuency Prediction: An Empirical Study",
+    "section": "3.1 Experimental Setup"
+  },
+  {
+    "subject": "Speech Corpus",
+    "predicate": "uses",
+    "object": "forced alignment",
+    "object_type": "Other",
+    "source_sentence": "The pause duration features are extracted by running forced alignment on the corresponding Switchboard speech corpus (LDC97S62).",
+    "extraction_mode": "fixed",
+    "paper": "D14-1013",
+    "title": "Combining Punctuation and Disﬂuency Prediction: An Empirical Study",
+    "section": "3.1 Experimental Setup"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "F1 score",
+    "object_type": "Metric",
+    "source_sentence": "We use the standard F1 score as our evaluation metric",
+    "extraction_mode": "fixed",
+    "paper": "D14-1013",
+    "title": "Combining Punctuation and Disﬂuency Prediction: An Empirical Study",
+    "section": "3.3 Evaluation and Results"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "frequency pruning threshold",
+    "object_type": "Other",
+    "source_sentence": "For training, we set the frequency pruning threshold to 5",
+    "extraction_mode": "fixed",
+    "paper": "D14-1013",
+    "title": "Combining Punctuation and Disﬂuency Prediction: An Empirical Study",
+    "section": "3.3 Evaluation and Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "feature templates",
+    "object_type": "Other",
+    "source_sentence": "All the four models are trained using the same feature templates as shown in Table 3.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1013",
+    "title": "Combining Punctuation and Disﬂuency Prediction: An Empirical Study",
+    "section": "4.1 Hard Cascade"
+  },
+  {
+    "subject": "Joint Approach",
+    "predicate": "comparesagainst",
+    "object": "Soft Cascade Approach",
+    "object_type": "Method",
+    "source_sentence": "Although the joint approach (2-layer FCRF and cross-product LCRF) are better than the soft- cascade approach, they cannot be easily scaled up to using higher order cliques, which greatly limits their potential.",
+    "extraction_mode": "fixed",
+    "paper": "D14-1013",
+    "title": "Combining Punctuation and Disﬂuency Prediction: An Empirical Study",
+    "section": "O None"
+  }
+]

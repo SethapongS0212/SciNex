@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "acoustic",
+    "predicate": "uses",
+    "object": "COVAREP software",
+    "object_type": "Other",
+    "source_sentence": "Acoustic: We use the COVAREP software to extract acoustic features including 12 Mel-frequency cepstral coefficients, pitch, voiced/unvoiced segmenting features , glottal source parameters , peak slope parameters and maxima dispersion quotients .",
+    "extraction_mode": "fixed",
+    "paper": "P18-1208",
+    "title": "Abstract",
+    "section": "3.3 Extracted Features"
+  },
+  {
+    "subject": "Deep Neural Network",
+    "predicate": "uses",
+    "object": "singleton vertices",
+    "object_type": "Concept",
+    "source_sentence": "The vector of all αs is inferred using a deep neural network Dα which takes as input singleton vertices in V (l, v, and a).",
+    "extraction_mode": "fixed",
+    "paper": "P18-1208",
+    "title": "Abstract",
+    "section": "4.1 Dynamic Fusion Graph"
+  },
+  {
+    "subject": "LSTMs",
+    "predicate": "uses",
+    "object": "network Dz",
+    "object_type": "Model",
+    "source_sentence": "a network Dz transforms Tt into a multi-modal representation zt to update the system of LSTMs.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1208",
+    "title": "Abstract",
+    "section": "4.2 Graph-MFN"
+  },
+  {
+    "subject": "multi-view",
+    "predicate": "uses",
+    "object": "network Du",
+    "object_type": "Model",
+    "source_sentence": "The Multi-view Gated Memory functions using a network Du that transforms Tt into a proposed memory update ˆut.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1208",
+    "title": "Abstract",
+    "section": "4.2 Graph-MFN"
+  }
+]

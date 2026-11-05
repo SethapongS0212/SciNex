@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "BioBERT",
+    "predicate": "trainedon",
+    "object": "PubMed",
+    "object_type": "Dataset",
+    "source_sentence": "BIOBERT is trained on abstracts from PubMed and full article texts from PubMed Central.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "2.1 Language Representations for Health"
+  },
+  {
+    "subject": "BioBERT",
+    "predicate": "trainedon",
+    "object": "PubMed Central",
+    "object_type": "Dataset",
+    "source_sentence": "BIOBERT is trained on abstracts from PubMed and full article texts from PubMed Central.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "2.1 Language Representations for Health"
+  },
+  {
+    "subject": "SciBERT",
+    "predicate": "trainedon",
+    "object": "Semantic Scholar articles",
+    "object_type": "Dataset",
+    "source_sentence": "SCIBERT is trained on 1.14M Semantic Scholar articles relating to computer science and biomedical sciences.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "2.1 Language Representations for Health"
+  },
+  {
+    "subject": "SciBERT",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "SCIBERT outperforms BERT in five NLP tasks including named entity recognition and text classification.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "2.1 Language Representations for Health"
+  },
+  {
+    "subject": "SBERT",
+    "predicate": "uses",
+    "object": "BERT language model",
+    "object_type": "Model",
+    "source_sentence": "SBERT is a model for sentence-pair regression tasks which is based on the BERT language model , to encode contextualized representations for each of the evidence sentences and then rank these sentences according to their cosine similarity with respect to the contextualized representation of the claim sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "4.1 Veracity Prediction"
+  },
+  {
+    "subject": "SBERT",
+    "predicate": "uses",
+    "object": "Contextualized Representations",
+    "object_type": "Concept",
+    "source_sentence": "SBERT is a model for sentence-pair regression tasks which is based on the BERT language model , to encode contextualized representations for each of the evidence sentences and then rank these sentences according to their cosine similarity with respect to the contextualized representation of the claim sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "4.1 Veracity Prediction"
+  },
+  {
+    "subject": "SBERT",
+    "predicate": "uses",
+    "object": "Cosine Similarity",
+    "object_type": "Concept",
+    "source_sentence": "SBERT is a model for sentence-pair regression tasks which is based on the BERT language model , to encode contextualized representations for each of the evidence sentences and then rank these sentences according to their cosine similarity with respect to the contextualized representation of the claim sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "4.1 Veracity Prediction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Sentence Selection",
+    "object_type": "Method",
+    "source_sentence": "a randomized sentence selection approach with BERT (bert-base- uncased) classifier, and lastly a BERT model, also using pre-trained uncased BERT, which does not make use of sentence selection and instead makes use of the entire article text to fine-tune for the fact- checking task.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "5.1 Prediction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Article Text",
+    "object_type": "Text",
+    "source_sentence": "a randomized sentence selection approach with BERT (bert-base- uncased) classifier, and lastly a BERT model, also using pre-trained uncased BERT, which does not make use of sentence selection and instead makes use of the entire article text to fine-tune for the fact- checking task.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "5.1 Prediction"
+  },
+  {
+    "subject": "BioBERT",
+    "predicate": "achieves",
+    "object": "second highest scores for F1, precision and accuracy",
+    "object_type": "Other",
+    "source_sentence": "BIOBERT v1.1 achieves the second highest scores for F1, precision and accuracy.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "5.1 Prediction"
+  },
+  {
+    "subject": "BioBERT",
+    "predicate": "comparesagainst",
+    "object": "BioBERT v1.0",
+    "object_type": "Model",
+    "source_sentence": "BIOBERT v1.1 outperforms BIOBERT v1.0 on all four metrics.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "5.1 Prediction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "highest precision score of the four models",
+    "object_type": "Other",
+    "source_sentence": "The standard BERT model achieves the highest precision score of the four models, however it also achieves the lowest recall and F1 scores.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "5.1 Prediction"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "addresses",
+    "object": "quality of the gold and generated explanations",
+    "object_type": "Concept",
+    "source_sentence": "We employ human evaluation in order to assess the quality of the gold and generated explanations with respect to these properties.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "5.3.1 Human & Computational Evaluations"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "addresses",
+    "object": "coherence properties",
+    "object_type": "Concept",
+    "source_sentence": "Also, we conduct a computational evaluation of the three coherence properties using NLI.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "5.3.1 Human & Computational Evaluations"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "SNLI corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We conducted the computational evaluation on three pretrained NLI models: 1) a decomposable attention model using ELMo embeddings trained on the Stanford Natural Language Inference (SNLI) corpus , 2) RoBERTa trained on SNLI, and 3) RoBERTa trained on the Multi-Genre Natural Language Inference (MNLI) corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "5.3.1 Human & Computational Evaluations"
+  },
+  {
+    "subject": "RoBERTa",
+    "predicate": "trainedon",
+    "object": "MNLI corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We conducted the computational evaluation on three pretrained NLI models: 1) a decomposable attention model using ELMo embeddings trained on the Stanford Natural Language Inference (SNLI) corpus , 2) RoBERTa trained on SNLI, and 3) RoBERTa trained on the Multi-Genre Natural Language Inference (MNLI) corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.623",
+    "title": "Explainable Automated Fact-Checking for Public Health Claims",
+    "section": "5.3.1 Human & Computational Evaluations"
+  }
+]

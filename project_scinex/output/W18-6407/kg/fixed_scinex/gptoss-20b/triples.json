@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "Context",
+    "object_type": "Concept",
+    "source_sentence": "In Section 4 we describe our experiments for compositional phrase embeddings standalone and in context of UMT.",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "preprocessing",
+    "predicate": "uses",
+    "object": "tokenization",
+    "object_type": "Method",
+    "source_sentence": "In order to compute vectors for words and subset of phrases (we treat phrases as single-unit vocabulary entries at this point) we first need to get a monolingual corpus and do some preprocessing like lowercasing / true- casing and tokenization.",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "3 Approach to Phrase Embeddings"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "Linear layer",
+    "object_type": "Other",
+    "source_sentence": "Neural Network with one linear layer (Linear): W1 ∗([w1, w2]) where W1 is parameters matrix and [w1, w2] means concatenation",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "4.1.2 Candidate Models"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "ReLU layer",
+    "object_type": "Other",
+    "source_sentence": "Neural Network with dense ReLU layer and linear layer (NonLinear)",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "4.1.2 Candidate Models"
+  },
+  {
+    "subject": "Long Short Term Memory",
+    "predicate": "uses",
+    "object": "last timestep",
+    "object_type": "Other",
+    "source_sentence": "Long Short Term Memory network (LSTM): last timestep is used as phrase representation",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "4.1.2 Candidate Models"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "phrases",
+    "object_type": "Concept",
+    "source_sentence": "We conducted experiments on phrases with length up to two words for simplicity.",
+    "extraction_mode": "fixed",
+    "paper": "W18-6407",
+    "title": "Phrase-based Unsupervised Machine Translation with Compositional Phrase Embeddings",
+    "section": "4.1.3 Experiments Results and Analysis"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "Beam Search",
+    "predicate": "produces",
+    "object": "hypotheses",
+    "object_type": "Other",
+    "source_sentence": "The initial population is formed by 20-best hypotheses obtained by beam search and 20 sampled ones, copied 50 times over to obtain a population size of 2000.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.5 GA parameters"
+  },
+  {
+    "subject": "Reranking",
+    "predicate": "uses",
+    "object": "Beam Search",
+    "object_type": "Method",
+    "source_sentence": "Reranking We translated newstest-18 by the baseline model using beam search with beam size 20.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.7 Results"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "knowledge of the reference",
+    "object_type": "Concept",
+    "source_sentence": "Experiments were again conducted with either the knowledge of the reference or with MBR decoding.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.7 Results"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "MBR decoding",
+    "object_type": "Method",
+    "source_sentence": "Experiments were again conducted with either the knowledge of the reference or with MBR decoding.",
+    "extraction_mode": "fixed",
+    "paper": "2023.acl-long.122",
+    "title": "Abstract",
+    "section": "4.7 Results"
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Semi-Supervised Learning",
+    "predicate": "uses",
+    "object": "English NE recognition model",
+    "object_type": "Model",
+    "source_sentence": "Finally, when semi-supervised learning is conducted to train the adopted English NE recognition model, the proposed model also significantly boosts the English NE recognition type-sensitive F-score.",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "A Joint Model to Identify and Align Bilingual Named Entities"
+  },
+  {
+    "subject": "Semi-Supervised Learning",
+    "predicate": "achieves",
+    "object": "English NE recognition type-sensitive F-score",
+    "object_type": "Metric",
+    "source_sentence": "Finally, when semi-supervised learning is conducted to train the adopted English NE recognition model, the proposed model also significantly boosts the English NE recognition type-sensitive F-score.",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "A Joint Model to Identify and Align Bilingual Named Entities"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "addresses",
+    "object": "NEs",
+    "object_type": "Concept",
+    "source_sentence": "Alignment can help fix those NEs that are initially incorrectly recognized when they are not the correct counterparts of each other.",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "2. Motivation"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "addresses",
+    "object": "semantic meaning",
+    "object_type": "Concept",
+    "source_sentence": "Because alignment would force the NEs in the linked NE pair to share the same semantic meaning, the NE that is more reliably identified in one language can be used to identify its less reliable counterpart in the other language.",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "2.1 Alignment Helps NE Recognition"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "achieves",
+    "object": "locate incorrectly recognized NEs",
+    "object_type": "Task",
+    "source_sentence": "This benefit, which is observed in both NE boundary identification and type classification, indicates that alignment can be used to locate those NEs that are initially incorrectly recognized.",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "2.1 Alignment Helps NE Recognition"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "addresses",
+    "object": "NE scope",
+    "object_type": "Concept",
+    "source_sentence": "Alignment scores alone, however, are incapable of selecting the appropriate NE scope in some cases.",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "2.2 Initial NEs Carry NE Scope Information"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "uses",
+    "object": "wrong NE pair",
+    "object_type": "Other",
+    "source_sentence": "As illustrated in Example (3), the desired NE pair {⟨德国⟩::[Germany]} is initially correctly recognized, although the wrong NE pair {⟨德国经济⟩::[Germany economy]} is finally selected from the regenerated candidate set if only alignment scores are used in the final selection process.",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "2.2 Initial NEs Carry NE Scope Information"
+  },
+  {
+    "subject": "Bigrams",
+    "predicate": "uses",
+    "object": "monolingual NE recognition model",
+    "object_type": "Other",
+    "source_sentence": "For example, the bigrams of text surrounding NEs are frequently adopted in a monolingual NE recognition model, but not in a bilingual alignment model.",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "2.2 Initial NEs Carry NE Scope Information"
+  },
+  {
+    "subject": "Example",
+    "predicate": "addresses",
+    "object": "Context",
+    "object_type": "Concept",
+    "source_sentence": "For example, {⟨梅尔斯⟩::[Myers]} is incorrectly identified as LOC, when in fact it should have been PER in the context \"主席梅尔斯\".",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "5.2 NE Type Errors"
+  },
+  {
+    "subject": "syntactic",
+    "predicate": "addresses",
+    "object": "Transliteration",
+    "object_type": "Concept",
+    "source_sentence": "Therefore, more complicated syntactic or semantic information is required in some cases involving transliteration.",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "5.2 NE Type Errors"
+  },
+  {
+    "subject": "semantic",
+    "predicate": "addresses",
+    "object": "Transliteration",
+    "object_type": "Concept",
+    "source_sentence": "Therefore, more complicated syntactic or semantic information is required in some cases involving transliteration.",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "5.2 NE Type Errors"
+  },
+  {
+    "subject": "Semi-Supervised Learning",
+    "predicate": "addresses",
+    "object": "learning the NE recognition model",
+    "object_type": "Task",
+    "source_sentence": "In other words, when semi-supervised learning is conducted for learning the NE recognition model, MERT-W is expected to guide the search process for convergence towards the human annotation.",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "6.2 On Learning NE Recognition Models via Semi-Supervised Learning"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "addresses",
+    "object": "multilingual named entities",
+    "object_type": "Concept",
+    "source_sentence": "Learning formulation and transformation rules for multilingual named entities.",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "8. Conclusion"
+  },
+  {
+    "subject": "Empirical Study",
+    "predicate": "addresses",
+    "object": "smoothing techniques for language modeling",
+    "object_type": "Concept",
+    "source_sentence": "An empirical study of smoothing techniques for language modeling.",
+    "extraction_mode": "fixed",
+    "paper": "J13-2001",
+    "title": "doi:10.1162/COLI a 00122",
+    "section": "8. Conclusion"
+  }
+]

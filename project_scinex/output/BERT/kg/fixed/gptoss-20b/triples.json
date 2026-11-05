@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "masked language models",
+    "object_type": "Method",
+    "source_sentence": "Unlike Radford et al. (2018), which uses unidirectional language models for pre-training, BERT uses masked language models to enable pre-trained deep bidirectional representations.",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "state of the art for eleven NLP tasks",
+    "object_type": "Other",
+    "source_sentence": "BERT advances the state of the art for eleven NLP tasks.",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "vocabulary",
+    "object_type": "Concept",
+    "source_sentence": "the final hidden vectors corresponding to the mask tokens are fed into an output softmax over the vocabulary",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "3 BERT"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "WordPiece tokens",
+    "object_type": "Concept",
+    "source_sentence": "In all of our experiments, we mask 15% of all WordPiece tokens in each sequence at random",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "3 BERT"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "token positions",
+    "object_type": "Concept",
+    "source_sentence": "The training data generator chooses 15% of the token positions at random for prediction",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "3 BERT"
+  },
+  {
+    "subject": "cross entropy",
+    "predicate": "uses",
+    "object": "original token",
+    "object_type": "Concept",
+    "source_sentence": "Then, Ti will be used to predict the original token with cross entropy loss",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "3 BERT"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "Concept",
+    "source_sentence": "only sentence embeddings are transferred to down-stream tasks, where BERT transfers all parameters to initialize end-task model parameters.",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "3.1 Pre-training BERT"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "BooksCorpus",
+    "object_type": "Dataset",
+    "source_sentence": "For the pre-training corpus we use the BooksCorpus (800M words) and English Wikipedia (2,500M words).",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "3.1 Pre-training BERT"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "English Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "For the pre-training corpus we use the BooksCorpus (800M words) and English Wikipedia (2,500M words).",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "3.1 Pre-training BERT"
+  },
+  {
+    "subject": "BERT Fine-tuning",
+    "predicate": "addresses",
+    "object": "11 NLP tasks",
+    "object_type": "Task",
+    "source_sentence": "In this section, we present BERT fine-tuning results on 11 NLP tasks.",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "self-attention mechanism",
+    "object_type": "Method",
+    "source_sentence": "the self-attention mechanism in the Transformer allows BERT to model many downstream tasks",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "3.2 Fine-tuning BERT"
+  },
+  {
+    "subject": "Self-Attention Mechanism",
+    "predicate": "uses",
+    "object": "Transformer",
+    "object_type": "Method",
+    "source_sentence": "the self-attention mechanism in the Transformer allows BERT to model many downstream tasks",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "3.2 Fine-tuning BERT"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "representation of the first sub-token",
+    "object_type": "Artifact",
+    "source_sentence": "We use the representation of the first sub- token as the input to the token - level classifier over the NER label set.",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "5.3 Feature-based Approach with BERT"
+  },
+  {
+    "subject": "WordPiece",
+    "predicate": "uses",
+    "object": "tokenization",
+    "object_type": "Method",
+    "source_sentence": "The LM masking is applied after WordPiece tokenization with a uniform masking rate of 15%",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "A.2 Pre-training Procedure"
+  },
+  {
+    "subject": "GPT",
+    "predicate": "trainedon",
+    "object": "BooksCorpus",
+    "object_type": "Dataset",
+    "source_sentence": "GPT is trained on the BooksCorpus (800M words);",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "B.1 Detailed Descriptions for the GLUE Benchmark Experiments."
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "BooksCorpus",
+    "object_type": "Dataset",
+    "source_sentence": "BERT is trained on the BooksCorpus (800M words) and Wikipedia (2,500M words).",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "B.1 Detailed Descriptions for the GLUE Benchmark Experiments."
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "BERT is trained on the BooksCorpus (800M words) and Wikipedia (2,500M words).",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "B.1 Detailed Descriptions for the GLUE Benchmark Experiments."
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Features",
+    "source_sentence": "For the feature-based approach, we concatenate the last 4 layers of BERT as the features, which was shown to be the best approach in Section 5.3.",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "C.1 Effect of Number of Training Steps"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "mixed strategy for masking the target tokens",
+    "object_type": "Method",
+    "source_sentence": "In Section 3.1, we mention that BERT uses a mixed strategy for masking the target tokens when pre-training with the masked language model (MLM) objective.",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "C.2 Ablation for Different Masking Procedures"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "masked language model objective",
+    "object_type": "Method",
+    "source_sentence": "In Section 3.1, we mention that BERT uses a mixed strategy for masking the target tokens when pre-training with the masked language model (MLM) objective.",
+    "extraction_mode": "fixed",
+    "paper": "BERT",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "section": "C.2 Ablation for Different Masking Procedures"
+  }
+]

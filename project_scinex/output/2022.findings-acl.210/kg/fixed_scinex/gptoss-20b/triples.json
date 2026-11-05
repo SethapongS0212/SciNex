@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Multi-Cell Compositional LSTM",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance for cross-domain NER",
+    "object_type": "Other",
+    "source_sentence": "Jia and Zhang (2020) presented a multi-cell compositional LSTM (Multi- Cell LSTM) structure where modeled each entity type as a separate cell state, and it reaches the state-of-the-art (SOTA) performance for cross - domain NER.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Adapter",
+    "predicate": "uses",
+    "object": "backbone network",
+    "object_type": "Other",
+    "source_sentence": "Except from the pretrain-finetune paradigm, some approaches proposed adding adap- tion layers Lin and Lu (2018) or adapter modules Houlsby et al. (2019) to the backbone network.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Word Embedding",
+    "predicate": "addresses",
+    "object": "Domain Adaptation",
+    "object_type": "Concept",
+    "source_sentence": "Furthermore, we enhance the contextual repre- sentation by fusing the constructed label graph into the word embedding by Graph Convolutional Net- to enhance domain adaptation ability in both low- resource and rich- resource scenarios.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "graph structure",
+    "object_type": "Concept",
+    "source_sentence": "we fused the learned graph structure into the word contextual embedding output by BERT to model the sentence's semantic label relationships.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "3.3 Label Semantics Fusion"
+  },
+  {
+    "subject": "Auxiliary Task",
+    "predicate": "addresses",
+    "object": "correct entity types",
+    "object_type": "Concept",
+    "source_sentence": "Besides, we introduce an auxiliary task to ensure the label-specific components focus on correct entity types.",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "3.3 Label Semantics Fusion"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "movie reviews",
+    "object_type": "Dataset",
+    "source_sentence": "we perform experiments on movie reviews, restaurant reviews, and dialogue domains for the rich-resource setting (we use all samples for training) and all eight domains for the low-resource setting (K = 20, 50).",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "4.2 Cross-Domain Experiments"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "restaurant reviews",
+    "object_type": "Dataset",
+    "source_sentence": "we perform experiments on movie reviews, restaurant reviews, and dialogue domains for the rich-resource setting (we use all samples for training) and all eight domains for the low-resource setting (K = 20, 50).",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "4.2 Cross-Domain Experiments"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "dialogue domains",
+    "object_type": "Dataset",
+    "source_sentence": "we perform experiments on movie reviews, restaurant reviews, and dialogue domains for the rich-resource setting (we use all samples for training) and all eight domains for the low-resource setting (K = 20, 50).",
+    "extraction_mode": "fixed",
+    "paper": "2022.findings-acl.210",
+    "title": "Cross-domain Named Entity Recognition via Graph Matching",
+    "section": "4.2 Cross-Domain Experiments"
+  }
+]

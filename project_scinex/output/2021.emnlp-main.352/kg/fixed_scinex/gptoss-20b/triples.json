@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "generation",
+    "predicate": "produces",
+    "object": "action a",
+    "object_type": "Action",
+    "source_sentence": "generation algorithm as implementing a policy that consumes an input x ∈X as well as a partially constructed output in the Kleene closure of V, which we will refer to as a \"canvas\", and outputs either an action a ∈A or a decision to stop.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.352",
+    "title": "Data-to-text Generation by Splicing Together Nearest Neighbors",
+    "section": "2.1 Imitation Learning for Text Generation"
+  },
+  {
+    "subject": "generation",
+    "predicate": "produces",
+    "object": "canvas",
+    "object_type": "Concept",
+    "source_sentence": "generation algorithm as implementing a policy that consumes an input x ∈X as well as a partially constructed output in the Kleene closure of V, which we will refer to as a \"canvas\", and outputs either an action a ∈A or a decision to stop.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.352",
+    "title": "Data-to-text Generation by Splicing Together Nearest Neighbors",
+    "section": "2.1 Imitation Learning for Text Generation"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "produces",
+    "object": "action a",
+    "object_type": "Action",
+    "source_sentence": "sequence-to-sequence style generation implements a policy π that consumes x and a canvas ˆy1:M ∈VM representing a prefix, and produces either an action a ∈A = V, or else a ⟨stop⟩action and generation terminates.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.352",
+    "title": "Data-to-text Generation by Splicing Together Nearest Neighbors",
+    "section": "2.1 Imitation Learning for Text Generation"
+  },
+  {
+    "subject": "Imitation Learning",
+    "predicate": "produces",
+    "object": "parameterized policy πθ",
+    "object_type": "Model",
+    "source_sentence": "Imitation learning of text generation policies conventionally proceeds by \"rolling in\" to a canvas ˆy1:M using a roll-in policy, and then training a parameterized policy πθ to mimic the actions of an oracle policy π∗run from ˆy1:M.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.352",
+    "title": "Data-to-text Generation by Splicing Together Nearest Neighbors",
+    "section": "2.1 Imitation Learning for Text Generation"
+  },
+  {
+    "subject": "training",
+    "predicate": "comprises",
+    "object": "sampling",
+    "object_type": "Other",
+    "source_sentence": "Training proceeds by sampling a mini-batch of examples and their derivations, and minimizing the sums of the losses (3) and (4) over each action in each derivation, divided by the mini-batch size.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.352",
+    "title": "Data-to-text Generation by Splicing Together Nearest Neighbors",
+    "section": "4.1 Training"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "6-layer transformer encoders and decoders",
+    "object_type": "Other",
+    "source_sentence": "All models are implemented using 6-layer transformer encoders and decoders, with model dimension 420, 7 attention heads, and feed-forward dimension 650;4 all models are trained from scratch.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.352",
+    "title": "Data-to-text Generation by Splicing Together Nearest Neighbors",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "Case Study",
+    "predicate": "achieves",
+    "object": "controlling number of sentences",
+    "object_type": "Concept",
+    "source_sentence": "In Ap- pendix C we describe , as a case study, attempting to control the number of sentences used in E2E dataset generations by controlling the neighbors;",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.352",
+    "title": "Data-to-text Generation by Splicing Together Nearest Neighbors",
+    "section": "5.2 Interpretability Evaluation"
+  },
+  {
+    "subject": "generation",
+    "predicate": "addresses",
+    "object": "plan",
+    "object_type": "Concept",
+    "source_sentence": "which also motivates recent work making explicit the template or plan being followed by the generation",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.352",
+    "title": "Data-to-text Generation by Splicing Together Nearest Neighbors",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "comparesagainst",
+    "object": "Parallel Decoding",
+    "object_type": "Method",
+    "source_sentence": "de- coding serially with beam search will generally be slower than the iterated parallel decoding of partially autoregressive models.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.352",
+    "title": "Data-to-text Generation by Splicing Together Nearest Neighbors",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "achieves",
+    "object": "100% constraint satisfaction",
+    "object_type": "Concept",
+    "source_sentence": "We can reach 100% constraint satisfaction by simply constraining the FULL model's beam search to never replace a full sentence in the canvas.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.352",
+    "title": "Data-to-text Generation by Splicing Together Nearest Neighbors",
+    "section": "B Manual Analysis of WikiBio Errors"
+  },
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "these cases",
+    "object_type": "Concept",
+    "source_sentence": "We suspect that bigger models, especially if they store state in addition to the canvas (which our FULL models do not), will better address these cases.",
+    "extraction_mode": "fixed",
+    "paper": "2021.emnlp-main.352",
+    "title": "Data-to-text Generation by Splicing Together Nearest Neighbors",
+    "section": "B Manual Analysis of WikiBio Errors"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "more than 80% F1 score",
+    "object_type": "Metric",
+    "source_sentence": "Exploratory experiments show that the separation model can achieve more than 80% F1 score.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "3.3 Emotionalization Module"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "trainedon",
+    "object": "new positive corpus N +",
+    "object_type": "Dataset",
+    "source_sentence": "We train a Seq2Seq model S2Sθpe on the new positive corpus N +, which is responsible for generating positive sentiment words s+ based on the content c+.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "3.3 Emotionalization Module"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "trainedon",
+    "object": "new negative corpus N −",
+    "object_type": "Dataset",
+    "source_sentence": "Another Seq2Seq model S2Sθne is trained on the new negative corpus N − to generate negative sentiment words s− based on content words c−.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "3.3 Emotionalization Module"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "optimizing the cross-entropy loss function",
+    "object_type": "Other",
+    "source_sentence": "At the training stage, each module is trained by optimizing the cross-entropy loss function.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "3.5 Training and Testing"
+  },
+  {
+    "subject": "Evaluation methods",
+    "predicate": "comprises",
+    "object": "automatic evaluation",
+    "object_type": "Method",
+    "source_sentence": "In this paper, we adopt two evaluation methods : automatic evaluation and human evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "4.2 Evaluation Metrics"
+  },
+  {
+    "subject": "Evaluation methods",
+    "predicate": "comprises",
+    "object": "human evaluation",
+    "object_type": "Method",
+    "source_sentence": "In this paper, we adopt two evaluation methods : automatic evaluation and human evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "4.2 Evaluation Metrics"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "content preservation",
+    "object_type": "Concept",
+    "source_sentence": "BLEU: We use the BLEU score between the transferred sentence and the source sentence to evaluate content preservation.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "4.2.1 Automatic Evaluation"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "English Wikipedia corpus dump",
+    "object_type": "Dataset",
+    "source_sentence": "We train word2vec on an English Wikipedia corpus dump to get 300- dimensional word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "4.4 Experiment Settings"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "achieves",
+    "object": "better content preservation",
+    "object_type": "Other",
+    "source_sentence": "we adopt explicit separation of content and sentiment via self- attention , which achieves better content preservation .",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Specificity-Driven Cascading Approach",
+    "predicate": "addresses",
+    "object": "Sentiment Modification",
+    "object_type": "Task",
+    "source_sentence": "In this paper, we propose a simple but effective specificity-driven cascading approach for unsupervised sentiment modification.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1553",
+    "title": "Speciﬁcity-Driven Cascading Approach for Unsupervised Sentiment Modiﬁcation",
+    "section": "7 Conclusion"
+  }
+]

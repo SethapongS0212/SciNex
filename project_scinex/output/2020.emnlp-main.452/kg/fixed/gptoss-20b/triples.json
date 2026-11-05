@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "classifier",
+    "object_type": "Model",
+    "source_sentence": "Our algorithm then predicts the affective polarity for unlabeled events using both the classifier's prediction for the event phrase as well as the associated sentiment expressions.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "better coverage and accuracy",
+    "object_type": "Other",
+    "source_sentence": "Our research addresses these limitations by exploring whether classification models can achieve better coverage and accuracy by generalizing across events.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "3.1 Motivation"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "uncased version of the BERT base model",
+    "object_type": "Model",
+    "source_sentence": "We use the uncased version of the BERT base model as our encoder.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "3.2 A BERT-based Affective Event Classiﬁer"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "probability distribution over the three polarity classes",
+    "object_type": "Other",
+    "source_sentence": "We use the 768-dimension output embedding of the special token [CLS], and pass the output vector of the special token [CLS] to a fully connected layer with softmax to produce a probability distribution over the three polarity classes.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "3.2 A BERT-based Affective Event Classiﬁer"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "ELMo",
+    "object_type": "Model",
+    "source_sentence": "We first use ELMo to encode an event sequence and feed the last layer of ELMo's outputs into the LSTM.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "3.3 Experimental Results for Blogs Data"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "ELMo's outputs",
+    "object_type": "Artifact",
+    "source_sentence": "second baseline is a linear classifier, which takes as input the average of the last layer of ELMo's outputs and produces a polarity distribution.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "4 Harvesting Events with Coreferent Sentiment Expressions"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "produces",
+    "object": "polarity distribution",
+    "object_type": "Other",
+    "source_sentence": "second baseline is a linear classifier, which takes as input the average of the last layer of ELMo's outputs and produces a polarity distribution.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "4 Harvesting Events with Coreferent Sentiment Expressions"
+  },
+  {
+    "subject": "Fine-tuning BERT",
+    "predicate": "produces",
+    "object": "strong affective event classifier",
+    "object_type": "Model",
+    "source_sentence": "This shows that fine-tuning BERT on a relatively small amount of gold labeled data produces a strong affective event classifier, with respect to both recall and precision.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "4 Harvesting Events with Coreferent Sentiment Expressions"
+  },
+  {
+    "subject": "Self-training",
+    "predicate": "uses",
+    "object": "Twitter Data",
+    "object_type": "Dataset",
+    "source_sentence": "the self-training algorithm will use this data in the aggregate",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "4 Harvesting Events with Coreferent Sentiment Expressions"
+  },
+  {
+    "subject": "Sentiment",
+    "predicate": "uses",
+    "object": "MPQA lexicon",
+    "object_type": "Concept",
+    "source_sentence": "creates sentiment queries from the MPQA lexicon",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "4.3 Iteratively Harvesting Events"
+  },
+  {
+    "subject": "Queries",
+    "predicate": "uses",
+    "object": "Phrases",
+    "object_type": "Concept",
+    "source_sentence": "form queries for sentiment or event phrases",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "4.3 Iteratively Harvesting Events"
+  },
+  {
+    "subject": "Self-training",
+    "predicate": "uses",
+    "object": "affective event classifier",
+    "object_type": "Method",
+    "source_sentence": "We designed an enhanced self-training algorithm that learns from unlabeled data by iteratively labeling new instances using both the affective event classifier's prediction as well as polarities associated with the event's discourse contexts.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "5 Discourse-enhanced Self-training"
+  },
+  {
+    "subject": "Self-training",
+    "predicate": "uses",
+    "object": "polarities",
+    "object_type": "Concept",
+    "source_sentence": "We designed an enhanced self-training algorithm that learns from unlabeled data by iteratively labeling new instances using both the affective event classifier's prediction as well as polarities associated with the event's discourse contexts.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "5 Discourse-enhanced Self-training"
+  },
+  {
+    "subject": "Self-training",
+    "predicate": "uses",
+    "object": "unlabeled data",
+    "object_type": "Dataset",
+    "source_sentence": "We designed an enhanced self-training algorithm that learns from unlabeled data by iteratively labeling new instances using both the affective event classifier's prediction as well as polarities associated with the event's discourse contexts.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "5 Discourse-enhanced Self-training"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "produces",
+    "object": "probability distribution",
+    "object_type": "Other",
+    "source_sentence": "The affective event classifier is applied to the event and generates a probability distribution over the three polarity values.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "5 Discourse-enhanced Self-training"
+  },
+  {
+    "subject": "probability",
+    "predicate": "produces",
+    "object": "average probability distribution",
+    "object_type": "Other",
+    "source_sentence": "The probability distributions are then averaged to produce an average probability distribution for the set of sentiment expressions as a whole.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "5 Discourse-enhanced Self-training"
+  },
+  {
+    "subject": "Discourse-enhanced Self-training",
+    "predicate": "achieves",
+    "object": "peak in iteration 7",
+    "object_type": "Concept",
+    "source_sentence": "In contrast, the learning curve of Discourse-enhanced Self-training gradually ascends, reaching its peak in iteration 7 and showing signs that it could potentially exceed that peak with more unlabeled data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "6.1 Results"
+  },
+  {
+    "subject": "Discourse-enhanced Self-training",
+    "predicate": "achieves",
+    "object": "substantial gains over fully supervised learning",
+    "object_type": "Concept",
+    "source_sentence": "Overall, the Discourse-enhanced Self-training approach produced substantial gains over fully supervised learning, and achieved more robust learning from unlabeled data than ordinary self-training.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "6.1 Results"
+  },
+  {
+    "subject": "Discourse-enhanced Self-training",
+    "predicate": "achieves",
+    "object": "more robust learning from unlabeled data",
+    "object_type": "Concept",
+    "source_sentence": "Overall, the Discourse-enhanced Self-training approach produced substantial gains over fully supervised learning, and achieved more robust learning from unlabeled data than ordinary self-training.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "6.1 Results"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "achieves",
+    "object": "supervised learning results",
+    "object_type": "Other",
+    "source_sentence": "By combining both the affective event classifier's prediction and the polarities of coreferent sentiment expressions, our algorithm substantially improved upon the supervised learning results.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.452",
+    "title": "Affective Event Classiﬁcation with Discourse-enhanced Self-training",
+    "section": "8 Conclusion"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Relation Extraction",
+    "predicate": "addresses",
+    "object": "hierarchical dependency of tags",
+    "object_type": "Concept",
+    "source_sentence": "Treating the entity - relation extraction task as a multi -turn QA task has the following key advantages: (1) the multi -turn QA setting provides an elegant way to capture the hierarchical dependency of tags.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1129",
+    "title": "Entity-Relation Extraction as Multi-turn Question Answering",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "expectation",
+    "predicate": "uses",
+    "object": "sampling",
+    "object_type": "Other",
+    "source_sentence": "The expectation is approximated by sampling from the policy π",
+    "extraction_mode": "fixed",
+    "paper": "P19-1129",
+    "title": "Entity-Relation Extraction as Multi-turn Question Answering",
+    "section": "4.4 Reinforcement Learning"
+  },
+  {
+    "subject": "Entities",
+    "predicate": "uses",
+    "object": "BERT tagging models",
+    "object_type": "Model",
+    "source_sentence": "entities are extracted using BERT tagging models",
+    "extraction_mode": "fixed",
+    "paper": "P19-1129",
+    "title": "Entity-Relation Extraction as Multi-turn Question Answering",
+    "section": "5.1 Results on RESUME"
+  },
+  {
+    "subject": "Relations",
+    "predicate": "uses",
+    "object": "CNN",
+    "object_type": "Model",
+    "source_sentence": "relations are extracted by applying a CNN to representations output by BERT transformers",
+    "extraction_mode": "fixed",
+    "paper": "P19-1129",
+    "title": "Entity-Relation Extraction as Multi-turn Question Answering",
+    "section": "5.1 Results on RESUME"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "tagging labels",
+    "object_type": "Concept",
+    "source_sentence": "We use the BERT tagging model to assign tagging labels to each word",
+    "extraction_mode": "fixed",
+    "paper": "P19-1129",
+    "title": "Entity-Relation Extraction as Multi-turn Question Answering",
+    "section": "5.1 Results on RESUME"
+  },
+  {
+    "subject": "Natural Language Questions",
+    "predicate": "achieves",
+    "object": "strict F1 improvement across all datasets",
+    "object_type": "Metric",
+    "source_sentence": "natural language questions lead to a strict F1 improvement across all datasets.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1129",
+    "title": "Entity-Relation Extraction as Multi-turn Question Answering",
+    "section": "6.1 Effect of Question Generation Strategy"
+  }
+]

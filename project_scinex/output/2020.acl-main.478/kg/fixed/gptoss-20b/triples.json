@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Sentence Boundaries",
+    "predicate": "uses",
+    "object": "NLTK",
+    "object_type": "Method",
+    "source_sentence": "We used NLTK to identify sentence boundaries in the body text.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.478",
+    "title": "Prafulla Kumar Choubey1 Aaron Lee1 Ruihong Huang1 Lu Wang2",
+    "section": "4 Dataset Creation and Statistics"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "Sentence Representations",
+    "object_type": "Concept",
+    "source_sentence": "two layer feed forward neural network as a regular classifier to make local decisions for each sentence based on the final sentence representations",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.478",
+    "title": "Prafulla Kumar Choubey1 Aaron Lee1 Ruihong Huang1 Lu Wang2",
+    "section": "5 Document-level Neural Network Model for Discourse Proﬁling"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "classifier",
+    "object_type": "Method",
+    "source_sentence": "Therefore, we also use a linear chain CRF layer on the output scores of the local classifier to model dependence among discourse labels.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.478",
+    "title": "Prafulla Kumar Choubey1 Aaron Lee1 Ruihong Huang1 Lu Wang2",
+    "section": "5 Document-level Neural Network Model for Discourse Proﬁling"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "addresses",
+    "object": "discourse labels",
+    "object_type": "Concept",
+    "source_sentence": "Therefore, we also use a linear chain CRF layer on the output scores of the local classifier to model dependence among discourse labels.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.478",
+    "title": "Prafulla Kumar Choubey1 Aaron Lee1 Ruihong Huang1 Lu Wang2",
+    "section": "5 Document-level Neural Network Model for Discourse Proﬁling"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "addresses",
+    "object": "discourse labels",
+    "object_type": "Concept",
+    "source_sentence": "Therefore, we also use a linear chain CRF layer on the output scores of the local classifier to model dependence among discourse labels.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.478",
+    "title": "Prafulla Kumar Choubey1 Aaron Lee1 Ruihong Huang1 Lu Wang2",
+    "section": "5 Document-level Neural Network Model for Discourse Proﬁling"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "linear SVM classifier",
+    "object_type": "Model",
+    "source_sentence": "Feature-based (SVM) uses linear SVM classifier over features used by Yarlott et al. (2018), including bag of words, tf-idf and 100-dimensional paragraph vectors obtained through Doc2Vec implementation in Gensim",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.478",
+    "title": "Prafulla Kumar Choubey1 Aaron Lee1 Ruihong Huang1 Lu Wang2",
+    "section": "6.1 Baseline Models"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "addresses",
+    "object": "sentence content types",
+    "object_type": "Concept",
+    "source_sentence": "We use the Document LSTM+ Document encoding classifier to predict sentence content types.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.478",
+    "title": "Prafulla Kumar Choubey1 Aaron Lee1 Ruihong Huang1 Lu Wang2",
+    "section": "7 Utilizing Content Structure to Improve Event Coreference Resolution"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "addresses",
+    "object": "singleton event mentions",
+    "object_type": "Concept",
+    "source_sentence": "we built a discourse-aware event singleton classifier, that resembles the sentence type classifier, to identify singleton event mentions in a document.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.478",
+    "title": "Prafulla Kumar Choubey1 Aaron Lee1 Ruihong Huang1 Lu Wang2",
+    "section": "7 Utilizing Content Structure to Improve Event Coreference Resolution"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "content type classifier",
+    "object_type": "Method",
+    "source_sentence": "the singleton classifier combines document and sentence representations provided by the content type classifier with contextualized event word representations obtained from a separate word-level biLSTM layer with 512 hidden units.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.478",
+    "title": "Prafulla Kumar Choubey1 Aaron Lee1 Ruihong Huang1 Lu Wang2",
+    "section": "7 Utilizing Content Structure to Improve Event Coreference Resolution"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "word-level biLSTM",
+    "object_type": "Method",
+    "source_sentence": "the singleton classifier combines document and sentence representations provided by the content type classifier with contextualized event word representations obtained from a separate word-level biLSTM layer with 512 hidden units.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.478",
+    "title": "Prafulla Kumar Choubey1 Aaron Lee1 Ruihong Huang1 Lu Wang2",
+    "section": "7 Utilizing Content Structure to Improve Event Coreference Resolution"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "feed forward neural network",
+    "object_type": "Method",
+    "source_sentence": "Then, the singleton classifier applies a two-layer feed forward neural network to identify event singletons, and the feed forward network has 3072-512-2 units.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.478",
+    "title": "Prafulla Kumar Choubey1 Aaron Lee1 Ruihong Huang1 Lu Wang2",
+    "section": "7 Utilizing Content Structure to Improve Event Coreference Resolution"
+  }
+]

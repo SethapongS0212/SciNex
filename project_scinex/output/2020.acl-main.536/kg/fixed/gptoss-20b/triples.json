@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "Language Model",
+    "object_type": "Model",
+    "source_sentence": "Follow-up work by Howard and Ruder (2018); Radford et al. (2018) further improves on this idea by fine-tuning the entire language model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "2 Background"
+  },
+  {
+    "subject": "mBERT",
+    "predicate": "trainedon",
+    "object": "Wikipedia Data",
+    "object_type": "Dataset",
+    "source_sentence": "The multilingual version of BERT (dubbed mBERT) trained on Wikipedia data of over 100 languages obtains strong performance on zero-shot cross-lingual transfer without using any parallel data during training.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "2 Background"
+  },
+  {
+    "subject": "mBERT",
+    "predicate": "comparesagainst",
+    "object": "word embeddings",
+    "object_type": "Method",
+    "source_sentence": "Other work has shown that mBERT out- performs word embeddings on token- level NLP tasks , and that adding character- level information and using multi-task learning can improve cross - lingual performance.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "2 Background"
+  },
+  {
+    "subject": "mBERT",
+    "predicate": "evaluatedon",
+    "object": "dependency parsing",
+    "object_type": "Task",
+    "source_sentence": "(2019) align mBERT representations and evaluate on dependency parsing as well.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "2 Background"
+  },
+  {
+    "subject": "Neural machine translation system",
+    "predicate": "uses",
+    "object": "SVCCA",
+    "object_type": "Method",
+    "source_sentence": "(2019) use SVCCA to investigate the multilingual representations obtained by the encoder of a massively multilingual neural machine translation system.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "2 Background"
+  },
+  {
+    "subject": "NLP Tasks",
+    "predicate": "encompasses",
+    "object": "natural language inference",
+    "object_type": "Task",
+    "source_sentence": "We consider three NLP tasks to evaluate performance: natural language inference (NLI), named entity recognition (NER) and dependency parsing (Parsing).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "3.2 Cross-lingual Evaluation"
+  },
+  {
+    "subject": "NLP Tasks",
+    "predicate": "encompasses",
+    "object": "named entity recognition",
+    "object_type": "Task",
+    "source_sentence": "We consider three NLP tasks to evaluate performance: natural language inference (NLI), named entity recognition (NER) and dependency parsing (Parsing).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "3.2 Cross-lingual Evaluation"
+  },
+  {
+    "subject": "NLP Tasks",
+    "predicate": "encompasses",
+    "object": "dependency parsing",
+    "object_type": "Task",
+    "source_sentence": "We consider three NLP tasks to evaluate performance: natural language inference (NLI), named entity recognition (NER) and dependency parsing (Parsing).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "3.2 Cross-lingual Evaluation"
+  },
+  {
+    "subject": "NLI",
+    "predicate": "uses",
+    "object": "XNLI dataset",
+    "object_type": "Dataset",
+    "source_sentence": "NLI We use the cross-lingual natural language inference (XNLI) dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "3.2 Cross-lingual Evaluation"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "representation of the first token",
+    "object_type": "Concept",
+    "source_sentence": "The task-specific layer is a linear mapping to a softmax classifier, which takes the representation of the first token as input.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "3.2 Cross-lingual Evaluation"
+  },
+  {
+    "subject": "NER",
+    "predicate": "uses",
+    "object": "WikiAnn dataset",
+    "object_type": "Dataset",
+    "source_sentence": "NER We use WikiAnn , a silver NER dataset built automatically from Wikipedia , for English-Russian and English-French.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "3.2 Cross-lingual Evaluation"
+  },
+  {
+    "subject": "Chinese NER",
+    "predicate": "uses",
+    "object": "CoNLL 2003 English",
+    "object_type": "Dataset",
+    "source_sentence": "For English-Chinese, we use CoNLL 2003 English and a Chinese NER dataset , with realigned Chinese NER labels based on the Stanford word segmenter.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "3.2 Cross-lingual Evaluation"
+  },
+  {
+    "subject": "NER",
+    "predicate": "uses",
+    "object": "BIO tagging",
+    "object_type": "Concept",
+    "source_sentence": "We model NER as BIO tagging.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "3.2 Cross-lingual Evaluation"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "representation of the first subword of each word",
+    "object_type": "Other",
+    "source_sentence": "The task- specific layer is a linear mapping to a softmax classifier, which takes the representation of the first subword of each word as input.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "3.2 Cross-lingual Evaluation"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "representation of the first subword of each word",
+    "object_type": "Other",
+    "source_sentence": "The task- specific layer is a linear mapping to a softmax classifier, which takes the representation of the first subword of each word as input.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "3.2 Cross-lingual Evaluation"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "representations of the first subword of each word",
+    "object_type": "Other",
+    "source_sentence": "The task- specific layer is a graph- based parser , using representations of the first subword of each word as inputs.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "3.2 Cross-lingual Evaluation"
+  },
+  {
+    "subject": "dependency",
+    "predicate": "uses",
+    "object": "Universal Dependencies (UD v2.3)",
+    "object_type": "Other",
+    "source_sentence": "Parsing Finally, we use the Universal Dependencies (UD v2.3) for dependency parsing.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "3.2 Cross-lingual Evaluation"
+  },
+  {
+    "subject": "Multilingual BERT",
+    "predicate": "trainedon",
+    "object": "Wikipedia comparable corpora",
+    "object_type": "Dataset",
+    "source_sentence": "Multilingual BERT and XLM are trained on the Wikipedia comparable corpora.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "4.1 Domain Similarity"
+  },
+  {
+    "subject": "XLM",
+    "predicate": "trainedon",
+    "object": "Wikipedia comparable corpora",
+    "object_type": "Dataset",
+    "source_sentence": "Multilingual BERT and XLM are trained on the Wikipedia comparable corpora.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "4.1 Domain Similarity"
+  },
+  {
+    "subject": "Sentences",
+    "predicate": "uses",
+    "object": "XNLI",
+    "object_type": "Other",
+    "source_sentence": "We use multi-way parallel sentences from XNLI for alignment supervision and Tatoeba for evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.536",
+    "title": "Emerging Cross-lingual Structure in Pretrained Language Models",
+    "section": "5.1.1 Word-level alignment"
+  }
+]

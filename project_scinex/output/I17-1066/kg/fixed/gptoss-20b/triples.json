@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "Domain Adaptation Methods",
+    "predicate": "addresses",
+    "object": "shared representations across domains",
+    "object_type": "Concept",
+    "source_sentence": "most existing domain adaptation methods focus on inducing shared representations across domains.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Auxiliary Task",
+    "predicate": "designedfor",
+    "object": "sentences",
+    "object_type": "Task",
+    "source_sentence": "But the auxiliary task in this earlier work is only designed for sentences; it will be less useful for documents.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Convolutional Neural Network",
+    "predicate": "addresses",
+    "object": "sentiment classification",
+    "object_type": "Task",
+    "source_sentence": "a large amount of NN models, including Convolutional Neural Network , Recursive Neural Network and Recurrent Neural Network , have been proposed for sentiment classification.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Recursive Neural Network",
+    "predicate": "addresses",
+    "object": "sentiment classification",
+    "object_type": "Task",
+    "source_sentence": "a large amount of NN models, including Convolutional Neural Network , Recursive Neural Network and Recurrent Neural Network , have been proposed for sentiment classification.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Recurrent Neural Network",
+    "predicate": "addresses",
+    "object": "sentiment classification",
+    "object_type": "Task",
+    "source_sentence": "a large amount of NN models, including Convolutional Neural Network , Recursive Neural Network and Recurrent Neural Network , have been proposed for sentiment classification.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "sentence embeddings",
+    "object_type": "Concept",
+    "source_sentence": "After obtaining the sentence embeddings for all the n sentences in d, we then apply an LSTM to sequentially combine all sentences together",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "3.3 A Hierarchical Neural Network for Document-level Sentiment Classiﬁcation"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "document embedding",
+    "object_type": "Concept",
+    "source_sentence": "Tang et al. (2015) used bi-directional gated RNN to chain the sentences into a document embedding",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "3.3 A Hierarchical Neural Network for Document-level Sentiment Classiﬁcation"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "label y",
+    "object_type": "Concept",
+    "source_sentence": "a softmax classifier is learned to map the document representation hn to a label y",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "3.3 A Hierarchical Neural Network for Document-level Sentiment Classiﬁcation"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Model",
+    "source_sentence": "These sentence embeddings are further combined together with an LSTM parameterized by Θ′ 2, and the final hidden state h′ n is fed to predict the auxiliary label y′: p(y′ | h′ n) = softmax(W′h′ n + b′).",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "3.4 Document-level Shared Representation Learning for Domain Adaptation"
+  },
+  {
+    "subject": "Sentence Embeddings",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Model",
+    "source_sentence": "These sentence embeddings are further combined together with an LSTM parameterized by Θ′ 2, and the final hidden state h′ n is fed to predict the auxiliary label y′: p(y′ | h′ n) = softmax(W′h′ n + b′).",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "3.4 Document-level Shared Representation Learning for Domain Adaptation"
+  },
+  {
+    "subject": "CNNs",
+    "predicate": "uses",
+    "object": "Sentence Embeddings",
+    "object_type": "Model",
+    "source_sentence": "we use two CNNs to obtain sentence embeddings zi and z′ i, respectively for si and s′ i.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "3.5 Sentence-level Shared Representation Learning for Domain Adaptation"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "combined sentence embeddings",
+    "object_type": "Other",
+    "source_sentence": "Then, all the n combined sentence embed- dings are further combined together via an LSTM: hi = LSTMΘ2 hi−1, (zi ⊕z′ i).",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "3.5 Sentence-level Shared Representation Learning for Domain Adaptation"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "Whn + b",
+    "object_type": "Other",
+    "source_sentence": "Finally, we feed the last hidden representation hn to predict the label of our main task: p(y | hn) = softmax(Whn + b).",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "3.5 Sentence-level Shared Representation Learning for Domain Adaptation"
+  },
+  {
+    "subject": "Mutual Information",
+    "predicate": "uses",
+    "object": "source labeled data Ds",
+    "object_type": "Dataset",
+    "source_sentence": "we also experiment with another method based on mutual information (MI) on the source labeled data Ds",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "3.7 Implementation Details"
+  },
+  {
+    "subject": "SCL",
+    "predicate": "uses",
+    "object": "SVD",
+    "object_type": "Other",
+    "source_sentence": "SCL is the Structural Correspondence Learning method, which uses all the non-pivot features to predict the occurrence of each pivot feature , and employs SVD on the learned weight vectors.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "4.1 Experiment Settings"
+  },
+  {
+    "subject": "Denoising Auto-Encoders",
+    "predicate": "uses",
+    "object": "shared hidden representation",
+    "object_type": "Other",
+    "source_sentence": "mDA is one of the state-of-the-art methods , marginalized denoising auto-encoders , which learns a shared hidden representation by reconstructing pivot features.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "4.1 Experiment Settings"
+  },
+  {
+    "subject": "SCL",
+    "predicate": "achieves",
+    "object": "2.7 percentage points",
+    "object_type": "Metric",
+    "source_sentence": "SCL and mDA can outperform the baseline model respectively by 2.7 and 3.7 percentage points on average, which shows that these two methods are useful for domain adaptation based on discrete representations.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "4.2 Results"
+  },
+  {
+    "subject": "SCL",
+    "predicate": "achieves",
+    "object": "0.5 percentage point",
+    "object_type": "Metric",
+    "source_sentence": "In addition, although SCL can outperform Naive with a large margin on almost all the data set pairs , the performance of H-SCL is not satisfactory, which can only improve the base- line by 0.5 percentage point on average.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "4.2 Results"
+  },
+  {
+    "subject": "SCL",
+    "predicate": "uses",
+    "object": "normalization",
+    "object_type": "Other",
+    "source_sentence": "In SCL, we tune the num- ber of induced features K in {25, 50, 100}, and also use normalization and rescaling.",
+    "extraction_mode": "fixed",
+    "paper": "I17-1066",
+    "title": "Leveraging Auxiliary Tasks for Document-Level Cross-Domain Sentiment Classiﬁcation",
+    "section": "4.2 Results"
+  }
+]

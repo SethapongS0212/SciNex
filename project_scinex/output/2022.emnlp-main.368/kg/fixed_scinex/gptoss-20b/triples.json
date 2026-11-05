@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "produces",
+    "object": "compressed PLM-based model",
+    "object_type": "Model",
+    "source_sentence": "We propose a two-stage knowledge distillation method with multiple teacher models to compress the large PLM-based model.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.368",
+    "title": "Tiny-NewsRec: Effective and Efficient PLM-based News Recommendation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "two real-world datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Extensive experiments on two real-world datasets validate that our method can effectively improve the performance of PLM-based news recommendation models while reducing the model size by a large margin.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.368",
+    "title": "Tiny-NewsRec: Effective and Efficient PLM-based News Recommendation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "News",
+    "predicate": "addresses",
+    "object": "news recommendation task",
+    "object_type": "Task",
+    "source_sentence": "The student model is also tuned to minimize the cross-entropy loss between its predicted score ˆy (s) FT and the ground-truth label yFT of the news recom- mendation task, i.e., L (s) FT = CE(ˆy (s) FT, yFT).",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.368",
+    "title": "Tiny-NewsRec: Effective and Efficient PLM-based News Recommendation",
+    "section": "3.3 Two-stage Knowledge Distillation"
+  },
+  {
+    "subject": "TinyBERT",
+    "predicate": "uses",
+    "object": "knowledge distillation",
+    "object_type": "Concept",
+    "source_sentence": "TinyBERT , a state-of-the-art two-stage knowledge distillation method for compressing the PLM which conducts knowledge distillation in both the pre-training stage and the finetuning stage.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.368",
+    "title": "Tiny-NewsRec: Effective and Efficient PLM-based News Recommendation",
+    "section": "4.1 Datasets and Experimental Settings"
+  },
+  {
+    "subject": "TinyBERT",
+    "predicate": "achieves",
+    "object": "same inference speed as Tiny-NewsRec",
+    "object_type": "Other",
+    "source_sentence": "student model distilled with other knowledge distillation methods (e.g., TinyBERT and NewsBERT) can achieve the same inference speed as Tiny-NewsRec",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.368",
+    "title": "Tiny-NewsRec: Effective and Efficient PLM-based News Recommendation",
+    "section": "4.7 Efficiency Evaluation"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "MIND",
+    "object_type": "Dataset",
+    "source_sentence": "In this paper, we conduct experiments with three real-world datasets, i.e., MIND, Feeds, and News.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.368",
+    "title": "Tiny-NewsRec: Effective and Efficient PLM-based News Recommendation",
+    "section": "6 Ethics Statement"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Feeds",
+    "object_type": "Dataset",
+    "source_sentence": "In this paper, we conduct experiments with three real-world datasets, i.e., MIND, Feeds, and News.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.368",
+    "title": "Tiny-NewsRec: Effective and Efficient PLM-based News Recommendation",
+    "section": "6 Ethics Statement"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "News",
+    "object_type": "Dataset",
+    "source_sentence": "In this paper, we conduct experiments with three real-world datasets, i.e., MIND, Feeds, and News.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.368",
+    "title": "Tiny-NewsRec: Effective and Efficient PLM-based News Recommendation",
+    "section": "6 Ethics Statement"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "4 GPUs",
+    "object_type": "Other",
+    "source_sentence": "All the other models are parallelly trained on 4 GPUs with the Horovod framework .",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.368",
+    "title": "Tiny-NewsRec: Effective and Efficient PLM-based News Recommendation",
+    "section": "A.3 Experimental Environment"
+  }
+]

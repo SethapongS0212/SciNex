@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "Reordering",
+    "predicate": "addresses",
+    "object": "reordering ambiguity and data sparsity",
+    "object_type": "Concept",
+    "source_sentence": "(2014) addressed the problem of reordering ambiguity and data sparsity using a neural reordering model (NRM) that assigns reordering probabilities on the words of both the current and the previous phrase pairs.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Lexicalized Reordering Models",
+    "predicate": "uses",
+    "object": "reordering probability distribution",
+    "object_type": "Other",
+    "source_sentence": "Lexicalized reordering models (LRM) maintain a reordering probability distribution for each phrase pair.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "2 Lexicalized Reordering Models"
+  },
+  {
+    "subject": "Lexicalized Reordering Models",
+    "predicate": "uses",
+    "object": "orientations (Monotone, Swap, Discontinuous)",
+    "object_type": "Other",
+    "source_sentence": "Three orientations with respect to previous phrase (Monotone, Swap, Discontin- uous) are typically used in lexicalized reordering models.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "2 Lexicalized Reordering Models"
+  },
+  {
+    "subject": "Distributed Representation",
+    "predicate": "addresses",
+    "object": "Ambiguity",
+    "object_type": "Concept",
+    "source_sentence": "(2013) tackled the ambiguity and sparseness problem by distributed representation of phrases .",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "3 Neural Reordering Model"
+  },
+  {
+    "subject": "Distributed Representation",
+    "predicate": "uses",
+    "object": "Phrases",
+    "object_type": "Concept",
+    "source_sentence": "(2013) tackled the ambiguity and sparseness problem by distributed representation of phrases .",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "3 Neural Reordering Model"
+  },
+  {
+    "subject": "Distributed Representation",
+    "predicate": "uses",
+    "object": "Vector Space",
+    "object_type": "Concept",
+    "source_sentence": "The distributed representation maps sparse phrases into a dense vector space where elements with similar roles are expected to be located close to each other.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "3 Neural Reordering Model"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "trainedon",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "The word2vec model is pre-trained on English and Japanese versions of Wikipedia.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "5.1 Setting"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "unknown words",
+    "object_type": "Concept",
+    "source_sentence": "The pre-trained word2vec vector is also used to represent unknown words in the test data.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "5.1 Setting"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "learning rate 0.0001",
+    "object_type": "Other",
+    "source_sentence": "We use the Adam optimizer with learning rate 0.0001.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "5.1 Setting"
+  },
+  {
+    "subject": "Reordering Model",
+    "predicate": "uses",
+    "object": "MERT",
+    "object_type": "Other",
+    "source_sentence": "We use our reordering model for N-best re-ranking and optimize BLEU using minimum error rate training (MERT).",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "5.3 MT Evaluation"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "measures",
+    "object_type": "Other",
+    "source_sentence": "BLEU-4, RIBES and WER are used as measures for evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "5.3 MT Evaluation"
+  },
+  {
+    "subject": "WER",
+    "predicate": "uses",
+    "object": "measures",
+    "object_type": "Other",
+    "source_sentence": "BLEU-4, RIBES and WER are used as measures for evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "5.3 MT Evaluation"
+  },
+  {
+    "subject": "Reordering",
+    "predicate": "uses",
+    "object": "lexical constraints",
+    "object_type": "Concept",
+    "source_sentence": "Lexicalized reordering model (LRM) introduced lexical constraints of the phrase reordering and not just penalizing long-distance reordering.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "rule-based",
+    "predicate": "uses",
+    "object": "hand-crafted rules",
+    "object_type": "Concept",
+    "source_sentence": "Rule-based preprocessing methods parse source sentences and reorder the words using hand-crafted rules.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "automatically aligned parallel corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Discriminative pre-ordering models learn whether children of each node should be reordered using automatically aligned parallel corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "Reordering Model",
+    "predicate": "uses",
+    "object": "phrase translation",
+    "object_type": "Method",
+    "source_sentence": "In this study, we improved a neural reordering model in PBSMT using phrase translation and word alignment.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "Reordering Model",
+    "predicate": "uses",
+    "object": "word alignment",
+    "object_type": "Method",
+    "source_sentence": "In this study, we improved a neural reordering model in PBSMT using phrase translation and word alignment.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "phrase reordering",
+    "predicate": "achieves",
+    "object": "improved accuracy",
+    "object_type": "Concept",
+    "source_sentence": "The experimental results demonstrate that our proposed method improves the accuracy of phrase reordering.",
+    "extraction_mode": "fixed",
+    "paper": "W16-4607",
+    "title": "Shin Kanouchi†, Katsuhito Sudoh‡, and Mamoru Komachi†",
+    "section": "7 Conclusion"
+  }
+]

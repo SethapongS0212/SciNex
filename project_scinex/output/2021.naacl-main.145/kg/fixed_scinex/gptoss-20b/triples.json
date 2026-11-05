@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "best performance on TOWE",
+    "object_type": "Other",
+    "source_sentence": "Extensive experiments validate that our TSMSA can achieve the best performance on TOWE, and MT-TSMSA performs quite competitive on AOPE.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.145",
+    "title": "Target-speciﬁed Sequence Labeling with Multi-head Self-attention for Target-oriented Opinion Words Extraction",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Pair-wise Aspect and Opinion Terms Extraction",
+    "predicate": "achieves",
+    "object": "extracting aspects and opinion terms in pairs",
+    "object_type": "Task",
+    "source_sentence": "Aspect - Opinion Pair Extraction (AOPE) and Pair-wise Aspect and Opinion Terms Extraction (PAOTE) both aim at extracting aspects and opinion terms in pairs.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.145",
+    "title": "Target-speciﬁed Sequence Labeling with Multi-head Self-attention for Target-oriented Opinion Words Extraction",
+    "section": "2.2 Aspect-Opinion Pair Extraction"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "achieves",
+    "object": "sequence labeling",
+    "object_type": "Task",
+    "source_sentence": "then they are passed to a projection layer and a Conditional Random Field (CRF) layer for sequence labeling.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.145",
+    "title": "Target-speciﬁed Sequence Labeling with Multi-head Self-attention for Target-oriented Opinion Words Extraction",
+    "section": "3.2 Framework"
+  },
+  {
+    "subject": "Viterbi",
+    "predicate": "uses",
+    "object": "label sequence",
+    "object_type": "Concept",
+    "source_sentence": "Given a new sentence , we use Viterbi algorithm to predict the label sequence by maximizing the conditional probability p(Y |Hl) in the decoding process.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.145",
+    "title": "Target-speciﬁed Sequence Labeling with Multi-head Self-attention for Target-oriented Opinion Words Extraction",
+    "section": "3.5 Decoder and Training"
+  },
+  {
+    "subject": "GloVe Vectors",
+    "predicate": "trainedon",
+    "object": "unlabeled data",
+    "object_type": "Dataset",
+    "source_sentence": "For the TOWE task, Fan et al. (2019) utilize 300- dimension GloVe vectors which are pre-trained on unlabeled data of 840 billion tokens to initialize word embedding vectors in IOG.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.145",
+    "title": "Target-speciﬁed Sequence Labeling with Multi-head Self-attention for Target-oriented Opinion Words Extraction",
+    "section": "4.3 Hyper-parameter Settings"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "comparesagainst",
+    "object": "Glove",
+    "object_type": "Model",
+    "source_sentence": "Firstly, BERT embedding shows poor performance when compared to Glove.",
+    "extraction_mode": "fixed",
+    "paper": "2021.naacl-main.145",
+    "title": "Target-speciﬁed Sequence Labeling with Multi-head Self-attention for Target-oriented Opinion Words Extraction",
+    "section": "4.5 Ablation Experiments"
+  }
+]

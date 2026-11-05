@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Classification",
+    "predicate": "addresses",
+    "object": "Personal Traits",
+    "object_type": "Task",
+    "source_sentence": "classification models to predict a user's personal traits based on hand-crafted textual features",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Classification",
+    "predicate": "addresses",
+    "object": "Demographic Attributes",
+    "object_type": "Task",
+    "source_sentence": "classification models work well for inferring demographic attributes",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Classification",
+    "predicate": "uses",
+    "object": "Textual Features",
+    "object_type": "Feature",
+    "source_sentence": "classification models to predict a user's personal traits based on hand-crafted textual features",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "word context",
+    "object_type": "Concept",
+    "source_sentence": "BERT is well-suited for this requirement, because it is a sequential model that effectively uses word context and incorporates world knowledge.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "3 Methodology"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "world knowledge",
+    "object_type": "Concept",
+    "source_sentence": "BERT is well-suited for this requirement, because it is a sequential model that effectively uses word context and incorporates world knowledge.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "3 Methodology"
+  },
+  {
+    "subject": "Web Search",
+    "predicate": "uses",
+    "object": "attribute-specific patterns",
+    "object_type": "Concept",
+    "source_sentence": "To create this collection we queried a Web search engine using attribute -specific patterns: \"my profession as ⟨profession value⟩\" and \"my favorite hobby is ⟨hobby value⟩\".",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "4.2 Document collection"
+  },
+  {
+    "subject": "Search Engine",
+    "predicate": "uses",
+    "object": "attribute-specific patterns",
+    "object_type": "Concept",
+    "source_sentence": "To create this collection we queried a Web search engine using attribute -specific patterns: \"my profession as ⟨profession value⟩\" and \"my favorite hobby is ⟨hobby value⟩\".",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "4.2 Document collection"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "PyTorch",
+    "object_type": "Other",
+    "source_sentence": "All our models were implemented in PyTorch; technical details are in Appendix B.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "5 Experimental Setup"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "cross-validation",
+    "object_type": "Other",
+    "source_sentence": "For the unseen experiments, we perform ten fold cross-validation with folds constructed such that each attribute value appears in only one test fold.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "5 Experimental Setup"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "produces",
+    "object": "contextualized embedding",
+    "object_type": "Artifact",
+    "source_sentence": "BERT, the term selection component, generates a contextualized embedding for each input term, which we process with a fully connected layer to produce a term score for each word in its context.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "5 Experimental Setup"
+  },
+  {
+    "subject": "Terms",
+    "predicate": "uses",
+    "object": "CHARM KNRM",
+    "object_type": "Model",
+    "source_sentence": "Terms were extracted using CHARM KNRM with Wiki-category on unseen experiments.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "6.2 Qualitative Analysis"
+  },
+  {
+    "subject": "CHARM",
+    "predicate": "addresses",
+    "object": "personal traits",
+    "object_type": "Concept",
+    "source_sentence": "We presented the CHARM method for inferring personal traits from conversations.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "CHARM",
+    "predicate": "uses",
+    "object": "document collections from Wikipedia and web search results",
+    "object_type": "Other",
+    "source_sentence": "We demonstrated the viability of CHARM for inferring users' unseen attribute values by comprehensive experiments with Reddit conversations, leveraging document collections from Wikipedia and web search results for CHARM's retrieval component.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Reddit conversations",
+    "object_type": "Dataset",
+    "source_sentence": "We demonstrated the viability of CHARM for inferring users' unseen attribute values by comprehensive experiments with Reddit conversations, leveraging document collections from Wikipedia and web search results for CHARM's retrieval component.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "CHARM",
+    "predicate": "uses",
+    "object": "IDs and texts",
+    "object_type": "Other",
+    "source_sentence": "We provide IDs and texts of the posts used as training and test data for CHARM.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "A Data"
+  },
+  {
+    "subject": "labeling",
+    "predicate": "uses",
+    "object": "Snorkel framework",
+    "object_type": "Method",
+    "source_sentence": "Additionally, we provide the posts containing explicit personal assertions, which have been used for ground truth labeling with the Snorkel framework.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "A Data"
+  },
+  {
+    "subject": "CHARM",
+    "predicate": "uses",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "CHARM runs BERT once on each utterance only, independent of the number of documents.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.434",
+    "title": "CHARM: Inferring Personal Attributes from Conversations",
+    "section": "B Training details and hyperparameters"
+  }
+]

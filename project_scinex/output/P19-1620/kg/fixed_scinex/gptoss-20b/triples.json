@@ -1,0 +1,35 @@
+[
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "unlabeled text passages",
+    "object_type": "Text",
+    "source_sentence": "apply the models in sequence on a large number of unlabeled text passages.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1620",
+    "title": "Synthetic QA Corpora Generation with Roundtrip Consistency",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Synthetic Data",
+    "predicate": "achieves",
+    "object": "significant improvements on SQuAD2 and NQ",
+    "object_type": "Other",
+    "source_sentence": "pretraining on synthetic data generated through this procedure provides us with significant improvements on two challenging datasets, SQuAD2 and NQ , achieving a new state of the art on the latter.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1620",
+    "title": "Synthetic QA Corpora Generation with Roundtrip Consistency",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "trainedon",
+    "object": "NQ",
+    "object_type": "Dataset",
+    "source_sentence": "Fine-tuning We define the p(q|c, a; θQ) model as a left-to-right language model where q = (q1,..., qLQ) is the sequence of ques- tion tokens and LQ is a predetermined maxi- mum question length, but, unlike the more usual i=1 p(qi|q1,..., qi−1, a, c; θQ) encoder-decoder approach, we compute fQ using the single encoder stack from the BERT model: fQ(q1,..., qi, a, c; θQ) = BERT(q1,..., qi−1, a, c)[i −1] · W ⊺ BERT, where WBERT is the word piece embedding ma- trix in BERT. All parameters of BERT including WBERT are finetuned. In the context of question generation , the input answer is encoded by intro- ducing a new token type id for the tokens in the extractive answer span, e.g. the question tokens being generated have type 0 and the context tokens have type 1, except for the ones in the answer span that have type 2. We always pad or truncate the question being input to BERT to a constant length LQ to avoid giving the model information about the length of the question we want it to generate.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1620",
+    "title": "Synthetic QA Corpora Generation with Roundtrip Consistency",
+    "section": "3.2 Question Generation: Fine-tuning Only"
+  }
+]

@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "BiLSTM-CRF",
+    "predicate": "addresses",
+    "object": "Sequence labeling",
+    "object_type": "Task",
+    "source_sentence": "Both groups of models are based on BiLSTM-CRF , one of the state-of-the-art models in sequence labeling.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "CRF",
+    "predicate": "uses",
+    "object": "modified Viterbi algorithm",
+    "object_type": "Method",
+    "source_sentence": "However, for linear-chain CRF model, k-best label sequences can be produced exactly with the modified Viterbi algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "3.1 Top-K Distillation"
+  },
+  {
+    "subject": "BiLSTM-CRF",
+    "predicate": "uses",
+    "object": "token embeddings",
+    "object_type": "Other",
+    "source_sentence": "We feed the token embeddings into the BiLSTM-CRF for decoding.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "4.1 Setup"
+  },
+  {
+    "subject": "m-BERT",
+    "predicate": "uses",
+    "object": "token embeddings",
+    "object_type": "Other",
+    "source_sentence": "We use M-BERT concatenated with language-specific Flair embeddings and fastText word embeddings as token embeddings for all the 2We use fastText + M-BERT instead if the Flair embedding is not available for a certain language.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "4.1 Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "mini-batch size of 2000 tokens",
+    "object_type": "Other",
+    "source_sentence": "For model training, the mini-batch size is set to 2000 tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "4.1 Setup"
+  },
+  {
+    "subject": "m-BERT",
+    "predicate": "uses",
+    "object": "adversarial learning",
+    "object_type": "Method",
+    "source_sentence": "Keung et al. (2019) used adversarial learning with M-BERT and significantly improved zero-resource cross-lingual NER.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "m-BERT",
+    "predicate": "achievesresult",
+    "object": "significantly improved zero-resource cross-lingual NER",
+    "object_type": "Concept",
+    "source_sentence": "Keung et al. (2019) used adversarial learning with M-BERT and significantly improved zero-resource cross-lingual NER.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Knowledge Distillation",
+    "predicate": "addresses",
+    "object": "natural language processing",
+    "object_type": "Concept",
+    "source_sentence": "Knowledge distillation has been used to improve the performance of small models with the guidance of big models, with applications in natural language processing (Kim and Rush, 2016; Kuncoro et al., 2016; Tan et al., 2019; Clark et al., 2019; Sun et al., 2019), computer vision and speech recognition.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Neural Machine Translation",
+    "predicate": "addresses",
+    "object": "structured prediction problems",
+    "object_type": "Concept",
+    "source_sentence": "For structured prediction problems, there are lines of work on neural machine translation , connectionist temporal classification in the field of speech recognition and dependency parsing.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "addresses",
+    "object": "Knowledge Distillation",
+    "object_type": "Concept",
+    "source_sentence": "Many recent researches on BERT with knowledge distillation are focused on distilling a large BERT model into a smaller one.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achievesresult",
+    "object": "60% faster speed",
+    "object_type": "Metric",
+    "source_sentence": "proposed a distilled version of the BERT model which achieves a 60% faster speed and maintains 97% performance of the larger BERT model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achievesresult",
+    "object": "97% performance",
+    "object_type": "Metric",
+    "source_sentence": "proposed a distilled version of the BERT model which achieves a 60% faster speed and maintains 97% performance of the larger BERT model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.304",
+    "title": "Structure-Level Knowledge Distillation For Multilingual Sequence Labeling",
+    "section": "5 Related Work"
+  }
+]

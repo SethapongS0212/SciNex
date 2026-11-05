@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Dialogue",
+    "predicate": "addresses",
+    "object": "Context",
+    "object_type": "Concept",
+    "source_sentence": "For our ranking model, we first define sequences of utterances from the beginning of a dialogue to a certain point of time in context c = (u1, u2,..., ul)",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3 Neural Utterance Ranking Model"
+  },
+  {
+    "subject": "Ranking",
+    "predicate": "addresses",
+    "object": "Context",
+    "object_type": "Concept",
+    "source_sentence": "We define utterance ranking to sort given candidate utterance list ac in order of suitability to context c.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3 Neural Utterance Ranking Model"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "achieves",
+    "object": "Ranking",
+    "object_type": "Task",
+    "source_sentence": "Another RNN is used to rank candidate utterances.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.2 Ranking Candidate Utterances"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Model",
+    "source_sentence": "This RNN has two LSTM layers and two linear layers; further, we use rectified linear unit (ReLU) as the activation function.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.2 Ranking Candidate Utterances"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "Sequence",
+    "object_type": "Model",
+    "source_sentence": "This RNN reads encoded utterance sequences and outputs scores.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.2 Ranking Candidate Utterances"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "Context",
+    "object_type": "Concept",
+    "source_sentence": "The RNN for ranking utter-ances in our model reads vector sequences constructed by context and candidate utterances in chronological order.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.2 Ranking Candidate Utterances"
+  },
+  {
+    "subject": "RNNs",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Model",
+    "source_sentence": "In our encoding and ranking RNNs, we used LSTM layers with 1000 hidden cells in each layer.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "rules",
+    "predicate": "addresses",
+    "object": "Dialogue Breakdown Detection Challenge",
+    "object_type": "Concept",
+    "source_sentence": "The dialogue format and rules were fully compliant with the Dialogue Breakdown Detection Challenge (DBDC).",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "5 Dialogue Experiment"
+  },
+  {
+    "subject": "Dialogue System",
+    "predicate": "addresses",
+    "object": "user satisfaction",
+    "object_type": "Concept",
+    "source_sentence": "to increase user satisfaction with a dialogue system , it is important not only to avoid dialogue breakdown, but also to offer flexible replies.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "5.2 Results"
+  }
+]

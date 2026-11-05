@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Selecting Candidates",
+    "predicate": "uses",
+    "object": "Keyword Search",
+    "object_type": "Method",
+    "source_sentence": "First attempts for automatically selecting candidates for a particular job were based on keyword search and content-based filtering techniques.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1615",
+    "title": "Ranking Job Offers for Candidates: learning hidden knowledge from Big Data",
+    "section": "2. State of the Art"
+  },
+  {
+    "subject": "Recommender Systems",
+    "predicate": "uses",
+    "object": "Similarity",
+    "object_type": "Concept",
+    "source_sentence": "Recommender systems are based on similarity measurements.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1615",
+    "title": "Ranking Job Offers for Candidates: learning hidden knowledge from Big Data",
+    "section": "2. State of the Art"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "evaluates",
+    "object": "70% to 50%",
+    "object_type": "Metric",
+    "source_sentence": "Precision results for the task of assigning jobs to a candidate, taking into account only top 10 recommendations, ranges from 70% to 50%, outperforming two baselines: one using profile similarity and one using a Collaborative Filtering system.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1615",
+    "title": "Ranking Job Offers for Candidates: learning hidden knowledge from Big Data",
+    "section": "2. State of the Art"
+  },
+  {
+    "subject": "Matching",
+    "predicate": "uses",
+    "object": "training",
+    "object_type": "Other",
+    "source_sentence": "This 'matching' information was used for training the classifiers.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1615",
+    "title": "Ranking Job Offers for Candidates: learning hidden knowledge from Big Data",
+    "section": "3. Description of the data"
+  },
+  {
+    "subject": "Language Identification",
+    "predicate": "uses",
+    "object": "PoS tagger",
+    "object_type": "Method",
+    "source_sentence": "Language identification is crucial for the PoS tagger and lemmatizer applied afterwards.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1615",
+    "title": "Ranking Job Offers for Candidates: learning hidden knowledge from Big Data",
+    "section": "3. Description of the data"
+  },
+  {
+    "subject": "LDA",
+    "predicate": "uses",
+    "object": "GibbsLDA++ implementation",
+    "object_type": "Method",
+    "source_sentence": "For the experiments, we used GibbsLDA++ implementation of LDA, which was de- signed to obtain topic models of Big Data structures.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1615",
+    "title": "Ranking Job Offers for Candidates: learning hidden knowledge from Big Data",
+    "section": "3. Description of the data"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "achieves",
+    "object": "74.38%",
+    "object_type": "Metric",
+    "source_sentence": "For our test-set of 126 candidates, the best system delivered in position 13, in average, the job offer selected by a human expert and with a precision of 74.38%.",
+    "extraction_mode": "fixed",
+    "paper": "L14-1615",
+    "title": "Ranking Job Offers for Candidates: learning hidden knowledge from Big Data",
+    "section": "8. Conclusion and future work"
+  }
+]

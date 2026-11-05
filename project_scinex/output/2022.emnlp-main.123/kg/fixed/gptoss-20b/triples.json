@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Evaluation",
+    "predicate": "achieves",
+    "object": "better correlation with human judgments",
+    "object_type": "Concept",
+    "source_sentence": "As for the evaluation of dialogue system, Gupta et al. (2019) show that multi-reference evaluation achieves better correlation with human judgments and release a test set for open-domain dialogue.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "reconstruction",
+    "predicate": "designedfor",
+    "object": "span-response mapping relationship",
+    "object_type": "Task",
+    "source_sentence": "The reconstruction reward is designed for strengthening the span-response mapping relationship in posterior reading:",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "3.3 Adversarial Activated Multi-reference Learning"
+  },
+  {
+    "subject": "Grounding",
+    "predicate": "designedfor",
+    "object": "span-response mapping relationship",
+    "object_type": "Task",
+    "source_sentence": "The grounding reward is designed for strengthening the span-response mapping relationship in generation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "3.3 Adversarial Activated Multi-reference Learning"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "span",
+    "object_type": "Other",
+    "source_sentence": "Next, we sample a span S and send the span to the generator together with the context to synthesize Rgen.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "3.3 Adversarial Activated Multi-reference Learning"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "context",
+    "object_type": "Other",
+    "source_sentence": "Next, we sample a span S and send the span to the generator together with the context to synthesize Rgen.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "3.3 Adversarial Activated Multi-reference Learning"
+  },
+  {
+    "subject": "GPT-2",
+    "predicate": "uses",
+    "object": "inductive attention",
+    "object_type": "Concept",
+    "source_sentence": "CGRG is a two-stage method that first predicts the control phrase and then generates a response with a GPT-2 that is extended with inductive attention.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "4.2 Baselines"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "policy-gradient method",
+    "object_type": "Method",
+    "source_sentence": "KnowledGPT jointly trains a knowledge selector and a generator with the policy-gradient method and curriculum learning, achieving state-of-the-art performance on two benchmarks.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "4.2 Baselines"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "curriculum learning",
+    "object_type": "Method",
+    "source_sentence": "KnowledGPT jointly trains a knowledge selector and a generator with the policy-gradient method and curriculum learning, achieving state-of-the-art performance on two benchmarks.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "4.2 Baselines"
+  },
+  {
+    "subject": "Curriculum Learning",
+    "predicate": "uses",
+    "object": "policy-gradient method",
+    "object_type": "Method",
+    "source_sentence": "KnowledGPT jointly trains a knowledge selector and a generator with the policy-gradient method and curriculum learning, achieving state-of-the-art performance on two benchmarks.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "4.2 Baselines"
+  },
+  {
+    "subject": "Denoising",
+    "predicate": "uses",
+    "object": "knowledge selection",
+    "object_type": "Concept",
+    "source_sentence": "KTWM incorporates term-level denoising into the knowledge selection and generates a simulated response vector to determine the fine-grained weight of knowledge terms.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "4.2 Baselines"
+  },
+  {
+    "subject": "Latent Variables",
+    "predicate": "uses",
+    "object": "knowledge selection",
+    "object_type": "Concept",
+    "source_sentence": "CoLV uses two latent variables to boost the diversity in knowledge selection and response generation, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "4.2 Baselines"
+  },
+  {
+    "subject": "Latent Variables",
+    "predicate": "uses",
+    "object": "response generation",
+    "object_type": "Task",
+    "source_sentence": "CoLV uses two latent variables to boost the diversity in knowledge selection and response generation, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "4.2 Baselines"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "context",
+    "object_type": "Concept",
+    "source_sentence": "K2R is a new method that first probes knowledge from a large-scale pre-trained language model and then generates a response with the context and probed knowledge.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "4.2 Baselines"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "appropriateness of the proposed model",
+    "object_type": "Concept",
+    "source_sentence": "BLEU and ROUGE evaluate the appropriateness of the proposed model while distinct and entropy focus on the diversity of generation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "5.1 Evaluation Metrics"
+  },
+  {
+    "subject": "ROUGE",
+    "predicate": "evaluates",
+    "object": "appropriateness of the proposed model",
+    "object_type": "Concept",
+    "source_sentence": "BLEU and ROUGE evaluate the appropriateness of the proposed model while distinct and entropy focus on the diversity of generation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "5.1 Evaluation Metrics"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "produces",
+    "object": "Dialogues",
+    "object_type": "Dataset",
+    "source_sentence": "After the strict filtering and cleaning procedure, we finally get 833 dialogues in the Focused Test.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "B Dataset Collection and Quality Control"
+  },
+  {
+    "subject": "Grounding",
+    "predicate": "uses",
+    "object": "BERTbase",
+    "object_type": "Model",
+    "source_sentence": "The discriminator network and the grounding reward network use BERTbase as backbone.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.123",
+    "title": "Xueliang Zhao1†, Tingchen Fu2†, Chongyang Tao3, Rui Yan2∗",
+    "section": "C Implementation Details"
+  }
+]

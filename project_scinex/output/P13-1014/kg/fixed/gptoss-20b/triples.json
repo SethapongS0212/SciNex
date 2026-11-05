@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "significant improvements in parsing accuracy",
+    "object_type": "Other",
+    "source_sentence": "Our experiments show that these advantages lead to significant improvements in parsing accuracy",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "dynamic parsing strategy",
+    "object_type": "Method",
+    "source_sentence": "In this section we present a novel transition -based parser for projective dependency trees, implementing a dynamic parsing strategy.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "3 Dependency Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "addresses",
+    "object": "projective dependency trees",
+    "object_type": "Task",
+    "source_sentence": "In this section we present a novel transition -based parser for projective dependency trees, implementing a dynamic parsing strategy.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "3 Dependency Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "stack data structure",
+    "object_type": "Other",
+    "source_sentence": "Our transition-based parser uses a stack data structure to store partial parses for the input string w.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "3.3 Transition-based Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "buffer",
+    "object_type": "Other",
+    "source_sentence": "The parser also uses a buffer to store the portion of the input string still to be processed.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "3.3 Transition-based Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "three types of transitions",
+    "object_type": "Concept",
+    "source_sentence": "Our parser uses three types of transitions , defined in what follows.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "3.3 Transition-based Parser"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "score()",
+    "object_type": "Method",
+    "source_sentence": "Then the algorithm uses the function score() to evaluate all transitions that can be applied under the current configuration",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "3.4 Deterministic Parsing Algorithm"
+  },
+  {
+    "subject": "Score Function",
+    "predicate": "uses",
+    "object": "linear model",
+    "object_type": "Model",
+    "source_sentence": "We use a linear model for the score function in Algorithm 1, and define score(t, c) = ⃗ω · φ(t, c).",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "4.1 Learning Algorithm"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "linear model",
+    "object_type": "Model",
+    "source_sentence": "We use a linear model for the score function in Algorithm 1, and define score(t, c) = ⃗ω · φ(t, c).",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "4.1 Learning Algorithm"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "Parsing",
+    "object_type": "Method",
+    "source_sentence": "After each update, the learning algorithm resumes parsing from the current configuration by applying bestCorrectT, and moves on using the updated weights.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "4.1 Learning Algorithm"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "Parsing",
+    "object_type": "Method",
+    "source_sentence": "After each update, the learning algorithm resumes parsing from the current configuration by applying bestCorrectT, and moves on using the updated weights.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "4.1 Learning Algorithm"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "this characterization",
+    "object_type": "Other",
+    "source_sentence": "We use this characterization in the implementation of predicate isCorrect() in Algorithm 2.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "4.2 Correct and Incorrect Transitions"
+  },
+  {
+    "subject": "parser",
+    "predicate": "comparesagainst",
+    "object": "arc-eager parser",
+    "object_type": "Model",
+    "source_sentence": "In the first three lines of Table 2 we compare the accuracy of our parser against our implementation of the arc-eager and arc-standard parsers.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "5 Experimental Assessment"
+  },
+  {
+    "subject": "parser",
+    "predicate": "comparesagainst",
+    "object": "arc-standard parser",
+    "object_type": "Model",
+    "source_sentence": "In the first three lines of Table 2 we compare the accuracy of our parser against our implementation of the arc-eager and arc-standard parsers.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "5 Experimental Assessment"
+  }
+]

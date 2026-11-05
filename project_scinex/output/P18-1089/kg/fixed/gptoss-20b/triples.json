@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Domain Adaptation",
+    "predicate": "encompasses",
+    "object": "cross-domain classification",
+    "object_type": "Task",
+    "source_sentence": "existing transfer learning based domain adaptation algorithms for cross-domain classification have generally been proven useful",
+    "extraction_mode": "fixed",
+    "paper": "P18-1089",
+    "title": "Identifying Transferable Information Across Domains for Cross-domain Sentiment Classiﬁcation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Concept",
+    "source_sentence": "Our results show that the use of SCP words as features identified by our approach leads to a more accurate cross-domain sentiment classifier in the unlabeled target domain.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1089",
+    "title": "Identifying Transferable Information Across Domains for Cross-domain Sentiment Classiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "addresses",
+    "object": "cross-domain sentiment classification",
+    "object_type": "Task",
+    "source_sentence": "Our results show that the use of SCP words as features identified by our approach leads to a more accurate cross-domain sentiment classifier in the unlabeled target domain.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1089",
+    "title": "Identifying Transferable Information Across Domains for Cross-domain Sentiment Classiﬁcation",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "statistical",
+    "predicate": "uses",
+    "object": "χ2 test",
+    "object_type": "Other",
+    "source_sentence": "Since we have a polarity annotated dataset in the source domain , a statistical test like χ2 test can be applied to find the significance of a word in the corpus for sentiment classification.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1089",
+    "title": "Identifying Transferable Information Across Domains for Cross-domain Sentiment Classiﬁcation",
+    "section": "3.1 Extracting SCP Features"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "skip-gram model",
+    "object_type": "Method",
+    "source_sentence": "To compute context vector (conV ec) of a word (w), we have used publicly available word2vec toolkit with the skip-gram model.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1089",
+    "title": "Identifying Transferable Information Across Domains for Cross-domain Sentiment Classiﬁcation",
+    "section": "3.1.2 Extracting Signiﬁcant Words with the Polarity Orientation from the Unlabeled Target Domain"
+  },
+  {
+    "subject": "log-linear",
+    "predicate": "uses",
+    "object": "Huffman code",
+    "object_type": "Other",
+    "source_sentence": "each word's Huffman code is used as an input to a log-linear classifier",
+    "extraction_mode": "fixed",
+    "paper": "P18-1089",
+    "title": "Identifying Transferable Information Across Domains for Cross-domain Sentiment Classiﬁcation",
+    "section": "3.1.2 Extracting Signiﬁcant Words with the Polarity Orientation from the Unlabeled Target Domain"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "SCP words as features",
+    "object_type": "Features",
+    "source_sentence": "A SVM based classifier is trained on SCP words as features using labeled source domain data, named as Cs.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1089",
+    "title": "Identifying Transferable Information Across Domains for Cross-domain Sentiment Classiﬁcation",
+    "section": "3.2 Ensemble-based Cross-domain Adaptation Algorithm"
+  },
+  {
+    "subject": "WSM",
+    "predicate": "produces",
+    "object": "classifier",
+    "object_type": "Model",
+    "source_sentence": "Finally, a Weighted Sum Model (WSM) of Cs and Ct gives a classifier in the target domain.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1089",
+    "title": "Identifying Transferable Information Across Domains for Cross-domain Sentiment Classiﬁcation",
+    "section": "3.2 Ensemble-based Cross-domain Adaptation Algorithm"
+  },
+  {
+    "subject": "WSM",
+    "predicate": "addresses",
+    "object": "Classification",
+    "object_type": "Task",
+    "source_sentence": "the WSM of Cs and Ct will classify the document as positive with a classification -score of 0.12 (Equation 4).",
+    "extraction_mode": "fixed",
+    "paper": "P18-1089",
+    "title": "Identifying Transferable Information Across Domains for Cross-domain Sentiment Classiﬁcation",
+    "section": "3.2 Ensemble-based Cross-domain Adaptation Algorithm"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "linear kernel",
+    "object_type": "Kernel",
+    "source_sentence": "We use SVM algorithm with linear kernel to train a classifier in all the mentioned classification systems in the paper.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1089",
+    "title": "Identifying Transferable Information Across Domains for Cross-domain Sentiment Classiﬁcation",
+    "section": "4 Dataset & Experimental Protocol"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "addresses",
+    "object": "errors",
+    "object_type": "Concept",
+    "source_sentence": "Furthermore, we show that an ensemble of the classifiers trained on the SCP features and target specific features overcomes the errors of the individual classifiers.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1089",
+    "title": "Identifying Transferable Information Across Domains for Cross-domain Sentiment Classiﬁcation",
+    "section": "7 Conclusion"
+  }
+]

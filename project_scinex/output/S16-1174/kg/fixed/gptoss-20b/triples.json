@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Sequence Labelling",
+    "predicate": "addresses",
+    "object": "OTE",
+    "object_type": "Concept",
+    "source_sentence": "Since we deal with the OTE as a sequence labelling problem, it is necessary to identify the boundary of OT properly.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1174",
+    "title": "Ayush Kumar IIT Patna, India Dept. of Computer Science ayush.cs12@iitp.ac.in",
+    "section": "2.1 Preprocessing"
+  },
+  {
+    "subject": "distributional",
+    "predicate": "produces",
+    "object": "Examples",
+    "object_type": "Concept",
+    "source_sentence": "Examples from the distributional thesaurus are presented in Table 1.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1174",
+    "title": "Ayush Kumar IIT Patna, India Dept. of Computer Science ayush.cs12@iitp.ac.in",
+    "section": "2.2 Features for Aspect Category Detection"
+  },
+  {
+    "subject": "Words",
+    "predicate": "uses",
+    "object": "tf-idf score",
+    "object_type": "Metric",
+    "source_sentence": "For every top five significant words based on tf- idf score in each aspect category",
+    "extraction_mode": "fixed",
+    "paper": "S16-1174",
+    "title": "Ayush Kumar IIT Patna, India Dept. of Computer Science ayush.cs12@iitp.ac.in",
+    "section": "2.2 Features for Aspect Category Detection"
+  },
+  {
+    "subject": "bag of words",
+    "predicate": "produces",
+    "object": "number of occurrences",
+    "object_type": "Concept",
+    "source_sentence": "Bag of Words : This feature denotes the number of occurrences of each word in the review.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1174",
+    "title": "Ayush Kumar IIT Patna, India Dept. of Computer Science ayush.cs12@iitp.ac.in",
+    "section": "2.2 Features for Aspect Category Detection"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Chunk information",
+    "object_type": "Concept",
+    "source_sentence": "Chunk information: To identify the boundaries of multi-word OTEs, we use chunk information of the current token as the features.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1174",
+    "title": "Ayush Kumar IIT Patna, India Dept. of Computer Science ayush.cs12@iitp.ac.in",
+    "section": "2.3 Features for Opinion Target Expression"
+  },
+  {
+    "subject": "WordNet",
+    "predicate": "uses",
+    "object": "top 4 noun synsets",
+    "object_type": "Concept",
+    "source_sentence": "WordNet: We use top 4 noun synsets of current token from WordNet as the features.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1174",
+    "title": "Ayush Kumar IIT Patna, India Dept. of Computer Science ayush.cs12@iitp.ac.in",
+    "section": "2.3 Features for Opinion Target Expression"
+  },
+  {
+    "subject": "Named Entity Information",
+    "predicate": "uses",
+    "object": "NER- sequence labels in BIO-scheme",
+    "object_type": "Concept",
+    "source_sentence": "Named entity information: We extract named entity information of the current token with Stanford CoreNLP tool, and use the NER- sequence labels in BIO-scheme as features.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1174",
+    "title": "Ayush Kumar IIT Patna, India Dept. of Computer Science ayush.cs12@iitp.ac.in",
+    "section": "2.3 Features for Opinion Target Expression"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "supervised classification",
+    "object_type": "Method",
+    "source_sentence": "For Slot 1 and Slot 3, we use supervised classification using Support Vector Machine (SVM)14.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1174",
+    "title": "Ayush Kumar IIT Patna, India Dept. of Computer Science ayush.cs12@iitp.ac.in",
+    "section": "3 Datasets, Experimental Results and Discussions"
+  },
+  {
+    "subject": "IIT-TUDA",
+    "predicate": "addresses",
+    "object": "sentiment analysis",
+    "object_type": "Task",
+    "source_sentence": "IIT-TUDA: System for sentiment analysis in indian languages using lexical acquisition.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1174",
+    "title": "Ayush Kumar IIT Patna, India Dept. of Computer Science ayush.cs12@iitp.ac.in",
+    "section": "3 Datasets, Experimental Results and Discussions"
+  }
+]

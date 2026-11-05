@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Joint Models",
+    "predicate": "addresses",
+    "object": "cascading errors in NLP pipelines",
+    "object_type": "Concept",
+    "source_sentence": "Joint models like ours have frequently been proposed as a way to avoid cascading errors in NLP pipelines;",
+    "extraction_mode": "fixed",
+    "paper": "K16-1019",
+    "title": "Greedy, Joint Syntactic-Semantic Parsing with Stack LSTMs",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "syntactic and semantic",
+    "predicate": "uses",
+    "object": "buffer",
+    "object_type": "Other",
+    "source_sentence": "Note that the syntactic and semantic transitions both operate on the same buffer, though they independently specify the syntax and semantics, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "K16-1019",
+    "title": "Greedy, Joint Syntactic-Semantic Parsing with Stack LSTMs",
+    "section": "2.2 Transitions for Joint Parsing"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "employs",
+    "object": "four stack LSTMs",
+    "object_type": "Other",
+    "source_sentence": "Our algorithm employs four stack LSTMs, one each for the S, M, and B data structures.",
+    "extraction_mode": "fixed",
+    "paper": "K16-1019",
+    "title": "Greedy, Joint Syntactic-Semantic Parsing with Stack LSTMs",
+    "section": "3.2 Stack LSTMs for Joint Parsing"
+  },
+  {
+    "subject": "rule",
+    "predicate": "uses",
+    "object": "allowed transitions",
+    "object_type": "Concept",
+    "source_sentence": "Note that only allowed transitions are considered in the decision rule (see §2.3).",
+    "extraction_mode": "fixed",
+    "paper": "K16-1019",
+    "title": "Greedy, Joint Syntactic-Semantic Parsing with Stack LSTMs",
+    "section": "3.2 Stack LSTMs for Joint Parsing"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "rectified linear unit",
+    "object_type": "Method",
+    "source_sentence": "The parser state at time t is given by a rectified linear unit in vector yt:",
+    "extraction_mode": "fixed",
+    "paper": "K16-1019",
+    "title": "Greedy, Joint Syntactic-Semantic Parsing with Stack LSTMs",
+    "section": "3.2 Stack LSTMs for Joint Parsing"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "four vectors summarizing the four stack LSTMs",
+    "object_type": "Other",
+    "source_sentence": "the algorithm's state at timestep t is encoded by the four vectors summarizing the four stack LSTMs, and this is the input to the classifier that chooses among the allowable transitions at that timestep.",
+    "extraction_mode": "fixed",
+    "paper": "K16-1019",
+    "title": "Greedy, Joint Syntactic-Semantic Parsing with Stack LSTMs",
+    "section": "3.2 Stack LSTMs for Joint Parsing"
+  },
+  {
+    "subject": "stochastic",
+    "predicate": "uses",
+    "object": "dropout",
+    "object_type": "Method",
+    "source_sentence": "We apply stochastic gradient descent with dropout for all neural network parameters.",
+    "extraction_mode": "fixed",
+    "paper": "K16-1019",
+    "title": "Greedy, Joint Syntactic-Semantic Parsing with Stack LSTMs",
+    "section": "3.4 Training"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "learned representations of word lemmas and POS tags",
+    "object_type": "Other",
+    "source_sentence": "As input to the classifier, we use learned representations of word lemmas and POS tags.",
+    "extraction_mode": "fixed",
+    "paper": "K16-1019",
+    "title": "Greedy, Joint Syntactic-Semantic Parsing with Stack LSTMs",
+    "section": "4.1 CoNLL"
+  }
+]

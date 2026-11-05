@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Reasoning",
+    "predicate": "addresses",
+    "object": "Multimodal Context",
+    "object_type": "Context",
+    "source_sentence": "ReDAN consists of three components: (i) Memory Generation Module (Sec. 3.1), which generates a set of visual and textual memories to provide grounding for reasoning; (ii) Multi-step Reasoning Module (Sec. 3.2), where recurrent dual attention is applied to jointly encode question, image and dialog history into a multimodal context vector for decoding; and (iii) Answer Decoding Module (Sec. 3.3), which derives the final answer for each question based on the multimodal context vector.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "3 Recurrent Dual Attention Network"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "Multimodal Context",
+    "object_type": "Context",
+    "source_sentence": "ReDAN consists of three components: (i) Memory Generation Module (Sec. 3.1), which generates a set of visual and textual memories to provide grounding for reasoning; (ii) Multi-step Reasoning Module (Sec. 3.2), where recurrent dual attention is applied to jointly encode question, image and dialog history into a multimodal context vector for decoding; and (iii) Answer Decoding Module (Sec. 3.3), which derives the final answer for each question based on the multimodal context vector.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "3 Recurrent Dual Attention Network"
+  },
+  {
+    "subject": "Grounding",
+    "predicate": "uses",
+    "object": "Memory Generation Module",
+    "object_type": "Process",
+    "source_sentence": "ReDAN consists of three components: (i) Memory Generation Module (Sec. 3.1), which generates a set of visual and textual memories to provide grounding for reasoning; (ii) Multi-step Reasoning Module (Sec. 3.2), where recurrent dual attention is applied to jointly encode question, image and dialog history into a multimodal context vector for decoding; and (iii) Answer Decoding Module (Sec. 3.3), which derives the final answer for each question based on the multimodal context vector.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "3 Recurrent Dual Attention Network"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "Dialog",
+    "object_type": "Dialog",
+    "source_sentence": "After applying the same BiLSTM to each dialog-history snippet",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "3.1 Memory Generation Module"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "question Q",
+    "object_type": "Other",
+    "source_sentence": "a question Q is first represented as a matrix Mq = [q0,..., qK′−1] ∈Rnh×K′ via a BiLSTM",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "3.2 Multi-step Reasoning Module"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "self attention",
+    "object_type": "Other",
+    "source_sentence": "self attention is applied, α = softmax(pT α · tanh(WqMq)), q = αMT q",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "3.2 Multi-step Reasoning Module"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "initial hidden state",
+    "object_type": "Other",
+    "source_sentence": "q ∈R1×nh then serves as the initial hidden state of the RNN, i.e., s0 = q",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "3.2 Multi-step Reasoning Module"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "GRU",
+    "object_type": "Method",
+    "source_sentence": "The question representation is then updated based on the current dialogue history and the image, via an RNN with Gated Recurrent Unit (GRU).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "3.2 Multi-step Reasoning Module"
+  },
+  {
+    "subject": "Multimodal Fusion",
+    "predicate": "uses",
+    "object": "final context vector",
+    "object_type": "Other",
+    "source_sentence": "After performing T steps of reasoning, multimodal fusion is then used to obtain the final context vector: c = [MFB(sT, vT ), MFB(sT, dT ), MFB(vT, dT )].",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "3.2 Multi-step Reasoning Module"
+  },
+  {
+    "subject": "bidirectional LSTMs",
+    "predicate": "uses",
+    "object": "self-attention mechanisms",
+    "object_type": "Other",
+    "source_sentence": "which are replaced by bidirectional LSTMs with self-attention mechanisms",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "4.2 Quantitative Results"
+  },
+  {
+    "subject": "Boosting",
+    "predicate": "uses",
+    "object": "NDCG",
+    "object_type": "Metric",
+    "source_sentence": "boosting NDCG from 59.32 to 60.53",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "4.2 Quantitative Results"
+  },
+  {
+    "subject": "Boosting",
+    "predicate": "uses",
+    "object": "MRR",
+    "object_type": "Metric",
+    "source_sentence": "boosting NDCG from 59.32 to 60.53, and MRR from 64.21 to 65.30",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "4.2 Quantitative Results"
+  },
+  {
+    "subject": "generative",
+    "predicate": "achieves",
+    "object": "better performance on Yes/no questions",
+    "object_type": "Task",
+    "source_sentence": "generative models performed better on Yes/no questions",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "4.4 Visual Dialog Challenge"
+  },
+  {
+    "subject": "generative",
+    "predicate": "achieves",
+    "object": "overall better performance",
+    "object_type": "Concept",
+    "source_sentence": "the better performance of generative models on the Yes/no questions translated into an overall better performance of generative models",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "4.4 Visual Dialog Challenge"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Vis-Dial dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Experiments on the Vis-Dial dataset validate the effectiveness of the proposed approach.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1648",
+    "title": "Multi-step Reasoning via Recurrent Dual Attention for Visual Dialog",
+    "section": "5 Conclusion"
+  }
+]

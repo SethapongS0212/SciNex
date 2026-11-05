@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "NLI",
+    "predicate": "addresses",
+    "object": "temporal inference in English",
+    "object_type": "Task",
+    "source_sentence": "Second, we created an NLI dataset focusing on temporal order in Japanese from the existing NLI dataset (which we refer to as PLMUTE) for temporal inference in English proposed by Thukral et al. (2021) because Japanese NLI datasets involving diverse temporal adverbs were not well developed.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "Japanese",
+    "predicate": "mentions",
+    "object": "pre-trained language model for Japanese",
+    "object_type": "Concept",
+    "source_sentence": "This Japanese BERT model is the most commonly used pre-trained language model for Japanese in huggingface/transformers.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "NLI",
+    "predicate": "trainedon",
+    "object": "JSNLI dataset",
+    "object_type": "Dataset",
+    "source_sentence": "BERT_JSNLI is Japanese BERT fine-tuned on a large Japanese NLI dataset JSNLI (533,005 examples), a Japanese translation of the SNLI dataset, which is one of the most widely used NLI datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "NLI",
+    "predicate": "mentions",
+    "object": "SNLI dataset",
+    "object_type": "Dataset",
+    "source_sentence": "BERT_JSNLI is Japanese BERT fine-tuned on a large Japanese NLI dataset JSNLI (533,005 examples), a Japanese translation of the SNLI dataset, which is one of the most widely used NLI datasets.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "PLMUTE_ja minimal training set",
+    "object_type": "Dataset",
+    "source_sentence": "BERT_few is Japanese BERT fine-tuned on the PLMUTE_ja minimal training set with two examples each of different combinations of tenses and sections (360 examples).",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "PLMUTE_ja training set",
+    "object_type": "Dataset",
+    "source_sentence": "BERT_all is Japanese BERT fine-tuned on the entire PLMUTE_ja training set (11,220 examples).",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "plan",
+    "predicate": "addresses",
+    "object": "Temporal Inferences",
+    "object_type": "Task",
+    "source_sentence": "In the future, we plan to cover various temporal inferences involving comparative deletion and temporal anaphora.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "plan",
+    "predicate": "addresses",
+    "object": "Test Sets",
+    "object_type": "Task",
+    "source_sentence": "Furthermore, we plan to construct inference test sets for these challenging inferences.",
+    "extraction_mode": "fixed",
+    "paper": "2022.acl-srw.10",
+    "title": "(1) P: I arrived in April 2021.",
+    "section": "7 Conclusion"
+  }
+]

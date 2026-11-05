@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Wikipedia data",
+    "object_type": "Dataset",
+    "source_sentence": "As training set and for estimating the frequencies of words , we use the Wikipedia data.",
+    "extraction_mode": "fixed",
+    "paper": "D17-1028",
+    "title": "Exploiting Morphological Regularities in Distributional Word Representations",
+    "section": "2 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "MSR word analogy dataset",
+    "object_type": "Dataset",
+    "source_sentence": "For all the experiments, we have calculated the fraction of answers correctly answered by the system on MSR word analogy dataset.",
+    "extraction_mode": "fixed",
+    "paper": "D17-1028",
+    "title": "Exploiting Morphological Regularities in Distributional Word Representations",
+    "section": "2 Datasets"
+  },
+  {
+    "subject": "transformation",
+    "predicate": "uses",
+    "object": "word embedding",
+    "object_type": "Concept",
+    "source_sentence": "If a transformation matrix exists for a transition rule, we apply the corresponding transformation matrix on the word embedding of the third word and search the whole vocabulary for the word with an embedding most similar to the transformed embedding (ignoring the third word itself).",
+    "extraction_mode": "fixed",
+    "paper": "D17-1028",
+    "title": "Exploiting Morphological Regularities in Distributional Word Representations",
+    "section": "3.2 Learning Transformation Matrices"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "produces",
+    "object": "words",
+    "object_type": "Task",
+    "source_sentence": "In a similar case, we can generate embeddings for words such as \"unprepared- ness\" from \"prepared\" by sequentially applying <null,ness> and a prefix operator trained in a similar manner - <null,un>.",
+    "extraction_mode": "fixed",
+    "paper": "D17-1028",
+    "title": "Exploiting Morphological Regularities in Distributional Word Representations",
+    "section": "4 Result and Analysis"
+  }
+]

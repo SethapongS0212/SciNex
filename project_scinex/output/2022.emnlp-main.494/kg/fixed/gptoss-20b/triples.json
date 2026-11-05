@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "OOD detection",
+    "object_type": "Task",
+    "source_sentence": "(3) Experiments and analysis demonstrate the effectiveness of our method for OOD detection .",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "SCL",
+    "object_type": "Method",
+    "source_sentence": "Baselines We compare UniNL with different pre-training objec- tives CE and SCL",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "3.1 Setup"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "For a fair comparison, we use the same BiLSTM and BERT as backbone.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "3.1 Setup"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "CLINC-Full",
+    "object_type": "Dataset",
+    "source_sentence": "We perform experiments on four public benchmark OOD datasets, CLINC-Full, CLINC-Small , Banking and Stackoverflow.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "A.1 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "CLINC-Small",
+    "object_type": "Dataset",
+    "source_sentence": "We perform experiments on four public benchmark OOD datasets, CLINC-Full, CLINC-Small , Banking and Stackoverflow.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "A.1 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Banking",
+    "object_type": "Dataset",
+    "source_sentence": "We perform experiments on four public benchmark OOD datasets, CLINC-Full, CLINC-Small , Banking and Stackoverflow.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "A.1 Datasets"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Stackoverflow",
+    "object_type": "Dataset",
+    "source_sentence": "We perform experiments on four public benchmark OOD datasets, CLINC-Full, CLINC-Small , Banking and Stackoverflow.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "A.1 Datasets"
+  },
+  {
+    "subject": "SCL",
+    "predicate": "uses",
+    "object": "supervised contrastive learning objective",
+    "object_type": "Method",
+    "source_sentence": "SCL uses a supervised con-trastive learning objective to minimize intra- class variance by pulling together in- domain intents belonging to the same class and maximize inter- class variance by pushing apart samples from different classes.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "A.2 Baselines"
+  },
+  {
+    "subject": "Score Function",
+    "predicate": "uses",
+    "object": "GDA",
+    "object_type": "Other",
+    "source_sentence": "To keep fair comparison, we follow the original paper using GDA as score function.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "A.2 Baselines"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We use the public pre-trained GloVe 300 dimensions embeddings and BERT- uncased model to embed tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "A.3 Implementation Details"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Concept",
+    "source_sentence": "We use the public pre-trained GloVe 300 dimensions embeddings and BERT- uncased model to embed tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "A.3 Implementation Details"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "reports",
+    "object": "total running time",
+    "object_type": "Metric",
+    "source_sentence": "for inference efficiency, we report the total running time on the entire test set of CLINC-Full.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "A.3 Implementation Details"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Search",
+    "object_type": "Other",
+    "source_sentence": "The training efficiency for KNCL objective function has a slight decrease due to the need for K-nearest neighbor search",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "A.3 Implementation Details"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "TESLA",
+    "object_type": "Other",
+    "source_sentence": "All experiments use a single Tesla T4 GPU(16 GB of memory).",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.494",
+    "title": "Yutao Mou1∗, Pei Wang1∗, Keqing He2∗, Yanan Wu1",
+    "section": "A.3 Implementation Details"
+  }
+]

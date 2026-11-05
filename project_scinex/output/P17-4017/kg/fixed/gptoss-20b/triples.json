@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "WikiQA dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct experiments on the WikiQA dataset.",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "2.4 Opinion-Oriented Text QA for Reviews"
+  },
+  {
+    "subject": "MAP",
+    "predicate": "evaluates",
+    "object": "0.7164",
+    "object_type": "Metric",
+    "source_sentence": "The results show that we achieve state-of-the-art results with 0.7164 in terms of MAP and 0.7332 in terms of MRR.",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "2.4 Opinion-Oriented Text QA for Reviews"
+  },
+  {
+    "subject": "Attention-based LSTM",
+    "predicate": "trainedon",
+    "object": "twitter conversation data",
+    "object_type": "Dataset",
+    "source_sentence": "The chit-chat model is an attention-based LSTM seq2seq model trained on twitter conversation data (˜43 million query-reply pairs).",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "2.5 Chit-chat Conversation Modeling"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "trainedon",
+    "object": "twitter conversation data",
+    "object_type": "Dataset",
+    "source_sentence": "The chit-chat model is an attention-based LSTM seq2seq model trained on twitter conversation data (˜43 million query-reply pairs).",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "2.5 Chit-chat Conversation Modeling"
+  },
+  {
+    "subject": "SuperAgent",
+    "predicate": "uses",
+    "object": "sub-engines",
+    "object_type": "Other",
+    "source_sentence": "For each query, SuperAgent will call the above- mentioned sub-engines in parallel.",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "2.6 Meta Engine"
+  },
+  {
+    "subject": "META",
+    "predicate": "uses",
+    "object": "merge and prioritize the results",
+    "object_type": "Method",
+    "source_sentence": "The meta en- gine is then used to merge and prioritize the results from the different engines.",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "2.6 Meta Engine"
+  },
+  {
+    "subject": "META",
+    "predicate": "uses",
+    "object": "simple strategy",
+    "object_type": "Method",
+    "source_sentence": "We use a simple strat- gy to implement the meta engine, which prefers results from the engines in order of fact QA, FAQ search , text QA and chit-chat engine according to tunable threshold.",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "2.6 Meta Engine"
+  },
+  {
+    "subject": "SuperAgent",
+    "predicate": "uses",
+    "object": "in-page product information",
+    "object_type": "Other",
+    "source_sentence": "SuperAgent is able to answer fact questions using in-page product information",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "3 Usability Analysis"
+  },
+  {
+    "subject": "SuperAgent",
+    "predicate": "uses",
+    "object": "FAQ search",
+    "object_type": "Other",
+    "source_sentence": "SuperAgent is able to conduct an FAQ search from customer QA pairs",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "3 Usability Analysis"
+  },
+  {
+    "subject": "SuperAgent",
+    "predicate": "uses",
+    "object": "customer reviews",
+    "object_type": "Other",
+    "source_sentence": "SuperAgent is able to get text QA answers from customer reviews",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "3 Usability Analysis"
+  },
+  {
+    "subject": "SuperAgent",
+    "predicate": "uses",
+    "object": "chit-chat engine",
+    "object_type": "Other",
+    "source_sentence": "SuperAgent is able to greet customers using the chit-chat engine",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "3 Usability Analysis"
+  },
+  {
+    "subject": "SuperAgent",
+    "predicate": "addresses",
+    "object": "e-commerce websites",
+    "object_type": "Other",
+    "source_sentence": "We have developed SuperAgent, a customer service chatbot for e-commerce websites.",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "5 Conclusion and Future Work"
+  },
+  {
+    "subject": "SuperAgent",
+    "predicate": "uses",
+    "object": "state-of-the-Art NLP",
+    "object_type": "Other",
+    "source_sentence": "SuperAgent leverages state-of-the-art NLP and machine learning techniques, including fact QA, FAQ search, opinion-oriented text QA, as well as chit-chat conversation modeling.",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "5 Conclusion and Future Work"
+  },
+  {
+    "subject": "SuperAgent",
+    "predicate": "uses",
+    "object": "Machine Learning Techniques",
+    "object_type": "Other",
+    "source_sentence": "SuperAgent leverages state-of-the-art NLP and machine learning techniques, including fact QA, FAQ search, opinion-oriented text QA, as well as chit-chat conversation modeling.",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "5 Conclusion and Future Work"
+  },
+  {
+    "subject": "Context Modeling",
+    "predicate": "addresses",
+    "object": "multi-turn queries",
+    "object_type": "Task",
+    "source_sentence": "Second, we will have a deeper delve on multi-turn queries, where context modeling will be further investigated.",
+    "extraction_mode": "fixed",
+    "paper": "P17-4017",
+    "title": "SuperAgent: A Customer Service Chatbot for E-commerce Websites",
+    "section": "5 Conclusion and Future Work"
+  }
+]

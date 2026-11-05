@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Neural Models",
+    "predicate": "uses",
+    "object": "translation",
+    "object_type": "Task",
+    "source_sentence": "Because translation is done standalone using only neural models, we still refer to this as NMT.",
+    "extraction_mode": "fixed",
+    "paper": "P18-2060",
+    "title": "Neural Hidden Markov Model for Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "embedding",
+    "object_type": "Other",
+    "source_sentence": "we use a source side bidi- rectional LSTM embedding hj = −→h j + ←−h j",
+    "extraction_mode": "fixed",
+    "paper": "P18-2060",
+    "title": "Neural Hidden Markov Model for Machine Translation",
+    "section": "3 Neural Hidden Markov Model"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "sentence posterior probabilities",
+    "object_type": "Other",
+    "source_sentence": "The training criterion is the logarithm of sentence posterior probabilities over training sentence pairs",
+    "extraction_mode": "fixed",
+    "paper": "P18-2060",
+    "title": "Neural Hidden Markov Model for Machine Translation",
+    "section": "3 Neural Hidden Markov Model"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "forward-backward algorithm",
+    "object_type": "Other",
+    "source_sentence": "which can be computed using the forward- backward algorithm",
+    "extraction_mode": "fixed",
+    "paper": "P18-2060",
+    "title": "Neural Hidden Markov Model for Machine Translation",
+    "section": "3 Neural Hidden Markov Model"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "Beam Search",
+    "object_type": "Method",
+    "source_sentence": "In the decoding stage we still calculate the sum over alignments and apply a target-synchronous beam search for the target string.",
+    "extraction_mode": "fixed",
+    "paper": "P18-2060",
+    "title": "Neural Hidden Markov Model for Machine Translation",
+    "section": "4 Decoding"
+  },
+  {
+    "subject": "preprocessing",
+    "predicate": "uses",
+    "object": "Moses tokenizer",
+    "object_type": "Method",
+    "source_sentence": "For German and English preprocessing, we use the Moses tokenizer with hyphen splitting, and perform truecasing with Moses scripts.",
+    "extraction_mode": "fixed",
+    "paper": "P18-2060",
+    "title": "Neural Hidden Markov Model for Machine Translation",
+    "section": "5 Experiments"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "Beam Search",
+    "object_type": "Method",
+    "source_sentence": "Decoding is done using beam search with a beam size of 12.",
+    "extraction_mode": "fixed",
+    "paper": "P18-2060",
+    "title": "Neural Hidden Markov Model for Machine Translation",
+    "section": "5.1 Attention-Based System"
+  },
+  {
+    "subject": "LSTM models",
+    "predicate": "achieves",
+    "object": "1.3% BLEU",
+    "object_type": "Metric",
+    "source_sentence": "Compare to the model presented in Wang et al. (2017), switching to LSTM models has a clear advantage, which improves the FFNN-based system by up to 1.3% BLEU and 1.8% TER.",
+    "extraction_mode": "fixed",
+    "paper": "P18-2060",
+    "title": "Neural Hidden Markov Model for Machine Translation",
+    "section": "5.3 Results"
+  },
+  {
+    "subject": "Machine Translation System",
+    "predicate": "uses",
+    "object": "Neural Networks",
+    "object_type": "Model",
+    "source_sentence": "We described a novel formulation for a neural network-based machine translation system, which applied neural networks to the conventional hidden Markov model.",
+    "extraction_mode": "fixed",
+    "paper": "P18-2060",
+    "title": "Neural Hidden Markov Model for Machine Translation",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Machine Translation",
+    "predicate": "uses",
+    "object": "HMM",
+    "object_type": "Model",
+    "source_sentence": "This results in a more modern and efficient way to use HMM in machine translation and enables neural networks to benefit from HMMs.",
+    "extraction_mode": "fixed",
+    "paper": "P18-2060",
+    "title": "Neural Hidden Markov Model for Machine Translation",
+    "section": "6 Discussion"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "comparesagainst",
+    "object": "Attention",
+    "object_type": "Method",
+    "source_sentence": "Experiments show that replacing attention with alignment does not improve the translation performance of NMT significantly.",
+    "extraction_mode": "fixed",
+    "paper": "P18-2060",
+    "title": "Neural Hidden Markov Model for Machine Translation",
+    "section": "6 Discussion"
+  }
+]

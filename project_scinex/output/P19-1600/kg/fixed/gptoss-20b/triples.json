@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "word xt",
+    "object_type": "Word",
+    "source_sentence": "We concatenate the word xt and its structure representation zt at the t-th time step and feed them into LSTM unit to encode the table.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "2.1 Table Encoder"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "structure representation zt",
+    "object_type": "Other",
+    "source_sentence": "We concatenate the word xt and its structure representation zt at the t-th time step and feed them into LSTM unit to encode the table.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "2.1 Table Encoder"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "Bahdanau-style attention mechanism",
+    "object_type": "Method",
+    "source_sentence": "We use Bahdanau-style attention mechanism to calculate g(st, hi).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "2.2 Description Decoder"
+  },
+  {
+    "subject": "Reinforcement Learning",
+    "predicate": "produces",
+    "object": "accurate, informative and loyal descriptions",
+    "object_type": "Other",
+    "source_sentence": "So we propose two methods: force-attention (FA) and richness-oriented reinforcement learning to produce accurate, informative and loyal descriptions.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3 Comprehensive Table Description"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "image",
+    "object_type": "Other",
+    "source_sentence": "the generator to pay equal attention to every part of the image while generating image captions",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3.1 Force-Attention Module"
+  },
+  {
+    "subject": "generator",
+    "predicate": "produces",
+    "object": "image captions",
+    "object_type": "Other",
+    "source_sentence": "the generator to pay equal attention to every part of the image while generating image captions",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3.1 Force-Attention Module"
+  },
+  {
+    "subject": "Reinforcement Learning",
+    "predicate": "uses",
+    "object": "generator",
+    "object_type": "Model",
+    "source_sentence": "We also propose a reinforcement learning frame- work which encourages the generator to cover rare and seldom mentioned words and attributes in the table .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3.2 Reinforced Richness-oriented Learning"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluatedon",
+    "object": "WB-filter datasets",
+    "object_type": "Dataset",
+    "source_sentence": "the BLEU and ROUGE scores are lower in the WB-filter datasets",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.5 Analysis of Experimental Results"
+  },
+  {
+    "subject": "ROUGE",
+    "predicate": "evaluatedon",
+    "object": "WB-filter datasets",
+    "object_type": "Dataset",
+    "source_sentence": "the BLEU and ROUGE scores are lower in the WB-filter datasets",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.5 Analysis of Experimental Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "competitive performance",
+    "object_type": "Concept",
+    "source_sentence": "Although the proposed models achieve competitive performance, we also observe some failure cases.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.6 Error Analysis"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "smoothing",
+    "object_type": "Method",
+    "source_sentence": "they emphasis easily ignored features or bits of information in the training procedure by smoothing or regularization.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "generating",
+    "predicate": "addresses",
+    "object": "one-sentence biographies",
+    "object_type": "Other",
+    "source_sentence": "This paper focused on generating one-sentence biographies for infoboxes like many previous works",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "WIKIBIO",
+    "object_type": "Dataset",
+    "source_sentence": "The experiments on the WIKIBIO and WB-filter datasets show the merits of our model.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "6 Conclusion and Future Work"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "WB-filter",
+    "object_type": "Dataset",
+    "source_sentence": "The experiments on the WIKIBIO and WB-filter datasets show the merits of our model.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "6 Conclusion and Future Work"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "ReLU",
+    "object_type": "Method",
+    "source_sentence": "Following the wiring choices of Transformer feed- forward network . hT i = relu(W T bd˜zT i ). (2) xT i = W T dbhT i + zi.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4 Domain Adaptation"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "trainedon",
+    "object": "WMT En-Fr training set",
+    "object_type": "Dataset",
+    "source_sentence": "NMT models trained on WMT are then adapted to the IWSLT'15 En-Fr corpus.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "JRC-Acquis dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We also evaluate adaptation performance on the JRC-Acquis dataset.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "newstest-2014",
+    "object_type": "Dataset",
+    "source_sentence": "We also evaluate the translation performance of the non-adapted base model on newstest-2014.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "training",
+    "predicate": "addresses",
+    "object": "Low Resource Languages",
+    "object_type": "Concept",
+    "source_sentence": "Global training: Train a fully shared model on all language pairs, with the goal of maximizing transfer to low resource languages.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "5.3 Models and Hyper-parameters"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "addresses",
+    "object": "low resource languages",
+    "object_type": "Task",
+    "source_sentence": "Sampling equally from all language pairs results in huge boost in low resource translation performance, but high resource languages perform significantly worse than their bilingual baselines.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1165",
+    "title": "Simple, Scalable Adaptation for Neural Machine Translation",
+    "section": "5.3 Models and Hyper-parameters"
+  }
+]

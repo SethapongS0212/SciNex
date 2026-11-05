@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "probing data structure",
+    "object_type": "Other",
+    "source_sentence": "The language model uses the probing data structure; the fastest and default data structure for KenLM, it makes use of a hash table to store the language model n-grams.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "3 Baseline Machine Translation System"
+  },
+  {
+    "subject": "Dependency Parser",
+    "predicate": "uses",
+    "object": "Stanford CoreNLP tool",
+    "object_type": "Other",
+    "source_sentence": "Instances of \"it\" are categorised as being either subject- or object- position pronouns using the dependency parser provided as part of the Stanford CoreNLP tool2.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "4 Extracting Source-language Information"
+  },
+  {
+    "subject": "coreference",
+    "predicate": "uses",
+    "object": "fixed expressions",
+    "object_type": "Other",
+    "source_sentence": "NADA is used as it considers the entire sentence , unlike the pleonastic sieve in the Stanford coreference resolution system , which uses only fixed expressions to identify pleonastic \"it\".",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "4 Extracting Source-language Information"
+  },
+  {
+    "subject": "SMT",
+    "predicate": "produces",
+    "object": "SMT output",
+    "object_type": "Other",
+    "source_sentence": "All instances of 'it' translated as 'ce/c'/il' are left as they are in the SMT output.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "5.2 Non-Anaphoric Rule"
+  },
+  {
+    "subject": "post-editing",
+    "predicate": "uses",
+    "object": "rules",
+    "object_type": "Concept",
+    "source_sentence": "The post-editing rules also allow for changes from singular to plural (and vice versa) and from one number and gender to another.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "7 Post-Editing Statistics"
+  },
+  {
+    "subject": "SMT",
+    "predicate": "achieves",
+    "object": "36.91 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "The official shared task results report a BLEU score of 36.91 for the post-edited SMT output.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "8 Results"
+  },
+  {
+    "subject": "SMT",
+    "predicate": "achieves",
+    "object": "114/210 correct translations",
+    "object_type": "Other",
+    "source_sentence": "accuracy with OTHER measure reveals that the post-edited SMT output contains correct translations for only 114/210 pronoun instances, according to human judgements.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "8 Results"
+  },
+  {
+    "subject": "post-editing",
+    "predicate": "uses",
+    "object": "two pronoun-specific rules",
+    "object_type": "Concept",
+    "source_sentence": "The post-editing approach makes use of two pronoun -specific rules applied to the output of a baseline English -to-French phrase-based SMT system.",
+    "extraction_mode": "fixed",
+    "paper": "W15-2509",
+    "title": "Automatic Post-Editing for the DiscoMT Pronoun Translation Task",
+    "section": "10 Summary and Future Work"
+  }
+]

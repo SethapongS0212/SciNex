@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "VAE",
+    "predicate": "uses",
+    "object": "RNN decoder",
+    "object_type": "Method",
+    "source_sentence": "Two samples of text generated using standard VAE with an RNN decoder is shown in Table 1.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "1 Duke University 2 Microsoft Research, Redmond 3 University of California, Santa Barbara"
+  },
+  {
+    "subject": "VAE",
+    "predicate": "uses",
+    "object": "recognition model",
+    "object_type": "Method",
+    "source_sentence": "A VAE encodes the text x using a recognition (encoder) model, qφ(z|x), parameterizing an approximate posterior distribution over a continuous latent variable z (whose prior is typically chosen as standard diagonal-covariance Gaussian).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "1 Duke University 2 Microsoft Research, Redmond 3 University of California, Santa Barbara"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "achieves",
+    "object": "generating words",
+    "object_type": "Task",
+    "source_sentence": "The generated sentence-level plan vectors are then passed onto the word-level LSTM decoder to generate the words for each sentence.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "3.1 Single Latent Variable (ml-VAE-S:)"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "teacher-forcing",
+    "object_type": "Method",
+    "source_sentence": "We use teacher-forcing during training and greedy decoding at test time.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "3.1 Single Latent Variable (ml-VAE-S:)"
+  },
+  {
+    "subject": "VAE",
+    "predicate": "uses",
+    "object": "linear layers",
+    "object_type": "Other",
+    "source_sentence": "The single-variable ml-VAE-S model feeds the paragraph feature vector into the linear layers to infer the mean and variance of the latent variable z.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "3.2 Double Latent Variables (ml-VAE-D):"
+  },
+  {
+    "subject": "VAE",
+    "predicate": "uses",
+    "object": "MLP layers",
+    "object_type": "Other",
+    "source_sentence": "In the double-variable model ml-VAE-D, the feature vector is transformed with two MLP layers, and then is used to compute the mean and variance of the top-level latent variable.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "3.2 Double Latent Variables (ml-VAE-D):"
+  },
+  {
+    "subject": "Inference Networks",
+    "predicate": "uses",
+    "object": "lower-level CNN",
+    "object_type": "Other",
+    "source_sentence": "The inference networks parameterizing q(z1|x) and q(z2|x) share the same parameters as the lower-level CNN.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "3.2 Double Latent Variables (ml-VAE-D):"
+  },
+  {
+    "subject": "CNNs",
+    "predicate": "uses",
+    "object": "sentence-level CNNs",
+    "object_type": "Other",
+    "source_sentence": "We use sentence-level CNNs to encode each sentence into a fixed-length vector.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "3.2 Double Latent Variables (ml-VAE-D):"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "hierarchical CNN architecture",
+    "object_type": "Other",
+    "source_sentence": "To abstract meaningful representations from the input paragraphs, we choose a hierarchical CNN architecture for the inference /encoder networks for both single and double latent variable models.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "3.2 Double Latent Variables (ml-VAE-D):"
+  },
+  {
+    "subject": "Hierarchical Encoder",
+    "predicate": "addresses",
+    "object": "posterior collapse",
+    "object_type": "Concept",
+    "source_sentence": "We instead introduce more flexible priors and hierarchical encoder and decoder structures to deal with posterior collapse.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "4 Related Work"
+  },
+  {
+    "subject": "VAE",
+    "predicate": "achieves",
+    "object": "smoothness of the learned VAE latent space",
+    "object_type": "Concept",
+    "source_sentence": "As shown in Table 8, these intermediate samples are all realistic-looking reviews that are syntactically and semantically reasonable, demonstrating the smoothness of the learned VAE latent space.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "5.5 Analysis"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "83.4% positive-sentiment",
+    "object_type": "Metric",
+    "source_sentence": "With this pre-trained classifier, 83.4% of the transferred reviews are predicted as positive-sentiment, indicating that \"attribute vector arithmetic\" consistently produces the intended manipulation of sentiment.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "5.5 Analysis"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "addresses",
+    "object": "semantic coherence",
+    "object_type": "Concept",
+    "source_sentence": "It consists of a multi-level LSTM generative network to model the semantic coherence at both the word- and sentence-levels.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1200",
+    "title": "⇤This research was carried out during an internship at Microsoft Research.",
+    "section": "6 Conclusion"
+  }
+]

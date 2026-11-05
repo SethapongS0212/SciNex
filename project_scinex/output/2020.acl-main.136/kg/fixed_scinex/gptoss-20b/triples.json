@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Seq2seq",
+    "predicate": "produces",
+    "object": "triples",
+    "object_type": "Other",
+    "source_sentence": "They introduced the categories for different overlapping patterns as shown in Figure 1 and proposed a sequence-to-sequence (Seq2Seq) model with copy mechanism to extract triples.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Neural Models",
+    "predicate": "achieves",
+    "object": "joint learning of entities and relations",
+    "object_type": "Other",
+    "source_sentence": "most existing neural models like achieve joint learning of entities and rela- tions only through parameter sharing but not joint decoding.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Relational Triple Extraction",
+    "predicate": "achieves",
+    "object": "identify all possible triples in a sentence",
+    "object_type": "Task",
+    "source_sentence": "The goal of relational triple extraction is to identify all possible ( subject , relation , object) triples in a sentence , where some triples may share the same entities as subjects or objects.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "3 The CASREL Framework"
+  },
+  {
+    "subject": "training",
+    "predicate": "trainedon",
+    "object": "training set D",
+    "object_type": "Dataset",
+    "source_sentence": "Formally, given annotated sentence xj from the training set D and a set of potentially overlapping triples Tj = {(s, r, o)} in xj, we aim to maximize the data likelihood of the training set D:",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "3 The CASREL Framework"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "uses",
+    "object": "context information",
+    "object_type": "Concept",
+    "source_sentence": "We employ a pre-trained BERT model to encode the context information.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "3.1 BERT Encoder"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "produces",
+    "object": "encoded vector hN",
+    "object_type": "Other",
+    "source_sentence": "The low level tagging module is designed to recognize all possible subjects in the input sentence by directly decoding the encoded vector hN produced by the N-layer BERT encoder.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "3.2 Cascade Decoder"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "identify the span of subject s",
+    "object_type": "Task",
+    "source_sentence": "The subject tagger optimizes the following likelihood function to identify the span of subject s given a sentence representation x:",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.136",
+    "title": "A Novel Cascade Binary Tagging Framework for Relational Triple Extraction",
+    "section": "3.2 Cascade Decoder"
+  }
+]

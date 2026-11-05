@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Translation Model",
+    "predicate": "trainedon",
+    "object": "synthetic corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Lastly, we fine-tuned our translation model with the synthetic and in-domain parallel corpora for domain adaptation.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5365",
+    "title": "NTT’s Machine Translation Systems for WMT19 Robustness Task",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Translation Model",
+    "predicate": "trainedon",
+    "object": "in-domain parallel corpora",
+    "object_type": "Dataset",
+    "source_sentence": "Lastly, we fine-tuned our translation model with the synthetic and in-domain parallel corpora for domain adaptation.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5365",
+    "title": "NTT’s Machine Translation Systems for WMT19 Robustness Task",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "produces",
+    "object": "subwords",
+    "object_type": "Other",
+    "source_sentence": "Then we further tokenized the words into subwords using joint Byte-Pair-Encoding (BPE) with 16,000 merge operations3 .",
+    "extraction_mode": "fixed",
+    "paper": "W19-5365",
+    "title": "NTT’s Machine Translation Systems for WMT19 Robustness Task",
+    "section": "2.2 Data Preprocessing"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "uses",
+    "object": "Models",
+    "object_type": "Model",
+    "source_sentence": "we decoded using an ensemble of independently trained models",
+    "extraction_mode": "fixed",
+    "paper": "W19-5365",
+    "title": "NTT’s Machine Translation Systems for WMT19 Robustness Task",
+    "section": "3.2 Experimental Results"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "achievesresult",
+    "object": "substantial gain in both directions",
+    "object_type": "Other",
+    "source_sentence": "According to the comparison between +fine- tuning and baseline shown in Table 4, fine-tuning on the in- domain and synthetic corpus achieved a substantial gain in both directions.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5365",
+    "title": "NTT’s Machine Translation Systems for WMT19 Robustness Task",
+    "section": "4.2 Effect of Fine-tuning"
+  },
+  {
+    "subject": "Robustness",
+    "predicate": "addresses",
+    "object": "Social Media Texts",
+    "object_type": "Concept",
+    "source_sentence": "Challenges still remain to improving the model's robustness against social media texts such as Reddit comments.",
+    "extraction_mode": "fixed",
+    "paper": "W19-5365",
+    "title": "NTT’s Machine Translation Systems for WMT19 Robustness Task",
+    "section": "4.3 Difﬁculties in Translating Social Media Texts"
+  }
+]

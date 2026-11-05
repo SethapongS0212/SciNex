@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "Attention Mechanism",
+    "object_type": "Method",
+    "source_sentence": "On the decoder side, we develop an RNN-based decoder which takes the graph vector representation as the initial hidden state to generate the sequences while employing an attention mechanism over all node embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1112",
+    "title": "SQL-to-Text Generation with Graph-to-Sequence Model",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "Node Embeddings",
+    "object_type": "Model",
+    "source_sentence": "On the decoder side, we develop an RNN-based decoder which takes the graph vector representation as the initial hidden state to generate the sequences while employing an attention mechanism over all node embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1112",
+    "title": "SQL-to-Text Generation with Graph-to-Sequence Model",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "achieves",
+    "object": "generate natural language",
+    "object_type": "Method",
+    "source_sentence": "a sequence de- coder with attention mechanism to generate sen- tences.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1112",
+    "title": "SQL-to-Text Generation with Graph-to-Sequence Model",
+    "section": "3 Graph-to-sequence Model"
+  },
+  {
+    "subject": "Long Short Term Memory",
+    "predicate": "uses",
+    "object": "feature vector",
+    "object_type": "Feature vector",
+    "source_sentence": "we first use a Long Short Term Memory (LSTM) to generate the feature vector av for all nodes ∀v ∈V from v's text attribute.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1112",
+    "title": "SQL-to-Text Generation with Graph-to-Sequence Model",
+    "section": "3 Graph-to-sequence Model"
+  },
+  {
+    "subject": "Node Embeddings",
+    "predicate": "uses",
+    "object": "feature vector",
+    "object_type": "Feature vector",
+    "source_sentence": "We use these feature vectors as initial node embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1112",
+    "title": "SQL-to-Text Generation with Graph-to-Sequence Model",
+    "section": "3 Graph-to-sequence Model"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "context vector",
+    "object_type": "Other",
+    "source_sentence": "The context vector ci is dynamically computed using attention mechanism over the node representations.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1112",
+    "title": "SQL-to-Text Generation with Graph-to-Sequence Model",
+    "section": "3 Graph-to-sequence Model"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "node representations",
+    "object_type": "Other",
+    "source_sentence": "The context vector ci is dynamically computed using attention mechanism over the node representations.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1112",
+    "title": "SQL-to-Text Generation with Graph-to-Sequence Model",
+    "section": "3 Graph-to-sequence Model"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "GloVe word vectors",
+    "object_type": "Word Vectors",
+    "source_sentence": "We initialize word embeddings using GloVe word vectors from Pennington et al. (2014), and the word embedding dimension is 300.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1112",
+    "title": "SQL-to-Text Generation with Graph-to-Sequence Model",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "tree",
+    "object_type": "Other",
+    "source_sentence": "We apply the SQL Parser tool5 to convert an SQL query to a tree whose structure is illustrated in Figure 3.",
+    "extraction_mode": "fixed",
+    "paper": "D18-1112",
+    "title": "SQL-to-Text Generation with Graph-to-Sequence Model",
+    "section": "5 Conclusions"
+  }
+]

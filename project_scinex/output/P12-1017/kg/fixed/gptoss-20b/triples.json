@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Unsupervised Learning",
+    "predicate": "addresses",
+    "object": "machine translation",
+    "object_type": "Task",
+    "source_sentence": "In this work, we will develop, describe, and evaluate methods for large vocabulary unsupervised learning of machine translation models suitable for real-world tasks.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "20",
+    "object_type": "Metric",
+    "source_sentence": "They perform experiments on a Spanish/English task with vocabulary sizes of about 500 words and achieve a performance of around 20 BLEU compared to 70 BLEU obtained by a sys- tem that was trained on parallel data.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "evaluates",
+    "object": "70",
+    "object_type": "Metric",
+    "source_sentence": "They perform experiments on a Spanish/English task with vocabulary sizes of about 500 words and achieve a performance of around 20 BLEU compared to 70 BLEU obtained by a sys- tem that was trained on parallel data.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "EM-Algorithm",
+    "object_type": "Method",
+    "source_sentence": "Their best performing approach uses an EM-Algorithm to train a generative word based trans- lation model.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Translation Model",
+    "predicate": "uses",
+    "object": "monolingual data",
+    "object_type": "Other",
+    "source_sentence": "In this section, we describe the statistical training criterion and the translation model that is trained using monolingual data.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "3 Translation Model"
+  },
+  {
+    "subject": "Context Vectors",
+    "predicate": "uses",
+    "object": "similarity coefficient",
+    "object_type": "Metric",
+    "source_sentence": "Similar to this we represent source and target words in a high dimensional vector space of target word weights which we call context vectors and use a similarity coefficient to find possible translation pairs.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "4 Monolingual Context Similarity"
+  },
+  {
+    "subject": "Context Vectors",
+    "predicate": "uses",
+    "object": "Monolingual Data",
+    "object_type": "Dataset",
+    "source_sentence": "Prepare context vectors vfi,ej for the source language using only the monolingual data for the source language and the translation model's current parameter estimate θ:",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "4 Monolingual Context Similarity"
+  },
+  {
+    "subject": "Context Vectors",
+    "predicate": "uses",
+    "object": "Translation Model",
+    "object_type": "Model",
+    "source_sentence": "Prepare context vectors vfi,ej for the source language using only the monolingual data for the source language and the translation model's current parameter estimate θ:",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "4 Monolingual Context Similarity"
+  },
+  {
+    "subject": "EM Training",
+    "predicate": "uses",
+    "object": "2-gram or 3-gram language model",
+    "object_type": "Language Model",
+    "source_sentence": "After initialization we first perform EM training of the translation model for 20-30 iterations using a 2-gram or 3-gram language model in the target language.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "5 Training Algorithm and Implementation"
+  },
+  {
+    "subject": "generative",
+    "predicate": "uses",
+    "object": "OpenFST",
+    "object_type": "Other",
+    "source_sentence": "The generative story described in Section 3 is implemented as a cascade of a permutation, insertion, lexicon, deletion and language model finite state transducers using OpenFST.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "5.2 EM Algorithm"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "EM algorithm",
+    "object_type": "Other",
+    "source_sentence": "We use the forward-backward algorithm on the composed transducers to efficiently train the lexicon model using the EM algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "5.2 EM Algorithm"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "2-gram LM",
+    "object_type": "Other",
+    "source_sentence": "In comparison to this baseline we run our algorithm with NC = 50 candidates per source word for both, a 2-gram and a 3-gram LM.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "6.1.1 Experimental Setup"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "3-gram LM",
+    "object_type": "Other",
+    "source_sentence": "In comparison to this baseline we run our algorithm with NC = 50 candidates per source word for both, a 2-gram and a 3-gram LM.",
+    "extraction_mode": "fixed",
+    "paper": "P12-1017",
+    "title": "Deciphering Foreign Language by Combining Language Models and Context Vectors",
+    "section": "6.1.1 Experimental Setup"
+  }
+]

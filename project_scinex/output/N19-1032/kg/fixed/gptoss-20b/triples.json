@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "tokens",
+    "object_type": "Other",
+    "source_sentence": "We first use pretrained word embeddings to represent tokens, such as GLoVe because nodes and queries are composed of tokens.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "3.2 Multi-level Features"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "contextualized word representations",
+    "object_type": "Other",
+    "source_sentence": "We use ELMo as contextualized word representations, modeling both complex word characteristics and contextual linguistic conditions.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "3.2 Multi-level Features"
+  },
+  {
+    "subject": "Bi-LSTM",
+    "predicate": "uses",
+    "object": "encoded query features",
+    "object_type": "Other",
+    "source_sentence": "Different from nodes, we represent a query by directly using a bidirectional LSTM (Bi-LSTM) whose output in each step is used as encoded query features.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "3.2 Multi-level Features"
+  },
+  {
+    "subject": "R-GCN",
+    "predicate": "addresses",
+    "object": "multi-hop reasoning",
+    "object_type": "Task",
+    "source_sentence": "In order to realize multi-hop reasoning , we use a Relational Graph Convolutional Network (R-GCN) that can propagate message across different entity nodes in graphs and generate transformed representation of original ones.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "3.3 GCN Layer"
+  },
+  {
+    "subject": "R-GCN",
+    "predicate": "addresses",
+    "object": "high-relational data characteristics",
+    "object_type": "Concept",
+    "source_sentence": "The R-GCN is employed to handle high-relational data characteristics and make use of different edge types.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "3.3 GCN Layer"
+  },
+  {
+    "subject": "R-GCN",
+    "predicate": "addresses",
+    "object": "different edge types",
+    "object_type": "Concept",
+    "source_sentence": "The R-GCN is employed to handle high-relational data characteristics and make use of different edge types.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "3.3 GCN Layer"
+  },
+  {
+    "subject": "Input",
+    "predicate": "addresses",
+    "object": "features",
+    "object_type": "Concept",
+    "source_sentence": "The initial input will be mutli-level nodes features fn = {fni}, 0 ≤i ≤T and edges e = {eij} in the graph.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "3.3 GCN Layer"
+  },
+  {
+    "subject": "Input",
+    "predicate": "addresses",
+    "object": "edges",
+    "object_type": "Concept",
+    "source_sentence": "The initial input will be mutli-level nodes features fn = {fni}, 0 ≤i ≤T and edges e = {eij} in the graph.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "3.3 GCN Layer"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "produces",
+    "object": "mutual information",
+    "object_type": "Concept",
+    "source_sentence": "Bi-directional attention is responsible for generating the mutual information between a graph and a query.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "3.4 Bi-directional Attention Between a Graph and a Query"
+  },
+  {
+    "subject": "GCN",
+    "predicate": "uses",
+    "object": "similarity matrix",
+    "object_type": "Concept",
+    "source_sentence": "the relation-aware nodes representation from GCN layer is just used to calculate the similarity matrix",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "3.4 Bi-directional Attention Between a Graph and a Query"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "1024 dimension representation",
+    "object_type": "Other",
+    "source_sentence": "We used standard ELMo with a 1024 dimension representation.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "4 Experiment"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "840B Web crawl data",
+    "object_type": "Dataset",
+    "source_sentence": "300-dimension GLoVe pre-trained embeddings from 840B Web crawl data were used as token-level features.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "4 Experiment"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "two GTX1080Ti GPUs",
+    "object_type": "Other",
+    "source_sentence": "It took about 14 hours for 50-epoch training on two GTX1080Ti GPUs",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "4 Experiment"
+  },
+  {
+    "subject": "Web Crawl Data",
+    "predicate": "uses",
+    "object": "token-level features",
+    "object_type": "Other",
+    "source_sentence": "300-dimension GLoVe pre-trained embeddings from 840B Web crawl data were used as token-level features.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "4 Experiment"
+  },
+  {
+    "subject": "Bi-directional Attention Entity Graph Convolutional Network",
+    "predicate": "addresses",
+    "object": "multi-hop reasoning QA tasks",
+    "object_type": "Task",
+    "source_sentence": "We propose a Bi-directional Attention entity Graph convolutional network (BAG) for multi - hop reasoning QA tasks.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1032",
+    "title": "Yu Cao1 Meng Fang2 Dacheng Tao1",
+    "section": "5 Conclusion"
+  }
+]

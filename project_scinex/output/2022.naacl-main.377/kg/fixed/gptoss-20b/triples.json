@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "GPT-2",
+    "object_type": "Model",
+    "source_sentence": "For the tokenizer, we use the same byte-level BPE tokenizer as in GPT-2.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.377",
+    "title": "Hyperconnect {seungju.han,beomsu.kim,jeffrey,seokjun.seo,airdish,enkhbayar.erdenee,",
+    "section": "B Model Details"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "ten selected characters in the HLA-chat dataset",
+    "object_type": "Dataset",
+    "source_sentence": "For the StyleProb metric, we train a character style classifier using the utterances from ten selected characters in the HLA-chat dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.377",
+    "title": "Hyperconnect {seungju.han,beomsu.kim,jeffrey,seokjun.seo,airdish,enkhbayar.erdenee,",
+    "section": "C Evaluation Details"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "RoBERTa-base model",
+    "object_type": "Model",
+    "source_sentence": "We collect the utterances of ten evaluation characters from the dataset and train a 10-class classifier by fine-tuning the RoBERTa-base model.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.377",
+    "title": "Hyperconnect {seungju.han,beomsu.kim,jeffrey,seokjun.seo,airdish,enkhbayar.erdenee,",
+    "section": "C Evaluation Details"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "0.5838 accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The accuracy of the classifier on the validation split is 0.5838.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.377",
+    "title": "Hyperconnect {seungju.han,beomsu.kim,jeffrey,seokjun.seo,airdish,enkhbayar.erdenee,",
+    "section": "C Evaluation Details"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "uses",
+    "object": "Amazon MTurk",
+    "object_type": "Other",
+    "source_sentence": "We use Amazon MTurk for collecting assessments, and Figure 2 shows the instructions and the interface for the human evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.377",
+    "title": "Hyperconnect {seungju.han,beomsu.kim,jeffrey,seokjun.seo,airdish,enkhbayar.erdenee,",
+    "section": "C Evaluation Details"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "HLA-Chat dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We mainly used HLA-Chat dataset for our evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.377",
+    "title": "Hyperconnect {seungju.han,beomsu.kim,jeffrey,seokjun.seo,airdish,enkhbayar.erdenee,",
+    "section": "C Evaluation Details"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "profanity checker algorithm",
+    "object_type": "Method",
+    "source_sentence": "As discussed in their paper, the Pile dataset explicitly used a profanity checker algorithm to reduce the pejorative content.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.377",
+    "title": "Hyperconnect {seungju.han,beomsu.kim,jeffrey,seokjun.seo,airdish,enkhbayar.erdenee,",
+    "section": "I Scientific Artifacts"
+  }
+]

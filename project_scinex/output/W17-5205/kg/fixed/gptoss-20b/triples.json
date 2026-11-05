@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Detecting Emotion",
+    "predicate": "addresses",
+    "object": "tracking brand and product perception",
+    "object_type": "Task",
+    "source_sentence": "Thus, automatically detecting emotion intensities in tweets is especially beneficial in applications such as tracking brand and product perception, tracking support for issues and policies, tracking public health and well-being, and disaster/crisis management.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Detecting Emotion",
+    "predicate": "addresses",
+    "object": "tracking support for issues and policies",
+    "object_type": "Task",
+    "source_sentence": "Thus, automatically detecting emotion intensities in tweets is especially beneficial in applications such as tracking brand and product perception, tracking support for issues and policies, tracking public health and well-being, and disaster/crisis management.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Detecting Emotion",
+    "predicate": "addresses",
+    "object": "tracking public health and well-being",
+    "object_type": "Task",
+    "source_sentence": "Thus, automatically detecting emotion intensities in tweets is especially beneficial in applications such as tracking brand and product perception, tracking support for issues and policies, tracking public health and well-being, and disaster/crisis management.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Detecting Emotion",
+    "predicate": "addresses",
+    "object": "disaster/crisis management",
+    "object_type": "Task",
+    "source_sentence": "Thus, automatically detecting emotion intensities in tweets is especially beneficial in applications such as tracking brand and product perception, tracking support for issues and policies, tracking public health and well-being, and disaster/crisis management.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Feature",
+    "source_sentence": "In Section 5, we present a competitive SVM-based baseline that uses a number of common text classification features.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Bias",
+    "predicate": "addresses",
+    "object": "different parts of the scale",
+    "object_type": "Concept",
+    "source_sentence": "Further, annotators often have a bias towards different parts of the scale, known as scale region bias.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "2.1 Emotion Annotation"
+  },
+  {
+    "subject": "Manual Annotations",
+    "predicate": "achieves",
+    "object": "similar intensity rankings",
+    "object_type": "Concept",
+    "source_sentence": "If repeated independent manual annotations from multiple respondents result in similar intensity rankings (and scores), then one can be confident that the scores capture the true emotion intensities.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "3.2 Reliability of Annotations"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Word N-grams",
+    "object_type": "Method",
+    "source_sentence": "The system uses the following features: a. Word N-grams (WN): presence or absence of word n-grams from n = 1 to n = 4. Character N-grams (CN): presence or absence of character n-grams from n = 3 to n = 5. Word Embeddings (WE): an average of the word embeddings of all the words in a tweet.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "5.1 System"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Character n-grams",
+    "object_type": "Method",
+    "source_sentence": "The system uses the following features: a. Word N-grams (WN): presence or absence of word n-grams from n = 1 to n = 4. Character N-grams (CN): presence or absence of character n-grams from n = 3 to n = 5. Word Embeddings (WE): an average of the word embeddings of all the words in a tweet.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "5.1 System"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Method",
+    "source_sentence": "The system uses the following features: a. Word N-grams (WN): presence or absence of word n-grams from n = 1 to n = 4. Character N-grams (CN): presence or absence of character n-grams from n = 3 to n = 5. Word Embeddings (WE): an average of the word embeddings of all the words in a tweet.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "5.1 System"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Lexicons",
+    "object_type": "Method",
+    "source_sentence": "The system uses the following features: a. Word N-grams (WN): presence or absence of word n-grams from n = 1 to n = 4. Character N-grams (CN): presence or absence of character n-grams from n = 3 to n = 5. Word Embeddings (WE): an average of the word embeddings of all the words in a tweet. We calculate individual word embeddings using the negative sampling skip-gram model implemented in Word2Vec . Word vectors are trained from ten million English tweets taken from the Edinburgh Twitter Corpus . We set Word2Vec parameters: window size: 5; number of dimensions: 400. d. Affect Lexicons (L): we use the lexicons shown in Table 4 by aggregating the information for all the words in a tweet.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "5.1 System"
+  },
+  {
+    "subject": "Learning Models",
+    "predicate": "trainedon",
+    "object": "Tweet Emotion Intensity Dataset training sets",
+    "object_type": "Dataset",
+    "source_sentence": "We developed the baseline system by learning models from each of the Tweet Emotion Intensity Dataset training sets and applying them to the corresponding development sets.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "5.2 Experiments"
+  },
+  {
+    "subject": "CharacTer",
+    "predicate": "achieves",
+    "object": "0.48 correlation",
+    "object_type": "Metric",
+    "source_sentence": "Using just character or just word n-grams leads to results around 0.48, suggesting that they are reasonably good indicators of emotion intensity by themselves.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "5.2 Experiments"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "achieves",
+    "object": "0.55 correlation",
+    "object_type": "Metric",
+    "source_sentence": "Word embeddings produces statistically significant improvement over the ngrams (avg. r = 0.55).",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "5.2 Experiments"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Process",
+    "source_sentence": "In the third model, the word embeddings of the words in a tweet are concatenated and fed into a deep learning architecture formed by LSTM, CNN, max pooling, fully connected layers.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.3 Prayas: Rank"
+  },
+  {
+    "subject": "Regression Model",
+    "predicate": "uses",
+    "object": "Lexicon Features",
+    "object_type": "Concept",
+    "source_sentence": "Each regression model is trained on a representation formed by the affect lexicon features (including those provided by AffectiveTweets) and word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.5 SeerNet: Rank"
+  },
+  {
+    "subject": "Regression Model",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Concept",
+    "source_sentence": "Each regression model is trained on a representation formed by the affect lexicon features (including those provided by AffectiveTweets) and word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.5 SeerNet: Rank"
+  }
+]

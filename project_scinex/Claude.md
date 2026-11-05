@@ -253,6 +253,28 @@ Regression-checked on 8 known-good papers: 0 spurious dotted-headings, section/c
 **Why not CS-NER abstract data per paper, and why not ITER:** the only ACL-id-keyed CS-NER slice (`acl/`) is title-only (`acl/train-abs.data` → 404); the abstract-level data belongs to other corpora (NCG/PWC/SciERC), not our ACL papers. So we use CS-NER as a **global gazetteer intersected with each paper's text**, not a per-paper lookup. ITER/SciERC (`--source iter`) is still available as a model-based non-circular fallback but is **not** the chosen path.
 - Columns expected by `entity_loader` / fixed extractor: Entity, Abbreviation, Aliases, TP, NER_Type, CEO_Type.
 
+### STATUS (2026-10-30, Session 37) — ⭐ ACL FINETUNING DONE: the max-empty-30% Qwen3-8B student keeps 670 triples at the teacher's guard-pass rate; teacher-only collapsed. Unjudged. READ `results.md` Table 16, `hands_off.md` §37.8.
+
+### STATUS (2026-10-27, Session 37) — ⛔⛔ FINETUNING CORPUS = THE ACL ANTHOLOGY PAPERS, FIXED EXTRACTOR. Teacher gpt-oss-20b running on 2× RTX 5090. READ `hands_off.md` §37.
+- **User decision (2026-10-26):** the Part 2 finetuning runs use the **ACL Anthology papers**, not
+  the professor's 20-paper corpus, **because the ACL papers have fixed entity lists**. 805 papers
+  (`papers_acl.txt`, parsed HTML + `output/acl/<id>/Entity_<id>_enriched.csv`). Extractor
+  **`fixed`**, so outputs go to `kg/fixed{,_scinex}/<slug>/`. The 20-paper finetuning results
+  (Tables 13–14) stand and are not extended.
+- **Machine:** Linux, 2× RTX 5090 (32 GB, sm_120), venv `/home/dev1/envsam`, stable torch
+  `2.13.0+cu130`, plus `kernels==0.12.3` for gpt-oss MXFP4. Repo at `/home/dev1/SciNex`.
+- **Teacher = `openai/gpt-oss-20b` locally** (user's choice; not comparable with gptoss-120b-taught
+  numbers). **Student = `Qwen/Qwen3-8B`.** Teacher pass: 37,970 paragraphs, ~1–1.5 days, in
+  `screen -r scinexacl` (`/home/dev1/scinex_runs/run_acl.sh`).
+- **Code:** the whole finetuning path takes `--extractor fixed` (`ft_common`, `ft_generate`,
+  `build_ft_data`, `ft_compare`, `run_ft_pipeline`), and `claude_extract.py`'s never-run fixed path
+  was repaired. Two builder bugs exposed by a local teacher are fixed: `{"triples": []}` was
+  dropped as a failed API call, and the hyphenated ACL HTML failed the alignment floor (§37.4).
+  The ACL split is `ft_data/acl/split.json` (20 folds, fold 0 = 41 eval papers).
+  **`ft_data/split.json` stays the 20-paper split.**
+- **Phase 2 is automatic** (`run_acl_phase2.sh`): Qwen3-8B teacher-only vs max-empty-30%, 1 epoch
+  each, one per GPU → generation on the 41 eval papers → `ft_compare`. ~32 h teacher + ~15 h.
+
 ### STATUS (2026-10-26, Session 36 close) — ⭐⭐⭐ FOLD-0 FINETUNING EXPERIMENT COMPLETE AND JUDGED. A finetuned 1.7B student matches the 120B teacher per triple, but under-extracts badly. READ `hands_off.md` §36.
 - **⭐⭐⭐ THE RESULT (CEO, blind census of all 174 paragraphs × 4 extractors, §36.12 / `results.md`
   Table 14).** Judge: claude-opus-5-5 in session, BLIND, 355 model-triples → 315 unique items.

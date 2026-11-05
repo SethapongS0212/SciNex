@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Global Features",
+    "predicate": "uses",
+    "object": "pre-trained convolutional neural network",
+    "object_type": "Model",
+    "source_sentence": "Prior work in visual storytelling has typically opted for global features extracted from a pre-trained convolutional neural network (Liu et al., 2017; Yu et al., 2017; Wang et al., 2018a,b; Huang et al., 2019) and has focused on improving the language generation model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Scene Graphs",
+    "predicate": "uses",
+    "object": "images",
+    "object_type": "Images",
+    "source_sentence": "We use scene graphs extracted from images , which does not require an external knowledgebase.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Scene Graphs",
+    "predicate": "uses",
+    "object": "images",
+    "object_type": "Images",
+    "source_sentence": "(2020) extract scene graphs from images and train an end-to-end model with a graph convolutional encoder directly on visual stories.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Scene Graph Embeddings",
+    "predicate": "uses",
+    "object": "images",
+    "object_type": "Images",
+    "source_sentence": "We propose a pipeline method which first obtains scene graph embeddings from images then applies them to visual storytelling in order to reduce the difficulty of learning both the scene graph embeddings and the story generation model together.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Scene Graph Embeddings",
+    "predicate": "uses",
+    "object": "Visual Storytelling",
+    "object_type": "Task",
+    "source_sentence": "We propose a pipeline method which first obtains scene graph embeddings from images then applies them to visual storytelling in order to reduce the difficulty of learning both the scene graph embeddings and the story generation model together.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Faster R-CNN",
+    "predicate": "uses",
+    "object": "Regions of Interest",
+    "object_type": "Concept",
+    "source_sentence": "This is done by extracting Regions of Interest (RoIs) of each object from the backbone Faster R-CNN model of KERN.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "produces",
+    "object": "Sequence",
+    "object_type": "Task",
+    "source_sentence": "We use a two-layer LSTM to merge the node representations and generate the sequence of object labels.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "3.1 Scene Graph Augmentation"
+  },
+  {
+    "subject": "probability",
+    "predicate": "uses",
+    "object": "Softmax",
+    "object_type": "Method",
+    "source_sentence": "The probability of node label yt conditioned on input G and previous node label y1:t−1 is obtained by applying a softmax layer on the decoder output as P(yt|y1:t−1, G) = softmax(g(hG, hC))",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "3.1 Scene Graph Augmentation"
+  },
+  {
+    "subject": "Node Embeddings",
+    "predicate": "uses",
+    "object": "extracted visual features",
+    "object_type": "Other",
+    "source_sentence": "We use extracted visual features as node embeddings and randomly initialise edge embeddings in the encoder.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "3.1 Scene Graph Augmentation"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "hidden vectors of all images",
+    "object_type": "Other",
+    "source_sentence": "We follow Wang et al. (2018b) in using a GRU to encode the hidden vectors of all images in a sequential manner and to generate the story.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "3.3 Attention-Based Story Generation"
+  },
+  {
+    "subject": "Maximum Likelihood Estimation",
+    "predicate": "uses",
+    "object": "backpropagation",
+    "object_type": "Other",
+    "source_sentence": "The model is optimised using maximum likelihood estimation with backpropagation.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "3.3 Attention-Based Story Generation"
+  },
+  {
+    "subject": "POS tagger",
+    "predicate": "uses",
+    "object": "generated stories",
+    "object_type": "Dataset",
+    "source_sentence": "We first process the generated stories with a state-of-the-art POS tagger and constituency parser.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "5 Evaluating Diversity and Relevance"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "generated stories",
+    "object_type": "Dataset",
+    "source_sentence": "We first process the generated stories with a state-of-the-art POS tagger and constituency parser.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "5 Evaluating Diversity and Relevance"
+  },
+  {
+    "subject": "ResNet",
+    "predicate": "uses",
+    "object": "stronger image feature extraction backbone",
+    "object_type": "Concept",
+    "source_sentence": "The ResNet global base- line generate more diverse verbs, adverbs and pro- nouns by using a stronger image feature extraction backbone.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "5.1 Word Diversity"
+  },
+  {
+    "subject": "VGG",
+    "predicate": "achieves",
+    "object": "lowest score on adjective phrases",
+    "object_type": "Concept",
+    "source_sentence": "Suprisingly, the VGG global obtains the lowest score on adjec- tive phrases.",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "5.2 Phrase Diversity"
+  },
+  {
+    "subject": "VGG",
+    "predicate": "produces",
+    "object": "31 unique adjective phrases",
+    "object_type": "Other",
+    "source_sentence": "We thus counted the unique adjective phrases generated by VGG global (31) and by our model (65).",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "5.2 Phrase Diversity"
+  },
+  {
+    "subject": "Graph Embedding",
+    "predicate": "comparesagainst",
+    "object": "ResNet",
+    "object_type": "Model",
+    "source_sentence": "Our scene graph embedding model also outperforms the model using the stronger ResNet features, showing that explicitly representing objects and relations in the form of scene graphs helps the model correctly refer to salient objects .",
+    "extraction_mode": "fixed",
+    "paper": "2020.conll-1.34",
+    "title": "Diverse and Relevant Visual Storytelling with Scene Graph Embeddings",
+    "section": "5.3 Relevance"
+  }
+]

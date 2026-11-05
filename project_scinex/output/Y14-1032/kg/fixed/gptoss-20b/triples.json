@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Translation Model",
+    "predicate": "trainedon",
+    "object": "Parallel Corpora",
+    "object_type": "Dataset",
+    "source_sentence": "In statistical machine translation (SMT) , the translation model is automatically learned form parallel corpora in an unsupervised way.",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Translation Model",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Concept",
+    "source_sentence": "The translation model contains translation pairs with their features scores.",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "uses",
+    "object": "Translation Model",
+    "object_type": "Model",
+    "source_sentence": "the quality of the unsupervised method used for translation model learning",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "uses",
+    "object": "Translation Model",
+    "object_type": "Model",
+    "source_sentence": "Accuracy also can be improved by filtering out the noisy translation pairs from the translation model",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Translation Model",
+    "predicate": "uses",
+    "object": "Comparable Corpora",
+    "object_type": "Dataset",
+    "source_sentence": "estimating new features for the translation pairs from comparable corpora (which we call comparable features), to make the translation model more discriminative thus more accurate.",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Bilingual Lexicon Extraction",
+    "predicate": "uses",
+    "object": "Comparable Corpora",
+    "object_type": "Dataset",
+    "source_sentence": "Previous studies use bilingual lexicon extraction (BLE) technology to estimate comparable features.",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Smoothing",
+    "predicate": "addresses",
+    "object": "the data sparseness problem for BLE",
+    "object_type": "Concept",
+    "source_sentence": "Smoothing technology has been proposed to address the data sparseness problem for BLE.",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Synonym Sets",
+    "predicate": "uses",
+    "object": "WordNet",
+    "object_type": "Concept",
+    "source_sentence": "(2013) use synonym sets in WordNet to smooth the vectors of words, however WordNet is not available for every language.",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Paraphrases",
+    "predicate": "addresses",
+    "object": "accuracy problem of SMT",
+    "object_type": "Concept",
+    "source_sentence": "The results verify the effectiveness of using BLE together with paraphrases for the accuracy problem of SMT.",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Paraphrasing",
+    "predicate": "addresses",
+    "object": "Unknown Words",
+    "object_type": "Concept",
+    "source_sentence": "One method is paraphrasing unknown words or phrases in the translation model (Callison-Burch et al., 2006; Razmara et al., 2013; Marton et al., 2009).",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "2.2 Paraphrases for SMT"
+  },
+  {
+    "subject": "bag of words",
+    "predicate": "uses",
+    "object": "context",
+    "object_type": "Concept",
+    "source_sentence": "We build a context by collecting the counts in a bag of words fashion, namely we do not distinguish the positions that the context words appear in.",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "4.2 Comparable Feature Estimation"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "uses",
+    "object": "cosine similarity",
+    "object_type": "Concept",
+    "source_sentence": "The similarity of the phrase pair is computed as the similarity of the source and target vectors using cosine similarity (Equation 3).",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "4.2 Comparable Feature Estimation"
+  },
+  {
+    "subject": "Parallel Corpus",
+    "predicate": "uses",
+    "object": "Chinese-English NIST open MT",
+    "object_type": "Dataset",
+    "source_sentence": "The parallel corpus we used is from Chinese-English NIST open MT.",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "5.1 Experimental Settings"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "English side of the parallel corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We trained a 5-gram language model on the English side of the parallel corpus using the SRILM toolkit.",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "5.1 Experimental Settings"
+  },
+  {
+    "subject": "dictionary",
+    "predicate": "uses",
+    "object": "NIST Chinese-English translation lexicon Version 3.0",
+    "object_type": "Lexicon",
+    "source_sentence": "The seed dictionary we used is NIST Chinese-English translation lexicon Version 3.0.",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "5.1 Experimental Settings"
+  },
+  {
+    "subject": "Wikipedia",
+    "predicate": "uses",
+    "object": "Chinese and English Wikipedia database dumps",
+    "object_type": "Dataset",
+    "source_sentence": "We downloaded Chinese and English Wikipedia database dumps.",
+    "extraction_mode": "fixed",
+    "paper": "Y14-1032",
+    "title": "Improving Statistical Machine Translation Accuracy Using Bilingual Lexicon Extraction with Paraphrases",
+    "section": "5.1 Experimental Settings"
+  }
+]

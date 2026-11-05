@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "classifier",
+    "predicate": "achieves",
+    "object": "maximizing accuracy of single decisions",
+    "object_type": "Task",
+    "source_sentence": "a locally trained classifier that tries to maximize the accuracy of single decisions",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Parsers",
+    "predicate": "achieves",
+    "object": "state-of-the-art accuracy for a number of languages",
+    "object_type": "Metric",
+    "source_sentence": "transition-based parsers have reached state-of-the-art accuracy for a number of languages",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "Relevant Information",
+    "object_type": "Concept",
+    "source_sentence": "the parser can postpone difficult decisions until the relevant information becomes available",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "parsing accuracy",
+    "object_type": "Metric",
+    "source_sentence": "Our experiments show that these advantages lead to significant improvements in parsing accuracy",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "stack data structure",
+    "object_type": "Concept",
+    "source_sentence": "Our transition-based parser uses a stack data structure to store partial parses for the input string w.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "3.3 Transition-based Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "buffer",
+    "object_type": "Concept",
+    "source_sentence": "The parser also uses a buffer to store the portion of the input string still to be processed.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "3.3 Transition-based Parser"
+  },
+  {
+    "subject": "parser",
+    "predicate": "produces",
+    "object": "dependency tree",
+    "object_type": "Other",
+    "source_sentence": "The output of the parser is a dependency tree for w.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "3.4 Deterministic Parsing Algorithm"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "produces",
+    "object": "dependency tree",
+    "object_type": "Other",
+    "source_sentence": "Then the algorithm stops, returning the dependency tree whose arc set is defined as in the current configuration.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "3.4 Deterministic Parsing Algorithm"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "predicate isCorrect()",
+    "object_type": "Other",
+    "source_sentence": "We use this characterization in the implementation of predicate isCorrect() in Algorithm 2.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "4.2 Correct and Incorrect Transitions"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "trainedon",
+    "object": "training set",
+    "object_type": "Dataset",
+    "source_sentence": "The tagger used on the training set is trained on the same data set by using four-way jackknifing, while the tagger used on the development and test sets is trained on all the training set.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "5 Experimental Assessment"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "trainedon",
+    "object": "all the training set",
+    "object_type": "Dataset",
+    "source_sentence": "The tagger used on the development and test sets is trained on all the training set.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "5 Experimental Assessment"
+  },
+  {
+    "subject": "parser",
+    "predicate": "comparesagainst",
+    "object": "arc-eager parser",
+    "object_type": "Model",
+    "source_sentence": "In the first three lines of Table 2 we compare the accuracy of our parser against our implementation of the arc-eager and arc-standard parsers.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "5 Experimental Assessment"
+  },
+  {
+    "subject": "parser",
+    "predicate": "comparesagainst",
+    "object": "arc-standard parser",
+    "object_type": "Model",
+    "source_sentence": "In the first three lines of Table 2 we compare the accuracy of our parser against our implementation of the arc-eager and arc-standard parsers.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "5 Experimental Assessment"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "feature template",
+    "object_type": "Feature",
+    "source_sentence": "For the arc-eager parser , we use the feature template of Zhang and Nivre (2011).",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "5 Experimental Assessment"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "feature template",
+    "object_type": "Feature",
+    "source_sentence": "The same template is adapted to the arc-standard parser , by removing the top-down parent features and by adding the right child features for the first stack element.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "5 Experimental Assessment"
+  },
+  {
+    "subject": "parser",
+    "predicate": "achieves",
+    "object": "12% error reduction in unlabeled attachment score",
+    "object_type": "Metric",
+    "source_sentence": "We have presented a novel transition -based parser using a dynamic parsing strategy, which achieves a ∼12% error reduction in unlabeled attachment score over the static arc-eager strategy and even more over the (equally static) arc-standard strategy, when evaluated on English.",
+    "extraction_mode": "fixed",
+    "paper": "P13-1014",
+    "title": "A Transition-Based Dependency Parser Using a Dynamic Parsing Strategy",
+    "section": "6 Concluding Remarks"
+  }
+]

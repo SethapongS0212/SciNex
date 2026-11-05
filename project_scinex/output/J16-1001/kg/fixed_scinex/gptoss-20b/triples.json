@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Sparse Features",
+    "object_type": "Feature",
+    "source_sentence": "Because of this, a third approach of first training the parameters of sparse features, then condensing the sparse features into dense features and performing one more optimization pass (potentially with a different algorithm ), has been widely used in a large number of research papers and systems (Dyer et al. 2009; He and Deng 2012; Flanigan, Dyer, and Carbonell 2013; Setiawan and Zhou 2013).",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "2.3 Features for Machine Translation"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "uses",
+    "object": "Algorithm",
+    "object_type": "Method",
+    "source_sentence": "Because of this, a third approach of first training the parameters of sparse features, then condensing the sparse features into dense features and performing one more optimization pass (potentially with a different algorithm ), has been widely used in a large number of research papers and systems (Dyer et al. 2009; He and Deng 2012; Flanigan, Dyer, and Carbonell 2013; Setiawan and Zhou 2013).",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "2.3 Features for Machine Translation"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "addresses",
+    "object": "inference problem",
+    "object_type": "Concept",
+    "source_sentence": "Given an input sentence f, the task of decoding is defined as an inference problem of finding the best scoring derivation ⟨ˆe, ˆd⟩according to Equation (1).",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "2.4 Decoding"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "addresses",
+    "object": "MT optimization",
+    "object_type": "Task",
+    "source_sentence": "We discuss the role of evaluation in MT optimization more completely in Section 8.3.",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "X X . will"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "achieves",
+    "object": "Better Translations",
+    "object_type": "Concept",
+    "source_sentence": "As the goal of optimization is to achieve better translations, we would like to choose parameters that reduce this loss.",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "2.6 The Optimization Setting"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "achieves",
+    "object": "minimizing loss on training data",
+    "object_type": "Concept",
+    "source_sentence": "Intuitively, if λ is set to a small value, optimization will attempt to learn a w that effectively minimizes loss on the training data, but there is a risk of over- fitting reducing generalization capability.",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "2.6 The Optimization Setting"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "achieves",
+    "object": "reducing over-fitting",
+    "object_type": "Concept",
+    "source_sentence": "On the other hand, if λ is set to a larger value, optimization will be less aggressive in minimizing loss on the training data, reducing over-fitting, but also possibly failing to capture useful information that could be used to improve accuracy.",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "2.6 The Optimization Setting"
+  },
+  {
+    "subject": "Search",
+    "predicate": "addresses",
+    "object": "parameter space",
+    "object_type": "Concept",
+    "source_sentence": "This γ can be adjusted in a way that allows for more effective search of the parameter space, as described in more detail in Section 5.5.",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "3.3 Risk-Based Loss"
+  },
+  {
+    "subject": "Dynamic Programming Algorithms",
+    "predicate": "comprises",
+    "object": "Tools",
+    "object_type": "Other",
+    "source_sentence": "It should be noted that although these equations apply to k-best lists, it is also possible to calculate statistics over lattices or forests using dynamic programming algorithms and tools such as the expectation semiring.",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "4 X n=1 log mnc (49)"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "1-best hypothesis",
+    "object_type": "Other",
+    "source_sentence": "After performing an update for a particular sentence, ¯s is then updated with the statistics from the 1-best hypothesis found during decoding.",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "6.1 Approximating the Error"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "addresses",
+    "object": "MapReduce framework",
+    "object_type": "Concept",
+    "source_sentence": "this algorithm can be considered a variety of the MapReduce framework",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "7.1 Large-Scale Online Optimization"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "sampling",
+    "object_type": "Other",
+    "source_sentence": "each shard performs T iterations of training by sampling a mini-batch (line 7), translating each sentence (line 10), and performing optimization on the mini-batch level (line 12).",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "7.1 Large-Scale Online Optimization"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Translating",
+    "object_type": "Other",
+    "source_sentence": "each shard performs T iterations of training by sampling a mini-batch (line 7), translating each sentence (line 10), and performing optimization on the mini-batch level (line 12).",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "7.1 Large-Scale Online Optimization"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Optimization",
+    "object_type": "Other",
+    "source_sentence": "each shard performs T iterations of training by sampling a mini-batch (line 7), translating each sentence (line 10), and performing optimization on the mini-batch level (line 12).",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "7.1 Large-Scale Online Optimization"
+  },
+  {
+    "subject": "local features",
+    "predicate": "uses",
+    "object": "standard linear model",
+    "object_type": "Model",
+    "source_sentence": "Another possibility is to first use a nonlinear function to calculate local features, which are then used as part of the standard linear model.",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "8.1 Non-Linear Models"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "uses",
+    "object": "stacking-based models",
+    "object_type": "Model",
+    "source_sentence": "ensemble decoding has been used with stacking-based models",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "8.1 Non-Linear Models"
+  },
+  {
+    "subject": "Neural Networks",
+    "predicate": "uses",
+    "object": "new local features",
+    "object_type": "Feature",
+    "source_sentence": "neural networks can effectively be used to calculate new local features for MT",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "8.1 Non-Linear Models"
+  },
+  {
+    "subject": "Kernels",
+    "predicate": "uses",
+    "object": "associations between the source and target strings",
+    "object_type": "Concept",
+    "source_sentence": "kernel-like functions over the feature space such as the Parzen window, binning, and Gaussian kernels , or the n-spectrum string kernel for finding associations between the source and target strings",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "8.1 Non-Linear Models"
+  },
+  {
+    "subject": "Optimization",
+    "predicate": "addresses",
+    "object": "binary good/bad input",
+    "object_type": "Concept",
+    "source_sentence": "Saluja, Lane, and Zhang (2012) also propose a method for incorporating binary good/bad input into optimization , with the motivation that this sort of feedback is easier for human annotators to provide than generating new reference sentences.",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "8.3 Evaluation Measures and Optimization"
+  },
+  {
+    "subject": "Survey Article",
+    "predicate": "addresses",
+    "object": "machine translation optimization",
+    "object_type": "Task",
+    "source_sentence": "In this survey article, we have provided a review of the current state-of-the-art in machine translation optimization , covering batch optimization , online optimization , expansions to large scale data, and a number of other topics.",
+    "extraction_mode": "fixed",
+    "paper": "J16-1001",
+    "title": "Optimization for Statistical Machine Translation: A Survey",
+    "section": "9. Conclusion"
+  }
+]

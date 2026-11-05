@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "NMT",
+    "predicate": "achieves",
+    "object": "improved BLEU scores",
+    "object_type": "Metric",
+    "source_sentence": "the proposed NMT reduced the vocabulary size and improved BLEU scores particularly in small- and medium-sized corpora.",
+    "extraction_mode": "fixed",
+    "paper": "N18-4014",
+    "title": "Japanese Predicate Conjugation for Neural Machine Translation",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "addresses",
+    "object": "syntax information",
+    "object_type": "Concept",
+    "source_sentence": "Sennrich and Haddow (2016) proposed a method to add POS information and dependency structure as embeddings with the aim of explicitly learning syntax information in NMT.",
+    "extraction_mode": "fixed",
+    "paper": "N18-4014",
+    "title": "Japanese Predicate Conjugation for Neural Machine Translation",
+    "section": "2 Related work"
+  },
+  {
+    "subject": "Information",
+    "predicate": "uses",
+    "object": "conjugation token",
+    "object_type": "Concept",
+    "source_sentence": "We propose two methods to introduce conjugation information : in the first method, it is treated as a token (conjugation token) and in the second, it is treated as concatenation of embeddings (conjugation feature).",
+    "extraction_mode": "fixed",
+    "paper": "N18-4014",
+    "title": "Japanese Predicate Conjugation for Neural Machine Translation",
+    "section": "4 Introducing Japanese predicate conjugation for NMT"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "conjugation feature",
+    "object_type": "Concept",
+    "source_sentence": "We propose two methods to introduce conjugation information : in the first method, it is treated as a token (conjugation token) and in the second, it is treated as concatenation of embeddings (conjugation feature).",
+    "extraction_mode": "fixed",
+    "paper": "N18-4014",
+    "title": "Japanese Predicate Conjugation for Neural Machine Translation",
+    "section": "4 Introducing Japanese predicate conjugation for NMT"
+  },
+  {
+    "subject": "POS Information",
+    "predicate": "uses",
+    "object": "POS token",
+    "object_type": "Concept",
+    "source_sentence": "Moreover we consider to introduce POS information into all words (POS token).",
+    "extraction_mode": "fixed",
+    "paper": "N18-4014",
+    "title": "Japanese Predicate Conjugation for Neural Machine Translation",
+    "section": "4 Introducing Japanese predicate conjugation for NMT"
+  },
+  {
+    "subject": "Words",
+    "predicate": "uses",
+    "object": "POS token",
+    "object_type": "Concept",
+    "source_sentence": "Moreover we consider to introduce POS information into all words (POS token).",
+    "extraction_mode": "fixed",
+    "paper": "N18-4014",
+    "title": "Japanese Predicate Conjugation for Neural Machine Translation",
+    "section": "4 Introducing Japanese predicate conjugation for NMT"
+  },
+  {
+    "subject": "Japanese Sentences",
+    "predicate": "uses",
+    "object": "Morphological Analyzer",
+    "object_type": "Method",
+    "source_sentence": "Japanese sentences were tokenized by the morphological analyzer MeCab (IPADic)",
+    "extraction_mode": "fixed",
+    "paper": "N18-4014",
+    "title": "Japanese Predicate Conjugation for Neural Machine Translation",
+    "section": "5 Experiment"
+  },
+  {
+    "subject": "English sentences",
+    "predicate": "uses",
+    "object": "Moses",
+    "object_type": "Method",
+    "source_sentence": "English sentences were preprocessed by Moses6 (tokenizer, truecaser)",
+    "extraction_mode": "fixed",
+    "paper": "N18-4014",
+    "title": "Japanese Predicate Conjugation for Neural Machine Translation",
+    "section": "5 Experiment"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "addresses",
+    "object": "Japanese-to-English translation",
+    "object_type": "Task",
+    "source_sentence": "baseline using BPE in Japanese-to-English translation",
+    "extraction_mode": "fixed",
+    "paper": "N18-4014",
+    "title": "Japanese Predicate Conjugation for Neural Machine Translation",
+    "section": "6.3 Effect of conjugation information"
+  }
+]

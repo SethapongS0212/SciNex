@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "language modeling",
+    "object_type": "Method",
+    "source_sentence": "They first perform pre-training and learn an initial set of parameters θ based on a variety of language modeling or noisy reconstruction objectives over Dx and Dy.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "2 Background and Overview"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "EM algorithm",
+    "object_type": "Method",
+    "source_sentence": "Finally, we present our complete training procedure, based on the EM algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "2 Background and Overview"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "maximizing likelihood",
+    "object_type": "Method",
+    "source_sentence": "Building upon existing work , we introduce a pre-training step that we run before maximizing the likelihood to obtain good representations.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "2 Background and Overview"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "achieves",
+    "object": "good representations",
+    "object_type": "Concept",
+    "source_sentence": "Building upon existing work , we introduce a pre-training step that we run before maximizing the likelihood to obtain good representations.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "2 Background and Overview"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "addresses",
+    "object": "this problem",
+    "object_type": "Concept",
+    "source_sentence": "We address this problem through the Expectation Max- imization (EM) algorithm .",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "3.1 M-UNMT - Monolingual Data Only"
+  },
+  {
+    "subject": "Parallel Corpus",
+    "predicate": "uses",
+    "object": "MASS",
+    "object_type": "Method",
+    "source_sentence": "We make use of an existing method, MASS, and enrich it with the auxiliary parallel corpus if available.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "4 Training algorithms"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "achieves",
+    "object": "intermediate translation model",
+    "object_type": "Model",
+    "source_sentence": "The aim of the pre-training phase is to produce an intermediate translation model pθ, to be refined during the fine-tuning step.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "4.1 Pre-training"
+  },
+  {
+    "subject": "Monolingual Data",
+    "predicate": "uses",
+    "object": "MASS objective",
+    "object_type": "Method",
+    "source_sentence": "For monolingual data, we use the MASS objective.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "4.1 Pre-training"
+  },
+  {
+    "subject": "Parallel Data",
+    "predicate": "uses",
+    "object": "cross-entropy translation objective",
+    "object_type": "Method",
+    "source_sentence": "If we have auxiliary parallel data, we use the traditional cross-entropy translation objective.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "4.1 Pre-training"
+  },
+  {
+    "subject": "Transformers",
+    "predicate": "uses",
+    "object": "translation models",
+    "object_type": "Model",
+    "source_sentence": "We use Transformers for our translation models pθ with a 6-layer encoder and decoder, a hidden size of 1024 and a 4096 feedforward filter size.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "5.2 Model architectures"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "Adam optimizer",
+    "object_type": "Method",
+    "source_sentence": "During pre-training, we used the Adam optimizer with initial learning rate of 0.0002 and weight decay parameter of 0.01, as well as 4,000 warmup steps and a linear decay schedule for 1.2 million steps.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "5.3 Training conﬁguration"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "Adamax",
+    "object_type": "Method",
+    "source_sentence": "For fine-tuning, we used Adamax with the same learning rate and warmup steps, no weight decay, and trained the models until convergence.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "5.3 Training conﬁguration"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "GPUs",
+    "object_type": "Other",
+    "source_sentence": "We used Google Cloud TPUs for pre-training and 8 NVIDIA V100 GPUs with a batch size of 3,000 tokens per GPU for fine-tuning.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.283",
+    "title": "A Multilingual View of Unsupervised Machine Translation",
+    "section": "5.3 Training conﬁguration"
+  }
+]

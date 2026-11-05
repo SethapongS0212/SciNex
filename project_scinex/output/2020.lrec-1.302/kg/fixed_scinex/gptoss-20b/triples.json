@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "FlauBERT",
+    "predicate": "comparesagainst",
+    "object": "multi-lingual/cross-lingual models",
+    "object_type": "Model",
+    "source_sentence": "FlauBERT – French Language Understanding via Bidirectional Encoder Representations from Transformers, a French BERT1 model that outperforms multi-lingual/cross-lingual models in several downstream NLP tasks",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "1. Introduction"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "achieves",
+    "object": "substantial improvements on downstream tasks",
+    "object_type": "Concept",
+    "source_sentence": "(2018, ELMo) and Howard and Ruder (2018, ULMFiT) were the first to demonstrate that leveraging huge general-domain text corpora in pre-training can lead to substantial improvements on downstream tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "1. Introduction"
+  },
+  {
+    "subject": "ULMFiT",
+    "predicate": "achieves",
+    "object": "substantial improvements on downstream tasks",
+    "object_type": "Concept",
+    "source_sentence": "(2018, ELMo) and Howard and Ruder (2018, ULMFiT) were the first to demonstrate that leveraging huge general-domain text corpora in pre-training can lead to substantial improvements on downstream tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "1. Introduction"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "achieves",
+    "object": "substantial improvements on downstream tasks",
+    "object_type": "Concept",
+    "source_sentence": "(2018, ELMo) and Howard and Ruder (2018, ULMFiT) were the first to demonstrate that leveraging huge general-domain text corpora in pre-training can lead to substantial improvements on downstream tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "1. Introduction"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "produces",
+    "object": "vocabulary of 50K sub-word units",
+    "object_type": "Other",
+    "source_sentence": "A vocabulary of 50K sub-word units is built using the Byte Pair Encoding (BPE) algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "3. Building FlauBERT"
+  },
+  {
+    "subject": "Noun Sense Disambiguation",
+    "predicate": "addresses",
+    "object": "WSD task",
+    "object_type": "Task",
+    "source_sentence": "Noun Sense Disambiguation We propose a new challenging task for the WSD of French , based on the French part of the Multilingual WSD task of SemEval 2013 , which targets nouns only.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "4. FLUE"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Machine Translation System",
+    "object_type": "Method",
+    "source_sentence": "For the training data, we followed the method proposed by Hadj Salah (2018), and translated the SemCor and the WordNet Gloss Corpus into French , using the best English - French Machine Translation system of the fairseq toolkit.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "4. FLUE"
+  },
+  {
+    "subject": "Alignment",
+    "predicate": "uses",
+    "object": "Machine Translation System",
+    "object_type": "Method",
+    "source_sentence": "Finally, we aligned the WordNet sense annotation from the source English words to the translated French words, using the alignment provided by the MT system.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "4. FLUE"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "produces",
+    "object": "evaluation corpus",
+    "object_type": "Other",
+    "source_sentence": "The result of the conversion process is an evaluation corpus composed of 306 sentences and 1 445 French nouns annotated with WordNet sense keys, and manually verified.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "4. FLUE"
+  },
+  {
+    "subject": "FlauBERT",
+    "predicate": "comparesagainst",
+    "object": "Multilingual BERT",
+    "object_type": "Model",
+    "source_sentence": "We compare the performance of FlauBERT with Multilingual BERT (Devlin et al., 2019, mBERT) and CamemBERT on all tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "5. Experiments and Results"
+  },
+  {
+    "subject": "FlauBERT",
+    "predicate": "comparesagainst",
+    "object": "CamemBERT",
+    "object_type": "Model",
+    "source_sentence": "We compare the performance of FlauBERT with Multilingual BERT (Devlin et al., 2019, mBERT) and CamemBERT on all tasks.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "5. Experiments and Results"
+  },
+  {
+    "subject": "CamemBERT",
+    "predicate": "comparesagainst",
+    "object": "mBERT",
+    "object_type": "Model",
+    "source_sentence": "both CamemBERT and FlauBERT outperform mBERT by a large margin.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "5. Experiments and Results"
+  },
+  {
+    "subject": "FlauBERT",
+    "predicate": "comparesagainst",
+    "object": "mBERT",
+    "object_type": "Model",
+    "source_sentence": "both CamemBERT and FlauBERT outperform mBERT by a large margin.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "5. Experiments and Results"
+  },
+  {
+    "subject": "French",
+    "predicate": "comparesagainst",
+    "object": "mBERT",
+    "object_type": "Model",
+    "source_sentence": "One can observe that the monolingual French models perform only slightly better than the multilingual model mBERT, which could be attributed to the characteristics of the PAWS-X dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "5.2. Paraphrasing"
+  },
+  {
+    "subject": "FlauBERT",
+    "predicate": "comparesagainst",
+    "object": "CamemBERT",
+    "object_type": "Model",
+    "source_sentence": "Finally, we compared FlauBERT with CamemBERT, mBERT, fastText and with no input embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "5.6. Word Sense Disambiguation"
+  },
+  {
+    "subject": "FlauBERT",
+    "predicate": "comparesagainst",
+    "object": "mBERT",
+    "object_type": "Model",
+    "source_sentence": "Finally, we compared FlauBERT with CamemBERT, mBERT, fastText and with no input embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "5.6. Word Sense Disambiguation"
+  },
+  {
+    "subject": "FlauBERT",
+    "predicate": "trainedon",
+    "object": "multiple-source corpus",
+    "object_type": "Dataset",
+    "source_sentence": "FlauBERT was trained on a multiple-source corpus and achieved state-of-the-art results on a number of French NLP tasks, surpassing multilingual/cross-lingual models.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "6. Conclusion"
+  },
+  {
+    "subject": "FlauBERT",
+    "predicate": "comparesagainst",
+    "object": "CamemBERT",
+    "object_type": "Model",
+    "source_sentence": "FlauBERT is competitive with CamemBERT – another pre-trained language model for French – despite being trained on almost twice as fewer text data.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "6. Conclusion"
+  },
+  {
+    "subject": "FlauBERT",
+    "predicate": "uses",
+    "object": "Hugging Face's transformers library",
+    "object_type": "Other",
+    "source_sentence": "FlauBERT is also now supported by Hugging Face's transformers library.",
+    "extraction_mode": "fixed",
+    "paper": "2020.lrec-1.302",
+    "title": "FlauBERT: Unsupervised Language Model Pre-training for French",
+    "section": "6. Conclusion"
+  }
+]

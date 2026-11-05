@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Dependency Parser",
+    "predicate": "uses",
+    "object": "deep biaffine neural network",
+    "object_type": "Model",
+    "source_sentence": "As a graph-based dependency parser, it employs a deep biaffine neural network to compute the scores of all dependencies, and uses viterbi decoding to find the highest-scoring tree.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1229",
+    "title": "Semi-supervised Domain Adaptation for Dependency Parsing",
+    "section": "3.1 Base Biafﬁne Parser"
+  },
+  {
+    "subject": "Dependency Parser",
+    "predicate": "uses",
+    "object": "viterbi decoding",
+    "object_type": "Method",
+    "source_sentence": "As a graph-based dependency parser, it employs a deep biaffine neural network to compute the scores of all dependencies, and uses viterbi decoding to find the highest-scoring tree.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1229",
+    "title": "Semi-supervised Domain Adaptation for Dependency Parsing",
+    "section": "3.1 Base Biafﬁne Parser"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "trainedon",
+    "object": "Chinese Gigaword Third Edition",
+    "object_type": "Dataset",
+    "source_sentence": "We train ELMo on the Chinese Gigaword Third Edition, consisting of about 1.2 million sentences.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1229",
+    "title": "Semi-supervised Domain Adaptation for Dependency Parsing",
+    "section": "3.3 Utilizing Unlabeled Data"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "trainedon",
+    "object": "target-domain unlabeled data",
+    "object_type": "Dataset",
+    "source_sentence": "Fine-tuning ELMo on the target-domain unlabeled data.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1229",
+    "title": "Semi-supervised Domain Adaptation for Dependency Parsing",
+    "section": "3.3 Utilizing Unlabeled Data"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "Biaffine Parser",
+    "object_type": "Model",
+    "source_sentence": "For each word, the representations from the three BiLSTM layers of ELMo are averaged and used to replace the original word embeddings in the Biaffine Parser.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1229",
+    "title": "Semi-supervised Domain Adaptation for Dependency Parsing",
+    "section": "3.3 Utilizing Unlabeled Data"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "charLSTM",
+    "object_type": "Other",
+    "source_sentence": "Since ELMo uses charLSTM to learn the first -layer word representations, we did try to expand the character dictionary with those that only occur in the target - domain unlabeled data, and randomly initialize their corresponding char embeddings before fine-tuning ELMo.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1229",
+    "title": "Semi-supervised Domain Adaptation for Dependency Parsing",
+    "section": "3.3 Utilizing Unlabeled Data"
+  },
+  {
+    "subject": "parser",
+    "predicate": "uses",
+    "object": "PyTorch",
+    "object_type": "Other",
+    "source_sentence": "We implement the basic bi-affine parser and the proposed approaches with PyTorch.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1229",
+    "title": "Semi-supervised Domain Adaptation for Dependency Parsing",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "trainedon",
+    "object": "Chinese Gigaword Corpus",
+    "object_type": "Dataset",
+    "source_sentence": "using the ELMo trained on general- domain Chinese Gigaword corpus has opposite effect on the two target domains.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1229",
+    "title": "Semi-supervised Domain Adaptation for Dependency Parsing",
+    "section": "4.3 Utilization of Unlabeled Data"
+  },
+  {
+    "subject": "data annotation",
+    "predicate": "achieves",
+    "object": "improving cross-domain parsing performance",
+    "object_type": "Task",
+    "source_sentence": "indicating data annotation is the most direct and effective (or maybe necessary) way for improving cross-domain parsing performance.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1229",
+    "title": "Semi-supervised Domain Adaptation for Dependency Parsing",
+    "section": "4.5 Analysis"
+  },
+  {
+    "subject": "Self-training",
+    "predicate": "addresses",
+    "object": "cross-domain constituent parsing",
+    "object_type": "Task",
+    "source_sentence": "As a typical semi- supervised approach, self-training is shown to be very useful for cross- domain constituent parsing and dependency parsing.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1229",
+    "title": "Semi-supervised Domain Adaptation for Dependency Parsing",
+    "section": "5 Related Works"
+  },
+  {
+    "subject": "Self-training",
+    "predicate": "addresses",
+    "object": "dependency parsing",
+    "object_type": "Task",
+    "source_sentence": "As a typical semi- supervised approach, self-training is shown to be very useful for cross- domain constituent parsing and dependency parsing.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1229",
+    "title": "Semi-supervised Domain Adaptation for Dependency Parsing",
+    "section": "5 Related Works"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "example-to-domain distances",
+    "object_type": "Concept",
+    "source_sentence": "Different from the unsupervised method of Guo et al. (2018), they use a small amount of target - domain labeled data to train an attention module for the computation of example-to- domain distances.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1229",
+    "title": "Semi-supervised Domain Adaptation for Dependency Parsing",
+    "section": "5 Related Works"
+  }
+]

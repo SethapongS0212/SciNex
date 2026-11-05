@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Classifiers",
+    "predicate": "uses",
+    "object": "Feature Selection",
+    "object_type": "Method",
+    "source_sentence": "for some of the component classifiers we additionally performed feature selection using a filter method based on the F-statistic.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1018",
+    "title": "PUT at SemEval-2016 Task 4: The ABC of Twitter Sentiment Analysis",
+    "section": "2 Basic Features"
+  },
+  {
+    "subject": "n-grams",
+    "predicate": "uses",
+    "object": "negation context",
+    "object_type": "Concept",
+    "source_sentence": "In addition to traditional n-grams, we also utilized n-grams in negation context .",
+    "extraction_mode": "fixed",
+    "paper": "S16-1018",
+    "title": "PUT at SemEval-2016 Task 4: The ABC of Twitter Sentiment Analysis",
+    "section": "2.3 Negation n-grams"
+  },
+  {
+    "subject": "Lexicon",
+    "predicate": "designedfor",
+    "object": "Twitter",
+    "object_type": "Other",
+    "source_sentence": "This lexicon contains a real- valued sentiment score associated with single words and 2-grams designed specifically for Twitter .",
+    "extraction_mode": "fixed",
+    "paper": "S16-1018",
+    "title": "PUT at SemEval-2016 Task 4: The ABC of Twitter Sentiment Analysis",
+    "section": "2.7 Hashtag Lexicon"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "Brown Clustering",
+    "object_type": "Method",
+    "source_sentence": "Our final set of features was created using Brown clustering.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1018",
+    "title": "PUT at SemEval-2016 Task 4: The ABC of Twitter Sentiment Analysis",
+    "section": "2.8 Brown Clustering"
+  },
+  {
+    "subject": "Brown Clustering",
+    "predicate": "uses",
+    "object": "hierarchical clustering of words",
+    "object_type": "Method",
+    "source_sentence": "Brown clustering is a form of hierarchical clustering of words based on the contexts in which they occur.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1018",
+    "title": "PUT at SemEval-2016 Task 4: The ABC of Twitter Sentiment Analysis",
+    "section": "2.8 Brown Clustering"
+  },
+  {
+    "subject": "Clustering",
+    "predicate": "uses",
+    "object": "English Tweets",
+    "object_type": "Dataset",
+    "source_sentence": "We used a precom- piled clustering of English tweets into 1000 clusters provided by Owoputi et al.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1018",
+    "title": "PUT at SemEval-2016 Task 4: The ABC of Twitter Sentiment Analysis",
+    "section": "2.8 Brown Clustering"
+  },
+  {
+    "subject": "training",
+    "predicate": "trainedon",
+    "object": "5000 best features",
+    "object_type": "Features",
+    "source_sentence": "Hence, we trained them on 5000 best features selected by the F value of ANOVA which improved micro-averaged F1 and also had a positive influence on training time.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1018",
+    "title": "PUT at SemEval-2016 Task 4: The ABC of Twitter Sentiment Analysis",
+    "section": "3.1 Multi-class classiﬁcation (subtask A)"
+  },
+  {
+    "subject": "Random Forest",
+    "predicate": "uses",
+    "object": "instance weighting",
+    "object_type": "Other",
+    "source_sentence": "The best results for Random Forest, according to macro-averaged F1, were achieved when each leaf of a single tree was enforced to contain at least three examples, the number of trees was equal to 5000 and instance weighting (as described above) was used.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1018",
+    "title": "PUT at SemEval-2016 Task 4: The ABC of Twitter Sentiment Analysis",
+    "section": "3.1 Multi-class classiﬁcation (subtask A)"
+  },
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "instance weighting",
+    "object_type": "Other",
+    "source_sentence": "Also SVM gave best results with instance weighting.",
+    "extraction_mode": "fixed",
+    "paper": "S16-1018",
+    "title": "PUT at SemEval-2016 Task 4: The ABC of Twitter Sentiment Analysis",
+    "section": "3.1 Multi-class classiﬁcation (subtask A)"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "trainedon",
+    "object": "training set",
+    "object_type": "Dataset",
+    "source_sentence": "Each classifier is trained on the same training set",
+    "extraction_mode": "fixed",
+    "paper": "S16-1018",
+    "title": "PUT at SemEval-2016 Task 4: The ABC of Twitter Sentiment Analysis",
+    "section": "3.3 Ordinal classiﬁcation (subtask C)"
+  }
+]

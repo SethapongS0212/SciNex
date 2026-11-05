@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Seq2seq",
+    "predicate": "trainedon",
+    "object": "window-based data",
+    "object_type": "Dataset",
+    "source_sentence": "Following Sproat and Jaitly (2016), we implement a seq2seq model trained on window-based data.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "3.1 Baseline models"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "uses",
+    "object": "input characters",
+    "object_type": "Other",
+    "source_sentence": "The model architecture is similar to Chan et al. (2016) and uses attention to align the output tokens with input characters as in Bahdanau et al.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "3.1 Baseline models"
+  },
+  {
+    "subject": "subwords",
+    "predicate": "uses",
+    "object": "character combinations",
+    "object_type": "Concept",
+    "source_sentence": "Subwords (i.e., a grouping of one or more characters) capture frequently co-occurring character combinations.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "Subword Units",
+    "predicate": "uses",
+    "object": "words",
+    "object_type": "Concept",
+    "source_sentence": "Subword units are concatenated to words for evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "3.2.1 Linguistic features"
+  },
+  {
+    "subject": "Neural Approaches",
+    "predicate": "addresses",
+    "object": "text normalization",
+    "object_type": "Concept",
+    "source_sentence": "In this paper, we investigate neural approaches to text normalization which directly translate a written-form sentence to its spoken counterpart without the need of a tagger or grammar.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "subwords",
+    "predicate": "uses",
+    "object": "baseline seq2seq model",
+    "object_type": "Model",
+    "source_sentence": "We show that the use of subwords can effectively reduce the OOV problem of a baseline seq2seq model with character inputs and token outputs.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Linguistic Features",
+    "predicate": "achieves",
+    "object": "further gains",
+    "object_type": "Concept",
+    "source_sentence": "The addition of linguistic features including casing, word position, POS tags, and edit labels leads to further gains.",
+    "extraction_mode": "fixed",
+    "paper": "N19-2024",
+    "title": "Neural Text Normalization with Subword Units",
+    "section": "6 Conclusion"
+  }
+]

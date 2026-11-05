@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "CoSimRank",
+    "predicate": "uses",
+    "object": "Random Walks",
+    "object_type": "Method",
+    "source_sentence": "Our key observation is that to compute the similarity of two nodes , we need not consider all other nodes in the graph as SimRank does; instead, CoSimRank starts random walks from the two nodes and computes their similarity at each time step.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "uses",
+    "object": "basic node similarity",
+    "object_type": "Concept",
+    "source_sentence": "CoSimRank can be used to compute many variations of basic node similarity – including similarity for graphs with weighted and typed edges and similarity for sets of nodes.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "addresses",
+    "object": "different types of applications",
+    "object_type": "Concept",
+    "source_sentence": "Thus, CoSimRank has the added advantage of being a flexible tool for different types of applications.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "comparesagainst",
+    "object": "SimRank",
+    "object_type": "Model",
+    "source_sentence": "In Section 4, we compare CoSimRank and SimRank.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "comparesagainst",
+    "object": "SimRank",
+    "object_type": "Model",
+    "source_sentence": "Later on, we will give a matrix formulation to compare CoSimRank with SimRank.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "3 CoSimRank"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "uses",
+    "object": "edge weighted PageRank",
+    "object_type": "Method",
+    "source_sentence": "We can use this edge weighted Page- Rank for CoSimRank.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "5.1 Weighted edges"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "addresses",
+    "object": "computing the similarity of nodes in a graph",
+    "object_type": "Task",
+    "source_sentence": "We propose CoSimRank as an efficient algorithm for computing the similarity of nodes in a graph.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "6.1 Baselines"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "uses",
+    "object": "simple inner product",
+    "object_type": "Method",
+    "source_sentence": "Recall that CoSimRank uses the simple inner product ⟨·, ·⟩to compare vectors.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "6.2 Synonym Extraction"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "achieves",
+    "object": "0.37 MRR",
+    "object_type": "Metric",
+    "source_sentence": "CoSimRank's MRR scores of 0.37 (one-synonym) and 0.59 (extended) are the same or better than all baselines",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "6.2 Synonym Extraction"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "achieves",
+    "object": "0.59 MRR",
+    "object_type": "Metric",
+    "source_sentence": "CoSimRank's MRR scores of 0.37 (one-synonym) and 0.59 (extended) are the same or better than all baselines",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "6.2 Synonym Extraction"
+  },
+  {
+    "subject": "Synonym Extraction",
+    "predicate": "uses",
+    "object": "English graph",
+    "object_type": "Other",
+    "source_sentence": "Synonym extraction is run on the English graph.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "6.2 Synonym Extraction"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "comparesagainst",
+    "object": "PPR+cos",
+    "object_type": "Method",
+    "source_sentence": "CoSimRank is better than PPR+cos on both evaluations",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "6.2 Synonym Extraction"
+  },
+  {
+    "subject": "Random Walks",
+    "predicate": "uses",
+    "object": "weighted adjacency matrix as Markov matrix",
+    "object_type": "Other",
+    "source_sentence": "running the random walks with the weighted adjacency matrix as Markov matrix",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "6.3 Lexicon Extraction"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "addresses",
+    "object": "synonym extraction",
+    "object_type": "Task",
+    "source_sentence": "Compared to PPR+cos, CoSimRank is roughly four times faster on synonym extraction and has comparable performance on lexicon extraction.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "6.4 Run time performance"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "addresses",
+    "object": "lexicon extraction",
+    "object_type": "Task",
+    "source_sentence": "Compared to PPR+cos, CoSimRank is roughly four times faster on synonym extraction and has comparable performance on lexicon extraction.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "6.4 Run time performance"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "comparesagainst",
+    "object": "SimRank",
+    "object_type": "Model",
+    "source_sentence": "We showed that CoSimRank is superior to SimRank in time and space complexity; and we demonstrated that CoSimRank performs better than PPR+cos on two similarity computation tasks.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "7 Summary"
+  },
+  {
+    "subject": "CoSimRank",
+    "predicate": "comparesagainst",
+    "object": "PPR+cos",
+    "object_type": "Model",
+    "source_sentence": "We showed that CoSimRank is superior to SimRank in time and space complexity; and we demonstrated that CoSimRank performs better than PPR+cos on two similarity computation tasks.",
+    "extraction_mode": "fixed",
+    "paper": "P14-1131",
+    "title": "CoSimRank: A Flexible & Efﬁcient Graph-Theoretic Similarity Measure",
+    "section": "7 Summary"
+  }
+]
