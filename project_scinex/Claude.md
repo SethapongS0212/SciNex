@@ -253,6 +253,8 @@ Regression-checked on 8 known-good papers: 0 spurious dotted-headings, section/c
 **Why not CS-NER abstract data per paper, and why not ITER:** the only ACL-id-keyed CS-NER slice (`acl/`) is title-only (`acl/train-abs.data` → 404); the abstract-level data belongs to other corpora (NCG/PWC/SciERC), not our ACL papers. So we use CS-NER as a **global gazetteer intersected with each paper's text**, not a per-paper lookup. ITER/SciERC (`--source iter`) is still available as a model-based non-circular fallback but is **not** the chosen path.
 - Columns expected by `entity_loader` / fixed extractor: Entity, Abbreviation, Aliases, TP, NER_Type, CEO_Type.
 
+### STATUS (2026-11-05, Session 37) — ⭐ BLIND JUDGING: the Qwen3-8B student is as correct as its gpt-oss-20b teacher (C4 51 vs 49 CEO, 61 vs 62 scinex) and far above the untuned model (23 / 19). Milder-cap students (50%, 60%) in flight in `screen scinexcaps`. READ `results.md` Table 17, `hands_off.md` §37.10, `HANDOFF_NEXT_SESSION.md`.
+
 ### STATUS (2026-10-30, Session 37) — ⭐ ACL FINETUNING DONE: the max-empty-30% Qwen3-8B student keeps 670 triples at the teacher's guard-pass rate; teacher-only collapsed. Unjudged. READ `results.md` Table 16, `hands_off.md` §37.8.
 
 ### STATUS (2026-10-27, Session 37) — ⛔⛔ FINETUNING CORPUS = THE ACL ANTHOLOGY PAPERS, FIXED EXTRACTOR. Teacher gpt-oss-20b running on 2× RTX 5090. READ `hands_off.md` §37.

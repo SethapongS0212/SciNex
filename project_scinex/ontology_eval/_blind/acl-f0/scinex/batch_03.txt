@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bf9b84e139e -----
+TRIPLE:     (Automatic evaluation)  --uses-->  (BLEU)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: For table-to-text generation, automatic evaluation has largely relied on BLEU and ROUGE.
+
+----- triple_id: b1b41fb4172 -----
+TRIPLE:     (Clusters)  --achieves-->  (5.7 point improvement)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Without clusters, they are very difficult to classify (only 79.2% accuracy), but adding clusters generates a 5.7 point improvement—much larger than the effect on in-dictionary tokens (Table 3).
+
+----- triple_id: b95f222911e -----
+TRIPLE:     (word2vec)  --produces-->  (vector representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: The word2vec approach aims to create similar vector representations of words that have similar context , and are thus assumed to be significantly semantically related.
+
+----- triple_id: b94261a9906 -----
+TRIPLE:     (Annotation)  --trainedon-->  (training data)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: although NN achieves the state-of-the-art performance on the pseudo-disambiguation task, its performance is not satisfying against human annotation, especially on Keller, which is probably because the NN model overfits the training data, whose distribution is different from human SP knowledge.
+
+----- triple_id: b0249f27c6b -----
+TRIPLE:     (Tagger)  --achieves-->  (88.6%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: A tagger that only uses word clusters achieves an accuracy of 88.6% on the OCT27 development set.
+
+----- triple_id: b891da9c98c -----
+TRIPLE:     (Filtering)  --addresses-->  (quality of synthetic question - answer pairs)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We concluded that using LM filtering improves the quality of synthetic question - answer pairs ; however, there is still a gap with round-trip filtering with some of the target domains .
+
+----- triple_id: b9d489fd1bf -----
+TRIPLE:     (User Embeddings)  --achieves-->  (state-of-the-art results for distant supervision)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We suggested several neural models to build user embeddings, achieving state-of-the-art results for distant supervision, but not for manual labelling.
+
+----- triple_id: b169ab52180 -----
+TRIPLE:     (Models)  --achievesresult-->  (success rate under all evaluation setups)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: our fine-tuned model based on back-translation with environmental dropout substantially outperforms the previous state-of-the-art models, and achieves the most recent rank-1 on the Vision and Language Navigation (VLN) R2R challenge leaderboard's private test data, outperforming all other entries in success rate under all evaluation setups (single run, beam search, and pre-exploration).
+
+----- triple_id: bf545a81bdb -----
+TRIPLE:     (Actions)  --uses-->  (CNN)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The image and ground-truth semantic segmentation mask Vt, tiled question L, and previous action at−1 are encoded via a CNN which outputs a distribution over actions.
+
+----- triple_id: b25ac2f809d -----
+TRIPLE:     (BLEU)  --comparesagainst-->  (METEOR)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Text only: We compare BLEU , ROUGE , METEOR , CIDEr and CIDEr- D using their publicly available implementations.
+
+----- triple_id: bfbad7894f3 -----
+TRIPLE:     (Experiments)  --configures-->  (k to 20)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: We set k to 20 in our experiments.
+
+----- triple_id: b1f26013fd4 -----
+TRIPLE:     (Multi-task Learning)  --uses-->  (bidirectional GRU layer)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Two encoders are employed in our multi-task learning framework. One is for the source text encoding (i.e., "Encoder1" in Figure 2) and the other is for retrieved keyphrases encoding (i.e., "Encoder2" in Figure 2). Both of them employ a bidirectional GRU layer to obtain a context-aware representation of each word:
+
+----- triple_id: b49f7460053 -----
+TRIPLE:     (Discourse)  --addresses-->  (Arguments)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Attribution is not annotated as a discourse relation itself but rather as a feature of discourse relations and their arguments.
+
+----- triple_id: baa9ef1b3c5 -----
+TRIPLE:     (GloVe)  --achieves-->  (88.7% performance)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: However, the performance using GloVe embeddings drops to 88.7%.
+
+----- triple_id: b00eac216b4 -----
+TRIPLE:     (Transformer)  --uses-->  (Self-Attention)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Within the Transformer architecture , the self-attention mech- anism can generate the latent representation for each record by jointly conditioning on all other records in the input dataset.
+
+----- triple_id: bd8ebe71dd5 -----
+TRIPLE:     (Models)  --comparesagainst-->  (MC)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: we benchmark our models on a vari- ety of others including MC , RG , SCWS∗11 , and our new rare word (RW) dataset (details in §5.1.1).
+
+----- triple_id: b90fcbae463 -----
+TRIPLE:     (embeddings)  --mentions-->  (general semantics)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: the embeddings get farther away from their general semantics
+
+----- triple_id: b12e2a67be5 -----
+TRIPLE:     (Models)  --achieves-->  (competitive performance)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Although the proposed models achieve compet- itive performance, we also observe some failure cases.
+
+----- triple_id: bdf684f4e3e -----
+TRIPLE:     (Transformer)  --comparesagainst-->  (recurrent model)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Using the method, we compare recurrent and transformer models in terms of capturing syntax and lexical semantics.
+
+----- triple_id: b1ee66af353 -----
+TRIPLE:     (Models)  --addresses-->  (understanding user intents behind search queries)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Datasets and models are proposed for understanding user intents behind search queries , or even more generally, user questions.
+
+----- triple_id: b3afe206435 -----
+TRIPLE:     (Models)  --trainedon-->  (90% of the data)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: In all cases, the models are trained on the same amount of data (90%).
+
+----- triple_id: bf8b4abbc5f -----
+TRIPLE:     (FEVER)  --uses-->  (crowd work-ers)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: In FEVER , the query Q is created by crowd work- ers.
+
+----- triple_id: bd7a6d17732 -----
+TRIPLE:     (supervised)  --uses-->  (tweets)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Systems followed a supervised learning approach in which tweets were mapped into feature vectors that were then used for training regression models.
+
+----- triple_id: b2d646abdbf -----
+TRIPLE:     (generative)  --uses-->  (raw HTML input)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We can observe that the generative model is able to generate question answer pairs even from raw HTML input that corresponds to a table.
+
+----- triple_id: b15f6fabcbe -----
+TRIPLE:     (Out-of-Sample Representation Learning)  --produces-->  (baselines)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: We also developed several baselines, a new training algorithm, and two aggregation models for out-of-sample representation learning.

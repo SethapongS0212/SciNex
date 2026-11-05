@@ -8,7 +8,9 @@
 > locally** (slug `gptoss-20b`), student **`Qwen/Qwen3-8B`**, on the Linux box with 2× RTX 5090.
 > **Status (2026-11-05): teacher pass and both students DONE.** The max-empty-30% student keeps
 > 670 CEO triples at the teacher's guard-pass rate (81.7% vs 80.9%); teacher-only collapsed
-> (`results.md` Table 16). **Next: blind C1/C3/C4 judging on the 41 eval papers.** Detail:
+> (`results.md` Table 16). **Blind judging done (Table 17):** the student's C4 equals the teacher's
+> (51 vs 49 CEO, 61 vs 62 scinex) and far exceeds the untuned model's (23 / 19). Milder caps
+> (50%, 60%) are training; next, judge them the same way. Detail:
 > `hands_off.md` §37 and `HANDOFF_NEXT_SESSION.md`. Everything below about the 20-paper corpus is the finished earlier
 > phase. Its results stand, and no new finetuning runs go on it.
 >

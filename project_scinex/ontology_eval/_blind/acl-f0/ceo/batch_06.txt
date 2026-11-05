@@ -1,0 +1,122 @@
+
+Grade the following 24 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b8f2aa0b7a8 -----
+TRIPLE:     (RNNs)  --uses-->  (multimodal settings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: RNNs , LSTMs , and convolutional neural networks have been ex- tended for multimodal settings .
+
+----- triple_id: bbf7020a528 -----
+TRIPLE:     (embeddings)  --evaluatedon-->  (200,000 words)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Consequently, it is easily computed for D- embeddings that 200,000 words will result in a 10GB model, which is unfeasible to be used in downstream tasks.
+
+----- triple_id: b4148ea4d0b -----
+TRIPLE:     (Neural Models)  --uses-->  (BERT)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: neural models employing BERT , T5 , or BART as document encoders cannot process documents longer than 512/1024 tokens.
+
+----- triple_id: b57d7199390 -----
+TRIPLE:     (training)  --uses-->  (tokenization)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: each side of the training corpus is processed independently with processors pertinents for the task at hand, including tokenization and truecasing.
+
+----- triple_id: bddb2796829 -----
+TRIPLE:     (Part-Of-Speech)  --produces-->  (embedding)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: vp is a randomly initialized and trainable embedding of the part-of-speech tag.
+
+----- triple_id: b143d0be26d -----
+TRIPLE:     (BART)  --achieves-->  (21.29 BLEU)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: BART and GPT2 achieved 21.29 and 18.31 BLEU, respectively.
+
+----- triple_id: b3a4dcc1965 -----
+TRIPLE:     (Word Embeddings)  --addresses-->  (natural language processing tasks)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Word Embeddings: Distributed representation models such as Word2Vec and Glove are generally very effective in a multitude of natural language processing tasks.
+
+----- triple_id: baa28eacb70 -----
+TRIPLE:     (BERT)  --uses-->  (BERT)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: BERTScore aligns the generated and target summaries on a token-level and uses BERT to compute their similarity scores.
+
+----- triple_id: b7fcda8579d -----
+TRIPLE:     (preprocessing)  --uses-->  (sarcasm-marking tags)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: During preprocessing we removed all sarcasm-marking tags from both the training tweets and the historical tweets.
+
+----- triple_id: bd4ff606b64 -----
+TRIPLE:     (Similarity)  --addresses-->  (pair of queries)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: A wide range of features were inves- tigated to define the similarity between a pair of queries , e.g. edit distance, cosine-similarity and Jaccard coefficient of character level trigrams.
+
+----- triple_id: b63d27bacc7 -----
+TRIPLE:     (Neural Network)  --trainedon-->  (personality detection corpus)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: Next, we feed dt to a neural network pre-trained on the personality detection corpus released by Matthews and Gilliland (1999), which contains labels for the Big-Five personality traits.
+
+----- triple_id: bb66a053676 -----
+TRIPLE:     (Tagger)  --uses-->  (inflectional, clitic, and part-of-speech features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The inflectional, clitic, and part-of-speech features are handled with a tagger, while the lexical features are handled with a language model.
+
+----- triple_id: ba1773acf1f -----
+TRIPLE:     (embeddings)  --addresses-->  (SP knowledge)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Compared to them, the learned embeddings from our model are useful resources that incorpo- rate SP knowledge and can be seamlessly lever- aged in other NLP models.
+
+----- triple_id: b63b4a00f54 -----
+TRIPLE:     (Keyphrase Generation)  --addresses-->  (present and absent keyphrases)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Keyphrase generation aims at predicting both present and absent keyphrases for a source text.
+
+----- triple_id: b0ae6ad28a2 -----
+TRIPLE:     (training)  --uses-->  (natural language templates)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For MATRES, 75% of the pairs in the training set for the timex model are sampled from explicit datetime templates, and the rest are sampled from natural language templates.
+
+----- triple_id: b2e71bdbb10 -----
+TRIPLE:     (log-linear)  --uses-->  (likelihood)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we assume a log-linear likelihood (2) for P[w∣ms]
+
+----- triple_id: b6eacfcc479 -----
+TRIPLE:     (Phrases)  --addresses-->  (Effect)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: the effect does not appear directly as a single argument of the pred- icate but is expressed in two semantically inter- connected phrases, one expressing an affected par- ticipant and another expressing the relevant situa- tion that affects that participant.
+
+----- triple_id: be5d843bfca -----
+TRIPLE:     (Representation Learning)  --addresses-->  (reasoning in KGs)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Representation learning has proved effective for reasoning in KGs .
+
+----- triple_id: b4a66643a36 -----
+TRIPLE:     (Time Expressions)  --uses-->  (timex embedding)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: vt corresponds to the timex embedding derived for time expressions (explained in Section 2.1)
+
+----- triple_id: b7370170854 -----
+TRIPLE:     (ELMo)  --comparesagainst-->  (baseline model)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: On this dataset, our proposed approach substantially outperforms the ELMo- equipped baseline model.
+
+----- triple_id: b9550be4922 -----
+TRIPLE:     (Experiments)  --uses-->  (OpenFst)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: All experiments were conducted using OpenFst , OpenGrm-Thrax , and Python 3.4.
+
+----- triple_id: b79c7dc796d -----
+TRIPLE:     (Models)  --uses-->  (Wikipedia)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: All models listed in Table 2 use Wikipedia as training data which partly overlap with the WIKI dataset.
+
+----- triple_id: bb08567dfb8 -----
+TRIPLE:     (Models)  --addresses-->  (target domain questions)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: It would be interesting to explore how one can adapt the generative models to the type of target domain questions .
+
+----- triple_id: be05495314d -----
+TRIPLE:     (Deep Learning Techniques)  --uses-->  (unlabeled data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: It is interesting to note that despite using deep learning techniques, training data, and large amounts of unlabeled data, the best systems are finding it beneficial to include features drawn from affect lexicons.

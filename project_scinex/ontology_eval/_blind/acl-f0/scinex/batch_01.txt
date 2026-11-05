@@ -1,0 +1,165 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bd8b54a1c88 -----
+TRIPLE:     (FEVER)  --comprises-->  (answer prediction)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: FEVER requires three sub tasks: doc- ument retrieval , evidence extraction , and answer prediction.
+
+----- triple_id: ba493701669 -----
+TRIPLE:     (Language Model)  --uses-->  (fine-tuning)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: In recent work, we have experimented with alternative ways of obtaining usage representations (using a different language model, fine-tuning, and various layer selection strategies)
+
+----- triple_id: bf274a73fde -----
+TRIPLE:     (Narrative)  --addresses-->  (advice-seeking goal)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: we en- vision that (intradiegetic) narrative understanding could help identify the components of the narra- tive that are most relevant to the advice -seeking goal
+
+----- triple_id: ba11e1ff34d -----
+TRIPLE:     (Experiments)  --produces-->  (experiments)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: We created a benchmark regression system and conducted experiments to show that affect lexicons, especially those with fine word– emotion association scores, are useful in determining emotion intensity.
+
+----- triple_id: b75d67ed356 -----
+TRIPLE:     (Models)  --evaluatedon-->  (AQUAINT)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: In particular, we test the proposed ED models using six standard datasets : AIDA- CoNLL (CoNLL) , MSNBC, AQUAINT , ACE2004, WNED-CWEB (CWEB), and WNED-WIKI (WIKI) .
+
+----- triple_id: bdd3c43cad4 -----
+TRIPLE:     (User Embedding)  --uses-->  (Softmax)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We feed the user embedding et to a layer with softmax activations to output a probability distribution over Y.
+
+----- triple_id: bb10a096f26 -----
+TRIPLE:     (embeddings)  --evaluatedon-->  (word similarity dataset)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: As a result, our context-sensitive morphoRNN em- beddings could significantly outperform existing embeddings on word similarity tasks for many datasets.
+
+----- triple_id: b4a8c6eaf33 -----
+TRIPLE:     (Models)  --achieves-->  (higher recall value)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Not surprisingly, our models recall more triplets and achieve higher recall value.
+
+----- triple_id: bf3d832577f -----
+TRIPLE:     (Convolutional Neural Networks)  --uses-->  (recognition)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: These include building a corpus from TED talks and using Convolutional Neural Networks (CNNs) in the recognition.
+
+----- triple_id: bb3b424d746 -----
+TRIPLE:     (Reinforcement Learning)  --comprises-->  (off- policy optimization)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: The first stage is train- ing the agent via mixed imitation learning (IL) and reinforcement learning (RL) which combines off- policy and on- policy optimization
+
+----- triple_id: b5aa727b76d -----
+TRIPLE:     (Models)  --comparesagainst-->  (factored NLMs)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: the work clos- est to ours in terms of handing unseen words are the factored NLMs and the compositional distributional seman- tic models (DSMs)
+
+----- triple_id: b8e092ebf04 -----
+TRIPLE:     (Deep Neural Network)  --uses-->  (Hidden Markov Model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: For this task, we have collected humming data and transcribed them in order to train a Deep Neural Network (DNN) based Hidden Markov Model (HMM) for note transcription.
+
+----- triple_id: b9ceb33d06a -----
+TRIPLE:     (training)  --configures-->  (negative log likelihood loss)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: The negative log likelihood loss is utilized for the generation training i.e., Lg = −PLy∗ t=1 logP(y∗ t |yt−1, x, r), where yt = [y1,..., yt−1] is the previously predicted word se- quence, Ly∗is the length of target keyphrase y∗, and y∗ t is the t-th target word in y∗.
+
+----- triple_id: b229d0d1b9f -----
+TRIPLE:     (Experiments)  --produces-->  (novel insights)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: probing with noise can shift perspectives and broaden our understanding of embeddings, demonstrated by our experiments which provide novel insights into contextual and static encoders.
+
+----- triple_id: bc35f5460c8 -----
+TRIPLE:     (Transformer)  --uses-->  (Self-Attention)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Transformer-based encoder-decoder conditional LMs use bidirectional self-attention in the encoding step to create vector representations of the tokens in the context c.
+
+----- triple_id: b1ec133fdf0 -----
+TRIPLE:     (Dialogue)  --addresses-->  (Context)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: For our ranking model, we first define sequences of utterances from the beginning of a dialogue to a certain point of time in context c = (u1, u2,..., ul)
+
+----- triple_id: bdbe45a6e8f -----
+TRIPLE:     (Transformer)  --uses-->  (document encoder)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: an additional Transformer as the document encoder.
+
+----- triple_id: b8e325a12d0 -----
+TRIPLE:     (classifier)  --uses-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Given the optimal embeddings ms, we can now train a classifier from ms to labels y for multi - modal prediction.
+
+----- triple_id: b3dc4db4f91 -----
+TRIPLE:     (generation)  --uses-->  (guidance input r)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: In addition, these keyphrases are concatenated together as a guidance input r for the decoder to provide useful external knowl- edge for the generation process.
+
+----- triple_id: bc2395be21c -----
+TRIPLE:     (SVM)  --uses-->  (5-fold cross-validation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We optimize the hyperparameters of the SVM using a 5-fold cross-validation (optimizing for micro-F1 score) on the training set.
+
+----- triple_id: bf02feb3502 -----
+TRIPLE:     (SVM)  --uses-->  (Features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: In Section 5, we present a competitive SVM-based baseline that uses a number of common text classification features.
+
+----- triple_id: b8cd1455edc -----
+TRIPLE:     (Dialogue System)  --uses-->  (topic words)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The dialogue system used in the experiment acquired topic words from given context in a simple manner.
+
+----- triple_id: b0718dbf14d -----
+TRIPLE:     (Experiments)  --evaluatedon-->  (NYT dataset)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We conduct experiments on two public datasets to evaluate the effectiveness of our models.
+
+----- triple_id: b5d647b3b17 -----
+TRIPLE:     (word2vec)  --addresses-->  (document boundaries)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The word2vec algorithm respects document boundaries by not extending the context vector across them.
+
+----- triple_id: b66e42a9ad5 -----
+TRIPLE:     (Regression)  --achieves-->  (Mean Absolute Error (MAE))
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: For regression, we report Mean Absolute Error (MAE) and Pearson's corre- lation (r).

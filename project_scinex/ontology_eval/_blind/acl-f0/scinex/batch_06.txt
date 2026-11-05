@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b8005f5ce0a -----
+TRIPLE:     (training)  --produces-->  (synthetic data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: All training table records are used to generate synthetic data.
+
+----- triple_id: b3f66fc460e -----
+TRIPLE:     (Models)  --achieves-->  (higher recall value)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Not surprisingly, our models recall more triplets and achieve higher re- call value.
+
+----- triple_id: b58b252ad40 -----
+TRIPLE:     (embeddings)  --achieves-->  (noise-robust morphological disambiguation accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The result of the narrow window embeddings is particularly interesting, as it shows that to achieve a relatively good noise -robust morphological dis- ambiguation accuracy, using narrow window em- beddings should go a long way.
+
+----- triple_id: b35af31e5c8 -----
+TRIPLE:     (Neural Architectures)  --uses-->  (natural language)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Modern approaches use neural architectures to map natural language to the (simulated) world and execute actions (Paxton et al., 2019; Chen et al., 2018; Nguyen et al., 2018; Blukis et al., 2018; Fried et al., 2018; Mei et al., 2016).
+
+----- triple_id: b51dc34eab9 -----
+TRIPLE:     (Novel Method)  --uses-->  (usage types)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We present a novel method that (1) exploits a pre-trained neural language model to obtain contextualised representations for every occurrence of a word of interest, (2) clusters these representations into usage types , and (3) measures change along time.
+
+----- triple_id: be3a0928aad -----
+TRIPLE:     (Random Forest)  --uses-->  (human-engineered features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We compared two types of leading text-based humor recognition methods: a conventional classifier (e.g., Random Forest) based on human-engineered features vs. an end-to-end CNN method, which relies on its inherent representation learning.
+
+----- triple_id: b14de0f3e46 -----
+TRIPLE:     (Web Corpora)  --addresses-->  (Bosnian)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: {bs,hr,sr}WaC – web corpora of Bosnian , Croatian and Serbian .
+
+----- triple_id: b335958590b -----
+TRIPLE:     (GloVe)  --uses-->  (word vectors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Then, we encode each tweet as a sequence of word vectors initialized using GloVe embeddings.
+
+----- triple_id: bb14f7de920 -----
+TRIPLE:     (Summarization Approaches)  --addresses-->  (Paradigms)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We benchmark the performance of several representative summarization approaches (Section 5.1) from both supervised and unsupervised paradigms, on our newly proposed dataset.
+
+----- triple_id: b8fa4626e28 -----
+TRIPLE:     (training)  --configures-->  (82K steps)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: In the first stage of pre-training (paired pre-training tasks), we train for 82K steps, taking approximately 1.5 days.
+
+----- triple_id: be180abfa3b -----
+TRIPLE:     (POS Tagging)  --addresses-->  (Dravidian Languages)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Another approach that applied to POS tagging of Dravidian language is to use part-of- speech tagger of another similar languages
+
+----- triple_id: b72d490b4eb -----
+TRIPLE:     (Attention)  --comparesagainst-->  (vanilla seq2seq model)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: By observing the generated description in WIKIBIO, we find that 1) compared with the vanilla seq2seq model, our force-attention module can cover the information in the 'Notableworks' attribute.
+
+----- triple_id: bb93dfbbd1d -----
+TRIPLE:     (Attention)  --achieves-->  (1.11/0.98 BLEU/ROUGE)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The proposed force- attention module achieves 1.11/0.98 and 2.04/1.32 BLEU/ROUGE increases on the WIKIBIO and WB-filter datasets , respectively.
+
+----- triple_id: ba967b551c4 -----
+TRIPLE:     (German)  --addresses-->  (GermaNet)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: For our German side experiments, we use GermaNet .
+
+----- triple_id: b71b8373119 -----
+TRIPLE:     (evaluate)  --evaluates-->  (suffix classification)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  Links an evaluation metric to the experimental result it quantitatively assesses
+SOURCE SENTENCE: We evaluate the model with respect to its ability to mimic human morphological annotations, using three intrinsic measures .
+
+----- triple_id: b08d6ce39cf -----
+TRIPLE:     (bigram)  --designedfor-->  (Classification Tasks)
+PREDICATE DEFINITION: Model → ResearchTask  |  Associates a model with the research task it was specifically designed or optimised to solve, such as a transformer model designed for machine translation or a CNN designed for image classification
+SOURCE SENTENCE: In the Bigram Shift (BS) task, the goal is to pre- dict whether two consecutive tokens in the sentence have been inverted
+
+----- triple_id: b24db656dcf -----
+TRIPLE:     (generation)  --uses-->  (self-attention)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: This makes the generation of the answer conditioned on both input context ( through attention on the encoder) and question ( through self-attention in the decoder).
+
+----- triple_id: b815f9012c7 -----
+TRIPLE:     (Automatic evaluation)  --uses-->  (ROUGE)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: For table-to-text generation, automatic evaluation has largely relied on BLEU and ROUGE.
+
+----- triple_id: bf0e8b88611 -----
+TRIPLE:     (Filtering)  --configures-->  (test set)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: After filtering and splitting, the train set contains 5019 instances, the test set contains 703 instances and the validation set contains 500 instances.
+
+----- triple_id: b40b7021ee8 -----
+TRIPLE:     (BERT model)  --comparesagainst-->  (BERT (static))
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: for the selectional preference ac- quisition task, we compare with two variations of the original BERT model: (1) BERT (static), which extracts static embedding from the BERT model in a similar way as that from the ELMo model; (2) BERT (dynamic), which takes a pair of words as input and produces a plausibility score for that pairs of words.
+
+----- triple_id: b82e21c1793 -----
+TRIPLE:     (Word Embeddings)  --uses-->  (Word2Vec)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Some of the word embeddings models used were Glove (SeerNet, UWa- terloo, YZU NLP), Word2Vec (SeerNet), and Word Vector Emoji Vectors (SeerNet).
+
+----- triple_id: ba1bb2fdc63 -----
+TRIPLE:     (Measures)  --addresses-->  (language impairment)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Measures derived from naturalistic language samples are thought to be approximately as sensitive to language impairment as are decontextualized tests like those that make up the CELF ; they may also be less biased against speakers of non-standard dialects.
+
+----- triple_id: b8b2cb34e57 -----
+TRIPLE:     (Image)  --uses-->  (CNN)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The image and ground-truth semantic segmentation mask Vt, tiled question L, and previous action at−1 are encoded via a CNN which outputs a distribution over actions.
+
+----- triple_id: bb51a41cd2e -----
+TRIPLE:     (Representation Learning)  --addresses-->  (Reasoning)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Representation learning has proved effective for reasoning in KGs.
+
+----- triple_id: be8d944fb16 -----
+TRIPLE:     (Models)  --produces-->  (Generating Text)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: We developed several models of varying quality for generating text from the tables in WikiBio.

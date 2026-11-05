@@ -67,7 +67,9 @@ def cmd_build(args):
     quiet_guard_logs()
     salt =hashlib.sha1(f"{args.run}|{args.ontology}|{args.seed}".encode()).hexdigest()
     items, key_rows, missing = {}, [], []
+    population = {}
     for slug in args.slugs:
+        cands = []
         for p in args.papers:
             # the SAME triple set ft_compare counts as "kept": today's guards over the stored
             # replies, conflicting duplicate replies dropped (triples.json can be stale or
@@ -82,12 +84,20 @@ def cmd_build(args):
                 if c in seen:                     # identical triple twice in one paper: once
                     continue
                 seen.add(c)
-                bid = "b" + hashlib.sha1(f"{salt}|{c}".encode()).hexdigest()[:10]
-                items.setdefault(bid, t)
-                key_rows.append({"blind_id": bid, "slug": slug, "paper": p, "triple_id": _tid(t, slug),
-                                 "subject": t["subject"], "predicate": t["predicate"],
-                                 "object": t["object"],
-                                 "source_sentence": " ".join(str(t.get("source_sentence", "")).split())})
+                cands.append((p, t, c))
+        population[slug] = len(cands)
+        # --max-per-slug: a seeded simple random sample per extractor when a census is too big
+        # (ACL base model: ~2.4k kept triples per ontology on 41 papers, hands_off §37.10)
+        if args.max_per_slug and len(cands) > args.max_per_slug:
+            rs = random.Random(f"{args.seed}|{slug}")
+            cands = rs.sample(cands, args.max_per_slug)
+        for p, t, c in cands:
+            bid = "b" + hashlib.sha1(f"{salt}|{c}".encode()).hexdigest()[:10]
+            items.setdefault(bid, t)
+            key_rows.append({"blind_id": bid, "slug": slug, "paper": p, "triple_id": _tid(t, slug),
+                             "subject": t["subject"], "predicate": t["predicate"],
+                             "object": t["object"],
+                             "source_sentence": " ".join(str(t.get("source_sentence", "")).split())})
     if missing:
         msg = f"no triples.json for: {', '.join(missing)}"
         if not args.allow_missing:
@@ -122,7 +132,8 @@ def cmd_build(args):
         w.writerows(key_rows)
     meta = {"created": date.today().isoformat(), "judge": JUDGE, "ontology": args.ontology,
             "papers": args.papers, "slugs": args.slugs, "seed": args.seed, "size": args.size,
-            "n_items": len(ids), "n_batches": len(chunks),
+            "n_items": len(ids), "n_batches": len(chunks), "extractor": args.extractor,
+            "max_per_slug": args.max_per_slug, "population_per_slug": population,
             "triples_per_slug": dict(Counter(r["slug"] for r in key_rows))}
     (d / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
     shared = len(key_rows) - len(ids)
@@ -262,6 +273,8 @@ def main():
     b.add_argument("--size", type=int, default=25)
     b.add_argument("--seed", type=int, default=17)
     b.add_argument("--allow-missing", action="store_true")
+    b.add_argument("--max-per-slug", type=int, default=None,
+                   help="judge a seeded random sample of N kept triples per extractor (default: census)")
     b.add_argument("--extractor", choices=["relation", "fixed"], default="relation",
                    help="fixed = ACL Anthology runs under kg/fixed*/ (hands_off §37)")
     b.add_argument("--force", action="store_true")

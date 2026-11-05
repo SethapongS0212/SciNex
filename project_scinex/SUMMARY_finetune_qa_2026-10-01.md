@@ -17,8 +17,13 @@ judged.**
   - trained with "no triples" answers capped at 30%, it kept **670 triples, 81.7% passing the guards**
     (teacher: 501, 80.9%), with 99.9% valid JSON;
   - the untuned model proposes 6,139 triples, but only 38.5% survive the guards.
-- **Caveats:** counts only, not correctness. The capped student also covers more paragraphs than
-  the teacher (43.8% vs 25.6%), which may be over-extraction.
+- **Correctness, judged blind (5 Nov, 50 sampled triples per model):** the student's relations are
+  right about as often as the teacher's (51% vs 49% on CEO, 61% vs 62% on scinex) and far more
+  often than the untuned model's (23% / 19%). Its extra triples, on paragraphs where the teacher
+  said nothing, are about as good as the teacher's own (46% vs 49%).
+- **What limits it:** the teacher itself (only half to two thirds of its relations are correct) and
+  the entity lists, whose generic entries ("Models", "Experiments") make every model's triples too
+  broad.
 - **Incident:** one GPU failed mid-run (likely heat). The work was rescued from a checkpoint and
   finished on the other GPU after a driver-module reload.
 - **Next:** blind per-triple judging of the base model, the capped student and the teacher.

@@ -279,6 +279,38 @@ folds (cross-validation).
 - ⛔ **The server has no GitHub credentials** (no `gh`, no credential helper, no registered SSH key).
   The commit was made locally on `main`; **the user runs `git push`**.
 
+### 37.10 ⭐ 2026-11-05: blind judging shows the student is as correct as its teacher; milder caps in flight
+User, after the Table 16 counts: *"i feel like the result on finetuning seems really terrible?"*,
+then *"lets fix the problem first. i want it to finish before 7 am tomorrow"* and *"lets fix whats
+possible to make the result actually makes sense and fool-proof"*.
+- **The honest critique (given in session):** the 30% cap over-corrected. The student extracts on
+  248 paragraphs where the teacher found nothing (55% of its CEO triples, 66% on scinex), and only
+  24% of its triples match the teacher's. The guards check form, not truth, and the teacher itself
+  is weak. My page headline "matches its teacher" overstated the counts.
+- **Fix 1, milder caps (in flight):** `ft_data/acl_maxempty50/fold0` (22,955 examples, 6,732
+  empty) and `ft_data/acl_maxempty60/fold0` (26,320, 10,097 empty), one per GPU, 1 epoch,
+  `--save-steps 200`. Driver `run_acl_caps.sh` in `screen scinexcaps`, from 12:13 server time.
+  ~7.4–8.3 s/step, so done around 19:30–20:00 server time. GPUs reached 89–90 °C at once; **the user
+  capped both at 400 W** (`sudo nvidia-smi -pl 400`), after which they ran at 86–89 °C. There are no
+  other processes on the GPUs (checked; the heat is the workload plus the server's cooling).
+- **Fix 2, correctness evidence:** `blind_judge.py build --max-per-slug N` (new) draws a seeded
+  random sample per extractor and records the population sizes in `meta.json`. Pools `acl-f0/ceo`
+  and `acl-f0/scinex`, 50 per model × base / me30 / teacher, 149 + 150 items, all judged blind in
+  session, then `collect` + `report`. **Result: `results.md` Table 17.** Student C4 51.0 / 61.0 vs
+  teacher 49.0 / 62.0 (a tie) vs base 23.0 / 19.0. The extra triples on teacher-empty paragraphs
+  score C4 45.6 vs 62.5 on shared ones; the first split attempt, with strict sentence matching,
+  misassigned paragraphs because of the hyphenation problem, and was redone with the loose matcher.
+- **Error types seen while judging** (all extractors): direction reversals (`X uses Y` where Y uses
+  X: ReLU/feedforward, GloVe/word vectors, preprocessing/images); negation ignored ("does NOT
+  use"); coordination misread as a relation; self-loops; one concept split into two ("semantic" /
+  "similarities"); adjectives or verbs as subjects ("unsupervised", "cluster", "evaluate"); objects
+  not in the sentence; **the prompt-template placeholder `88.5` leaked as an object twice** (§36.12
+  saw the same leak); reference-list titles mined as claims; `configures` swapped (still excluded
+  from training). Generic subjects from the entity lists ("Models", "Experiments", "Tagger") drive
+  the low C3 for every model.
+- **Next (in `HANDOFF_NEXT_SESSION.md`):** compare me50/me60 when done, judge them blind with fresh
+  base/teacher decoys (run `acl-f0-caps`, seed 29), update Table 18, the page and GitHub.
+
 ## Session 36 — the unattended chain's post-mortem (a laptop sleep + MY deadline bug), then the real run starts (2026-10-23)
 
 > User: *"continue on where we left off"*, and mid-session: *"i think we still have credits left to

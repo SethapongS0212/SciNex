@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b807aa157e5 -----
+TRIPLE:     (Pre-training)  --trainedon-->  (Datasets)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: In the table below, we show statistics for the 5 datasets we use in our pre-training dataset.
+
+----- triple_id: b7987e9ccb3 -----
+TRIPLE:     (Models)  --achieves-->  (loss in Normal class)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: there is a loss in our models for Normal class.
+
+----- triple_id: b9bc86924a5 -----
+TRIPLE:     (Models)  --achieves-->  (small improvement)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Moreover, including time embeddings as additional input to the improved models leads to a small improvement in the overall accuracy.
+
+----- triple_id: bf9c623bdc5 -----
+TRIPLE:     (RED)  --comparesagainst-->  (ROUGE)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: However, BLEU and ROUGE, which only compare the candidates to the reference, pe- nalize candidate 3 for both excluding the divergent information in the reference (in red) and includ- ing correct information from the table (in green).
+
+----- triple_id: b22b06bcf50 -----
+TRIPLE:     (training)  --achieves-->  (reconstruct input ri)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The training objective is to reconstruct the input ri.
+
+----- triple_id: be32807dd22 -----
+TRIPLE:     (Experiments)  --achieves-->  (significant improvements in domain adaptation of RC models)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Our experiments showed that by proper decoding, significant improvements in domain adaptation of RC models can be achieved.
+
+----- triple_id: bd7dc383f5e -----
+TRIPLE:     (Transformer)  --uses-->  (bidirectional self-attention)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Transformer-based encoder-decoder conditional LMs use bidirectional self-attention in the encoding step to create vector representations of the tokens in the context c.
+
+----- triple_id: b329a476f81 -----
+TRIPLE:     (LSTM)  --uses-->  (Image)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: planner LSTM takes in a CNN encoded image Vt
+
+----- triple_id: b091a5a536c -----
+TRIPLE:     (BERT)  --uses-->  (contextualised representation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We collect a contextualised representation for each occurrence of these words in the second century of COHA, using BERT as described in Section 3.2.
+
+----- triple_id: b4437a0a73c -----
+TRIPLE:     (post-processing)  --uses-->  (single session task labels)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: after post-processing the single session task labels, the total number of distinct tasks is reduced.
+
+----- triple_id: b774c3df7f2 -----
+TRIPLE:     (Annotations)  --uses-->  (Arabic tweets)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: These annotations will be done for English, Spanish, and Arabic tweets.
+
+----- triple_id: b26d10198de -----
+TRIPLE:     (embeddings)  --achieves-->  (co-occurrence information)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: conventional embeddings only capture the co-occurrence information , which is enough to predict the selectional preference of 7For D- embedding , since it provides embeddings for different relations (e.g., 'food@nsubj', 'food@dobj), we follow their work and directly use embeddings over certain relations to predict the score for the tested pairs.
+
+----- triple_id: b23feb1f80d -----
+TRIPLE:     (CRFs)  --addresses-->  (segmentation tasks)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Sequence models such as CRFs and S-CRFs are used for segmentation tasks in NLP, e.g., Peng et al. (2004) applied a CRF model for Chinese word segmentation and Andrew (2006) followed with a S-CRF model.
+
+----- triple_id: bf505234c55 -----
+TRIPLE:     (Arguments)  --addresses-->  (Input)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: to detect arguments within the input natural language texts and the further detection of their boundaries
+
+----- triple_id: b14b75ea1cc -----
+TRIPLE:     (Unlabeled Data)  --addresses-->  (POS)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Varying the amount of unlabeled data
+
+----- triple_id: b262f96834b -----
+TRIPLE:     (Sentence Embeddings)  --addresses-->  (opinion analysis)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Sentence embeddings are crucial for down-stream tasks such as document classification, opinion analysis , and machine translation.
+
+----- triple_id: b55394eefc0 -----
+TRIPLE:     (preprocessing)  --uses-->  (Images)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use the following preprocessing/data augmentations on the images : resize to 224 × 224 pixels with a ran- dom crop, that has random scaling between 0.8 and 1.0 and aspect ratio between 0.75 and 1.3, along with a random horizontal flip.
+
+----- triple_id: b00dd1ebc2e -----
+TRIPLE:     (MWE)  --achieves-->  (outperforms ELMo)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: It is observed that that MWE outperforms ELMo and achieves comparable results with BERT with smaller embedding dimension and much less training complexities.
+
+----- triple_id: bf995fb51ad -----
+TRIPLE:     (evaluate)  --evaluatedon-->  (two event temporal ordering datasets)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We evaluate on two event temporal ordering datasets, one real and one artificially constructed.
+
+----- triple_id: bfce44adb1b -----
+TRIPLE:     (Detecting Emotion)  --addresses-->  (disaster/crisis management)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Automatically detecting emotion intensities in tweets is especially beneficial in applications such as tracking brand and product perception, tracking support for issues and policies, tracking public health and well-being, and disaster/crisis management.
+
+----- triple_id: b680a6ca862 -----
+TRIPLE:     (Models)  --achievesresult-->  (nearly 50%)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: The language only models achieve nearly 50%, suggesting that despite the entropy filtering in Das et al. (2018a) each question has one answer that is as likely as all other answers combined.
+
+----- triple_id: babfe1764ff -----
+TRIPLE:     (Temporal Relation Classification)  --addresses-->  (GloVe)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Using ELMo em- beddings in this manner does not lead to a sub- stantial improvement over previous results, with an accuracy of 97.6% for the temporal relation classification objective on the same test set.
+
+----- triple_id: b42d93c3189 -----
+TRIPLE:     (RNN)  --uses-->  (Sequence)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: This RNN reads encoded utterance sequences and outputs scores.
+
+----- triple_id: ba2ee75676e -----
+TRIPLE:     (training)  --configures-->  (Ptacek dataset)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: We follow its authors in setting a batch size of 16 for the Riloff dataset , and of 512 for the Ptacek dataset , and in training for 30 epochs using the RMSProp optimizer with a learning rate of 0.001.
+
+----- triple_id: ba7aa6b5e76 -----
+TRIPLE:     (NRC)  --configures-->  (NRC-Aff-Int)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: NRC-Aff-Int has real-valued fine-grained word– emotion association scores for all the words in NRC-EmoLex that were marked as being associ- ated with anger, fear, joy, and sadness.

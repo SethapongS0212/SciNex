@@ -50,6 +50,37 @@
 > exceeds the teacher's (25.6%), which can mean over-extraction. A random sample mixes good triples
 > (`LSTM uses lexical features`) with vague ones (`Unsupervised Methods achieves very strong
 > result`), and vague subjects come from the CS-NER entity lists. Next: blind C1/C3/C4 census.
+>
+> **Table 17 (ACL, ⭐ BLIND CORRECTNESS).** C1/C3/C4 on a seeded random sample of **50 kept triples
+> per model and ontology** (`blind_judge.py build --extractor fixed --max-per-slug 50`), pooled,
+> shuffled and anonymised, judged by claude-opus-5-5 in session, 41 held-out ACL papers, 2026-11-05.
+> Scores are CORRECT = 1 / PARTIAL = ½, with a 95% bootstrap CI over triples
+> (`ontology_eval/_blind/acl-f0/{ceo,scinex}/report.json`):
+>
+> | ontology | extractor | C1 | C3 | C4 | C4 strictly correct |
+> |---|---|---|---|---|---|
+> | CEO | qwen3-8b-acl-base-hf (untuned) | 60.0 [52, 68] | 30.0 [18, 42] | **23.0** [15, 33] | 10.0 |
+> | CEO | **qwen3-8b-acl-ft-me30-cv** | 90.0 [84, 95] | 28.0 [16, 40] | **51.0** [40, 62] | 36.0 |
+> | CEO | gptoss-20b (teacher) | 80.0 [72, 87] | 30.0 [18, 44] | **49.0** [39, 58] | 26.0 |
+> | scinex | qwen3-8b-acl-base-hf (untuned) | 66.0 [56, 76] | 28.0 [16, 40] | **19.0** [12, 27] | 2.0 |
+> | scinex | **qwen3-8b-acl-ft-me30-cv** | 90.0 [84, 95] | 32.0 [20, 44] | **61.0** [51, 71] | 42.0 |
+> | scinex | gptoss-20b (teacher) | 81.0 [73, 88] | 36.0 [22, 50] | **62.0** [51, 73] | 46.0 |
+>
+> Differences in C4: student − teacher **+2.0 [−14, +17] (CEO), −1.0 [−17, +14] (scinex): a tie.**
+> Student − base **+28.0 [+13, +42] (CEO), +42.0 [+30, +55] (scinex): significant.** Student −
+> teacher on C1: +10.0 / +9.0 (CIs touch 0).
+> **Where its extra triples come from (CEO):** per paragraph, teacher and student both extract on
+> 181 of 980 paragraphs, only the teacher on 70, only the student on 248, neither on 481. 55% of
+> the student's CEO triples (66% on scinex) sit on teacher-empty paragraphs. Of the 50 judged
+> student triples, those on shared paragraphs score **C4 62.5** (n=16) and those on teacher-empty
+> paragraphs **C4 45.6** (n=34), against the teacher's own 49.0. So the extra triples are
+> teacher-grade, not junk; the small n makes this split indicative only.
+> **Reading:** finetuning transfers the teacher's correctness into an 8B student and more than
+> doubles relation correctness over the untuned model. The **ceiling is the teacher** (only half
+> to two thirds of its relations are correct) **and the entity lists** (C3 ~30% for every model:
+> generic CS-NER entries become subjects). ⚠ Single rater; n=50 per cell; one fold; not comparable
+> with Tables 13–14 (different corpus, extractor, teacher and student). In flight on 2026-11-05:
+> students with milder caps (50%, 60% empty), to be judged the same way.
 
 > ### ⚠ SESSION 27: THE EVALUATION CRITERIA CHANGED
 > Every precision number in this file uses the **old** CORRECT/PARTIAL/INCORRECT rubric and the

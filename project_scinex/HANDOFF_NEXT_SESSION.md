@@ -19,13 +19,14 @@ symlink to its `project_scinex/`. Driver scripts: `/home/dev1/scinex_runs/` (cop
 `ft_runs/acl_scripts/`). The July ACL copy (PDFs, parsed HTML, entity CSVs) is in
 `/home/dev1/project_scinex_old_2026-07`. Use `python` from the venv; long runs go in `screen`.
 
-## The result (judge-free, `results.md` Tables 15–16)
+## The result (`results.md` Tables 15–17)
 **Teacher** `gpt-oss-20b` (local, MXFP4, reasoning low) over all 805 papers × both ontologies:
 37,970 paragraphs in 30.6 h. Valid JSON 99.5% (CEO) / 99.6% (scinex); kept triples 8,488 / 5,479
 (79.6% / 78.4% pass the guards); coverage 22.8% / 16.4%. About 80% of its answers are empty, and
 `uses` is 65% of its CEO triples.
 
-**Students** (Qwen3-8B QLoRA, 1 epoch) on the **41 held-out papers** (980 paragraphs per ontology):
+**Students** (Qwen3-8B QLoRA, 1 epoch) on the **41 held-out papers** (980 paragraphs per ontology),
+judge-free counts:
 
 | CEO | valid JSON | proposed → kept | kept rate | coverage |
 |---|---|---|---|---|
@@ -34,35 +35,65 @@ symlink to its `project_scinex/`. Driver scripts: `/home/dev1/scinex_runs/` (cop
 | **`qwen3-8b-acl-ft-me30-cv` (empty targets ≤ 30%)** | **99.9%** | **820 → 670** | **81.7%** | **43.8%** |
 | `gptoss-20b` (teacher) | 99.2% | 619 → 501 | 80.9% | 25.6% |
 
-On scinex the pattern is the same: me30 keeps 548 triples (85.1%) against the teacher's 289
-(77.5%). **Capping empty targets fixes the recall collapse.** ⚠ These are counts, not correctness:
-nothing has been judged yet. A random sample mixes precise triples with vague ones whose generic
-subjects come from the entity lists.
+**⭐ Blind C1/C3/C4 judging (2026-11-05)**, 50 sampled kept triples per model and ontology, judged
+by Claude in session (`ontology_eval/_blind/acl-f0/{ceo,scinex}/`):
+
+| | CEO C1 | CEO C3 | **CEO C4** | scinex C1 | scinex C3 | **scinex C4** |
+|---|---|---|---|---|---|---|
+| base (untuned) | 60.0 | 30.0 | **23.0** | 66.0 | 28.0 | **19.0** |
+| **me30 student** | 90.0 | 28.0 | **51.0** | 90.0 | 32.0 | **61.0** |
+| gptoss-20b teacher | 80.0 | 30.0 | **49.0** | 81.0 | 36.0 | **62.0** |
+
+- **The student is as correct as its teacher** (C4 +2.0 [−14, +17] CEO, −1.0 [−17, +14] scinex) and
+  far better than the untuned model (+28 [+13, +42] and +42 [+30, +55]).
+- **Its extra triples are not junk.** 55% of its CEO triples sit on paragraphs where the teacher
+  found nothing. Judged by paragraph type: shared paragraphs C4 62.5 (n=16), teacher-empty
+  paragraphs C4 45.6 (n=34), against the teacher's own 49.0.
+- **The ceiling is the teacher and the entity lists:** only ~50–60% of the teacher's relations are
+  correct, and specificity (C3) is ~30% for every model, because the generic CS-NER entries
+  ("Models", "Experiments") become subjects.
 
 ## State
-- **Everything has finished; nothing is running.** The server was rebooted on 2026-11-05 10:34 and
-  both GPUs are visible again (GPU1 had dropped off the bus on 10-28; §37.7).
+- **⏳ IN FLIGHT: milder caps, `screen -r scinexcaps`** (`/home/dev1/scinex_runs/run_acl_caps.sh`,
+  copy in `ft_runs/acl_scripts/`), started 2026-11-05 12:13 server time (the server clock runs ~7 h
+  behind the user's). GPU0 trains `ft_data/acl_maxempty50/fold0` → `qwen3-8b-acl-ft-me50-cv`
+  (2,870 steps); GPU1 trains `ft_data/acl_maxempty60/fold0` → `qwen3-8b-acl-ft-me60-cv` (3,290
+  steps). Both use `--save-steps 200` and then ft_gen. **Expected done ~19:30–20:00 server time.**
+  Then `ft_compare` writes `/home/dev1/scinex_runs/acl_compare_caps.log` and
+  `ft_runs/qwen3-8b-acl-f0/compare_caps.json`. Progress: `/home/dev1/scinex_runs/acl_driver.log`.
+  Re-running the script resumes.
+- **GPU power is capped at 400 W** (user, `sudo nvidia-smi -pl 400`), because both cards hit 89–90 °C
+  at full power. Without persistence mode the cap can reset when the driver unloads, so re-apply it
+  before long jobs.
 - Adapters (gitignored): `ft_runs/qwen3-8b-acl-f0/adapter/` (teacher-only, **recovered from
-  `checkpoint-5493`** after a crash at the final save; see its `run_manifest.json`) and
-  `ft_runs/qwen3-8b-acl-f0-me30/adapter/`.
-- A presentation page with the results was published as a private claude.ai artifact ("SciNex ACL
-  Finetuning Results").
+  `checkpoint-5493`**; see its `run_manifest.json`) and `ft_runs/qwen3-8b-acl-f0-me30/adapter/`.
+- Presentation page: private claude.ai artifact "SciNex ACL Finetuning Results"
+  (https://claude.ai/artifact/YEfrmYnhmqMQxNAAio3tEt), updated with the judged numbers.
+- **GitHub pushes work from this server** with the deploy key `~/.ssh/scinex_deploy_ed25519`
+  (write access to SciNex only): `GIT_SSH_COMMAND="ssh -i ~/.ssh/scinex_deploy_ed25519 -o
+  IdentitiesOnly=yes" git push git@github.com:SethapongS0212/SciNex.git main`.
 
 ## Next steps, in order
-1. **Push to GitHub if it has not been pushed yet.** The Session 37 commit was made locally, but
-   this server has no GitHub credentials. Run `git push` from `/home/dev1/SciNex`; it asks for the
-   username and a personal access token.
-2. **Blind C1/C3/C4 judging on the 41 eval papers**, with Claude in session as the judge (its only
-   role). `blind_judge.py build --extractor fixed` now reads the ACL outputs, but it pools EVERY
-   kept triple (a census), and base alone has ~4.8k. Add a per-extractor sample cap (e.g. 40–60 per
-   extractor and ontology, seeded) before building for base / me30 / teacher. **Never open
-   `key.csv` before `collect`.**
-3. **Look at over-extraction.** me30 covers 43.8% of paragraphs against the teacher's 25.6%. If the
-   judge finds its extra triples wrong, try a milder cap (`--max-empty-frac 0.5`) as a third variant.
-4. **Entity-list quality.** Generic CS-NER entries ("Models", "Unsupervised Methods") become vague
-   subjects. Consider filtering them out of the fixed-entity lists, which needs a teacher re-run.
+1. **When the caps run finishes:** read `acl_compare_caps.log`. Which cap brings coverage closest
+   to the teacher's 25.6% (CEO) / 17.3% (scinex) without collapsing?
+2. **Judge me50 and me60 blind**, with fresh base/teacher decoys so the pool stays blind, per
+   ontology (CEO, then scinex):
+   ```
+   python blind_judge.py build --run acl-f0-caps --ontology ceo --extractor fixed --max-per-slug 50 --seed 29 \
+       --papers $(cat ft_data/acl/fold0/eval_papers.txt) \
+       --slugs qwen3-8b-acl-ft-me50-cv qwen3-8b-acl-ft-me60-cv qwen3-8b-acl-base-hf gptoss-20b
+   #   judge ontology_eval/_blind/acl-f0-caps/ceo/batch_NN.txt -> replies/reply_NN.txt
+   python blind_judge.py collect --run acl-f0-caps --ontology ceo
+   python blind_judge.py report  --run acl-f0-caps --ontology ceo --compare qwen3-8b-acl-ft-me50-cv gptoss-20b
+   ```
+   **Never open `key.csv` before `collect`.** Then update `results.md` (Table 18), the presentation
+   page and GitHub.
+3. **Entity-list quality** (the C3 ceiling): filter generic CS-NER entries out of the fixed-entity
+   lists. That needs a teacher re-run, so plan ~30 h.
+4. **A stronger teacher** would raise the C4 ceiling (gptoss-120b reached C4 86% on the 20-paper
+   corpus). It needs API credit (OpenRouter) or more GPU memory.
 5. **More folds** (`--eval-fold 1..`) with the winning variant, so more papers are scored by a model
-   that never saw them. The ACL split has 20 folds; pick a few, not all 20.
+   that never saw them. The ACL split has 20 folds; pick a few.
 6. **Part 3 Q&A** with an independent, non-Claude model (still open since Session 34).
 
 ## Decisions already made — do not re-open

@@ -44,8 +44,11 @@ against the real papers.
 - **⭐ ACL finetuning result (2026-10-30, judge-free):** on 41 held-out ACL papers a Qwen3-8B
   student trained with empty targets capped at 30% keeps **670 CEO triples at an 81.7% guard-pass
   rate**, against the gpt-oss-20b teacher's 501 at 80.9%, with 99.9% valid JSON. Trained on the
-  teacher's raw mix (80% empty answers), the student collapsed to 15 triples. Not yet judged for
-  correctness. `project_scinex/results.md` Tables 15–16, `project_scinex/hands_off.md` §37.
+  teacher's raw mix (80% empty answers), the student collapsed to 15 triples.
+- **⭐ Blind correctness (2026-11-05):** relation correctness (C4) of the finetuned student is
+  **51 (CEO) / 61 (scinex)**, equal to the teacher's 49 / 62 and far above the untuned model's
+  23 / 19 (50 sampled triples per model, blind). The ceiling is the teacher and the generic entity
+  lists. `project_scinex/results.md` Tables 15–17, `project_scinex/hands_off.md` §37.
 
 - **Extraction comparison, 20 papers, CEO ontology** (C1 concept correctness / C3 specificity /
   C4 relation correctness, ~40 judged triples per model): GPT-OSS-120B 88.8 / 80.0 / **86.2**,

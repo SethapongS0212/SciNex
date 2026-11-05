@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b7f3df5d577 -----
+TRIPLE:     (fine-tuning)  --uses-->  (training set D)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Our approach to model p(a, q|c) involves fine-tuning a pretrained Enc-Dec conditional LM using a training set D = {(c1, q1, a1), (c2, q2, a2),..., (c|D|, q|D|, a|D|)}.
+
+----- triple_id: bb8161300a7 -----
+TRIPLE:     (embeddings)  --addresses-->  (downstream tasks)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Thus, to ensure the learned embeddings can be used in downstream tasks, their size becomes an important concern when evaluating different embedding models, especially when there exist many different relations between words in our model.
+
+----- triple_id: be356c1cfef -----
+TRIPLE:     (Argument Mining)  --addresses-->  (Twitter Data)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: This paper investigated argument mining tasks on Twitter data.
+
+----- triple_id: b89f2b25ab9 -----
+TRIPLE:     (dependency-based)  --addresses-->  (this problem)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: To address this problem, the dependency-based embedding model is proposed to treat a word through separate ones, e.g., 'food@dobj' and 'food@nsubj', under different syntactic relations, with the skip-gram model being used to train the final embeddings.
+
+----- triple_id: b1bcb378878 -----
+TRIPLE:     (dictionary)  --uses-->  (Phonetic Normalization)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We did include, however, a variant of the tag dictionary feature that uses phonetic normalization for lookup; it seemed to yield a small improvement.
+
+----- triple_id: bd0cf81fd25 -----
+TRIPLE:     (generator)  --trainedon-->  (WIKIBIO dataset)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: Before the richness-oriented reinforced training, the neural generator is pre-trained 8 and 4 epochs for the WIKIBIO and WB-filter datasets (with or without force-attention module), respectively.
+
+----- triple_id: b2fe1c59602 -----
+TRIPLE:     (Models)  --addresses-->  (verbs)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In all but one case, models exhibit the best Word (hr) Word (en) POS MFS BoW SG MFS BoW SG performance on verbs, followed by nouns, and adjectives.
+
+----- triple_id: b06bb5a2b59 -----
+TRIPLE:     (BERT)  --addresses-->  (BS)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The same interpretation holds for BERT embeddings on the BS and SOMO tasks; e.g. in SOMO a sentence containing an out of context word is positioned closer to the origin.
+
+----- triple_id: b23de71e192 -----
+TRIPLE:     (natural language)  --addresses-->  (bad systems)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We found this necessary to assign low scores to bad systems which, for example, copy values from the table without phrasing them in natural language.
+
+----- triple_id: b50aa98e558 -----
+TRIPLE:     (Models)  --evaluatedon-->  (CNN/DM)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: despite achieving state-of-the-art perfor- mances on short-document summarization datasets such as CNN/DM , News- room , and XSum , etc., such models cannot be readily applied to effectively summarize ECTs.
+
+----- triple_id: b092f702271 -----
+TRIPLE:     (NMT)  --uses-->  (subword translation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Subword translation is an approach used in NMT to tackle out-of-vocabulary (OOV) problem using byte-pair encoding (BPE) or other similar segmentation techniques.
+
+----- triple_id: b8d93f717ec -----
+TRIPLE:     (ensemble)  --uses-->  (deep learning)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Consequently, we construct an ensemble by taking the best performing deep learning (CNN, LSTM and GRU each) and classical feature based (SVR) models using a MLP network.
+
+----- triple_id: b65b005f072 -----
+TRIPLE:     (multimodal)  --addresses-->  (Spoken Utterances)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: At the heart of many multimodal modeling tasks lies the challenge of learning rich representations of spoken utterances from multiple modal - ities .
+
+----- triple_id: b7c4c695c29 -----
+TRIPLE:     (Matching)  --uses-->  (bi-directional attention)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The Matching Layer encodes C2, Q2 as matching vectors C3 ∈Rlw×dc by using bi-directional attention , a Bi-RNN, and self- attention.
+
+----- triple_id: b12ce7649e2 -----
+TRIPLE:     (BERT)  --trainedon-->  (pretrained versions)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: We use pretrained versions of BERT and GloVe to generate embeddings for each sen- tence.
+
+----- triple_id: bc717d6bc5a -----
+TRIPLE:     (Generative Models)  --addresses-->  (Rendered Passage)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The content under Passage is the input string, as seen by the generative models, and Ren- dered Passage indicates how the table appears in a browser.
+
+----- triple_id: b238c946b8d -----
+TRIPLE:     (BART)  --uses-->  (denoising autoencoder)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: BART introduces a denoising autoencoder for pre-training sequence to sequence tasks including summarization.
+
+----- triple_id: b44a275fc1e -----
+TRIPLE:     (Enhanced Transformer Model)  --achieves-->  (BLEU)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Experimental results have shown that our enhanced transformer model outperforms current state-of-the-art system on BLEU, content selection precision and content ordering metics.
+
+----- triple_id: bef30571a23 -----
+TRIPLE:     (BERT)  --uses-->  (contextualised representation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We collect a contextualised representation for each occurrence of these words in the second century of COHA, using BERT as described in Section 3.2.
+
+----- triple_id: bc3dbee0b26 -----
+TRIPLE:     (GloVe)  --uses-->  (their released code)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For word2Vec and GloVe, we use their released code.
+
+----- triple_id: b35644ca82b -----
+TRIPLE:     (Attention Mechanism)  --uses-->  (CLIP initialization)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For RIC, we compare to a decoder baseline that concatenates the two input image representations and uses a single cross attention mechanism (with a CLIP initialization on the visual encoder).
+
+----- triple_id: b1b874153f0 -----
+TRIPLE:     (NLG)  --addresses-->  (content quality)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: A recurring theme is that metrics like BLEU and NIST are not suitable for judging content quality in NLG.
+
+----- triple_id: b6dd1ac6239 -----
+TRIPLE:     (Dialogue System)  --uses-->  (Twitter)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We released a conversational dialogue system called KELDIC on Twitter (screen name: @KELDIC).
+
+----- triple_id: bd0760eb2a1 -----
+TRIPLE:     (Paraphrasing)  --uses-->  (target Reuters sentences)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: (2) a Paraphrasing block that is trained to rephrase the extracted ECT sentences to the format of target (Reuters) sentences, thereby generating a set of bullet points.
+
+----- triple_id: b8619fb7132 -----
+TRIPLE:     (Matching)  --uses-->  (self-attention)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The Matching Layer encodes C2, Q2 as matching vectors C3 ∈Rlw×dc by using bi-directional attention , a Bi-RNN, and self-attention.

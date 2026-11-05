@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b6ff6a3d456 -----
+TRIPLE:     (Enhanced Transformer Model)  --achieves-->  (content selection precision)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Experimental results have shown that our enhanced transformer model outperforms current state-of-the-art system on BLEU, content selection precision and content ordering metics.
+
+----- triple_id: b5d0fe71118 -----
+TRIPLE:     (generation)  --uses-->  (negative log likelihood loss)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The negative log likelihood loss is utilized for the generation training i.e., Lg = −PLy∗ t=1 logP(y∗ t |yt−1, x, r), where yt = [y1,..., yt−1] is the previously predicted word sequence, Ly∗is the length of target keyphrase y∗, and y∗ t is the t-th target word in y∗.
+
+----- triple_id: bca297389ea -----
+TRIPLE:     (News)  --addresses-->  (attributions)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The results suggest that a very high proportion of attribu- tions are nested in news language.
+
+----- triple_id: ba34f919f59 -----
+TRIPLE:     (Tokenization)  --uses-->  (training)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: each side of the training corpus is processed independently with pro- cessors pertinents for the task at hand, includ- ing tokenization and truecasing.
+
+----- triple_id: b952b01bce7 -----
+TRIPLE:     (definition)  --addresses-->  (order of the temporal intervals)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: However, this definition of the JSD is insensitive to the order of the temporal intervals and yields lower correlation with human semantic change ratings (cfr. Section 5.2) than the pairwise metrics.
+
+----- triple_id: b5d7412bffb -----
+TRIPLE:     (Experiments)  --evaluatedon-->  (CMU-MOSI)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Our first set of experiments evaluates the performance of our baselines on two multimodal prediction tasks: multimodal sentiment analysis on CMU-MOSI and multimodal speaker traits recognition on POM.
+
+----- triple_id: b7cf1b922fa -----
+TRIPLE:     (BERT)  --evaluatedon-->  (BS task)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: including that applying BERT results: The vanilla BERT vectors out-perform random baselines across all tasks, includ- ing the BS task.
+
+----- triple_id: b104e486b26 -----
+TRIPLE:     (Multi-task Learning)  --uses-->  (bidirectional GRU layer)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Two encoders are employed in our multi-task learning framework. One is for the source text encoding (i.e., "Encoder1" in Figure 2) and the other is for retrieved keyphrases encoding (i.e., "Encoder2" in Figure 2). Both of them employ a bidirectional GRU layer to obtain a context-aware representation of each word:
+
+----- triple_id: be382780673 -----
+TRIPLE:     (generation)  --uses-->  (Topk+Nucleus)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Question - answer generation with AQGen, QAGen, and QAGen2S is performed using Topk+Nucleus
+
+----- triple_id: b52d80b41b6 -----
+TRIPLE:     (Experiments)  --uses-->  (GermaNet)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For our German side experiments, we use GermaNet.
+
+----- triple_id: b123a55a1ad -----
+TRIPLE:     (training)  --uses-->  (synthetic data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Each experiment was performed by training the RC model on the synthetic data generated on the target domain corpus.
+
+----- triple_id: bd301562d62 -----
+TRIPLE:     (Features)  --uses-->  (Character n-grams)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The system uses the following features: a. Word N-grams (WN): presence or absence of word n-grams from n = 1 to n = 4. Character N-grams (CN): presence or absence of character n-grams from n = 3 to n = 5. Word Embeddings (WE): an average of the word embeddings of all the words in a tweet.
+
+----- triple_id: b975a7ff3e2 -----
+TRIPLE:     (Expectation Maximization)  --uses-->  (Expectation Maximization)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For each value of K, we execute 10 iterations of Expectation Maximization to alleviate the influence of different initialisation values.
+
+----- triple_id: b2b9677a2a7 -----
+TRIPLE:     (Attention Mechanism)  --uses-->  (g(st, hi))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use Bahdanau-style attention mechanism to calculate g(st, hi).
+
+----- triple_id: bf3fe1d16c4 -----
+TRIPLE:     (Models)  --comparesagainst-->  (local model)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: the global models consistently outperform the local model both for rare and frequent entities.
+
+----- triple_id: b38d164b82a -----
+TRIPLE:     (language modeling)  --uses-->  (Relative Captioner mode)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We additionally apply a language modeling loss, using the Relative Captioner mode of our architecture, that maximizes the conditional probability of a relative caption given a reference and a target image :
+
+----- triple_id: b3bfb52f546 -----
+TRIPLE:     (Seq2seq)  --uses-->  (Recurrent Neural Network)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: sequence to sequence autoencoder (seq2seq) which captures temporal information using a recurrent neural network encoder and decoder.
+
+----- triple_id: bc6e6770b77 -----
+TRIPLE:     (Source Text)  --uses-->  (extractor)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Besides extracting keyphrase candidates, the importance scores of the source text words , β, predicted by the extractor are also employed to rescale the original copy probability distribution of the decoder.
+
+----- triple_id: b5da5a91375 -----
+TRIPLE:     (Word Vector)  --addresses-->  (session specific semantics of query terms)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We hypothesize that the modified word vector embedding approach of Section 3.2 will be more effective in capturing the session specific semantics of query terms since it takes into account the temporal context of query session information from query logs.
+
+----- triple_id: b83b417caef -----
+TRIPLE:     (Natural Language Generation)  --comprises-->  (macro planning)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: Natural Language Generation , NLG, is often viewed as a complex process comprising four main tasks : i) macro planning, building an overall text plan; ii) micro planning, selecting referring expressions and appropriate content words; iii) surface realisation, selection of grammatical constructions and linear order; and iv) physical presentation, producing final articulation and layout operations.
+
+----- triple_id: bf0ae403df2 -----
+TRIPLE:     (Neural Architectures)  --uses-->  (natural language)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Modern approaches use neural architectures to map natural language to the (simulated) world and execute actions (Paxton et al., 2019; Chen et al., 2018; Nguyen et al., 2018; Blukis et al., 2018; Fried et al., 2018; Mei et al., 2016).
+
+----- triple_id: b0964046f87 -----
+TRIPLE:     (Classification)  --uses-->  (multiclass classification accuracy A(c))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For classification, we report multiclass classifica- tion accuracy A(c) where c denotes the number of classes and F1 score.
+
+----- triple_id: b8e93d77ecd -----
+TRIPLE:     (LSTM)  --uses-->  (LSTM language encoder (L))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at (seen in Figure 2).
+
+----- triple_id: b213af337e7 -----
+TRIPLE:     (Experiments)  --evaluatedon-->  (SP acquisition)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Experiments are conducted on SP acquisition over different dependency relations to evaluate whether the learned embeddings effectively capture words' semantics over these relations.
+
+----- triple_id: ba6ba791405 -----
+TRIPLE:     (ReLU)  --uses-->  (feedforward layers)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We apply multiple feedforward layers with ReLU non-linearity, followed by a softmax layer to obtain output probabilities for the four labels before, after, vague and simultaneous, denoting the temporal relation between the event pair (e1, e2).

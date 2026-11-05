@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bf2e041572a -----
+TRIPLE:     (Classification)  --addresses-->  (factual vs opinion arguments classification)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: To address the task of factual vs opinion arguments classification , we apply the supervised classification algorithms described in Section 2.1.
+
+----- triple_id: b82d56b958e -----
+TRIPLE:     (Recommendation)  --evaluatedon-->  (Bolly-wood artists)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We test the similar artist recommendation system on Bolly- wood artists mostly because Bollywood music provides us with a comparatively small set, which is easier to annotate and evaluate.
+
+----- triple_id: b47652dbaf5 -----
+TRIPLE:     (Network Embedding)  --addresses-->  (multiple relations among people in a social network)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: A multiplex network embedding model was originally proposed for modeling multiple relations among people in a social network.
+
+----- triple_id: b5bc102f4d0 -----
+TRIPLE:     (BART)  --achieves-->  (21.29 BLEU)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: BART and GPT2 achieved 21.29 and 18.31 BLEU, respectively.
+
+----- triple_id: b0167ca728a -----
+TRIPLE:     (Out-of-Sample Representation Learning)  --addresses-->  (attributed KGs)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Out-of-sample representation learning has also been extensively studied for attributed KGs and attributed simple graphs (Yang et al., 2016; Hamilton et al., 2017a; Veliˇckovi´c et al., 2018; Chen et al., 2018).
+
+----- triple_id: b3f746084a4 -----
+TRIPLE:     (Annotation)  --evaluates-->  (0.529)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  Links an evaluation metric to the experimental result it quantitatively assesses
+SOURCE SENTENCE: The kappa for the human annotation is 0.529
+
+----- triple_id: bd1eded62a3 -----
+TRIPLE:     (Algorithm)  --uses-->  (heuristics)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: the algorithm extracts the NEs from the tweets through 's system, and applies the following two heuristics:
+
+----- triple_id: bb281717c22 -----
+TRIPLE:     (errors)  --encompasses-->  (Lemmatization)
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  Relates a research domain to the research tasks that fall within its scope
+SOURCE SENTENCE: POS related errors cover 13%, Hamza errors 11%, lemmatization errors include 7%, and the rest are mostly due to wrong case, gender, person tags, and other unidentified issues.
+
+----- triple_id: bd57dd2b245 -----
+TRIPLE:     (Croatian)  --mentions-->  (football forward)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: Prediction vedran nikÅ ˛aiÄ ˘G ( born 5 may 1987 ) is a croatian football forward who is currently a free agent.
+
+----- triple_id: bb1ffa1621c -----
+TRIPLE:     (Features)  --extractedfrom-->  (Bollywood songs)
+PREDICATE DEFINITION: ? → AcademicPaper  |  Links an extracted entity to the academic paper it was extracted from.
+SOURCE SENTENCE: We extracted musical , psy-choacoustic and speech features from Bollywood songs for each artist in a spectral vector representation.
+
+----- triple_id: b9b83ba6b50 -----
+TRIPLE:     (training)  --uses-->  (placeholders such as [num-one], [num-two], etc.)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: During training we replace the numerical values in the input sentences with placeholders such as [num-one], [num-two], etc.
+
+----- triple_id: b176b4b29ec -----
+TRIPLE:     (Dropout)  --configures-->  (dropout rate 0.5)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: We apply- ing dropout rate 0.4 to the environmental dropout and 0.5 to the dropout layers which regularize the network.
+
+----- triple_id: b8a73c37c1d -----
+TRIPLE:     (Experiments)  --uses-->  (post-processed dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The post-processed dataset with cross-session task labels that we use for our experiments is publicly available.
+
+----- triple_id: bd80407be59 -----
+TRIPLE:     (Models)  --addresses-->  (paraphrases)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We note that these models are not sensitive to paraphrases between the table and text.
+
+----- triple_id: b679046c475 -----
+TRIPLE:     (Algorithm)  --uses-->  (gazetteer)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Given the small size of the available annotated dataset, to address this task we implemented a simple string matching algorithm that relies on a gazetteer containing a set of Twitter usernames and hashtags extracted from the training data, and a list of very common news agencies (e.g.
+
+----- triple_id: bbfcad65007 -----
+TRIPLE:     (NMT)  --addresses-->  (errors)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: It is now defacto to use subwords in NMT as with the better vocab cov- erage it enables the NMT models with excellent copying capability.
+
+----- triple_id: befc0b05786 -----
+TRIPLE:     (training)  --uses-->  (back-translation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: the model is fine- tuned using additional training data generated via back-translation
+
+----- triple_id: b0c2322a962 -----
+TRIPLE:     (training)  --uses-->  (synthetic data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Each experiment was performed by training the RC model on the synthetic data generated on the target domain corpus.
+
+----- triple_id: b55c4c47551 -----
+TRIPLE:     (BERT)  --trainedon-->  (document-level representation)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: Ling et al. (2020) trained BERT by predicting entities using the document-level representation.
+
+----- triple_id: b371a6e9326 -----
+TRIPLE:     (Experiments)  --uses-->  (Amazon EC2)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: All of the experiments in this work were performed on Amazon EC2 instances.
+
+----- triple_id: b0a0d8680bc -----
+TRIPLE:     (Finite State Automata)  --uses-->  (context-dependent rewrite rules)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Finite state automata can be used implement a cascade of context-dependent rewrite rules (e.g., "α goes to β in the context δ γ") similar to those used by linguists in writing phonological rules.
+
+----- triple_id: be969e9abab -----
+TRIPLE:     (Models)  --uses-->  (standard maximum entropy model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We trained all models with the OpenNLP toolkit using the standard maximum entropy model7.
+
+----- triple_id: ba10526f83c -----
+TRIPLE:     (Models)  --uses-->  (Features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Note that in higher-order models, we include the conjunction of all features that fire on a given segment si with those that fire on the adjacent segments
+
+----- triple_id: bc37920ea2d -----
+TRIPLE:     (entity)  --addresses-->  (polarity)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We find 110 of the 148 lemmas (74.3%) to have an inconsistent effect on an af- fected entity ( polarity / affected entity, or both) across their different senses.
+
+----- triple_id: be380d118f7 -----
+TRIPLE:     (Tagger)  --achieves-->  (substantially higher accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Our tagger achieves substantially higher accuracy than Gimpel et al.

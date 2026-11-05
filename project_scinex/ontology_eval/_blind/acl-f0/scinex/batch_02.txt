@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bd46f934bae -----
+TRIPLE:     (Search)  --addresses-->  (queries)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: This is because queries in the same search session are usually related to the same topic, as observed in previous studies .
+
+----- triple_id: bec7e7fd7c6 -----
+TRIPLE:     (semantic)  --addresses-->  (semantic change)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We propose three metrics for the automatic quan- tification of lexical semantic change using contex- tualised word representations .
+
+----- triple_id: b7474374a5b -----
+TRIPLE:     (Human Evaluation)  --evaluatedon-->  (WikiBio dataset)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We conduct a large-scale human evaluation of the outputs from 16 table-to-text models on 1100 examples from the WikiBio dataset
+
+----- triple_id: b5dc9e2966e -----
+TRIPLE:     (ELMo)  --uses-->  (static representations of words)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: • ELMo , a pretrained lan- guage model with contextual awareness. We use its static representations of words as the word embedding .
+
+----- triple_id: b238e9e9548 -----
+TRIPLE:     (BART)  --evaluatedon-->  (SQuAD dev set)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We trained QGen models on both BART- Large and GPT2-Medium , which have an equivalent number of parameters, 406M (BART) vs 350M (GPT2), and evaluated BLEU score of the generated question w.r.t. the ground truth question on the SQuAD dev set.
+
+----- triple_id: b6a11bdcd1e -----
+TRIPLE:     (Regression Model)  --trainedon-->  (Word Embeddings)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: Each regression model is trained on a representation formed by the affect lexicon features (including those provided by AffectiveTweets) and word embeddings.
+
+----- triple_id: b147d1b571e -----
+TRIPLE:     (Discourse)  --addresses-->  (Treebank)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The first annotates only in- tra–sentential attributions with an explicit source and a verb cue, the latter annotates attribution if no other discourse re- lation is present.
+
+----- triple_id: b929eebcf63 -----
+TRIPLE:     (SGD)  --uses-->  (stochastic gradient descent)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: the training process is thus to update c, ur, and Xr with the gradients passed from the loss function using stochastic gradient descent (SGD).
+
+----- triple_id: b0ba548214c -----
+TRIPLE:     (Models)  --addresses-->  (Common Sense Reasoning)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: These results underline the need for models that can combine common sense reasoning about the events within the story with an intuition about the intention of the narrator.
+
+----- triple_id: be289ef6b73 -----
+TRIPLE:     (Optimization)  --uses-->  (Algorithm)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: we perform gradient-based optimization on W and b (in Algorithm 1 line 5-8).
+
+----- triple_id: bbd757999ad -----
+TRIPLE:     (n-grams)  --addresses-->  (precision)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: When computing precision , we want to check what fraction of the n-grams in Gi n are correct.
+
+----- triple_id: b0e5e2e3c2f -----
+TRIPLE:     (Irish)  --addresses-->  (initial mutation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: However, a particular challenge with Irish (along with other Celtic languages ) is initial mu- tation, that is the changing of initial consonant by lenition, eclipsis or prefixing of a consonant to a word starting with a vowel.
+
+----- triple_id: bceab1eaea5 -----
+TRIPLE:     (Attention Mechanism)  --uses-->  (Sentences)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Chen and Bansal used an attention mechanism to extract sentences from the source document such that the summary would cover the important information in the source document.
+
+----- triple_id: b3569131526 -----
+TRIPLE:     (Datasets)  --mentions-->  (NarrativeQA)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: notable datasets include MCTest and NarrativeQA.
+
+----- triple_id: be0b36fe4d1 -----
+TRIPLE:     (definition)  --addresses-->  (out-of-sample reasoning for KGs)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We define out-of-sample reasoning for KGs as: Definition 1.
+
+----- triple_id: b22c3315805 -----
+TRIPLE:     (bidirectional)  --addresses-->  (generation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: including the generated question in the bidirectional encoder allows cross attention between the passage and generated question.
+
+----- triple_id: bc40b1f5f06 -----
+TRIPLE:     (NRC)  --addresses-->  (Sentiment)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: (2014) describes the NRC-Canada system which ranked first in three sentiment shared tasks: SemEval-2013 Task 2, SemEval-2014 Task 9, and SemEval- 2014 Task 4.
+
+----- triple_id: b2e36e87621 -----
+TRIPLE:     (semi-Markov Conditional Random Fields)  --uses-->  (morphological segmentation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We apply semi-Markov Conditional Random Fields (S-CRFs) to the problem of morphological segmentation.
+
+----- triple_id: b34921ed498 -----
+TRIPLE:     (Algorithm)  --produces-->  (1,000 clusters)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: The algorithm partitions words into a base set of 1,000 clusters, and induces a hierarchy among those 1,000 clusters with a series of greedy agglomerative merges that heuristically optimize the likelihood of a hidden Markov model with a one-class-per-lexical-type constraint.
+
+----- triple_id: b82672e592d -----
+TRIPLE:     (Preliminary Analysis)  --addresses-->  (Understanding)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: In a preliminary analysis aimed at understanding how this property affects performance, we compare words used 20The set annotated by humans is disjoint.
+
+----- triple_id: bce161a7fd0 -----
+TRIPLE:     (Alignment)  --uses-->  (image)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: For alignment , we input a caption to T and an image to V, extracting the pooled representations.
+
+----- triple_id: b9b21aa7728 -----
+TRIPLE:     (BERT Language Model)  --produces-->  (usage representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: we use the BERT language model to compute usage representations for each occurrence of these words.
+
+----- triple_id: ba7fddd5684 -----
+TRIPLE:     (Clustering)  --addresses-->  (Queries)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Unlike previous approaches of grouping together queries according to fixed time windows, and then clustering the queries within each time window separately , we take a more general approach of clus- tering the overall set of query vectors.
+
+----- triple_id: b5fb9b1b942 -----
+TRIPLE:     (Sentiment Analysis)  --addresses-->  (financial domain)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Sentiment analysis in financial domain offers more challenges
+
+----- triple_id: b058fd21f5f -----
+TRIPLE:     (training)  --achieves-->  (large gain in EM (3.8) and F1 (2.7))
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: In particular, when training the RC model with data from all domains + SQuAD training data (last row), there is a large gain in both EM (3.8) and F1 (2.7).

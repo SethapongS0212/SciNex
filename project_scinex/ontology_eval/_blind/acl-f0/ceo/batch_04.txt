@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b29b723d5a0 -----
+TRIPLE:     (Information)  --addresses-->  (word-level)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The information richness (Eq 5) is the multiplica- tion of the attribute-level and word-level richness of the descriptions towards the source tables .
+
+----- triple_id: bdbbe0b9057 -----
+TRIPLE:     (Models)  --evaluatedon-->  (ELMo)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: We evaluate our mod- els across three settings: (a) our event ordering model without including timex embeddings , (b) our event ordering model with masking of time tokens (replacing it with UNK tokens) and (c) our full model including timex embeddings . We evaluate the models using both GloVe and ELMo embeddings as input .
+
+----- triple_id: bc2e39666c4 -----
+TRIPLE:     (BPE)  --uses-->  (subtree)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we use the same POS tag and the same subtree of a word for its BPE segments
+
+----- triple_id: b3952e53b7a -----
+TRIPLE:     (Categories)  --addresses-->  (ECT-Sum corpus)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We evaluate and compare the summarization perfor- mance of a wide range of representative algorithms corresponding to various categories on the ECT- Sum corpus.
+
+----- triple_id: b0b7cd1b33d -----
+TRIPLE:     (semantic)  --uses-->  (word vectors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: when the semantic context used to learn the transformation matrix for the word vectors is restricted to similar queries within search sessions, the effectiveness improves further.
+
+----- triple_id: b4fddddaec1 -----
+TRIPLE:     (Novel Method)  --uses-->  (usage types)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We present a novel method that (1) exploits a pre-trained neural language model to obtain contextualised representations for every occurrence of a word of interest, (2) clusters these representations into usage types , and (3) measures change along time.
+
+----- triple_id: b66703a9788 -----
+TRIPLE:     (Word Embeddings)  --uses-->  (time embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Augmenting word embeddings with time embeddings increases the number of network parameters; however, additional experiments revealed that increasing the size of the GloVe embeddings in the basic temporal model did not lead to an improvement in performance.
+
+----- triple_id: b3251237787 -----
+TRIPLE:     (Sentence)  --uses-->  (nltk)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use nltk for word and sentence tokenization.
+
+----- triple_id: b2d2d61be7e -----
+TRIPLE:     (Score Function)  --uses-->  (DistMult)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Having the embeddings for v, r and u, we use a score function (e.g., DistMult) to compute the score for this triple being true.
+
+----- triple_id: bd02a87c1d5 -----
+TRIPLE:     (Information)  --addresses-->  (description)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The information rich- ness measures the ratio of covered information in the table by the description.
+
+----- triple_id: b13bb7b4416 -----
+TRIPLE:     (Word Vectors)  --uses-->  (semantic contexts)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Transformation of the word vectors leveraging the semantic contexts (i.e. our proposed method in Section 3) outperforms the clustering effectiveness obtained with the baseline approaches.
+
+----- triple_id: b324d40cbd6 -----
+TRIPLE:     (semantic)  --addresses-->  (similarities)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: our study is carried out using queries from a Web search log and hence it is reasonable to ex- pect that a web collection will provide better esti- mates of semantic similarities between the queries .
+
+----- triple_id: b58e1dccbdf -----
+TRIPLE:     (Entities)  --addresses-->  (complexity of attribution)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Another widespread assumption has limited the source of an attribution to be a NE (e.g. This weakens performance whenever non–named entities and/or anaphoric NPs are in- volved.
+
+----- triple_id: b011f02e3c0 -----
+TRIPLE:     (Images)  --uses-->  (preprocessing/data augmentations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use the following preprocessing/data augmentations on the images : resize to 224 × 224 pixels with a random crop, that has random scaling between 0.8 and 1.0 and aspect ratio between 0.75 and 1.3, along with a random horizontal flip.
+
+----- triple_id: bef5b292250 -----
+TRIPLE:     (Regression Model)  --trainedon-->  (Lexicon Features)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: Each regression model is trained on a representation formed by the affect lexicon features (including those provided by AffectiveTweets) and word embeddings.
+
+----- triple_id: b9a10ae80f0 -----
+TRIPLE:     (Machine Learning Methods)  --uses-->  (Recommendation Systems)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Therefore we are interested in using machine learning methods to build a recommendation system that can provide good similar artist recommendation even for relatively unknown artists.
+
+----- triple_id: b6216f2d304 -----
+TRIPLE:     (HotpotQA)  --addresses-->  (questions)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: What questions in HotpotQA are difficult for QFE?
+
+----- triple_id: b971a82a671 -----
+TRIPLE:     (word2vec)  --uses-->  (Gensim implementation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use the Word2vec framework in the Gensim implementation to generate the embedding spaces.
+
+----- triple_id: b4c203941ee -----
+TRIPLE:     (CRFs)  --addresses-->  (POS Tagging)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Karthik (2007) ap- ply linear-chain CRFs for POS tagging of Bengali , Hindi and Telugu
+
+----- triple_id: b9678469098 -----
+TRIPLE:     (Neural Machine Translation Architectures)  --uses-->  (nearest neighbors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In this work, we introduce an intrinsic way of comparing neural machine translation architectures by looking at the nearest neighbors of the encoder hidden states.
+
+----- triple_id: becca3d737e -----
+TRIPLE:     (Dialogue System)  --uses-->  (Twitter data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Banch and Li. proposed a model based on the vector space model and Nio et al. constructed a dialogue system that uses movie scripts and Twitter data.
+
+----- triple_id: b711f8a9b51 -----
+TRIPLE:     (embeddings)  --uses-->  (Wikipedia annotations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: the frequency of their entities in the Wikipedia annotations used to train the embeddings.
+
+----- triple_id: b509c8e1d33 -----
+TRIPLE:     (Experiments)  --addresses-->  (performance of ranking)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We conducted experiments to verify the performance of ranking given candidate utterances and given contexts.
+
+----- triple_id: b5d1e705ebf -----
+TRIPLE:     (CRF)  --comparesagainst-->  (S-CRF Inflectional Increments)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: First, we compare against the CRF model of Ruokolainen et al. (2013) and, second, we compare against the S-CRF Inflectional Increments.
+
+----- triple_id: b091513d8cf -----
+TRIPLE:     (Precision and Recall)  --uses-->  (generation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Next we discuss how to compute the precision and recall of the generation.
