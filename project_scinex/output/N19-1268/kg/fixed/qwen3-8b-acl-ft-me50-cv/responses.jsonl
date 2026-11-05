@@ -1,0 +1,28 @@
+{"para_id": 0, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 1, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 2, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 3, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 4, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 5, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 6, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 7, "raw": "{\"triples\": [{\"subject\": \"Encoder-Decoder Model\", \"predicate\": \"uses\", \"object\": \"Bi-LSTM\", \"object_type\": \"Method\", \"source_sentence\": \"For our base instruction-to- navigation translation agent , we implement an encoder-decoder model similar to Fried et al. The encoder is a bidi- rectional LSTM-RNN with an embedding layer: u1, u2, · · ·, uL = Bi-LSTM( ˆw1, · · ·, ˆwL) (3) where uj is the j-th word in the instruction with a length of L.\"}, {\"subject\": \"Softmax\", \"predicate\": \"uses\", \"object\": \"Alignment\", \"object_type\": \"Concept\", \"source_sentence\": \"The probability of moving to the k-th navigable viewpoint pt(at,k) is calculated as softmax of the alignment between the navigable viewpoint feature gt,k and the instruction-aware hidden output ˜ht.\"}]}", "n_tokens": 205, "truncated": false}
+{"para_id": 8, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 9, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 10, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 11, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 12, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 13, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 14, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 15, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 16, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 17, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 18, "raw": "{\"triples\": [{\"subject\": \"Back Translation\", \"predicate\": \"uses\", \"object\": \"Dropout\", \"object_type\": \"Method\", \"source_sentence\": \"For submitting to the leaderboard, we simply train our agent via back translation with environmental dropout on test unseen environments (see Sec.7.2).\"}]}", "n_tokens": 68, "truncated": false}
+{"para_id": 19, "raw": "{\"triples\": [{\"subject\": \"Back Translation\", \"predicate\": \"achieves\", \"object\": \"5.7% improvement\", \"object_type\": \"Metric\", \"source_sentence\": \"back translation with environmental dropout improves the best supervised model by 5.7%, where the improvement is 3 times more than the back translation without new environments.\"}]}", "n_tokens": 75, "truncated": false}
+{"para_id": 20, "raw": "{\"triples\": [{\"subject\": \"Algorithm\", \"predicate\": \"uses\", \"object\": \"beam search result\", \"object_type\": \"Other\", \"source_sentence\": \"The state-factored Dijkstra algorithm is used for the beam search result.\"}]}", "n_tokens": 55, "truncated": false}
+{"para_id": 21, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 22, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 23, "raw": "{\"triples\": [{\"subject\": \"Back Translation\", \"predicate\": \"achieves\", \"object\": \"46.5%\", \"object_type\": \"Metric\", \"source_sentence\": \"the back translation on the training environments only achieves 46.5%.\"}]}", "n_tokens": 58, "truncated": false}
+{"para_id": 24, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}
+{"para_id": 25, "raw": "{\"triples\": [{\"subject\": \"Back Translation\", \"predicate\": \"addresses\", \"object\": \"limited variety of environments\", \"object_type\": \"Concept\", \"source_sentence\": \"Here, we showed that the limited variety of environments is the bottleneck of back translation and we overcome it via 'environmental dropout' to generate new unseen environments.\"}]}", "n_tokens": 73, "truncated": false}
+{"para_id": 26, "raw": "{\"triples\": [{\"subject\": \"ResNet\", \"predicate\": \"uses\", \"object\": \"ImageNet\", \"object_type\": \"Dataset\", \"source_sentence\": \"We use ResNet-152 pretrained on the ImageNet to extract the 2048-dimensional image feature.\"}, {\"subject\": \"Back Translation\", \"predicate\": \"uses\", \"object\": \"Dropout\", \"object_type\": \"Method\", \"source_sentence\": \"The model is then fine-tuned by back translation with environmental dropout.\"}, {\"subject\": \"Reward Shaping\", \"predicate\": \"uses\", \"object\": \"direct reward\", \"object_type\": \"Other\", \"source_sentence\": \"We use the reward shaping : the direct reward rt at time step t is the change of the distance dt−1 −dt, supposing dt is the distance to the target position at time step t.\"}, {\"subject\": \"RMSProp\", \"predicate\": \"uses\", \"object\": \"learning rate 1e-4\", \"object_type\": \"Other\", \"source_sentence\": \"For optimizing the loss, we use RMSprop (as suggested in Mnih et al. (2016)) with a fixed learning rate 1e −4 and the batch size is 64.\"}]}", "n_tokens": 268, "truncated": false}
+{"para_id": 27, "raw": "{\"triples\": []}", "n_tokens": 7, "truncated": false}

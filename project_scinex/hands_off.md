@@ -89,6 +89,44 @@ last GPU step), restore the GPU settings; then handoff steps 1–3 (blind-judge 
 page, push), which need no GPU. Docs on `main`; code on `s38-prep`, pushed as
 its own branch, to merge once no `ft_train_qlora.py` call can happen for this run.
 
+### 38.5 Caps run finished; me50 picked; GPUs restored (20:41–21:00 server time)
+- **Run:** me50 lane done 20:19 (training + ft_gen 485.6 min), me60 lane 20:41, both rc=0; compare
+  20:41 → `/home/dev1/scinex_runs/acl_compare_caps.log`, `ft_runs/qwen3-8b-acl-f0/compare_caps.json`.
+  The thermal guard never intervened.
+- **GPUs restored at 20:42**, right after the compare: guard screen stopped, `-rgc` on both,
+  `-pl 575` (= default), `-pm 0`. Verified: persistence Disabled, power limit 575 W, max SM clock
+  3090 MHz on both. Nothing of ours is left running on the GPUs.
+- **`s38-prep` merged into `main`** (merge commit after the me60 lane's training finished):
+  `--share-system-prompt`, the entity audit and **`ft_overlap.py`** (new: per-paragraph student vs
+  teacher overlap, and with `--verdicts` the judged C1/C3/C4 split by shared vs teacher-empty
+  paragraph).
+- **Blind round `acl-f0-caps`** (seed 29, 50 per model and ontology; me50, me60, plus re-sampled base
+  and teacher as decoys; CEO 198 items, scinex 193; judged in session by claude-opus-5-5, key opened
+  only by `collect`). Results in **`results.md` Table 18**:
+
+  | | CEO cov. | CEO kept | CEO C4 | scinex cov. | scinex kept | scinex C4 |
+  |---|---|---|---|---|---|---|
+  | base | 74.5% | 2,363 | 17.0 | 77.1% | 2,469 | 16.0 |
+  | me30 (T17 round) | 43.8% | 670 | 51.0 | 35.6% | 548 | 61.0 |
+  | **me50** | **23.2%** | **407** | **58.0** | **11.4%** | **182** | **71.0** |
+  | me60 | 15.7% | 289 | 58.0 | 5.8% | 90 | 63.0 |
+  | teacher | 25.6% | 501 | 45.0 | 17.3% | 289 | 55.0 |
+
+- **Decision: me50** — coverage closest to the teacher's on both ontologies, ≥ teacher correctness
+  (C4 +13 [−2, +28] CEO, +16 [0, +31] scinex: not significant, so "at least as correct"). me60 adds
+  nothing. The cap trades volume for precision: kept × strict-C4 puts me30 first in absolute correct
+  triples (≈ 241 CEO / 230 scinex vs me50 155 / 102, teacher 130 / 121). On scinex the coverage match
+  lies between 30% and 50% (me50 undershoots, 11.4% vs 17.3%).
+- ⚠ **Judge drift between rounds:** same teacher, fresh sample, fresh session: CEO C4 45 (was 49),
+  scinex 55 (was 62), CEO C3 18 (was 30). Compare models within a round only; me30's C1/C3/C4 come
+  from the other round.
+- Overlap (`ft_overlap.py`): me50 CEO paragraphs both 126 / only teacher 125 / only student 101 /
+  neither 628; 42% of its CEO triples (63% scinex) sit on teacher-empty paragraphs. Judged C4 shared
+  vs teacher-empty: me50 CEO 63.8 (n=29) vs 50.0 (n=21), scinex 75.0 (20) vs 68.3 (30); me60 CEO 74.2
+  (31) vs 31.6 (19), scinex 57.7 (26) vs 68.8 (24). Files:
+  `ontology_eval/_blind/acl-f0-caps/{ceo,scinex}/overlap_<slug>.json`.
+- Still open: the GPU smoke test of `--share-system-prompt` (command in `HANDOFF_NEXT_SESSION.md`).
+
 ## Session 37 — Linux box with 2× RTX 5090; ⛔ finetuning corpus switched to the ACL ANTHOLOGY papers + FIXED extractor; gpt-oss-20b teacher run launched (2026-10-26/27)
 
 > User: *"download the github https://github.com/SethapongS0212/SciNex to envsam and overwrite it over

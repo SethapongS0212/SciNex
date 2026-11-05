@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "six standard ED datasets",
+    "object_type": "Dataset",
+    "source_sentence": "We conducted extensive experiments using six standard ED datasets , i.e., AIDA-CoNLL, MSNBC, AQUAINT , ACE2004, WNED-WIKI, and WNED-CWEB.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "document-level representation",
+    "object_type": "Other",
+    "source_sentence": "Ling et al. (2020) trained BERT by predicting entities using the document-level representation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "referent entity titles",
+    "object_type": "Other",
+    "source_sentence": "(2021) addressed ED by training BART to generate referent entity titles of target mentions in an autoregressive manner.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "Longformer",
+    "object_type": "Other",
+    "source_sentence": "(2022) formulated ED as a text extraction problem; they fed the document and candidate entity titles to BART and Longformer and disambiguated a mention in the document by extracting the referent entity title of the mention.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "local contextual information",
+    "object_type": "Other",
+    "source_sentence": "However, unlike our model, these models addressed the task based only on local contextual information.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "entity embeddings",
+    "object_type": "Other",
+    "source_sentence": "Recent studies have proposed Transformer-based models that treat entities as input tokens to enrich their expressiveness using additional information contained in the entity embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "WordPiece",
+    "object_type": "Method",
+    "source_sentence": "we tokenize the document text using the BERT's wordpiece tokenizer",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "All models listed in Table 2 use Wikipedia as training data which partly overlap with the WIKI dataset.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "4.1 Results"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "CoNLL dataset",
+    "object_type": "Dataset",
+    "source_sentence": "The fine-tuning on the CoNLL dataset significantly improves the performance on this dataset (Table 1).",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "4.1 Results"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "ED datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Our extensive experiments on a wide range of ED datasets demonstrate its effectiveness.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "5 Conclusion and Future Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "tokenized input text",
+    "object_type": "Other",
+    "source_sentence": "The input text is tokenized using BERT's tokenizer with its vocabulary consisting of Vw = 30, 000 words.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "A Details of Proposed Model"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "parameters",
+    "object_type": "Other",
+    "source_sentence": "To reduce the training time, the parameters that are shared with BERT are initialized using BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "A Details of Proposed Model"
+  },
+  {
+    "subject": "Transformers",
+    "predicate": "uses",
+    "object": "PyTorch",
+    "object_type": "Other",
+    "source_sentence": "We implement the model using PyTorch and Hugging Face Transformers , and the training takes approximately ten days using eight Tesla V100 GPUs.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "A Details of Proposed Model"
+  },
+  {
+    "subject": "Transformers",
+    "predicate": "uses",
+    "object": "Hugging Face Transformers",
+    "object_type": "Other",
+    "source_sentence": "We implement the model using PyTorch and Hugging Face Transformers , and the training takes approximately ten days using eight Tesla V100 GPUs.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "A Details of Proposed Model"
+  }
+]

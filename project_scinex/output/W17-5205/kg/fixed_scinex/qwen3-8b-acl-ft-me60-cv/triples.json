@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "Random Forest",
+    "predicate": "uses",
+    "object": "representation formed by concatenating three vectors",
+    "object_type": "Other",
+    "source_sentence": "IMS applies a random forest regression model to a representation formed by concatenating three vectors: 1. a feature vector drawn from existing affect lexicons, 2. a feature vector drawn from expanded affect lexicons, and 3. the output of a neural network.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.4 IMS: Rank"
+  },
+  {
+    "subject": "Lexicons",
+    "predicate": "uses",
+    "object": "AffectiveTweets package",
+    "object_type": "Other",
+    "source_sentence": "The first vector is obtained using the lexicons implemented in the AffectiveTweets package.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.4 IMS: Rank"
+  },
+  {
+    "subject": "Lexicons",
+    "predicate": "uses",
+    "object": "feed-forward neural networks",
+    "object_type": "Other",
+    "source_sentence": "The second is based on an extended lexicons built from feed-forward neural networks trained on word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.4 IMS: Rank"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "CNN and LSTM layers",
+    "object_type": "Other",
+    "source_sentence": "The third vector is taken from the output of neural network that combines CNN and LSTM layers.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.4 IMS: Rank"
+  },
+  {
+    "subject": "Regression Model",
+    "predicate": "trainedon",
+    "object": "representation formed by the affect lexicon features",
+    "object_type": "Other",
+    "source_sentence": "Each regression model is trained on a representation formed by the affect lexicon features (including those provided by AffectiveTweets) and word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.5 SeerNet: Rank"
+  }
+]

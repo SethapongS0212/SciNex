@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "BiLSTM",
+    "predicate": "produces",
+    "object": "contextualized embeddings",
+    "object_type": "Concept",
+    "source_sentence": "A biLSTM is used to obtain contextualized embeddings hk for each token xk in the two sentences, as shown in Figure 1.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "Dependency Parser",
+    "predicate": "produces",
+    "object": "dependency paths",
+    "object_type": "Concept",
+    "source_sentence": "We use the Stanford Dependency Parser to extract the dependency paths for both events to their lowest common ancestor.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "produces",
+    "object": "time embeddings",
+    "object_type": "Other",
+    "source_sentence": "We obtain time embeddings h1 and h2 for timex t1 and t2 by averaging the outputs of biLSTM layer.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2.1 Time Embeddings"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "output probabilities",
+    "object_type": "Other",
+    "source_sentence": "This is followed by a softmax layer that produces the output probabilities for the three label classes (before, after and simultaneous), denoting the temporal relation between the two time expressions.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2.1 Time Embeddings"
+  }
+]

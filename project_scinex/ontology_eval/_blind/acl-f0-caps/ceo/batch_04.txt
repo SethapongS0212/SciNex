@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bf240bbb4c6 -----
+TRIPLE:     (Annotation)  --addresses-->  (Categories)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The vast majority of emotion annotation work provides discrete binary labels to the text instances (joy–nojoy, fear–nofear, and so on).
+
+----- triple_id: b895f51f406 -----
+TRIPLE:     (Models)  --evaluatedon-->  (Datasets)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Through experiments on two datasets, we show that incorporating these embeddings in deep temporal models leads to an improvement in the overall temporal classification performance.
+
+----- triple_id: b765b61dda2 -----
+TRIPLE:     (training)  --produces-->  (synthetic data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: All training table records are used to generate synthetic data.
+
+----- triple_id: b36b531cdf1 -----
+TRIPLE:     (Seq2seq)  --uses-->  (recurrent neural network encoder and decoder)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: sequence to sequence autoencoder (seq2seq) which captures temporal information using a recurrent neural network encoder and decoder.
+
+----- triple_id: b274cdd088c -----
+TRIPLE:     (training)  --achieves-->  (in-sample link prediction)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The results in Table 3 indicate that training with our proposed algorithm does not deteriorate the performance for in-sample link prediction.
+
+----- triple_id: b4f57e8dcaf -----
+TRIPLE:     (word2vec)  --uses-->  (Distributed Representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In addition, Word2Vec distributed representations were utilized in the model building.
+
+----- triple_id: b5a3c60414d -----
+TRIPLE:     (analysis)  --addresses-->  (impact of hashtag words on emotion intensities)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Not in- cluded in this summary are: (a) experiments show- ing marked similarities between emotion pairs in terms of how they manifest in language, (b) how training data for one emotion can be used to im- prove prediction performance for a different emo- tion, and (c) an analysis of the impact of hashtag words on emotion intensities.
+
+----- triple_id: bf63a3e9b50 -----
+TRIPLE:     (training)  --uses-->  (humming data from the TCS corpus)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For training note models, we have used humming data from the IOACAS corpus 8 and TCS corpus 9 with additional humming data collected by us.
+
+----- triple_id: bd029e8a45f -----
+TRIPLE:     (Models)  --evaluatedon-->  (two popular tweet datasets)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: We test our models on two popular tweet datasets , one labelled manually and the other via distant supervision.
+
+----- triple_id: b24aa78c489 -----
+TRIPLE:     (Softmax)  --uses-->  (entities)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: applying softmax over all entities : ˆy = softmax(Bme + bo)
+
+----- triple_id: b3cd5c6d05a -----
+TRIPLE:     (WordNet)  --uses-->  (30-dimensional WordNet features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we used 30-dimensional WordNet features and five-dimensional number embeddings.
+
+----- triple_id: b8eaa5761e2 -----
+TRIPLE:     (Expectation Maximization)  --uses-->  (different initialisation values)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For each value of K, we execute 10 iterations of Expectation Maximization to alleviate the influence of different initialisation values.
+
+----- triple_id: be1bfe73a4e -----
+TRIPLE:     (Narrative)  --addresses-->  (advice-seeking goal)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We en- vision that (intradiegetic) narrative understanding could help identify the components of the narra- tive that are most relevant to the advice -seeking goal.
+
+----- triple_id: bf22c70726e -----
+TRIPLE:     (RNN)  --uses-->  (RNN encoder)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: our NUR model utilizes an RNN encoder.
+
+----- triple_id: b11c3b7ea72 -----
+TRIPLE:     (Reddit Posts)  --splitfrom-->  (Pushshift API)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: We start from an existing collection of Reddit posts which we supplement with The Baumgartner Reddit Corpus retrieved via Pushshift API on Nov.
+
+----- triple_id: b6fc60f8ddf -----
+TRIPLE:     (Word Embedding)  --trainedon-->  (size 256)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: The word embedding is trained from scratch with size 256 and the dimension of the action em- bedding is 64.
+
+----- triple_id: b1662e939bf -----
+TRIPLE:     (Matching)  --uses-->  (Bi-RNN)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The Matching Layer encodes C2, Q2 as matching vectors C3 ∈Rlw×dc by using bi-directional attention , a Bi-RNN, and self-attention.
+
+----- triple_id: b059906f7b6 -----
+TRIPLE:     (Experiments)  --evaluatedon-->  (AOL query log)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Our experiments on the AOL query log indicate that the proposed temporal and tempo-lexical query embedding method significantly out- perform the baseline word2vec embedding.
+
+----- triple_id: b4836c55559 -----
+TRIPLE:     (Context)  --uses-->  (bi-directional RNN)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The Context Layer encodes C1, Q1 as contextual vectors C2 ∈Rlw×2dc, Q2 ∈Rmw×2dc by using a bi-directional RNN (Bi-RNN), where dc is the output size of a uni-directional RNN.
+
+----- triple_id: b29d9b31a34 -----
+TRIPLE:     (Statistical Significance)  --addresses-->  (evaluation scores)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: To obtain statistical significance for the averages, we calculate a 99% confidence interval (CI) to confirm that observed differences in the averages of different model scores are significant.
+
+----- triple_id: b20e2c6c62c -----
+TRIPLE:     (BERT)  --uses-->  (BERT)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: BERTScore aligns the generated and target summaries on a token-level and uses BERT to compute their similarity scores.
+
+----- triple_id: b6a1ff8f864 -----
+TRIPLE:     (evaluate)  --addresses-->  (effectiveness)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In order to evaluate the effectiveness of our auto- matic term recognition approach we evaluated the accuracy of the extraction in various settings.
+
+----- triple_id: be011c04bb1 -----
+TRIPLE:     (retrieval)  --uses-->  (note-based linear scaling (NLS))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The retrieval method used is similar to Yang et al. It mainly uses note-based linear scaling (NLS) and note-based recursive alignment (NRA).
+
+----- triple_id: bf68ad40523 -----
+TRIPLE:     (dependency-based)  --addresses-->  (this problem)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: To address this problem, the dependency-based embedding model is proposed to treat a word through separate ones, e.g., 'food@dobj' and 'food@nsubj', under different syntactic relations, with the skip-gram model being used to train the final embeddings.
+
+----- triple_id: b24ed6da126 -----
+TRIPLE:     (Twitter)  --addresses-->  (categories)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We merged many of Lynn's categories into this category as they were specific to Twitter, e.g., Lynn has two tags for hash- tags.

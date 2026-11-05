@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Deep Learning Method",
+    "predicate": "uses",
+    "object": "patterns",
+    "object_type": "Concept",
+    "source_sentence": "This deep learning method allows us to learn the patterns present in the humming data and create a model that can detect the notes in a humming query.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "1. Introduction"
+  },
+  {
+    "subject": "Machine Learning Methods",
+    "predicate": "uses",
+    "object": "recommendation system",
+    "object_type": "Model",
+    "source_sentence": "Therefore we are interested in using machine learning methods to build a recommendation system that can provide good similar artist recommendation even for relatively unknown artists.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "1. Introduction"
+  },
+  {
+    "subject": "Hidden Markov Model",
+    "predicate": "addresses",
+    "object": "note transcription",
+    "object_type": "Task",
+    "source_sentence": "Hidden Markov model (HMM) is one of the common methods that have been used for note transcription (Shih et al., 2002; Shih et al., 2003; Shifrin et al., 2002; Ryyn¨anen and Klapuri, 2004).",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "2. Previous Work"
+  },
+  {
+    "subject": "HMM",
+    "predicate": "uses",
+    "object": "monophone models",
+    "object_type": "Model",
+    "source_sentence": "We use 3-state HMM monophone models to train each of the notes and a single-state HMM to train the silence model.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "4.2. Candidate Melody Retrieval"
+  },
+  {
+    "subject": "HMM",
+    "predicate": "uses",
+    "object": "silence model",
+    "object_type": "Model",
+    "source_sentence": "We use 3-state HMM monophone models to train each of the notes and a single-state HMM to train the silence model.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "4.2. Candidate Melody Retrieval"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "greedy layer-wise supervised training method",
+    "object_type": "Method",
+    "source_sentence": "The extracted features are then used to train the models by using the greedy layer-wise supervised training method, which takes the extracted features as input and uses three hidden layers for training, which was found to be the optimal number of layers for this task.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "4.2. Candidate Melody Retrieval"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "three hidden layers",
+    "object_type": "Other",
+    "source_sentence": "The extracted features are then used to train the models by using the greedy layer-wise supervised training method, which takes the extracted features as input and uses three hidden layers for training, which was found to be the optimal number of layers for this task.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "4.2. Candidate Melody Retrieval"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "note-based linear scaling (NLS)",
+    "object_type": "Method",
+    "source_sentence": "The retrieval method used is similar to Yang et al. It mainly uses note-based linear scaling (NLS) and note-based recursive alignment (NRA).",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "4.2. Candidate Melody Retrieval"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "note-based recursive alignment (NRA)",
+    "object_type": "Method",
+    "source_sentence": "The retrieval method used is similar to Yang et al. It mainly uses note-based linear scaling (NLS) and note-based recursive alignment (NRA).",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "4.2. Candidate Melody Retrieval"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "different scale factors",
+    "object_type": "Other",
+    "source_sentence": "The note based linear scaling algorithm basically uses different scale factors to stretch and contract the humming query input.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "4.2. Candidate Melody Retrieval"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "ranked list of top 20 songs",
+    "object_type": "Other",
+    "source_sentence": "The retrieval method is used to generate a ranked list of top 20 songs most similar to the query.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "4.2. Candidate Melody Retrieval"
+  },
+  {
+    "subject": "Logistic Regression",
+    "predicate": "uses",
+    "object": "stochastic gradient descent",
+    "object_type": "Method",
+    "source_sentence": "We use logistic regression to train the model and update the weights with the stochastic gradient descent.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "5.5. Learning Feature Weights"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "humming data from the IOACAS corpus",
+    "object_type": "Dataset",
+    "source_sentence": "For training note models, we have used humming data from the IOACAS corpus 8 and TCS corpus 9 with additional humming data collected by us.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "6. Experiments and Results 6.1. Results for Humming Recognition"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "TCS corpus",
+    "object_type": "Dataset",
+    "source_sentence": "For training note models, we have used humming data from the IOACAS corpus 8 and TCS corpus 9 with additional humming data collected by us.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "6. Experiments and Results 6.1. Results for Humming Recognition"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "additional humming data collected by us",
+    "object_type": "Dataset",
+    "source_sentence": "For training note models, we have used humming data from the IOACAS corpus 8 and TCS corpus 9 with additional humming data collected by us.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "6. Experiments and Results 6.1. Results for Humming Recognition"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "transcription system",
+    "object_type": "Model",
+    "source_sentence": "We have currently trained the transcription system on a relatively small dataset, and we believe that using additional training data can improve our overall transcription accuracy and the retrieval accuracy.",
+    "extraction_mode": "fixed",
+    "paper": "L16-1312",
+    "title": "A Machine Learning based Music Retrieval and Recommendation System",
+    "section": "6. Experiments and Results 6.1. Results for Humming Recognition"
+  }
+]

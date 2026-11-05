@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b47b01c1d6c -----
+TRIPLE:     (Evaluation)  --uses-->  (official evaluation script)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The official evaluation script (which calculates correlations using both metrics and also acts as a format checker) was made avail- able along with the training and development data well in advance.
+
+----- triple_id: b5d644e25e2 -----
+TRIPLE:     (Logical Inference)  --addresses-->  (Textual Entailment)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Applying logical inference can play a role in tasks surrounding NLG (e.g., summarisation, question answering, or textual entailment), but also dedicated components of NLG systems, such as gen- erating definite descriptions, which requires check- ing contextual restrictions .
+
+----- triple_id: b809515705c -----
+TRIPLE:     (training)  --achieves-->  (in-sample link prediction)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The results in Table 3 indicate that training with our proposed algorithm does not deteriorate the performance for in-sample link prediction.
+
+----- triple_id: bc2c25bbb6f -----
+TRIPLE:     (word2vec)  --addresses-->  (keyword-based search queries)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: In the context of our empirical study, we aim to learn word vector embedding from a query log, where each document in the 'word2vec' terminology refers to a single query .
+
+----- triple_id: b61b6d79e46 -----
+TRIPLE:     (supervised)  --addresses-->  (methods)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We look first at work on unsupervised task extraction and then consider work on supervised methods , and final briefly consider a study introducing a query embedding method.
+
+----- triple_id: b4249eab89a -----
+TRIPLE:     (BERT Language Model)  --trainedon-->  (English text passages extracted from Wikipedia)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence predic- tion, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).
+
+----- triple_id: b2f743d9f34 -----
+TRIPLE:     (Summaries)  --uses-->  (SummaC)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We used the official implementation21 of SummaC to obtain the scores for all model-generated summaries.
+
+----- triple_id: b2ea81c79a3 -----
+TRIPLE:     (Words)  --addresses-->  (information)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: words, using relative information between a vec- tor representation and targeted ablations of itself allows for inferences to be made on where informa- tion is encoded in embeddings .
+
+----- triple_id: bbacf532303 -----
+TRIPLE:     (word2vec)  --trainedon-->  (Wiki corpus)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: We obtained these scores by training a word2vec model on the Wiki corpus.
+
+----- triple_id: bfd2713ab77 -----
+TRIPLE:     (Experiments)  --uses-->  (post-processed dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The post-processed dataset with cross-session task labels that we use for our experiments is publicly available.
+
+----- triple_id: bffecd2c118 -----
+TRIPLE:     (Algorithm)  --evaluates-->  (not using or only using the scorer)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  Links an evaluation metric to the experimental result it quantitatively assesses
+SOURCE SENTENCE: We further ex- plore the effects of not using or only using the scorer in Algorithm 1.
+
+----- triple_id: b655105e3e6 -----
+TRIPLE:     (POS Tag)  --uses-->  (parse)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We POS tag and parse our corpus prior to applying BPE segmentation.
+
+----- triple_id: b0f36158bb3 -----
+TRIPLE:     (BART)  --uses-->  (denoising autoencoder)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: BART introduces a denoising autoencoder for pre-training sequence to sequence tasks including summarization.
+
+----- triple_id: b726e36d290 -----
+TRIPLE:     (LSTM)  --uses-->  (context)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use two LSTM layers to model the relevant context for both directions of the target word.
+
+----- triple_id: be1bba1f392 -----
+TRIPLE:     (Supervised Approach)  --addresses-->  (segmenting queries into task hierarchies)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: A supervised approach for automatically segment- ing queries into task hierarchies was proposed in .
+
+----- triple_id: bb81bdb424f -----
+TRIPLE:     (AdaGrad)  --uses-->  (optimizer)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We implemented other models and baselines in PyTorch and used the AdaGrad optimizer.
+
+----- triple_id: bdcc0017c8b -----
+TRIPLE:     (LSTM)  --uses-->  (character embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use LSTM-based character embeddings, and experiment with both wide and narrow embedding window.
+
+----- triple_id: b76cbfec8d2 -----
+TRIPLE:     (Information Extraction)  --uses-->  (training summary)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use an information extraction (IE) system to extract the number of relations of each training summary.
+
+----- triple_id: b2abea12cda -----
+TRIPLE:     (Models)  --evaluatedon-->  (two popular tweet datasets)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We test our models on two popular tweet datasets , one labelled manually and the other via distant supervision.
+
+----- triple_id: bda8e03745a -----
+TRIPLE:     (Word Embedding)  --addresses-->  (larger semantic contexts)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: To address this problem, we propose a method of word embedding that is able to capture larger semantic contexts for better estimation of the word vectors.
+
+----- triple_id: bf387f7f563 -----
+TRIPLE:     (Dialogue)  --addresses-->  (Context)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: For our ranking model, we first define sequences of utterances from the beginning of a dialogue to a certain point of time in context c = (u1, u2,..., ul)
+
+----- triple_id: b0abd6db054 -----
+TRIPLE:     (Models)  --achievesresult-->  (nearly 50%)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: The language only models achieve nearly 50%, suggesting that despite the entropy filtering in Das et al. (2018a) each question has one answer that is as likely as all other answers combined.
+
+----- triple_id: b0a464224f3 -----
+TRIPLE:     (Attention)  --achieves-->  (2.04/1.32 BLEU/ROUGE increases on the WB-filter dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The proposed force- attention module achieves 1.11/0.98 and 2.04/1.32 BLEU/ROUGE increases on the WIKIBIO and WB-filter datasets , respectively.
+
+----- triple_id: ba02eca657b -----
+TRIPLE:     (Automatic evaluation)  --uses-->  (BLEU)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: For table-to-text generation, automatic evaluation has largely relied on BLEU and ROUGE.
+
+----- triple_id: bd28d37005d -----
+TRIPLE:     (ADAM)  --uses-->  (parameters)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use Adam to optimize parameters and we stop the training when we find the best result in the validation set.

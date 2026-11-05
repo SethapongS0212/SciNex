@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b3b12f5f324 -----
+TRIPLE:     (Dependency Parser)  --uses-->  (dependency paths)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use the Stanford Dependency Parser to extract the dependency paths for both events to their lowest common ancestor.
+
+----- triple_id: bf33a8a43e8 -----
+TRIPLE:     (BPE)  --uses-->  (subword segmentation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use a shared vocabulary BPE Model for subword segmentation, with a code of 32000 merge operations.
+
+----- triple_id: b6887001fa1 -----
+TRIPLE:     (Enhanced Transformer Model)  --achieves-->  (content selection precision)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Experimental results have shown that our enhanced transformer model outperforms current state-of-the-art system on BLEU, content selection precision and content ordering metics.
+
+----- triple_id: bf999a01d3f -----
+TRIPLE:     (Reddit Posts)  --splitfrom-->  (Nov.)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: We start from an existing collection of Reddit posts which we supplement with The Baumgartner Reddit Corpus retrieved via Pushshift API on Nov.
+
+----- triple_id: b9fb4f0b5af -----
+TRIPLE:     (BART)  --achieves-->  (18.31 BLEU)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: BART and GPT2 achieved 21.29 and 18.31 BLEU, respectively.
+
+----- triple_id: b9b3b457219 -----
+TRIPLE:     (Models)  --uses-->  (WMT15 parallel training data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We train our models for two directions, namely English-German and German-English, both of which use the WMT15 parallel training data.
+
+----- triple_id: b8f38a94477 -----
+TRIPLE:     (OntoNotes)  --addresses-->  (word senses)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: A notable exception is OntoNotes , combining syntax (Penn Tree- bank style), predicate argument structure (based on PropBank), word senses, and coreference.
+
+----- triple_id: b4d9b5fb742 -----
+TRIPLE:     (MWE)  --comparesagainst-->  (ELMo)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: It is observed that that MWE outperforms ELMo and achieves comparable results with BERT with smaller embedding dimension and much less training complexities.
+
+----- triple_id: bf8d46e2eb1 -----
+TRIPLE:     (Features)  --uses-->  (external resources)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Features were drawn both from the training data as well as from external resources such as large tweet corpora and affect lexicons.
+
+----- triple_id: b0c364d0890 -----
+TRIPLE:     (RNN)  --produces-->  (Features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: The proposed using limited context and MSE follow this, suggesting that utterance encoding by RNN is effective to extract features for ranking.
+
+----- triple_id: b4dba30ff1f -----
+TRIPLE:     (Tagger)  --trainedon-->  (150,000 utterances of child-directed speech)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: The tagger was trained on a corpus of approximately 150,000 utterances of child-directed speech annotated with a 39-tag set comparable to the familiar PTB tagset.
+
+----- triple_id: b592ad1822d -----
+TRIPLE:     (Sequence)  --uses-->  (Input)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Next, the question is concatenated with the input context and the resulting sequence is given as input to the Enc-Dec, which finally generates the answer a ∼p(a|q, c), (Step 2).
+
+----- triple_id: b02015ecd02 -----
+TRIPLE:     (Experiments)  --uses-->  (10 established probing task datasets)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In our experiments we use 10 established probing task datasets for the English language introduced by Conneau et al.
+
+----- triple_id: b11f928fd92 -----
+TRIPLE:     (Models)  --addresses-->  (local contextual information)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: However, unlike our model, these models addressed the task based only on local contextual information.
+
+----- triple_id: bb4fe29684d -----
+TRIPLE:     (training)  --uses-->  (top 5 samples)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: When training the RC model we only used the top 5 samples based on LM score per each pas- sage.
+
+----- triple_id: bf52f8eea0d -----
+TRIPLE:     (POS tagger)  --uses-->  (Features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Our POS tagger can make use of any number of possibly overlapping features.
+
+----- triple_id: b74f657841d -----
+TRIPLE:     (Attention Mechanism)  --uses-->  (attribute information)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: (2018) proposed a structure-aware model using a modified LSTM unit and a specific attention mechanism to incorporate the attribute information.
+
+----- triple_id: bf961bc4173 -----
+TRIPLE:     (Time Expressions)  --uses-->  (generic templates)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use generic templates for time expressions to generate training data for the timex model.
+
+----- triple_id: b6986a75d67 -----
+TRIPLE:     (Random Forest)  --uses-->  (features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we applied Random Forest to perform humor recognition by using the following two groups of features.
+
+----- triple_id: b0c032687d9 -----
+TRIPLE:     (Word Vectors)  --achieves-->  (effective task clusters)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: This suggests that optimally trained word vectors can produce effective task clusters without the use of external collections in contextualizing the queries.
+
+----- triple_id: b9b13cfd8d1 -----
+TRIPLE:     (BLEU)  --uses-->  (Moses)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: BLEU and TER scores are computed with tokenized lower-cased output and references using the "evaluater" binary from Moses.
+
+----- triple_id: be4828df4e5 -----
+TRIPLE:     (Entities)  --addresses-->  (complexity of attribution)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Another widespread assumption has limited the source of an attribution to be a NE (e.g. This weakens performance whenever non–named entities and/or anaphoric NPs are in- volved.
+
+----- triple_id: b053a15974b -----
+TRIPLE:     (Multi-task Learning)  --uses-->  (bidirectional GRU)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Two encoders are employed in our multi-task learning framework. One is for the source text encoding (i.e., "Encoder1" in Figure 2) and the other is for retrieved keyphrases encoding (i.e., "Encoder2" in Figure 2). Both of them employ a bidirectional GRU layer to obtain a context-aware representation of each word:
+
+----- triple_id: b9123903fd4 -----
+TRIPLE:     (Features)  --uses-->  (affect lexicons)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Features were drawn both from the training data as well as from external resources such as large tweet corpora and affect lexicons.
+
+----- triple_id: b32b393fc7a -----
+TRIPLE:     (RNN)  --uses-->  (relation classification)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: (2015a,b) employed CNN or RNN on relation classification.

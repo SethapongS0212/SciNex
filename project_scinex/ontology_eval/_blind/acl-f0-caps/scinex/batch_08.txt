@@ -1,0 +1,92 @@
+
+Grade the following 18 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b83f5187246 -----
+TRIPLE:     (Models)  --achieves-->  (higher recall value)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Not surprisingly, our models recall more triplets and achieve higher recall value.
+
+----- triple_id: b6141248cfd -----
+TRIPLE:     (Neural Network)  --uses-->  (classifier)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: In our experiments, we use a fully connected neural network for our classifier.
+
+----- triple_id: be02a61cfff -----
+TRIPLE:     (Adaptor Grammars)  --uses-->  (unsupervised morphological segmentation of Tamil)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Kumar et al. (2015) applied adaptor grammars to unsupervised morphological segmentation of Kannada , Malayalam and Tamil.
+
+----- triple_id: ba4baf39426 -----
+TRIPLE:     (bidirectional)  --addresses-->  (generation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: including the generated question in the bidirectional encoder allows cross attention between the passage and generated question.
+
+----- triple_id: b28054227c8 -----
+TRIPLE:     (Multi-task Learning)  --addresses-->  (keyphrase generation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: First, an end-to-end multi-task learning framework is introduced, which not only combines the keyphrase extraction and generation but also leverages the retrieved keyphrases from similar documents to guide the generation process.
+
+----- triple_id: b0a0d27494a -----
+TRIPLE:     (Softmax)  --produces-->  (output probabilities)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: This is followed by a softmax layer that produces the output probabilities for the three label classes (before, after and simultaneous), denoting the temporal relation between the two time expressions.
+
+----- triple_id: b068985613f -----
+TRIPLE:     (Multi-task Learning)  --addresses-->  (generate keyphrases word by word with external knowledge)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We propose a multi-task learning framework which simultaneously learns to extract keyphrases from the source text and generate keyphrases word by word with external knowledge.
+
+----- triple_id: b978ad5c128 -----
+TRIPLE:     (RNNs)  --uses-->  (CNN models)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Bert- ero and Fung (2016a) formulated the recognition to be a sequential labeling task and utilized Re- current Neural Networks (RNNs) on top of CNN models (serv- ing as feature extractors) to utilize context infor- mation among utterances.
+
+----- triple_id: b91af192539 -----
+TRIPLE:     (Models)  --comparesagainst-->  (GloVe)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Finally, we use the vanilla BERT and GloVe sentence embeddings in their respective evaluations as vanilla baselines against which the models with noise are compared.
+
+----- triple_id: bfd4643f6ff -----
+TRIPLE:     (Context)  --mentions-->  (candidate utterances)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: They were first shown a context and 10 candidate utterances, including how KELDIC actually replied on Twitter, as well as labels for each candidate.
+
+----- triple_id: bb8bc91ff21 -----
+TRIPLE:     (Models)  --addresses-->  (random sentence encoders)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Wieting and Kiela (2019) discovered that random sentence encoders achieve competitive per- formance as compared to larger models that in- volve expensive training and tuning.
+
+----- triple_id: b2139e07636 -----
+TRIPLE:     (Evaluation)  --addresses-->  (object)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: In combination with the attitude towards the ob- ject this yields the evaluation of the state that re- sults from the event .
+
+----- triple_id: b6e7b39c676 -----
+TRIPLE:     (Datasets)  --mentions-->  (NarrativeQA)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: notable datasets include MCTest and NarrativeQA.
+
+----- triple_id: bd6443dd2d0 -----
+TRIPLE:     (NRC)  --achieves-->  (first place in SemEval-2014 Task 9)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: (2014) describes the NRC-Canada system which ranked first in three sentiment shared tasks: SemEval-2013 Task 2, SemEval-2014 Task 9, and SemEval- 2014 Task 4.
+
+----- triple_id: bd21b745a6a -----
+TRIPLE:     (Convolutional Neural Networks)  --uses-->  (character embedding vectors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use convolutional neural networks (CNN) and LSTM-based architectures for the character embedding vectors vci, both applied to the character sequence within each word separately.
+
+----- triple_id: b8125d8c1ed -----
+TRIPLE:     (Experiments)  --addresses-->  (multimodal speaker traits recognition)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: To evaluate the generalization of our models, we perform experiments on multimodal speaker traits recognition and multimodal sentiment analysis.
+
+----- triple_id: b1c1b0a0f2c -----
+TRIPLE:     (BERT Language Model)  --uses-->  (usage representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: First, given a diachronic corpus and a list of words of interest, we use the BERT language model to compute usage representations for each occurrence of these words.
+
+----- triple_id: bc1ba34f8bc -----
+TRIPLE:     (Negative Sampling)  --uses-->  (learning process)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: we adopt the negative sampling strategy to conduct the learning process.

@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "ResNet",
+    "predicate": "trainedon",
+    "object": "ImageNet",
+    "object_type": "Dataset",
+    "source_sentence": "We use ResNet-152 pretrained on the ImageNet to extract the 2048-dimensional image feature.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "supervised",
+    "predicate": "uses",
+    "object": "mixture of imitation and reinforcement learning",
+    "object_type": "Method",
+    "source_sentence": "The agent model is first trained with supervised learning via the mixture of imitation and reinforcement learning.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "uses",
+    "object": "environmental dropout",
+    "object_type": "Method",
+    "source_sentence": "The model is then fine-tuned by back translation with environmental dropout.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "Word Embedding",
+    "predicate": "trainedon",
+    "object": "size 256",
+    "object_type": "Other",
+    "source_sentence": "The word embedding is trained from scratch with size 256 and the dimension of the action embedding is 64.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "size 512",
+    "object_type": "Other",
+    "source_sentence": "The size of the LSTM units is set to 512 (256 for the bidirectional LSTM).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "RMSProp",
+    "predicate": "uses",
+    "object": "fixed learning rate 1e-4",
+    "object_type": "Other",
+    "source_sentence": "For optimizing the loss, we use RMSprop (as suggested in Mnih et al. (2016)) with a fixed learning rate 1e-4 and the batch size is 64.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  }
+]

@@ -1,0 +1,165 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b0fa46ad4d4 -----
+TRIPLE:     (semantic)  --addresses-->  (basic structure of the environment)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: When working with the semantic view, the key labels (e.g., wall, floor, ceil) are not dropped, be- cause they are the basic structure of the envi- ronment.
+
+----- triple_id: b7827cca2d6 -----
+TRIPLE:     (supervised)  --uses-->  (mixture of imitation and reinforcement learning)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The agent model is first trained with supervised learning via the mixture of imitation and reinforcement learning.
+
+----- triple_id: befb32d7aa5 -----
+TRIPLE:     (syntax trees)  --mentions-->  (surface strings are stored as GF syntax trees)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: The surface strings are stored as GF syntax trees, and the GF linearisation algorithm is used for displaying the sentences to the user.
+
+----- triple_id: b628fa4afc0 -----
+TRIPLE:     (Models)  --uses-->  (standard maximum entropy model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We trained all models with the OpenNLP toolkit using the standard maximum entropy model7.
+
+----- triple_id: bf7c2dae3e8 -----
+TRIPLE:     (Enhanced Transformer Model)  --achieves-->  (content selection precision)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Experimental results have shown that our enhanced transformer model outperforms current state-of-the-art system on BLEU, content selection precision and content ordering metics.
+
+----- triple_id: b6bc0c01d17 -----
+TRIPLE:     (Transfer Learning Techniques)  --addresses-->  (seq-to-seq generation tasks)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: T5 systematically applies transfer learning techniques for seq-to-seq generation tasks, including summarization.
+
+----- triple_id: b0c4364317c -----
+TRIPLE:     (Bi-LSTM)  --addresses-->  (morphological feature tagging tasks)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We use Bi-LSTM-based taggers for the morphological feature tagging tasks.
+
+----- triple_id: bc3c5dea16a -----
+TRIPLE:     (Constraints)  --addresses-->  (Context)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Since our final goal is to allow for editing directly on the concrete surface strings, we also need some linearisation constraints
+
+----- triple_id: bb2528675bb -----
+TRIPLE:     (RNNs)  --uses-->  (context information)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Bert- ero and Fung (2016a) formulated the recognition to be a sequential labeling task and utilized Re- current Neural Networks (RNNs) on top of CNN models (serv- ing as feature extractors) to utilize context infor- mation among utterances.
+
+----- triple_id: b664466c583 -----
+TRIPLE:     (Models)  --addresses-->  (IC)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Previous methods that evaluated IC were encoder-based: while these models, e.g., , are evaluated on both ITR/TIR and IC, the IC performance was suboptimal because these methods used sequential Masked Language Modeling predictions for generating text at infer- ence time.
+
+----- triple_id: b683dceab95 -----
+TRIPLE:     (Wikipedia)  --addresses-->  (longer biographies)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Perez-Beltrachini and Lapata (2018) used the first paragraph of the wikipedia pages as the gold biographies aiming at generating longer biographies.
+
+----- triple_id: b246b0bf2b1 -----
+TRIPLE:     (Grammar)  --addresses-->  (noun phrase inflection)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The grammar handles noun phrase inflection, fronting of noun phrases, and verb inflection.
+
+----- triple_id: b8d24934a71 -----
+TRIPLE:     (User Embeddings)  --achieves-->  (0.922 f1-score on Ptacek dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: User embeddings show remarkable predictive power on the Ptacek dataset.
+
+----- triple_id: bbb2387d64e -----
+TRIPLE:     (BiLSTM)  --produces-->  (contextualized embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: A biLSTM is used to obtain contextualized embeddings hk for each token xk in the two sentences, as shown in Figure 1.
+
+----- triple_id: be77f5f4606 -----
+TRIPLE:     (training)  --uses-->  (stochastic gradient descent)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The training is performed using stochastic gradient descent with mini-batches.
+
+----- triple_id: b8ff16d68a7 -----
+TRIPLE:     (Question Answer Pairs)  --extractedfrom-->  (raw HTML input)
+PREDICATE DEFINITION: ? → AcademicPaper  |  Links an extracted entity to the academic paper it was extracted from.
+SOURCE SENTENCE: The generative model is able to generate question answer pairs even from raw HTML input that corresponds to a table.
+
+----- triple_id: bdc0a727673 -----
+TRIPLE:     (GloVe)  --uses-->  (norm)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: In contrast, GloVe is a static encoder and exhibits no indication that it stores this information in the norm, or indeed any ability to accurately model this phenomenon at all, but uses the norm to store surface-level and syntactic information.
+
+----- triple_id: b7dc70224f2 -----
+TRIPLE:     (Unsupervised Learning)  --uses-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use the entire train set (both labeled and unlabeled data) for unsupervised learning of our multimodal embeddings before the embeddings are fine-tuned to predict the label using limited labeled data.
+
+----- triple_id: baadc23c997 -----
+TRIPLE:     (Models)  --achieves-->  (enhanced performance for rare entities)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: As presented in Table 3, our models achieve en- hanced performance for rare entities .
+
+----- triple_id: b46861b84fe -----
+TRIPLE:     (Enhanced Transformer Model)  --achieves-->  (BLEU)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Experimental results have shown that our enhanced transformer model outperforms current state-of-the-art system on BLEU, content selection precision and content ordering metics.
+
+----- triple_id: bad3d5f73d1 -----
+TRIPLE:     (Ranking)  --uses-->  (feature vector)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The feature vector for ranking is generated from context and candidate utterance.
+
+----- triple_id: bca7235441a -----
+TRIPLE:     (word2vec)  --trainedon-->  (one embedding for each word)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: word2Vec and GloVe have the smallest size because they only train one embedding for each word while sacrificing the relation-dependent information among them.
+
+----- triple_id: be9173515d7 -----
+TRIPLE:     (Generative Models)  --trainedon-->  (SQuAD 1.1)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: Generative models are trained on SQuAD 1.1 for 5 epochs, and the best model is selected based on the cross entropy loss on the SQuAD dev set.
+
+----- triple_id: b4ee7c5db1c -----
+TRIPLE:     (Back Translation)  --uses-->  (environmental dropout)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The model is then fine-tuned by back translation with environmental dropout.
+
+----- triple_id: bcc1d77a63b -----
+TRIPLE:     (Crowdsourcing)  --uses-->  (Tweets)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The 4-tuples of tweets were uploaded on the crowdsourcing platform, CrowdFlower.

@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b3284959f65 -----
+TRIPLE:     (CRFs)  --addresses-->  (segmentation tasks)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Sequence models such as CRFs and S-CRFs are used for segmentation tasks in NLP, e.g., Peng et al. (2004) applied a CRF model for Chinese word segmentation and Andrew (2006) followed with a S-CRF model.
+
+----- triple_id: bb9d353a68b -----
+TRIPLE:     (Neural Architectures)  --uses-->  (natural language)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Modern approaches use neural architectures to map natural language to the (simulated) world and execute actions (Paxton et al., 2019; Chen et al., 2018; Nguyen et al., 2018; Blukis et al., 2018; Fried et al., 2018; Mei et al., 2016).
+
+----- triple_id: ba92c4a23dd -----
+TRIPLE:     (fine-tuning)  --uses-->  (training set D)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Our approach to model p(a, q|c) involves fine-tuning a pretrained Enc-Dec conditional LM using a training set D = {(c1, q1, a1), (c2, q2, a2),..., (c|D|, q|D|, a|D|)}.
+
+----- triple_id: b975e7c37bc -----
+TRIPLE:     (training)  --addresses-->  (Link Prediction)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The results in Table 3 indicate that training with our proposed algorithm does not deteriorate the performance for in-sample link prediction.
+
+----- triple_id: bdf7655d2d0 -----
+TRIPLE:     (Regression Model)  --trainedon-->  (Word Embeddings)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: Each regression model is trained on a representation formed by the affect lexicon features (including those provided by AffectiveTweets) and word embeddings.
+
+----- triple_id: bb95c93ad9d -----
+TRIPLE:     (Structural SVM)  --uses-->  (lexical features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: which employs a structural SVM framework for estimating the weights of different lexical features to measure the similarity between two queries.
+
+----- triple_id: b6cb5ce271d -----
+TRIPLE:     (training)  --mentions-->  (resources)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: We have found that both methods make effective methods for training a system that is significantly better than a random baseline, however our analysis shows that there are still weaknesses with each system , suggesting that performance is being limited by the availability of resources.
+
+----- triple_id: b7249c618f5 -----
+TRIPLE:     (Clustering)  --addresses-->  (Usage Types)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The clustering of contextualised representations into usage types is one of the main steps in our method (see Section 3.3).
+
+----- triple_id: b98262e636b -----
+TRIPLE:     (Adaptor Grammars)  --addresses-->  (unsupervised morphological segmentation of Malayalam)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Kumar et al. (2015) applied adaptor grammars to unsupervised morphological segmentation of Kannada, Malayalam and Tamil
+
+----- triple_id: bbe8c64e692 -----
+TRIPLE:     (RNN)  --achieves-->  (Ranking)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Another RNN is used to rank candidate utterances.
+
+----- triple_id: b508f6ee294 -----
+TRIPLE:     (Models)  --uses-->  (OpenNLP toolkit)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We trained all models with the OpenNLP toolkit using the standard maximum entropy model7.
+
+----- triple_id: bbad4a0bb94 -----
+TRIPLE:     (Sentiment Analysis)  --addresses-->  (financial domain)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Sentiment analysis in financial domain offers more challenges
+
+----- triple_id: bc5657d8509 -----
+TRIPLE:     (Random Forest)  --uses-->  (representation formed by concatenating three vectors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: IMS applies a random forest regression model to a representation formed by concatenating three vectors: 1. a feature vector drawn from existing affect lexicons, 2. a feature vector drawn from expanded affect lexicons, and 3. the output of a neural network.
+
+----- triple_id: b95ec9d2cbb -----
+TRIPLE:     (BERT Language Model)  --uses-->  (usage representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: we use the BERT language model to compute usage representations for each occurrence of these words.
+
+----- triple_id: b9c9a4d91e5 -----
+TRIPLE:     (Deep Learning)  --addresses-->  (computational humor research)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Deep learning recently has been applied to computational humor research (Bertero and Fung, 2016b,a).
+
+----- triple_id: b5fdf2fbddb -----
+TRIPLE:     (character n-gram)  --uses-->  (context features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: character n-gram context features on the left and right for each potential boundary
+
+----- triple_id: b4003458e37 -----
+TRIPLE:     (CRF)  --uses-->  (Chinese word segmentation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Peng et al. (2004) applied a CRF model for Chinese word segmentation and Andrew (2006) followed with a S-CRF model.
+
+----- triple_id: ba590643df5 -----
+TRIPLE:     (Tagger)  --achievesresult-->  (88.3% accuracy)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: Ritter et al.'s best tagger, trained on a concatenation of PTB, IRC, and Twitter, achieved 88.3% (Table 4).
+
+----- triple_id: b5315accaa7 -----
+TRIPLE:     (automatic evaluations)  --mentions-->  (WIKIBIO)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: Automatic evaluations are shown in Table 2 for WIKIBIO and WB-filter.
+
+----- triple_id: b97b01d27c6 -----
+TRIPLE:     (CRF)  --addresses-->  (morphological segmentation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: In this paper, we presented a higher-order semi- CRF model for morphological segmentation for the Dravidian languages of South India.
+
+----- triple_id: bbbeaadb963 -----
+TRIPLE:     (Experiments)  --uses-->  (Annotations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We also present experiments to determine the quality of the annotations.
+
+----- triple_id: bf89fbb3ae6 -----
+TRIPLE:     (BERT Language Model)  --uses-->  (usage representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence predic- tion, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).
+
+----- triple_id: b7ef110b55c -----
+TRIPLE:     (CRF)  --achieves-->  (85.3% accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Ritter et al.'s CRF-based tagger had 85.3% accuracy
+
+----- triple_id: bb4481a2e5c -----
+TRIPLE:     (Adaptor Grammars)  --uses-->  (unsupervised morphological segmentation of Malayalam)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Kumar et al. (2015) applied adaptor grammars to unsupervised morphological segmentation of Kannada , Malayalam and Tamil.
+
+----- triple_id: b2092ff454d -----
+TRIPLE:     (Structural SVM)  --addresses-->  (weights of different lexical features)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The limi- tations of were allevi- ated in the work reported in , which employs a structural SVM framework for estimating the weights of different lexical features to measure the similarity between two queries .

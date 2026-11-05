@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b9c65085c53 -----
+TRIPLE:     (BERT Language Model)  --trainedon-->  (BooksCorpus)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence predic- tion, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).
+
+----- triple_id: b69a1db37fb -----
+TRIPLE:     (Tagger)  --achieves-->  (88.6% accuracy on the OCT27 development set)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: A tagger that only uses word clusters achieves an accuracy of 88.6% on the OCT27 development set.
+
+----- triple_id: bf19d7ceab9 -----
+TRIPLE:     (Lexicons)  --uses-->  (AffectiveTweets package)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The first vector is obtained using the lexicons implemented in the AffectiveTweets package.
+
+----- triple_id: b091f5fb1ff -----
+TRIPLE:     (Regression Model)  --trainedon-->  (Lexicon Features)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: Each regression model is trained on a representation formed by the affect lexicon features (including those provided by AffectiveTweets) and word embeddings.
+
+----- triple_id: b6aa8e2e777 -----
+TRIPLE:     (Transformer)  --achieves-->  (state-of-the-art results on the story cloze test)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We also use a Fine-tuned Transformer LM model , which was shown to perform competitively on a diverse set of NLP tasks, achieving state-of-the-art results on the story cloze test.
+
+----- triple_id: b76d7d1349d -----
+TRIPLE:     (Segmentation)  --addresses-->  (POS Tagging)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We also showed that segmentation is beneficial to the down-stream task of POS tagging.
+
+----- triple_id: b001e42baed -----
+TRIPLE:     (RNNs)  --uses-->  (LSTM)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: In our encoding and ranking RNNs, we used LSTM layers with 1000 hidden cells in each layer.
+
+----- triple_id: b15fa12ac85 -----
+TRIPLE:     (MWE)  --comparesagainst-->  (BERT)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: It is observed that that MWE outperforms ELMo and achieves comparable results with BERT with smaller embedding dimension and much less training complexities.
+
+----- triple_id: bcc39895f08 -----
+TRIPLE:     (Models)  --achieves-->  (small improvement)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Moreover, including time embeddings as additional input to the improved models leads to a small improvement in the overall accuracy.
+
+----- triple_id: bea0c0a2d3d -----
+TRIPLE:     (NMT)  --addresses-->  (domain adaptation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: In this paper, after giving an overview of our NMT pipeline, we will focus on how we address the following issues in order to better prepare NMT engines for real-world deployment: 1) data cleaning, 2) over-generation , 3) improving robust- ness when translating entities, and 4) domain adap- tation.
+
+----- triple_id: b8fde0b939e -----
+TRIPLE:     (Experiments)  --evaluatedon-->  (AOL query log)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: Our experiments on the AOL query log indicate that the proposed temporal and tempo-lexical query embedding method significantly outperform the baseline word2vec embedding.
+
+----- triple_id: bed768c9d05 -----
+TRIPLE:     (Lexicon)  --addresses-->  (multiple numeric or nominal word–affect associations)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The input lexicon can have multiple numeric or nominal word–affect associations.
+
+----- triple_id: b87731aab95 -----
+TRIPLE:     (cross entropy)  --uses-->  (learning effect)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: we use cross entropy as the loss function to measure the learning effect for Eq. (2).
+
+----- triple_id: b08f688bdb0 -----
+TRIPLE:     (Information)  --mentions-->  (information state)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: During editing, there is an information state consisting of the current tree, and a single node which is called the selected node v∗.
+
+----- triple_id: ba632b650b7 -----
+TRIPLE:     (Models)  --comparesagainst-->  (BERT)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Finally, we use the vanilla BERT and GloVe sentence embeddings in their respective evaluations as vanilla baselines against which the models with noise are compared.
+
+----- triple_id: bdccefe5411 -----
+TRIPLE:     (Inference)  --achieves-->  (more than 10 times the closest neural model)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Our model achieves an inference per second (IPS) of more than 10 times the closest neural model (EF-LSTM).
+
+----- triple_id: b0330cae24e -----
+TRIPLE:     (Tagger)  --achieves-->  (substantially higher accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Our tagger achieves substantially higher accuracy than Gimpel et al.
+
+----- triple_id: ba71bd746c3 -----
+TRIPLE:     (morphological)  --addresses-->  (proper noun)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The morphological analyzer has a backoff mode of "no- analysis" that provides a "proper noun" analysis to all word.
+
+----- triple_id: b3404336e45 -----
+TRIPLE:     (cluster)  --addresses-->  (Example)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Here, smh is in a related but distinct subtree from the above expressions (A5); its usage in this example is slightly different from its more common usage, which it shares with the other words in its cluster: message-ending expressions of commentary or emotional reaction, sometimes as a metacomment on the author's message; e.g., Maybe you could get a guy to date you if you actually respected yourself #smh or There is really NO reason why other girls should send my boyfriend a goodmorning text #justsaying.
+
+----- triple_id: bfec54f9434 -----
+TRIPLE:     (Documents)  --mentions-->  (annual reports of UK firms)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: In FNS, annual reports of UK firms constitute the documents , and a subset of narrative sections from the reports are given verbatim as reference summaries .
+
+----- triple_id: b5ec01df272 -----
+TRIPLE:     (Experiments)  --addresses-->  (multimodal sentiment analysis)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: To evaluate the generalization of our models, we perform experiments on multimodal speaker traits recognition and multimodal sentiment analysis.
+
+----- triple_id: bdb42e22c7a -----
+TRIPLE:     (LSTM)  --uses-->  (model cell)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: In our experiments, for both dataset , we use LSTM as the model cell;
+
+----- triple_id: b6c8f6996f1 -----
+TRIPLE:     (word2vec)  --addresses-->  (broader coverage)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We opted for word2vec over the-sauri or Chinese lexical databases such as HowNet because of its broader coverage.
+
+----- triple_id: ba6ed955e46 -----
+TRIPLE:     (training)  --mentions-->  (identical between both encoders)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: the training data used to train their word embeddings should be identical between both encoders
+
+----- triple_id: b5d33655362 -----
+TRIPLE:     (post-processing)  --uses-->  (single session task labels)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: after post-processing the single session task labels, the total number of distinct tasks is reduced.

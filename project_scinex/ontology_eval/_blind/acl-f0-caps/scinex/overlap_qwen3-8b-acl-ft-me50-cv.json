@@ -1,0 +1,28 @@
+{
+  "ontology": "scinex",
+  "student": "qwen3-8b-acl-ft-me50-cv",
+  "teacher": "gptoss-20b",
+  "paragraphs": {
+    "neither": 741,
+    "only_teacher": 127,
+    "both": 43,
+    "only_student": 69
+  },
+  "student_kept": 182,
+  "student_kept_on_teacher_empty": 115,
+  "share_on_teacher_empty": 0.632,
+  "judged": {
+    "shared": {
+      "n": 20,
+      "C1": 87.5,
+      "C3_appropriate_pct": 55.0,
+      "C4": 75.0
+    },
+    "teacher_empty": {
+      "n": 30,
+      "C1": 88.3,
+      "C3_appropriate_pct": 46.7,
+      "C4": 68.3
+    }
+  }
+}

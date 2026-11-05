@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b3da79c5911 -----
+TRIPLE:     (cluster)  --uses-->  (usage representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Then, we cluster all the usage repre- sentations collected for a given word into an auto- matically determined number of partitions (usage types ) and organise them along the temporal axis.
+
+----- triple_id: b2be0fc5035 -----
+TRIPLE:     (Algorithm)  --produces-->  (1,000 clusters)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: The algorithm partitions words into a base set of 1,000 clusters, and induces a hierarchy among those 1,000 clusters with a series of greedy agglomerative merges that heuristically optimize the likelihood of a hidden Markov model with a one-class-per-lexical-type constraint.
+
+----- triple_id: b6b65f74c86 -----
+TRIPLE:     (Encoder-Decoder Model)  --addresses-->  (sequence prediction tasks)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: One of the main advantages of the encoder-decoder model , commonly used for sequence prediction tasks, is its ability to handle inputs and outputs of variable length.
+
+----- triple_id: bf014fd6d51 -----
+TRIPLE:     (training)  --configures-->  (Language Processing)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: OOV: This baseline is inspired by the way a word embedding is computed for out-of-vocabulary (OOV) words (i.e. words unseen during training) in some works in the natural language processing literature.
+
+----- triple_id: bc779f54bfe -----
+TRIPLE:     (Experiments)  --addresses-->  (groundless information)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The experiments and case studies show its effectiveness to deal with the 'groundless informa- tion' and 'less informative' problems in Table 1.
+
+----- triple_id: b2971110356 -----
+TRIPLE:     (Sentence Embeddings)  --addresses-->  (opinion analysis)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Sentence embeddings are crucial for down-stream tasks such as document classification, opinion analysis , and machine translation.
+
+----- triple_id: b4c296f8c3e -----
+TRIPLE:     (Data Cleaning)  --produces-->  (Datasets)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: after carefully performing data cleaning and addressing pairing issues, we arrive at a total of 2,425 document- summary pairs as part of the dataset.
+
+----- triple_id: b9471a8ead5 -----
+TRIPLE:     (Random Forest)  --uses-->  (human-engineered features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We compared two types of leading text-based humor recognition methods: a conventional classifier (e.g., Random Forest) based on human-engineered features vs. an end-to-end CNN method, which relies on its inherent representation learning.
+
+----- triple_id: bee4457f633 -----
+TRIPLE:     (WordNet)  --uses-->  (hypernymy/antonymy words)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The WordNet features are binaries reflecting the existence of hypernymy/antonymy words in the input .
+
+----- triple_id: b14812964d1 -----
+TRIPLE:     (Feed-Forward Neural Networks)  --uses-->  (word embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The second is based on an extended lexicons built from feed-forward neural networks trained on word embeddings.
+
+----- triple_id: b8703ae130b -----
+TRIPLE:     (Machine Translation)  --addresses-->  (Translation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The second statistical-based response approach is the machine translation (MT) method.
+
+----- triple_id: b17dd95a47a -----
+TRIPLE:     (Image)  --uses-->  (CNN)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The image and ground-truth semantic segmentation mask Vt, tiled question L, and previous action at−1 are encoded via a CNN which outputs a distribution over actions.
+
+----- triple_id: b049024df7d -----
+TRIPLE:     (Reinforcement Learning)  --addresses-->  (informative descriptions)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: So we propose two methods: force-attention (FA) and richness-oriented reinforcement learning to pro- duce accurate, informative and loyal descriptions.
+
+----- triple_id: b6704f116c9 -----
+TRIPLE:     (Transformer)  --uses-->  (Layer Normalization)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Our transformer model has hidden state dimensions of 512 and a batch size of 4096 tokens and uses layer normalization.
+
+----- triple_id: b2daf9256ec -----
+TRIPLE:     (Pre-training)  --uses-->  (Adam optimizer)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: For pre-training, we use the Adam optimizer with a learning rate of 10−5.
+
+----- triple_id: b249581766d -----
+TRIPLE:     (anaphoric expressions)  --addresses-->  (definite descriptions)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: A case in point is the treatment of anaphoric expressions including pronouns, proper names, possessive constructions and definite descriptions.
+
+----- triple_id: bb5bff79497 -----
+TRIPLE:     (Information)  --mentions-->  (source tables)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: we design a mixed reward Rmix which contains both the BLEU-4 scores and the information richness of the generated descriptions towards the source tables
+
+----- triple_id: bf12da18a40 -----
+TRIPLE:     (Domain Adaptation)  --addresses-->  (DuoRC)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We assess the effectiveness of our QA data generators for domain adaptation of four different target domain datasets: Natural Questions (NQ), BioASQ, NewsQA and DuoRC.
+
+----- triple_id: b29cd448d4c -----
+TRIPLE:     (retrieval)  --uses-->  (Jaccard similarities of the non-stop-word sets)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The retrieval is based on the Jaccard similarities of the non-stop-word sets between x and the corpus documents.
+
+----- triple_id: b4a735a176d -----
+TRIPLE:     (Algorithm)  --achieves-->  (learning ms, W and b)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The optimization algorithm derived in section 3.4 can be easily extended to learn ms, W and b in Baseline 2.
+
+----- triple_id: beef445ec61 -----
+TRIPLE:     (training)  --achieves-->  (performing well on a transductive task)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Such a procedure, however, introduces an inconsistency between training and testing as the training is done irrespective of the aggregation function and with the objective of performing well on a transductive task whereas the model is tested on an out-of-sample task.
+
+----- triple_id: b87450317cf -----
+TRIPLE:     (Transformer)  --produces-->  (vector representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: Transformer-based encoder-decoder conditional LMs use bidirectional self-attention in the encoding step to create vector representations of the tokens in the context c.
+
+----- triple_id: bf7a39802f9 -----
+TRIPLE:     (Questions)  --addresses-->  (Information)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: In order to keep only well-formed information -seeking questions , we filter the can- didate questions by keeping only those that start with interrogatives10 or any, anyone, help, advice , thoughts.
+
+----- triple_id: bdbe4ab897b -----
+TRIPLE:     (evaluate)  --evaluatedon-->  (two event temporal ordering datasets)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We evaluate on two event temporal ordering datasets, one real and one artificially constructed.
+
+----- triple_id: bad6be52088 -----
+TRIPLE:     (Supervised Learning)  --addresses-->  (navigation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: As opposed to semi-supervised methods in Sec. 3.4, in this section we view both imitation learning and reinforcement learning as supervised learning.

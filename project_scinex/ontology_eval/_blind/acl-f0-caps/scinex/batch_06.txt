@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: ba77d413e25 -----
+TRIPLE:     (GloVe)  --uses-->  (SeerNet)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Some of the word embeddings models used were Glove (SeerNet, UWa- terloo, YZU NLP), Word2Vec (SeerNet), and Word Vector Emoji Vectors (SeerNet).
+
+----- triple_id: be5070e1174 -----
+TRIPLE:     (Multi-task Learning)  --addresses-->  (extract keyphrases from the source text)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We propose a multi-task learning framework which simultaneously learns to extract keyphrases from the source text and generate keyphrases word by word with external knowledge.
+
+----- triple_id: b07a400cdaa -----
+TRIPLE:     (training)  --uses-->  (Synthetic Data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Each experiment was performed by training the RC model on the synthetic data generated on the target domain corpus.
+
+----- triple_id: b055835d862 -----
+TRIPLE:     (Adaptor Grammars)  --uses-->  (unsupervised morphological segmentation of Kannada)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Kumar et al. (2015) applied adaptor grammars to unsupervised morphological segmentation of Kannada , Malayalam and Tamil.
+
+----- triple_id: bd671382221 -----
+TRIPLE:     (Back Translation)  --uses-->  (Dropout)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The model is then fine-tuned by back translation with environmental dropout.
+
+----- triple_id: b5a91188da7 -----
+TRIPLE:     (Neural Machine Translation)  --achieves-->  (state-of-the-art performance)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Neural machine translation (NMT) has achieved state -of-the-art performance for many language
+
+----- triple_id: b7b8af24787 -----
+TRIPLE:     (English)  --mentions-->  (swimmer)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: Prediction adam whitehead ( born 28 march 1980 ) is an english swimmer.
+
+----- triple_id: b3a88712ba8 -----
+TRIPLE:     (LSTM)  --uses-->  (ResNet-encoded image Vt)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at.
+
+----- triple_id: b6cbcbcd870 -----
+TRIPLE:     (BART)  --addresses-->  (input text length limitation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: BART (1024), Pegasus (512), and T5 (512) have limitations on the length of input text that they can process.
+
+----- triple_id: ba85c2b3821 -----
+TRIPLE:     (Transformer)  --uses-->  (bidirectional self-attention)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Transformer-based encoder-decoder conditional LMs use bidirectional self-attention in the encoding step to create vector representations of the tokens in the context c.
+
+----- triple_id: b98e142c0fb -----
+TRIPLE:     (Beam Search)  --uses-->  (State-factored Dijkstra algorithm)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The state- factored Dijkstra algorithm is used for the beam search result.
+
+----- triple_id: bf2f47c553f -----
+TRIPLE:     (Dependency Parser)  --produces-->  (dependency paths)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: We use the Stanford Dependency Parser to extract the dependency paths for both events to their lowest common ancestor.
+
+----- triple_id: b3d1ed6304d -----
+TRIPLE:     (LSTM)  --uses-->  (character embedding vectors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use convolutional neural networks (CNN) and LSTM-based architectures for the character embedding vectors vci, both applied to the character sequence within each word separately.
+
+----- triple_id: bc98e57f45b -----
+TRIPLE:     (Data Augmentation)  --achieves-->  (improved RG precision)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: all content-oriented evaluation metrics are improved compared to DATA-TRANS but not as much as each single of the data augmentation method.
+
+----- triple_id: b17df6b79e3 -----
+TRIPLE:     (Sentiment Prediction)  --achieves-->  (state-of-the-art performance)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Our proposed approach achieves state-of-the-art performance with the increments of 2.0 and 4.1 points over the existing systems for the tasks of sentiment prediction of financial microblog and news data.
+
+----- triple_id: b810ad220f2 -----
+TRIPLE:     (Datasets)  --evaluatedon-->  (two event temporal ordering datasets)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We evaluate on two event temporal ordering datasets, one real and one artificially constructed.
+
+----- triple_id: b36eacd946e -----
+TRIPLE:     (embeddings)  --mentions-->  (word2vec)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: For both the re- lational embeddings (v and u) and the center em- bedding, we use a similar way as that in word2vec that each one has two vari- ants to represent the semantics of a word w being the head or tail in different relations
+
+----- triple_id: b6b40f400a3 -----
+TRIPLE:     (Convolutional Neural Networks)  --addresses-->  (text categorization tasks)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Convolutional Neural Networks (CNNs) have recently been successfully used in several text categorization tasks (e.g., review rating, sentiment recognition, and question type recognition).
+
+----- triple_id: b3044e322ee -----
+TRIPLE:     (Context)  --comprises-->  (Wikipedia database)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: The context C is the Wikipedia database shared among all samples.
+
+----- triple_id: b8b0e498f75 -----
+TRIPLE:     (Word Vectors)  --producedby-->  (word2vec skip-gram algorithm)
+PREDICATE DEFINITION: ResearchArtifact → ResearchProcess  |  Links a research artifact back to the research process that generated it
+SOURCE SENTENCE: The word vectors used in learning the parameter matrix θ are obtained by the word2vec skip-gram algorithm.
+
+----- triple_id: b26c4fb8842 -----
+TRIPLE:     (Filtering)  --achieves-->  (improvements in the target domain downstream RC models)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We argue that using LM filtering, as discussed in section 2.4, results in improvements in the target domain downstream RC models by enhancing the quality of the generated (q, a) pairs.
+
+----- triple_id: b922df59c72 -----
+TRIPLE:     (Models)  --uses-->  (Features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Note that in higher-order models, we include the conjunction of all features that fire on a given segment si with those that fire on the adjacent segments
+
+----- triple_id: bce44d55ae5 -----
+TRIPLE:     (Experiments)  --achieves-->  (significant improvements in domain adaptation of RC models)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Our experiments showed that by proper decoding, significant improvements in domain adaptation of RC models can be achieved.
+
+----- triple_id: bd8ec0344cd -----
+TRIPLE:     (training)  --addresses-->  (information)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: our work some- what shares similar goals as Kiddon et al. (2018) in the sense that they emphasis easily ig- nored (usually less frequent) features or bits of in- formation in the training procedure by smoothing or regularization.
+
+----- triple_id: b73d13f09f3 -----
+TRIPLE:     (Transformer)  --uses-->  (Self-Attention)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Transformer-based encoder-decoder conditional LMs use bidirectional self-attention in the encoding step to create vector representations of the tokens in the context c.

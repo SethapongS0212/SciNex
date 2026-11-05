@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "Datasets",
+    "object_type": "Dataset",
+    "source_sentence": "In our work, we compare the performance of our models when tested on datasets representative of both manual annotation and distant supervision.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "2.1 Sarcasm Detection"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "two popular tweet datasets",
+    "object_type": "Dataset",
+    "source_sentence": "We test our models on two popular tweet datasets , one labelled manually and the other via distant supervision.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "3 Sarcasm Datasets"
+  },
+  {
+    "subject": "preprocessing",
+    "predicate": "uses",
+    "object": "sarcasm-marking tags",
+    "object_type": "Other",
+    "source_sentence": "During preprocessing we removed all sarcasm-marking tags from both the training tweets and the historical tweets.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "3.2 Ptacek dataset"
+  },
+  {
+    "subject": "User Embedding",
+    "predicate": "uses",
+    "object": "Softmax",
+    "object_type": "Method",
+    "source_sentence": "We feed the user embedding et to a layer with softmax activations to output a probability distribution over Y.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "4 Contextual Sarcasm Detection Models"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "trainedon",
+    "object": "personality detection corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Next, we feed dt to a neural network pre-trained on the personality detection corpus released by Matthews and Gilliland (1999), which contains labels for the Big-Five personality traits.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "4 Contextual Sarcasm Detection Models"
+  },
+  {
+    "subject": "Encoder-Decoder Model",
+    "predicate": "addresses",
+    "object": "sequence prediction tasks",
+    "object_type": "Task",
+    "source_sentence": "One of the main advantages of the encoder-decoder model , commonly used for sequence prediction tasks, is its ability to handle inputs and outputs of variable length.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "4 Contextual Sarcasm Detection Models"
+  },
+  {
+    "subject": "Encoder-Decoder Model",
+    "predicate": "addresses",
+    "object": "summarizing it",
+    "object_type": "Task",
+    "source_sentence": "We use an encoder-decoder model as in the previous paragraph, but change the objective from reconstructing the input to summarizing it.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "4 Contextual Sarcasm Detection Models"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "word vectors",
+    "object_type": "Other",
+    "source_sentence": "Then, we encode each tweet as a sequence of word vectors initialized using GloVe embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "Luong, Pham, and Manning (2015)",
+    "object_type": "Other",
+    "source_sentence": "We use the general global attention mechanism suggested by Luong, Pham, and Manning (2015).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "User Embeddings",
+    "predicate": "achieves",
+    "object": "0.922 F1 on Ptacek dataset",
+    "object_type": "Metric",
+    "source_sentence": "User embeddings show remarkable predictive power on the Ptacek dataset.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "5.2 Results"
+  },
+  {
+    "subject": "User Embeddings",
+    "predicate": "achieves",
+    "object": "0.478 F1 on Riloff dataset",
+    "object_type": "Metric",
+    "source_sentence": "On the Riloff dataset , however, user embeddings seem to be far less informative, with EX-W-CASCADE yielding an f1-score of only 0.478.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "5.2 Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "considerably higher predictive power",
+    "object_type": "Other",
+    "source_sentence": "We applied the exclusive models on #Riloff and noticed a considerably higher predictive power than on Riloff.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "5.3 Performance Analysis"
+  },
+  {
+    "subject": "Neural Models",
+    "predicate": "achieves",
+    "object": "state-of-the-art results for distant supervision",
+    "object_type": "Other",
+    "source_sentence": "We suggested several neural models to build user embeddings, achieving state-of-the-art results for distant supervision, but not for manual labelling.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "6 Conclusion"
+  }
+]

@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Word Embedding",
+    "predicate": "uses",
+    "object": "word vectors",
+    "object_type": "Other",
+    "source_sentence": "The Word Embedding Layer encodes C and Q as sequences of word vectors.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Word Vector",
+    "predicate": "uses",
+    "object": "pre-trained word embedding",
+    "object_type": "Other",
+    "source_sentence": "A word vector is the concatenation of a pre-trained word embedding and a character-based embedding obtained using a CNN.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Word Vector",
+    "predicate": "uses",
+    "object": "character-based embedding",
+    "object_type": "Other",
+    "source_sentence": "A word vector is the concatenation of a pre-trained word embedding and a character-based embedding obtained using a CNN.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Context",
+    "predicate": "uses",
+    "object": "bi-directional RNN",
+    "object_type": "Other",
+    "source_sentence": "The Context Layer encodes C1, Q1 as contextual vectors C2 ∈Rlw×2dc, Q2 ∈Rmw×2dc by using a bi-directional RNN (Bi-RNN), where dc is the output size of a uni-directional RNN.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Matching",
+    "predicate": "uses",
+    "object": "bi-directional attention",
+    "object_type": "Other",
+    "source_sentence": "The Matching Layer encodes C2, Q2 as matching vectors C3 ∈Rlw×dc by using bi-directional attention , a Bi-RNN, and self-attention.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Matching",
+    "predicate": "uses",
+    "object": "Bi-RNN",
+    "object_type": "Other",
+    "source_sentence": "The Matching Layer encodes C2, Q2 as matching vectors C3 ∈Rlw×dc by using bi-directional attention , a Bi-RNN, and self-attention.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Matching",
+    "predicate": "uses",
+    "object": "self-attention",
+    "object_type": "Other",
+    "source_sentence": "The Matching Layer encodes C2, Q2 as matching vectors C3 ∈Rlw×dc by using bi-directional attention , a Bi-RNN, and self-attention.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "evidence",
+    "predicate": "uses",
+    "object": "Bi-RNN",
+    "object_type": "Other",
+    "source_sentence": "The Evidence Layer first encodes C3 as [−→ C4; ←− C4] ∈Rlw×2dc by a Bi-RNN.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "Sentences",
+    "object_type": "Other",
+    "source_sentence": "Chen and Bansal used an attention mechanism to extract sentences from the source document such that the summary would cover the important information in the source document.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.2 Query Focused Extractor"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "Sentence",
+    "object_type": "Other",
+    "source_sentence": "QFE updates the state of the RNN (the dark blue box in Figure 3) as follows: where et ∈{1, · · ·, ls} is the index of the sentence extracted at step t.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.2 Query Focused Extractor"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "Algorithm",
+    "object_type": "Method",
+    "source_sentence": "QFE uses the beam search algorithm to search ˆE.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.4 Test Phase"
+  },
+  {
+    "subject": "document retriever",
+    "predicate": "uses",
+    "object": "top- five paragraphs",
+    "object_type": "Other",
+    "source_sentence": "Because C is large , we used the NSMN document retriever and gave only the top- five paragraphs to our model.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "5.2 Experimental Setup"
+  },
+  {
+    "subject": "WordNet",
+    "predicate": "uses",
+    "object": "30-dimensional WordNet features",
+    "object_type": "Other",
+    "source_sentence": "Similar to NSMN, in order to capture the semantic and numeric relationships, we used 30-dimensional WordNet features and five-dimensional number embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "5.2 Experimental Setup"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "uses",
+    "object": "11 randomly initialized models",
+    "object_type": "Other",
+    "source_sentence": "Our model used ensemble learning of 11 randomly initialized models.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "5.2 Experimental Setup"
+  },
+  {
+    "subject": "evidence",
+    "predicate": "uses",
+    "object": "union of the predicted evidences of each model",
+    "object_type": "Other",
+    "source_sentence": "For the evidence extraction , we used the union of the predicted evidences of each model.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "5.2 Experimental Setup"
+  },
+  {
+    "subject": "Sentence Matching",
+    "predicate": "addresses",
+    "object": "RTE",
+    "object_type": "Task",
+    "source_sentence": "RTE is performed by sentence matching.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "6.2 Recognizing Textual Entailment"
+  },
+  {
+    "subject": "FEVER",
+    "predicate": "addresses",
+    "object": "verification and fact checking",
+    "object_type": "Task",
+    "source_sentence": "FEVER has the aim of verification and fact checking for RTE on a large database.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "6.2 Recognizing Textual Entailment"
+  }
+]

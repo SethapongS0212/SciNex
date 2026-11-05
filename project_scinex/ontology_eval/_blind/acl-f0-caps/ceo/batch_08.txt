@@ -1,0 +1,117 @@
+
+Grade the following 23 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bbb40515d53 -----
+TRIPLE:     (Maximum Likelihood Estimation)  --uses-->  (negative log-likelihood over D)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We train the Enc-Dec with parameters θ through maximum likelihood estimation (MLE) by minimizing the negative log-likelihood over D:
+
+----- triple_id: bfacc12e68e -----
+TRIPLE:     (Multi-task Learning)  --uses-->  (external knowledge)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We propose a multi-task learning framework which simultaneously learns to extract keyphrases from the source text and generate keyphrases word by word with external knowledge.
+
+----- triple_id: b5e4057a141 -----
+TRIPLE:     (Word Vectors)  --addresses-->  (external collections)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: This suggests that optimally trained word vectors can produce effective task clusters without the use of external collections in contextualizing the queries .
+
+----- triple_id: ba00d109140 -----
+TRIPLE:     (word2vec)  --uses-->  (lexical context)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Word embedding algorithms, such as 'word2vec', make use of the lexical context in learning vector representations of words.
+
+----- triple_id: b1bb1fd2269 -----
+TRIPLE:     (Experiments)  --uses-->  (AOL query log)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we use the AOL query log for our experiments.
+
+----- triple_id: b6762e965c4 -----
+TRIPLE:     (RNN)  --uses-->  (sequence labeling model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: (2017) proposed a novel tagging schema and employed a Recurrent Neural Networks (RNN) based sequence labeling model to jointly extract entities and relations.
+
+----- triple_id: b42ae23862a -----
+TRIPLE:     (syntactic)  --addresses-->  (Frame)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Further example sentences are available through the WebCage corpus which, however, lack explicit syntactic frame information .
+
+----- triple_id: be30ed9590c -----
+TRIPLE:     (Tagger)  --evaluatedon-->  (Penn Treebank)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: The tagger was tested using the traditional "standard split" of the Wall St. Journal portion of the Penn Treebank, with sections 0–18 for training, sections 19–21 for development, and sections 22–24 for evaluation.
+
+----- triple_id: b89cc11aef8 -----
+TRIPLE:     (Algorithm)  --uses-->  (training)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: using Algorithm 2 for training as opposed to Algorithm 1 results in a boost of performance.
+
+----- triple_id: b238d56845e -----
+TRIPLE:     (RNNs)  --uses-->  (morphemes)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Essentially, we treat each morpheme as a basic unit in the RNNs and construct representations for morphologically complex words on the fly from their morphemes.
+
+----- triple_id: b0ca6d9da4e -----
+TRIPLE:     (BERT)  --uses-->  (contextualised representation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We collect a contextualised representation for each occurrence of these words in the second century of COHA, using BERT as described in Section 3.2.
+
+----- triple_id: b0849b6cbfb -----
+TRIPLE:     (Paraphrasing)  --uses-->  (target Reuters sentences)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: (2) a Paraphrasing block that is trained to rephrase the extracted ECT sentences to the format of target (Reuters) sentences, thereby generating a set of bullet points.
+
+----- triple_id: b7c5b40fdfd -----
+TRIPLE:     (LSTM)  --uses-->  (model cell)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In our experiments, for both dataset , we use LSTM as the model cell;
+
+----- triple_id: b76ab73e4f0 -----
+TRIPLE:     (Back Translation)  --uses-->  (new data triplets from testing environments)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: back translation could significantly improve the performance when it uses new data triplets from testing environments
+
+----- triple_id: bfb76d80094 -----
+TRIPLE:     (Experiments)  --uses-->  (six standard ED datasets)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We conducted extensive experiments using six standard ED datasets , i.e., AIDA-CoNLL, MSNBC, AQUAINT , ACE2004, WNED-WIKI, and WNED-CWEB.
+
+----- triple_id: ba43bd6a01f -----
+TRIPLE:     (Detecting Emotion)  --addresses-->  (tracking public health and well-being)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Thus, automatically detecting emotion intensities in tweets is especially beneficial in applications such as tracking brand and product perception, tracking support for issues and policies, tracking public health and well-being, and disaster/crisis management.
+
+----- triple_id: b1c5ab33e91 -----
+TRIPLE:     (Context)  --addresses-->  (Semantics)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: the context-sensitive mor- phoRNN (csmRNN) consistently improves corre- lations over the cimRNN model for all datasets, demonstrating the effectiveness of using surround- ing contexts in learning both morphological syn- tactics and semantics.
+
+----- triple_id: b517756a67f -----
+TRIPLE:     (Models)  --comparesagainst-->  (Baseline Models)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: Our QAGen and QA- Gen2S models outperform by wide margins the baseline models trained on SQuAD 1.1 only, as well as unsupersived domain adaptation approaches (UDA) suggested by Nishida et al. (2019) and Lee et al.
+
+----- triple_id: bd9e198892e -----
+TRIPLE:     (BERT)  --uses-->  (pre-trained models)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For ELMo and BERT, we use their pre-trained models.
+
+----- triple_id: bd8c8cf7ccd -----
+TRIPLE:     (transformation)  --achieves-->  (improvement in task extraction effectiveness)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: results improve with the application of transformation based word vector embedding of the query terms.
+
+----- triple_id: b65fab247e7 -----
+TRIPLE:     (Transformer Models)  --uses-->  (Fairseq tool)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We trained small transformer models with the Fairseq tool , with the same pa- rameters as those indicated in the fairseq github site for IWSLT'14 German to English .
+
+----- triple_id: b1a3bd09ebe -----
+TRIPLE:     (Novel Method)  --uses-->  (contextualised representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We present a novel method that (1) exploits a pre-trained neural language model to obtain contextualised representations for every occurrence of a word of interest, (2) clusters these representations into usage types , and (3) measures change along time.
+
+----- triple_id: bc27018c3bd -----
+TRIPLE:     (Images)  --uses-->  (preprocessing/data augmentations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use the following preprocessing/data augmentations on the images : resize to 224 × 224 pixels with a random crop, that has random scaling between 0.8 and 1.0 and aspect ratio between 0.75 and 1.3, along with a random horizontal flip.

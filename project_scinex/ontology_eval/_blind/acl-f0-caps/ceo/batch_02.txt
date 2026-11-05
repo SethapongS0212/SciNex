@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b2e67aff114 -----
+TRIPLE:     (Generative Models)  --trainedon-->  (SQuAD 1.1)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: Generative models are trained on SQuAD 1.1 for 5 epochs, and the best model is selected based on the cross entropy loss on the SQuAD dev set.
+
+----- triple_id: bf1d2bd9abf -----
+TRIPLE:     (Models)  --evaluatedon-->  (MC)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: we benchmark our models on a variety of others including MC , RG , SCWS∗11 , and our new rare word (RW) dataset
+
+----- triple_id: bb5d9f42785 -----
+TRIPLE:     (training)  --uses-->  (neural language model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: By training a neural language model (NLM) and integrating RNN structures for com- plex words , we utilize contextual information
+
+----- triple_id: b40a851213d -----
+TRIPLE:     (Discourse)  --addresses-->  (identity between discourse referents)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The basic conditions are used to describe names of discourse referents (named), concepts of entities (pred), relations between dis- course referents (rel), cardinality of discourse ref- erents denoting sets of objects (card), or to express identity between discourse referents (=).
+
+----- triple_id: bcc5fd4923f -----
+TRIPLE:     (BERT)  --comparesagainst-->  (BERT (static))
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: As BERT was not originally designed for word level semantics tasks, for the selectional preference ac- quisition task, we compare with two variations of the original BERT model: (1) BERT (static), which extracts static embedding from the BERT model in a similar way as that from the ELMo model; (2) BERT (dynamic), which takes a pair of words as input and produces a plausibility score for that pairs of words.
+
+----- triple_id: b46ed295c7d -----
+TRIPLE:     (Relation Extraction)  --addresses-->  (pre-assigned entities)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: most previous methods mainly focused on the task of relation extraction or classification which identifies the semantic relations between t- wo pre-assigned entities .
+
+----- triple_id: bf938d997fc -----
+TRIPLE:     (BERT model)  --uses-->  (pytorch_pretrained_bert library)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we used the bert-base-uncased BERT model from the pytorch_pretrained_bert library
+
+----- triple_id: b0f05810357 -----
+TRIPLE:     (Classifiers)  --uses-->  (perceptron learning algorithm)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Both classifiers are trained with held-out-data using the perceptron learning algorithm and weight averaging.
+
+----- triple_id: b4af21d0827 -----
+TRIPLE:     (Brown Clustering)  --produces-->  (effective features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: We obtained hierarchical word clusters via Brown clustering on a large set of unlabeled tweets. Not only does Brown clustering produce effective features for discriminative models, but its variants are better unsupervised POS taggers than some models developed nearly 20 years later; see comparisons in Blunsom and Cohn (2011).
+
+----- triple_id: bced4a289a8 -----
+TRIPLE:     (Transformer)  --uses-->  (self-attention mechanism)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Within the Transformer architecture , the self-attention mechanism can generate the latent representation for each record by jointly conditioning on all other records in the input dataset.
+
+----- triple_id: b57c8112eeb -----
+TRIPLE:     (Word Embeddings)  --uses-->  (Word Vector Emoji Vectors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Some of the word embeddings models used were Glove (SeerNet, UWa- terloo, YZU NLP), Word2Vec (SeerNet), and Word Vector Emoji Vectors (SeerNet).
+
+----- triple_id: befebcc5e6a -----
+TRIPLE:     (classifier)  --addresses-->  (transitive task depen- dence)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: According to , the disadvantage of using a classifier based approach for extracting tasks is that with the binary predictions of the classifier it is difficult to model the transitive task depen- dence between the queries , e.g. if query pairs (q1, q2) and (q2, q3) are predicted to be part of the same task, the classifier may not predict that q1 and q3 are also a part of the same task.
+
+----- triple_id: b917fd74568 -----
+TRIPLE:     (MWE)  --uses-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: our MWE model uses a set of (constrained and small) embeddings for each word to encode its general and relation-dependent semantics to resolve the sparseness and the size problem.
+
+----- triple_id: b3a8c9a8985 -----
+TRIPLE:     (GloVe)  --uses-->  (Time Expressions)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: However, in the ELMo setting, we observed a larger drop in performance by masking out the time expressions compared to GloVe embeddings .
+
+----- triple_id: b0fd7dff424 -----
+TRIPLE:     (BERT)  --uses-->  (vector norm)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Given that we know that BERT is a contextual encoder, and that its self-attention uses the vector norm to control the levels of contribution from less informative words
+
+----- triple_id: b73e1aff676 -----
+TRIPLE:     (Image)  --addresses-->  (Objects)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: we drop raw feature dimensions (see Fig. 4a) to mimic the removal of random objects from an RGB image (see Fig. This traditional fea- ture dropout (with dropout rate p) is implemented as an element-wise multiplication of the feature f and the dropout mask ξf.
+
+----- triple_id: b9cbd549dcf -----
+TRIPLE:     (Statistical models)  --trainedon-->  (small amount of data)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: simple statistical models, trained on a small amount of data, achieve near-ceiling performance at this task.
+
+----- triple_id: b539121ba61 -----
+TRIPLE:     (Features)  --uses-->  (training data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Features were drawn both from the training data as well as from external resources such as large tweet corpora and affect lexicons.
+
+----- triple_id: bd66ee413e1 -----
+TRIPLE:     (Deep Learning)  --addresses-->  (computational humor research)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Deep learning recently has been applied to computational humor research (Bertero and Fung, 2016b,a).
+
+----- triple_id: b5ce02f4da4 -----
+TRIPLE:     (LSTM)  --uses-->  (two LSTM layers of size 100)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The LSTM character embedding architecture uses two LSTM layers of size 100, and embedding size 50.
+
+----- triple_id: b271968affa -----
+TRIPLE:     (RNN)  --addresses-->  (contextual information)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Motivated by these limitations, we propose a context-sensitive morphoRNN (csm-RNN) which integrates RNN structures into NLM training, allowing for contextual information being taken into account in learning morphemic compositionality.
+
+----- triple_id: be67f757694 -----
+TRIPLE:     (Features)  --uses-->  (spectral flatness)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The musical features include timbre, chroma, spectral flatness; psychological features include loudness, sharpness; sound features include frequency and speech characteristics.
+
+----- triple_id: b7b9e3dfd64 -----
+TRIPLE:     (sampling)  --achieves-->  (best EM/F1 on the target domain)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: sampling 10 pairs per document leads to the best EM/F1 on the target domain.
+
+----- triple_id: b0dd7a149b6 -----
+TRIPLE:     (Models)  --achieves-->  (higher re- call value)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Not surprisingly, our models recall more triplets and achieve higher re- call value.
+
+----- triple_id: b0dd42ea3ab -----
+TRIPLE:     (BERT)  --trainedon-->  (variable-size context)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: For this evaluation, BERT is given the same variable-size context as the human annotators.

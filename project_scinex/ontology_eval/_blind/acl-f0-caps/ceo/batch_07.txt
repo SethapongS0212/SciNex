@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b7986dc3c5f -----
+TRIPLE:     (LSTM)  --uses-->  (last state vector)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For the LSTM-based architecture we use the last state vector as the embedding representation of the word's characters.
+
+----- triple_id: bdb68f9ac7a -----
+TRIPLE:     (WordNet)  --uses-->  (30-dimensional WordNet features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Similar to NSMN, in order to capture the semantic and numeric relationships, we used 30-dimensional WordNet features and five-dimensional number embeddings.
+
+----- triple_id: bd0a230d4e6 -----
+TRIPLE:     (Deep Learning Models)  --uses-->  (usage-dependent representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Recently, neural contextualised word representations have gained widespread use in NLP, thanks to deep learning models which learn usage-dependent representations while optimising tasks such as machine translation and language modelling
+
+----- triple_id: be1bac549e3 -----
+TRIPLE:     (LSTM)  --achieves-->  (outperform CNN-based models for EGY)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: We showed that LSTM-based character embeddings outperform CNN-based models for EGY.
+
+----- triple_id: b58a2db75c4 -----
+TRIPLE:     (Word Embedding)  --uses-->  (size 256)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The word embedding is trained from scratch with size 256 and the dimension of the action embedding is 64.
+
+----- triple_id: b32a00afbe7 -----
+TRIPLE:     (Encoder-Decoder Model)  --uses-->  (input utterances)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Dong and Lapata (2016) presented a method based on an attention- enhanced and encoder-decoder model, which encodes input utterances and generates their logical forms.
+
+----- triple_id: baa418ecb28 -----
+TRIPLE:     (BERT Language Model)  --uses-->  (Transformer encoder)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence predic- tion, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).
+
+----- triple_id: b9956d4a2e0 -----
+TRIPLE:     (CRF)  --achieves-->  (85.3% accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Ritter et al.'s CRF- based tagger had 85.3% accuracy, and their best tagger, trained on a concatenation of PTB, IRC, and Twitter, achieved 88.3% (Table 4).
+
+----- triple_id: b7c1604ce71 -----
+TRIPLE:     (retrieval)  --uses-->  (note-based recursive alignment (NRA))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The retrieval method used is similar to Yang et al. It mainly uses note-based linear scaling (NLS) and note-based recursive alignment (NRA).
+
+----- triple_id: be489e43024 -----
+TRIPLE:     (RNN)  --uses-->  (LSTM)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Another RNN has two LSTM layers
+
+----- triple_id: ba9a79917ac -----
+TRIPLE:     (Experiments)  --uses-->  (word2vec)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We employ three different embedding strategies for our experiments : i) standard word2vec, ii) transformed vectors with temporal context , and iii) transformed vectors with temporal lexical contexts.
+
+----- triple_id: b505b37e25e -----
+TRIPLE:     (Over the Years)  --addresses-->  (consensus)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Over the years several studies have evaluated automatic metrics for measuring text generation performance (Callison-Burch et al., 2006; Stent et al., 2005; Belz and Reiter, 2006; Reiter, 2018; Liu et al., 2016; Kilickaya et al., 2017; Gatt and Krahmer, 2018). The only consensus from these studies seems to be that no single metric is suitable across all tasks.
+
+----- triple_id: b57df4e88b4 -----
+TRIPLE:     (Universal Sentence Encoder)  --uses-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: in terms of cosine similarity between their embeddings obtained using Google's Universal Sentence Encoder.
+
+----- triple_id: b7e32848871 -----
+TRIPLE:     (Part-of-Speech Tagger)  --uses-->  (regular expression)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The most important step for the creation of the tool is the identification of terms from the text and this is achieved in English by means of a regular expression over the output of a part-of-speech tagger.
+
+----- triple_id: bbd0247e735 -----
+TRIPLE:     (Inference)  --uses-->  (trained Extractive Module)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: During inference , a test ECT document is sent as input to the trained Extractive Module.
+
+----- triple_id: b3de3a37ec7 -----
+TRIPLE:     (Tagger)  --uses-->  (morphological feature tagging)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: These features can be grouped into non-lexical features, where a tagger is used to predict the relevant morphological tag, handled through morphological feature tagging , and lexical features that need a language model , handled through lexicalized feature language models.
+
+----- triple_id: bb3cb3b3bb8 -----
+TRIPLE:     (Word Embeddings)  --uses-->  (negative sampling skip-gram model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We calculate individual word embeddings using the negative sampling skip-gram model implemented in Word2Vec.
+
+----- triple_id: bc882704906 -----
+TRIPLE:     (ROUGE)  --addresses-->  (model- generated summaries)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: For evaluating the content quality of model- generated summaries , we consider ROUGE , and BERTScore .
+
+----- triple_id: b7bcb32641b -----
+TRIPLE:     (User Embeddings)  --achieves-->  (0.478 F1 on Riloff dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: On the Riloff dataset , however, user embeddings seem to be far less informative, with EX-W-CASCADE yielding an f1-score of only 0.478.
+
+----- triple_id: b83fedbd74a -----
+TRIPLE:     (Negative Sampling)  --uses-->  (learning process)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we adopt the negative sampling strategy to conduct the learning process.
+
+----- triple_id: b4277ce6d44 -----
+TRIPLE:     (Models)  --uses-->  (Score Function)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Different models have been proposed in the literature by mainly changing the score function.
+
+----- triple_id: b375753c5fd -----
+TRIPLE:     (semantic)  --uses-->  (word vectors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: when the semantic context used to learn the transformation matrix for the word vectors is restricted to similar queries within search sessions, the effectiveness improves further.
+
+----- triple_id: b8a34dccab0 -----
+TRIPLE:     (Evaluation)  --addresses-->  (Dialogue Breakdown Detection Challenge)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Evaluation criterion was based on the Dialogue Breakdown Detection Challenge (DBDC) .
+
+----- triple_id: b3f895e2ea4 -----
+TRIPLE:     (Models)  --trainedon-->  (new data)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: We annotate new data and develop new models for the most commonly spoken Dravidian languages : Kannada , Malayalam , Tamil and Telugu.
+
+----- triple_id: b7cac581d4e -----
+TRIPLE:     (Image Retrieval)  --addresses-->  (text-to-image retrieval)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Our approach achieves competitive performance on 7 downstream fashion tasks: image -to-text re- trieval, text-to- image retrieval , image retrieval with text feedback, category recognition, subcategory recognition, image captioning , and relative image captioning (Sections 4 and 5.1).

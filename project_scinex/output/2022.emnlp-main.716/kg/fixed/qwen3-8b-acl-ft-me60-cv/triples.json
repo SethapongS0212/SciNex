@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "vision-and-language pre-training",
+    "object_type": "Task",
+    "source_sentence": "A substantial body of work has focused on using the Transformer architecture in the context of vision-and-language pre-training (VLP)",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "cross attention",
+    "object_type": "Method",
+    "source_sentence": "As BERT does not have cross-attention parameters, they are learned from scratch.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "3.1 Model Overview"
+  },
+  {
+    "subject": "language modeling",
+    "predicate": "uses",
+    "object": "Relative Captioner mode",
+    "object_type": "Method",
+    "source_sentence": "We additionally apply a language modeling loss, using the Relative Captioner mode of our architecture, that maximizes the conditional probability of a relative caption given a reference and a target image :",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "3.2.2 Pre-training with Triplets"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "Adam optimizer",
+    "object_type": "Method",
+    "source_sentence": "For pre-training, we use the Adam optimizer with a learning rate of 10−5.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "A Training Details"
+  }
+]

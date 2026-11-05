@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b754329cf37 -----
+TRIPLE:     (ensemble)  --uses-->  (deep learning)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Consequently, we construct an ensemble by taking the best performing deep learning (CNN, LSTM and GRU each) and classical feature based (SVR) models using a MLP network.
+
+----- triple_id: b43cfb26cbc -----
+TRIPLE:     (GloVe)  --addresses-->  (natural language processing tasks)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Distributed representation models such as Word2Vec and Glove are generally very effective in a multitude of natural language processing tasks.
+
+----- triple_id: be88ce213d8 -----
+TRIPLE:     (Models)  --addresses-->  (meaning)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: later work developed more sophisticated models of morphological structure and meaning
+
+----- triple_id: bd9dfde38b9 -----
+TRIPLE:     (Algorithm)  --uses-->  (gazetteer)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Given the small size of the available annotated dataset, to address this task we implemented a simple string matching algorithm that relies on a gazetteer containing a set of Twitter usernames and hashtags extracted from the training data, and a list of very common news agencies (e.g.
+
+----- triple_id: bddf1eba8a1 -----
+TRIPLE:     (Models)  --addresses-->  (adjectives)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In all but one case, models exhibit the best Word (hr) Word (en) POS MFS BoW SG MFS BoW SG performance on verbs, followed by nouns, and adjectives.
+
+----- triple_id: be2589e1cb4 -----
+TRIPLE:     (morphological)  --addresses-->  (annotation)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In what follows, we de- scribe a system which automates a key part of this annotation process: the tedious and error-prone an- notation of morphological structure .
+
+----- triple_id: b58f78d8bf6 -----
+TRIPLE:     (Deep Learning)  --addresses-->  (distributed representation)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Deep learning systems give each word a distributed representation, i.e., a dense low- dimensional real-valued vector or an embedding.
+
+----- triple_id: b62ee4839f8 -----
+TRIPLE:     (Generative Models)  --addresses-->  (Rendered Passage)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The content under Passage is the input string, as seen by the generative models, and Ren- dered Passage indicates how the table appears in a browser.
+
+----- triple_id: b684c6fff20 -----
+TRIPLE:     (Algorithm)  --uses-->  (different scale factors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The note based linear scaling algorithm basically uses different scale factors to stretch and contract the humming query input.
+
+----- triple_id: ba12d6db272 -----
+TRIPLE:     (NMT)  --uses-->  (BPE)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Subword translation is an approach used in NMT to tackle out-of-vocabulary (OOV) problem using byte-pair encoding (BPE) or other similar segmentation techniques.
+
+----- triple_id: b2461bb548f -----
+TRIPLE:     (BERT)  --uses-->  (cross attention)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: As BERT does not have cross-attention parameters, they are learned from scratch.
+
+----- triple_id: b4fbf6ec22e -----
+TRIPLE:     (Example)  --addresses-->  (specified form)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Another example is that the lineari- sation of a given node must be of a specified form (e.g., when the user selects a specific word form from the context menu).
+
+----- triple_id: be62d40b8f2 -----
+TRIPLE:     (Experiments)  --evaluatedon-->  (AOL query log)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Our experiments on the AOL query log indicate that the proposed temporal and tempo-lexical query embedding method significantly outperform the baseline word2vec embedding.
+
+----- triple_id: bcca45aa346 -----
+TRIPLE:     (Features)  --uses-->  (three hidden layers)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The extracted features are then used to train the models by using the greedy layer-wise supervised training method, which takes the extracted features as input and uses three hidden layers for training, which was found to be the optimal number of layers for this task.
+
+----- triple_id: bef8361ee9c -----
+TRIPLE:     (training)  --uses-->  (uniform distribution)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: During training, all the trainable parameters including the embeddings are randomly initialized with uniform distribution in [-0.1, 0.1].
+
+----- triple_id: b1b6ab13f8e -----
+TRIPLE:     (Morphological Analyzer)  --uses-->  (backoff mode of "no-analysis")
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The morphological analyzer has a backoff mode of "no-analysis" that provides a "proper noun" analysis to all word.
+
+----- triple_id: b9f46332bf7 -----
+TRIPLE:     (Transformer)  --uses-->  (entity embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Recent studies have proposed Transformer-based models that treat entities as input tokens to enrich their expressiveness using additional information contained in the entity embeddings.
+
+----- triple_id: bb3203fa918 -----
+TRIPLE:     (embeddings)  --uses-->  (cosine similarity)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For embedding based methods (word2vec, GloVe, D-embedding7, and MWE8), we follow previous work and use the cosine similarity between embeddings of head and tail words to predict their relations.
+
+----- triple_id: bfdeaaeb586 -----
+TRIPLE:     (RNN)  --uses-->  (LSTM)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: This RNN has two LSTM layers and two linear layers; further, we use rectified linear unit (ReLU) as the activation function.
+
+----- triple_id: bed321458c6 -----
+TRIPLE:     (Clustering)  --addresses-->  (web)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In contrast to the experimental setup of , a) we conduct clustering globally in- stead of clustering each individual query session separately; and b) the edge weights of the graph- based clustering in our case refers to the cosine- similarity values computed between the embedded query vectors and cosine similarity values between the vectors obtained from top 1000 documents retrieved from Clueweb12B, a publicly available web collection2.
+
+----- triple_id: b404f413ca2 -----
+TRIPLE:     (Word Vectors)  --achieves-->  (semantic relatedness)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: This suggests that the word vectors are better able to capture the semantic relatedness between the task-related query terms.
+
+----- triple_id: b5840b4d386 -----
+TRIPLE:     (Convolutional Neural Networks)  --uses-->  (character embedding vectors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use convolutional neural networks (CNN) and LSTM-based architectures for the character embedding vectors vci, both applied to the character sequence within each word separately.
+
+----- triple_id: b34e0392fd5 -----
+TRIPLE:     (NLG)  --uses-->  (statistical techniques)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: As one of the things we have in mind is the use of statistical techniques in NLG, the corpus should be sufficiently large.
+
+----- triple_id: bcfac2a5b96 -----
+TRIPLE:     (Baseline Models)  --achieves-->  (significant (10 times) speedup during inference)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: our proposed baseline models: 1) display competitive performance on supervised multimodal prediction , 2) outperform classical deep autoencoders for semi- supervised multimodal prediction and 3) attain significant (10 times) speedup during inference.
+
+----- triple_id: bfa862a7482 -----
+TRIPLE:     (Models)  --achieves-->  (state-of-the-art accuracy on the task of morphological segmentation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: We show that a combination of higher-order models and linguistically-motivated features yields state-of-the-art accuracy on the task of morphological segmentation on the corpus.

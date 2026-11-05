@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "addresses",
+    "object": "vision-and-language pre-training",
+    "object_type": "Task",
+    "source_sentence": "A substantial body of work has focused on using the Transformer architecture in the context of vision-and-language pre-training (VLP)",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "cross attention",
+    "object_type": "Method",
+    "source_sentence": "As BERT does not have cross-attention parameters, they are learned from scratch.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "3.1 Model Overview"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "comprises",
+    "object": "image-text pairs",
+    "object_type": "Other",
+    "source_sentence": "Our pre-training dataset is comprised of image -text pairs from five fashion datasets : FACAD , Fashion -Gen , Fashion200K , Shop- ping100k , and DeepFashion .",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "Adam optimizer",
+    "object_type": "Method",
+    "source_sentence": "For pre-training, we use the Adam optimizer with a learning rate of 10−5.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "A Training Details"
+  },
+  {
+    "subject": "preprocessing",
+    "predicate": "uses",
+    "object": "Images",
+    "object_type": "Dataset",
+    "source_sentence": "We use the following preprocessing/data augmentations on the images : resize to 224 × 224 pixels with a ran- dom crop, that has random scaling between 0.8 and 1.0 and aspect ratio between 0.75 and 1.3, along with a random horizontal flip.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "A Training Details"
+  },
+  {
+    "subject": "preprocessing",
+    "predicate": "uses",
+    "object": "fine-tuning",
+    "object_type": "Method",
+    "source_sentence": "We use the same preprocessing for downstream fine-tuning.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "A Training Details"
+  }
+]

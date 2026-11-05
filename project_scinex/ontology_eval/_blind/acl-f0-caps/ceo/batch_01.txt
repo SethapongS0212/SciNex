@@ -1,0 +1,165 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bda2b510ffc -----
+TRIPLE:     (Transformer)  --uses-->  (vision-and-language pre-training)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: A substantial body of work has focused on using the Transformer architecture in the context of vision-and-language pre-training (VLP)
+
+----- triple_id: bf6312e39fd -----
+TRIPLE:     (Baseline Models)  --achieves-->  (supervised multimodal learning)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Our proposed baseline models 1) achieve competitive performance on supervised multimodal learning, 2) improve upon classical deep autoencoders for semi- supervised multimodal learning, and 3) are up to 10 times faster during inference.
+
+----- triple_id: b3ac361ad30 -----
+TRIPLE:     (Attention)  --achieves-->  (2.04/1.32 BLEU/ROUGE increases on the WB-filter dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The proposed force- attention module achieves 1.11/0.98 and 2.04/1.32 BLEU/ROUGE increases on the WIKIBIO and WB-filter datasets , respectively.
+
+----- triple_id: b9fdc641a4e -----
+TRIPLE:     (embeddings)  --uses-->  (Wikipedia annotations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: the frequency of their entities in the Wikipedia annotations used to train the embeddings.
+
+----- triple_id: bfb0d817fd5 -----
+TRIPLE:     (Baseline Models)  --achieves-->  (up to 10 times faster during inference)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Our proposed baseline models 1) achieve competitive performance on supervised multimodal learning, 2) improve upon classical deep autoencoders for semi- supervised multimodal learning, and 3) are up to 10 times faster during inference.
+
+----- triple_id: bb6937bb30f -----
+TRIPLE:     (NMT)  --comprises-->  (corpus preparation pipeline)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: Our NMT pipeline is composed of several com- ponents, which are described in the following sec- tions.
+
+----- triple_id: ba238636940 -----
+TRIPLE:     (evidence)  --supports-->  (Lexical Knowledge)
+PREDICATE DEFINITION: ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion
+SOURCE SENTENCE: we have provided further evidence that opinion inference and the relevance of lexical knowledge to support it are independent of specific languages.
+
+----- triple_id: be3c822fb3b -----
+TRIPLE:     (RNN)  --produces-->  (scores)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: Thus, this RNN reads encoded utterance sequences and outputs scores.
+
+----- triple_id: bf91fea4513 -----
+TRIPLE:     (Earnings Calls)  --addresses-->  (share repurchase program)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Earnings Calls, typically a teleconference or a we- bcast, are hosted by publicly traded companies to discuss important aspects of their quarterly (10- Q), or annual (10-K) earnings reports, along with current trends and future goals that help financial analysts and investors to review their price targets and trade decisions (Givoly and Lakonishok, 1980; Richard Frankel and Skinner, 1999; Bowen et al., 2002; Keith and Stent, 2019).
+
+----- triple_id: b1025e025de -----
+TRIPLE:     (training)  --splitfrom-->  (Inspec)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: However, there exist du- plicates in the KP20k training dataset with itself, the KP20k validation dataset , the KP20k testing dataset , and other four popular testing datasets (i.e., Inspec , Krapivin , NUS , and SemEval ).
+
+----- triple_id: b813c834f6a -----
+TRIPLE:     (Reward Shaping)  --uses-->  (direct reward)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use the reward shaping : the direct reward rt at time step t is the change of the distance dt−1 −dt, supposing dt is the distance to the target position at time step t.
+
+----- triple_id: b19c36f79f8 -----
+TRIPLE:     (Pre-training)  --uses-->  (Adam optimizer)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For pre-training, we use the Adam optimizer with a learning rate of 10−5.
+
+----- triple_id: b503f97cba2 -----
+TRIPLE:     (Precision and Recall)  --addresses-->  (generation)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Next we discuss how to compute the precision and recall of the generation .
+
+----- triple_id: be406794e65 -----
+TRIPLE:     (Domains)  --addresses-->  (DuoRC)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: 8 presents comprehensive results of using LM filtering over all the of the target domains . We can observe that the arguments made in Sec. 4.7 hold for NewsQA and DuoRC as well.
+
+----- triple_id: be80eefe03a -----
+TRIPLE:     (training)  --uses-->  (English Wikipedia4)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use the English Wikipedia4 as the training corpus.
+
+----- triple_id: b1e78de01a9 -----
+TRIPLE:     (Dropout)  --achieves-->  (52.0%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: the environmental dropout could boost the result to 52.0%
+
+----- triple_id: b60b98f2be4 -----
+TRIPLE:     (RNNs)  --uses-->  (multimodal settings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: RNNs , LSTMs , and convolutional neural networks have been ex- tended for multimodal settings .
+
+----- triple_id: b45e0612a29 -----
+TRIPLE:     (Models)  --uses-->  (Word Representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we do not start training from scratch, but rather, initialize our models with existing word representations.
+
+----- triple_id: bdfcf92a33d -----
+TRIPLE:     (Algorithm)  --addresses-->  (representation learning)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: A general training procedure for out-of-sample representation learning is proposed in Algorithm 2.
+
+----- triple_id: b44203bc228 -----
+TRIPLE:     (Data-to-Text Generation)  --addresses-->  (training data)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Second, the training data in data-to-text generation task is often very limited.
+
+----- triple_id: b38cd64514b -----
+TRIPLE:     (GRU)  --uses-->  (input representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we learn the word embeddings and use two bi-directional GRU to obtain the input representations.
+
+----- triple_id: b3d4eba6f27 -----
+TRIPLE:     (Features)  --uses-->  (large tweet corpora)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Features were drawn both from the training data as well as from external resources such as large tweet corpora and affect lexicons.
+
+----- triple_id: bc38b9e4e6e -----
+TRIPLE:     (Response Generation)  --uses-->  (Neural Networks)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: More recently, response generation using neural networks has been widely studied, most work grounded in the MT method (Cho et al., 2014; Sordoni et al., 2015; Shang et al., 2015; Vinyals and Le, 2015).
+
+----- triple_id: bc804b34690 -----
+TRIPLE:     (GloVe)  --uses-->  (their released code)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For word2Vec and GloVe, we use their released code.
+
+----- triple_id: b4556ef2893 -----
+TRIPLE:     (Evaluation)  --uses-->  (clustering evaluation metrics)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Since we use weighted clustering to extract cross- session search tasks, we used standard clustering evaluation metrics to evaluate the effectiveness of the task extraction.

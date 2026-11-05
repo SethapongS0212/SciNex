@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bfc6ee7180d -----
+TRIPLE:     (LSTM)  --uses-->  (embedding size 50)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The LSTM character embedding architecture uses two LSTM layers of size 100, and embedding size 50.
+
+----- triple_id: b4194c97f6b -----
+TRIPLE:     (cluster)  --uses-->  (usage representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Then, we cluster all the usage repre- sentations collected for a given word into an auto- matically determined number of partitions (usage types ) and organise them along the temporal axis.
+
+----- triple_id: b2e7af4b19f -----
+TRIPLE:     (GloVe)  --uses-->  (matrix decomposition)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: GloVe , learning word embeddings by matrix decomposition on word co-occurrences.
+
+----- triple_id: be1cb57bdd3 -----
+TRIPLE:     (Baseline Models)  --trainedon-->  (SQuAD 1.1)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: Our QAGen and QA-Gen2S models outperform by wide margins the baseline models trained on SQuAD 1.1 only, as well as unsupersived domain adaptation approaches (UDA) suggested by Nishida et al. (2019) and Lee et al.
+
+----- triple_id: b7a2e36b9f6 -----
+TRIPLE:     (SGD)  --uses-->  (Adam)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: optimized by using any SGD optimization, e.g., Adam , Adadelta , and so on.
+
+----- triple_id: b0904386be6 -----
+TRIPLE:     (NLG)  --addresses-->  (content quality)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: A recurring theme is that metrics like BLEU and NIST are not suitable for judging content quality in NLG.
+
+----- triple_id: b07399b22dd -----
+TRIPLE:     (sampling)  --uses-->  (QA pairs)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: By sampling many QA pairs per passage, we increase the chance of generating good samples.
+
+----- triple_id: be0b3412d57 -----
+TRIPLE:     (LSTM)  --comparesagainst-->  (CNN-based models)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: We showed that LSTM-based character embeddings outperform CNN-based models for EGY.
+
+----- triple_id: b3ffedf47fb -----
+TRIPLE:     (training)  --achieves-->  (state-of-the-art tagger)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: We show that training POS taggers that use the output of our segmenters as features significantly improves a state-of-the-art tagger.
+
+----- triple_id: b5c3d6f9fae -----
+TRIPLE:     (evaluate)  --evaluates-->  (AUC-ROC score)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: We evaluate the perfor- mance of all probes using the AUC-ROC score.
+
+----- triple_id: b3404de07c1 -----
+TRIPLE:     (Word Vectors)  --uses-->  (standard skip-gram)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: query vectors were obtained by summing over the constituent word vectors obtained using the standard skip-gram.
+
+----- triple_id: b516cccda7b -----
+TRIPLE:     (Information Extraction)  --uses-->  (training summary)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use an information extraction (IE) system to extract the number of relations of each training summary.
+
+----- triple_id: b92bb6d0f52 -----
+TRIPLE:     (embeddings)  --uses-->  (cosine distance)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use these embeddings to learn and score normalization candidates based on their cosine distance as a semantic score, and edit distance as a lexical score.
+
+----- triple_id: b8115a6ff7f -----
+TRIPLE:     (training)  --uses-->  (smoothing)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: they emphasis easily ignored features or bits of information in the training procedure by smoothing or regularization.
+
+----- triple_id: bf8f8663e85 -----
+TRIPLE:     (FEVER)  --addresses-->  (document retrieval)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: FEVER requires three sub tasks: doc- ument retrieval , evidence extraction , and answer prediction.
+
+----- triple_id: b35f7db8e9e -----
+TRIPLE:     (ResNet)  --uses-->  (ImageNet)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use ResNet-152 pretrained on the ImageNet to extract the 2048-dimensional image feature.
+
+----- triple_id: bd7afdbb129 -----
+TRIPLE:     (Softmax)  --produces-->  (output probabilities)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: This is followed by a softmax layer that produces the output probabilities for the three label classes (before, after and simultaneous), denoting the temporal relation between the two time expressions.
+
+----- triple_id: bc3025d6d39 -----
+TRIPLE:     (post-processing)  --produces-->  (dataset with cross-session task labels)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: after post-processing the single session task labels, the total number of distinct tasks is reduced. This is indicative of the fact that the modified dataset # Queries 1424 1424 #Tasks annotated 554 224 #Sessions 307 307 #Sessions with cross- session tasks 0 239 # Query pairs across sessions judged in the same task 0 36768 is able to consider queries from different search sessions as a part of the same search task (there are 36, 768 of them as shown in Table 1).
+
+----- triple_id: b169f42264c -----
+TRIPLE:     (Models)  --trainedon-->  (SQuAD)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: the generative models were trained on SQuAD.
+
+----- triple_id: b641fc0ba63 -----
+TRIPLE:     (Models)  --uses-->  (GloVe)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We evaluate the models using both GloVe and ELMo embeddings.
+
+----- triple_id: b32d0db3eda -----
+TRIPLE:     (unsupervised)  --comprises-->  (word clusters)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: Besides unsupervised word clusters, there are two other sets of features that contain generalized lexi- cal class information.
+
+----- triple_id: b4dd136f4bd -----
+TRIPLE:     (Reinforcement Learning)  --uses-->  (generator)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We also propose a reinforcement learning frame- work which encourages the generator to cover rare and seldom mentioned words and attributes in the table.
+
+----- triple_id: b30ce642195 -----
+TRIPLE:     (Neural Sequence Labeling)  --uses-->  (importance score of each word)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For keyphrase extraction , we adopt a neural sequence labeling model to output the likelihood of each word in the source text to be a keyphrase word (or the importance score of each word).
+
+----- triple_id: b6ae5171817 -----
+TRIPLE:     (Experiments)  --evaluatedon-->  (WB-filter)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: The experiments on the WIKIBIO and WB-filter datasets show the merits of our model.
+
+----- triple_id: b237dbfa628 -----
+TRIPLE:     (RNNs)  --uses-->  (LSTM layers)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In our encoding and ranking RNNs, we used LSTM layers with 1000 hidden cells in each layer.

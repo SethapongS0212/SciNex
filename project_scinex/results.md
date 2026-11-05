@@ -79,8 +79,51 @@
 > doubles relation correctness over the untuned model. The **ceiling is the teacher** (only half
 > to two thirds of its relations are correct) **and the entity lists** (C3 ~30% for every model:
 > generic CS-NER entries become subjects). ⚠ Single rater; n=50 per cell; one fold; not comparable
-> with Tables 13–14 (different corpus, extractor, teacher and student). In flight on 2026-11-05:
-> students with milder caps (50%, 60% empty), to be judged the same way.
+> with Tables 13–14 (different corpus, extractor, teacher and student). Milder caps: Table 18.
+>
+> **Table 18 (ACL, ⭐ MILDER CAPS: 50% and 60% empty targets).** Same student recipe as
+> me30 (Qwen3-8B QLoRA r=16, 1 epoch, fold 0), trained on `ft_data/acl_maxempty50` (2,870 steps)
+> and `acl_maxempty60` (3,290 steps), 2026-11-05. Counts from `ft_compare` on the 41 held-out
+> papers (`ft_runs/qwen3-8b-acl-f0/compare_caps.json`); correctness from a NEW blind round
+> `acl-f0-caps` (seed 29, 50 kept triples per model and ontology, the base and the teacher
+> re-sampled as decoys, `ontology_eval/_blind/acl-f0-caps/{ceo,scinex}/report.json`). me30 rows
+> are from Tables 16–17 (a different blind round, so its C1/C3/C4 are not directly comparable):
+>
+> | ontology | run | proposed → kept | kept rate | coverage | vs teacher P / R | C1 | C3 | C4 [95% CI] | C4 strict |
+> |---|---|---|---|---|---|---|---|---|---|
+> | CEO | qwen3-8b-acl-base-hf (untuned) | 6,139 → 2,363 | 38.5% | 74.5% | 4.4% / 19.6% | 57.0 | 20.0 | **17.0** [10, 25] | 2.0 |
+> | CEO | me30 (Table 17 round) | 820 → 670 | 81.7% | 43.8% | 23.6% / 30.7% | 90.0 | 28.0 | 51.0 [40, 62] | 36.0 |
+> | CEO | **qwen3-8b-acl-ft-me50-cv** | **451 → 407** | **90.2%** | **23.2%** | 28.5% / 22.4% | 80.0 | 44.0 | **58.0** [48, 68] | 38.0 |
+> | CEO | qwen3-8b-acl-ft-me60-cv | 326 → 289 | 88.7% | 15.7% | 30.8% / 18.0% | 83.0 | 40.0 | **58.0** [46, 69] | 46.0 |
+> | CEO | gptoss-20b (teacher) | 619 → 501 | 80.9% | 25.6% | (teacher) | 73.0 | 18.0 | **45.0** [35, 56] | 26.0 |
+> | scinex | qwen3-8b-acl-base-hf (untuned) | 6,349 → 2,469 | 38.9% | 77.1% | 2.6% / 19.7% | 51.0 | 22.0 | **16.0** [9, 25] | 4.0 |
+> | scinex | me30 (Table 17 round) | 644 → 548 | 85.1% | 35.6% | 13.5% / 24.6% | 90.0 | 32.0 | 61.0 [51, 71] | 42.0 |
+> | scinex | **qwen3-8b-acl-ft-me50-cv** | **196 → 182** | **92.9%** | **11.4%** | 17.0% / 11.8% | 88.0 | 50.0 | **71.0** [61, 81] | 56.0 |
+> | scinex | qwen3-8b-acl-ft-me60-cv | 97 → 90 | 92.8% | 5.8% | 25.6% / 9.3% | 85.0 | 54.0 | **63.0** [51, 74] | 52.0 |
+> | scinex | gptoss-20b (teacher) | 373 → 289 | 77.5% | 17.3% | (teacher) | 80.0 | 36.0 | **55.0** [43, 67] | 42.0 |
+>
+> All four students emit 99.8–100% valid JSON. Differences in C4 (unpaired bootstrap): me50 −
+> teacher **+13 [−2, +28] (CEO), +16 [0, +31] (scinex)**; me60 − teacher +13 [−4, +29], +8 [−9,
+> +25]; every student − base +41 to +55, significant.
+> **Reading: (1) The cap sets coverage, steeply.** Coverage falls from 43.8% (me30) to 23.2% (me50)
+> and 15.7% (me60) on CEO; the teacher's 25.6% sits between me30 and me50, close to me50. On
+> scinex me50 already undershoots (11.4% vs 17.3%), so the scinex match lies between 30% and 50%.
+> **(2) me50 is the pick** (coverage closest to the teacher's on both ontologies): it keeps 90%
+> of what it proposes and is at least as correct as its teacher (C4 58 vs 45, 71 vs 55; the CIs
+> touch 0, so "at least as correct", not "better"). me60 adds nothing: same CEO C4, lower scinex
+> C4, fewer triples. **(3) The trade-off is volume.** Rough correct-relation counts (kept × strict
+> C4): CEO me30 ≈ 241, me50 ≈ 155, me60 ≈ 133, teacher ≈ 130; scinex me30 ≈ 230, teacher ≈ 121,
+> me50 ≈ 102, me60 ≈ 47. me30 yields the most correct triples in absolute terms; a milder cap buys
+> precision with recall. Choose me50 to imitate the teacher, me30 to maximise graph size.
+> **(4) Where the triples sit** (`ft_overlap.py`): me50 CEO extracts on 126 paragraphs shared with
+> the teacher, 101 the teacher left empty and misses 125 of the teacher's; 42% of its CEO triples
+> (63% scinex) are on teacher-empty paragraphs (me30: 55% / 66%). Judged C4 on shared vs
+> teacher-empty paragraphs: me50 CEO 63.8 (n=29) vs 50.0 (n=21), scinex 75.0 (n=20) vs 68.3
+> (n=30); me60 CEO 74.2 (n=31) vs 31.6 (n=19), scinex 57.7 (n=26) vs 68.8 (n=24). Small n; on
+> CEO the shared-paragraph triples are the better ones.
+> ⚠ **Judge drift:** this round scored the same teacher lower than Table 17 (CEO C4 45 vs 49,
+> scinex 55 vs 62; C3 18 vs 30 on CEO) with fresh samples and a fresh session. Compare models
+> only within a round. Single rater; n=50 per cell; one fold.
 
 > ### ⚠ SESSION 27: THE EVALUATION CRITERIA CHANGED
 > Every precision number in this file uses the **old** CORRECT/PARTIAL/INCORRECT rubric and the

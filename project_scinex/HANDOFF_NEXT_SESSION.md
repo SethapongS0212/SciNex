@@ -1,46 +1,42 @@
 # Handoff — next session
 
-**Updated in Session 38 (2026-11-05, 13:40 server time)**: read the Session 38 block below first,
-then the Session 37 handoff under it, which still holds. Detail: `hands_off.md` §38.
+**Updated at the end of Session 38 (2026-11-05, ~21:00 server time)**: read the Session 38 block
+below first, then the Session 37 handoff under it (its "State" and steps 1–3 are now done).
+Detail: `hands_off.md` §38 (38.5 = the caps result).
 
-## ⚡ Session 38 — what changed while the caps run trains
-- **The caps run (`screen scinexcaps`) is healthy and later than first estimated:** training ends
-  ~19:00–19:30 server time, ft_gen takes ~1.5 h per lane, so `acl_compare_caps.log` lands around
-  **20:45–21:15**, not 19:30–20:00. Presentation at ~00:00 server time (07:00 user time).
-- **GPU settings changed for heat (sudo, given by the user for this only).** GPU0 had hit 90 °C with
-  0 °C margin at the 400 W minimum cap. Now: persistence mode on, max-clock locks GPU0 1650 MHz /
-  GPU1 1900 MHz (84 °C and 77 °C, 6 and 13 °C margin; GPU1 lost no speed), and a root thermal guard
-  in `screen gpuguard` that only ever LOWERS a clock if a margin reaches 2 °C.
-- ⛔ **University property: restore every setting as soon as the compare is written** (the run's
-  last GPU step; the judging needs no GPU):
-  ```
-  sudo screen -S gpuguard -X quit
-  sudo nvidia-smi -i 0 -rgc && sudo nvidia-smi -i 1 -rgc     # remove the clock locks
-  sudo nvidia-smi -pl 575                                    # factory default power limit
-  sudo nvidia-smi -pm 0                                      # persistence mode off
-  nvidia-smi --query-gpu=index,persistence_mode,power.limit,clocks.max.sm --format=csv
-  ```
-  The sudo password is not stored anywhere; ask the user if the session has lost it.
-- **Branch `s38-prep`** (worktree `/home/dev1/SciNex-s38`, pushed to GitHub): opt-in
-  `ft_train_qlora.py --share-system-prompt` (proven identical loss/gradients on CPU,
-  `ft_runs/test_share_prompt.py`; ~2× fewer tokens), `--no-grad-checkpointing`, and the read-only
-  `entity_cleanup_audit.py` + `entity_cleanup/`. **Merge into `main` only once this run can no
-  longer call `ft_train_qlora.py`** (both trainings finished), e.g. with tonight's commit:
-  `git -C /home/dev1/SciNex merge s38-prep`.
-- **After the presentation, before any new training:** GPU-measure the speed-up (both GPUs free):
+## ⚡ Session 38 — done: caps run judged, me50 picked, GPUs restored, branch merged
+- **Caps run finished** (me50 lane 20:19, me60 lane 20:41, both rc=0). Compare:
+  `/home/dev1/scinex_runs/acl_compare_caps.log`, `ft_runs/qwen3-8b-acl-f0/compare_caps.json`.
+- **Blind round `acl-f0-caps` judged, both ontologies** (seed 29, me50 + me60 + re-sampled base and
+  teacher). **`results.md` Table 18.** **Pick: me50** (`qwen3-8b-acl-ft-me50-cv`, adapter
+  `ft_runs/qwen3-8b-acl-f0-me50/adapter/`, gitignored): coverage 23.2% / 11.4% (teacher 25.6% /
+  17.3%), kept rate 90% / 93%, C4 58 / 71 vs teacher 45 / 55 (CEO / scinex; CIs touch 0, so "at
+  least as correct as the teacher"). me60 adds nothing. ⚠ me30 still yields the most correct
+  triples in absolute terms (kept × strict C4 ≈ 241 / 230 vs me50 155 / 102): **open choice for the
+  user — me50 to imitate the teacher, me30 for a bigger graph.** On scinex the coverage match lies
+  between caps 30% and 50%. ⚠ Judge drift between rounds (same teacher: CEO C4 45 vs 49, scinex 55
+  vs 62): compare within a round only.
+- **GPUs restored at 20:42** (university property): guard stopped, clock locks removed, power limit
+  575 W, persistence mode off; verified. If a future run needs heat control again, the recipe is in
+  `hands_off.md` §38.1 — and restore afterwards.
+- **`s38-prep` is merged into `main`**: opt-in `ft_train_qlora.py --share-system-prompt` (CPU-proven
+  identical; GPU speed not yet measured), `--no-grad-checkpointing`, `entity_cleanup_audit.py` +
+  `entity_cleanup/`, and **`ft_overlap.py`** (student vs teacher per paragraph; `--verdicts` splits
+  judged scores by shared vs teacher-empty paragraphs).
+- **First thing next session, both GPUs free:** GPU-measure the speed-up:
   ```
   python ft_train_qlora.py --data ft_data/acl_maxempty50/fold0 --base-model Qwen/Qwen3-8B \
       --run-name smoke-share --epochs 1 --max-steps 20 --share-system-prompt
   ```
   Compare s/step and peak VRAM with the default path's 7.7 s/step (full clocks), then delete
-  `ft_runs/smoke-share/`. If the masked attention kernel turns out slow on sm_120, keep the default
-  path; the flag is only worth adopting if the measured step time drops.
-- **Entity-list cleanup (handoff step 5) now has its evidence:** `entity_cleanup/README.md` on the
-  branch. Generic subjects are judged too broad 85% of the time, kept subjects 28–38%. Dropping
-  GENERIC + NOT_A_CONCEPT + case collisions would lift C3 from 31% to ~45% on the judged sample
-  (62% if the REVIEW words go too), at the cost of 29–45% of the teacher's current triples. C4 does
-  not move: that ceiling is the teacher. **The user/professor should review the 74 REVIEW rows of
-  `stoplist_draft.csv`** before the lists are rewritten.
+  `ft_runs/smoke-share/`. Adopt the flag only if the measured step time drops.
+- **Entity-list cleanup has its evidence** (`entity_cleanup/README.md`): generic subjects are judged
+  too broad 85% of the time, kept subjects 28–38%; dropping GENERIC + NOT_A_CONCEPT + collisions
+  lifts C3 from 31% to ~45% (62% with REVIEW), at the cost of 29–45% of the teacher's triples. C4
+  does not move. **The user/professor should review the 74 REVIEW rows of
+  `entity_cleanup/stoplist_draft.csv`** before the lists are rewritten.
+- Next steps are the Session 37 list below from step 4 on (guards, entity lists, stronger teacher,
+  more folds with the chosen cap, Part 3).
 
 ---
 
@@ -98,19 +94,12 @@ by Claude in session (`ontology_eval/_blind/acl-f0/{ceo,scinex}/`):
   ("Models", "Experiments") become subjects.
 
 ## State
-- **⏳ IN FLIGHT: milder caps, `screen -r scinexcaps`** (`/home/dev1/scinex_runs/run_acl_caps.sh`,
-  copy in `ft_runs/acl_scripts/`), started 2026-11-05 12:13 server time (the server clock runs ~7 h
-  behind the user's). GPU0 trains `ft_data/acl_maxempty50/fold0` → `qwen3-8b-acl-ft-me50-cv`
-  (2,870 steps); GPU1 trains `ft_data/acl_maxempty60/fold0` → `qwen3-8b-acl-ft-me60-cv` (3,290
-  steps). Both use `--save-steps 200` and then ft_gen. **Expected done ~19:30–20:00 server time.**
-  Then `ft_compare` writes `/home/dev1/scinex_runs/acl_compare_caps.log` and
-  `ft_runs/qwen3-8b-acl-f0/compare_caps.json`. Progress: `/home/dev1/scinex_runs/acl_driver.log`.
-  Re-running the script resumes.
-- **GPU power is capped at 400 W** (user, `sudo nvidia-smi -pl 400`), because both cards hit 89–90 °C
-  at full power. Without persistence mode the cap can reset when the driver unloads, so re-apply it
-  before long jobs.
+- ✔ **Done in Session 38:** the milder-caps run (me50/me60) finished, was judged, and is in
+  `results.md` Table 18 (see the Session 38 block at the top). The 400 W cap and every other GPU
+  setting were restored to the defaults afterwards.
 - Adapters (gitignored): `ft_runs/qwen3-8b-acl-f0/adapter/` (teacher-only, **recovered from
-  `checkpoint-5493`**; see its `run_manifest.json`) and `ft_runs/qwen3-8b-acl-f0-me30/adapter/`.
+  `checkpoint-5493`**; see its `run_manifest.json`), `ft_runs/qwen3-8b-acl-f0-me30/adapter/`,
+  `ft_runs/qwen3-8b-acl-f0-me50/adapter/` and `ft_runs/qwen3-8b-acl-f0-me60/adapter/`.
 - Presentation page: private claude.ai artifact "SciNex ACL Finetuning Results"
   (https://claude.ai/artifact/YEfrmYnhmqMQxNAAio3tEt), updated with the judged numbers.
 - **GitHub pushes work from this server** with the deploy key `~/.ssh/scinex_deploy_ed25519`
@@ -120,7 +109,7 @@ by Claude in session (`ontology_eval/_blind/acl-f0/{ceo,scinex}/`):
 ## Next steps, in order (set by the user on 2026-11-05 for the next session)
 The presentation is at **07:00 user time = ~00:00 server time** (the server clock runs ~7 h behind).
 
-**Before the presentation (≈ 2 h of work, start when the caps run is done, ~19:30–20:00 server):**
+**Before the presentation — ✔ ALL DONE in Session 38 (steps 1–3):**
 1. **Check the caps run** (5 min). `tail /home/dev1/scinex_runs/acl_driver.log` should end with
    "caps run done". Read `/home/dev1/scinex_runs/acl_compare_caps.log`: pick the cap whose coverage
    is closest to the teacher's (CEO 25.6%, scinex 17.3%) without collapsing. If a lane FAILED, re-run
