@@ -73,28 +73,45 @@ by Claude in session (`ontology_eval/_blind/acl-f0/{ceo,scinex}/`):
   (write access to SciNex only): `GIT_SSH_COMMAND="ssh -i ~/.ssh/scinex_deploy_ed25519 -o
   IdentitiesOnly=yes" git push git@github.com:SethapongS0212/SciNex.git main`.
 
-## Next steps, in order
-1. **When the caps run finishes:** read `acl_compare_caps.log`. Which cap brings coverage closest
-   to the teacher's 25.6% (CEO) / 17.3% (scinex) without collapsing?
-2. **Judge me50 and me60 blind**, with fresh base/teacher decoys so the pool stays blind, per
-   ontology (CEO, then scinex):
+## Next steps, in order (set by the user on 2026-11-05 for the next session)
+The presentation is at **07:00 user time = ~00:00 server time** (the server clock runs ~7 h behind).
+
+**Before the presentation (≈ 2 h of work, start when the caps run is done, ~19:30–20:00 server):**
+1. **Check the caps run** (5 min). `tail /home/dev1/scinex_runs/acl_driver.log` should end with
+   "caps run done". Read `/home/dev1/scinex_runs/acl_compare_caps.log`: pick the cap whose coverage
+   is closest to the teacher's (CEO 25.6%, scinex 17.3%) without collapsing. If a lane FAILED, re-run
+   `screen -dmS scinexcaps /home/dev1/scinex_runs/run_acl_caps.sh`; it resumes from the step
+   checkpoints. If it cannot finish in time, the presentation uses the current page as it stands.
+2. **Blind-judge me50 and me60, CEO first** (~45 min per ontology): build `acl-f0-caps` with fresh
+   base/teacher decoys (commands below), judge every batch, then `collect` + `report`. Do scinex
+   too if there is time.
    ```
    python blind_judge.py build --run acl-f0-caps --ontology ceo --extractor fixed --max-per-slug 50 --seed 29 \
        --papers $(cat ft_data/acl/fold0/eval_papers.txt) \
        --slugs qwen3-8b-acl-ft-me50-cv qwen3-8b-acl-ft-me60-cv qwen3-8b-acl-base-hf gptoss-20b
-   #   judge ontology_eval/_blind/acl-f0-caps/ceo/batch_NN.txt -> replies/reply_NN.txt
    python blind_judge.py collect --run acl-f0-caps --ontology ceo
-   python blind_judge.py report  --run acl-f0-caps --ontology ceo --compare qwen3-8b-acl-ft-me50-cv gptoss-20b
+   python blind_judge.py report  --run acl-f0-caps --ontology ceo \
+       --compare qwen3-8b-acl-ft-me50-cv gptoss-20b --compare qwen3-8b-acl-ft-me60-cv gptoss-20b
    ```
-   **Never open `key.csv` before `collect`.** Then update `results.md` (Table 18), the presentation
-   page and GitHub.
-3. **Entity-list quality** (the C3 ceiling): filter generic CS-NER entries out of the fixed-entity
-   lists. That needs a teacher re-run, so plan ~30 h.
-4. **A stronger teacher** would raise the C4 ceiling (gptoss-120b reached C4 86% on the 20-paper
-   corpus). It needs API credit (OpenRouter) or more GPU memory.
-5. **More folds** (`--eval-fold 1..`) with the winning variant, so more papers are scored by a model
-   that never saw them. The ACL split has 20 folds; pick a few.
-6. **Part 3 Q&A** with an independent, non-Claude model (still open since Session 34).
+   **Never open `key.csv` before `collect`.**
+3. **Update and publish** (~20 min): `results.md` Table 18 (counts from `compare_caps.json` +
+   judged C1/C3/C4), the presentation page (artifact slug `fcf3ea23-a2e2-46a8-836b-401a7d74e2e1`,
+   file `/home/dev1/scinex_runs/presentation/acl_results.html`; add the me50/me60 rows, and change
+   the headline only if a cap clearly matches the teacher's coverage and correctness),
+   `hands_off.md` §37.11, then commit + push with the deploy key (see State).
+
+**After the presentation:**
+4. **Guard fixes for errors the judging exposed in every model** (CPU only): drop the leaked
+   template placeholder `88.5` (an object not in the sentence), self-loops (subject == object),
+   and objects absent from the source sentence. Then re-run `ft_compare.py --extractor fixed`.
+   Not before the presentation, so the numbers shown stay fixed.
+5. **Entity-list cleanup** (the C3 ceiling): remove generic CS-NER entries ("Models",
+   "Experiments", "Tagger") from `output/acl/*/Entity_*_enriched.csv`, re-run the teacher (~30 h),
+   and retrain the winning cap.
+6. **A stronger teacher** (the C4 ceiling): it needs OpenRouter credit/key or more GPU memory.
+   That is the user's decision.
+7. **More folds** (2–3 of the 20 in `ft_data/acl/split.json`) with the winning cap.
+8. **Part 3 Q&A** with an independent, non-Claude model.
 
 ## Decisions already made — do not re-open
 - **Corpus = 805 ACL papers, extractor = fixed** (user, 2026-10-26). **Teacher = gpt-oss-20b run
@@ -103,7 +120,9 @@ by Claude in session (`ontology_eval/_blind/acl-f0/{ceo,scinex}/`):
 - **ACL split = `ft_data/acl/split.json`** (20 folds, seed 13; fold 0 = 41 eval papers). It is as
   sticky as the 20-paper `ft_data/split.json`, which stays untouched. Never regenerate either file.
 - **Claude's only role is the in-session blind triple judge**: never an extractor, teacher,
-  training-data source or API-called model. Asked again in Session 37 and still declined.
+  training-data source or API-called model. **Reaffirmed by the user on 2026-11-05**: Claude as an
+  extractor (judged by other models) was discussed and dropped. Using Claude outputs as training
+  data would also need checking against Anthropic's terms.
 - Generation batch size 8 on the 5090 (measured); 1 epoch on the ACL data.
 
 ## Traps hit in Session 37 — do not repeat
