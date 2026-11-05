@@ -38,6 +38,7 @@ Needs: transformers, peft, bitsandbytes, accelerate (requirements_ft.txt).
 """
 
 import argparse
+import hashlib
 import json
 import math
 import os
@@ -109,10 +110,133 @@ def tokenize_examples(tokenizer, examples, max_len):
         if n > max_len:
             dropped[part] += 1
             continue
+        first = e["messages"][0] if e["messages"] else {}
+        sys_key = (hashlib.sha1(first["content"].encode("utf-8")).hexdigest()
+                   if first.get("role") == "system" else None)
         feats.append({"input_ids": p_ids + c_ids,
                       "labels": [-100] * len(p_ids) + c_ids,
-                      "part": part})
+                      "part": part, "sys": sys_key})
     return feats, {"lengths": lengths, "dropped": dropped, "template_modes": modes}
+
+
+# ── --share-system-prompt: compute a shared prompt prefix once per optimizer step ────────────
+#
+# Every extraction example of one ontology starts with the SAME ~2.7k-token system prompt (2
+# distinct prompts in 13,464 ACL examples), and loss is taken only on the ~200-token answer. The
+# default path re-encodes that prompt for each of the 8 examples of a step. Here, the examples
+# of one step that share a token prefix are packed into ONE sequence
+#     [shared prefix | user+answer 1 | user+answer 2 | ...]
+# with a 4D mask (each segment sees the prefix and, causally, itself; never another segment)
+# and per-segment position ids that continue from the prefix. Every answer token therefore sees
+# exactly the tokens, at exactly the positions, it sees unpacked: same per-example loss, and the
+# gradient through the prefix is the sum over its segments, i.e. the same step gradient.
+# Examples with no partner (vocabulary, ontology, a lone extraction) are packed block-diagonally.
+# Verified on CPU against the default path: ft_runs/test_share_prompt.py.
+
+def _first_target(labels):
+    return next((i for i, l in enumerate(labels) if l != -100), len(labels))
+
+
+def _common_prefix_len(seqs):
+    n = min(len(s) for s in seqs)
+    head = seqs[0]
+    for i in range(n):
+        if any(s[i] != head[i] for s in seqs[1:]):
+            return i
+    return n
+
+
+def _build_packed(prefix_len, group):
+    """One packed sequence: shared prefix (may be 0) + one segment per example."""
+    ids = list(group[0]["input_ids"][:prefix_len])
+    pos, seg = list(range(prefix_len)), [-1] * prefix_len
+    pred, tgt = [], []
+    for j, f in enumerate(group):
+        start, suffix, lab = len(ids), f["input_ids"][prefix_len:], f["labels"]
+        assert all(l == -100 for l in lab[:prefix_len + 1]), "a target token inside the shared prefix"
+        ids += suffix
+        pos += range(prefix_len, prefix_len + len(suffix))
+        seg += [j] * len(suffix)
+        for t in range(prefix_len + 1, len(lab)):   # token t is predicted from position t-1
+            if lab[t] != -100:
+                pred.append(start + t - 1 - prefix_len)
+                tgt.append(lab[t])
+    return {"input_ids": ids, "position_ids": pos, "seg": seg, "prefix": prefix_len,
+            "pred": pred, "tgt": tgt}
+
+
+def pack_step(feats, cap, min_prefix=64):
+    """The examples of ONE optimizer step -> packed sequences of at most `cap` tokens (a single
+    example longer than cap stays alone). The shared prefix stops at least one token before the
+    earliest answer token, so every predicting position lies inside its own segment."""
+    by_sys, singles, out = defaultdict(list), [], []
+    for f in feats:
+        by_sys[f.get("sys")].append(f)
+    for key, group in by_sys.items():
+        if key is None or len(group) < 2:
+            singles += group
+            continue
+        p = min(_common_prefix_len([f["input_ids"] for f in group]),
+                min(_first_target(f["labels"]) for f in group) - 1)
+        if p < min_prefix:
+            singles += group
+            continue
+        cur, cur_len = [], p
+        for f in group:
+            extra = len(f["input_ids"]) - p
+            if cur and cur_len + extra > cap:
+                out.append(_build_packed(p, cur))
+                cur, cur_len = [], p
+            cur.append(f)
+            cur_len += extra
+        out.append(_build_packed(p, cur))
+    cur, cur_len = [], 0
+    for f in singles:
+        if cur and cur_len + len(f["input_ids"]) > cap:
+            out.append(_build_packed(0, cur))
+            cur, cur_len = [], 0
+        cur.append(f)
+        cur_len += len(f["input_ids"])
+    if cur:
+        out.append(_build_packed(0, cur))
+    return out
+
+
+class StepPacker:
+    """Collator for --share-system-prompt: a batch is ONE optimizer step's examples."""
+
+    def __init__(self, cap, attn_implementation):
+        if attn_implementation not in ("sdpa", "eager"):
+            sys.exit(f"--share-system-prompt supports sdpa/eager attention, not {attn_implementation}")
+        self.cap, self.eager = cap, attn_implementation == "eager"
+
+    def __call__(self, batch):
+        import torch
+        assert len(batch) == 1, "use per_device_train_batch_size=1 with StepPacker"
+        seqs = []
+        for s in pack_step(batch[0]["step"], self.cap):
+            n = len(s["input_ids"])
+            idx, seg = torch.arange(n), torch.tensor(s["seg"])
+            allowed = (idx[None, :] <= idx[:, None]) & (
+                (idx[None, :] < s["prefix"]) | (seg[None, :] == seg[:, None]))
+            mask = allowed[None, None]
+            if self.eager:   # eager attention ADDS the mask to the scores
+                mask = torch.zeros(mask.shape, dtype=torch.float32).masked_fill(
+                    ~mask, torch.finfo(torch.float32).min)
+            seqs.append({"input_ids": torch.tensor([s["input_ids"]]),
+                         "position_ids": torch.tensor([s["position_ids"]]),
+                         "attention_mask": mask,
+                         "pred": torch.tensor(s["pred"]), "tgt": torch.tensor(s["tgt"])})
+        return {"seqs": seqs}
+
+
+def packed_loss_sum(model, s):
+    """Summed cross-entropy over the answer tokens of one packed sequence. Logits are
+    materialised only at the predicting positions (logits_to_keep as an index tensor)."""
+    import torch.nn.functional as F
+    out = model(input_ids=s["input_ids"], attention_mask=s["attention_mask"],
+                position_ids=s["position_ids"], logits_to_keep=s["pred"], use_cache=False)
+    return F.cross_entropy(out.logits[0].float(), s["tgt"], reduction="sum")
 
 
 def _pct(xs, q):
@@ -174,6 +298,25 @@ def completion_only_trainer_cls():
             n = num_items_in_batch if num_items_in_batch is not None else (target != -100).sum()
             loss = loss / n
             return (loss, out) if return_outputs else loss
+
+        def training_step(self, model, inputs, num_items_in_batch=None):
+            if "seqs" not in inputs:                       # default path, unchanged
+                return super().training_step(model, inputs, num_items_in_batch)
+            # --share-system-prompt: ONE optimizer step's packed sequences. Normalise by every
+            # answer token of the step (= the default path's num_items_in_batch) and backward
+            # sequence by sequence, so only one graph is alive at a time.
+            model.train()
+            if hasattr(self.optimizer, "train") and callable(self.optimizer.train):
+                self.optimizer.train()
+            inputs = self._prepare_inputs(inputs)
+            n = sum(int(s["tgt"].numel()) for s in inputs["seqs"])
+            total = torch.zeros((), device=self.args.device)
+            for s in inputs["seqs"]:
+                with self.compute_loss_context_manager():
+                    loss = packed_loss_sum(model, s) / n
+                self.accelerator.backward(loss)
+                total += loss.detach()
+            return total
 
     return CompletionOnlyTrainer
 
@@ -244,7 +387,7 @@ def load_model(args):
     model.config.use_cache = False
     if args.upcast_fp32:
         model = prepare_model_for_kbit_training(
-            model, use_gradient_checkpointing=True,
+            model, use_gradient_checkpointing=not args.no_grad_checkpointing,
             gradient_checkpointing_kwargs={"use_reentrant": False})
     else:
         # Lean path (default). peft's helper upcasts EVERY non-quantised weight to fp32 —
@@ -253,7 +396,8 @@ def load_model(args):
         # (100% util at 41 W, >10 min for 16 examples). bf16 LoRA training is standard.
         for p in model.parameters():
             p.requires_grad_(False)
-        model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+        if not args.no_grad_checkpointing:
+            model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
         model.enable_input_require_grads()
     lora = LoraConfig(r=args.lora_r, lora_alpha=args.lora_alpha, lora_dropout=args.lora_dropout,
                       bias="none", task_type="CAUSAL_LM",
@@ -292,6 +436,16 @@ def main():
     ap.add_argument("--upcast-fp32", action="store_true",
                     help="peft's prepare_model_for_kbit_training (fp32 non-quantised weights); "
                          "costs ~0.8 GB extra on Qwen3-4B — fine on the VM, not on 8 GB")
+    ap.add_argument("--share-system-prompt", action="store_true",
+                    help="opt-in speed-up: per optimizer step, pack the examples that share a prompt "
+                         "prefix (every extraction example of one ontology shares its ~2.7k-token "
+                         "system prompt) into one sequence and encode the prefix once. Same loss and "
+                         "gradient as the default path (ft_runs/test_share_prompt.py); roughly half "
+                         "the tokens per step. Default off")
+    ap.add_argument("--no-grad-checkpointing", action="store_true",
+                    help="opt-in: skip activation recomputation (~25%% less compute per step) at the "
+                         "cost of activation memory, ~1 GB per layer at 4k tokens on Qwen3-8B, so it "
+                         "may not fit at full sequence length. Default off")
     ap.add_argument("--trust-remote-code", action="store_true")
     ap.add_argument("--allow-dev-torch", action="store_true")
     ap.add_argument("--dry-run", action="store_true", help="tokenizer only: stats, no model, no GPU")
@@ -331,13 +485,18 @@ def main():
     run_dir.mkdir(parents=True, exist_ok=True)
 
     model = load_model(args)
+    per_step = args.batch_size * args.grad_accum
     total_steps = args.max_steps if args.max_steps > 0 else \
-        math.ceil(math.ceil(len(feats) / (args.batch_size * args.grad_accum)) * args.epochs)
+        math.ceil(math.ceil(len(feats) / per_step) * args.epochs)
+    if args.share_system_prompt and dev_feats:
+        sys.exit("--share-system-prompt has no dev-set evaluation path yet; drop dev.jsonl or the flag")
     targs = TrainingArguments(
         output_dir=str(run_dir / "checkpoints"),
         num_train_epochs=args.epochs, max_steps=args.max_steps,
-        per_device_train_batch_size=args.batch_size, per_device_eval_batch_size=1,
-        gradient_accumulation_steps=args.grad_accum,
+        # --share-system-prompt: one dataset item = one optimizer step's `per_step` examples
+        per_device_train_batch_size=1 if args.share_system_prompt else args.batch_size,
+        per_device_eval_batch_size=1,
+        gradient_accumulation_steps=1 if args.share_system_prompt else args.grad_accum,
         learning_rate=args.lr, lr_scheduler_type="cosine",
         warmup_steps=max(1, math.ceil(args.warmup_ratio * total_steps)),   # warmup_ratio is deprecated
         optim="paged_adamw_8bit", bf16=True, logging_steps=5,
@@ -346,14 +505,25 @@ def main():
         save_strategy="steps" if args.save_steps > 0 else "epoch",
         save_steps=args.save_steps if args.save_steps > 0 else 500, save_total_limit=1,
         eval_strategy="epoch" if dev_feats else "no",
-        gradient_checkpointing=True, gradient_checkpointing_kwargs={"use_reentrant": False},
+        gradient_checkpointing=not args.no_grad_checkpointing,
+        gradient_checkpointing_kwargs={"use_reentrant": False},
         report_to=[], seed=args.seed, remove_unused_columns=False,
     )
-    strip = [{k: v for k, v in f.items() if k != "part"} for f in feats]
-    dev_strip = [{k: v for k, v in f.items() if k != "part"} for f in dev_feats]
+    if args.share_system_prompt:
+        # same shuffled examples, cut into optimizer steps of `per_step` (the Trainer's sampler
+        # then shuffles the step order, as it shuffles single examples on the default path)
+        train_set = [{"step": feats[i:i + per_step]} for i in range(0, len(feats), per_step)]
+        collator = StepPacker(args.max_seq_len, model.config._attn_implementation)
+        dev_strip = []
+        print(f"--share-system-prompt: {len(train_set)} steps of {per_step} examples, packed "
+              f"sequences capped at {args.max_seq_len} tokens", flush=True)
+    else:
+        train_set = [{k: v for k, v in f.items() if k not in ("part", "sys")} for f in feats]
+        dev_strip = [{k: v for k, v in f.items() if k not in ("part", "sys")} for f in dev_feats]
+        collator = Collator(tok.pad_token_id)
     trainer = completion_only_trainer_cls()(
-        model=model, args=targs, train_dataset=strip,
-        eval_dataset=dev_strip or None, data_collator=Collator(tok.pad_token_id),
+        model=model, args=targs, train_dataset=train_set,
+        eval_dataset=dev_strip or None, data_collator=collator,
         callbacks=[progress_callback(torch.cuda.get_device_properties(0).total_memory / 2**30)])
     t0 = time.time()
     # resume from the newest step checkpoint of an interrupted run (optimizer, LR schedule, RNG
@@ -378,7 +548,8 @@ def main():
         "parts": args.parts, "n_train_examples": len(feats), "dropped_too_long": dict(stats["dropped"]),
         "hyperparameters": {k: getattr(args, k) for k in (
             "max_seq_len", "epochs", "max_steps", "lr", "batch_size", "grad_accum", "warmup_ratio",
-            "lora_r", "lora_alpha", "lora_dropout", "target_modules", "seed")},
+            "lora_r", "lora_alpha", "lora_dropout", "target_modules", "seed",
+            "share_system_prompt", "no_grad_checkpointing")},
         "train_loss": getattr(result, "training_loss", None),
         "log_history": trainer.state.log_history,
         "versions": {"torch": torch.__version__, "transformers": transformers.__version__,

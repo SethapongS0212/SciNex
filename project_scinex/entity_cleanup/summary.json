@@ -1,0 +1,202 @@
+{
+  "papers_with_list": 802,
+  "min_df_pct": 5.0,
+  "entity_list_entries": 79875,
+  "entries_by_category": {
+    "KEEP": 34307,
+    "GENERIC": 29870,
+    "REVIEW": 9746,
+    "NOT_A_CONCEPT": 4173,
+    "CASE_COLLISION": 1779
+  },
+  "case_sensitive_entries_checked": 5381,
+  "case_collisions": 1779,
+  "top_case_collisions": [
+    [
+      "complex",
+      288,
+      292
+    ],
+    [
+      "tags",
+      184,
+      187
+    ],
+    [
+      "tag",
+      161,
+      167
+    ],
+    [
+      "map",
+      151,
+      185
+    ],
+    [
+      "character",
+      138,
+      139
+    ],
+    [
+      "zero",
+      128,
+      129
+    ],
+    [
+      "mutual",
+      83,
+      84
+    ],
+    [
+      "red",
+      66,
+      70
+    ],
+    [
+      "bit",
+      51,
+      51
+    ],
+    [
+      "etc",
+      43,
+      45
+    ],
+    [
+      "flat",
+      38,
+      41
+    ],
+    [
+      "tesla",
+      34,
+      35
+    ],
+    [
+      "nice",
+      34,
+      35
+    ],
+    [
+      "hit",
+      22,
+      34
+    ],
+    [
+      "als",
+      20,
+      21
+    ],
+    [
+      "meta",
+      19,
+      20
+    ],
+    [
+      "robert",
+      19,
+      22
+    ],
+    [
+      "gin",
+      17,
+      18
+    ],
+    [
+      "ill",
+      11,
+      11
+    ],
+    [
+      "mas",
+      11,
+      12
+    ],
+    [
+      "ice",
+      10,
+      14
+    ],
+    [
+      "layered",
+      8,
+      8
+    ],
+    [
+      "grasp",
+      8,
+      9
+    ],
+    [
+      "microblog",
+      8,
+      8
+    ],
+    [
+      "adagrad",
+      7,
+      15
+    ]
+  ],
+  "teacher_triples_by_subject_category": {
+    "fixed": {
+      "KEEP": 4639,
+      "REVIEW": 1392,
+      "GENERIC": 2177,
+      "NOT_A_CONCEPT": 246,
+      "CASE_COLLISION": 34
+    },
+    "fixed_scinex": {
+      "REVIEW": 806,
+      "KEEP": 3057,
+      "GENERIC": 1450,
+      "NOT_A_CONCEPT": 148,
+      "CASE_COLLISION": 18
+    }
+  },
+  "judged_by_subject_category": {
+    "NOT_A_CONCEPT": {
+      "n": 12,
+      "C1": 41.7,
+      "C4": 33.3,
+      "C3_appropriate_pct": 0.0,
+      "C3_too_broad_pct": 100.0
+    },
+    "REVIEW": {
+      "n": 59,
+      "C1": 78.8,
+      "C4": 48.3,
+      "C3_appropriate_pct": 10.2,
+      "C3_too_broad_pct": 83.1
+    },
+    "KEEP": {
+      "n": 51,
+      "C1": 89.2,
+      "C4": 42.2,
+      "C3_appropriate_pct": 66.7,
+      "C3_too_broad_pct": 27.5
+    },
+    "GENERIC": {
+      "n": 104,
+      "C1": 71.2,
+      "C4": 42.3,
+      "C3_appropriate_pct": 9.6,
+      "C3_too_broad_pct": 84.6
+    },
+    "KEEP*": {
+      "n": 72,
+      "C1": 85.4,
+      "C4": 46.5,
+      "C3_appropriate_pct": 58.3,
+      "C3_too_broad_pct": 37.5
+    },
+    "CASE_COLLISION": {
+      "n": 1,
+      "C1": 0.0,
+      "C4": 0.0,
+      "C3_appropriate_pct": 0.0,
+      "C3_too_broad_pct": 100.0
+    }
+  },
+  "note": "KEEP* in judged = below the df threshold (long tail), not reviewed"
+}
