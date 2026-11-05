@@ -253,6 +253,8 @@ Regression-checked on 8 known-good papers: 0 spurious dotted-headings, section/c
 **Why not CS-NER abstract data per paper, and why not ITER:** the only ACL-id-keyed CS-NER slice (`acl/`) is title-only (`acl/train-abs.data` → 404); the abstract-level data belongs to other corpora (NCG/PWC/SciERC), not our ACL papers. So we use CS-NER as a **global gazetteer intersected with each paper's text**, not a per-paper lookup. ITER/SciERC (`--source iter`) is still available as a model-based non-circular fallback but is **not** the chosen path.
 - Columns expected by `entity_loader` / fixed extractor: Entity, Abbreviation, Aliases, TP, NER_Type, CEO_Type.
 
+### STATUS (2026-11-05, Session 38) — Caps run (me50/me60) still training, compare due ~20:45–21:15 server time. GPU heat fixed with clock locks (GPU0 1650 / GPU1 1900 MHz) + root guard: ⛔ university box, RESTORE the settings after the run (checklist in `HANDOFF_NEXT_SESSION.md`). Branch `s38-prep`: opt-in `--share-system-prompt` (~2× fewer training tokens, CPU-proven identical gradients, GPU speed not yet measured) and the entity-list audit (generic subjects explain the C3 ceiling; C4 is the teacher's). READ `hands_off.md` §38.
+
 ### STATUS (2026-11-05, Session 37) — ⭐ BLIND JUDGING: the Qwen3-8B student is as correct as its gpt-oss-20b teacher (C4 51 vs 49 CEO, 61 vs 62 scinex) and far above the untuned model (23 / 19). Milder-cap students (50%, 60%) in flight in `screen scinexcaps`. READ `results.md` Table 17, `hands_off.md` §37.10, `HANDOFF_NEXT_SESSION.md`.
 
 ### STATUS (2026-10-30, Session 37) — ⭐ ACL FINETUNING DONE: the max-empty-30% Qwen3-8B student keeps 670 triples at the teacher's guard-pass rate; teacher-only collapsed. Unjudged. READ `results.md` Table 16, `hands_off.md` §37.8.

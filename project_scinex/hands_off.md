@@ -1,5 +1,94 @@
 # Hands-Off Notes
 
+## Session 38 — GPU heat brought under control with clock locks; a 2× training speed-up built and proven equivalent on CPU; entity-list cleanup audited (2026-11-05)
+
+> User: *"read HANDOFF_NEXT_SESSION.md and continue"*. At 12:38 server time the caps run (§37.10)
+> had been training for 25 min, so the handoff's steps 1–3 wait for it. In the meantime the user
+> asked for safer GPUs (*"i rather it to finish without any problem"*), then *"isnt there a way we
+> can edit and change how code and process runs so it uses less resources but keeping the same or
+> similar qualities"*, then chose two CPU-only tasks: **speed-up for future runs** and the
+> **entity-list cleanup draft**. Both live on branch **`s38-prep`** (worktree
+> `/home/dev1/SciNex-s38`), so the code `main` runs is untouched while the students train.
+
+### 38.1 GPU heat: clock locks, not a power cap (sudo given by the user for this only)
+- **400 W is the 5090's MINIMUM power limit**, so `nvidia-smi -pl` cannot go lower. At 400 W GPU0 sat
+  at 90 °C with **0 °C margin** to its max operating temperature (`temperature.gpu.tlimit`; HW
+  slowdown at −2, shutdown at −5) and had already spent 27 s in HW thermal slowdown. GPU1: 86 °C,
+  margin 5 °C.
+- The user gave the sudo password for heat management (not stored anywhere). **The machine is
+  university property: every setting below is to be restored after the run** (checklist in
+  `HANDOFF_NEXT_SESSION.md`). All are runtime-only; `nvidia-persistenced` starts with
+  `--no-persistence-mode`, so a reboot also resets them.
+- `sudo nvidia-smi -pm 1` (persistence on, so the 400 W cap cannot silently reset to 575 W).
+- **Clock locks** (`nvidia-smi -i N -lgc 0,<MHz>`), measured on the live run:
+
+  | | before | 1500 MHz | **final** |
+  |---|---|---|---|
+  | GPU0 (me50) | 90 °C, 400 W, margin 0, 7.7 s/step | 79 °C, 302 W, margin 11, **10.0 s/step (−30%)** | **1650 MHz**: 84 °C, 344 W, margin 6, 8.2 s/step |
+  | GPU1 (me60) | 86 °C, 400 W, margin 5, 7.8 s/step | — | **1900 MHz**: 77 °C, 343 W, margin 13, **7.8 s/step (no loss)** |
+
+  Power rises much faster than speed near the top clocks, so a modest lock is close to free.
+- **Thermal guard** `/home/dev1/scinex_runs/gpu_thermal_guard.sh`, root `screen gpuguard`: every 30 s,
+  if a GPU's margin is ≤ 2 °C it lowers that GPU's max clock by 100 MHz (floor 1200); it never raises
+  a clock; log `gpu_thermal_guard.log`. ⛔ Its first version would have set GPU1 to 2000 MHz on its
+  first trigger, i.e. RAISED it from the hand-set 1900; it was restarted with the right state
+  before it ever fired. Keep the guard's start state equal to the hand-set locks.
+
+### 38.2 `--share-system-prompt`: ~2× faster training at identical loss (branch `s38-prep`)
+- **Where the time goes** (`ft_train_qlora.py --dry-run` on `ft_data/acl_maxempty50/fold0`):
+  extraction 13,464 examples at p50 3,230 tokens (98% of all tokens); vocabulary 8,191 × 73;
+  ontology 1,300 × 171. Training runs batch 1 × accum 8, so there is no padding and **length
+  grouping would save nothing**. Turning gradient checkpointing off needs ~1 GB of activations per
+  layer at 4k tokens × 36 layers, so it would likely not fit in 32 GB.
+- **The waste:** all 13,464 extraction examples use **2 distinct system prompts** (one per ontology,
+  ~12.5k characters, ~2.7k tokens), re-encoded for every example although loss is taken only on the
+  ~200-token answer.
+- **The flag** (opt-in, default off): one dataset item = one optimizer step's 8 shuffled examples.
+  Examples sharing a token prefix are packed into `[prefix | segment 1 | segment 2 | ...]` with a 4D
+  boolean mask (a segment sees the prefix and, causally, itself), per-segment position ids that
+  continue from the prefix, and logits only at the predicting positions (`logits_to_keep` as an
+  index tensor). Examples without a partner are packed block-diagonally. A `training_step` override
+  backpropagates sequence by sequence and normalises by every answer token of the step (= the default
+  path's `num_items_in_batch`). Sequences are capped at `--max-seq-len`. Also new:
+  `--no-grad-checkpointing` (opt-in, for measurement). Dev-set evaluation is refused in share mode.
+- **Proof** (`ft_runs/test_share_prompt.py`, CPU, real Qwen3 tokenizer, a real 8-example step, a
+  tiny random Qwen3 with LoRA on all seven projections): loss 11.949280 vs 11.949279; worst relative
+  LoRA-gradient difference 8 × 10⁻⁷ for sdpa and eager, at cap 6144 and 4000; one real
+  `CompletionOnlyTrainer` SGD step with gradient checkpointing gives the same update to 2.4 × 10⁻⁶.
+  **PASS.**
+- **Projection over the full me50 data:** tokens encoded 44.3 M → 21.6 M (48.9%), forward passes
+  22,955 → 7,089 (30.9%), so about **2× faster** (linear layers dominate). ⚠ Not yet measured on GPU:
+  with a custom mask SDPA cannot use the causal cuDNN path, so the real kernel speed on sm_120 is the
+  open question. GPU smoke test in `HANDOFF_NEXT_SESSION.md`.
+
+### 38.3 Entity-list cleanup audit — the C3 ceiling explained (draft, read-only, branch `s38-prep`)
+`entity_cleanup_audit.py` → `entity_cleanup/{README.md, stoplist_draft.csv, summary.json}`. It reads
+the 802 lists, the teacher's kept triples on all papers, and the 299 judged `acl-f0` triples (batch
+and reply files only, no model identity).
+- The lists are a CS-NER gazetteer matched **case-insensitively**, so common words become entities:
+  `training` in 86% of papers, `Example`, `Language`, `Information` (typed *Model*), `Models`,
+  `Experiments` (typed *Model*). ~100 entries per paper.
+- Categories over 79,875 entries: **GENERIC 37.4%**, NOT_A_CONCEPT 5.2% (`semantic`, `supervised`,
+  `evaluate`), **CASE_COLLISION 2.2%** (automatic per paper: `CompLex` where the paper only writes
+  "complex", 288/292 papers; `tags`, `character`→CharacTer, `zero`→ZeRO, `mutual`→MuTual), REVIEW 12.2%
+  (task words: `classifier`, `parser`, `Attention`), KEEP 43.0%. ⛔ The first collision rule
+  (exact case) wrongly flagged `fastText`/`bidirectional LSTM`; the second flagged "Adam" in 186
+  papers. Final rule: a collision only if EVERY occurrence is plain casing, plus an allow-list.
+- **Judged triples by subject category:** GENERIC (n=104) C3 appropriate 9.6%, too broad 84.6%;
+  NOT_A_CONCEPT (12) 0% / 100%; REVIEW (59) 10.2% / 83.1%; KEEP (51) 66.7% / 27.5%; long tail (72)
+  58.3% / 37.5%. **C4 is flat (42–48) across categories.**
+- **Projection:** C3 appropriate 30.8% now → **45.1%** without GENERIC + NOT_A_CONCEPT + collisions
+  (182 of 299 triples left) → **61.8%** without REVIEW too (123 left). It would remove 29% (45% with
+  REVIEW) of the teacher's current CEO triples. A re-run teacher would not simply lose them; it may
+  pick specific subjects instead. **The C4 ceiling is the teacher's, not the lists'.**
+
+### 38.4 State at 13:40 server time
+Caps run healthy: me50 step 584/2870 (8.2 s/step), me60 610/3290 (7.9 s/step); training ends
+~19:00–19:30, ft_gen ~1.5 h each, compare ~20:45–21:15. As soon as the compare is written (the run's
+last GPU step), restore the GPU settings; then handoff steps 1–3 (blind-judge me50/me60, Table 18,
+page, push), which need no GPU. Docs on `main`; code on `s38-prep`, pushed as
+its own branch, to merge once no `ft_train_qlora.py` call can happen for this run.
+
 ## Session 37 — Linux box with 2× RTX 5090; ⛔ finetuning corpus switched to the ACL ANTHOLOGY papers + FIXED extractor; gpt-oss-20b teacher run launched (2026-10-26/27)
 
 > User: *"download the github https://github.com/SethapongS0212/SciNex to envsam and overwrite it over

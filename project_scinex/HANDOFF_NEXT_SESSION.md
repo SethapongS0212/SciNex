@@ -1,5 +1,49 @@
 # Handoff — next session
 
+**Updated in Session 38 (2026-11-05, 13:40 server time)**: read the Session 38 block below first,
+then the Session 37 handoff under it, which still holds. Detail: `hands_off.md` §38.
+
+## ⚡ Session 38 — what changed while the caps run trains
+- **The caps run (`screen scinexcaps`) is healthy and later than first estimated:** training ends
+  ~19:00–19:30 server time, ft_gen takes ~1.5 h per lane, so `acl_compare_caps.log` lands around
+  **20:45–21:15**, not 19:30–20:00. Presentation at ~00:00 server time (07:00 user time).
+- **GPU settings changed for heat (sudo, given by the user for this only).** GPU0 had hit 90 °C with
+  0 °C margin at the 400 W minimum cap. Now: persistence mode on, max-clock locks GPU0 1650 MHz /
+  GPU1 1900 MHz (84 °C and 77 °C, 6 and 13 °C margin; GPU1 lost no speed), and a root thermal guard
+  in `screen gpuguard` that only ever LOWERS a clock if a margin reaches 2 °C.
+- ⛔ **University property: restore every setting as soon as the compare is written** (the run's
+  last GPU step; the judging needs no GPU):
+  ```
+  sudo screen -S gpuguard -X quit
+  sudo nvidia-smi -i 0 -rgc && sudo nvidia-smi -i 1 -rgc     # remove the clock locks
+  sudo nvidia-smi -pl 575                                    # factory default power limit
+  sudo nvidia-smi -pm 0                                      # persistence mode off
+  nvidia-smi --query-gpu=index,persistence_mode,power.limit,clocks.max.sm --format=csv
+  ```
+  The sudo password is not stored anywhere; ask the user if the session has lost it.
+- **Branch `s38-prep`** (worktree `/home/dev1/SciNex-s38`, pushed to GitHub): opt-in
+  `ft_train_qlora.py --share-system-prompt` (proven identical loss/gradients on CPU,
+  `ft_runs/test_share_prompt.py`; ~2× fewer tokens), `--no-grad-checkpointing`, and the read-only
+  `entity_cleanup_audit.py` + `entity_cleanup/`. **Merge into `main` only once this run can no
+  longer call `ft_train_qlora.py`** (both trainings finished), e.g. with tonight's commit:
+  `git -C /home/dev1/SciNex merge s38-prep`.
+- **After the presentation, before any new training:** GPU-measure the speed-up (both GPUs free):
+  ```
+  python ft_train_qlora.py --data ft_data/acl_maxempty50/fold0 --base-model Qwen/Qwen3-8B \
+      --run-name smoke-share --epochs 1 --max-steps 20 --share-system-prompt
+  ```
+  Compare s/step and peak VRAM with the default path's 7.7 s/step (full clocks), then delete
+  `ft_runs/smoke-share/`. If the masked attention kernel turns out slow on sm_120, keep the default
+  path; the flag is only worth adopting if the measured step time drops.
+- **Entity-list cleanup (handoff step 5) now has its evidence:** `entity_cleanup/README.md` on the
+  branch. Generic subjects are judged too broad 85% of the time, kept subjects 28–38%. Dropping
+  GENERIC + NOT_A_CONCEPT + case collisions would lift C3 from 31% to ~45% on the judged sample
+  (62% if the REVIEW words go too), at the cost of 29–45% of the teacher's current triples. C4 does
+  not move: that ceiling is the teacher. **The user/professor should review the 74 REVIEW rows of
+  `stoplist_draft.csv`** before the lists are rewritten.
+
+---
+
 **Written at the end of Session 37 (2026-11-05).** Read this, then `hands_off.md` §37 (37.2 for
 the corpus decision, 37.7–37.8 for the hardware incident and the results).
 
