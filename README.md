@@ -11,60 +11,42 @@ against the real papers.
 
 ## Start here
 
+> **⛔ Read [`project_scinex/OBJECTIVE.md`](project_scinex/OBJECTIVE.md) first.** The professor's
+> objective: (1) research paper → knowledge graph; (2) finetune an LLM to understand the domain
+> ontology and vocabulary, so it extracts with **only the entity list, no ontology in the prompt**;
+> (3) evaluate the graph with **simulated Q&A against the real papers** (the main evaluation).
+
 | If you want to… | read |
 |---|---|
-| **set the project up on a new machine** | [`project_scinex/SETUP_NEW_MACHINE.md`](project_scinex/SETUP_NEW_MACHINE.md) |
+| **know the objective** | [`project_scinex/OBJECTIVE.md`](project_scinex/OBJECTIVE.md) |
 | **know where the work stands and what is next** | [`project_scinex/HANDOFF_NEXT_SESSION.md`](project_scinex/HANDOFF_NEXT_SESSION.md) |
-| read the full write-up (pipeline, ontologies, evaluation, results, limitations) | [`project_scinex/RESULTS_REPORT.md`](project_scinex/RESULTS_REPORT.md) |
-| see paper-ready result tables | [`project_scinex/results.md`](project_scinex/results.md) |
-| see the finetuning + Q&A progress summary | [`project_scinex/SUMMARY_finetune_qa_2026-10-01.md`](project_scinex/SUMMARY_finetune_qa_2026-10-01.md) |
+| set the project up on a new machine | [`project_scinex/SETUP_NEW_MACHINE.md`](project_scinex/SETUP_NEW_MACHINE.md) |
+| see the result tables | [`project_scinex/results.md`](project_scinex/results.md) |
 | understand the architecture and conventions | [`project_scinex/Claude.md`](project_scinex/Claude.md) |
 | read the session-by-session log (every trap found) | [`project_scinex/hands_off.md`](project_scinex/hands_off.md) |
-| see the 20-paper corpus | [`project_scinex/PAPERS.md`](project_scinex/PAPERS.md), `project_scinex/papers/manifest.csv` |
-| use the PDF → HTML parser (Part 1, `main.py`) | [`project_scinex/README.md`](project_scinex/README.md) |
+| use the PDF → HTML parser (step 1, `main.py`) | [`project_scinex/README.md`](project_scinex/README.md) |
 
 ---
 
-## The project in three parts
+## The project in three steps
 
-1. **Paper → knowledge graph** (built). PDF parser → paragraphs → an LLM extracts triples whose
-   relation must come from the ontology → rule-based guards reject malformed triples.
-2. **Finetune an open-weight LLM on the ontology and vocabulary** (current work; **fold 0 done and
-   judged**). A small student (Qwen3-1.7B, QLoRA) learns from a teacher model's stored extractions
-   (GPT-OSS-120B), optionally augmented with triples that other models agree on, and is evaluated on
-   papers it never trained on. It now matches the teacher per triple but extracts far less.
-3. **Evaluate graphs by simulated Q&A** (tooling built, `qa_eval.py`). Questions verified against the
-   paper text are answered from the graph alone and graded deterministically.
+1. **Paper → knowledge graph.** PDF parser → paragraphs → an extractor writes triples whose
+   subjects come from the paper's fixed entity list → rule-based guards reject malformed triples.
+2. **Finetune an open LLM to understand the ontology and vocabulary.** A local teacher
+   (gpt-oss-20b) labels 805 ACL Anthology papers using the ontology; students (Qwen3, Llama-3.1,
+   Gemma-3, Phi-4) learn from those answers plus ontology and vocabulary cards, and then extract
+   **without the ontology in their prompt**. Tested on 41 papers they never saw.
+3. **Evaluate graphs by simulated Q&A** (`qa_eval.py`): questions verified against the paper text
+   are answered from the graph alone and graded deterministically. Per-triple blind judging is a
+   diagnostic.
 
-## Status (October 2026)
+## Status (November 2026)
 
-- **⛔ Corpus change for Part 2 (2026-10-26):** the finetuning runs now use the **ACL Anthology
-  papers** (805 papers with fixed entity lists) with the **fixed extractor**, not the 20-paper
-  corpus. Teacher `gpt-oss-20b` (local), student `Qwen3-8B`, on 2× RTX 5090.
-- **⭐ ACL finetuning result (2026-10-30, judge-free):** on 41 held-out ACL papers a Qwen3-8B
-  student trained with empty targets capped at 30% keeps **670 CEO triples at an 81.7% guard-pass
-  rate**, against the gpt-oss-20b teacher's 501 at 80.9%, with 99.9% valid JSON. Trained on the
-  teacher's raw mix (80% empty answers), the student collapsed to 15 triples.
-- **⭐ Blind correctness (2026-11-05):** relation correctness (C4) of the finetuned student is
-  **51 (CEO) / 61 (scinex)**, equal to the teacher's 49 / 62 and far above the untuned model's
-  23 / 19 (50 sampled triples per model, blind). The ceiling is the teacher and the generic entity
-  lists. `project_scinex/results.md` Tables 15–17, `project_scinex/hands_off.md` §37.
-
-- **Extraction comparison, 20 papers, CEO ontology** (C1 concept correctness / C3 specificity /
-  C4 relation correctness, ~40 judged triples per model): GPT-OSS-120B 88.8 / 80.0 / **86.2**,
-  Gemma-4-31B 93.8 / 80.0 / 73.8, Qwen3-235B 75.0 / 60.0 / 47.5, Ministral-14B 70.0 / 52.5 / 41.2.
-  The models differ most on relation typing (C4). At this sample size, gaps under ~10 points
-  are not distinguishable. Details and caveats: `results.md`.
-- **⭐⭐⭐ Finetuning result (fold 0, judged 2026-10-24):** a finetuned **Qwen3-1.7B** student reaches
-  the **120B teacher's per-triple quality** on papers it never saw. Blind census of all 174 paragraphs
-  per extractor, CEO ontology — relation correctness (C4) **29.4% untuned → 85.4% finetuned**, against
-  the teacher's **86.4%**; outright relation errors fall from **63.6% of triples to ~7%** (teacher
-  1.7%). Valid JSON 87.9% → 100%. **But the student under-extracts badly:** it answers "no triples"
-  for 90–95% of paragraphs, giving 47 triples where the teacher gives 180 (coverage 7.5% vs 42%).
-  Multi-model ("consensus") training data beats teacher-only on volume (+62% triples) at
-  indistinguishable quality. Full tables and caveats: `project_scinex/results.md` Tables 13–14.
-- **Earlier result (ACL corpus, citation prediction):** RotatE knowledge-graph embeddings predict
-  held-out citation links with MRR ≈ 0.60 and Hits@10 ≈ 0.85 (5 seeds, held-out test papers).
+- Students that still read the full ontology prompt already match their teacher per triple
+  (relation correctness 58 / 71 vs 45 / 55 on CEO / scinex, `results.md` Table 18). They are the
+  baseline.
+- **In progress:** ontology-free students of four model families, then the simulated Q&A
+  evaluation, then a second teacher. See `project_scinex/HANDOFF_NEXT_SESSION.md`.
 
 ## What is deliberately NOT in this repo
 

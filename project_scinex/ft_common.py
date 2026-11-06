@@ -171,7 +171,36 @@ def split_sets(split, corpus, eval_fold, dev_fold=None):
 
 # ── ontology / prompts ───────────────────────────────────────────────────────
 
-PROMPT_VARIANTS = ("default", "recall")
+PROMPT_VARIANTS = ("default", "recall", "noont")
+
+# "noont" (Session 38, the professor's step 2: "finetune the LLM to understand the domain
+# ontology and vocabulary"): an ONTOLOGY-FREE system prompt. No relation list, no relation
+# definitions or relation-specific rules — only the ontology's NAME, the general extraction
+# rules and the output format. A model that still emits correct, ontology-consistent triples
+# under it has learned the ontology into its weights (training data: the teacher's
+# ontology-constrained answers + the ontology and vocabulary cards). The user prompt (entity
+# list + text) is unchanged. Used for training data (build_ft_data --prompt-variant noont)
+# AND inference (ft_generate --prompt-variant noont); the guards still check every triple
+# against the full ontology, so evaluation is identical.
+NOONT_NAMES = {"ceo": "CEO (Core Experiment Ontology)", "scinex": "scinex"}
+_NOONT_PROMPT = """You are a scientific knowledge extraction expert trained on the {name} ontology.
+
+Extract knowledge triples (subject, predicate, object) from scientific paper text. Use the
+relations of the {name} ontology that you were trained on, with their correct direction.
+
+SUBJECTS: use ONLY the fixed subjects listed with the text, written exactly as listed.
+OBJECTS: any meaningful entity explicitly mentioned in the text; human-readable, max 6 words.
+Every triple needs a verbatim source_sentence from the text that states it explicitly.
+Never extract a triple whose subject and object refer to the same thing.
+
+Return ONLY valid JSON, no explanation, no markdown:
+{{"triples": [{{"subject": "fixed subject exactly as listed", "predicate": "relation name", "object": "entity found in text", "object_type": "Model | Method | Dataset | Metric | Task | Concept | Other", "source_sentence": "verbatim sentence from the text"}}]}}
+
+If no triple is stated in the text, return: {{"triples": []}}"""
+
+
+def noont_system_prompt(ontology):
+    return _NOONT_PROMPT.format(name=NOONT_NAMES[ontology])
 
 # "recall" (Session 38): the default fixed prompt tells the model to return {"triples": []}
 # for the WHOLE paragraph in eight places where only one triple or one sentence is bad (a
@@ -268,6 +297,8 @@ def current_system_prompt(ontology, ontology_file=SCINEX_OWL_DEFAULT, extractor=
         ex = RelationOnlyExtractor(relations=relations, schema=schema, model_name="n/a")
     if prompt_variant not in (None, "default") and extractor != "fixed":
         sys.exit("prompt variants are defined for --extractor fixed only")
+    if prompt_variant == "noont":
+        return noont_system_prompt(ontology), list(ex.relations)
     return apply_prompt_variant(ex._system_prompt, prompt_variant), list(ex.relations)
 
 

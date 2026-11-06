@@ -289,8 +289,9 @@ def completion_only_trainer_cls():
             has = labels != -100
             first = int(has.float().argmax(dim=1).min())   # earliest target position in the batch
             k = L - first + 1                               # logits at first-1 .. L-1
+            extra = {"token_type_ids": inputs["token_type_ids"]} if "token_type_ids" in inputs else {}
             out = model(input_ids=inputs["input_ids"], attention_mask=inputs["attention_mask"],
-                        logits_to_keep=k, use_cache=False)
+                        logits_to_keep=k, use_cache=False, **extra)
             logits = out.logits[:, :-1, :].float()          # predicts positions first .. L-1
             target = labels[:, first:]
             loss = F.cross_entropy(logits.reshape(-1, logits.size(-1)), target.reshape(-1),
@@ -356,8 +357,11 @@ def progress_callback(total_vram_gb):
 class Collator:
     """Right-pad to the longest sequence in the batch; padded labels are -100."""
 
-    def __init__(self, pad_id):
+    def __init__(self, pad_id, token_type_ids=False):
         self.pad_id = pad_id
+        # Gemma-3 (Gemma3ForConditionalGeneration) refuses to train without token_type_ids,
+        # which mark image tokens; text-only input is all zeros
+        self.token_type_ids = token_type_ids
 
     def __call__(self, batch):
         import torch
@@ -365,8 +369,11 @@ class Collator:
         ids = [b["input_ids"] + [self.pad_id] * (n - len(b["input_ids"])) for b in batch]
         lab = [b["labels"] + [-100] * (n - len(b["labels"])) for b in batch]
         att = [[1] * len(b["input_ids"]) + [0] * (n - len(b["input_ids"])) for b in batch]
-        return {"input_ids": torch.tensor(ids), "labels": torch.tensor(lab),
-                "attention_mask": torch.tensor(att)}
+        out = {"input_ids": torch.tensor(ids), "labels": torch.tensor(lab),
+               "attention_mask": torch.tensor(att)}
+        if self.token_type_ids:
+            out["token_type_ids"] = torch.zeros_like(out["input_ids"])
+        return out
 
 
 def load_model(args):
@@ -401,11 +408,21 @@ def load_model(args):
         model.enable_input_require_grads()
     lora = LoraConfig(r=args.lora_r, lora_alpha=args.lora_alpha, lora_dropout=args.lora_dropout,
                       bias="none", task_type="CAUSAL_LM",
-                      target_modules=args.target_modules if args.target_modules != ["all-linear"]
-                      else "all-linear")
+                      target_modules=_lora_targets(args.target_modules))
     model = get_peft_model(model, lora)
     model.print_trainable_parameters()
     return model
+
+
+def _lora_targets(names):
+    """peft target_modules: a list of module-name suffixes (default), "all-linear", or one
+    "re:<regex>" matched against full module names — e.g. Gemma-3's language model only,
+    not its vision tower: re:.*language_model.*\\.(q|k|v|o|gate|up|down)_proj"""
+    if names == ["all-linear"]:
+        return "all-linear"
+    if len(names) == 1 and names[0].startswith("re:"):
+        return names[0][3:]
+    return names
 
 
 def main():
@@ -428,7 +445,7 @@ def main():
     ap.add_argument("--lora-dropout", type=float, default=0.05)
     ap.add_argument("--target-modules", nargs="+",
                     default=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
-                    help="or: all-linear")
+                    help="or: all-linear, or one re:<regex> over full module names")
     ap.add_argument("--seed", type=int, default=13)
     ap.add_argument("--save-steps", type=int, default=0,
                     help="checkpoint every N optimizer steps (keeps the latest); a re-run with the "
@@ -520,7 +537,8 @@ def main():
     else:
         train_set = [{k: v for k, v in f.items() if k not in ("part", "sys")} for f in feats]
         dev_strip = [{k: v for k, v in f.items() if k not in ("part", "sys")} for f in dev_feats]
-        collator = Collator(tok.pad_token_id)
+        collator = Collator(tok.pad_token_id,
+                            token_type_ids=getattr(model.config, "model_type", "") == "gemma3")
     trainer = completion_only_trainer_cls()(
         model=model, args=targs, train_dataset=train_set,
         eval_dataset=dev_strip or None, data_collator=collator,

@@ -1,5 +1,7 @@
 # Results — Scientific-Paper Knowledge-Graph Pipeline
 
+> **⛔ Objective (2026-11-06): `OBJECTIVE.md`.** The headline evaluation is simulated Q&A with ONTOLOGY-FREE students (no ontology in the prompt). Every table below predates it: the students in Tables 15–18 read the full ontology prompt, and Tables 1–14 use the old 20-paper corpus. They are baselines and history, not the objective's result.
+
 > ### ⛔ SESSION 37 (2026-10-26): PART 2 FINETUNING MOVES TO THE ACL ANTHOLOGY CORPUS
 > From here on the finetuning experiments run on the **ACL Anthology papers (805, fixed entity
 > lists) with the FIXED extractor**, teacher **gpt-oss-20b (local)**, student **Qwen3-8B**. User

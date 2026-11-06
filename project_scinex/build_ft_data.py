@@ -562,7 +562,11 @@ def main():
             except ImportError as e:
                 sys.exit(f"cannot render the current {ont} system prompt ({e}). Install rdflib, "
                          f"or pass --system-prompt stored.")
-            schemas[ont] = schema_from_system_prompt(cur_prompts[ont][0])
+            # the ontology cards teach the FULL ontology, whatever the extraction prompt shows
+            # (the noont prompt has no relation list to read a schema from)
+            full = cur_prompts[ont][0] if args.prompt_variant == "default" else \
+                current_system_prompt(ont, args.ontology_file, args.extractor)[0]
+            schemas[ont] = schema_from_system_prompt(full)
         else:
             probe = next((OUTPUT_DIR / p / "kg" / exdir_for(args.extractor, ont) / args.teacher / "system_prompt.txt"
                           for p in train if (OUTPUT_DIR / p / "kg" / exdir_for(args.extractor, ont) / args.teacher / "system_prompt.txt").exists()), None)

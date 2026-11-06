@@ -204,6 +204,16 @@ def main():
         if args.base_model and args.base_model != run_manifest["base_model"]:
             sys.exit(f"--base-model {args.base_model} != adapter's base {run_manifest['base_model']}")
         args.base_model = run_manifest["base_model"]
+        dm = run_manifest.get("data_manifest") or {}
+        if isinstance(dm, str) and Path(dm).exists():
+            dm = json.loads(Path(dm).read_text(encoding="utf-8"))
+        if not dm and run_manifest.get("data_dir"):
+            f = Path(run_manifest["data_dir"]) / "manifest.json"
+            dm = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+        trained_variant = (dm or {}).get("prompt_variant", "default")
+        if trained_variant != args.prompt_variant:
+            sys.exit(f"adapter was trained with --prompt-variant {trained_variant}, "
+                     f"you asked for {args.prompt_variant}: pass the training variant")
     if not args.base_model:
         sys.exit("--base-model is required without --adapter")
     refuse_excluded(args.base_model, "base model")

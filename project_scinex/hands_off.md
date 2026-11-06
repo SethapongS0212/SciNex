@@ -127,6 +127,63 @@ its own branch, to merge once no `ft_train_qlora.py` call can happen for this ru
   `ontology_eval/_blind/acl-f0-caps/{ceo,scinex}/overlap_<slug>.json`.
 - Still open: the GPU smoke test of `--share-system-prompt` (command in `HANDOFF_NEXT_SESSION.md`).
 
+### 38.6 Why the teacher says "empty" so often; teacher-v2 tooling (2026-11-06, 00:30–01:30)
+- **Not junk paragraphs:** over all 18,985 teacher paragraphs (CEO), references/acknowledgments/
+  appendix are < 1% (the parser already drops them), and the teacher is empty ~75% in EVERY section
+  (methods/results 75.0%, intro 75.1%, related work 73.8%). Empty rate falls with the number of
+  listed subjects: 87% (1–2) → 70% (11+).
+- **Hand check of 30 random teacher-empty method/result paragraphs** (seed 7, one rater):
+  correctly empty 11; teacher MISSED clear triples 9 (e.g. "Optimal Beam Search uses Lagrangian
+  Relaxation", "TinyBERT achieves comparable performance…"); real facts blocked because the key
+  name is not in the entity list 3 (EWISE, CluHTM, hredGAN); borderline 7.
+- **Cause in the prompt:** the default fixed prompt says "return {"triples": []}" for the WHOLE
+  paragraph in eight places where only one triple or sentence is bad.
+- **Built:** `--prompt-variant recall` (`ft_common._RECALL_EDITS`: each of those rules scoped to the
+  triple/sentence + a coverage check; default prompt byte-identical to the stored one);
+  `build_entity_v2.py` → `output/acl_v2/` (gitignored; drop GENERIC/NOT_A_CONCEPT/collisions, keep
+  REVIEW, add paper-specific names; 79,875 → 47,743 entries, 3,690 added; `entity_v2/summary.json`);
+  `ft_generate --entity-dir` (re-renders stored prompts, same para_ids; no-entity paragraphs recorded
+  empty); `ft_compare`/`ft_overlap` use each run's recorded `entity_dir`. Regression: `ft_compare`
+  on the caps runs reproduces `compare_caps.json` exactly.
+- **Probe, gpt-oss-20b on the same 30 paragraphs** (paragraphs with ≥1 kept triple, by label
+  missed/blocked/borderline/empty-ok; kept triples): default prompt + v1 lists 2/0/1/1, 7 kept;
+  recall + v1 2/1/1/3, 9; **recall + v2 lists 3/2/4/1, 17**; recall + v2 + reasoning MEDIUM 0/1/0/0,
+  1 (more cautious); default + v2 4/1/1/0, 7. The lists matter more than the prompt; the teacher
+  stays cautious; repeats vary (the default setup re-run kept triples on 4 paragraphs the original
+  run left empty). The 41-paper v2 test run (`run_teacher_v2_test.sh`) was started and then
+  stopped by the user to re-focus on the objective; its partial output was deleted.
+
+### 38.7 ⛔ The objective (professor), and the ontology-free students (2026-11-06)
+- The user relayed the professor's brief: *"Knowledge Graph Construction for Open Science —
+  research paper → Knowledge Graph; finetune LLM to understand Domain-Ontology and Vocabulary
+  Corpus; Knowledge Graph evaluation using simulated Q&A against real papers."* Agreed reading:
+  the finetuned model must extract with the entity list only, the ontology learned into its
+  weights; the main evaluation is simulated Q&A. Written to **`OBJECTIVE.md`** (and the top of
+  `Claude.md`, both READMEs, `HANDOFF_NEXT_SESSION.md`). Stale docs that described other phases
+  were deleted at the user's request: `TASK.md`, `RESULTS_REPORT.md`,
+  `SUMMARY_finetune_qa_2026-10-01.md`, `PAPERS.md` (git history keeps them).
+- The user asked about MIT's "Weight-Space Programming" (MIT CSAIL, 2026-11-02: GPT-6 Astra edited
+  0.016% of Qwen3.5-0.8B's weights, MATH-500 7.9% → 48.1%, ~20 h and 158 turns per patch). Not
+  adopted: tiny models, narrow tasks, no tooling for 8B students, unreplicated.
+- **`--prompt-variant noont`** (`ft_common.noont_system_prompt`): names the ontology, keeps the
+  general rules and the JSON format, no relation list or definitions: **218 tokens vs 2,744**
+  (CEO; scinex 210 vs 2,837). `build_ft_data --prompt-variant noont` → `ft_data/acl_noont_me50`,
+  `acl_noont_me30`: **identical to `acl_maxempty50/30` except the extraction system prompt**
+  (verified: same counts, same user+answer multiset; ontology cards 1,300 and vocabulary 8,191
+  kept). ⛔ First build had 0 ontology cards (schema read from the noont prompt); fixed to read
+  the full prompt. Extraction examples p50 3,230 → 659 tokens. `ft_generate` refuses an adapter
+  whose data manifest's `prompt_variant` differs from the one asked for.
+- Student families: `ft_train_qlora --target-modules re:<regex>` (Gemma-3: language model only, 336
+  of 499 linear layers, none of the vision tower); Gemma-3 needs `token_type_ids` (zeros) in
+  training; Phi-4 uses `qkv_proj o_proj gate_up_proj down_proj`. Smoke-tested train (3 steps) and
+  generate (2 paragraphs) for Llama-3.1-8B, Gemma-3-12B, Phi-4; dry-run tokenization OK for all.
+- **Running from 01:39:** `run_noont.sh` (see `HANDOFF_NEXT_SESSION.md` for the lane plan). GPU heat
+  settings re-applied (400 W, 1650/1900 MHz, guard) — restore after.
+- The user also asked for a second teacher: multi-teacher distillation is a normal technique;
+  plan = Qwen3-30B-A3B-Instruct-2507 on a fixed subset of training papers with a gpt-oss-20b
+  student on the same subset, compared by Q&A. Q&A model: Mistral-Small-24B-Instruct-2501
+  (neither a teacher nor a student family). Both downloading.
+
 ## Session 37 — Linux box with 2× RTX 5090; ⛔ finetuning corpus switched to the ACL ANTHOLOGY papers + FIXED extractor; gpt-oss-20b teacher run launched (2026-10-26/27)
 
 > User: *"download the github https://github.com/SethapongS0212/SciNex to envsam and overwrite it over
