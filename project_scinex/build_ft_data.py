@@ -60,7 +60,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from ft_common import (  # noqa: E402
     CORPUS_FILE_DEFAULT, FT_DIR, OUTPUT_DIR, SCINEX_OWL_DEFAULT, SPLIT_FILE, TEACHER_DEFAULT,
-    alignment_rate, assign_folds, canonical_predicate, current_system_prompt, exdir_for,
+    PROMPT_VARIANTS, alignment_rate, assign_folds, canonical_predicate, current_system_prompt, exdir_for,
     guard_pass, is_api_run, load_entity_set_for, load_paragraphs, load_split, norm, parse_definition,
     quiet_guard_logs, read_corpus,
     read_replies, refuse_excluded, schema_from_system_prompt, sha256_file, split_sets,
@@ -501,6 +501,9 @@ def main():
     ap.add_argument("--out", default=None,
                     help=f"default {FT_DIR}, or {FT_DIR}/consensus with --consensus-models so the "
                          f"teacher-only data is never overwritten")
+    ap.add_argument("--prompt-variant", choices=PROMPT_VARIANTS, default="default",
+                    help="with --system-prompt current: the fixed-prompt variant (ft_common); use the "
+                         "one the teacher ran with, e.g. 'recall' for a gptoss-20b-v2 teacher")
     ap.add_argument("--system-prompt", choices=["current", "stored"], default="current",
                     help="current = rendered by today's code (what ft_generate.py sends at eval "
                          "time; scinex needs rdflib); stored = the teacher run's system_prompt.txt")
@@ -554,7 +557,8 @@ def main():
     for ont in args.ontologies:
         if args.system_prompt == "current":
             try:
-                cur_prompts[ont] = current_system_prompt(ont, args.ontology_file, args.extractor)
+                cur_prompts[ont] = current_system_prompt(ont, args.ontology_file, args.extractor,
+                                                         args.prompt_variant)
             except ImportError as e:
                 sys.exit(f"cannot render the current {ont} system prompt ({e}). Install rdflib, "
                          f"or pass --system-prompt stored.")
@@ -664,7 +668,8 @@ def main():
         "teacher": args.teacher, "extractor": args.extractor, "ontologies": args.ontologies,
         "consensus_models": args.consensus_models,
         "consensus_min": args.consensus_min if args.consensus_models else None,
-        "system_prompt": args.system_prompt, "configures": args.configures,
+        "system_prompt": args.system_prompt, "prompt_variant": args.prompt_variant,
+        "configures": args.configures,
         "verdict_filter": args.verdict_filter, "max_empty_frac": args.max_empty_frac,
         "counts": {k: len(v) for k, v in parts.items()} | {"dev_extraction": len(ext_dev),
                                                             "empty_extraction_targets": n_empty},

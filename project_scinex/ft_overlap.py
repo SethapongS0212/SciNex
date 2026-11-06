@@ -31,10 +31,11 @@ def kept_by_paragraph(paper, ontology, slug, extractor):
     d = OUTPUT_DIR / paper / "kg" / exdir_for(extractor, ontology) / slug
     if not (d / "responses.jsonl").exists():
         return None
-    relations = json.loads((d / "prompt_meta.json").read_text(encoding="utf-8"))["relations"]
+    meta = json.loads((d / "prompt_meta.json").read_text(encoding="utf-8"))
+    relations = meta["relations"]
     replies, _ = read_replies(d / "responses.jsonl")
     api_run = is_api_run(d)
-    entity_set = entity_set_for(paper) if extractor == "fixed" else None
+    entity_set = entity_set_for(paper, meta.get("entity_dir")) if extractor == "fixed" else None
     return {pid: guard_pass(raw, relations, api_run, entity_set)[2] for pid, raw in replies.items()}
 
 

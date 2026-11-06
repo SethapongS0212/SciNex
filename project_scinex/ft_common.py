@@ -171,10 +171,90 @@ def split_sets(split, corpus, eval_fold, dev_fold=None):
 
 # ── ontology / prompts ───────────────────────────────────────────────────────
 
-def current_system_prompt(ontology, ontology_file=SCINEX_OWL_DEFAULT, extractor="relation"):
+PROMPT_VARIANTS = ("default", "recall")
+
+# "recall" (Session 38): the default fixed prompt tells the model to return {"triples": []}
+# for the WHOLE paragraph in eight places where only one triple or one sentence is bad (a
+# table reference, a list of names, one implied relation). A 30-paragraph check of the
+# teacher's empty answers found clear, stated triples in 9 of 30 (hands_off.md §38.6). The
+# variant scopes each of those instructions to the triple or sentence and adds a coverage
+# check before an empty answer. Every precision rule (named subject, domain -> range, no
+# inference, no self-loops) is kept word for word. Placeholders only, no concrete names or
+# numbers, so nothing can leak into answers the way the default prompt's "88.5" did.
+_RECALL_EDITS = [
+    ('9. If the paragraph only mentions an entity without a clear relationship, skip it — return {"triples": []}',
+     '9. A subject that is only mentioned, with no relation stated, gives no triple. Return {"triples": []} only when NO listed subject has a stated relation anywhere in the paragraph'),
+    ('  If you have to reason about what the sentence implies — skip it, return {"triples": []}',
+     '  If you have to reason about what the sentence implies — skip that triple (keep the others)'),
+    ('or "this approach" without naming the specific entity — SKIP IT.',
+     'or "this approach" without naming the specific entity — SKIP THAT TRIPLE.'),
+    ('→ a list, not a comparison, return {"triples": []}',
+     '→ a list, not a comparison: no comparesAgainst triple from it'),
+    ('  If source sentence is a bare list of names → return {"triples": []}',
+     '  If the source sentence is a bare list of names → no writtenBy triple from it'),
+    ('  If the source sentence is ANY of the following, return {"triples": []} immediately:',
+     '  NEVER use any of the following as a source_sentence (skip only the triples that would rely on\n'
+     '  it — the other sentences of the paragraph still count):'),
+    ('  specific entity — SKIP IT. The canonical entity name or its abbreviation must appear literally.',
+     '  specific entity — SKIP THAT TRIPLE. The canonical entity name or its abbreviation must appear literally.'),
+    ('  The source_sentence must make the triple obvious. If you have to reason about what is implied,\n'
+     '  return {"triples": []}',
+     '  The source_sentence must make the triple obvious. If you have to reason about what is implied,\n'
+     '  skip that triple.\n'
+     '\n'
+     'COVERAGE — do not under-extract:\n'
+     '  Most method, experiment and result paragraphs state at least one relation. Before you answer\n'
+     '  {"triples": []}, check EVERY listed subject that appears in the text: does a sentence say it\n'
+     '  uses, is built from, is trained or evaluated on, produces, achieves, or is compared with\n'
+     '  something named? If yes, extract that triple. One clear triple is better than none.\n'
+     '  SHOULD extract:  "<Subject> achieves <result> on <Dataset>"   → (<Subject>, achieves, <result> on <Dataset>)\n'
+     '  SHOULD extract:  "we use <Method> to train <Subject>"         → (<Subject>, uses, <Method>)\n'
+     '  SHOULD extract:  "<Subject> outperforms <Model B> on <task>"  → (<Subject>, comparesAgainst, <Model B>)\n'
+     '  Answer {"triples": []} only when no listed subject has such a stated relation (worked\n'
+     '  examples, data listings, pure arithmetic, author or funding text).'),
+]
+
+
+def apply_prompt_variant(system, variant="default"):
+    """The system prompt for a variant. Each edit's anchor must occur exactly once, so a
+    change to the base prompt fails loudly instead of yielding a half-edited prompt."""
+    if variant in (None, "default"):
+        return system
+    if variant != "recall":
+        sys.exit(f"unknown prompt variant {variant!r}; known: {', '.join(PROMPT_VARIANTS)}")
+    for old, new in _RECALL_EDITS:
+        n = system.count(old)
+        if n != 1:
+            sys.exit(f"prompt variant 'recall': anchor found {n}x (want 1): {old[:70]!r}")
+        system = system.replace(old, new)
+    return system
+
+
+def rerender_fixed_rows(rows, entity_set):
+    """Rebuild each row's fixed-extractor user prompt with another entity list, keeping the
+    para_ids and paragraph text (so runs on old and new lists answer the same paragraphs).
+    A paragraph in which the new list finds no entity gets `no_entity: True` — the pipeline
+    never prompts such a paragraph (render_paragraphs skips it), so callers record it empty."""
+    from kg_extraction.fixed_extractor import _make_fixed_user_prompt
+    out = []
+    for r in rows:
+        present = entity_set.match_any_in_text(r["paragraph"])
+        user = _make_fixed_user_prompt(r["paragraph"], r.get("section", ""), present,
+                                       entity_set.abbreviations)
+        row = {k: v for k, v in r.items() if k not in ("user_prompt", "no_entity")}
+        row["user_prompt"] = user
+        if not present:
+            row["no_entity"] = True
+        out.append(row)
+    return out
+
+
+def current_system_prompt(ontology, ontology_file=SCINEX_OWL_DEFAULT, extractor="relation",
+                          prompt_variant="default"):
     """(system_prompt, relations) exactly as claude_extract.py / kg_main would build them
     today. scinex needs rdflib (the OWL loader). The fixed extractor's system prompt does
-    not depend on the paper — its entity list goes in each paragraph's user prompt."""
+    not depend on the paper — its entity list goes in each paragraph's user prompt.
+    prompt_variant other than "default" is applied with apply_prompt_variant."""
     from kg_extraction.fixed_extractor import FixedTripleExtractor
     from kg_extraction.relation_extractor import RelationOnlyExtractor
     relations = schema = None
@@ -186,7 +266,9 @@ def current_system_prompt(ontology, ontology_file=SCINEX_OWL_DEFAULT, extractor=
                                   model_name="n/a")
     else:
         ex = RelationOnlyExtractor(relations=relations, schema=schema, model_name="n/a")
-    return ex._system_prompt, list(ex.relations)
+    if prompt_variant not in (None, "default") and extractor != "fixed":
+        sys.exit("prompt variants are defined for --extractor fixed only")
+    return apply_prompt_variant(ex._system_prompt, prompt_variant), list(ex.relations)
 
 
 # ── fixed-entity lists (ACL Anthology papers) ────────────────────────────────

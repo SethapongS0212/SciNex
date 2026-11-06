@@ -59,10 +59,14 @@ def agreement(student, teacher):
 _ENTITY_SETS = {}
 
 
-def entity_set_for(paper):
-    if paper not in _ENTITY_SETS:
-        _ENTITY_SETS[paper] = load_entity_set_for(paper)
-    return _ENTITY_SETS[paper]
+def entity_set_for(paper, entity_dir=None):
+    """The paper's entity list; entity_dir as recorded in a run's prompt_meta.json (a run
+    generated with ft_generate --entity-dir), else the default output/acl lists."""
+    key = (paper, entity_dir)
+    if key not in _ENTITY_SETS:
+        _ENTITY_SETS[key] = (load_entity_set_for(paper, entity_dir) if entity_dir
+                             else load_entity_set_for(paper))
+    return _ENTITY_SETS[key]
 
 
 def run_stats(paper, ontology, slug, extractor="relation"):
@@ -78,7 +82,7 @@ def run_stats(paper, ontology, slug, extractor="relation"):
     proposed = kept_n = covered = 0
     kept = []
     api_run = is_api_run(d)
-    entity_set = entity_set_for(paper) if extractor == "fixed" else None
+    entity_set = entity_set_for(paper, meta.get("entity_dir")) if extractor == "fixed" else None
     for pid, raw in replies.items():
         status, raw_t, surv = guard_pass(raw, relations, api_run, entity_set)
         st[status] += 1

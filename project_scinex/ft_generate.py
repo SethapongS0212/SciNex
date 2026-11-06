@@ -38,9 +38,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from ft_common import (  # noqa: E402
-    OUTPUT_DIR, SCINEX_OWL_DEFAULT, TEACHER_DEFAULT, build_messages, current_system_prompt,
-    entity_csv_for, exdir_for, fast_attention, load_paragraphs, read_jsonl, refuse_excluded,
-    render_chat, write_jsonl,
+    ENTITY_DIR_DEFAULT, OUTPUT_DIR, PROMPT_VARIANTS, SCINEX_OWL_DEFAULT, TEACHER_DEFAULT,
+    build_messages, current_system_prompt, entity_csv_for, exdir_for, fast_attention,
+    load_entity_set_for, load_paragraphs, read_jsonl, refuse_excluded, render_chat,
+    rerender_fixed_rows, write_jsonl,
 )
 
 
@@ -181,6 +182,14 @@ def main():
     ap.add_argument("--ingest", action="store_true", help="run claude_extract.py ingest afterwards")
     ap.add_argument("--trust-remote-code", action="store_true")
     ap.add_argument("--dry-run", action="store_true", help="render + count prompts, no model")
+    ap.add_argument("--prompt-variant", choices=PROMPT_VARIANTS, default="default",
+                    help="fixed extractor only: 'recall' scopes the default prompt's paragraph-level "
+                         "'return []' rules to the triple and adds a coverage check (ft_common)")
+    ap.add_argument("--entity-dir", default=None,
+                    help="fixed extractor only: take entity lists from here (e.g. output/acl_v2) and "
+                         "re-render the stored prompts' entity lists, same para_ids. Paragraphs the "
+                         "new list finds no entity in are recorded empty without a model call, as "
+                         "the pipeline never prompts them")
     args = ap.parse_args()
 
     if ":" in args.model_slug or "/" in args.model_slug:
@@ -199,11 +208,15 @@ def main():
         sys.exit("--base-model is required without --adapter")
     refuse_excluded(args.base_model, "base model")
     papers = resolve_papers(args, run_manifest)
+    if (args.prompt_variant != "default" or args.entity_dir) and args.extractor != "fixed":
+        sys.exit("--prompt-variant / --entity-dir apply to --extractor fixed only")
+    entity_dir = args.entity_dir or str(ENTITY_DIR_DEFAULT)
 
     # render every prompt first (cheap), so --dry-run and the real run see the same work list
     jobs = []
     for ont in args.ontologies:
-        system, relations = current_system_prompt(ont, args.ontology_file, args.extractor)
+        system, relations = current_system_prompt(ont, args.ontology_file, args.extractor,
+                                                  args.prompt_variant)
         exdir = exdir_for(args.extractor, ont)
         for paper in papers:
             rows, source = load_paragraphs(paper, exdir, prefer_slugs=(args.teacher,),
@@ -214,6 +227,12 @@ def main():
                 continue
             if args.limit:
                 rows = rows[:args.limit]
+            if args.entity_dir:
+                es = load_entity_set_for(paper, args.entity_dir)
+                if es is None:
+                    print(f"  ! {paper}/{ont}: no entity list in {args.entity_dir} — skipped")
+                    continue
+                rows = rerender_fixed_rows(rows, es)
             jobs.append((paper, ont, exdir, system, relations, rows, source))
     n_prompts = sum(len(j[5]) for j in jobs)
     print(f"{args.base_model}{' + ' + adapter_dir if adapter_dir else ''} -> "
@@ -244,7 +263,8 @@ def main():
             "model_slug": args.model_slug, "n_paragraphs": len(rows),
             "n_relations": len(relations), "relations": relations,
             "base_model": args.base_model, "adapter": adapter_dir, "paragraph_source": source,
-            "reasoning_effort": args.reasoning_effort,
+            "reasoning_effort": args.reasoning_effort, "prompt_variant": args.prompt_variant,
+            "entity_dir": args.entity_dir,
         }, indent=2), encoding="utf-8")
 
         out_f = dest / "responses.jsonl"
@@ -253,6 +273,10 @@ def main():
             done = {r["para_id"] for r in read_jsonl(out_f)}
         todo = [r for r in rows if r["para_id"] not in done]
         with open(out_f, "a" if done else "w", encoding="utf-8") as f:
+            for r in (r for r in todo if r.get("no_entity")):
+                f.write(json.dumps({"para_id": r["para_id"], "raw": '{"triples": []}', "n_tokens": 0,
+                                    "truncated": False, "skipped": "no_entity"}) + "\n")
+            todo = [r for r in todo if not r.get("no_entity")]
             for i in range(0, len(todo), args.batch_size):
                 chunk = todo[i:i + args.batch_size]
                 prompts = [render_chat(tok, build_messages(system, r["user_prompt"]), True, **tmpl_kw)
@@ -267,7 +291,7 @@ def main():
                 print(f"    {paper}/{ont}: {min(i + args.batch_size, len(todo))}/{len(todo)} "
                       f"({(time.time() - t0) / 60:.1f} min, peak VRAM {peak:.1f} GB)", flush=True)
         if args.ingest:
-            ent = (["--entity-csv", str(entity_csv_for(paper))]
+            ent = (["--entity-csv", str(entity_csv_for(paper, entity_dir))]
                    if args.extractor == "fixed" else [])
             subprocess.run([sys.executable, "claude_extract.py", "ingest", "--paper", paper,
                             "--extractor", args.extractor, "--ontology", ont, *ent,
