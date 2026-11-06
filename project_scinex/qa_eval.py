@@ -161,26 +161,36 @@ def add_api_args(p, required=True):
     p.add_argument("--backoff", type=float, default=5.0)
     p.add_argument("--sleep", type=float, default=0.0)
     p.add_argument("--limit", type=int, default=None, help="max API calls this invocation (smoke test)")
+    p.add_argument("--hf-batch", type=int, default=8, help="hf only: prompts per generate() batch")
 
 
 def _hf_local(args):
     """A local model as the Q&A backend — same 4-bit loader and chat template as
-    ft_generate.py. Loaded once per process."""
+    ft_generate.py. Loaded once per process. Returns ask(system, user); ask.many(pairs)
+    answers a list of (system, user) in left-padded greedy batches of --hf-batch (the
+    same batching ft_generate.py uses), so long runs are not one prompt at a time."""
     import torch
     from ft_common import build_messages, fast_attention, render_chat
-    from ft_generate import load_model
+    from ft_generate import generate_batch, load_model
     loaded = {}
 
-    def ask(system, user):
+    def _model():
         if not loaded:                       # load on first use: a no-op step costs nothing
             loaded["m"] = load_model(args.model, None, False)
-        model, tok = loaded["m"]
-        prompt = render_chat(tok, build_messages(system, user), True)
-        enc = tok(prompt, return_tensors="pt", add_special_tokens=False).to(model.device)
-        with torch.no_grad(), fast_attention():
-            out = model.generate(**enc, max_new_tokens=args.max_tokens, do_sample=False,
-                                 pad_token_id=tok.pad_token_id)
-        return tok.decode(out[0][enc["input_ids"].shape[1]:], skip_special_tokens=True)
+        return loaded["m"]
+
+    def many(pairs):
+        model, tok = _model()
+        prompts = [render_chat(tok, build_messages(s, u), True) for s, u in pairs]
+        out = []
+        for i in range(0, len(prompts), max(1, args.hf_batch)):
+            out += [text for text, _n, _tr in
+                    generate_batch(model, tok, prompts[i:i + args.hf_batch], args.max_tokens)]
+        return out
+
+    def ask(system, user):
+        return many([(system, user)])[0]
+    ask.many = many
     return ask
 
 
@@ -200,6 +210,7 @@ def api(args):
         if args.sleep:
             time.sleep(args.sleep)
         return raw
+    ask.many = lambda pairs: [ask(s, u) for s, u in pairs]
     return ask
 
 
@@ -268,6 +279,11 @@ def _sha(*parts, n=10):
 
 # ── generate ─────────────────────────────────────────────────────────────────
 
+def _loose(s):
+    """letters and digits only, lowercased: "ex- ploits" == "exploits"."""
+    return re.sub(r"[^a-z0-9]", "", norm(s))
+
+
 def validate(q, para_text, relations):
     """(clean_question, None) or (None, reason). Deterministic — rerunnable from raw."""
     if not isinstance(q, dict):
@@ -279,9 +295,13 @@ def validate(q, para_text, relations):
     if not question or not answer or not evidence:
         return None, "missing_field"
     npara = norm(para_text)
-    if norm(evidence)[:60] not in npara:
+    # ACL HTML keeps PDF line-break hyphenation ("ex- ploits") and a generator quoting it
+    # repairs the word, so fall back to letters+digits only (as ft_common.alignment_rate's
+    # loose test, hands_off §37) before rejecting
+    lpara = _loose(para_text)
+    if norm(evidence)[:60] not in npara and _loose(evidence)[:50] not in lpara:
         return None, "evidence_not_in_paragraph"
-    if norm(answer) not in npara:
+    if norm(answer) not in npara and (not _loose(answer) or _loose(answer) not in lpara):
         return None, "answer_not_verbatim"
     if len(answer.split()) > 12:
         return None, "answer_too_long"
@@ -321,13 +341,16 @@ def cmd_generate(args):
                 "prompt_version": PROMPT_VERSION, "relations": relations,
                 "generator": {"provider": args.provider, "model": args.model},
                 "per_paragraph": args.per_paragraph, "max_per_paper": args.max_per_paper,
-                "min_words": args.min_words, "seed": args.seed}
+                "min_words": args.min_words, "seed": args.seed,
+                "para_exdir": args.para_exdir, "para_slug": args.para_slug or TEACHER_DEFAULT}
         (rd / "run.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
 
     # paragraphs, in the same form the extractors saw them
     units = []
     for p in papers:
-        rows, source = load_paragraphs(p, "relation", prefer_slugs=(TEACHER_DEFAULT,))
+        rows, source = load_paragraphs(p, meta.get("para_exdir", "relation"),
+                                       prefer_slugs=(meta.get("para_slug", TEACHER_DEFAULT),),
+                                       extractor="fixed" if meta.get("para_exdir", "relation").startswith("fixed") else "relation")
         if rows is None:
             sys.exit(f"{p}: no paragraphs (no prompts.jsonl, no parsed HTML) on this machine")
         for r in rows:
@@ -345,16 +368,20 @@ def cmd_generate(args):
         ask = api(args)
         system = (QGEN_SYSTEM.replace("<<K>>", str(meta["per_paragraph"]))
                   .replace("<<RELATIONS>>", ", ".join(relations)))
-        for i, (p, r) in enumerate(todo, 1):
+        step = max(1, getattr(args, "hf_batch", 1)) if args.provider == "hf" else 1
+        for i in range(0, len(todo), step):
+            chunk = todo[i:i + step]
             try:
-                raw = ask(system, f"Section: {r['section']}\n\nParagraph:\n{r['paragraph']}")
+                raws = ask.many([(system, f"Section: {r['section']}\n\nParagraph:\n{r['paragraph']}")
+                                 for _p, r in chunk])
             except Exception as e:
-                print(f"  {p}#{r['para_id']}: FAILED — {e} (will retry on the next run)")
+                print(f"  {chunk[0][0]}#{chunk[0][1]['para_id']}: FAILED — {e} (will retry on the next run)")
                 continue
             append_jsonl(raw_f, [{"paper": p, "para_id": r["para_id"], "raw": raw,
-                                  "model": args.model}])
-            if i % 10 == 0 or i == len(todo):
-                print(f"  {i}/{len(todo)}", flush=True)
+                                  "model": args.model} for (p, r), raw in zip(chunk, raws)])
+            done_n = min(i + step, len(todo))
+            if done_n % 10 < step or done_n == len(todo):
+                print(f"  {done_n}/{len(todo)}", flush=True)
 
     # validate everything from raw (cheap, deterministic), then cap per paper
     by_key = {(p, r["para_id"]): r for p, r in units}
@@ -466,12 +493,10 @@ def cmd_answer(args):
         for q in todo:
             groups[(q["paper"], q["para_id"]) if args.context == "oracle" else (q["paper"],)].append(q)
         print(f"{key}: {len(todo)} questions to answer in {len(groups)} group(s)")
+        jobs = []                        # one model call each: (gkey, local, shown, trunc, triples, user)
         for gkey, qs in groups.items():
             triples = kg_triples(qs[0]["paper"], spec) if spec else None
             for i in range(0, len(qs), args.batch_size):
-                if args.limit and calls >= args.limit:
-                    print("  --limit reached")
-                    return
                 batch = qs[i:i + args.batch_size]
                 local = {f"q{j + 1}": q for j, q in enumerate(batch)}
                 qlines = "\n".join(f"- {lid}: {q['question']}" for lid, q in local.items())
@@ -484,11 +509,19 @@ def cmd_answer(args):
                     user = f"PARAGRAPH:\n{batch[0]['context']}\n\nQUESTIONS:\n{qlines}"
                 else:
                     user = f"QUESTIONS:\n{qlines}"
-                try:
-                    raw = ask(ANSWER_SYSTEM[args.context], user)
-                except Exception as e:
-                    print(f"  {gkey}: FAILED — {e} (will retry on the next run)")
-                    continue
+                jobs.append((gkey, local, shown, trunc, triples, user))
+        step = max(1, args.hf_batch) if args.provider == "hf" else 1
+        for k in range(0, len(jobs), step):
+            if args.limit and calls >= args.limit:
+                print("  --limit reached")
+                return
+            chunk = jobs[k:k + step]
+            try:
+                raws = ask.many([(ANSWER_SYSTEM[args.context], j[5]) for j in chunk])
+            except Exception as e:
+                print(f"  {chunk[0][0]}: FAILED — {e} (will retry on the next run)")
+                continue
+            for (gkey, local, shown, trunc, triples, _u), raw in zip(chunk, raws):
                 calls += 1
                 data = parse_json(raw) or {}
                 rows = []
@@ -508,6 +541,7 @@ def cmd_answer(args):
                 append_jsonl(out_f, rows)
                 if local:
                     print(f"  {gkey}: {len(local)} question(s) not answered in the reply — rerun to retry")
+            print(f"  {key}: {min(k + step, len(jobs))}/{len(jobs)} calls", flush=True)
     print(f"{calls} calls")
 
 
@@ -731,6 +765,10 @@ def main():
     g.add_argument("--max-per-paper", type=int, default=30)
     g.add_argument("--min-words", type=int, default=40)
     g.add_argument("--seed", type=int, default=13)
+    g.add_argument("--para-exdir", default="relation",
+                   help="kg/<exdir> whose stored prompts.jsonl gives the paragraphs (ACL: fixed)")
+    g.add_argument("--para-slug", default=None,
+                   help=f"run under that exdir to read the paragraphs from (default {TEACHER_DEFAULT}; ACL: gptoss-20b)")
     g.add_argument("--rebuild-only", action="store_true",
                    help="re-validate stored raw replies without any API call")
     add_api_args(g)

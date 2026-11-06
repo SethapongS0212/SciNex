@@ -78,7 +78,10 @@ def load_model(base_model, adapter_dir, trust_remote_code, attn_implementation=N
     from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
     tok_src = adapter_dir if adapter_dir else base_model
-    tok = AutoTokenizer.from_pretrained(tok_src, trust_remote_code=trust_remote_code)
+    # Mistral's HF tokenizers ship a pre-tokenizer regex that transformers flags as wrong
+    # (it warns "set fix_mistral_regex=True"); apply the fix for Mistral models only
+    tok_kw = {"fix_mistral_regex": True} if "mistral" in str(base_model).lower() else {}
+    tok = AutoTokenizer.from_pretrained(tok_src, trust_remote_code=trust_remote_code, **tok_kw)
     tok.padding_side = "left"                      # batched generation
     if tok.pad_token_id is None:
         tok.pad_token = tok.eos_token
