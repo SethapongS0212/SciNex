@@ -1,9 +1,12 @@
 # Handoff — next session
 
-**Updated 2026-11-06 (Session 38).** Read in this order:
+**Updated 2026-11-07 15:30 server time (Session 38).** Read in this order:
 1. **[`OBJECTIVE.md`](OBJECTIVE.md)** — the professor's three steps. Everything serves them.
 2. This file — where the work stands and what to do next.
 3. `hands_off.md` §38 for detail; `results.md` for tables.
+
+> **Standing rule (user):** update the md docs after every meaningful step, as it happens; commit
+> and push to GitHub when the change is important or necessary.
 
 ## ⛔ The objective in four lines (full text: `OBJECTIVE.md`)
 - Paper → KG; **finetune an LLM so it understands the ontology + vocabulary**; **evaluate the KG
@@ -13,63 +16,48 @@
 - Corpus: 805 ACL papers, fixed entity lists; fold 0 (41 papers) held out.
 - Per-triple judging (C1/C3/C4) and judge-free counts are diagnostics, not the headline.
 
-## State (2026-11-06, ~02:00 server time)
-- **⏳ IN FLIGHT: `screen -r noont`** — `/home/dev1/scinex_runs/run_noont.sh` (copy in
-  `ft_runs/acl_scripts/`), log `/home/dev1/scinex_runs/noont_driver.log`. Ontology-free students,
-  data `ft_data/acl_noont_me{50,30}` (identical to `acl_maxempty{50,30}` except the extraction
-  system prompt: 218 tokens with no ontology vs 2,744):
-
-  | GPU | runs (train → generate on the 41 papers, both ontologies) |
-  |---|---|
-  | 0 | `qwen3-8b-acl-noont-me50-cv` → `qwen3-8b-acl-base-noont` (untuned control) → `llama31-8b-acl-noont-me50-cv` → `qwen3-4b-acl-noont-me50-cv` |
-  | 1 | `qwen3-8b-acl-noont-me30-cv` → `gemma3-12b-acl-noont-me50-cv` → `phi4-acl-noont-me50-cv` |
-
-  Then `ft_compare` → `ft_runs/noont/compare_noont.json`, log `noont_compare.log`. Every step
-  skips if done, so re-running the script resumes. Smoke-tested for all four model families
-  (Gemma-3 needed `token_type_ids` and a LoRA regex that skips its vision tower; Phi-4 needs
-  `--target-modules qkv_proj o_proj gate_up_proj down_proj`; both are in the script).
-- **⛔ GPU settings are CHANGED for heat while it runs** (university property — restore after):
-  persistence on, 400 W, clocks GPU0 1650 / GPU1 1900 MHz, root guard `screen gpuguard`.
-  Restore when no GPU job is left:
+## State (2026-11-07, 15:30 server time)
+- ✔ **Ontology-free students DONE** (`run_noont.sh`, finished 2026-11-06 22:51; `results.md`
+  Table 19, `ft_runs/noont/compare_noont.json`). With NO ontology in the prompt every finetuned
+  student still keeps 87–93% of its proposals (CEO); the untuned model with the same prompt keeps
+  9.5% → the ontology was learned into the weights. Slugs: `qwen3-8b-acl-noont-me{50,30}-cv`,
+  `llama31-8b-…`, `qwen3-4b-…`, `gemma3-12b-…`, `phi4-acl-noont-me50-cv`, control
+  `qwen3-8b-acl-base-noont`.
+- ✔ **Q&A questions DONE:** run `qa_eval/acl-f0`, 1,222 questions from the 41 papers (generator and
+  answerer `mistralai/Mistral-Small-24B-Instruct-2501`, local hf, batched). Answered: oracle,
+  closedbook, and the KGs of the teacher, untuned base and ontology-in-prompt me30/me50 (both
+  ontologies). **Preliminary (graded 2026-11-07):** oracle 86.3, closedbook 4.4, KG teacher
+  5.0 / 3.3 (CEO / scinex), base 12.7 / 12.8, me30 8.5 / 6.3, me50 5.1 / 2.9. The KGs are too
+  sparse to answer paper questions: coverage, not triple correctness, is the bottleneck.
+- **⏳ IN FLIGHT: `screen -r qa0` / `qa1`** (started 2026-11-07 15:11, ~3–4 h): Q&A answers from the
+  14 noont KGs (7 slugs × 2 ontologies), `run_qa.sh <gpu> kg …`, log `qa_driver.log`.
+- **⛔ GPU settings are STILL CHANGED for heat** (university property): persistence on, 400 W,
+  clock locks, root guard `screen gpuguard`. **Restore as soon as the Q&A is done:**
   ```
   sudo screen -S gpuguard -X quit
   sudo nvidia-smi -i 0 -rgc && sudo nvidia-smi -i 1 -rgc
   sudo nvidia-smi -pl 575 && sudo nvidia-smi -pm 0
   ```
   The sudo password is not stored; ask the user.
-- **Downloaded models** (HF cache): students Qwen3-4B, Qwen3-8B, Llama-3.1-8B-Instruct,
-  Gemma-3-12B-it, Phi-4; teacher gpt-oss-20b; **Q&A model Mistral-Small-24B-Instruct-2501**
-  (chosen because it is neither a teacher nor a student family); **second teacher
-  Qwen3-30B-A3B-Instruct-2507** (download started 2026-11-06).
-- Earlier results (ontology-IN-prompt students, Tables 15–18): the me50 student matches the
-  teacher's coverage and is at least as correct (C4 58/71 vs 45/55). They are the comparison
-  baseline for the noont students, not the objective.
-- Teacher v2 tooling exists (`--prompt-variant recall`, `--entity-dir output/acl_v2` from
-  `build_entity_v2.py`): a 30-paragraph probe showed the new entity lists recover some missed
-  triples; the prompt alone did little; reasoning "medium" made the teacher MORE cautious. Its
-  41-paper test run was stopped by the user (2026-11-06) in favour of the objective; its partial
-  output was deleted. Re-run with `/home/dev1/scinex_runs/run_teacher_v2_test.sh low` if wanted.
+- Models in the HF cache: students Qwen3-4B/8B, Llama-3.1-8B-Instruct, Gemma-3-12B-it, Phi-4;
+  teacher gpt-oss-20b; Q&A model Mistral-Small-24B-Instruct-2501; second teacher
+  Qwen3-30B-A3B-Instruct-2507 (downloaded, not run yet).
+- Teacher v2 tooling (`--prompt-variant recall`, `--entity-dir output/acl_v2`) is built and probed
+  (hands_off §38.6), not run at scale. Given the Q&A result (coverage is the bottleneck) it is now
+  directly relevant.
 
 ## Next steps, in order
-1. **When `noont run done` appears:** read `noont_compare.log`. Key question: do the noont
-   students keep the ontology-in-prompt students' guard-pass rate and coverage? The untuned
-   `qwen3-8b-acl-base-noont` is the control (it cannot know the relations).
-2. **Simulated Q&A — the MAIN evaluation** (`qa_eval.py`, provider `hf`, model
-   `mistralai/Mistral-Small-24B-Instruct-2501`; never Claude, never a teacher as question writer):
-   `generate` questions from the 41 eval papers once, then `answer --context kg` for every KG
-   (teacher, base, me50/me30 with ontology, every noont student; `fixed/<slug>` and
-   `fixed_scinex/<slug>`), plus `oracle` and `closedbook`; `grade` (deterministic overlap);
-   `report --compare ...`. One answerer for every condition.
-3. Blind C1/C3/C4 diagnostic of the best noont students vs the ontology-in-prompt me50 and the
-   teacher (`blind_judge.py`, new run name).
-4. **Second teacher (user request, 2026-11-06):** Qwen3-30B-A3B-Instruct-2507 as teacher 2 on a
-   fixed subset of TRAINING papers, and a gpt-oss-20b student on the SAME subset, so only the
-   teacher differs; then noont students from each, compared by Q&A. Multi-teacher distillation
-   is a normal, published technique; here it answers "does the teacher change what the student
-   learns?". ⚠ Qwen teacher → Qwen student is a family confound: also train a non-Qwen student.
-5. Then: more folds; entity-list cleanup decision (REVIEW rows of
-   `entity_cleanup/stoplist_draft.csv` need the user/professor); guard fixes (`88.5` leak,
-   self-loops, objects absent from the sentence).
+1. When `qa0`/`qa1` finish: `python qa_eval.py grade --run acl-f0` then `report --run acl-f0
+   --compare <noont-me50> <ft-me50> …`. Rerun `run_qa.sh <gpu> controls` / `kg …` once to fill the
+   few unanswered questions (the report flags them). Write `results.md` Table 20 (Q&A). Restore
+   the GPUs. Commit + push.
+2. Analyse WHY the KGs answer so little: how many questions have an answer that is a node of the
+   KG (`answer-in-KG`), how many concern a listed entity at all (fixed extraction cannot answer
+   questions about unlisted subjects). This decides the next lever.
+3. Raise coverage: the teacher-v2 recall fixes + v2 entity lists, a lower empty cap (me30 beats
+   me50 on Q&A), and the second teacher (Qwen3-30B-A3B) — all judged by the same Q&A run.
+4. Blind C1/C3/C4 diagnostic of the noont students (`blind_judge.py`), more folds, entity-list
+   review (REVIEW rows need the user/professor), guard fixes (`88.5` leak, self-loops).
 
 ## Machine
 Linux box `kubegpu-g04`, **2× RTX 5090 (32 GB, sm_120)**, 125 GB RAM. venv **`/home/dev1/envsam`**

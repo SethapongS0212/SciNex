@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Similarity",
+    "predicate": "uses",
+    "object": "embedded query vectors",
+    "object_type": "Method",
+    "source_sentence": "In contrast to , we investigate the use of embedded query vectors to compute similarity, rather than depend- ing on character and word level lexical similarity features, e.g. edit...",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "2.1 Unsupervised Task Extraction"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "comparesagainst",
+    "object": "clustering the entire dataset",
+    "object_type": "Method",
+    "source_sentence": "We also evaluate the effectiveness of clus- tering the entire dataset rather than on aggregating clustering effectiveness separately for each session as in .",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "2.1 Unsupervised Task Extraction"
+  },
+  {
+    "subject": "Queries",
+    "predicate": "comprises",
+    "object": "2-3 words",
+    "object_type": "Concept",
+    "source_sentence": "In the case of keyword-based search queries , often comprising 2-3 words, the average number of context vectors is much lower than the number of contexts avail- able for the standard word embedding scenario of full length documents, e.g.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "3.1 Problems with Short Documents"
+  },
+  {
+    "subject": "Clustering",
+    "predicate": "uses",
+    "object": "cosine similarity",
+    "object_type": "Metric",
+    "source_sentence": "a) we conduct clustering globally in- stead of clustering each individual query session separately; and b) the edge weights of the graph- based clustering in our case refers to the cosine- similarity values computed between the embedded query vectors and cosine similarity values between the vectors obtained from top 1000 documents retrieved from Clueweb12B, a publicly available web collection2.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "4.2 Clustering of Query Vectors"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "commercial search engine",
+    "object_type": "Method",
+    "source_sentence": "The annotators were instructed to use a commercial search engine (e.g. Google), if required, to determine if two queries from different search sessions could potentially relate to the same underlying task.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "5.1 Dataset"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "post-processed dataset",
+    "object_type": "Dataset",
+    "source_sentence": "The post-processed dataset with cross-session task labels that we use for our experiments is publicly available3.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "5.1 Dataset"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "employs",
+    "object": "standard word2vec",
+    "object_type": "Method",
+    "source_sentence": "We employ three different em- bedding strategies for our experiments : i) standard word2vec, ii) transformed vectors with temporal context , and iii) transformed vectors with tempo- lexical contexts.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "5.3 Parameters and Evaluation Metrics"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "Evaluation",
+    "object_type": "Concept",
+    "source_sentence": "The objective of the experiments is to show that our proposed query term embedding method can outperform the above mentioned baselines, thus indicating that within- session adjacency information can be useful to learn task specific semantics.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "5.3 Parameters and Evaluation Metrics"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "temporal and tempo-lexical query embedding method",
+    "object_type": "Method",
+    "source_sentence": "Our experiments on the AOL query log indicate that the proposed temporal and tempo-lexical query embedding method significantly out- perform the baseline word2vec embedding.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "7 Conclusions and Future Work"
+  }
+]

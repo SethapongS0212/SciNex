@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "dependency-based",
+    "predicate": "uses",
+    "object": "skip-gram model",
+    "object_type": "Model",
+    "source_sentence": "the dependency-based embedding model is proposed to treat a word through separate ones, e.g., 'food@dobj' and 'food@nsubj', under different syntactic relations, with the skip-gram model being used to train the final embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Negative Sampling",
+    "predicate": "uses",
+    "object": "learning process",
+    "object_type": "Process",
+    "source_sentence": "we adopt the negative sampling strategy to conduct the learning process.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "2.2 Learning the MWE model"
+  },
+  {
+    "subject": "cross entropy",
+    "predicate": "uses",
+    "object": "loss function",
+    "object_type": "Other",
+    "source_sentence": "we use cross entropy as the loss function E = −log σ(vr h,wh ⊤· vr t,wt) −log σ(−vr h,wh ⊤· vr t,w′ t) to measure the learning effect for Eq. (2), with σ denoting the sigmoid function.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "2.2 Learning the MWE model"
+  },
+  {
+    "subject": "SGD",
+    "predicate": "uses",
+    "object": "gradients",
+    "object_type": "Other",
+    "source_sentence": "the training process is thus to update c, ur, and Xr with the gradients passed from the loss function using stochastic gradient descent (SGD).",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "2.2 Learning the MWE model"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "released code",
+    "object_type": "Other",
+    "source_sentence": "For word2Vec and GloVe, we use their released code.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.2 Baselines"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "released code",
+    "object_type": "Other",
+    "source_sentence": "For word2Vec and GloVe, we use their released code.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.2 Baselines"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "pre-trained models",
+    "object_type": "Other",
+    "source_sentence": "For ELMo and BERT, we use their pre-trained models.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.2 Baselines"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "pre-trained models",
+    "object_type": "Other",
+    "source_sentence": "For ELMo and BERT, we use their pre-trained models.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.2 Baselines"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "cosine similarity",
+    "object_type": "Concept",
+    "source_sentence": "For embedding based methods (word2vec, GloVe, D-embedding7, and MWE8), we follow previous work and use the cosine similarity between embeddings of head and tail words to predict their relations.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.3 Selectional Preference Acquisition"
+  }
+]

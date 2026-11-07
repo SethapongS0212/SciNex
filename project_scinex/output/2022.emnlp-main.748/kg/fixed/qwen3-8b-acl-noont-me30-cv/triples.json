@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "ECTSum",
+    "object_type": "Dataset",
+    "source_sentence": "Models trained on ECTSum, on the other hand, are specifically expected to capture salient financial metrics such as sales, revenues, current trends, etc. in as few words as possible.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "2 Related Works"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "ECTSum",
+    "object_type": "Dataset",
+    "source_sentence": "This property requires models, trained on ECTSum, to process the entire document in order to generate a high quality summary.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "3.3 Statistics and Analysis"
+  },
+  {
+    "subject": "Paraphrasing",
+    "predicate": "produces",
+    "object": "bullet points",
+    "object_type": "Other",
+    "source_sentence": "Our proposed model ECT-BPS contains two separately trained modules/blocks – (1) an Extractive block that is trained to identify the most relevant sentences from the input ECT document, and (2) a Paraphrasing block that is trained to rephrase the extracted ECT sentences to the format of target (Reuters) sentences, thereby generating a set of bullet points.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "4 The ECT-BPS Framework"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "trainedon",
+    "object": "financial communication text",
+    "object_type": "Dataset",
+    "source_sentence": "We replace this layer by FinBERT , a BERT model pre-trained on financial communication text, and use it to obtain the individual sentence representations.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "4.1 The Extractive Module"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "numerical values",
+    "object_type": "Concept",
+    "source_sentence": "More specifically, during training we replace the numerical values in the input sentences with placeholders such as [num-one], [num-two], etc.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "4.2 The Paraphrasing Module"
+  },
+  {
+    "subject": "Paraphrasing",
+    "predicate": "uses",
+    "object": "Sentences",
+    "object_type": "Other",
+    "source_sentence": "Sentences corresponding to the extractive summary thus obtained are paraphrased using the trained Paraphrasing Module to obtain the final summary.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "4.3 Training and Inference"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "addresses",
+    "object": "ECT-BPS-generated summaries",
+    "object_type": "Other",
+    "source_sentence": "We then report the design and results of a human evaluation experiment conducted to manually assess and compare ECT-BPS-generated summaries with those of competing baselines.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "5 Experiments and Results"
+  },
+  {
+    "subject": "ROUGE",
+    "predicate": "uses",
+    "object": "F-1 scores",
+    "object_type": "Metric",
+    "source_sentence": "We report the F-1 scores corresponding to ROUGE-1, ROUGE-2, and ROUGE-L.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "5.2 Evaluation Metrics"
+  },
+  {
+    "subject": "Summarization",
+    "predicate": "evaluatedon",
+    "object": "ECTSum corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We evaluate and compare the summarization performance of a wide range of representative algorithms on the ECTSum corpus as briefed below:",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "A.2 Baselines"
+  },
+  {
+    "subject": "classifier",
+    "predicate": "uses",
+    "object": "Sentence Representations",
+    "object_type": "Concept",
+    "source_sentence": "A classifier on sentence representations is used for sentence selection.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "A.2.2 Extractive Approaches"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "denoising autoencoder",
+    "object_type": "Method",
+    "source_sentence": "BART introduces a denoising autoencoder for pre-training sequence to sequence tasks including summarization.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "A.2.3 Abstractive Approaches"
+  },
+  {
+    "subject": "BART",
+    "predicate": "addresses",
+    "object": "summarization",
+    "object_type": "Task",
+    "source_sentence": "BART introduces a denoising autoencoder for pre-training sequence to sequence tasks including summarization.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "A.2.3 Abstractive Approaches"
+  },
+  {
+    "subject": "Longformer",
+    "predicate": "uses",
+    "object": "attention mechanism",
+    "object_type": "Method",
+    "source_sentence": "Longformer Encoder Decoder (LED) is a Longformer variant for supporting long document generative seq-to-seq tasks. It uses an attention mechanism that scales linearly with sequence length, making it easy to process documents of thousands of tokens or longer.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "A.2.4 Long Document Summarizers"
+  },
+  {
+    "subject": "ROUGE",
+    "predicate": "uses",
+    "object": "n-grams",
+    "object_type": "Other",
+    "source_sentence": "ROUGE measures the textual overlap (n-grams, word sequences ) between the generated summary and the reference summary.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "A.3 Evaluation Metrics"
+  },
+  {
+    "subject": "ROUGE",
+    "predicate": "uses",
+    "object": "word sequences",
+    "object_type": "Other",
+    "source_sentence": "ROUGE measures the textual overlap (n-grams, word sequences ) between the generated summary and the reference summary.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "A.3 Evaluation Metrics"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "similarity scores",
+    "object_type": "Other",
+    "source_sentence": "BERTScore aligns the generated and target summaries on a token-level and uses BERT to compute their similarity scores.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "A.3 Evaluation Metrics"
+  },
+  {
+    "subject": "Summaries",
+    "predicate": "uses",
+    "object": "SummaC",
+    "object_type": "Model",
+    "source_sentence": "We used the official implementation21 of SummaC to obtain the scores for all model-generated summaries.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.748",
+    "title": "Rajdeep Mukherjee1∗ Abhinav Bohra1 Akash Banerjee1 Soumya Sharma1",
+    "section": "A.3 Evaluation Metrics"
+  }
+]

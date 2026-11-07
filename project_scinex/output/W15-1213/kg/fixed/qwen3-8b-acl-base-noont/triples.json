@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "Classifiers",
+    "predicate": "trainedon",
+    "object": "held-out-data",
+    "object_type": "Dataset",
+    "source_sentence": "Both classifiers are trained with held-out-data us- ing the perceptron learning algorithm and weight averaging .",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "3.2 Suffix prediction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "finite state automata",
+    "object_type": "Model",
+    "source_sentence": "To model these spelling changes triggered by suffix- ation, we use finite state automata (FSAs), math- φ0 *apostrophe* suf1=\"M\" suf1=\"G\" suf1=\"R\" suf1=\"E\" suf1=\"R\" suf2=\"'M\" suf2=\"NG\" suf2=\"OR\" suf2=\"NE\" suf2=\"UR\" suf3=\"ING\" suf3=\"AUR\" φ2 *initial* *peninitial* w_i-2=\"I'M\" w_i-2=\"LOOKING\" w_i-2=\"FOR\" w_i-1=\"I'M\" w_i-1=\"LOOKING\" w_i-1=\"FOR\" w_i-1=\"ONE\" w_i+1=\"LOOKING\" w_i+1=\"FOR\" w_i+1=\"ONE\" w_i+1=\"DINOSAUR\" *ultimate* w_i+2=\"FOR\" w_i+2=\"ONE\" w_i+2=\"PET\" *penultimate* ematical models widely used in both natural lan- guage processing and speech recognition.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "3.3 Stem analysis"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "three intrinsic measures",
+    "object_type": "Metric",
+    "source_sentence": "We evaluate the model with respect to its ability to mimic human morphological annotations, using three intrinsic measures .",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "4 Evaluation"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "Pearson product-moment correlation",
+    "object_type": "Metric",
+    "source_sentence": "We also evaluate the model extrinsi- cally, by computing the Pearson product-moment correlation between MLUM computed from man- ual annotated data to MLUM computed from au- tomated morphological annotations.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "4 Evaluation"
+  },
+  {
+    "subject": "POS",
+    "predicate": "produces",
+    "object": "performance gains",
+    "object_type": "Metric",
+    "source_sentence": "Neither set of POS features produced any appreciable gains in performance.",
+    "extraction_mode": "fixed",
+    "paper": "W15-1213",
+    "title": "Automated morphological analysis of clinical language samples",
+    "section": "4.4 Discussion"
+  }
+]

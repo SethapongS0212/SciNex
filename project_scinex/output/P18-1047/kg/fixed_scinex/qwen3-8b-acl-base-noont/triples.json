@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Relation Extraction",
+    "predicate": "uses",
+    "object": "task of relation extraction or classification",
+    "object_type": "Task",
+    "source_sentence": "most previous methods mainly focused on the task of relation extraction or classification which identifies the semantic relations between two pre-assigned entities.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Datasets",
+    "predicate": "uses",
+    "object": "two public datasets",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct experiments on two public datasets.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "copy mechanism",
+    "object_type": "Concept",
+    "source_sentence": "we introduce a differentiable neu- ral model based on Seq2Seq learning with copy mechanism",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "3 Our Model"
+  },
+  {
+    "subject": "Relation Prediction",
+    "predicate": "uses",
+    "object": "confidence vector",
+    "object_type": "Concept",
+    "source_sentence": "Similar with the relation prediction , we concatenate qe and qNA to form the confidence vector and apply soft- max to obtain the probability distribution pe = [pe 1,..., pe n+1]:",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "3.1.2 Decoder"
+  },
+  {
+    "subject": "Relation Prediction",
+    "predicate": "uses",
+    "object": "probability distribution",
+    "object_type": "Concept",
+    "source_sentence": "Similar with the relation prediction , we concatenate qe and qNA to form the confidence vector and apply soft- max to obtain the probability distribution pe = [pe 1,..., pe n+1]:",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "3.1.2 Decoder"
+  },
+  {
+    "subject": "Models",
+    "predicate": "trainedon",
+    "object": "negative log-likelihood loss func- function",
+    "object_type": "Method",
+    "source_sentence": "Both OneDecoder and MultiDecoder models are trained with the negative log-likelihood loss func- function.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "3.3 Training"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "produces",
+    "object": "train set",
+    "object_type": "Dataset",
+    "source_sentence": "After filtering and splitting, the train set contains 5019 instances, the test set contains 703 instances and the validation set contains 500 instances.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "produces",
+    "object": "test set",
+    "object_type": "Dataset",
+    "source_sentence": "After filtering and splitting, the train set contains 5019 instances, the test set contains 703 instances and the validation set contains 500 instances.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "produces",
+    "object": "validation set",
+    "object_type": "Dataset",
+    "source_sentence": "After filtering and splitting, the train set contains 5019 instances, the test set contains 703 instances and the validation set contains 500 instances.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Model",
+    "source_sentence": "In our experiments, for both dataset , we use LSTM as the model cell;",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.2 Settings"
+  },
+  {
+    "subject": "Models",
+    "predicate": "comparesagainst",
+    "object": "much more balanced",
+    "object_type": "Concept",
+    "source_sentence": "our models are much more balanced.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.4 Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "much higher performance on all metrics",
+    "object_type": "Metric",
+    "source_sentence": "our models achieve much high- er performance on all metrics.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.5 Detailed Results on Different Sentence Types"
+  }
+]

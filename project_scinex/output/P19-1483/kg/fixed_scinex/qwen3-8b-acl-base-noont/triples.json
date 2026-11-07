@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "Text",
+    "predicate": "comprises",
+    "object": "gold-standard",
+    "object_type": "Concept",
+    "source_sentence": "The underlying assumption behind these metrics is that the reference text is gold-standard, i.e., it is the ideal target text that a system should gener- ate.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "evaluatedon",
+    "object": "outputs",
+    "object_type": "Concept",
+    "source_sentence": "Our main contributions are: • We conduct a large -scale human evaluation of the outputs from 16 table-to-text models on 1100 examples from the WikiBio dataset , many of which have divergent references (§5.2).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Information",
+    "predicate": "extractedfrom",
+    "object": "reference texts",
+    "object_type": "Dataset",
+    "source_sentence": "We develop information extraction based metrics , inspired from Wiseman et al. (2017), by training a model to extract tables from the reference texts (§4).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "reference description",
+    "object_type": "Concept",
+    "source_sentence": "For training and evaluation we further assume that we have a ref- erence description R available for each table.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "2 Table-to-Text Generation"
+  },
+  {
+    "subject": "Example",
+    "predicate": "comprises",
+    "object": "candidate 3 in Figure 1",
+    "object_type": "Concept",
+    "source_sentence": "For example, in Figure 1, it is highly unlikely that a system would produce \"Silkworm\" when it is not present in the table.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "3 PARENT"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "auxil- iary model",
+    "object_type": "Model",
+    "source_sentence": "(2017) proposed to use an auxil- iary model, trained to extract structured records from text, for evaluation .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "4 Evaluation via Information Extraction"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "human evaluation scores",
+    "object_type": "Metric",
+    "source_sentence": "we show these generated texts to humans to judge their quality, and obtain aggregated human evaluation scores for all the models, ¯h = (h1,..., hl) (§5.2).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "5 Experiments & Results"
+  },
+  {
+    "subject": "Generated Texts",
+    "predicate": "comparesagainst",
+    "object": "reference texts",
+    "object_type": "Concept",
+    "source_sentence": "Workers on a crowd-sourcing platform, proficient in English, were shown a table with pairs of generated texts, or a generated text and the reference, and asked to select the one they prefer.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "5.2 Human Evaluation"
+  },
+  {
+    "subject": "Generated Texts",
+    "predicate": "comparesagainst",
+    "object": "reference texts",
+    "object_type": "Concept",
+    "source_sentence": "Paired comparisons have been shown to be supe- rior to rating scales for comparing generated texts.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "5.2 Human Evaluation"
+  },
+  {
+    "subject": "Information",
+    "predicate": "comprises",
+    "object": "inferred from the table",
+    "object_type": "Concept",
+    "source_sentence": "We define a reference as entailed when it mentions only information which can be inferred from the table.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "5.5 Analysis"
+  },
+  {
+    "subject": "Models",
+    "predicate": "comprises",
+    "object": "PARENT-C",
+    "object_type": "Model",
+    "source_sentence": "Between the two entailment models, PARENT-C is better due to its higher correlation with the grammaticality and fluency aspects.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "5.6 WebNLG Dataset"
+  },
+  {
+    "subject": "Over the Years",
+    "predicate": "evaluatedon",
+    "object": "automatic metrics",
+    "object_type": "Model",
+    "source_sentence": "Over the years several studies have evaluated au- tomatic metrics for measuring text generation per- formance (Callison-Burch et al., 2006; Stent et al., 2005; Belz and Reiter, 2006; Reiter, 2018; Liu et al., 2016; Kilickaya et al., 2017; Gatt and Krah- mer, 2018).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "6 Related Work"
+  },
+  {
+    "subject": "training",
+    "predicate": "producedby",
+    "object": "output sequence",
+    "object_type": "Model",
+    "source_sentence": "After training, we can parse the out- put sequence along the special tokens <R> and <C> to get a set of (attribute, value) pairs.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.1 Information Extraction System"
+  },
+  {
+    "subject": "parse",
+    "predicate": "extractedfrom",
+    "object": "set of (attribute, value) pairs",
+    "object_type": "Concept",
+    "source_sentence": "After training, we can parse the out- put sequence along the special tokens <R> and <C> to get a set of (attribute, value) pairs.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.1 Information Extraction System"
+  },
+  {
+    "subject": "Text",
+    "predicate": "uses",
+    "object": "beam sizes",
+    "object_type": "Method",
+    "source_sentence": "Various beam sizes and length nor- malization penalties were applied for the table-to- text system , which are listed in the main paper.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.2 Hyperparameters"
+  },
+  {
+    "subject": "Information Extraction",
+    "predicate": "uses",
+    "object": "beam size of 8",
+    "object_type": "Method",
+    "source_sentence": "For the information extraction system , we found a beam size of 8 and no length penalty to produce the highest F- score on the dev set.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.2 Hyperparameters"
+  }
+]

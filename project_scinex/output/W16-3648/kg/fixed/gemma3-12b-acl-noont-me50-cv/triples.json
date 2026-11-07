@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Response Generation",
+    "predicate": "uses",
+    "object": "Neural Networks",
+    "object_type": "Model",
+    "source_sentence": "More recently, response generation using neural networks has been widely studied, most work grounded in the MT method (Cho et al., 2014; Sordoni et al., 2015; Shang et al., 2015; Vinyals and Le, 2015).",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "RNN encoder",
+    "object_type": "Model",
+    "source_sentence": "our NUR model utilizes an RNN encoder.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.1 Utterance Encoding"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "RNN decoder approach",
+    "object_type": "Method",
+    "source_sentence": "The RNN in our model does not generate sentences using this RNN decoder approach.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.1 Utterance Encoding"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "skip-gram model",
+    "object_type": "Method",
+    "source_sentence": "a neural network for word embedding (as shown in Figure 1) learns via the skip-gram model.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.1 Utterance Encoding"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Method",
+    "source_sentence": "This RNN has two LSTM layers and two linear layers; further, we use rectified linear unit (ReLU) as the activation function.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.2 Ranking Candidate Utterances"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "ReLU",
+    "object_type": "Method",
+    "source_sentence": "This RNN has two LSTM layers and two linear layers; further, we use rectified linear unit (ReLU) as the activation function.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.2 Ranking Candidate Utterances"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "Ranking",
+    "object_type": "Task",
+    "source_sentence": "We conducted experiments to verify the performance of ranking given candidate utterances and given contexts.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "dialogue data",
+    "object_type": "Dataset",
+    "source_sentence": "For our experiments, we used dialogue data between a conversational dialogue system and a user for both training and test data.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "RNNs",
+    "predicate": "uses",
+    "object": "LSTM layers",
+    "object_type": "Method",
+    "source_sentence": "In our encoding and ranking RNNs, we used LSTM layers with 1000 hidden cells in each layer.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Dialogue System",
+    "predicate": "uses",
+    "object": "ListNet",
+    "object_type": "Method",
+    "source_sentence": "This dialogue system ranks utterances using ListNet and selects the top-ranked utterance to reply.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Features",
+    "predicate": "uses",
+    "object": "n-gram pairs",
+    "object_type": "Concept",
+    "source_sentence": "It primarily utilizes n-gram pairs between utterances in context and candidates as features.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Dialogue System",
+    "predicate": "uses",
+    "object": "proposed method",
+    "object_type": "Method",
+    "source_sentence": "we developed a conversational dialogue system based on our proposed method and conducted dialogue experiments with human subjects.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "5 Dialogue Experiment"
+  },
+  {
+    "subject": "Dialogue System",
+    "predicate": "uses",
+    "object": "topic words",
+    "object_type": "Concept",
+    "source_sentence": "The dialogue system used in the experiment acquired topic words from given context in a simple manner.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "6 Conclusions"
+  }
+]

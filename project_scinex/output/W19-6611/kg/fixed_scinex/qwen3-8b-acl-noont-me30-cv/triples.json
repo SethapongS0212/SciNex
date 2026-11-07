@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "multi-headed attention",
+    "object_type": "Method",
+    "source_sentence": "Our transformer model is a 6-layer transformer with multi-headed attention of 8 heads.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "2 Datasets and Models"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "layer normalization",
+    "object_type": "Method",
+    "source_sentence": "Our transformer model has hidden state dimensions of 512 and a batch size of 4096 tokens and uses layer normalization.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "2 Datasets and Models"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "cosine similarity",
+    "object_type": "Concept",
+    "source_sentence": "The nearest neighbors of the word embeddings are also computed using cosine similarity.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "3.1 Hidden States vs Embeddings"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "POS tag",
+    "object_type": "Concept",
+    "source_sentence": "We POS tag and parse our corpus prior to applying BPE segmentation.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "3.3 Syntactic Similarity"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "subtree of a word",
+    "object_type": "Concept",
+    "source_sentence": "Then, after applying BPE, we use the same POS tag and the same subtree of a word for its BPE segments, following Sennrich and Haddow (2016).",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "3.3 Syntactic Similarity"
+  },
+  {
+    "subject": "Nearest Neighbors",
+    "predicate": "uses",
+    "object": "hidden states",
+    "object_type": "Other",
+    "source_sentence": "We use the logged hidden states to compute the nearest neighbors of the tokens with frequency of 10 to 2000 in our held-out data.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "4 Empirical Analyses"
+  },
+  {
+    "subject": "Similarity",
+    "predicate": "uses",
+    "object": "nearest neighbors",
+    "object_type": "Other",
+    "source_sentence": "We compute cosine similarity to find the nearest neighbors.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "4 Empirical Analyses"
+  },
+  {
+    "subject": "POS tagger",
+    "predicate": "uses",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "To carry out an analysis based on POS tags, we tagged our training data using the Stanford POS tagger.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "4.1 Embedding Nearest Neighbors Coverage"
+  }
+]

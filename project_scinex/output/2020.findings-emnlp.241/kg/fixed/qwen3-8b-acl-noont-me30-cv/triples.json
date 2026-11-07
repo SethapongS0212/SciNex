@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Representation Learning",
+    "predicate": "addresses",
+    "object": "reasoning",
+    "object_type": "Task",
+    "source_sentence": "Representation learning has proved effective for reasoning in KGs.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "stochastic gradient descent",
+    "object_type": "Method",
+    "source_sentence": "The training is performed using stochastic gradient descent with mini-batches.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "KG embedding model",
+    "object_type": "Model",
+    "source_sentence": "Note that Algorithm 2 is generic and can be used with any KG embedding model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "3.1 Proposed Training Procedure"
+  },
+  {
+    "subject": "Datasets",
+    "predicate": "uses",
+    "object": "WN18RR",
+    "object_type": "Dataset",
+    "source_sentence": "We created datasets for out-of-sample representation learning over KGs using WN18RR and FB15k-237 , two standard datasets for KG completion.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "4 Datasets"
+  },
+  {
+    "subject": "Datasets",
+    "predicate": "uses",
+    "object": "FB15k-237",
+    "object_type": "Dataset",
+    "source_sentence": "We created datasets for out-of-sample representation learning over KGs using WN18RR and FB15k-237 , two standard datasets for KG completion.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "4 Datasets"
+  },
+  {
+    "subject": "Graph Convolutional Networks",
+    "predicate": "uses",
+    "object": "initial entity features",
+    "object_type": "Concept",
+    "source_sentence": "Graph convolutional networks (GCNs) have proved effective for inductive and out-of-sample learning when initial entity features are available.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "5.1 Baselines"
+  },
+  {
+    "subject": "AdaGrad",
+    "predicate": "uses",
+    "object": "optimizer",
+    "object_type": "Other",
+    "source_sentence": "We implemented other models and baselines in PyTorch and used the AdaGrad optimizer.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "5.2 Implementation Details"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "training",
+    "object_type": "Other",
+    "source_sentence": "using Algorithm 2 for training as opposed to Algorithm 1 results in a boost of performance.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "5.3 Results"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "in-sample link prediction",
+    "object_type": "Task",
+    "source_sentence": "The results in Table 3 indicate that training with our proposed algorithm does not deteriorate the performance for in-sample link prediction.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "0.36 Test MRR"
+  },
+  {
+    "subject": "Out-of-Sample Representation Learning",
+    "predicate": "addresses",
+    "object": "non-attributed multi-relational graphs",
+    "object_type": "Concept",
+    "source_sentence": "We studied out-of-sample representation learning for non-attributed multi-relational graphs - a problem that is surprisingly poorly studied.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Out-of-Sample Representation Learning",
+    "predicate": "uses",
+    "object": "aggregation models",
+    "object_type": "Model",
+    "source_sentence": "We also developed several baselines, a new training algorithm, and two aggregation models for out-of-sample representation learning.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Out-of-Sample Representation Learning",
+    "predicate": "uses",
+    "object": "training algorithm",
+    "object_type": "Method",
+    "source_sentence": "We also developed several baselines, a new training algorithm, and two aggregation models for out-of-sample representation learning.",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "6 Conclusion"
+  },
+  {
+    "subject": "Out-of-Sample Representation Learning",
+    "predicate": "uses",
+    "object": "aggregation functions",
+    "object_type": "Method",
+    "source_sentence": "Future work includes developing new training strategies, testing other aggregation functions, combining the aggregation functions with other transductive models, extending out-of-sample reasoning to temporal KG completion and knowledge hypergraph completion (e.g., extending the proposed training algorithm and aggregation functions to the temporal or hypergraph versions of DistMult or SimplE ) transferring the knowledge learned over one graph to a new graph with new entities (similar to ), studying the similarities and differences between out-of-sample representation learning and out-of-vocabulary word embedding , and testing the proposed models on relational domains other than knowledge graphs .",
+    "extraction_mode": "fixed",
+    "paper": "2020.findings-emnlp.241",
+    "title": "Out-of-Sample Representation Learning for Knowledge Graphs",
+    "section": "6 Conclusion"
+  }
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "language modeling",
+    "predicate": "uses",
+    "object": "probability distribution",
+    "object_type": "Concept",
+    "source_sentence": "Language modeling consists of learning the probability distribution p(x) over variable-length token sequences x = (x1, x2,..., x|x|), where the tokens come from a fixed size vocabulary V.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.1 Enc-Dec Conditional Language Models"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "next token prediction",
+    "object_type": "Task",
+    "source_sentence": "The training of LMs typically involves solving the task of predicting the next token based on past tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.1 Enc-Dec Conditional Language Models"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "context",
+    "object_type": "Concept",
+    "source_sentence": "In the case of conditional LMs, the generation is conditioned on an additional context c.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.1 Enc-Dec Conditional Language Models"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "bidirectional self-attention",
+    "object_type": "Method",
+    "source_sentence": "Transformer-based encoder-decoder conditional LMs use bidirectional self-attention in the encoding step to create vector representations of the tokens in the context c.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.1 Enc-Dec Conditional Language Models"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "sequence",
+    "object_type": "Concept",
+    "source_sentence": "The decoding step generates the tokens of the sequence x in an auto-regressive manner, while performing self-attention on previously generated tokens of x and all the representations output by the encoder for c.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.1 Enc-Dec Conditional Language Models"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "training set D",
+    "object_type": "Dataset",
+    "source_sentence": "Our approach to model p(a, q|c) involves fine-tuning a pretrained Enc-Dec conditional LM using a training set D = {(c1, q1, a1), (c2, q2, a2),..., (c|D|, q|D|, a|D|)}.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.2 Question-Answer Generation"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "produces",
+    "object": "answer tokens",
+    "object_type": "Other",
+    "source_sentence": "During sampling, the answer tokens are generated , which are followed by question tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.2 Question-Answer Generation"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "produces",
+    "object": "question tokens",
+    "object_type": "Other",
+    "source_sentence": "During sampling, the question tokens are generated , which are followed by answer tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.2 Question-Answer Generation"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "target domains",
+    "object_type": "Domain",
+    "source_sentence": "(2019) showed improvements by fine-tuning the language model on the target domains.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "3 Related Work"
+  },
+  {
+    "subject": "Generative Models",
+    "predicate": "trainedon",
+    "object": "SQuAD 1.1",
+    "object_type": "Dataset",
+    "source_sentence": "Generative models are trained on SQuAD 1.1 for 5 epochs, and the best model is selected based on the cross entropy loss on the SQuAD dev set.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "SQuAD 1.1",
+    "object_type": "Dataset",
+    "source_sentence": "The span detection module consists of bert-base-uncased fine-tuned on SQuAD 1.1 passage and spans, where the start and end classification heads are trained to perform span detection.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "synthetic data",
+    "object_type": "Dataset",
+    "source_sentence": "Each experiment was performed by training the RC model on the synthetic data generated on the target domain corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.4 Domain Adaptation Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "structured corpora",
+    "object_type": "Dataset",
+    "source_sentence": "This opens the door to the possibility of using our proposed models in structured corpora without any extra effort.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "C.3 Question Answers from Table"
+  }
+]

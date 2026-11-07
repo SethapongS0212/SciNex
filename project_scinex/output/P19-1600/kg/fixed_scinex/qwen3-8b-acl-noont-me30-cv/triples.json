@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "word xt",
+    "object_type": "Other",
+    "source_sentence": "We concatenate the word xt and its structure representation zt at the t-th time step and feed them into LSTM unit to encode the table.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "2.1 Table Encoder"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "structure representation zt",
+    "object_type": "Other",
+    "source_sentence": "We concatenate the word xt and its structure representation zt at the t-th time step and feed them into LSTM unit to encode the table.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "2.1 Table Encoder"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "g(st, hi)",
+    "object_type": "Concept",
+    "source_sentence": "We use Bahdanau-style attention mechanism to calculate g(st, hi).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "2.2 Description Decoder"
+  },
+  {
+    "subject": "generator",
+    "predicate": "addresses",
+    "object": "rare and seldom mentioned words and attributes",
+    "object_type": "Concept",
+    "source_sentence": "We also propose a reinforcement learning frame- work which encourages the generator to cover rare and seldom mentioned words and attributes in the table.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3.2 Reinforced Richness-oriented Learning"
+  },
+  {
+    "subject": "Information",
+    "predicate": "addresses",
+    "object": "description",
+    "object_type": "Concept",
+    "source_sentence": "The information rich- ness measures the ratio of covered information in the table by the description.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3.2.1 Information Richness"
+  },
+  {
+    "subject": "Datasets",
+    "predicate": "uses",
+    "object": "WIKIBIO dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We use two datasets to test our model in the context of end-to-end table description generation and comprehensive generation for selected attributes in user-oriented scenario.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Filtering",
+    "predicate": "achieves",
+    "object": "100% Hit-1 coverage",
+    "object_type": "Metric",
+    "source_sentence": "The filtering ensures that the WB-filter dataset achieves 100% Hit-1 coverage.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Automatic Metrics",
+    "predicate": "uses",
+    "object": "BLEU-4",
+    "object_type": "Metric",
+    "source_sentence": "Automatic Metrics: Following the previous work , we use BLEU-4 and ROUGE-4 (F measure) for automatic evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.2 Evaluation Metrics"
+  },
+  {
+    "subject": "Automatic Metrics",
+    "predicate": "uses",
+    "object": "ROUGE-4",
+    "object_type": "Metric",
+    "source_sentence": "Automatic Metrics: Following the previous work , we use BLEU-4 and ROUGE-4 (F measure) for automatic evaluation.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.2 Evaluation Metrics"
+  },
+  {
+    "subject": "automatic evaluations",
+    "predicate": "evaluatedon",
+    "object": "WIKIBIO",
+    "object_type": "Dataset",
+    "source_sentence": "Automatic evaluations are shown in Table 2 for WIKIBIO and WB-filter.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.5 Analysis of Experimental Results"
+  },
+  {
+    "subject": "automatic evaluations",
+    "predicate": "evaluatedon",
+    "object": "WB-filter",
+    "object_type": "Dataset",
+    "source_sentence": "Automatic evaluations are shown in Table 2 for WIKIBIO and WB-filter.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.5 Analysis of Experimental Results"
+  },
+  {
+    "subject": "generator",
+    "predicate": "achieves",
+    "object": "informative and accurate descriptions",
+    "object_type": "Other",
+    "source_sentence": "Richness-oriented reinforcement learning is proposed to cover more informative contents in source tables , which help the generator to generate informative and accurate descriptions.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "6 Conclusion and Future Work"
+  }
+]

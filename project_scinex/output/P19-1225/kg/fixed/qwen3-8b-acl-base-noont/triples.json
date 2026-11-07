@@ -1,0 +1,156 @@
+[
+  {
+    "subject": "Reading Comprehension",
+    "predicate": "uses",
+    "object": "textual sources",
+    "object_type": "Concept",
+    "source_sentence": "Reading comprehension (RC) is a task that uses textual sources to answer any question .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "HotpotQA",
+    "predicate": "publishedin",
+    "object": "explainable multi -hop QA dataset",
+    "object_type": "Dataset",
+    "source_sentence": "(2018) released HotpotQA, an ex- plainable multi -hop QA dataset, as shown in Fig- ure 1.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Context Vectors",
+    "predicate": "publishedin",
+    "object": "sentence-level context vectors",
+    "object_type": "Concept",
+    "source_sentence": "Here, X ∈Rls×2dc is the sentence-level context vectors, where ls is the number of sentences of C.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Context Vectors",
+    "predicate": "publishedin",
+    "object": "contextual query vectors",
+    "object_type": "Concept",
+    "source_sentence": "QFE, described later, receives sentence-level context vectors X ∈Rls×2dc and the contextual query vectors Q2 ∈Rmw×2dc as Y.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Search",
+    "predicate": "uses",
+    "object": "beam search algorithm",
+    "object_type": "Method",
+    "source_sentence": "QFE uses the beam search algorithm to search ˆE.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.4 Test Phase"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "classification accuracy of AT",
+    "object_type": "Metric",
+    "source_sentence": "For the answer evaluation, the score was measured by the classification accuracy of AT.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "evidence extraction score",
+    "object_type": "Metric",
+    "source_sentence": "QFE performed the best in terms of the evidence extraction score among all models compared.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "4.3 Results"
+  },
+  {
+    "subject": "document retriever",
+    "predicate": "uses",
+    "object": "NSMN",
+    "object_type": "Model",
+    "source_sentence": "we used the NSMN document retriever and gave only the top- five paragraphs to our model.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "5.2 Experimental Setup"
+  },
+  {
+    "subject": "WordNet",
+    "predicate": "uses",
+    "object": "features",
+    "object_type": "Feature",
+    "source_sentence": "we used 30-dimensional WordNet fea- tures and five-dimensional number embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "5.2 Experimental Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "ensemble learning",
+    "object_type": "Method",
+    "source_sentence": "Our model used ensemble learning of 11 randomly initialized models.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "5.2 Experimental Setup"
+  },
+  {
+    "subject": "FEVER",
+    "predicate": "uses",
+    "object": "metrics",
+    "object_type": "Metric",
+    "source_sentence": "We evaluated the prediction of AT and the evi- dence E by using the official metrics in FEVER .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "5.2 Experimental Setup"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "uses",
+    "object": "sentence id",
+    "object_type": "Concept",
+    "source_sentence": "E was evaluated in terms of precision, recall and F1, which were measured by sentence id.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "5.2 Experimental Setup"
+  },
+  {
+    "subject": "FEVER",
+    "predicate": "uses",
+    "object": "score",
+    "object_type": "Metric",
+    "source_sentence": "The FEVER score was used as a metric accounting for both AT and E.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "5.2 Experimental Setup"
+  },
+  {
+    "subject": "Sentence",
+    "predicate": "uses",
+    "object": "encoder-decoder architecture",
+    "object_type": "Model",
+    "source_sentence": "A typical approach to sentence-level extractive summarization has an encoder-decoder architec- ture (Cheng and Lapata, 2016; Nallapati et al., 2017; Narayan et al., 2018).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "6.3 Summarization"
+  }
+]

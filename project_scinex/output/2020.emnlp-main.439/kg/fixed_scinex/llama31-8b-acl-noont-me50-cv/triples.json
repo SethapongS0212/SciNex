@@ -1,0 +1,134 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "bidirectional self-attention",
+    "object_type": "Method",
+    "source_sentence": "Transformer-based encoder-decoder conditional LMs use bidirectional self-attention in the encoding step to create vector representations of the tokens in the context c.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.1 Enc-Dec Conditional Language Models"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "self-attention",
+    "object_type": "Method",
+    "source_sentence": "The decoding step generates the tokens of the sequence x in an auto-regressive manner, while performing self-attention on previously generated tokens of x and all the representations output by the encoder for c.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.1 Enc-Dec Conditional Language Models"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "Attention",
+    "object_type": "Method",
+    "source_sentence": "This makes the generation of the answer conditioned on both input context ( through attention on the encoder) and question ( through self-attention in the decoder).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.2 Question-Answer Generation"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "Self-Attention",
+    "object_type": "Method",
+    "source_sentence": "This makes the generation of the answer conditioned on both input context ( through attention on the encoder) and question ( through self-attention in the decoder).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.2 Question-Answer Generation"
+  },
+  {
+    "subject": "Generative Models",
+    "predicate": "trainedon",
+    "object": "SQuAD 1.1 dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We used SQuAD 1.1 dataset to train the generative models as well as in- domain supervised data for the downstream RC task in this work.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Generative Models",
+    "predicate": "trainedon",
+    "object": "SQuAD 1.1",
+    "object_type": "Dataset",
+    "source_sentence": "Generative models are trained on SQuAD 1.1 for 5 epochs, and the best model is selected based on the cross entropy loss on the SQuAD dev set.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "model training",
+    "predicate": "uses",
+    "object": "bert-base-uncased model",
+    "object_type": "Model",
+    "source_sentence": "For RC model training, we use bert-base-uncased model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "BART",
+    "predicate": "achieves",
+    "object": "21.29 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "BART and GPT2 achieved 21.29 and 18.31 BLEU, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "BART",
+    "predicate": "achieves",
+    "object": "18.31 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "BART and GPT2 achieved 21.29 and 18.31 BLEU, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Synthetic Data",
+    "object_type": "Dataset",
+    "source_sentence": "Each experiment was performed by training the RC model on the synthetic data generated on the target domain corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.4 Domain Adaptation Results"
+  },
+  {
+    "subject": "Generative Models",
+    "predicate": "trainedon",
+    "object": "SQuAD 1.1 dataset",
+    "object_type": "Dataset",
+    "source_sentence": "SQuAD 1.1 dataset is used to train the generative models as well as in- domain supervised data for the downstream RC task.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "A Additional Details Regarding the Datasets Used"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Amazon EC2 instances",
+    "object_type": "Other",
+    "source_sentence": "All of the experiments in this work were performed on Amazon EC2 instances.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "D Training and Platform Details"
+  }
+]

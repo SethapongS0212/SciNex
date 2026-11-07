@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "evaluate",
+    "predicate": "evaluatedon",
+    "object": "performance",
+    "object_type": "Metric",
+    "source_sentence": "We extensively evaluate the performance of our proposed approach on five popular benchmarks.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Keyphrase Extraction",
+    "predicate": "uses",
+    "object": "predicting the keyphrases",
+    "object_type": "Task",
+    "source_sentence": "Keyphrase extraction focuses on predicting the keyphrases that are present in the source text.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "2.1 Automatic Keyphrase Extraction"
+  },
+  {
+    "subject": "Supervised Methods",
+    "predicate": "uses",
+    "object": "hand-crafted textual features",
+    "object_type": "Features",
+    "source_sentence": "The scores can be learned by either supervised methods with hand-crafted tex- tual features (Medelyan et al., 2009; Witten et al., 1999; Nguyen and Kan, 2007; Frank et al., 1999; Hulth, 2003) or unsupervised graph ranking meth- ods (Mihalcea and Tarau, 2004; Grineva et al., 2009; Wan and Xiao, 2008).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "2.1 Automatic Keyphrase Extraction"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "external memory bank",
+    "object_type": "Dataset",
+    "source_sentence": "Our decoder employs the exter- nal memory bank [v1,..., vLr] to provide external guidance for the generation process.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2.3 Extractor"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "internal memory bank",
+    "object_type": "Dataset",
+    "source_sentence": "In addition to the internal memory bank [u1,..., uLx], our decoder employs the exter- nal memory bank [v1,..., vLr] to provide external guidance for the generation process.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2.3 Extractor"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "publishedin",
+    "object": "sequence identifier",
+    "object_type": "Method",
+    "source_sentence": "We use the following sequence identifier as our extractor to identify whether the word is a keyphrase word in the source text.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2.3 Extractor"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "publishedin",
+    "object": "forward GRU layer",
+    "object_type": "Method",
+    "source_sentence": "This decoder mainly consists of a forward GRU layer: cin t = attn(ht, [u1,..., uLx], Win), (5) cex t = attn(ht, [v1,..., vLr], Wex), (6) ˜ht = tanh(W1[cin t; cex t ]; ht), (7) where et−1 is the embedding vector of the (t − 1)-th predicted word.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2.3 Extractor"
+  },
+  {
+    "subject": "Text",
+    "predicate": "publishedin",
+    "object": "source text",
+    "object_type": "Concept",
+    "source_sentence": "gt = σ(wT g ˜ht + bg) ∈R is the soft switch between generating from the predefined vocabulary V and copying from X that are all words appearing in the source text.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2.3 Extractor"
+  },
+  {
+    "subject": "Words",
+    "predicate": "comparesagainst",
+    "object": "words appearing in the source text",
+    "object_type": "Concept",
+    "source_sentence": "gt = σ(wT g ˜ht + bg) ∈R is the soft switch between generating from the predefined vocabulary V and copying from X that are all words appearing in the source text.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2.3 Extractor"
+  },
+  {
+    "subject": "Source Text",
+    "predicate": "publishedin",
+    "object": "words appearing in the source text",
+    "object_type": "Concept",
+    "source_sentence": "gt = σ(wT g ˜ht + bg) ∈R is the soft switch between generating from the predefined vocabulary V and copying from X that are all words appearing in the source text.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2.3 Extractor"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "publishedin",
+    "object": "internal attention scores",
+    "object_type": "Concept",
+    "source_sentence": "Previous work either directly uses the internal attention scores as the copy probabilities (i.e., αc t,i = αin t,i) or employs extra neural network layers to calculate new copy scores.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2.3 Extractor"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "publishedin",
+    "object": "extra neural network layers",
+    "object_type": "Concept",
+    "source_sentence": "Previous work either directly uses the internal attention scores as the copy probabilities (i.e., αc t,i = αin t,i) or employs extra neural network layers to calculate new copy scores.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2.3 Extractor"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "weighted cross-entropy loss",
+    "object_type": "Metric",
+    "source_sentence": "We choose the source text words appearing in the assigned keyphrases as the gold important words and use the weighted cross-entropy loss for the extraction training i.e., Le = −1 Lx PLx j=1 wβ∗ j logβj+(1−β∗ j )log(1−βj), where β∗ j ∈{0, 1} is the ground-truth label for the j-th word and w is the loss weight for the positive training samples .",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2.5 Joint Training"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "negative log likelihood loss",
+    "object_type": "Metric",
+    "source_sentence": "The negative log likelihood loss is utilized for the generation training i.e., Lg = −PLy∗ t=1 logP(y∗ t |yt−1, x, r), where yt = [y1,..., yt−1] is the previously predicted word se- quence, Ly∗is the length of target keyphrase y∗, and y∗ t is the t-th target word in y∗.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2.5 Joint Training"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "produces",
+    "object": "Nrk retrieved keyphrase candidates",
+    "object_type": "Concept",
+    "source_sentence": "Finally, we get Nrk retrieved keyphrase candidates rk = [rk1,..., rkNrk] and their retrieval scores rs = [rs1,..., rsNrk].",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.3.1 Keyphrase Candidate Collection"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "macro-averaged recall",
+    "object_type": "Metric",
+    "source_sentence": "Similar to CopyRNN and CorrRNN, we adopt macro-averaged recall (R) and F-measure (F1) as our evaluation metrics.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "4.2 Baseline Models and Evaluation Metrics"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "F-measure",
+    "object_type": "Metric",
+    "source_sentence": "Similar to CopyRNN and CorrRNN, we adopt macro-averaged recall (R) and F-measure (F1) as our evaluation metrics.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "4.2 Baseline Models and Evaluation Metrics"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "evaluates",
+    "object": "extracted keyphrases",
+    "object_type": "Concept",
+    "source_sentence": "The extraction threshold ϵ is set to 0.7 after evaluating the extracted keyphrases on the evaluation dataset .",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "4.3 Implementation Details"
+  }
+]

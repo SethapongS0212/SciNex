@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "sequence labeling model",
+    "object_type": "Model",
+    "source_sentence": "(2017) proposed a novel tagging schema and employed a Recurrent Neural Networks (RNN) based sequence labeling model to jointly extract entities and relations.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "two public datasets",
+    "object_type": "Dataset",
+    "source_sentence": "We conduct experiments on two public datasets.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Encoder-Decoder Model",
+    "predicate": "uses",
+    "object": "attention",
+    "object_type": "Method",
+    "source_sentence": "Dong and Lapata (2016) presented a method based on an attention-enhanced and encoder-decoder model, which encodes input utterances and generates their logical forms.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Encoder-Decoder Model",
+    "predicate": "uses",
+    "object": "input utterances",
+    "object_type": "Other",
+    "source_sentence": "Dong and Lapata (2016) presented a method based on an attention-enhanced and encoder-decoder model, which encodes input utterances and generates their logical forms.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Encoder-Decoder Model",
+    "predicate": "uses",
+    "object": "logical forms",
+    "object_type": "Other",
+    "source_sentence": "Dong and Lapata (2016) presented a method based on an attention-enhanced and encoder-decoder model, which encodes input utterances and generates their logical forms.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "copy mechanism",
+    "object_type": "Method",
+    "source_sentence": "In this section, we introduce a differentiable neural model based on Seq2Seq learning with copy mechanism, which is able to extract multiple relational facts in an end2end fashion.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "3 Our Model"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "bi-directional RNN",
+    "object_type": "Model",
+    "source_sentence": "Following , our encoder uses a bi-directional RNN to encode the input sentence.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "3.1.1 Encoder"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "negative log-likelihood loss function",
+    "object_type": "Other",
+    "source_sentence": "Both OneDecoder and MultiDecoder models are trained with the negative log-likelihood loss function.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "3.3 Training"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "two widely used datasets",
+    "object_type": "Dataset",
+    "source_sentence": "To evaluate the performance of our methods , we conduct experiments on two widely used datasets.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.1 Dataset"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "model cell",
+    "object_type": "Other",
+    "source_sentence": "In our experiments, for both dataset , we use LSTM as the model cell;",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.2 Settings"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "uses",
+    "object": "standard micro Precision",
+    "object_type": "Metric",
+    "source_sentence": "we use the standard micro Precision, Recall and F1 score to evaluate the results.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.3 Baseline and Evaluation Metrics"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "higher recall value",
+    "object_type": "Metric",
+    "source_sentence": "Not surprisingly, our models recall more triplets and achieve higher recall value.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.4 Results"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "much higher performance on all metrics",
+    "object_type": "Other",
+    "source_sentence": "our models achieve much higher performance on all metrics.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.5 Detailed Results on Different Sentence Types"
+  },
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "copy mechanism",
+    "object_type": "Method",
+    "source_sentence": "In this paper, we proposed an end2end neural model based on Seq2Seq learning framework with copy mechanism for relational facts extraction.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.6 OneDecoder vs. MultiDecoder"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "extract relational facts from all three classes",
+    "object_type": "Task",
+    "source_sentence": "our models can extract relational facts from all three classes.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.6 OneDecoder vs. MultiDecoder"
+  }
+]

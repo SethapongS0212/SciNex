@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "fine-tuning",
+    "predicate": "achieves",
+    "object": "translation performance",
+    "object_type": "Concept",
+    "source_sentence": "The generated pairs are then incorporated into the training data for fine-tuning the forward translator, which proves to improve the translation performance.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Encoder-Decoder Model",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Model",
+    "source_sentence": "For our base instruction-to- navigation translation agent , we implement an encoder-decoder model similar to Fried et al. The encoder is a bidi- rectional LSTM-RNN with an embedding layer: u1, u2, · · ·, uL = Bi-LSTM( ˆw1, · · ·, ˆwL) (3) where uj is the j-th word in the instruction with a length of L.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "3.2 Base Agent Model"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "Alignment",
+    "object_type": "Concept",
+    "source_sentence": "The probability of moving to the k-th navigable viewpoint pt(at,k) is calculated as softmax of the alignment between the navigable viewpoint feature gt,k and the instruction-aware hidden output ˜ht.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "3.2 Base Agent Model"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "uses",
+    "object": "environmental dropout",
+    "object_type": "Method",
+    "source_sentence": "For submitting to the leaderboard, we simply train our agent via back translation with environmental dropout on test unseen environments (see Sec.7.2).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "5 Results"
+  },
+  {
+    "subject": "Algorithm",
+    "predicate": "uses",
+    "object": "beam search result",
+    "object_type": "Other",
+    "source_sentence": "The state- factored Dijkstra algorithm is used for the beam search result.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "6 Ablation Studies"
+  },
+  {
+    "subject": "Back Translation",
+    "predicate": "achieves",
+    "object": "46.5%",
+    "object_type": "Metric",
+    "source_sentence": "the back translation on the training environments only achieves 46.5%.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "7.2 Back Translation on Unseen Environments"
+  },
+  {
+    "subject": "ResNet",
+    "predicate": "uses",
+    "object": "ImageNet",
+    "object_type": "Dataset",
+    "source_sentence": "We use ResNet-152 pretrained on the ImageNet to extract the 2048-dimensional image feature.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "Bidirectional LSTM",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Model",
+    "source_sentence": "The size of the LSTM units is set to 512 (256 for the bidirectional LSTM).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  },
+  {
+    "subject": "RMSProp",
+    "predicate": "uses",
+    "object": "learning rate 1e −4",
+    "object_type": "Other",
+    "source_sentence": "For optimizing the loss, we use RMSprop (as suggested in Mnih et al. (2016)) with a fixed learning rate 1e −4 and the batch size is 64.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1268",
+    "title": "1Our code, data, and models publicly available at: https://github.com/airsplay/R2R-EnvDrop",
+    "section": "A.1 Implementation Details"
+  }
+]

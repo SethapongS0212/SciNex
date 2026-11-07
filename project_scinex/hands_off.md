@@ -184,6 +184,24 @@ its own branch, to merge once no `ft_train_qlora.py` call can happen for this ru
   student on the same subset, compared by Q&A. Q&A model: Mistral-Small-24B-Instruct-2501
   (neither a teacher nor a student family). Both downloading.
 
+### 38.8 Results of the objective runs so far (2026-11-07)
+- `run_noont.sh` finished 2026-11-06 22:51 (lane 1 Gemma-3 trained 3.6 h, Phi-4 2.9 h; Qwen3-8B
+  ~4.9 h on GPU0 because the Q&A generator shared the card). **Table 19:** every noont student keeps
+  87–93% of its proposals (CEO) at the coverage of its ontology-in-prompt twin; the untuned
+  noont control 9.5% / 9.9%.
+- Q&A (`qa_eval/acl-f0`): 935 paragraphs → 1,222 questions (2026-11-06 02:02–06:02). The session
+  ended after the oracle/closedbook answers (18:25) and nothing ran for ~21 h — the noont KGs had
+  not been queued. Resumed 2026-11-07 15:11 on both GPUs (`qa0`, `qa1`, `--hf-batch 8`).
+- **Preliminary Q&A** (deterministic overlap grading; accuracy, CORRECT=1, PARTIAL=½): oracle 86.3,
+  closedbook 4.4; KG teacher 5.0 / 3.3 (CEO / scinex), untuned base 12.7 / 12.8, me30 8.5 / 6.3,
+  me50 5.1 / 2.9. answer-in-KG: teacher 8.4%, base 18.3%, me30 12.6%, me50 7.9%. me50 − teacher
+  0.0 [−1.9, 2.0]; me50 − base −7.7 [−9.3, −5.8]. **The graphs are too sparse to answer most
+  paper questions; Q&A rewards coverage, so the untuned model's noisy but large graph scores best.**
+  Raising coverage (teacher-v2 recall fixes, v2 entity lists, lower empty cap, second teacher) is
+  now the main lever.
+- Standing rule repeated by the user: update the md docs after every meaningful step and push
+  when important (also in `Claude.md` and the handoff).
+
 ## Session 37 — Linux box with 2× RTX 5090; ⛔ finetuning corpus switched to the ACL ANTHOLOGY papers + FIXED extractor; gpt-oss-20b teacher run launched (2026-10-26/27)
 
 > User: *"download the github https://github.com/SethapongS0212/SciNex to envsam and overwrite it over

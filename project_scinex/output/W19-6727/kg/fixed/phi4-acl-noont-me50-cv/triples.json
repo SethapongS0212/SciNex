@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "2.3 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "Training with our pipeline improves BLEU and TER scores respectively by 2.3 and 3.0 points.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "2.2 Experiments"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "3.0 TER",
+    "object_type": "Metric",
+    "source_sentence": "Training with our pipeline improves BLEU and TER scores respectively by 2.3 and 3.0 points.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "2.2 Experiments"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "BPE",
+    "object_type": "Method",
+    "source_sentence": "Subword translation is an approach used in NMT to tackle out-of-vocabulary (OOV) problem using byte-pair encoding (BPE) or other similar segmentation techniques.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.2.3 Issues with Subwords"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "subwords",
+    "object_type": "Method",
+    "source_sentence": "It is now defacto to use subwords in NMT as with the better vocab coverage it enables the NMT models with excellent copying capability.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.2.3 Issues with Subwords"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "evaluater binary from Moses",
+    "object_type": "Other",
+    "source_sentence": "BLEU and TER scores are computed with tokenized lower-cased output and references using the \"evaluater\" binary from Moses.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "source text context",
+    "object_type": "Concept",
+    "source_sentence": "Our translation models are dynamically adapted to the source text context at each sentence, using fine-tuning but without knowing the source domain in advance.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "4 Domain Adaptation"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "translation memory",
+    "object_type": "Concept",
+    "source_sentence": "To this end, the training corpus is indexed into a translation memory.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "4 Domain Adaptation"
+  },
+  {
+    "subject": "Information retrieval",
+    "predicate": "uses",
+    "object": "translation memory",
+    "object_type": "Concept",
+    "source_sentence": "At test time, the translation memory is queried with the source sentence by information retrieval tools3.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "4 Domain Adaptation"
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "Semantic Change",
+    "predicate": "publishedin",
+    "object": "constant mutation",
+    "object_type": "Concept",
+    "source_sentence": "Word meaning is indeed in constant mutation and, since correct understanding of the meaning of individual words underpins general machine reading comprehension, it has become increasingly relevant for computational linguists to detect and characterise lexical semantic change —e.g., in the form of laws of semantic change (Dubossarsky et al., 2015; Xu and Kemp, 2015; Hamilton et al., 2016)—with the aid of quantitative and reproducible evaluation procedures.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "publishedin",
+    "object": "quantitative and reproducible",
+    "object_type": "Concept",
+    "source_sentence": "it has become increasingly relevant for computational linguists to detect and characterise lexical semantic change —e.g., in the form of laws of semantic change (Dubossarsky et al., 2015; Xu and Kemp, 2015; Hamilton et al., 2016)—with the aid of quantitative and reproducible evaluation procedures.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "publishedin",
+    "object": "distributional semantic models",
+    "object_type": "Model",
+    "source_sentence": "This line of work relies mainly on distributional semantic models, which produce one abstract representation for every word form.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "human similarity judgements",
+    "object_type": "Metric",
+    "source_sentence": "We create a new evaluation dataset of human similarity judgements on more than 3K word usage pairs across different time periods",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "BooksCorpus",
+    "object_type": "Dataset",
+    "source_sentence": "We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence predic- tion, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "3.1 Language Model"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "English text passages extracted from Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence predic- tion, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "3.1 Language Model"
+  },
+  {
+    "subject": "Clustering",
+    "predicate": "uses",
+    "object": "DBSCAN",
+    "object_type": "Method",
+    "source_sentence": "There also exist clustering methods that select the optimal K automatically, e.g. DBSCAN or Affin- ity Propagation .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "3.3 Usage Types"
+  },
+  {
+    "subject": "Clustering",
+    "predicate": "uses",
+    "object": "Affinity Propagation",
+    "object_type": "Method",
+    "source_sentence": "There also exist clustering methods that select the optimal K automatically, e.g. DBSCAN or Affin- ity Propagation .",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "3.3 Usage Types"
+  },
+  {
+    "subject": "Frequency Distributions",
+    "predicate": "publishedin",
+    "object": "probability distributions",
+    "object_type": "Concept",
+    "source_sentence": "When normalised, frequency distributions can be interpreted as probability distributions over usage types ut w: ut w[k] = 1 Nt ft w[k].",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "3.3 Usage Types"
+  },
+  {
+    "subject": "Frequency Distributions",
+    "predicate": "publishedin",
+    "object": "count of occurrences",
+    "object_type": "Concept",
+    "source_sentence": "By counting the number of occurrences of each usage type k in a given time interval t (we refer to this count as freq(k, t)), we obtain frequency distributions ft w for each interval under scrutiny: ft w ∈NKw: ft w[k] = freq(k, t) k ∈[1, Kw] (1)",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "3.3 Usage Types"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "contextualised representation",
+    "object_type": "Method",
+    "source_sentence": "We collect a contextualised representation for each occurrence of these words in the second cen- tury of COHA, using BERT as described in Sec- tion 3.2.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "4 Data"
+  },
+  {
+    "subject": "cluster",
+    "predicate": "uses",
+    "object": "usage types",
+    "object_type": "Concept",
+    "source_sentence": "This results in a large set of usage repre- sentations, ∼1.3M in total, which we cluster into usage types using K-Means and silhouette coeffi- cients (Section 3.3).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "4 Data"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "usage representations",
+    "object_type": "Concept",
+    "source_sentence": "We use these usage represen- tations and usage types in the evaluation and the analyses offered in the remaining of the paper.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "4 Data"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "usage types",
+    "object_type": "Concept",
+    "source_sentence": "We use these usage represen- tations and usage types in the evaluation and the analyses offered in the remaining of the paper.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "4 Data"
+  },
+  {
+    "subject": "Clustering",
+    "predicate": "uses",
+    "object": "contextualised Representations",
+    "object_type": "Concept",
+    "source_sentence": "The clustering of contextualised representations into usage types is one of the main steps in our method (see Section 3.3).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "5.1 Evaluation of Usage Types"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "uses",
+    "object": "linguistic properties",
+    "object_type": "Concept",
+    "source_sentence": "we provide an in-depth qualitative analysis of the linguistic properties that define usage types and the kinds of lexical semantic change we observe.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "6 Analysis"
+  },
+  {
+    "subject": "Collocations",
+    "predicate": "comparesagainst",
+    "object": "lexical items",
+    "object_type": "Concept",
+    "source_sentence": "Specific clus- ters are also assigned to lexical items that are parts of phrasal collocations (e.g., 'iron curtain') or of named entities ('alexander graham bell' vs.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "6.1 What do Usage Types Capture?"
+  },
+  {
+    "subject": "Named Entities",
+    "predicate": "comparesagainst",
+    "object": "lexical items",
+    "object_type": "Concept",
+    "source_sentence": "Specific clus- ters are also assigned to lexical items that are parts of phrasal collocations (e.g., 'iron curtain') or of named entities ('alexander graham bell' vs.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "6.1 What do Usage Types Capture?"
+  }
+]

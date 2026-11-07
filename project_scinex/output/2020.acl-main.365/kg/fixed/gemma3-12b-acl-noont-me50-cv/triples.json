@@ -1,0 +1,101 @@
+[
+  {
+    "subject": "Novel Method",
+    "predicate": "uses",
+    "object": "pre-trained neural language model",
+    "object_type": "Model",
+    "source_sentence": "We present a novel method that (1) exploits a pre-trained neural language model to obtain contextualised representations for every occurrence of a word of interest, (2) clusters these representations into usage types , and (3) measures change along time.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT Language Model",
+    "predicate": "uses",
+    "object": "usage representations",
+    "object_type": "Other",
+    "source_sentence": "we use the BERT language model to compute usage representations for each occurrence of these words.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "3 Method: A Usage-based Approach to Lexical Semantic Change"
+  },
+  {
+    "subject": "BERT Language Model",
+    "predicate": "trainedon",
+    "object": "BooksCorpus",
+    "object_type": "Dataset",
+    "source_sentence": "We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence prediction, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "3.1 Language Model"
+  },
+  {
+    "subject": "BERT Language Model",
+    "predicate": "trainedon",
+    "object": "English text passages extracted from Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence prediction, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "3.1 Language Model"
+  },
+  {
+    "subject": "Clustering",
+    "predicate": "uses",
+    "object": "Contextualised Representations",
+    "object_type": "Concept",
+    "source_sentence": "The clustering of contextualised representations into usage types is one of the main steps in our method (see Section 3.3).",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "5.1 Evaluation of Usage Types"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "Similarity",
+    "object_type": "Concept",
+    "source_sentence": "It relies on the similarity values between pairs of usage representations created by the language model.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "5.1 Evaluation of Usage Types"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "Annotation",
+    "object_type": "Concept",
+    "source_sentence": "We create a new evaluation dataset, following the annotation approach of Erk et al. (2009, 2013) for rating pairs of usages of the same word.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "5.1 Evaluation of Usage Types"
+  },
+  {
+    "subject": "Annotating",
+    "predicate": "uses",
+    "object": "GEMS dataset",
+    "object_type": "Dataset",
+    "source_sentence": "Since we need to collect human judgements for pairs of usages, annotating the entire GEMS dataset would be extremely costly and time consuming.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "5.1 Evaluation of Usage Types"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "Context",
+    "object_type": "Concept",
+    "source_sentence": "For this evaluation, BERT is given the same variable-size context as the human annotators.",
+    "extraction_mode": "fixed",
+    "paper": "2020.acl-main.365",
+    "title": "Analysing Lexical Semantic Change with Contextualised Word Representations",
+    "section": "5.1 Evaluation of Usage Types"
+  }
+]

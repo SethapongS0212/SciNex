@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "global contextual information",
+    "object_type": "Concept",
+    "source_sentence": "In this study, we propose a global ED model based on BERT.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "masked entities",
+    "object_type": "Concept",
+    "source_sentence": "This training enables the model to learn how to disambiguate masked entities based on words and non-masked entities.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Inference",
+    "predicate": "uses",
+    "object": "global contextual information",
+    "object_type": "Concept",
+    "source_sentence": "This sequential inference effectively accumulates the global contextual information and enhances the coherence of disambiguation decisions.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "six standard ED datasets",
+    "object_type": "Dataset",
+    "source_sentence": "We conducted extensive experiments using six standard ED datasets , i.e., AIDA-CoNLL, MSNBC, AQUAINT , ACE2004, WNED-WIKI, and WNED-CWEB.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "document-level representation",
+    "object_type": "Other",
+    "source_sentence": "Ling et al. (2020) trained BERT by predicting entities using the document-level representation.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "referent entity titles",
+    "object_type": "Other",
+    "source_sentence": "(2021) addressed ED by training BART to generate referent entity titles of target mentions in an autoregressive manner.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "document",
+    "object_type": "Other",
+    "source_sentence": "(2022) formulated ED as a text extraction problem; they fed the document and candidate entity titles to BART and Longformer and disambiguated a mention in the document by extracting the referent entity title of the mention.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BART",
+    "predicate": "uses",
+    "object": "candidate entity titles",
+    "object_type": "Other",
+    "source_sentence": "(2022) formulated ED as a text extraction problem; they fed the document and candidate entity titles to BART and Longformer and disambiguated a mention in the document by extracting the referent entity title of the mention.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Longformer",
+    "predicate": "uses",
+    "object": "document",
+    "object_type": "Other",
+    "source_sentence": "(2022) formulated ED as a text extraction problem; they fed the document and candidate entity titles to BART and Longformer and disambiguated a mention in the document by extracting the referent entity title of the mention.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Longformer",
+    "predicate": "uses",
+    "object": "candidate entity titles",
+    "object_type": "Other",
+    "source_sentence": "(2022) formulated ED as a text extraction problem; they fed the document and candidate entity titles to BART and Longformer and disambiguated a mention in the document by extracting the referent entity title of the mention.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "entities",
+    "object_type": "Other",
+    "source_sentence": "Treating entities as inputs of Transformer.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "entity embeddings",
+    "object_type": "Other",
+    "source_sentence": "Recent studies have proposed Transformer-based models that treat entities as input tokens to enrich their expressiveness using additional information contained in the entity embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "WordPiece",
+    "object_type": "Method",
+    "source_sentence": "we tokenize the document text using the BERT's wordpiece tokenizer",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "uses",
+    "object": "entity",
+    "object_type": "Concept",
+    "source_sentence": "The model then computes the embedding m′ e ∈RH for each [MASK] token using Eq.(2) and predicts the entity using softmax over the K entity candidates: ˆyED = softmax(B∗m′ e + b∗ o), (3)",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "3.3 ED Model"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "six standard datasets",
+    "object_type": "Dataset",
+    "source_sentence": "we test the proposed ED models using six standard datasets : AIDA- CoNLL (CoNLL) , MSNBC, AQUAINT , ACE2004, WNED-CWEB (CWEB), and WNED-WIKI (WIKI) .",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "training set of the CoNLL dataset",
+    "object_type": "Dataset",
+    "source_sentence": "we optionally fine-tune the model by maximizing the log likelihood of the ED pre- dictions (ˆyED) using the training set of the CoNLL dataset with the KB+YAGO candidates.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "achieves",
+    "object": "performance on the CoNLL dataset",
+    "object_type": "Other",
+    "source_sentence": "The fine-tuning on the CoNLL dataset significantly improves the performance on this dataset (Table 1).",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "4.1 Results"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "ED datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Our extensive experiments on a wide range of ED datasets demonstrate its effectiveness.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "5 Conclusion and Future Work"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "tokenizer",
+    "object_type": "Other",
+    "source_sentence": "The input text is tokenized using BERT's tokenizer with its vocabulary consisting of Vw = 30, 000 words.",
+    "extraction_mode": "fixed",
+    "paper": "2022.naacl-main.238",
+    "title": "Global Entity Disambiguation with BERT",
+    "section": "A Details of Proposed Model"
+  }
+]

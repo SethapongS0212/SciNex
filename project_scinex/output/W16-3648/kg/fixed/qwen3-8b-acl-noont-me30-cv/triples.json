@@ -1,0 +1,200 @@
+[
+  {
+    "subject": "example-based",
+    "predicate": "uses",
+    "object": "large database of previously recorded dialogue",
+    "object_type": "Dataset",
+    "source_sentence": "The first approach is the example-based method , which searches a large database of previously recorded dialogue for given user input selecting an utterance identified as the most similar.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "example-based",
+    "predicate": "addresses",
+    "object": "context",
+    "object_type": "Concept",
+    "source_sentence": "A disadvantage of example-based methods is that it is difficult to consider context.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Response Generation",
+    "predicate": "uses",
+    "object": "Neural Networks",
+    "object_type": "Model",
+    "source_sentence": "More recently, response generation using neural networks has been widely studied, most work grounded in the MT method (Cho et al., 2014; Sordoni et al., 2015; Shang et al., 2015; Vinyals and Le, 2015).",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "skip-gram model",
+    "object_type": "Method",
+    "source_sentence": "a neural network for word embedding (as shown in Figure 1) learns via the skip-gram model.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.1 Utterance Encoding"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Model",
+    "source_sentence": "In the following experiments, we used two-layer long short-term memory (LSTM) networks as our RNN encoders.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.1 Utterance Encoding"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "mean squared error (MSE)",
+    "object_type": "Metric",
+    "source_sentence": "In cases where a neural network outputs a one- dimensional value, like our model, the mean squared error (MSE) between training data and the model's output is generally used as a loss function;",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.2 Ranking Candidate Utterances"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "Ranking",
+    "object_type": "Task",
+    "source_sentence": "We conducted experiments to verify the performance of ranking given candidate utterances and given contexts.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "dialogue data",
+    "object_type": "Dataset",
+    "source_sentence": "For our experiments, we used dialogue data between a conversational dialogue system and a user for both training and test data.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "RNNs",
+    "predicate": "uses",
+    "object": "LSTM layers",
+    "object_type": "Method",
+    "source_sentence": "In our encoding and ranking RNNs, we used LSTM layers with 1000 hidden cells in each layer.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Ranking",
+    "predicate": "uses",
+    "object": "context",
+    "object_type": "Context",
+    "source_sentence": "The feature vector for ranking is generated from context and candidate utterance.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Ranking",
+    "predicate": "uses",
+    "object": "candidate utterance",
+    "object_type": "Other",
+    "source_sentence": "The feature vector for ranking is generated from context and candidate utterance.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "N-gram",
+    "predicate": "uses",
+    "object": "context",
+    "object_type": "Context",
+    "source_sentence": "It primarily utilizes n-gram pairs between utterances in context and candidates as features.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "N-gram",
+    "predicate": "uses",
+    "object": "candidates",
+    "object_type": "Other",
+    "source_sentence": "It primarily utilizes n-gram pairs between utterances in context and candidates as features.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "Features",
+    "object_type": "Concept",
+    "source_sentence": "The proposed using limited context and MSE follow this, suggesting that utterance encoding by RNN is effective to extract features for ranking.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.3 Results"
+  },
+  {
+    "subject": "Dialogue System",
+    "predicate": "uses",
+    "object": "our proposed method",
+    "object_type": "Method",
+    "source_sentence": "we developed a conversational dialogue system based on our proposed method and conducted dialogue experiments with human subjects.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "5 Dialogue Experiment"
+  },
+  {
+    "subject": "Dialogue System",
+    "predicate": "uses",
+    "object": "our website",
+    "object_type": "Other",
+    "source_sentence": "Our dialogue system and subjects chat on our website; we collected 120 text chat dialogues.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "5 Dialogue Experiment"
+  },
+  {
+    "subject": "Dialogue System",
+    "predicate": "uses",
+    "object": "NUR model",
+    "object_type": "Model",
+    "source_sentence": "A conversational dialogue system based on our NUR model selects an utterance as a response from candidates generated by the acquisition method of .",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "5.1 Dialogue System"
+  },
+  {
+    "subject": "Dialogue System",
+    "predicate": "uses",
+    "object": "topic words",
+    "object_type": "Concept",
+    "source_sentence": "The dialogue system used in the experiment acquired topic words from given context in a simple manner.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "6 Conclusions"
+  }
+]

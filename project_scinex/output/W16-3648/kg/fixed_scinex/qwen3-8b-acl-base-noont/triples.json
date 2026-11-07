@@ -1,0 +1,211 @@
+[
+  {
+    "subject": "Conversational Dialogue Systems",
+    "predicate": "comparesagainst",
+    "object": "non-task-oriented or chat-oriented dialogue systems",
+    "object_type": "Concept",
+    "source_sentence": "The study of conversational dialogue systems (also known as non-task-oriented or chat-oriented dialogue systems ) has a long history.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "rule",
+    "predicate": "comparesagainst",
+    "object": "used",
+    "object_type": "Method",
+    "source_sentence": "To con- struct such systems , rule-based methods have long been used ;",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "two-layer long short-term memory (LSTM) networks",
+    "object_type": "Model",
+    "source_sentence": "In the following experiments, we used two- layer long short-term memory (LSTM) networks as our RNN encoders.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.1 Utterance Encoding"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "ReLU",
+    "object_type": "Concept",
+    "source_sentence": "This RNN has two LSTM layers and two linear layers; further, we use rectified lin- ear unit (ReLU) as the activation function.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.2 Ranking Candidate Utterances"
+  },
+  {
+    "subject": "Ranking",
+    "predicate": "uses",
+    "object": "Plackett-Luce model",
+    "object_type": "Model",
+    "source_sentence": "In our study, to calculate ranking distance, we selected the Plackett-Luce model, which has been used in various ranking models, such as ListNet , BayesRank , etc.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "3.2 Ranking Candidate Utterances"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "50% or more annotators",
+    "object_type": "Metric",
+    "source_sentence": "In our evaluation, we regard candidates with 50% or more annotators decided as NB as correct utterances and others as incorrect.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Context",
+    "predicate": "uses",
+    "object": "last user utterance",
+    "object_type": "Concept",
+    "source_sentence": "this setting causes our system to only use the last user utterance as context, discarding the rest.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "candidate utterance",
+    "object_type": "Concept",
+    "source_sentence": "The input vector is made by concatenating three BoW vectors, i.e., candidate utterance, last user utterance in the given context, and the given context with- out the last user utterance.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "last user utterance in the given context",
+    "object_type": "Concept",
+    "source_sentence": "The input vector is made by concatenating three BoW vectors, i.e., candidate utterance, last user utterance in the given context, and the given context with- out the last user utterance.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Input",
+    "predicate": "uses",
+    "object": "given context without the last user utterance",
+    "object_type": "Concept",
+    "source_sentence": "The input vector is made by concatenating three BoW vectors, i.e., candidate utterance, last user utterance in the given context, and the given context with- out the last user utterance.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Words",
+    "predicate": "uses",
+    "object": "6203 words",
+    "object_type": "Concept",
+    "source_sentence": "In the BoW vector, we used 6203 words that occur at least two times in the training data, thus, the input layer of the DNN has 18609 cells.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "1000 hidden cells",
+    "object_type": "Concept",
+    "source_sentence": "we used LSTM layers with 1000 hidden cells in each layer.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "Dialogue System",
+    "predicate": "uses",
+    "object": "ListNet",
+    "object_type": "Model",
+    "source_sentence": "This dialogue system ranks utterances using ListNet and selects the top-ranked utter- ance to reply.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.2 Experimental Settings"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "mean average precision (MAP)",
+    "object_type": "Metric",
+    "source_sentence": "To evaluate ranking performance, we used mean average precision (MAP) and mean reciprocal rank (MRR) measures.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.3 Results"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "mean reciprocal rank (MRR)",
+    "object_type": "Metric",
+    "source_sentence": "To evaluate ranking performance, we used mean average precision (MAP) and mean reciprocal rank (MRR) measures.",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.3 Results"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "features",
+    "object_type": "Concept",
+    "source_sentence": "The proposed using limited context and MSE follow this, suggesting that utterance encod- ing by RNN is effective to extract features for ranking .",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "4.3 Results"
+  },
+  {
+    "subject": "Dialogue System",
+    "predicate": "uses",
+    "object": "NUR model",
+    "object_type": "Model",
+    "source_sentence": "A conversational dialogue system based on our NUR model selects an utterance as a response from candidates generated by the acquisition method of .",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "5.1 Dialogue System"
+  },
+  {
+    "subject": "Dialogue Systems",
+    "predicate": "uses",
+    "object": "NUR model",
+    "object_type": "Method",
+    "source_sentence": "we proposed a new utterance selec- tion method called the NUR model for conversa- tional dialogue systems",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "6 Conclusions"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "performance",
+    "object_type": "Metric",
+    "source_sentence": "conducted experiments to evaluate its performance via dialogue with human subjects",
+    "extraction_mode": "fixed",
+    "paper": "W16-3648",
+    "title": "Neural Utterance Ranking Model for Conversational Dialogue Systems",
+    "section": "6 Conclusions"
+  }
+]

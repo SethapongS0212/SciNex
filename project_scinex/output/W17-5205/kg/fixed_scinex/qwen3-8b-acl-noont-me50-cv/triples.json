@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "negative sampling skip-gram model",
+    "object_type": "Method",
+    "source_sentence": "We calculate individual word embeddings using the negative sampling skip-gram model implemented in Word2Vec.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "5.1 System"
+  },
+  {
+    "subject": "Word Vectors",
+    "predicate": "trainedon",
+    "object": "ten million English tweets",
+    "object_type": "Dataset",
+    "source_sentence": "Word vectors are trained from ten million English tweets taken from the Edinburgh Twitter Corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "5.1 System"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Concept",
+    "source_sentence": "Some of the word embeddings models used were Glove (SeerNet, UWa- terloo, YZU NLP), Word2Vec (SeerNet), and Word Vector Emoji Vectors (SeerNet).",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.2 Machine Learning Setups"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Concept",
+    "source_sentence": "Some of the word embeddings models used were Glove (SeerNet, UWa- terloo, YZU NLP), Word2Vec (SeerNet), and Word Vector Emoji Vectors (SeerNet).",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.2 Machine Learning Setups"
+  },
+  {
+    "subject": "Word Vector",
+    "predicate": "uses",
+    "object": "Word Embeddings",
+    "object_type": "Concept",
+    "source_sentence": "Some of the word embeddings models used were Glove (SeerNet, UWa- terloo, YZU NLP), Word2Vec (SeerNet), and Word Vector Emoji Vectors (SeerNet).",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.2 Machine Learning Setups"
+  },
+  {
+    "subject": "ensemble",
+    "predicate": "uses",
+    "object": "three variations of the third model",
+    "object_type": "Model",
+    "source_sentence": "The final predictions are made by combining the first two models with three variations of the third model into an ensemble.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.3 Prayas: Rank"
+  },
+  {
+    "subject": "Random Forest",
+    "predicate": "uses",
+    "object": "representation formed by concatenating three vectors",
+    "object_type": "Other",
+    "source_sentence": "IMS applies a random forest regression model to a representation formed by concatenating three vectors: 1. a feature vector drawn from existing affect lexicons, 2. a feature vector drawn from expanded affect lexicons, and 3. the output of a neural network.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.4 IMS: Rank"
+  },
+  {
+    "subject": "Lexicons",
+    "predicate": "uses",
+    "object": "AffectiveTweets package",
+    "object_type": "Other",
+    "source_sentence": "The first vector is obtained using the lexicons implemented in the AffectiveTweets package.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.4 IMS: Rank"
+  },
+  {
+    "subject": "Lexicons",
+    "predicate": "uses",
+    "object": "feed-forward neural networks",
+    "object_type": "Other",
+    "source_sentence": "The second is based on an extended lexicons built from feed-forward neural networks trained on word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.4 IMS: Rank"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "CNN and LSTM layers",
+    "object_type": "Other",
+    "source_sentence": "The third vector is taken from the output of neural network that combines CNN and LSTM layers.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.4 IMS: Rank"
+  }
+]

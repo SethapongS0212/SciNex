@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "lexical context",
+    "object_type": "Concept",
+    "source_sentence": "Word embedding algorithms, such as 'word2vec' , make use of the lexical context in learning vector representations of words.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Structural SVM",
+    "predicate": "uses",
+    "object": "lexical features",
+    "object_type": "Feature",
+    "source_sentence": "The limitations of were alleviated in the work reported in , which employs a structural SVM framework for estimating the weights of different lexical features to measure the similarity between two queries.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "2.2 Supervised Task Extraction"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "addresses",
+    "object": "document boundaries",
+    "object_type": "Concept",
+    "source_sentence": "The word2vec algorithm respects document boundaries by not extending the context vector across them.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "3.1 Problems with Short Documents"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "produces",
+    "object": "word vectors",
+    "object_type": "Other",
+    "source_sentence": "The word vectors used in learning the parameter matrix θ are obtained by the word2vec skip-gram algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "3.2 Word Vector Transformation with Semantic Contexts"
+  },
+  {
+    "subject": "Word Embedding",
+    "predicate": "uses",
+    "object": "query word vectors",
+    "object_type": "Other",
+    "source_sentence": "the constituent query word vectors are obtained using the word embedding approaches described in Section 3.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "4 Clustering of Embedded Queries"
+  },
+  {
+    "subject": "Clustering",
+    "predicate": "uses",
+    "object": "cosine similarity values",
+    "object_type": "Metric",
+    "source_sentence": "the edge weights of the graph-based clustering in our case refers to the cosine-similarity values computed between the embedded query vectors and cosine similarity values between the vectors obtained from top 1000 documents retrieved from Clueweb12B, a publicly available web collection2.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "4.2 Clustering of Query Vectors"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "AOL query log",
+    "object_type": "Dataset",
+    "source_sentence": "we use the AOL query log for our experiments.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "5.1 Dataset"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "AOL query log",
+    "object_type": "Dataset",
+    "source_sentence": "we use the same subset of 1424 queries from the AOL query log for the evaluation of task extraction effectiveness.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "5.1 Dataset"
+  },
+  {
+    "subject": "Annotation Scheme",
+    "predicate": "uses",
+    "object": "search intent",
+    "object_type": "Concept",
+    "source_sentence": "our annotation scheme was solely based on the underlying search intent of the query.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "5.1 Dataset"
+  },
+  {
+    "subject": "Word Vectors",
+    "predicate": "trainedon",
+    "object": "AOL query log",
+    "object_type": "Dataset",
+    "source_sentence": "For our word vector based experiments , we used the skip-gram model to train the word vectors using the entire AOL query log comprising over 6M queries .",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "5.3 Parameters and Evaluation Metrics"
+  },
+  {
+    "subject": "Clustering",
+    "predicate": "uses",
+    "object": "cosine similarities",
+    "object_type": "Concept",
+    "source_sentence": "weighted clustering is conducted using the cosine similarities between the query vectors, i.e. the 'Qry vec skip-gram' approach.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "6.1 Cross-Session Task Extraction"
+  },
+  {
+    "subject": "Word Vectors",
+    "predicate": "uses",
+    "object": "semantic relatedness",
+    "object_type": "Concept",
+    "source_sentence": "This suggests that the word vectors are better able to capture the semantic relatedness between the task-related query terms.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "6.1 Cross-Session Task Extraction"
+  },
+  {
+    "subject": "Word Vectors",
+    "predicate": "uses",
+    "object": "temporal context",
+    "object_type": "Concept",
+    "source_sentence": "The use of temporal context in learning word vectors results in best performance for α = 1, i.e. when no retrieval-based similarity is used (see Equation 5).",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "6.1 Cross-Session Task Extraction"
+  },
+  {
+    "subject": "Word Vectors",
+    "predicate": "uses",
+    "object": "external collections",
+    "object_type": "Concept",
+    "source_sentence": "This suggests that optimally trained word vectors can produce effective task clusters without the use of external collections in contextualizing the queries.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "6.1 Cross-Session Task Extraction"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "AOL query log",
+    "object_type": "Dataset",
+    "source_sentence": "Our experiments on the AOL query log indicate that the proposed temporal and tempo-lexical query embedding method significantly out-perform the baseline word2vec embedding.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "7 Conclusions and Future Work"
+  }
+]

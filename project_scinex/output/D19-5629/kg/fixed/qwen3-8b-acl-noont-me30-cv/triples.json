@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "SYSTRAN",
+    "predicate": "produces",
+    "object": "generation model",
+    "object_type": "Model",
+    "source_sentence": "We introduce a new data-to-text Li Gong, Josep Crego, Jean Senellart SYSTRAN / 5 rue Feydeau, 75002 Paris, France email@example.com generation model which jointly learns content selection and text generation.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Transformer Encoder",
+    "predicate": "uses",
+    "object": "record embedding",
+    "object_type": "Other",
+    "source_sentence": "the input embedding of Transformer encoder is replaced by our record embedding to better incorporate the record information.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "3 Data-to-Text Transformer Model"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "Self-Attention",
+    "object_type": "Method",
+    "source_sentence": "Within the Transformer architecture , the self-attention mechanism can generate the latent representation for each record by jointly conditioning on all other records in the input dataset.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "3.2 Content Selection Modeling"
+  },
+  {
+    "subject": "Content Selection",
+    "predicate": "uses",
+    "object": "input record sequences",
+    "object_type": "Other",
+    "source_sentence": "In content selection modeling , the input record sequences together with its label sequences are used to optimize the encoder by minimizing the cross-entorpy loss.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "3.2 Content Selection Modeling"
+  },
+  {
+    "subject": "Content Selection",
+    "predicate": "uses",
+    "object": "label sequences",
+    "object_type": "Other",
+    "source_sentence": "In content selection modeling , the input record sequences together with its label sequences are used to optimize the encoder by minimizing the cross-entorpy loss.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "3.2 Content Selection Modeling"
+  },
+  {
+    "subject": "generation",
+    "predicate": "produces",
+    "object": "training data",
+    "object_type": "Dataset",
+    "source_sentence": "Our data generation technique doubles the amount of training data available for learning.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "4.1 Synthetic Data Generation"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "training examples",
+    "object_type": "Dataset",
+    "source_sentence": "Then, we select for fine-tuning our baseline model the subset of training data in which each summary contains at least N relations.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "4.2 Training Data Selection"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "ROTOWIRE dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We run the experiments with the ROTOWIRE dataset , a dataset of NBA basketball game summaries, paired with their corresponding box- and line-score tables.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "5.1 Data and Preprocessing"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "IE system",
+    "object_type": "Other",
+    "source_sentence": "For the purpose of comparison, we directly use the publicly available IE system of to evaluate our models.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "5.2 Evaluation metrics"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "Pytorch",
+    "object_type": "Other",
+    "source_sentence": "We implement all our models in Pytorch, and train them on 1 GTX 1080 GPU.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "5.3 Training Details"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "Data Augmentation",
+    "object_type": "Other",
+    "source_sentence": "DATA-TRANS represents our data-to-text Transformer model (as illustrated in Figure 1) without any data augmentation.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "6 Results"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "data selection",
+    "object_type": "Other",
+    "source_sentence": "By training data selection (+DATA SEL), we select the data whose summary contains the number of relations N >= 16 as the new training data.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "6 Results"
+  },
+  {
+    "subject": "Data Selection",
+    "predicate": "achieves",
+    "object": "CS recall rate",
+    "object_type": "Metric",
+    "source_sentence": "Training data selection improves the CS recall rate by making the model generate more relations.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "6 Results"
+  },
+  {
+    "subject": "Data Augmentation",
+    "predicate": "achieves",
+    "object": "improved evaluation results",
+    "object_type": "Other",
+    "source_sentence": "Combining these two data augmentation methods , all content - oriented evaluation results are improved compared to DATA-TRANS.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "6 Results"
+  },
+  {
+    "subject": "Enhanced Transformer Model",
+    "predicate": "achieves",
+    "object": "BLEU",
+    "object_type": "Metric",
+    "source_sentence": "Experimental results have shown that our enhanced transformer model outperforms current state-of-the-art system on BLEU, content selection precision and content ordering metics.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "7 Conclusions"
+  },
+  {
+    "subject": "Enhanced Transformer Model",
+    "predicate": "achieves",
+    "object": "content selection precision",
+    "object_type": "Metric",
+    "source_sentence": "Experimental results have shown that our enhanced transformer model outperforms current state-of-the-art system on BLEU, content selection precision and content ordering metics.",
+    "extraction_mode": "fixed",
+    "paper": "D19-5629",
+    "title": "SYSTRAN @ WNGT 2019: DGT Task",
+    "section": "7 Conclusions"
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "uses",
+    "object": "extractive model",
+    "object_type": "Model",
+    "source_sentence": "we propose a multi-task learning framework to take advantage of both extractive and generative models.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "uses",
+    "object": "generative model",
+    "object_type": "Model",
+    "source_sentence": "we propose a multi-task learning framework to take advantage of both extractive and generative models.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Sequence Labeling",
+    "predicate": "uses",
+    "object": "Recurrent Neural Network",
+    "object_type": "Model",
+    "source_sentence": "Sequence labeling models are built on a recurrent neural network to sequentially go through a source text and learn the likelihood of each word in the source text to be a keyphrase word.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "2.1 Automatic Keyphrase Extraction"
+  },
+  {
+    "subject": "Multi-task Learning",
+    "predicate": "uses",
+    "object": "external knowledge",
+    "object_type": "Concept",
+    "source_sentence": "We propose a multi-task learning framework which simultaneously learns to extract keyphrases from the source text and generate keyphrases word by word with external knowledge.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.2 Joint Extraction and Generation"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "produces",
+    "object": "generated keyphrase candidates",
+    "object_type": "Other",
+    "source_sentence": "The generated keyphrase candidates directly come from the beam search process of the decoder.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.3.1 Keyphrase Candidate Collection"
+  },
+  {
+    "subject": "GRU",
+    "predicate": "uses",
+    "object": "Input",
+    "object_type": "Other",
+    "source_sentence": "we learn the word embeddings and use two bi-directional GRU to obtain the input representations.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "3.3.2 Merging"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "uniform distribution",
+    "object_type": "Other",
+    "source_sentence": "During training, all the trainable parameters including the embeddings are randomly initialized with uniform distribution in [-0.1, 0.1].",
+    "extraction_mode": "fixed",
+    "paper": "N19-1292",
+    "title": "Wang Chen1, Hou Pong Chan1, Piji Li2, Lidong Bing3, Irwin King1",
+    "section": "4.3 Implementation Details"
+  }
+]

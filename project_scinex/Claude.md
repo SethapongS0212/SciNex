@@ -17,7 +17,7 @@ Claude-as-extractor comparisons): useful context, not the task.
 ---
 
 ## ⚠ DOCUMENTATION DISCIPLINE — READ FIRST (standing user instruction)
-**After ANY meaningful change — new result, code change, decision, fix, new run — UPDATE THE MARKDOWN DOCS in the SAME session, before finishing.** The user relies on these files to hand off to the next session and to feed the paper writer; out-of-date docs break that. This is a standing instruction, no need to re-ask.
+**After ANY meaningful change — new result, code change, decision, fix, new run — UPDATE THE MARKDOWN DOCS in the SAME session, as soon as it happens (do not wait for the end: sessions can end mid-run).** **Commit and push to GitHub whenever the change is important or necessary** (results, code, decisions, the handoff) — user, repeated 2026-11-07. The user relies on these files to hand off to the next session and to feed the paper writer; out-of-date docs break that. This is a standing instruction, no need to re-ask.
 - **`hands_off.md`** — append a dated session note (what changed, why, exact numbers, file paths, next steps). The running log.
 - **`Claude.md`** — update the STATUS block + any architecture/convention that changed. The persistent overview.
 - **`results.md`** — keep the consolidated paper-ready tables/findings in sync whenever a result changes. Hand THIS to the paper/abstract writer.

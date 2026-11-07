@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "NMT",
+    "predicate": "comprises",
+    "object": "data cleaning and filtering scripts",
+    "object_type": "Other",
+    "source_sentence": "Our NMT pipeline is composed of several components, which are described in the following sections. Training data is first processed through a corpus preparation pipeline. This pipeline includes data cleaning and filtering scripts (see Section 2), as well as a processing pipeline.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "1.1 Our Pipeline"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "comprises",
+    "object": "processing pipeline",
+    "object_type": "Other",
+    "source_sentence": "Our NMT pipeline is composed of several components, which are described in the following sections. Training data is first processed through a corpus preparation pipeline. This pipeline includes data cleaning and filtering scripts (see Section 2), as well as a processing pipeline.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "1.1 Our Pipeline"
+  },
+  {
+    "subject": "Transformer Models",
+    "predicate": "uses",
+    "object": "Fairseq tool",
+    "object_type": "Other",
+    "source_sentence": "We trained small transformer models with the Fairseq tool , with the same pa- rameters as those indicated in the fairseq github site for IWSLT'14 German to English .",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "2.2 Experiments"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "BPE",
+    "object_type": "Method",
+    "source_sentence": "Subword translation is an approach used in NMT to tackle out-of-vocabulary (OOV) problem using byte-pair encoding (BPE) or other similar segmentation techniques.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.2.3 Issues with Subwords"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "subwords",
+    "object_type": "Method",
+    "source_sentence": "It is now defacto to use subwords in NMT as with the better vocab coverage it enables the NMT models with excellent copying capability.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.2.3 Issues with Subwords"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "algorithm",
+    "object_type": "Method",
+    "source_sentence": "In BPE, the algorithm checks each subword in the given vocab and if not found, it will recursively split the segment into smaller units (by reversing byte-pair encoding merge operations) until all units are either in-vocabulary, or cannot be split further ( often character level splits).",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "addresses",
+    "object": "subword segmentation",
+    "object_type": "Task",
+    "source_sentence": "We use a shared vocabulary BPE Model for subword segmentation, with a code of 32000 merge operations.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "Moses",
+    "object_type": "Other",
+    "source_sentence": "BLEU and TER scores are computed with tokenized lower-cased output and references using the \"evaluater\" binary from Moses.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "achieves",
+    "object": "effective",
+    "object_type": "Concept",
+    "source_sentence": "This technique, referred to as fine-tuning, is very effective.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "4 Domain Adaptation"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "fine-tuning",
+    "object_type": "Method",
+    "source_sentence": "Our translation models are dynamically adapted to the source text context at each sentence, using fine-tuning but without knowing the source domain in advance.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "4 Domain Adaptation"
+  },
+  {
+    "subject": "Translation Memory",
+    "predicate": "uses",
+    "object": "information retrieval tools",
+    "object_type": "Method",
+    "source_sentence": "At test time, the translation memory is queried with the source sentence by information retrieval tools.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "4 Domain Adaptation"
+  }
+]

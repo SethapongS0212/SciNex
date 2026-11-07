@@ -1,0 +1,145 @@
+[
+  {
+    "subject": "Domain Shift",
+    "predicate": "uses",
+    "object": "Fashion images",
+    "object_type": "Concept",
+    "source_sentence": "Fashion images represent a domain shift from the pre-training data",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "fashion image-text data",
+    "object_type": "Dataset",
+    "source_sentence": "we propose a domain -specific fash- ion pre-training procedure that takes advantage of fashion image -text data from multiple fashion cata- logues",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "fashion datasets",
+    "object_type": "Dataset",
+    "source_sentence": "we repurpose a set of fashion datasets to form a pre-training dataset D consisting of fashion image -text pairs",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "3.2 Pre-training Objectives"
+  },
+  {
+    "subject": "Text Generation",
+    "predicate": "publishedin",
+    "object": "encouraged",
+    "object_type": "Concept",
+    "source_sentence": "In addition to alignment , we encourage the model to gain image -grounded text generation capabilities.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "3.2 Pre-training Objectives"
+  },
+  {
+    "subject": "language modeling",
+    "predicate": "uses",
+    "object": "Relative Captioner mode",
+    "object_type": "Method",
+    "source_sentence": "We additionally apply a language modeling loss, using the Relative Captioner mode of our archi- tecture, that maximizes the conditional probability of a relative caption given a reference and a target image",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "3.2.2 Pre-training with Triplets"
+  },
+  {
+    "subject": "Part-Of-Speech",
+    "predicate": "publishedin",
+    "object": "performed",
+    "object_type": "Task",
+    "source_sentence": "We extract the first sentence from Tref and Ttgt, and perform part-of-speech tagging.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "3.3 Constructing Pseudo-Triplets"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "pre-training dataset",
+    "object_type": "Dataset",
+    "source_sentence": "we provide the details of our pre- training dataset",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "4 Experiments"
+  },
+  {
+    "subject": "Image Retrieval",
+    "predicate": "uses",
+    "object": "Fashion IQ",
+    "object_type": "Dataset",
+    "source_sentence": "We use Fashion IQ for our image retrieval with text feedback task and our relative captioning task.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "4.1 Datasets"
+  },
+  {
+    "subject": "Image Retrieval",
+    "predicate": "uses",
+    "object": "Text Feedback",
+    "object_type": "Concept",
+    "source_sentence": "Image Retrieval with Text Feedback (IRTF). Given a gallery ΘI of fashion images I, a refer- ence image Iref, and a relative caption Trel, retrieve the target image Itgt that most closely applies Trel to Iref.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "4.2 Downstream Tasks"
+  },
+  {
+    "subject": "retrieval",
+    "predicate": "uses",
+    "object": "CLIP ResNet-50 encoder",
+    "object_type": "Model",
+    "source_sentence": "We also include zero-shot retrieval results with a CLIP ResNet-50 encoder as a baseline.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "5.1 Comparison with SOTA Models"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "Adam optimizer",
+    "object_type": "Method",
+    "source_sentence": "For pre-training, we use the Adam optimizer with a learning rate of 10−5.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "A Training Details"
+  },
+  {
+    "subject": "Pre-training",
+    "predicate": "uses",
+    "object": "learning rate of 10−5",
+    "object_type": "Metric",
+    "source_sentence": "For pre-training, we use the Adam optimizer with a learning rate of 10−5.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "A Training Details"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "same evaluation metrics",
+    "object_type": "Metric",
+    "source_sentence": "We use the same evaluation metrics for RIC.",
+    "extraction_mode": "fixed",
+    "paper": "2022.emnlp-main.716",
+    "title": "FaD-VLP: Fashion Vision-and-Language Pre-training towards Unified Retrieval and Captioning",
+    "section": "C Evaluation Details"
+  }
+]

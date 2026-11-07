@@ -2,6 +2,44 @@
 
 > **⛔ Objective (2026-11-06): `OBJECTIVE.md`.** The headline evaluation is simulated Q&A with ONTOLOGY-FREE students (no ontology in the prompt). Every table below predates it: the students in Tables 15–18 read the full ontology prompt, and Tables 1–14 use the old 20-paper corpus. They are baselines and history, not the objective's result.
 
+> ### ⭐ OBJECTIVE RESULTS (2026-11-06/07) — ontology-free extraction (`OBJECTIVE.md`)
+>
+> **Table 19 (ACL, ⭐ ONTOLOGY-FREE STUDENTS, judge-free).** Students trained and run with the
+> `noont` prompt: the ontology's NAME only, no relation list or definitions (218 tokens vs 2,744).
+> Training data identical to Tables 16–18 except that prompt (ontology and vocabulary cards kept).
+> 41 held-out ACL papers, 980 paragraphs per ontology, same guards as every other table
+> (`ft_runs/noont/compare_noont.json`, 2026-11-06):
+>
+> | ontology | run | prompt | proposed → kept | kept rate | coverage | vs teacher P / R |
+> |---|---|---|---|---|---|---|
+> | CEO | qwen3-8b-acl-ft-me50-cv | full ontology | 451 → 407 | 90.2% | 23.2% | 28.5% / 22.4% |
+> | CEO | **qwen3-8b-acl-noont-me50-cv** | **none** | **409 → 362** | **88.5%** | **19.9%** | 30.7% / 21.4% |
+> | CEO | qwen3-8b-acl-ft-me30-cv | full ontology | 820 → 670 | 81.7% | 43.8% | 23.6% / 30.7% |
+> | CEO | **qwen3-8b-acl-noont-me30-cv** | **none** | **797 → 678** | **85.1%** | **43.9%** | 22.4% / 28.7% |
+> | CEO | llama31-8b-acl-noont-me50-cv | none | 374 → 336 | 89.8% | 21.0% | 31.8% / 19.8% |
+> | CEO | qwen3-4b-acl-noont-me50-cv | none | 411 → 357 | 86.9% | 19.9% | 24.1% / 17.6% |
+> | CEO | gemma3-12b-acl-noont-me50-cv | none | 420 → 390 | 92.9% | 22.3% | 28.2% / 21.2% |
+> | CEO | phi4-acl-noont-me50-cv | none | 377 → 349 | 92.6% | 20.4% | 30.9% / 20.8% |
+> | CEO | qwen3-8b-acl-base-noont (untuned control) | none | 5,731 → 544 | **9.5%** | 31.4% | 9.7% / 10.8% |
+> | CEO | gptoss-20b (teacher, full ontology) | full | 619 → 501 | 80.9% | 25.6% | (teacher) |
+> | scinex | qwen3-8b-acl-ft-me50-cv | full ontology | 196 → 182 | 92.9% | 11.4% | 17.0% / 11.8% |
+> | scinex | **qwen3-8b-acl-noont-me50-cv** | **none** | **226 → 204** | **90.3%** | **11.6%** | 17.2% / 13.1% |
+> | scinex | qwen3-8b-acl-ft-me30-cv | full ontology | 644 → 548 | 85.1% | 35.6% | 13.5% / 24.6% |
+> | scinex | **qwen3-8b-acl-noont-me30-cv** | **none** | **627 → 544** | **86.8%** | **35.2%** | 12.7% / 23.9% |
+> | scinex | llama31-8b-acl-noont-me50-cv | none | 213 → 189 | 88.7% | 11.3% | 18.5% / 13.1% |
+> | scinex | qwen3-4b-acl-noont-me50-cv | none | 250 → 218 | 87.2% | 11.9% | 14.2% / 12.1% |
+> | scinex | gemma3-12b-acl-noont-me50-cv | none | 242 → 217 | 89.7% | 13.9% | 20.3% / 15.2% |
+> | scinex | phi4-acl-noont-me50-cv | none | 149 → 138 | 92.6% | 9.7% | 21.0% / 11.1% |
+> | scinex | qwen3-8b-acl-base-noont (untuned control) | none | 5,811 → 575 | **9.9%** | 32.9% | 2.8% / 5.9% |
+> | scinex | gptoss-20b (teacher) | full | 373 → 289 | 77.5% | 17.3% | (teacher) |
+>
+> **Reading:** removing the ontology from the prompt costs almost nothing: same kept rate (±4
+> points), same coverage, same agreement with the teacher, for every family (Qwen3-4B/8B,
+> Llama-3.1-8B, Gemma-3-12B, Phi-4) — while the untuned model given that prompt passes the
+> ontology guards only ~10% of the time. **Finetuning put the ontology into the weights**
+> (OBJECTIVE step 2). Valid JSON 99.8–100% for every student. ⚠ Counts, not correctness: the
+> blind C1/C3/C4 diagnostic and the Q&A (the main evaluation, Table 20) decide quality.
+>
 > ### ⛔ SESSION 37 (2026-10-26): PART 2 FINETUNING MOVES TO THE ACL ANTHOLOGY CORPUS
 > From here on the finetuning experiments run on the **ACL Anthology papers (805, fixed entity
 > lists) with the FIXED extractor**, teacher **gpt-oss-20b (local)**, student **Qwen3-8B**. User

@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Negative Sampling",
+    "predicate": "uses",
+    "object": "learning process",
+    "object_type": "Process",
+    "source_sentence": "we adopt the negative sampling strategy to conduct the learning process.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "2.2 Learning the MWE model"
+  },
+  {
+    "subject": "cross entropy",
+    "predicate": "uses",
+    "object": "loss function",
+    "object_type": "Other",
+    "source_sentence": "we use cross entropy as the loss function E = −log σ(vr h,wh ⊤· vr t,wt) −log σ(−vr h,wh ⊤· vr t,w′ t) to measure the learning effect for Eq. (2).",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "2.2 Learning the MWE model"
+  },
+  {
+    "subject": "SGD",
+    "predicate": "uses",
+    "object": "training process",
+    "object_type": "Process",
+    "source_sentence": "the training process is thus to update c, ur, and Xr with the gradients passed from the loss function using stochastic gradient descent (SGD).",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "2.2 Learning the MWE model"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "SP acquisition",
+    "object_type": "Task",
+    "source_sentence": "Experiments are conducted to evaluate how our embeddings are performed on SP acquisition and word similarity measurement.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3 Experiments"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "addresses",
+    "object": "word similarity measurement",
+    "object_type": "Task",
+    "source_sentence": "Experiments are conducted to evaluate how our embeddings are performed on SP acquisition and word similarity measurement.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3 Experiments"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "static representations of words",
+    "object_type": "Other",
+    "source_sentence": "ELMo , a pretrained language model with contextual awareness. We use its static representations of words as the word embedding.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.2 Baselines"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "achieves",
+    "object": "state-of-the-art performance on many NLP tasks",
+    "object_type": "Other",
+    "source_sentence": "BERT , a pretrained bi-directional contextualized word embedding model with state-of-the-art performance on many NLP tasks.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.2 Baselines"
+  },
+  {
+    "subject": "MWE",
+    "predicate": "comparesagainst",
+    "object": "ELMo",
+    "object_type": "Model",
+    "source_sentence": "It is observed that that MWE outperforms ELMo and achieves comparable results with BERT with smaller embedding dimension and much less training complexities.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.4 Word Similarity Measurement"
+  },
+  {
+    "subject": "MWE",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "It is observed that that MWE outperforms ELMo and achieves comparable results with BERT with smaller embedding dimension and much less training complexities.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.4 Word Similarity Measurement"
+  },
+  {
+    "subject": "MWE",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "our MWE model uses a set of (constrained and small) embeddings for each word to encode its general and relation-dependent semantics to resolve the sparseness and the size problem.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "SP knowledge",
+    "object_type": "Concept",
+    "source_sentence": "Compared to them, the learned embeddings from our model are useful resources that incorpo- rate SP knowledge and can be seamlessly lever- aged in other NLP models.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "5 Related Work"
+  }
+]

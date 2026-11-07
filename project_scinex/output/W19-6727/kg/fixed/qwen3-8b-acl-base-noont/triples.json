@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "Translation",
+    "predicate": "uses",
+    "object": "do-not-translate words",
+    "object_type": "Concept",
+    "source_sentence": "Do-not-translate words are replaced by placehold- ers and replaced back in the translation (Section 3.2.1).",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "1.1 Our Pipeline"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "uses",
+    "object": "over- generation patterns",
+    "object_type": "Concept",
+    "source_sentence": "After translation , a post- processing mod- ule deletes over- generation patterns based on the source sentence (Section 2.2).",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "1.1 Our Pipeline"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "corpora",
+    "object_type": "Dataset",
+    "source_sentence": "we describe some steps we take to prepare different corpora prior to training.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "2 Training Data cleaning"
+  },
+  {
+    "subject": "Translation",
+    "predicate": "uses",
+    "object": "placeholder token",
+    "object_type": "Method",
+    "source_sentence": "We detect DNTs in the source and replace them with a placeholder token during translation .",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.2.2 How DNTs are helpful?"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "subwords",
+    "object_type": "Concept",
+    "source_sentence": "It is now defacto to use subwords in NMT as with the better vocab cov- erage it enables the NMT models with excellent copying capability.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.2.3 Issues with Subwords"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "splitfrom",
+    "object": "subwords",
+    "object_type": "Concept",
+    "source_sentence": "In BPE, the algorithm checks each subword in the given vocab and if not found, it will recursively split the segment into smaller units (by reversing byte-pair encod- ing merge operations) until all units are either in- vocabulary, or cannot be split further ( often char- acter level splits).",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "cross entropy",
+    "object_type": "Metric",
+    "source_sentence": "For the training of model parameters, we use NAG with cross entropy as a loss function.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "NAG",
+    "object_type": "Method",
+    "source_sentence": "For the training of model parameters, we use NAG with cross entropy as a loss function.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  },
+  {
+    "subject": "Subword Segmentation",
+    "predicate": "uses",
+    "object": "BPE Model",
+    "object_type": "Model",
+    "source_sentence": "We use a shared vocabulary BPE Model for subword segmentation, with a code of 32000 merge operations.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  },
+  {
+    "subject": "Information retrieval",
+    "predicate": "uses",
+    "object": "Lucene",
+    "object_type": "Model",
+    "source_sentence": "3Concretely we use Lucene , a very efficient open-source information retrieval library.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "4 Domain Adaptation"
+  },
+  {
+    "subject": "Baseline Models",
+    "predicate": "produces",
+    "object": "most effective output",
+    "object_type": "Concept",
+    "source_sentence": "Then, finally, building upon strong baseline models to produce the most effec- tive output for an particular use case",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "5 What does all of this mean in practice?"
+  }
+]

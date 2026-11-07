@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "NMT",
+    "predicate": "addresses",
+    "object": "output length",
+    "object_type": "Concept",
+    "source_sentence": "NMT models are not perfect at controlling the output length and sometimes drop or duplicate content.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "2.2 Experiments"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "BPE",
+    "object_type": "Method",
+    "source_sentence": "Subword translation is an approach used in NMT to tackle out-of-vocabulary (OOV) problem using byte-pair encoding (BPE) or other similar segmentation techniques.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.2.3 Issues with Subwords"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "Segmentation",
+    "object_type": "Method",
+    "source_sentence": "Subword translation is an approach used in NMT to tackle out-of-vocabulary (OOV) problem using byte-pair encoding (BPE) or other similar segmentation techniques.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.2.3 Issues with Subwords"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "subword segmentation",
+    "object_type": "Task",
+    "source_sentence": "We use a shared vocabulary BPE Model for subword segmentation, with a code of 32000 merge operations.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "Moses",
+    "object_type": "Other",
+    "source_sentence": "BLEU and TER scores are computed with tokenized lower-cased output and references using the \"evaluater\" binary from Moses.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  }
+]

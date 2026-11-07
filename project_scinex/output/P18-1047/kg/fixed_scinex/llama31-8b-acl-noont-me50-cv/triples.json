@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Seq2seq",
+    "predicate": "uses",
+    "object": "copy mechanism",
+    "object_type": "Method",
+    "source_sentence": "In this section, we introduce a differentiable neural model based on Seq2Seq learning with copy mechanism, which is able to extract multiple relational facts in an end2end fashion.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "3 Our Model"
+  },
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "input sentence",
+    "object_type": "Other",
+    "source_sentence": "Following, our encoder uses a bi-directional RNN to encode the input sentence.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "3.1.1 Encoder"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "model cell",
+    "object_type": "Other",
+    "source_sentence": "In our experiments, for both dataset, we use LSTM as the model cell;",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.2 Settings"
+  },
+  {
+    "subject": "ADAM",
+    "predicate": "uses",
+    "object": "parameters",
+    "object_type": "Other",
+    "source_sentence": "We use Adam to optimize parameters",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.2 Settings"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "best performance on relational facts extraction",
+    "object_type": "Task",
+    "source_sentence": "We compare our models with NovelTagging model, which conduct the best performance on relational facts extraction.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.3 Baseline and Evaluation Metrics"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "higher recall value",
+    "object_type": "Metric",
+    "source_sentence": "Not surprisingly, our models recall more triplets and achieve higher recall value.",
+    "extraction_mode": "fixed",
+    "paper": "P18-1047",
+    "title": "Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism",
+    "section": "4.4 Results"
+  }
+]

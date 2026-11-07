@@ -1,0 +1,167 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "bidirectional self-attention",
+    "object_type": "Method",
+    "source_sentence": "Transformer-based encoder-decoder conditional LMs use bidirectional self-attention in the encoding step to create vector representations of the tokens in the context c.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.1 Enc-Dec Conditional Language Models"
+  },
+  {
+    "subject": "Decoding",
+    "predicate": "uses",
+    "object": "self-attention",
+    "object_type": "Method",
+    "source_sentence": "The decoding step generates the tokens of the sequence x in an auto-regressive manner, while performing self-attention on previously generated tokens of x and all the representations output by the encoder for c.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.1 Enc-Dec Conditional Language Models"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "training set D",
+    "object_type": "Dataset",
+    "source_sentence": "Our approach to model p(a, q|c) involves fine-tuning a pretrained Enc-Dec conditional LM using a training set D = {(c1, q1, a1), (c2, q2, a2),..., (c|D|, q|D|, a|D|)}.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.2 Question-Answer Generation"
+  },
+  {
+    "subject": "Maximum Likelihood Estimation",
+    "predicate": "uses",
+    "object": "negative log-likelihood",
+    "object_type": "Metric",
+    "source_sentence": "We train the Enc-Dec with parameters θ through maximum likelihood estimation (MLE) by minimizing the negative log-likelihood over D:",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.2 Question-Answer Generation"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "answer tokens",
+    "object_type": "Other",
+    "source_sentence": "During sampling, the answer tokens are generated , which are followed by question tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.2 Question-Answer Generation"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "question tokens",
+    "object_type": "Other",
+    "source_sentence": "During sampling, the question tokens are generated , which are followed by answer tokens.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.2 Question-Answer Generation"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "trainedon",
+    "object": "target domains",
+    "object_type": "Dataset",
+    "source_sentence": "(2019) showed improvements by fine-tuning the language model on the target domains.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "3 Related Work"
+  },
+  {
+    "subject": "Generative Models",
+    "predicate": "trainedon",
+    "object": "SQuAD 1.1",
+    "object_type": "Dataset",
+    "source_sentence": "Generative models are trained on SQuAD 1.1 for 5 epochs, and the best model is selected based on the cross entropy loss on the SQuAD dev set.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "Baseline Models",
+    "predicate": "trainedon",
+    "object": "SQuAD 1.1",
+    "object_type": "Dataset",
+    "source_sentence": "Our QAGen and QA- Gen2S models outperform by wide margins the baseline models trained on SQuAD 1.1 only, as well as unsupersived domain adaptation approaches (UDA) suggested by Nishida et al. (2019) and Lee et al.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "BART",
+    "predicate": "achieves",
+    "object": "21.29 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "BART and GPT2 achieved 21.29 and 18.31 BLEU, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Synthetic Data",
+    "object_type": "Dataset",
+    "source_sentence": "Each experiment was performed by training the RC model on the synthetic data generated on the target domain corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.4 Domain Adaptation Results"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "BERT-base model",
+    "object_type": "Model",
+    "source_sentence": "The downstream RC models presented in previous sections were based on fine-tuning BERT-base model, which has 110 million parameters.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.7 Experiments with Large QA Models"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "significant improvements in domain adaptation of RC models",
+    "object_type": "Concept",
+    "source_sentence": "Our experiments showed that by proper decoding, significant improvements in domain adaptation of RC models can be achieved.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "5 Conclusions"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "Synthetic Data",
+    "object_type": "Dataset",
+    "source_sentence": "7 shows EM/F1 scores of the bert-base-uncased RC models trained with synthetic data generated from the IMDB corpus on SQuAD 1.1 dev set.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "B.1 Performance on SQuAD 1.1 with Different Filtering Approaches"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Amazon EC2",
+    "object_type": "Other",
+    "source_sentence": "All of the experiments in this work were performed on Amazon EC2 instances.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "D Training and Platform Details"
+  }
+]

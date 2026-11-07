@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "ResNet-encoded image",
+    "object_type": "Image",
+    "source_sentence": "At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at (seen in Figure 2).",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.1 Matterport Room-to-Room"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "CNN encoded image",
+    "object_type": "Image",
+    "source_sentence": "At each timestep, a planner LSTM takes in a CNN encoded image Vt, LSTM encoded question L, and the previous action at−1 and emits an action at.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "LSTM encoded question",
+    "object_type": "Question",
+    "source_sentence": "At each timestep, a planner LSTM takes in a CNN encoded image Vt, LSTM encoded question L, and the previous action at−1 and emits an action at.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  },
+  {
+    "subject": "LSTM",
+    "predicate": "uses",
+    "object": "previous action",
+    "object_type": "Action",
+    "source_sentence": "At each timestep, a planner LSTM takes in a CNN encoded image Vt, LSTM encoded question L, and the previous action at−1 and emits an action at.",
+    "extraction_mode": "fixed",
+    "paper": "N19-1197",
+    "title": "Shifting the Baseline: Single Modality Performance on Visual Navigation & QA",
+    "section": "3.3 Embodied Question Answering"
+  }
+]

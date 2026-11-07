@@ -1,0 +1,178 @@
+[
+  {
+    "subject": "representing words",
+    "predicate": "publishedin",
+    "object": "distributed representations",
+    "object_type": "Model",
+    "source_sentence": "Representing words as distributed representations is an important way for machines to process lexical semantics",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "transformation matrix",
+    "object_type": "Method",
+    "source_sentence": "use a transformation matrix for each relation to project them into the same space of the center embeddings",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "negative sampling strategy",
+    "object_type": "Method",
+    "source_sentence": "To train vr h,w and vr t,w for each w under r, we adopt the negative sampling strategy to conduct the learning process.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "2.2 Learning the MWE model"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "stochastic gradient descent",
+    "object_type": "Method",
+    "source_sentence": "the training process is thus to update c, ur, and Xr with the gradients passed from the loss function using stochastic gra- dient descent (SGD).",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "2.2 Learning the MWE model"
+  },
+  {
+    "subject": "Learning",
+    "predicate": "uses",
+    "object": "discounting learning rate",
+    "object_type": "Concept",
+    "source_sentence": "η is the discounting learning rate.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "2.2 Learning the MWE model"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "embeddings",
+    "object_type": "Model",
+    "source_sentence": "Experiments are conducted to evaluate how our embeddings are performed on SP acquisition and word similarity measurement.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3 Experiments"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "English Wikipedia4",
+    "object_type": "Dataset",
+    "source_sentence": "We use the English Wikipedia4 as the training cor- pus.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.1 Implementation Details"
+  },
+  {
+    "subject": "word2vec",
+    "predicate": "uses",
+    "object": "their released code",
+    "object_type": "Model",
+    "source_sentence": "For word2Vec and GloVe, we use their released code.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.2 Baselines"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "their pre-trained models",
+    "object_type": "Model",
+    "source_sentence": "For ELMo and BERT, we use their pre-trained models.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.2 Baselines"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "their pre-trained models",
+    "object_type": "Model",
+    "source_sentence": "For ELMo and BERT, we use their pre-trained models.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.2 Baselines"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "comparesagainst",
+    "object": "two variations of the original BERT model",
+    "object_type": "Model",
+    "source_sentence": "we compare with two variations of the original BERT model: (1) BERT (static), which extracts static embedding from the BERT model in a similar way as that from the ELMo model; (2) BERT (dynamic), which takes a pair of words as input and produces a plausibility score for that pairs of words.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.2 Baselines"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "uses",
+    "object": "cosine similarity",
+    "object_type": "Metric",
+    "source_sentence": "we use the cosine similarity between embeddings of head and tail words to pre- dict their relations",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.3 Selectional Preference Acquisition"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "evaluatedon",
+    "object": "word similarity",
+    "object_type": "Task",
+    "source_sentence": "we also evaluate our embeddings on word similarity (WS) mea- surement to test whether the learned embedding can effectively capture the overall semantics.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.4 Word Similarity Measurement"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "evaluatedon",
+    "object": "frequent words",
+    "object_type": "Concept",
+    "source_sentence": "This re- sult is promising since it is analyzed by Solovyev et al. (2017) that two-thirds of the frequent words are nouns; thus there are potential benefits if our embeddings are used in downstream NLP tasks.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.4 Word Similarity Measurement"
+  },
+  {
+    "subject": "embeddings",
+    "predicate": "achieves",
+    "object": "best performance",
+    "object_type": "Metric",
+    "source_sentence": "the center embeddings achieve the best performance against all the other relation- dependent embeddings , which demonstrates the effectiveness of our model in learning relation- dependent information over words and also en- hancing their overall semantics.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.4 Word Similarity Measurement"
+  },
+  {
+    "subject": "MWE",
+    "predicate": "achieves",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "It is observed that that MWE outperforms ELMo and achieves comparable results with BERT with smaller embedding dimension and much less training complexities.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.4 Word Similarity Measurement"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "RNN",
+    "predicate": "uses",
+    "object": "attention mechanism",
+    "object_type": "Method",
+    "source_sentence": "QFE sequentially extracts the evidence sentences by using an RNN with an attention mechanism on the question sentence",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Word Embedding",
+    "predicate": "uses",
+    "object": "word vectors",
+    "object_type": "Other",
+    "source_sentence": "The Word Embedding Layer encodes C and Q as sequences of word vectors.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Word Vector",
+    "predicate": "uses",
+    "object": "CNN",
+    "object_type": "Other",
+    "source_sentence": "A word vector is the concatenation of a pre-trained word embedding and a character-based embedding obtained using a CNN.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Context",
+    "predicate": "uses",
+    "object": "bi-directional RNN",
+    "object_type": "Other",
+    "source_sentence": "The Context Layer encodes C1, Q1 as contextual vectors C2 ∈Rlw×2dc, Q2 ∈Rmw×2dc by using a bi-directional RNN (Bi-RNN).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Matching",
+    "predicate": "uses",
+    "object": "bi-directional attention",
+    "object_type": "Other",
+    "source_sentence": "The Matching Layer encodes C2, Q2 as matching vectors C3 ∈Rlw×dc by using bi-directional attention, a Bi-RNN, and self-attention.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "evidence",
+    "predicate": "uses",
+    "object": "Bi-RNN",
+    "object_type": "Other",
+    "source_sentence": "The Evidence Layer first encodes C3 as [−→ C4; ←− C4] ∈Rlw×2dc by a Bi-RNN.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.1 Model Architecture"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "Sentences",
+    "object_type": "Other",
+    "source_sentence": "Chen and Bansal used an attention mechanism to extract sentences from the source document such that the summary would cover the important information in the source document.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.2 Query Focused Extractor"
+  },
+  {
+    "subject": "Beam Search",
+    "predicate": "uses",
+    "object": "Algorithm",
+    "object_type": "Method",
+    "source_sentence": "QFE uses the beam search algorithm to search ˆE.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1225",
+    "title": "Answering while Summarizing: Multi-task Learning for Multi-hop QA with Evidence Extraction",
+    "section": "3.4 Test Phase"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "Word Embedding",
+    "predicate": "uses",
+    "object": "lexical context",
+    "object_type": "Concept",
+    "source_sentence": "Word embedding algorithms, such as 'word2vec', make use of the lexical context in learning vector representations of words.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "2 Related Work"
+  },
+  {
+    "subject": "Supervised Approach",
+    "predicate": "addresses",
+    "object": "segmenting queries into task hierarchies",
+    "object_type": "Task",
+    "source_sentence": "A supervised approach for automatically segment- ing queries into task hierarchies was proposed in .",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "2.2 Supervised Task Extraction"
+  },
+  {
+    "subject": "Structural SVM",
+    "predicate": "uses",
+    "object": "lexical features",
+    "object_type": "Concept",
+    "source_sentence": "which employs a structural SVM framework for estimating the weights of different lexical features to measure the similarity between two queries .",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "2.2 Supervised Task Extraction"
+  },
+  {
+    "subject": "Word Vectors",
+    "predicate": "uses",
+    "object": "word2vec skip-gram algorithm",
+    "object_type": "Method",
+    "source_sentence": "The word vectors used in learning the parameter matrix θ are obtained by the word2vec skip-gram algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "3.2 Word Vector Transformation with Semantic Contexts"
+  },
+  {
+    "subject": "unsupervised",
+    "predicate": "addresses",
+    "object": "identifying cross-session tasks",
+    "object_type": "Task",
+    "source_sentence": "In this section, we describe our unsupervised approach to identifying cross- session tasks by clus- tering the query vectors, where the constituent query word vectors are obtained using the word embedding approaches described in Section 3.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "4 Clustering of Embedded Queries"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "AOL query log",
+    "object_type": "Dataset",
+    "source_sentence": "Our experiments on the AOL query log indicate that the proposed temporal and tempo-lexical query embedding method significantly out- perform the baseline word2vec embedding.",
+    "extraction_mode": "fixed",
+    "paper": "N18-1026",
+    "title": "Tempo-Lexical Context driven Word Embedding for Cross-Session Search Task Extraction",
+    "section": "7 Conclusions and Future Work"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "GloVe",
+    "predicate": "produces",
+    "object": "word embedding",
+    "object_type": "Other",
+    "source_sentence": "Here, vw is the word embedding obtained from GloVe or contextualized word embeddings from ELMo, vp is a randomly initialized and trainable embedding of the part-of-speech tag, and vt corresponds to the timex embedding derived for time expressions (explained in Section 2.1).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "produces",
+    "object": "contextualized word embeddings",
+    "object_type": "Other",
+    "source_sentence": "Here, vw is the word embedding obtained from GloVe or contextualized word embeddings from ELMo, vp is a randomly initialized and trainable embedding of the part-of-speech tag, and vt corresponds to the timex embedding derived for time expressions (explained in Section 2.1).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "produces",
+    "object": "contextualized embeddings",
+    "object_type": "Other",
+    "source_sentence": "Contextual Encoding A biLSTM is used to obtain contextualized embeddings hk for each token xk in the two sentences, as shown in Figure 1.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "Dependency Parser",
+    "predicate": "produces",
+    "object": "dependency paths",
+    "object_type": "Other",
+    "source_sentence": "Dependency Encoding We use the Stanford Dependency Parser to extract the dependency paths for both events to their lowest common ancestor.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "two datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Through experiments on two datasets, we show that incorporating these embeddings in deep temporal models leads to an improvement in the overall temporal classification performance.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "4 Conclusion"
+  }
+]

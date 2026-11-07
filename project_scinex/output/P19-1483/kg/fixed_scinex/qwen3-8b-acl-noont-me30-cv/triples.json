@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "Automatic Metrics",
+    "predicate": "uses",
+    "object": "generated text",
+    "object_type": "Other",
+    "source_sentence": "automatic metrics that compare the generated text to one or more reference texts are routinely used to compare models.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Automatic evaluation",
+    "predicate": "uses",
+    "object": "BLEU",
+    "object_type": "Metric",
+    "source_sentence": "For table-to-text generation , automatic evaluation has largely relied on BLEU and ROUGE.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Automatic evaluation",
+    "predicate": "uses",
+    "object": "ROUGE",
+    "object_type": "Metric",
+    "source_sentence": "For table-to-text generation , automatic evaluation has largely relied on BLEU and ROUGE.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Information Extraction",
+    "predicate": "uses",
+    "object": "training",
+    "object_type": "Method",
+    "source_sentence": "We also develop information extraction based metrics , inspired from Wiseman et al. (2017), by training a model to extract tables from the reference texts (§4).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Smoothing",
+    "predicate": "uses",
+    "object": "Chen and Cherry (2014)",
+    "object_type": "Other",
+    "source_sentence": "Hence, we adopt a smoothing technique from Chen and Cherry (2014) that assigns a small positive value ϵ to any of En p, En r (Ri) and Er(T i) which are 0.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "3 PARENT"
+  },
+  {
+    "subject": "Precision",
+    "predicate": "comparesagainst",
+    "object": "Ground Truth",
+    "object_type": "Concept",
+    "source_sentence": "Precision for the (attribute, value) pairs extracted from the generated text compared to those in the ground truth table.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "4 Evaluation via Information Extraction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "addresses",
+    "object": "generating text from the tables in WikiBio",
+    "object_type": "Task",
+    "source_sentence": "We developed several models of varying quality for generating text from the tables in WikiBio.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "5.1 Data & Models"
+  },
+  {
+    "subject": "parse",
+    "predicate": "produces",
+    "object": "set of (attribute, value) pairs",
+    "object_type": "Other",
+    "source_sentence": "After training, we can parse the output sequence along the special tokens <R> and <C> to get a set of (attribute, value) pairs.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.1 Information Extraction System"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "embeddings of the tokens in the vocabulary",
+    "object_type": "Other",
+    "source_sentence": "The embeddings of the tokens in the vocabulary were initialized with Glove.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.2 Hyperparameters"
+  },
+  {
+    "subject": "Dropout",
+    "predicate": "uses",
+    "object": "outputs of the biLSTM",
+    "object_type": "Other",
+    "source_sentence": "a dropout of 0.2 was also applied to the outputs of the biLSTM.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1483",
+    "title": "Bhuwan Dhingra† ∗ Manaal Faruqui‡ Ankur Parikh‡ Ming-Wei Chang‡",
+    "section": "A.2 Hyperparameters"
+  }
+]

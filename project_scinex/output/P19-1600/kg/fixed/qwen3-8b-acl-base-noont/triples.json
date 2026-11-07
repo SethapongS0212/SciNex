@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "generator",
+    "predicate": "publishedin",
+    "object": "reinforcement learning",
+    "object_type": "Method",
+    "source_sentence": "Based on that, we use the rein- forcement learning to encourage the generator to cover infrequent and rarely mentioned attributes as well as generate more informative descriptions with less groundless content.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Models",
+    "predicate": "comparesagainst",
+    "object": "tested on",
+    "object_type": "Dataset",
+    "source_sentence": "We test our models on two settings: 1) For neural table -to-text generation like Fig 1a, we test our model on WIKIBIO , a crawled dataset from Wikipedia with paired infoboxes and associated descriptions.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Wikipedia",
+    "predicate": "publishedin",
+    "object": "source of dataset",
+    "object_type": "Dataset",
+    "source_sentence": "We test our models on two settings: 1) For neural table -to-text generation like Fig 1a, we test our model on WIKIBIO , a crawled dataset from Wikipedia with paired infoboxes and associated descriptions.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Factual Attribute-value Tables",
+    "predicate": "comparesagainst",
+    "object": "testbed",
+    "object_type": "Concept",
+    "source_sentence": "It is a widely used benchmark dataset for description generation for factual attribute-value tables and also a quite meaningful testbed in the real-world scenarios with vast and heterogenous attributes.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Attention Mechanism",
+    "predicate": "uses",
+    "object": "Bahdanau-style",
+    "object_type": "Method",
+    "source_sentence": "We use Bahdanau-style attention mechanism to calculate g(st, hi).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "2.2 Description Decoder"
+  },
+  {
+    "subject": "generator",
+    "predicate": "uses",
+    "object": "particular attributes",
+    "object_type": "Concept",
+    "source_sentence": "we find that the generator usually focuses on partic- ular attributes while the other attributes have rel- atively low attention values in the entire decod- ing procedure.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3.1 Force-Attention Module"
+  },
+  {
+    "subject": "Information",
+    "predicate": "publishedin",
+    "object": "multiplication",
+    "object_type": "Concept",
+    "source_sentence": "The information richness (Eq 5) is the multiplica- tion of the attribute-level and word-level richness of the descriptions towards the source tables.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3.2.1 Information Richness"
+  },
+  {
+    "subject": "Words",
+    "predicate": "comparesagainst",
+    "object": "lemmatized",
+    "object_type": "Method",
+    "source_sentence": "we firstly lemmatize all the words in the tables and filter the words with a stop-words list which in- cluding prepositions, symbols and numbers, etc.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3.2.1 Information Richness"
+  },
+  {
+    "subject": "Prepositions",
+    "predicate": "comparesagainst",
+    "object": "filtered",
+    "object_type": "Concept",
+    "source_sentence": "we firstly lemmatize all the words in the tables and filter the words with a stop-words list which in- cluding prepositions, symbols and numbers, etc.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3.2.1 Information Richness"
+  },
+  {
+    "subject": "Numbers",
+    "predicate": "comparesagainst",
+    "object": "filtered",
+    "object_type": "Concept",
+    "source_sentence": "we firstly lemmatize all the words in the tables and filter the words with a stop-words list which in- cluding prepositions, symbols and numbers, etc.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3.2.1 Information Richness"
+  },
+  {
+    "subject": "sampling",
+    "predicate": "uses",
+    "object": "Monte-Carlo sampling",
+    "object_type": "Method",
+    "source_sentence": "ys is a sequence that can be sam- pled from Pφ by Monte-Carlo sampling ys = {ys 1, ys 2, · · ·, ys |Y |}",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "3.2.2 Reinforcement Learning"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "uses",
+    "object": "generation fluency",
+    "object_type": "Concept",
+    "source_sentence": "We use human evaluation which involves the generation fluency, coverage (how much given information in the infobox is mentioned in the related biography) and correct- ness (how much false or irrelevant information is mentioned in the biography).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.2 Evaluation Metrics"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "uses",
+    "object": "coverage",
+    "object_type": "Concept",
+    "source_sentence": "We use human evaluation which involves the generation fluency, coverage (how much given information in the infobox is mentioned in the related biography) and correct- ness (how much false or irrelevant information is mentioned in the biography).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.2 Evaluation Metrics"
+  },
+  {
+    "subject": "Human Evaluation",
+    "predicate": "uses",
+    "object": "correctness",
+    "object_type": "Concept",
+    "source_sentence": "We use human evaluation which involves the generation fluency, coverage (how much given information in the infobox is mentioned in the related biography) and correct- ness (how much false or irrelevant information is mentioned in the biography).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.2 Evaluation Metrics"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "force-attention",
+    "object_type": "Concept",
+    "source_sentence": "The global constraint of force-attention (Eq 4) is adapted after 4 and 1.5 epochs of training to avoid hurting the primary loss for the WIKIBIO and WB-filter datasets , respectively.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.3 Experimental Details"
+  },
+  {
+    "subject": "Language Model",
+    "predicate": "uses",
+    "object": "attribute information",
+    "object_type": "Concept",
+    "source_sentence": "Table NLM: Lebret et al. (2016) proposed a neu- ral language model Table NLM taking the attribute information into consideration.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.4 Baselines"
+  },
+  {
+    "subject": "Attention",
+    "predicate": "achieves",
+    "object": "1.11/0.98 BLEU/ROUGE increases",
+    "object_type": "Metric",
+    "source_sentence": "The proposed force-attention module achieves 1.11/0.98 and 2.04/1.32 BLEU/ROUGE increases on the WIKIBIO and WB-filter datasets , respectively.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "4.5 Analysis of Experimental Results"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "smoothing",
+    "object_type": "Method",
+    "source_sentence": "they emphasis easily ig- nored (usually less frequent) features or bits of in- formation in the training procedure by smoothing or regularization.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "regularization",
+    "object_type": "Method",
+    "source_sentence": "they emphasis easily ig- nored (usually less frequent) features or bits of in- formation in the training procedure by smoothing or regularization.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "5 Related Work"
+  },
+  {
+    "subject": "generating",
+    "predicate": "uses",
+    "object": "Wikipedia",
+    "object_type": "Dataset",
+    "source_sentence": "Perez-Beltrachini and Lapata (2018) used the first paragraph of the wikipedia pages as the gold biographies aiming at generating longer biogra- phies.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1600",
+    "title": "Towards Comprehensive Description Generation from Factual Attribute-value Tables",
+    "section": "5 Related Work"
+  }
+]

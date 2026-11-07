@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "BLEU",
+    "object_type": "Metric",
+    "source_sentence": "Training with our pipeline improves BLEU and TER scores respectively by 2.3 and 3.0 points.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "2.2 Experiments"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "TER",
+    "object_type": "Metric",
+    "source_sentence": "Training with our pipeline improves BLEU and TER scores respectively by 2.3 and 3.0 points.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "2.2 Experiments"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "BPE",
+    "object_type": "Method",
+    "source_sentence": "Subword translation is an approach used in NMT to tackle out-of-vocabulary (OOV) problem using byte-pair encoding (BPE) or other similar segmentation techniques.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.2.3 Issues with Subwords"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "NMT system",
+    "object_type": "Other",
+    "source_sentence": "For example, the word \"Gonzalez\" is broken into \"G@@ on@@ z@@ al@@ e@@ z\" by BPE and passes through the NMT system unchanged.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.2.4 Spelling Errors in Subword NMT"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "subword segmentation",
+    "object_type": "Task",
+    "source_sentence": "We use a shared vocabulary BPE Model for subword segmentation, with a code of 32000 merge operations.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "NAG",
+    "object_type": "Method",
+    "source_sentence": "For the training of model parameters, we use NAG with cross entropy as a loss function.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "cross entropy",
+    "object_type": "Method",
+    "source_sentence": "For the training of model parameters, we use NAG with cross entropy as a loss function.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "Moses",
+    "object_type": "Method",
+    "source_sentence": "BLEU and TER scores are computed with tokenized lower-cased output and references using the \"evaluater\" binary from Moses.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "Models",
+    "object_type": "Model",
+    "source_sentence": "Our translation models are dynamically adapted to the source text context at each sentence, using fine-tuning but without knowing the source domain in advance.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "4 Domain Adaptation"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "Source Text",
+    "object_type": "Text",
+    "source_sentence": "Our translation models are dynamically adapted to the source text context at each sentence, using fine-tuning but without knowing the source domain in advance.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "4 Domain Adaptation"
+  },
+  {
+    "subject": "Information retrieval",
+    "predicate": "uses",
+    "object": "Translation Memory",
+    "object_type": "Other",
+    "source_sentence": "At test time, the translation memory is queried with the source sentence by information retrieval tools3.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "4 Domain Adaptation"
+  }
+]

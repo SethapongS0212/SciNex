@@ -1,0 +1,112 @@
+[
+  {
+    "subject": "SVM",
+    "predicate": "uses",
+    "object": "text classification features",
+    "object_type": "Feature",
+    "source_sentence": "In Section 5, we present a competitive SVM-based baseline that uses a number of common text classification features.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "SVMs",
+    "predicate": "addresses",
+    "object": "Regression",
+    "object_type": "Task",
+    "source_sentence": "Support vector machines (SVMs) were the second most popular regression algorithm.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "uses",
+    "object": "negative sampling skip-gram model",
+    "object_type": "Method",
+    "source_sentence": "We calculate individual word embeddings using the negative sampling skip-gram model implemented in Word2Vec.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "5.1 System"
+  },
+  {
+    "subject": "Word Vectors",
+    "predicate": "trainedon",
+    "object": "Edinburgh Twitter Corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Word vectors are trained from ten million English tweets taken from the Edinburgh Twitter Corpus.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "5.1 System"
+  },
+  {
+    "subject": "Word Embeddings",
+    "predicate": "achieves",
+    "object": "statistically significant improvement over the ngrams",
+    "object_type": "Other",
+    "source_sentence": "Word embeddings produces statistically significant improvement over the ngrams (avg. r = 0.55).",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "5.2 Experiments"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "uses",
+    "object": "lexicon features vector",
+    "object_type": "Other",
+    "source_sentence": "The first is a feed-forward neural network whose input vector is formed by concatenating the average word embedding vector with the lexicon features vector provided by the AffectiveTweets package.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.3 Prayas: Rank"
+  },
+  {
+    "subject": "Deep Learning Architecture",
+    "predicate": "uses",
+    "object": "LSTM",
+    "object_type": "Method",
+    "source_sentence": "In the third model, the word embeddings of the words in a tweet are concatenated and fed into a deep learning architecture formed by LSTM, CNN, max pooling, fully connected layers.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.3 Prayas: Rank"
+  },
+  {
+    "subject": "IMS",
+    "predicate": "uses",
+    "object": "Random Forest",
+    "object_type": "Model",
+    "source_sentence": "IMS applies a random forest regression model to a representation formed by concatenating three vectors: 1. a feature vector drawn from existing affect lexicons, 2. a feature vector drawn from expanded affect lexicons, and 3. the output of a neural network.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.4 IMS: Rank"
+  },
+  {
+    "subject": "Regression Model",
+    "predicate": "trainedon",
+    "object": "affect lexicon features",
+    "object_type": "Concept",
+    "source_sentence": "Each regression model is trained on a representation formed by the affect lexicon features (including those provided by AffectiveTweets) and word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.5 SeerNet: Rank"
+  },
+  {
+    "subject": "Regression Model",
+    "predicate": "trainedon",
+    "object": "word embeddings",
+    "object_type": "Concept",
+    "source_sentence": "Each regression model is trained on a representation formed by the affect lexicon features (including those provided by AffectiveTweets) and word embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "W17-5205",
+    "title": "WASSA-2017 Shared Task on Emotion Intensity",
+    "section": "6.5 SeerNet: Rank"
+  }
+]

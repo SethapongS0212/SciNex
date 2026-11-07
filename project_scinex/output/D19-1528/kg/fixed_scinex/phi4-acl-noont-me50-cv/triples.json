@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "Negative Sampling",
+    "predicate": "uses",
+    "object": "learning process",
+    "object_type": "Process",
+    "source_sentence": "we adopt the negative sampling strategy to conduct the learning process.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "2.2 Learning the MWE model"
+  },
+  {
+    "subject": "cross entropy",
+    "predicate": "uses",
+    "object": "loss function",
+    "object_type": "Other",
+    "source_sentence": "we use cross entropy as the loss function E = −log σ(vr h,wh ⊤· vr t,wt) −log σ(−vr h,wh ⊤· vr t,w′ t) to measure the learning effect for Eq. (2), with σ denoting the sigmoid function.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "2.2 Learning the MWE model"
+  },
+  {
+    "subject": "SGD",
+    "predicate": "uses",
+    "object": "gradients",
+    "object_type": "Other",
+    "source_sentence": "the training process is thus to update c, ur, and Xr with the gradients passed from the loss function using stochastic gradient descent (SGD).",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "2.2 Learning the MWE model"
+  },
+  {
+    "subject": "MWE",
+    "predicate": "comparesagainst",
+    "object": "ELMo",
+    "object_type": "Model",
+    "source_sentence": "It is observed that that MWE outperforms ELMo and achieves comparable results with BERT with smaller embedding dimension and much less training complexities.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.4 Word Similarity Measurement"
+  },
+  {
+    "subject": "MWE",
+    "predicate": "comparesagainst",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "It is observed that that MWE outperforms ELMo and achieves comparable results with BERT with smaller embedding dimension and much less training complexities.",
+    "extraction_mode": "fixed",
+    "paper": "D19-1528",
+    "title": "Multiplex Word Embeddings for Selectional Preference Acquisition",
+    "section": "3.4 Word Similarity Measurement"
+  }
+]

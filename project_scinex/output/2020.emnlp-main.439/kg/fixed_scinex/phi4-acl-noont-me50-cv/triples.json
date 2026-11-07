@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "bidirectional self-attention",
+    "object_type": "Method",
+    "source_sentence": "Transformer-based encoder-decoder conditional LMs use bidirectional self-attention in the encoding step to create vector representations of the tokens in the context c.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.1 Enc-Dec Conditional Language Models"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "attention on the encoder",
+    "object_type": "Method",
+    "source_sentence": "This makes the generation of the answer conditioned on both input context ( through attention on the encoder) and question ( through self-attention in the decoder).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.2 Question-Answer Generation"
+  },
+  {
+    "subject": "generation",
+    "predicate": "uses",
+    "object": "self-attention in the decoder",
+    "object_type": "Method",
+    "source_sentence": "This makes the generation of the answer conditioned on both input context ( through attention on the encoder) and question ( through self-attention in the decoder).",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.2 Question-Answer Generation"
+  },
+  {
+    "subject": "Generative Models",
+    "predicate": "trainedon",
+    "object": "SQuAD 1.1",
+    "object_type": "Dataset",
+    "source_sentence": "Generative models are trained on SQuAD 1.1 for 5 epochs, and the best model is selected based on the cross entropy loss on the SQuAD dev set.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "SQuAD 1.1 passage and spans",
+    "object_type": "Dataset",
+    "source_sentence": "The span detection module consists of bert-base-uncased fine-tuned on SQuAD 1.1 passage and spans, where the start and end classification heads are trained to perform span detection.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "Synthetic Data",
+    "object_type": "Dataset",
+    "source_sentence": "Each experiment was performed by training the RC model on the synthetic data generated on the target domain corpus.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.4 Domain Adaptation Results"
+  },
+  {
+    "subject": "fine-tuning",
+    "predicate": "uses",
+    "object": "BERT-base model",
+    "object_type": "Model",
+    "source_sentence": "The downstream RC models presented in previous sections were based on fine-tuning BERT-base model, which has 110 million parameters.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.7 Experiments with Large QA Models"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "domain adaptation of RC models",
+    "object_type": "Task",
+    "source_sentence": "Our experiments showed that by proper decoding, significant improvements in domain adaptation of RC models can be achieved.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "5 Conclusions"
+  }
+]

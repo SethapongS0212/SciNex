@@ -1,0 +1,222 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "evaluatedon",
+    "object": "probing tasks",
+    "object_type": "Task",
+    "source_sentence": "we demonstrate its generalisability to both contextual and static encoders by using it to intrinsically evaluate English GloVe and BERT embeddings on a number of established probing tasks",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "evaluatedon",
+    "object": "probing tasks",
+    "object_type": "Task",
+    "source_sentence": "we demonstrate its generalisability to both contextual and static encoders by using it to intrinsically evaluate English GloVe and BERT embeddings on a number of established probing tasks",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Establishing a Baseline",
+    "predicate": "employs",
+    "object": "two such baselines",
+    "object_type": "Method",
+    "source_sentence": "We employ two such baselines: (a) we assert a random prediction onto the test set, negating any information that a classifier could have learned , class distributions included; and (b) we train the probe on randomly generated vectors, establishing a baseline with access only to class distributions.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "2.2 Random Baselines"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "comparesagainst",
+    "object": "evaluation scores of probes",
+    "object_type": "Metric",
+    "source_sentence": "comparing evaluation scores of probes on any two noise models to determine whether they come from the same distribution",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "2.3 Confidence Intervals"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "10 established probing task datasets",
+    "object_type": "Dataset",
+    "source_sentence": "In our experiments we use 10 established prob- ing task datasets for the English language intro- duced by Conneau et al.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "3 Data"
+  },
+  {
+    "subject": "evaluate",
+    "predicate": "uses",
+    "object": "AUC-ROC score",
+    "object_type": "Metric",
+    "source_sentence": "We evaluate the perfor- mance of all probes using the AUC-ROC score",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.1 Models and Implementation"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "uses",
+    "object": "pytorch_pretrained_bert library",
+    "object_type": "Dataset",
+    "source_sentence": "we used the bert-base-uncased BERT model from the pytorch_pretrained_bert library",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.1 Models and Implementation"
+  },
+  {
+    "subject": "Models",
+    "predicate": "comparesagainst",
+    "object": "vanilla baselines",
+    "object_type": "Concept",
+    "source_sentence": "Finally, we use the vanilla BERT and GloVe sentence embeddings in their respective evaluations as vanilla baselines against which the models with noise are compared.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.2 Chosen Noise Models"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "GloVe Vectors",
+    "object_type": "Model",
+    "source_sentence": "Detailed experimental evaluation results for GloVe and BERT on each of the 10 probing tasks are pre- sented in Tables 1 and 2 respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.3 Results"
+  },
+  {
+    "subject": "Evaluation",
+    "predicate": "uses",
+    "object": "BERT",
+    "object_type": "Model",
+    "source_sentence": "Detailed experimental evaluation results for GloVe and BERT on each of the 10 probing tasks are pre- sented in Tables 1 and 2 respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.3 Results"
+  },
+  {
+    "subject": "Classification",
+    "predicate": "publishedin",
+    "object": "classification task",
+    "object_type": "Task",
+    "source_sentence": "the WC task is a particularly unusual classification task",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.3 Results"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "norm",
+    "object_type": "Concept",
+    "source_sentence": "BERT's ability to model incongruity via the norm could essentially be frequency-based, similar to how some word em- beddings encode word frequency in the norm",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.4 Norm Correlation Analysis"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "norm",
+    "object_type": "Concept",
+    "source_sentence": "GloVe is a static encoder and exhibits no indication that it stores this information in the norm, or indeed any ability to accurately model this phenomenon at all, but uses the norm to store surface- level and syntactic information",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.4 Norm Correlation Analysis"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "norm",
+    "object_type": "Concept",
+    "source_sentence": "Our findings show that BERT primarily uses the norm to store contextual incongruity information and positions incongruous sentences closer to the origin.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Model",
+    "source_sentence": "our use of off-the-shelf GloVe and BERT embeddings",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "embeddings",
+    "object_type": "Model",
+    "source_sentence": "our use of off-the-shelf GloVe and BERT embeddings",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "datasets",
+    "object_type": "Dataset",
+    "source_sentence": "the datasets on which we measured or the models which were used to measure",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "probes",
+    "object_type": "Model",
+    "source_sentence": "the datasets on which we measured or the models which were used to measure, be it encoders, probes or probing tasks",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "probing tasks",
+    "object_type": "Task",
+    "source_sentence": "the datasets on which we measured or the models which were used to measure, be it encoders, probes or probing tasks",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "analysis",
+    "predicate": "supports",
+    "object": "decision",
+    "object_type": "Concept",
+    "source_sentence": "This analysis supports our decision from §2 to use a different noising function to remove information from the norm container,",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "A.1 Analysis of L1 and L2 Normalised Embeddings"
+  }
+]

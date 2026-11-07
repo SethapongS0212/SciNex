@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "BERT",
+    "predicate": "produces",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "We use pretrained versions of BERT and GloVe to generate embeddings for each sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.1 Models and Implementation"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "produces",
+    "object": "embeddings",
+    "object_type": "Other",
+    "source_sentence": "We use pretrained versions of BERT and GloVe to generate embeddings for each sentence.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.1 Models and Implementation"
+  },
+  {
+    "subject": "BERT model",
+    "predicate": "uses",
+    "object": "pytorch_pretrained_bert library",
+    "object_type": "Other",
+    "source_sentence": "we used the bert-base-uncased BERT model from the pytorch_pretrained_bert library",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.1 Models and Implementation"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "norm",
+    "object_type": "Concept",
+    "source_sentence": "specifically BERT stores information pertinent to the BS, SOMO and TC tasks in the norm",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "4.3 Results"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "uses",
+    "object": "norm",
+    "object_type": "Concept",
+    "source_sentence": "Our findings show that BERT primarily uses the norm to store contextual incongruity information and positions incongruous sentences closer to the origin.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "7 Conclusion"
+  },
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "norm",
+    "object_type": "Concept",
+    "source_sentence": "Meanwhile, GloVe stores much more syntactic information in its norm than BERT, but does not store contextual information at all, and mainly stores surface-level information in the norm.",
+    "extraction_mode": "fixed",
+    "paper": "2022.blackboxnlp-1.34",
+    "title": "Probing with Noise: Unpicking the Warp and Weft of Embeddings",
+    "section": "7 Conclusion"
+  }
+]

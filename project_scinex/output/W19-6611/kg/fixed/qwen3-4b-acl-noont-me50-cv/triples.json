@@ -1,0 +1,46 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "multi-headed attention",
+    "object_type": "Method",
+    "source_sentence": "Our transformer model is a 6-layer transformer with multi-headed attention of 8 heads.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "2 Datasets and Models"
+  },
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "layer normalization",
+    "object_type": "Method",
+    "source_sentence": "Our transformer model has hidden state dimensions of 512 and a batch size of 4096 to- kens and uses layer normalization.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "2 Datasets and Models"
+  },
+  {
+    "subject": "BPE",
+    "predicate": "uses",
+    "object": "32K merge operation",
+    "object_type": "Other",
+    "source_sentence": "We apply Byte-Pair Encoding (BPE) with 32K merge operation.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "2 Datasets and Models"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "100K sentences",
+    "object_type": "Dataset",
+    "source_sentence": "We train our models until convergence and then use the trained models to translate 100K sentences from a held-out dataset and log the hidden states for later use in our analyses.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6611",
+    "title": "An Intrinsic Nearest Neighbor Analysis of Neural Machine Translation Architectures",
+    "section": "2 Datasets and Models"
+  }
+]

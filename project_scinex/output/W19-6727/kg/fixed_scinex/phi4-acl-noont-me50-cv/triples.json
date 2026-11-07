@@ -1,0 +1,57 @@
+[
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "2.3 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "Training with our pipeline improves BLEU and TER scores respectively by 2.3 and 3.0 points.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "2.2 Experiments"
+  },
+  {
+    "subject": "training",
+    "predicate": "achieves",
+    "object": "3.0 TER",
+    "object_type": "Metric",
+    "source_sentence": "Training with our pipeline improves BLEU and TER scores respectively by 2.3 and 3.0 points.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "2.2 Experiments"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "BPE",
+    "object_type": "Method",
+    "source_sentence": "Subword translation is an approach used in NMT to tackle out-of-vocabulary (OOV) problem using byte-pair encoding (BPE) or other similar segmentation techniques.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.2.3 Issues with Subwords"
+  },
+  {
+    "subject": "NMT",
+    "predicate": "uses",
+    "object": "subwords",
+    "object_type": "Method",
+    "source_sentence": "It is now defacto to use subwords in NMT as with the better vocab coverage it enables the NMT models with excellent copying capability.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.2.3 Issues with Subwords"
+  },
+  {
+    "subject": "BLEU",
+    "predicate": "uses",
+    "object": "Moses",
+    "object_type": "Model",
+    "source_sentence": "BLEU and TER scores are computed with tokenized lower-cased output and references using the \"evaluater\" binary from Moses.",
+    "extraction_mode": "fixed",
+    "paper": "W19-6727",
+    "title": "Improving Robustness in Real-World Neural Machine Translation Engines",
+    "section": "3.3 Tackling Subword Issues"
+  }
+]

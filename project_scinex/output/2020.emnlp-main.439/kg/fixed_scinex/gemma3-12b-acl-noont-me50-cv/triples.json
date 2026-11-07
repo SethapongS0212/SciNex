@@ -1,0 +1,79 @@
+[
+  {
+    "subject": "Transformer",
+    "predicate": "uses",
+    "object": "bidirectional self-attention",
+    "object_type": "Method",
+    "source_sentence": "Transformer-based encoder-decoder conditional LMs use bidirectional self-attention in the encoding step to create vector representations of the tokens in the context c.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "2.1 Enc-Dec Conditional Language Models"
+  },
+  {
+    "subject": "Generative Models",
+    "predicate": "trainedon",
+    "object": "SQuAD 1.1",
+    "object_type": "Dataset",
+    "source_sentence": "Generative models are trained on SQuAD 1.1 for 5 epochs, and the best model is selected based on the cross entropy loss on the SQuAD dev set.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "BERT",
+    "predicate": "trainedon",
+    "object": "SQuAD 1.1 passage and spans",
+    "object_type": "Dataset",
+    "source_sentence": "The span detection module consists of bert-base-uncased fine-tuned on SQuAD 1.1 passage and spans, where the start and end classification heads are trained to perform span detection.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "BART",
+    "predicate": "achieves",
+    "object": "21.29 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "BART and GPT2 achieved 21.29 and 18.31 BLEU, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "BART",
+    "predicate": "achieves",
+    "object": "18.31 BLEU",
+    "object_type": "Metric",
+    "source_sentence": "BART and GPT2 achieved 21.29 and 18.31 BLEU, respectively.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "4.2 Experimental Setup"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "achieves",
+    "object": "significant improvements in domain adaptation of RC models",
+    "object_type": "Other",
+    "source_sentence": "Our experiments showed that by proper decoding, significant improvements in domain adaptation of RC models can be achieved.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "5 Conclusions"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "uses",
+    "object": "Amazon EC2 instances",
+    "object_type": "Other",
+    "source_sentence": "All of the experiments in this work were performed on Amazon EC2 instances.",
+    "extraction_mode": "fixed",
+    "paper": "2020.emnlp-main.439",
+    "title": "End-to-End Synthetic Data Generation for Domain Adaptation of Question Answering Systems",
+    "section": "D Training and Platform Details"
+  }
+]

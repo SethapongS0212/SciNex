@@ -1,0 +1,68 @@
+[
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "labelled data",
+    "object_type": "Dataset",
+    "source_sentence": "The effectiveness of such mod- els depends on the quality of labelled data used for training.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "1 Introduction"
+  },
+  {
+    "subject": "Published Results",
+    "predicate": "achieves",
+    "object": "SIARN",
+    "object_type": "Model",
+    "source_sentence": "As a baseline , we implement the SIARN (Single-Dimension Intra- Attention Network) model proposed by , since it achieves the best published results on both our datasets .",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "4 Contextual Sarcasm Detection Models"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "trainedon",
+    "object": "personality detection corpus",
+    "object_type": "Dataset",
+    "source_sentence": "we feed dt to a neural network pre-trained on the personality detection corpus released by Matthews and Gilliland (1999)",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "4 Contextual Sarcasm Detection Models"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "RMSProp optimizer",
+    "object_type": "Method",
+    "source_sentence": "For comparability with SIARN, our baseline , we follow its authors in setting a batch size of 16 for the Riloff dataset , and of 512 for the Ptacek dataset , and in training for 30 epochs using the RMSProp optimizer with a learning rate of 0.001.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "learning rate of 0.001",
+    "object_type": "Metric",
+    "source_sentence": "For comparability with SIARN, our baseline , we follow its authors in setting a batch size of 16 for the Riloff dataset , and of 512 for the Ptacek dataset , and in training for 30 epochs using the RMSProp optimizer with a learning rate of 0.001.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "Distant Supervision",
+    "predicate": "achieves",
+    "object": "state-of-the-art results",
+    "object_type": "Metric",
+    "source_sentence": "We suggested several neural models to build user embeddings, achieving state-of-the-art results for distant supervision, but not for man- ual labelling.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "6 Conclusion"
+  }
+]

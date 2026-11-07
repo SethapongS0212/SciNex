@@ -1,0 +1,189 @@
+[
+  {
+    "subject": "Tagging",
+    "predicate": "uses",
+    "object": "Lexical Features",
+    "object_type": "Concept",
+    "source_sentence": "This is consistent with conventional wisdom that the quality of lexical features is much more important than the paramet- ric form of the sequence model, at least in our setting : part-of- speech tagging with a small labeled training set.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "2 MEMM Tagger"
+  },
+  {
+    "subject": "Brown Clustering",
+    "predicate": "produces",
+    "object": "Effective Features",
+    "object_type": "Concept",
+    "source_sentence": "Not only does Brown clustering produce effective features for dis- criminative models, but its variants are better unsu- pervised POS taggers than some models developed nearly 20 years later; see comparisons in Blunsom and Cohn (2011).",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.1 Clustering Method"
+  },
+  {
+    "subject": "Twitter",
+    "predicate": "uses",
+    "object": "POS tag- ging",
+    "object_type": "Task",
+    "source_sentence": "Using prefix features of hierarchical clusters in this way was sim- ilarly found to be effective for named-entity recog- nition and Twitter POS tag- ging",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.4 Cluster-Based Features"
+  },
+  {
+    "subject": "TAG",
+    "predicate": "addresses",
+    "object": "feature for a word's most frequent part-of-speech tag",
+    "object_type": "Feature",
+    "source_sentence": "We use the tag dictionary fea- ture from Gimpel et al., which adds a feature for a word's most frequent part-of-speech tag.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.5 Other Lexical Features"
+  },
+  {
+    "subject": "Domain Adaptation",
+    "predicate": "publishedin",
+    "object": "feature-based method",
+    "object_type": "Concept",
+    "source_sentence": "This can be viewed as a feature-based domain adaptation method, since it gives lexical type-level information for standard English words, which the model learns to map between PTB tags to the desired output tags.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "3.5 Other Lexical Features"
+  },
+  {
+    "subject": "Words",
+    "predicate": "comparesagainst",
+    "object": "top 100 most common words",
+    "object_type": "Concept",
+    "source_sentence": "the words \"p\" and \"d\" are among the top 100 most common words on Twit- ter",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "4 Tokenization and Emoticon Detection"
+  },
+  {
+    "subject": "Words",
+    "predicate": "comparesagainst",
+    "object": "misanalysis of:p and:d",
+    "object_type": "Concept",
+    "source_sentence": "the words \"p\" and \"d\" are among the top 100 most common words on Twit- ter, due to misanalysis of:p and:d",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "4 Tokenization and Emoticon Detection"
+  },
+  {
+    "subject": "Tokenization",
+    "predicate": "splitfrom",
+    "object": "contractions containing apostrophes",
+    "object_type": "Patterns",
+    "source_sentence": "the PTB tokenization splits contrac- tions containing apostrophes: I'm ⇒I/PRP 'm/VBP",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "5.2 Compounds in Penn Treebank vs. Twitter"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "OCT27's training and development sets",
+    "object_type": "Dataset",
+    "source_sentence": "we ran a series of experiments training only on OCT27's training and development sets",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "substantially higher accuracy than Gimpel et al.",
+    "object_type": "Metric",
+    "source_sentence": "Our tagger achieves substantially higher accuracy than Gimpel et al.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "distributional",
+    "predicate": "trainedon",
+    "object": "much smaller unlabeled corpus",
+    "object_type": "Dataset",
+    "source_sentence": "We do not reuse the other lex- ical features from the previous work, including a phonetic normalizer (Metaphone), a name list con- sisting of words that are frequently capitalized, and distributional features trained on a much smaller un- labeled corpus; they are all worse than our new lexical features described here.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "OCT27 development set",
+    "object_type": "Dataset",
+    "source_sentence": "A tagger that only uses word clusters achieves an accuracy of 88.6% on the OCT27 development set.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.1 Main Experiments"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "trainedon",
+    "object": "PTB, IRC, and Twitter",
+    "object_type": "Dataset",
+    "source_sentence": "Ritter et al.'s CRF- based tagger had 85.3% accuracy, and their best tag- ger, trained on a concatenation of PTB, IRC, and Twitter, achieved 88.3% (Table 4).",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.2 Evaluation on RITTERTW"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "evaluatedon",
+    "object": "NPS Chat Corpus",
+    "object_type": "Corpora",
+    "source_sentence": "We evaluate our tagger on the NPS Chat Corpus ,24 a PTB-part-of-speech annotated dataset of Internet Relay Chat (IRC) room messages from 2006.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.3 IRC: Evaluation on NPSCHAT"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "comparesagainst",
+    "object": "tagger in the same setup",
+    "object_type": "Model",
+    "source_sentence": "We compare to a tagger in the same setup as experiments on this data in Forsyth (2007), training on 90% of the data and testing on 10%; we average results across 10-fold cross-validation.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.3 IRC: Evaluation on NPSCHAT"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "achieves",
+    "object": "93.4% (±0.3%) accuracy",
+    "object_type": "Metric",
+    "source_sentence": "The full tagger model achieved 93.4% (±0.3%) accuracy, significantly improving over the best result they re- port, 90.8% accuracy with a tagger trained on a mix of several POS-annotated corpora.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.3 IRC: Evaluation on NPSCHAT"
+  },
+  {
+    "subject": "Tagger",
+    "predicate": "trainedon",
+    "object": "90% of the data",
+    "object_type": "Training",
+    "source_sentence": "We compare to a tagger in the same setup as experiments on this data in Forsyth (2007), training on 90% of the data and testing on 10%; we average results across 10-fold cross-validation.",
+    "extraction_mode": "fixed",
+    "paper": "N13-1039",
+    "title": "Improved Part-of-Speech Tagging for Online Conversational Text with Word Clusters",
+    "section": "6.3 IRC: Evaluation on NPSCHAT"
+  }
+]

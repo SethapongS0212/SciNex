@@ -1,0 +1,90 @@
+[
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "Datasets",
+    "object_type": "Dataset",
+    "source_sentence": "In our work, we compare the performance of our models when tested on datasets representative of both manual annotation and distant supervision.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "2.1 Sarcasm Detection"
+  },
+  {
+    "subject": "Models",
+    "predicate": "evaluatedon",
+    "object": "two popular tweet datasets",
+    "object_type": "Dataset",
+    "source_sentence": "We test our models on two popular tweet datasets , one labelled manually and the other via distant supervision.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "3 Sarcasm Datasets"
+  },
+  {
+    "subject": "Neural Network",
+    "predicate": "trainedon",
+    "object": "personality detection corpus",
+    "object_type": "Dataset",
+    "source_sentence": "Next, we feed dt to a neural network pre-trained on the personality detection corpus released by Matthews and Gilliland (1999), which contains labels for the Big-Five personality traits.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "4 Contextual Sarcasm Detection Models"
+  },
+  {
+    "subject": "Sequence",
+    "predicate": "uses",
+    "object": "GloVe embeddings",
+    "object_type": "Other",
+    "source_sentence": "Then, we encode each tweet as a sequence of word vectors initialized using GloVe embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "RMSProp optimizer",
+    "object_type": "Other",
+    "source_sentence": "For comparability with SIARN, our baseline , we follow its authors in setting a batch size of 16 for the Riloff dataset , and of 512 for the Ptacek dataset , and in training for 30 epochs using the RMSProp optimizer with a learning rate of 0.001.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "training",
+    "predicate": "uses",
+    "object": "learning rate 0.001",
+    "object_type": "Other",
+    "source_sentence": "For comparability with SIARN, our baseline , we follow its authors in setting a batch size of 16 for the Riloff dataset , and of 512 for the Ptacek dataset , and in training for 30 epochs using the RMSProp optimizer with a learning rate of 0.001.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "5.1 Experimental Setup"
+  },
+  {
+    "subject": "Models",
+    "predicate": "achieves",
+    "object": "higher predictive power",
+    "object_type": "Concept",
+    "source_sentence": "We applied the exclusive models on #Riloff and noticed a considerably higher predictive power than on Riloff.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "5.3 Performance Analysis"
+  },
+  {
+    "subject": "Neural Models",
+    "predicate": "achieves",
+    "object": "state-of-the-art results for distant supervision",
+    "object_type": "Other",
+    "source_sentence": "We suggested several neural models to build user embeddings, achieving state-of-the-art results for distant supervision, but not for manual labelling.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1275",
+    "title": "Exploring Author Context for Detecting Intended vs Perceived Sarcasm",
+    "section": "6 Conclusion"
+  }
+]

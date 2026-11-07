@@ -1,0 +1,123 @@
+[
+  {
+    "subject": "GloVe",
+    "predicate": "uses",
+    "object": "word embedding",
+    "object_type": "Concept",
+    "source_sentence": "Here, vw is the word embedding obtained from GloVe or contextualized word embeddings from ELMo, vp is a randomly initialized and trainable embedding of the part-of-speech tag, and vt corresponds to the timex embedding derived for time expressions (explained in Section 2.1).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "ELMo",
+    "predicate": "uses",
+    "object": "contextualized word embeddings",
+    "object_type": "Concept",
+    "source_sentence": "Here, vw is the word embedding obtained from GloVe or contextualized word embeddings from ELMo, vp is a randomly initialized and trainable embedding of the part-of-speech tag, and vt corresponds to the timex embedding derived for time expressions (explained in Section 2.1).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "BiLSTM",
+    "predicate": "uses",
+    "object": "contextualized embeddings",
+    "object_type": "Concept",
+    "source_sentence": "Contextual Encoding A biLSTM is used to obtain contextualized embeddings hk for each token xk in the two sentences, as shown in Figure 1.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "Dependency Parser",
+    "predicate": "uses",
+    "object": "Stanford Dependency Parser",
+    "object_type": "Other",
+    "source_sentence": "Dependency Encoding We use the Stanford Dependency Parser to extract the dependency paths for both events to their lowest common ancestor.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "Probabilities",
+    "object_type": "Probabilities",
+    "source_sentence": "We apply multiple feedforward layers with ReLU non-linearity, followed by a softmax layer to obtain output probabilities for the four labels before, after, vague and simultaneous,2 denoting the temporal relation between the event pair (e1, e2).",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2 Methodology"
+  },
+  {
+    "subject": "Softmax",
+    "predicate": "produces",
+    "object": "Probabilities",
+    "object_type": "Probabilities",
+    "source_sentence": "This is followed by a softmax layer that produces the output probabilities for the three label classes (before, after and simultaneous), denoting the temporal relation between the two time expressions.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "2.1 Time Embeddings"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "GloVe embeddings",
+    "object_type": "Other",
+    "source_sentence": "We evaluate the models using both GloVe and ELMo embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "3.2.1 Evaluation on MATRES"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "ELMo embeddings",
+    "object_type": "Other",
+    "source_sentence": "We evaluate the models using both GloVe and ELMo embeddings.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "3.2.1 Evaluation on MATRES"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "GloVe embeddings",
+    "object_type": "Other",
+    "source_sentence": "We evaluate the models using both GloVe and ELMo embeddings as input.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "3.2.2 Evaluation on Distant Data"
+  },
+  {
+    "subject": "Models",
+    "predicate": "uses",
+    "object": "ELMo embeddings",
+    "object_type": "Other",
+    "source_sentence": "We evaluate the models using both GloVe and ELMo embeddings as input.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "3.2.2 Evaluation on Distant Data"
+  },
+  {
+    "subject": "Experiments",
+    "predicate": "evaluatedon",
+    "object": "two datasets",
+    "object_type": "Dataset",
+    "source_sentence": "Through experiments on two datasets, we show that incorporating these embeddings in deep temporal models leads to an improvement in the overall temporal classification performance.",
+    "extraction_mode": "fixed",
+    "paper": "P19-1433",
+    "title": "Embedding time expressions for deep temporal ordering models",
+    "section": "4 Conclusion"
+  }
+]
