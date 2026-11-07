@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b707f4e689b -----
+TRIPLE:     (BERT model)  --produces-->  (768-dimensional sentence embedding)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: The BERT model generates 12 layers of embedding vectors with each layer containing a separate 768-dimensional embedding for each word, so we average the word embeddings in BERT's final layer, resulting in a 768-dimensional sentence embedding.
+
+----- triple_id: b2289553d24 -----
+TRIPLE:     (Experiments)  --evaluatedon-->  (AOL query log)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Our experiments on the AOL query log indicate that the proposed temporal and tempo-lexical query embedding method significantly out- perform the baseline word2vec embedding.
+
+----- triple_id: be9e234e2bd -----
+TRIPLE:     (BERT)  --uses-->  (sub-word tokens)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: While BERT uses sub-word tokens to get around out of vocabulary tokens, in the rare instance of encountering an OOV with GloVe, we generate a random word embedding in its stead.
+
+----- triple_id: be953dedae5 -----
+TRIPLE:     (Neural Networks)  --uses-->  (context information)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Beyond treating humor detection as a binary classification task, Bert-ero and Fung (2016a) formulated the recognition to be a sequential labeling task and utilized Recurrent Neural Networks (RNNs) on top of CNN models (serving as feature extractors) to utilize context information among utterances.
+
+----- triple_id: b81994c4767 -----
+TRIPLE:     (Experiments)  --uses-->  (ACE2004)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We conducted extensive experiments using six standard ED datasets , i.e., AIDA-CoNLL, MSNBC, AQUAINT , ACE2004, WNED-WIKI, and WNED-CWEB.
+
+----- triple_id: bc0b7eca81c -----
+TRIPLE:     (LSTM)  --uses-->  (character embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use LSTM-based character embeddings, and experiment with both wide and narrow embedding window.
+
+----- triple_id: b94e9e57a15 -----
+TRIPLE:     (Models)  --uses-->  (Wikipedia)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: All models listed in Table 2 use Wikipedia as training data which partly overlap with the WIKI dataset.
+
+----- triple_id: be61c1d5e63 -----
+TRIPLE:     (Conditional Random Fields)  --uses-->  (POS Tagging)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: (2011) also use conditional random fields for POS tagging, trained on annotated Twitter content.
+
+----- triple_id: b7ace34df14 -----
+TRIPLE:     (Word Vectors)  --trainedon-->  (AOL query log)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: we used the skip-gram model to train the word vectors using the entire AOL query log comprising over 6M queries.
+
+----- triple_id: bdcd114cbc6 -----
+TRIPLE:     (word2vec)  --uses-->  (normalization)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Most relevant to our work is the paper by van der Goot et al. (2017), where they use Word2vec to find potential normalization candidates for non-canonical words on the lexical level, and rank them using a classifier.
+
+----- triple_id: b06f75cab83 -----
+TRIPLE:     (Back Translation)  --achieves-->  (46.5%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: the back translation on the training environments only achieves 46.5%.
+
+----- triple_id: b0985e19fa0 -----
+TRIPLE:     (NMT)  --addresses-->  (over-generation)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In this paper, after giving an overview of our NMT pipeline, we will focus on how we address the following issues in order to better prepare NMT engines for real-world deployment: 1) data cleaning, 2) over- generation , 3) improving robustness when translating entities, and 4) domain adap- tation.
+
+----- triple_id: b8f05b9033a -----
+TRIPLE:     (Language Model)  --uses-->  (lexical features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: lexical features that need a language model , handled through lexicalized feature language models
+
+----- triple_id: b8a17f19cb6 -----
+TRIPLE:     (retrieval)  --uses-->  (transcribed query)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The notes of the query is transcribed using our note transcrip- tion method and is then passed onto the retrieval system , which uses the transcribed query and the melody database, which refers to the entire list of pre-transcribed melodies or songs that can be recognized by our system , to give a ranked list of melodies that match the input query.
+
+----- triple_id: be23d7b002e -----
+TRIPLE:     (SVM)  --uses-->  (text classification features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In Section 5, we present a competitive SVM-based baseline that uses a number of common text classification features.
+
+----- triple_id: b54f368ea26 -----
+TRIPLE:     (Automatic evaluation)  --uses-->  (BLEU)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For table-to-text generation , automatic evaluation has largely relied on BLEU and ROUGE.
+
+----- triple_id: b8c37a318c1 -----
+TRIPLE:     (cross entropy)  --uses-->  (network)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We train this network with the cross entropy loss.
+
+----- triple_id: be24010d36c -----
+TRIPLE:     (ADAM)  --uses-->  (parameters)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use Adam to optimize parameters and we stop the training when we find the best result in the validation set.
+
+----- triple_id: bb6e85ab5bd -----
+TRIPLE:     (Baseline Models)  --trainedon-->  (SQuAD 1.1)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: Our QAGen and QA- Gen2S models outperform by wide margins the baseline models trained on SQuAD 1.1 only, as well as unsupersived domain adaptation approaches (UDA) suggested by Nishida et al. (2019) and Lee et al.
+
+----- triple_id: b679891b52d -----
+TRIPLE:     (Clustering)  --uses-->  (released tagger)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use the largest clustering (56 million tweets and 1,000 clusters) as the default for the released tagger.
+
+----- triple_id: bb991b91f15 -----
+TRIPLE:     (Back Translation)  --uses-->  (environmental dropout)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The model is then fine-tuned by back translation with environmental dropout.
+
+----- triple_id: befe8b9e2aa -----
+TRIPLE:     (word2vec)  --uses-->  (embedding spaces)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use the Word2vec framework in the Gensim implementation (Rehùrek and Sojka, 2010) to generate the embedding spaces.
+
+----- triple_id: b7b2456e1ed -----
+TRIPLE:     (RNN)  --uses-->  (bi-directional RNN)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: our encoder uses a bi-directional RNN to encode the input sentence.
+
+----- triple_id: bca219c2763 -----
+TRIPLE:     (GloVe)  --produces-->  (word embedding)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: Here, vw is the word embedding obtained from GloVe or contextualized word embeddings from ELMo
+
+----- triple_id: b9c1a26edce -----
+TRIPLE:     (Filtering)  --achieves-->  (improvements in the target domain downstream RC models)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: We argue that using LM filtering, as discussed in section 2.4, results in improvements in the target domain downstream RC models by enhancing the quality of the generated (q, a) pairs.

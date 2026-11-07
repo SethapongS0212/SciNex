@@ -1,0 +1,72 @@
+
+Grade the following 14 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b0893ae63bf -----
+TRIPLE:     (Algorithm)  --achieves-->  (boost of performance)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: using Algorithm 2 for training as opposed to Algorithm 1 results in a boost of performance.
+
+----- triple_id: ba3f39d5e18 -----
+TRIPLE:     (ADAM)  --mentions-->  (breaststroke swimmer)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: Reference adam whitehead ( born 28 march 1980 ) is a former breaststroke swimmer from coventry, england, who competed at the 2000 summer olympics in sydney, australia.
+
+----- triple_id: b0a567c5b57 -----
+TRIPLE:     (transformation)  --produces-->  (multimodal embedding space)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: The transformation matrix W ⊺transforms the visual and acoustic features into the multimodal embedding space.
+
+----- triple_id: b4917798b11 -----
+TRIPLE:     (Features)  --uses-->  (affect lexicons)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Features were drawn both from the training data as well as from external resources such as large tweet corpora and affect lexicons.
+
+----- triple_id: bf78640fc68 -----
+TRIPLE:     (Multi-task Learning)  --addresses-->  (generate keyphrases word by word with external knowledge)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We propose a multi-task learning framework which simultaneously learns to extract keyphrases from the source text and generate keyphrases word by word with external knowledge.
+
+----- triple_id: b6db1a31e6e -----
+TRIPLE:     (Experiments)  --evaluatedon-->  (two datasets)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: Through experiments on two datasets, we show that incorporating these embeddings in deep temporal models leads to an improvement in the overall temporal classification performance.
+
+----- triple_id: bfb88a360bc -----
+TRIPLE:     (sampling)  --uses-->  (question tokens)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: During sampling, the question tokens are generated , which are followed by answer tokens.
+
+----- triple_id: b4062b93fad -----
+TRIPLE:     (NMT)  --uses-->  (BPE)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Subword translation is an approach used in NMT to tackle out-of-vocabulary (OOV) problem using byte-pair encoding (BPE) or other similar segmentation techniques.
+
+----- triple_id: b1415510da8 -----
+TRIPLE:     (Back Translation)  --achieves-->  (46.5%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: the back translation on the training environments only achieves 46.5%.
+
+----- triple_id: b42dfab2f04 -----
+TRIPLE:     (LSTM)  --uses-->  (ResNet-encoded image Vt)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at.
+
+----- triple_id: bc2b38e1f5d -----
+TRIPLE:     (Baseline Models)  --comparesagainst-->  (Models)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Across all benchmarks , unimodal baselines out- perform baseline models used in or derived from the original works.
+
+----- triple_id: b37c7058761 -----
+TRIPLE:     (Sentiment Prediction)  --achieves-->  (state-of-the-art performance)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Our proposed approach achieves state-of-the-art performance with the increments of 2.0 and 4.1 points over the existing systems for the tasks of sentiment prediction of financial microblog and news data.
+
+----- triple_id: be17e37eecd -----
+TRIPLE:     (training)  --uses-->  (humming data from the IOACAS corpus)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: For training note models, we have used humming data from the IOACAS corpus 8 and TCS corpus 9 with additional humming data collected by us.
+
+----- triple_id: b01d6af9522 -----
+TRIPLE:     (retrieval)  --produces-->  (ranked list of top 20 songs)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: The retrieval method is used to generate a ranked list of top 20 songs most similar to the query.

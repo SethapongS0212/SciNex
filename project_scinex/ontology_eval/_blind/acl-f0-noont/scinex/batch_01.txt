@@ -1,0 +1,165 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bb4d8ab206b -----
+TRIPLE:     (semi-Markov Conditional Random Fields)  --uses-->  (morphological segmentation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We apply semi-Markov Conditional Random Fields (S-CRFs) to the problem of morphological segmentation.
+
+----- triple_id: b5e670cf36d -----
+TRIPLE:     (GloVe)  --uses-->  (SeerNet)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Some of the word embeddings models used were Glove (SeerNet, UWa- terloo, YZU NLP), Word2Vec (SeerNet), and Word Vector Emoji Vectors (SeerNet).
+
+----- triple_id: b3c6e53363c -----
+TRIPLE:     (Back Translation)  --uses-->  (environmental dropout)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The model is then fine-tuned by back translation with environmental dropout.
+
+----- triple_id: ba1e42af3e6 -----
+TRIPLE:     (Multi-task Learning)  --addresses-->  (extract keyphrases from the source text)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We propose a multi-task learning framework which simultaneously learns to extract keyphrases from the source text and generate keyphrases word by word with external knowledge.
+
+----- triple_id: b96b24137e2 -----
+TRIPLE:     (GloVe)  --produces-->  (word embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: GloVe word embeddings , Facet (iMotions, 2017) and COVAREP are extracted for the language, visual and acoustic modalities respectively1.
+
+----- triple_id: bfa2fe313e6 -----
+TRIPLE:     (Neural Architectures)  --uses-->  (natural language)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Modern approaches use neural architectures to map natural language to the (simulated) world and execute actions (Paxton et al., 2019; Chen et al., 2018; Nguyen et al., 2018; Blukis et al., 2018; Fried et al., 2018; Mei et al., 2016).
+
+----- triple_id: b171f705423 -----
+TRIPLE:     (Baseline Models)  --trainedon-->  (SQuAD 1.1)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: Our QAGen and QA- Gen2S models outperform by wide margins the baseline models trained on SQuAD 1.1 only, as well as unsupersived domain adaptation approaches (UDA) suggested by Nishida et al. (2019) and Lee et al.
+
+----- triple_id: bd43052e7fa -----
+TRIPLE:     (BERT Language Model)  --uses-->  (usage representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence predic- tion, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).
+
+----- triple_id: b17ab4d97f8 -----
+TRIPLE:     (LSTM)  --uses-->  (previous action at−1)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at.
+
+----- triple_id: bd6c5f3efe4 -----
+TRIPLE:     (Generative Models)  --trainedon-->  (SQuAD 1.1 dataset)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: SQuAD 1.1 dataset is used to train the generative models as well as in- domain supervised data for the downstream RC task.
+
+----- triple_id: b8d5d583783 -----
+TRIPLE:     (LSTM)  --uses-->  (morphological tagging)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use an LSTM-based architecture for morphological tagging and language modeling for the various morphological features in EGY.
+
+----- triple_id: be76a0425be -----
+TRIPLE:     (RNN)  --uses-->  (LSTM)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: This RNN has two LSTM layers and two linear layers; further, we use rectified linear unit (ReLU) as the activation function.
+
+----- triple_id: b002068b62e -----
+TRIPLE:     (Tagger)  --achievesresult-->  (88.3% accuracy)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: Ritter et al.'s best tagger, trained on a concatenation of PTB, IRC, and Twitter, achieved 88.3% (Table 4).
+
+----- triple_id: b1028dcb297 -----
+TRIPLE:     (Novel Method)  --uses-->  (pre-trained neural language model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We present a novel method that (1) exploits a pre-trained neural language model to obtain contextualised representations for every occurrence of a word of interest, (2) clusters these representations into usage types, and (3) measures change along time.
+
+----- triple_id: b77244f714a -----
+TRIPLE:     (Back Translation)  --uses-->  (Dropout)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The model is then fine-tuned by back translation with environmental dropout.
+
+----- triple_id: bfc99a3e62e -----
+TRIPLE:     (word2vec)  --trainedon-->  (Wiki corpus)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: We obtained these scores by training a word2vec model on the Wiki corpus.
+
+----- triple_id: b664b6443a6 -----
+TRIPLE:     (LSTM)  --uses-->  (ResNet-encoded image Vt)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at (seen in Figure 2).
+
+----- triple_id: bed04611a42 -----
+TRIPLE:     (Precision)  --evaluates-->  (0.582)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  Links an evaluation metric to the experimental result it quantitatively assesses
+SOURCE SENTENCE: On the TED data, we also observed that the CNN model helps to increase precision (from 0.515 to 0.582)
+
+----- triple_id: b194e754a60 -----
+TRIPLE:     (Distant Supervision)  --achieves-->  (state-of-the-art results)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We suggested several neural models to build user embeddings, achieving state-of-the-art results for distant supervision, but not for manual labelling.
+
+----- triple_id: b844d3f979a -----
+TRIPLE:     (BERT)  --achieves-->  (out-perform random baselines across all tasks)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The vanilla BERT vectors out- perform random baselines across all tasks, includ- ing the BS task.
+
+----- triple_id: be0cf902d7a -----
+TRIPLE:     (CRF)  --comparesagainst-->  (S-CRF Inflectional Increments)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: First, we compare against the CRF model of Ruokolainen et al. (2013) and, second, we compare against the S-CRF Inflectional Increments.
+
+----- triple_id: bd744cffd8a -----
+TRIPLE:     (Softmax)  --uses-->  (navigable viewpoint feature)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The probability of moving to the k-th navigable viewpoint pt(at,k) is calculated as softmax of the alignment between the navigable viewpoint feature gt,k and the instruction-aware hidden output ˜ht.
+
+----- triple_id: b029166f759 -----
+TRIPLE:     (Neural Language Models)  --uses-->  (word-level embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Our architecture, however, uses neural language models for modeling lemmas and dia- critized forms, and utilizes the word-level embed- dings in various configurations to combat noise , as explained throughout the rest of the paper.
+
+----- triple_id: b7bebf40688 -----
+TRIPLE:     (Experiments)  --addresses-->  (multimodal speaker traits recognition)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: To evaluate the generalization of our models, we perform experiments on multimodal speaker traits recognition and multimodal sentiment analysis.
+
+----- triple_id: b98f50fc752 -----
+TRIPLE:     (BART)  --trainedon-->  (target mentions)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: (2021) addressed ED by training BART to generate referent entity titles of target mentions in an autoregressive manner.

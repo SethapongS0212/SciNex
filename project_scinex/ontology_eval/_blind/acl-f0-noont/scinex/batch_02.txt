@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b106667b0de -----
+TRIPLE:     (LSTM)  --uses-->  (language modeling)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use an LSTM-based architecture for morphological tagging and language modeling for the various morphological features in EGY.
+
+----- triple_id: b39f082f8c7 -----
+TRIPLE:     (BERT)  --uses-->  (contextualised representation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We collect a contextualised representation for each occurrence of these words in the second century of COHA, using BERT as described in Section 3.2.
+
+----- triple_id: bc9e67a5eda -----
+TRIPLE:     (Enhanced Transformer Model)  --achieves-->  (content ordering metics)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: our enhanced transformer model outperforms current state-of-the-art system on BLEU, content selection precision and content ordering metics.
+
+----- triple_id: b717a43a3e9 -----
+TRIPLE:     (Word Embeddings)  --uses-->  (negative sampling skip-gram model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We calculate individual word embeddings using the negative sampling skip-gram model implemented in Word2Vec.
+
+----- triple_id: b23a3ab920b -----
+TRIPLE:     (PubMed)  --uses-->  (PubMed abstracts)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: we collected PubMed abstracts to use as target domain unlabeled passages.
+
+----- triple_id: b7d52f75eee -----
+TRIPLE:     (Adaptor Grammars)  --addresses-->  (unsupervised morphological segmentation of Malayalam)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Kumar et al. (2015) applied adaptor grammars to unsupervised morphological segmentation of Kannada, Malayalam and Tamil
+
+----- triple_id: b9796f12543 -----
+TRIPLE:     (Models)  --trainedon-->  (WMT15 parallel training data)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: We train our models for two directions, namely English-German and German-English, both of which use the WMT15 parallel training data.
+
+----- triple_id: bb8962e4832 -----
+TRIPLE:     (Bi-LSTM)  --addresses-->  (morphological feature tagging tasks)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We use Bi-LSTM-based taggers for the morphological feature tagging tasks.
+
+----- triple_id: bae2ca4b4ac -----
+TRIPLE:     (Experiments)  --addresses-->  (multimodal sentiment analysis)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: To evaluate the generalization of our models, we perform experiments on multimodal speaker traits recognition and multimodal sentiment analysis.
+
+----- triple_id: bb49cef7c98 -----
+TRIPLE:     (Word Embedding)  --uses-->  (lexical context)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Word embedding algorithms, such as 'word2vec', make use of the lexical context in learning vector representations of words.
+
+----- triple_id: bc4fae89c10 -----
+TRIPLE:     (Multi-task Learning)  --addresses-->  (keyphrase generation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: a new multi-task learning framework that leverages an extractive model and external knowledge to improve keyphrase generation
+
+----- triple_id: bca7db90025 -----
+TRIPLE:     (BERT)  --uses-->  (norm)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Furthermore, BERT's ability to model incongruity via the norm could essentially be frequency-based, similar to how some word embeddings encode word frequency in the norm.
+
+----- triple_id: b23fc3a70cd -----
+TRIPLE:     (Grammar)  --addresses-->  (noun phrase inflection)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The grammar handles noun phrase inflection, fronting of noun phrases, and verb inflection.
+
+----- triple_id: bcaee39fb65 -----
+TRIPLE:     (BERT)  --produces-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: In our experiments we examine BERT and GloVe embeddings.
+
+----- triple_id: be80511d677 -----
+TRIPLE:     (Experiments)  --addresses-->  (Ranking)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We conducted experiments to verify the performance of ranking given candidate utterances and given contexts.
+
+----- triple_id: bbcf3226718 -----
+TRIPLE:     (Neural Network)  --uses-->  (classifier)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: In our experiments, we use a fully connected neural network for our classifier.
+
+----- triple_id: b6cc5bc88c7 -----
+TRIPLE:     (ResNet)  --trainedon-->  (ImageNet)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: We use ResNet-152 pretrained on the ImageNet to extract the 2048-dimensional image feature.
+
+----- triple_id: b4ddf703d02 -----
+TRIPLE:     (Filtering)  --achieves-->  (100% Hit-1 coverage)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The filtering ensures that the WB-filter dataset achieves 100% Hit-1 coverage.
+
+----- triple_id: b23042ba34f -----
+TRIPLE:     (classifier)  --uses-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Given the optimal embeddings ms, we can now train a classifier from ms to labels y for multi - modal prediction.
+
+----- triple_id: bc0cd527c35 -----
+TRIPLE:     (LSTM)  --uses-->  (character sequence)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use convolutional neural networks (CNN) and LSTM-based architectures for the character embedding vectors vci, both applied to the character sequence within each word separately.
+
+----- triple_id: bd120c5338a -----
+TRIPLE:     (AdaGrad)  --uses-->  (optimizer)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We implemented other models and baselines in PyTorch and used the AdaGrad optimizer.
+
+----- triple_id: bbd70e71797 -----
+TRIPLE:     (Word Vectors)  --uses-->  (word2vec skip-gram algorithm)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The word vectors used in learning the parameter matrix θ are obtained by the word2vec skip-gram algorithm.
+
+----- triple_id: bbc3f4def7b -----
+TRIPLE:     (Adaptor Grammars)  --addresses-->  (unsupervised morphological segmentation of Kannada)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: More recently, Kumar et al. (2015) applied adaptor grammars to unsupervised morphological segmentation of Kannada, Malayalam and Tamil
+
+----- triple_id: b57b576aa04 -----
+TRIPLE:     (BERT Language Model)  --trainedon-->  (BooksCorpus)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence predic- tion, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).
+
+----- triple_id: be4fdb6be1b -----
+TRIPLE:     (NMT)  --addresses-->  (domain adaptation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: In this paper, after giving an overview of our NMT pipeline, we will focus on how we address the following issues in order to better prepare NMT engines for real-world deployment: 1) data cleaning, 2) over-generation , 3) improving robust- ness when translating entities, and 4) domain adap- tation.

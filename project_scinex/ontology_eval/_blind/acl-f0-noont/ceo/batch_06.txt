@@ -1,0 +1,117 @@
+
+Grade the following 23 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bac576e265c -----
+TRIPLE:     (LSTM)  --uses-->  (previous action at−1)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at (seen in Figure 2).
+
+----- triple_id: b035e0d864f -----
+TRIPLE:     (LSTM)  --uses-->  (new action)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: This baseline model is trained and evaluated with the same inputs as the full model, but does not pass control to a lower-level controller, instead predicting a new action using the planner LSTM at each timestep.
+
+----- triple_id: b3356b76788 -----
+TRIPLE:     (BERT)  --uses-->  (WordPiece tokenizer)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we tokenize the document text using the BERT's wordpiece tokenizer
+
+----- triple_id: b27cc90f0cd -----
+TRIPLE:     (Examples)  --uses-->  (QA pairs)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Tables 10 and 12 in the Appendix show examples of QA pairs and their LM scores.
+
+----- triple_id: b5d9162fc04 -----
+TRIPLE:     (Keyphrase Extraction)  --uses-->  (neural sequence labeling model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For keyphrase extraction , we adopt a neural sequence labeling model to output the likelihood of each word in the source text to be a keyphrase word (or the importance score of each word).
+
+----- triple_id: bba68a3e49f -----
+TRIPLE:     (BLEU)  --uses-->  (Moses)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: BLEU and TER scores are computed with tokenized lower-cased output and references using the "evaluater" binary from Moses.
+
+----- triple_id: bc91cf4ba78 -----
+TRIPLE:     (Word Vectors)  --achieves-->  (effective task clusters)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: This suggests that optimally trained word vectors can produce effective task clusters without the use of external collections in contextualizing the queries.
+
+----- triple_id: bee5a1562d0 -----
+TRIPLE:     (RNN)  --uses-->  (LSTM)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Another RNN has two LSTM layers
+
+----- triple_id: b3e2ef43534 -----
+TRIPLE:     (Experiments)  --uses-->  (MSNBC)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We conducted extensive experiments using six standard ED datasets , i.e., AIDA-CoNLL, MSNBC, AQUAINT , ACE2004, WNED-WIKI, and WNED-CWEB.
+
+----- triple_id: b14a88af41d -----
+TRIPLE:     (BiLSTM)  --produces-->  (time embeddings h1 and h2)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: We obtain time embeddings h1 and h2 for timex t1 and t2 by averaging the outputs of biLSTM layer.
+
+----- triple_id: b06ba41f7d2 -----
+TRIPLE:     (retrieval)  --uses-->  (Jaccard similarities)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The retrieval is based on the Jaccard similarities of the non-stop-word sets between x and the corpus documents.
+
+----- triple_id: b4926514988 -----
+TRIPLE:     (Hidden Markov Model)  --uses-->  (Deep Neural Network)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For this task, we have collected humming data and transcribed them in order to train a Deep Neural Network (DNN) based Hidden Markov Model (HMM) for note transcription.
+
+----- triple_id: bf33fe12b65 -----
+TRIPLE:     (Regression)  --uses-->  (Mean Absolute Error (MAE))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For regression, we report Mean Absolute Error (MAE) and Pearson's correlation (r).
+
+----- triple_id: b6dfc382e90 -----
+TRIPLE:     (BART)  --addresses-->  (summarization)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: BART introduces a denoising autoencoder for pre-training sequence to sequence tasks including summarization.
+
+----- triple_id: becc573632e -----
+TRIPLE:     (embeddings)  --uses-->  (dependency relations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: encoding selectional preference information into embeddings can be conducted by modeling word association patterns under different dependency relations.
+
+----- triple_id: bfc15630376 -----
+TRIPLE:     (Encoder-Decoder Model)  --uses-->  (input utterances)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Dong and Lapata (2016) presented a method based on an attention- enhanced and encoder-decoder model, which en- codes input utterances and generates their logical forms.
+
+----- triple_id: b44b75a12f8 -----
+TRIPLE:     (MWE)  --comparesagainst-->  (ELMo)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: It is observed that that MWE outperforms ELMo and achieves comparable results with BERT with smaller embedding dimension and much less training complexities.
+
+----- triple_id: b0bf2a41bda -----
+TRIPLE:     (Regression Model)  --uses-->  (Word Embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Each regression model is trained on a representation formed by the affect lexicon features (including those provided by AffectiveTweets) and word embeddings.
+
+----- triple_id: b456e34c6d4 -----
+TRIPLE:     (Boxer)  --addresses-->  (semantic analysis)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Among other tools, the most important are the C&C parser for syntactic analysis, and Boxer for semantic analysis.
+
+----- triple_id: bb113d20dfb -----
+TRIPLE:     (LSTM)  --achieves-->  (outperform CNN-based models for EGY)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: We showed that LSTM-based character embeddings outperform CNN-based models for EGY.
+
+----- triple_id: b2dfa8ca50e -----
+TRIPLE:     (Experiments)  --uses-->  (AIDA-CoNLL)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We conducted extensive experiments using six standard ED datasets , i.e., AIDA-CoNLL, MSNBC, AQUAINT , ACE2004, WNED-WIKI, and WNED-CWEB.
+
+----- triple_id: bd070517a09 -----
+TRIPLE:     (Models)  --uses-->  (GloVe)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We evaluate the models using both GloVe and ELMo embeddings as input.
+
+----- triple_id: b04f4c4a660 -----
+TRIPLE:     (Features)  --uses-->  (affect lexicons)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Features were drawn both from the training data as well as from external resources such as large tweet corpora and affect lexicons.

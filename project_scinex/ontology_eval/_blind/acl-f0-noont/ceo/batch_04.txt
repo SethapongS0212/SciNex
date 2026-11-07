@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b4bb6658162 -----
+TRIPLE:     (evaluate)  --evaluatedon-->  (two event temporal ordering datasets)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: We evaluate on two event temporal ordering datasets, one real and one artificially constructed.
+
+----- triple_id: bbf593aea62 -----
+TRIPLE:     (Models)  --uses-->  (structured corpora)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: This opens the door to the possibility of using our proposed models in structured corpora without any extra effort.
+
+----- triple_id: bca8a403b53 -----
+TRIPLE:     (MWE)  --comparesagainst-->  (BERT)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: It is observed that that MWE outperforms ELMo and achieves comparable results with BERT with smaller embedding dimension and much less training complexities.
+
+----- triple_id: b8b125b8053 -----
+TRIPLE:     (training)  --uses-->  (stochastic gradient descent)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The training is performed using stochastic gradient descent with mini-batches.
+
+----- triple_id: b9f0de4c4ce -----
+TRIPLE:     (GRU)  --uses-->  (input representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Besides, we learn the word embeddings and use two bi-directional GRU to obtain the input representations.
+
+----- triple_id: bec5c25200d -----
+TRIPLE:     (BERT)  --uses-->  (norm)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Furthermore, BERT's ability to model incongruity via the norm could essentially be frequency-based, similar to how some word embeddings encode word frequency in the norm.
+
+----- triple_id: bd6d4b7bf94 -----
+TRIPLE:     (LSTM)  --uses-->  (language modeling)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use an LSTM-based architecture for morphological tagging and language modeling for the various morphological features in EGY.
+
+----- triple_id: b3a6dba6325 -----
+TRIPLE:     (supervised)  --uses-->  (mixture of imitation and reinforcement learning)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The agent model is first trained with supervised learning via the mixture of imitation and reinforcement learning.
+
+----- triple_id: b05942f3214 -----
+TRIPLE:     (cross entropy)  --uses-->  (learning effect)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For each (wh, wt), we use cross entropy as the loss function E = −log σ(vr h,wh ⊤· vr t,wt) −log σ(−vr h,wh ⊤· vr t,w′ t) to measure the learning effect for Eq. (2), with σ denoting the sigmoid function.
+
+----- triple_id: b744e95543f -----
+TRIPLE:     (Baseline Models)  --achieves-->  (10 times faster during inference)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Our proposed baseline models 1) achieve competitive performance on supervised multimodal learning, 2) improve upon classical deep autoencoders for semi- supervised multimodal learning, and 3) are up to 10 times faster during inference.
+
+----- triple_id: bf329772341 -----
+TRIPLE:     (Word Embeddings)  --uses-->  (in-house EGY monolingual corpus)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We also use an in-house EGY monolingual corpus of about 410 million words, collected from online commentaries of blogs and social media platforms, to pre-train the word embeddings.
+
+----- triple_id: b955a47eed7 -----
+TRIPLE:     (User Embeddings)  --achieves-->  (0.922 F1 on Ptacek dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: User embeddings show remarkable predictive power on the Ptacek dataset.
+
+----- triple_id: bcb4d843bc4 -----
+TRIPLE:     (Experiments)  --achieves-->  (significant improvements in domain adaptation of RC models)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Our experiments showed that by proper decoding, significant improvements in domain adaptation of RC models can be achieved.
+
+----- triple_id: b2b154abb6f -----
+TRIPLE:     (Conditional Random Fields)  --uses-->  (lexical features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: ARK tagger uses conditional random fields with word clusters as features, obtained via Brown clustering , along with various lexical features.
+
+----- triple_id: b56e1635dbc -----
+TRIPLE:     (Neural Network)  --uses-->  (classifier)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In our experiments, we use a fully connected neural network for our classifier.
+
+----- triple_id: b68028e3054 -----
+TRIPLE:     (BERT model)  --uses-->  (pytorch_pretrained_bert library)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we used the bert-base-uncased BERT model from the pytorch_pretrained_bert library
+
+----- triple_id: bb166559398 -----
+TRIPLE:     (Seq2seq)  --uses-->  (copy mechanism)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: based on Seq2Seq learning with copy mechanism
+
+----- triple_id: bc1818ba471 -----
+TRIPLE:     (BERT)  --uses-->  (Word Representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: BERT's word representations and similarity scores (as well as our clustering methods which build on them) correlate, to a substantial extent, with human similarity judgements.
+
+----- triple_id: b98e7fd4fed -----
+TRIPLE:     (Models)  --evaluatedon-->  (two popular tweet datasets)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: We test our models on two popular tweet datasets , one labelled manually and the other via distant supervision.
+
+----- triple_id: b6830c9f9e6 -----
+TRIPLE:     (Algorithm)  --uses-->  (training)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: using Algorithm 2 for training as opposed to Algorithm 1 results in a boost of performance.
+
+----- triple_id: b8102105aa7 -----
+TRIPLE:     (Deep Learning Method)  --uses-->  (humming data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: This deep learning method allows us to learn the patterns present in the humming data and create a model that can detect the notes in a humming query.
+
+----- triple_id: ba8221831c1 -----
+TRIPLE:     (GRU)  --achieves-->  (0.721 cosine similarity on microblog dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: In microblog dataset we obtain the best cosine similarities of 0.724, 0.727, 0.721 and 0.765 for CNN, LSTM, GRU and feature based systems, respectively.
+
+----- triple_id: bf639771884 -----
+TRIPLE:     (Tagger)  --achieves-->  (96.69% accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The tagger correctly assigned 96.69% of the tags for the evaluation set.
+
+----- triple_id: bffba40ef02 -----
+TRIPLE:     (BERT)  --uses-->  (Similarity)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: BERT's word representations and similarity scores (as well as our clustering methods which build on them) correlate, to a substantial extent, with human similarity judgements.
+
+----- triple_id: b5709a416d7 -----
+TRIPLE:     (transformation)  --achieves-->  (improvement in task extraction effectiveness)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: results improve with the application of transformation based word vector embedding of the query terms.

@@ -202,6 +202,19 @@ its own branch, to merge once no `ft_train_qlora.py` call can happen for this ru
 - Standing rule repeated by the user: update the md docs after every meaningful step and push
   when important (also in `Claude.md` and the handoff).
 
+### 38.9 Why the KGs answer so few questions; blind check of the noont student (2026-11-07)
+- **`qa_gap_analysis.py`** (new, deterministic; `qa_eval/acl-f0/gap_analysis.json`): of the 1,222
+  questions, **852 (69.7%) mention an entity of the paper's fixed list**, so the list restriction
+  is not the main limit. Per KG (CEO): question paragraph covered by the KG — teacher 27.3%,
+  me50 25.4%, me30 45.0%, untuned base 76.8%; **gold answer present in a graph node — teacher
+  19.1%, me50 16.2%, me30 24.5%, base 45.3%**. Accuracy when the answer is in the graph: teacher
+  40.1 (covered paragraph) / 11.5 (elsewhere), me30 39.6 / 15.7, base 29.5 / 15.1; when it is
+  not: 0.3–2.0. **The KG answers only what it contains; coverage of paper facts is the
+  bottleneck, and the finetuned/teacher triples convert better (≈40%) than the untuned ones (≈30%).**
+- **Blind round `acl-f0-noont`** (seed 31; noont-me50, ontology-in-prompt me50, teacher; CEO 148
+  items, scinex 139): C4 CEO 58.0 / 49.0 / 54.0, scinex 61.0 / 63.0 / 57.0 — a tie. `results.md`
+  Table 19b. The ontology-free student is as correct as both.
+
 ## Session 37 — Linux box with 2× RTX 5090; ⛔ finetuning corpus switched to the ACL ANTHOLOGY papers + FIXED extractor; gpt-oss-20b teacher run launched (2026-10-26/27)
 
 > User: *"download the github https://github.com/SethapongS0212/SciNex to envsam and overwrite it over

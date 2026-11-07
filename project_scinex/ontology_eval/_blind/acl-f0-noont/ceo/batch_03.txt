@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b23148d7ccb -----
+TRIPLE:     (Encoder-Decoder Model)  --uses-->  (attention)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Dong and Lapata (2016) presented a method based on an attention- enhanced and encoder-decoder model, which encodes input utterances and generates their logical forms.
+
+----- triple_id: bd8c557fa93 -----
+TRIPLE:     (Machine Learning Methods)  --uses-->  (recommendation system)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Therefore we are interested in using machine learning methods to build a recommendation system that can provide good similar artist recommendation even for relatively unknown artists.
+
+----- triple_id: ba4d7f223c5 -----
+TRIPLE:     (RNN)  --produces-->  (Features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: The proposed using limited context and MSE follow this, suggesting that utterance encoding by RNN is effective to extract features for ranking.
+
+----- triple_id: b2f390f5d10 -----
+TRIPLE:     (fine-tuning)  --uses-->  (preprocessing)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use the same preprocessing for downstream fine-tuning.
+
+----- triple_id: bbddfc78b6e -----
+TRIPLE:     (Transformer)  --achieves-->  (state-of-the-art results on the story cloze test)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: We also use a Fine-tuned Transformer LM model , which was shown to perform competitively on a diverse set of NLP tasks, achieving state-of-the-art results on the story cloze test.
+
+----- triple_id: b775d457427 -----
+TRIPLE:     (Baseline Models)  --achieves-->  (supervised multimodal learning)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Our proposed baseline models 1) achieve competitive performance on supervised multimodal learning, 2) improve upon classical deep autoencoders for semi- supervised multimodal learning, and 3) are up to 10 times faster during inference.
+
+----- triple_id: bc0fb76b055 -----
+TRIPLE:     (Beam Search)  --produces-->  (generated keyphrase candidates)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: The generated keyphrase candidates directly come from the beam search process of the decoder.
+
+----- triple_id: b527c8b107e -----
+TRIPLE:     (embeddings)  --uses-->  (biLSTM)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We obtain time embeddings h1 and h2 for timex t1 and t2 by averaging the outputs of biLSTM layer.
+
+----- triple_id: b1a09b907c3 -----
+TRIPLE:     (Grammar)  --addresses-->  (noun phrase inflection)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The grammar handles noun phrase inflection, fronting of noun phrases, and verb inflection.
+
+----- triple_id: b6c16c1e338 -----
+TRIPLE:     (Back Translation)  --uses-->  (Dropout)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For submitting to the leaderboard, we simply train our agent via back translation with environmental dropout on test unseen environments (see Sec.7.2).
+
+----- triple_id: bf9a8acfeb9 -----
+TRIPLE:     (BART)  --addresses-->  (ED)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: (2021) addressed ED by training BART to generate referent entity titles of target mentions in an autoregressive manner.
+
+----- triple_id: bd9e4e15ce1 -----
+TRIPLE:     (word2vec)  --uses-->  (document boundaries)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The word2vec algorithm respects document boundaries by not extending the context vector across them.
+
+----- triple_id: b90dc12359b -----
+TRIPLE:     (Bi-LSTM)  --uses-->  (two hidden layers of size 800)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For the Bi-LSTM tagging architecture we use two hidden layers of size 800.
+
+----- triple_id: b8fc4304afd -----
+TRIPLE:     (Language Model)  --trainedon-->  (target domains)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: (2019) showed improvements by fine-tuning the language model on the target domains.
+
+----- triple_id: ba3ac3a97e6 -----
+TRIPLE:     (training)  --uses-->  (TCS corpus)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For training note models, we have used humming data from the IOACAS corpus 8 and TCS corpus 9 with additional humming data collected by us.
+
+----- triple_id: bdb3ed619b0 -----
+TRIPLE:     (Novel Method)  --uses-->  (usage types)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We present a novel method that (1) exploits a pre-trained neural language model to obtain contextualised representations for every occurrence of a word of interest, (2) clusters these representations into usage types , and (3) measures change along time.
+
+----- triple_id: b9f23fc81b9 -----
+TRIPLE:     (Random Forest)  --uses-->  (human-engineered features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: a conventional classifier (e.g., Random Forest) based on human-engineered features vs. an end-to-end CNN method, which relies on its inherent representation learning.
+
+----- triple_id: b8979de5a09 -----
+TRIPLE:     (Evaluation)  --uses-->  (Annotation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We create a new evaluation dataset, following the annotation approach of Erk et al. (2009, 2013) for rating pairs of usages of the same word.
+
+----- triple_id: baa48b706dc -----
+TRIPLE:     (RNN)  --uses-->  (sequence labeling model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: (2017) proposed a novel tagging schema and employed a Recurrent Neural Networks (RNN) based sequence labeling model to jointly extract entities and relations.
+
+----- triple_id: b910d453cb7 -----
+TRIPLE:     (Novel Method)  --uses-->  (pre-trained neural language model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We present a novel method that (1) exploits a pre-trained neural language model to obtain contextualised representations for every occurrence of a word of interest, (2) clusters these representations into usage types, and (3) measures change along time.
+
+----- triple_id: b845a30dabc -----
+TRIPLE:     (ELMo)  --uses-->  (contextualized word embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Here, vw is the word embedding obtained from GloVe or contextualized word embeddings from ELMo
+
+----- triple_id: b2689ba2cef -----
+TRIPLE:     (training)  --uses-->  (Synthetic Data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Each experiment was performed by training the RC model on the synthetic data generated on the target domain corpus.
+
+----- triple_id: b4a547f52f0 -----
+TRIPLE:     (word2vec)  --trainedon-->  (Wiki corpus)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: We obtained these scores by training a word2vec model on the Wiki corpus.
+
+----- triple_id: b0e2373ed26 -----
+TRIPLE:     (word2vec)  --uses-->  (word embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We pre-train the word embeddings using Word2vec.
+
+----- triple_id: bc1ed3d9af4 -----
+TRIPLE:     (Conditional Random Fields)  --uses-->  (Brown Clustering)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: ARK tagger uses conditional random fields with word clusters as features, obtained via Brown clustering , along with various lexical features.

@@ -33,6 +33,23 @@
 > | scinex | qwen3-8b-acl-base-noont (untuned control) | none | 5,811 → 575 | **9.9%** | 32.9% | 2.8% / 5.9% |
 > | scinex | gptoss-20b (teacher) | full | 373 → 289 | 77.5% | 17.3% | (teacher) |
 >
+> **Table 19b (blind C1/C3/C4 diagnostic, round `acl-f0-noont`, seed 31, 2026-11-07):** 50 kept
+> triples per model and ontology, pooled and anonymised, judged by claude-opus-5-5 in session
+> (`ontology_eval/_blind/acl-f0-noont/{ceo,scinex}/report.json`):
+>
+> | ontology | extractor | C1 | C3 | C4 [95% CI] | C4 strict |
+> |---|---|---|---|---|---|
+> | CEO | **qwen3-8b-acl-noont-me50-cv (no ontology)** | 79.0 | 32.0 | **58.0** [46, 69] | 44.0 |
+> | CEO | qwen3-8b-acl-ft-me50-cv (ontology in prompt) | 81.0 | 44.0 | 49.0 [38, 60] | 30.0 |
+> | CEO | gptoss-20b (teacher) | 75.0 | 32.0 | 54.0 [43, 65] | 38.0 |
+> | scinex | **qwen3-8b-acl-noont-me50-cv (no ontology)** | 86.0 | 38.0 | **61.0** [50, 72] | 44.0 |
+> | scinex | qwen3-8b-acl-ft-me50-cv (ontology in prompt) | 87.0 | 38.0 | 63.0 [52, 73] | 46.0 |
+> | scinex | gptoss-20b (teacher) | 79.0 | 44.0 | 57.0 [45, 69] | 46.0 |
+>
+> noont − ontology-in-prompt C4: +9 [−7, +25] (CEO), −2 [−17, +13] (scinex); noont − teacher +4 / +4.
+> **The ontology-free student is as correct as the student that reads the ontology, and as its
+> teacher.** Single rater, n=50 per cell, one fold; compare within this round only.
+>
 > **Reading:** removing the ontology from the prompt costs almost nothing: same kept rate (±4
 > points), same coverage, same agreement with the teacher, for every family (Qwen3-4B/8B,
 > Llama-3.1-8B, Gemma-3-12B, Phi-4) — while the untuned model given that prompt passes the

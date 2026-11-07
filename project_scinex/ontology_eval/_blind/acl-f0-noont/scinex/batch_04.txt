@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b76954415f0 -----
+TRIPLE:     (recognition)  --uses-->  (Domains)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We add recognition patterns for these by using a list of top-level and country domains.
+
+----- triple_id: bf47e52d407 -----
+TRIPLE:     (Lexicons)  --uses-->  (AffectiveTweets package)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The first vector is obtained using the lexicons implemented in the AffectiveTweets package.
+
+----- triple_id: bce09273a88 -----
+TRIPLE:     (Filtering)  --achieves-->  (filter out distractor candidates that are acceptable answers)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We follow a two-step process where the first step, Candidate Generation , optimizes distractor plau- sibility; and the second step, Candidate Filtering, aims to filter out distractor candidates that are ac- ceptable answers.
+
+----- triple_id: b2c0ed42ec2 -----
+TRIPLE:     (Free Text)  --addresses-->  (unknown words or phrases)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Systems that are supposed to handle free text input sooner or later run into problems with unknown words or phrases.
+
+----- triple_id: b59e62a7c68 -----
+TRIPLE:     (REINFORCE)  --achieves-->  (reward function Rmix)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We use the REINFORCE algorithm to learn an agent to maximize the reward function Rmix.
+
+----- triple_id: b669e8252ee -----
+TRIPLE:     (training)  --uses-->  (official evaluation script)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The official evaluation script (which calculates correlations using both metrics and also acts as a format checker) was made avail- able along with the training and development data well in advance.
+
+----- triple_id: bb7d5ce75b0 -----
+TRIPLE:     (Normalization)  --uses-->  (POS Tagging)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: They experiment with various normalization and embedding settings, and they find that both normalization and pre-trained embeddings are helpful for the task of POS tagging.
+
+----- triple_id: bfb63a4fe1f -----
+TRIPLE:     (Narrative)  --achieves-->  (distinguishing spurious and essential circumstances of the narratives)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: better representation of the structure of the narrative, in terms of discourse acts and sentiment flow, could also help distinguish between spurious and essential circumstances of the narratives.
+
+----- triple_id: ba3520284ed -----
+TRIPLE:     (Experiments)  --uses-->  (fully connected neural network)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: In our experiments, we use a fully connected neural network for our classifier.
+
+----- triple_id: b67a3c23b77 -----
+TRIPLE:     (CRFs)  --addresses-->  (segmentation tasks)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Sequence models such as CRFs and S-CRFs are used for segmentation tasks in NLP, e.g., Peng et al. (2004) applied a CRF model for Chinese word segmentation and Andrew (2006) followed with a S-CRF model.
+
+----- triple_id: be161256186 -----
+TRIPLE:     (Weakly Supervised Training)  --uses-->  (Tearma-based model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: we considered the weakly supervised training scheme by using the Tearma-based model
+
+----- triple_id: bd7f46f605b -----
+TRIPLE:     (FEVER)  --addresses-->  (verification and fact checking)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: FEVER has the aim of verification and fact checking for RTE on a large database.
+
+----- triple_id: bfd006ede87 -----
+TRIPLE:     (Tagger)  --achieves-->  (88.6%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: A tagger that only uses word clusters achieves an accuracy of 88.6% on the OCT27 development set.
+
+----- triple_id: b5bc1da14ea -----
+TRIPLE:     (Transformer)  --achieves-->  (state-of-the-art results on the story cloze test)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We also use a Fine-tuned Transformer LM model , which was shown to perform competitively on a diverse set of NLP tasks, achieving state-of-the-art results on the story cloze test.
+
+----- triple_id: b21c4d97bca -----
+TRIPLE:     (GloVe)  --produces-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: In our experiments we examine BERT and GloVe embeddings.
+
+----- triple_id: bc7aae9eef0 -----
+TRIPLE:     (Enhanced Transformer Model)  --achieves-->  (BLEU)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: our enhanced transformer model outperforms current state-of-the-art system on BLEU, content selection precision and content ordering metics.
+
+----- triple_id: be84ec68749 -----
+TRIPLE:     (Sentence Embeddings)  --addresses-->  (machine translation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Sentence embeddings are crucial for down-stream tasks such as document classification, opinion analysis , and machine translation.
+
+----- triple_id: b57dc28e26f -----
+TRIPLE:     (Sequence Labeling)  --uses-->  (Recurrent Neural Network)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Sequence labeling models are built on a recurrent neural network to sequentially go through a source text and learn the likelihood of each word in the source text to be a keyphrase word.
+
+----- triple_id: b2b93cfa2bc -----
+TRIPLE:     (Tagger)  --trainedon-->  (150,000 utterances of child-directed speech)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: The tagger was trained on a corpus of approximately 150,000 utterances of child-directed speech annotated with a 39-tag set comparable to the familiar PTB tagset.
+
+----- triple_id: b07c08c63de -----
+TRIPLE:     (Encoder-Decoder Model)  --addresses-->  (sequence prediction tasks)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: One of the main advantages of the encoder-decoder model , commonly used for sequence pre- diction tasks, is its ability to handle inputs and outputs of variable length.
+
+----- triple_id: beaa933bbff -----
+TRIPLE:     (User Embeddings)  --achieves-->  (0.478 f1-score on Riloff dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: On the Riloff dataset , however, user embeddings seem to be far less informative, with EX-W-CASCADE yielding an f1-score of only 0.478.
+
+----- triple_id: b83013fee63 -----
+TRIPLE:     (training)  --uses-->  (stochastic gradient descent)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The training is performed using stochastic gradient descent with mini-batches.
+
+----- triple_id: beaaeb3392a -----
+TRIPLE:     (ROUGE)  --uses-->  (word sequences)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: ROUGE measures the textual overlap (n-grams, word sequences ) between the generated summary and the reference summary.
+
+----- triple_id: b8e8a89ff10 -----
+TRIPLE:     (Ranking)  --achieves-->  (precision)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Thus, in order to ensure high-quality results, there are a number of methods of ranking that are performed in order to rank the terms and thus to improve the precision of the top ranked candidates.
+
+----- triple_id: b64dc6b8102 -----
+TRIPLE:     (Models)  --achieves-->  (higher recall value)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Not surprisingly, our models recall more triplets and achieve higher re- call value.

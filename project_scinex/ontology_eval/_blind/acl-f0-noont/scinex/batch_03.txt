@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b4a8bf2e520 -----
+TRIPLE:     (lexical similarity)  --addresses-->  (clustering cross-session queries)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: using lexical similarity for clustering cross- session queries into a single group, e.g. , is unlikely to be effective.
+
+----- triple_id: b82c42ef93e -----
+TRIPLE:     (GloVe)  --uses-->  (matrix decomposition)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: GloVe , learning word embeddings by matrix decomposition on word co-occurrences.
+
+----- triple_id: b01185afbb4 -----
+TRIPLE:     (Models)  --trainedon-->  (90% of the data)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: In all cases, the models are trained on the same amount of data (90%).
+
+----- triple_id: b7cc1f53c2e -----
+TRIPLE:     (LSTM)  --uses-->  (previous action at−1)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at (seen in Figure 2).
+
+----- triple_id: bae4fae6e11 -----
+TRIPLE:     (Models)  --uses-->  (ELMo)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We evaluate the models using both GloVe and ELMo embeddings as input.
+
+----- triple_id: bd5b52b3e64 -----
+TRIPLE:     (Grammar)  --addresses-->  (fronting of noun phrases)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The grammar handles noun phrase inflection, fronting of noun phrases, and verb inflection.
+
+----- triple_id: bb5a7a322a4 -----
+TRIPLE:     (training)  --uses-->  (Synthetic Data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Each experiment was performed by training the RC model on the synthetic data generated on the target domain corpus.
+
+----- triple_id: b87aeb22098 -----
+TRIPLE:     (evaluate)  --evaluatedon-->  (two event temporal ordering datasets)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We evaluate on two event temporal ordering datasets, one real and one artificially constructed.
+
+----- triple_id: bc23303ae75 -----
+TRIPLE:     (Adaptor Grammars)  --addresses-->  (unsupervised morphological segmentation of Tamil)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Kumar et al. (2015) applied adaptor grammars to unsupervised morphological segmentation of Kannada, Malayalam and Tamil
+
+----- triple_id: b3e0968a095 -----
+TRIPLE:     (Softmax)  --uses-->  (instruction-aware hidden output)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The probability of moving to the k-th navigable viewpoint pt(at,k) is calculated as softmax of the alignment between the navigable viewpoint feature gt,k and the instruction-aware hidden output ˜ht.
+
+----- triple_id: bf33e6db080 -----
+TRIPLE:     (Human Evaluation)  --produces-->  (aggregated human evaluation scores)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: we show these generated texts to humans to judge their quality, and obtain aggregated human evaluation scores for all the models, ¯h = (h1,..., hl) (§5.2).
+
+----- triple_id: b7cb8c0e4c2 -----
+TRIPLE:     (embeddings)  --addresses-->  (event temporal ordering model)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Next, we investigate the effectiveness of our timex embeddings in the context of our full event temporal ordering model.
+
+----- triple_id: bef7d0a39ec -----
+TRIPLE:     (BPE)  --uses-->  (32K merge operation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We apply Byte-Pair Encoding (BPE) with 32K merge operation.
+
+----- triple_id: b26f72aacbd -----
+TRIPLE:     (Softmax)  --produces-->  (output probabilities)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: This is followed by a softmax layer that produces the output probabilities for the three label classes (before, after and simultaneous), denoting the temporal relation between the two time expressions.
+
+----- triple_id: b4c9dd05c1b -----
+TRIPLE:     (character n-gram)  --uses-->  (context features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: character n-gram context features on the left and right for each potential boundary
+
+----- triple_id: b1467d69cdd -----
+TRIPLE:     (NMT)  --addresses-->  (over-generation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: In this paper, after giving an overview of our NMT pipeline, we will focus on how we address the following issues in order to better prepare NMT engines for real-world deployment: 1) data cleaning, 2) over-generation , 3) improving robust- ness when translating entities, and 4) domain adap- tation.
+
+----- triple_id: ba2e9fabd5b -----
+TRIPLE:     (training)  --uses-->  (uniform distribution)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: During training, all the trainable parameters including the embeddings are randomly initialized with uniform distribution in [-0.1, 0.1].
+
+----- triple_id: b4d934caa87 -----
+TRIPLE:     (Experiments)  --produces-->  (novel insights)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: probing with noise can shift perspectives and broaden our understanding of embeddings, demonstrated by our experiments which provide novel insights into contextual and static encoders.
+
+----- triple_id: bd8abb3976e -----
+TRIPLE:     (training)  --uses-->  (placeholders such as [num-one], [num-two], etc.)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: During training we replace the numerical values in the input sentences with placeholders such as [num-one], [num-two], etc.
+
+----- triple_id: bcd12bfc756 -----
+TRIPLE:     (LSTM)  --uses-->  (character embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use LSTM-based character embeddings, and experiment with both wide and narrow embedding window.
+
+----- triple_id: b93f33ab5bd -----
+TRIPLE:     (Regression Model)  --trainedon-->  (Word Embeddings)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: Each regression model is trained on a representation formed by the affect lexicon features (including those provided by AffectiveTweets) and word embeddings.
+
+----- triple_id: bed683dad1f -----
+TRIPLE:     (Automatic evaluation)  --uses-->  (ROUGE)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: For table-to-text generation, automatic evaluation has largely relied on BLEU and ROUGE.
+
+----- triple_id: bd2555929b8 -----
+TRIPLE:     (ensemble)  --achieves-->  (prediction accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Ensemble of models improves the prediction accuracy by combining the outputs of all the individual models.
+
+----- triple_id: b3db07975da -----
+TRIPLE:     (Experiments)  --addresses-->  (multi-modal sentiment analysis)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We perform a set of experiments across two tasks and datasets spanning multimodal personality traits recognition and multi - modal sentiment analysis.
+
+----- triple_id: b037878961d -----
+TRIPLE:     (Information Extraction)  --uses-->  (training summary)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use an information extraction (IE) system to extract the number of relations of each training summary.

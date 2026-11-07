@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b15f7f1c58d -----
+TRIPLE:     (training)  --achieves-->  (TER 3.0)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Training with our pipeline improves BLEU and TER scores respectively by 2.3 and 3.0 points.
+
+----- triple_id: bd92034d2a4 -----
+TRIPLE:     (Word Vector)  --uses-->  (skip-gram model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For our word vector based experiments , we used the skip-gram model to train the word vectors using the entire AOL query log comprising over 6M queries.
+
+----- triple_id: b14cf4892b3 -----
+TRIPLE:     (Maximum Likelihood Estimation)  --uses-->  (negative log-likelihood over D)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We train the Enc-Dec with parameters θ through maximum likelihood estimation (MLE) by minimizing the negative log-likelihood over D:
+
+----- triple_id: b552cf97cae -----
+TRIPLE:     (evidence)  --supports-->  (Lexical Knowledge)
+PREDICATE DEFINITION: ExperimentalMeasurement → ExperimentalOutcome  |  use when a specific number backs up a qualitative conclusion
+SOURCE SENTENCE: we have provided further evidence that opinion inference and the relevance of lexical knowledge to support it are independent of specific languages.
+
+----- triple_id: bdf060a8ec6 -----
+TRIPLE:     (RNN)  --uses-->  (attention mechanism)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: QFE sequentially extracts the evidence sentences by using an RNN with an attention mechanism on the question sentence, while the existing method extracts each evidence sentence independently.
+
+----- triple_id: b05e42faef5 -----
+TRIPLE:     (hybrid)  --uses-->  (stacked denoising autoencoders)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we derive a new hybrid word embedding model using a stacked denoising autoencoders (DAWE).
+
+----- triple_id: b0629506825 -----
+TRIPLE:     (Sentence)  --uses-->  (nltk)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use nltk for word and sentence tokenization.
+
+----- triple_id: b863be79382 -----
+TRIPLE:     (embeddings)  --evaluatedon-->  (word similarity)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: we also evaluate our embeddings on word similarity (WS) measurement to test whether the learned embedding can effectively capture the overall semantics.
+
+----- triple_id: b9933733b8d -----
+TRIPLE:     (Search)  --uses-->  (document sentence)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we greedily search for a document sentence (using regular expressions) that captures all the numerical values mentioned in the target sentence.
+
+----- triple_id: b8c300120aa -----
+TRIPLE:     (unsupervised)  --uses-->  (contextualised word representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We present the first unsupervised approach to lexical semantic change that makes use of state-of-the-art contextualised word representations.
+
+----- triple_id: b632853a7a2 -----
+TRIPLE:     (Sentences)  --uses-->  (target summary)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The selected set of document sentences serve as the target summary for training the Extractive Module.
+
+----- triple_id: b2cceda267c -----
+TRIPLE:     (RNN)  --uses-->  (Sentence)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: QFE updates the state of the RNN (the dark blue box in Figure 3) as follows: where et ∈{1, · · ·, ls} is the index of the sentence extracted at step t.
+
+----- triple_id: ba64084160d -----
+TRIPLE:     (training)  --uses-->  (humming data from the IOACAS corpus)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For training note models, we have used humming data from the IOACAS corpus 8 and TCS corpus 9 with additional humming data collected by us.
+
+----- triple_id: bcfa950b29f -----
+TRIPLE:     (Word Embeddings)  --uses-->  (negative sampling skip-gram model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We calculate individual word embeddings using the negative sampling skip-gram model implemented in Word2Vec.
+
+----- triple_id: b33d3c82112 -----
+TRIPLE:     (Multi-task Learning)  --uses-->  (retrieved keyphrases from similar documents)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: First, an end-to-end multi-task learning framework is introduced, which not only combines the keyphrase extraction and generation but also leverages the retrieved keyphrases from similar documents to guide the generation process.
+
+----- triple_id: b8d3a6c2e19 -----
+TRIPLE:     (Word Representation)  --uses-->  (stacked denoising autoencoder)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: b) develop an enhanced word representation by leveraging the syntactic and semantic richness of the two distributed word representation through a stacked denoising autoencoder;
+
+----- triple_id: b56cf42210e -----
+TRIPLE:     (Experiments)  --uses-->  (AOL query log)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we use the AOL query log for our experiments.
+
+----- triple_id: b58e6aad5d8 -----
+TRIPLE:     (transformation)  --uses-->  (visual and acoustic features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The transformation matrix W transforms the visual and acoustic features into the multimodal embedding space.
+
+----- triple_id: b534559c0df -----
+TRIPLE:     (BERT Language Model)  --trainedon-->  (English text passages extracted from Wikipedia)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence predic- tion, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).
+
+----- triple_id: b2c9db302a6 -----
+TRIPLE:     (BLEU)  --evaluatedon-->  (WB-filter datasets)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: the BLEU and ROUGE scores are lower in the WB-filter datasets
+
+----- triple_id: b2c37eb1f1e -----
+TRIPLE:     (Dependency Parser)  --uses-->  (dependency paths)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use the Stanford Dependency Parser to extract the dependency paths for both events to their lowest common ancestor
+
+----- triple_id: b544502fdd4 -----
+TRIPLE:     (Automatic Metrics)  --uses-->  (BLEU-4)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Automatic Metrics: Following the previous work , we use BLEU-4 and ROUGE-4 (F measure) for automatic evaluation.
+
+----- triple_id: b593093cdaf -----
+TRIPLE:     (preprocessing)  --uses-->  (random horizontal flip)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use the following preprocessing/data augmentations on the images : resize to 224 × 224 pixels with a random crop, that has random scaling between 0.8 and 1.0 and aspect ratio between 0.75 and 1.3, along with a random horizontal flip.
+
+----- triple_id: bc6e293db8b -----
+TRIPLE:     (parser)  --uses-->  (Stanford Chinese parser)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We then performed word segmentation, POS tagging and dependency analysis on a subset of 5.5 million sentences with the Stanford Chinese parser for use in the Candidate Filtering step.
+
+----- triple_id: bfdd88aaf9c -----
+TRIPLE:     (Input)  --uses-->  (input layer of size 300)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We also use an input layer of size 300.

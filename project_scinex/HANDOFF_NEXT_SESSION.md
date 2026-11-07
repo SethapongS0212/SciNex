@@ -51,7 +51,11 @@
    --compare <noont-me50> <ft-me50> …`. Rerun `run_qa.sh <gpu> controls` / `kg …` once to fill the
    few unanswered questions (the report flags them). Write `results.md` Table 20 (Q&A). Restore
    the GPUs. Commit + push.
-2. Analyse WHY the KGs answer so little: how many questions have an answer that is a node of the
+2. ✔ DONE 2026-11-07 (hands_off §38.9): 70% of questions mention a listed entity; the KG answers
+   ~40% of questions whose answer is in it and ~0% otherwise; answer-in-graph is 16–25% for the
+   finetuned/teacher KGs → raise coverage. Blind check: noont student as correct as the
+   ontology-in-prompt student and the teacher (Table 19b). Old text of this step:
+   Analyse WHY the KGs answer so little: how many questions have an answer that is a node of the
    KG (`answer-in-KG`), how many concern a listed entity at all (fixed extraction cannot answer
    questions about unlisted subjects). This decides the next lever.
 3. Raise coverage: the teacher-v2 recall fixes + v2 entity lists, a lower empty cap (me30 beats

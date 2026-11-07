@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b365b1ee40b -----
+TRIPLE:     (Attention)  --achieves-->  (2.04/1.32 BLEU/ROUGE increases on WB-filter dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The proposed force- attention module achieves 1.11/0.98 and 2.04/1.32 BLEU/ROUGE increases on the WIKIBIO and WB-filter datasets , respectively.
+
+----- triple_id: bbab884dc59 -----
+TRIPLE:     (Experiments)  --uses-->  (AOL query log)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: we use the AOL query log for our experiments.
+
+----- triple_id: bcf25567b3e -----
+TRIPLE:     (Baseline Models)  --achieves-->  (up to 10 times faster during inference)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Our proposed baseline models 1) achieve competitive performance on supervised multimodal learning, 2) improve upon classical deep autoencoders for semi- supervised multimodal learning, and 3) are up to 10 times faster during inference.
+
+----- triple_id: b3b9e1801e7 -----
+TRIPLE:     (Negative Sampling)  --uses-->  (learning process)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: To train vr h,w and vr t,w for each w under r, we adopt the negative sampling strategy to conduct the learning process.
+
+----- triple_id: b90fa21ab54 -----
+TRIPLE:     (English)  --mentions-->  (swimmer)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: Prediction adam whitehead ( born 28 march 1980 ) is an english swimmer.
+
+----- triple_id: b592e32813f -----
+TRIPLE:     (BART)  --uses-->  (Longformer)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: (2022) formulated ED as a text extraction problem; they fed the document and candidate entity titles to BART and Longformer and disambiguated a mention in the document by extracting the referent entity title of the mention.
+
+----- triple_id: b5f08f13d9d -----
+TRIPLE:     (training)  --achieves-->  (in-sample link prediction)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The results in Table 3 indicate that training with our proposed algorithm does not deteriorate the performance for in-sample link prediction.
+
+----- triple_id: b4ff4becc81 -----
+TRIPLE:     (Transformer)  --uses-->  (Self-Attention)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Transformer-based encoder-decoder conditional LMs use bidirectional self-attention in the encoding step to create vector representations of the tokens in the context c.
+
+----- triple_id: bdc2e5a4c15 -----
+TRIPLE:     (Reward Shaping)  --uses-->  (direct reward rt)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use the reward shaping : the direct reward rt at time step t is the change of the distance dt−1 −dt, supposing dt is the distance to the target position at time step t.
+
+----- triple_id: b2cab794165 -----
+TRIPLE:     (CRF)  --achieves-->  (85.3% accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Ritter et al.'s CRF-based tagger had 85.3% accuracy
+
+----- triple_id: b53df552368 -----
+TRIPLE:     (training)  --uses-->  (transcription system)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We have currently trained the transcription system on a relatively small dataset, and we believe that using additional training data can improve our overall transcription accuracy and the retrieval accuracy.
+
+----- triple_id: b60e3eaa306 -----
+TRIPLE:     (Tagger)  --achieves-->  (93.4% accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The full tagger model achieved 93.4% (±0.3%) accuracy, significantly improving over the best result they report, 90.8% accuracy with a tagger trained on a mix of several POS-annotated corpora.
+
+----- triple_id: bc10ca2a3c5 -----
+TRIPLE:     (LSTM)  --uses-->  (character embedding vectors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use convolutional neural networks (CNN) and LSTM-based architectures for the character embedding vectors vci, both applied to the character sequence within each word separately.
+
+----- triple_id: b0142a48f0f -----
+TRIPLE:     (BERT)  --uses-->  (norm)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: specifically BERT stores information pertinent to the BS, SOMO and TC tasks in the norm
+
+----- triple_id: b193168540e -----
+TRIPLE:     (Negative Sampling)  --addresses-->  (learning process)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: To train vr h,w and vr t,w for each w under r, we adopt the negative sampling strategy to conduct the learning process.
+
+----- triple_id: bf926846037 -----
+TRIPLE:     (ROUGE)  --uses-->  (n-grams)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: ROUGE measures the textual overlap (n-grams, word sequences ) between the generated summary and the reference summary.
+
+----- triple_id: b907556390b -----
+TRIPLE:     (Datasets)  --mentions-->  (MCTest)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: notable datasets include MCTest and NarrativeQA.
+
+----- triple_id: b2dfa734d1a -----
+TRIPLE:     (Translation)  --addresses-->  (neural machine translation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Back-translation Back translation , a popular semi-supervised learning method, has been well studied in neural machine translation
+
+----- triple_id: b61d641be96 -----
+TRIPLE:     (ensemble)  --produces-->  (final predictions)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: The final predictions are made by combining the first two models with three variations of the third model into an ensemble.
+
+----- triple_id: b7ea1ecc0c3 -----
+TRIPLE:     (word2vec)  --uses-->  (word embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We pre-train the word embeddings using Word2vec.
+
+----- triple_id: b696e6fba96 -----
+TRIPLE:     (word2vec)  --trainedon-->  (100 billion words of Google News)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: In this study, we utilized the Word2Vec embedding vectors (d = 300) that were trained on 100 billion words of Google News.
+
+----- triple_id: bbb87f5c64f -----
+TRIPLE:     (Convolutional Neural Networks)  --uses-->  (character embedding vectors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use convolutional neural networks (CNN) and LSTM-based architectures for the character embedding vectors vci.
+
+----- triple_id: b7ef1b7d6fe -----
+TRIPLE:     (post-editing)  --addresses-->  (issues or concerns with the output)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: MT for post-editing, where an end user will be working with the output, we may need the flexibility to act on specific feedback in order to address issues or concerns with the output.
+
+----- triple_id: b3969b01736 -----
+TRIPLE:     (ensemble)  --achievesresult-->  (0.797 cosine score)
+PREDICATE DEFINITION: Model → ExperimentalResult  |  Links a model to an experimental result (metric outcome) it achieves.
+SOURCE SENTENCE: ensemble yields enhanced cosine scores of 0.797 and 0.786 for the microblog messages and news headline
+
+----- triple_id: b209e9705dd -----
+TRIPLE:     (Transformer Encoder)  --trainedon-->  (BooksCorpus)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: We produce usage representations using the BERT language model , a multi- layer bidirectional Transformer encoder trained on masked token prediction and next sentence predic- tion, on the BooksCorpus (800M words ) and on English text passages extracted from Wikipedia (2,500M words ).
