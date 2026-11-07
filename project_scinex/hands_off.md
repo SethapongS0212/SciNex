@@ -215,6 +215,16 @@ its own branch, to merge once no `ft_train_qlora.py` call can happen for this ru
   items, scinex 139): C4 CEO 58.0 / 49.0 / 54.0, scinex 61.0 / 63.0 / 57.0 — a tie. `results.md`
   Table 19b. The ontology-free student is as correct as both.
 
+### 38.10 Hand-over (2026-11-07 15:40): unattended chain
+- The user asked to proceed with the coverage plan and is starting a new session. Started
+  `screen chain` = `run_after_qa.sh`: wait for the noont-KG Q&A (qa0/qa1) → grade/report →
+  teacher v2 (`gptoss-20b-v2`, recall prompt + `output/acl_v2` lists) on all 802 papers, eval papers
+  first (dry run: 1,604 paper × ontology runs, 37,970 paragraphs; one paper,
+  2021.emnlp-main.196, has an empty v2 list and is recorded empty) → v1 vs v2 compare → Q&A of the
+  v2 KGs. The second teacher (Qwen3-30B-A3B) and v2-trained students are left for the next session
+  (untested paths; commands in `HANDOFF_NEXT_SESSION.md`). GPU heat settings stay applied
+  until the chain ends.
+
 ## Session 37 — Linux box with 2× RTX 5090; ⛔ finetuning corpus switched to the ACL ANTHOLOGY papers + FIXED extractor; gpt-oss-20b teacher run launched (2026-10-26/27)
 
 > User: *"download the github https://github.com/SethapongS0212/SciNex to envsam and overwrite it over
