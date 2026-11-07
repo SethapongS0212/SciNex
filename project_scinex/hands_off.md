@@ -1,5 +1,37 @@
 # Hands-Off Notes
 
+## Session 39 — ⭐⭐ MAIN EVALUATION RESULT: the ontology-free students on simulated Q&A (Table 20) (2026-11-07)
+
+> User: *"read HANDOFF_NEXT_SESSION.md and continue"*. At 16:02 server time the noont-KG Q&A
+> answers (qa0/qa1) were nearly done; the chain graded them at 16:20 and started teacher v2.
+
+### 39.1 Table 20 (`results.md`): simulated Q&A for every KG
+- Report with paired comparisons saved as `qa_eval/acl-f0/report_table20.json` (the chain's later
+  plain `report` call overwrites `report.json` without comparisons). `qa_gap_analysis.py` re-run
+  on all 22 KGs → `qa_eval/acl-f0/gap_analysis.json` (CPU, 2 s).
+- **noont = ontology-in-prompt on Q&A:** me50 −0.6 [−1.6, 0.3] / 0.0 [−0.8, 0.7], me30 −0.1
+  [−1.2, 1.0] / +0.6 [−0.4, 1.7] (CEO / scinex). The objective's main evaluation agrees with
+  Tables 19 / 19b: the ontology is in the weights.
+- **noont-me30 beats its teacher** +3.3 [1.4, 5.3] / +3.5 [1.9, 5.1] and the untuned noont model
+  +3.6 / +2.2. noont-me50 ties both. me30 − me50 = +3.9 / +4.0: coverage decides the score.
+- All five me50 families tie (CEO 4.0–4.5, scinex 2.7–3.4).
+- Accuracy when the answer is in a node of the question's paragraph: finetuned / teacher 34–51%,
+  untuned 25–30%. The untuned full-ontology KG (12.7 / 12.8) wins only on size (2.4k triples,
+  77–79% paragraphs covered, C4 ~20%).
+- ⚠ me50 KGs ≈ closedbook (4.4); only me30 clears it. Oracle 86.3. Coverage is still the lever.
+
+### 39.2 Missing answers → deferred fill-in (`screen qafill`)
+- 67 answers missing: closedbook 30, oracle 2, CEO ft-me30 9, scinex teacher 18, scinex
+  llama/phi4 noont 4 each. Cause: the answer model's batched reply skipped them (`qa_kg.log` /
+  `qa_controls.log`: "N question(s) not answered in the reply — rerun to retry"). A re-run asks
+  only the missing ones.
+- Both GPUs now run teacher v2 (16.6 GB peak each); Mistral-24B 4-bit does not fit beside it.
+  So `screen qafill` = `/home/dev1/scinex_runs/run_qa_fill.sh` (copy in `ft_runs/acl_scripts/`)
+  waits for "teacher v2 lanes:" in `after_qa_driver.log`, fills the answers on GPU1 (while the
+  chain answers the v2 KGs on GPU0), waits for the chain to end, then grades and reports with
+  the Table 20 comparisons (+ v2 − v1 teacher if the v2 answers exist) → `report_table20.json`.
+  Log `/home/dev1/scinex_runs/qa_fill.log`. Update Table 20's missing-answer rows afterwards.
+
 ## Session 38 — GPU heat brought under control with clock locks; a 2× training speed-up built and proven equivalent on CPU; entity-list cleanup audited (2026-11-05)
 
 > User: *"read HANDOFF_NEXT_SESSION.md and continue"*. At 12:38 server time the caps run (§37.10)

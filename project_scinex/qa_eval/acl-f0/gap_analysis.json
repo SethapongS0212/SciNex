@@ -1,0 +1,2538 @@
+{
+ "run": "acl-f0",
+ "questions": 1222,
+ "entity_related": 852,
+ "by_relation_count": {
+  "produces": 58,
+  "encompasses": 113,
+  "other": 66,
+  "uses": 408,
+  "addresses": 117,
+  "cites": 46,
+  "achieves": 80,
+  "comparesAgainst": 30,
+  "trainedOn": 36,
+  "comprises": 102,
+  "evaluates": 30,
+  "evaluatedOn": 65,
+  "reports": 15,
+  "designedFor": 18,
+  "splitFrom": 5,
+  "configures": 16,
+  "employs": 10,
+  "supports": 4,
+  "affiliatedWith": 1,
+  "publishedIn": 1,
+  "motivates": 1
+ },
+ "kgs": {
+  "fixed/gptoss-20b": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 256,
+    "para_covered": 333,
+    "answer_in_graph": 233,
+    "answered_correct_pts": 61.5
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 767,
+     "acc": 0.3
+    },
+    "covered+ans_in_graph": {
+     "n": 111,
+     "acc": 40.1
+    },
+    "covered": {
+     "n": 222,
+     "acc": 0.5
+    },
+    "uncovered+ans_in_graph": {
+     "n": 122,
+     "acc": 11.5
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 7.0
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 3.0
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 1.3
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 2.5
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 2.5
+    },
+    "other": {
+     "n": 66,
+     "acc": 2.3
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 10.8
+    },
+    "produces": {
+     "n": 58,
+     "acc": 4.3
+    },
+    "cites": {
+     "n": 46,
+     "acc": 2.2
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 19.4
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 5.0
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 10.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 25.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed/qwen3-8b-acl-base-hf": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 675,
+    "para_covered": 939,
+    "answer_in_graph": 553,
+    "answered_correct_pts": 155.5
+   },
+   "accuracy_by_coverage": {
+    "covered+ans_in_graph": {
+     "n": 460,
+     "acc": 29.5
+    },
+    "covered": {
+     "n": 479,
+     "acc": 1.0
+    },
+    "uncovered+ans_in_graph": {
+     "n": 93,
+     "acc": 15.1
+    },
+    "uncovered": {
+     "n": 190,
+     "acc": 0.5
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 13.1
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 22.6
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 12.8
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 4.4
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 3.8
+    },
+    "other": {
+     "n": 66,
+     "acc": 10.6
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 22.3
+    },
+    "produces": {
+     "n": 58,
+     "acc": 9.5
+    },
+    "cites": {
+     "n": 46,
+     "acc": 16.3
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 23.6
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 8.3
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 18.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 25.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 0.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed/qwen3-8b-acl-base-noont": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 292,
+    "para_covered": 397,
+    "answer_in_graph": 245,
+    "answered_correct_pts": 58.5
+   },
+   "accuracy_by_coverage": {
+    "covered": {
+     "n": 266,
+     "acc": 1.1
+    },
+    "covered+ans_in_graph": {
+     "n": 131,
+     "acc": 26.3
+    },
+    "uncovered": {
+     "n": 711,
+     "acc": 0.8
+    },
+    "uncovered+ans_in_graph": {
+     "n": 114,
+     "acc": 13.2
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 6.2
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 5.6
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 3.5
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 1.5
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 1.2
+    },
+    "other": {
+     "n": 66,
+     "acc": 0.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 10.0
+    },
+    "produces": {
+     "n": 58,
+     "acc": 1.7
+    },
+    "cites": {
+     "n": 46,
+     "acc": 2.2
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 19.4
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 1.7
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 8.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 10.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 0.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed/qwen3-8b-acl-ft-me50-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 252,
+    "para_covered": 310,
+    "answer_in_graph": 198,
+    "answered_correct_pts": 62.0
+   },
+   "accuracy_by_coverage": {
+    "covered+ans_in_graph": {
+     "n": 114,
+     "acc": 38.6
+    },
+    "uncovered": {
+     "n": 828,
+     "acc": 0.5
+    },
+    "uncovered+ans_in_graph": {
+     "n": 84,
+     "acc": 11.3
+    },
+    "covered": {
+     "n": 196,
+     "acc": 2.0
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 7.1
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 3.0
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 4.0
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 2.9
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 0.6
+    },
+    "other": {
+     "n": 66,
+     "acc": 0.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 6.9
+    },
+    "produces": {
+     "n": 58,
+     "acc": 5.2
+    },
+    "cites": {
+     "n": 46,
+     "acc": 3.3
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 22.2
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 5.0
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 5.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 25.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed/qwen3-8b-acl-ft-me30-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 425,
+    "para_covered": 550,
+    "answer_in_graph": 300,
+    "answered_correct_pts": 103.5
+   },
+   "accuracy_by_coverage": {
+    "covered+ans_in_graph": {
+     "n": 211,
+     "acc": 39.6
+    },
+    "uncovered": {
+     "n": 583,
+     "acc": 0.4
+    },
+    "uncovered+ans_in_graph": {
+     "n": 89,
+     "acc": 15.7
+    },
+    "covered": {
+     "n": 339,
+     "acc": 1.0
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 11.3
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 10.7
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 4.9
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 3.9
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 2.5
+    },
+    "other": {
+     "n": 66,
+     "acc": 2.3
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 11.5
+    },
+    "produces": {
+     "n": 58,
+     "acc": 5.2
+    },
+    "cites": {
+     "n": 46,
+     "acc": 5.4
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 27.8
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 6.7
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 5.0
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 8.3
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 6.7
+    },
+    "employs": {
+     "n": 10,
+     "acc": 20.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 25.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed/qwen3-8b-acl-noont-me50-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 213,
+    "para_covered": 264,
+    "answer_in_graph": 181,
+    "answered_correct_pts": 54.5
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 869,
+     "acc": 0.6
+    },
+    "uncovered+ans_in_graph": {
+     "n": 89,
+     "acc": 7.3
+    },
+    "covered+ans_in_graph": {
+     "n": 92,
+     "acc": 42.9
+    },
+    "covered": {
+     "n": 172,
+     "acc": 2.0
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 7.2
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 3.8
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 1.3
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 2.9
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 1.2
+    },
+    "other": {
+     "n": 66,
+     "acc": 1.5
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 3.1
+    },
+    "produces": {
+     "n": 58,
+     "acc": 4.3
+    },
+    "cites": {
+     "n": 46,
+     "acc": 2.2
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 13.9
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 0.0
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 15.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 25.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed/qwen3-8b-acl-noont-me30-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 443,
+    "para_covered": 564,
+    "answer_in_graph": 301,
+    "answered_correct_pts": 102.0
+   },
+   "accuracy_by_coverage": {
+    "covered+ans_in_graph": {
+     "n": 215,
+     "acc": 37.0
+    },
+    "uncovered": {
+     "n": 572,
+     "acc": 0.3
+    },
+    "uncovered+ans_in_graph": {
+     "n": 86,
+     "acc": 16.3
+    },
+    "covered": {
+     "n": 349,
+     "acc": 1.9
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 11.0
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 6.4
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 6.2
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 4.4
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 4.4
+    },
+    "other": {
+     "n": 66,
+     "acc": 1.5
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 18.5
+    },
+    "produces": {
+     "n": 58,
+     "acc": 5.2
+    },
+    "cites": {
+     "n": 46,
+     "acc": 5.4
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 22.2
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 6.7
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 6.7
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 5.6
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 6.7
+    },
+    "employs": {
+     "n": 10,
+     "acc": 20.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 0.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed/qwen3-4b-acl-noont-me50-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 215,
+    "para_covered": 261,
+    "answer_in_graph": 189,
+    "answered_correct_pts": 49.5
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 869,
+     "acc": 0.2
+    },
+    "uncovered+ans_in_graph": {
+     "n": 92,
+     "acc": 13.0
+    },
+    "covered+ans_in_graph": {
+     "n": 97,
+     "acc": 35.1
+    },
+    "covered": {
+     "n": 164,
+     "acc": 1.2
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 6.1
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 4.3
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 0.0
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 2.9
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 1.9
+    },
+    "other": {
+     "n": 66,
+     "acc": 0.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 3.1
+    },
+    "produces": {
+     "n": 58,
+     "acc": 1.7
+    },
+    "cites": {
+     "n": 46,
+     "acc": 5.4
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 15.3
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 0.0
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 6.2
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 5.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 25.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed/llama31-8b-acl-noont-me50-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 220,
+    "para_covered": 279,
+    "answer_in_graph": 179,
+    "answered_correct_pts": 48.5
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 855,
+     "acc": 0.5
+    },
+    "uncovered+ans_in_graph": {
+     "n": 88,
+     "acc": 12.5
+    },
+    "covered+ans_in_graph": {
+     "n": 91,
+     "acc": 34.1
+    },
+    "covered": {
+     "n": 188,
+     "acc": 1.1
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 6.2
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 2.1
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 0.9
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 1.0
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 0.6
+    },
+    "other": {
+     "n": 66,
+     "acc": 0.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 6.2
+    },
+    "produces": {
+     "n": 58,
+     "acc": 5.2
+    },
+    "cites": {
+     "n": 46,
+     "acc": 6.5
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 15.3
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 0.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 0.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed/gemma3-12b-acl-noont-me50-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 223,
+    "para_covered": 284,
+    "answer_in_graph": 181,
+    "answered_correct_pts": 51.5
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 853,
+     "acc": 0.2
+    },
+    "uncovered+ans_in_graph": {
+     "n": 85,
+     "acc": 16.5
+    },
+    "covered+ans_in_graph": {
+     "n": 96,
+     "acc": 34.9
+    },
+    "covered": {
+     "n": 188,
+     "acc": 1.1
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 5.8
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 4.3
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 0.4
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 2.0
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 1.2
+    },
+    "other": {
+     "n": 66,
+     "acc": 0.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 7.7
+    },
+    "produces": {
+     "n": 58,
+     "acc": 3.4
+    },
+    "cites": {
+     "n": 46,
+     "acc": 4.3
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 19.4
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 0.0
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 5.6
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 10.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 0.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed/phi4-acl-noont-me50-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 218,
+    "para_covered": 281,
+    "answer_in_graph": 168,
+    "answered_correct_pts": 55.5
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 869,
+     "acc": 0.5
+    },
+    "uncovered+ans_in_graph": {
+     "n": 72,
+     "acc": 18.1
+    },
+    "covered+ans_in_graph": {
+     "n": 96,
+     "acc": 39.1
+    },
+    "covered": {
+     "n": 185,
+     "acc": 0.5
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 7.1
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 3.4
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 1.8
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 2.5
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 1.2
+    },
+    "other": {
+     "n": 66,
+     "acc": 0.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 6.9
+    },
+    "produces": {
+     "n": 58,
+     "acc": 3.4
+    },
+    "cites": {
+     "n": 46,
+     "acc": 6.5
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 16.7
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 0.0
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 0.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 0.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed_scinex/gptoss-20b": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 172,
+    "para_covered": 223,
+    "answer_in_graph": 172,
+    "answered_correct_pts": 40.0
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 898,
+     "acc": 0.1
+    },
+    "covered+ans_in_graph": {
+     "n": 71,
+     "acc": 42.3
+    },
+    "covered": {
+     "n": 152,
+     "acc": 0.7
+    },
+    "uncovered+ans_in_graph": {
+     "n": 101,
+     "acc": 7.9
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 4.0
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 6.0
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 1.8
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 0.0
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 3.8
+    },
+    "other": {
+     "n": 66,
+     "acc": 0.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 5.4
+    },
+    "produces": {
+     "n": 58,
+     "acc": 0.0
+    },
+    "cites": {
+     "n": 46,
+     "acc": 3.3
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 11.1
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 1.7
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 1.7
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 0.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 25.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed_scinex/qwen3-8b-acl-base-hf": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 694,
+    "para_covered": 964,
+    "answer_in_graph": 578,
+    "answered_correct_pts": 156.0
+   },
+   "accuracy_by_coverage": {
+    "covered": {
+     "n": 478,
+     "acc": 1.7
+    },
+    "covered+ans_in_graph": {
+     "n": 486,
+     "acc": 28.1
+    },
+    "uncovered+ans_in_graph": {
+     "n": 92,
+     "acc": 12.0
+    },
+    "uncovered": {
+     "n": 166,
+     "acc": 0.3
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 13.4
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 21.4
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 13.3
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 6.4
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 6.2
+    },
+    "other": {
+     "n": 66,
+     "acc": 7.6
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 26.2
+    },
+    "produces": {
+     "n": 58,
+     "acc": 5.2
+    },
+    "cites": {
+     "n": 46,
+     "acc": 9.8
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 23.6
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 10.0
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 11.7
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 5.6
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 6.7
+    },
+    "employs": {
+     "n": 10,
+     "acc": 25.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 25.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed_scinex/qwen3-8b-acl-base-noont": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 298,
+    "para_covered": 400,
+    "answer_in_graph": 259,
+    "answered_correct_pts": 56.5
+   },
+   "accuracy_by_coverage": {
+    "covered": {
+     "n": 262,
+     "acc": 1.7
+    },
+    "covered+ans_in_graph": {
+     "n": 138,
+     "acc": 25.4
+    },
+    "uncovered": {
+     "n": 701,
+     "acc": 0.5
+    },
+    "uncovered+ans_in_graph": {
+     "n": 121,
+     "acc": 11.2
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 6.0
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 5.1
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 3.5
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 2.5
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 0.6
+    },
+    "other": {
+     "n": 66,
+     "acc": 3.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 6.9
+    },
+    "produces": {
+     "n": 58,
+     "acc": 0.9
+    },
+    "cites": {
+     "n": 46,
+     "acc": 4.3
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 12.5
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 1.7
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 8.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 6.7
+    },
+    "employs": {
+     "n": 10,
+     "acc": 10.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 0.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed_scinex/qwen3-8b-acl-ft-me50-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 120,
+    "para_covered": 142,
+    "answer_in_graph": 119,
+    "answered_correct_pts": 35.5
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 1012,
+     "acc": 0.2
+    },
+    "covered+ans_in_graph": {
+     "n": 51,
+     "acc": 42.2
+    },
+    "covered": {
+     "n": 91,
+     "acc": 2.7
+    },
+    "uncovered+ans_in_graph": {
+     "n": 68,
+     "acc": 14.0
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 3.8
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 3.4
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 0.0
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 2.0
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 0.6
+    },
+    "other": {
+     "n": 66,
+     "acc": 0.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 2.3
+    },
+    "produces": {
+     "n": 58,
+     "acc": 3.4
+    },
+    "cites": {
+     "n": 46,
+     "acc": 2.2
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 15.3
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 0.0
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 10.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 25.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed_scinex/qwen3-8b-acl-ft-me30-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 351,
+    "para_covered": 448,
+    "answer_in_graph": 252,
+    "answered_correct_pts": 76.5
+   },
+   "accuracy_by_coverage": {
+    "covered+ans_in_graph": {
+     "n": 161,
+     "acc": 37.3
+    },
+    "uncovered": {
+     "n": 683,
+     "acc": 0.4
+    },
+    "covered": {
+     "n": 287,
+     "acc": 1.4
+    },
+    "uncovered+ans_in_graph": {
+     "n": 91,
+     "acc": 11.0
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 8.0
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 5.6
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 4.0
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 2.9
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 5.0
+    },
+    "other": {
+     "n": 66,
+     "acc": 1.5
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 8.5
+    },
+    "produces": {
+     "n": 58,
+     "acc": 3.4
+    },
+    "cites": {
+     "n": 46,
+     "acc": 5.4
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 25.0
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 5.0
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 5.0
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 20.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 25.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed_scinex/qwen3-8b-acl-noont-me50-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 123,
+    "para_covered": 150,
+    "answer_in_graph": 136,
+    "answered_correct_pts": 35.0
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 995,
+     "acc": 0.3
+    },
+    "covered+ans_in_graph": {
+     "n": 59,
+     "acc": 32.2
+    },
+    "covered": {
+     "n": 91,
+     "acc": 3.3
+    },
+    "uncovered+ans_in_graph": {
+     "n": 77,
+     "acc": 13.6
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 3.9
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 3.8
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 0.0
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 2.0
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 1.9
+    },
+    "other": {
+     "n": 66,
+     "acc": 0.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 1.5
+    },
+    "produces": {
+     "n": 58,
+     "acc": 3.4
+    },
+    "cites": {
+     "n": 46,
+     "acc": 1.1
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 11.1
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 0.0
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 5.6
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 0.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 25.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed_scinex/qwen3-8b-acl-noont-me30-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 352,
+    "para_covered": 450,
+    "answer_in_graph": 264,
+    "answered_correct_pts": 83.5
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 682,
+     "acc": 0.4
+    },
+    "uncovered+ans_in_graph": {
+     "n": 90,
+     "acc": 17.8
+    },
+    "covered+ans_in_graph": {
+     "n": 174,
+     "acc": 34.8
+    },
+    "covered": {
+     "n": 276,
+     "acc": 1.4
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 9.3
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 5.1
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 4.9
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 2.9
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 4.4
+    },
+    "other": {
+     "n": 66,
+     "acc": 1.5
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 13.8
+    },
+    "produces": {
+     "n": 58,
+     "acc": 3.4
+    },
+    "cites": {
+     "n": 46,
+     "acc": 5.4
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 16.7
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 1.7
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 5.0
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 5.6
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 6.7
+    },
+    "employs": {
+     "n": 10,
+     "acc": 20.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 25.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed_scinex/qwen3-4b-acl-noont-me50-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 132,
+    "para_covered": 157,
+    "answer_in_graph": 138,
+    "answered_correct_pts": 37.0
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 986,
+     "acc": 0.3
+    },
+    "covered+ans_in_graph": {
+     "n": 59,
+     "acc": 36.4
+    },
+    "covered": {
+     "n": 98,
+     "acc": 1.5
+    },
+    "uncovered+ans_in_graph": {
+     "n": 79,
+     "acc": 13.9
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 4.4
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 3.0
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 0.0
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 4.4
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 0.6
+    },
+    "other": {
+     "n": 66,
+     "acc": 0.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 0.0
+    },
+    "produces": {
+     "n": 58,
+     "acc": 3.4
+    },
+    "cites": {
+     "n": 46,
+     "acc": 2.2
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 11.1
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 0.0
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 5.6
+    },
+    "configures": {
+     "n": 16,
+     "acc": 6.2
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 0.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 0.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed_scinex/llama31-8b-acl-noont-me50-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 122,
+    "para_covered": 146,
+    "answer_in_graph": 118,
+    "answered_correct_pts": 33.0
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 1005,
+     "acc": 0.3
+    },
+    "covered+ans_in_graph": {
+     "n": 47,
+     "acc": 41.5
+    },
+    "covered": {
+     "n": 99,
+     "acc": 4.0
+    },
+    "uncovered+ans_in_graph": {
+     "n": 71,
+     "acc": 9.2
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 4.2
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 2.1
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 0.9
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 1.5
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 0.6
+    },
+    "other": {
+     "n": 66,
+     "acc": 0.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 2.3
+    },
+    "produces": {
+     "n": 58,
+     "acc": 3.4
+    },
+    "cites": {
+     "n": 46,
+     "acc": 4.3
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 8.3
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 1.7
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 0.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 0.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed_scinex/gemma3-12b-acl-noont-me50-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 146,
+    "para_covered": 177,
+    "answer_in_graph": 133,
+    "answered_correct_pts": 41.5
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 973,
+     "acc": 0.3
+    },
+    "covered+ans_in_graph": {
+     "n": 61,
+     "acc": 42.6
+    },
+    "covered": {
+     "n": 116,
+     "acc": 1.7
+    },
+    "uncovered+ans_in_graph": {
+     "n": 72,
+     "acc": 14.6
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 5.3
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 3.0
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 0.0
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 1.5
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 1.9
+    },
+    "other": {
+     "n": 66,
+     "acc": 0.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 2.3
+    },
+    "produces": {
+     "n": 58,
+     "acc": 4.3
+    },
+    "cites": {
+     "n": 46,
+     "acc": 2.2
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 15.3
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 0.0
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 15.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 0.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  },
+  "fixed_scinex/phi4-acl-noont-me50-cv": {
+   "funnel": {
+    "all": 1222,
+    "entity": 852,
+    "entity_and_para_covered": 107,
+    "para_covered": 126,
+    "answer_in_graph": 105,
+    "answered_correct_pts": 32.5
+   },
+   "accuracy_by_coverage": {
+    "uncovered": {
+     "n": 1032,
+     "acc": 0.2
+    },
+    "covered+ans_in_graph": {
+     "n": 41,
+     "acc": 51.2
+    },
+    "covered": {
+     "n": 85,
+     "acc": 1.8
+    },
+    "uncovered+ans_in_graph": {
+     "n": 64,
+     "acc": 12.5
+    }
+   },
+   "accuracy_by_relation": {
+    "uses": {
+     "n": 408,
+     "acc": 3.1
+    },
+    "addresses": {
+     "n": 117,
+     "acc": 2.1
+    },
+    "encompasses": {
+     "n": 113,
+     "acc": 1.8
+    },
+    "comprises": {
+     "n": 102,
+     "acc": 1.0
+    },
+    "achieves": {
+     "n": 80,
+     "acc": 3.1
+    },
+    "other": {
+     "n": 66,
+     "acc": 0.8
+    },
+    "evaluatedOn": {
+     "n": 65,
+     "acc": 2.3
+    },
+    "produces": {
+     "n": 58,
+     "acc": 2.6
+    },
+    "cites": {
+     "n": 46,
+     "acc": 2.2
+    },
+    "trainedOn": {
+     "n": 36,
+     "acc": 12.5
+    },
+    "comparesAgainst": {
+     "n": 30,
+     "acc": 1.7
+    },
+    "evaluates": {
+     "n": 30,
+     "acc": 3.3
+    },
+    "designedFor": {
+     "n": 18,
+     "acc": 0.0
+    },
+    "configures": {
+     "n": 16,
+     "acc": 0.0
+    },
+    "reports": {
+     "n": 15,
+     "acc": 0.0
+    },
+    "employs": {
+     "n": 10,
+     "acc": 15.0
+    },
+    "splitFrom": {
+     "n": 5,
+     "acc": 0.0
+    },
+    "supports": {
+     "n": 4,
+     "acc": 0.0
+    },
+    "affiliatedWith": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "publishedIn": {
+     "n": 1,
+     "acc": 0.0
+    },
+    "motivates": {
+     "n": 1,
+     "acc": 0.0
+    }
+   }
+  }
+ }
+}

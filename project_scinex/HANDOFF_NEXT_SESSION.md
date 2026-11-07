@@ -1,9 +1,9 @@
 # Handoff — next session
 
-**Updated 2026-11-07 15:40 server time (end of Session 38).** Read in this order:
+**Updated 2026-11-07 16:40 server time (Session 39).** Read in this order:
 1. **[`OBJECTIVE.md`](OBJECTIVE.md)** — the professor's three steps. Everything serves them.
 2. This file — where the work stands and what to do next.
-3. `hands_off.md` §38 for detail; `results.md` for tables.
+3. `hands_off.md` §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation).
 
 > **Standing rule (user):** update the md docs after every meaningful step, as it happens; commit
 > and push to GitHub when the change is important or necessary.
@@ -16,49 +16,48 @@
 - Corpus: 805 ACL papers, fixed entity lists; fold 0 (41 papers) held out.
 - Per-triple judging (C1/C3/C4) and judge-free counts are diagnostics, not the headline.
 
-## State (2026-11-07, 15:40 server time = 22:40 user time)
-- ✔ **Ontology-free students DONE and checked.** Table 19 (counts): with no ontology in the prompt
-  every finetuned student keeps 87–93% of its proposals; the untuned model with the same prompt
-  ~10%. Table 19b (blind C1/C3/C4): noont-me50 C4 58 / 61 vs ontology-in-prompt me50 49 / 63 vs
-  teacher 54 / 57 (CEO / scinex) — a tie. **Step 2 of the objective is met.**
-- ✔ **Q&A gap analysis DONE** (`qa_gap_analysis.py`, hands_off §38.9): 70% of the 1,222 questions
-  mention a listed entity; a KG answers ~40% of the questions whose answer it contains and ~0%
-  otherwise; the answer is in the graph for only 16–25% of questions (teacher / finetuned KGs).
-  **Coverage of paper facts is the bottleneck.**
+## State (2026-11-07, 16:40 server time = 23:40 user time)
+- ✔ **Step 2 of the objective MET** (Tables 19 / 19b): ontology-free students keep 87–93% of
+  proposals and are as correct as ontology-in-prompt students and the teacher.
+- ✔ **⭐⭐ MAIN EVALUATION DONE for the noont KGs — `results.md` Table 20** (simulated Q&A, 1,222
+  questions, 41 papers; `qa_eval/acl-f0/report_table20.json`, `gap_analysis.json`):
+  - noont = ontology-in-prompt: me50 −0.6 / 0.0, me30 −0.1 / +0.6 points (CEO / scinex), CIs across 0.
+  - **noont-me30 beats its teacher +3.3 [1.4, 5.3] / +3.5 [1.9, 5.1]** and the untuned noont model
+    +3.6 / +2.2. noont-me50 ties both. me30 − me50 = +4: **coverage decides the score.**
+  - Accuracy: oracle 86.3, closedbook 4.4, teacher 5.0 / 3.3, noont-me30 8.3 / 6.8, noont-me50
+    4.5 / 2.9, other me50 families 4.0–4.5 / 2.7–3.4, untuned full-ontology 12.7 / 12.8 (big noisy
+    graph). ⚠ me50 KGs ≈ closedbook; coverage of paper facts is still the lever.
 - **⏳ RUNNING, unattended — check these first:**
-  1. `screen -r qa0`, `screen -r qa1` (started 15:11, done ~18:30 server): Q&A answers from the 14
-     noont KGs. Log `/home/dev1/scinex_runs/qa_driver.log`.
-  2. **`screen -r chain`** = `/home/dev1/scinex_runs/run_after_qa.sh` (copy in
-     `ft_runs/acl_scripts/`), log **`/home/dev1/scinex_runs/after_qa_driver.log`**. It waits for
-     qa0/qa1, then: grades + reports the Q&A (`qa_eval/acl-f0/report.json`, log `qa_grade.log`) →
-     **teacher v2** (`gptoss-20b-v2` = gpt-oss-20b, `--prompt-variant recall`, `--entity-dir
-     output/acl_v2`) on all 802 papers × 2 ontologies, the 41 eval papers first, ~30 h, logs
-     `teacher_v2full_gpu{0,1}.log` → `ft_compare` v1 vs v2 (`teacher_v2_compare.log`,
-     `ft_runs/teacher_v2/compare_v2.json`) → Q&A answers from the v2 teacher KGs + grade + report.
-     Expected done ~2026-11-09 00:00 server. Re-running the script resumes every step.
+  1. **`screen -r chain`** = `/home/dev1/scinex_runs/run_after_qa.sh` (copy in
+     `ft_runs/acl_scripts/`), log **`/home/dev1/scinex_runs/after_qa_driver.log`**. Graded the Q&A
+     at 16:20, then started **teacher v2** (`gptoss-20b-v2` = gpt-oss-20b, `--prompt-variant
+     recall`, `--entity-dir output/acl_v2`) on all 805 papers (403 + 402) × 2 ontologies, the 41 eval
+     papers first, ~30 h, logs `teacher_v2full_gpu{0,1}.log` → `ft_compare` v1 vs v2
+     (`teacher_v2_compare.log`, `ft_runs/teacher_v2/compare_v2.json`) → Q&A answers from the v2
+     teacher KGs on GPU0 + grade + report. Expected done ~2026-11-09 00:00 server. Re-running the
+     script resumes every step.
+  2. **`screen -r qafill`** = `/home/dev1/scinex_runs/run_qa_fill.sh` (copy in
+     `ft_runs/acl_scripts/`), log `/home/dev1/scinex_runs/qa_fill.log`. Waits for the teacher v2
+     lanes, re-asks the **67 Q&A answers the answer model skipped** (closedbook 30, oracle 2, CEO
+     ft-me30 9, scinex teacher 18, scinex llama/phi4 noont 4 each) on GPU1, waits for the chain to
+     end, then grades + reports with the Table 20 comparisons (+ v2 − v1 teacher) →
+     `qa_eval/acl-f0/report_table20.json`.
 - **⛔ GPU settings are CHANGED for heat while these run** (university property): persistence on,
   400 W, clock locks 1650 / 1900 MHz, root guard `screen gpuguard` (checked: running).
-  **Restore when the chain is done and nothing else runs:**
+  **Restore when chain AND qafill are done and nothing else runs:**
   ```
   sudo screen -S gpuguard -X quit
   sudo nvidia-smi -i 0 -rgc && sudo nvidia-smi -i 1 -rgc
   sudo nvidia-smi -pl 575 && sudo nvidia-smi -pm 0
   ```
   The sudo password is not stored; ask the user.
-- Preliminary Q&A (graded 2026-11-07 15:15, before the noont KGs): oracle 86.3, closedbook 4.4, KG
-  teacher 5.0 / 3.3, untuned base 12.7 / 12.8, me30 8.5 / 6.3, me50 5.1 / 2.9 (CEO / scinex).
 - Models in the HF cache: students Qwen3-4B/8B, Llama-3.1-8B-Instruct, Gemma-3-12B-it, Phi-4;
   teachers gpt-oss-20b and **Qwen3-30B-A3B-Instruct-2507 (second teacher, not run yet)**; Q&A model
   Mistral-Small-24B-Instruct-2501.
 
 ## Next steps, in order
-1. **When qa0/qa1 are done** (the chain grades automatically): write `results.md` **Table 20**
-   from `qa_eval/acl-f0/report.json` — accuracy per KG (teacher, base, ontology-in-prompt me30/me50,
-   every noont student, both ontologies) + oracle/closedbook; compare noont vs ontology-in-prompt
-   (`qa_eval.py report --run acl-f0 --compare kg__fixed__qwen3-8b-acl-noont-me50-cv
-   kg__fixed__qwen3-8b-acl-ft-me50-cv`); run `qa_gap_analysis.py` on the noont KGs. A few
-   questions may be unanswered (the report flags them): re-run `run_qa.sh <gpu> kg …` /
-   `controls` to fill them, then grade again. Commit + push.
+1. **When `qafill` is done:** update Table 20 from `qa_eval/acl-f0/report_table20.json` (the
+   rows marked "missing", the v2 teacher rows and its v2 − v1 comparison). Commit + push.
 2. **When the teacher v2 lanes finish:** read `teacher_v2_compare.log` (does v2 extract more,
    at what kept rate?) and its Q&A (chain step 5). If v2 covers more:
    - build ontology-free training data from it, e.g.

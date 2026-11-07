@@ -4,6 +4,74 @@
 
 > ### ⭐ OBJECTIVE RESULTS (2026-11-06/07) — ontology-free extraction (`OBJECTIVE.md`)
 >
+> **Table 20 (ACL, ⭐⭐ MAIN EVALUATION — SIMULATED Q&A, 2026-11-07).** 1,222 questions written by
+> Mistral-Small-24B-Instruct-2501 (local, 4-bit, greedy) from 935 paragraphs of the 41 held-out
+> papers; the same model answers from each KG (or from the paragraph = oracle, or from nothing =
+> closedbook). Deterministic grading (exact match / token overlap; CORRECT 1, PARTIAL ½). 95% CIs
+> resample papers. Columns 6–8 from `qa_gap_analysis.py`. Files: `qa_eval/acl-f0/report_table20.json`,
+> `qa_eval/acl-f0/gap_analysis.json`. "me50 / me30" = at most 50% / 30% empty training targets.
+>
+> | ontology | KG | accuracy [95% CI] | answered | answer in KG | paragraph covered | answer in a node | acc. if covered + in node |
+> |---|---|---|---|---|---|---|---|
+> | CEO | teacher gpt-oss-20b (full ontology) | 5.0 [3.4, 6.9] | 15.0 | 8.4 | 27.3 | 19.1 | 40.1 (n=111) |
+> | CEO | untuned Qwen3-8B, full ontology | 12.7 [10.9, 14.7] | 33.1 | 18.3 | 76.8 | 45.3 | 29.5 (n=460) |
+> | CEO | untuned Qwen3-8B, no ontology | 4.8 [3.4, 6.3] | 14.9 | 9.2 | 32.5 | 20.0 | 26.3 (n=131) |
+> | CEO | Qwen3-8B me50, ontology in prompt | 5.1 [3.6, 6.7] | 12.8 | 7.9 | 25.4 | 16.2 | 38.6 (n=114) |
+> | CEO | **Qwen3-8B me50, no ontology** | **4.5** [3.1, 6.0] | 11.8 | 7.0 | 21.6 | 14.8 | 42.9 (n=92) |
+> | CEO | Qwen3-8B me30, ontology in prompt | 8.5 [6.6, 10.6] (9 missing) | 21.1 | 12.6 | 45.0 | 24.5 | 39.6 (n=211) |
+> | CEO | **Qwen3-8B me30, no ontology** | **8.3** [6.3, 10.3] | 21.3 | 12.4 | 46.2 | 24.6 | 37.0 (n=215) |
+> | CEO | Qwen3-4B me50, no ontology | 4.1 [2.8, 5.4] | 11.8 | 6.7 | 21.4 | 15.5 | 35.1 (n=97) |
+> | CEO | Llama-3.1-8B me50, no ontology | 4.0 [2.9, 5.1] | 10.6 | 6.0 | 22.8 | 14.6 | 34.1 (n=91) |
+> | CEO | Gemma-3-12B me50, no ontology | 4.2 [2.9, 5.6] | 10.8 | 6.9 | 23.2 | 14.8 | 34.9 (n=96) |
+> | CEO | Phi-4 me50, no ontology | 4.5 [3.1, 6.1] | 10.8 | 7.2 | 23.0 | 13.7 | 39.1 (n=96) |
+> | scinex | teacher gpt-oss-20b (full ontology) | 3.3 [2.2, 4.5] (18 missing) | 8.8 | 5.8 | 18.2 | 14.1 | 42.3 (n=71) |
+> | scinex | untuned Qwen3-8B, full ontology | 12.8 [10.9, 14.8] | 34.8 | 19.5 | 78.9 | 47.3 | 28.1 (n=486) |
+> | scinex | untuned Qwen3-8B, no ontology | 4.6 [3.3, 6.0] | 13.6 | 8.7 | 32.7 | 21.2 | 25.4 (n=138) |
+> | scinex | Qwen3-8B me50, ontology in prompt | 2.9 [1.9, 4.0] | 6.8 | 4.8 | 11.6 | 9.7 | 42.2 (n=51) |
+> | scinex | **Qwen3-8B me50, no ontology** | **2.9** [1.8, 4.0] | 7.6 | 5.6 | 12.3 | 11.1 | 32.2 (n=59) |
+> | scinex | Qwen3-8B me30, ontology in prompt | 6.3 [4.4, 8.3] | 16.0 | 10.1 | 36.7 | 20.6 | 37.3 (n=161) |
+> | scinex | **Qwen3-8B me30, no ontology** | **6.8** [5.1, 8.7] | 16.6 | 10.8 | 36.8 | 21.6 | 34.8 (n=174) |
+> | scinex | Qwen3-4B me50, no ontology | 3.0 [1.9, 4.2] | 8.2 | 4.9 | 12.8 | 11.3 | 36.4 (n=59) |
+> | scinex | Llama-3.1-8B me50, no ontology | 2.7 [1.7, 3.8] (4 missing) | 6.7 | 4.9 | 11.9 | 9.7 | 41.5 (n=47) |
+> | scinex | Gemma-3-12B me50, no ontology | 3.4 [2.1, 4.8] | 8.7 | 5.1 | 14.5 | 10.9 | 42.6 (n=61) |
+> | scinex | Phi-4 me50, no ontology | 2.7 [1.7, 3.8] (4 missing) | 5.8 | 4.4 | 10.3 | 8.6 | 51.2 (n=41) |
+> | — | oracle (the source paragraph) | 86.3 [84.8, 87.7] (2 missing) | 96.8 | — | — | — | — |
+> | — | closedbook (no context) | 4.4 [3.1, 5.6] (30 missing) | 22.6 | — | — | — | — |
+>
+> Paired differences (accuracy points, a − b, same questions; CI resamples papers), CEO / scinex:
+>
+> | a − b | CEO | scinex |
+> |---|---|---|
+> | noont-me50 − ontology-in-prompt me50 | −0.6 [−1.6, 0.3] | 0.0 [−0.8, 0.7] |
+> | noont-me30 − ontology-in-prompt me30 | −0.1 [−1.2, 1.0] | +0.6 [−0.4, 1.7] |
+> | noont-me50 − teacher | −0.6 [−2.7, 1.4] | −0.5 [−1.6, 0.8] |
+> | **noont-me30 − teacher** | **+3.3 [1.4, 5.3]** | **+3.5 [1.9, 5.1]** |
+> | noont-me50 − untuned noont | −0.3 [−2.1, 1.4] | −1.8 [−3.1, −0.2] |
+> | **noont-me30 − untuned noont** | **+3.6 [1.6, 5.6]** | **+2.2 [0.5, 4.1]** |
+> | noont-me30 − noont-me50 | +3.9 [2.4, 5.5] | +4.0 [2.7, 5.4] |
+>
+> **Reading:**
+> 1. **Removing the ontology from the prompt costs nothing on the main evaluation** (all four
+>    noont − ontology-in-prompt differences within ±0.6 points, CIs across 0). Together with Tables
+>    19 / 19b: the ontology is in the weights (OBJECTIVE step 2), and the Q&A agrees.
+> 2. **The ontology-free me30 student beats its own teacher** (+3.3 / +3.5, CIs above 0) and the
+>    untuned model given the same prompt (+3.6 / +2.2). The me50 student only ties both.
+> 3. **Coverage decides the score.** me30 − me50 = +4 points in both ontologies; within each prompt
+>    the ranking follows "answer in a node". All me50 students (5 families) tie at 4.0–4.5 (CEO)
+>    and 2.7–3.4 (scinex).
+> 4. When the answer IS in the graph near the question's paragraph, finetuned and teacher triples
+>    answer 34–51% correctly vs 25–30% for the untuned graphs: the finetuned triples convert better.
+>    The untuned full-ontology KG still scores highest (12.7 / 12.8) only because it is 4–8× bigger
+>    (2,363 / 2,469 kept triples, Table 16) and covers 77–79% of paragraphs, while only ~20% of its
+>    triples are correct (Table 17 C4 23 / 19 vs ~50–60 for the students and the teacher).
+> 5. ⚠ Absolute accuracy is low: the me50 KGs (2.7–4.5) are no better than closedbook (4.4); only
+>    the me30 KGs (6.8–8.3) clear it, and the oracle shows the questions are answerable (86.3).
+>    **Coverage of paper facts is the lever** (teacher v2 recall prompt, v2 entity lists, second
+>    teacher; running since 2026-11-07 16:20).
+> 6. 67 answers are missing (the answer model skipped them in a batched reply; counts above); a
+>    fill-in run (`ft_runs/acl_scripts/run_qa_fill.sh`, `screen qafill`) re-asks them when the
+>    GPUs are free. Single fold, one question writer/answerer, deterministic grading.
+>
 > **Table 19 (ACL, ⭐ ONTOLOGY-FREE STUDENTS, judge-free).** Students trained and run with the
 > `noont` prompt: the ontology's NAME only, no relation list or definitions (218 tokens vs 2,744).
 > Training data identical to Tables 16–18 except that prompt (ontology and vocabulary cards kept).
