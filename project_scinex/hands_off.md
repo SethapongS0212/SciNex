@@ -32,6 +32,14 @@
   the Table 20 comparisons (+ v2 − v1 teacher if the v2 answers exist) → `report_table20.json`.
   Log `/home/dev1/scinex_runs/qa_fill.log`. Update Table 20's missing-answer rows afterwards.
 
+### 39.3 GPU restore made automatic (`screen gpurestore`, root)
+- The user gave sudo again (GPU heat management only; not stored). Started root `screen gpurestore`
+  = `/home/dev1/scinex_runs/gpu_restore_after.sh` (copy in `ft_runs/acl_scripts/`): waits for
+  `run_after_qa.sh` and `run_qa_fill.sh` to exit (`pgrep -f 'run_after_qa[.]sh|…'` — the bracket
+  keeps the pattern out of its own command line), then for 10 idle minutes (no CUDA process), then
+  quits gpuguard, `-rgc` both cards, `-pl 575`, `-pm 0`. Log `/home/dev1/scinex_runs/gpu_restore.log`.
+  Default limit checked: `power.default_limit` = 575 W on both cards.
+
 ## Session 38 — GPU heat brought under control with clock locks; a 2× training speed-up built and proven equivalent on CPU; entity-list cleanup audited (2026-11-05)
 
 > User: *"read HANDOFF_NEXT_SESSION.md and continue"*. At 12:38 server time the caps run (§37.10)

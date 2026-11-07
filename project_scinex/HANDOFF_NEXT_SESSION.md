@@ -44,12 +44,18 @@
      `qa_eval/acl-f0/report_table20.json`.
 - **⛔ GPU settings are CHANGED for heat while these run** (university property): persistence on,
   400 W, clock locks 1650 / 1900 MHz, root guard `screen gpuguard` (checked: running).
-  **Restore when chain AND qafill are done and nothing else runs:**
+  **The restore is AUTOMATIC:** root `screen gpurestore` = `/home/dev1/scinex_runs/gpu_restore_after.sh`
+  (copy in `ft_runs/acl_scripts/`, started 2026-11-07 17:02 server) waits until `run_after_qa.sh`
+  and `run_qa_fill.sh` have exited and no CUDA process has run for 10 min, then quits gpuguard,
+  resets the clock locks, sets 575 W and persistence off. Log `/home/dev1/scinex_runs/gpu_restore.log`
+  ("=== GPU settings RESTORED ==="). Check it with `nvidia-smi --query-gpu=persistence_mode,power.limit
+  --format=csv` (want Disabled, 575 W). ⚠ If a driver dies without exiting cleanly, restore by hand:
   ```
   sudo screen -S gpuguard -X quit
   sudo nvidia-smi -i 0 -rgc && sudo nvidia-smi -i 1 -rgc
   sudo nvidia-smi -pl 575 && sudo nvidia-smi -pm 0
   ```
+  ⚠ New GPU runs after the restore start at default settings: re-apply the clock locks first (§38.1).
   The sudo password is not stored; ask the user.
 - Models in the HF cache: students Qwen3-4B/8B, Llama-3.1-8B-Instruct, Gemma-3-12B-it, Phi-4;
   teachers gpt-oss-20b and **Qwen3-30B-A3B-Instruct-2507 (second teacher, not run yet)**; Q&A model
