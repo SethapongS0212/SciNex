@@ -67,7 +67,10 @@
   ```
   ⚠ New GPU runs after the restore start at default settings: re-apply the clock locks first (§38.1).
   The sudo password is not stored; ask the user.
-- Models in the HF cache: students Qwen3-4B/8B, Llama-3.1-8B-Instruct, Gemma-3-12B-it, Phi-4;
+- Models in the HF cache: students Qwen3-8B, Gemma-3-12B-it (also KGRAG's model — never delete),
+  Phi-4 (**Qwen3-4B and Llama-3.1-8B-Instruct deleted 2026-11-08 at the user's request**; their
+  adapters stay in `ft_runs/`; re-download before reusing them, the drivers run with
+  `HF_HUB_OFFLINE=1`; KGRAG's models nllb-200 / bge-m3 / ms-marco / Llama-3.2-1B / Gemma stay);
   teachers gpt-oss-20b and **Qwen3-30B-A3B-Instruct-2507 (second teacher, not run yet)**; Q&A model
   Mistral-Small-24B-Instruct-2501.
 
