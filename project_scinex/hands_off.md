@@ -1,6 +1,6 @@
 # Hands-Off Notes
 
-## Session 39 — ⭐⭐ MAIN EVALUATION RESULT: the ontology-free students on simulated Q&A (Table 20) (2026-11-07)
+## Session 39 — ⭐⭐ MAIN EVALUATION RESULT: the ontology-free students on simulated Q&A (Table 20); teacher v2 early result; v2 student queued; second teacher blocked (2026-11-07/08)
 
 > User: *"read HANDOFF_NEXT_SESSION.md and continue"*. At 16:02 server time the noont-KG Q&A
 > answers (qa0/qa1) were nearly done; the chain graded them at 16:20 and started teacher v2.
@@ -39,6 +39,40 @@
   keeps the pattern out of its own command line), then for 10 idle minutes (no CUDA process), then
   quits gpuguard, `-rgc` both cards, `-pl 575`, `-pm 0`. Log `/home/dev1/scinex_runs/gpu_restore.log`.
   Default limit checked: `power.default_limit` = 575 W on both cards.
+
+### 39.4 2026-11-08 10:47 server: teacher v2 at 58%; early v1 vs v2; v2 student queued
+- Teacher v2 after 18.4 h: 11,067 / 19,056 (gpu0) and 11,035 / 18,914 (gpu1) paragraphs, ~10
+  paragraphs/min per lane, no errors, cards 45–60 °C at ~140 W (~50% util). Lanes run all CEO
+  runs first, then scinex. ETA ~2026-11-09 00:10 server.
+- The 41 eval papers are done (both ontologies), so `ft_compare` v1 vs v2 ran early (scratch,
+  CPU): **v2 kept 561 vs 501 (CEO), 389 vs 289 (scinex), same kept rate; answer-in-KG 11.0 vs 8.4
+  and 9.4 vs 5.8** → `results.md` Table 21 (preliminary). v2 covers more → HANDOFF step 2 applies.
+- `build_ft_data.py` dry run on the partial v2 data works: per-paper status matches v1 (733 ok /
+  28 misaligned vs 734 / 30 for CEO); partial counts extraction 8,497, ontology 1,052, vocab 7,943.
+- **`screen v2student`** = `/home/dev1/scinex_runs/run_v2_student.sh` (copy in
+  `ft_runs/acl_scripts/`), log `v2_student_driver.log`: waits for the lanes (stops if either
+  failed) → builds `ft_data/acl_v2_noont_me30` + manifest sanity check → after qafill has filled
+  its answers, trains `qwen3-8b-acl-f0-v2-noont-me30` on GPU1 (~2 h expected; v1 me30 took 1 h 38 m)
+  → generates slug `qwen3-8b-acl-v2-noont-me30-cv` (noont prompt, `--teacher gptoss-20b-v2
+  --entity-dir output/acl_v2`) → Q&A (CEO GPU0 after the chain ends, scinex GPU1) → waits for
+  qafill to exit → grade + report with all comparisons (incl. v2 teacher − v1 teacher, v2 student
+  − v1 student, v2 student − v2 teacher) → `report_table20.json` → `ft_compare` →
+  `ft_runs/teacher_v2/compare_v2_student.json`. Expected done ~04:00 server 2026-11-09.
+- `gpurestore` still fires correctly: it waits for chain + qafill to exit and THEN for 10 minutes
+  without any CUDA process, so it waits for v2student too (its steps follow each other within
+  seconds).
+
+### 39.5 ⛔ Second teacher (Qwen3-30B-A3B-Instruct-2507) cannot run 4-bit with this stack
+- Checked on the meta device (CPU, no GPU): transformers 5.5.4 stores Qwen3-MoE experts as fused
+  3-D `nn.Parameter`s (`Qwen3MoeExperts.gate_up_proj` / `down_proj`), and bitsandbytes 4-bit only
+  replaces `nn.Linear`. Result: **0.91 B params in 4-bit, 29.6 B left in bf16 (~59 GB)** → does not
+  fit one 32 GB card through `ft_generate.py`. No GPU smoke test was needed (or possible: both
+  cards busy).
+- Options (user decision): (a) custom loader that unfuses experts into per-expert bnb 4-bit
+  linears (~16 GB; engineering, speed unknown); (b) bf16 split over both cards (59 GB of 64 GB,
+  tiny batch, blocks both GPUs); (c) a dense second teacher that fits in 4-bit, e.g. Qwen3-32B or
+  Gemma-3-27B-it (download ~55–65 GB); (d) a separate venv with vLLM + an AWQ/GPTQ checkpoint.
+  Mistral-Small-24B is excluded (it is the Q&A model).
 
 ## Session 38 — GPU heat brought under control with clock locks; a 2× training speed-up built and proven equivalent on CPU; entity-list cleanup audited (2026-11-05)
 

@@ -1,6 +1,6 @@
 # Handoff — next session
 
-**Updated 2026-11-07 16:40 server time (Session 39).** Read in this order:
+**Updated 2026-11-08 11:00 server time (Session 39).** Read in this order:
 1. **[`OBJECTIVE.md`](OBJECTIVE.md)** — the professor's three steps. Everything serves them.
 2. This file — where the work stands and what to do next.
 3. `hands_off.md` §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation).
@@ -16,7 +16,7 @@
 - Corpus: 805 ACL papers, fixed entity lists; fold 0 (41 papers) held out.
 - Per-triple judging (C1/C3/C4) and judge-free counts are diagnostics, not the headline.
 
-## State (2026-11-07, 16:40 server time = 23:40 user time)
+## State (2026-11-08, 11:00 server time = 18:00 user time)
 - ✔ **Step 2 of the objective MET** (Tables 19 / 19b): ontology-free students keep 87–93% of
   proposals and are as correct as ontology-in-prompt students and the teacher.
 - ✔ **⭐⭐ MAIN EVALUATION DONE for the noont KGs — `results.md` Table 20** (simulated Q&A, 1,222
@@ -42,9 +42,19 @@
      ft-me30 9, scinex teacher 18, scinex llama/phi4 noont 4 each) on GPU1, waits for the chain to
      end, then grades + reports with the Table 20 comparisons (+ v2 − v1 teacher) →
      `qa_eval/acl-f0/report_table20.json`.
+  3. **`screen -r v2student`** = `/home/dev1/scinex_runs/run_v2_student.sh` (copy in
+     `ft_runs/acl_scripts/`), log `v2_student_driver.log` (hands_off §39.4). HANDOFF step 2,
+     automated: after the lanes, builds `ft_data/acl_v2_noont_me30`, trains
+     `qwen3-8b-acl-f0-v2-noont-me30` on GPU1, generates slug `qwen3-8b-acl-v2-noont-me30-cv` on
+     the eval papers, answers its Q&A, grades + reports with every comparison
+     (`report_table20.json`), runs `ft_compare` (`ft_runs/teacher_v2/compare_v2_student.json`).
+     Expected done ~2026-11-09 04:00 server. Re-running resumes.
+- Teacher v2 at 58% on 2026-11-08 10:47 (~10 paragraphs/min per card). Eval papers done early:
+  **v2 keeps 561 / 389 triples vs v1 501 / 289, answer-in-KG 11.0 / 9.4 vs 8.4 / 5.8**
+  (`results.md` Table 21, preliminary).
 - **⛔ GPU settings are CHANGED for heat while these run** (university property): persistence on,
   400 W, clock locks 1650 / 1900 MHz, root guard `screen gpuguard` (checked: running).
-  **The restore is AUTOMATIC:** root `screen gpurestore` = `/home/dev1/scinex_runs/gpu_restore_after.sh`
+  **The restore is AUTOMATIC:** root `screen gpurestore` (also waits for v2student: it needs 10 min with no CUDA process) = `/home/dev1/scinex_runs/gpu_restore_after.sh`
   (copy in `ft_runs/acl_scripts/`, started 2026-11-07 17:02 server) waits until `run_after_qa.sh`
   and `run_qa_fill.sh` have exited and no CUDA process has run for 10 min, then quits gpuguard,
   resets the clock locks, sets 575 W and persistence off. Log `/home/dev1/scinex_runs/gpu_restore.log`
@@ -62,23 +72,22 @@
   Mistral-Small-24B-Instruct-2501.
 
 ## Next steps, in order
-1. **When `qafill` is done:** update Table 20 from `qa_eval/acl-f0/report_table20.json` (the
-   rows marked "missing", the v2 teacher rows and its v2 − v1 comparison). Commit + push.
-2. **When the teacher v2 lanes finish:** read `teacher_v2_compare.log` (does v2 extract more,
-   at what kept rate?) and its Q&A (chain step 5). If v2 covers more:
-   - build ontology-free training data from it, e.g.
-     `python build_ft_data.py --extractor fixed --teacher gptoss-20b-v2 --entity-dir output/acl_v2
-     --prompt-variant noont --papers-file papers_acl.txt --split ft_data/acl/split.json --folds 20
-     --eval-fold 0 --max-empty-frac 0.3 --out ft_data/acl_v2_noont_me30` (check the manifest: counts,
-     ontology cards 1,300, alignment);
-   - train Qwen3-8B on it like `run_noont.sh` (`ft_train_qlora.py … --epochs 1 --save-steps 200`),
-     generate with `ft_generate.py --adapter … --extractor fixed --teacher gptoss-20b-v2
-     --prompt-variant noont --entity-dir output/acl_v2 --batch-size 8 --ingest`, then Q&A it.
-3. **Second teacher** (user request): Qwen3-30B-A3B-Instruct-2507, same v2 setup. ⚠ Not tested yet:
-   smoke-test it first (load in 4-bit, a few paragraphs, measure s/paragraph — HF MoE in 4-bit may
-   be slow). For a fair comparison, run it on a FIXED subset of training papers and train a
-   gpt-oss-20b-v2 student on the same subset, so only the teacher differs; also train a non-Qwen
-   student (family confound). Judge by Q&A.
+1. **When `v2student` is done** (it ends last): update `results.md` — Table 20 (fill the
+   "missing" rows; add teacher v2 and the v2 student with their comparisons, from
+   `qa_eval/acl-f0/report_table20.json` / `v2_student_qa.log`), Table 21 (final, from
+   `teacher_v2_compare.log` + `v2_student_compare.log`); re-run `qa_gap_analysis.py` with the v2
+   KGs added. Check `gpu_restore.log` says RESTORED. Commit + push.
+   - If the run stopped: the driver logs say where; each script resumes when re-run (chain →
+     qafill → v2student order).
+2. **Decide with the user what comes next**, e.g. a v2 me50 student / other families on v2 data,
+   or a lower empty cap (Q&A rewards coverage — me30 beat me50 by +4 points — but watch
+   per-triple correctness with a blind C1/C3/C4 round).
+3. **Second teacher** (user request): ⛔ **Qwen3-30B-A3B-Instruct-2507 does not fit in 4-bit with
+   this stack** (fused MoE experts stay bf16: 29.6 B params ≈ 59 GB; hands_off §39.5). Ask the
+   user to pick: (a) custom per-expert 4-bit loader, (b) bf16 over both cards, (c) a dense teacher
+   that fits (Qwen3-32B / Gemma-3-27B-it, download), (d) separate vLLM venv + AWQ checkpoint.
+   Then: run it on a FIXED subset of training papers and train a gpt-oss-20b-v2 student on the
+   same subset, so only the teacher differs; also a non-Qwen student. Judge by Q&A.
 4. Later: more folds; entity-list REVIEW rows (user/professor); guard fixes (`88.5` leak,
    self-loops); `--share-system-prompt` GPU speed test (less relevant now that noont prompts are short).
 

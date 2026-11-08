@@ -72,6 +72,26 @@
 >    fill-in run (`ft_runs/acl_scripts/run_qa_fill.sh`, `screen qafill`) re-asks them when the
 >    GPUs are free. Single fold, one question writer/answerer, deterministic grading.
 >
+> **Table 21 (ACL, PRELIMINARY — teacher v2 vs v1 on the 41 eval papers, judge-free, 2026-11-08).**
+> Teacher v2 = gpt-oss-20b with the `recall` prompt and the `output/acl_v2` entity lists
+> (`hands_off.md` §38.6). The eval papers ran first; the 764 training papers were still running.
+> Counts from `ft_compare.py`; Q&A predictors (no answers yet) computed as in Table 20:
+>
+> | ontology | KG | proposed → kept | kept rate | coverage | triples | paragraph covered | answer in a node | answer in KG |
+> |---|---|---|---|---|---|---|---|---|
+> | CEO | teacher v1 | 619 → 501 | 80.9% | 25.6% | 497 | 27.3 | 19.1 | 8.4 |
+> | CEO | **teacher v2** | 702 → 561 | 79.9% | 29.0% | 553 | 30.8 | 21.2 | **11.0** |
+> | CEO | noont-me30 student (v1 data) | 797 → 678 | 85.1% | 43.9% | 657 | 46.2 | 24.6 | 12.4 |
+> | scinex | teacher v1 | 373 → 289 | 77.5% | 17.3% | 287 | 18.2 | 14.1 | 5.8 |
+> | scinex | **teacher v2** | 496 → 389 | 78.4% | 23.7% | 384 | 24.3 | 19.7 | **9.4** |
+> | scinex | noont-me30 student (v1 data) | 627 → 544 | 86.8% | 35.2% | 535 | 36.8 | 21.6 | 10.8 |
+>
+> v2 keeps 12% (CEO) / 35% (scinex) more triples at the same kept rate, and its graph holds
+> 31% / 62% more of the Q&A gold answers ("answer in KG" 8.4 → 11.0, 5.8 → 9.4), nearly as many
+> as the me30 student with ~20% fewer triples. v1/v2 agree on only ~21% / 14% of triples (P vs
+> v1), as expected from run-to-run variation. Q&A answers for v2 and a student trained on v2 data
+> are queued (`hands_off.md` §39.4).
+>
 > **Table 19 (ACL, ⭐ ONTOLOGY-FREE STUDENTS, judge-free).** Students trained and run with the
 > `noont` prompt: the ontology's NAME only, no relation list or definitions (218 tokens vs 2,744).
 > Training data identical to Tables 16–18 except that prompt (ontology and vocabulary cards kept).
