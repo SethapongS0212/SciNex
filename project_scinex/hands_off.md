@@ -74,6 +74,39 @@
   Gemma-3-27B-it (download ~55–65 GB); (d) a separate venv with vLLM + an AWQ/GPTQ checkpoint.
   Mistral-Small-24B is excluded (it is the Q&A model).
 
+### 39.6 Second teacher via vLLM (option d, user: "if you think choice d is the best go for it")
+- **Separate venv `/home/dev1/envvllm`** (Python 3.12.3): `vllm==0.32.0` (released 2026-10-18;
+  pins torch 2.13.0 → `2.13.0+cu130`, transformers 5.19.0) + `beautifulsoup4`, `rdflib==7.6.0`,
+  `networkx==3.4.2` for the project imports. `envsam` untouched. Install log
+  `/home/dev1/scinex_runs/envvllm_install.log`.
+- **Checkpoint `RedHatAI/Qwen3-30B-A3B-Instruct-2507-quantized.w4a16`** (16.7 GB, compressed-
+  tensors W4A16, Red Hat / Neural Magic). Same 4-bit class as gpt-oss-20b's MXFP4.
+- **`ft_generate.py --backend vllm`** (additive; the default `hf` path is unchanged):
+  `load_vllm` (`LLM(..., max_model_len 8192, gpu_memory_utilization 0.90, seed 0)`) and
+  `generate_batch_vllm` (greedy, prompt token ids = `tok(render_chat(...), add_special_tokens=False)`,
+  so the tokens are exactly the HF path's; `finish_reason == "length"` → truncated; harmony models
+  keep special tokens and go through `harmony_final`). New flags `--backend`, `--max-model-len`,
+  `--gpu-memory-utilization`, `--ingest-python` (ingest runs with envsam). Adapters are refused
+  on vllm. `prompt_meta.json` gets `"backend": "vllm"`.
+- Checked on CPU: the longest v2 prompt is 4,042 tokens (+3,072 new < 8,192); the rendered
+  prompts are **identical** (78 prompts, 264,719 tokens, same sha256) with the original Qwen
+  tokenizer in envsam, the RedHat tokenizer in envsam, and the RedHat tokenizer in envvllm.
+  Dry runs pass in both venvs.
+- **`screen teacher2`** = `/home/dev1/scinex_runs/run_teacher2.sh` (copy in `ft_runs/acl_scripts/`),
+  log `teacher2_driver.log`, GPU0 only: waits for the chain → smoke test (2 training papers × 4
+  paragraphs, slug `smoke-qwen30b`, deleted after; needs ≥80% valid JSON) → full run, slug
+  **`qwen3-30b-a3b-v2`**, all 805 papers × 2 ontologies, eval papers first, `--batch-size 64`,
+  ingest with envsam → `ft_compare` v1 / v2 / q30b (`ft_runs/teacher2/compare_teacher2.json`) →
+  its Q&A → grade/report → ontology-free me30 Qwen3-8B student on its data
+  (`ft_data/acl_q30b_noont_me30`, run `qwen3-8b-acl-f0-q30b-noont-me30`, slug
+  `qwen3-8b-acl-q30b-noont-me30-cv`) → its Q&A → grade/report → `compare_students.json`.
+  Running the teacher on ALL papers (not a subset) makes the student comparison fair as is: v2
+  student vs q30b student differ only in the teacher (same prompt, lists, cap, recipe).
+- `run_v2_student.sh` restarted (it was still waiting) so it uses **GPU1 only** (its Q&A runs
+  both ontologies on GPU1); both chains grade under `flock /home/dev1/scinex_runs/qa_grade.lock`.
+- The bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` (57 GB) is still in the cache as a fallback until
+  the vLLM smoke test passes; then it can go (user agreed to delete it with option d).
+
 ## Session 38 — GPU heat brought under control with clock locks; a 2× training speed-up built and proven equivalent on CPU; entity-list cleanup audited (2026-11-05)
 
 > User: *"read HANDOFF_NEXT_SESSION.md and continue"*. At 12:38 server time the caps run (§37.10)

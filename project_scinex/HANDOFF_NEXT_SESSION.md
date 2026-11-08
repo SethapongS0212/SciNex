@@ -1,6 +1,6 @@
 # Handoff — next session
 
-**Updated 2026-11-08 11:00 server time (Session 39).** Read in this order:
+**Updated 2026-11-08 12:45 server time (Session 39).** Read in this order:
 1. **[`OBJECTIVE.md`](OBJECTIVE.md)** — the professor's three steps. Everything serves them.
 2. This file — where the work stands and what to do next.
 3. `hands_off.md` §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation).
@@ -16,7 +16,7 @@
 - Corpus: 805 ACL papers, fixed entity lists; fold 0 (41 papers) held out.
 - Per-triple judging (C1/C3/C4) and judge-free counts are diagnostics, not the headline.
 
-## State (2026-11-08, 11:00 server time = 18:00 user time)
+## State (2026-11-08, 12:45 server time = 19:45 user time)
 - ✔ **Step 2 of the objective MET** (Tables 19 / 19b): ontology-free students keep 87–93% of
   proposals and are as correct as ontology-in-prompt students and the teacher.
 - ✔ **⭐⭐ MAIN EVALUATION DONE for the noont KGs — `results.md` Table 20** (simulated Q&A, 1,222
@@ -48,13 +48,20 @@
      `qwen3-8b-acl-f0-v2-noont-me30` on GPU1, generates slug `qwen3-8b-acl-v2-noont-me30-cv` on
      the eval papers, answers its Q&A, grades + reports with every comparison
      (`report_table20.json`), runs `ft_compare` (`ft_runs/teacher_v2/compare_v2_student.json`).
-     Expected done ~2026-11-09 04:00 server. Re-running resumes.
+     Expected done ~2026-11-09 04:00 server. Re-running resumes. **GPU1 only** (restarted 12:35).
+  4. **`screen -r teacher2`** = `/home/dev1/scinex_runs/run_teacher2.sh` (copy in
+     `ft_runs/acl_scripts/`), log `teacher2_driver.log` (hands_off §39.6). **Second teacher
+     Qwen3-30B-A3B-Instruct-2507 (W4A16, RedHatAI checkpoint) via vLLM** from the separate venv
+     `/home/dev1/envvllm` (`ft_generate.py --backend vllm`), GPU0 only, after the chain: smoke
+     test → all 805 papers (slug `qwen3-30b-a3b-v2`, eval first) → compare → its Q&A → an
+     ontology-free me30 Qwen3-8B student on its data (slug `qwen3-8b-acl-q30b-noont-me30-cv`) →
+     Q&A → report. Speed unknown until the smoke test (logged as wall seconds). Re-running resumes.
 - Teacher v2 at 58% on 2026-11-08 10:47 (~10 paragraphs/min per card). Eval papers done early:
   **v2 keeps 561 / 389 triples vs v1 501 / 289, answer-in-KG 11.0 / 9.4 vs 8.4 / 5.8**
   (`results.md` Table 21, preliminary).
 - **⛔ GPU settings are CHANGED for heat while these run** (university property): persistence on,
   400 W, clock locks 1650 / 1900 MHz, root guard `screen gpuguard` (checked: running).
-  **The restore is AUTOMATIC:** root `screen gpurestore` (also waits for v2student: it needs 10 min with no CUDA process) = `/home/dev1/scinex_runs/gpu_restore_after.sh`
+  **The restore is AUTOMATIC:** root `screen gpurestore` (also waits for v2student and teacher2: it needs 10 min with no CUDA process) = `/home/dev1/scinex_runs/gpu_restore_after.sh`
   (copy in `ft_runs/acl_scripts/`, started 2026-11-07 17:02 server) waits until `run_after_qa.sh`
   and `run_qa_fill.sh` have exited and no CUDA process has run for 10 min, then quits gpuguard,
   resets the clock locks, sets 575 W and persistence off. Log `/home/dev1/scinex_runs/gpu_restore.log`
@@ -71,7 +78,8 @@
   Phi-4 (**Qwen3-4B and Llama-3.1-8B-Instruct deleted 2026-11-08 at the user's request**; their
   adapters stay in `ft_runs/`; re-download before reusing them, the drivers run with
   `HF_HUB_OFFLINE=1`; KGRAG's models nllb-200 / bge-m3 / ms-marco / Llama-3.2-1B / Gemma stay);
-  teachers gpt-oss-20b and **Qwen3-30B-A3B-Instruct-2507 (second teacher, not run yet)**; Q&A model
+  teachers gpt-oss-20b and Qwen3-30B-A3B-Instruct-2507 (bf16, unusable 4-bit; to delete) + its
+  **W4A16 `RedHatAI/Qwen3-30B-A3B-Instruct-2507-quantized.w4a16` (vLLM, envvllm)**; Q&A model
   Mistral-Small-24B-Instruct-2501.
 
 ## Next steps, in order
@@ -85,17 +93,19 @@
 2. **Decide with the user what comes next**, e.g. a v2 me50 student / other families on v2 data,
    or a lower empty cap (Q&A rewards coverage — me30 beat me50 by +4 points — but watch
    per-triple correctness with a blind C1/C3/C4 round).
-3. **Second teacher** (user request): ⛔ **Qwen3-30B-A3B-Instruct-2507 does not fit in 4-bit with
-   this stack** (fused MoE experts stay bf16: 29.6 B params ≈ 59 GB; hands_off §39.5). Ask the
-   user to pick: (a) custom per-expert 4-bit loader, (b) bf16 over both cards, (c) a dense teacher
-   that fits (Qwen3-32B / Gemma-3-27B-it, download), (d) separate vLLM venv + AWQ checkpoint.
-   Then: run it on a FIXED subset of training papers and train a gpt-oss-20b-v2 student on the
-   same subset, so only the teacher differs; also a non-Qwen student. Judge by Q&A.
+3. **Second teacher** (user request): ⏳ **running in `screen teacher2`** (option d chosen by
+   the user: vLLM + W4A16 checkpoint; the bf16 checkpoint cannot load 4-bit, hands_off §39.5–39.6).
+   If the smoke test failed (`teacher2_driver.log`, `teacher2_smoke.log`): fix and re-run
+   `run_teacher2.sh`. When done: `results.md` — teacher v1 / v2 / q30b (`teacher2_compare.log`,
+   Q&A) and students on v2 vs q30b data (`teacher2_students_compare.log`, Q&A). Then delete the
+   57 GB bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` from the HF cache (user agreed). Still open: a
+   non-Qwen student on both teachers' data (family confound; Phi-4 / Gemma-3-12B in cache).
 4. Later: more folds; entity-list REVIEW rows (user/professor); guard fixes (`88.5` leak,
    self-loops); `--share-system-prompt` GPU speed test (less relevant now that noont prompts are short).
 
 ## Machine
-Linux box `kubegpu-g04`, **2× RTX 5090 (32 GB, sm_120)**, 125 GB RAM. venv **`/home/dev1/envsam`**
+Linux box `kubegpu-g04`, **2× RTX 5090 (32 GB, sm_120)**, 125 GB RAM. Second venv **`/home/dev1/envvllm`**
+(vLLM 0.32.0, torch 2.13.0+cu130; only for `ft_generate.py --backend vllm`). venv **`/home/dev1/envsam`**
 (Python 3.12.3, torch `2.13.0+cu130`, no `--allow-dev-torch`; `kernels==0.12.3` for gpt-oss;
 `peft==0.21.1`). Repo `/home/dev1/SciNex`; `/home/dev1/project_scinex` is a symlink to its
 `project_scinex/`. Drivers in `/home/dev1/scinex_runs/` (copies in `ft_runs/acl_scripts/`). Long

@@ -26,6 +26,11 @@ The finetuning runs now use the **ACL Anthology corpus with the fixed extractor*
   no reboot is needed (`hands_off.md` §37.8).
 - Run long jobs inside `screen`. The drivers used are in `ft_runs/acl_scripts/`; they hardcode this
   box's paths.
+- **Second venv for vLLM (Session 39, second teacher only):** `python3 -m venv envvllm &&
+  envvllm/bin/pip install vllm==0.32.0 beautifulsoup4 rdflib==7.6.0 networkx==3.4.2` (vLLM pins
+  torch 2.13.0+cu130), then `hf download RedHatAI/Qwen3-30B-A3B-Instruct-2507-quantized.w4a16`.
+  Used only through `ft_generate.py --backend vllm --ingest-python <envsam python>`; keep it out
+  of the main venv (different transformers version).
 
 ## 1. What is in GitHub, and what is NOT
 

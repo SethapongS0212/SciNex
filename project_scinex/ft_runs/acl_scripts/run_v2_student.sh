@@ -5,8 +5,8 @@
 #      max 30% empty targets, ACL split fold 0) and sanity-check the manifest counts
 #   3. GPU1, once run_qa_fill.sh has filled its answers: train Qwen3-8B (QLoRA, 1 epoch,
 #      --save-steps 200), then generate on the 41 eval papers with the noont prompt + v2 lists
-#   4. Q&A answers from its KGs (CEO on GPU0, scinex on GPU1), wait for run_qa_fill.sh to end
-#      (one grades.jsonl writer at a time), grade + report with the Table 20 comparisons plus the
+#   4. Q&A answers from its KGs on GPU1 (GPU0 belongs to run_teacher2.sh), wait for run_qa_fill.sh
+#      to end, grade + report under flock $LOGS/qa_grade.lock (one grades.jsonl writer at a time) with the Table 20 comparisons plus the
 #      v2 ones -> qa_eval/acl-f0/report_table20.json
 #   5. ft_compare: v1 teacher, v2 teacher, v1 noont-me30 student, v2 noont-me30 student
 # Every step is skipped if its output exists, so re-running resumes.
@@ -69,12 +69,10 @@ else
   touch "$LOGS/v2_gen_$SLUG.done"; say "gpu1: gen $SLUG finished"
 fi
 
-say "Q&A answers from $SLUG (CEO gpu0, scinex gpu1)"
-while screen -ls | grep -qE '\.chain[[:space:]]'; do sleep 60; done   # GPU0 busy until the chain ends
-HF_BATCH=8 "$LOGS/run_qa.sh" 0 kg "fixed/$SLUG" & q0=$!
-HF_BATCH=8 "$LOGS/run_qa.sh" 1 kg "fixed_scinex/$SLUG" & q1=$!
-wait $q0; wait $q1
+say "gpu1: Q&A answers from $SLUG"
+HF_BATCH=8 "$LOGS/run_qa.sh" 1 kg "fixed/$SLUG" "fixed_scinex/$SLUG"
 while pgrep -f 'run_qa_fill[.]sh' > /dev/null; do sleep 60; done
+exec 9> "$LOGS/qa_grade.lock"; flock 9
 "$PY" qa_eval.py grade --run acl-f0 >> "$LOGS/v2_student_qa.log" 2>&1
 C=()
 cmp() {  # add a comparison only when both answer files exist (report exits on unknown conditions)
@@ -86,10 +84,13 @@ for o in fixed fixed_scinex; do
   for s in qwen3-8b-acl-noont-me50-cv qwen3-8b-acl-noont-me30-cv; do cmp "kg__${o}__$s" "kg__${o}__gptoss-20b"; done
   cmp "kg__${o}__gptoss-20b-v2" "kg__${o}__gptoss-20b"
   cmp "kg__${o}__$SLUG" "kg__${o}__gptoss-20b-v2"
+  cmp "kg__${o}__qwen3-30b-a3b-v2" "kg__${o}__gptoss-20b-v2"
+  cmp "kg__${o}__qwen3-8b-acl-q30b-noont-me30-cv" "kg__${o}__$SLUG"
 done
 "$PY" qa_eval.py report --run acl-f0 "${C[@]}" >> "$LOGS/v2_student_qa.log" 2>&1 && \
   cp qa_eval/acl-f0/report.json qa_eval/acl-f0/report_table20.json && say "Q&A graded + reported (report_table20.json)" \
   || say "Q&A grade/report FAILED - see $LOGS/v2_student_qa.log"
+flock -u 9
 
 mapfile -t EVAL < "$EVALF"
 "$PY" ft_compare.py --extractor fixed --teacher gptoss-20b \

@@ -149,6 +149,31 @@ def generate_batch(model, tok, prompts, max_new_tokens):
     return res
 
 
+def load_vllm(base_model, args):
+    """--backend vllm (second teacher, Session 39): a checkpoint that ships its own quantization
+    (e.g. RedHatAI/...-quantized.w4a16 for Qwen3-30B-A3B, whose fused MoE experts bitsandbytes
+    cannot quantize). Runs from the separate venv /home/dev1/envvllm. The prompt text and its
+    tokens are exactly the HF path's (render_chat + add_special_tokens=False); decoding greedy."""
+    from vllm import LLM
+    llm = LLM(model=base_model, max_model_len=args.max_model_len,
+              gpu_memory_utilization=args.gpu_memory_utilization,
+              trust_remote_code=args.trust_remote_code, seed=0)
+    return llm, llm.get_tokenizer()
+
+
+def generate_batch_vllm(llm, tok, prompts, max_new_tokens):
+    from vllm import SamplingParams
+    harmony = "<|channel|>" in tok.get_vocab()
+    sp = SamplingParams(temperature=0.0, max_tokens=max_new_tokens, skip_special_tokens=not harmony)
+    reqs = [{"prompt_token_ids": tok(p, add_special_tokens=False)["input_ids"]} for p in prompts]
+    res = []
+    for o in llm.generate(reqs, sp, use_tqdm=False):
+        c = o.outputs[0]
+        text = harmony_final(c.text) if harmony else c.text.strip()
+        res.append((text, len(c.token_ids), c.finish_reason == "length"))
+    return res
+
+
 def paper_title(paper):
     from kg_extraction.html_parser import parse_html
     html = OUTPUT_DIR / paper / "no-llm" / "output.html"
@@ -183,6 +208,14 @@ def main():
     ap.add_argument("--resume", action="store_true", default=True)
     ap.add_argument("--no-resume", dest="resume", action="store_false")
     ap.add_argument("--ingest", action="store_true", help="run claude_extract.py ingest afterwards")
+    ap.add_argument("--ingest-python", default=None,
+                    help="interpreter for the ingest step (default: this one). With --backend vllm "
+                         "from /home/dev1/envvllm, pass /home/dev1/envsam/bin/python")
+    ap.add_argument("--backend", choices=["hf", "vllm"], default="hf",
+                    help="hf = transformers (+bnb 4-bit, adapters); vllm = pre-quantized checkpoints "
+                         "(run from the vLLM venv; use a big --batch-size, e.g. 64)")
+    ap.add_argument("--max-model-len", type=int, default=8192, help="vllm only: context length")
+    ap.add_argument("--gpu-memory-utilization", type=float, default=0.90, help="vllm only")
     ap.add_argument("--trust-remote-code", action="store_true")
     ap.add_argument("--dry-run", action="store_true", help="render + count prompts, no model")
     ap.add_argument("--prompt-variant", choices=PROMPT_VARIANTS, default="default",
@@ -256,8 +289,15 @@ def main():
             print(f"  {paper:20s} {ont:6s} {len(rows):3d} paragraphs  ({source})")
         return
 
-    model, tok = load_model(args.base_model, adapter_dir, args.trust_remote_code,
-                            args.attn_implementation)
+    if args.backend == "vllm":
+        if adapter_dir:
+            sys.exit("--backend vllm is for base/teacher models; adapters go through --backend hf")
+        model, tok = load_vllm(args.base_model, args)
+        gen_fn = generate_batch_vllm
+    else:
+        model, tok = load_model(args.base_model, adapter_dir, args.trust_remote_code,
+                                args.attn_implementation)
+        gen_fn = generate_batch
     tmpl_kw = {"reasoning_effort": args.reasoning_effort} if args.reasoning_effort else {}
     t0 = time.time()
     for paper, ont, exdir, system, relations, rows, source in jobs:
@@ -278,6 +318,7 @@ def main():
             "base_model": args.base_model, "adapter": adapter_dir, "paragraph_source": source,
             "reasoning_effort": args.reasoning_effort, "prompt_variant": args.prompt_variant,
             "entity_dir": args.entity_dir,
+            **({"backend": "vllm"} if args.backend == "vllm" else {}),
         }, indent=2), encoding="utf-8")
 
         out_f = dest / "responses.jsonl"
@@ -294,19 +335,23 @@ def main():
                 chunk = todo[i:i + args.batch_size]
                 prompts = [render_chat(tok, build_messages(system, r["user_prompt"]), True, **tmpl_kw)
                            for r in chunk]
-                for r, (text, n_tok, trunc) in zip(chunk, generate_batch(model, tok, prompts, args.max_new_tokens)):
+                for r, (text, n_tok, trunc) in zip(chunk, gen_fn(model, tok, prompts, args.max_new_tokens)):
                     f.write(json.dumps({"para_id": r["para_id"], "raw": text,
                                         "n_tokens": n_tok, "truncated": trunc},
                                        ensure_ascii=False) + "\n")
                 f.flush()
-                import torch
-                peak = torch.cuda.max_memory_allocated() / 2**30 if torch.cuda.is_available() else 0
+                if args.backend == "vllm":     # the engine runs in its own process: no torch stats here
+                    mem = ""
+                else:
+                    import torch
+                    peak = torch.cuda.max_memory_allocated() / 2**30 if torch.cuda.is_available() else 0
+                    mem = f", peak VRAM {peak:.1f} GB"
                 print(f"    {paper}/{ont}: {min(i + args.batch_size, len(todo))}/{len(todo)} "
-                      f"({(time.time() - t0) / 60:.1f} min, peak VRAM {peak:.1f} GB)", flush=True)
+                      f"({(time.time() - t0) / 60:.1f} min{mem})", flush=True)
         if args.ingest:
             ent = (["--entity-csv", str(entity_csv_for(paper, entity_dir))]
                    if args.extractor == "fixed" else [])
-            subprocess.run([sys.executable, "claude_extract.py", "ingest", "--paper", paper,
+            subprocess.run([args.ingest_python or sys.executable, "claude_extract.py", "ingest", "--paper", paper,
                             "--extractor", args.extractor, "--ontology", ont, *ent,
                             "--ontology-file", args.ontology_file, "--model-slug", args.model_slug,
                             "--responses", str(out_f)], check=False)
