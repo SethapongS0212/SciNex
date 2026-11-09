@@ -5,8 +5,11 @@
 # stop the thermal guard, reset clock locks, power limit 575 W, persistence off.
 LOG=/home/dev1/scinex_runs/gpu_restore.log
 say() { echo "[$(date '+%F %T')] $*" >> "$LOG"; }
-say "gpurestore: waiting for run_after_qa.sh and run_qa_fill.sh to exit"
-while pgrep -f 'run_after_qa[.]sh|run_qa_fill[.]sh' > /dev/null; do sleep 120; done
+# Optional $1 = pgrep -f pattern of the drivers to wait for (bracket the dot so the pattern
+# never matches this script's own command line), e.g. 'run_teacher2[.]sh'.
+PAT=${1:-'run_after_qa[.]sh|run_qa_fill[.]sh'}
+say "gpurestore: waiting for drivers matching $PAT to exit"
+while pgrep -f "$PAT" > /dev/null; do sleep 120; done
 say "drivers exited; waiting for 10 idle minutes on the GPUs"
 quiet=0
 while [ "$quiet" -lt 5 ]; do

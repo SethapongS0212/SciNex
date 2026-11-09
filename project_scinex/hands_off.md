@@ -107,6 +107,31 @@
 - The bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` (57 GB) is still in the cache as a fallback until
   the vLLM smoke test passes; then it can go (user agreed to delete it with option d).
 
+### 39.7 2026-11-09: overnight results; teacher2 smoke failure fixed and relaunched
+- **Chain** done 00:52 (teacher v2 lanes finished 00:16 / 00:32, compare, v2 Q&A). **qafill** done
+  00:53 (filled 36 of the 67 answers; closedbook's 30 skips repeat under greedy decoding, oracle 1).
+  **v2student** done 04:08: data 13,531 extraction / 1,241 ontology / 7,943 vocabulary examples;
+  training 2 h 00 m on GPU1; generation 1 h 12 m; Q&A 20 m. **gpurestore** restored the defaults
+  at 04:18 (log shows 575 W, persistence off, clocks reset).
+- **Results** (`results.md` Tables 20 / 21): teacher v2 Q&A 6.2 / 4.9 vs v1 5.0 / 3.3 (+1.1
+  [−0.7, 3.1] / +1.6 [0.3, 3.1]); **v2-data noont-me30 student 10.0 / 8.0 = best finetuned KG**,
+  +3.8 / +3.1 over teacher v2, +1.7 / +1.2 over the v1-data student (CIs touch 0); keeps 851 /
+  730 triples (87 / 86%), coverage 53 / 45%. `gap_analysis.json` re-run with the v2 KGs.
+- **teacher2 smoke FAILED at 00:54**: vLLM loaded the W4A16 model and captured CUDA graphs fine on
+  sm_120, then its sampler warm-up JIT-compiled a FlashInfer top-k/top-p kernel, which needs `nvcc`
+  ("Could not find nvcc and default cuda_home='/usr/local/cuda' doesn't exist"). No CUDA toolkit on
+  this box. **Fix: `VLLM_USE_FLASHINFER_SAMPLER=0`** (greedy decoding never uses it), now exported in
+  `run_teacher2.sh`. Re-run by hand 12:47: 96 s wall incl. load, **16/16 valid JSON, 102 triples
+  proposed, 0 truncated** (gpt-oss v2 proposed 46 on 120 paragraphs of the same 2 papers).
+- **Relaunched 12:48 on BOTH GPUs** (v2student had finished): `run_teacher2.sh` now runs two lanes
+  (`teacher2_half{0,1}.txt`, eval papers first; logs `teacher2_full_gpu{0,1}.log`), then compare,
+  the teacher's Q&A on GPU1 in the background while the q30b student trains on GPU0.
+- **GPU heat settings re-applied** (user's sudo, heat management only; not stored): `-pm 1`, `-pl
+  400`, `-lgc 0,1650` (GPU0) / `0,1900` (GPU1), root `screen gpuguard` (caps 1650 / 1900). New root
+  `screen gpurestore` = `gpu_restore_after.sh 'run_teacher2[.]sh'` (the script now takes the
+  driver pattern as $1) restores everything 10 idle minutes after `run_teacher2.sh` exits. First
+  minutes: 100% util, 48 / 40 °C, <200 W.
+
 ## Session 38 — GPU heat brought under control with clock locks; a 2× training speed-up built and proven equivalent on CPU; entity-list cleanup audited (2026-11-05)
 
 > User: *"read HANDOFF_NEXT_SESSION.md and continue"*. At 12:38 server time the caps run (§37.10)

@@ -1,6 +1,6 @@
 # Handoff — next session
 
-**Updated 2026-11-08 12:45 server time (Session 39).** Read in this order:
+**Updated 2026-11-09 13:00 server time (Session 39).** Read in this order:
 1. **[`OBJECTIVE.md`](OBJECTIVE.md)** — the professor's three steps. Everything serves them.
 2. This file — where the work stands and what to do next.
 3. `hands_off.md` §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation).
@@ -16,63 +16,34 @@
 - Corpus: 805 ACL papers, fixed entity lists; fold 0 (41 papers) held out.
 - Per-triple judging (C1/C3/C4) and judge-free counts are diagnostics, not the headline.
 
-## State (2026-11-08, 12:45 server time = 19:45 user time)
-- ✔ **Step 2 of the objective MET** (Tables 19 / 19b): ontology-free students keep 87–93% of
+## State (2026-11-09, 13:00 server time = 20:00 user time)
+- ✔ Step 2 of the objective MET (Tables 19 / 19b): ontology-free students keep 87–93% of
   proposals and are as correct as ontology-in-prompt students and the teacher.
-- ✔ **⭐⭐ MAIN EVALUATION DONE for the noont KGs — `results.md` Table 20** (simulated Q&A, 1,222
-  questions, 41 papers; `qa_eval/acl-f0/report_table20.json`, `gap_analysis.json`):
-  - noont = ontology-in-prompt: me50 −0.6 / 0.0, me30 −0.1 / +0.6 points (CEO / scinex), CIs across 0.
-  - **noont-me30 beats its teacher +3.3 [1.4, 5.3] / +3.5 [1.9, 5.1]** and the untuned noont model
-    +3.6 / +2.2. noont-me50 ties both. me30 − me50 = +4: **coverage decides the score.**
-  - Accuracy: oracle 86.3, closedbook 4.4, teacher 5.0 / 3.3, noont-me30 8.3 / 6.8, noont-me50
-    4.5 / 2.9, other me50 families 4.0–4.5 / 2.7–3.4, untuned full-ontology 12.7 / 12.8 (big noisy
-    graph). ⚠ me50 KGs ≈ closedbook; coverage of paper facts is still the lever.
-- **⏳ RUNNING, unattended — check these first:**
-  1. **`screen -r chain`** = `/home/dev1/scinex_runs/run_after_qa.sh` (copy in
-     `ft_runs/acl_scripts/`), log **`/home/dev1/scinex_runs/after_qa_driver.log`**. Graded the Q&A
-     at 16:20, then started **teacher v2** (`gptoss-20b-v2` = gpt-oss-20b, `--prompt-variant
-     recall`, `--entity-dir output/acl_v2`) on all 805 papers (403 + 402) × 2 ontologies, the 41 eval
-     papers first, ~30 h, logs `teacher_v2full_gpu{0,1}.log` → `ft_compare` v1 vs v2
-     (`teacher_v2_compare.log`, `ft_runs/teacher_v2/compare_v2.json`) → Q&A answers from the v2
-     teacher KGs on GPU0 + grade + report. Expected done ~2026-11-09 00:00 server. Re-running the
-     script resumes every step.
-  2. **`screen -r qafill`** = `/home/dev1/scinex_runs/run_qa_fill.sh` (copy in
-     `ft_runs/acl_scripts/`), log `/home/dev1/scinex_runs/qa_fill.log`. Waits for the teacher v2
-     lanes, re-asks the **67 Q&A answers the answer model skipped** (closedbook 30, oracle 2, CEO
-     ft-me30 9, scinex teacher 18, scinex llama/phi4 noont 4 each) on GPU1, waits for the chain to
-     end, then grades + reports with the Table 20 comparisons (+ v2 − v1 teacher) →
-     `qa_eval/acl-f0/report_table20.json`.
-  3. **`screen -r v2student`** = `/home/dev1/scinex_runs/run_v2_student.sh` (copy in
-     `ft_runs/acl_scripts/`), log `v2_student_driver.log` (hands_off §39.4). HANDOFF step 2,
-     automated: after the lanes, builds `ft_data/acl_v2_noont_me30`, trains
-     `qwen3-8b-acl-f0-v2-noont-me30` on GPU1, generates slug `qwen3-8b-acl-v2-noont-me30-cv` on
-     the eval papers, answers its Q&A, grades + reports with every comparison
-     (`report_table20.json`), runs `ft_compare` (`ft_runs/teacher_v2/compare_v2_student.json`).
-     Expected done ~2026-11-09 04:00 server. Re-running resumes. **GPU1 only** (restarted 12:35).
-  4. **`screen -r teacher2`** = `/home/dev1/scinex_runs/run_teacher2.sh` (copy in
-     `ft_runs/acl_scripts/`), log `teacher2_driver.log` (hands_off §39.6). **Second teacher
-     Qwen3-30B-A3B-Instruct-2507 (W4A16, RedHatAI checkpoint) via vLLM** from the separate venv
-     `/home/dev1/envvllm` (`ft_generate.py --backend vllm`), GPU0 only, after the chain: smoke
-     test → all 805 papers (slug `qwen3-30b-a3b-v2`, eval first) → compare → its Q&A → an
-     ontology-free me30 Qwen3-8B student on its data (slug `qwen3-8b-acl-q30b-noont-me30-cv`) →
-     Q&A → report. Speed unknown until the smoke test (logged as wall seconds). Re-running resumes.
-- Teacher v2 at 58% on 2026-11-08 10:47 (~10 paragraphs/min per card). Eval papers done early:
-  **v2 keeps 561 / 389 triples vs v1 501 / 289, answer-in-KG 11.0 / 9.4 vs 8.4 / 5.8**
-  (`results.md` Table 21, preliminary).
-- **⛔ GPU settings are CHANGED for heat while these run** (university property): persistence on,
-  400 W, clock locks 1650 / 1900 MHz, root guard `screen gpuguard` (checked: running).
-  **The restore is AUTOMATIC:** root `screen gpurestore` (also waits for v2student and teacher2: it needs 10 min with no CUDA process) = `/home/dev1/scinex_runs/gpu_restore_after.sh`
-  (copy in `ft_runs/acl_scripts/`, started 2026-11-07 17:02 server) waits until `run_after_qa.sh`
-  and `run_qa_fill.sh` have exited and no CUDA process has run for 10 min, then quits gpuguard,
-  resets the clock locks, sets 575 W and persistence off. Log `/home/dev1/scinex_runs/gpu_restore.log`
-  ("=== GPU settings RESTORED ==="). Check it with `nvidia-smi --query-gpu=persistence_mode,power.limit
-  --format=csv` (want Disabled, 575 W). ⚠ If a driver dies without exiting cleanly, restore by hand:
+- ✔ **Main evaluation (simulated Q&A), `results.md` Table 20**, complete for every KG so far:
+  noont = ontology-in-prompt (|diff| ≤ 0.6); noont-me30 beats its teacher (+3.3 / +3.5).
+- ✔ **Teacher v2 + student on v2 data DONE** (Tables 20 / 21): teacher v2 6.2 / 4.9 vs v1 5.0 / 3.3;
+  **v2-data noont-me30 Qwen3-8B = 10.0 / 8.0, the best finetuned KG** (+3.8 / +3.1 over teacher v2,
+  +1.7 / +1.2 over the v1-data student, CIs touch 0); 851 / 730 triples, coverage 53 / 45%.
+  Only the noisy untuned full-ontology graph scores higher (12.7 / 12.8).
+- **⏳ RUNNING, unattended: `screen -r teacher2`** = `/home/dev1/scinex_runs/run_teacher2.sh` (copy in
+  `ft_runs/acl_scripts/`), log `teacher2_driver.log` (hands_off §39.6–39.7). **Second teacher
+  Qwen3-30B-A3B-Instruct-2507 W4A16 via vLLM** (`/home/dev1/envvllm`, `ft_generate.py --backend
+  vllm`, `VLLM_USE_FLASHINFER_SAMPLER=0`), slug `qwen3-30b-a3b-v2`, all 805 papers on BOTH GPUs
+  (started 12:48, logs `teacher2_full_gpu{0,1}.log`) → compare (`teacher2_compare.log`) → its Q&A
+  (GPU1) while a noont-me30 Qwen3-8B student trains on its data (GPU0; slug
+  `qwen3-8b-acl-q30b-noont-me30-cv`) → Q&A → report (`teacher2_qa.log`,
+  `teacher2_students_compare.log`). Re-running the script resumes every step.
+- **⛔ GPU settings CHANGED for heat while it runs** (university property): persistence on, 400 W,
+  clock locks 1650 / 1900 MHz, root `screen gpuguard`. **Restore is AUTOMATIC:** root `screen
+  gpurestore` = `gpu_restore_after.sh 'run_teacher2[.]sh'` restores them 10 min after the driver
+  exits and the GPUs go idle (log `gpu_restore.log`, "=== GPU settings RESTORED ==="). If the driver
+  dies uncleanly, restore by hand:
   ```
-  sudo screen -S gpuguard -X quit
+  sudo screen -S gpuguard -X quit; sudo screen -S gpurestore -X quit
   sudo nvidia-smi -i 0 -rgc && sudo nvidia-smi -i 1 -rgc
   sudo nvidia-smi -pl 575 && sudo nvidia-smi -pm 0
   ```
-  ⚠ New GPU runs after the restore start at default settings: re-apply the clock locks first (§38.1).
+  New GPU runs after a restore start at default settings: re-apply the clock locks first (§38.1).
   The sudo password is not stored; ask the user.
 - Models in the HF cache: students Qwen3-8B, Gemma-3-12B-it (also KGRAG's model — never delete),
   Phi-4 (**Qwen3-4B and Llama-3.1-8B-Instruct deleted 2026-11-08 at the user's request**; their
@@ -83,23 +54,17 @@
   Mistral-Small-24B-Instruct-2501.
 
 ## Next steps, in order
-1. **When `v2student` is done** (it ends last): update `results.md` — Table 20 (fill the
-   "missing" rows; add teacher v2 and the v2 student with their comparisons, from
-   `qa_eval/acl-f0/report_table20.json` / `v2_student_qa.log`), Table 21 (final, from
-   `teacher_v2_compare.log` + `v2_student_compare.log`); re-run `qa_gap_analysis.py` with the v2
-   KGs added. Check `gpu_restore.log` says RESTORED. Commit + push.
-   - If the run stopped: the driver logs say where; each script resumes when re-run (chain →
-     qafill → v2student order).
-2. **Decide with the user what comes next**, e.g. a v2 me50 student / other families on v2 data,
-   or a lower empty cap (Q&A rewards coverage — me30 beat me50 by +4 points — but watch
-   per-triple correctness with a blind C1/C3/C4 round).
-3. **Second teacher** (user request): ⏳ **running in `screen teacher2`** (option d chosen by
-   the user: vLLM + W4A16 checkpoint; the bf16 checkpoint cannot load 4-bit, hands_off §39.5–39.6).
-   If the smoke test failed (`teacher2_driver.log`, `teacher2_smoke.log`): fix and re-run
-   `run_teacher2.sh`. When done: `results.md` — teacher v1 / v2 / q30b (`teacher2_compare.log`,
-   Q&A) and students on v2 vs q30b data (`teacher2_students_compare.log`, Q&A). Then delete the
-   57 GB bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` from the HF cache (user agreed). Still open: a
-   non-Qwen student on both teachers' data (family confound; Phi-4 / Gemma-3-12B in cache).
+1. **When `teacher2` is done:** `results.md` — add teacher q30b and the q30b-data student to Table 20
+   (from `qa_eval/acl-f0/report_table20.json` / `teacher2_qa.log`) and Table 21 (from
+   `teacher2_compare.log`, `teacher2_students_compare.log`); the key comparison is
+   `kg__*__qwen3-8b-acl-q30b-noont-me30-cv` − `kg__*__qwen3-8b-acl-v2-noont-me30-cv` (only the
+   teacher differs). Re-run `qa_gap_analysis.py` with the new KGs. Check `gpu_restore.log` says
+   RESTORED. Delete the 57 GB bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` from the HF cache (user
+   agreed; the W4A16 copy is the one in use). Commit + push.
+2. **Blind C1/C3/C4 round on the v2-data student** (and the q30b one): are the extra triples
+   correct? (Q&A rewards coverage; the untuned graph shows coverage alone can mislead.)
+3. **Decide with the user**: non-Qwen student on both teachers' data (family confound; Phi-4 /
+   Gemma-3-12B in cache), lower empty caps, more folds.
 4. Later: more folds; entity-list REVIEW rows (user/professor); guard fixes (`88.5` leak,
    self-loops); `--share-system-prompt` GPU speed test (less relevant now that noont prompts are short).
 

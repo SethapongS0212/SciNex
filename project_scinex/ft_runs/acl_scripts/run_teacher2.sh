@@ -3,7 +3,8 @@
 # (RedHatAI/...-quantized.w4a16), served by vLLM from the separate venv /home/dev1/envvllm
 # (ft_generate.py --backend vllm). Same setup as teacher v2 (gpt-oss-20b): --prompt-variant
 # recall, --entity-dir output/acl_v2, paragraphs of the gptoss-20b run, max 3072 new tokens.
-# GPU0 only (GPU1 belongs to run_v2_student.sh):
+# Full run on BOTH GPUs (two lanes, eval papers first; v2student finished 2026-11-09 04:08),
+# then the student on GPU0 while the teacher's Q&A runs on GPU1:
 #   1. wait for run_after_qa.sh (the chain) to end, so GPU0 is free
 #   2. SMOKE TEST: 2 training papers x 4 paragraphs, slug smoke-qwen30b (deleted afterwards):
 #      valid-JSON rate + seconds per paragraph; stop if it fails
@@ -19,6 +20,10 @@ PY=/home/dev1/envsam/bin/python
 VPY=/home/dev1/envvllm/bin/python
 LOGS=/home/dev1/scinex_runs
 export PYTHONUNBUFFERED=1 HF_HUB_OFFLINE=1 TOKENIZERS_PARALLELISM=false
+# vLLM 0.32 warms up FlashInfer's top-k/top-p sampler, which JIT-compiles with nvcc (not installed
+# here) -> "Could not find nvcc" at engine start (smoke failure 2026-11-09 00:54). Greedy decoding
+# does not need it.
+export VLLM_USE_FLASHINFER_SAMPLER=0
 say() { echo "[$(date '+%F %T')] $*" | tee -a "$LOGS/teacher2_driver.log"; }
 MODEL=RedHatAI/Qwen3-30B-A3B-Instruct-2507-quantized.w4a16
 T2=qwen3-30b-a3b-v2
@@ -91,14 +96,25 @@ EOF
   touch "$LOGS/teacher2_smoke.ok"
 fi
 
-# 3. full run, eval papers first
+# 3. full run on both GPUs, each lane starts with its half of the eval papers
 if [ ! -f "$LOGS/teacher2_full.done" ]; then
-  cp "$EVALF" "$LOGS/teacher2_papers.txt"; grep -vxF -f "$EVALF" papers_acl.txt >> "$LOGS/teacher2_papers.txt"
-  say "gpu0: $T2 on all $(wc -l < "$LOGS/teacher2_papers.txt") papers started"
-  CUDA_VISIBLE_DEVICES=0 "$VPY" ft_generate.py "${VGEN[@]}" --model-slug "$T2" \
-    --papers-from "$LOGS/teacher2_papers.txt" --ingest --ingest-python "$PY" >> "$LOGS/teacher2_full.log" 2>&1 \
-    || { say "gpu0: $T2 FAILED (exit $?) - see $LOGS/teacher2_full.log (re-run resumes)"; exit 1; }
-  touch "$LOGS/teacher2_full.done"; say "gpu0: $T2 finished"
+  awk 'NR % 2 == 1' "$EVALF" > "$LOGS/teacher2_half0.txt"; awk 'NR % 2 == 0' "$EVALF" > "$LOGS/teacher2_half1.txt"
+  grep -vxF -f "$EVALF" papers_acl.txt | awk 'NR % 2 == 1' >> "$LOGS/teacher2_half0.txt"
+  grep -vxF -f "$EVALF" papers_acl.txt | awk 'NR % 2 == 0' >> "$LOGS/teacher2_half1.txt"
+  lane() {  # lane <gpu>
+    say "gpu$1: $T2 on $(wc -l < "$LOGS/teacher2_half$1.txt") papers started"
+    if CUDA_VISIBLE_DEVICES=$1 "$VPY" ft_generate.py "${VGEN[@]}" --model-slug "$T2" \
+        --papers-from "$LOGS/teacher2_half$1.txt" --ingest --ingest-python "$PY" >> "$LOGS/teacher2_full_gpu$1.log" 2>&1; then
+      say "gpu$1: $T2 lane finished"
+    else
+      say "gpu$1: $T2 lane FAILED (exit $?) - see $LOGS/teacher2_full_gpu$1.log (re-run resumes)"; return 1
+    fi
+  }
+  lane 0 & p0=$!
+  lane 1 & p1=$!
+  wait $p0; r0=$?; wait $p1; r1=$?
+  [ $r0 -eq 0 ] && [ $r1 -eq 0 ] || { say "teacher2 lanes incomplete (rc $r0/$r1) - stop; re-run resumes"; exit 1; }
+  touch "$LOGS/teacher2_full.done"; say "$T2 finished on all papers"
 fi
 
 # 4. compare on the eval papers
@@ -108,9 +124,8 @@ mkdir -p ft_runs/teacher2
   --papers "${EVAL[@]}" --out ft_runs/teacher2/compare_teacher2.json > "$LOGS/teacher2_compare.log" 2>&1
 say "teacher compare: $LOGS/teacher2_compare.log"
 
-# 5. Q&A of the second teacher's KGs
-HF_BATCH=8 "$LOGS/run_qa.sh" 0 kg "fixed/$T2" "fixed_scinex/$T2"
-grade_report "teacher2 KGs"
+# 5. Q&A of the second teacher's KGs on GPU1, in the background while the student trains on GPU0
+( HF_BATCH=8 "$LOGS/run_qa.sh" 1 kg "fixed/$T2" "fixed_scinex/$T2"; grade_report "teacher2 KGs" ) & qa_pid=$!
 
 # 6. ontology-free me30 student on the second teacher's data
 if [ ! -f "$DATA/fold0/manifest.json" ]; then
@@ -143,6 +158,7 @@ if [ ! -f "$LOGS/teacher2_gen_$SLUG.done" ]; then
   touch "$LOGS/teacher2_gen_$SLUG.done"; say "gpu0: gen $SLUG finished"
 fi
 HF_BATCH=8 "$LOGS/run_qa.sh" 0 kg "fixed/$SLUG" "fixed_scinex/$SLUG"
+wait $qa_pid
 grade_report "q30b student"
 "$PY" ft_compare.py --extractor fixed --teacher gptoss-20b \
   --slugs gptoss-20b gptoss-20b-v2 "$T2" qwen3-8b-acl-noont-me30-cv qwen3-8b-acl-v2-noont-me30-cv "$SLUG" \
