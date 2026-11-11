@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b2e35ab8523 -----
+TRIPLE:     (word2vec)  --uses-->  (Word Representation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We utilize Word2Vec and GloVe word representation techniques to learn our fi- B.
+
+----- triple_id: b42bb597b13 -----
+TRIPLE:     (Word Embeddings)  --uses-->  (in-house EGY monolingual corpus)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We also use an in-house EGY monolingual corpus of about 410 million words, collected from online commentaries of blogs and social media platforms, to pre-train the word embeddings.
+
+----- triple_id: b951354b4f5 -----
+TRIPLE:     (Clustering)  --uses-->  (cosine similarities)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: weighted clustering is conducted using the cosine similarities between the query vectors, i.e. the 'Qry vec skip-gram' approach.
+
+----- triple_id: b054e41dad5 -----
+TRIPLE:     (DeepFashion)  --splitfrom-->  (DeepFashion)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: DeepFashion consists of diverse clothing images with different annotation types.
+
+----- triple_id: b1122d3e737 -----
+TRIPLE:     (gazetteer)  --uses-->  (hashtags)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: To address this task we implemented a simple string matching algorithm that relies on a gazetteer containing a set of Twitter usernames and hashtags extracted from the training data, and a list of very common news agencies (e.g.
+
+----- triple_id: b6b93befdf4 -----
+TRIPLE:     (Rhetorical Relations)  --addresses-->  (messages)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Arguably, the output of the macro planning component in an NLG system is some sort of abstract, language-neutral representation that en- codes the information and messages that need to be conveyed, structured by rhetorical relations, and supported by information that is presupposed to be common ground.
+
+----- triple_id: b8a133ff4a3 -----
+TRIPLE:     (ECTSum)  --addresses-->  (financial summarization)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: These nuances necessitates further research on the ECTSum corpus, and financial summarization in general.
+
+----- triple_id: bb6fec954b8 -----
+TRIPLE:     (Tagger)  --achieves-->  (93.2% accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The full tagger attains 93.2% accuracy (final row of Ta- ble 2).
+
+----- triple_id: b933ea9bf01 -----
+TRIPLE:     (Score Function)  --uses-->  (DistMult)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: we use a score function (e.g., DistMult) to compute the score for this triple being true.
+
+----- triple_id: b23e7648bd0 -----
+TRIPLE:     (Multi-task Learning)  --employs-->  (extractive model)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: In summary, our main contributions include: (1) a new multi-task learning framework that lever-ages an extractive model and external knowledge to improve keyphrase generation
+
+----- triple_id: b3d7a9490d1 -----
+TRIPLE:     (Reinforcement Learning)  --comparesagainst-->  (Imitation Learning)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: The first stage is training the agent via mixed imitation learning (IL) and reinforcement learning (RL) which combines off- policy and on- policy optimization; this significantly outperforms using IL or RL alone.
+
+----- triple_id: b28457530e6 -----
+TRIPLE:     (Interactive Visualization)  --uses-->  (Tweet Emotion Intensity Dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We created an interactive visualization to allow ease of exploration of the Tweet Emotion Intensity Dataset.
+
+----- triple_id: bf5f7c52a4e -----
+TRIPLE:     (SVM)  --uses-->  (common text classification features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In Section 5, we present a competitive SVM-based baseline that uses a number of common text classification features.
+
+----- triple_id: b5952ef0ac2 -----
+TRIPLE:     (Word Embeddings)  --uses-->  (dynamic word embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: More recent methods capture diachronic word usage by learning dynamic word embeddings that vary as a function of time
+
+----- triple_id: b8361d4d5a0 -----
+TRIPLE:     (MADAMIRA)  --achieves-->  (handling complexity and ambiguity)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Notable contributions for both MSA and EGY include MADAMIRA , a morphological disambigua- tion tool that uses morphological analyzers to han- dle complexity and ambiguity.
+
+----- triple_id: b9f0aaaee5b -----
+TRIPLE:     (Softmax)  --produces-->  (output probabilities)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: This is followed by a softmax layer that produces the output probabilities for the three label classes (before, after and simultaneous), denoting the temporal relation between the two time expressions.
+
+----- triple_id: b0e22bd227e -----
+TRIPLE:     (QAGen2S)  --uses-->  (answer-only scores)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use answer -only scores for QAGen and QAGen2S be- cause question quality would have a dominant effect on LM scores since questions are usually longer than answers .
+
+----- triple_id: b8732d33791 -----
+TRIPLE:     (Tagger)  --uses-->  (fuzzy matches)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: If the normalized word is not in a cluster, the tagger considers the fuzzy matches.
+
+----- triple_id: b31c7256780 -----
+TRIPLE:     (Information retrieval)  --uses-->  (Lucene)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Concretely we use Lucene , a very efficient open-source information retrieval library.
+
+----- triple_id: b351c3f0430 -----
+TRIPLE:     (multimodal)  --addresses-->  (multimodal categorization)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Additionally, we illustrate the effectiveness of FaD- VLP on another understanding task: multimodal categorization.
+
+----- triple_id: b406050c471 -----
+TRIPLE:     (Extractive Summarization)  --uses-->  (content selection)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Sentence-level extractive summarization is also used for content selection in abstractive summarization.
+
+----- triple_id: b868e74ab6b -----
+TRIPLE:     (Irish)  --trainedon-->  (Irish Wikipedia)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: To achieve this we collected a large corpus of Irish from the Irish Wikipedia, which was selected due to its size and availability but also due to its technical nature meaning that it is likely to contain the terms used in a similar manner to the Tearma database.
+
+----- triple_id: b6faa07c90e -----
+TRIPLE:     (ECTSum)  --achieves-->  (103.67 document-to-summary compression ratio)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: What makes ECTSum truly different from others is the way the summaries are written. Instead of containing well-formed sentences, the articles contain telegram-style bullet-points precisely capturing the important metrics discussed in the earnings calls. A sample reference summary from our dataset corresponding to the 2nd quarter 2022 earnings call of Apple is shown in Table 1. There are several other factors that make ECTSum a challenging dataset. First, the document-to-summary compression ratio of 103.67 is the highest among existing long document summarization datasets with comparable document lengths (Table 2).
+
+----- triple_id: b2094eded8a -----
+TRIPLE:     (biLSTMs)  --produces-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: We concatenate the outputs of the upper biLSTMs' embeddings for the two events to obtain z = [h1 upper; h2 upper].
+
+----- triple_id: b8b2887dfea -----
+TRIPLE:     (Parallel Text)  --uses-->  (symbol language)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Multilinguality is also useful for first language learning, e.g., by displaying the parallel text in a symbol language such as Bliss-symbolics.

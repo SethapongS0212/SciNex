@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bd3be89aad8 -----
+TRIPLE:     (Text Pairs)  --achieves-->  (1.4 million image -text pairs)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Our final pre- training dataset has 1.4 million image -text pairs .
+
+----- triple_id: bb19294a19e -----
+TRIPLE:     (W-CASCADE)  --uses-->  (weighting technique)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We employ the same weighting technique as we did for W-CASCADE to construct et.
+
+----- triple_id: b39e8c716db -----
+TRIPLE:     (Longformer)  --achieves-->  (long document summarization performance on ECT-Sum corpus)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Long Document Summarizers: BigBird , LongT5 , Longformer Encoder Decoder (LED) .
+
+----- triple_id: b37634f65b5 -----
+TRIPLE:     (GloVe)  --trainedon-->  (all 10 datasets)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: The random norm and dimension values are sampled uniformly from a range between the minimum and maximum norm/dimension values of the respective embeddings on all 10 datasets. BERT norm range: [7.1896,13.2854], BERT dimension range: [-5.427,1.9658]; GloVe norm range: [2.0041,8.0359], GloVe dimension range: [-2.5446,3.1976]
+
+----- triple_id: b4a6ee9d4f1 -----
+TRIPLE:     (embeddings)  --uses-->  (Tagging)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: These embeddings are used as the pre-trained embeddings in the tagging architecture.
+
+----- triple_id: bce4849c99b -----
+TRIPLE:     (QAGen2S)  --comparesagainst-->  (QAGen)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Similar to previous domain adaptation results, we observe that QAGen2S outperforms QAGen, and QAGen exceeds AQGen.
+
+----- triple_id: b77bcbf2844 -----
+TRIPLE:     (Distributed Representations)  --uses-->  (word2vec)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: In addition, Word2Vec distributed representations were utilized in the model building.
+
+----- triple_id: bf08357b6c3 -----
+TRIPLE:     (Multi-task Learning)  --achieves-->  (integration of keyphrase extraction and generation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: First, an end-to-end multi-task learning framework is introduced, which not only combines the keyphrase extraction and generation but also leverages the retrieved keyphrases from similar documents to guide the generation process.
+
+----- triple_id: bd4a7dcc24d -----
+TRIPLE:     (generator)  --trainedon-->  (WIKIBIO)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: the neural generator is pre-trained 8 and 4 epochs for the WIKIBIO and WB-filter datasets (with or without force-attention module), respectively.
+
+----- triple_id: b1c23575b9a -----
+TRIPLE:     (Tagger)  --achieves-->  (88.6% on the OCT27 development set)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: A tagger that only uses word clusters achieves an accuracy of 88.6% on the OCT27 development set.
+
+----- triple_id: b66a184e4ee -----
+TRIPLE:     (Text Categorization)  --achieves-->  (text categorization)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Semi-supervised convolutional neural networks for text categorization via region embedding.
+
+----- triple_id: b21a45a4c92 -----
+TRIPLE:     (summarizers)  --achieves-->  (1.00 for SummaCCONV scores)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: the Num-Prec. and SummaCCONV scores for all extractive summarizers are always 1.00 because the summary sentences are taken ver- batim from the source documents.
+
+----- triple_id: bd64390be18 -----
+TRIPLE:     (cimRNN)  --uses-->  (morpheme trees)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: forward pass – recursively construct morpheme trees (cimRNN, csmRNN) and language model structures (csmRNN) to derive scores for training examples
+
+----- triple_id: be8f22cd1d1 -----
+TRIPLE:     (embeddings)  --achieves-->  (monotonic performance drop)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: However, once the range passes a threshold (1 in our experiment), the embeddings get farther away from their general semantics and start to overfit, which is also observed in the WS experiment, and thus the performance drops monotonically.
+
+----- triple_id: b0ad3c7cd77 -----
+TRIPLE:     (MultiDecoder)  --achieves-->  (generate one triplet)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: applying multiple separated decoders (MultiDecoder) and each of them generating one triplet
+
+----- triple_id: bba730ced03 -----
+TRIPLE:     (BERT)  --uses-->  (vector norm)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Given that we know that BERT is a contextual encoder, and that its self-attention uses the vector norm to control the levels of contribution from less informative words, we suspect that this gives it the capabilities to accurately model these short-distance dependencies and word co-occurrence probabilities, concepts which strongly correspond to local contextual incongruity.
+
+----- triple_id: b0d963769b3 -----
+TRIPLE:     (Morphological Disambiguation)  --achieves-->  (correct morphological analysis)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The morphological disambiguation task is intended to choose the correct morphological analysis from the set of potential analyses, obtained from the morphological analyzer.
+
+----- triple_id: b025428796f -----
+TRIPLE:     (bootstrapping)  --achieves-->  (average score of all runs)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: To mitigate this, we retrain and evaluate each model 50 times reporting the average score of all runs, essentially bootstrapping over the random seeds.
+
+----- triple_id: b37a4cfc2c3 -----
+TRIPLE:     (SQuAD)  --achieves-->  (88.00 F1 on NewsQA)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Our SQuAD 1.1 SQuAD 44.66 58.94 39.51 56.36 44.35 56.06 28.85 34.92 80.78 88. on every target domain dev set of RC models fine-tuned on synthetic data of different target domain corpora.
+
+----- triple_id: ba27a1907e4 -----
+TRIPLE:     (Transformer)  --achieves-->  (0.31 Precision on English-German)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: English-German Model Precision Recall Matched Brackets Cross Brackets Tag Accuracy Recurrent 0.38 0.38 0.42 0.31 0.46 Transformer 0.31 0.31 0.35 0.28 0.40
+
+----- triple_id: ba2bf362e20 -----
+TRIPLE:     (NMT)  --achieves-->  (differences between hidden state representations and word embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We provide interpretable representations of hidden states in NMT systems highlighting the differences between hidden state representations and word embeddings.
+
+----- triple_id: be24a9a5f6e -----
+TRIPLE:     (PARENT-W)  --achieves-->  (0.168 correlation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The average correlation for PARENT-W drops to 0.168 in this case.
+
+----- triple_id: b4c0103137f -----
+TRIPLE:     (ECTSum)  --achieves-->  (highest compression ratio)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: ECTSum has the highest compression ratio among all the datasets while having comparable coverage and density scores.
+
+----- triple_id: b68d017d891 -----
+TRIPLE:     (Semantic Change)  --achieves-->  (modelling and analysing lexical semantic change)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Overall, our study demonstrates the potential of using contextualised word representations for mod- elling and analysing lexical semantic change and opens the door to further work in this direction.
+
+----- triple_id: bfdd353c41d -----
+TRIPLE:     (NMT)  --addresses-->  (OVER)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: In this paper, after giving an overview of our NMT pipeline, we will focus on how we address the following issues in order to better prepare NMT engines for real-world deployment: 1) data cleaning, 2) over- generation , 3) improving robust- ness when translating entities, and 4) domain adap- tation.

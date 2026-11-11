@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b49655d168a -----
+TRIPLE:     (Dropout)  --uses-->  (dropout of 0.2)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Learning rate of 0.0003 was used during training, with the Adam optimizer, and a dropout of 0.2 was also applied to the outputs of the biLSTM.
+
+----- triple_id: bf29006a0cf -----
+TRIPLE:     (QAGen2S)  --achieves-->  (more than 8 points in EM on SQuAD)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: For NQ dataset , QAGen2S improves the SQuAD baseline by more than 8 points in EM and more than 7 points in F1.
+
+----- triple_id: b0ed017d8a0 -----
+TRIPLE:     (CIDEr)  --achieves-->  (weak correlation with human judgments)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Commonly used metrics which only rely on the reference (BLEU, ROUGE, METEOR, CIDEr) have only weak correlations with human judgments.
+
+----- triple_id: b56a6d325c3 -----
+TRIPLE:     (Wikipedia)  --addresses-->  (entity mentions)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We consider only the mentions that refer to valid entities in Wikipedia.
+
+----- triple_id: be1b5b99790 -----
+TRIPLE:     (DBDC)  --evaluates-->  (88.5)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: Evaluation criterion was based on the Dialogue Breakdown Detection Challenge (DBDC).
+
+----- triple_id: b6469346a5c -----
+TRIPLE:     (Relevant Information)  --addresses-->  (dimension or norm)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Having established the vanilla results as a baseline for the ablations, we examine which information container encodes the relevant information : dimension or norm.
+
+----- triple_id: b1e2f1a3f2b -----
+TRIPLE:     (Annotation)  --uses-->  (GermaNet)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We supply our annotation labels with the understanding that they cover only the syntactic frames exemplified by GermaNet.
+
+----- triple_id: b480a018072 -----
+TRIPLE:     (RNN)  --uses-->  (User Utterances)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: our NUR model has two RNN encoders, one for user utterances, the other for system utterances.
+
+----- triple_id: b3f4f80f295 -----
+TRIPLE:     (AQGen)  --uses-->  (Topk+Nucleus)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Question - answer generation with AQGen, QAGen, and QAGen2S is performed using Topk+Nucleus
+
+----- triple_id: b32d4d4e6eb -----
+TRIPLE:     (word2vec)  --trainedon-->  (Wiki corpus)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: We obtained these scores by training a word2vec model on the Wiki corpus.
+
+----- triple_id: b373e0f1ff8 -----
+TRIPLE:     (Spoken Language)  --addresses-->  (Dialectal Arabic)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Dialectal Arabic, including EGY among other dialects, is the primarily spoken language used by native Arabic speakers in daily exchanges.
+
+----- triple_id: be700d64e99 -----
+TRIPLE:     (Tagger)  --achieves-->  (substantially higher accuracy than Gimpel et al.)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Our tagger achieves substantially higher accuracy than Gimpel et al.
+
+----- triple_id: bb003dc15f5 -----
+TRIPLE:     (Transformer)  --achieves-->  (superior in capturing lexical semantics)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: We show that the transformer model is superior in terms of capturing lexical semantics.
+
+----- triple_id: b38e3e3e85f -----
+TRIPLE:     (Hate Speech Detection)  --addresses-->  (Hate Speech)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Both are important to detect, for applications such as opinion mining for the former and hate speech detection for the latter.
+
+----- triple_id: b97e81963c3 -----
+TRIPLE:     (Answer Selection)  --addresses-->  (evidence extraction)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Our overall model uses multi-task learning with a QA model for answer selection and QFE for evidence extraction.
+
+----- triple_id: b7a66152287 -----
+TRIPLE:     (Summarization)  --addresses-->  (Unsupervised Approaches)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We evaluate and compare the summarization performance of a wide range of representative algorithms corresponding to various categories on the ECT-Sum corpus.
+
+----- triple_id: b2242fffcd0 -----
+TRIPLE:     (Summarization)  --encompasses-->  (Document Summarization)
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains
+SOURCE SENTENCE: What makes ECTSum truly different from others is the way the summaries are written. Instead of containing well-formed sentences, the articles contain telegram-style bullet-points precisely capturing the important metrics discussed in the earnings calls. A sample reference summary from our dataset corresponding to the 2nd quarter 2022 earnings call of Apple is shown in Table 1. There are several other factors that make ECTSum a challenging dataset. First, the document-to-summary compression ratio of 103.67 is the highest among existing long document summarization datasets with comparable document lengths (Table 2).
+
+----- triple_id: b53371e961f -----
+TRIPLE:     (Confidence Vector)  --produces-->  (probability distribution pe)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: we concatenate qe and qNA to form the confidence vector and apply soft- max to obtain the probability distribution pe = [pe 1,..., pe n+1]:
+
+----- triple_id: bf62a06b197 -----
+TRIPLE:     (Morphological Analyzer)  --uses-->  (SAMA)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The morphological analyzer we use in this paper is similar to the one used by Habash et al. It is based on the SAMA , CALIMA , and ADAM databases.
+
+----- triple_id: b8adc05a931 -----
+TRIPLE:     (clustered)  --achieves-->  (four usage types for curtain)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: For example, occurrences of curtain are clustered into four usage types (Figure 2c): two of these cor- respond to a literal interpretation of the word as a hanging piece of cloth ('curtainless windows', 'pulled the curtain closed') whereas the other two indicate metaphorical interpretations of curtain as any barrier that excludes the free exchange of in- formation or communication ('the curtain on the legal war is being raised').
+
+----- triple_id: b151f200276 -----
+TRIPLE:     (BERT)  --uses-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use pretrained versions of BERT and GloVe to generate embeddings for each sentence.
+
+----- triple_id: bbdbb38cf99 -----
+TRIPLE:     (Multiple Metrics)  --produces-->  (a score)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: We then carried out the scoring of each term according to multiple metrics
+
+----- triple_id: b3732265140 -----
+TRIPLE:     (LSTM)  --uses-->  (context vector)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use two LSTM layers to model the relevant context for both directions of the target word, where the input is represented by the vi vectors mentioned above: where hi is the context vector from the LSTM for each direction.
+
+----- triple_id: b217040619d -----
+TRIPLE:     (FaD-VLP)  --comparesagainst-->  (ResNet-50)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: FaD-VLP is competitive with state-of-the-art models on IRTF that use a comparable ResNet-50 visual encoder.
+
+----- triple_id: bba9d554db3 -----
+TRIPLE:     (generation)  --uses-->  (encoder)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: keyphrase extraction and generation are jointly conducted by the extractor and the decoder through sharing an encoder.

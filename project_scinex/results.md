@@ -4,7 +4,7 @@
 
 > ### ⭐ OBJECTIVE RESULTS (2026-11-06/07) — ontology-free extraction (`OBJECTIVE.md`)
 >
-> **Table 20 (ACL, ⭐⭐ MAIN EVALUATION — SIMULATED Q&A, 2026-11-07; v2 rows + filled answers 2026-11-09).** 1,222 questions written by
+> **Table 20 (ACL, ⭐⭐ MAIN EVALUATION — SIMULATED Q&A, 2026-11-07; v2 and second-teacher rows 2026-11-09/11).** 1,222 questions written by
 > Mistral-Small-24B-Instruct-2501 (local, 4-bit, greedy) from 935 paragraphs of the 41 held-out
 > papers; the same model answers from each KG (or from the paragraph = oracle, or from nothing =
 > closedbook). Deterministic grading (exact match / token overlap; CORRECT 1, PARTIAL ½). 95% CIs
@@ -14,27 +14,31 @@
 > | ontology | KG | accuracy [95% CI] | answered | answer in KG | paragraph covered | answer in a node | acc. if covered + in node |
 > |---|---|---|---|---|---|---|---|
 > | CEO | teacher gpt-oss-20b v1 (full ontology) | 5.0 [3.4, 6.9] | 15.0 | 8.4 | 27.3 | 19.1 | 40.1 (n=111) |
-> | CEO | **teacher gpt-oss-20b v2** (recall prompt, v2 lists) | 6.2 [4.3, 8.2] | 15.1 | 11.0 | 30.8 | 21.2 | 34.6 (n=136) |
+> | CEO | teacher gpt-oss-20b v2 (recall prompt, v2 lists) | 6.2 [4.3, 8.2] | 15.1 | 11.0 | 30.8 | 21.2 | 34.6 (n=136) |
+> | CEO | **teacher Qwen3-30B-A3B** (W4A16, same v2 setup) | 16.7 [14.5, 19.1] | 39.7 | 24.6 | 79.5 | 42.6 | 40.9 (n=456) |
 > | CEO | untuned Qwen3-8B, full ontology | 12.7 [10.9, 14.7] | 33.1 | 18.3 | 76.8 | 45.3 | 29.5 (n=460) |
 > | CEO | untuned Qwen3-8B, no ontology | 4.8 [3.4, 6.3] | 14.9 | 9.2 | 32.5 | 20.0 | 26.3 (n=131) |
 > | CEO | Qwen3-8B me50, ontology in prompt | 5.1 [3.6, 6.7] | 12.8 | 7.9 | 25.4 | 16.2 | 38.6 (n=114) |
-> | CEO | **Qwen3-8B me50, no ontology** | 4.5 [3.1, 6.0] | 11.8 | 7.0 | 21.6 | 14.8 | 42.9 (n=92) |
+> | CEO | Qwen3-8B me50, no ontology | 4.5 [3.1, 6.0] | 11.8 | 7.0 | 21.6 | 14.8 | 42.9 (n=92) |
 > | CEO | Qwen3-8B me30, ontology in prompt | 8.5 [6.6, 10.6] | 20.9 | 12.6 | 45.0 | 24.5 | 39.6 (n=211) |
-> | CEO | **Qwen3-8B me30, no ontology** | 8.3 [6.3, 10.3] | 21.3 | 12.4 | 46.2 | 24.6 | 37.0 (n=215) |
-> | CEO | ⭐ **Qwen3-8B me30, no ontology, v2 teacher data** | **10.0 [8.1, 12.0]** | 23.1 | 15.2 | 56.9 | 28.3 | 37.7 (n=268) |
+> | CEO | Qwen3-8B me30, no ontology | 8.3 [6.3, 10.3] | 21.3 | 12.4 | 46.2 | 24.6 | 37.0 (n=215) |
+> | CEO | Qwen3-8B me30, no ontology, gpt-oss v2 data | 10.0 [8.1, 12.0] | 23.1 | 15.2 | 56.9 | 28.3 | 37.7 (n=268) |
+> | CEO | ⭐ **Qwen3-8B me30, no ontology, Qwen3-30B data** | **15.5 [13.3, 17.7]** | 35.8 | 23.5 | 81.8 | 41.4 | 37.0 (n=457) |
 > | CEO | Qwen3-4B me50, no ontology | 4.1 [2.8, 5.4] | 11.8 | 6.7 | 21.4 | 15.5 | 35.1 (n=97) |
 > | CEO | Llama-3.1-8B me50, no ontology | 4.0 [2.9, 5.1] | 10.6 | 6.0 | 22.8 | 14.6 | 34.1 (n=91) |
 > | CEO | Gemma-3-12B me50, no ontology | 4.2 [2.9, 5.6] | 10.8 | 6.9 | 23.2 | 14.8 | 34.9 (n=96) |
 > | CEO | Phi-4 me50, no ontology | 4.5 [3.1, 6.1] | 10.8 | 7.2 | 23.0 | 13.7 | 39.1 (n=96) |
 > | scinex | teacher gpt-oss-20b v1 (full ontology) | 3.3 [2.2, 4.5] | 8.7 | 5.8 | 18.2 | 14.1 | 42.3 (n=71) |
-> | scinex | **teacher gpt-oss-20b v2** (recall prompt, v2 lists) | 4.9 [3.5, 6.4] | 14.0 | 9.4 | 24.3 | 19.7 | 38.4 (n=108) |
+> | scinex | teacher gpt-oss-20b v2 (recall prompt, v2 lists) | 4.9 [3.5, 6.4] | 14.0 | 9.4 | 24.3 | 19.7 | 38.4 (n=108) |
+> | scinex | **teacher Qwen3-30B-A3B** (W4A16, same v2 setup) | 17.0 [14.7, 19.4] | 41.5 | 26.7 | 78.4 | 43.7 | 39.7 (n=463) |
 > | scinex | untuned Qwen3-8B, full ontology | 12.8 [10.9, 14.8] | 34.8 | 19.5 | 78.9 | 47.3 | 28.1 (n=486) |
 > | scinex | untuned Qwen3-8B, no ontology | 4.6 [3.3, 6.0] | 13.6 | 8.7 | 32.7 | 21.2 | 25.4 (n=138) |
 > | scinex | Qwen3-8B me50, ontology in prompt | 2.9 [1.9, 4.0] | 6.8 | 4.8 | 11.6 | 9.7 | 42.2 (n=51) |
-> | scinex | **Qwen3-8B me50, no ontology** | 2.9 [1.8, 4.0] | 7.6 | 5.6 | 12.3 | 11.1 | 32.2 (n=59) |
+> | scinex | Qwen3-8B me50, no ontology | 2.9 [1.8, 4.0] | 7.6 | 5.6 | 12.3 | 11.1 | 32.2 (n=59) |
 > | scinex | Qwen3-8B me30, ontology in prompt | 6.3 [4.4, 8.3] | 16.0 | 10.1 | 36.7 | 20.6 | 37.3 (n=161) |
-> | scinex | **Qwen3-8B me30, no ontology** | 6.8 [5.1, 8.7] | 16.6 | 10.8 | 36.8 | 21.6 | 34.8 (n=174) |
-> | scinex | ⭐ **Qwen3-8B me30, no ontology, v2 teacher data** | **8.0 [6.3, 9.8]** | 21.5 | 13.4 | 49.3 | 25.9 | 34.4 (n=218) |
+> | scinex | Qwen3-8B me30, no ontology | 6.8 [5.1, 8.7] | 16.6 | 10.8 | 36.8 | 21.6 | 34.8 (n=174) |
+> | scinex | Qwen3-8B me30, no ontology, gpt-oss v2 data | 8.0 [6.3, 9.8] | 21.5 | 13.4 | 49.3 | 25.9 | 34.4 (n=218) |
+> | scinex | ⭐ **Qwen3-8B me30, no ontology, Qwen3-30B data** | **18.2 [15.5, 20.9]** | 40.3 | 26.8 | 80.0 | 42.6 | 43.8 (n=461) |
 > | scinex | Qwen3-4B me50, no ontology | 3.0 [1.9, 4.2] | 8.2 | 4.9 | 12.8 | 11.3 | 36.4 (n=59) |
 > | scinex | Llama-3.1-8B me50, no ontology | 2.7 [1.7, 3.7] | 6.6 | 4.9 | 11.9 | 9.7 | 41.5 (n=47) |
 > | scinex | Gemma-3-12B me50, no ontology | 3.4 [2.1, 4.8] | 8.7 | 5.1 | 14.5 | 10.9 | 42.6 (n=61) |
@@ -56,6 +60,11 @@
 > | teacher v2 − teacher v1 | +1.1 [−0.7, 3.1] | **+1.6 [0.3, 3.1]** |
 > | v2-data noont-me30 − v1-data noont-me30 | +1.7 [−0.2, 3.6] | +1.2 [−0.7, 3.0] |
 > | **v2-data noont-me30 − teacher v2** | **+3.8 [1.9, 5.8]** | **+3.1 [1.7, 4.6]** |
+> | **teacher Qwen3-30B − teacher gpt-oss v2** | **+10.5 [8.2, 13.1]** | **+12.1 [10.0, 14.2]** |
+> | **q30b-data noont-me30 − v2-data noont-me30** (only the teacher differs) | **+5.4 [3.7, 7.4]** | **+10.1 [8.0, 12.5]** |
+> | q30b-data noont-me30 − its teacher | −1.2 [−2.9, 0.5] | +1.1 [−1.1, 3.5] |
+> | **q30b-data noont-me30 − untuned, full ontology** | **+2.7 [0.7, 4.8]** | **+5.4 [3.1, 7.9]** |
+> | **q30b-data noont-me30 − untuned, no ontology** | **+10.7 [8.5, 12.9]** | **+13.5 [11.2, 16.0]** |
 >
 > **Reading:**
 > 1. **Removing the ontology from the prompt costs nothing on the main evaluation** (all four
@@ -68,44 +77,85 @@
 >    and 2.7–3.4 (scinex).
 > 4. When the answer IS in the graph near the question's paragraph, finetuned and teacher triples
 >    answer 34–51% correctly vs 25–30% for the untuned graphs: the finetuned triples convert better.
->    The untuned full-ontology KG still scores highest (12.7 / 12.8) only because it is 4–8× bigger
+>    The untuned full-ontology KG beat every v1 graph (12.7 / 12.8) only because it is 4–8× bigger
 >    (2,363 / 2,469 kept triples, Table 16) and covers 77–79% of paragraphs, while only ~20% of its
 >    triples are correct (Table 17 C4 23 / 19 vs ~50–60 for the students and the teacher).
 > 5. ⚠ Absolute accuracy is low: the me50 KGs (2.7–4.5) are no better than closedbook (4.4); only
 >    the me30 KGs (6.8–8.3) clear it, and the oracle shows the questions are answerable (86.3).
 >    **Coverage of paper facts is the lever.**
 > 6. ⭐ **Teacher v2 (2026-11-09)** answers more (+1.1 / +1.6), and the ontology-free me30 student
->    trained on its data is **the best finetuned KG so far: 10.0 / 8.0**, +3.8 / +3.1 over its own
+>    trained on its data scores 10.0 / 8.0, +3.8 / +3.1 over its own
 >    teacher (CIs above 0) and +1.7 / +1.2 over the v1-data student (CIs touch 0). It keeps 851 / 730
->    triples at 87 / 86% kept rate and covers 57 / 49% of the question paragraphs. Only the noisy
->    untuned full-ontology graph still scores higher (12.7 / 12.8, ~20% of its triples correct).
-> 7. Missing answers: the re-ask (`run_qa_fill.sh`, 2026-11-09) filled 36 of the 67 — every KG
+>    triples at 87 / 86% kept rate and covers 57 / 49% of the question paragraphs.
+> 7. ⭐⭐ **Second teacher (2026-11-11): the highest Q&A so far.** Qwen3-30B-A3B's own KGs score
+>    16.7 / 17.0, and the ontology-free 8B student trained on them **15.5 / 18.2, statistically
+>    equal to its 30B teacher**, above every other KG including the untuned full-ontology one. It
+>    runs with no ontology in its prompt and keeps 79 / 78% of proposals where its teacher keeps
+>    44 / 42% (it learned the guards' ontology). ⚠ **But read Table 22: only about a third of
+>    those triples are correct.** Q&A does not penalise wrong triples, so these graphs buy
+>    coverage with precision. Same-family caveat: teacher and student are both Qwen; and the q30b
+>    student saw 2.6× more extraction examples (35,289 vs 13,531) because its teacher left fewer
+>    paragraphs empty.
+> 8. Missing answers: the re-ask (`run_qa_fill.sh`, 2026-11-09) filled 36 of the 67 — every KG
 >    condition is now complete. closedbook keeps 30 (3 papers × 10 questions; the greedy re-ask
 >    skips the same ones) and oracle 1 — controls only. Single fold, one question writer/answerer, deterministic grading.
 >
-> **Table 21 (ACL, teacher v2 vs v1 and the student on v2 data — 41 eval papers, judge-free,
-> 2026-11-09).** Teacher v2 = gpt-oss-20b with the `recall` prompt and the `output/acl_v2` entity
-> lists (`hands_off.md` §38.6), run on all 805 papers (2026-11-07 16:20 → 2026-11-09 00:32). The v2
-> student = Qwen3-8B, ontology-free prompt, max 30% empty targets, trained on the v2 teacher's
-> replies (`ft_data/acl_v2_noont_me30`: 13,531 extraction + 1,241 ontology + 7,943 vocabulary
-> examples; 2 h on one 5090). `ft_runs/teacher_v2/compare_v2_student.json`; Q&A columns from Table 20:
+> **Table 21 (ACL, teachers and their ontology-free me30 students — 41 eval papers, judge-free,
+> 2026-11-11).** Teacher v2 = gpt-oss-20b, `recall` prompt, `output/acl_v2` lists. Teacher q30b =
+> Qwen3-30B-A3B-Instruct-2507 W4A16 via vLLM, identical prompts and lists. Students = Qwen3-8B, no
+> ontology in the prompt, max 30% empty targets, same recipe; extraction examples 9,617 (v1) /
+> 13,531 (v2) / 35,289 (q30b). `ft_runs/teacher2/compare_students.json`; Q&A from Table 20:
 >
-> | ontology | KG | proposed → kept | kept rate | coverage | Q&A accuracy | answer in KG |
-> |---|---|---|---|---|---|---|
-> | CEO | teacher v1 | 619 → 501 | 80.9% | 25.6% | 5.0 | 8.4 |
-> | CEO | teacher v2 | 702 → 561 | 79.9% | 29.0% | 6.2 | 11.0 |
-> | CEO | noont-me30 student, v1 data | 797 → 678 | 85.1% | 43.9% | 8.3 | 12.4 |
-> | CEO | **noont-me30 student, v2 data** | **974 → 851** | **87.4%** | **53.0%** | **10.0** | **15.2** |
-> | scinex | teacher v1 | 373 → 289 | 77.5% | 17.3% | 3.3 | 5.8 |
-> | scinex | teacher v2 | 496 → 389 | 78.4% | 23.7% | 4.9 | 9.4 |
-> | scinex | noont-me30 student, v1 data | 627 → 544 | 86.8% | 35.2% | 6.8 | 10.8 |
-> | scinex | **noont-me30 student, v2 data** | **848 → 730** | **86.1%** | **44.8%** | **8.0** | **13.4** |
+> | ontology | KG | proposed → kept | kept rate | coverage | valid JSON | Q&A accuracy | answer in KG |
+> |---|---|---|---|---|---|---|---|
+> | CEO | teacher v1 | 619 → 501 | 80.9% | 25.6% | 99.2% | 5.0 | 8.4 |
+> | CEO | teacher v2 | 702 → 561 | 79.9% | 29.0% | 99.7% | 6.2 | 11.0 |
+> | CEO | teacher q30b | 5,571 → 2,428 | 43.6% | 75.2% | 98.9% | 16.7 | 24.6 |
+> | CEO | student, v1 data | 797 → 678 | 85.1% | 43.9% | 99.8% | 8.3 | 12.4 |
+> | CEO | student, v2 data | 974 → 851 | 87.4% | 53.0% | 99.7% | 10.0 | 15.2 |
+> | CEO | **student, q30b data** | **3,059 → 2,429** | **79.4%** | **77.1%** | 96.5% | **15.5** | **23.5** |
+> | scinex | teacher v1 | 373 → 289 | 77.5% | 17.3% | 99.6% | 3.3 | 5.8 |
+> | scinex | teacher v2 | 496 → 389 | 78.4% | 23.7% | 99.7% | 4.9 | 9.4 |
+> | scinex | teacher q30b | 5,605 → 2,334 | 41.6% | 74.8% | 98.5% | 17.0 | 26.7 |
+> | scinex | student, v1 data | 627 → 544 | 86.8% | 35.2% | 99.8% | 6.8 | 10.8 |
+> | scinex | student, v2 data | 848 → 730 | 86.1% | 44.8% | 99.9% | 8.0 | 13.4 |
+> | scinex | **student, q30b data** | **3,238 → 2,527** | **78.0%** | **76.1%** | 96.4% | **18.2** | **26.8** |
 >
-> v2 keeps 12% / 35% more triples than v1 at the same kept rate; the student on v2 data keeps 26% /
-> 34% more than the v1-data student, at a slightly higher kept rate. Run-to-run agreement is low
-> (v2 vs v1: P 21% / 14%), so overlap with the teacher is not a quality measure here. ⚠ Counts and
-> Q&A only; per-triple correctness of the v2 student is not judged yet (a blind C1/C3/C4 round
-> would show whether the extra triples are right).
+> Graph objects stay short in every KG (mean 2.4–3.7 words, gold answers 2.7), so the Q&A gain is
+> not long text spans matching the answers by word overlap. Run-to-run agreement between teachers
+> is low, so overlap with a teacher is not a quality measure.
+>
+> **Table 22 (ACL, ⭐ BLIND CORRECTNESS of the new teachers and students, round `acl-f0-q30b`, seed
+> 41, 2026-11-11).** 50 kept triples per model and ontology, pooled and anonymised, judged by
+> claude-opus-5-5 in session (`ontology_eval/_blind/acl-f0-q30b/{ceo,scinex}/report.json`).
+> "Correct (est.)" = kept × C4:
+>
+> | ontology | extractor | C1 | C3 | C4 [95% CI] | C4 strict | kept | correct (est.) | not correct (est.) | Q&A |
+> |---|---|---|---|---|---|---|---|---|---|
+> | CEO | teacher gpt-oss v2 | 89 | 58 | **75** [66, 84] | 60 | 561 | 421 | 140 | 6.2 |
+> | CEO | student, v2 data | 82 | 52 | **48** [36, 59] | 34 | 851 | 408 | 443 | 10.0 |
+> | CEO | teacher q30b | 71 | 42 | **26** [16, 36] | 16 | 2,428 | 631 | 1,797 | 16.7 |
+> | CEO | student, q30b data | 70 | 50 | **27** [17, 38] | 16 | 2,429 | 656 | 1,773 | 15.5 |
+> | scinex | teacher gpt-oss v2 | 93 | 56 | **78** [69, 86] | 64 | 389 | 303 | 86 | 4.9 |
+> | scinex | student, v2 data | 84 | 58 | **59** [47, 70] | 46 | 730 | 431 | 299 | 8.0 |
+> | scinex | teacher q30b | 70 | 40 | **34** [22, 46] | 24 | 2,334 | 794 | 1,540 | 17.0 |
+> | scinex | student, q30b data | 78 | 58 | **41** [30, 53] | 28 | 2,527 | 1,036 | 1,491 | 18.2 |
+>
+> C4 differences: q30b teacher − gpt-oss v2 −49 [−62, −34] / −44 [−58, −30]; q30b student − v2
+> student −21 [−36, −5] / −18 [−33, −1]; q30b student − its teacher +1 [−14, +15] / +7 [−9, +23];
+> v2 student − gpt-oss v2 −27 [−41, −12] / −19 [−33, −5].
+>
+> **Reading:** the second teacher is a **recall-for-precision trade**, not a free win. Its student
+> holds about 1.6× (CEO) to 2.4× (scinex) more correct triples than the v2 student, and about 4–5×
+> more wrong ones. That is why Q&A rises (the answer model can ignore a wrong triple) while a
+> reader of the graph would find most triples wrong. Typical failures in the sample: `addresses`
+> and `achieves` used as catch-all relations (q30b student C4 on CEO `addresses` 14%, scinex
+> `achieves` 32%), `employs` applied to models (0%; it is Organisation → Person), self-loops
+> (`DAILY547 evaluatedOn DAILY547`), objects absent from the sentence. The q30b student matches its
+> teacher's precision; the v2 student falls well below its teacher (−27 / −19). ⚠ Single rater, n=50 per cell,
+> one fold; compare within this round only (the judge saw aggregate predicate counts before
+> judging, not which model wrote an item). v1 is not in this round, so v2's 75 / 78 cannot be set
+> against v1's 54 / 57 from Table 19b.
 >
 > **Table 19 (ACL, ⭐ ONTOLOGY-FREE STUDENTS, judge-free).** Students trained and run with the
 > `noont` prompt: the ontology's NAME only, no relation list or definitions (218 tokens vs 2,744).

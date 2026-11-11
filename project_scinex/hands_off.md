@@ -104,8 +104,8 @@
   student vs q30b student differ only in the teacher (same prompt, lists, cap, recipe).
 - `run_v2_student.sh` restarted (it was still waiting) so it uses **GPU1 only** (its Q&A runs
   both ontologies on GPU1); both chains grade under `flock /home/dev1/scinex_runs/qa_grade.lock`.
-- The bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` (57 GB) is still in the cache as a fallback until
-  the vLLM smoke test passes; then it can go (user agreed to delete it with option d).
+- The bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` (57 GB) is still in the cache. Deleting it needs the
+  user's yes: it was suggested, never explicitly approved (corrected 2026-11-11).
 
 ### 39.7 2026-11-09: overnight results; teacher2 smoke failure fixed and relaunched
 - **Chain** done 00:52 (teacher v2 lanes finished 00:16 / 00:32, compare, v2 Q&A). **qafill** done
@@ -131,6 +131,25 @@
   `screen gpurestore` = `gpu_restore_after.sh 'run_teacher2[.]sh'` (the script now takes the
   driver pattern as $1) restores everything 10 idle minutes after `run_teacher2.sh` exits. First
   minutes: 100% util, 48 / 40 °C, <200 W.
+
+### 39.8 2026-11-11: second teacher results, and the blind check that qualifies them
+- **`teacher2` done 2026-11-10 06:18** (teacher lanes 4 h 25 m / 5 h 07 m, ~70 paragraphs/min per
+  card vs 10 for HF gpt-oss; student training 5 h 19 m on 35,289 extraction examples; generation
+  6 h 31 m because the student writes long replies). GPU settings restored 06:29, log confirms.
+- The 9 skipped scinex answers of the q30b teacher re-asked; **`qa_report_all.sh`** (new, in
+  `ft_runs/acl_scripts/`) re-grades and reports with every comparison.
+- **Q&A (Table 20): teacher q30b 16.7 / 17.0; q30b-data noont-me30 student 15.5 / 18.2 = equal to its
+  teacher (−1.2 [−2.9, 0.5] / +1.1 [−1.1, 3.5]), +5.4 / +10.1 over the v2 student, +2.7 / +5.4 over
+  the untuned full-ontology graph.** Objects stay short (2.4–3.7 words), so word-overlap grading is
+  not being gamed by long spans.
+- **Blind round `acl-f0-q30b` (Table 22, seed 41, 50 per cell, 200 + 198 items judged in session):
+  C4 gpt-oss v2 75 / 78, v2 student 48 / 59, q30b teacher 26 / 34, q30b student 27 / 41.** Estimated
+  correct triples (kept × C4): 421 / 303, 408 / 431, 631 / 794, 656 / 1,036. So q30b buys coverage with
+  precision: 1.6–2.4× more correct triples than the v2 student, 4–5× more wrong ones. Q&A cannot see
+  wrong triples. Failure modes: `addresses` / `achieves` as catch-alls, `employs` on models, self-loops,
+  objects not in the sentence, the `88.5` leak (seen again: `DBDC evaluates 88.5`).
+- Why it matters for the objective: Q&A is the headline, but "the KG answers more" and "the KG is
+  mostly right" have now separated. Report both to the professor.
 
 ## Session 38 — GPU heat brought under control with clock locks; a 2× training speed-up built and proven equivalent on CPU; entity-list cleanup audited (2026-11-05)
 

@@ -1,0 +1,165 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bbf686de373 -----
+TRIPLE:     (BERT)  --uses-->  (sub-word tokens)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: While BERT uses sub-word tokens to get around out of vocabulary tokens, in the rare instance of encountering an OOV with GloVe, we generate a random word embedding in its stead.
+
+----- triple_id: b0097cbd76c -----
+TRIPLE:     (embeddings)  --addresses-->  (SP knowledge)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Compared to them, the learned embeddings from our model are useful resources that incorporate SP knowledge and can be seamlessly leveraged in other NLP models.
+
+----- triple_id: b900b09a5f3 -----
+TRIPLE:     (Language Model)  --uses-->  (Attribute Information)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Lebret et al. (2016) proposed a neural language model Table NLM taking the attribute information into consideration.
+
+----- triple_id: b9643420b1f -----
+TRIPLE:     (Neural Network)  --addresses-->  (Parsing)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Neural network techniques have found success in several NLP tasks recently such as sentiment analysis at the sentence and document level , language modeling , paraphrase detection , discriminative parsing , and tasks involving semantic relations and compositional meaning of phrases .
+
+----- triple_id: bdfc5866c52 -----
+TRIPLE:     (Contextualised Word Representations)  --employs-->  (neural contextualised word representations)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: None of these restrictions limit our proposed approach, which leverages neural contextualised word representations.
+
+----- triple_id: bc002eb4b9e -----
+TRIPLE:     (Maximum Likelihood Estimation)  --uses-->  (training set D)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: fine-tuning a pretrained Enc-Dec conditional LM using a training set D = {(c1, q1, a1), (c2, q2, a2),..., (c|D|, q|D|, a|D|)} through maximum likelihood estimation (MLE) by minimizing the negative log-likelihood over D
+
+----- triple_id: b82591214b1 -----
+TRIPLE:     (PARENT)  --achieves-->  (0.838 correlation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: With these components, the correlation is 0.838, showing that they are crucial to the performance of PARENT.
+
+----- triple_id: b91432dbb63 -----
+TRIPLE:     (Optimization)  --uses-->  (SGD)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: optimized by using any SGD optimization, e.g., Adam , Adadelta , and so on.
+
+----- triple_id: b5229b53e8a -----
+TRIPLE:     (BERT)  --uses-->  (document encoders)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: neural models employing BERT , T5 , or BART as document encoders cannot process documents longer than 512/1024 tokens.
+
+----- triple_id: b71ced8003b -----
+TRIPLE:     (DuoRC)  --comprises-->  (paraphraseRC task)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: ParaphraseRC task of DuoRC dataset is used in our evaluations.
+
+----- triple_id: b7b02f87484 -----
+TRIPLE:     (word2vec)  --uses-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For embedding based methods (word2vec, GloVe, D-embedding7, and MWE8), we follow previous work and use the cosine similarity between embeddings of head and tail words to predict their relations.
+
+----- triple_id: b24aa10a1a7 -----
+TRIPLE:     (Back Translation)  --achieves-->  (5.7% improvement)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: As shown in Table 2, back translation with environmental dropout improves the best supervised model by 5.7%, where the improvement is 3 times more than the back translation without new environments.
+
+----- triple_id: bdc0688548a -----
+TRIPLE:     (visual features)  --uses-->  (features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Each segment contains individual words w in a sequence w, visual features v in a sequence v, and acoustic features a in a sequence a.
+
+----- triple_id: b36e127e62f -----
+TRIPLE:     (embeddings)  --achieves-->  (relatively good noise-robust morphological disambiguation accuracy)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The result of the narrow window embeddings is particularly interesting, as it shows that to achieve a relatively good noise-robust morphological disambiguation accuracy, using narrow window embeddings should go a long way.
+
+----- triple_id: bda8dab6a19 -----
+TRIPLE:     (Evolutionary Algorithms)  --addresses-->  (Attention)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Parameter control in evolutionary algorithms (EAs) has been shown to be beneficial; however, the control of offspring size has so far received very little attention.
+
+----- triple_id: b767906e2ad -----
+TRIPLE:     (CODA)  --addresses-->  (Computational Models)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: CODA presents a detailed description of orthographic guidelines, mainly for the purpose of developing DA computational models, applied to EGY, and later extended to several other Arabic dialects
+
+----- triple_id: b4ff7230c1e -----
+TRIPLE:     (post-processing)  --produces-->  (original values)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: After obtaining the paraphrased sentences, we replace the placeholders with their original values by performing a simple post-processing step.
+
+----- triple_id: be700b9d7c4 -----
+TRIPLE:     (Dropout)  --achieves-->  (generalization-focused learning)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The second, more important stage is semi-supervised learning with generalization-focused 'environmental dropout'.
+
+----- triple_id: bd563fec0ed -----
+TRIPLE:     (Neural Network)  --uses-->  (extra neural network layers)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Previous work either directly uses the internal attention scores as the copy probabilities (i.e., αc t,i = αin t,i) or employs extra neural network layers to calculate new copy scores.
+
+----- triple_id: bfdef0cf342 -----
+TRIPLE:     (Grammar)  --addresses-->  (verb inflection)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The grammar handles noun phrase inflection, fronting of noun phrases, and verb inflection.
+
+----- triple_id: ba401e162f5 -----
+TRIPLE:     (HMM)  --employs-->  (mel-frequency cepstral coefficients)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: In this paper, we focus on note-based methods since they are more efficient and there still seems to be room for improvement in accuracy in this case. These methods are often based on statistical approaches. Hidden Markov model (HMM) is one of the common methods that have been used for note transcription (Shih et al., 2002; Shih et al., 2003; Shifrin et al., 2002; Ryyn¨anen and Klapuri, 2004). (2002) and Shih et al. (2003), the note is segmented by modelling phonemes using mel-frequency cepstral coefficients, energy measures, and the derivatives of these as features, and then the average pitch of the note is found on the segmented segments, which is then used to represent the individual notes.
+
+----- triple_id: b98b80b6ae9 -----
+TRIPLE:     (BLEU-T)  --achieves-->  (improved correlation over BLEU)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: BLEU performs the best among these, and adding n-grams from the table as references improves this further (BLEU-T).
+
+----- triple_id: b5c51af34f8 -----
+TRIPLE:     (Lexicons)  --uses-->  (Feed-Forward Neural Networks)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The second is based on an extended lexicons built from feed-forward neural networks trained on word embeddings
+
+----- triple_id: b5277ffab62 -----
+TRIPLE:     (Preliminary Analysis)  --addresses-->  (how this property affects performance)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In a preliminary analysis aimed at understanding how this property affects performance, we compare words used 20The set annotated by humans is disjoint.
+
+----- triple_id: b5e84bdeeee -----
+TRIPLE:     (Semantic Change Detection)  --addresses-->  (Word Frequencies)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In particular, with the exception of a few methods based on word frequencies and parts of speech, lexical semantic change detection has been addressed following two main approaches: form-based and sense-based (for an overview, see Kutuzov et al., 2018; Tang, 2018).

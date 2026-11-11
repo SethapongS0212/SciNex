@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bfc2a1b6383 -----
+TRIPLE:     (Effective Features)  --achieves-->  (effective features for discriminative models)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Not only does Brown clustering produce effective features for discriminative models, but its variants are better unsupervised POS taggers than some models developed nearly 20 years later; see comparisons in Blunsom and Cohn (2011).
+
+----- triple_id: b6b716e8b7b -----
+TRIPLE:     (Morphology)  --encompasses-->  (SN)
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  Relates a research domain to the research tasks that fall within its scope
+SOURCE SENTENCE: We also consider these tasks to represent examples of different language domains: surface information (SL,WC), morphology (SN,ON,TE), syntax (TD,TC,CIN) and contextual incongruity (BS,SOMO).
+
+----- triple_id: b056d8d19e3 -----
+TRIPLE:     (BLEU)  --achieves-->  (average, similar to BLEU: Entailed Recall)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We combine precisions for n-gram orders 1-4 using a geometric average, similar to BLEU: Entailed Recall.
+
+----- triple_id: b08e9dd7e72 -----
+TRIPLE:     (Sentence Embeddings)  --addresses-->  (Machine Translation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Sentence embeddings are crucial for down-stream tasks such as document classification, opinion analysis , and machine translation.
+
+----- triple_id: b59de1f6b11 -----
+TRIPLE:     (Bi-RNN)  --uses-->  (Context Vectors)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The Context Layer encodes C1, Q1 as contextual vectors C2 ∈Rlw×2dc, Q2 ∈Rmw×2dc by using a bi-directional RNN (Bi-RNN), where dc is the output size of a uni-directional RNN.
+
+----- triple_id: b94b6144c06 -----
+TRIPLE:     (fine-tuning)  --achieves-->  (significant performance improvement on CoNLL dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The fine-tuning on the CoNLL dataset significantly improves the performance on this dataset (Table 1).
+
+----- triple_id: bc77f6c11d3 -----
+TRIPLE:     (PARENT)  --achieves-->  (highest correlation with humans on WikiBio)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We propose a new metric , PARENT, which shows the highest correlation with humans across a range of settings with divergent references in WikiBio.
+
+----- triple_id: b9ece30ce56 -----
+TRIPLE:     (Rating Scales)  --comparesagainst-->  (BWS)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Kiritchenko and Mohammad (2017) show through empirical experiments that BWS produces more reliable fine-grained scores than scores obtained using rating scales.
+
+----- triple_id: b137120a693 -----
+TRIPLE:     (Back Translation)  --achieves-->  (5.7% improvement)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: back translation with environmental dropout improves the best supervised model by 5.7%
+
+----- triple_id: b23b85aa4f9 -----
+TRIPLE:     (POS)  --uses-->  (segmenters)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: training POS taggers that use the output of our segmenters as features significantly improves a state-of-the-art tagger.
+
+----- triple_id: b16904bfd6d -----
+TRIPLE:     (MADAMIRA)  --addresses-->  (morphological complexity)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Notable contributions for both MSA and EGY include MADAMIRA , a morphological disambigua- tion tool that uses morphological analyzers to han- dle complexity and ambiguity.
+
+----- triple_id: bc16b504a9b -----
+TRIPLE:     (NMT)  --achieves-->  (spelling errors)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Although subword NMT works quite well at copying, it sometimes fails to copy the complete sequence of subwords in the translated text and results in spelling errors.
+
+----- triple_id: b41baadba02 -----
+TRIPLE:     (Precision)  --uses-->  (generation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Next we discuss how to compute the precision and recall of the generation.
+
+----- triple_id: b850031f617 -----
+TRIPLE:     (oDistMult-LS)  --achieves-->  (16% improvement in terms of filtered MRR)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: On oWN18RR, for instance, oDistMult- ERAvg and oDistMult-LS achieve 28% and 16% improvement in terms of filtered MRR compared to DistMult-ERAvg and DistMult-LS respectively.
+
+----- triple_id: ba899b8441c -----
+TRIPLE:     (BERT)  --comparesagainst-->  (random baselines)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: The vanilla BERT vectors out- perform random baselines across all tasks, includ- ing the BS task.
+
+----- triple_id: b078528d028 -----
+TRIPLE:     (retrieval)  --evaluatedon-->  (evaluation dataset)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: the retrieval number K is set to 3 after evaluating the retrieved keyphrases on the evaluation dataset.
+
+----- triple_id: b8c1c3d51eb -----
+TRIPLE:     (Multi-task Learning)  --addresses-->  (extraction)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We propose a multi-task learning framework which simultaneously learns to extract keyphrases from the source text and generate keyphrases word by word with external knowledge.
+
+----- triple_id: b16e09f3be3 -----
+TRIPLE:     (Back Translation)  --addresses-->  (navigation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Back translation was introduced to the task of navigation in Fried et al.
+
+----- triple_id: b1d677c04d6 -----
+TRIPLE:     (CODA)  --designedfor-->  (DA computational models)
+PREDICATE DEFINITION: Model → ResearchTask  |  Associates a model with the research task it was specifically designed or optimised to solve, such as a transformer model designed for machine translation or a CNN designed for image classification
+SOURCE SENTENCE: CODA presents a detailed description of orthographic guidelines, mainly for the purpose of developing DA computational models
+
+----- triple_id: b244c2283e7 -----
+TRIPLE:     (Neural Network)  --uses-->  (average word embedding vector)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The first is a feed-forward neural network whose input vector is formed by concatenating the average word embedding vector with the lexicon features vector provided by the AffectiveTweets package.
+
+----- triple_id: b850a0310d3 -----
+TRIPLE:     (FaD-VLP)  --evaluatedon-->  (CR/SR)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We compare FaD-VLP to existing work on our set of 7 downstream tasks: ITR/TIR (Table 2), IRTF (Table 3), CR/SR (Table 4), IC (Table 5), and RIC (Table 6).
+
+----- triple_id: b62ad592b8a -----
+TRIPLE:     (Tagger)  --evaluatedon-->  (Penn Treebank)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: The tagger was tested using the traditional "standard split" of the Wall St. Journal portion of the Penn Treebank, with sections 0–18 for training, sections 19–21 for development, and sections 22–24 for evaluation.
+
+----- triple_id: b0e65a37db3 -----
+TRIPLE:     (OneDecoder)  --uses-->  (negative log-likelihood loss function)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Both OneDecoder and MultiDecoder models are trained with the negative log-likelihood loss function.
+
+----- triple_id: b979d09f625 -----
+TRIPLE:     (DuoRC)  --evaluatedon-->  (ParaphraseRC task of DuoRC dataset)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: ParaphraseRC task of DuoRC dataset was used in our evaluations, consisting of 13,111 pairs .
+
+----- triple_id: b35a211a140 -----
+TRIPLE:     (word2vec)  --uses-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: For embedding based methods (word2vec, GloVe, D-embedding7, and MWE8), we follow previous work and use the cosine similarity between embeddings of head and tail words to predict their relations.

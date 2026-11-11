@@ -1,0 +1,117 @@
+
+Grade the following 23 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bdbafe55cf9 -----
+TRIPLE:     (External Resources)  --uses-->  (features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Features were drawn both from the training data as well as from external resources such as large tweet corpora and affect lexicons.
+
+----- triple_id: b4e2fd18657 -----
+TRIPLE:     (QC-WCC)  --uses-->  (optimal value of η)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: For the tempo-lexical based transformation method, we used the optimal value of η as obtained from the QC-WCC baseline, to cluster the queries in each temporal window of 26 minutes.
+
+----- triple_id: bfacc1d26ed -----
+TRIPLE:     (Back Translation)  --achieves-->  (50.5%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Back translation (without dropout) slightly improves the result to 50.5%.
+
+----- triple_id: b66bdf004c3 -----
+TRIPLE:     (SemBank)  --evaluatedon-->  (texts without copyright restrictions)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: Therefore, SemBank will only consist of texts which distribution isn't subject to copyright restrictions.
+
+----- triple_id: b24c9502529 -----
+TRIPLE:     (Linguistic Annotations)  --achieves-->  (morphological structure)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: But this tool (and others like it) require the clinician to provide not only a complete orthographic transcription, but also detailed linguistic annotations using a complex and unforgiving annotation syntax that itself takes significant effort to master.
+
+----- triple_id: b26036a0ccf -----
+TRIPLE:     (Distant Supervision)  --uses-->  (tag-based distant supervision)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Two methods are commonly used to label texts for sarcasm : manual labelling by human annotators; and tag-based distant supervision.
+
+----- triple_id: b985d4973b2 -----
+TRIPLE:     (sentence structure)  --evaluatedon-->  (Sentence Structure)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: Developmental language impairments are normally assessed using standardized tests such as the Clinical Evaluation of Language Fundamentals (CELF), a battery of norm-referenced language tasks such as Recalling Sentences, in which the child repeats a sentence, and Sentence Structure , in which the child points to a picture matching a sentence.
+
+----- triple_id: b067f5b2d07 -----
+TRIPLE:     (embeddings)  --uses-->  (Dependency Relations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: encoding selectional preference information into embeddings can be conducted by modeling word association patterns under different dependency relations.
+
+----- triple_id: bdcc7e808a1 -----
+TRIPLE:     (generation)  --achieves-->  (optimizes distractor plausibility)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: the first step, Candidate Generation , optimizes distractor plau- sibility; and the second step, Candidate Filtering, aims to filter out distractor candidates that are ac- ceptable answers.
+
+----- triple_id: b4d65385ca3 -----
+TRIPLE:     (User-Generated Content)  --addresses-->  (noise)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The lack of a standard orthography, combined with the fact that user-generated content in social media is prone to noise, increase sparsity and reduce performance.
+
+----- triple_id: b03be6f9681 -----
+TRIPLE:     (Unsupervised Learning)  --addresses-->  (explainable multi-hop QA)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Tackled unsupervised learning for explainable multi-hop QA, but their model is restricted to the multiple-choice setting.
+
+----- triple_id: bf642d96f6d -----
+TRIPLE:     (ECTSum)  --achieves-->  (comparable coverage and density scores)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: ECTSum has the highest compression ratio among all the datasets while having comparable coverage and density scores.
+
+----- triple_id: bf83f27dd11 -----
+TRIPLE:     (generation)  --achieves-->  (accurate, informative and loyal)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We set up 3 goals for comprehensive description generation for attribute-value factual tables : accurate, informative and loyal.
+
+----- triple_id: b590be460e6 -----
+TRIPLE:     (LSTM)  --uses-->  (ResNet-encoded image Vt)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at (seen in Figure 2).
+
+----- triple_id: bc30ee935d7 -----
+TRIPLE:     (Fortia-FBK)  --uses-->  (sentiment lexicons)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Fortia-FBK trained a CNN with the assistance of sentiment lexicons for predicting the sentiment score.
+
+----- triple_id: b5b285e56aa -----
+TRIPLE:     (BLEU)  --comparesagainst-->  (BLEU-T)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: A similar trend is seen comparing BLEU and BLEU-T.
+
+----- triple_id: be542697b68 -----
+TRIPLE:     (WIKIBIO)  --splitfrom-->  (WB-filter)
+PREDICATE DEFINITION: Dataset → Dataset  |  Records that a dataset partition was derived from a larger source dataset
+SOURCE SENTENCE: 2) To test our model in the user-oriented setting, we filter WIKIBIO to form WB-filter.
+
+----- triple_id: bc87b9b2c39 -----
+TRIPLE:     (Manual Annotations)  --achieves-->  (Ranking)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: if repeated independent manual annotations from multiple respondents result in similar intensity rankings (and scores), then one can be confident that the scores capture the true emotion intensities.
+
+----- triple_id: b82a4ac3f81 -----
+TRIPLE:     (QAGen)  --comparesagainst-->  (QAGen2S)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Additionally, QAGen and QAGen2S significantly outperforms QGen, our implementation of the three-stage pipeline of Puri et al. well as sampling top 10 spans and generating one question per each.
+
+----- triple_id: b2a1f7f612c -----
+TRIPLE:     (Deep Learning Models)  --achieves-->  (usage-dependent representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Thanks to deep learning models which learn usage-dependent representations while optimising tasks such as machine translation and language modelling
+
+----- triple_id: b43e7501f73 -----
+TRIPLE:     (Classification)  --addresses-->  (factual vs opinion arguments classification)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: To address the task of factual vs opinion arguments classification , we apply the supervised classification algorithms described in Section 2.1.
+
+----- triple_id: b6e90363ff3 -----
+TRIPLE:     (Attention Mechanism)  --uses-->  (RNN)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: QFE sequentially extracts the evidence sentences by using an RNN with an attention mechanism on the question sentence, while the existing method extracts each evidence sentence independently.
+
+----- triple_id: b81ce1aef77 -----
+TRIPLE:     (Unstructured Text)  --extractedfrom-->  (Prepared Remarks)
+PREDICATE DEFINITION: ? → AcademicPaper  |  Links an extracted entity to the academic paper it was extracted from.
+SOURCE SENTENCE: We only consider the unstructured text corresponding to the Prepared Remarks section to form the source documents .

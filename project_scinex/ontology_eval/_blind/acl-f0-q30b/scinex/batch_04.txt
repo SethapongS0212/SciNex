@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b772f40c093 -----
+TRIPLE:     (NMT)  --uses-->  (BPE)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Subword translation is an approach used in NMT to tackle out-of-vocabulary (OOV) problem using byte-pair encoding (BPE) or other similar segmentation techniques.
+
+----- triple_id: b3aa43952d0 -----
+TRIPLE:     (Paraphrasing)  --achieves-->  (strategy of replacing numbers with placeholders while training)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: be attributed to our strategy of replacing numbers with placeholders while training the Paraphrasing module (please refer to Section 4.2 for details).
+
+----- triple_id: bc735d34b96 -----
+TRIPLE:     (GRU)  --achieves-->  (0.727 cosine similarity)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: In microblog dataset we obtain the best cosine similarities of 0.724, 0.727, 0.721 and 0.765 for CNN, LSTM, GRU and feature based systems, respectively.
+
+----- triple_id: bce8b401c7f -----
+TRIPLE:     (QAGen2S)  --uses-->  (Topk+Nucleus)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Question - answer generation with AQGen, QAGen, and QAGen2S is performed using Topk+Nucleus, as discussed in Sec.
+
+----- triple_id: b65eced13b6 -----
+TRIPLE:     (ECT-BPS)  --achieves-->  (6.8% better ROUGE scores)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: To conclude, despite the understandably good performance of long document summarizers on the ECT summarization task, our simple extract-then-paraphrase approach, ECT-BPS, establishes the state-of-the-art performance with overall 6.8% better ROUGE scores, 3.67% better BERTScore scores, 8.5% better Num-Prec. scores, and 0.4% better factual consistency scores over the respective strongest baselines.
+
+----- triple_id: ba2d2317f1f -----
+TRIPLE:     (GEMS)  --achieves-->  (one of the lowest ED score)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Indeed coach is assigned one of the lowest ED score among the GEMS words.
+
+----- triple_id: b3734eef309 -----
+TRIPLE:     (BERT)  --uses-->  (sub-word tokens)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: While BERT uses sub-word tokens to get around out of vocabulary tokens, in the rare instance of encountering an OOV with GloVe, we generate a random word embedding in its stead.
+
+----- triple_id: b749aa4deef -----
+TRIPLE:     (retrieval)  --evaluatedon-->  (Fashion -Gen)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We evaluate cross - modal retrieval on Fashion -Gen .
+
+----- triple_id: bd42bd16544 -----
+TRIPLE:     (WebNLG)  --addresses-->  (summary of all records)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: In some cases the system is expected to summarize all the records (e.g. WebNLG); in others the system is expected to only summarize the salient records (e.g. As a motivating example, consider the three candidate generations shown in Figure 1.
+
+----- triple_id: bc5d42bea82 -----
+TRIPLE:     (Reading Comprehension)  --uses-->  (textual sources)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Reading comprehension (RC) is a task that uses textual sources to answer any question.
+
+----- triple_id: b52c8226771 -----
+TRIPLE:     (GloVe)  --uses-->  (matrix decomposition)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: • GloVe , learning word embeddings by matrix decomposition on word co-occurrences.
+
+----- triple_id: b23d9192917 -----
+TRIPLE:     (Part-Of-Speech Tagging)  --achieves-->  (success in English)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: While the part-of-speech tagging approach described above has been successful in English and our results show that it is an effective method also for Irish , there are some clear shortcomings of the approach.
+
+----- triple_id: bfd04f589ce -----
+TRIPLE:     (Back Translation)  --uses-->  (environmental dropout)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The method for pre-exploration is described in Sec. 7.2, where the agent applies back translation with environmental dropout on the validation unseen environment.
+
+----- triple_id: bb31f7212be -----
+TRIPLE:     (Layer Normalization)  --achieves-->  (normalization of input features)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: me = layernorm gelu(Wfhe + bf) (2) where he ∈RH is the output embedding corresponding to the masked entity , Wf ∈RH×H is a matrix, bo ∈RVe and bf ∈RH are bias vectors, gelu(·) is the gelu activation function , and layernorm(·) is the layer normalization function .
+
+----- triple_id: bce614979b3 -----
+TRIPLE:     (GloVe)  --uses-->  (Word Representation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We utilize Word2Vec and GloVe word representation techniques to learn our fi- B.
+
+----- triple_id: b8d56f89db9 -----
+TRIPLE:     (News Texts)  --encompasses-->  (attribution in news texts)
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  Relates a research domain to the research tasks that fall within its scope
+SOURCE SENTENCE: Preliminary data analysis has shed light on some of the unmotivated assumptions in the current literature (e.g. that sources are NEs and that a small set of reporting verbs can be sufficient to identify attribution) and identified some relevant aspects of attribution in news texts.
+
+----- triple_id: b9cdca2004d -----
+TRIPLE:     (LSTM)  --uses-->  (previous action at−1)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: At each timestep an LSTM decoder uses a ResNet-encoded image Vt and previous action at−1 to attend over the states of an LSTM language encoder (L) to predict navigation action at (seen in Figure 2).
+
+----- triple_id: bb99c1e6c31 -----
+TRIPLE:     (Beam Search)  --uses-->  (beam size set to 6)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: While testing, the beam search depth, and beam size are set as 6 and correspondingly.
+
+----- triple_id: be21b7c6872 -----
+TRIPLE:     (Deep Neural Network)  --trainedon-->  (humming data)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: For this task, we have collected humming data and transcribed them in order to train a Deep Neural Network (DNN) based Hid- den Markov Model (HMM) for note transcription.
+
+----- triple_id: bd97f0377a0 -----
+TRIPLE:     (Tagger)  --achieves-->  (93.2% accuracy on English Twitter text)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The full tagger attains 93.2% accuracy (final row of Table 2).
+
+----- triple_id: b1e2d2b2e26 -----
+TRIPLE:     (ECT-BPS)  --comprises-->  (Extractive block)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: Our proposed model ECT-BPS contains two separately trained modules/blocks – (1) an Extractive block that is trained to identify the most relevant sentences from the input ECT document, and (2) a Paraphrasing block that is trained to rephrase the extracted ECT sentences to the format of target (Reuters) sentences, thereby generating a set of bullet points.
+
+----- triple_id: bdec2813e89 -----
+TRIPLE:     (PARENT-C)  --uses-->  (co-occurrence counts)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: PARENT-C only relies on co-occurrence counts.
+
+----- triple_id: b0db12b2cf5 -----
+TRIPLE:     (ECTSum)  --evaluatedon-->  (ECTSum corpus)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We evaluate and compare the summarization performance of a wide range of representative algorithms on the ECTSum corpus as briefed below:
+
+----- triple_id: b62ab4c9976 -----
+TRIPLE:     (OneDecoder)  --achieves-->  (generate all triplets)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: employing only one unified decoder (OneDecoder) to generate all triplets
+
+----- triple_id: b39806c6d5f -----
+TRIPLE:     (CopyRNN)  --uses-->  (attentional encoder -decoder model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: CopyRNN, which is built on the attentional encoder -decoder model with copy mechanism to generate keyphrases.

@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b6e441edfab -----
+TRIPLE:     (Keyphrase Generation)  --achieves-->  (new state-of-the-art performance on five real-world benchmarks)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: However, when human annotators are asked to assign keyphrases to a document, they usually first obtain a global sense about which parts of the document are important and then write down the keyphrases word by word based on a more detailed understanding. To achieve such a goal, we propose a multi-task learning framework to take advantage of both extractive and generative models. For keyphrase extraction, we adopt a neural sequence labeling model to output the likelihood of each word in the source text to be a keyphrase word (or the importance score of each word). These importance scores are then employed to rectify the copy probability distribution of the generative model. Since the extractive model is explicitly trained to identify keyphrases from the source text, its importance scores can help the copy mechanism to identify important source text words more accurately. Different from the copy probability distribution which is dynamic at each generation step, these importance scores are static. In summary, our main contributions include: (1) a new multi-task learning framework that lever-ages an extractive model and external knowledge to improve keyphrase generation; (2) a novel neural-based merging module that combines the predicted keyphrases from extractive, generative, and retrieval methods to further improve the performance; and (3) the new state-of-the-art performance on five real-world benchmarks.
+
+----- triple_id: b526d9ae09b -----
+TRIPLE:     (MultiDecoder)  --comparesagainst-->  (OneDecoder)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: our MultiDecoder model performs better then OneDecoder model
+
+----- triple_id: b6279277750 -----
+TRIPLE:     (RNN)  --comprises-->  (compositional properties)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: By training a neural language model (NLM) and integrating RNN structures for complex words, we utilize contextual information in an interesting way to learn morphemic semantics and their compositional properties.
+
+----- triple_id: bbe5e43acad -----
+TRIPLE:     (LSTM)  --uses-->  (word xt and its structure representation zt)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We concatenate the word xt and its structure representation zt at the t-th time step and feed them into LSTM unit to encode the table . ht = LSTM([xt; zt], ht−1) is the t-th hidden state among the encoder states H = {ht}T t=1.
+
+----- triple_id: b1b13b8a3bd -----
+TRIPLE:     (THOR-Nav)  --evaluatedon-->  (EQA)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Matterport↑ THOR-Nav↑ EQA↓ (%) (%) (m) Model Seen Un Seen Un Un ∆Uni – Base +7.1 +5.8 +33.4 +5.96 -0.10
+
+----- triple_id: b7b7111fc53 -----
+TRIPLE:     (Transformer)  --employs-->  (Self-Attention)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: Transformer-based encoder-decoder conditional LMs use bidirectional self-attention in the encoding step to create vector representations of the tokens in the context c.
+
+----- triple_id: b9f618a9ce6 -----
+TRIPLE:     (Word Embeddings)  --uses-->  (Word2Vec)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We further propose to develop an enhanced word representation by learning through a stacked denoising autoencoder network using word embeddings of Word2Vec and GloVe models.
+
+----- triple_id: b7436b59a43 -----
+TRIPLE:     (Annotation)  --uses-->  (Annotation Guidelines)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In the ex- ploratory phase I, we annotated 226 GermaNet synsets following the annotation guidelines for EffectWordNet by Choi and Wiebe (2014).
+
+----- triple_id: b5243563dec -----
+TRIPLE:     (Morphological Disambiguation)  --addresses-->  (Disambiguation)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The set of morphological features that we model for EGY morphological disambiguation includes: • Non-lexicalized features: aspect, case, gen- der, person, part-of-speech (POS), number, mood, state, voice.
+
+----- triple_id: b21ea8849a9 -----
+TRIPLE:     (POS)  --addresses-->  (Dravidian Languages)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: There are large amount of research literature on construction of POS taggers for south Dravidian languages and most of them are languages specific, e.g., Pandian and Geetha (2009).
+
+----- triple_id: b79ecddeead -----
+TRIPLE:     (AffectiveTweets)  --uses-->  (Weka)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Our AffectiveTweets Weka baseline package was used by five participating teams, including the teams that ranked first, second, and third.
+
+----- triple_id: b74434a2395 -----
+TRIPLE:     (BoW)  --comprises-->  (last user utterance in the given context)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: The input vector is made by concatenating three BoW vectors, i.e., candidate utterance, last user utterance in the given context, and the given context without the last user utterance.
+
+----- triple_id: bc14d2f875d -----
+TRIPLE:     (RNNs)  --achieves-->  (morphological compositionality)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Our work does not simply concatenate vectors of morphemes, but rather combines them using RNNs, which captures morphological compositionality.
+
+----- triple_id: b88ffa82102 -----
+TRIPLE:     (BERTScore)  --uses-->  (BERT)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: BERTScore aligns the generated and target summaries on a token-level and uses BERT to compute their similarity scores.
+
+----- triple_id: b7be23ccc96 -----
+TRIPLE:     (syntactic and semantic)  --uses-->  (semantic representation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We are using state-of-the-art tools for syntactic and semantic processing to provide a rough, first proposal of semantic representation for a text.
+
+----- triple_id: b8a9d8ef396 -----
+TRIPLE:     (OVER)  --evaluates-->  (13.3)
+PREDICATE DEFINITION: EvaluationMetric → ExperimentalResult  |  subject MUST be a named metric (e.g. F1, Accuracy, BLEU, RMSE, WER). Object must be a SPECIFIC numeric result (e.g. '88.5 on the test set') — NOT a full descriptive sentence
+SOURCE SENTENCE: Applied to the system with DNTs, OVER drops from 26.0 to 13.3 and the REP score from 2.9 to 2.7.
+
+----- triple_id: bdbd350ddf8 -----
+TRIPLE:     (BERT)  --uses-->  (global ED model)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In this study, we propose a global ED model based on BERT.
+
+----- triple_id: b76c86a640f -----
+TRIPLE:     (Room-to-Room)  --evaluatedon-->  (Room-to-Room dataset)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: We evaluate our model on the Room-to-Room dataset and achieve rank-1 in the Vision and Language Navigation (VLN) challenge leaderboard under all experimental setups.
+
+----- triple_id: bef270d0811 -----
+TRIPLE:     (Optimization)  --uses-->  (ADAM)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: optimized by using any SGD optimization, e.g., Adam , Adadelta , and so on.
+
+----- triple_id: bd2d8647f71 -----
+TRIPLE:     (SALT)  --addresses-->  (SALT-style annotations)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Furthermore, automation of other SALT-style annotations (such as maze detection) does not negatively impact automatic MLUM estimates.
+
+----- triple_id: baa9aca55a6 -----
+TRIPLE:     (Domain Adaptation)  --uses-->  (QAGen2S)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: 6 displays the domain adaptation results on the NQ domain using QAGen2S generated samples.
+
+----- triple_id: b7a34a239c7 -----
+TRIPLE:     (Alignment)  --addresses-->  (loosely alignment between structured data and related descriptions)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The cause of 'low coverage' problem is the loosely alignment between structured data and related descriptions.
+
+----- triple_id: bda1818b69f -----
+TRIPLE:     (word2vec)  --uses-->  (distributed representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Word2Vec distributed representations were utilized in the model building.
+
+----- triple_id: b86fe035de6 -----
+TRIPLE:     (Aggregation)  --comprises-->  (average of word embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: • TweetToEmbeddingsFeatureVector filter: calculates a tweet-level feature representation using pre-trained word embeddings supporting the following aggregation schemes: average of word embeddings; addition of word embeddings; and concatenation of the first k word embeddings in the tweet.
+
+----- triple_id: b21f0cf7db1 -----
+TRIPLE:     (word2vec)  --trainedon-->  (Google News)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: In this study, we utilized the Word2Vec embedding vectors (d = 300) that were trained on 100 billion words of Google News.

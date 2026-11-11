@@ -1,0 +1,165 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b28bdd85920 -----
+TRIPLE:     (Normalization)  --achieves-->  (English)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We do not attempt to do Twitter "normalization" into traditional written English , which we view as a lossy translation task.
+
+----- triple_id: b01f4a54be9 -----
+TRIPLE:     (GermaNet)  --produces-->  (synsets)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: We extracted all corresponding GermaNet synsets by their lemma and POS information , resulting in 163 verbal and 52 adjectival synsets.
+
+----- triple_id: bf26f1dae59 -----
+TRIPLE:     (SummaCCONV)  --uses-->  (Aggregation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: SummaCCONV is a recently proposed NLI-based factual inconsistency detection model based on aggregation of sentence-level entailment scores for each pair of input document and summary sentences.
+
+----- triple_id: b9f7ce76a6b -----
+TRIPLE:     (PARENT)  --achieves-->  (0.838 correlation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: With these components, the correlation is 0.838, showing that they are crucial to the performance of PARENT.
+
+----- triple_id: b4e1692ca55 -----
+TRIPLE:     (ECTSum)  --comparesagainst-->  (existing long document summarization datasets)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: In Table 2, we report various dataset statistics, as defined by Grusky et al. (2018), for the ECTSum corpus and compare them with the existing long document summarization datasets
+
+----- triple_id: ba6f3d2cf51 -----
+TRIPLE:     (HMM)  --uses-->  (humming data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: For this task, we have collected humming data and transcribed them in order to train a Deep Neural Network (DNN) based Hidden Markov Model (HMM) for note transcription.
+
+----- triple_id: b61e3c75682 -----
+TRIPLE:     (LFG)  --addresses-->  (surface string editing)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Formalisms such as HPSG and LFG are probably also well suited for surface string editing, but the theory of editing presented in this paper must of course be adapted to the underlying formalism.
+
+----- triple_id: b9ac7333ddf -----
+TRIPLE:     (METEOR)  --comparesagainst-->  (PARENT)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: When multiple references are available for a table, we compute PARENT against each reference and take the maximum as its overall score, similar to METEOR.
+
+----- triple_id: b309c6d9a13 -----
+TRIPLE:     (Regression Model)  --uses-->  (SVM)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: The regression model used is an L2-regularized L2-loss SVM regression model with the regularization parameter C set to 1, implemented in LIBLINEAR.
+
+----- triple_id: b37c7a7af8b -----
+TRIPLE:     (Random Forest)  --uses-->  (semantic distance features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: we applied Random Forest to perform humor recognition by using the following two groups of features.
+
+----- triple_id: be5bb6ce372 -----
+TRIPLE:     (GloVe)  --uses-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Another source of uncertainty stems from our use of off-the-shelf GloVe and BERT embeddings
+
+----- triple_id: b1483f29f96 -----
+TRIPLE:     (Back Translation)  --evaluatedon-->  (training environments)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: Env Drop) on these unseen environments achieves a success rate of 61.9%, while the back translation on the training environments only achieves 46.5%.
+
+----- triple_id: b6408269dc9 -----
+TRIPLE:     (Convolutional Neural Networks)  --addresses-->  (text categorization tasks)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Convolutional Neural Networks (CNNs) have recently been successfully used in several text categorization tasks (e.g., review rating, sentiment recognition, and question type recognition).
+
+----- triple_id: b1efa266cc3 -----
+TRIPLE:     (MADAMIRA)  --uses-->  (morphological analyzers)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Notable contributions for both MSA and EGY include MADAMIRA , a morphological disambiguation tool that uses morphological analyzers to handle complexity and ambiguity.
+
+----- triple_id: bdfa422200d -----
+TRIPLE:     (BiLSTM)  --produces-->  (time embeddings h1 and h2)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: We obtain time embeddings h1 and h2 for timex t1 and t2 by averaging the outputs of biLSTM layer.
+
+----- triple_id: bd1c49b7091 -----
+TRIPLE:     (Back Translation)  --uses-->  (paired data {(X, Y)})
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Back translation method first trains a forward model P XY and a backward model P YX, using paired data {(X, Y)}.
+
+----- triple_id: bb6b7dbb697 -----
+TRIPLE:     (MultiDecoder)  --comparesagainst-->  (OneDecoder)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: our MultiDecoder model performs better then OneDecoder model
+
+----- triple_id: b9e06ec1a03 -----
+TRIPLE:     (CLIP)  --uses-->  (ResNet-50 image encoder)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: In our model, we use a ResNet-50 image encoder initialized from CLIP.
+
+----- triple_id: bd8e1e366b8 -----
+TRIPLE:     (Narratives)  --uses-->  (GloVe embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We represent both narratives and questions with tf-idf weighted GloVe embeddings.
+
+----- triple_id: bb4099c27a5 -----
+TRIPLE:     (Entity Extraction)  --uses-->  (similarity between queries)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: An entity extraction method was applied in to estimate similarities between queries for the purpose of task extraction.
+
+----- triple_id: b5e964f88b9 -----
+TRIPLE:     (detection)  --achieves-->  (no negative impact on automatic MLUM estimates)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Furthermore, automation of other SALT-style annotations (such as maze detection) does not negatively impact automatic MLUM estimates.
+
+----- triple_id: b7db79300b1 -----
+TRIPLE:     (SQuAD)  --mentions-->  (EM/F1 scores)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: 3 also shows EM/F1 scores of the cross-domain RC models on SQuAD 1.1 dev set.
+
+----- triple_id: bebd3965be5 -----
+TRIPLE:     (Pre-trained Word Embeddings)  --achieves-->  (tweet-level feature representation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: • TweetToEmbeddingsFeatureVector filter: calculates a tweet-level feature representation using pre-trained word embeddings supporting the following aggregation schemes: average of word embeddings; addition of word embeddings; and concatenation of the first k word embeddings in the tweet.
+
+----- triple_id: b83af0c71fe -----
+TRIPLE:     (PARENT)  --uses-->  (union of the reference and the table)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: When computing precision, PARENT effectively uses a union of the reference and the table, to reward correct information missing from the reference.
+
+----- triple_id: bf5f0943f8b -----
+TRIPLE:     (Logical Inference)  --addresses-->  (textual entailment)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Applying logical inference can play a role in tasks surrounding NLG (e.g., summarisation, question answering, or textual entailment), but also dedicated components of NLG systems, such as generating definite descriptions, which requires checking contextual restrictions.

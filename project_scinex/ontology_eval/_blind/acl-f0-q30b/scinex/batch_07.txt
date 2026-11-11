@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bf188bbd209 -----
+TRIPLE:     (Softmax)  --uses-->  (Bme)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: applying softmax over all entities : ˆy = softmax(Bme + bo) (1)
+
+----- triple_id: b08e5660001 -----
+TRIPLE:     (QAGen)  --achieves-->  (EM F1 on NewsQA)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We ex- perimented with both options and summarized the results in Tab. 9 for QAGen and AQGen models.
+
+----- triple_id: b3d16a1d632 -----
+TRIPLE:     (BPE)  --achieves-->  (character level splits)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: In BPE, the algorithm checks each subword in the given vocab and if not found, it will recursively split the segment into smaller units (by reversing byte-pair encod- ing merge operations) until all units are either in- vocabulary, or cannot be split further (often character level splits).
+
+----- triple_id: be637bd0b7c -----
+TRIPLE:     (statistical parser)  --uses-->  (MALT parser)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Suppose that we use a statistical parser such as the MALT parser.
+
+----- triple_id: b509af260db -----
+TRIPLE:     (QAGen2S)  --achieves-->  (more diverse and longer answer spans)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Comparing QA- Gen and QAGen2S samples, we can observe that QAGen2S generates more diverse and longer answer spans.
+
+----- triple_id: b0e437b3a90 -----
+TRIPLE:     (Self-Attention)  --achieves-->  (conditioning of the answer on the question)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: This makes the generation of the answer conditioned on both input context (through attention on the encoder) and question (through self-attention in the decoder).
+
+----- triple_id: b352ef3e400 -----
+TRIPLE:     (SeerNet)  --uses-->  (GloVe)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Some of the word embed- dings models used were Glove (SeerNet, UWa- terloo, YZU NLP), Word2Vec (SeerNet), and Word Vector Emoji Vectors (SeerNet).
+
+----- triple_id: b243487f644 -----
+TRIPLE:     (CMU-MOSI)  --evaluatedon-->  (60% of the training labels)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We test this hypothesis by evaluating the perfor- mance of our model on the CMU-MOSI dataset with only 40%, 60%, 80%, and 100% of the train- ing labels.
+
+----- triple_id: b1bcd14aa01 -----
+TRIPLE:     (GloVe)  --uses-->  (norm)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: In contrast, GloVe is a static encoder and exhibits no indication that it stores this information in the norm, or indeed any ability to accurately model this phenomenon at all, but uses the norm to store surface-level and syntactic information
+
+----- triple_id: b20582f5b21 -----
+TRIPLE:     (BERT)  --achieves-->  (768-dimensional sentence embedding)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The BERT model generates 12 layers of embedding vectors with each layer containing a separate 768-dimensional embedding for each word, so we average the word embeddings in BERT's final layer, resulting in a 768-dimensional sentence embedding.
+
+----- triple_id: bea9abf4fcf -----
+TRIPLE:     (Annotation)  --produces-->  (stand-off annotation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: Each attribution relation was reconstructed, further annotated, as described in the next Section, and stored as stand–off annotation.
+
+----- triple_id: bc37a7da542 -----
+TRIPLE:     (Cro36WSD-S)  --achieves-->  (774 instances discarded)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The relationship between these two variants mirrors the one between recall and precision – Cro36WSD-M provides more diverse and lenient annotations, whereas Cro36WSD-S offers a more strict, and thus a more reliable set of annotations (with 774 instances being discarded).
+
+----- triple_id: b20b7f8609f -----
+TRIPLE:     (Dropout)  --achieves-->  (feature dimension removal)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Failure of Feature Dropout Different from dropout on neurons to regularize neural networks, we drop raw feature dimensions (see Fig. 4a) to mimic the removal of random objects from an RGB image (see Fig.
+
+----- triple_id: ba1949bc8a5 -----
+TRIPLE:     (Crowdsourcing)  --trainedon-->  (4-tuples of tweets)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: The 4-tuples of tweets were uploaded on the crowdsourcing platform, CrowdFlower.
+
+----- triple_id: b7a96e726b5 -----
+TRIPLE:     (generator)  --uses-->  (reinforcement learning)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Based on that, we use the reinforcement learning to encourage the generator to cover infrequent and rarely mentioned attributes as well as generate more informative descriptions with less groundless content .
+
+----- triple_id: b1225a38829 -----
+TRIPLE:     (Terminology)  --achieves-->  (forced translation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: This technique can also be used to force the translation of specific terminology.
+
+----- triple_id: b3a99743d25 -----
+TRIPLE:     (LSTM-RNN)  --uses-->  (Attention)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: we use a stacked bidirectional LSTM-RNN encoder with attention flow.
+
+----- triple_id: bf532fba9ad -----
+TRIPLE:     (PARENT)  --achieves-->  (highest correlation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: RG-F, and both variants of the PARENT metric achieve the highest correlation for both settings.
+
+----- triple_id: b96bf44c3a5 -----
+TRIPLE:     (BERT)  --trainedon-->  (SQuAD 1.1)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: The span detection module consists of bert-base-uncased fine-tuned on SQuAD 1.1 passage and spans, where the start and end classification heads are trained to perform span detection.
+
+----- triple_id: b0917960053 -----
+TRIPLE:     (RNN)  --uses-->  (LSTM)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Another RNN is used to rank candidate utterances, as illustrated in 2. This RNN has two LSTM layers and two linear layers; further, we use rectified linear unit (ReLU) as the activation function.
+
+----- triple_id: bcb1c6d7672 -----
+TRIPLE:     (Feature Engineering)  --addresses-->  (joint extraction of entities and relations)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Nevertheless, the relational facts in sentences are often complicated. Different relational triplets may have overlaps in a sentence. Such phenomenon makes aforementioned methods, whatever deep learning based models and traditional feature engineering based joint models, always fail to extract relational triplets precisely.
+
+----- triple_id: b201f036c80 -----
+TRIPLE:     (Building a Corpus)  --uses-->  (TED Talks)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: These include building a corpus from TED talks and using Convolutional Neural Networks (CNNs) in the recognition.
+
+----- triple_id: b0e7f681e5f -----
+TRIPLE:     (Two Decades)  --achieves-->  (state-of-the-art tools)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: But given the developments in (mostly statistical) parsing of the last two decades we are now in a position to use state-of-the-art tools to semi-automatically produce gold (or nearly gold) standard DRS-annotated corpora .
+
+----- triple_id: bc98c81cdcd -----
+TRIPLE:     (THOR-Nav)  --achieves-->  (5.96)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Matterport↑ THOR-Nav↑ EQA↓ (%) (%) (m) Model Seen Un Seen Un Un ∆Uni – Base +7.1 +5.8 +33.4 +5.96 -0.10
+
+----- triple_id: bd3eff96405 -----
+TRIPLE:     (e-Commerce)  --motivates-->  (FaD-VLP)
+PREDICATE DEFINITION: ResearchObjective → ResearchProcess  |  Links a research objective to the research process it drives
+SOURCE SENTENCE: Our model is motivated by e-commerce appli- cations, and demonstrates good performance on benchmarks, but it is not suitable for deployment or commercial use in its current form.

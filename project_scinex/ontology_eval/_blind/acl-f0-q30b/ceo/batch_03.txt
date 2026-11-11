@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b7de54f8026 -----
+TRIPLE:     (parser)  --uses-->  (Dependency Relations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We apply the Stanford parser to obtain parse trees and dependency relations;
+
+----- triple_id: bc1ac72733a -----
+TRIPLE:     (Tagger)  --evaluatedon-->  (Penn Treebank)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: The tagger was tested using the traditional "standard split" of the Wall St. Journal portion of the Penn Treebank, with sections 0–18 for training, sections 19–21 for development, and sections 22–24 for evaluation.
+
+----- triple_id: b4b46f9e386 -----
+TRIPLE:     (LSTM)  --uses-->  (embedding size 50)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The LSTM character embedding architecture uses two LSTM layers of size 100, and embedding size 50.
+
+----- triple_id: be215368506 -----
+TRIPLE:     (KG-KE)  --comparesagainst-->  (CorrRNN)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: Moreover, we also ob- serve that the KG-KE model exceeds CopyRNN and CorrRNN on most datasets, which indicates the strength of our combination with the extractive model.
+
+----- triple_id: b6d7ef5db73 -----
+TRIPLE:     (DuoRC)  --splitfrom-->  (ParaphraseRC task of DuoRC dataset)
+PREDICATE DEFINITION: Dataset → Dataset  |  use for train/dev/test partition relationships
+SOURCE SENTENCE: ParaphraseRC task of DuoRC dataset was used in our evaluations, consisting of 13,111 pairs .
+
+----- triple_id: bd2972dcc2b -----
+TRIPLE:     (ECTSum)  --addresses-->  (long document summarization in the finance domain)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We present ECTSum, the first long document summarization dataset in the finance domain that requires models to process long unstructured earning call transcripts and summarize them in a few words while capturing crucial metrics and maintaining factual consistency.
+
+----- triple_id: b5ba683e254 -----
+TRIPLE:     (Lexical Similarity Features)  --uses-->  (edit distance)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In contrast to, we investigate the use of embedded query vectors to compute similarity, rather than depending on character and word level lexical similarity features, e.g. edit distance, term overlap, trigram character overlap etc.
+
+----- triple_id: b8867d7cc87 -----
+TRIPLE:     (determiners)  --addresses-->  (Irish grammar)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Actually determiners (e.g., 'an', 'na') and demonstratives (e.g., 'seo', 'sin', '´ud') are clearly distinct in Irish grammar
+
+----- triple_id: b4556b1e471 -----
+TRIPLE:     (WB-filter)  --achieves-->  (coverage of information from 'Organization' and 'Birthplace')
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Similarly , the generated description for WB-filter covers the information from 'Or- ganization' and ' Birthplace' with the help of pro- posed model.
+
+----- triple_id: b31fcb42311 -----
+TRIPLE:     (S-CRFs)  --addresses-->  (labeling)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: S-CRFs have the ability to jointly model both a segmentation and a labeling.
+
+----- triple_id: bb9ac410979 -----
+TRIPLE:     (Twitter)  --achieves-->  (state-of-the-art results in POS tagging)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: This leads to state-of-the-art results in POS tagging for both Twitter and Internet Relay Chat (IRC) text.
+
+----- triple_id: ba3e61e6f17 -----
+TRIPLE:     (Neural Network)  --uses-->  (Attention Mechanism)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Recent work attempts to capture incongruity using a neural network with an intra-attention mechanism.
+
+----- triple_id: b6cd84c3275 -----
+TRIPLE:     (BERT)  --employs-->  (Self-Attention)
+PREDICATE DEFINITION: Organisation → Person  |  use for employment relationships
+SOURCE SENTENCE: Given that we know that BERT is a contextual encoder, and that its self-attention uses the vector norm to control the levels of contribution from less informative words, we suspect that this gives it the capabilities to accurately model these short-distance dependencies and word co-occurence probabilities, concepts which strongly correspond to local contextual incongruity.
+
+----- triple_id: bef5f186ade -----
+TRIPLE:     (Terminology)  --addresses-->  (lack of robustness around handling terminology)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: This can include, but is not limited to, the need for a more rigorous data cleaning step, a lack of robustness around handling terminology and various types of mistranslations, and the ability to adapt to different domains.
+
+----- triple_id: ba7e0422aa9 -----
+TRIPLE:     (LSTM)  --achieves-->  (0.727 cosine similarity on microblog dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: In microblog dataset we obtain the best cosine similarities of 0.724, 0.727, 0.721 and 0.765 for CNN, LSTM, GRU and feature based systems, respectively.
+
+----- triple_id: ba440e0b9b6 -----
+TRIPLE:     (fine-tuning)  --uses-->  (training examples)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Here, we present a straightforward method to bias our model to output more relations by means of fine-tuning on the training examples containing a greater number of relations.
+
+----- triple_id: b986f9ae701 -----
+TRIPLE:     (Word Vector Representations)  --addresses-->  (syntactic-semantic word vectors)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: While much work has focused on different objective functions for training single and multi-word vector representations , very little work has been done to tackle sub-word units and how they can be used to compute syntactic-semantic word vectors.
+
+----- triple_id: bf416d022fc -----
+TRIPLE:     (Different Perspectives)  --addresses-->  (attribution)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Being able to automatically identify the elements of an at- tribution relations (detailed below) would benefit sentiment analysis, summarisation and information retrieval tasks, e.g. enabling searches based on specific sources, present- ing information from different perspectives, selecting more relevant and reliable results.
+
+----- triple_id: b5ae61bf76b -----
+TRIPLE:     (FEVER)  --uses-->  (metric accounting for both AT and E)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The FEVER score was used as a metric accounting for both AT and E.
+
+----- triple_id: bb241bd4d3a -----
+TRIPLE:     (Language Model)  --uses-->  (Jelineck-Mercer smoothing)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For the retrieval model we used the LM-JM (Language Model with Jelineck-Mercer smoothing) with the smoothing parameter set to 0.6 as suggested in .
+
+----- triple_id: bfed72efd3c -----
+TRIPLE:     (Transformer)  --achieves-->  (state-of-the-art results on the story cloze test)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: We also use a Fine-tuned Transformer LM model , which was shown to perform competitively on a diverse set of NLP tasks, achieving state-of-the-art results on the story cloze test.
+
+----- triple_id: ba0dc83d7a8 -----
+TRIPLE:     (word-sense)  --comprises-->  (member word-sense pairs)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: A WordNet synset can be referred to by its internal identifier, or by any of its member word-sense pairs.
+
+----- triple_id: b6da35d0278 -----
+TRIPLE:     (CNN-based)  --uses-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: (2016) in terms of the char- acter embeddings, both LSTM and CNN-based systems .
+
+----- triple_id: ba970a37e15 -----
+TRIPLE:     (generation)  --addresses-->  (keyphrase generation)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Then keyphrase extraction and generation are jointly conducted by the extractor and the decoder through sharing an encoder.
+
+----- triple_id: bf4d3014985 -----
+TRIPLE:     (HotpotQA)  --evaluatedon-->  (fullwiki setting)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: In the fullwiki setting, all ten paragraphs of C are retrieved paragraphs. Hence, C may not include two gold paragraphs, and in that case, AS and E cannot be extracted. Therefore, the oracle model does not achieve 100 % accuracy. HotpotQA does not provide the training data for the fullwiki setting, and the training data in the fullwiki setting is the same as the distractor setting.

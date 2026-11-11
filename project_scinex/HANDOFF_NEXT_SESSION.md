@@ -1,9 +1,9 @@
 # Handoff — next session
 
-**Updated 2026-11-09 13:00 server time (Session 39).** Read in this order:
+**Updated 2026-11-11 08:00 server time (Session 39).** Read in this order:
 1. **[`OBJECTIVE.md`](OBJECTIVE.md)** — the professor's three steps. Everything serves them.
 2. This file — where the work stands and what to do next.
-3. `hands_off.md` §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation).
+3. `hands_off.md` §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation; Table 22 = its correctness check).
 
 > **Standing rule (user):** update the md docs after every meaningful step, as it happens; commit
 > and push to GitHub when the change is important or necessary.
@@ -16,55 +16,37 @@
 - Corpus: 805 ACL papers, fixed entity lists; fold 0 (41 papers) held out.
 - Per-triple judging (C1/C3/C4) and judge-free counts are diagnostics, not the headline.
 
-## State (2026-11-09, 13:00 server time = 20:00 user time)
-- ✔ Step 2 of the objective MET (Tables 19 / 19b): ontology-free students keep 87–93% of
-  proposals and are as correct as ontology-in-prompt students and the teacher.
-- ✔ **Main evaluation (simulated Q&A), `results.md` Table 20**, complete for every KG so far:
-  noont = ontology-in-prompt (|diff| ≤ 0.6); noont-me30 beats its teacher (+3.3 / +3.5).
-- ✔ **Teacher v2 + student on v2 data DONE** (Tables 20 / 21): teacher v2 6.2 / 4.9 vs v1 5.0 / 3.3;
-  **v2-data noont-me30 Qwen3-8B = 10.0 / 8.0, the best finetuned KG** (+3.8 / +3.1 over teacher v2,
-  +1.7 / +1.2 over the v1-data student, CIs touch 0); 851 / 730 triples, coverage 53 / 45%.
-  Only the noisy untuned full-ontology graph scores higher (12.7 / 12.8).
-- **⏳ RUNNING, unattended: `screen -r teacher2`** = `/home/dev1/scinex_runs/run_teacher2.sh` (copy in
-  `ft_runs/acl_scripts/`), log `teacher2_driver.log` (hands_off §39.6–39.7). **Second teacher
-  Qwen3-30B-A3B-Instruct-2507 W4A16 via vLLM** (`/home/dev1/envvllm`, `ft_generate.py --backend
-  vllm`, `VLLM_USE_FLASHINFER_SAMPLER=0`), slug `qwen3-30b-a3b-v2`, all 805 papers on BOTH GPUs
-  (started 12:48, logs `teacher2_full_gpu{0,1}.log`) → compare (`teacher2_compare.log`) → its Q&A
-  (GPU1) while a noont-me30 Qwen3-8B student trains on its data (GPU0; slug
-  `qwen3-8b-acl-q30b-noont-me30-cv`) → Q&A → report (`teacher2_qa.log`,
-  `teacher2_students_compare.log`). Re-running the script resumes every step.
-- **⛔ GPU settings CHANGED for heat while it runs** (university property): persistence on, 400 W,
-  clock locks 1650 / 1900 MHz, root `screen gpuguard`. **Restore is AUTOMATIC:** root `screen
-  gpurestore` = `gpu_restore_after.sh 'run_teacher2[.]sh'` restores them 10 min after the driver
-  exits and the GPUs go idle (log `gpu_restore.log`, "=== GPU settings RESTORED ==="). If the driver
-  dies uncleanly, restore by hand:
-  ```
-  sudo screen -S gpuguard -X quit; sudo screen -S gpurestore -X quit
-  sudo nvidia-smi -i 0 -rgc && sudo nvidia-smi -i 1 -rgc
-  sudo nvidia-smi -pl 575 && sudo nvidia-smi -pm 0
-  ```
-  New GPU runs after a restore start at default settings: re-apply the clock locks first (§38.1).
-  The sudo password is not stored; ask the user.
+## State (2026-11-11, 08:00 server time = 15:00 user time)
+- **Nothing is running. GPU settings are at defaults** (`gpu_restore.log`: RESTORED 2026-11-10 06:29).
+- ✔ Step 2 of the objective MET (Tables 19 / 19b): ontology-free students work.
+- ✔ **Main evaluation, `results.md` Table 20** (accuracy CEO / scinex): oracle 86.3, closedbook 4.4;
+  teachers gpt-oss v1 5.0 / 3.3, v2 6.2 / 4.9, **Qwen3-30B 16.7 / 17.0**; ontology-free Qwen3-8B me30
+  students on v1 data 8.3 / 6.8, v2 data 10.0 / 8.0, **Qwen3-30B data 15.5 / 18.2** (best KG; equal to its
+  teacher; above the untuned full-ontology 12.7 / 12.8).
+- ⚠ **The blind check qualifies that (Table 22, C4):** gpt-oss v2 75 / 78, v2 student 48 / 59, Qwen3-30B
+  26 / 34, its student 27 / 41. The Qwen3-30B line has 1.6–2.4× more correct triples than the v2
+  student but 4–5× more wrong ones; Q&A cannot see wrong triples. **Report both numbers.**
 - Models in the HF cache: students Qwen3-8B, Gemma-3-12B-it (also KGRAG's model — never delete),
   Phi-4 (**Qwen3-4B and Llama-3.1-8B-Instruct deleted 2026-11-08 at the user's request**; their
   adapters stay in `ft_runs/`; re-download before reusing them, the drivers run with
   `HF_HUB_OFFLINE=1`; KGRAG's models nllb-200 / bge-m3 / ms-marco / Llama-3.2-1B / Gemma stay);
-  teachers gpt-oss-20b and Qwen3-30B-A3B-Instruct-2507 (bf16, unusable 4-bit; to delete) + its
+  teachers gpt-oss-20b and Qwen3-30B-A3B-Instruct-2507 (bf16, unusable 4-bit) + its
   **W4A16 `RedHatAI/Qwen3-30B-A3B-Instruct-2507-quantized.w4a16` (vLLM, envvllm)**; Q&A model
   Mistral-Small-24B-Instruct-2501.
 
 ## Next steps, in order
-1. **When `teacher2` is done:** `results.md` — add teacher q30b and the q30b-data student to Table 20
-   (from `qa_eval/acl-f0/report_table20.json` / `teacher2_qa.log`) and Table 21 (from
-   `teacher2_compare.log`, `teacher2_students_compare.log`); the key comparison is
-   `kg__*__qwen3-8b-acl-q30b-noont-me30-cv` − `kg__*__qwen3-8b-acl-v2-noont-me30-cv` (only the
-   teacher differs). Re-run `qa_gap_analysis.py` with the new KGs. Check `gpu_restore.log` says
-   RESTORED. Delete the 57 GB bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` from the HF cache (user
-   agreed; the W4A16 copy is the one in use). Commit + push.
-2. **Blind C1/C3/C4 round on the v2-data student** (and the q30b one): are the extra triples
-   correct? (Q&A rewards coverage; the untuned graph shows coverage alone can mislead.)
-3. **Decide with the user**: non-Qwen student on both teachers' data (family confound; Phi-4 /
-   Gemma-3-12B in cache), lower empty caps, more folds.
+1. **Ask the user which way to go** (asked 2026-11-11; check the chat or ask again):
+   - **Tighten the guards** (recommended first; CPU only, no retraining): reject self-loops, enforce
+     `employs` domain/range, fix the `88.5` leak, constrain `addresses` / `achieves`; re-ingest stored
+     replies, re-run Q&A and a blind round to measure the precision/coverage trade. Note: this changes
+     the guards behind every table, so keep the old numbers labelled.
+   - **Cleaner training data**: `build_ft_data.py --consensus-models` (keep Qwen3-30B triples gpt-oss
+     also proposes) or `--verdict-filter`, then retrain a student.
+   - **Non-Qwen student** on the Qwen3-30B data (family confound; Phi-4 / Gemma-3-12B in cache).
+2. **Delete the 57 GB bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507`?** Ask first; never approved. The W4A16
+   copy is the one in use. Also unapproved: the 2 AWQ stubs (27 MB) and pip cache (7.3 GB).
+3. New GPU runs start at default settings: re-apply the clock locks first (§38.1); sudo password not
+   stored, ask the user. `qa_report_all.sh` re-grades Q&A with all comparisons.
 4. Later: more folds; entity-list REVIEW rows (user/professor); guard fixes (`88.5` leak,
    self-loops); `--share-system-prompt` GPU speed test (less relevant now that noont prompts are short).
 

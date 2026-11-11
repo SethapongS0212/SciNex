@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bd36218cb43 -----
+TRIPLE:     (PARENT)  --addresses-->  (human judgments)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We check how different components in the computation of PARENT contribute to its correlation to human judgments.
+
+----- triple_id: b36f7ef4056 -----
+TRIPLE:     (Dependency Relations)  --addresses-->  (capturing words' semantics over different dependency relations)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Experiments are conducted on SP acquisition over different dependency relations to evaluate whether the learned embeddings effectively cap- ture words' semantics over these relations .
+
+----- triple_id: be699955a87 -----
+TRIPLE:     (Morphological Disambiguation)  --addresses-->  (phonological variations)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The set of morphological features that we model for EGY morphological disambiguation includes: • Non-lexicalized features: aspect, case, gen- der, person, part-of-speech (POS), number, mood, state, voice.
+
+----- triple_id: b9ff3945a39 -----
+TRIPLE:     (ELMo)  --comparesagainst-->  (GloVe)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: However, in the ELMo setting, we observed a larger drop in performance by masking out the time expressions compared to GloVe embeddings.
+
+----- triple_id: bf457e40ddd -----
+TRIPLE:     (GloVe)  --uses-->  (embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: we represent both narratives and questions with tf-idf weighted GloVe embeddings and compute the cosine similarity between them.
+
+----- triple_id: b84c5bd3541 -----
+TRIPLE:     (Generating Referring Expressions)  --addresses-->  (thematic roles)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: It is also interesting to explore the insights from approaches dedicated to generating referring expressions using logical methods (van Deemter, 2006; Gardent et al., 2004) with robust surface realisation systems.
+
+----- triple_id: b7b97ad2a4a -----
+TRIPLE:     (Back Translation)  --achieves-->  (2.0% higher in SPL)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: For submitting to the leaderboard, we simply train our agent via back translation with environmental dropout on test unseen environments (see Sec.7.2). Our result is 3.4% higher than Wang et al. (2019) in Success Rate and 2.0% higher in SPL.
+
+----- triple_id: b2b2ac7f11c -----
+TRIPLE:     (GloVe)  --achieves-->  (syntactic information in norm)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Meanwhile, GloVe stores much more syntactic information in its norm than BERT, but does not store contextual information at all, and mainly stores surface-level information in the norm.
+
+----- triple_id: b176b8c10d0 -----
+TRIPLE:     (PARENT)  --addresses-->  (WebNLG)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We also demonstrate the applicability of PARENT on the data released as part of the WebNLG challenge , where the references are elicited from humans, and hence are of high quality
+
+----- triple_id: bde36c1344f -----
+TRIPLE:     (Dialogue)  --comprises-->  (11 system utterances and 10 human utterances)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: Therefore, a dialogue contains 11 system and 10 human utterances.
+
+----- triple_id: bad424e96ef -----
+TRIPLE:     (PARENT)  --evaluatedon-->  (WebNLG)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: Lastly, we show that PARENT is compa- rable to the best existing metrics when references are elicited by humans on the WebNLG data.
+
+----- triple_id: be4e9adbb90 -----
+TRIPLE:     (QAGen2S)  --achieves-->  (more than 8 points in EM on SQuAD)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: For NQ dataset , QAGen2S improves the SQuAD baseline by more than 8 points in EM and more than 7 points in F1.
+
+----- triple_id: b8d4916fc8d -----
+TRIPLE:     (Enhanced Transformer Model)  --achieves-->  (BLEU)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Experimental results have shown that our enhanced transformer model outperforms current state-of-the-art system on BLEU, content selection precision and content ordering metics.
+
+----- triple_id: bb67367f249 -----
+TRIPLE:     (BART)  --achieves-->  (denoising autoencoder for pre-training sequence to sequence tasks)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: • BART introduces a denoising autoencoder for pre-training sequence to sequence tasks including summarization .
+
+----- triple_id: b4ee8503896 -----
+TRIPLE:     (Hate Speech Detection)  --addresses-->  (perceived sarcasm)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Both are important to detect, for applications such as opinion mining for the former and hate speech detection for the latter.
+
+----- triple_id: ba0c01f82d2 -----
+TRIPLE:     (NovelTagging)  --achieves-->  (best performance in Normal class)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: NovelTagging model achieves the best performance in Normal class.
+
+----- triple_id: bea52c1b323 -----
+TRIPLE:     (BERT model)  --trainedon-->  (bert-base-uncased)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: We used the bert-base-uncased BERT model from the pytorch_pretrained_bert library5
+
+----- triple_id: b4a4b580b5e -----
+TRIPLE:     (Logistic Regression)  --achieves-->  (classification performance)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We tested Logistic Regression (LR) and Random Forest (RF) classification algorithms, relying on the scikit-learn tool suite.
+
+----- triple_id: bd61609ecbe -----
+TRIPLE:     (Seq2seq)  --uses-->  (Recurrent Neural Network)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: sequence to sequence autoencoder (seq2seq) which captures temporal information using a recurrent neural network encoder and decoder.
+
+----- triple_id: bd7d01af503 -----
+TRIPLE:     (NUS)  --evaluatedon-->  (NUS)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: As for testing, following Meng et al. (2017), we employ five popular testing datasets from scientific publications as our testbeds for the baselines and our methods, which include Inspec, Krapivin, NUS, SemEval, and KP20k.
+
+----- triple_id: bac2d69eb83 -----
+TRIPLE:     (BPE)  --uses-->  (Gonzalez)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: the word "Gonzalez" is broken into "G@@ on@@ z@@ al@@ e@@ z" by BPE and passes through the NMT system unchanged.
+
+----- triple_id: b61090a4f24 -----
+TRIPLE:     (retrieval)  --produces-->  (ranked list of top 20 songs)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: The retrieval method is used to generate a ranked list of top 20 songs most similar to the query.
+
+----- triple_id: bb793918bc2 -----
+TRIPLE:     (generator)  --trainedon-->  (WB-filter)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: Before the richness-oriented reinforced training, the neural generator is pre-trained 8 and 4 epochs for the WIKIBIO and WB-filter datasets (with or without force-attention module), respectively.
+
+----- triple_id: bf3a2efcfd3 -----
+TRIPLE:     (OneDecoder)  --comparesagainst-->  (MultiDecoder)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: In this way, multiple triplets can be extracted (In detail, we adopt two different strategies in decoding process: employing only one unified decoder (OneDecoder) to generate all triplets or applying multiple separated decoders (MultiDecoder) and each of them generating one triplet).
+
+----- triple_id: b99eb81982f -----
+TRIPLE:     (Fortia-FBK)  --achieves-->  (0.745)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Fortia-FBK reported cosine similarity of 0.745.

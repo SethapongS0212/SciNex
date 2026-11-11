@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b4f02ea5590 -----
+TRIPLE:     (cimRNN)  --addresses-->  (structural agreement)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: it is interesting to observe that the cimRNN model could well enforce structural agreement among related words.
+
+----- triple_id: bc7b9fcc402 -----
+TRIPLE:     (QGen)  --trainedon-->  (GPT2-Medium)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: We trained QGen models on both BART- Large and GPT2-Medium , which have an equivalent number of parameters, 406M (BART) vs 350M (GPT2), and evaluated BLEU score of the generated question w.r.t. the ground truth question on the SQuAD dev set.
+
+----- triple_id: b0b4b9791f3 -----
+TRIPLE:     (Alignment)  --achieves-->  (Representational coherence between word vectors across different periods)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Representational coherence between word vectors across different periods can be guaranteed by incremental training procedures as well as by post hoc alignment of semantic spaces.
+
+----- triple_id: b7ec8024da8 -----
+TRIPLE:     (NovelTagging)  --achieves-->  (best performance on relational facts extraction)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We compare our models with NovelTagging model , which conduct the best performance on relational facts extraction.
+
+----- triple_id: bb282e6f781 -----
+TRIPLE:     (CopyRNN)  --achieves-->  (failure to predict keyphrase 'wireless networks')
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: As for absent keyphrase prediction, we note that KG-KE-KR successfully predicts the keyphrase 'wireless networks' while CopyRNN fails.
+
+----- triple_id: bbcb682d93c -----
+TRIPLE:     (Candidate Ranking)  --addresses-->  (effective features)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The effective features extracted from utterances for candidate ranking are different between the user and the system.
+
+----- triple_id: b380cd34360 -----
+TRIPLE:     (MultiDecoder)  --achieves-->  (0.371 F1 score on WebNLG dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: In the WebNLG dataset , MultiDecoder model achieves the highest F1 score (0.371).
+
+----- triple_id: b0eae53d7b9 -----
+TRIPLE:     (subwords)  --addresses-->  (out-of-vocabulary (OOV) problem in NMT)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Subwords also help in tackling out-of-vocabulary (OOV) problem in NMT.
+
+----- triple_id: b789860733e -----
+TRIPLE:     (LeBron)  --achieves-->  (14 field goal attempts)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: NAME POS PTS FGM FGA CITY... LeBron James F 14 5 14 Cleveland...
+
+----- triple_id: b6d4b96db24 -----
+TRIPLE:     (DAILY547)  --evaluatedon-->  (DAILY547)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We use DAILY547 as an additional test set.
+
+----- triple_id: bd21b0ddaac -----
+TRIPLE:     (METEOR)  --achieves-->  (weak correlation with human judgments)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Commonly used metrics which only rely on the reference (BLEU, ROUGE, METEOR, CIDEr) have only weak correlations with human judgments.
+
+----- triple_id: b901d098144 -----
+TRIPLE:     (csmRNN)  --uses-->  (morpheme trees)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: forward pass – recursively construct morpheme trees (cimRNN, csmRNN) and language model structures (csmRNN) to derive scores for training examples
+
+----- triple_id: b7f915f26b3 -----
+TRIPLE:     (MADAMIRA)  --achieves-->  (common spelling errors correction)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: MADAMIRA can automatically correct common spelling errors as a side effect of disambiguation
+
+----- triple_id: b96be57364c -----
+TRIPLE:     (Data Augmentation)  --comparesagainst-->  (DATA-TRANS)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Combining these two data augmentation methods , all content - oriented evaluation results are improved compared to DATA-TRANS.
+
+----- triple_id: bc927e28696 -----
+TRIPLE:     (BERT)  --uses-->  (wordpiece tokenizer)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: we tokenize the document text using the BERT's wordpiece tokenizer, and insert [CLS] and [SEP] tokens as the first and last words, respectively.
+
+----- triple_id: b75c1b0d842 -----
+TRIPLE:     (MultiDecoder)  --uses-->  (negative log-likelihood loss function)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Both OneDecoder and MultiDecoder models are trained with the negative log-likelihood loss function.
+
+----- triple_id: bdbf905fe61 -----
+TRIPLE:     (Similarity Features)  --achieves-->  (similarity between queries)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: In contrast to, we investigate the use of embedded query vectors to compute similarity, rather than depending on character and word level lexical similarity features, e.g. edit distance, term overlap, trigram character overlap etc.
+
+----- triple_id: bd804aec985 -----
+TRIPLE:     (BERTScore)  --uses-->  (BERT)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: BERTScore aligns the generated and target summaries on a token-level and uses BERT to compute their similarity scores.
+
+----- triple_id: bb96665a929 -----
+TRIPLE:     (Annotation)  --uses-->  (caption)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We use a concatenation of the color annotation and in-shop description as the caption
+
+----- triple_id: b792bf8020c -----
+TRIPLE:     (SemBank)  --uses-->  (Discourse Representation Theory)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: SemBank is driven by linguistic theory, using CCG, Combinatory Categorial Grammar, for providing syntactic structure, employing (Segmented) Discourse Representation Theory as semantic framework, and first-order logic as a language for automated inference tasks.
+
+----- triple_id: beb7e7c0a5a -----
+TRIPLE:     (word2vec)  --addresses-->  (document boundaries)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The word2vec algorithm respects document boundaries by not extending the context vector across them.
+
+----- triple_id: b85b1ce6844 -----
+TRIPLE:     (Canonical Segmentation)  --addresses-->  (Dravidian morphology)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Future work should concentrate on canonical segmentation (Cotterell et al., 2016a; Cotterell et al., 2016b; Cotterell and Schütze, 2017), which may be a better fit for the problem given the rich phonological changes in Dravidian morphology.
+
+----- triple_id: b117f4aa60c -----
+TRIPLE:     (synonym)  --extractedfrom-->  (Roget's Thesaurus)
+PREDICATE DEFINITION: ? → AcademicPaper  |  Links an extracted entity to the academic paper it was extracted from.
+SOURCE SENTENCE: We identified the query words for an emotion by first searching the Roget's Thesaurus to find categories that had the focus emotion word (or a close synonym) as the head word.
+
+----- triple_id: b16a37fa06c -----
+TRIPLE:     (Transformer)  --achieves-->  (higher increase for nouns)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Interestingly, in all cases except ADV, the similarity between the hidden states and the embeddings for the transformer model are much higher, and the increase for nouns is much higher than for the rest.
+
+----- triple_id: b2a0927aaa1 -----
+TRIPLE:     (Transformers)  --comparesagainst-->  (recurrent models)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: (2018) use subject -verb agreement and logical inference tasks to compare recurrent models with transformers.
