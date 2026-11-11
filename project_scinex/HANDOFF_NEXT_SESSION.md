@@ -30,21 +30,23 @@
   Phi-4 (**Qwen3-4B and Llama-3.1-8B-Instruct deleted 2026-11-08 at the user's request**; their
   adapters stay in `ft_runs/`; re-download before reusing them, the drivers run with
   `HF_HUB_OFFLINE=1`; KGRAG's models nllb-200 / bge-m3 / ms-marco / Llama-3.2-1B / Gemma stay);
-  teachers gpt-oss-20b and Qwen3-30B-A3B-Instruct-2507 (bf16, unusable 4-bit) + its
+  teachers gpt-oss-20b and Qwen3-30B-A3B-Instruct-2507 as
   **W4A16 `RedHatAI/Qwen3-30B-A3B-Instruct-2507-quantized.w4a16` (vLLM, envvllm)**; Q&A model
   Mistral-Small-24B-Instruct-2501.
 
 ## Next steps, in order
 1. **Ask the user which way to go** (asked 2026-11-11; check the chat or ask again):
-   - **Tighten the guards** (recommended first; CPU only, no retraining): reject self-loops, enforce
-     `employs` domain/range, fix the `88.5` leak, constrain `addresses` / `achieves`; re-ingest stored
-     replies, re-run Q&A and a blind round to measure the precision/coverage trade. Note: this changes
-     the guards behind every table, so keep the old numbers labelled.
-   - **Cleaner training data**: `build_ft_data.py --consensus-models` (keep Qwen3-30B triples gpt-oss
-     also proposes) or `--verdict-filter`, then retrain a student.
+   - **Tighten the guards** (recommended; CPU only, no retraining). Simulated on the Table 22 sample
+     with three rules (subject = object or one inside the other, `employs` on anything, < half of the
+     object's words in the sentence): Qwen3-30B student C4 27 → 42 (CEO) / 41 → 51 (scinex), keeping
+     60 / 76% of its triples; gpt-oss v2 barely moves (75 → 76, 78 → 79). Rough: n=50, the
+     substring self-loop rule also drops some good triples. Then re-ingest, re-run Q&A + a blind
+     round. Old numbers stay, labelled.
+   - Cleaner training data by teacher consensus is NOT viable: only 3.4% / 2.1% of Qwen3-30B triples
+     match gpt-oss's. Retraining on guard-filtered Qwen3-30B data is the natural step AFTER the guards.
    - **Non-Qwen student** on the Qwen3-30B data (family confound; Phi-4 / Gemma-3-12B in cache).
-2. **Delete the 57 GB bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507`?** Ask first; never approved. The W4A16
-   copy is the one in use. Also unapproved: the 2 AWQ stubs (27 MB) and pip cache (7.3 GB).
+2. ✔ bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` (57 GB) deleted 2026-11-11 with the user's OK. Still
+   unapproved: the 2 AWQ stubs (27 MB) and the pip cache (7.3 GB).
 3. New GPU runs start at default settings: re-apply the clock locks first (§38.1); sudo password not
    stored, ask the user. `qa_report_all.sh` re-grades Q&A with all comparisons.
 4. Later: more folds; entity-list REVIEW rows (user/professor); guard fixes (`88.5` leak,

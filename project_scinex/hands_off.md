@@ -104,8 +104,8 @@
   student vs q30b student differ only in the teacher (same prompt, lists, cap, recipe).
 - `run_v2_student.sh` restarted (it was still waiting) so it uses **GPU1 only** (its Q&A runs
   both ontologies on GPU1); both chains grade under `flock /home/dev1/scinex_runs/qa_grade.lock`.
-- The bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` (57 GB) is still in the cache. Deleting it needs the
-  user's yes: it was suggested, never explicitly approved (corrected 2026-11-11).
+- The bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` (57 GB) was deleted 2026-11-11 after the user's OK
+  ("you can delete that since we dont use them anymore").
 
 ### 39.7 2026-11-09: overnight results; teacher2 smoke failure fixed and relaunched
 - **Chain** done 00:52 (teacher v2 lanes finished 00:16 / 00:32, compare, v2 Q&A). **qafill** done
@@ -150,6 +150,11 @@
   objects not in the sentence, the `88.5` leak (seen again: `DBDC evaluates 88.5`).
 - Why it matters for the objective: Q&A is the headline, but "the KG answers more" and "the KG is
   mostly right" have now separated. Report both to the professor.
+- **Guard simulation on the judged sample** (rules: subject = object or one contains the other;
+  `employs` anywhere; < 50% of the object's content words in the source sentence): q30b student C4
+  27 → 42 / 41 → 51 keeping 60 / 76%; q30b teacher 26 → 38 / 34 → 42 keeping 66%; v2 student 48 → 52 /
+  59 → 60; gpt-oss v2 75 → 76 / 78 → 79. Teacher consensus (q30b ∩ gpt-oss) would keep only ~3%.
+  Recommended next: implement these guards for real (user to confirm).
 
 ## Session 38 — GPU heat brought under control with clock locks; a 2× training speed-up built and proven equivalent on CPU; entity-list cleanup audited (2026-11-05)
 
