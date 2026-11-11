@@ -84,7 +84,8 @@ def run_stats(paper, ontology, slug, extractor="relation"):
     api_run = is_api_run(d)
     entity_set = entity_set_for(paper, meta.get("entity_dir")) if extractor == "fixed" else None
     for pid, raw in replies.items():
-        status, raw_t, surv = guard_pass(raw, relations, api_run, entity_set)
+        status, raw_t, surv = guard_pass(raw, relations, api_run, entity_set,
+                                         meta.get("guards", "v1"))
         st[status] += 1
         proposed += len(raw_t)
         kept_n += len(surv)

@@ -17,7 +17,9 @@
 - Per-triple judging (C1/C3/C4) and judge-free counts are diagnostics, not the headline.
 
 ## State (2026-11-11, 08:00 server time = 15:00 user time)
-- **Nothing is running. GPU settings are at defaults** (`gpu_restore.log`: RESTORED 2026-11-10 06:29).
+- **⏳ RUNNING: `screen -r qag2`** (`run_qa_g2.sh`, started 2026-11-11 08:08, ~2 h): Q&A on the
+  **guards-v2** KGs (`<slug>-g2`), then `qa_report_all.sh`. Log `qa_g2_driver.log`. GPU heat settings
+  applied; root `gpurestore` restores them when it ends (`gpu_restore.log`). hands_off §39.9.
 - ✔ Step 2 of the objective MET (Tables 19 / 19b): ontology-free students work.
 - ✔ **Main evaluation, `results.md` Table 20** (accuracy CEO / scinex): oracle 86.3, closedbook 4.4;
   teachers gpt-oss v1 5.0 / 3.3, v2 6.2 / 4.9, **Qwen3-30B 16.7 / 17.0**; ontology-free Qwen3-8B me30
@@ -35,16 +37,12 @@
   Mistral-Small-24B-Instruct-2501.
 
 ## Next steps, in order
-1. **Ask the user which way to go** (asked 2026-11-11; check the chat or ask again):
-   - **Tighten the guards** (recommended; CPU only, no retraining). Simulated on the Table 22 sample
-     with three rules (subject = object or one inside the other, `employs` on anything, < half of the
-     object's words in the sentence): Qwen3-30B student C4 27 → 42 (CEO) / 41 → 51 (scinex), keeping
-     60 / 76% of its triples; gpt-oss v2 barely moves (75 → 76, 78 → 79). Rough: n=50, the
-     substring self-loop rule also drops some good triples. Then re-ingest, re-run Q&A + a blind
-     round. Old numbers stay, labelled.
-   - Cleaner training data by teacher consensus is NOT viable: only 3.4% / 2.1% of Qwen3-30B triples
-     match gpt-oss's. Retraining on guard-filtered Qwen3-30B data is the natural step AFTER the guards.
-   - **Non-Qwen student** on the Qwen3-30B data (family confound; Phi-4 / Gemma-3-12B in cache).
+1. **When `qag2` is done:** write `results.md` Table 23 (Q&A v1 vs v2 guards per KG, from
+   `qa_report_all.log` / `report_table20.json`) next to the v2 correctness (hands_off §39.9:
+   q30b student C4 27 → 44 / 41 → 53, kept 2,429 → 1,705 / 2,527 → 1,876). Then propose to the user:
+   retrain the student on guard-v2-filtered Qwen3-30B data (`make_guard_variant.py --slugs
+   qwen3-30b-a3b-v2 --papers-from papers_acl.txt --suffix=-g2`, then `build_ft_data.py --teacher
+   qwen3-30b-a3b-v2-g2 ...`), a non-Qwen student, or a fresh blind round on the v2 KGs.
 2. ✔ bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` (57 GB) deleted 2026-11-11 with the user's OK. Still
    unapproved: the 2 AWQ stubs (27 MB) and the pip cache (7.3 GB).
 3. New GPU runs start at default settings: re-apply the clock locks first (§38.1); sudo password not

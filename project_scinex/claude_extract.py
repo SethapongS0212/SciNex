@@ -159,7 +159,8 @@ def cmd_ingest(args):
         except Exception:
             before = 0
             unparsed += 1
-        triples = _parse_fixed_output(raw, entity_set, ex.relations)
+        triples = _parse_fixed_output(raw, entity_set, ex.relations,
+                                      guards=meta.get("guards", "v1"))
         dropped += max(0, before - len(triples))
         if not triples and before == 0:
             empty += 1

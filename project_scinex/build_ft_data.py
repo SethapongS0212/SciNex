@@ -139,7 +139,8 @@ def consensus_votes(paper, ontology, args, cur_prompts, by_id, n_teacher, rep):
             continue
         surv_by_pid = {}
         for pid, raw in run["replies"].items():
-            status, raw_t, surv = guard_pass(raw, run["relations"], run["api_run"], entity_set)
+            status, raw_t, surv = guard_pass(raw, run["relations"], run["api_run"], entity_set,
+                                             run["meta"].get("guards", "v1"))
             if status == "ok":
                 surv_by_pid[pid] = (raw_t, surv)
         rate, _n = alignment_rate([(by_id[pid]["paragraph"], [t.get("source_sentence", "") for t in raw_t])
@@ -214,7 +215,7 @@ def extraction_examples(papers, ontology, args, cur_prompts, report, bad_ids):
         parsed = {}
         for pid, raw in run["replies"].items():
             status, raw_triples, surv = guard_pass(raw, run["relations"], run["api_run"],
-                                                   entity_set)
+                                                   entity_set, run["meta"].get("guards", "v1"))
             parsed[pid] = (status, raw_triples, surv)
             if status == "ok":
                 for t in surv:

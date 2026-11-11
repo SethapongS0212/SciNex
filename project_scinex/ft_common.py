@@ -516,19 +516,20 @@ def classify_raw(raw, api_run=True):
     return "ok", data
 
 
-def guard_pass(raw, relations, api_run=True, entity_set=None):
+def guard_pass(raw, relations, api_run=True, entity_set=None, guards="v1"):
     """(status, raw_triples, survivors) — survivors are what `claude_extract.py ingest`
     would write to triples.json today: the current `_parse_fixed_output` guards, then the
     graph builder's entity filter. Predicates come back LOWERCASED (as in triples.json);
     `canonical_predicate` restores the ontology spelling for training targets.
-    entity_set=None is relation mode; pass the paper's EntitySet for the fixed extractor."""
+    entity_set=None is relation mode; pass the paper's EntitySet for the fixed extractor.
+    guards = the run's prompt_meta "guards" (v1 when absent; v2 = fixed_extractor.guards_v2_reject)."""
     from kg_extraction.fixed_extractor import _parse_fixed_output
     from kg_extraction.kg_builder import _is_valid_entity
     status, data = classify_raw(raw, api_run)
     if status != "ok":
         return status, [], []
     raw_triples = [t for t in data.get("triples", []) if isinstance(t, dict)]
-    kept = _parse_fixed_output(raw, entity_set, relations)   # as ingest does, per extractor
+    kept = _parse_fixed_output(raw, entity_set, relations, guards=guards)   # as ingest does
     survivors = [t for t in kept
                  if _is_valid_entity(t["subject"], t["predicate"], "subject")
                  and _is_valid_entity(t["object"], t["predicate"], "object")]

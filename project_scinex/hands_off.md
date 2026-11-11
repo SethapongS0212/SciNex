@@ -156,6 +156,33 @@
   59 → 60; gpt-oss v2 75 → 76 / 78 → 79. Teacher consensus (q30b ∩ gpt-oss) would keep only ~3%.
   Recommended next: implement these guards for real (user to confirm).
 
+### 39.9 Guards v2 implemented (user: "yes do that", 2026-11-11)
+- **`kg_extraction/fixed_extractor.py`**: `_parse_fixed_output(..., guards="v1")`; `guards="v2"` adds
+  `guards_v2_reject` after every v1 check: `self_loop` (subject = object, or one contains the other
+  as whole words), `agent_predicate` (employs / affiliatedWith / locatedIn — the ACL CS-NER lists
+  hold no Person/Organisation, types are Method 25k, Resource 23k, Task 19k, Model 7.5k, Tool,
+  Language, Dataset), `object_not_in_sentence` (< half of the object's content words in the
+  source sentence, now for every predicate). **v1 stays the default and is unchanged**: ft_compare
+  counts identical to before; a v1 re-ingest reproduces stored triples.json exactly (4/4 checked).
+- The version travels in `prompt_meta.json` ("guards"): `claude_extract.py ingest`,
+  `ft_common.guard_pass` and its callers (`ft_compare`, `ft_overlap`, `build_ft_data`, so also
+  `blind_judge`) read it. **`make_guard_variant.py`** (new) copies a run's stored replies to
+  `<slug>-g2/` with guards v2 and re-ingests (no model; 1,230 paper×ontology runs in 15 s). Pass
+  the suffix as `--suffix=-g2` (argparse reads a bare leading dash as a flag).
+- **Kept triples v1 → v2** (`ft_runs/guards_v2/compare_g2.json`, CEO / scinex): gpt-oss v1 501 → 481
+  / 289 → 271; v2 561 → 520 / 389 → 357; q30b teacher 2,428 → 1,642 / 2,334 → 1,705; untuned full
+  ontology 2,363 → 1,940 / 2,469 → 1,955; noont-me30 678 → 655 / 544 → 523; v2 student 851 → 790 /
+  730 → 685; **q30b student 2,429 → 1,705 / 2,527 → 1,876**.
+- **Correctness under v2** = the Table 22 judged sample restricted to items that pass v2 (a random
+  sample of the v2 population, since v2 only removes; `ft_runs/guards_v2/blind_subset_g2.json`): C4
+  gpt-oss v2 76 / 79, v2 student 52 / 60, q30b teacher 38 / 43, **q30b student 44 / 53** (n 31–48). Of
+  the 80 judged triples v2 removes, 65 were INCORRECT, 9 PARTIAL, 6 CORRECT.
+- **Running: `screen qag2`** = `/home/dev1/scinex_runs/run_qa_g2.sh` (copy in `ft_runs/acl_scripts/`),
+  started 2026-11-11 08:08: Q&A answers for 9 slugs × 2 ontologies of `-g2` KGs on both GPUs →
+  `qa_report_all.sh` (now also compares every `-g2` KG with its v1 self and the key pairs under v2).
+  Heat settings re-applied (clock locks 1650 / 1900, 400 W, `gpuguard`); root `gpurestore` =
+  `gpu_restore_after.sh 'run_qa_g2[.]sh'` restores them afterwards.
+
 ## Session 38 — GPU heat brought under control with clock locks; a 2× training speed-up built and proven equivalent on CPU; entity-list cleanup audited (2026-11-05)
 
 > User: *"read HANDOFF_NEXT_SESSION.md and continue"*. At 12:38 server time the caps run (§37.10)

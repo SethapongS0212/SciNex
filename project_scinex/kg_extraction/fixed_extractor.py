@@ -963,11 +963,65 @@ def _schema_class_names(schema: dict | None) -> set[str]:
     return names
 
 
+# ── Guards v2 (Session 39, 2026-11-11) ───────────────────────────────────────
+# Opt-in (`guards="v2"`; a run records it as "guards" in prompt_meta.json and every tool
+# that re-parses stored replies passes it on). v1 — the default — is unchanged, so every
+# table built before 2026-11-11 stays reproducible. The three rules come from the blind
+# round acl-f0-q30b (results.md Table 22), where they were the commonest fixable errors:
+#   self_loop               subject and object name the same thing, or one contains the
+#                           other as whole words: (DAILY547, evaluatedOn, DAILY547),
+#                           (HMM, uses, single-state HMM)
+#   agent_predicate         employs / affiliatedWith / locatedIn need a Person or
+#                           Organisation subject; the ACL CS-NER lists hold none (types:
+#                           Method, Resource, Task, Model, Tool, Language, Dataset), so a
+#                           listed subject can never satisfy them: (BERT, employs, Self-Attention)
+#   object_not_in_sentence  fewer than half of the object's content words occur in the
+#                           source sentence — v1 checked this only for 8 predicates, with a
+#                           looser threshold, so achieves/addresses/evaluates objects could be
+#                           invented: (DBDC, evaluates, 88.5) with no 88.5 in the sentence
+GUARD_VERSIONS = ("v1", "v2")
+_V2_AGENT_PREDS = {"employs", "affiliatedwith", "locatedin"}
+_V2_STOP = {"a", "an", "the", "of", "in", "on", "for", "to", "and", "or", "with", "by",
+            "from", "at", "as", "is", "are", "was", "were", "its", "their", "our"}
+
+
+def _v2_words(text: str) -> list[str]:
+    return re.findall(r"[a-z0-9]+(?:\.[0-9]+)?", str(text).lower())
+
+
+def _v2_is_self_loop(subj: str, obj: str) -> bool:
+    s, o = " ".join(_v2_words(subj)), " ".join(_v2_words(obj))
+    if not s or not o:
+        return False
+    return s == o or f" {s} " in f" {o} " or f" {o} " in f" {s} "
+
+
+def _v2_object_in_sentence(obj: str, src: str) -> bool:
+    content = [w for w in _v2_words(obj) if w not in _V2_STOP]
+    if not content:
+        return True
+    src_words = set(_v2_words(src))
+    return 2 * sum(w in src_words for w in content) >= len(content)
+
+
+def guards_v2_reject(subj: str, pred: str, obj: str, src: str) -> str | None:
+    """The reason a triple fails the v2-only rules, or None. Applied after all v1 guards."""
+    p = str(pred).lower().replace(" ", "").replace("-", "").replace("_", "")
+    if _v2_is_self_loop(subj, obj):
+        return "self_loop"
+    if p in _V2_AGENT_PREDS:
+        return "agent_predicate"
+    if not _v2_object_in_sentence(obj, src):
+        return "object_not_in_sentence"
+    return None
+
+
 def _parse_fixed_output(
     raw: str,
     entity_set: EntitySet | None,
     valid_relations: list[str],
     schema: dict | None = None,
+    guards: str = "v1",
 ) -> list[dict]:
     """
     Parse LLM output and validate:
@@ -976,7 +1030,10 @@ def _parse_fixed_output(
       named literally in the source sentence)
     - Predicate must be in valid relations
     - Object must be non-empty and clean
+    guards="v2" adds `guards_v2_reject` after every v1 check (see above).
     """
+    if guards not in GUARD_VERSIONS:
+        raise ValueError(f"guards must be one of {GUARD_VERSIONS}, got {guards!r}")
     raw = _strip_think_and_fences(raw)
 
     if not raw:
@@ -1218,6 +1275,13 @@ def _parse_fixed_output(
                 f"subject, not '{canonical_subj}'"
             )
             continue
+
+        if guards == "v2":
+            why = guards_v2_reject(canonical_subj, pred, obj, src_sentence)
+            if why:
+                logger.debug(f"Skipping triple — guards v2 {why}: "
+                             f"({canonical_subj}, {pred}, {obj})")
+                continue
 
         result.append({
             "subject":         canonical_subj,
