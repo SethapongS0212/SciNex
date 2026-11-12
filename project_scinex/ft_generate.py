@@ -149,16 +149,35 @@ def generate_batch(model, tok, prompts, max_new_tokens):
     return res
 
 
-def load_vllm(base_model, args):
+_VLLM_LORA = None      # LoRARequest when a student adapter is served (set by load_vllm)
+
+
+def load_vllm(base_model, args, adapter_dir=None):
     """--backend vllm (second teacher, Session 39): a checkpoint that ships its own quantization
     (e.g. RedHatAI/...-quantized.w4a16 for Qwen3-30B-A3B, whose fused MoE experts bitsandbytes
     cannot quantize). Runs from the separate venv /home/dev1/envvllm. The prompt text and its
-    tokens are exactly the HF path's (render_chat + add_special_tokens=False); decoding greedy."""
+    tokens are exactly the HF path's (render_chat + add_special_tokens=False); decoding greedy.
+    With an adapter (scale-up students, 2026-11-12) the base is served with LoRA enabled and the
+    adapter's own tokenizer renders the prompts, as on the HF path; --vllm-quantization
+    bitsandbytes keeps the NF4 base the adapter was trained on (default: bf16 base)."""
+    global _VLLM_LORA
     from vllm import LLM
+    kw = {}
+    if args.vllm_quantization:
+        kw["quantization"] = args.vllm_quantization
+    if adapter_dir:
+        cfg = json.loads((Path(adapter_dir) / "adapter_config.json").read_text(encoding="utf-8"))
+        kw.update(enable_lora=True, max_lora_rank=max(8, int(cfg.get("r", 16))), max_loras=1)
     llm = LLM(model=base_model, max_model_len=args.max_model_len,
               gpu_memory_utilization=args.gpu_memory_utilization,
-              trust_remote_code=args.trust_remote_code, seed=0)
-    return llm, llm.get_tokenizer()
+              trust_remote_code=args.trust_remote_code, seed=0, **kw)
+    tok = llm.get_tokenizer()
+    if adapter_dir:
+        from transformers import AutoTokenizer
+        from vllm.lora.request import LoRARequest
+        tok = AutoTokenizer.from_pretrained(adapter_dir, trust_remote_code=args.trust_remote_code)
+        _VLLM_LORA = LoRARequest("student", 1, str(Path(adapter_dir).resolve()))
+    return llm, tok
 
 
 def generate_batch_vllm(llm, tok, prompts, max_new_tokens):
@@ -167,7 +186,8 @@ def generate_batch_vllm(llm, tok, prompts, max_new_tokens):
     sp = SamplingParams(temperature=0.0, max_tokens=max_new_tokens, skip_special_tokens=not harmony)
     reqs = [{"prompt_token_ids": tok(p, add_special_tokens=False)["input_ids"]} for p in prompts]
     res = []
-    for o in llm.generate(reqs, sp, use_tqdm=False):
+    lora = {"lora_request": _VLLM_LORA} if _VLLM_LORA is not None else {}
+    for o in llm.generate(reqs, sp, use_tqdm=False, **lora):
         c = o.outputs[0]
         text = harmony_final(c.text) if harmony else c.text.strip()
         res.append((text, len(c.token_ids), c.finish_reason == "length"))
@@ -216,6 +236,10 @@ def main():
                          "(run from the vLLM venv; use a big --batch-size, e.g. 64)")
     ap.add_argument("--max-model-len", type=int, default=8192, help="vllm only: context length")
     ap.add_argument("--gpu-memory-utilization", type=float, default=0.90, help="vllm only")
+    ap.add_argument("--vllm-quantization", default=None,
+                    help="vllm only: e.g. bitsandbytes (NF4 in flight, as the QLoRA base); default none")
+    ap.add_argument("--guards", choices=["v1", "v2"], default="v1",
+                    help="guard version recorded in prompt_meta.json; ingest and every re-parse use it")
     ap.add_argument("--trust-remote-code", action="store_true")
     ap.add_argument("--dry-run", action="store_true", help="render + count prompts, no model")
     ap.add_argument("--prompt-variant", choices=PROMPT_VARIANTS, default="default",
@@ -290,9 +314,7 @@ def main():
         return
 
     if args.backend == "vllm":
-        if adapter_dir:
-            sys.exit("--backend vllm is for base/teacher models; adapters go through --backend hf")
-        model, tok = load_vllm(args.base_model, args)
+        model, tok = load_vllm(args.base_model, args, adapter_dir)
         gen_fn = generate_batch_vllm
     else:
         model, tok = load_model(args.base_model, adapter_dir, args.trust_remote_code,
@@ -319,6 +341,7 @@ def main():
             "reasoning_effort": args.reasoning_effort, "prompt_variant": args.prompt_variant,
             "entity_dir": args.entity_dir,
             **({"backend": "vllm"} if args.backend == "vllm" else {}),
+            **({"guards": args.guards} if args.guards != "v1" else {}),
         }, indent=2), encoding="utf-8")
 
         out_f = dest / "responses.jsonl"

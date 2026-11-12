@@ -262,6 +262,8 @@ Regression-checked on 8 known-good papers: 0 spurious dotted-headings, section/c
 **Why not CS-NER abstract data per paper, and why not ITER:** the only ACL-id-keyed CS-NER slice (`acl/`) is title-only (`acl/train-abs.data` → 404); the abstract-level data belongs to other corpora (NCG/PWC/SciERC), not our ACL papers. So we use CS-NER as a **global gazetteer intersected with each paper's text**, not a per-paper lookup. ITER/SciERC (`--source iter`) is still available as a model-based non-circular fallback but is **not** the chosen path.
 - Columns expected by `entity_loader` / fixed extractor: Entity, Abbreviation, Aliases, TP, NER_Type, CEO_Type.
 
+### STATUS (2026-11-12 10:00, Session 39) — ⭐ SCALE-UP started (`SCALE_PLAN.md`): 805 → 5,000+ papers, 1,000+ test papers. Acquisition (`screen scaleacq`) and curve point 0 training (`screen scalep0`) running. READ `SCALE_PLAN.md`, `HANDOFF_NEXT_SESSION.md`.
+
 ### STATUS (2026-11-12, Session 39) — Guards v2 (opt-in; `results.md` Table 23): Qwen3-30B-data ontology-free student stays the best KG on Q&A (13.7 / 16.4) and rises to C4 44 / 53 (from 27 / 41). Nothing running; GPUs restored. Next: user picks retrain on v2-filtered data / non-Qwen student / fresh blind round. READ `HANDOFF_NEXT_SESSION.md`.
 
 ### STATUS (2026-11-11, Session 39) — Second teacher done. Q&A (`results.md` Table 20): Qwen3-30B teacher 16.7 / 17.0, its ontology-free 8B student 15.5 / 18.2 = best KG. ⚠ Blind check (Table 22): C4 only 27 / 41 vs 48 / 59 (v2 student) and 75 / 78 (gpt-oss v2): coverage bought with precision; report both. Nothing running; GPU settings restored. Next: user picks guards / cleaner data / non-Qwen student. READ `HANDOFF_NEXT_SESSION.md`.

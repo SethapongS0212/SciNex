@@ -1,6 +1,6 @@
 # Handoff — next session
 
-**Updated 2026-11-12 09:30 server time (Session 39).** Read in this order:
+**Updated 2026-11-12 10:00 server time (Session 39).** Read in this order:
 1. **[`OBJECTIVE.md`](OBJECTIVE.md)** — the professor's three steps. Everything serves them.
 2. This file — where the work stands and what to do next.
 3. `hands_off.md` §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation; Table 22 = its correctness check).
@@ -16,10 +16,11 @@
 - Corpus: 805 ACL papers, fixed entity lists; fold 0 (41 papers) held out.
 - Per-triple judging (C1/C3/C4) and judge-free counts are diagnostics, not the headline.
 
-## State (2026-11-11, 08:00 server time = 15:00 user time)
-- **Nothing is running; GPU settings at defaults** (restored 2026-11-11 10:10).
-- ✔ **Guards v2 done (`results.md` Table 23):** on the Qwen3-30B-data student, Q&A 15.5 → 13.7 /
-  18.2 → 16.4 (still the best KG), C4 27 → 44 / 41 → 53; other graphs lose ≤ 0.8 Q&A points.
+## State (2026-11-12, 10:00 server time)
+- **⭐ SCALE-UP IN PROGRESS — read [`SCALE_PLAN.md`](SCALE_PLAN.md) first.** User: 5,000+ papers,
+  test set 1,000+. Running: `screen scaleacq` (paper acquisition, CPU/network), `screen scalep0`
+  (curve point 0 training, GPU0). GPU heat settings applied; root `gpurestore` restores them when
+  every `run_scale_*.sh` driver has exited.
 - ✔ Step 2 of the objective MET (Tables 19 / 19b): ontology-free students work.
 - ✔ **Main evaluation, `results.md` Table 20** (accuracy CEO / scinex): oracle 86.3, closedbook 4.4;
   teachers gpt-oss v1 5.0 / 3.3, v2 6.2 / 4.9, **Qwen3-30B 16.7 / 17.0**; ontology-free Qwen3-8B me30
