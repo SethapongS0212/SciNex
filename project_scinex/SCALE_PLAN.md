@@ -42,9 +42,21 @@ more training data help? Measured on a test set of 1,000+ held-out papers.
   applied; root `gpurestore` waits for every `run_scale_*.sh` driver.
 - vLLM + LoRA works (3 papers: 3.7 min); the 41-paper equivalence check is running on GPU1.
 
+## Backend checks (2026-11-12) — both pass, both adopted for the whole scale-up
+- **Student generation via vLLM + LoRA (bf16 base)** vs the HF NF4 path, Qwen3-30B-data student on
+  the 41 legacy test papers: 56 min vs 6.5 h. Kept 2,446 / 2,436 vs 2,429 / 2,527 (CEO / scinex),
+  coverage −5 points, truncations 49 / 65 vs 34 / 35 (the student writes 45-51 triples on dense
+  paragraphs and hits the 3,072-token cap; kept unchanged for comparability). **Q&A (same HF
+  answerer): +0.4 [−1.4, 2.2] / −1.3 [−2.8, 0.2] — equivalent.** Slug `qwen3-8b-acl-q30b-noont-me30-vllm`.
+- **Q&A answerer via vLLM** (`RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w4a16`,
+  `serve_mistral.sh`, `qa_eval.py --provider openai-compat --concurrency 32`): 1,222 questions × 2
+  KGs in 99 s vs ~25 min. Same score on 96% of questions; abstains more (answered 29 / 33% vs 36 /
+  40%), accuracy −1.7 / −1.8 points vs the HF NF4 answerer. A small systematic shift → **every
+  scale-up Q&A uses the vLLM answerer**, and the legacy run is re-answered with it as
+  `qa_eval/acl-f0-vllm` (same questions) to bridge old and new tables.
+
 ## Still to build
-1. `scale_finalize.py`: usable-paper filter, test/train split file (`ft_data/scale/split.json`),
-   corpus list `papers_scale.txt`.
-2. Teacher driver for all new papers (both GPUs, ~1-2 days).
-3. `qa_eval.py` concurrency for `--provider openai-compat` + vLLM-served Mistral; new run `scale`.
-4. Curve drivers (build data per size, train, vLLM-generate on the test set, Q&A, report).
+1. ✔ `scale_finalize.py` (runs inside `run_scale_teacher.sh`). ✔ teacher driver `run_scale_teacher.sh`
+   (`screen scaleteacher`, waits for acquisition + p0). ✔ `qa_eval.py --concurrency`.
+2. Q&A question generation for the scale test set (run `scale`, vLLM Mistral, capped per paper).
+3. Curve drivers (build data per size, train, vLLM-generate on the test set, Q&A, report).

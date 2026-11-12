@@ -162,6 +162,8 @@ def add_api_args(p, required=True):
     p.add_argument("--sleep", type=float, default=0.0)
     p.add_argument("--limit", type=int, default=None, help="max API calls this invocation (smoke test)")
     p.add_argument("--hf-batch", type=int, default=8, help="hf only: prompts per generate() batch")
+    p.add_argument("--concurrency", type=int, default=1,
+                   help="API providers: parallel requests (a local vLLM server batches them)")
 
 
 def _hf_local(args):
@@ -210,7 +212,20 @@ def api(args):
         if args.sleep:
             time.sleep(args.sleep)
         return raw
-    ask.many = lambda pairs: [ask(s, u) for s, u in pairs]
+
+    def ask_safe(pair):
+        try:
+            return ask(*pair)
+        except Exception as e:           # one failed call must not sink its whole chunk
+            print(f"  call FAILED — {e} (left unanswered; a re-run retries it)", flush=True)
+            return ""
+    n = max(1, getattr(args, "concurrency", 1))
+    if n > 1:                            # e.g. a local vLLM server, which batches concurrent requests
+        from concurrent.futures import ThreadPoolExecutor
+        pool = ThreadPoolExecutor(max_workers=n)
+        ask.many = lambda pairs: list(pool.map(ask_safe, pairs))
+    else:
+        ask.many = lambda pairs: [ask(s, u) for s, u in pairs]
     return ask
 
 
@@ -368,7 +383,8 @@ def cmd_generate(args):
         ask = api(args)
         system = (QGEN_SYSTEM.replace("<<K>>", str(meta["per_paragraph"]))
                   .replace("<<RELATIONS>>", ", ".join(relations)))
-        step = max(1, getattr(args, "hf_batch", 1)) if args.provider == "hf" else 1
+        step = (max(1, getattr(args, "hf_batch", 1)) if args.provider == "hf"
+                else max(1, getattr(args, "concurrency", 1)) * 4)
         for i in range(0, len(todo), step):
             chunk = todo[i:i + step]
             try:
@@ -510,7 +526,7 @@ def cmd_answer(args):
                 else:
                     user = f"QUESTIONS:\n{qlines}"
                 jobs.append((gkey, local, shown, trunc, triples, user))
-        step = max(1, args.hf_batch) if args.provider == "hf" else 1
+        step = max(1, args.hf_batch) if args.provider == "hf" else max(1, args.concurrency) * 4
         for k in range(0, len(jobs), step):
             if args.limit and calls >= args.limit:
                 print("  --limit reached")
