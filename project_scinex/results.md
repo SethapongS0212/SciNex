@@ -157,6 +157,38 @@
 > judging, not which model wrote an item). v1 is not in this round, so v2's 75 / 78 cannot be set
 > against v1's 54 / 57 from Table 19b.
 >
+> **Table 23 (ACL, ⭐ GUARDS v2 — what stricter guards cost in Q&A and buy in correctness,
+> 2026-11-11).** Guards v2 (`kg_extraction/fixed_extractor.py` `guards_v2_reject`: self-loops, agent
+> predicates on non-agents, objects not in the sentence) applied to the SAME stored replies
+> (`make_guard_variant.py`, KGs `<slug>-g2`; no model rerun). Q&A as Table 20; C4 under v2 = the
+> Table 22 sample restricted to items that pass v2 (n 31–48; `ft_runs/guards_v2/`). CEO / scinex:
+>
+> | KG | kept v1 → v2 | Q&A v1 → v2 | Q&A v2 − v1 [95% CI] | C4 v1 → v2 |
+> |---|---|---|---|---|
+> | teacher gpt-oss v1 | 501 → 481 / 289 → 271 | 5.0 → 4.6 / 3.3 → 3.5 | −0.4 [−1.0, 0.2] / +0.2 [0.0, 0.4] | — |
+> | teacher gpt-oss v2 | 561 → 520 / 389 → 357 | 6.2 → 5.4 / 4.9 → 4.3 | −0.8 [−1.4, −0.2] / −0.6 [−1.1, −0.2] | 75 → 76 / 78 → 79 |
+> | teacher Qwen3-30B | 2,428 → 1,642 / 2,334 → 1,705 | 16.7 → 14.4 / 17.0 → 14.6 | −2.3 [−3.6, −1.1] / −2.4 [−3.8, −1.2] | 26 → 38 / 34 → 43 |
+> | untuned Qwen3-8B, full ontology | 2,363 → 1,940 / 2,469 → 1,955 | 12.7 → 12.2 / 12.8 → 11.2 | −0.5 [−1.6, 0.6] / −1.6 [−3.0, −0.4] | — |
+> | untuned Qwen3-8B, no ontology | — | 4.8 → 4.4 / 4.6 → 4.3 | −0.4 / −0.3 (CIs across 0) | — |
+> | student me50, v1 data | — | 4.5 → 4.3 / 2.9 → 2.8 | −0.2 / −0.1 | — |
+> | student me30, v1 data | 678 → 655 / 544 → 523 | 8.3 → 8.3 / 6.8 → 6.2 | −0.1 [−0.5, 0.3] / −0.7 [−1.2, −0.2] | — |
+> | student me30, gpt-oss v2 data | 851 → 790 / 730 → 685 | 10.0 → 10.0 / 8.0 → 7.8 | 0.0 [−0.6, 0.5] / −0.2 [−0.9, 0.5] | 48 → 52 / 59 → 60 |
+> | **student me30, Qwen3-30B data** | **2,429 → 1,705 / 2,527 → 1,876** | **15.5 → 13.7 / 18.2 → 16.4** | −1.8 [−3.5, −0.2] / −1.8 [−3.4, −0.2] | **27 → 44 / 41 → 53** |
+>
+> Under v2: Qwen3-30B-data student − gpt-oss-v2-data student **+3.7 [1.9, 5.7] / +8.6 [6.5, 10.6]**;
+> − its teacher −0.7 [−2.7, 1.1] / +1.8 [−0.4, 4.1]; − untuned full ontology +1.4 [−0.8, 3.6] / **+5.2
+> [3.2, 7.3]**. Qwen3-30B teacher − gpt-oss v2 +9.0 / +10.3; gpt-oss-v2-data student − its teacher
+> +4.6 / +3.5 (all CIs above 0).
+>
+> **Reading:** v2 removes ~30% of the Qwen3-30B line's triples, and of the judged ones it removes
+> 81% were wrong (65 of 80; 9 partial, 6 correct). Q&A drops only ~2 points there and ≤ 0.8 for
+> every other graph, while C4 rises 17 / 12 points for the Qwen3-30B student. **The Qwen3-30B-data
+> ontology-free student remains the best KG on the main evaluation** (13.7 / 16.4) and is now about
+> half correct per triple (44 / 53) instead of a third. It is still below the gpt-oss line on
+> precision (52 / 60 student, 76 / 79 teacher): the remaining errors are semantic (catch-all
+> `addresses` / `achieves`), which these rules do not touch. scinex gpt-oss v1 under v2 has 18
+> unanswered questions (the same batched-reply skip as before). Single rater, n=31–48 per C4 cell.
+>
 > **Table 19 (ACL, ⭐ ONTOLOGY-FREE STUDENTS, judge-free).** Students trained and run with the
 > `noont` prompt: the ontology's NAME only, no relation list or definitions (218 tokens vs 2,744).
 > Training data identical to Tables 16–18 except that prompt (ontology and vocabulary cards kept).

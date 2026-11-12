@@ -1,6 +1,6 @@
 # Handoff — next session
 
-**Updated 2026-11-11 08:00 server time (Session 39).** Read in this order:
+**Updated 2026-11-12 09:30 server time (Session 39).** Read in this order:
 1. **[`OBJECTIVE.md`](OBJECTIVE.md)** — the professor's three steps. Everything serves them.
 2. This file — where the work stands and what to do next.
 3. `hands_off.md` §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation; Table 22 = its correctness check).
@@ -17,9 +17,9 @@
 - Per-triple judging (C1/C3/C4) and judge-free counts are diagnostics, not the headline.
 
 ## State (2026-11-11, 08:00 server time = 15:00 user time)
-- **⏳ RUNNING: `screen -r qag2`** (`run_qa_g2.sh`, started 2026-11-11 08:08, ~2 h): Q&A on the
-  **guards-v2** KGs (`<slug>-g2`), then `qa_report_all.sh`. Log `qa_g2_driver.log`. GPU heat settings
-  applied; root `gpurestore` restores them when it ends (`gpu_restore.log`). hands_off §39.9.
+- **Nothing is running; GPU settings at defaults** (restored 2026-11-11 10:10).
+- ✔ **Guards v2 done (`results.md` Table 23):** on the Qwen3-30B-data student, Q&A 15.5 → 13.7 /
+  18.2 → 16.4 (still the best KG), C4 27 → 44 / 41 → 53; other graphs lose ≤ 0.8 Q&A points.
 - ✔ Step 2 of the objective MET (Tables 19 / 19b): ontology-free students work.
 - ✔ **Main evaluation, `results.md` Table 20** (accuracy CEO / scinex): oracle 86.3, closedbook 4.4;
   teachers gpt-oss v1 5.0 / 3.3, v2 6.2 / 4.9, **Qwen3-30B 16.7 / 17.0**; ontology-free Qwen3-8B me30
@@ -37,12 +37,11 @@
   Mistral-Small-24B-Instruct-2501.
 
 ## Next steps, in order
-1. **When `qag2` is done:** write `results.md` Table 23 (Q&A v1 vs v2 guards per KG, from
-   `qa_report_all.log` / `report_table20.json`) next to the v2 correctness (hands_off §39.9:
-   q30b student C4 27 → 44 / 41 → 53, kept 2,429 → 1,705 / 2,527 → 1,876). Then propose to the user:
-   retrain the student on guard-v2-filtered Qwen3-30B data (`make_guard_variant.py --slugs
-   qwen3-30b-a3b-v2 --papers-from papers_acl.txt --suffix=-g2`, then `build_ft_data.py --teacher
-   qwen3-30b-a3b-v2-g2 ...`), a non-Qwen student, or a fresh blind round on the v2 KGs.
+1. **Ask the user what next** (offered 2026-11-12): retrain the student on guard-v2-filtered
+   Qwen3-30B data (`make_guard_variant.py --slugs qwen3-30b-a3b-v2 --papers-from papers_acl.txt
+   --suffix=-g2`, then `build_ft_data.py --teacher qwen3-30b-a3b-v2-g2 --entity-dir output/acl_v2
+   --prompt-variant noont --max-empty-frac 0.3 ...`; ~12 h GPU), a non-Qwen student on that data, or
+   a fresh blind round on the v2 KGs (the C4 v2 numbers are a filtered subset, n 31–48).
 2. ✔ bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` (57 GB) deleted 2026-11-11 with the user's OK. Still
    unapproved: the 2 AWQ stubs (27 MB) and the pip cache (7.3 GB).
 3. New GPU runs start at default settings: re-apply the clock locks first (§38.1); sudo password not

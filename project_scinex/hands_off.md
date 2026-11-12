@@ -182,6 +182,9 @@
   `qa_report_all.sh` (now also compares every `-g2` KG with its v1 self and the key pairs under v2).
   Heat settings re-applied (clock locks 1650 / 1900, 400 W, `gpuguard`); root `gpurestore` =
   `gpu_restore_after.sh 'run_qa_g2[.]sh'` restores them afterwards.
+- **Done 2026-11-11 09:59** (lanes rc 0/0; restore 10:10). Results: `results.md` Table 23. Q&A v2 − v1:
+  q30b student −1.8 / −1.8, q30b teacher −2.3 / −2.4, all others ≤ 0.8 (or within noise); q30b student −
+  v2 student under v2 +3.7 / +8.6. The q30b-data student stays the best KG (13.7 / 16.4) at C4 44 / 53.
 
 ## Session 38 — GPU heat brought under control with clock locks; a 2× training speed-up built and proven equivalent on CPU; entity-list cleanup audited (2026-11-05)
 
