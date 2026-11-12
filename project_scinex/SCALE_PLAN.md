@@ -36,11 +36,22 @@ more training data help? Measured on a test set of 1,000+ held-out papers.
 - **Correctness:** blind C1/C3/C4 rounds (in-session judge) on samples from the largest student,
   the curve-point-0 student and the teacher.
 
-## Status
-- 2026-11-12 09:27 `screen scaleacq` (acquisition, ~4 h). 09:29 `screen scalep0` (curve point 0
-  training on GPU0, `ft_data/acl_q30b_g2_noont_me30`: 34,320 extraction examples). GPU heat settings
-  applied; root `gpurestore` waits for every `run_scale_*.sh` driver.
-- vLLM + LoRA works (3 papers: 3.7 min); the 41-paper equivalence check is running on GPU1.
+## Status and pipeline (all unattended; every driver resumes when re-run)
+| screen | driver (`/home/dev1/scinex_runs/`, copies in `ft_runs/acl_scripts/`) | does |
+|---|---|---|
+| `scaleacq` | `run_scale_acquire.sh` | download → parse → entity lists → v2 lists (started 2026-11-12 09:27; ~16:30) |
+| `scalep0` | `run_scale_p0.sh` | curve point 0: 764 legacy papers, guards-v2 Qwen3-30B data (GPU0; ~14:30) |
+| `scaleteacher` | `run_scale_teacher.sh` | waits; `scale_finalize.py` (split); Qwen3-30B teacher on all new papers, both GPUs, test papers first, `--vllm-group 16` |
+| `scalecurve` | `run_scale_curve.sh` | waits for the teacher; GPU0: gen n764 → Mistral server (questions for run `scale`, ≤ 10/paper; controls; teacher answers) → train full → gen full; GPU1: train 1500 → gen → train 3000 → gen; then Q&A for every student (`scale`, `acl-f0-vllm`), report, `ft_compare` |
+GPU heat settings applied 2026-11-12 09:29; root `gpurestore` (`gpu_restore_after.sh 'run_scale_[[:alnum:]_]+[.]sh'`)
+restores them 10 min after the last scale driver exits. Logs: `scale_driver.log`, `scale_acquire*.log`,
+`scale_teacher_gpu{0,1}.log`, `scale_train_*.log`, `scale_gen_*.log`, `scale_qa.log`, `scale_report_*.log`.
+**Results land in:** `qa_eval/scale/report_scale.json`, `qa_eval/acl-f0-vllm/report_scale.json`,
+`ft_runs/scale/compare_curve.json`. Then: write results.md tables, a blind C1/C3/C4 round on the
+largest student vs n764 vs teacher, and update the docs.
+
+Rough timeline: acquisition done ~2026-11-12 16:30; teacher ~1-1.5 days; curve ~2 days
+(train full ≈ 33 h is the longest step). Expected done ≈ 2026-11-16.
 
 ## Backend checks (2026-11-12) — both pass, both adopted for the whole scale-up
 - **Student generation via vLLM + LoRA (bf16 base)** vs the HF NF4 path, Qwen3-30B-data student on
@@ -48,6 +59,9 @@ more training data help? Measured on a test set of 1,000+ held-out papers.
   coverage −5 points, truncations 49 / 65 vs 34 / 35 (the student writes 45-51 triples on dense
   paragraphs and hits the 3,072-token cap; kept unchanged for comparability). **Q&A (same HF
   answerer): +0.4 [−1.4, 2.2] / −1.3 [−2.8, 0.2] — equivalent.** Slug `qwen3-8b-acl-q30b-noont-me30-vllm`.
+- **Cross-paper batching** (`ft_generate.py --vllm-group 16`, `--max-model-len 6144`, util 0.92): same
+  student, 41 papers: 10.9 min vs 56 min, kept 2,464 / 2,451 vs 2,446 / 2,436 — equivalent, 5× faster
+  (≈ 4.6 h per student on the 1,041 test papers). Used by the teacher and every student.
 - **Q&A answerer via vLLM** (`RedHatAI/Mistral-Small-24B-Instruct-2501-quantized.w4a16`,
   `serve_mistral.sh`, `qa_eval.py --provider openai-compat --concurrency 32`): 1,222 questions × 2
   KGs in 99 s vs ~25 min. Same score on 96% of questions; abstains more (answered 29 / 33% vs 36 /
@@ -55,7 +69,7 @@ more training data help? Measured on a test set of 1,000+ held-out papers.
   scale-up Q&A uses the vLLM answerer**, and the legacy run is re-answered with it as
   `qa_eval/acl-f0-vllm` (same questions) to bridge old and new tables.
 
-## Still to build
+## Built (2026-11-12)
 1. ✔ `scale_finalize.py` (runs inside `run_scale_teacher.sh`). ✔ teacher driver `run_scale_teacher.sh`
    (`screen scaleteacher`, waits for acquisition + p0). ✔ `qa_eval.py --concurrency`.
 2. Q&A question generation for the scale test set (run `scale`, vLLM Mistral, capped per paper).

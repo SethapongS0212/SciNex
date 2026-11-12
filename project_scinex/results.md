@@ -189,6 +189,28 @@
 > `addresses` / `achieves`), which these rules do not touch. scinex gpt-oss v1 under v2 has 18
 > unanswered questions (the same batched-reply skip as before). Single rater, n=31–48 per C4 cell.
 >
+> **Table 24 (ACL, ANSWERER BRIDGE for the scale-up, 2026-11-12).** The scale-up answers Q&A with
+> Mistral-Small-24B served by vLLM (`RedHatAI/...-quantized.w4a16`, `qa_eval.py --provider
+> openai-compat --concurrency 32`) instead of the HF NF4 build (≈ 15× faster). Run `acl-f0-vllm` =
+> the SAME 1,222 questions re-answered for every KG (`qa_eval/acl-f0-vllm/report_bridge.json`).
+> Same score on ~96% of questions; the vLLM build abstains more, so absolute accuracy is 1-2 points
+> lower everywhere (oracle 86.3 → 85.1, closedbook 4.4 → 3.2, Qwen3-30B student 15.5 / 18.2 → 13.7 /
+> 16.3). **Every conclusion of Tables 20-23 holds** (CEO / scinex, vLLM answerer):
+>
+> | a − b | CEO | scinex |
+> |---|---|---|
+> | noont-me30 − ontology-in-prompt me30 | −1.1 [−2.2, 0.0] | 0.0 [−0.8, 0.8] |
+> | noont-me30 − teacher v1 | +2.7 [0.9, 4.6] | +2.2 [0.9, 3.4] |
+> | v2-data student − teacher v2 | +3.4 [1.8, 5.0] | +2.5 [1.2, 3.7] |
+> | Qwen3-30B teacher − gpt-oss v2 | +9.7 [7.4, 12.1] | +11.6 [9.5, 13.6] |
+> | Qwen3-30B-data student − v2-data student | +5.6 [4.1, 7.1] | +10.1 [8.2, 12.1] |
+> | Qwen3-30B-data student − its teacher | −0.7 [−2.6, 1.2] | +1.0 [−1.1, 3.1] |
+> | Qwen3-30B-data student − untuned full ontology | +3.2 [1.1, 5.4] | +4.9 [2.6, 7.5] |
+> | same, guards v2 − guards v1 | −1.8 [−3.1, −0.7] | −1.6 [−2.6, −0.6] |
+>
+> Also checked: student generation via vLLM + LoRA (bf16 base) vs HF NF4 on the 41 papers, Q&A with
+> the HF answerer: +0.4 [−1.4, 2.2] / −1.3 [−2.8, 0.2] (`SCALE_PLAN.md`).
+>
 > **Table 19 (ACL, ⭐ ONTOLOGY-FREE STUDENTS, judge-free).** Students trained and run with the
 > `noont` prompt: the ontology's NAME only, no relation list or definitions (218 tokens vs 2,744).
 > Training data identical to Tables 16–18 except that prompt (ontology and vocabulary cards kept).

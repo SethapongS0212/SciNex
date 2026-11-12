@@ -25,7 +25,7 @@ lane() {
   if CUDA_VISIBLE_DEVICES=$1 "$VPY" ft_generate.py --backend vllm \
       --base-model RedHatAI/Qwen3-30B-A3B-Instruct-2507-quantized.w4a16 --model-slug qwen3-30b-a3b-v2-g2 \
       --teacher gptoss-20b --extractor fixed --prompt-variant recall --entity-dir output/acl_v2 --guards v2 \
-      --batch-size 64 --papers-from "$LOGS/scale_teacher_half$1.txt" --ingest --ingest-python "$PY" \
+      --batch-size 64 --vllm-group 16 --papers-from "$LOGS/scale_teacher_half$1.txt" --ingest --ingest-python "$PY" \
       >> "$LOGS/scale_teacher_gpu$1.log" 2>&1; then say "teacher gpu$1: finished"; else say "teacher gpu$1: FAILED (exit $?) - re-run resumes"; return 1; fi
 }
 lane 0 & p0=$!; lane 1 & p1=$!

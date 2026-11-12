@@ -165,6 +165,8 @@ def load_vllm(base_model, args, adapter_dir=None):
     kw = {}
     if args.vllm_quantization:
         kw["quantization"] = args.vllm_quantization
+    if args.kv_cache_dtype:
+        kw["kv_cache_dtype"] = args.kv_cache_dtype
     if adapter_dir:
         cfg = json.loads((Path(adapter_dir) / "adapter_config.json").read_text(encoding="utf-8"))
         kw.update(enable_lora=True, max_lora_rank=max(8, int(cfg.get("r", 16))), max_loras=1)
@@ -236,6 +238,9 @@ def main():
                          "(run from the vLLM venv; use a big --batch-size, e.g. 64)")
     ap.add_argument("--max-model-len", type=int, default=8192, help="vllm only: context length")
     ap.add_argument("--gpu-memory-utilization", type=float, default=0.90, help="vllm only")
+    ap.add_argument("--vllm-group", type=int, default=1,
+                    help="vllm only: paper x ontology runs per generate() call (cross-paper batching)")
+    ap.add_argument("--kv-cache-dtype", default=None, help="vllm only: e.g. fp8 (doubles KV capacity)")
     ap.add_argument("--vllm-quantization", default=None,
                     help="vllm only: e.g. bitsandbytes (NF4 in flight, as the QLoRA base); default none")
     ap.add_argument("--guards", choices=["v1", "v2"], default="v1",
@@ -322,7 +327,10 @@ def main():
         gen_fn = generate_batch
     tmpl_kw = {"reasoning_effort": args.reasoning_effort} if args.reasoning_effort else {}
     t0 = time.time()
-    for paper, ont, exdir, system, relations, rows, source in jobs:
+
+    def prepare(job):
+        """Write the files ingest reads; return (out_f, todo rows still to generate)."""
+        paper, ont, exdir, system, relations, rows, source = job
         dest = OUTPUT_DIR / paper / "kg" / exdir / args.model_slug
         dest.mkdir(parents=True, exist_ok=True)
         # the files claude_extract.py ingest reads
@@ -343,26 +351,62 @@ def main():
             **({"backend": "vllm"} if args.backend == "vllm" else {}),
             **({"guards": args.guards} if args.guards != "v1" else {}),
         }, indent=2), encoding="utf-8")
-
         out_f = dest / "responses.jsonl"
         done = set()
         if out_f.exists() and args.resume:
             done = {r["para_id"] for r in read_jsonl(out_f)}
+        else:
+            out_f.write_text("", encoding="utf-8")
         todo = [r for r in rows if r["para_id"] not in done]
-        with open(out_f, "a" if done else "w", encoding="utf-8") as f:
+        with open(out_f, "a", encoding="utf-8") as f:
             for r in (r for r in todo if r.get("no_entity")):
                 f.write(json.dumps({"para_id": r["para_id"], "raw": '{"triples": []}', "n_tokens": 0,
                                     "truncated": False, "skipped": "no_entity"}) + "\n")
-            todo = [r for r in todo if not r.get("no_entity")]
+        return out_f, [r for r in todo if not r.get("no_entity")]
+
+    def write_replies(out_f, chunk, results):
+        with open(out_f, "a", encoding="utf-8") as f:
+            for r, (text, n_tok, trunc) in zip(chunk, results):
+                f.write(json.dumps({"para_id": r["para_id"], "raw": text,
+                                    "n_tokens": n_tok, "truncated": trunc},
+                                   ensure_ascii=False) + "\n")
+
+    def ingest(job, out_f):
+        paper, ont = job[0], job[1]
+        if args.ingest:
+            ent = (["--entity-csv", str(entity_csv_for(paper, entity_dir))]
+                   if args.extractor == "fixed" else [])
+            subprocess.run([args.ingest_python or sys.executable, "claude_extract.py", "ingest", "--paper", paper,
+                            "--extractor", args.extractor, "--ontology", ont, *ent,
+                            "--ontology-file", args.ontology_file, "--model-slug", args.model_slug,
+                            "--responses", str(out_f)], check=False)
+
+    group = max(1, args.vllm_group) if args.backend == "vllm" else 1
+    if group > 1:
+        # vLLM: one generate() call over the paragraphs of `group` paper x ontology runs, so the
+        # engine batches across papers (one paper's ~20-40 paragraphs leave the GPU half idle).
+        # Replies are written per run after the call; an interrupted group is redone on resume.
+        for g in range(0, len(jobs), group):
+            batch = jobs[g:g + group]
+            prepped = [prepare(job) for job in batch]
+            flat = [(k, r, render_chat(tok, build_messages(batch[k][3], r["user_prompt"]), True, **tmpl_kw))
+                    for k, (_out_f, todo) in enumerate(prepped) for r in todo]
+            results = gen_fn(model, tok, [x[2] for x in flat], args.max_new_tokens) if flat else []
+            for k, (out_f, todo) in enumerate(prepped):
+                pairs = [(r, res) for (kk, r, _p), res in zip(flat, results) if kk == k]
+                write_replies(out_f, [r for r, _ in pairs], [res for _, res in pairs])
+                ingest(batch[k], out_f)
+            print(f"    runs {min(g + group, len(jobs))}/{len(jobs)}: {len(flat)} paragraphs this group "
+                  f"({(time.time() - t0) / 60:.1f} min)", flush=True)
+    else:
+        for job in jobs:
+            paper, ont, system = job[0], job[1], job[3]
+            out_f, todo = prepare(job)
             for i in range(0, len(todo), args.batch_size):
                 chunk = todo[i:i + args.batch_size]
                 prompts = [render_chat(tok, build_messages(system, r["user_prompt"]), True, **tmpl_kw)
                            for r in chunk]
-                for r, (text, n_tok, trunc) in zip(chunk, gen_fn(model, tok, prompts, args.max_new_tokens)):
-                    f.write(json.dumps({"para_id": r["para_id"], "raw": text,
-                                        "n_tokens": n_tok, "truncated": trunc},
-                                       ensure_ascii=False) + "\n")
-                f.flush()
+                write_replies(out_f, chunk, gen_fn(model, tok, prompts, args.max_new_tokens))
                 if args.backend == "vllm":     # the engine runs in its own process: no torch stats here
                     mem = ""
                 else:
@@ -371,13 +415,7 @@ def main():
                     mem = f", peak VRAM {peak:.1f} GB"
                 print(f"    {paper}/{ont}: {min(i + args.batch_size, len(todo))}/{len(todo)} "
                       f"({(time.time() - t0) / 60:.1f} min{mem})", flush=True)
-        if args.ingest:
-            ent = (["--entity-csv", str(entity_csv_for(paper, entity_dir))]
-                   if args.extractor == "fixed" else [])
-            subprocess.run([args.ingest_python or sys.executable, "claude_extract.py", "ingest", "--paper", paper,
-                            "--extractor", args.extractor, "--ontology", ont, *ent,
-                            "--ontology-file", args.ontology_file, "--model-slug", args.model_slug,
-                            "--responses", str(out_f)], check=False)
+            ingest(job, out_f)
     print(f"done in {(time.time() - t0) / 60:.1f} min")
     if not args.ingest:
         print("next: claude_extract.py ingest per paper (or re-run with --ingest)")
