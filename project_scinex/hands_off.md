@@ -1,5 +1,30 @@
 # Hands-Off Notes
 
+## Session 40 — scale-up check-in: acquisition, teacher, questions done; interim Q&A driver added (2026-11-14)
+
+> User: *"check the progress, read md files, and continue"*. At 07:36 server time everything was on
+> schedule; `scalecurve` was training nfull (GPU0, 15%) and n3000 (GPU1, 9%).
+
+### 40.1 Where the scale-up stands (`SCALE_PLAN.md` "Progress")
+- Acquisition done 11-12 21:59 (7,500 → 7,396 with v2 lists). `scale_finalize.py`: 7,272 usable new
+  papers → test 1,041 (41 legacy + 1,000 new), train 7,036 (764 legacy + 6,272 new) → **8,077 papers**.
+- Teacher (Qwen3-30B W4A16, guards v2, `--vllm-group 16`) on 7,272 new papers, both GPUs: 20 h.
+- n764 gen 3.9 h; n1500 train 8.5 h + gen 3.3 h; questions for run `scale`: 10,402 (≤ 10/paper,
+  25,388 paragraphs, 7,344 rejected), controls + teacher answered.
+- **Interim numbers, `results.md` Table 25:** CPU-only `qa_eval.py grade/report --run scale`
+  (token-overlap grading; the driver's final grade appends only new answers) →
+  `qa_eval/scale/report_interim_teacher.json`: oracle 86.3, closedbook 5.6, teacher 11.1 / 12.0.
+  `ft_compare.py` on teacher / n764 / n1500 (30 s CPU) → `ft_runs/scale/compare_interim.json`.
+  ("vs teacher P / R" there compares with gptoss-20b, which has no output on new papers — ignore.)
+
+### 40.2 New driver `run_scale_qa_interim.sh` (`screen scaleinterim`, copy in `ft_runs/acl_scripts/`)
+- GPU1 idles ~17 h between the end of `gen n3000` (~11-15 02:00) and the final Q&A (~19:30). The
+  driver waits for `scale_gen_<n3000>.done`, checks GPU1 is empty, serves Mistral on GPU1 port 8012
+  (`screen mistralsrv1`; the curve driver uses GPU0 port 8011), answers n764/1500/3000 on `scale` and
+  `acl-f0-vllm` (two passes), grades, reports → `report_interim.json`, re-runs `ft_compare` with
+  n3000. Answers are resumable per qid, so the final pass only adds nfull. Its name matches
+  `gpurestore`'s pattern, so the restore waits for it too. Exits if nfull is already generated.
+
 ## Session 39 — ⭐⭐ MAIN EVALUATION RESULT: the ontology-free students on simulated Q&A (Table 20); teacher v2 early result; v2 student queued; second teacher blocked (2026-11-07/08)
 
 > User: *"read HANDOFF_NEXT_SESSION.md and continue"*. At 16:02 server time the noont-KG Q&A

@@ -39,10 +39,11 @@ more training data help? Measured on a test set of 1,000+ held-out papers.
 ## Status and pipeline (all unattended; every driver resumes when re-run)
 | screen | driver (`/home/dev1/scinex_runs/`, copies in `ft_runs/acl_scripts/`) | does |
 |---|---|---|
-| `scaleacq` | `run_scale_acquire.sh` | download → parse → entity lists → v2 lists (started 2026-11-12 09:27; ~16:30) |
-| `scalep0` | `run_scale_p0.sh` | curve point 0: 764 legacy papers, guards-v2 Qwen3-30B data (GPU0; ~14:30) |
-| `scaleteacher` | `run_scale_teacher.sh` | waits; `scale_finalize.py` (split); Qwen3-30B teacher on all new papers, both GPUs, test papers first, `--vllm-group 16` |
+| `scaleacq` | `run_scale_acquire.sh` | ✔ done 2026-11-12 21:59: 7,500 candidates → PDF 7,413 → parsed 7,409 → v2 list 7,396 |
+| `scalep0` | `run_scale_p0.sh` | ✔ done 2026-11-12 14:26: curve point 0 (764 legacy papers, guards-v2 Qwen3-30B data) |
+| `scaleteacher` | `run_scale_teacher.sh` | ✔ split: usable new 7,272 (excluded no_html 91, small_html 109, few_entities 28) → **test 1,041 (41 legacy + 1,000 new), train 7,036 (764 legacy + 6,272 new)**; teacher on all 7,272 new papers 2026-11-12 22:00 → 11-13 18:09 |
 | `scalecurve` | `run_scale_curve.sh` | waits for the teacher; GPU0: gen n764 → Mistral server (questions for run `scale`, ≤ 10/paper; controls; teacher answers) → train full → gen full; GPU1: train 1500 → gen → train 3000 → gen; then Q&A for every student (`scale`, `acl-f0-vllm`), report, `ft_compare` |
+| `scaleinterim` | `run_scale_qa_interim.sh` | (Session 40) waits for gen n3000, then Mistral on GPU1 (port 8012): Q&A for n764/1500/3000 on `scale` + `acl-f0-vllm` → `qa_eval/<run>/report_interim.json`, `ft_runs/scale/compare_interim.json`. The final pass then only adds nfull |
 GPU heat settings applied 2026-11-12 09:29; root `gpurestore` (`gpu_restore_after.sh 'run_scale_[[:alnum:]_]+[.]sh'`)
 restores them 10 min after the last scale driver exits. Logs: `scale_driver.log`, `scale_acquire*.log`,
 `scale_teacher_gpu{0,1}.log`, `scale_train_*.log`, `scale_gen_*.log`, `scale_qa.log`, `scale_report_*.log`.
@@ -68,6 +69,21 @@ Rough timeline: acquisition done ~2026-11-12 16:30; teacher ~1-1.5 days; curve ~
   40%), accuracy −1.7 / −1.8 points vs the HF NF4 answerer. A small systematic shift → **every
   scale-up Q&A uses the vLLM answerer**, and the legacy run is re-answered with it as
   `qa_eval/acl-f0-vllm` (same questions) to bridge old and new tables.
+
+## Progress (2026-11-14 07:40 server, Session 40)
+| step | status |
+|---|---|
+| questions, run `scale` | ✔ 10,402 (≤ 10/paper) from 25,388 paragraphs; controls + teacher answered (11-14 00:58) |
+| teacher on test set (Q&A) | ✔ 11.1 / 12.0 (oracle 86.3, closedbook 5.6) — `results.md` Table 25 (interim) |
+| n764 gen | ✔ 11-13 22:07 (GPU0, 3.9 h) |
+| n1500 train → gen | ✔ train 8.5 h (11-14 02:41), gen 3.3 h (06:02) |
+| n3000 train → gen | ⏳ train started 06:03, 18,645 steps × 3.2 s → ~22:30; gen → ~11-15 02:00 (GPU1) |
+| nfull train → gen | ⏳ train started 11-14 01:00, 41,872 steps × 3.2 s → **~11-15 15:30**; gen → ~19:30 (GPU0) |
+| interim Q&A n764/1500/3000 | ⏳ `scaleinterim`, ~11-15 02:00 → ~03:30 |
+| final Q&A + report + ft_compare | ⏳ ~11-15 19:30 → ~21:00 server (≈ 11-16 04:00 the user's local time) |
+
+nfull training data: 315,958 extraction examples (94,787 empty targets = the 30% cap), 1,691
+ontology + 17,325 vocabulary cards; n1500 67,304; n3000 134,434.
 
 ## Built (2026-11-12)
 1. ✔ `scale_finalize.py` (runs inside `run_scale_teacher.sh`). ✔ teacher driver `run_scale_teacher.sh`

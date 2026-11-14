@@ -1,9 +1,9 @@
 # Handoff — next session
 
-**Updated 2026-11-12 10:00 server time (Session 39).** Read in this order:
+**Updated 2026-11-14 07:45 server time (Session 40).** Read in this order:
 1. **[`OBJECTIVE.md`](OBJECTIVE.md)** — the professor's three steps. Everything serves them.
 2. This file — where the work stands and what to do next.
-3. `hands_off.md` §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation; Table 22 = its correctness check).
+3. `hands_off.md` §40, §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation; Table 22 = its correctness check).
 
 > **Standing rule (user):** update the md docs after every meaningful step, as it happens; commit
 > and push to GitHub when the change is important or necessary.
@@ -16,11 +16,17 @@
 - Corpus: 805 ACL papers, fixed entity lists; fold 0 (41 papers) held out.
 - Per-triple judging (C1/C3/C4) and judge-free counts are diagnostics, not the headline.
 
-## State (2026-11-12, 10:00 server time)
-- **⭐ SCALE-UP IN PROGRESS — read [`SCALE_PLAN.md`](SCALE_PLAN.md) first.** User: 5,000+ papers,
-  test set 1,000+. Running: `screen scaleacq` (paper acquisition, CPU/network), `screen scalep0`
-  (curve point 0 training, GPU0). GPU heat settings applied; root `gpurestore` restores them when
-  every `run_scale_*.sh` driver has exited.
+## State (2026-11-14, 07:45 server time)
+- **⭐ SCALE-UP RUNNING — read [`SCALE_PLAN.md`](SCALE_PLAN.md) "Progress" first.** User: 5,000+ papers,
+  test set 1,000+. **Reached: 8,077 papers (7,036 train + 1,041 test).** Done: acquisition, split,
+  teacher on all new papers, questions (10,402), students n764 + n1500 generated. Running:
+  `screen scalecurve` (GPU0 trains nfull → ~11-15 15:30, then gen; GPU1 trains n3000 → ~22:30, then
+  gen) and `screen scaleinterim` (Q&A for n764/1500/3000 on GPU1 at ~11-15 02:00). Final Q&A + report
+  ≈ 11-15 21:00 server. GPU heat settings applied; root `gpurestore` restores them when every
+  `run_scale_*.sh` driver has exited.
+- Interim, `results.md` Table 25: teacher on the 1,041-paper test set 11.1 / 12.0 (oracle 86.3,
+  closedbook 5.6). Students keep 91-93% as many triples as the teacher; n1500 > n764 on kept rate
+  (+5.6 / +4.9) and coverage (+3.6 / +2.0).
 - ✔ Step 2 of the objective MET (Tables 19 / 19b): ontology-free students work.
 - ✔ **Main evaluation, `results.md` Table 20** (accuracy CEO / scinex): oracle 86.3, closedbook 4.4;
   teachers gpt-oss v1 5.0 / 3.3, v2 6.2 / 4.9, **Qwen3-30B 16.7 / 17.0**; ontology-free Qwen3-8B me30
@@ -38,11 +44,15 @@
   Mistral-Small-24B-Instruct-2501.
 
 ## Next steps, in order
-1. **Ask the user what next** (offered 2026-11-12): retrain the student on guard-v2-filtered
-   Qwen3-30B data (`make_guard_variant.py --slugs qwen3-30b-a3b-v2 --papers-from papers_acl.txt
-   --suffix=-g2`, then `build_ft_data.py --teacher qwen3-30b-a3b-v2-g2 --entity-dir output/acl_v2
-   --prompt-variant noont --max-empty-frac 0.3 ...`; ~12 h GPU), a non-Qwen student on that data, or
-   a fresh blind round on the v2 KGs (the C4 v2 numbers are a filtered subset, n 31–48).
+1. **When `scaleinterim` finishes (~11-15 03:30 server):** fill Table 25's n764 / n1500 / n3000 rows
+   from `qa_eval/scale/report_interim.json` + `ft_runs/scale/compare_interim.json`
+   (`scale_report_interim_*.log` hold the paired comparisons); push.
+2. **When `scalecurve` logs `=== curve done` (~11-15 21:00):** final Table 25 from
+   `qa_eval/scale/report_scale.json`, `qa_eval/acl-f0-vllm/report_scale.json`,
+   `ft_runs/scale/compare_curve.json`; then a blind C1/C3/C4 round (in-session judge) on nfull vs
+   n764 vs teacher; check `gpu_restore.log` says RESTORED; update docs; push.
+3. Earlier option list (paused by the scale-up): non-Qwen student on the guard-v2 data; fresh blind
+   round on the v2 KGs.
 2. ✔ bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` (57 GB) deleted 2026-11-11 with the user's OK. Still
    unapproved: the 2 AWQ stubs (27 MB) and the pip cache (7.3 GB).
 3. New GPU runs start at default settings: re-apply the clock locks first (§38.1); sudo password not
