@@ -70,17 +70,17 @@ Rough timeline: acquisition done ~2026-11-12 16:30; teacher ~1-1.5 days; curve ~
   scale-up Q&A uses the vLLM answerer**, and the legacy run is re-answered with it as
   `qa_eval/acl-f0-vllm` (same questions) to bridge old and new tables.
 
-## Progress (2026-11-14 07:40 server, Session 40)
-| step | status |
+## ✔ DONE (2026-11-15 22:52 server; GPU settings restored 23:03) — results `results.md` Table 25
+| step | finished |
 |---|---|
-| questions, run `scale` | ✔ 10,402 (≤ 10/paper) from 25,388 paragraphs; controls + teacher answered (11-14 00:58) |
-| teacher on test set (Q&A) | ✔ 11.1 / 12.0 (oracle 86.3, closedbook 5.6) — `results.md` Table 25 (interim) |
-| n764 gen | ✔ 11-13 22:07 (GPU0, 3.9 h) |
-| n1500 train → gen | ✔ train 8.5 h (11-14 02:41), gen 3.3 h (06:02) |
-| n3000 train → gen | ⏳ train started 06:03, 18,645 steps × 3.2 s → ~22:30; gen → ~11-15 02:00 (GPU1) |
-| nfull train → gen | ⏳ train started 11-14 01:00, 41,872 steps × 3.2 s → **~11-15 15:30**; gen → ~19:30 (GPU0) |
-| interim Q&A n764/1500/3000 | ⏳ `scaleinterim`, ~11-15 02:00 → ~03:30 |
-| final Q&A + report + ft_compare | ⏳ ~11-15 19:30 → ~21:00 server (≈ 11-16 04:00 the user's local time) |
+| n3000 train → gen | 11-14 22:41 (16.6 h) → 11-15 01:58 |
+| interim Q&A (n764/1500/3000, GPU1) | 11-15 02:58 |
+| nfull train → gen | 11-15 18:59 (42 h) → 22:28 |
+| final Q&A + report + ft_compare | 11-15 22:52 |
+
+**Answer to the question:** yes — Q&A rises monotonically 10.3 → 11.4 / 10.8 → 12.0 (nfull − n764
++1.1 / +1.3, CIs above 0) and the ontology-free 8B student reaches its 30B teacher (nfull − teacher
++0.3 / 0.0); gains shrink with each doubling. Correctness: blind round `scale-test` (Table 26).
 
 nfull training data: 315,958 extraction examples (94,787 empty targets = the 30% cap), 1,691
 ontology + 17,325 vocabulary cards; n1500 67,304; n3000 134,434.
