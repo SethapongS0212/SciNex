@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b79eae7adb9 -----
+TRIPLE:     (Product Aspect Rating Prediction)  --addresses-->  (aspect extraction)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The product aspect rating prediction problem usually involves two subtasks: aspect extraction and sentiment identification.
+
+----- triple_id: be697e80efd -----
+TRIPLE:     (Dialogues)  --extractedfrom-->  (REX-J corpus)
+PREDICATE DEFINITION: ? → AcademicPaper  |  Links an extracted entity to the academic paper it was extracted from.
+SOURCE SENTENCE: We used 40 dialogues in the REX-J corpus6, containing 2,048 referring expressions.
+
+----- triple_id: bd05044e454 -----
+TRIPLE:     (NMT)  --trainedon-->  (WMT18)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: We will now describe the most significant results obtained with the German→English NMT models we trained for WMT18 (based on the architecture and parameters outlined in Section 3).
+
+----- triple_id: bbb03468b67 -----
+TRIPLE:     (NLP Research)  --addresses-->  (statistical significance testing)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: This emphasis on empirical results highlights the role of statistical significance testing in NLP research: if we rely on empirical evaluation to validate our hypotheses and reveal the correct language processing mechanisms, we better be sure that our results are not coincidental.
+
+----- triple_id: bd9048035b4 -----
+TRIPLE:     (hyperlinks)  --extractedfrom-->  (Wikipedia articles)
+PREDICATE DEFINITION: ? → AcademicPaper  |  Links an extracted entity to the academic paper it was extracted from.
+SOURCE SENTENCE: Previous works trained their models on 2.6 million mentions obtained by mapping hyperlinks in Wikipedia articles to Freebase5.
+
+----- triple_id: b20bdfc5b01 -----
+TRIPLE:     (German)  --addresses-->  (morphologically)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: To show the potential of our approach, we chose to perform a case study on German, a morphologically- rich language.
+
+----- triple_id: b70b54c2fdc -----
+TRIPLE:     (Annotation Tool)  --achieves-->  (no delay in returning new instances)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The annotation tool performs all necessary computations asynchronously with GUI and returns new instances without any delay.
+
+----- triple_id: be957813b55 -----
+TRIPLE:     (Neural Network Models)  --achieves-->  (higher accuracy gains)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Still, recent work (Roth and Lapata, 2016; He et al., 2017; Marcheggiani and Titov, 2017) indicates that neural network models could see even higher accuracy gains by leveraging syntactic information rather than ignoring it.
+
+----- triple_id: b4cea6eafc2 -----
+TRIPLE:     (Newswire Articles)  --extractedfrom-->  (HTML metadata)
+PREDICATE DEFINITION: ? → AcademicPaper  |  Links an extracted entity to the academic paper it was extracted from.
+SOURCE SENTENCE: We identify newswire articles and use the summaries provided in the HTML metadata.
+
+----- triple_id: be6196aaf9d -----
+TRIPLE:     (bigram language model)  --achieves-->  (order of the aspects in the final summary)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We use an aspect-based bigram language model to decide the order of the aspects in the final summary.
+
+----- triple_id: bbe29e6a62b -----
+TRIPLE:     (Dependency Parser)  --achieves-->  (highly-competitive constituent parser)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Very recently, Fern´andez-Gonz´alez and Martins (2015) also show that an off-the-shelf, trainable, dependency parser is enough to build a highly-competitive constituent parser.
+
+----- triple_id: bad93391184 -----
+TRIPLE:     (Individual Word Domains)  --achieves-->  (triggering in n-gram language models)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Triggering Individual Word Domains in n-gram Language Models. The 7th European Conference on Speech Communication and Technology, 1, 701-704.
+
+----- triple_id: bf53aaa6c87 -----
+TRIPLE:     (empirical results)  --achieves-->  (state-of-the-art performances)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: empirical results suggest that our method obtains state-of-the-art performances.
+
+----- triple_id: b1f0b7b744e -----
+TRIPLE:     (Random Forest)  --achieves-->  (best performance)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: A Random Forest classifier performed the best.
+
+----- triple_id: bc8050e0b52 -----
+TRIPLE:     (Topic Detection and Tracking)  --achieves-->  (detection of new event)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Research in novelty mining could be traced back to the Topic Detection and Tracking (TDT) evaluation campaigns where the concern was to detect new event from online news streams.
+
+----- triple_id: b30807185ba -----
+TRIPLE:     (Inter-Annotator Agreement)  --achieves-->  (0.6775 Kappa Coefficient on binary task)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Two inter-annotator agreement measures are calculated for the binary and ranking tasks – Cohen's Kappa and Krippendorff's Alpha. The Kappa coefficient represents the average of scores across all pairs of raters for consistency with previous CWI studies.
+
+----- triple_id: b5a01a2758f -----
+TRIPLE:     (Reranking)  --produces-->  (N spans)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: A final reranking of selecting top N from the list would produce N spans.
+
+----- triple_id: b62d4057195 -----
+TRIPLE:     (Path-based)  --achieves-->  (performance)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Although they prevail over the path-based models in performance, they are weak in interpretability since their intermediate reasoning process is black-box neural network layers.
+
+----- triple_id: be6c9066250 -----
+TRIPLE:     (Model Compression)  --addresses-->  (finding smallest set of parameters for satisfactory solutions)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: There also exist connections between intrinsic dimensionality, knowledge distillation, and other model compression methods. Fundamentally intrin- sic dimensionality attempts to find the smallest set of parameters needed to tune to reach satisfactory solutions, which can be thought of as a sparsifica- tion or distillation problem .
+
+----- triple_id: b08484e3d84 -----
+TRIPLE:     (Multimodal Fusion)  --uses-->  (gate-based)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: For the cases with only one face and one aspect, we directly use the aspect to modify the face description generated in the face-sensitive image-to-emotional-text translation module and add a sentence "There are 1 people in the image.", and take the new face description as input to gate-based multimodal fusion module.
+
+----- triple_id: bf3f68a2caa -----
+TRIPLE:     (Language Model)  --uses-->  (layer dimensionality 250 (embedding) and 500 (GRU))
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: For the language model, we use layer dimension- alities 250 (embedding) and 500 (GRU).
+
+----- triple_id: b7c921dca45 -----
+TRIPLE:     (fine-tuning)  --achieves-->  (adaptation to new tasks)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We find that, for both prompt-tuning and fine-tuning, pre-trained models can more easily adapt to existing relations than to novel (permuted) ones, but they are still able to adapt to new tasks, especially compared to non-pre-trained models.
+
+----- triple_id: bcfdf7862da -----
+TRIPLE:     (anaphors)  --achieves-->  (derivation of features based on the corresponding antecedent)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: For those candidate targets that have been recog- nized as anaphors (see Section 2), these features were derived based on the corresponding antecedent.
+
+----- triple_id: bb55d34dcb3 -----
+TRIPLE:     (Annotation)  --achieves-->  (80% semi-automatically)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Around 80% of the annotation was performed semi–automatically, making use of a system of 48 rules (Table 2) to identify the most common source –cue patterns, and then manually corrected.
+
+----- triple_id: b84eeb7be20 -----
+TRIPLE:     (Random Forest)  --achieves-->  (classification tasks)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We used distributed representation (Doc2Vec) for creating feature vector which was passed as the input to machine learning algorithm such as Linear Regression for regression tasks and Random Forest Tree for classification tasks.

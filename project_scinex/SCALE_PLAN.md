@@ -80,7 +80,9 @@ Rough timeline: acquisition done ~2026-11-12 16:30; teacher ~1-1.5 days; curve ~
 
 **Answer to the question:** yes — Q&A rises monotonically 10.3 → 11.4 / 10.8 → 12.0 (nfull − n764
 +1.1 / +1.3, CIs above 0) and the ontology-free 8B student reaches its 30B teacher (nfull − teacher
-+0.3 / 0.0); gains shrink with each doubling. Correctness: blind round `scale-test` (Table 26).
++0.3 / 0.0); gains shrink with each doubling. Correctness (blind round `scale-test`, Table 26): C4 flat with training size and student = teacher
+(teacher 40 / 37, n764 33 / 43, nfull 40 / 35); only 16-22% of triples strictly correct — the
+errors come from the teacher's targets.
 
 nfull training data: 315,958 extraction examples (94,787 empty targets = the 30% cap), 1,691
 ontology + 17,325 vocabulary cards; n1500 67,304; n3000 134,434.

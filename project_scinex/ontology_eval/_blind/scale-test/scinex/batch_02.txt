@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bb8a32ae718 -----
+TRIPLE:     (example-based)  --evaluatedon-->  (100 misclassified tweets)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: For the following example-based error analysis of the MT approach, we therefore only consider examples where both MT systems lead to the same SA label, taking a random sample of 100 misclassified tweets.
+
+----- triple_id: b03af5eb6f4 -----
+TRIPLE:     (BERT)  --uses-->  (Word Segmentation)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: BERT uses the wordpiece tool for word segmentation and inserts special separators ([CLS], which are used to separate each sample) and separator ([SEP], which are used to separate different sentences in the sample).
+
+----- triple_id: b2c1e751fce -----
+TRIPLE:     (Event Coreference Resolution)  --achieves-->  (text understanding)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Event coreference resolution aims to identify and link event mentions in a document that refer to the same real-world event, which is vital for identify- ing the skeleton of a story and text understanding and is beneficial to numerous other NLP applica- tions such as question answering and summariza- tion.
+
+----- triple_id: ba8dfe0b8a6 -----
+TRIPLE:     (Japanese)  --achieves-->  (largest performance loss with cross-lingual transfer)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Among the target languages, Portuguese exhibits the smallest performance difference between monolingual and cross-lingual settings while the largest performance loss with cross-lingual transfer occurs in Japanese, Turkish, Korean, and Hindi.
+
+----- triple_id: b3e2e488ffb -----
+TRIPLE:     (Regular Expressions)  --achieves-->  (conversion of merged syllables to classical forms)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: These types of merged syllables were also converted to their classical forms, using a set of three regular expressions in the Cg3 formalism through the rule SPLITCOHORT.
+
+----- triple_id: b9dcbc7eb23 -----
+TRIPLE:     (embeddings)  --configures-->  (100,000 most frequent)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: To keep a reasonable size of vocabulary, we filter out the semantic functions that occur fewer than 100 times and keep only the 100,000 most frequent embeddings for the encoder.
+
+----- triple_id: b929f55490d -----
+TRIPLE:     (Beam Search)  --achieves-->  (full search for rare long word sequences)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: For the rare long word sequences in the data, a beam search strategy was adopted.
+
+----- triple_id: b34f20e0b3a -----
+TRIPLE:     (pruning)  --addresses-->  (cost-efficient compact models)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Given these findings, future work can explore different approaches to leveraging a large model's capability such as pruning for cost-efficient compact models.
+
+----- triple_id: b112baf767d -----
+TRIPLE:     (NLI)  --evaluatedon-->  (DNLI)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We study this for NLI datasets: SNLI, MNLI, DNLI, and Adversarial NLI (Figure 5).
+
+----- triple_id: b568837601b -----
+TRIPLE:     (Language Model)  --achieves-->  (best results for the recursive autoencoder (RAE))
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The neural language model (NLM) gives best results for the recursive autoencoder (RAE), although the other two representations come close.
+
+----- triple_id: b20e94be42f -----
+TRIPLE:     (Generative Models)  --achieves-->  (coherent and relevant semantics)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: In this paper we proposed to use a dual learning bridge between text and commonsense KB. In this approach, a generative model is trained to transfer a sentence to a path and back. Assembling paths together results in a graph showing the presence of inherent structure, while generated sentences exhibit coherent and relevant semantics. For evaluation, we proposed a novel commonsense KB completion task tailored to generative models.
+
+----- triple_id: b2238752855 -----
+TRIPLE:     (SVM)  --trainedon-->  (combination of texts taken from Le and Ld)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: The SVM is trained on a combination of texts taken from Le and Ld.
+
+----- triple_id: b99f8e91715 -----
+TRIPLE:     (Tagger)  --uses-->  (lemmas and part-of-speech tags)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We propose an alternate method here, which uses lemmas and part-of-speech tags that are output by a tagger/lemmatizer.
+
+----- triple_id: b938d588da2 -----
+TRIPLE:     (Pragmatics)  --addresses-->  (pre-suppositions)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We omit specific aspects of pragmatics such as implicatures and pre-suppositions, as they are rarely observed in NLI datasets.
+
+----- triple_id: bd0f3f22eda -----
+TRIPLE:     (English)  --evaluatedon-->  (Czech translation task)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We focus on the University of Edinburgh's submission to the English-Czech translation task, since its NMT model is available.
+
+----- triple_id: b36df8b9b83 -----
+TRIPLE:     (MDL)  --achieves-->  (compression of gender information)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Our main intrinsic metric is the compression of gender information evaluated by a minimum description length (MDL) probing classifier , trained to predict gender from the model's representations.
+
+----- triple_id: bcffbc1cb0f -----
+TRIPLE:     (German)  --achieves-->  (topic 15)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: 15 war hitler germany german did germans nazi world army nazis 0.17
+
+----- triple_id: b478ab05f14 -----
+TRIPLE:     (N-gram)  --achieves-->  (selection of in-domain data)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: (2015) utilized part-of-speech tags and used a class-based n-gram language model for selecting in-domain data.
+
+----- triple_id: b50aadf5ed2 -----
+TRIPLE:     (BERT)  --achieves-->  (state-of-the-art on GLUE benchmark)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Although RecAdam has shown its effectiveness in fine-tuning BERT-like models (e.g., BERT and ALBERT ) to the GLUE benchmark , ex- ploring the effectiveness of RecAdam in the sec- ond phase of pre-training for generative pre-trained models is not trivial.
+
+----- triple_id: b241d4064c0 -----
+TRIPLE:     (Topic information)  --uses-->  (the same corpus)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: UDP silver POS and topic information use the same corpus, taken from the 100 longest articles in Wikipedia randomly partitioned in a 70/10/20 train/dev/test split.
+
+----- triple_id: bddfedcade3 -----
+TRIPLE:     (Natural Language Generation)  --addresses-->  (English Text)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Following the conceptual authoring approach described in , this interface masks the composition of a formal query as the composition of an English text describing the equivalent information needs using natural language generation techniques.
+
+----- triple_id: b259662c241 -----
+TRIPLE:     (RoBERTa)  --achieves-->  (best FOL reasoning ability in complex scenarios)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Considering four evaluations comprehensively, RoBERTa has the best FOL reasoning ability in complex scenarios and is the only one of three LMs that can provide a certain degree of traceability.
+
+----- triple_id: b8f50fe27ae -----
+TRIPLE:     (FEVER)  --addresses-->  (Verification)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: FEVER: a large-scale dataset for fact extraction and VERification.
+
+----- triple_id: b3e8266ce8f -----
+TRIPLE:     (Scientific Articles)  --evaluatedon-->  (SCROLLS)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: SCROLLS incorporates multiple tasks (summa- rization, question answering, and natural language inference) over various domains (literature, meet- ing transcripts, TV shows, scientific articles, and more), where each example's input typically con- tains thousands of words.
+
+----- triple_id: bb0c66e81fd -----
+TRIPLE:     (Semantic Analysis)  --addresses-->  (color information)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: In Natural Language Processing and semantic analysis in particular, color information may be important in order to properly process textual information (word sense disambiguation, and indexing).

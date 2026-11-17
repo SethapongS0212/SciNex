@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b868d1b81b3 -----
+TRIPLE:     (Sanskrit)  --encompasses-->  (Marathi)
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains
+SOURCE SENTENCE: Hindi and Marathi languages are derived from the Sanskrit and use the "Devanagari" script for writing.
+
+----- triple_id: bf41d0c5bc3 -----
+TRIPLE:     (Spatial Prepositions)  --addresses-->  (commonsense reasoning)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We have introduced a novel and challenging benchmark for commonsense reasoning with spatial prepositions in multiple conceptual domains, and provided initial results on two families of LLMs.
+
+----- triple_id: be42bfbd6d2 -----
+TRIPLE:     (GPT)  --trainedon-->  (text-davinci-001)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: In our experiments, we mainly explore GPT-3.5 mod- els. We use the 6.7B variant of InstructGPT (text-curie-001) and the ≥175B variants, i.e., text-davinci-001 (tuned on instruc- tions), text-davinci-002 (tuned on code and 6Examples can be found in Appendix A.1 7Example prompts for two tasks are in Appendix A.2. instructions), and text-davinci-003 (further tuned with reinforcement learning with human feedback, RLHF).8 For deterministic predictions, all models use greedy decoding (temperature as 0.0)9. We use InstructGPT002 as the default LLM for experiments due to its powerful capability and the fact that it has been extensively researched and applied as of the time of writing this paper. We also include the recent ChatGPT , which is built upon InstructGPT and trained with dialogue data and RLHF.
+
+----- triple_id: bd229c3463a -----
+TRIPLE:     (Phrase-Based Statistical Machine Translation)  --uses-->  (word embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: To resolve the issue, we use word embeddings and phrase-based statistical machine translation to translate English personality adjectives into Japanese.
+
+----- triple_id: be87b9b3a21 -----
+TRIPLE:     (reranker)  --uses-->  (span representations)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The answer reranker aims to rerank the candidate answers proposed by the previous reader. We first introduce a span-level non-maximum suppression algorithm to prune redundant candidate spans, and then predict the reranking scores for remaining candidates using their span representations.
+
+----- triple_id: b28f0fa4191 -----
+TRIPLE:     (Sentence Embedding)  --produces-->  (degenerated sentence-level semantic features)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: We hypothesize that associative chaining pushes usage embeddings of related meta-senses too close to each other, so that some important sentence-level semantic features in the sentence embedding become degenerated.
+
+----- triple_id: b7d93186414 -----
+TRIPLE:     (Language Identification)  --achieves-->  (near perfect precision/recall)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Language identification is carried out with near perfect precision/recall at the level of identifiable paragraph-like units longer than a specified threshold of characters using the algorithm of Lui and Baldwin (2012).
+
+----- triple_id: bf4d76f3db9 -----
+TRIPLE:     (Large Language Models)  --achieves-->  (reasoning)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Chain of thought prompting elicits reasoning in large language models.
+
+----- triple_id: b6001e87cb3 -----
+TRIPLE:     (LISA)  --trainedon-->  (CoNLL-2005 SRL)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: In experiments on CoNLL-2005 SRL, LISA achieves new state-of-the-art performance for a model using predicted predicates and standard word embeddings, attaining 2.5 F1 absolute higher than the previous state-of-the-art on newswire and more than 3.5 F1 on out-of-domain data, nearly 10% reduction in error.
+
+----- triple_id: bf2c0d55995 -----
+TRIPLE:     (DistilBERT)  --comprises-->  (12 encoder layers)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: For training from scratch, we use the DistilBERT model configuration with 12 encoder layers and 12 attention heads.
+
+----- triple_id: bd25a0efc30 -----
+TRIPLE:     (SVM)  --achieves-->  (0.98 accuracy on Intent Classification)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: For intent classification, we measure accuracy of two models: an SVM using bag of words feature representation, and FastText , a neural network that averages across sentence embeddings and passes the result through feedforward layers.
+
+----- triple_id: bbb7c1205a7 -----
+TRIPLE:     (data-driven)  --addresses-->  (corpus dependent senses)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In contrast to WSD which relies on curated sense inventories, our method is data-driven, therefore resulting senses are corpus dependent.
+
+----- triple_id: bfcea25121d -----
+TRIPLE:     (Transformer)  --achieves-->  (performance superior to all baselines)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: In response, we also propose CRONKGQA, a transformer-based solution that exploits recent advances in Temporal KG embeddings, and achieves performance superior to all baselines, with an increase of 120% in accuracy over the next best performing method.
+
+----- triple_id: b2637e5f1fd -----
+TRIPLE:     (N-gram)  --addresses-->  (local features)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In each region, a convolutional layer is first used to extract local n-gram features.
+
+----- triple_id: bdca4a277bd -----
+TRIPLE:     (web services)  --produces-->  (user-friendly web application)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: The web services described in this paper entails the implementation of existing technologies as web services that are accessible via an application programming interface (API) and a user-friendly web application which leverages the API, described in Section 5.
+
+----- triple_id: b37a31b3a37 -----
+TRIPLE:     (Pre-training)  --addresses-->  (English dialogue)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Specifically, we collect an English dialogue pre-training corpus, which consists of 1 million conversations from Reddit.
+
+----- triple_id: b71667899f5 -----
+TRIPLE:     (semantic parser)  --addresses-->  (lexical similarity)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Apply a shallow semantic parser to both E and F. Apply the maximum weighted bipartite matching algorithm to align the semantic frames between E and F according to the lexical similarities of the predicates.
+
+----- triple_id: b74e6235cbf -----
+TRIPLE:     (MT Systems)  --evaluatedon-->  (n-grams)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: The metrics currently used to evaluate MT systems are generally based on measuring the degree of overlap of n-grams between an MT translation and a human-generated reference translation as a way of measuring translation quality.
+
+----- triple_id: bf439e4ad3d -----
+TRIPLE:     (XLNet)  --reports-->  (Generalized autoregressive pretraining for language understanding)
+PREDICATE DEFINITION: AcademicPaper → ResearchProcess  |  subject MUST be the paper itself (rare in fixed extraction — only use when the sentence is about what the paper as a whole describes). Do NOT use with Model or Method as subject — use achieves instead
+SOURCE SENTENCE: Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Ruslan Salakhutdinov, and Quoc V Le. Xlnet: Generalized autoregressive pretrain- ing for language understanding.
+
+----- triple_id: b04b8718f5b -----
+TRIPLE:     (Logistic Regression)  --uses-->  (labeled documents)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Logistic Regression is a vanilla supervised classification baseline. It only leverages labeled documents to build a text classifier and predict risk categories.
+
+----- triple_id: bfbaff462ab -----
+TRIPLE:     (Neural Nets)  --addresses-->  (unpredictability)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Such unpredictability combined with continuity and topology-preserving properties of neural nets pro- pel the phenomenon identified, namely mapped vectors resembling more the input than the target vectors, in nearest neighbors terms.
+
+----- triple_id: b8c1488463a -----
+TRIPLE:     (Precision)  --achieves-->  (71.15%)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Nonetheless, we can observe that amongst the three experiments (UU-Tax, Single-stage #1 and Single-stage #2) the highest recall of 96.26% is achieved in the (Single stage #2) along with the lowest precision of 71.15%.
+
+----- triple_id: bdea860c722 -----
+TRIPLE:     (Language Model)  --uses-->  (KenLM)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We trained a Moses system , with the following settings: a maximum sentence length of 80, Fast-Aligner for word-alignments , an interpolated Kneser-Ney smoothed 5-gram language model with KenLM , lexicalized reordering model , a 5-gram operation sequence model and other default pa- rameters.
+
+----- triple_id: bcc8d463855 -----
+TRIPLE:     (Graph-based Algorithms)  --achieves-->  (comparable levels of performance)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Second, in an extrinsic evaluation on the Word Sense Disambiguation (WSD) task we replace several original measures with their vectorized counterparts in a known graph-based WSD algorithm by Sinha and Mi- halcea (2007), reaching comparable levels of per- formance with the graph-based algorithms while maintaining computational gains.
+
+----- triple_id: b981d565738 -----
+TRIPLE:     (VAE)  --achieves-->  (sentence sampling)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: VAE allows sentence sampling and sentence interpolation in the continuous latent space

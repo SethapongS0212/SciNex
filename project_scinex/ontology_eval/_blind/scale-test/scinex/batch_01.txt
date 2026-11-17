@@ -1,0 +1,165 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b1313d82080 -----
+TRIPLE:     (PubMed)  --extractedfrom-->  (BioCausal)
+PREDICATE DEFINITION: ? → AcademicPaper  |  Links an extracted entity to the academic paper it was extracted from.
+SOURCE SENTENCE: BioCausal: The full biomedical causal detection dataset we developed (BioCausal-Large) contains 13,342 sentences from PUBMED, of which 7,562 causal.
+
+----- triple_id: bd2efd7cd21 -----
+TRIPLE:     (Dialogue Agents)  --achieves-->  (personalized dialogue)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Saizheng Zhang, Emily Dinan, Jack Urbanek, Arthur Szlam, Douwe Kiela, and Jason Weston. Personalizing dialogue agents: I have a dog, do you have pets too?
+
+----- triple_id: b8ac8f9539a -----
+TRIPLE:     (Automated Fact Checking)  --addresses-->  (Misinformation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Automated fact checking can help prevent the propagation of misinformation and has great potential to bring value to society.
+
+----- triple_id: bfa8b0f2865 -----
+TRIPLE:     (Log-linear Models)  --addresses-->  (shallow models)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: These approaches are however applied to shallow models such as log-linear models.
+
+----- triple_id: b79a92902dd -----
+TRIPLE:     (Genetic Algorithm)  --uses-->  (decision trees)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: We employed a genetic algorithm for feature selection, using decision trees as backbones.
+
+----- triple_id: b3c886c4eac -----
+TRIPLE:     (Syntax-based)  --achieves-->  (great progress in this area)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: While we cannot declare complete success, our syntax-based systems constitute great progress in this area.
+
+----- triple_id: b4b7159ffa0 -----
+TRIPLE:     (NLP Research)  --addresses-->  (English)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: What explains the dominance of English in NLP research?
+
+----- triple_id: b906a724b7b -----
+TRIPLE:     (Synthesis)  --achieves-->  (image generation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: And for image SYNTHESIS, we utilize the newly released DALL·E-mini7 which chooses VQGAN as the image encoder/decoder and BART as the autoregressive transformer.
+
+----- triple_id: b71870263f3 -----
+TRIPLE:     (classifier)  --produces-->  (polarity indicator vector y)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: For each decoder, the input state is represented by the sum- mation of the four input i.e., the polarity indicator vector y from the classifier or the labeled dataset, the context vector z from the encoder, the input token embedding ext and the position embedding pxt: ←− h trm t = ←−− ftrm(e[xt:a], pxt, y, z), xt ∈[xl: a] p(xt−1|·) = softmax(Wp ←−h trm t + bp), −→h trm t = −−→ ftrm(e[a:xt], pxt, y, z), xt ∈[a: xr]
+
+----- triple_id: b0a5fbdbdef -----
+TRIPLE:     (Metaphor Detection)  --supports-->  (text generation)
+PREDICATE DEFINITION: ExperimentalMeasurement → ExperimentalOutcome  |  Links a quantitative experimental measurement to the qualitative conclusion it provides evidence for
+SOURCE SENTENCE: Automatic reasoning about LE supports tasks such as taxonomy creation , natural lan- guage inference , text generation , and metaphor detection .
+
+----- triple_id: be71fdb55f8 -----
+TRIPLE:     (LSTM)  --uses-->  (attention mechanism)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: (2016) propose a model to incorporate user and product information into an LSTM with attention mechanism.
+
+----- triple_id: b0becca31ff -----
+TRIPLE:     (multi-view)  --comparesagainst-->  (CPG)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Note that our multi-view graph is different from CPG. which is original for C/C++ only and we do not find an appropriate analysis platform for other languages.
+
+----- triple_id: b5708187533 -----
+TRIPLE:     (Text Categorization)  --addresses-->  (information extraction)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Such methods have been used in different tasks like text categorization ( ¨Ozg¨ur et al., 2005) and information retrieval to extract the required information.
+
+----- triple_id: be1fc182fae -----
+TRIPLE:     (Two Corpora)  --comprises-->  (French dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: Data were taken from two corpora: a small French dataset (n = 57), collected at the Memory Clinic and Research Centre of the University Hospital Nice, and the Pitt subcorpus of DementiaBank, containing 550 English samples2.
+
+----- triple_id: b3c0dae4299 -----
+TRIPLE:     (AMP)  --configures-->  (FP16 mixed precision training)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: FP16 AMP setup uses NVIDIA's automatic mixed precision1 and the FP32 baseline is the default implementation from Pytorch.
+
+----- triple_id: b442d9a4af2 -----
+TRIPLE:     (parser)  --addresses-->  (coordination)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We target database querying applications, where the parser needs to handle superlatives, comparatives, negation, and coordination.
+
+----- triple_id: bc0c1e0e994 -----
+TRIPLE:     (post-processing)  --achieves-->  (improve semantic vectors by leveraging lexicon-derived relational information)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: More recently, a retrofitting technique has been introduced into improve semantic vectors by leveraging lexicon-derived relational information in a post-processing stage.
+
+----- triple_id: b3f5408fe2f -----
+TRIPLE:     (Twitter)  --evaluatedon-->  (real-world datasets)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: Extensive experiments on real-world datasets collected from TWITTER demonstrate our proposed model outperforms state-of-the-art rumor verification methods with large margin.
+
+----- triple_id: b814e968087 -----
+TRIPLE:     (Human Languages)  --achieves-->  (positive entropy rates)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: In this way, we uncover a possibility that the entropy rates of human languages are positive but 20% smaller than previously reported.
+
+----- triple_id: b83c6962397 -----
+TRIPLE:     (Inference)  --trainedon-->  (MuST-C training set)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: During inference, the features are computed on the fly and CMVN normalization is based on the global mean and variance estimated on the MuST-C training set.
+
+----- triple_id: bc37429ae66 -----
+TRIPLE:     (Systematic Evaluation)  --addresses-->  (understanding and reasoning within the temporal domain)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: This area reveals a necessity for a systematic evaluation of LLMs' understanding and reasoning within the temporal domain.
+
+----- triple_id: b53f2b63523 -----
+TRIPLE:     (Chinese)  --addresses-->  (usernames)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Specifically, we conduct all of the human evaluations via full-time Chinese employees from the Chinese data annotation platform, ensuring all of the personal information of the workers involved (e.g., usernames, emails, URLs, demographic information, etc.) is discarded.
+
+----- triple_id: bbfe8f9002a -----
+TRIPLE:     (Classification)  --evaluatedon-->  (cross-validation set)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We split the data randomly into two subsets, one as a development set for observation and analysis, and the other as a cross-validation set for classification.
+
+----- triple_id: b8438d9f1b1 -----
+TRIPLE:     (Discourse Information)  --achieves-->  (better perplexity on held-out data)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: By adding discourse information as a latent variable, we attain better perplexity on held-out data.
+
+----- triple_id: b9e11f0596c -----
+TRIPLE:     (Inference)  --achieves-->  (iterative refinement only based on ENCODER-DECODER)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: During inference, we abandon ARDECODER and perform iterative refinement only based on ENCODER-DECODER.

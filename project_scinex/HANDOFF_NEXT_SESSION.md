@@ -1,6 +1,6 @@
 # Handoff — next session
 
-**Updated 2026-11-14 07:45 server time (Session 40).** Read in this order:
+**Updated 2026-11-17 17:50 server time (Session 40).** Read in this order:
 1. **[`OBJECTIVE.md`](OBJECTIVE.md)** — the professor's three steps. Everything serves them.
 2. This file — where the work stands and what to do next.
 3. `hands_off.md` §40, §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation; Table 22 = its correctness check).
@@ -16,17 +16,17 @@
 - Corpus: 805 ACL papers, fixed entity lists; fold 0 (41 papers) held out.
 - Per-triple judging (C1/C3/C4) and judge-free counts are diagnostics, not the headline.
 
-## State (2026-11-14, 07:45 server time)
-- **⭐ SCALE-UP RUNNING — read [`SCALE_PLAN.md`](SCALE_PLAN.md) "Progress" first.** User: 5,000+ papers,
-  test set 1,000+. **Reached: 8,077 papers (7,036 train + 1,041 test).** Done: acquisition, split,
-  teacher on all new papers, questions (10,402), students n764 + n1500 generated. Running:
-  `screen scalecurve` (GPU0 trains nfull → ~11-15 15:30, then gen; GPU1 trains n3000 → ~22:30, then
-  gen) and `screen scaleinterim` (Q&A for n764/1500/3000 on GPU1 at ~11-15 02:00). Final Q&A + report
-  ≈ 11-15 21:00 server. GPU heat settings applied; root `gpurestore` restores them when every
-  `run_scale_*.sh` driver has exited.
-- Interim, `results.md` Table 25: teacher on the 1,041-paper test set 11.1 / 12.0 (oracle 86.3,
-  closedbook 5.6). Students keep 91-93% as many triples as the teacher; n1500 > n764 on kept rate
-  (+5.6 / +4.9) and coverage (+3.6 / +2.0).
+## State (2026-11-17, 17:50 server time)
+- **✔ SCALE-UP DONE** ([`SCALE_PLAN.md`](SCALE_PLAN.md)): 8,077 ACL papers (7,036 train + 1,041 test),
+  finished 2026-11-15 22:52; GPU settings restored 23:03 (`gpu_restore.log`). Nothing running.
+- ⭐ **`results.md` Table 25 (main evaluation, 10,402 questions on 1,041 test papers):** the
+  ontology-free Qwen3-8B student improves monotonically with training papers — 764 → 1,500 → 3,000 →
+  7,036: 10.3 → 10.8 → 11.2 → 11.4 (CEO) / 10.8 → 11.0 → 11.8 → 12.0 (scinex); nfull − n764 +1.1 /
+  +1.3 (CIs above 0); **it reaches its 30B teacher** (nfull − teacher +0.3 / 0.0); kept rate 68 → 82%,
+  coverage 51.5 → 59.3% (teacher 60.4%). Diminishing returns per doubling. Oracle 86.3, closedbook 5.6.
+- **Table 26 (blind C1/C3/C4, round `scale-test`):** C4 teacher 40 / 37, n764 33 / 43, nfull 40 / 35 —
+  flat with data, student = teacher; only 16-22% strictly correct. Scaling buys coverage, not
+  precision; the precision ceiling is the teacher's targets.
 - ✔ Step 2 of the objective MET (Tables 19 / 19b): ontology-free students work.
 - ✔ **Main evaluation, `results.md` Table 20** (accuracy CEO / scinex): oracle 86.3, closedbook 4.4;
   teachers gpt-oss v1 5.0 / 3.3, v2 6.2 / 4.9, **Qwen3-30B 16.7 / 17.0**; ontology-free Qwen3-8B me30
@@ -44,15 +44,11 @@
   Mistral-Small-24B-Instruct-2501.
 
 ## Next steps, in order
-1. **When `scaleinterim` finishes (~11-15 03:30 server):** fill Table 25's n764 / n1500 / n3000 rows
-   from `qa_eval/scale/report_interim.json` + `ft_runs/scale/compare_interim.json`
-   (`scale_report_interim_*.log` hold the paired comparisons); push.
-2. **When `scalecurve` logs `=== curve done` (~11-15 21:00):** final Table 25 from
-   `qa_eval/scale/report_scale.json`, `qa_eval/acl-f0-vllm/report_scale.json`,
-   `ft_runs/scale/compare_curve.json`; then a blind C1/C3/C4 round (in-session judge) on nfull vs
-   n764 vs teacher; check `gpu_restore.log` says RESTORED; update docs; push.
-3. Earlier option list (paused by the scale-up): non-Qwen student on the guard-v2 data; fresh blind
-   round on the v2 KGs.
+1. **Ask the user what next.** Options the scale-up points to: (a) better training targets — the
+   precision ceiling is the teacher (Table 26): predicate-specific guards for `addresses` /
+   `achieves`, or an ensembled / stronger teacher; (b) write-up for the professor (Tables 20, 25, 26
+   are the story: ontology-free student = teacher, improves with data, precision is the open problem);
+   (c) a non-Qwen student on the 7,036-paper data.
 2. ✔ bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` (57 GB) deleted 2026-11-11 with the user's OK. Still
    unapproved: the 2 AWQ stubs (27 MB) and the pip cache (7.3 GB).
 3. New GPU runs start at default settings: re-apply the clock locks first (§38.1); sudo password not

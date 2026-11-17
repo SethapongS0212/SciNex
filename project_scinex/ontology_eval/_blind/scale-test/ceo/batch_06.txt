@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bcc9ac5d3d5 -----
+TRIPLE:     (preprocessing)  --uses-->  (XML)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Basic preprocessing was applied to both the specialized and the reference corpora, which included extracting the text from the XML files that comprise the corpus, replacing non-ASCII characters with ASCII equivalents and tokenizing.
+
+----- triple_id: baa72b7289f -----
+TRIPLE:     (Attention)  --achieves-->  (0.89 F1-score on gender)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: We also collected and curated a novel Twitter demographic dataset and explored different variants of deep multi-modal multi-task learning architectures, settling on the Hierarchical-Attention DMT as the top performing model, achieving an F1-score of 0.89, 0.82, 0.86, and 0.68 for gender, age, political orientation, and location respectively.
+
+----- triple_id: bdd62db9a69 -----
+TRIPLE:     (Linguistic knowledge)  --encompasses-->  (syntax)
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains
+SOURCE SENTENCE: In addition to layer-wise representations, subspaces that encode specific linguistic knowledge, such as syntax, have been a popular area of study.
+
+----- triple_id: b0e63052384 -----
+TRIPLE:     (ICLM)  --uses-->  (Aligner / Captioner mode of our architecture)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use the Aligner / Captioner mode of our architecture for this task. Image Caption Language Modeling (ICLM).
+
+----- triple_id: b82a1e86494 -----
+TRIPLE:     (Speech Acts)  --addresses-->  (cross domain classification model learning)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Our research findings and datasets can also be employed to similar problems, like classification of speech acts, summarisation, verb based keyphrase extraction, and cross domain classification model learning.
+
+----- triple_id: b0a611155f8 -----
+TRIPLE:     (SOM)  --achieves-->  (better results over DUAL)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: We also find that SOM yields better results over DUAL while hard sampling leads to better optimization.
+
+----- triple_id: b3ef8d2d6ee -----
+TRIPLE:     (SVM)  --uses-->  (RBF kernel)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: (2008) propose a feature-based SVM regression model with RBF kernel that predicts syntactic parser performance on different domains.
+
+----- triple_id: b028cc319cd -----
+TRIPLE:     (Forum Data)  --uses-->  (r/racism)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For forum data, we sample comments in subreddits known for anti-racism: r/racism, r/BlackLivesMatter, and r/StopAntiAsianRacism.
+
+----- triple_id: bcc9323a649 -----
+TRIPLE:     (Emotion Annotation)  --evaluatedon-->  (SemEval 2007 Affective Text task)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: The SemEval 2007 Affective Text task focused on emotion annotation and classification where a dataset of 1, 250 news headlines was human labeled with the 6 basic emotions of Ekman and provided to participants.
+
+----- triple_id: b8c505a8bfd -----
+TRIPLE:     (Entity Recognition)  --addresses-->  (biomedical domain)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: To demonstrate their ability to work in concert, we illustrate how to use them to address an interactive domain adaptation task in biomedical entity recognition.
+
+----- triple_id: bc55a95c88f -----
+TRIPLE:     (Causal Sentences)  --addresses-->  (causal relations)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: BioCausal includes causal sentences both with and without explicit clues.
+
+----- triple_id: baf651736c3 -----
+TRIPLE:     (SVM)  --addresses-->  (irrelevant features)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The SVM must therefore learn to disregard many irrelevant features. We observe that this is not necessary, and develop an SVM that only uses the relevant attributes in the score for each class.
+
+----- triple_id: bac3674247f -----
+TRIPLE:     (Faster R-CNN)  --trainedon-->  (Visual Genome)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: The input images are preprocessed using Faster R-CNN pre-trained on Visual Genome, hence obtaining 100 object regions per image.
+
+----- triple_id: bf1c1427c3f -----
+TRIPLE:     (Language Model)  --addresses-->  (Low Error Density Domains)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: This analysis suggests that the inability to rely on a strong internal language model representation can negatively impact SOTA system performance on CWEB and on low error density domains in general.
+
+----- triple_id: bdba5412152 -----
+TRIPLE:     (Case Study)  --addresses-->  (political parody)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In the future, we plan to study more in depth the stylistic and figurative devices used for parody, extend the data set beyond the political case study and explore human behavior regarding parody, including how this is detected and diffused through social media.
+
+----- triple_id: bf54d572d62 -----
+TRIPLE:     (Entity Recognition)  --uses-->  (MedMentions dataset)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: First we extracted the medical entities by exploiting the entity recognition model2 trained on MedMentions dataset , from a given pair P and H.
+
+----- triple_id: bcab3fc9e05 -----
+TRIPLE:     (French)  --evaluatedon-->  (reduced semantic space (300 dimensions) using svd)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: We then compared the different composition methods on different versions of the same semantic space (both for French and English): the full semantic space, a reduced version of the space to 300 dimensions using singular value decomposition (svd, ), and a reduced version of the space to 300 dimensions using non-negative matrix factorization (nmf, ).
+
+----- triple_id: b80d653d254 -----
+TRIPLE:     (Hierarchical Representations)  --produces-->  (feature hierarchy)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: Fundamentally, neural networks operate via a concept of feature hierarchy, in which hierarchical representations are constructed as sequences propagate across the network.
+
+----- triple_id: bfeb6814c01 -----
+TRIPLE:     (Aggregation)  --uses-->  (Enc(X) and z′)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: re-decode the aggregation of Enc(X) and z′.
+
+----- triple_id: b771555a6ac -----
+TRIPLE:     (TinyBERT)  --achieves-->  (substantial increase in OOD)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Having a claim-only biased model for FEVER rather than a TinyBERT model yields a substantial increase in OOD, as can be seen in the results.
+
+----- triple_id: bff3d8fca96 -----
+TRIPLE:     (hyperlinks)  --uses-->  (proper name + nominal + pronominal coreference mentions)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Line 6-7: hyperlinks + proper name + nominal + pronominal coreference mentions (all steps).
+
+----- triple_id: b54d8250158 -----
+TRIPLE:     (GPT-2)  --trainedon-->  (existing, labeled datasets)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: (2020a) fine-tune GPT-2 on existing, labeled datasets to generate claims for given topics.
+
+----- triple_id: bf6c19f2dda -----
+TRIPLE:     (MRC)  --addresses-->  (clickbait spoiling generation)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Clickbait spoiling generation can be regarded as an MRC problem, its model accepts similar input features as SQuAD.
+
+----- triple_id: be67c68a099 -----
+TRIPLE:     (Explicit Semantic Analysis)  --uses-->  (processed Wikipedia snapshot)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Third, we have processed a recent Wikipedia snapshot as described in to use as the underlying concept space for the explicit semantic analysis of text.
+
+----- triple_id: b7bfe581bfd -----
+TRIPLE:     (NRC)  --produces-->  (Affect Intensity Lexicon)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: We refer to the full list of words along with their real-valued scores of affect intensity as the NRC Affect Intensity Lexicon.

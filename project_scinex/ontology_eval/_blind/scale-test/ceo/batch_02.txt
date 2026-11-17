@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bcfa19d9693 -----
+TRIPLE:     (Scene Segmentation)  --addresses-->  (narrative texts)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In this paper, we introduce the task of scene segmentation. A scene can be understood as a segment of a text where the story time and the discourse time are more or less equal, the narration focuses on one action and space and character constellations stay the same. Scenes can be found predominately in narrative texts like novels
+
+----- triple_id: b005bbcd3d8 -----
+TRIPLE:     (Chinese)  --addresses-->  (POS Tagging)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The current research on natural language processing for Chinese still focuses on POS tagging, parsing , translation , etc.
+
+----- triple_id: b34f88d7e43 -----
+TRIPLE:     (Selectional Preference)  --addresses-->  (connotative polarity)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: In this work, connotative predicates are those that exhibit selectional preference on the connotative po- larity of some of their arguments.
+
+----- triple_id: bb2b59b6e7e -----
+TRIPLE:     (parser)  --uses-->  (WikiExtractor)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Specifically, for each language, we obtain its latest dump of Wikipedia articles1, then process the dump with the parser WikiExtractor to extract textual and meta data for articles.
+
+----- triple_id: b4646356241 -----
+TRIPLE:     (Decoding Strategies)  --addresses-->  (uncertainty)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Following this instance-level approach, we analyse NLG models and decoding strategies, demonstrating that probing a generator with multiple samples and, when possible, multiple references, provides the level of detail necessary to gain understanding of a model's representation of uncertainty.
+
+----- triple_id: bacbc7eb310 -----
+TRIPLE:     (Lexicon)  --produces-->  (elementary tree templates)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: These underspecified elementary trees are further specified in the generation lexicon, which maps concepts onto elementary tree templates, and associates a word (an anchor) with the tree, along with other idiosyncratic information (e.g., preposition choice).
+
+----- triple_id: ba5d35316fc -----
+TRIPLE:     (WIKIBIO)  --publishedin-->  (Wikipedia)
+PREDICATE DEFINITION: AcademicPaper → PublicationVenue  |  use for journal/conference names only
+SOURCE SENTENCE: For neural table-to-text generation like Fig 1a, we test our model on WIKIBIO, a crawled dataset from Wikipedia with paired infoboxes and associated descriptions.
+
+----- triple_id: b3adc587914 -----
+TRIPLE:     (LSTM)  --uses-->  (character embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: For the official submission, we use 128 LSTM cells for the (unidirectional) encoder, decoder, attention mechanism, character embeddings, as well as for the fully connected layers for morphological features encoding/prediciton.
+
+----- triple_id: b16e1cf9d74 -----
+TRIPLE:     (Translation)  --addresses-->  (Chinese-English)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We verify our approach on translation tasks for three language pairs: Chinese-English, English- French, and English-German.
+
+----- triple_id: b6bc3d3d07e -----
+TRIPLE:     (STS)  --evaluatedon-->  (MSRVID)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: We use two different STS datasets to evaluate all models: we opt for very different STS datasets to gain more insight about the effectiveness of visually- informed STS models in different settings. The first dataset is the evaluation portion of the Microsoft Research video captions dataset (MSRVID) from the SemEval 2012 STS challenge Agirre et al.
+
+----- triple_id: b2c8ba4e9b0 -----
+TRIPLE:     (Large-Scale Language Models)  --addresses-->  (probing experiments)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: • Our framework enables probing experiments to understand the behavior of a classification pipeline with large-scale language models.
+
+----- triple_id: b329c156a5a -----
+TRIPLE:     (Novel Method)  --comprises-->  (Label Calibration)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: In this paper, we propose a novel method based on Instance Ranking and Label Calibration strategies (IRLC) to better identify the hard and semi-hard negative instances by learning discriminative representations in relational feature and label semantic space simultaneously.
+
+----- triple_id: ba9264bebf5 -----
+TRIPLE:     (Neural Network)  --trainedon-->  (short texts)
+PREDICATE DEFINITION: Model → TrainingDataset  |  use only for named training corpora/datasets
+SOURCE SENTENCE: model and conventional neural network to detect single social emotion from short texts.
+
+----- triple_id: ba6a5f8bc28 -----
+TRIPLE:     (Training Models)  --comprises-->  (generation training)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  BOTH subject and object must be processes/methods. Object must be an explicitly named sub-process or component — NOT a dataset, representation, or result
+SOURCE SENTENCE: Training models for each of the above tasks are carried out in two phases: DPR training and generation training.
+
+----- triple_id: be450f60954 -----
+TRIPLE:     (German)  --addresses-->  (negation)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: According to the existing corpora, negation is used less frequently in English, Swedish, Dutch, and Japanese, whereas it appears more frequently in Spanish, Italian, Chinese, and German.
+
+----- triple_id: b3bcd637952 -----
+TRIPLE:     (LSTM)  --uses-->  (Word Embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The system uses word embeddings and character-level representations of word beginnings and endings in a LSTM RNN architecture.
+
+----- triple_id: bded3b89b90 -----
+TRIPLE:     (Collocation)  --addresses-->  (Lexical Association)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Lexical association measures and collocation extraction. Language Resources and Evaluation, 44(1-2):138–158.
+
+----- triple_id: b57c720cdae -----
+TRIPLE:     (STS)  --achieves-->  (0.8803 on MSRvid)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Also remind that the obtained best results for the task en (around 0.87 for MSRvid and 0.73 for MSRpar) are comparative to that of the STS-12 (0.8803 for MSRvid and 0.7343 for MSRpar).
+
+----- triple_id: b657528003f -----
+TRIPLE:     (retrieval)  --comparesagainst-->  (B-GST)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: At last, we also compare our model with previous methods involved in retrieval, DRG , IMaT , B-GST and G-GST .
+
+----- triple_id: b32bb290894 -----
+TRIPLE:     (embeddings)  --achieves-->  (highest performance overall)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Remarkably, the improvement is even larger for the concatenation of the embeddings updated during training CONCU-INIlang+U-INIvis, which obtains the highest performance overall.
+
+----- triple_id: bead830c43c -----
+TRIPLE:     (Translation Model)  --uses-->  (reordering)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: Having finished one pass over the corpus, the accumu Pruning Bhist Histogram pruning. Only the best Bhist hypotheses are kept. Preselection Search Blex cand Lexical candidates. Try only the best Blex cand substitutions e for each word f based on p(f|e) BLM cand LM candidates. Try only the best BLM hist successor words e with respect to the previous hypothesis' LM state. Translation Model Wjump Jump width. Maximum jump size allowed in local reordering. Cost for non-monotonic transitions. Cost for insertions of words. Mins Maximum number of insertions per sentence. Cost for deletions of words.
+
+----- triple_id: b32ca75e6e6 -----
+TRIPLE:     (Joint Learning)  --achieves-->  (better results than the two other baselines)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: As we can see, the two proposed joint learning methods outperform the simple average embedding method and the two other baselines, indicating the effectiveness of the proposed methods.
+
+----- triple_id: ba349fc3b83 -----
+TRIPLE:     (Parsers)  --uses-->  (Dependency Forest)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: In this paper, we will work with parsers that assume dependency graphs G = (Vw, A) to satisfy the following properties: • Single-head: every node has at most one incoming arc (if (i, l, j) ∈A, then for every k ̸= i, (k, l′, j) ̸∈A). • Acyclicity: there are no directed cycles in G. • Node 0 is a root, i.e., there are no arcs of the form (i, l, 0) in A.
+
+----- triple_id: b46b7276c3f -----
+TRIPLE:     (learning-based)  --achieves-->  (comparable result with the constant setting on PH14)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: We can observe that the learning-based strategy (red line) gets the best result on ASLG and comparable result with the constant setting (α=0.8) on PH14, but still better than other three cosine strategies.
+
+----- triple_id: bc403c4ec5b -----
+TRIPLE:     (k-NN)  --evaluatedon-->  (TIGER)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: Looking only at those types found in TIGER, we found that the k-NN classifier predicted the cor- rect tag with ≈22% accuracy (not shown in the ta- ble).

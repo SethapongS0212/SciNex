@@ -1,0 +1,165 @@
+########## RUBRIC — C1, C3, C4 (per triple) ##########
+
+You are grading knowledge-graph triples extracted from scientific papers. For each triple
+you get: the triple, the ONTOLOGY DEFINITION of its predicate (allowed domain -> range),
+and the SOURCE SENTENCE it was taken from.
+
+Judge ONLY from the source sentence. A triple can be true about the paper and still wrong
+here, because the sentence is the extractor's evidence.
+
+C1 — CONCEPT CORRECTNESS: are the subject and object valid, meaningful concepts that are
+     actually present in the sentence?
+  CORRECT    both are real, well-formed concepts and both appear in (or are unambiguously
+             denoted by) the sentence
+  PARTIAL    one side is vague, a fragment, or only loosely denoted by the sentence
+  INCORRECT  a side is not a concept at all (a cross-reference, a section title, a bare
+             number where an entity is required), or does not come from this sentence
+
+C3 — CONCEPT SPECIFICITY: is the granularity right for a scientific KG?
+  APPROPRIATE  specific enough to be useful, general enough to recur ("Random Forest",
+               "F1-score", "oxide scale")
+  TOO_BROAD    a generic placeholder that would merge unrelated things ("the model",
+               "data", "method", "system")
+  TOO_NARROW   an over-specified fragment that will never match anything else
+               ("the 3rd convolutional layer of our second variant")
+
+C4 — RELATION CORRECTNESS: does the stated relation hold, in that direction, per the text?
+  CORRECT    the sentence explicitly supports it AND the subject/object types match the
+             predicate's domain -> range
+  PARTIAL    supported but loosely typed, or implied rather than stated
+  INCORRECT  unsupported, or subject and object are swapped relative to domain -> range
+
+Return ONE JSON object, no markdown fences, no commentary:
+
+{"verdicts": [
+  {"triple_id": "<id>", "C1": "...", "C3": "...", "C4": "...", "note": "<short, only if not all-best>"}
+]}
+
+Include every triple_id shown.
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b17118046fb -----
+TRIPLE:     (verb clustering)  --achieves-->  (automatically acquired selectional preferences)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Sun, Lin and Anna Korhonen. Improving verb clustering with automatically acquired selectional preferences. In Proceedings of EMNLP 2009, pages 638–647, Singapore.
+
+----- triple_id: be5486b30c0 -----
+TRIPLE:     (Cro36WSD-S)  --evaluatedon-->  (774 instances being discarded)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: The relationship between these two variants mirrors the one between recall and precision – Cro36WSD-M provides more diverse and lenient annotations, whereas Cro36WSD-S offers a more strict, and thus a more reliable set of annotations (with 774 instances being discarded).
+
+----- triple_id: b9dd4a28bc0 -----
+TRIPLE:     (Empirical Studies)  --addresses-->  (Numerical Question Answering with robust numerical capabilities)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: With experiment analysis and empirical studies, it is demonstrated that Numerical Question Answering with robust numerical capabilities is still to a large extent an open question.
+
+----- triple_id: bff0f31adcd -----
+TRIPLE:     (Pre-training)  --addresses-->  (improvement of performance across all target languages)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The Baseline method does not utilize the available unlabeled data in the target languages, whereas DiTTO uses the unlabeled data to improve the performance across all the target languages. Recently task-adaptive pre-training (TAPT) (Gururangan et al., 2020; Hossain et al., 2020; Caselli et al., 2021) using unlabeled task-specific data has been shown to improve the performance for pre-trained language models across multiple tasks.
+
+----- triple_id: b839aee9771 -----
+TRIPLE:     (bigram)  --achieves-->  (similar latent dimensions)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: In this paper, we focus on selectional preference that reflects the association of two words: if two words form a bigram, then the two words should share similar latent dimensions.
+
+----- triple_id: b436d9df28e -----
+TRIPLE:     (Sentiment Analysis)  --addresses-->  (aspect-level sentiment classification)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Aspect-based sentiment analysis (ABSA) involves three subtasks, i.e., aspect term extraction, opinion term extraction, and aspect-level sentiment classification.
+
+----- triple_id: b59491de522 -----
+TRIPLE:     (Automatic Metrics)  --addresses-->  (evaluation of dialogue systems)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Automatic metrics are not fully reliable for evaluating dialogue systems , so we also con- duct human evaluations on the dialogue responses.
+
+----- triple_id: ba3b0fd9e1e -----
+TRIPLE:     (Classification)  --evaluatedon-->  (Internet Movie Database)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: We evaluate our method mainly on three text classification datasets: Internet Movie Database , AG News corpus and Stanford Sentiment Treebank of binary classification .
+
+----- triple_id: b8034d0934a -----
+TRIPLE:     (Intelligent Assistants)  --addresses-->  (gamification)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Previous studies on intelligent assistants have not investigated chat detection. Their research topics are centered around those on user behaviors including the prediction of user satisfaction and engagement (Jiang et al., 2015; Kobayashi et al., 2015; Sano et al., 2016; Kiseleva et al., 2016a,b) and gamification .
+
+----- triple_id: b089cb31cf6 -----
+TRIPLE:     (Temporal Orientation)  --addresses-->  (fine-grained level)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Whereas the study on the temporal orientation concentrated on a coarse-grained level, we focused on the fine-grained level of temporal orientation which opens more aspects of the social, economic, and psychological research which was not possible previously on a large scale.
+
+----- triple_id: bf49fc0f347 -----
+TRIPLE:     (Hybrid Systems)  --addresses-->  (multi-domain task-oriented SDS and open-domain non-task-oriented SDS)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Unlike intent and domain determination, chat detection targets hybrid systems of multi-domain task-oriented SDS and open-domain non-task-oriented SDS, and aims to determine whether the non-task-oriented component is responsible to a given user utterance or not (i.e., the user is going to have a chat or not).
+
+----- triple_id: b09e637c4d4 -----
+TRIPLE:     (Question Generation)  --addresses-->  (SQuAD)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: For question generation, SQuAD and CMRC are employed.
+
+----- triple_id: b6c5c964226 -----
+TRIPLE:     (Classification)  --addresses-->  (entity pair filtering)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Similar to single entity filtering, we view the task of filtering entity pairs as a classification task, training a separate classifier for each relation.
+
+----- triple_id: bee335b8761 -----
+TRIPLE:     (Filtering)  --addresses-->  (Term Extraction)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: For the term extraction, we will focus on more powerful filtering techniques.
+
+----- triple_id: b41fd37d42d -----
+TRIPLE:     (bigram)  --achieves-->  (72.3 word token f-score)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Interestingly, the syllable bigram model surpasses the performance of the word bigram model proposed by Goldwater et al. (word token f-score 72.3) given sufficient compensation for its undersegmentation bias.
+
+----- triple_id: b5454b0a00c -----
+TRIPLE:     (Conceptual Spaces)  --addresses-->  (vagueness)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: However, the study of conceptual spaces has mostly focused on modelling cognitive and linguistic phenomena, such as metaphor and vagueness, with only few works addressing the challenge of learning such representations from data.
+
+----- triple_id: bd61bfec493 -----
+TRIPLE:     (PaLM)  --achieves-->  (better overall accuracy on English than on Romanian)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The overall performance was better for the English than for the Romanian dataset particularly in the case of PaLM models, including in the generative experiment.
+
+----- triple_id: b483512fc8a -----
+TRIPLE:     (Semantic Similarity)  --addresses-->  (case alignment)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Then we define semantic similarity of a case alignment A between case frames CF1 and CF2.
+
+----- triple_id: b90040f4668 -----
+TRIPLE:     (Graded Lexical Entailment)  --achieves-->  (state-of-the-art performance)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: LEAR specialisation achieves state-of-the-art performance in the tasks of hypernymy directionality, hypernymy detection, and graded lexical entailment, demonstrating the effectiveness and robustness of the proposed asymmetric specialisation model.
+
+----- triple_id: b90bbd7a362 -----
+TRIPLE:     (English)  --addresses-->  (variations of prepositions)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Although we used a unit cost for the edit distance, we can adjust the cost of each edit operation so that the tool can ignore variations of prepositions if we want to use English texts.
+
+----- triple_id: bd9e4a98b56 -----
+TRIPLE:     (Web Search Queries)  --uses-->  (Non-Conversational Text)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We specifically use tweets and Web search queries as conversational and non-conversational text data, respectively.
+
+----- triple_id: b6a8151dc53 -----
+TRIPLE:     (BiLSTM)  --uses-->  (word-embeddings)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: model is a word-level stacked bidirectional LSTM (BiLSTM) with context-aware attention that uses word-embeddings pretrained by on a corpus of ≈330M tweets.
+
+----- triple_id: bd48638fac6 -----
+TRIPLE:     (Sentiment Classification)  --addresses-->  (labeling cost)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Especially for sentiment classification, we will combine prior domain knowledge, such as domain sentiment lexicon, with AVR framework to further reduce labeling cost.
+
+----- triple_id: b9280ebfe38 -----
+TRIPLE:     (multimodal)  --addresses-->  (complex spatial-temporal reasoning)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The dataset is created on programmed realistic shopping scenarios and actively-rendered photorealistic user visual observations, which brings new challenges for complex spatial-temporal reasoning on the multimodal interactions (visual cues and grounded-dialogs).
+
+----- triple_id: bae9eac3af0 -----
+TRIPLE:     (Unsupervised Learning)  --encompasses-->  (clustering)
+PREDICATE DEFINITION: ResearchDomain → ResearchTask  |  subject MUST be a broad domain (NLP, Computer Vision, etc.). Object is a specific task within that domain. NEVER use a ResearchTask as the subject — tasks cannot encompass domains
+SOURCE SENTENCE: Let Mθ(D) be a certain mathematical structure on a data set D with parameters θ where Mθ could be clustering, dimensionality reduction, TDA Mapper, or some other unsupervised learning algorithm.

@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: bb671af2192 -----
+TRIPLE:     (Tree Adjoining Grammar (TAG)  --achieves-->  (improved detection of inconsistent annotation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: A recent approach to this problem (which we will call the KBM system) improves upon Dickinson and Meur- ers (2003) by decomposing the full syntactic tree into smaller units, using ideas from Tree Adjoining Grammar (TAG) . This al- lows the comparison to be based on small syntactic units instead of string n-grams, improving the detec- tion of inconsistent annotation.
+
+----- triple_id: b9bba93f3df -----
+TRIPLE:     (embeddings)  --configures-->  (128 size for all, 64 for node type)
+PREDICATE DEFINITION: ExperimentalSpecification → Experiment  |  Associates an experimental specification with the experiment it governs, establishing the conditions under which the experiment runs or the criteria by which its results are assessed
+SOURCE SENTENCE: The size of all embeddings is 128, except for node type embeddings, which is 64.
+
+----- triple_id: bcd1f973ce4 -----
+TRIPLE:     (generation)  --achieves-->  (re-ranking as a complementary step)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Re-ranking can be regarded as a complementary step after candidate generation.
+
+----- triple_id: b0ca9c05c06 -----
+TRIPLE:     (Part-Of-Speech)  --achieves-->  (96.6 accuracy on second layer)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: In particular, we find that while linear and MLP probes on the first layer of ELMo (ELMo1) achieve slightly higher part-of-speech accuracy than those on the second layer (ELMo2), (97.2 compared to 96.6, for a loss of 0.6 )
+
+----- triple_id: b7514003267 -----
+TRIPLE:     (Language Model)  --trainedon-->  (pretrained)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: Unfortunately, this requires formatting different tasks into specialized augmented formats which are unfamiliar to the base pretrained language model (PLMs).
+
+----- triple_id: b0c09025d0f -----
+TRIPLE:     (ProdLDA)  --comparesagainst-->  (HDP)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: The baselines of HDP, NVLDA, and prodLDA, which achieve competitive topic coherence scores, are selected for comparison.
+
+----- triple_id: b399c558970 -----
+TRIPLE:     (Semi-Supervised Learning)  --uses-->  (monolingual data)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: One is semi-supervised learning to use monolingual data .
+
+----- triple_id: b067ed67188 -----
+TRIPLE:     (Filtering)  --addresses-->  (irrelevant templates)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Another direction would be take a supervised approach, training classifiers over a labeled dataset for filtering irrelevant templates and incorrect instantiations.
+
+----- triple_id: bb59ef785ab -----
+TRIPLE:     (BERT)  --achieves-->  (strong performance in these benchmarks)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We consider BERT as the base model as it achieves strong performance in these benchmarks.
+
+----- triple_id: b803da31031 -----
+TRIPLE:     (BLEU)  --achieves-->  (5.2)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: They obtained a BLEU score of 5.2 in their best setting on Twitter data (average length 23 chars), which is relatively less complex than Reddit (average length 75 chars).
+
+----- triple_id: bb39ef11fa6 -----
+TRIPLE:     (Specific Features)  --uses-->  (capital words)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Thus, in this work, we presented multiple types of traditional NLP features to perform SAT, e.g., sentiment lexicon features (e.g., MPQA, IMDB, Bing Liu opinion lexicon, etc), linguistic features (e.g., negations, n-gram at the word level and character level, etc) and tweet specific features (e.g., emoticons, capital words, elongated words, hashtags, etc,).
+
+----- triple_id: ba655f47b06 -----
+TRIPLE:     (Arabic)  --addresses-->  (concatenative morphology)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: By including German, Turkish, Finnish and Arabic, many interesting aspects of concatenative morphology have already been covered.
+
+----- triple_id: b9c531a8945 -----
+TRIPLE:     (Dialog Systems)  --achieves-->  (correct more often than u1)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: The promise of statistical dialog systems is that s∗will (we hope!) be correct more often than u1.
+
+----- triple_id: be5c1d1f534 -----
+TRIPLE:     (Extensive Evaluation)  --produces-->  (MODEL-DP)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to the research artifact it generates as output
+SOURCE SENTENCE: From the extensive evaluation of our model by tuning several hyper-parameters, we obtain MODEL-DP (Table 3), which gives the best performance for all the three datasets outperforming the baselines (Table 1).
+
+----- triple_id: bc616a90025 -----
+TRIPLE:     (Sequence Labeling)  --addresses-->  (fine-tuning)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: In this section, we introduce basic concepts of named entity recognition, standard fine-tuning for sequence labeling, and domain adaptation for sequence labeling.
+
+----- triple_id: beae322fb9f -----
+TRIPLE:     (unary rules)  --addresses-->  (disambiguation difficulty)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Second, due to the existence of unary rules in constituent trees, competing candidate parses often have different number of actions, and this increases the disambiguation difficulty for the parsing model.
+
+----- triple_id: bb523f853fb -----
+TRIPLE:     (Multi-task Training)  --achieves-->  (better performance on long sentence translation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We conjecture that our proposed multi-task training method significantly improves the contextual information contained in the NAR hidden state, and thus has better performance on long sentence translation.
+
+----- triple_id: b74ed3d61f4 -----
+TRIPLE:     (Two Approaches)  --comprises-->  (automated prompt tuning)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: The latter two approaches have grown more popular as pre-trained models have grown larger. The performance of both prompt-search approaches still lags fine-tuning , though the difference between approaches appears to shrink as model size increases .
+
+----- triple_id: bf9308a0268 -----
+TRIPLE:     (Machine Reading)  --addresses-->  (comprehension of text)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: In our work, we consider the comprehension of text only, and use Wikipedia text documents as the sole resource in order to emphasize the task of machine reading at scale, as described in the introduction.
+
+----- triple_id: b67dbc1fc1b -----
+TRIPLE:     (classifier)  --achieves-->  (NOUN_NUM)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: It uses a nominal classifier, which classifies CATiB NOM words into one of the following Buckwalter noun/adjective classes: NOUN, NOUN.VN, NOUN_QUANT, NOUN_NUM, ADJ, ADJ.VN, ADV_COMP, ADV_NUM.
+
+----- triple_id: bfcbf1fc382 -----
+TRIPLE:     (Lexicon)  --evaluatedon-->  (Tweet Emotion Intensity Dataset)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: We will use the lexicon to study the role emotion words play in high emotion intensity tweets, using the Tweet Emotion Intensity Dataset that has intensity scores for whole tweets.
+
+----- triple_id: b462a2f6a72 -----
+TRIPLE:     (Wikipedia)  --mentions-->  (europe)
+PREDICATE DEFINITION: AcademicPaper → ?  |  Links an academic paper to an entity, model, dataset or result extracted from it.
+SOURCE SENTENCE: We also considered two additional domains, for which we used Wikipedia canadian, australian, australia, africa, na- tions, african, canada, states, countries, asia, united, british, european, competition, world, europe, asian, britain, country, german
+
+----- triple_id: bec875ef1e8 -----
+TRIPLE:     (English)  --uses-->  (for the TOEFL® exam)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: JFLEG The JHU Fluency- Extended GUG corpus consists of sentences writ- ten by English language learners (with different proficiency levels and L1s) for the TOEFL® exam
+
+----- triple_id: bd6e484d7f1 -----
+TRIPLE:     (Attention)  --achieves-->  (compositional generalization)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We find that weight decay and attention mechanisms facilitate compositional generalization by encouraging sparse representations divorced from irrelevant context.
+
+----- triple_id: b6eb0a4bdb5 -----
+TRIPLE:     (Metaphor Detection)  --comparesagainst-->  (Tsvetkov et al. (2013))
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: We compare our method to a context unigram model as well as two other baselines from recent work on metaphor detection: Klebanov et al. (2014), and Tsvetkov et al.

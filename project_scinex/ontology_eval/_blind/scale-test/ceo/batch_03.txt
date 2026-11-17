@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b6f96a3457d -----
+TRIPLE:     (CRF)  --achieves-->  (matching the best mention-entity pairs)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Then, we perform Con- ditional Random Field (CRF) to match the best mention-entity pairs.
+
+----- triple_id: bb55b9224e7 -----
+TRIPLE:     (Sentiment Analysis)  --addresses-->  (Related Words)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Besides, since subtask B, C, D and E focus on topic-level sentiment analysis, we tried to extract features from related words rather than whole tweet.
+
+----- triple_id: b3f51153327 -----
+TRIPLE:     (Speaker Verification)  --addresses-->  (class-based errors)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: The concept of class-based errors is reminiscent of universal background models in speaker verification and a few document attribution strategies in information retrieval.
+
+----- triple_id: b61e97c401f -----
+TRIPLE:     (retrieval)  --addresses-->  (learning image-text relationships)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Learning image-text relationships is central to many applications, including image captioning/tagging (Kulkarni et al., 2013; Mitchell et al., 2013; Karpathy and Fei-Fei, 2015) and cross-modal retrieval/search .
+
+----- triple_id: bac96d32f57 -----
+TRIPLE:     (Dialog)  --addresses-->  (large-scale pretraining for conversational applications)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We hope that this work will motivate and guide further developments in the areas of retrieval-based task-oriented dialog and large-scale pretraining for conversational applications.
+
+----- triple_id: b31bf2367a7 -----
+TRIPLE:     (classifier)  --uses-->  (Lexicon)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: The first set of results uses the lexicon-based classifier for sentiment analysis and compares the different topic identification approaches.
+
+----- triple_id: b72a43fd524 -----
+TRIPLE:     (Logistic Regression)  --uses-->  (Bag-of-Words)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: To investigate the source of gender information after scrubbing, we use logistic regression (LR) model to predict the gender from the Bag-of-Words of the scrubbed biographies.
+
+----- triple_id: b47a1aac3ca -----
+TRIPLE:     (Transformer)  --comparesagainst-->  (window attention)
+PREDICATE DEFINITION: Model → Model  |  BOTH subject and object must be named Models. Use when the paper explicitly benchmarks one model against another. Citation keys like 'Smith et al. (2019)' are NOT valid — use the model name
+SOURCE SENTENCE: Nevertheless, Transformer with Si-SAN still outperforms window attention by 0.52 BLEU point.
+
+----- triple_id: b395714c499 -----
+TRIPLE:     (META)  --addresses-->  (conflict between base classifiers)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: When the prediction of the two base classifiers conflicts with each other, the meta-classifier tends to choose the one with a higher confidence score; this choice improves the accuracy and precision because known features generate a higher confidence whereas unseen or less-weighted features generate a lower score.
+
+----- triple_id: b7a95423124 -----
+TRIPLE:     (Causal Inference)  --addresses-->  (backdoor adjustment)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We also discover the connections between our learning framework and the backdoor adjustment in the causal inference theory
+
+----- triple_id: b9b197570fa -----
+TRIPLE:     (RoBERTa)  --achieves-->  (perfect performance on comparing numbers in zero-shot setup)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: For example, ROBERTA- LARGE (ROBERTA-L) can perfectly solve some reasoning tasks, such as comparing numbers, even in a zero-shot setup, whereas other models' performance is close to random.
+
+----- triple_id: b48513c4be4 -----
+TRIPLE:     (CNNs)  --uses-->  (tile approach)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: A tile approach is splitting the image into 196 rectangular tiles of equal size. These are tiles are analyzed by CNNs and processed as suggested by and .
+
+----- triple_id: bdcbb9e12d9 -----
+TRIPLE:     (generation)  --achieves-->  (significantly better performances on semantic content)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Our introduced noise strategy (Mask with Entropy and Reluency) shows significantly better performances on semantic content generation.
+
+----- triple_id: b17ba272173 -----
+TRIPLE:     (NER Models)  --addresses-->  (noisy real-world scenarios)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: State-of-the-art NER models are all under the traditional assumption of clean data annotation. The key motivation of this work is the intrinsic gap between the clean data assumption and noisy real-world scenarios.
+
+----- triple_id: baf213a84d2 -----
+TRIPLE:     (NER)  --achieves-->  (85 in F value)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: In these classes, we also confirmed that monolingual NER achieved a high accuracy over 85 in F value compared to the other classes (e.g., in the "Station" and "Museum" classes, NER only achieved 76 and 56 in F value, respectively).
+
+----- triple_id: bfea3b83174 -----
+TRIPLE:     (Graph Model)  --produces-->  (topic distribution)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: In the topic-driven word-based graph model, the first layer denotes the relatedness among content words as captured in the above word-based graph model, and the second layer denotes the topic distribution, with the dashed lines between these two layers indicating the word-topic model return by LDA.
+
+----- triple_id: bd9bf1dbf02 -----
+TRIPLE:     (Swedish Clinical Text)  --evaluatedon-->  (clinical entities disorder, finding and body structure)
+PREDICATE DEFINITION: Model/Experiment → Dataset  |  use when a model or experiment is explicitly tested on a named benchmark/dataset. Subject can be Model as shorthand for the experiment involving that model
+SOURCE SENTENCE: The most important contribution of the study is that a rule- based system for recognising the clinical entities disorder, finding and body structure in Swedish clinical text has been constructed and evaluated.
+
+----- triple_id: b764de796ed -----
+TRIPLE:     (Sub-event detection)  --addresses-->  (sequential nature of social media streams)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Current approaches to identify sub-events within a given event, such as a goal during a soccer match, essentially do not exploit the sequential nature of social media streams. We address this shortcoming by framing the sub-event detection problem in social media streams as a sequence labeling task and adopt a neural sequence architecture that explicitly accounts for the chronological order of posts.
+
+----- triple_id: b4ac7db04ae -----
+TRIPLE:     (Optimization)  --uses-->  (learning rate)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a method/model explicitly consumes a tool, dataset, or architecture
+SOURCE SENTENCE: We use Adam optimization algorithm with 1e-3 learning rate to train the model.
+
+----- triple_id: b82cac81fa0 -----
+TRIPLE:     (Softmax)  --produces-->  (categorical distribution)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  use when a process explicitly creates a new artifact
+SOURCE SENTENCE: To this end, we use a simple categorical distribution parameterized by a Softmax:
+
+----- triple_id: b1a98179a59 -----
+TRIPLE:     (Linguistic Features)  --addresses-->  (TFIDF)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: For other linguistic features, we also extract character-bigram and TFIDF features from the training dataset.
+
+----- triple_id: ba7da866565 -----
+TRIPLE:     (BERT)  --achieves-->  (second best ranking on gender stereotype)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: The ranking of gender stereotype from best to worst is DistilBERT, BERT, BERT-large, RoBERTa-large, ALBERT-xxlarge, and RoBERTa.
+
+----- triple_id: bf700581a1d -----
+TRIPLE:     (Weakly supervised learning)  --addresses-->  (dialogue systems)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: Weakly supervised learning has been used in NLP for tasks such as cyberbullying detection , sentiment analysis , dialogue systems and others .
+
+----- triple_id: bcf052da3b7 -----
+TRIPLE:     (detection)  --achieves-->  (dramatic improvement with 358-word translation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  use when a model/method attains a specific result or goal. USE THIS instead of reports when subject is a Model
+SOURCE SENTENCE: Notably, considering Tables 2 and 3 together, a simple word-to-word translation for as little as 358 words, improves frame detection performance drastically even to the level of a complete translation of the test set to English.
+
+----- triple_id: b09837f1f74 -----
+TRIPLE:     (WordNet)  --addresses-->  (polysemous words)
+PREDICATE DEFINITION: ResearchProcess/Paper → ResearchContext  |  subject must be a Paper, Model, or Method (never a ResearchTask). Object is a domain/task/objective the subject targets. STRICT: Do NOT use when a task is the subject — tasks ARE ResearchContext, they cannot address themselves
+SOURCE SENTENCE: We construct our SWORME usage dataset based on the sense-annotated text corpus made by , which consists of 1.47M sentences taken from the Wikitext-103 corpus and contains usages of over 7,500 English polysemous words labeled with their associated WordNet synset IDs.

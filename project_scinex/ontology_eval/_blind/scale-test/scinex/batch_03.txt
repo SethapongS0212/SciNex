@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: b58dbff5375 -----
+TRIPLE:     (Translators)  --addresses-->  (improved productivity)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We would like to provide translators with some guidance on reasonably good MT proposals–the sentences with low TERs–to help them increase the leverage on MT proposals to achieve improved productivity.
+
+----- triple_id: bab344f795f -----
+TRIPLE:     (PARENT)  --uses-->  (precision and recall)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: PARENT evaluates each instance (T i, Ri, Gi) separately, by computing the precision and recall of Gi against both T i and Ri.
+
+----- triple_id: b3a6b738c3c -----
+TRIPLE:     (Sarcastic Tweets)  --splitfrom-->  (English)
+PREDICATE DEFINITION: Dataset → Dataset  |  Records that a dataset partition was derived from a larger source dataset
+SOURCE SENTENCE: We used the English dataset provided by the task organizers. It has 3468 English tweets. It has 867 sarcastic and 2601 non-sarcastic tweets, which indicates that the dataset is highly unbalanced.
+
+----- triple_id: b4dc1198dce -----
+TRIPLE:     (Lexicon)  --comprises-->  (Neg)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: • SentiWN Strong LEX: This lexicon is composed of all Pos (N= 624) and Neg (N= 1,156) entries with a score > 0.50 as well as all the Obj entries mentioned above (i.e., N= 5,243). The list totals 7,023 entries.
+
+----- triple_id: b9d03e33767 -----
+TRIPLE:     (Annotation Scheme)  --comparesagainst-->  (essay data)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: Note that our annotation scheme is different from the VU Amsterdam metaphor-annotated dataset or the essay data used in , where every word in the corpus is individually labeled as a metaphor or a literal word.
+
+----- triple_id: b212efc1d5d -----
+TRIPLE:     (TAG)  --achieves-->  (conjunction)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: For example, the comma is not assigned a single tag as punctuation, but has distinct tags according to its function: conjunction, disjunction, or apposition.
+
+----- triple_id: b5df3c2c723 -----
+TRIPLE:     (Multi-label Classification)  --addresses-->  (movie content analysis)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Rather than representing the script as a sequence, we employ feed-forward neural networks to encode the screenplay into various attributes (e.g., Plot, Genre) and their labels (e.g., thriller, romance), viewing movie content analysis as a multi-label classification problem.
+
+----- triple_id: b3f27a25587 -----
+TRIPLE:     (Manual Annotation)  --achieves-->  (gold standard)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Since manual annotation is expensive and time consuming, we annotated for the gold standard the top 15 clusters constructed from the top 50 candidate terms, for each target term.
+
+----- triple_id: b338992701a -----
+TRIPLE:     (Chinese)  --addresses-->  (Named Entities)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: They mark five types of named entities in Chinese EMRs: dis- eases, type of disease diagnosis, symptoms and signs, test, and treatments.
+
+----- triple_id: b6e0ad8d891 -----
+TRIPLE:     (Attention-Based Models)  --comparesagainst-->  (MLP-Mixer)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: In contrast to attention-based models, the MLP-Mixer captures long-range dependencies without introducing a quadratic cost on the sequence length.
+
+----- triple_id: b8905c31fd1 -----
+TRIPLE:     (Syntactic Dependencies)  --achieves-->  (change in contribution due to preprocessing)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: One of our evaluation goals includes to study the changes of the contribution of syntactic dependencies due to the application of different preprocessing steps.
+
+----- triple_id: b3f7acc16b9 -----
+TRIPLE:     (SRL)  --evaluatedon-->  (performance)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: The effect of more features such as NE and biology terms will examine to improve performance of SRL system.
+
+----- triple_id: bcb5f6b3b22 -----
+TRIPLE:     (NER)  --trainedon-->  (standard cross entropy loss)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: when training an NER model by the standard cross entropy loss, although the development F1 score keeps increasing throughout, the development loss also increases in the later stage (e.g., after ten epochs) of the training process.
+
+----- triple_id: b13d5e3f0ea -----
+TRIPLE:     (BERT)  --achieves-->  (masked language modelling)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Mixed Objective Function In order to train BERT models using the UMLS-based reasoning tasks described above alongside the masked-language objective, each training example is augmented with an indicator label that tells the model which loss function to apply to the sequence in question.
+
+----- triple_id: ba156e7cef9 -----
+TRIPLE:     (Language Models)  --addresses-->  (style polarity)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: We observe that language models are not adequate to capture style polarity; thus, we encourage larger change in the confidence of a style classifier, by adopting a classification confidence reward, i.e., where we reuse the classifier defined in Eq.
+
+----- triple_id: bf6413b28e4 -----
+TRIPLE:     (automatic MT evaluation)  --addresses-->  (MT Output)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Automatic MT evaluation aims at formulating automatic metrics to measure the quality of MT output.
+
+----- triple_id: bc12e53a04f -----
+TRIPLE:     (Glosses)  --achieves-->  (description of words and meanings in synset)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Description includes the words and glosses in the synset.
+
+----- triple_id: b64c3cddc28 -----
+TRIPLE:     (Quantificational Scope Readings)  --addresses-->  (computational derivation)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Here in this paper, a preliminary sketch of a unified three-tier computational model will be drawn up to show how quantificational scope readings across languages can be computed and derived.
+
+----- triple_id: b4204729261 -----
+TRIPLE:     (BLEU)  --achieves-->  (0.0 on non-english name spoiler)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Non-english names also failed for both measures, such as texttgt="Carrer Avinyo" and textprd="Carrer Avinyó", producing bleu-n 0.0 and meteor 0.25.
+
+----- triple_id: b7925ba81d7 -----
+TRIPLE:     (Task-oriented Dialogue System)  --addresses-->  (practical applications)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: The task-oriented dialogue system is one of the rapidly growing fields with many practical applications, attracting more and more research attention recently (Zhao and Esk´enazi, 2016; Wen et al., 2016; Bordes et al., 2017; Dhingra et al., 2017; Eric and Manning, 2017; Liu and Lane, 2017).
+
+----- triple_id: b1922ec276f -----
+TRIPLE:     (BERT)  --comparesagainst-->  (CUVA)
+PREDICATE DEFINITION: Model → Model  |  Associates a model with another model to which it is directly compared in an experiment
+SOURCE SENTENCE: In comparison, CUVA performs significantly better, i.e. +4.1%, +4.5% and +11.8% improvement on the average of Macro, Micro, and Pair F1 values, when compared against ERNIE+HAC, BERT+HAC and RoBERTa+HAC respectively.
+
+----- triple_id: b99da11d501 -----
+TRIPLE:     (SemBank)  --comprises-->  (Rhetorical Relations)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: The linguistic levels of SemBank are, in order of analysis depth: part of speech tags (Penn tagset); named entities (roughly based on the ACE ontology); word senses (WordNet); thematic roles (VerbNet); syntactic structure (CCG); semantic representations, including events and tense (DRT); rhetorical relations (SDRT).
+
+----- triple_id: bf0360c7423 -----
+TRIPLE:     (Translation)  --achieves-->  (TABA)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: TABA Back-Translation from AB, back to A where xABA = TBA(xAB) = TBA(TAB(xA))
+
+----- triple_id: bb6c7833673 -----
+TRIPLE:     (STS)  --achieves-->  (Textual Similarity)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: A Semantic Textual Similarity (STS) measures the degree of semantic equivalence between two target sentences.
+
+----- triple_id: b0bc9ffead5 -----
+TRIPLE:     (Machine Translation)  --addresses-->  (spoken language processing tasks)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: They have been widely used in many subsequent spoken language processing tasks, such as machine translation, spoken document understanding and retrieval.

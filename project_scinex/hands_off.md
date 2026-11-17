@@ -25,6 +25,20 @@
   n3000. Answers are resumable per qid, so the final pass only adds nfull. Its name matches
   `gpurestore`'s pattern, so the restore waits for it too. Exits if nfull is already generated.
 
+### 40.3 Scale-up finished (checked 2026-11-17 17:19 server)
+- Timeline: n3000 train 16.6 h (11-14 22:41) → gen 3.3 h; interim Q&A on GPU1 11-15 02:01 → 02:58
+  (worked as designed; the final pass only added nfull); nfull train 42 h (11-15 18:59) → gen 3.5 h;
+  final Q&A + report 22:52; `gpurestore` restored defaults 23:03 (persistence off, 575 W, clocks reset).
+- **Table 25** (`qa_eval/scale/report_scale.json`, `ft_runs/scale/compare_curve.json`): Q&A 10.3 / 10.8
+  (n764) → 10.8 / 11.0 → 11.2 / 11.8 → **11.4 / 12.0 (nfull)**; teacher 11.1 / 12.0. nfull − n764 +1.1
+  [0.5, 1.7] / +1.3 [0.7, 1.8]; nfull − teacher +0.3 [−0.3, 0.9] / 0.0 [−0.6, 0.7]. Kept rate 68 → 82%,
+  coverage 51.5 → 59.3%, truncations 986 → 455, valid JSON 96.3 → 98.3%. Legacy 41-paper bridge
+  (`qa_eval/acl-f0-vllm/report_scale.json`) same direction, CIs too wide to resolve 1 point.
+- **Blind round `scale-test`** (seed 51, 50 per KG × ontology, teacher / n764 / nfull, 300 items
+  judged in session; Table 26): C4 40 / 37, 33 / 43, 40 / 35 — no trend, student = teacher. Strictly
+  correct 16-22%. Errors are the Table 22 types (catch-all `addresses` / `achieves`, task-as-subject,
+  generic subjects, citation titles, table fragments, claims as objects).
+
 ## Session 39 — ⭐⭐ MAIN EVALUATION RESULT: the ontology-free students on simulated Q&A (Table 20); teacher v2 early result; v2 student queued; second teacher blocked (2026-11-07/08)
 
 > User: *"read HANDOFF_NEXT_SESSION.md and continue"*. At 16:02 server time the noont-KG Q&A

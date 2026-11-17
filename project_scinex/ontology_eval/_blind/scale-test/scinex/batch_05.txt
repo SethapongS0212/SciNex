@@ -1,0 +1,127 @@
+
+Grade the following 25 triples on C1, C3, C4. Items are pooled from several extractors and shuffled; which model produced a triple is deliberately hidden.
+
+----- triple_id: ba9186cd09f -----
+TRIPLE:     (spoken language translation)  --addresses-->  (Chinese translation output)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: To evaluate the quality of Chinese translation output, the International Workshop on Spoken Language Translation in 2005 used the word-level BLEU metric.
+
+----- triple_id: bc49b2ee5eb -----
+TRIPLE:     (Supervised Learning)  --trainedon-->  (MUC-4)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: TIER was originally trained with supervised learning using 1,300 texts and their corresponding answer key templates from the MUC-4 data set.
+
+----- triple_id: b1dbe8486f1 -----
+TRIPLE:     (Dependency Sensitive Convolutional Neural Networks)  --evaluatedon-->  (modeling sentences and documents)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: Dependency Sensitive Convolutional Neural Networks for Mod- eling Sentences and Documents. of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics Hu- man Language Technologies, pages 1512–1521.
+
+----- triple_id: bdc81599818 -----
+TRIPLE:     (treebanks)  --evaluatedon-->  (700 sentence pairs)
+PREDICATE DEFINITION: Experiment → Dataset  |  Directly links an experiment to the dataset used to assess the final performance of its model(s)
+SOURCE SENTENCE: For the purpose of a detailed comparative study of the two treebanks, about 700 sentence pairs from the two treebanks were manually aligned at sentence level and the trees were then aligned automatically.
+
+----- triple_id: be0582be8b8 -----
+TRIPLE:     (Implicational Universals)  --addresses-->  (statistical)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Implicational universals can also be statistical.
+
+----- triple_id: b6b3d7ecd44 -----
+TRIPLE:     (Narrative)  --comprises-->  (complicating action)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: Labov and Waletzky (1967) defined a structure of narrative consisting of three elements: the orientation, the complicating action, and the evaluation.
+
+----- triple_id: b28ca52447d -----
+TRIPLE:     (SVM)  --uses-->  (token unigrams)
+PREDICATE DEFINITION: ResearchProcess → ResearchArtifact  |  Relates a research process to a research artifact it consumes as input
+SOURCE SENTENCE: Setup A supervised machine learning experiment using tenfold cross-validation with the SVM algorithm from the LibSVM package was set up with as only features the token unigrams present in the training data.
+
+----- triple_id: bba49163769 -----
+TRIPLE:     (Clustering)  --achieves-->  (set TF of BF diverse samples)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Apply Hierarchical clustering on TI to extract set TF of BF diverse samples;
+
+----- triple_id: b63dd8008aa -----
+TRIPLE:     (Medical Terminologies)  --addresses-->  (recognition of three types of entities)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: cally recognise these three types of entities using exist- ing medical terminologies, and whether different tech- niques for preprocessing the text and the terminologies affect the results.
+
+----- triple_id: b09266a9b3c -----
+TRIPLE:     (classifier)  --achieves-->  (best possible performance on sentiment)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Lastly, it is worth noting that, as the goal of our work is to determine the best possible performance of a lexicon-based sentiment classifier, we computed an oracle threshold by optimizing the threshold on the gold set, as described in the following section.
+
+----- triple_id: bbf237228ff -----
+TRIPLE:     (Machine Translation)  --achieves-->  (automatic identification of fixed points)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: In the first one, Moses, a statistical machine translation system is used to define the fixed points.
+
+----- triple_id: bc0f7ce15c1 -----
+TRIPLE:     (LSTM)  --achieves-->  (improvement)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Combining LSTM with W2V shows similar trend but with much larger improvement, yet again, CNN+W2V outperforms LSTM+W2V both on average and individually in 8 out of 9 languages.
+
+----- triple_id: b2e91dd2c8a -----
+TRIPLE:     (decision tree)  --addresses-->  (alternative paths in research)
+PREDICATE DEFINITION: Publication/ResearchProcess → ResearchContext  |  Links a publication or a research process to the research context element it targets
+SOURCE SENTENCE: Here we simply highlight just how many choices have been made along the way, and how quickly the number of alternative paths grows the further back up the decision tree we look.
+
+----- triple_id: b9930a809e6 -----
+TRIPLE:     (BERT)  --achieves-->  (0.5824 micro-averaged F1 score)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: After we submitted our results, we experimented a new condition where context features were added to the BERT + CrystalFeel condition. For context, we extracted features using 3 words before and after the target text segment. The results showed improvement (micro-averaged F1 score = 0.5824).
+
+----- triple_id: bae9178a194 -----
+TRIPLE:     (CTRL)  --trainedon-->  (topics, stances, and aspects)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: Our Arg-CTRL is conditioned on topics, stances, and aspects and can reliably create arguments using these control codes.
+
+----- triple_id: bbc5be489ee -----
+TRIPLE:     (parser)  --achieves-->  (processing of negation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Their approach, which is described for the Japanese language, uses support vector machine learning and relies on a Japanese syntactic parser, which permits them to process negation.
+
+----- triple_id: bf382417076 -----
+TRIPLE:     (Multiple Levels)  --comprises-->  (lexical)
+PREDICATE DEFINITION: ResearchProcess → ResearchProcess  |  Relates a research process to a constituent sub-process that forms a structural part of it
+SOURCE SENTENCE: This comparison can be performed on multiple levels: lexical, syntactic or semantic.
+
+----- triple_id: bb50865107f -----
+TRIPLE:     (N-gram)  --achieves-->  (local word order)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We further improve our system by taking local word order into account with n-gram features.
+
+----- triple_id: b6486f40378 -----
+TRIPLE:     (NER Models)  --trainedon-->  (53K projected sentences)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: Because there are fewer training examples for Chinese than English, two NER models were trained, one with the same number of projected sentences as there were gold Chinese sentences (36K), and the second using the full English dataset (53K sentences) projected to Chinese.
+
+----- triple_id: b4dce75a972 -----
+TRIPLE:     (RoBERTa)  --achieves-->  (almost perfect performance on comparing people's ages)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: For example, ROBERTA-L can almost perfectly compare people's ages, when the numeric values are in the expected range (15–105), but miserably fails if the values are outside this range.
+
+----- triple_id: b41dbc1bd18 -----
+TRIPLE:     (Buffer Transitions)  --achieves-->  (worse performance)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: We also experimentally checked that adding both non-projective buffer transitions at the same time (NE+LNBA+RNBA) achieved worse performance than adding only the most suitable transition for each dataset.
+
+----- triple_id: b8adda498c0 -----
+TRIPLE:     (kernel)  --achieves-->  (generalized existing routing methods)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: generalized existing routing methods within the framework of weighted kernel density estimation.
+
+----- triple_id: b4c57db7336 -----
+TRIPLE:     (Focal Loss)  --trainedon-->  (multi-label data)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: In the multi-label case, we alter focal loss formulation such that y and ˆy become y ∈{0, 1}|K| and ˆy ∈R|K|.
+
+----- triple_id: b2ba3acd6c9 -----
+TRIPLE:     (RoBERTa)  --trainedon-->  (DPR)
+PREDICATE DEFINITION: Model → TrainingDataset  |  Directly links a model to the training dataset used to optimise its parameters during the learning phase
+SOURCE SENTENCE: We leverage RoBERTa as Language Model for Masked Token Prediction, and DPR as dataset for training.
+
+----- triple_id: bcb59485f2b -----
+TRIPLE:     (Speech Recognition System)  --achieves-->  (significant, but latent, quality degradation)
+PREDICATE DEFINITION: ResearchProcess → ResearchObjective  |  Links a research process to the research objective it fulfils
+SOURCE SENTENCE: Showing the importance of paying attention to data normalization behavior in large-scale pipelines, these metrics have highlighted issues in Google's real-world speech recognition system that have caused significant, but latent, quality degradation.

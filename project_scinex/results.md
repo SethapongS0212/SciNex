@@ -259,6 +259,28 @@
 > the paragraph-level extraction captures, not the student, limits the main evaluation.
 > Correctness of the same KGs: Table 26 (blind round `scale-test`).
 >
+> **Table 26 (SCALE-UP, BLIND CORRECTNESS of the curve's end points, round `scale-test`, seed 51,
+> 2026-11-17).** 50 kept triples per KG and ontology drawn at random from all 1,041 test papers,
+> pooled and anonymised, judged by claude-opus-5-5 in session (rubric as Table 19b; C4 counts
+> PARTIAL as ½). `ontology_eval/_blind/scale-test/{ceo,scinex}/report.json`. CEO / scinex:
+>
+> | KG | C1 | C3 | C4 [95% CI] | C4 strictly correct | ≈ correct triples (kept × C4) |
+> |---|---|---|---|---|---|
+> | teacher Qwen3-30B (g2) | 80 / 70 | 58 / 44 | **40** [29, 51] / **37** [28, 47] | 22 / 16 | 16.3k / 15.1k |
+> | student n764 | 80 / 66 | 50 / 36 | 33 [23, 43] / 43 [33, 53] | 16 / 20 | 12.2k / 16.4k |
+> | student nfull | 80 / 76 | 54 / 52 | **40** [29, 50] / **35** [25, 45] | 22 / 16 | 16.5k / 14.7k |
+>
+> nfull − n764 C4 +7 [−8, 22] / −8 [−22, 6]; nfull − teacher 0 [−15, 15] / −2 [−16, 12] (unpaired).
+> **Reading:** per-triple correctness does not move with training size and the student equals its
+> teacher — scaling buys coverage and well-formed replies (Table 25), not precision. ⚠ Absolute
+> precision is low: ~35-40% C4, only 16-22% of triples strictly correct. Main error types, as in
+> Table 22: catch-all `addresses` / `achieves` (task as subject; the paper's method, not the named
+> entity, achieves the result; is-a or part-of relations written as `addresses`), generic or
+> adjective subjects ("classifier", "multimodal"), citation titles and table / formula fragments,
+> numbers or comparative claims as objects. These are inherited from the teacher, so better targets
+> (a stronger or ensembled teacher, predicate-specific guards) are the lever, not more papers.
+> Single rater, n=50 per cell; compare within this round only (different papers from Tables 19b/22).
+>
 > **Table 19 (ACL, ⭐ ONTOLOGY-FREE STUDENTS, judge-free).** Students trained and run with the
 > `noont` prompt: the ontology's NAME only, no relation list or definitions (218 tokens vs 2,744).
 > Training data identical to Tables 16–18 except that prompt (ontology and vocabulary cards kept).
