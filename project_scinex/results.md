@@ -281,6 +281,32 @@
 > (a stronger or ensembled teacher, predicate-specific guards) are the lever, not more papers.
 > Single rater, n=50 per cell; compare within this round only (different papers from Tables 19b/22).
 >
+> **Table 27 (SCALE-UP, ⏳ GUARDS v3 — precision rules for `addresses` / `achieves`, 2026-11-18;
+> Q&A answers pending).** Guards v3 = v2 + two opt-in rules (`kg_extraction/fixed_extractor.py`
+> `guards_v3_reject`): `nonprocess_subject` (addresses / achieves with a subject the entity list types
+> Resource, Language or Dataset) and `citation_sentence` (source sentence is a bibliography entry).
+> Applied to the SAME stored replies (`make_guard_variant.py --guards v3`, KGs `<slug>-g3`; no model
+> rerun). C4 under v3 = the Table 26 sample restricted to triples that are in the v3 KG
+> (`ft_runs/scale/blind_subset_g3.json`); answer in KG = share of the 10,402 questions whose gold answer
+> is a node of the KG, a judge-free Q&A proxy that reproduces Table 25's column exactly for v2
+> (`ft_runs/scale/answer_in_kg_g3.json`). CEO / scinex:
+>
+> | KG | kept v2 → v3 | C4 v2 → v3 (n kept of 50) | C4 of the removed | answer in KG v2 → v3 |
+> |---|---|---|---|---|
+> | teacher Qwen3-30B | 40,647 → 35,356 / 40,678 → 35,811 | 40.0 → 42.4 (46) / 37.0 → 40.0 (45) | 12.5 / 10.0 | 19.9 → 18.8 / 21.5 → 20.1 |
+> | student n764 | 36,964 → 33,030 / 38,039 → 33,541 | 33.0 → 35.6 (45) / 43.0 → 45.2 (42) | 10.0 / 31.2 | 18.6 → 17.4 / 19.4 → 18.2 |
+> | student nfull | 41,313 → 36,480 / 41,892 → 36,640 | 40.0 → 40.7 (43) / 35.0 → 35.7 (42) | 35.7 / 31.2 | 20.1 → 19.1 / 21.7 → 20.3 |
+>
+> Held-out check of the same rules on the independent round `acl-f0-q30b` (Table 22, 400 judged
+> triples, rules not designed on it): they remove 5%, whose C4 is 7.5, and C4 of the rest goes 48.5 →
+> 50.7. Rejected rule, tested: Task-typed subjects for addresses / achieves (the ontology forbids them
+> for addresses) — those triples score about average (C4 35 / 41), so the rule removes as many good
+> triples as bad. **Reading:** v3 removes ~12% of triples, mostly wrong ones, for +1-3 C4 points and
+> −1.0 to −1.4 answer-in-KG points. A small, clean gain; rules cannot fix the semantic errors that
+> dominate (Table 26), which confirms that precision has to come from better training targets.
+> ⏳ The Q&A answer pass (`run_g3_qa.sh`) stopped on a thermal watchdog: GPU1 reached 84 °C (3 °C below
+> its slowdown limit) 20 s into the run at default clocks; it needs the usual clock lock (sudo).
+>
 > **Table 19 (ACL, ⭐ ONTOLOGY-FREE STUDENTS, judge-free).** Students trained and run with the
 > `noont` prompt: the ontology's NAME only, no relation list or definitions (218 tokens vs 2,744).
 > Training data identical to Tables 16–18 except that prompt (ontology and vocabulary cards kept).

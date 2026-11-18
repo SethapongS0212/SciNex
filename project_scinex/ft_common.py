@@ -522,7 +522,7 @@ def guard_pass(raw, relations, api_run=True, entity_set=None, guards="v1"):
     graph builder's entity filter. Predicates come back LOWERCASED (as in triples.json);
     `canonical_predicate` restores the ontology spelling for training targets.
     entity_set=None is relation mode; pass the paper's EntitySet for the fixed extractor.
-    guards = the run's prompt_meta "guards" (v1 when absent; v2 = fixed_extractor.guards_v2_reject)."""
+    guards = the run's prompt_meta "guards" (v1 when absent; v2 = fixed_extractor.guards_v2_reject; v3 = v2 + guards_v3_reject)."""
     from kg_extraction.fixed_extractor import _parse_fixed_output
     from kg_extraction.kg_builder import _is_valid_entity
     status, data = classify_raw(raw, api_run)

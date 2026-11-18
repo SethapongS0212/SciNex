@@ -34,10 +34,14 @@ class EntitySet:
         entities: list[str],
         abbreviations: dict[str, str],
         aliases: dict[str, list[str]],
+        types: dict[str, str] | None = None,
     ):
         self.entities      = entities
         self.abbreviations = abbreviations
         self.aliases       = aliases
+        # {canonical -> NER_Type} from the CSV's NER_Type column when present (Session 40,
+        # read only by guards v3); empty for lists without the column.
+        self.types         = dict(types or {})
 
         # Build reverse lookup: any form → canonical name
         self.lookup: dict[str, str] = {}
@@ -158,6 +162,7 @@ def load_entity_csv(csv_path: str | Path, tp_only: bool = True) -> EntitySet:
     entities      = []
     abbreviations = {}
     aliases_map   = {}
+    types         = {}
     skipped       = 0
 
     with open(csv_path, "r", encoding="utf-8-sig") as f:
@@ -181,6 +186,9 @@ def load_entity_csv(csv_path: str | Path, tp_only: bool = True) -> EntitySet:
                     continue
 
             entities.append(canonical)
+            ner_type = (row.get("NER_Type") or "").strip()
+            if ner_type:
+                types[canonical] = ner_type
 
             # Abbreviation
             abbr = row.get("Abbreviation", "").strip()
@@ -209,6 +217,7 @@ def load_entity_csv(csv_path: str | Path, tp_only: bool = True) -> EntitySet:
         entities=entities,
         abbreviations=abbreviations,
         aliases=aliases_map,
+        types=types,
     )
 
 
@@ -220,6 +229,7 @@ def load_entity_csvs(csv_paths: list[str | Path], tp_only: bool = True) -> Entit
     all_entities      = []
     all_abbreviations = {}
     all_aliases       = {}
+    all_types         = {}
 
     for path in csv_paths:
         es = load_entity_csv(path, tp_only=tp_only)
@@ -228,10 +238,13 @@ def load_entity_csvs(csv_paths: list[str | Path], tp_only: bool = True) -> Entit
                 all_entities.append(e)
         all_abbreviations.update(es.abbreviations)
         all_aliases.update(es.aliases)
+        for k, v in es.types.items():
+            all_types.setdefault(k, v)
 
     logger.info(f"Merged {len(all_entities)} unique entities from {len(csv_paths)} CSV files.")
     return EntitySet(
         entities=all_entities,
         abbreviations=all_abbreviations,
         aliases=all_aliases,
+        types=all_types,
     )

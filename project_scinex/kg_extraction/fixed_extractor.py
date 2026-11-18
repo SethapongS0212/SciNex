@@ -979,7 +979,7 @@ def _schema_class_names(schema: dict | None) -> set[str]:
 #                           source sentence — v1 checked this only for 8 predicates, with a
 #                           looser threshold, so achieves/addresses/evaluates objects could be
 #                           invented: (DBDC, evaluates, 88.5) with no 88.5 in the sentence
-GUARD_VERSIONS = ("v1", "v2")
+GUARD_VERSIONS = ("v1", "v2", "v3")
 _V2_AGENT_PREDS = {"employs", "affiliatedwith", "locatedin"}
 _V2_STOP = {"a", "an", "the", "of", "in", "on", "for", "to", "and", "or", "with", "by",
             "from", "at", "as", "is", "are", "was", "were", "its", "their", "our"}
@@ -1016,6 +1016,38 @@ def guards_v2_reject(subj: str, pred: str, obj: str, src: str) -> str | None:
     return None
 
 
+# ── Guards v3 (Session 40, 2026-11-18) ───────────────────────────────────────
+# Opt-in (`guards="v3"` = every v2 rule + the two below). From the blind round scale-test
+# (results.md Table 26) and checked on the independent round acl-f0-q30b (Table 22), where the
+# triples these rules remove scored C4 24 / 7.5 against 38 / 48.5 overall:
+#   nonprocess_subject  addresses / achieves need a process (method, model, tool) as subject;
+#                       a subject the entity list types Resource, Language or Dataset cannot
+#                       target a context or attain a result: (WordNet, addresses, polysemous
+#                       words), (Japanese, achieves, largest performance loss)
+#   citation_sentence   the source sentence is a bibliography entry (venue/pages/volume
+#                       pattern AND a year): the triple restates a cited title, not a claim
+# Task-typed subjects (also forbidden for addresses by the ontology) were tested and NOT
+# adopted: their triples scored about average (C4 35 / 41), so the rule removes as many good
+# triples as bad ones (hands_off.md §40.4).
+_V3_PROCESS_PREDS = {"addresses", "achieves"}
+_V3_NONPROCESS_TYPES = {"resource", "language", "dataset"}
+_V3_CITATION = re.compile(
+    r"(proceedings|conference on|workshop on|journal|transactions|arxiv|pages?\s+\d|pp\.\s*\d|"
+    r"\d+\s*\(\d+(?:[-–]\d+)?\)\s*:\s*\d+|association for computational linguistics|in proc\b)",
+    re.IGNORECASE)
+_V3_YEAR = re.compile(r"\b(19[5-9]\d|20[0-2]\d)[a-z]?\b")
+
+
+def guards_v3_reject(pred: str, src: str, subj_type: str | None) -> str | None:
+    """The reason a triple fails the v3-only rules, or None. Applied after every v2 rule."""
+    p = str(pred).lower().replace(" ", "").replace("-", "").replace("_", "")
+    if p in _V3_PROCESS_PREDS and str(subj_type or "").strip().lower() in _V3_NONPROCESS_TYPES:
+        return "nonprocess_subject"
+    if _V3_CITATION.search(src or "") and _V3_YEAR.search(src or ""):
+        return "citation_sentence"
+    return None
+
+
 def _parse_fixed_output(
     raw: str,
     entity_set: EntitySet | None,
@@ -1030,7 +1062,8 @@ def _parse_fixed_output(
       named literally in the source sentence)
     - Predicate must be in valid relations
     - Object must be non-empty and clean
-    guards="v2" adds `guards_v2_reject` after every v1 check (see above).
+    guards="v2" adds `guards_v2_reject` after every v1 check (see above);
+    guards="v3" adds `guards_v3_reject` after those.
     """
     if guards not in GUARD_VERSIONS:
         raise ValueError(f"guards must be one of {GUARD_VERSIONS}, got {guards!r}")
@@ -1276,10 +1309,17 @@ def _parse_fixed_output(
             )
             continue
 
-        if guards == "v2":
+        if guards in ("v2", "v3"):
             why = guards_v2_reject(canonical_subj, pred, obj, src_sentence)
             if why:
                 logger.debug(f"Skipping triple — guards v2 {why}: "
+                             f"({canonical_subj}, {pred}, {obj})")
+                continue
+        if guards == "v3":
+            subj_type = entity_set.types.get(canonical_subj) if entity_set is not None else None
+            why = guards_v3_reject(pred, src_sentence, subj_type)
+            if why:
+                logger.debug(f"Skipping triple — guards v3 {why}: "
                              f"({canonical_subj}, {pred}, {obj})")
                 continue
 
