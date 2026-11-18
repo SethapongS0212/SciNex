@@ -108,3 +108,5 @@ runs in `screen`. Push with the deploy key:
 - `pkill -f` / `pgrep -f` with a pattern contained in your own command line matches your own shell.
   `nvidia-smi -L` takes no `-i`; use `-i N --query-gpu=name --format=csv,noheader`.
 
+
+- **2026-11-18 18:46 (auto):** guards-v3 Q&A pass finished; report in `qa_eval/scale/report_g3.json` and `ft_runs/scale/g3_report.log`. Table 27 Q&A column still to be written into results.md.
