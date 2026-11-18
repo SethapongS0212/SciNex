@@ -1,6 +1,6 @@
 # Handoff — next session
 
-**Updated 2026-11-18 18:10 server time (Session 40).** Read in this order:
+**Updated 2026-11-18 19:00 server time (Session 40).** Read in this order:
 1. **[`OBJECTIVE.md`](OBJECTIVE.md)** — the professor's three steps. Everything serves them.
 2. This file — where the work stands and what to do next.
 3. `hands_off.md` §40, §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation; Table 22 = its correctness check).
@@ -44,6 +44,8 @@
   Mistral-Small-24B-Instruct-2501.
 
 ## Next steps, in order
+- **Report + slides for the professor exist** (user's claude.ai account: "SciNex Progress Report",
+  "SciNex Progress Slides"; `hands_off.md` §40.4). When Table 27's Q&A column lands, update both.
 0. **Guards v3 (Table 27, `hands_off.md` §40.4):** built and measured without the GPU (−12% triples,
    C4 +1-3, answer-in-KG −1.0 to −1.4). The Q&A answer pass needs the clock lock first (no sudo this
    session; the default-clock run hit 84 °C in 20 s): lock GPU1, `screen -dmS g3qa

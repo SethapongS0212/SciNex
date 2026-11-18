@@ -40,7 +40,7 @@
   generic subjects, citation titles, table fragments, claims as objects).
 
 ### 40.4 Guards v3 (2026-11-18; user: "do what you think is best, keep the experiment run")
-- Rules probed on the judged triples first (`/tmp/.../scratchpad/rule_probe.py`, result in
+- Rules probed on the judged triples first (`ft_runs/scale/scripts/rule_probe.py scale-test acl-f0-q30b`; result in
   `results.md` Table 27): Task-typed subject for addresses/achieves → rejected C4 35.1 (scale-test) /
   40.8 (acl-f0-q30b) ≈ average → NOT adopted; a sentence "fragment" rule (few stopwords / many
   symbols) → 28.0 / 46.2 → NOT adopted; Resource / Language / Dataset subject for addresses/achieves
@@ -50,13 +50,16 @@
   v1 / v2 unchanged: a v2 re-ingest of 4 papers × 2 ontologies reproduces triples.json byte for byte.
 - `make_guard_variant.py --guards v3 --suffix=-g3` on teacher + n764/1500/3000/nfull, 1,041 test
   papers (10,410 runs, 2.5 min). `ft_runs/scale/compare_g3.json`, `blind_subset_g3.json` (exact
-  membership of each judged triple in the -g3 triples.json), `answer_in_kg_g3.json`.
+  membership of each judged triple in the -g3 triples.json; `scripts/c4_g3.py`), `answer_in_kg_g3.json`
+  (`scripts/aikg.py`; reproduces Table 25's answer-in-KG column exactly for the v2 KGs).
 - **GPU heat, no sudo this session:** `run_g3_qa.sh` (Mistral on GPU1, default clocks) tripped its
   own watchdog (margin ≤ 3 °C) 20 s after the server came up: 27 → 84 °C, fans still at 0%. Server
   stopped, no harm; answers are resumable. To finish: apply the clock lock (`sudo nvidia-smi -i 1
   -pm 1 && sudo nvidia-smi -i 1 -lgc 0,1900`), run `screen -dmS g3qa /home/dev1/scinex_runs/run_g3_qa.sh`,
   then restore (`sudo nvidia-smi -i 1 -rgc && sudo nvidia-smi -i 1 -pm 0`).
-- Report + slides for the professor started (claude.ai doc "SciNex Progress Report"; slide deck).
+- **Report + slides for the professor done (2026-11-18)**, from Tables 19/20/25/26/27, in the user's claude.ai
+  account: doc "SciNex Progress Report" (pipeline diagram, learning-curve chart) and deck "SciNex Progress
+  Slides" (12 slides with speaker notes; exports to .pptx / PDF). Not in the repo.
 
 ## Session 39 — ⭐⭐ MAIN EVALUATION RESULT: the ontology-free students on simulated Q&A (Table 20); teacher v2 early result; v2 student queued; second teacher blocked (2026-11-07/08)
 
