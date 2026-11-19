@@ -15,6 +15,18 @@
 - **Decision:** v3 is a precision-for-coverage trade (+1-3 C4, −0.6 to −1.1 Q&A). Keep it opt-in; the
   headline tables stay on v2. Precision still has to come from better training targets (Table 26).
 
+### 41.2 GPU sharing: SciNex on GPU 1 only (user, 2026-11-19)
+- A colleague takes GPU 0. How GPUs are chosen: the Python code always asks for device 0
+  (`ft_train_qlora.py` / `ft_generate.py` `device_map={"": 0}`; vLLM and `qa_eval.py` likewise); the
+  driver picks the physical card with `CUDA_VISIBLE_DEVICES`. So: `CUDA_VISIBLE_DEVICES=1`, never
+  `device=1` in code (with one card visible there is no device 1).
+- Verified: default CUDA ordering = `nvidia-smi` ordering (visible 0 → bus 0x01, visible 1 → bus
+  0x85), so `CUDA_DEVICE_ORDER` is not needed. (An empty `CUDA_DEVICE_ORDER=` breaks CUDA init.)
+- `gpu_thermal_guard.sh` now reads and caps GPU 1 only (cap 1900 MHz); `gpu_restore_after.sh` waits
+  for idle on GPU 1 only and restores only GPU 1 (`-i 1 -rgc / -pl 575 / -pm 0`). Old versions kept as
+  `*.bak-2gpu` in `/home/dev1/scinex_runs/`; repo copies in `ft_runs/acl_scripts/` synced.
+- Old two-card drivers were not edited (finished one-off runs); new drivers must target GPU 1.
+
 ## Session 40 — scale-up check-in: acquisition, teacher, questions done; interim Q&A driver added (2026-11-14)
 
 > User: *"check the progress, read md files, and continue"*. At 07:36 server time everything was on

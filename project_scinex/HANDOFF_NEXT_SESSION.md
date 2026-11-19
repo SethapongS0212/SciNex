@@ -58,13 +58,20 @@
    (c) a non-Qwen student on the 7,036-paper data.
 2. ✔ bf16 `Qwen/Qwen3-30B-A3B-Instruct-2507` (57 GB) deleted 2026-11-11 with the user's OK. Still
    unapproved: the 2 AWQ stubs (27 MB) and the pip cache (7.3 GB).
-3. New GPU runs start at default settings: re-apply the clock locks first (§38.1); sudo password not
-   stored, ask the user. `qa_report_all.sh` re-grades Q&A with all comparisons.
+3. New GPU runs start at default settings: re-apply the clock lock first, **GPU 1 only**
+   (`sudo nvidia-smi -i 1 -pm 1 && sudo nvidia-smi -i 1 -lgc 0,1900`); sudo password not stored, ask
+   the user. `qa_report_all.sh` re-grades Q&A with all comparisons.
 4. Later: more folds; entity-list REVIEW rows (user/professor); guard fixes (`88.5` leak,
    self-loops); `--share-system-prompt` GPU speed test (less relevant now that noont prompts are short).
 
 ## Machine
-Linux box `kubegpu-g04`, **2× RTX 5090 (32 GB, sm_120)**, 125 GB RAM. Second venv **`/home/dev1/envvllm`**
+Linux box `kubegpu-g04`, **2× RTX 5090 (32 GB, sm_120)**, 125 GB RAM.
+**⛔ GPU sharing (user, 2026-11-19): SciNex uses GPU 1 ONLY; GPU 0 belongs to a colleague.**
+Pin every run with `CUDA_VISIBLE_DEVICES=1` (the code's `device_map={"": 0}` / vLLM then see GPU 1 as
+`cuda:0`; never hard-code device 1). Default CUDA numbering = `nvidia-smi` numbering (verified: visible 1
+→ bus 0x85). Every `nvidia-smi` setter takes `-i 1`; `gpu_thermal_guard.sh` and `gpu_restore_after.sh`
+are GPU-1-only (`.bak-2gpu` = old versions). The old two-card drivers (`run_scale_curve.sh`,
+`run_noont.sh`, `run_g3_qa_gpu0.sh`, …) split work over both cards — don't reuse them unchanged. Second venv **`/home/dev1/envvllm`**
 (vLLM 0.32.0, torch 2.13.0+cu130; only for `ft_generate.py --backend vllm`). venv **`/home/dev1/envsam`**
 (Python 3.12.3, torch `2.13.0+cu130`, no `--allow-dev-torch`; `kernels==0.12.3` for gpt-oss;
 `peft==0.21.1`). Repo `/home/dev1/SciNex`; `/home/dev1/project_scinex` is a symlink to its
@@ -82,6 +89,8 @@ runs in `screen`. Push with the deploy key:
 - Empty-target cap: 50% imitates the teacher's coverage, 30% gives a bigger graph; both are
   trained for the noont students.
 - The GPUs are university property: every setting changed for heat is restored afterwards.
+- **GPU 1 only** for SciNex (GPU 0 = colleague's, since 2026-11-19): one-card runs, roughly half the
+  throughput of the two-card scale-up drivers.
 
 ## Traps — do not repeat
 - Background watchers die with the chat session; re-arm them.
