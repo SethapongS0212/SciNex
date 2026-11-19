@@ -281,8 +281,8 @@
 > (a stronger or ensembled teacher, predicate-specific guards) are the lever, not more papers.
 > Single rater, n=50 per cell; compare within this round only (different papers from Tables 19b/22).
 >
-> **Table 27 (SCALE-UP, ⏳ GUARDS v3 — precision rules for `addresses` / `achieves`, 2026-11-18;
-> Q&A answers pending).** Guards v3 = v2 + two opt-in rules (`kg_extraction/fixed_extractor.py`
+> **Table 27 (SCALE-UP, GUARDS v3 — precision rules for `addresses` / `achieves`, 2026-11-18;
+> Q&A pass done 2026-11-18 18:46).** Guards v3 = v2 + two opt-in rules (`kg_extraction/fixed_extractor.py`
 > `guards_v3_reject`): `nonprocess_subject` (addresses / achieves with a subject the entity list types
 > Resource, Language or Dataset) and `citation_sentence` (source sentence is a bibliography entry).
 > Applied to the SAME stored replies (`make_guard_variant.py --guards v3`, KGs `<slug>-g3`; no model
@@ -291,21 +291,30 @@
 > is a node of the KG, a judge-free Q&A proxy that reproduces Table 25's column exactly for v2
 > (`ft_runs/scale/answer_in_kg_g3.json`). CEO / scinex:
 >
-> | KG | kept v2 → v3 | C4 v2 → v3 (n kept of 50) | C4 of the removed | answer in KG v2 → v3 |
-> |---|---|---|---|---|
-> | teacher Qwen3-30B | 40,647 → 35,356 / 40,678 → 35,811 | 40.0 → 42.4 (46) / 37.0 → 40.0 (45) | 12.5 / 10.0 | 19.9 → 18.8 / 21.5 → 20.1 |
-> | student n764 | 36,964 → 33,030 / 38,039 → 33,541 | 33.0 → 35.6 (45) / 43.0 → 45.2 (42) | 10.0 / 31.2 | 18.6 → 17.4 / 19.4 → 18.2 |
-> | student nfull | 41,313 → 36,480 / 41,892 → 36,640 | 40.0 → 40.7 (43) / 35.0 → 35.7 (42) | 35.7 / 31.2 | 20.1 → 19.1 / 21.7 → 20.3 |
+> | KG | kept v2 → v3 | C4 v2 → v3 (n kept of 50) | C4 of the removed | answer in KG v2 → v3 | **Q&A accuracy v2 → v3** | **paired Δ [95% CI]** |
+> |---|---|---|---|---|---|---|
+> | teacher Qwen3-30B | 40,647 → 35,356 / 40,678 → 35,811 | 40.0 → 42.4 (46) / 37.0 → 40.0 (45) | 12.5 / 10.0 | 19.9 → 18.8 / 21.5 → 20.1 | 11.1 → 10.4 / 12.0 → 11.0 | −0.7 [−1.0, −0.4] / −1.0 [−1.3, −0.7] |
+> | student n764 | 36,964 → 33,030 / 38,039 → 33,541 | 33.0 → 35.6 (45) / 43.0 → 45.2 (42) | 10.0 / 31.2 | 18.6 → 17.4 / 19.4 → 18.2 | 10.3 → 9.3 / 10.8 → 9.8 | −0.9 [−1.2, −0.6] / −0.9 [−1.2, −0.7] |
+> | student n1500 | — | — | — | 19.4 → 18.2 / 19.7 → 18.5 | 10.8 → 10.0 / 11.0 → 10.1 | −0.8 [−1.1, −0.6] / −0.9 [−1.2, −0.6] |
+> | student n3000 | — | — | — | 19.9 → 18.5 / 21.0 → 19.5 | 11.2 → 10.6 / 11.8 → 10.7 | −0.6 [−0.9, −0.3] / −1.1 [−1.4, −0.8] |
+> | student nfull | 41,313 → 36,480 / 41,892 → 36,640 | 40.0 → 40.7 (43) / 35.0 → 35.7 (42) | 35.7 / 31.2 | 20.1 → 19.1 / 21.7 → 20.3 | 11.4 → 10.7 / 12.0 → 11.1 | −0.7 [−1.0, −0.4] / −0.9 [−1.2, −0.7] |
+>
+> Q&A = the Table 25 protocol (10,402 questions, 1,041 test papers, Mistral-Small-24B answerer,
+> paired bootstrap over papers; `qa_eval/scale/report_g3.json`, `ft_runs/scale/g3_report.log`). The
+> learning curve and the student = teacher result survive v3: nfull − n764 +1.3 [0.8, 1.9] / +1.3
+> [0.7, 1.8]; nfull − teacher +0.3 [−0.3, 0.8] / 0.0 [−0.6, 0.7]. The loss comes from fewer answered
+> questions (answered −1.3 to −2.3 points); precision on answered questions is unchanged (43.5 → 43.5
+> CEO teacher; 47.1 → 45.8 scinex nfull).
 >
 > Held-out check of the same rules on the independent round `acl-f0-q30b` (Table 22, 400 judged
 > triples, rules not designed on it): they remove 5%, whose C4 is 7.5, and C4 of the rest goes 48.5 →
 > 50.7. Rejected rule, tested: Task-typed subjects for addresses / achieves (the ontology forbids them
 > for addresses) — those triples score about average (C4 35 / 41), so the rule removes as many good
 > triples as bad. **Reading:** v3 removes ~12% of triples, mostly wrong ones, for +1-3 C4 points and
-> −1.0 to −1.4 answer-in-KG points. A small, clean gain; rules cannot fix the semantic errors that
-> dominate (Table 26), which confirms that precision has to come from better training targets.
-> ⏳ The Q&A answer pass (`run_g3_qa.sh`) stopped on a thermal watchdog: GPU1 reached 84 °C (3 °C below
-> its slowdown limit) 20 s into the run at default clocks; it needs the usual clock lock (sudo).
+> −1.0 to −1.4 answer-in-KG points, which the Q&A pass confirms as **−0.6 to −1.1 accuracy points**
+> (all CIs below 0). A precision-for-coverage trade, not a free gain: v3 stays opt-in and v2 remains
+> the setting for the headline Q&A tables. Rules cannot fix the semantic errors that dominate
+> (Table 26), which confirms that precision has to come from better training targets.
 >
 > **Table 19 (ACL, ⭐ ONTOLOGY-FREE STUDENTS, judge-free).** Students trained and run with the
 > `noont` prompt: the ontology's NAME only, no relation list or definitions (218 tokens vs 2,744).

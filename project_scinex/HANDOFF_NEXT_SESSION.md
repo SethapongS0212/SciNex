@@ -1,9 +1,9 @@
 # Handoff — next session
 
-**Updated 2026-11-18 19:00 server time (Session 40).** Read in this order:
+**Updated 2026-11-19 13:30 server time (Session 41).** Read in this order:
 1. **[`OBJECTIVE.md`](OBJECTIVE.md)** — the professor's three steps. Everything serves them.
 2. This file — where the work stands and what to do next.
-3. `hands_off.md` §40, §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation; Table 22 = its correctness check).
+3. `hands_off.md` §41, §40, §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation; Table 22 = its correctness check).
 
 > **Standing rule (user):** update the md docs after every meaningful step, as it happens; commit
 > and push to GitHub when the change is important or necessary.
@@ -45,11 +45,12 @@
 
 ## Next steps, in order
 - **Report + slides for the professor exist** (user's claude.ai account: "SciNex Progress Report",
-  "SciNex Progress Slides"; `hands_off.md` §40.4). When Table 27's Q&A column lands, update both.
-0. **Guards v3 (Table 27, `hands_off.md` §40.4):** built and measured without the GPU (−12% triples,
-   C4 +1-3, answer-in-KG −1.0 to −1.4). The Q&A answer pass needs the clock lock first (no sudo this
-   session; the default-clock run hit 84 °C in 20 s): lock GPU1, `screen -dmS g3qa
-   /home/dev1/scinex_runs/run_g3_qa.sh`, restore after; then fill Table 27's Q&A column.
+  "SciNex Progress Slides"; `hands_off.md` §40.4). Table 27's Q&A column is now in — add it to both
+  (one line / one slide: v3 = +1-3 C4 for −0.6 to −1.1 Q&A; v2 stays the headline setting).
+0. ✔ **Guards v3 DONE (Table 27, `hands_off.md` §41):** −12% triples, C4 +1-3, **Q&A −0.6 to −1.1
+   points** (all CIs below 0; answered rate drops, precision on answered unchanged). Learning curve
+   and student = teacher hold under v3. Verdict: a precision-for-coverage trade; v3 stays opt-in,
+   v2 stays the setting for headline tables. GPU settings restored 2026-11-18 18:55. Nothing running.
 1. **Ask the user what next.** Options the scale-up points to: (a) better training targets — the
    precision ceiling is the teacher (Table 26): predicate-specific guards for `addresses` /
    `achieves`, or an ensembled / stronger teacher; (b) write-up for the professor (Tables 20, 25, 26
@@ -109,4 +110,4 @@ runs in `screen`. Push with the deploy key:
   `nvidia-smi -L` takes no `-i`; use `-i N --query-gpu=name --format=csv,noheader`.
 
 
-- **2026-11-18 18:46 (auto):** guards-v3 Q&A pass finished; report in `qa_eval/scale/report_g3.json` and `ft_runs/scale/g3_report.log`. Table 27 Q&A column still to be written into results.md.
+- **2026-11-18 18:46 (auto):** guards-v3 Q&A pass finished; report in `qa_eval/scale/report_g3.json` and `ft_runs/scale/g3_report.log`. ✔ Written into results.md Table 27 on 2026-11-19 (Session 41).

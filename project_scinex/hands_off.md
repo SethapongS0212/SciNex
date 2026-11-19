@@ -1,5 +1,20 @@
 # Hands-Off Notes
 
+## Session 41 — guards-v3 Q&A result written up (2026-11-19)
+
+### 41.1 Guards v3 on simulated Q&A (`results.md` Table 27)
+- The Q&A pass (`run_g3_qa.sh`, Mistral-Small-24B answerer) finished 2026-11-18 18:46 under the clock
+  lock; the auto-push committed `qa_eval/scale/report_g3.json`; GPU settings restored 18:55
+  (`gpu_restore.log`: pm 0, 575 W, clocks unlocked). Report: `ft_runs/scale/g3_report.log`.
+- Accuracy v2 → v3, CEO / scinex: teacher 11.1 → 10.4 / 12.0 → 11.0; n764 10.3 → 9.3 / 10.8 → 9.8;
+  n1500 10.8 → 10.0 / 11.0 → 10.1; n3000 11.2 → 10.6 / 11.8 → 10.7; nfull 11.4 → 10.7 / 12.0 → 11.1.
+  Paired Δ −0.6 to −1.1, every CI below 0. Cause: answered rate −1.3 to −2.3 points; precision on
+  answered questions about unchanged. The answer-in-KG proxy (−1.0 to −1.4) predicted the direction.
+- Conclusions that survive v3: nfull − n764 +1.3 [0.8, 1.9] / +1.3 [0.7, 1.8]; nfull − teacher
+  +0.3 [−0.3, 0.8] / 0.0 [−0.6, 0.7].
+- **Decision:** v3 is a precision-for-coverage trade (+1-3 C4, −0.6 to −1.1 Q&A). Keep it opt-in; the
+  headline tables stay on v2. Precision still has to come from better training targets (Table 26).
+
 ## Session 40 — scale-up check-in: acquisition, teacher, questions done; interim Q&A driver added (2026-11-14)
 
 > User: *"check the progress, read md files, and continue"*. At 07:36 server time everything was on
