@@ -316,6 +316,30 @@
 > the setting for the headline Q&A tables. Rules cannot fix the semantic errors that dominate
 > (Table 26), which confirms that precision has to come from better training targets.
 >
+> **Table 28 (⏳ VERIFIED TRAINING TARGETS — option (a), 2026-11-19; probe done, student pending).**
+> An open-model verifier (`verify_triples.py`; Qwen3-30B-A3B W4A16 = the teacher model itself, vLLM)
+> sees ONE triple at a time in the blind judge's format (triple, predicate definition, source sentence)
+> and answers YES / NO; score = P(YES) / (P(YES) + P(NO)) from the first-token logprobs. Its question
+> follows the C4 definition plus concept validity. Probe = the 700 triples already judged blind (rounds
+> `acl-f0-q30b`, Table 22, and `scale-test`, Table 26); nothing was tuned on them; threshold 0.5 fixed
+> beforehand (`ft_runs/verify/probe_q30b.csv`). Kept = P(YES) ≥ 0.5:
+>
+> | judged set | n | removed | C4 all → kept | C4 of removed | strictly correct all → kept | AUC correct-vs-rest |
+> |---|---|---|---|---|---|---|
+> | scale-test (teacher, n764, nfull) | 300 | 53.7% | 38.0 → 54.0 | 24.2 | 18.7 → 32.4 | 0.77 |
+> | — CEO / scinex | 150 / 150 | 52.7 / 54.7% | 37.7 → 54.9 / 38.3 → 52.9 | 22.2 / 26.2 | 20.0 → 35.2 / 17.3 → 29.4 | 0.80 / 0.74 |
+> | acl-f0-q30b (gpt-oss v2, Qwen3-30B, 2 students) | 400 | 44.2% | 48.5 → 62.3 | 31.1 | 36.0 → 48.9 | 0.71 |
+> | all | 700 | 48.3% | 44.0 → 59.1 | 27.8 | 28.6 → 42.5 | 0.73 |
+>
+> P(YES) is nearly binary: thresholds 0.05 → 0.95 remove 38 → 57% (C4 kept 56.6 → 60.4). **Reading:**
+> about +15 C4 points for half the triples, against +1-3 for a 12% cut by guards v3 (Table 27): the
+> verifier is the stronger precision lever, but the removed triples still score 24-31 C4, so Q&A
+> (which rewards coverage) will drop. ⏳ Running (`run_verify_chain.sh`, GPU 1 only, waits for the
+> clock lock): score every teacher triple on 805 ACL + 1,041 test papers → teacher variant
+> `qwen3-30b-a3b-v2-g2-v50` (re-ingested) → Q&A + answer-in-KG of that teacher KG → the n764 recipe on
+> the verified targets (`ft_data/acl_q30b_g2v50_noont_me30`, student
+> `qwen3-8b-scale-q30b-g2v50-noont-me30-n764`) → Q&A vs n764 / teacher, then a fresh blind round.
+>
 > **Table 19 (ACL, ⭐ ONTOLOGY-FREE STUDENTS, judge-free).** Students trained and run with the
 > `noont` prompt: the ontology's NAME only, no relation list or definitions (218 tokens vs 2,744).
 > Training data identical to Tables 16–18 except that prompt (ontology and vocabulary cards kept).

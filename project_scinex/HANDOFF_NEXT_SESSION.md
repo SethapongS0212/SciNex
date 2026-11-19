@@ -1,6 +1,6 @@
 # Handoff — next session
 
-**Updated 2026-11-19 13:30 server time (Session 41).** Read in this order:
+**Updated 2026-11-19 14:00 server time (Session 41).** Read in this order:
 1. **[`OBJECTIVE.md`](OBJECTIVE.md)** — the professor's three steps. Everything serves them.
 2. This file — where the work stands and what to do next.
 3. `hands_off.md` §41, §40, §39 (and §38) for detail; `results.md` for tables (Table 20 = the main evaluation; Table 22 = its correctness check).
@@ -44,9 +44,19 @@
   Mistral-Small-24B-Instruct-2501.
 
 ## Next steps, in order
-- **Report + slides for the professor exist** (user's claude.ai account: "SciNex Progress Report",
-  "SciNex Progress Slides"; `hands_off.md` §40.4). Table 27's Q&A column is now in — add it to both
-  (one line / one slide: v3 = +1-3 C4 for −0.6 to −1.1 Q&A; v2 stays the headline setting).
+- ⏳ **RUNNING: option (a), verifier-filtered training targets (`results.md` Table 28, `hands_off.md`
+  §41.3).** `screen vchain` = `/home/dev1/scinex_runs/run_verify_chain.sh`, GPU 1 only, logs in
+  `/home/dev1/scinex_runs/verify/` (`chain.log` first). It WAITS for the GPU 1 clock lock (needs the
+  user's sudo): `sudo nvidia-smi -i 1 -pm 1 && sudo nvidia-smi -i 1 -pl 400 && sudo nvidia-smi -i 1 -lgc
+  0,1900`, then `sudo screen -dmS gpuguard bash /home/dev1/scinex_runs/gpu_thermal_guard.sh` and `sudo
+  screen -dmS gpurestore bash /home/dev1/scinex_runs/gpu_restore_after.sh 'run_verify_chain[.]sh'`
+  (restores GPU 1 after the chain). Probe result: the verifier removes ~half the triples and lifts C4
+  44 → 59. When s7 lands: fill Table 28's Q&A rows, run a blind round on the verified student (vs n764),
+  update report + slides.
+- **Report + slides for the professor** (user's claude.ai account: report
+  https://claude.ai/artifact/GMh6RnH3nnN6BVvzQDXuQb , slides https://claude.ai/artifact/UCybhqEw9idpKe2j5nKjLR):
+  updated 2026-11-19 with Table 27's Q&A and the verifier probe (report section "In progress: verified
+  training targets"; slide 11 "verify").
 0. ✔ **Guards v3 DONE (Table 27, `hands_off.md` §41):** −12% triples, C4 +1-3, **Q&A −0.6 to −1.1
    points** (all CIs below 0; answered rate drops, precision on answered unchanged). Learning curve
    and student = teacher hold under v3. Verdict: a precision-for-coverage trade; v3 stays opt-in,
@@ -115,6 +125,10 @@ runs in `screen`. Push with the deploy key:
   slug folders.
 - gpt-oss needs `kernels==0.12.3` (0.17 breaks transformers 5.5.4) and `--attn-implementation
   flex_attention` (eager attention runs out of memory at batch 8).
+- **GPU 1 at default settings heats 47 → 85 °C in 20 s at 575 W** (2026-11-19). Never run a heavy
+  step on it without the clock lock; a 10 s watchdog poll is too slow. vLLM's `VLLM::EngineCore` child
+  can survive killing its parent: check `nvidia-smi -i 1 --query-compute-apps=pid` after any stop.
+- vLLM in envvllm needs `VLLM_USE_FLASHINFER_SAMPLER=0` (no nvcc on the box for FlashInfer's JIT sampler).
 - `pkill -f` / `pgrep -f` with a pattern contained in your own command line matches your own shell.
   `nvidia-smi -L` takes no `-i`; use `-i N --query-gpu=name --format=csv,noheader`.
 

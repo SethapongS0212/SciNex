@@ -27,6 +27,30 @@
   `*.bak-2gpu` in `/home/dev1/scinex_runs/`; repo copies in `ft_runs/acl_scripts/` synced.
 - Old two-card drivers were not edited (finished one-off runs); new drivers must target GPU 1.
 
+### 41.3 Option (a) started: verifier-filtered training targets (`results.md` Table 28)
+- User (2026-11-19): do the best of (a)-(c) first, write-up anyway. Chose (a): Table 26 says precision is
+  capped by the teacher's targets; (c) is a robustness check that Table 19 already half-answers.
+- New `verify_triples.py` (probe / score / variant): an open-model verifier (default the teacher model,
+  Qwen3-30B W4A16, envvllm) scores each guard-surviving raw triple alone, judge format, P(YES) from
+  first-token logprobs; `variant` writes `<slug><suffix>` with low-P triples removed from responses.jsonl
+  and re-ingests (prompt_meta gets verifier / verify_threshold / verify_source_slug), so build_ft_data,
+  ft_compare and qa_eval work unchanged. Checked: per-triple survivors = triples.json (50/50 on one run);
+  a fake-score variant kept exactly the expected 21/50. `ft_runs/verify/scripts/aikg.py <slugs>` =
+  answer-in-KG for any slugs (reproduces Table 25: 19.9 / 21.5, 18.6 / 19.4).
+- Probe (700 judged triples, 3 s on GPU 1): removes 48%, C4 44.0 → 59.1, strict 28.6 → 42.5, AUC 0.73
+  (scale-test: 54%, 38.0 → 54.0). vLLM needs `VLLM_USE_FLASHINFER_SAMPLER=0` (no nvcc for the
+  FlashInfer JIT sampler).
+- **GPU 1 heat at default settings (no sudo):** scoring went 47 → 85 C in 20 s at 575 W, margin 1 C;
+  the watchdog (10 s poll) caught it twice, and one vLLM `EngineCore` survived a manual stop for ~40 s at
+  87 C (killed). Driver changed: every GPU step waits for the clock lock (persistence Enabled on GPU 1),
+  3 s poll, a stop also kills anything left on GPU 1. Nothing heavy runs on GPU 1 without the lock.
+- `run_verify_chain.sh` (screen `vchain`, logs `/home/dev1/scinex_runs/verify/`) is waiting for the
+  lock: s1 score (~140k triples, ~15 min) → s2 variant `-v50` + ft_compare + answer-in-KG → s3 teacher-v50
+  Q&A → s4 build data (n764 recipe) → s5 train (~5 h) → s6 gen 1,041 test papers (~3.3 h) → s7 Q&A +
+  report (`qa_eval/scale/report_v50.json`) + ft_compare + answer-in-KG. Then: blind round on the student.
+- Write-up updated in the user's claude.ai account: report (guards-v3 Q&A, new section "In progress:
+  verified training targets", Next steps) and slides (guards slide, new slide 11 "verify", next slide).
+
 ## Session 40 — scale-up check-in: acquisition, teacher, questions done; interim Q&A driver added (2026-11-14)
 
 > User: *"check the progress, read md files, and continue"*. At 07:36 server time everything was on
